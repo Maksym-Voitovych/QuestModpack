@@ -1,0 +1,3713 @@
+[
+  {
+    "number": 25,
+    "title": "Роботизована металургія",
+    "theme": "Роботизовані сплави Oritech спираються на пневматичні плати та ритуальну металургію духів.",
+    "main_mods": [
+      "oritech",
+      "occultism",
+      "pneumaticcraft"
+    ],
+    "unlocks": [
+      {
+        "id": "oritech:foundry_block",
+        "purpose_uk": "Ливарна лінія обмеженого рівня"
+      },
+      {
+        "id": "oritech:assembler_block",
+        "purpose_uk": "Складальні операції"
+      },
+      {
+        "id": "oritech:biosteel_ingot",
+        "purpose_uk": "Біотехнологічний сплав"
+      },
+      {
+        "id": "oritech:carbon_fibre_strands",
+        "purpose_uk": "Вуглецевий матеріал"
+      },
+      {
+        "id": "oritech:machine_core_3",
+        "purpose_uk": "Початкове ядро цього технологічного рівня"
+      },
+      {
+        "id": "occultism:afrit_essence",
+        "purpose_uk": "Продукт контрольованого ритуалу"
+      }
+    ],
+    "limits_uk": [
+      "Прискорювач частинок, ресурсні вузли платини та спавнер-контролер Oritech закриті до відповідних пізніх епох.",
+      "Зміна рецептів машин використовує духовні матеріали, а ритуальних компонентів — друковані плати; ключі не є компонентами машин."
+    ],
+    "milestones": [
+      {
+        "id": "E25_M1",
+        "title": "Ливарна без ручного підживлення",
+        "objective_uk": "Зібрати foundry із введенням металів, буфером енергії та виходом сплаву.",
+        "evidence_uk": "Серверна перевірка структури/операції; саме володіння блоком недостатнє.",
+        "after": []
+      },
+      {
+        "id": "E25_M2",
+        "title": "Серія біосталі",
+        "objective_uk": "Виготовити 32 біосталеві зливки через ливарний технологічний маршрут.",
+        "evidence_uk": "Лічильник виходу виробничої операції, не предмети з чужої скрині.",
+        "after": [
+          "E25_M1"
+        ]
+      },
+      {
+        "id": "E25_M3",
+        "title": "Контракт африта",
+        "objective_uk": "Виконати occultism:ritual/summon_unbound_afrit із технічно підсиленою оснасткою; викликати справжнього occultism:afrit_wild.",
+        "evidence_uk": "Успішний ритуал і поява afrit_wild. result із ritual_dummy у JEI не рахується реально виробленою есенцією.",
+        "after": []
+      },
+      {
+        "id": "E25_M4",
+        "title": "Духовна металургія",
+        "objective_uk": "Виробити 8 occultism:iesnium_ingot; перемогти власних викликаних afrit_wild і зібрати 4 occultism:afrit_essence.",
+        "evidence_uk": "Власна переробка iesnium плюс події kill/loot. Loot-table occultism:entities/afrit_wild реально містить afrit_essence; іконка ритуалу доказом не є.",
+        "after": [
+          "E25_M3"
+        ]
+      },
+      {
+        "id": "E25_M5",
+        "title": "Складальник подвійного походження",
+        "objective_uk": "Виготовити oritech:assembler_block за integration_recipe цієї епохи та виконати 16 штатних складальних операцій.",
+        "evidence_uk": "Крафт конкретного assembler_block із платою та iesnium; 16 завершених штатних рецептів із власником.",
+        "after": [
+          "E25_M2",
+          "E25_M4"
+        ]
+      },
+      {
+        "id": "E25_M6",
+        "title": "Стабільна комірка",
+        "objective_uk": "Показати 3 хвилини роботи ливарні та складальника без втрати живлення чи переповнення виходу.",
+        "evidence_uk": "Серверний таймер лише в завантаженому чанку, з перевіркою корисного випуску.",
+        "after": [
+          "E25_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Енергоаудит",
+        "objective_uk": "Порівняти витрати двох рецептів сплаву й налаштувати буфер."
+      },
+      {
+        "title": "Механічний дизайн",
+        "objective_uk": "Побудувати безпечну галерею обслуговування для машин."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_25",
+      "name_uk": "Ключ епохи 25: Роботизована металургія",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "oritech:biosteel_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:afrit_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "pneumaticcraft:printed_circuit_board",
+          "count": 2
+        },
+        "S": {
+          "id": "botania:elementium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_24",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "oritech:assembler_block",
+      "preserve_source_recipe_id": "oritech:crafting/assembler",
+      "additional_inputs": [
+        {
+          "id": "pneumaticcraft:printed_circuit_board",
+          "count": 1
+        },
+        {
+          "id": "occultism:iesnium_ingot",
+          "count": 1
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_25",
+      "implementation_note_uk": "Повна штатна сітка 3×3 не має вільних місць: замінити лише мідні комірки [0, 1] на друковану плату та [0, 2] на iesnium. Зберегти всі інші комірки, type/category/result і вихід 1; мідь[0, 0], adamant, 2 crafter, 2 motor і blast_furnace лишаються. Аналогічно змінити assembleralt або вимкнути його, щоб він не обходив нові витрати.",
+      "status": "design_patch_not_installed",
+      "input_patch": {
+        "kind": "replace_grid_slots",
+        "zero_based": true,
+        "replacements": [
+          {
+            "row": 0,
+            "column": 1,
+            "id": "pneumaticcraft:printed_circuit_board"
+          },
+          {
+            "row": 0,
+            "column": 2,
+            "id": "occultism:iesnium_ingot"
+          }
+        ]
+      },
+      "also_patch_recipe_ids": [
+        "oritech:crafting/assembleralt"
+      ]
+    }
+  },
+  {
+    "number": 26,
+    "title": "Кероване вирощування ресурсів",
+    "theme": "Ресурсна агрокультура стає промисловою галуззю, але не джерелом майбутніх матеріалів.",
+    "main_mods": [
+      "mysticalagriculture",
+      "mysticalagradditions",
+      "botanypots",
+      "botanypotstiers",
+      "mysticalautomation"
+    ],
+    "unlocks": [
+      {
+        "id": "mysticalagriculture:infusion_altar",
+        "purpose_uk": "Алтар створення насіння"
+      },
+      {
+        "id": "mysticalagriculture:infusion_pedestal",
+        "purpose_uk": "Периферія алтаря"
+      },
+      {
+        "id": "mysticalagriculture:inferium_seeds",
+        "purpose_uk": "Перша дозволена культура есенції"
+      },
+      {
+        "id": "mysticalagriculture:tertium_essence",
+        "purpose_uk": "Верхня межа базового агрорівня"
+      },
+      {
+        "id": "mysticalagriculture:iron_seeds",
+        "purpose_uk": "Дозволена звичайна руда"
+      },
+      {
+        "id": "mysticalagriculture:tertium_farmland",
+        "purpose_uk": "Контрольоване покращення ґрунту"
+      }
+    ],
+    "limits_uk": [
+      "Рівні T4/T5/T6, Gaia, draconium, awakened draconium, antimatter-подібні ресурси та інші майбутні культури блокуються поштучно, незалежно від номінального tier.",
+      "Botany Pots для їжі дозволені раніше; автоматичні ресурсні горщики й прискорювачі потребують цієї епохи та ліміту сумарної швидкості.",
+      "Заборонити EMC насіння, есенцій прогресії й нескінченну позитивну петлю насіння/декрафту."
+    ],
+    "milestones": [
+      {
+        "id": "E26_M1",
+        "title": "Механічний каркас алтаря",
+        "objective_uk": "Зібрати інфузійний алтар і 8 п’єдесталів за рецептом із біосталлю та магічним компонентом.",
+        "evidence_uk": "Крафт і перевірка структури, без безкоштовного перенесення чужого алтаря.",
+        "after": []
+      },
+      {
+        "id": "E26_M2",
+        "title": "Чистий старт культури",
+        "objective_uk": "Виростити 64 inferium essence з власноруч посіяного дозволеного насіння.",
+        "evidence_uk": "Збір урожаю на ділянці команди; не конвертація із запасів іншої команди.",
+        "after": [
+          "E26_M1"
+        ]
+      },
+      {
+        "id": "E26_M3",
+        "title": "Третій ступінь есенції",
+        "objective_uk": "Послідовно виготовити prudentium та 8 tertium essence.",
+        "evidence_uk": "Події перетворення з перевіркою незамкненого балансу есенцій.",
+        "after": []
+      },
+      {
+        "id": "E26_M4",
+        "title": "Зв’язок із природною магією",
+        "objective_uk": "Виготовити 8 elementium і використати 2 у рецепті першого дозволеного ресурсного насіння.",
+        "evidence_uk": "Реєстр нового рецепту та лічильник його завершення.",
+        "after": [
+          "E26_M3"
+        ]
+      },
+      {
+        "id": "E26_M5",
+        "title": "Ферма одного металу",
+        "objective_uk": "Автоматизувати збір і перетворення залізної есенції в 64 залізні зливки.",
+        "evidence_uk": "Операції випуску; заборонені культури в цій самій фермі не повинні запускатися.",
+        "after": [
+          "E26_M2",
+          "E26_M4"
+        ]
+      },
+      {
+        "id": "E26_M6",
+        "title": "Обмежений розгін",
+        "objective_uk": "Продемонструвати 3 хвилини роботи в межах дозволеної кількості прискорювачів.",
+        "evidence_uk": "Серверна перевірка складу ферми та числа корисних циклів; конкретний ліміт визначити після вимірювання.",
+        "after": [
+          "E26_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Різноманіття полів",
+        "objective_uk": "Виростити 4 дозволені звичайні ресурси без зайвого прискорення."
+      },
+      {
+        "title": "Продовольча автономія",
+        "objective_uk": "Побудувати окрему харчову ферму без залежності від ресурсоесенцій."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_26",
+      "name_uk": "Ключ епохи 26: Кероване вирощування ресурсів",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "oritech:biosteel_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "mysticalagriculture:tertium_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "pneumaticcraft:printed_circuit_board",
+          "count": 2
+        },
+        "S": {
+          "id": "botania:elementium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_25",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 27,
+    "title": "Фабрика життєвих матриць",
+    "theme": "Дані мобів і життєва есенція входять у виробництво; босові трофеї залишаються випробуваннями.",
+    "main_mods": [
+      "hostilenetworks",
+      "industrialforegoing",
+      "apothic_spawners",
+      "mifa"
+    ],
+    "unlocks": [
+      {
+        "id": "hostilenetworks:deep_learner",
+        "purpose_uk": "Навчання моделей"
+      },
+      {
+        "id": "hostilenetworks:blank_data_model",
+        "purpose_uk": "Стартова матриця даних"
+      },
+      {
+        "id": "hostilenetworks:sim_chamber",
+        "purpose_uk": "Контрольований симулятор"
+      },
+      {
+        "id": "hostilenetworks:loot_fabricator",
+        "purpose_uk": "Фабрикатор дозволених звичайних трофеїв"
+      },
+      {
+        "id": "hostilenetworks:prediction_matrix",
+        "purpose_uk": "Витратний матеріал симуляцій"
+      },
+      {
+        "id": "hostilenetworks:overworld_prediction",
+        "purpose_uk": "Початковий продукт симуляції"
+      }
+    ],
+    "limits_uk": [
+      "Моделі босів, Dragon/Wither/Gaia/Chaos і трофеї, що засвідчують особистий прогрес, не розблоковуються звичайним виготовленням симулятора.",
+      "Скорочення затримки спавнерів, ігнорування умов та масовий нерест розділити на пізні рівні; початковий спавнер має консервативні межі.",
+      "MIFA та інші аддони не можуть давати сумарний необмежений множник швидкості."
+    ],
+    "milestones": [
+      {
+        "id": "E27_M1",
+        "title": "Етична камера даних",
+        "objective_uk": "Зібрати симулятор і фабрикатор за новими рецептами з магічним сполучником.",
+        "evidence_uk": "Підтверджений крафт двох машин після відкриття епохи.",
+        "after": []
+      },
+      {
+        "id": "E27_M2",
+        "title": "Навчання без позичених моделей",
+        "objective_uk": "Навчити одну модель звичайного моба від базового стану до дозволеного першого робочого рівня.",
+        "evidence_uk": "Зміна компонентів моделі й справжні вбивства власної команди; ID предмета сам по собі не розрізняє модель.",
+        "after": [
+          "E27_M1"
+        ]
+      },
+      {
+        "id": "E27_M3",
+        "title": "Кристал життєвої енергії",
+        "objective_uk": "Виробити 4 dark power gem через EvilCraft.",
+        "evidence_uk": "Подія виробничого перетворення; витрачена енергія/кров за штатними правилами.",
+        "after": []
+      },
+      {
+        "id": "E27_M4",
+        "title": "Матриця з душею",
+        "objective_uk": "Створити 32 prediction matrix у рецепті, що поєднує технічний полімер і магічний реагент.",
+        "evidence_uk": "Лічильник нового рецепту, а не наявності готового стека.",
+        "after": [
+          "E27_M3"
+        ]
+      },
+      {
+        "id": "E27_M5",
+        "title": "Перший симуляційний цикл",
+        "objective_uk": "Виробити 16 дозволених звичайних трофеїв і передати їх у виробничу лінію.",
+        "evidence_uk": "Лічильники симуляції та фабрикації, з перевіркою типу моделі.",
+        "after": [
+          "E27_M2",
+          "E27_M4"
+        ]
+      },
+      {
+        "id": "E27_M6",
+        "title": "Захист від босового обходу",
+        "objective_uk": "Пройти негативну перевірку: заборонена модель/рецепт трофея не запускається до окремого доступу.",
+        "evidence_uk": "Автоматична серверна перевірка політики; гравець не отримує заборонений трофей навіть при внесенні моделі.",
+        "after": [
+          "E27_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Каталог фауни",
+        "objective_uk": "Навчити ще 3 дозволені моделі."
+      },
+      {
+        "title": "Безпечний мобокомплекс",
+        "objective_uk": "Зробити аварійне вимкнення ферми й окрему схему утилізації надлишків."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_27",
+      "name_uk": "Ключ епохи 27: Фабрика життєвих матриць",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "hostilenetworks:prediction_matrix",
+          "count": 2
+        },
+        "M": {
+          "id": "evilcraft:dark_power_gem",
+          "count": 2
+        },
+        "R": {
+          "id": "industrialforegoing:plastic",
+          "count": 2
+        },
+        "S": {
+          "id": "botania:terrasteel_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_26",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 28,
+    "title": "Розподілена логістика",
+    "theme": "Умовні мережі й духовні сховища об’єднують фабрики без дострокового доступу до чужих машин.",
+    "main_mods": [
+      "xnet",
+      "integrateddynamics",
+      "integratedtunnels",
+      "integratedterminals",
+      "occultism",
+      "enderstorage",
+      "dimstorage",
+      "modularrouters"
+    ],
+    "unlocks": [
+      {
+        "id": "xnet:controller",
+        "purpose_uk": "Програмована мережа передачі"
+      },
+      {
+        "id": "integrateddynamics:portable_logic_programmer",
+        "purpose_uk": "Умовна логіка"
+      },
+      {
+        "id": "integrateddynamics:crystalized_menril_chunk",
+        "purpose_uk": "Матеріал логічних компонентів"
+      },
+      {
+        "id": "occultism:storage_controller",
+        "purpose_uk": "Духовне мережеве сховище"
+      },
+      {
+        "id": "occultism:storage_remote",
+        "purpose_uk": "Дистанційний інтерфейс сховища"
+      },
+      {
+        "id": "enderstorage:ender_chest",
+        "purpose_uk": "Канальний обмін між дозволеними точками"
+      }
+    ],
+    "limits_uk": [
+      "Міжвимірна передача і квитки завантаження чанків мають окремі обмеження власника, кількості та епохи.",
+      "Передача предмета в мережу не надає права користуватися закритою машиною; канали інших команд не повинні переносити доступ.",
+      "Духовні копачі Occultism, надшвидкі маршрутизатори й безмежні сховища мають пізніші власні гейти."
+    ],
+    "milestones": [
+      {
+        "id": "E28_M1",
+        "title": "Мережа з трьома типами потоків",
+        "objective_uk": "Під’єднати предмети, рідину та енергію до окремо керованих каналів XNet.",
+        "evidence_uk": "Серверна перевірка підключень і реальних передач кожного типу.",
+        "after": []
+      },
+      {
+        "id": "E28_M2",
+        "title": "Умова зупинки",
+        "objective_uk": "Налаштувати зупинку виробництва при запасі 256 одиниць продукту.",
+        "evidence_uk": "Реакція мережі на досягнення порогу, без викидання продукту в світ.",
+        "after": [
+          "E28_M1"
+        ]
+      },
+      {
+        "id": "E28_M3",
+        "title": "Духовний склад",
+        "objective_uk": "Завершити ритуал контролера сховища з компонентом технічного рівня 24–25.",
+        "evidence_uk": "Успіх ритуалу і створення прив’язаного до команди контролера.",
+        "after": []
+      },
+      {
+        "id": "E28_M4",
+        "title": "Резерв без дублювання",
+        "objective_uk": "Покласти й повернути 512 звичайних предметів, перевіривши незмінність кількості.",
+        "evidence_uk": "Серверний баланс до/після для контрольного набору предметів.",
+        "after": [
+          "E28_M3"
+        ]
+      },
+      {
+        "id": "E28_M5",
+        "title": "Мережа двох майстерень",
+        "objective_uk": "Зв’язати дві дозволені виробничі зони; налаштувати фільтри й аварійну зупинку.",
+        "evidence_uk": "Серія 32 операцій передачі й підтверджена реакція на переповнення.",
+        "after": [
+          "E28_M2",
+          "E28_M4"
+        ]
+      },
+      {
+        "id": "E28_M6",
+        "title": "Права доступу",
+        "objective_uk": "Перевірити, що учасник без дозволу не активує закритий блок через маршрутизатор, термінал чи fake player.",
+        "evidence_uk": "Інтеграційний серверний сценарій; якщо відсутня атрибуція fake player, цей маршрут залишається вимкненим.",
+        "after": [
+          "E28_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Логічна панель",
+        "objective_uk": "Побудувати екран стану фабрики."
+      },
+      {
+        "title": "Буфер на випадок зупинки",
+        "objective_uk": "Додати автономне безпечне вимкнення при втраті зв’язку."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_28",
+      "name_uk": "Ключ епохи 28: Розподілена логістика",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "ae2:engineering_processor",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:spirit_attuned_crystal",
+          "count": 2
+        },
+        "R": {
+          "id": "enderio:pulsating_alloy_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "pneumaticcraft:printed_circuit_board",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_27",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 29,
+    "title": "Реакторна енергетика",
+    "theme": "Ядерне тепло й магічні кристали живлять перші великі мережі без стрибка до найвищих генераторів.",
+    "main_mods": [
+      "bigreactors",
+      "reactorplus",
+      "powah"
+    ],
+    "unlocks": [
+      {
+        "id": "bigreactors:basic_reactorcontroller",
+        "purpose_uk": "Керований реактор базового класу"
+      },
+      {
+        "id": "bigreactors:basic_reactorcontrolrod",
+        "purpose_uk": "Регулювання потужності"
+      },
+      {
+        "id": "bigreactors:basic_turbinecontroller",
+        "purpose_uk": "Парова турбіна базового класу"
+      },
+      {
+        "id": "bigreactors:cyanite_ingot",
+        "purpose_uk": "Підтвердження витрати ядерного палива"
+      },
+      {
+        "id": "powah:crystal_blazing",
+        "purpose_uk": "Кристал середнього енергорівня"
+      },
+      {
+        "id": "powah:crystal_spirited",
+        "purpose_uk": "Верхня межа кристалів цієї епохи"
+      }
+    ],
+    "limits_uk": [
+      "Powah nitro залишається закритим до епохи 36; посилені реактори ExtremeReactors і ReactorPlus відкриваються лише в межах перевіреної потужності.",
+      "Креативні джерела пари/води не належать до обов’язкової прогресії.",
+      "Збільшення вартості контролера не замінює перевірку доступу до палива й реакторної структури."
+    ],
+    "milestones": [
+      {
+        "id": "E29_M1",
+        "title": "Холодна перевірка",
+        "objective_uk": "Зібрати базовий реактор, регулювання, вимикач і буфер без запуску на максимум.",
+        "evidence_uk": "Валідна структура, керовані стрижні та справжнє аварійне вимкнення.",
+        "after": []
+      },
+      {
+        "id": "E29_M2",
+        "title": "Паливний баланс",
+        "objective_uk": "Відпрацювати паливо до отримання 16 cyanite ingot.",
+        "evidence_uk": "Продукт реального паливного циклу, не перенесені зливки.",
+        "after": [
+          "E29_M1"
+        ]
+      },
+      {
+        "id": "E29_M3",
+        "title": "Вогняна стабілізація",
+        "objective_uk": "Виготовити 16 fire essence для реакторних кристалічних компонентів.",
+        "evidence_uk": "Власні рецепти магічної есенції.",
+        "after": []
+      },
+      {
+        "id": "E29_M4",
+        "title": "Кристалічна драбина",
+        "objective_uk": "Послідовно отримати blazing і spirited crystals; не дозволяти nitro-рецепти.",
+        "evidence_uk": "Завершення дозволених energizing-рецептів з перевіркою споживання енергії.",
+        "after": [
+          "E29_M3"
+        ]
+      },
+      {
+        "id": "E29_M5",
+        "title": "Керований енергоблок",
+        "objective_uk": "Виготовити powah:energy_cell_spirited зі 2 botania:terrasteel_ingot за integration_recipe; зв’язати його з базовим реактором і виробничим навантаженням.",
+        "evidence_uk": "Новий крафт конкретного буфера, виміряне надходження й корисне споживання енергії. Basic reactor controller використовує окремий OP-рецепт 29.",
+        "after": [
+          "E29_M2",
+          "E29_M4"
+        ]
+      },
+      {
+        "id": "E29_M6",
+        "title": "Пуск і зупинка",
+        "objective_uk": "Пройти повний запуск, 5 хвилин стабільної роботи й контрольовану зупинку.",
+        "evidence_uk": "Серверний часовий сценарій і журнал стану реактора.",
+        "after": [
+          "E29_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Тепловий обмін",
+        "objective_uk": "Порівняти прямий вихід із паротурбінним контуром."
+      },
+      {
+        "title": "Енергетичний диспетчер",
+        "objective_uk": "Додати пріоритет живлення критичних машин."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_29",
+      "name_uk": "Ключ епохи 29: Реакторна енергетика",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "bigreactors:cyanite_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "ars_nouveau:fire_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "powah:crystal_spirited",
+          "count": 2
+        },
+        "S": {
+          "id": "botania:elementium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_28",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "powah:energy_cell_spirited",
+      "preserve_source_recipe_id": "powah:crafting/energy_cell_spirited",
+      "additional_inputs": [
+        {
+          "id": "botania:terrasteel_ingot",
+          "count": 2
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_29",
+      "implementation_note_uk": "Зберегти native crafting_shaped, вихід 1, обидва попередні energy_cell_niotic, 2 capacitor_spirited, dielectric_casing і 2 з 4 crystal_spirited. У повній сітці замінити лише crystal_spirited у[0, 0] і[2, 0] на terrasteel. Новий pattern Mnb/cdc/Mnb; M=terrasteel, інші символи як у джерелі.",
+      "status": "design_patch_not_installed",
+      "input_patch": {
+        "kind": "replace_grid_slots",
+        "zero_based": true,
+        "replacements": [
+          {
+            "row": 0,
+            "column": 0,
+            "id": "botania:terrasteel_ingot"
+          },
+          {
+            "row": 2,
+            "column": 0,
+            "id": "botania:terrasteel_ingot"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "number": 30,
+    "title": "Завоювання Енду",
+    "theme": "Підготовлена експедиція завершує основну географічну драбину й відкриває магію архімага.",
+    "main_mods": [
+      "minecraft",
+      "aether",
+      "twilightforest",
+      "ars_nouveau",
+      "cataclysm",
+      "aquamirae"
+    ],
+    "unlocks": [
+      {
+        "id": "ars_nouveau:archmage_spell_book",
+        "purpose_uk": "Книга після виконання штатних вимог і експедиції"
+      },
+      {
+        "id": "minecraft:dragon_breath",
+        "purpose_uk": "Експедиційний реагент"
+      },
+      {
+        "id": "minecraft:elytra",
+        "purpose_uk": "Керований доступ до польоту"
+      },
+      {
+        "id": "twilightforest:fiery_ingot",
+        "purpose_uk": "Трофейна металургія Сутінкового лісу"
+      },
+      {
+        "id": "aether:ambrosium_shard",
+        "purpose_uk": "Матеріал дозволеної небесної експедиції"
+      },
+      {
+        "id": "minecraft:nether_star",
+        "purpose_uk": "Дозволений босовий компонент, без ранніх симуляцій"
+      }
+    ],
+    "limits_uk": [
+      "Портали й телепортаційні альтернативи в End/Aether повинні перевіряти однакові стадії; штатні порядки босів Twilight Forest зберігаються.",
+      "Перемога над драконом не відкриває Draconic Evolution автоматично: його виробництво починається в епосі 40.",
+      "Досягнення та трофеї переданої команди не замінюють власний облік експедиції."
+    ],
+    "milestones": [
+      {
+        "id": "E30_M1",
+        "title": "Експедиційний комплект",
+        "objective_uk": "Підготувати обладнання, запас енергії, витратні зілля й дозволений спосіб повернення.",
+        "evidence_uk": "Предметний набір разом із перевіркою дозволених характеристик польоту/захисту.",
+        "after": []
+      },
+      {
+        "id": "E30_M2",
+        "title": "Власний портал",
+        "objective_uk": "Активувати й використати дозволений вхід до End після відкриття епохи.",
+        "evidence_uk": "Подія переходу команди у вимір; чужий портал не обходить стадію.",
+        "after": [
+          "E30_M1"
+        ]
+      },
+      {
+        "id": "E30_M3",
+        "title": "Шлях архімага",
+        "objective_uk": "Завершити потрібну для книги магічну підготовку й законно отримати nether star.",
+        "evidence_uk": "Босова подія Wither та крафт книги з перевіркою всіх штатних/нових інгредієнтів.",
+        "after": []
+      },
+      {
+        "id": "E30_M4",
+        "title": "Випробування регіонів",
+        "objective_uk": "Завершити дозволену фінальну ланку Twilight Forest і одну експедицію Aether.",
+        "evidence_uk": "Штатні advancement босів/вимірів; конкретні IDs до прив’язки перевірити в поточному світі.",
+        "after": [
+          "E30_M3"
+        ]
+      },
+      {
+        "id": "E30_M5",
+        "title": "Падіння дракона",
+        "objective_uk": "Перемогти Ender Dragon без предметів або ефектів майбутніх епох.",
+        "evidence_uk": "Серверний облік участі команди у вбивстві, з перевіркою спорядження.",
+        "after": [
+          "E30_M2",
+          "E30_M4"
+        ]
+      },
+      {
+        "id": "E30_M6",
+        "title": "Повернення з реагентом",
+        "objective_uk": "Зібрати 8 dragon breath і повернутися до бази.",
+        "evidence_uk": "Власний збір реагенту й подія повернення, а не випадково знайдений предмет.",
+        "after": [
+          "E30_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Картографія Енду",
+        "objective_uk": "Дослідити острів і знайти місто без ранньої міжвимірної телепортації."
+      },
+      {
+        "title": "Пам’ятник експедиції",
+        "objective_uk": "Побудувати зал трофеїв без використання ключів як декору."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_30",
+      "name_uk": "Ключ епохи 30: Завоювання Енду",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "ae2:engineering_processor",
+          "count": 2
+        },
+        "M": {
+          "id": "ars_nouveau:abjuration_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "minecraft:dragon_breath",
+          "count": 2
+        },
+        "S": {
+          "id": "twilightforest:fiery_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_29",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 31,
+    "title": "Воля Ґаї та володарі ритуалів",
+    "theme": "Магічні школи проходять власні вершини й виробляють компоненти для високої промисловості.",
+    "main_mods": [
+      "botania",
+      "goety",
+      "irons_spellbooks",
+      "forbidden_arcanus",
+      "ars_elemental",
+      "goety_cataclysm"
+    ],
+    "unlocks": [
+      {
+        "id": "botania:gaia_pylon",
+        "purpose_uk": "Підготовка арени Ґаї"
+      },
+      {
+        "id": "botania:life_essence",
+        "purpose_uk": "Трофей Ґаї"
+      },
+      {
+        "id": "botania:gaia_ingot",
+        "purpose_uk": "Ритуально-технічний сплав"
+      },
+      {
+        "id": "forbidden_arcanus:hephaestus_forge_tier_5",
+        "purpose_uk": "Пізній рівень кузні з доданими промисловими вимогами"
+      },
+      {
+        "id": "goety:shadow_essence",
+        "purpose_uk": "Ритуальний реагент високої магії"
+      },
+      {
+        "id": "goety:resonance_crystal",
+        "purpose_uk": "Резонатор ритуалів"
+      }
+    ],
+    "limits_uk": [
+      "Ґая I перед Ґаєю II; автоматичне вирощування gaia spirit та симуляції босового трофея залишаються вимкненими.",
+      "Високі закляття, закликані армії й невразливість обмежити за ефектом, не лише за рецептом книги.",
+      "Неперевірений босовий drop із суміжного аддона не робити єдиним обов’язковим реагентом."
+    ],
+    "milestones": [
+      {
+        "id": "E31_M1",
+        "title": "Арена із захистом фабрики",
+        "objective_uk": "Побудувати арену Ґаї, окрему від працюючої промислової бази.",
+        "evidence_uk": "Валідні пілони/ритуал та відсутність недозволених автоматичних атак.",
+        "after": []
+      },
+      {
+        "id": "E31_M2",
+        "title": "Промислова оправа",
+        "objective_uk": "Виготовити 16 електронних схем для ритуальної оснастки.",
+        "evidence_uk": "Власна серія технологічного рецепту; схеми не є ключами.",
+        "after": [
+          "E31_M1"
+        ]
+      },
+      {
+        "id": "E31_M3",
+        "title": "Перша воля Ґаї",
+        "objective_uk": "Перемогти Ґаю I й отримати власну life essence.",
+        "evidence_uk": "Подія вбивства/успіху ритуалу з командною участю.",
+        "after": []
+      },
+      {
+        "id": "E31_M4",
+        "title": "Союз магічних шкіл",
+        "objective_uk": "Виконати один високий ритуал Goety та виготовити 4 deorum.",
+        "evidence_uk": "Серверні події ритуалу й кузні; назву/API ритуалу звірити перед реалізацією.",
+        "after": [
+          "E31_M3"
+        ]
+      },
+      {
+        "id": "E31_M5",
+        "title": "Повернення Ґаї",
+        "objective_uk": "Законно відкрити й перемогти Ґаю II, застосувавши компоненти першого випробування.",
+        "evidence_uk": "Порядок двох босових подій, а не два стеки однакового трофея.",
+        "after": [
+          "E31_M2",
+          "E31_M4"
+        ]
+      },
+      {
+        "id": "E31_M6",
+        "title": "Сплав для високої напруги",
+        "objective_uk": "Виробити 4 gaia ingot і передати 2 у виробничу партію високовольтної оснастки.",
+        "evidence_uk": "Крафт сплаву плюс окремий новий гібридний рецепт, без споживання ключа.",
+        "after": [
+          "E31_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Колекція шкіл",
+        "objective_uk": "Зібрати комплект дозволених високих заклять різних стихій."
+      },
+      {
+        "title": "Кузня майстра",
+        "objective_uk": "Побудувати повний обслуговуваний комплекс Hephaestus."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_31",
+      "name_uk": "Ключ епохи 31: Воля Ґаї та володарі ритуалів",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "modern_industrialization:electronic_circuit",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:life_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "forbidden_arcanus:deorum_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "goety:shadow_essence",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_30",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 32,
+    "title": "Високовольтна мережа",
+    "theme": "Висока напруга й повне автокрафтування створюють керовану фабрику замовлень.",
+    "main_mods": [
+      "modern_industrialization",
+      "ae2",
+      "extendedae",
+      "megacells",
+      "merequester",
+      "appmek",
+      "appliedpneumatics",
+      "arseng"
+    ],
+    "unlocks": [
+      {
+        "id": "modern_industrialization:hv_storage_unit",
+        "purpose_uk": "Високовольтний буфер"
+      },
+      {
+        "id": "modern_industrialization:digital_circuit",
+        "purpose_uk": "Цифрова схема"
+      },
+      {
+        "id": "ae2:molecular_assembler",
+        "purpose_uk": "Повний мережевий автокрафт"
+      },
+      {
+        "id": "ae2:pattern_provider",
+        "purpose_uk": "Контрольована видача шаблонів"
+      },
+      {
+        "id": "megacells:1m_crafting_storage",
+        "purpose_uk": "Перша велика пам’ять автокрафту"
+      },
+      {
+        "id": "megacells:accumulation_processor",
+        "purpose_uk": "Матеріал масштабування мережі"
+      }
+    ],
+    "limits_uk": [
+      "Безмежні бездротові прискорювачі, Quantum Crafter/броня AdvancedAE і найбільші сховища відкриваються пізніше за їхніми власними ефектами.",
+      "Хімічні/манові/пневматичні інтерфейси успадковують обмеження джерел; мережа не скасовує стадії рецептів.",
+      "Не прибирати канали AE2 як прихований спосіб зняти логістичну складність без окремого рішення дизайну."
+    ],
+    "milestones": [
+      {
+        "id": "E32_M1",
+        "title": "Високовольтна секція",
+        "objective_uk": "Ввести HV живлення через сумісний перетворювач і буфер із захистом від зворотного потоку.",
+        "evidence_uk": "Перевірка структури мережі й реального живлення HV-операції.",
+        "after": []
+      },
+      {
+        "id": "E32_M2",
+        "title": "Цифрова партія",
+        "objective_uk": "Виробити 32 digital circuit і 8 accumulation processor.",
+        "evidence_uk": "Лічильники власного технологічного випуску.",
+        "after": [
+          "E32_M1"
+        ]
+      },
+      {
+        "id": "E32_M3",
+        "title": "Рунічний вузол керування",
+        "objective_uk": "Виготовити магічно стабілізований керувальний вузол із gaia ingot та цифровою схемою.",
+        "evidence_uk": "Окремий новий рецепт промислової деталі; ключі в ньому відсутні.",
+        "after": []
+      },
+      {
+        "id": "E32_M4",
+        "title": "Потік магічних реагентів",
+        "objective_uk": "Автоматизувати постачання manasteel/elementium або дозволених есенцій у мережеве замовлення.",
+        "evidence_uk": "Замовлення з фактичним виробництвом магічного інгредієнта, а не лише запасом.",
+        "after": [
+          "E32_M3"
+        ]
+      },
+      {
+        "id": "E32_M5",
+        "title": "Складне замовлення",
+        "objective_uk": "Виконати одним замовленням 16 механізмів із щонайменше 4 рівнями залежностей.",
+        "evidence_uk": "Журнал завершеного автокрафту, без ручного внесення фінального виробу.",
+        "after": [
+          "E32_M2",
+          "E32_M4"
+        ]
+      },
+      {
+        "id": "E32_M6",
+        "title": "Відновлення після зупинки",
+        "objective_uk": "Зупинити один постачальник, коректно відновити замовлення й не продублювати реагенти.",
+        "evidence_uk": "Контрольний баланс входів/виходів і завершення відкладеного замовлення.",
+        "after": [
+          "E32_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Чисті канали",
+        "objective_uk": "Оптимізувати кабелі й задокументувати канальну схему."
+      },
+      {
+        "title": "Черга замовлень",
+        "objective_uk": "Налаштувати пороги запасу для 8 дозволених матеріалів."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_32",
+      "name_uk": "Ключ епохи 32: Високовольтна мережа",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "modern_industrialization:digital_circuit",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "megacells:accumulation_processor",
+          "count": 2
+        },
+        "S": {
+          "id": "pneumaticcraft:printed_circuit_board",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_31",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 33,
+    "title": "Розщеплення та радіохімія",
+    "theme": "Промислова радіохімія відкриває полоній через справжній контрольований паливний цикл.",
+    "main_mods": [
+      "mekanism",
+      "mekanismgenerators",
+      "reactorplus"
+    ],
+    "unlocks": [
+      {
+        "id": "mekanismgenerators:fission_reactor_casing",
+        "purpose_uk": "Конструкція реактора поділу"
+      },
+      {
+        "id": "mekanismgenerators:fission_reactor_port",
+        "purpose_uk": "Матеріальні інтерфейси"
+      },
+      {
+        "id": "mekanismgenerators:fission_reactor_logic_adapter",
+        "purpose_uk": "Аварійна автоматика"
+      },
+      {
+        "id": "mekanism:solar_neutron_activator",
+        "purpose_uk": "Обробка радіоактивного матеріалу"
+      },
+      {
+        "id": "mekanism:pellet_polonium",
+        "purpose_uk": "Контрольований полонієвий продукт"
+      },
+      {
+        "id": "mekanism:pellet_plutonium",
+        "purpose_uk": "Плутонієва гілка паливної переробки"
+      }
+    ],
+    "limits_uk": [
+      "SPS, антиматерія й необмежені QIO-носії закриті до епохи 39.",
+      "Жодних обов’язкових розгерметизацій/радіаційних аварій: безпека доводиться контрольованими симуляціями зупинки.",
+      "Турбіна, охолодження, відходи й сонячний активатор не можуть бути опущені заради формального крафту реактора."
+    ],
+    "milestones": [
+      {
+        "id": "E33_M1",
+        "title": "Реактор у холодному стані",
+        "objective_uk": "Зібрати реактор, подачу охолоджувача, контур відходів і резервний вимикач.",
+        "evidence_uk": "Перевірка багатоблокових структур та наявності вільного буфера відходів.",
+        "after": []
+      },
+      {
+        "id": "E33_M2",
+        "title": "Замкнений паливний маршрут",
+        "objective_uk": "Підготувати паливо штатним хімічним шляхом та запустити мінімальний безпечний цикл.",
+        "evidence_uk": "Фактичне споживання палива й контрольований відвід тепла.",
+        "after": [
+          "E33_M1"
+        ]
+      },
+      {
+        "id": "E33_M3",
+        "title": "Магічні сенсори",
+        "objective_uk": "Виготовити ритуально стабілізовану автоматику з gaia ingot і цифровими схемами.",
+        "evidence_uk": "Новий рецепт допоміжної оснастки, що не витрачає ключі.",
+        "after": []
+      },
+      {
+        "id": "E33_M4",
+        "title": "Денне опромінення",
+        "objective_uk": "Отримати перші 8 pellet_polonium через штатний solar neutron activator.",
+        "evidence_uk": "Подія кінцевої обробки полонію з обліком джерела.",
+        "after": [
+          "E33_M3"
+        ]
+      },
+      {
+        "id": "E33_M5",
+        "title": "Корисне навантаження",
+        "objective_uk": "Синхронізувати парову/енергетичну частину з виробничою мережею протягом 5 хвилин.",
+        "evidence_uk": "Корисний виробничий випуск і стабільні допустимі показники реактора.",
+        "after": [
+          "E33_M2",
+          "E33_M4"
+        ]
+      },
+      {
+        "id": "E33_M6",
+        "title": "Аварійний стоп без аварії",
+        "objective_uk": "Перевірити вимкнення при сигналі переповнення буфера або зупинки насоса.",
+        "evidence_uk": "Тестовий сигнал і підтверджений безпечний стан; реальний вибух не потрібен.",
+        "after": [
+          "E33_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Другий радіохімічний продукт",
+        "objective_uk": "Підготувати окрему плутонієву партію."
+      },
+      {
+        "title": "Чиста зона",
+        "objective_uk": "Обладнати сервісний коридор і позначити небезпечні контури."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_33",
+      "name_uk": "Ключ епохи 33: Розщеплення та радіохімія",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "mekanism:pellet_polonium",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "modern_industrialization:digital_circuit",
+          "count": 2
+        },
+        "S": {
+          "id": "powah:crystal_spirited",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_32",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 34,
+    "title": "Рідкісні метали світів",
+    "theme": "Пошук Allthemodium і Vibranium залишається експедицією, а не ранньою фермою ресурсів.",
+    "main_mods": [
+      "allthemodium",
+      "justdirethings",
+      "gobber2",
+      "silentgear"
+    ],
+    "unlocks": [
+      {
+        "id": "allthemodium:allthemodium_ingot",
+        "purpose_uk": "Перший рідкісний метал"
+      },
+      {
+        "id": "allthemodium:vibranium_ingot",
+        "purpose_uk": "Другий регіональний метал у межах цієї епохи"
+      },
+      {
+        "id": "justdirethings:blazegold_ingot",
+        "purpose_uk": "Оновлення прикладних інструментів"
+      },
+      {
+        "id": "justdirethings:eclipsealloy_ingot",
+        "purpose_uk": "Пізній матеріал лише після перевірки нативного ланцюга"
+      },
+      {
+        "id": "gobber2:gobber2_ingot_nether",
+        "purpose_uk": "Контрольований Nether-рівень Gobber"
+      },
+      {
+        "id": "gobber2:gobber2_ingot_end",
+        "purpose_uk": "Контрольований End-рівень Gobber"
+      }
+    ],
+    "limits_uk": [
+      "Unobtainium, рідкісні сплави найвищого рівня та їхні безмежні покращення залишаються закритими до епохи 44.",
+      "Gobber із польотом, невразливістю, ремонтом і телепортацією гейтиться за конкретним ефектом; відкриття зливка не відкриває всі аксесуари.",
+      "Рідкісні метали заборонені для EMC, насіння, копачів і лазерних таблиць до визначеного окремого дозволу."
+    ],
+    "milestones": [
+      {
+        "id": "E34_M1",
+        "title": "Сканування без обходу",
+        "objective_uk": "Підготувати інструмент правильного рівня й дозволену геологічну експедицію.",
+        "evidence_uk": "Перевірка характеристик інструмента і доступу до регіону.",
+        "after": []
+      },
+      {
+        "id": "E34_M2",
+        "title": "Перші рідкісні зливки",
+        "objective_uk": "Самостійно видобути й обробити 8 allthemodium.",
+        "evidence_uk": "Походження від видобутку/обробки власної команди; обмін не виконує віху.",
+        "after": [
+          "E34_M1"
+        ]
+      },
+      {
+        "id": "E34_M3",
+        "title": "Магічна оправа",
+        "objective_uk": "Виробити 4 gaia ingot для гібридного пошукового обладнання.",
+        "evidence_uk": "Операції магічного сплаву після власних босових віх.",
+        "after": []
+      },
+      {
+        "id": "E34_M4",
+        "title": "Пекельна розвідка",
+        "objective_uk": "Добути 8 vibranium у дозволеному регіоні після першого металу.",
+        "evidence_uk": "Події видобутку, розміщення/ламання руди не множить лічильник.",
+        "after": [
+          "E34_M3"
+        ]
+      },
+      {
+        "id": "E34_M5",
+        "title": "Гібридний інструмент",
+        "objective_uk": "Виготовити justdirethings:eclipsealloy_pickaxe за integration_recipe: штатні 3 eclipsealloy+2 stick, додатково 2 gaia_ingot+2 allthemodium_ingot.",
+        "evidence_uk": "Крафт конкретної кирки через доповнений 3×3; альтернативний штатний smithing не задовольняє цю віху й не обходить ціну.",
+        "after": [
+          "E34_M2",
+          "E34_M4"
+        ]
+      },
+      {
+        "id": "E34_M6",
+        "title": "Облік альтернативних джерел",
+        "objective_uk": "Пройти перевірку, що насіння, EMC, копачі та loot не виробляють закритий Unobtainium.",
+        "evidence_uk": "Серверний тест усіх зареєстрованих джерел цільового ресурсу.",
+        "after": [
+          "E34_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Розвідка біомів",
+        "objective_uk": "Нанести на карту два потрібні для руд регіони."
+      },
+      {
+        "title": "Особистий інструмент",
+        "objective_uk": "Порівняти дозволені Silent Gear/Gobber/JustDireThings без майбутніх модифікаторів."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_34",
+      "name_uk": "Ключ епохи 34: Рідкісні метали світів",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "allthemodium:allthemodium_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "allthemodium:vibranium_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "mekanism:pellet_polonium",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_33",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "justdirethings:eclipsealloy_pickaxe",
+      "preserve_source_recipe_id": "justdirethings:eclipsealloy_pickaxe",
+      "additional_inputs": [
+        {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        {
+          "id": "allthemodium:allthemodium_ingot",
+          "count": 2
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_34",
+      "implementation_note_uk": "Зберегти всі 3 eclipsealloy_ingot, 2 stick, type/group/result/count. Заповнити чотири порожні комірки: [1, 0], [1, 2]=gaia_ingot; [2, 0], [2, 2]=allthemodium_ingot. Pattern fff/MsM/TsT. Альтернативний smithing-вихід цього самого інструмента вимкнути або дати рівноцінну додаткову вартість; інакше він обходить магічні витрати.",
+      "status": "design_patch_not_installed",
+      "input_patch": {
+        "kind": "fill_empty_grid_slots",
+        "zero_based": true,
+        "replacements": [
+          {
+            "row": 1,
+            "column": 0,
+            "id": "botania:gaia_ingot"
+          },
+          {
+            "row": 1,
+            "column": 2,
+            "id": "botania:gaia_ingot"
+          },
+          {
+            "row": 2,
+            "column": 0,
+            "id": "allthemodium:allthemodium_ingot"
+          },
+          {
+            "row": 2,
+            "column": 2,
+            "id": "allthemodium:allthemodium_ingot"
+          }
+        ]
+      },
+      "disable_unpatched_alternative_recipe_ids": [
+        "justdirethings:eclipsealloy_pickaxe-templateupgrade"
+      ]
+    }
+  },
+  {
+    "number": 35,
+    "title": "Надпровідна промисловість",
+    "theme": "Надпровідники й багатомашинні масиви масштабують уже освоєну магічну металургію.",
+    "main_mods": [
+      "modern_industrialization",
+      "extended_industrialization",
+      "industrialization_overdrive"
+    ],
+    "unlocks": [
+      {
+        "id": "modern_industrialization:superconductor_ingot",
+        "purpose_uk": "Матеріал великого енергетичного транспорту"
+      },
+      {
+        "id": "modern_industrialization:superconductor_cable",
+        "purpose_uk": "Надпровідна магістраль"
+      },
+      {
+        "id": "modern_industrialization:processing_unit",
+        "purpose_uk": "Обчислювальний компонент"
+      },
+      {
+        "id": "modern_industrialization:ev_storage_unit",
+        "purpose_uk": "Буфер EV"
+      },
+      {
+        "id": "industrialization_overdrive:multi_processing_array",
+        "purpose_uk": "Паралельна обробка в дозволених межах"
+      },
+      {
+        "id": "industrialization_overdrive:upgrade_stacker",
+        "purpose_uk": "Керування покращеннями з лімітом"
+      }
+    ],
+    "limits_uk": [
+      "Квантова броня, масове клонування матерії й креативні сховища не відкриваються разом із кабелем.",
+      "Паралелізм масивів має рахувати реальні витрати входів і енергії, без нульової собівартості через комбінацію аддонів.",
+      "Штатні EV-рецепти і енергетичні номінали перевірити на реальному сервері: назва епохи не змінює нативний EU/t."
+    ],
+    "milestones": [
+      {
+        "id": "E35_M1",
+        "title": "EV без втрати керування",
+        "objective_uk": "Побудувати дозволену EV секцію і перетворення HV/EV із буфером.",
+        "evidence_uk": "Реальна EV виробнича операція, правильна топологія трансформаторів.",
+        "after": []
+      },
+      {
+        "id": "E35_M2",
+        "title": "Надпровідна партія",
+        "objective_uk": "Виробити 32 superconductor_ingot та 8 processing_unit.",
+        "evidence_uk": "Підтверджені багатокрокові технологічні рецепти.",
+        "after": [
+          "E35_M1"
+        ]
+      },
+      {
+        "id": "E35_M3",
+        "title": "Ритуальний енергопровід",
+        "objective_uk": "Створити магічні стабілізатори із gaia ingot і рідкісним металом.",
+        "evidence_uk": "Окремий гібридний рецепт матеріалу, жодного ключа.",
+        "after": []
+      },
+      {
+        "id": "E35_M4",
+        "title": "Регенерація реагентів",
+        "objective_uk": "Автоматизувати відновлювану магічну лінію для 16 стабілізаторів.",
+        "evidence_uk": "Виробничий лічильник і баланс реагентів.",
+        "after": [
+          "E35_M3"
+        ]
+      },
+      {
+        "id": "E35_M5",
+        "title": "Масив обробки",
+        "objective_uk": "Паралельно виготовити 4 партії дозволеного виробу з реальним споживанням ресурсів.",
+        "evidence_uk": "Завершені операції масиву та баланс кількостей.",
+        "after": [
+          "E35_M2",
+          "E35_M4"
+        ]
+      },
+      {
+        "id": "E35_M6",
+        "title": "Навантага і повернення",
+        "objective_uk": "П’ять хвилин живити одночасно масив і магічну лінію без зупинки критичних контурів.",
+        "evidence_uk": "Серверний таймер під корисним навантаженням.",
+        "after": [
+          "E35_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Розводка фабрики",
+        "objective_uk": "Винести сервісні та силові мережі в окремі канали."
+      },
+      {
+        "title": "Таблиця собівартості",
+        "objective_uk": "Порівняти одинарну машину й масив на однаковій партії."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_35",
+      "name_uk": "Ключ епохи 35: Надпровідна промисловість",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "modern_industrialization:superconductor_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "modern_industrialization:processing_unit",
+          "count": 2
+        },
+        "S": {
+          "id": "allthemodium:vibranium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_34",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 36,
+    "title": "Термоядерний синтез",
+    "theme": "Стабільна термоядерна енергетика вимагає повної паливної інфраструктури та високої магії.",
+    "main_mods": [
+      "mekanism",
+      "mekanismgenerators",
+      "mekanismadvancedgenerators",
+      "powah",
+      "modern_industrialization"
+    ],
+    "unlocks": [
+      {
+        "id": "mekanismgenerators:fusion_reactor_controller",
+        "purpose_uk": "Керування термоядерною установкою"
+      },
+      {
+        "id": "mekanismgenerators:fusion_reactor_frame",
+        "purpose_uk": "Корпус реактора"
+      },
+      {
+        "id": "mekanism:laser_amplifier",
+        "purpose_uk": "Підготовка імпульсу запалювання"
+      },
+      {
+        "id": "mekanismgenerators:hohlraum",
+        "purpose_uk": "Витратний елемент старту"
+      },
+      {
+        "id": "powah:crystal_nitro",
+        "purpose_uk": "Високий кристал енергетики"
+      },
+      {
+        "id": "powah:reactor_nitro",
+        "purpose_uk": "Пізня альтернативна генерація після зміни рецепту"
+      }
+    ],
+    "limits_uk": [
+      "SPS і antimatter залишаються закритими до епохи 39, навіть якщо енергії вже достатньо.",
+      "MI fusion і генератори аддонів відкриваються лише після їхніх штатних ланцюгів; енергосистеми різних модів не прирівнюються без перевіреної конверсії.",
+      "Паливо, вода/пара та лазерний запуск входять у обов’язкову перевірку."
+    ],
+    "milestones": [
+      {
+        "id": "E36_M1",
+        "title": "Паливний комплекс",
+        "objective_uk": "Автоматизувати штатне отримання дейтерію й тритію із запасом для запуску.",
+        "evidence_uk": "Виробництво двох потоків і належні буфери.",
+        "after": []
+      },
+      {
+        "id": "E36_M2",
+        "title": "Контрольоване запалювання",
+        "objective_uk": "Зібрати реактор, заповнити hohlraum і виконати лазерний запуск.",
+        "evidence_uk": "Реальний перехід установки в робочий стан.",
+        "after": [
+          "E36_M1"
+        ]
+      },
+      {
+        "id": "E36_M3",
+        "title": "Резонатор високої потужності",
+        "objective_uk": "Виготовити ритуальний компонент для нового рецепту fusion controller.",
+        "evidence_uk": "Гібридний рецепт із матеріалом високої магії та надпровідником.",
+        "after": []
+      },
+      {
+        "id": "E36_M4",
+        "title": "Нітро-кристалізація",
+        "objective_uk": "Отримати 8 nitro crystal дозволеним енергетичним рецептом.",
+        "evidence_uk": "Витрачена енергія й завершення energizing-рецепту.",
+        "after": [
+          "E36_M3"
+        ]
+      },
+      {
+        "id": "E36_M5",
+        "title": "Енергопостачання фабрики",
+        "objective_uk": "Під’єднати термоядерний вихід до двох великих виробничих навантажень.",
+        "evidence_uk": "П’ять хвилин корисного випуску при стабільних паливних буферах.",
+        "after": [
+          "E36_M2",
+          "E36_M4"
+        ]
+      },
+      {
+        "id": "E36_M6",
+        "title": "Повторний запуск",
+        "objective_uk": "Безпечно зупинити й повторно запустити установку із запасного палива.",
+        "evidence_uk": "Серверний журнал зупинки/запуску, без вимоги зруйнувати реактор.",
+        "after": [
+          "E36_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Альтернативна електростанція",
+        "objective_uk": "Порівняти дозволений Powah nitro із синтезом."
+      },
+      {
+        "title": "Пасивний резерв",
+        "objective_uk": "Побудувати енергетичний резерв для насосів і автоматики."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_36",
+      "name_uk": "Ключ епохи 36: Термоядерний синтез",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "mekanismgenerators:hohlraum",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "powah:crystal_nitro",
+          "count": 2
+        },
+        "S": {
+          "id": "modern_industrialization:superconductor_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_35",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 37,
+    "title": "Місяць і Марс",
+    "theme": "Космос починається з життєзабезпечення та реальних експедицій, спільних для обох космічних модів.",
+    "main_mods": [
+      "ad_astra",
+      "industrialupgrade"
+    ],
+    "unlocks": [
+      {
+        "id": "ad_astra:tier_1_rocket",
+        "purpose_uk": "Перший міжпланетний апарат"
+      },
+      {
+        "id": "ad_astra:tier_2_rocket",
+        "purpose_uk": "Другий апарат після місячних ресурсів"
+      },
+      {
+        "id": "ad_astra:desh_ingot",
+        "purpose_uk": "Матеріал Місяця"
+      },
+      {
+        "id": "ad_astra:ostrum_ingot",
+        "purpose_uk": "Матеріал Марса"
+      },
+      {
+        "id": "ad_astra:oxygen_loader",
+        "purpose_uk": "Підготовка кисню"
+      },
+      {
+        "id": "ad_astra:space_suit",
+        "purpose_uk": "Контрольований скафандр"
+      }
+    ],
+    "limits_uk": [
+      "Маршрути IndustrialUpgrade на Місяць/Марс мають ті самі стадії, що Ad Astra; альтернативна ракета не обходить географію.",
+      "Ракети T3/T4, Venus/Mercury/Glacio і пізні планетарні рецепти закриті до наступних епох.",
+      "Вимоги перебування перевіряють вимір, а не предмет, який міг прийти поштою."
+    ],
+    "milestones": [
+      {
+        "id": "E37_M1",
+        "title": "Життєзабезпечення",
+        "objective_uk": "Підготувати кисень, паливо, скафандр і резерв повернення.",
+        "evidence_uk": "Перевірка компонентів скафандра, фактичного запасу кисню та палива.",
+        "after": []
+      },
+      {
+        "id": "E37_M2",
+        "title": "Місячний старт",
+        "objective_uk": "Виготовити й запустити T1 rocket, приземлитися на Місяці.",
+        "evidence_uk": "Крафт апарата і власна подія прибуття команди.",
+        "after": [
+          "E37_M1"
+        ]
+      },
+      {
+        "id": "E37_M3",
+        "title": "Магічна герметизація",
+        "objective_uk": "Виготовити 16 air essence і гібридну оснастку життєзабезпечення.",
+        "evidence_uk": "Власний магічний рецепт і новий техніко-магічний компонент.",
+        "after": []
+      },
+      {
+        "id": "E37_M4",
+        "title": "Місячна металургія",
+        "objective_uk": "Добути й обробити 16 desh ingot на дозволеній місячній гілці.",
+        "evidence_uk": "Видобуток/обробка з обліком походження.",
+        "after": [
+          "E37_M3"
+        ]
+      },
+      {
+        "id": "E37_M5",
+        "title": "Марсіанська експедиція",
+        "objective_uk": "Створити T2 rocket із desh, дістатися Марса й виготовити 16 ostrum ingot.",
+        "evidence_uk": "Порядок Moon→T2→Mars та фактичний випуск металу.",
+        "after": [
+          "E37_M2",
+          "E37_M4"
+        ]
+      },
+      {
+        "id": "E37_M6",
+        "title": "Дві бази з поверненням",
+        "objective_uk": "Розгорнути малий автономний пост на обох планетах і повернути експедицію на базу.",
+        "evidence_uk": "Киснева/енергетична структура, успішний перехід назад, без сторонньої телепортації.",
+        "after": [
+          "E37_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Орбітальний журнал",
+        "objective_uk": "Позначити маршрути й витрати експедицій."
+      },
+      {
+        "title": "Планетарна архітектура",
+        "objective_uk": "Побудувати безпечний шлюз і склад запасів."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_37",
+      "name_uk": "Ключ епохи 37: Місяць і Марс",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "ad_astra:desh_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:life_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "ad_astra:ostrum_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "modern_industrialization:processing_unit",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_36",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 38,
+    "title": "Венера, Меркурій та Ґласіо",
+    "theme": "Космічна промисловість освоює складні умови й останні стандартні ракетні рівні.",
+    "main_mods": [
+      "ad_astra",
+      "industrialupgrade"
+    ],
+    "unlocks": [
+      {
+        "id": "ad_astra:tier_3_rocket",
+        "purpose_uk": "Ракета третього рівня"
+      },
+      {
+        "id": "ad_astra:tier_4_rocket",
+        "purpose_uk": "Останній стандартний ракетний рівень"
+      },
+      {
+        "id": "ad_astra:calorite_ingot",
+        "purpose_uk": "Матеріал гарячих планет"
+      },
+      {
+        "id": "ad_astra:etrium_ingot",
+        "purpose_uk": "Пізній енергетичний матеріал Ad Astra"
+      },
+      {
+        "id": "ad_astra:etrionic_core",
+        "purpose_uk": "Космічний енергетичний вузол"
+      },
+      {
+        "id": "ad_astra:etrionic_blast_furnace",
+        "purpose_uk": "Пізня космічна обробка"
+      }
+    ],
+    "limits_uk": [
+      "Конкретну доступність планет для кожної ракети звірити зі штатним космічним меню версії; не переписувати його за пам’яттю.",
+      "Доступ IndustrialUpgrade до аналогічних планет дзеркалить ці стадії; зовнішні планети IU залишаються закритими до 44.",
+      "Телепорти, кишенькові виміри й аварійні предмети повернення не дають раннього посадкового маршруту."
+    ],
+    "milestones": [
+      {
+        "id": "E38_M1",
+        "title": "Третій ракетний рівень",
+        "objective_uk": "Виготовити T3 rocket через освоєні desh/ostrum і власні технологічні компоненти.",
+        "evidence_uk": "Подія нового крафту апарата, старий предмет не виконує віху.",
+        "after": []
+      },
+      {
+        "id": "E38_M2",
+        "title": "Гаряча експедиція",
+        "objective_uk": "Завершити дозволені експедиції Venus/Mercury та виплавити 16 calorite ingot.",
+        "evidence_uk": "Серверні події відвідування й переробки руди.",
+        "after": [
+          "E38_M1"
+        ]
+      },
+      {
+        "id": "E38_M3",
+        "title": "Захист від крайніх умов",
+        "objective_uk": "Виготовити вогняні/повітряні магічні компоненти для космічного обладнання.",
+        "evidence_uk": "Нова гібридна деталь і перевірка комплекту захисту.",
+        "after": []
+      },
+      {
+        "id": "E38_M4",
+        "title": "Етріонний цикл",
+        "objective_uk": "Виробити 16 etrium ingot і один etrionic core штатним або затвердженим гібридним маршрутом.",
+        "evidence_uk": "Операції виробництва, без ресурсів майбутнього рівня.",
+        "after": [
+          "E38_M3"
+        ]
+      },
+      {
+        "id": "E38_M5",
+        "title": "Четвертий ракетний рівень",
+        "objective_uk": "Створити T4 rocket, відкрити Glacio та повернутися з експедиції.",
+        "evidence_uk": "Послідовність крафту/прибуття/повернення.",
+        "after": [
+          "E38_M2",
+          "E38_M4"
+        ]
+      },
+      {
+        "id": "E38_M6",
+        "title": "Космічна лінія",
+        "objective_uk": "Запустити віддалений виробничий пост на 5 хвилин з реальним життєзабезпеченням.",
+        "evidence_uk": "Серверний таймер та корисний виробничий результат.",
+        "after": [
+          "E38_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Планетарний атлас",
+        "objective_uk": "Зібрати зразки дозволених планет без залучення майбутніх металів."
+      },
+      {
+        "title": "Система евакуації",
+        "objective_uk": "Зробити резерв кисню й запасний транспорт."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_38",
+      "name_uk": "Ключ епохи 38: Венера, Меркурій та Ґласіо",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "ad_astra:calorite_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "ars_nouveau:wilden_tribute",
+          "count": 2
+        },
+        "R": {
+          "id": "ad_astra:etrium_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "powah:crystal_nitro",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_37",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 39,
+    "title": "Антиматерія й просторові технології",
+    "theme": "SPS і просторові духи відкривають дорогі, вимірювані операції з матерією.",
+    "main_mods": [
+      "mekanism",
+      "occultism",
+      "advanced_ae",
+      "megacells",
+      "ae2"
+    ],
+    "unlocks": [
+      {
+        "id": "mekanism:sps_casing",
+        "purpose_uk": "Корпус SPS"
+      },
+      {
+        "id": "mekanism:supercharged_coil",
+        "purpose_uk": "Високоенергетична частина SPS"
+      },
+      {
+        "id": "mekanism:pellet_antimatter",
+        "purpose_uk": "Перший контрольований продукт антиматерії"
+      },
+      {
+        "id": "occultism:marid_essence",
+        "purpose_uk": "Вищий духовний реагент"
+      },
+      {
+        "id": "advanced_ae:quantum_processor",
+        "purpose_uk": "Пізній квантовий обчислювальний компонент"
+      },
+      {
+        "id": "advanced_ae:quantum_crafter",
+        "purpose_uk": "Квантовий автокрафт за зміненим рецептом"
+      }
+    ],
+    "limits_uk": [
+      "Антиматерія не має EMC, насіння, лутових замінників чи безкоштовного рецепту; витрата енергії та полонію обов’язкова.",
+      "Quantum armor, нескінченні бездротові апгрейди й QIO найбільшої місткості відкривати окремо після перевірки їхніх ефектів.",
+      "Сутності/ритуали маріда та просторові копачі не можуть приносити майбутні матеріали."
+    ],
+    "milestones": [
+      {
+        "id": "E39_M1",
+        "title": "SPS із вимірюваним живленням",
+        "objective_uk": "Зібрати валідний SPS і підготувати контрольований запас енергії та полонію.",
+        "evidence_uk": "Валідна структура, введення енергії й вхідного реагенту.",
+        "after": []
+      },
+      {
+        "id": "E39_M2",
+        "title": "Перша антиматерія",
+        "objective_uk": "Виробити 4 pellet_antimatter штатним SPS-маршрутом.",
+        "evidence_uk": "Фактичний випуск із реальним споживанням реагентів/енергії.",
+        "after": [
+          "E39_M1"
+        ]
+      },
+      {
+        "id": "E39_M3",
+        "title": "Контракт маріда",
+        "objective_uk": "Виконати occultism:ritual/summon_unbound_marid, перемогти власного occultism:marid_unbound і зібрати 4 реальні occultism:marid_essence.",
+        "evidence_uk": "Ритуал→поява→kill/loot. Есенція підтверджена loot-table occultism:entities/marid_unbound; JEI result ритуалу не є виданим предметом.",
+        "after": []
+      },
+      {
+        "id": "E39_M4",
+        "title": "Квантовий процесор",
+        "objective_uk": "Виробити 8 advanced_ae:quantum_processor двома партіями integration_recipe: на кожні 4 процесори витратити 1 marid_essence+1 pellet_antimatter поверх штатних входів.",
+        "evidence_uk": "Дві завершені crystal_assembler-операції; inscriber і MekMM-пресування не мають давати непатченого обходу.",
+        "after": [
+          "E39_M3"
+        ]
+      },
+      {
+        "id": "E39_M5",
+        "title": "Складальник просторового рівня",
+        "objective_uk": "Виготовити advanced_ae:quantum_crafter за OP-рецептом епохи 39 і виконати ним замовлення на 16 modern_industrialization:processing_unit.",
+        "evidence_uk": "Точний quantum_crafter і 16 власних processing_unit у завершеному замовленні; рецепт контролера узгодити з op-candidates, unlock_epoch39.",
+        "after": [
+          "E39_M2",
+          "E39_M4"
+        ]
+      },
+      {
+        "id": "E39_M6",
+        "title": "Енергетичний баланс SPS",
+        "objective_uk": "Виміряти завершену другу партію і довести відсутність позитивної петлі антиматерії.",
+        "evidence_uk": "Контроль кількостей входу/виходу та відсутності відшкодування всіх витрат.",
+        "after": [
+          "E39_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Просторова диспетчерська",
+        "objective_uk": "Обладнати панель запасу полонію, енергії й антиматерії."
+      },
+      {
+        "title": "Духовний архів",
+        "objective_uk": "Зібрати дозволені книжки прив’язки без використання їх для обходу стадій."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_39",
+      "name_uk": "Ключ епохи 39: Антиматерія й просторові технології",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "mekanism:pellet_antimatter",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:marid_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "advanced_ae:quantum_processor",
+          "count": 2
+        },
+        "S": {
+          "id": "modern_industrialization:superconductor_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_38",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "advanced_ae:quantum_processor",
+      "preserve_source_recipe_id": "advanced_ae:quantum_processor_eae",
+      "additional_inputs": [
+        {
+          "id": "occultism:marid_essence",
+          "count": 1
+        },
+        {
+          "id": "mekanism:pellet_antimatter",
+          "count": 1
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_39",
+      "implementation_note_uk": "Зберегти extendedae:crystal_assembler і штатну партію 4:4 printed_quantum_processor+4 printed_silicon+4 redstone_dust→4 quantum_processor. Додати по 1 marid_essence іantimatter_pellet на партію 4. Не переносити процес у звичайний crafting. Зберегти всі native поля, якщо вони з’являються в фактичній конфігурації; ємність додаткових входів перевірити на машині.",
+      "status": "design_patch_not_installed",
+      "disable_unpatched_alternative_recipe_ids": [
+        "advanced_ae:quantum_processor",
+        "mekmm:compat/advanced_ae/presser/quantum_processor"
+      ],
+      "output_batch_count": 4
+    },
+    "integration_recipe_refs": [
+      {
+        "target_id": "advanced_ae:quantum_crafter",
+        "design_file": "op-candidates.json",
+        "required_unlock_epoch": 39
+      }
+    ]
+  },
+  {
+    "number": 40,
+    "title": "Виверновий синтез",
+    "theme": "Перша драконяча фабрика поєднує fusion crafting, антиматерію та довершені ритуали.",
+    "main_mods": [
+      "draconicevolution",
+      "draconicadditions"
+    ],
+    "unlocks": [
+      {
+        "id": "draconicevolution:crafting_core",
+        "purpose_uk": "Центр fusion crafting"
+      },
+      {
+        "id": "draconicevolution:basic_crafting_injector",
+        "purpose_uk": "Початковий інжектор"
+      },
+      {
+        "id": "draconicevolution:wyvern_crafting_injector",
+        "purpose_uk": "Виверновий інжектор"
+      },
+      {
+        "id": "draconicevolution:draconium_core",
+        "purpose_uk": "Основний драконієвий компонент"
+      },
+      {
+        "id": "draconicevolution:wyvern_core",
+        "purpose_uk": "Вивернове ядро"
+      },
+      {
+        "id": "draconicevolution:wyvern_energy_core",
+        "purpose_uk": "Керований виверновий енергокомпонент"
+      }
+    ],
+    "limits_uk": [
+      "Awakened/draconic рівень закритий до 41; chaotic до 42.",
+      "Наявність draconium із давньої експедиції не дає права на ранній крафт чи використання інжекторів.",
+      "Польотні/захисні модулі, energy core і аддонні намиста мають окремі рівневі правила."
+    ],
+    "milestones": [
+      {
+        "id": "E40_M1",
+        "title": "Фабрика fusion crafting",
+        "objective_uk": "Зібрати crafting core та комплект штатно потрібних basic injectors.",
+        "evidence_uk": "Валідна структура і доступні рецепти поточного рівня.",
+        "after": []
+      },
+      {
+        "id": "E40_M2",
+        "title": "Драконієве виробництво",
+        "objective_uk": "Виготовити 8 draconium core і 4 wyvern core.",
+        "evidence_uk": "Лічильники власного крафту; не використовується предмет із чужого сховища.",
+        "after": [
+          "E40_M1"
+        ]
+      },
+      {
+        "id": "E40_M3",
+        "title": "Ритуальне узгодження",
+        "objective_uk": "Виготовити 4 botania:gaia_ingot і 4 mekanism:pellet_antimatter для перших чотирьох гібридних wyvern_crafting_injector.",
+        "evidence_uk": "Власний магічний сплав і SPS-випуск; не вимагається новий неописаний предмет-стабілізатор.",
+        "after": []
+      },
+      {
+        "id": "E40_M4",
+        "title": "Вивернові інжектори",
+        "objective_uk": "Виконати 4 fusion-рецепти draconicevolution:machines/wyvern_crafting_injector з integration_recipe, після цього довести комплект до потрібного розміру.",
+        "evidence_uk": "Кожна операція зберігає native tier/energy/catalyst і споживає по 1 gaia_ingot та 1 antimatter_pellet додатково.",
+        "after": [
+          "E40_M3"
+        ]
+      },
+      {
+        "id": "E40_M5",
+        "title": "Високоенергетична партія",
+        "objective_uk": "Завершити 4 додаткові fusion-операції створення draconicevolution:wyvern_crafting_injector для повноцінної робочої лінії.",
+        "evidence_uk": "Завершення 4 операцій після першої партії; 8 інжекторів мінімум, а геометрія рецепта із 10 входами підтримується базовими інжекторами.",
+        "after": [
+          "E40_M2",
+          "E40_M4"
+        ]
+      },
+      {
+        "id": "E40_M6",
+        "title": "Захищений сервіс",
+        "objective_uk": "Показати кероване відключення й повернення живлення без дюпу інгредієнтів.",
+        "evidence_uk": "Баланс матеріалів при перериванні й завершенні операції.",
+        "after": [
+          "E40_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Кристалічний зв’язок",
+        "objective_uk": "Налаштувати дозволену draсonic мережу передачі енергії."
+      },
+      {
+        "title": "Обладнання виверни",
+        "objective_uk": "Виготовити один інструмент без модулів майбутнього рівня."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_40",
+      "name_uk": "Ключ епохи 40: Виверновий синтез",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "draconicevolution:wyvern_core",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "mekanism:pellet_antimatter",
+          "count": 2
+        },
+        "S": {
+          "id": "ad_astra:calorite_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_39",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "draconicevolution:wyvern_crafting_injector",
+      "preserve_source_recipe_id": "draconicevolution:machines/wyvern_crafting_injector",
+      "additional_inputs": [
+        {
+          "id": "botania:gaia_ingot",
+          "count": 1
+        },
+        {
+          "id": "mekanism:pellet_antimatter",
+          "count": 1
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_40",
+      "implementation_note_uk": "Зберегти справжній draconicevolution:fusion_crafting, native catalyst=basic_crafting_injector, усі 8 штатних input-компонентів, techLevel=draconium, totalEnergy=32000 і вихід 1. Додати 2 окремі споживані інгредієнти. Для цієї операції потрібні 10 вхідних інжекторів; валідність геометрії та ліміт фізичних інжекторів перевірити на сервері, не обходити її простим 3×3.",
+      "status": "design_patch_not_installed",
+      "preserve_native_fields_list": [
+        "type",
+        "catalyst",
+        "ingredients",
+        "techLevel",
+        "totalEnergy",
+        "result"
+      ],
+      "additional_input_consume": true
+    }
+  },
+  {
+    "number": 41,
+    "title": "Пробуджена драконяча матерія",
+    "theme": "Пробудження draconium потребує справжніх драконячих трофеїв і стабільної виробничої інфраструктури.",
+    "main_mods": [
+      "draconicevolution",
+      "botania",
+      "goety"
+    ],
+    "unlocks": [
+      {
+        "id": "draconicevolution:awakened_draconium_ingot",
+        "purpose_uk": "Пробуджений матеріал"
+      },
+      {
+        "id": "draconicevolution:awakened_core",
+        "purpose_uk": "Ядро драконячого рівня"
+      },
+      {
+        "id": "draconicevolution:awakened_crafting_injector",
+        "purpose_uk": "Драконячий інжектор"
+      },
+      {
+        "id": "draconicevolution:dragon_heart",
+        "purpose_uk": "Трофей штатного драконячого маршруту"
+      },
+      {
+        "id": "draconicevolution:draconic_energy_core",
+        "purpose_uk": "Драконячий енергетичний компонент"
+      },
+      {
+        "id": "draconicevolution:draconic_relay_crystal",
+        "purpose_uk": "Високий рівень енергетичного зв’язку"
+      }
+    ],
+    "limits_uk": [
+      "Chaos shard, chaotic core і модулі невразливості заборонені до власного випробування 42.",
+      "Не робити обов’язковою багаторазову механічну перемогу над драконом заради сотень сердець; кількість трофеїв і вихід партії перебалансувати як finite milestone.",
+      "Модульні предмети перевіряються разом із усіма встановленими компонентами."
+    ],
+    "milestones": [
+      {
+        "id": "E41_M1",
+        "title": "Серце дракона",
+        "objective_uk": "Отримати потрібний штатним пробудженням dragon heart власною командою.",
+        "evidence_uk": "Босова подія й трофей із доведеним походженням; якщо перша перемога була в 30, вона зараховується.",
+        "after": []
+      },
+      {
+        "id": "E41_M2",
+        "title": "Пробудження сплаву",
+        "objective_uk": "Завершити партію awakened draconium зі штатною енергією та доданими гібридними реагентами.",
+        "evidence_uk": "Завершена fusion-операція без витрат ключа.",
+        "after": [
+          "E41_M1"
+        ]
+      },
+      {
+        "id": "E41_M3",
+        "title": "Магія стабілізації",
+        "objective_uk": "Виробити 4 gaia ingot і 4 marid essence для підтримки пробудження.",
+        "evidence_uk": "Власний випуск двох різних магічних маршрутів.",
+        "after": []
+      },
+      {
+        "id": "E41_M4",
+        "title": "Пробуджені інжектори",
+        "objective_uk": "Оновити інжектори до рівня awakened у порядку штатної fusion-драбини.",
+        "evidence_uk": "Послідовність поліпшень, а не обхід прямим рецептом.",
+        "after": [
+          "E41_M3"
+        ]
+      },
+      {
+        "id": "E41_M5",
+        "title": "Драконяче ядро",
+        "objective_uk": "Виготовити 4 awakened core та один дозволений draconic інструмент.",
+        "evidence_uk": "Крафт і перевірка встановлених модулів.",
+        "after": [
+          "E41_M2",
+          "E41_M4"
+        ]
+      },
+      {
+        "id": "E41_M6",
+        "title": "Підготовка до Хаосу",
+        "objective_uk": "Провести контрольне випробування захисту, енергозапасу й повернення без chaotic ефектів.",
+        "evidence_uk": "Перевірка комплекту та тренувальний сценарій, без вимоги помирати.",
+        "after": [
+          "E41_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Модульний майстер",
+        "objective_uk": "Порівняти дві дозволені конфігурації інструмента."
+      },
+      {
+        "title": "Ритуальний зал пробудження",
+        "objective_uk": "Оформити обслуговувану fusion-арену."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_41",
+      "name_uk": "Ключ епохи 41: Пробуджена драконяча матерія",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "draconicevolution:awakened_core",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "draconicevolution:awakened_draconium_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "occultism:marid_essence",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_40",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 42,
+    "title": "Випробування Хаосу",
+    "theme": "Власна перемога над Chaos Guardian відкриває chaotic-виробництво; обладнання до бою залишається обмеженим.",
+    "main_mods": [
+      "draconicevolution",
+      "draconicadditions"
+    ],
+    "unlocks": [
+      {
+        "id": "draconicevolution:chaos_shard",
+        "purpose_uk": "Босовий матеріал після власного випробування"
+      },
+      {
+        "id": "draconicevolution:chaotic_core",
+        "purpose_uk": "Ядро chaotic-рівня"
+      },
+      {
+        "id": "draconicevolution:chaotic_crafting_injector",
+        "purpose_uk": "Найвищий штатний інжектор"
+      },
+      {
+        "id": "draconicevolution:chaotic_energy_core",
+        "purpose_uk": "Пізній енергетичний компонент"
+      },
+      {
+        "id": "draconicadditions:item_stable_chaos",
+        "purpose_uk": "Стабілізація Хаосу лише після босової віхи"
+      },
+      {
+        "id": "draconicadditions:chaos_crystalizer",
+        "purpose_uk": "Аддонна обробка після перевірки її виходу"
+      }
+    ],
+    "limits_uk": [
+      "Внутрішній підетап: спершу бій дозволеним draconic комплектом, потім chaotic-рецепти. Саме відкриття епохи42 не відкриває всі предмети Хаосу.",
+      "Автоферми Chaos shards і переміщення guardian/кристала у ферму не замінюють обов’язкову босову подію.",
+      "Невразливість/повна відміна шкоди заборонена до завершення обов’язкового бою."
+    ],
+    "milestones": [
+      {
+        "id": "E42_M1",
+        "title": "Експедиція до Хаосу",
+        "objective_uk": "Підготувати дозволений draconic комплект, енергозапас і маршрут до арени.",
+        "evidence_uk": "Компонентна перевірка спорядження та власне прибуття.",
+        "after": []
+      },
+      {
+        "id": "E42_M2",
+        "title": "Власне випробування",
+        "objective_uk": "Перемогти Chaos Guardian без спорядження, що потребує його трофея.",
+        "evidence_uk": "Серверний облік участі/вбивства; негативна перевірка недозволених ефектів.",
+        "after": [
+          "E42_M1"
+        ]
+      },
+      {
+        "id": "E42_M3",
+        "title": "Ритуал стабілізації трофея",
+        "objective_uk": "Виробити 4 botania:gaia_ingot і 2 mekanism:pellet_antimatter для майбутнього chaos_crystalizer та його запускової партії.",
+        "evidence_uk": "Конкретні власні магічні/технологічні продукти; новий предмет-стабілізатор не потрібний.",
+        "after": []
+      },
+      {
+        "id": "E42_M4",
+        "title": "Chaotic fusion",
+        "objective_uk": "Після босової віхи виготовити 2 chaotic core і оновити потрібні інжектори.",
+        "evidence_uk": "Рецепт перевіряє підетап боса, не лише epoch_open_42.",
+        "after": [
+          "E42_M3"
+        ]
+      },
+      {
+        "id": "E42_M5",
+        "title": "Обережний аддон",
+        "objective_uk": "Після власної перемоги над Chaos Guardian виготовити draconicadditions:chaos_crystalizer справжнім chaotic fusion за integration_recipe.",
+        "evidence_uk": "Подія fusion ізchaos_liquifier-catalyst, energy_transfuser ідоданими 3 інгредієнтами; простийcrafting або перенесенийблок не зараховується.",
+        "after": [
+          "E42_M2",
+          "E42_M4"
+        ]
+      },
+      {
+        "id": "E42_M6",
+        "title": "Повернення й аудит",
+        "objective_uk": "Повернутися на базу і підтвердити, що запас Хаосу походить із дозволених джерел.",
+        "evidence_uk": "Командний журнал трофеїв і виробничих перетворень.",
+        "after": [
+          "E42_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Майстерність бою",
+        "objective_uk": "Повторити випробування з меншою витратою енергії без вимоги грінду."
+      },
+      {
+        "title": "Пізня оснастка",
+        "objective_uk": "Зібрати дозволений chaotic набір після основної босової віхи."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_42",
+      "name_uk": "Ключ епохи 42: Випробування Хаосу",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "draconicevolution:chaotic_core",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "draconicevolution:chaos_shard",
+          "count": 2
+        },
+        "S": {
+          "id": "mekanism:pellet_antimatter",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_41",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "draconicadditions:chaos_crystalizer",
+      "preserve_source_recipe_id": "draconicadditions:blocks/chaos_crystalizer",
+      "additional_inputs": [
+        {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        {
+          "id": "mekanism:pellet_antimatter",
+          "count": 1
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_42",
+      "implementation_note_uk": "Зберегти draconicevolution:fusion_crafting, catalyst=chaos_liquifier, споживаний energy_transfuser, techLevel=chaotic, totalEnergy=100000 і вихід 1. Додати 2 gaia_ingot+1 antimatter_pellet як 3 споживані входи. Усі chaotic інжектори/матеріали виготовляються лише після власного Chaos Guardian.",
+      "status": "design_patch_not_installed",
+      "additional_requirements": [
+        "E42_M2"
+      ],
+      "preserve_native_fields_list": [
+        "type",
+        "catalyst",
+        "ingredients",
+        "techLevel",
+        "totalEnergy",
+        "result"
+      ],
+      "additional_input_consume": true
+    }
+  },
+  {
+    "number": 43,
+    "title": "Еволюція механізмів",
+    "theme": "Evolved Mekanism масштабує фабрики через вже освоєну антиматерію й дорогі магічні сплави.",
+    "main_mods": [
+      "evolvedmekanism",
+      "mekmm",
+      "mekanism",
+      "mekanisticrouters"
+    ],
+    "unlocks": [
+      {
+        "id": "evolvedmekanism:alloy_hypercharged",
+        "purpose_uk": "Перший пост-ultimate сплав"
+      },
+      {
+        "id": "evolvedmekanism:alloy_subatomic",
+        "purpose_uk": "Сплав із реальним antimat­ter nucleosynth-маршрутом"
+      },
+      {
+        "id": "evolvedmekanism:overclocked_control_circuit",
+        "purpose_uk": "Початкове розширення схеми"
+      },
+      {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "purpose_uk": "Квантовий рівень після антиматерії"
+      },
+      {
+        "id": "evolvedmekanism:quantum_energy_cube",
+        "purpose_uk": "Квантовий енергобуфер"
+      },
+      {
+        "id": "evolvedmekanism:quantum_enriching_factory",
+        "purpose_uk": "Паралельна фабрика дозволеного рівня"
+      }
+    ],
+    "limits_uk": [
+      "Dense/multiversal/exoversal й інші вищі рівні потребують окремої перевірки штатних ресурсів; creative circuit/alloy/factory залишаються поза основним шляхом.",
+      "Кількість слотів і speed upgrades не можуть робити витрату реагенту нульовою; комбінації patch/addon тестуються на повній операції.",
+      "Субатомний сплав має справжню ціну антиматерії; EMC/насіння/плавлення назад не відшкодовує витрати."
+    ],
+    "milestones": [
+      {
+        "id": "E43_M1",
+        "title": "За межі ultimate",
+        "objective_uk": "Виготовити hypercharged alloy і 8 overclocked circuit штатним послідовним маршрутом.",
+        "evidence_uk": "Події infusing і крафту; прямі альтернативні рецепти закриті.",
+        "after": []
+      },
+      {
+        "id": "E43_M2",
+        "title": "Субатомна партія",
+        "objective_uk": "Виробити 16 alloy_subatomic із реальним споживанням antimatter в nucleosynthesizing.",
+        "evidence_uk": "Завершені операції й витрата хімічного компонента.",
+        "after": [
+          "E43_M1"
+        ]
+      },
+      {
+        "id": "E43_M3",
+        "title": "Контроль духів у великій фабриці",
+        "objective_uk": "Виробити 4 marid essence і духовні стабілізатори квантових компонентів.",
+        "evidence_uk": "Власні ритуальні операції та новий гібридний рецепт.",
+        "after": []
+      },
+      {
+        "id": "E43_M4",
+        "title": "Квантові схеми",
+        "objective_uk": "Виготовити 16 quantum_control_circuit без пропуску overclocked-попередника.",
+        "evidence_uk": "Послідовний технологічний журнал.",
+        "after": [
+          "E43_M3"
+        ]
+      },
+      {
+        "id": "E43_M5",
+        "title": "Квантовий виробничий модуль",
+        "objective_uk": "Запустити квантовий буфер і одну дозволену багатослотову фабрику.",
+        "evidence_uk": "Серія 64 операцій із коректним списанням усіх реагентів.",
+        "after": [
+          "E43_M2",
+          "E43_M4"
+        ]
+      },
+      {
+        "id": "E43_M6",
+        "title": "Перевірка масштабування",
+        "objective_uk": "Порівняти одиночну й паралельну операції: однаковий матеріальний баланс і допустимі витрати енергії.",
+        "evidence_uk": "Серверний контроль партії, без довільних неперевірених RF/t.",
+        "after": [
+          "E43_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Профіль продуктивності",
+        "objective_uk": "Знайти джерело найбільшого навантаження фабрики."
+      },
+      {
+        "title": "Спеціалізовані машини",
+        "objective_uk": "Додати один дозволений модуль MekMM без дублювання чужого технологічного рівня."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_43",
+      "name_uk": "Ключ епохи 43: Еволюція механізмів",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "evolvedmekanism:quantum_control_circuit",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:marid_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "evolvedmekanism:alloy_subatomic",
+          "count": 2
+        },
+        "S": {
+          "id": "draconicevolution:awakened_draconium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_42",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 44,
+    "title": "Планетарна промисловість",
+    "theme": "Пізні планети IndustrialUpgrade, Unobtainium й прискорювач Oritech замикають виробництво рідкісної матерії.",
+    "main_mods": [
+      "industrialupgrade",
+      "quantumgenerators",
+      "powerutilities",
+      "oritech",
+      "allthemodium"
+    ],
+    "unlocks": [
+      {
+        "id": "industrialupgrade:alloyingot/osmiridium",
+        "purpose_uk": "Пізній промисловий сплав"
+      },
+      {
+        "id": "industrialupgrade:basemachine3/rocket_assembler",
+        "purpose_uk": "Планетарне виробництво IU"
+      },
+      {
+        "id": "industrialupgrade:basemachine3/research_table_space",
+        "purpose_uk": "Пізнє космічне дослідження"
+      },
+      {
+        "id": "oritech:accelerator_controller",
+        "purpose_uk": "Прискорювач частинок"
+      },
+      {
+        "id": "allthemodium:unobtainium_ingot",
+        "purpose_uk": "Фінальний базовий рідкісний метал"
+      },
+      {
+        "id": "quantumgenerators:qg/nsp_gen",
+        "purpose_uk": "Приклад пізнього генератора; точний підрівень після вимірювання"
+      }
+    ],
+    "limits_uk": [
+      "IndustrialUpgrade має тисячі предметів: параметри EU/t, стадії планет і зміст малозрозумілих crafting_* деталей перевіряються за реальними машинами, а не лише назвами ID.",
+      "Усі Quantum Generators розподілити за виміряною вартістю й виходом; назва NSP/ADSP не доводить порядок потужності.",
+      "Квантові копачі й матерія не повинні видавати ключі, босові докази, Infinity або майбутні матеріали."
+    ],
+    "milestones": [
+      {
+        "id": "E44_M1",
+        "title": "Планетарна лабораторія",
+        "objective_uk": "Побудувати space research table та штатно потрібну інфраструктуру пізніх маршрутів IU.",
+        "evidence_uk": "Валідні структури і завершені дослідницькі операції, а не набір блоків.",
+        "after": []
+      },
+      {
+        "id": "E44_M2",
+        "title": "Промисловий сплав",
+        "objective_uk": "Виробити 16 osmiridium через дозволені процеси IU.",
+        "evidence_uk": "Серія штатного або затвердженого гібридного рецепту.",
+        "after": [
+          "E44_M1"
+        ]
+      },
+      {
+        "id": "E44_M3",
+        "title": "Магія для планетарної установки",
+        "objective_uk": "Виробити духовні стабілізатори із marid essence для нового контролера.",
+        "evidence_uk": "Ритуальний випуск і гібридний рецепт допоміжної деталі.",
+        "after": []
+      },
+      {
+        "id": "E44_M4",
+        "title": "Unobtainium власного походження",
+        "objective_uk": "Добути й обробити 8 unobtainium після відкриття цієї епохи.",
+        "evidence_uk": "Геологічне походження та обробка, без EMC чи насіння.",
+        "after": [
+          "E44_M3"
+        ]
+      },
+      {
+        "id": "E44_M5",
+        "title": "Прискорювач із корисним виходом",
+        "objective_uk": "Зібрати Oritech accelerator і завершити дозволену операцію рідкісного матеріалу.",
+        "evidence_uk": "Перевірена структура та операція з витратою енергії.",
+        "after": [
+          "E44_M2",
+          "E44_M4"
+        ]
+      },
+      {
+        "id": "E44_M6",
+        "title": "Планетарна енергостанція",
+        "objective_uk": "Запустити один виміряний, збалансований пізній генератор і живити ним виробниче навантаження 5 хвилин.",
+        "evidence_uk": "Журнал генерації, споживання й джерел палива; генератор без ціни експлуатації потребує окремого ліміту.",
+        "after": [
+          "E44_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Експедиція зовнішніх планет",
+        "objective_uk": "Відвідати ще одну дозволену зовнішню планету IU."
+      },
+      {
+        "title": "Атлас рідкісних сплавів",
+        "objective_uk": "Порівняти рецепти рідкісних сплавів без вимоги виготовляти всі декоративні варіанти."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_44",
+      "name_uk": "Ключ епохи 44: Планетарна промисловість",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "industrialupgrade:alloyingot/osmiridium",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:marid_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "allthemodium:unobtainium_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "evolvedmekanism:quantum_control_circuit",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_43",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 45,
+    "title": "Обмежена трансмутація",
+    "theme": "ProjectE знімає побутовий грінд тільки для білого списку звичайних матеріалів і не замінює прогресію.",
+    "main_mods": [
+      "projecte",
+      "kubejsprojecte"
+    ],
+    "unlocks": [
+      {
+        "id": "projecte:philosophers_stone",
+        "purpose_uk": "Обмежена алхімічна конверсія"
+      },
+      {
+        "id": "projecte:transmutation_table",
+        "purpose_uk": "Трансмутація дозволених матеріалів"
+      },
+      {
+        "id": "projecte:condenser_mk1",
+        "purpose_uk": "Перший конденсор із жорстким списком виходу"
+      },
+      {
+        "id": "projecte:dark_matter",
+        "purpose_uk": "Дорогий штатний компонент без власного EMC-обходу"
+      },
+      {
+        "id": "projecte:alchemical_chest",
+        "purpose_uk": "Обмежений побутовий компонент"
+      },
+      {
+        "id": "projecte:white_alchemical_bag",
+        "purpose_uk": "Дозволена побутова мобільність сховища"
+      }
+    ],
+    "limits_uk": [
+      "EMC діє за білим списком виходів. Ключі, докази, нові гібридні деталі, босові трофеї, есенції прогресії, антиматерія, рідкісні метали, neutronium й Infinity не мають EMC і не виводяться автоматичним mapper.",
+      "Потрібно блокувати також philosophers stone світові/мобові перетворення, реле й інші альтернативні EMC-джерела, якщо вони обходять список.",
+      "Колектори та потужніші конденсори відкриваються лише в47; навіть там перелік матеріалів залишається обмеженим."
+    ],
+    "milestones": [
+      {
+        "id": "E45_M1",
+        "title": "Алхімічний фундамент",
+        "objective_uk": "Створити philosophers stone через змінений рецепт із пізніми технічними й магічними матеріалами.",
+        "evidence_uk": "Крафт дозволений лише після всіх попередніх епох; жодного ключа в рецепті.",
+        "after": []
+      },
+      {
+        "id": "E45_M2",
+        "title": "Перша dark matter",
+        "objective_uk": "Законно виготовити 4 dark matter з реально витрачених дозволених матеріалів.",
+        "evidence_uk": "Крафтовий маршрут і баланс; матеріал сам по собі не підлягає вільному копіюванню.",
+        "after": [
+          "E45_M1"
+        ]
+      },
+      {
+        "id": "E45_M3",
+        "title": "Рунічна стабілізація EMC",
+        "objective_uk": "Виробити gaia-стабілізатори для нового рецепту table/condenser.",
+        "evidence_uk": "Окремий магічно-технічний компонент із власним виробництвом.",
+        "after": []
+      },
+      {
+        "id": "E45_M4",
+        "title": "Безпечний каталог",
+        "objective_uk": "Навчити таблицю 16 дозволеним звичайним матеріалам.",
+        "evidence_uk": "Білий список фактичного запису й вилучення; заборонений предмет не виводиться.",
+        "after": [
+          "E45_M3"
+        ]
+      },
+      {
+        "id": "E45_M5",
+        "title": "Побутовий конденсор",
+        "objective_uk": "Виготовити й запустити Mk1 для дозволеного звичайного матеріалу.",
+        "evidence_uk": "64 законні операції з правильним списанням EMC.",
+        "after": [
+          "E45_M2",
+          "E45_M4"
+        ]
+      },
+      {
+        "id": "E45_M6",
+        "title": "Негативний EMC-аудит",
+        "objective_uk": "Перевірити неможливість створення ключів, антиматерії, bosstrophy та майбутніх ресурсів через усі EMC-інтерфейси.",
+        "evidence_uk": "Автоматичний тест після остаточного mapper/reload, включно з мережевими інтеграціями.",
+        "after": [
+          "E45_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Безпечна будівельна палітра",
+        "objective_uk": "Навчити звичайні блоки для будівництва."
+      },
+      {
+        "title": "Лабораторія еквівалентності",
+        "objective_uk": "Перевірити відсутність прибуткової петлі для дозволених побутових конверсій."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_45",
+      "name_uk": "Ключ епохи 45: Обмежена трансмутація",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "projecte:dark_matter",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "mekanism:pellet_antimatter",
+          "count": 2
+        },
+        "S": {
+          "id": "allthemodium:unobtainium_ingot",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_44",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    }
+  },
+  {
+    "number": 46,
+    "title": "Нейтроній і сингулярності",
+    "theme": "Avaritia стає проєктом інфраструктури та різноманітних ланцюгів, а не очікуванням біля одного колектора.",
+    "main_mods": [
+      "avaritia",
+      "avaritia_expand",
+      "allthecompressed"
+    ],
+    "unlocks": [
+      {
+        "id": "avaritia:crystal_matrix_ingot",
+        "purpose_uk": "Перший компонент великого крафту"
+      },
+      {
+        "id": "avaritia:extreme_crafting_table",
+        "purpose_uk": "Станція великого крафту"
+      },
+      {
+        "id": "avaritia:neutron_collector",
+        "purpose_uk": "Колектор із гібридним рецептом"
+      },
+      {
+        "id": "avaritia:neutron_ingot",
+        "purpose_uk": "Продукт кінцевого збирання частинок"
+      },
+      {
+        "id": "avaritia:neutron_compressor",
+        "purpose_uk": "Контрольований компресор сингулярностей"
+      },
+      {
+        "id": "avaritia:singularity",
+        "purpose_uk": "Тип визначається компонентами предмета"
+      }
+    ],
+    "limits_uk": [
+      "Infinity catalyst відкривається у47; infinity ingot і спорядження у48.",
+      "Сингулярності — один ID із даними типу: кожну матеріальну версію перевіряти за компонентом, не загальною наявністю предмета.",
+      "Вартість сировини підбирається під виміряну пропускну здатність; уникати тижнів AFK і сотень однакових босів.",
+      "Колектори не мають безмежних покращень часу; summation прискорення з різних модів підлягає ліміту."
+    ],
+    "milestones": [
+      {
+        "id": "E46_M1",
+        "title": "Стіл великої інженерії",
+        "objective_uk": "Створити crystal matrix і extreme crafting table з міжмодовими компонентами.",
+        "evidence_uk": "Завершений новий рецепт столу після епохи 45.",
+        "after": []
+      },
+      {
+        "id": "E46_M2",
+        "title": "Нейтронний колектор",
+        "objective_uk": "Запустити колектор із кінцевою вартістю та отримати першу партію neutron pile/nugget.",
+        "evidence_uk": "Підтверджений випуск колектора, час рахується тільки у робочому стані.",
+        "after": [
+          "E46_M1"
+        ]
+      },
+      {
+        "id": "E46_M3",
+        "title": "Магічна оправа нейтронію",
+        "objective_uk": "Виробити 8 botania:gaia_ingot для магічного підсилення нейтронної оснастки й фінального ключа. Дешевий deorum не є єдиним магічним внеском цього рівня.",
+        "evidence_uk": "Власний Gaia-сплав після власної босової віхи 31, без EMC-замінника.",
+        "after": []
+      },
+      {
+        "id": "E46_M4",
+        "title": "Перші нейтронні зливки",
+        "objective_uk": "Перетворити частинки на 8 neutron ingot без декрафтової петлі.",
+        "evidence_uk": "Повний матеріальний баланс на pile→nugget→ingot та всіх зворотних рецептах.",
+        "after": [
+          "E46_M3"
+        ]
+      },
+      {
+        "id": "E46_M5",
+        "title": "Три різні сингулярності",
+        "objective_uk": "Виготовити по одному з трьох точних продуктів singularity_targets: Avaritia gold із 4096 gold_ingot; Avaritia redstone із 8192 redstone; MI singularity зі штатних 1 ultradense_metal_ball + 64 nuke в implosion_compressor.",
+        "evidence_uk": "Точні компоненти avaritia:singularity_id=avaritia:gold/redstone і окремий ID modern_industrialization:singularity. Кількості Avaritia є проєктною конфігурацією: їхній темп треба виміряти, а не видавати їх за штатні значення.",
+        "after": [
+          "E46_M2",
+          "E46_M4"
+        ]
+      },
+      {
+        "id": "E46_M6",
+        "title": "Промисловий темп",
+        "objective_uk": "Підтвердити стабільне постачання сировини та обґрунтований час ще однієї сингулярності.",
+        "evidence_uk": "Виміряна пропускна здатність; фінальні кількості налаштовуються за цим результатом.",
+        "after": [
+          "E46_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Паралельне стискання",
+        "objective_uk": "Побудувати ще одну дозволену лінію без перевищення ліміту прискорень."
+      },
+      {
+        "title": "Колекція сингулярностей",
+        "objective_uk": "Додати необов’язкові типи з освоєних матеріалів."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_46",
+      "name_uk": "Ключ епохи 46: Нейтроній і сингулярності",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "avaritia:neutron_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "avaritia:crystal_matrix_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "projecte:dark_matter",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_45",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "singularity_targets": [
+      {
+        "output": {
+          "id": "avaritia:singularity",
+          "count": 1,
+          "components": {
+            "avaritia:singularity_id": "avaritia:gold"
+          }
+        },
+        "native_machine": "avaritia:neutron_compressor",
+        "native_recipe_type": "avaritia:compressor_recipe",
+        "preserve_source_recipe_id": null,
+        "design_input": {
+          "id": "minecraft:gold_ingot",
+          "count": 4096
+        },
+        "status": "component_value_export_verified_compression_count_proposed",
+        "note_uk": "Значення avaritia:gold підтверджене рецептом denser_neutron_collector. Визначення динамічного стиснення відсутнє в експорті. 4096 — нова проєктна кількість, а не заявлена штатна вартість.",
+        "stage": "aia2_epoch_46"
+      },
+      {
+        "output": {
+          "id": "avaritia:singularity",
+          "count": 1,
+          "components": {
+            "avaritia:singularity_id": "avaritia:redstone"
+          }
+        },
+        "native_machine": "avaritia:neutron_compressor",
+        "native_recipe_type": "avaritia:compressor_recipe",
+        "preserve_source_recipe_id": null,
+        "design_input": {
+          "id": "minecraft:redstone",
+          "count": 8192
+        },
+        "status": "component_value_export_verified_compression_count_proposed",
+        "note_uk": "Значення avaritia:redstone підтверджене рецептом dense_neutron_collector. 8192 — проєктна кількість; потрібне налаштування динамічної компресії з перевіркою темпу.",
+        "stage": "aia2_epoch_46"
+      },
+      {
+        "output": {
+          "id": "modern_industrialization:singularity",
+          "count": 1
+        },
+        "native_recipe_type": "modern_industrialization:implosion_compressor",
+        "preserve_source_recipe_id": "modern_industrialization:electric_age/component/implosion_compressor/singularity",
+        "native_inputs": [
+          {
+            "id": "modern_industrialization:ultradense_metal_ball",
+            "count": 1
+          },
+          {
+            "id": "modern_industrialization:nuke",
+            "count": 64
+          }
+        ],
+        "preserve_native_fields": true,
+        "status": "native_recipe_export_verified",
+        "note_uk": "Зберегти штатний implosion_compressor, eu=1, duration=10 і весь паливний/промисловий ланцюг. Не підміняти процес звичайним крафтом 3×3.",
+        "stage": "aia2_epoch_46"
+      }
+    ]
+  },
+  {
+    "number": 47,
+    "title": "Космічна конвергенція",
+    "theme": "Усі виробничі школи збирають космічний каталізатор; пізній EMC лишається інструментом звичайної сировини.",
+    "main_mods": [
+      "avaritia",
+      "projecte",
+      "appliede",
+      "ae2ao",
+      "ae2"
+    ],
+    "unlocks": [
+      {
+        "id": "avaritia:infinity_catalyst",
+        "purpose_uk": "Космічний багатогалузевий компонент"
+      },
+      {
+        "id": "avaritia:eternal_singularity",
+        "purpose_uk": "Пізня сукупність сингулярностей за затвердженим рецептом"
+      },
+      {
+        "id": "projecte:red_matter",
+        "purpose_uk": "Обмежений пізній алхімічний компонент"
+      },
+      {
+        "id": "projecte:collector_mk3",
+        "purpose_uk": "Пізня генерація EMC лише з дозволеними виходами"
+      },
+      {
+        "id": "projecte:condenser_mk2",
+        "purpose_uk": "Пізнє прискорення побутової трансмутації"
+      },
+      {
+        "id": "appliede:transmutation_terminal",
+        "purpose_uk": "EMC-термінал, що успадковує білий список"
+      }
+    ],
+    "limits_uk": [
+      "Infinity ingot/armor відкриваються лише у48; каталізатор не є дозволом носити будь-яку кінцеву броню.",
+      "AppliedE, AE2AO та інші інтеграції зобов’язані використовувати той самий білий список й перевірки стадій, включно із шаблонами автокрафту.",
+      "Power flowers/колектори не створюють прогресійних предметів; якщо предмети квітів відсутні в реєстрі конкретної версії, не вигадувати їх ID.",
+      "Космічний каталізатор містить різноманітні кінцеві продукти, а не лише збільшені стеки EMC-сировини.",
+      "Базові ProjectE collector_mk1/mk2/mk3 і реле належать до епохи47 тільки з білим списком EMC для звичайної сировини. Creative і power flowers без перевірених зареєстрованих ID не належать до обов’язкової прогресії."
+    ],
+    "milestones": [
+      {
+        "id": "E47_M1",
+        "title": "Архів сингулярностей",
+        "objective_uk": "Підготувати по одній Avaritia gold/redstone singularity з точними компонентами та одну modern_industrialization:singularity. Повторний виробіток потрібний, лише якщо попередні продукти витрачені.",
+        "evidence_uk": "Перші три точні продукти required_component_products зі збереженим доказом власного виробництва в епосі 46. Порожній generic avaritia:singularity не приймається.",
+        "after": []
+      },
+      {
+        "id": "E47_M2",
+        "title": "Пізня еквівалентність",
+        "objective_uk": "Виготовити red matter та налаштувати обмежений Mk2 без поширення EMC на заборонені матеріали.",
+        "evidence_uk": "Крафт і негативний тест виходів після перерахунку mapper.",
+        "after": [
+          "E47_M1"
+        ]
+      },
+      {
+        "id": "E47_M3",
+        "title": "Внесок магічних шкіл",
+        "objective_uk": "Підготувати 2 botania:gaia_ingot, 2 occultism:marid_essence, 2 forbidden_arcanus:deorum_ingot і 2 goety:shadow_essence.",
+        "evidence_uk": "Чотири конкретні продукти required_component_products: магічний сплав, реальний kill/loot маріда, кузня та ритуальна/трофейна школа. Ці предмети не мають EMC.",
+        "after": []
+      },
+      {
+        "id": "E47_M4",
+        "title": "Внесок технологічних шкіл",
+        "objective_uk": "Підготувати 2 mekanism:pellet_antimatter, 2 draconicevolution:chaotic_core, 2 evolvedmekanism:quantum_control_circuit і 2 industrialupgrade:alloyingot/osmiridium.",
+        "evidence_uk": "Конкретні власні випуски SPS, chaotic fusion, субатомної схеми та планетарної металургії.",
+        "after": [
+          "E47_M3"
+        ]
+      },
+      {
+        "id": "E47_M5",
+        "title": "Космічний каталізатор",
+        "objective_uk": "Виготовити 2 infinity catalyst за затвердженим кінцевим рецептом.",
+        "evidence_uk": "Повний великий крафт із точними інгредієнтами й реальною витратою.",
+        "after": [
+          "E47_M2",
+          "E47_M4"
+        ]
+      },
+      {
+        "id": "E47_M6",
+        "title": "Мережевий аудит EMC",
+        "objective_uk": "Пройти той самий тест заборонених ресурсів через AppliedE і автоматичні шаблони AE2.",
+        "evidence_uk": "Серверний негативний сценарій, включно з переміщенням шаблону між командами.",
+        "after": [
+          "E47_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Енергетична скульптура",
+        "objective_uk": "Побудувати пізню EMC-електростанцію в межах списку дозволених виходів."
+      },
+      {
+        "title": "Автоматизація каталізатора",
+        "objective_uk": "Автоматизувати підготовку компонентів без автоматичної передачі прав доступу."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_47",
+      "name_uk": "Ключ епохи 47: Космічна конвергенція",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "avaritia:infinity_catalyst",
+          "count": 2
+        },
+        "M": {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        "R": {
+          "id": "projecte:red_matter",
+          "count": 2
+        },
+        "S": {
+          "id": "draconicevolution:chaotic_core",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_46",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "required_component_products": [
+      {
+        "id": "avaritia:singularity",
+        "count": 1,
+        "components": {
+          "avaritia:singularity_id": "avaritia:gold"
+        }
+      },
+      {
+        "id": "avaritia:singularity",
+        "count": 1,
+        "components": {
+          "avaritia:singularity_id": "avaritia:redstone"
+        }
+      },
+      {
+        "id": "modern_industrialization:singularity",
+        "count": 1
+      },
+      {
+        "id": "botania:gaia_ingot",
+        "count": 2
+      },
+      {
+        "id": "occultism:marid_essence",
+        "count": 2
+      },
+      {
+        "id": "forbidden_arcanus:deorum_ingot",
+        "count": 2
+      },
+      {
+        "id": "goety:shadow_essence",
+        "count": 2
+      },
+      {
+        "id": "mekanism:pellet_antimatter",
+        "count": 2
+      },
+      {
+        "id": "draconicevolution:chaotic_core",
+        "count": 2
+      },
+      {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "count": 2
+      },
+      {
+        "id": "industrialupgrade:alloyingot/osmiridium",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "number": 48,
+    "title": "Нескінченність",
+    "theme": "Фінал перевіряє цілісність усіх шкіл і завершується останнім ключем без штучної 49-ї обов’язкової епохи.",
+    "main_mods": [
+      "avaritia",
+      "avaritia_expand",
+      "allthemodium",
+      "draconicevolution"
+    ],
+    "unlocks": [
+      {
+        "id": "avaritia:infinity_ingot",
+        "purpose_uk": "Фінальний сплав після космічного каталізатора"
+      },
+      {
+        "id": "avaritia:infinity_sword",
+        "purpose_uk": "Після виконання всіх попередніх босових випробувань"
+      },
+      {
+        "id": "avaritia:infinity_pickaxe",
+        "purpose_uk": "Лише післяфінальний доступ за campaign_complete; не за aia2_epoch_48"
+      },
+      {
+        "id": "avaritia:infinity_chestplate",
+        "purpose_uk": "Фінальна броня без раннього обходу босів"
+      },
+      {
+        "id": "avaritia:infinity_helmet",
+        "purpose_uk": "Частина фінального комплекту"
+      },
+      {
+        "id": "avaritia:infinity_boots",
+        "purpose_uk": "Частина фінального комплекту"
+      }
+    ],
+    "limits_uk": [
+      "Ключ48 є фінальним артефактом і не має рецепта-споживача. Його створення завершує гру, не відкриває примусову епоху49.",
+      "Ключі не отримують EMC і ніколи не входять до рецептів Infinity-спорядження чи креативних блоків.",
+      "Креативні предмети дозволені лише як необов’язковий післяфінальний проєкт із явною політикою; вони не потрібні для перемоги.",
+      "Час фіналу визначається різноманітністю вже освоєних ліній, а не новим багатотижневим гріндом.",
+      "Виняток для фінальної віхи: infinity_chestplate дозволений за aia2_epoch_48 до ключа48, бо обов’язкові боси завершені. infinity_pickaxe і creative-предмети потребують campaign_complete."
+    ],
+    "milestones": [
+      {
+        "id": "E48_M1",
+        "title": "Усі школи під одним керуванням",
+        "objective_uk": "Виконати контрольне замовлення з продуктами Create/MI/Mekanism/Oritech і Botania/Ars/Occultism/кузні.",
+        "evidence_uk": "Завершені виробничі операції потрібних ліній; заготовлений предмет без доказу не замінює майстерності.",
+        "after": []
+      },
+      {
+        "id": "E48_M2",
+        "title": "Фінальний сплав",
+        "objective_uk": "Виготовити потрібну кінцевому рецепту партію infinity ingot з infinity catalyst і затверджених матеріалів.",
+        "evidence_uk": "Великий крафт після aia2_done_47; без EMC і зворотної прибуткової петлі.",
+        "after": [
+          "E48_M1"
+        ]
+      },
+      {
+        "id": "E48_M3",
+        "title": "Вершина ритуалів",
+        "objective_uk": "Завершити коротку заключну серію вже освоєних ритуалів із власними магічними реагентами.",
+        "evidence_uk": "Три різні дозволені ритуальні/магічні операції, без нового невідомого боса.",
+        "after": []
+      },
+      {
+        "id": "E48_M4",
+        "title": "Вершина матеріалознавства",
+        "objective_uk": "Виготовити фінальний рідкісний сплав і chaotic компонент для ключа 48.",
+        "evidence_uk": "Два власні технологічні випуски, без споживання інших ключів поза 47.",
+        "after": [
+          "E48_M3"
+        ]
+      },
+      {
+        "id": "E48_M5",
+        "title": "Один доказ Нескінченності",
+        "objective_uk": "Виготовити конкретно avaritia:infinity_chestplate за integration_recipe цієї епохи; Infinity pickaxe не приймається як альтернатива.",
+        "evidence_uk": "Повний крафт 9×9 на tier4: усі штатні матеріали та додатково 2 gaia_ingot + 2 unobtainium_ingot. В епосі 48 немає обов’язкового боса, якого ця броня дозволила б обійти.",
+        "after": [
+          "E48_M2",
+          "E48_M4"
+        ]
+      },
+      {
+        "id": "E48_M6",
+        "title": "Завершений світ",
+        "objective_uk": "Підтвердити завершення всіх 47 попередніх фіналів, роботу бази й відсутність невиконаних обов’язкових віх.",
+        "evidence_uk": "Авторитетний командний журнал, не довільна галочка чи чужий ключ 48.",
+        "after": [
+          "E48_M5"
+        ]
+      }
+    ],
+    "optional_quests": [
+      {
+        "title": "Музей прогресії",
+        "objective_uk": "Створити експозицію виробничих віх; для старих ключів використовувати декоративні копії, які не є справжніми ключами."
+      },
+      {
+        "title": "Післяфінальна мегабаза",
+        "objective_uk": "Почати необов’язковий креативний проєкт за окремою політикою сервера."
+      }
+    ],
+    "key": {
+      "id": "kubejs:aia2_epoch_key_48",
+      "name_uk": "Ключ епохи 48: Нескінченність",
+      "station": "stage-aware 3x3 crafting (integration required)",
+      "pattern": [
+        "TMT",
+        "RPR",
+        "SMS"
+      ],
+      "ingredients": {
+        "T": {
+          "id": "avaritia:infinity_ingot",
+          "count": 2
+        },
+        "M": {
+          "id": "occultism:marid_essence",
+          "count": 2
+        },
+        "R": {
+          "id": "allthemodium:unobtainium_allthemodium_alloy_ingot",
+          "count": 2
+        },
+        "S": {
+          "id": "draconicevolution:chaotic_core",
+          "count": 2
+        },
+        "P": {
+          "id": "kubejs:aia2_epoch_key_47",
+          "count": 1
+        }
+      },
+      "requires_all_milestones": true,
+      "consumes_previous_key": true
+    },
+    "integration_recipe": {
+      "target_id": "avaritia:infinity_chestplate",
+      "preserve_source_recipe_id": "avaritia:infinity_chestplate",
+      "additional_inputs": [
+        {
+          "id": "botania:gaia_ingot",
+          "count": 2
+        },
+        {
+          "id": "allthemodium:unobtainium_ingot",
+          "count": 2
+        }
+      ],
+      "preserve_native_fields": true,
+      "stage": "aia2_epoch_48",
+      "implementation_note_uk": "Зберегти всю штатну сітку 9×9, усі infinity_ingot/neutron_ingot/crystal_matrix, type=avaritia:shaped_table, tier=4 і вихід 1. Заповнити лише чотири порожні комірки: [0, 4] і [8, 0] — gaia_ingot; [1, 4] і [2, 4] — unobtainium_ingot. Дозволений виняток: chestplate доступний до ключа 48, бо всі обов’язкові боси завершені до епохи 42. Infinity pickaxe лишається післяфінальною через можливість ламати bedrock.",
+      "status": "design_patch_not_installed",
+      "input_patch": {
+        "kind": "fill_empty_grid_slots",
+        "zero_based": true,
+        "replacements": [
+          {
+            "row": 0,
+            "column": 4,
+            "id": "botania:gaia_ingot"
+          },
+          {
+            "row": 8,
+            "column": 0,
+            "id": "botania:gaia_ingot"
+          },
+          {
+            "row": 1,
+            "column": 4,
+            "id": "allthemodium:unobtainium_ingot"
+          },
+          {
+            "row": 2,
+            "column": 4,
+            "id": "allthemodium:unobtainium_ingot"
+          }
+        ]
+      },
+      "additional_requirements": [
+        "aia2_done_42",
+        "aia2_done_47"
+      ],
+      "preserve_native_fields_list": [
+        "type",
+        "tier",
+        "key",
+        "all_native_occupied_pattern_cells",
+        "result"
+      ]
+    }
+  }
+]

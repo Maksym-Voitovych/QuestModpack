@@ -1,0 +1,410 @@
+{
+  "id": "000042FCC332503F",
+  "filename": "aia2_epoch_10",
+  "order_index": 9,
+  "title": "10. Латунь і писемна магія",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_10",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000089C2D1E2FE33",
+      "title": "Холодна латунь",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "00000FE703F4058E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:imbuement_chamber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5F2451D3BEC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000127AF7588695",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 16 латунних злитків новим ненагрітим магічним mixing-рецептом.",
+        "Фактична умова цього коду: 1 × ars_nouveau:imbuement_chamber (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006F99743C1E27",
+      "title": "Точна послідовність",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000089C2D1E2FE33",
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "00000588E2A85AA4",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044A44B39B160",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DC8566A012EC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Збудувати deployer-лінію й одержати 4 precision_mechanism.",
+        "Фактична умова цього коду: 4 × create:precision_mechanism (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00001957E6A99017",
+      "title": "Перший запис",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "000041D5702BDB20",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000264B240F66A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000092D6C3FC9B9E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити novice_spell_book й вивчити дозволені початкові гліфи.",
+        "Фактична умова цього коду: 1 × ars_nouveau:source_gem (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C2212DD8696C",
+      "title": "Ріст джерела",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00001957E6A99017",
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "00000FF0CBC6873D",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002F57B9BDD0A4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FAE23E1FA2A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити imbuement_chamber й виготовити 16 source_gem.",
+        "Фактична умова цього коду: 2 × ars_nouveau:source_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008D49F15BD794",
+      "title": "Точність підсилює чари",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000C2212DD8696C",
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "00006E2C6A243E5E",
+          "type": "item",
+          "item": {
+            "id": "create:brass_sheet",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D7724E58252",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E6D5623C12B6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити ars_nouveau:imbuement_chamber за зміненим рецептом із create:precision_mechanism ×1. Перший source_gem вимагає латунної точності; латунь доступна попередньою Botania-магією.",
+        "Фактична умова цього коду: 4 × create:brass_sheet (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002EF0D47461D5",
+      "title": "Закляття в цеху",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00008D49F15BD794",
+        "000083B2185CFC5C"
+      ],
+      "tasks": [
+        {
+          "id": "0000EEA0BB6FF1E6",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDE0DFFA7B0C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005FB44AB31627",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E58D45593A6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F17519262DBB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Використати дозволене утилітарне закляття в роботі цеху й завершити ще одну партію 4 precision_mechanism.",
+        "Фактична умова цього коду: 2 × create:precision_mechanism (здати — витрачається); 2 × ars_nouveau:source_gem (здати — витрачається); 2 × botania:mana_powder (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_10. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000586345E37885",
+      "title": "Ключ епохи 10: Латунь і писемна магія",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000089C2D1E2FE33",
+        "00006F99743C1E27",
+        "00001957E6A99017",
+        "0000C2212DD8696C",
+        "00008D49F15BD794",
+        "00002EF0D47461D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005E635CD8D3B1",
+          "type": "advancement",
+          "advancement": "aia2:keys/e10"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A42241430B1B",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × create:precision_mechanism; 2 × ars_nouveau:source_gem; 2 × create:brass_sheet; 2 × botania:mana_powder; 1 × kubejs:aia2_epoch_key_09"
+      ]
+    },
+    {
+      "id": "00004F9F7B8E29DA",
+      "title": "Конвеєр солодощів",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000089C2D1E2FE33"
+      ],
+      "description": [
+        "Випробувати доступні харчові Create Confectionery/Slice & Dice рецепти без нових tier-ресурсів."
+      ],
+      "rewards": [
+        {
+          "id": "0000A6946330E833",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00009CDFFB1C8A96",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00007538FF94A989",
+      "title": "Гліф світла",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000089C2D1E2FE33"
+      ],
+      "description": [
+        "Освітити фабрику дозволеним Ars-закляттям."
+      ],
+      "rewards": [
+        {
+          "id": "00008549C9559298",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000D7A49ECA1B06",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

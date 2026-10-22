@@ -1,0 +1,410 @@
+{
+  "id": "0000DEC78C162E95",
+  "filename": "aia2_epoch_18",
+  "order_index": 17,
+  "title": "18. Полімери та біофабрика",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_18",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000039C7E30F6E87",
+      "title": "Латекс із деревини",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "0000F2D668938E36",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_frame_pity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFF7025B342E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000865741B67EAE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Поставити fluid_extractor й отримати 8000 mB латексу з дозволених деревних блоків.",
+        "Фактична умова цього коду: 1 × industrialforegoing:machine_frame_pity (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006E455564995E",
+      "title": "Полімерна партія",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000039C7E30F6E87",
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "00006359317CF7F4",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A5E323501E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000059B003B1DAE2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити latex_processing_unit й виробити 32 plastic.",
+        "Фактична умова цього коду: 4 × industrialforegoing:plastic (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004A5AAA7A6FC6",
+      "title": "Алмаз із мани",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "0000DAE5B87273A2",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_diamond",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7307E515685",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000806C58317715",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 mana_diamond на власному манаконтурі.",
+        "Фактична умова цього коду: 1 × botania:mana_diamond (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000074A5930D9B6B",
+      "title": "Ковка для рамки",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004A5AAA7A6FC6",
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "0000D32E05F90ABB",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_diamond",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A12AFCD96BD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009D7AE1E881AE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 8 deorum_ingot для біофабричних корпусів.",
+        "Фактична умова цього коду: 2 × botania:mana_diamond (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00001E6C98199073",
+      "title": "Жива рамка машини",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "000074A5930D9B6B",
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "00005F284482526B",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:iron_gear",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008D6DC7922A7F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DBCB7B81F2AF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити industrialforegoing:machine_frame_pity за зміненим рецептом із botania:manasteel_ingot ×2. Перший IF-корпус без пластику: магічний матеріал доступний раніше за латекс.",
+        "Фактична умова цього коду: 4 × industrialforegoing:iron_gear (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BA4D803749FE",
+      "title": "Лиття без втрат",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00001E6C98199073",
+        "000030C0C01A9BCF"
+      ],
+      "tasks": [
+        {
+          "id": "0000877576019BC6",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005EB46D4C15B2",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_diamond",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C70707FACFB4",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:deorum_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000290EC9B2BD4D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00007AC140FFEAF7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Відлити 16 металевих заготовок і виготовити другу партію 16 plastic.",
+        "Фактична умова цього коду: 2 × industrialforegoing:plastic (здати — витрачається); 2 × botania:mana_diamond (здати — витрачається); 2 × forbidden_arcanus:deorum_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_18. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000079102E7B00EA",
+      "title": "Ключ епохи 18: Полімери та біофабрика",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000039C7E30F6E87",
+        "00006E455564995E",
+        "00004A5AAA7A6FC6",
+        "000074A5930D9B6B",
+        "00001E6C98199073",
+        "0000BA4D803749FE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000431112395ED6",
+          "type": "advancement",
+          "advancement": "aia2:keys/e18"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000010EC49A2AECC",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × industrialforegoing:plastic; 2 × botania:mana_diamond; 2 × industrialforegoing:iron_gear; 2 × forbidden_arcanus:deorum_ingot; 1 × kubejs:aia2_epoch_key_17"
+      ]
+    },
+    {
+      "id": "00004C508B7A64EB",
+      "title": "Полімерна палітра",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000039C7E30F6E87"
+      ],
+      "description": [
+        "Створити кольорові будівельні пластики, не відкриваючи сильні машини."
+      ],
+      "rewards": [
+        {
+          "id": "0000EAFCD8CD8895",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000381EB306DA75",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "000035A3F76345FE",
+      "title": "Ливарний стенд",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000039C7E30F6E87"
+      ],
+      "description": [
+        "Оформити сортування форм і повернення матеріалів."
+      ],
+      "rewards": [
+        {
+          "id": "0000CDA2D9382CD3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00001CB234BB90DF",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

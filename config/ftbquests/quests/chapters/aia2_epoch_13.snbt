@@ -1,0 +1,410 @@
+{
+  "id": "00008282A3846390",
+  "filename": "aia2_epoch_13",
+  "order_index": 12,
+  "title": "13. Низьковольтна алхімія",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_13",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000095AA955002C",
+      "title": "Аналоговий вузол",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "00000CA3FE8E838F",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:basic_machine_hull",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A00450380BC9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A4A737433762",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 analog_circuit й 4 basic_machine_hull.",
+        "Фактична умова цього коду: 1 × modern_industrialization:basic_machine_hull (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F3E432F7E325",
+      "title": "Електричний цех",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000095AA955002C",
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "000009996C45B3EB",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C117A489E4D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DFEDF1015204",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити electric_macerator і electric_wiremill; виробити 32 дроти та 16 подрібненої сировини.",
+        "Фактична умова цього коду: 4 × modern_industrialization:analog_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000EC5CF9935F35",
+      "title": "Темний самоцвіт",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "0000D09385723A82",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E18FA48F5E7C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002737FB995D86",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Добути dark_gem і створити blood_extractor без пізніх духів.",
+        "Фактична умова цього коду: 1 × evilcraft:dark_gem (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000036D724547982",
+      "title": "Кровна інфузія",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000EC5CF9935F35",
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "0000BD0BC56A8217",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001902A60352DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005639CE3E3BAA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати 4000 mB крові дозволеним шляхом і завершити 8 ранніх blood_infuser циклів.",
+        "Фактична умова цього коду: 2 × evilcraft:dark_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B3FDF5CB6564",
+      "title": "Алхімічний корпус",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "000036D724547982",
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "00008444356193F3",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:steel_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD74E10FC2A2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00006B75CEF52D78",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити modern_industrialization:basic_machine_hull за зміненим рецептом із evilcraft:dark_gem ×2. LV-корпус залежить від магічної гілки; dark_gem добувається без цього корпусу.",
+        "Фактична умова цього коду: 4 × modern_industrialization:steel_plate (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004FC5449AD268",
+      "title": "Партія на електриці",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B3FDF5CB6564",
+        "0000154E6D88EAD3"
+      ],
+      "tasks": [
+        {
+          "id": "0000DF35A438C030",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CF23DB0F228D",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB4155EAA438",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006EF19A7EAFAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B6D4932A8195",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Обробити 32 одиниці руди на LV і зберегти побічні матеріали окремо.",
+        "Фактична умова цього коду: 2 × modern_industrialization:analog_circuit (здати — витрачається); 2 × evilcraft:dark_gem (здати — витрачається); 2 × botania:rune_water (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_13. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000654F324390C2",
+      "title": "Ключ епохи 13: Низьковольтна алхімія",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000095AA955002C",
+        "0000F3E432F7E325",
+        "0000EC5CF9935F35",
+        "000036D724547982",
+        "0000B3FDF5CB6564",
+        "00004FC5449AD268"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E31505B4C6C8",
+          "type": "advancement",
+          "advancement": "aia2:keys/e13"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A509E1E7EC33",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:analog_circuit; 2 × evilcraft:dark_gem; 2 × modern_industrialization:steel_plate; 2 × botania:rune_water; 1 × kubejs:aia2_epoch_key_12"
+      ]
+    },
+    {
+      "id": "0000DF5C71704F86",
+      "title": "Ізольована лабораторія",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000095AA955002C"
+      ],
+      "description": [
+        "Відокремити кровну алхімію від складу їжі."
+      ],
+      "rewards": [
+        {
+          "id": "0000E45A0523C4B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000088BCF45807D4",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000C8E7C6490D34",
+      "title": "Кабельна палітра",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000095AA955002C"
+      ],
+      "description": [
+        "Організувати марковану локальну MI мережу."
+      ],
+      "rewards": [
+        {
+          "id": "00006460B78902B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000095A1D1247ED4",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

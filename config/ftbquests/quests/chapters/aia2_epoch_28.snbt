@@ -1,0 +1,411 @@
+{
+  "id": "0000781D8E0C8A78",
+  "filename": "aia2_epoch_28",
+  "order_index": 27,
+  "title": "28. Розподілена логістика",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_28",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000A7DB3DA4DF8F",
+      "title": "Мережа з трьома типами потоків",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "0000DDF9F2F27ED1",
+          "type": "item",
+          "item": {
+            "id": "xnet:controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002B978E0B217D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FC11474C7BE8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Під’єднати предмети, рідину та енергію до окремо керованих каналів XNet.",
+        "Фактична умова цього коду: 1 × xnet:controller (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00003B86B2CE5B40",
+      "title": "Умова зупинки",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "00002BC1DD1EFAF0",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000405F96F81491",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A38FE8E10626",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Налаштувати зупинку виробництва при запасі 256 одиниць продукту.",
+        "Фактична умова цього коду: 4 × ae2:engineering_processor (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000023B6FC26D0BD",
+      "title": "Духовний склад",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "00003832D32805FE",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031CA2291DDEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A0ADA666976B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити ритуал контролера сховища з компонентом технічного рівня 24–25.",
+        "Фактична умова цього коду: 1 × occultism:spirit_attuned_crystal (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002737078B2381",
+      "title": "Резерв без дублювання",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000023B6FC26D0BD",
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "00007E3870A5B082",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E8D5672BD24",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DD55CAF6D62D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Покласти й повернути 512 звичайних предметів, перевіривши незмінність кількості.",
+        "Фактична умова цього коду: 2 × occultism:spirit_attuned_crystal (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000003F9F286585C",
+      "title": "Мережа двох майстерень",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00003B86B2CE5B40",
+        "00002737078B2381",
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "00003E5040491778",
+          "type": "item",
+          "item": {
+            "id": "enderio:pulsating_alloy_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008ED9BE83039C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000BA8A65E4C145",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зв’язати дві дозволені виробничі зони; налаштувати фільтри й аварійну зупинку.",
+        "Фактична умова цього коду: 4 × enderio:pulsating_alloy_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000074476C4240D4",
+      "title": "Права доступу",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000003F9F286585C",
+        "0000742C9D8A1AA7"
+      ],
+      "tasks": [
+        {
+          "id": "0000F3D918CA67FA",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007DB2CF64F03D",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000008F27B11FC1C",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003DE9385E4361",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001E6C2C2F67DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перевірити, що учасник без дозволу не активує закритий блок через маршрутизатор, термінал чи fake player.",
+        "Фактична умова цього коду: 2 × ae2:engineering_processor (здати — витрачається); 2 × occultism:spirit_attuned_crystal (здати — витрачається); 2 × pneumaticcraft:printed_circuit_board (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_28. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000570227EFB779",
+      "title": "Ключ епохи 28: Розподілена логістика",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "00003B86B2CE5B40",
+        "000023B6FC26D0BD",
+        "00002737078B2381",
+        "000003F9F286585C",
+        "000074476C4240D4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B5E0E7CB0354",
+          "type": "advancement",
+          "advancement": "aia2:keys/e28"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000035769F83434",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × ae2:engineering_processor; 2 × occultism:spirit_attuned_crystal; 2 × enderio:pulsating_alloy_ingot; 2 × pneumaticcraft:printed_circuit_board; 1 × kubejs:aia2_epoch_key_27"
+      ]
+    },
+    {
+      "id": "0000E6C0FBF01D68",
+      "title": "Логічна панель",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000A7DB3DA4DF8F"
+      ],
+      "description": [
+        "Побудувати екран стану фабрики."
+      ],
+      "rewards": [
+        {
+          "id": "000067098E7C7780",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00009411AACBFB68",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "000053812A1CE6AC",
+      "title": "Буфер на випадок зупинки",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000A7DB3DA4DF8F"
+      ],
+      "description": [
+        "Додати автономне безпечне вимкнення при втраті зв’язку."
+      ],
+      "rewards": [
+        {
+          "id": "00006147CA15C4BB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00001987B912B777",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "id": "0000D3550441D93E",
+  "filename": "aia2_epoch_33",
+  "order_index": 32,
+  "title": "33. Розщеплення та радіохімія",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_33",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000071EC6B938463",
+      "title": "Реактор у холодному стані",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "00006C721A6AA271",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_casing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EAC4D7D00CA4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000624881109981",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати реактор, подачу охолоджувача, контур відходів і резервний вимикач.",
+        "Фактична умова цього коду: 1 × mekanismgenerators:fission_reactor_casing (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000EE0923A2DFE5",
+      "title": "Замкнений паливний маршрут",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000071EC6B938463",
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "0000D035BAFD0060",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_polonium",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E759130A2DE1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000060086893E64F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати паливо штатним хімічним шляхом та запустити мінімальний безпечний цикл.",
+        "Фактична умова цього коду: 1 × mekanism:pellet_polonium (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004D8D8C4912F1",
+      "title": "Магічні сенсори",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "0000BC2291552FB1",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004F46E5A6223A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000034A3E5D58DE3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити ритуально стабілізовану автоматику з gaia ingot і цифровими схемами.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005D7DFEC4D784",
+      "title": "Денне опромінення",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004D8D8C4912F1",
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "00001E3E3BA13AD6",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000010E225DAA716",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000898F0DA46B55",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Отримати перші 8 pellet_polonium через штатний solar neutron activator.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000FF19C930F51E",
+      "title": "Корисне навантаження",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000EE0923A2DFE5",
+        "00005D7DFEC4D784",
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "00008033ABA8B4F6",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:digital_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076160D3BCEE5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B25478868185",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Синхронізувати парову/енергетичну частину з виробничою мережею протягом 5 хвилин.",
+        "Фактична умова цього коду: 1 × modern_industrialization:digital_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000D93340473FA1",
+      "title": "Аварійний стоп без аварії",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000FF19C930F51E",
+        "0000F0ACC7694D75"
+      ],
+      "tasks": [
+        {
+          "id": "0000B63F1E1FDC99",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_polonium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000072B65D3CFC15",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D7631498B57",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000712A70C75F78",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000EE955AE3DE08",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перевірити вимкнення при сигналі переповнення буфера або зупинки насоса.",
+        "Фактична умова цього коду: 2 × mekanism:pellet_polonium (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × powah:crystal_spirited (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_33. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000042CB3F6CFEE8",
+      "title": "Ключ епохи 33: Розщеплення та радіохімія",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000071EC6B938463",
+        "0000EE0923A2DFE5",
+        "00004D8D8C4912F1",
+        "00005D7DFEC4D784",
+        "0000FF19C930F51E",
+        "0000D93340473FA1"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000043D87F33A23C",
+          "type": "advancement",
+          "advancement": "aia2:keys/e33"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000653662104FFF",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × mekanism:pellet_polonium; 2 × botania:gaia_ingot; 2 × modern_industrialization:digital_circuit; 2 × powah:crystal_spirited; 1 × kubejs:aia2_epoch_key_32"
+      ]
+    },
+    {
+      "id": "0000516AC2113D92",
+      "title": "Другий радіохімічний продукт",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000071EC6B938463"
+      ],
+      "description": [
+        "Підготувати окрему плутонієву партію."
+      ],
+      "rewards": [
+        {
+          "id": "0000F8D3EE34BD1D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00007313C000927B",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000B1774874039E",
+      "title": "Чиста зона",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000071EC6B938463"
+      ],
+      "description": [
+        "Обладнати сервісний коридор і позначити небезпечні контури."
+      ],
+      "rewards": [
+        {
+          "id": "0000C9C1CE469CA0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00000E06D9343871",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

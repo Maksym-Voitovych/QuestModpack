@@ -1,0 +1,410 @@
+{
+  "id": "0000ACF62510F488",
+  "filename": "aia2_epoch_16",
+  "order_index": 15,
+  "title": "16. Осмій і кристали",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_16",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000040D637E45047",
+      "title": "Осмієва автоматика",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "0000842385F8F014",
+          "type": "item",
+          "item": {
+            "id": "mekanism:steel_casing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000056FEBC3838E4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000002CA0871646B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити Metallurgic Infuser й виробити 16 basic_control_circuit.",
+        "Фактична умова цього коду: 1 × mekanism:steel_casing (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000013F3A10086B0",
+      "title": "Перший enrichment",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000040D637E45047",
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "0000B42F9864F994",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004BA707956F57",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000120C0EEBA0B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Збагатити й виплавити 32 рудних одиниці в межах 2x ліміту.",
+        "Фактична умова цього коду: 4 × mekanism:alloy_infused (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000CFA52C7881AE",
+      "title": "Вогняна печатка сплаву",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "000018E9503C3FBF",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B36FF934891E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000095A6D67E5401",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити 4 Fire rune для ранніх маготехнічних корпусів.",
+        "Фактична умова цього коду: 1 × botania:rune_fire (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000095BED3F8CBD5",
+      "title": "Промінь кристалізації",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000CFA52C7881AE",
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "00006BA99C200480",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E82BD4ED2E6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DF3C38151B75",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити Atomic Reconstructor й одержати по 8 restonia/enori crystal.",
+        "Фактична умова цього коду: 2 × botania:rune_fire (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000ADF5BE42D1AE",
+      "title": "Руна в машинному корпусі",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "000095BED3F8CBD5",
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "0000D40A3EEE00F8",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:restonia_crystal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA1A9A63F0B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008AE0A1A0B9FE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити mekanism:steel_casing за зміненим рецептом із botania:rune_fire ×1. Вогняна руна потрібна просунутішим Mek корпусам; перший Infuser має незалежний рецепт.",
+        "Фактична умова цього коду: 4 × actuallyadditions:restonia_crystal (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000078125B12380C",
+      "title": "Лінія з двома процесами",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000ADF5BE42D1AE",
+        "000055DFC3C3A8E4"
+      ],
+      "tasks": [
+        {
+          "id": "0000E7DFD5865C46",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BB3FE4C672F",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000C349BA4EFF8",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000945F62DF85F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004B05A119C4D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматично передати 16 ресурсів через Infuser/Enrichment й окремо виготовити 16 кристалів AA.",
+        "Фактична умова цього коду: 2 × mekanism:alloy_infused (здати — витрачається); 2 × botania:rune_fire (здати — витрачається); 2 × mekanism:basic_control_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_16. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00003BFFFBA54478",
+      "title": "Ключ епохи 16: Осмій і кристали",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000040D637E45047",
+        "000013F3A10086B0",
+        "0000CFA52C7881AE",
+        "000095BED3F8CBD5",
+        "0000ADF5BE42D1AE",
+        "000078125B12380C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DE7C758C24A",
+          "type": "advancement",
+          "advancement": "aia2:keys/e16"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A51AB4F92236",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × mekanism:alloy_infused; 2 × botania:rune_fire; 2 × actuallyadditions:restonia_crystal; 2 × mekanism:basic_control_circuit; 1 × kubejs:aia2_epoch_key_15"
+      ]
+    },
+    {
+      "id": "000047316DF928FD",
+      "title": "Осмієві інструменти",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000040D637E45047"
+      ],
+      "description": [
+        "Випробувати дозволений MekanismTools-комплект без масового AOE."
+      ],
+      "rewards": [
+        {
+          "id": "0000047235499F59",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E2C0B4F296B0",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00007B22E3A1CDDF",
+      "title": "Лазерна лабораторія",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000040D637E45047"
+      ],
+      "description": [
+        "Оформити безпечну зону Atomic Reconstructor."
+      ],
+      "rewards": [
+        {
+          "id": "0000FB9CD291BFD6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00006426E34C748D",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

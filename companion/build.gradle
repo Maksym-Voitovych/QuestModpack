@@ -1,0 +1,52 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = '0.2.0-alpha'
+group = 'ua.aia2'
+base.archivesName = 'aia2-machine-guard'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = '21.1.264'
+    runs {
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'aia2.guard.verifyMixin', 'true'
+        }
+    }
+    mods {
+        aia2_machine_guard {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+def resourceModVersion = version.toString()
+tasks.named('processResources', ProcessResources).configure {
+    inputs.property 'mod_version', resourceModVersion
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand mod_version: resourceModVersion
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+// An executable policy suite, separate from Gradle's JUnit test discovery.
+sourceSets {
+    policyTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+tasks.register('policyTest', JavaExec) {
+    dependsOn policyTestClasses
+    classpath = sourceSets.policyTest.runtimeClasspath
+    mainClass = 'ua.aia2.guard.GuardPolicyTest'
+}
+tasks.named('check') { dependsOn policyTest }

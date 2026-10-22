@@ -1,0 +1,410 @@
+{
+  "id": "0000AF6E1E409FB9",
+  "filename": "aia2_epoch_11",
+  "order_index": 10,
+  "title": "11. Перша електромережа",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_11",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000074698D9E8145",
+      "title": "Проводка без плутанини",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "00006D6DAB930F1E",
+          "type": "item",
+          "item": {
+            "id": "createaddition:alternator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000248C5943D121",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000007DDD3DE17E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити LV connectors, проводи й capacitor_lv; з’єднати генератор із буфером.",
+        "Фактична умова цього коду: 1 × createaddition:alternator (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B40D111092BD",
+      "title": "Механіка у FE",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000074698D9E8145",
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "0000F113E050CEE3",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE09E38CF617",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001A50E078F88B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Живити дозволений споживач від alternator або IE dynamo й витратити 100000 FE на корисний процес.",
+        "Фактична умова цього коду: 4 × immersiveengineering:component_steel (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000072FF4FE07226",
+      "title": "Рунічна ізоляція",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "0000DEC54A713041",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8A5FA14E7CC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A0BA886A1B0D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити 4 Water rune і 8 source_gem для гібридних електродеталей.",
+        "Фактична умова цього коду: 1 × botania:rune_water (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000045E2DBE53D54",
+      "title": "Енергетична алхімія",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000072FF4FE07226",
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "0000FE721A909ADA",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000101D4E02A779",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004497F0C52DBE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити energizing_orb й одержати першу партію початкового матеріалу Powah.",
+        "Фактична умова цього коду: 2 × botania:rune_water (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005185075760D7",
+      "title": "Не просто мідний дріт",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "000045E2DBE53D54",
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "00008E6B02EDE7C5",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007FDB69907484",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000077CA52D1BF3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити createaddition:alternator за зміненим рецептом із botania:rune_water ×1. Магічна ізоляція кінетичного генератора.",
+        "Фактична умова цього коду: 4 × powah:capacitor_basic (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BEAEFC640706",
+      "title": "Керований запас",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00005185075760D7",
+        "0000586345E37885"
+      ],
+      "tasks": [
+        {
+          "id": "0000B1B71A01E1D4",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_steel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002EE6E5931540",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6412DA9A5E2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000097D24E731BFB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000000478193B0D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Провести 10 корисних циклів споживача, використовуючи буфер і відновлювану генерацію.",
+        "Фактична умова цього коду: 2 × immersiveengineering:component_steel (здати — витрачається); 2 × botania:rune_water (здати — витрачається); 2 × ars_nouveau:source_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_11. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00009BD25F4F6D6B",
+      "title": "Ключ епохи 11: Перша електромережа",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000074698D9E8145",
+        "0000B40D111092BD",
+        "000072FF4FE07226",
+        "000045E2DBE53D54",
+        "00005185075760D7",
+        "0000BEAEFC640706"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000039E65D460807",
+          "type": "advancement",
+          "advancement": "aia2:keys/e11"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000096704261684B",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × immersiveengineering:component_steel; 2 × botania:rune_water; 2 × powah:capacitor_basic; 2 × ars_nouveau:source_gem; 1 × kubejs:aia2_epoch_key_10"
+      ]
+    },
+    {
+      "id": "000029D154EE7671",
+      "title": "Зарядна станція",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000074698D9E8145"
+      ],
+      "description": [
+        "Поставити доступний зарядний пристрій для дозволених ранніх інструментів."
+      ],
+      "rewards": [
+        {
+          "id": "00007E04F71CB52A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000C668035995AC",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000FED6A68D4DEB",
+      "title": "Панель навантаження",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000074698D9E8145"
+      ],
+      "description": [
+        "Оформити індикатори й аварійний вимикач мережі."
+      ],
+      "rewards": [
+        {
+          "id": "000017E86BC96EC0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000034611017E4A0",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "id": "00006AAA9974E593",
+  "filename": "aia2_epoch_36",
+  "order_index": 35,
+  "title": "36. Термоядерний синтез",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_36",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00003342BFA662DA",
+      "title": "Паливний комплекс",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "00003F9707C1FC3C",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AF024EC3667A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000069E907CBC03C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматизувати штатне отримання дейтерію й тритію із запасом для запуску.",
+        "Фактична умова цього коду: 1 × mekanismgenerators:fusion_reactor_controller (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000F2ABF13800E",
+      "title": "Контрольоване запалювання",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "0000EC2DFB0C6CA4",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006BB4EA6E41D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B5180BFD909D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати реактор, заповнити hohlraum і виконати лазерний запуск.",
+        "Фактична умова цього коду: 1 × mekanismgenerators:hohlraum (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005CBC0F9BC645",
+      "title": "Резонатор високої потужності",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "0000AA07DD242176",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035B0B1256CCE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003274E64487DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити ритуальний компонент для нового рецепту fusion controller.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00003AB08B6198AF",
+      "title": "Нітро-кристалізація",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00005CBC0F9BC645",
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "000080BF72D8C792",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F22CE42D0693",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000610D6F50F979",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Отримати 8 nitro crystal дозволеним енергетичним рецептом.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000066A0E39B0640",
+      "title": "Енергопостачання фабрики",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00000F2ABF13800E",
+        "00003AB08B6198AF",
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "0000BEEA91FE27FE",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD374C22C9CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000EE25B7EADEA2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Під’єднати термоядерний вихід до двох великих виробничих навантажень.",
+        "Фактична умова цього коду: 1 × powah:crystal_nitro (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000EACA01312938",
+      "title": "Повторний запуск",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000066A0E39B0640",
+        "0000C902BC4BF099"
+      ],
+      "tasks": [
+        {
+          "id": "000084C6178CFCD4",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA775A4C431E",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7980E2118A0",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000466900B9BD02",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A9FB65267E64",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Безпечно зупинити й повторно запустити установку із запасного палива.",
+        "Фактична умова цього коду: 2 × mekanismgenerators:hohlraum (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × modern_industrialization:superconductor_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_36. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000EDCC4CD05238",
+      "title": "Ключ епохи 36: Термоядерний синтез",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00003342BFA662DA",
+        "00000F2ABF13800E",
+        "00005CBC0F9BC645",
+        "00003AB08B6198AF",
+        "000066A0E39B0640",
+        "0000EACA01312938"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000829F3FD95E54",
+          "type": "advancement",
+          "advancement": "aia2:keys/e36"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00000F5055124A9B",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × mekanismgenerators:hohlraum; 2 × botania:gaia_ingot; 2 × powah:crystal_nitro; 2 × modern_industrialization:superconductor_ingot; 1 × kubejs:aia2_epoch_key_35"
+      ]
+    },
+    {
+      "id": "0000564B50E779BA",
+      "title": "Альтернативна електростанція",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00003342BFA662DA"
+      ],
+      "description": [
+        "Порівняти дозволений Powah nitro із синтезом."
+      ],
+      "rewards": [
+        {
+          "id": "000084722AD8A41A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000032499491A65",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00003426D9F58AE9",
+      "title": "Пасивний резерв",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00003342BFA662DA"
+      ],
+      "description": [
+        "Побудувати енергетичний резерв для насосів і автоматики."
+      ],
+      "rewards": [
+        {
+          "id": "0000C580705D71F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000A59591591ADA",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

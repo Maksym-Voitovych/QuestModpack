@@ -1,0 +1,411 @@
+{
+  "id": "0000E041B664DBD7",
+  "filename": "aia2_epoch_32",
+  "order_index": 31,
+  "title": "32. Високовольтна мережа",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_32",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000594559C753F2",
+      "title": "Високовольтна секція",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "000099C8239ECE0B",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:hv_storage_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D5BA913C51D5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003A7AA3DDEAD6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Ввести HV живлення через сумісний перетворювач і буфер із захистом від зворотного потоку.",
+        "Фактична умова цього коду: 1 × modern_industrialization:hv_storage_unit (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008EEADED59432",
+      "title": "Цифрова партія",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000594559C753F2",
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "00002194CE6B1A5A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:digital_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E6B3B9EC69A2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002ED263F7931B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 32 digital circuit і 8 accumulation processor.",
+        "Фактична умова цього коду: 4 × modern_industrialization:digital_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B3F16135AC53",
+      "title": "Рунічний вузол керування",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "00002CB96304B6B4",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDDA4C8F493A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000803EC7BB20B4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити магічно стабілізований керувальний вузол із gaia ingot та цифровою схемою.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000DBDCEB1D080D",
+      "title": "Потік магічних реагентів",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B3F16135AC53",
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "000087C80BD376FB",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009AEB1F273A5E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001F5B6E8E2691",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматизувати постачання manasteel/elementium або дозволених есенцій у мережеве замовлення.",
+        "Фактична умова цього коду: 2 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BF5F287B1A90",
+      "title": "Складне замовлення",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00008EEADED59432",
+        "0000DBDCEB1D080D",
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "000093B178914469",
+          "type": "item",
+          "item": {
+            "id": "megacells:accumulation_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4D0CB23D56D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000095A09E17CCD2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати одним замовленням 16 механізмів із щонайменше 4 рівнями залежностей.",
+        "Фактична умова цього коду: 4 × megacells:accumulation_processor (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000ED09D2902570",
+      "title": "Відновлення після зупинки",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000BF5F287B1A90",
+        "0000AE14C79E7DF9"
+      ],
+      "tasks": [
+        {
+          "id": "0000EB038F7A68A0",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:digital_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094A703B5D565",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B0F53ABB0A29",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000190452A2216D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004DCAE2DFE566",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зупинити один постачальник, коректно відновити замовлення й не продублювати реагенти.",
+        "Фактична умова цього коду: 2 × modern_industrialization:digital_circuit (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × pneumaticcraft:printed_circuit_board (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_32. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F0ACC7694D75",
+      "title": "Ключ епохи 32: Високовольтна мережа",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000594559C753F2",
+        "00008EEADED59432",
+        "0000B3F16135AC53",
+        "0000DBDCEB1D080D",
+        "0000BF5F287B1A90",
+        "0000ED09D2902570"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BA7251258048",
+          "type": "advancement",
+          "advancement": "aia2:keys/e32"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000C216ABE8658D",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:digital_circuit; 2 × botania:gaia_ingot; 2 × megacells:accumulation_processor; 2 × pneumaticcraft:printed_circuit_board; 1 × kubejs:aia2_epoch_key_31"
+      ]
+    },
+    {
+      "id": "000014731A14C83B",
+      "title": "Чисті канали",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000594559C753F2"
+      ],
+      "description": [
+        "Оптимізувати кабелі й задокументувати канальну схему."
+      ],
+      "rewards": [
+        {
+          "id": "0000DD25A394E35D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000BCA791F6D3D7",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00008B3362496105",
+      "title": "Черга замовлень",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000594559C753F2"
+      ],
+      "description": [
+        "Налаштувати пороги запасу для 8 дозволених матеріалів."
+      ],
+      "rewards": [
+        {
+          "id": "000089390FF998A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00009CFCC1D96EB7",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

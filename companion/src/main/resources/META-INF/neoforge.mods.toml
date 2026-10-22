@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="aia2_machine_guard"
+version="${mod_version}"
+displayName="AIA2 Machine Guard"
+description='''Native server machine ticker protection for the AIA2 progression pack.'''
+
+[[mixins]]
+config="aia2_machine_guard.mixins.json"
+
+[[dependencies.aia2_machine_guard]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.264,21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.aia2_machine_guard]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"

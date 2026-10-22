@@ -1,0 +1,402 @@
+{
+  "id": "00007429FACFB483",
+  "filename": "aia2_epoch_01",
+  "order_index": 0,
+  "title": "01. Вогнище й коріння",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_01",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000AD0AEAC90ECA",
+      "title": "Кам’яна опора",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [],
+      "tasks": [
+        {
+          "id": "0000E38366679FFD",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:mortar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000745F2291390",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B5EBBBCEC5AF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити кам’яну кирку, піч і сховище для табору.",
+        "Фактична умова цього коду: 1 × rootsclassic:mortar (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000FFC1B3D7576",
+      "title": "Перший випал",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000AD0AEAC90ECA"
+      ],
+      "tasks": [
+        {
+          "id": "0000C341FD4D95FB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:flint",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000083C0478949",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000AEECF326C7E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Випалити 16 каменю та 8 деревного вугілля.",
+        "Фактична умова цього коду: 4 × minecraft:flint (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000030FC43148192",
+      "title": "Польовий травник",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [],
+      "tasks": [
+        {
+          "id": "000005C0DB28AFC8",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C0A9C321A00",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009B55FE763A1A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати old_root, дубову кору й чотири звичайні рослинні інгредієнти.",
+        "Фактична умова цього коду: 1 × rootsclassic:old_root (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C08C3F1C8A17",
+      "title": "Ступка й товкач",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000030FC43148192"
+      ],
+      "tasks": [
+        {
+          "id": "0000F1344F66374E",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD24B71F42A6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CA26E9337D13",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити ступку й товкач; приготувати перший доступний трав’яний засіб.",
+        "Фактична умова цього коду: 2 × rootsclassic:old_root (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C977ECD25248",
+      "title": "Матеріал і рослина",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000C08C3F1C8A17"
+      ],
+      "tasks": [
+        {
+          "id": "0000A8564B709F51",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BAC2EEB26952",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FB11631CCB02",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити rootsclassic:mortar за зміненим рецептом із minecraft:flint ×1. Ступка є матеріальним зв’язком ручного кам’яного ремесла з травництвом.",
+        "Фактична умова цього коду: 4 × minecraft:cobblestone (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000099CEB9439C96",
+      "title": "Сталий табір",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000C977ECD25248"
+      ],
+      "tasks": [
+        {
+          "id": "00005CFF3C65635D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:flint",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F974E0A30989",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD272DC29456",
+          "type": "item",
+          "item": {
+            "id": "minecraft:oak_planks",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077A1BAAECD26",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00007A24F901B251",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати 16 їжі й виростити хоча б один повний урожай відновлюваної культури.",
+        "Фактична умова цього коду: 2 × minecraft:flint (здати — витрачається); 2 × rootsclassic:old_root (здати — витрачається); 2 × minecraft:oak_planks (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_01. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000055963FA9D704",
+      "title": "Ключ епохи 1: Вогнище й коріння",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000AD0AEAC90ECA",
+        "00000FFC1B3D7576",
+        "000030FC43148192",
+        "0000C08C3F1C8A17",
+        "0000C977ECD25248",
+        "000099CEB9439C96"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006B51A22D880F",
+          "type": "advancement",
+          "advancement": "aia2:keys/e01"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000722B5206D02B",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × minecraft:flint; 2 × rootsclassic:old_root; 2 × minecraft:cobblestone; 2 × minecraft:oak_planks; 1 × minecraft:crafting_table"
+      ]
+    },
+    {
+      "id": "00009EEF211BDA96",
+      "title": "Бібліотека мандрівника",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000AD0AEAC90ECA"
+      ],
+      "description": [
+        "Відкрити JEI, мапу й довідники; навчальний квест без впливу на прогресію."
+      ],
+      "rewards": [
+        {
+          "id": "000044C5D7D19390",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000A822DBC8A6D0",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000C711E850E57E",
+      "title": "Кам’яний будинок",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000AD0AEAC90ECA"
+      ],
+      "description": [
+        "Побудувати захищений табір і позначити домашню точку."
+      ],
+      "rewards": [
+        {
+          "id": "0000C24CD018DD69",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000423DCCB54648",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

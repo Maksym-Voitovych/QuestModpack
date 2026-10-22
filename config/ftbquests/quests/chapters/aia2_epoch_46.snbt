@@ -1,0 +1,411 @@
+{
+  "id": "0000A5FAF0FA407D",
+  "filename": "aia2_epoch_46",
+  "order_index": 45,
+  "title": "46. Нейтроній і сингулярності",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_46",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000049C4E61EFE4D",
+      "title": "Стіл великої інженерії",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "00008335F4B382EA",
+          "type": "item",
+          "item": {
+            "id": "avaritia:crystal_matrix_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F541C0AF4F0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008A0A25A6FAC1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити crystal matrix і extreme crafting table з міжмодовими компонентами.",
+        "Фактична умова цього коду: 1 × avaritia:crystal_matrix_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F1239CED6CF4",
+      "title": "Нейтронний колектор",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000049C4E61EFE4D",
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "0000057F2209C95E",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C1E74763193",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00000CB2965DAE21",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити колектор із кінцевою вартістю та отримати першу партію neutron pile/nugget.",
+        "Фактична умова цього коду: 1 × avaritia:neutron_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BB77CA535EBD",
+      "title": "Магічна оправа нейтронію",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "0000A5EA0F66492D",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C8A911C43FE9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003E12E326DB8C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 botania:gaia_ingot для магічного підсилення нейтронної оснастки й фінального ключа. Дешевий deorum не є єдиним магічним внеском цього рівня.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BDEAE5B9489C",
+      "title": "Перші нейтронні зливки",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000BB77CA535EBD",
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "0000909A54C58306",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E18BCED07902",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B0BC791FD31C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перетворити частинки на 8 neutron ingot без декрафтової петлі.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000022231BFE8AAC",
+      "title": "Три різні сингулярності",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000F1239CED6CF4",
+        "0000BDEAE5B9489C",
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "000019974E41F29A",
+          "type": "item",
+          "item": {
+            "id": "avaritia:crystal_matrix_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A82DE0865BEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DF57E92460DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити по одному з трьох точних продуктів singularity_targets: Avaritia gold із 4096 gold_ingot; Avaritia redstone із 8192 redstone; MI singularity зі штатних 1 ultradense_metal_ball + 64 nuke в implosion_compressor.",
+        "Фактична умова цього коду: 1 × avaritia:crystal_matrix_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000045351A602A07",
+      "title": "Промисловий темп",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000022231BFE8AAC",
+        "0000B25E6408F625"
+      ],
+      "tasks": [
+        {
+          "id": "0000D0FD40469621",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8077B06241A",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DBBEF47FFBA0",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000013E41B12278E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002B30F5ECC917",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підтвердити стабільне постачання сировини та обґрунтований час ще однієї сингулярності.",
+        "Фактична умова цього коду: 2 × avaritia:neutron_ingot (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × projecte:dark_matter (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_46. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000061B27D7C50CE",
+      "title": "Ключ епохи 46: Нейтроній і сингулярності",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000049C4E61EFE4D",
+        "0000F1239CED6CF4",
+        "0000BB77CA535EBD",
+        "0000BDEAE5B9489C",
+        "000022231BFE8AAC",
+        "000045351A602A07"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BDD68B54D38C",
+          "type": "advancement",
+          "advancement": "aia2:keys/e46"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002B6D653A1223",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × avaritia:neutron_ingot; 2 × botania:gaia_ingot; 2 × avaritia:crystal_matrix_ingot; 2 × projecte:dark_matter; 1 × kubejs:aia2_epoch_key_45"
+      ]
+    },
+    {
+      "id": "0000DFAAEA15BCD9",
+      "title": "Паралельне стискання",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000049C4E61EFE4D"
+      ],
+      "description": [
+        "Побудувати ще одну дозволену лінію без перевищення ліміту прискорень."
+      ],
+      "rewards": [
+        {
+          "id": "000062776C345272",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00009CE79CA8C087",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000E3B3BE2CE716",
+      "title": "Колекція сингулярностей",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000049C4E61EFE4D"
+      ],
+      "description": [
+        "Додати необов’язкові типи з освоєних матеріалів."
+      ],
+      "rewards": [
+        {
+          "id": "0000F660E1E5318F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E62ACE773A84",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

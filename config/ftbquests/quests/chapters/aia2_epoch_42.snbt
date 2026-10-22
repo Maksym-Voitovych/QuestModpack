@@ -1,0 +1,406 @@
+{
+  "id": "00001699BE4BB531",
+  "filename": "aia2_epoch_42",
+  "order_index": 41,
+  "title": "42. Випробування Хаосу",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_42",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00006A746FE9A27F",
+      "title": "Експедиція до Хаосу",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "000030FE7AE3960C",
+          "type": "item",
+          "item": {
+            "id": "draconicadditions:chaos_crystalizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079BA72E45CF9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000C96A5BBD01B5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати дозволений draconic комплект, енергозапас і маршрут до арени.",
+        "Фактична умова цього коду: 1 × draconicadditions:chaos_crystalizer (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000647DD0ECAB2C",
+      "title": "Власне випробування",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00006A746FE9A27F",
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "0000A3033733B38D",
+          "type": "kill",
+          "entity": "draconicevolution:draconic_guardian",
+          "value": 1
+        },
+        {
+          "id": "0000F9E41F38F717",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000735BE87742AE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перемогти Chaos Guardian без спорядження, що потребує його трофея.",
+        "Серверний kill-task: особисто/командою перемогти зазначену істоту після відкриття завдання.",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006AEA998D07AA",
+      "title": "Ритуал стабілізації трофея",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "0000FDA1D8E9790B",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BAB492124C00",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000057A54607AAB1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 botania:gaia_ingot і 2 mekanism:pellet_antimatter для майбутнього chaos_crystalizer та його запускової партії.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B6EB185AC044",
+      "title": "Chaotic fusion",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00006AEA998D07AA",
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "000074D13638126B",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000004B73744789A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D10EB79DEA34",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Після босової віхи виготовити 2 chaotic core і оновити потрібні інжектори.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00001FA4438E3C49",
+      "title": "Обережний аддон",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000647DD0ECAB2C",
+        "0000B6EB185AC044",
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "000028C378BED05A",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaos_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6690649FF4A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000481C304A5370",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Після власної перемоги над Chaos Guardian виготовити draconicadditions:chaos_crystalizer справжнім chaotic fusion за integration_recipe.",
+        "Фактична умова цього коду: 1 × draconicevolution:chaos_shard (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B62A8CE25BB8",
+      "title": "Повернення й аудит",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00001FA4438E3C49",
+        "000059837DC5B970"
+      ],
+      "tasks": [
+        {
+          "id": "0000F774945FD869",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D2F0902F64ED",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B08710D425AA",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000EDC930CB333",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E7D9E9F5FC48",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Повернутися на базу і підтвердити, що запас Хаосу походить із дозволених джерел.",
+        "Фактична умова цього коду: 2 × draconicevolution:chaotic_core (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × mekanism:pellet_antimatter (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_42. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002A0684036143",
+      "title": "Ключ епохи 42: Випробування Хаосу",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00006A746FE9A27F",
+        "0000647DD0ECAB2C",
+        "00006AEA998D07AA",
+        "0000B6EB185AC044",
+        "00001FA4438E3C49",
+        "0000B62A8CE25BB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCFB123D2757",
+          "type": "advancement",
+          "advancement": "aia2:keys/e42"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00007826CE3C126F",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × draconicevolution:chaotic_core; 2 × botania:gaia_ingot; 2 × draconicevolution:chaos_shard; 2 × mekanism:pellet_antimatter; 1 × kubejs:aia2_epoch_key_41"
+      ]
+    },
+    {
+      "id": "000019E28A8AAF1F",
+      "title": "Майстерність бою",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00006A746FE9A27F"
+      ],
+      "description": [
+        "Повторити випробування з меншою витратою енергії без вимоги грінду."
+      ],
+      "rewards": [
+        {
+          "id": "0000F86878B9CDED",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000C67DDA588C9B",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "000085A1901EF63D",
+      "title": "Пізня оснастка",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00006A746FE9A27F"
+      ],
+      "description": [
+        "Зібрати дозволений chaotic набір після основної босової віхи."
+      ],
+      "rewards": [
+        {
+          "id": "000011BDF1A7ACFA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00008063C9ECC3DC",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

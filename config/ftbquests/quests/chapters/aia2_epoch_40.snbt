@@ -1,0 +1,411 @@
+{
+  "id": "0000017365EDE1E0",
+  "filename": "aia2_epoch_40",
+  "order_index": 39,
+  "title": "40. Виверновий синтез",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_40",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000C60AA7AEC62E",
+      "title": "Фабрика fusion crafting",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "0000E69D69499DEE",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_crafting_injector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5E1FE839472",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004820AC25D4CA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати crafting core та комплект штатно потрібних basic injectors.",
+        "Фактична умова цього коду: 1 × draconicevolution:wyvern_crafting_injector (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004255327E45A7",
+      "title": "Драконієве виробництво",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C60AA7AEC62E",
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "00003314B3023DC7",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F4503DCAC16E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005230E2077DA9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 8 draconium core і 4 wyvern core.",
+        "Фактична умова цього коду: 1 × draconicevolution:wyvern_core (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E7B9B4F43E0C",
+      "title": "Ритуальне узгодження",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "0000F65D1E159B55",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000607DD8E9BE42",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D7A659CFC4C9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 4 botania:gaia_ingot і 4 mekanism:pellet_antimatter для перших чотирьох гібридних wyvern_crafting_injector.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000354B7302C756",
+      "title": "Вивернові інжектори",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000E7B9B4F43E0C",
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "0000FFC22E2AFDE8",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D3364E553DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009A4F06A0F9B0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати 4 fusion-рецепти draconicevolution:machines/wyvern_crafting_injector з integration_recipe, після цього довести комплект до потрібного розміру.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008CC47470D49A",
+      "title": "Високоенергетична партія",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004255327E45A7",
+        "0000354B7302C756",
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "00001F96A42F03CC",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7F88BB5F2AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008BD0B70A6221",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити 4 додаткові fusion-операції створення draconicevolution:wyvern_crafting_injector для повноцінної робочої лінії.",
+        "Фактична умова цього коду: 1 × mekanism:pellet_antimatter (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B752B411A929",
+      "title": "Захищений сервіс",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00008CC47470D49A",
+        "00006E7027253AE0"
+      ],
+      "tasks": [
+        {
+          "id": "00006D3002309310",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_core",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D8464F8567BC",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F6D6A0CE280",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000643B89710BBA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004A5C4D731FC4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Показати кероване відключення й повернення живлення без дюпу інгредієнтів.",
+        "Фактична умова цього коду: 2 × draconicevolution:wyvern_core (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × ad_astra:calorite_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_40. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000081F5F0B4E5D3",
+      "title": "Ключ епохи 40: Виверновий синтез",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000C60AA7AEC62E",
+        "00004255327E45A7",
+        "0000E7B9B4F43E0C",
+        "0000354B7302C756",
+        "00008CC47470D49A",
+        "0000B752B411A929"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004FBD0418FC9",
+          "type": "advancement",
+          "advancement": "aia2:keys/e40"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000097D93D5BC06E",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × draconicevolution:wyvern_core; 2 × botania:gaia_ingot; 2 × mekanism:pellet_antimatter; 2 × ad_astra:calorite_ingot; 1 × kubejs:aia2_epoch_key_39"
+      ]
+    },
+    {
+      "id": "0000B6CEF6230BFE",
+      "title": "Кристалічний зв’язок",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C60AA7AEC62E"
+      ],
+      "description": [
+        "Налаштувати дозволену draсonic мережу передачі енергії."
+      ],
+      "rewards": [
+        {
+          "id": "0000975E694AA5BE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000D077E86824A2",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00009969860DEA5F",
+      "title": "Обладнання виверни",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C60AA7AEC62E"
+      ],
+      "description": [
+        "Виготовити один інструмент без модулів майбутнього рівня."
+      ],
+      "rewards": [
+        {
+          "id": "000065FAA5F00A2A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000095003B4017AD",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

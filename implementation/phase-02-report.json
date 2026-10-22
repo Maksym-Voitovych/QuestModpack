@@ -1,0 +1,52 @@
+{
+  "version": "0.2.0-alpha",
+  "status": "implemented_and_locally_verified_partial_coverage",
+  "changes": [
+    "Native machine block-tier/owner gate before standard BE ticks",
+    "Vanilla2x2/3x3 result gate before consumption, including shift-click",
+    "Vanilla Crafter scheduled-tick machine and output gate",
+    "Live FTB Teams public-API membership verification before staged crafting",
+    "Full separate block registry map and melee attack cancellation",
+    "Four native Create operation proofs across three mandatory milestones",
+    "Required-adapter and corrupt-ledger fail-closed behavior",
+    "Installer preserves required mode on updates"
+  ],
+  "verification": {
+    "javascript_tests": 23,
+    "python_installer_tests": 1,
+    "java_assertions": 128,
+    "snbt_chapters": 48,
+    "native_recipe_definitions": 91,
+    "ftb_object_ids": 1732,
+    "block_ids": 16003,
+    "item_ids_including_new_keys": 28012,
+    "native_build": "passed",
+    "native_mixin_target_bindings": 5,
+    "minimal_neoforge_bootstrap": "passed",
+    "full_modpack_run": false,
+    "live_ftb_runtime_test": false,
+    "machine_and_crafting_gameplay_scenarios": false,
+    "native_stage_advancements": 48,
+    "mandatory_stage_tasks": 288,
+    "automatic_stage_sync_rewards": 48
+  },
+  "remaining_work": [
+    "Recipe-level gates for later recipes in already allowed modded machines",
+    "Custom crafting menus, entity/contraption/global/capability process paths",
+    "Component-dependent item tiers and per-item unlock audit",
+    "Full-instance compatibility and gameplay validation"
+  ],
+  "development_environment": {
+    "java": "OracleJDK21.0.9 checksum verified, development only",
+    "python": "/workspace/aia2-toolchains/python",
+    "gradle": "9.2.1, checksum verified, offline build passed",
+    "draft_fields_saved": [
+      "install_script",
+      "start_skill",
+      "network.allowed_domains"
+    ],
+    "configuration_published": false
+  },
+  "companion_sha256": "8135a6cb27a6489d5161442c1868e03f780ee90454afa4b3e68feffd87a74361",
+  "repository_layout": "root kubejs/, config/, mods/"
+}

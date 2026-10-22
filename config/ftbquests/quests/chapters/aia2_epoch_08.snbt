@@ -1,0 +1,410 @@
+{
+  "id": "0000BA608FC1A45C",
+  "filename": "aia2_epoch_08",
+  "order_index": 7,
+  "title": "08. Сталь і відьомство",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_08",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000D46547876B39",
+      "title": "Побічний продукт — ресурс",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "0000C78AFC65C7C3",
+          "type": "item",
+          "item": {
+            "id": "enchanted:witch_oven",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F45A016F766E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D7CB662EF3A0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити Coke Oven, випалити 32 coal_coke й зібрати creosote.",
+        "Фактична умова цього коду: 1 × enchanted:witch_oven (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F46BD2F837F4",
+      "title": "Перші сталеві злитки",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000D46547876B39",
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "000011D0ACE5BAE2",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E06C287724E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000012631DCEA144",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Збудувати примітивний Blast Furnace й виплавити 16 сталі.",
+        "Фактична умова цього коду: 4 × immersiveengineering:ingot_steel (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006A161617E489",
+      "title": "Піч відьми",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "0000C4511A516496",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mutandis",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C406F5A43128",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005F898C270FA7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити witch_oven й отримати 4 базові відьомські випари.",
+        "Фактична умова цього коду: 1 × enchanted:mutandis (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000497DCB69E93B",
+      "title": "Ботанічне перетворення",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00006A161617E489",
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "0000F91DC4E41565",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mutandis",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F117415E152D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CB702130442E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити 4 mutandis й успішно перетворити звичайну рослину.",
+        "Фактична умова цього коду: 2 × enchanted:mutandis (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000069848303DEEB",
+      "title": "Магічний вогнетрив",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000497DCB69E93B",
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "0000776B5328E965",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:coal_coke",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000986333C487F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00006D4BE0D4AA4E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити enchanted:witch_oven за зміненим рецептом із immersiveengineering:plate_steel ×2. Сталь із нового незалежного blastbrick-маршруту потрібна магічній печі.",
+        "Фактична умова цього коду: 4 × immersiveengineering:coal_coke (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000CBE57BD0E11F",
+      "title": "Повторний цикл сталі",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000069848303DEEB",
+        "000037657710F2B8"
+      ],
+      "tasks": [
+        {
+          "id": "00002676F581804A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EEBC07EA325A",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mutandis",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000002D6BC031064",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C44EA4D69DBA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000514DD3C88AD9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити ще 16 сталі й використати creosote для 16 treated wood.",
+        "Фактична умова цього коду: 2 × immersiveengineering:ingot_steel (здати — витрачається); 2 × enchanted:mutandis (здати — витрачається); 2 × botania:livingrock (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_08. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C9015E9D68A0",
+      "title": "Ключ епохи 8: Сталь і відьомство",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000D46547876B39",
+        "0000F46BD2F837F4",
+        "00006A161617E489",
+        "0000497DCB69E93B",
+        "000069848303DEEB",
+        "0000CBE57BD0E11F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EB665014DA96",
+          "type": "advancement",
+          "advancement": "aia2:keys/e08"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004C6BC7DEE209",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × immersiveengineering:ingot_steel; 2 × enchanted:mutandis; 2 × immersiveengineering:coal_coke; 2 × botania:livingrock; 1 × kubejs:aia2_epoch_key_07"
+      ]
+    },
+    {
+      "id": "0000A42E8701CDA4",
+      "title": "Огороджений двір",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000D46547876B39"
+      ],
+      "description": [
+        "Побудувати коксохімічний двір із безпечними проходами."
+      ],
+      "rewards": [
+        {
+          "id": "00000E0D33D1525E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00009A661300BE0C",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000FB745927602D",
+      "title": "Колекція саджанців",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000D46547876B39"
+      ],
+      "description": [
+        "Отримати три різні саджанці дозволеною mutandis-трансмутацією."
+      ],
+      "rewards": [
+        {
+          "id": "00001ED7B761D187",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000EC984F61C294",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

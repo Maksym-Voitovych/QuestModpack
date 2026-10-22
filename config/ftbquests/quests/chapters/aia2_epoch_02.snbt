@@ -1,0 +1,417 @@
+{
+  "id": "0000DF1D03306F43",
+  "filename": "aia2_epoch_02",
+  "order_index": 1,
+  "title": "02. Мідь і водяне колесо",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_02",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00005833E614381D",
+      "title": "Мідна партія",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "000066DD44A00027",
+          "type": "item",
+          "item": {
+            "id": "create:water_wheel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000023FB9C6385BD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000C2FBC8C0DCA5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виплавити 16 мідних злитків і зробити 8 анде-залізних сплавів.",
+        "Фактична умова цього коду: 1 × create:water_wheel (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000FC57A2A49EA1",
+      "title": "Сила потоку",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00005833E614381D",
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "0000953DDAE4C207",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007FE1C99DEEDB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        },
+        {
+          "id": "0000BEC32EECE406",
+          "type": "advancement",
+          "advancement": "create:water_wheel"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002D5EEBC4546D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати колесо, вал і пару шестерень; передати обертання до демонстраційного вала.",
+        "Фактична умова цього коду: 4 × minecraft:copper_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Власноруч поставлене водяне колесо Create має одержати ненульовий потік води на сервері; нативне досягнення Harnessed Hydraulics. Потрібен хоча б один справжній запуск колеса.",
+        "Додатково потрібні ВСІ вказані нативні досягнення Create. Поставте машину власноруч і будьте онлайн. Уже здобуті досягнення зараховуються; це одноразові докази, без лічильника циклів або перевірки FE/t.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004320FD91FD44",
+      "title": "Різьбяр символів",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "000033294B579FC4",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000920AB4FD49DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000AAB503B724DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити різьбярський ніж і основу тотема.",
+        "Фактична умова цього коду: 1 × rootsclassic:oak_bark (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002316E0B3689C",
+      "title": "Символ біля води",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004320FD91FD44",
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "000066E76657970B",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C949155DBB1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000082C635894D6F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Вирізьбити один дозволений пасивний тотем і одержати його ефект.",
+        "Фактична умова цього коду: 2 × rootsclassic:oak_bark (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000DC676D060D41",
+      "title": "Два ремесла",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00002316E0B3689C",
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "0000BE4CB82E03D4",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000058F1EBE75CC1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000825B50212A80",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити create:water_wheel за зміненим рецептом із rootsclassic:oak_bark ×1. Природне ущільнення початкового колеса, без пізньої магічної машини.",
+        "Фактична умова цього коду: 4 × create:andesite_alloy (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F65810F4F025",
+      "title": "Передатне число",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000DC676D060D41",
+        "000055963FA9D704"
+      ],
+      "tasks": [
+        {
+          "id": "0000A13650F1FF8A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000211F2BA46B53",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F1C2FB85AB7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:charcoal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB1D9158218C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000036E8F3195035",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Побудувати дві різні швидкості обертання від одного водяного колеса.",
+        "Фактична умова цього коду: 2 × minecraft:copper_ingot (здати — витрачається); 2 × rootsclassic:oak_bark (здати — витрачається); 2 × minecraft:charcoal (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_02. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E21646D828D5",
+      "title": "Ключ епохи 2: Мідь і водяне колесо",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00005833E614381D",
+        "0000FC57A2A49EA1",
+        "00004320FD91FD44",
+        "00002316E0B3689C",
+        "0000DC676D060D41",
+        "0000F65810F4F025"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000691F4D4748B1",
+          "type": "advancement",
+          "advancement": "aia2:keys/e02"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CC3CAA3420F9",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × minecraft:copper_ingot; 2 × rootsclassic:oak_bark; 2 × create:andesite_alloy; 2 × minecraft:charcoal; 1 × kubejs:aia2_epoch_key_01"
+      ]
+    },
+    {
+      "id": "0000843149E2CC55",
+      "title": "Дерев’яна скульптура",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00005833E614381D"
+      ],
+      "description": [
+        "Вирізьбити декоративний набір тотемів без нових механік."
+      ],
+      "rewards": [
+        {
+          "id": "0000A49C4901D978",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000F86B2822D221",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00006AE6AA228750",
+      "title": "Річкова стежка",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00005833E614381D"
+      ],
+      "description": [
+        "З’єднати табір і водяне колесо мостом та освітленою дорогою."
+      ],
+      "rewards": [
+        {
+          "id": "0000EF01F2939153",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000111B13A6F568",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

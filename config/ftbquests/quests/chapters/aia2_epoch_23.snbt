@@ -1,0 +1,410 @@
+{
+  "id": "00004CD737E11A53",
+  "filename": "aia2_epoch_23",
+  "order_index": 22,
+  "title": "23. Збагачення й промислова магія",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_23",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000032DAEA32A63F",
+      "title": "Лінія трьох виходів",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "000099024410BB4A",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_purifying_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001EEA1046F88B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00006664944C96A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати легальну 3x ore-processing лінію й обробити 16 рудних одиниць.",
+        "Фактична умова цього коду: 1 × mekanism:basic_purifying_factory (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008EE193428CE0",
+      "title": "Кисень під навантаженням",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000032DAEA32A63F",
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "0000B0B86E6E1A61",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_control_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A877B6DFF8C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000020AD0AE5C5B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Забезпечити Separator → Purification потоком кисню на 32 корисні цикли.",
+        "Фактична умова цього коду: 4 × mekanism:advanced_control_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00001D5BA2310609",
+      "title": "Вівтар промислової кристалізації",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "0000DA5D3BFE45C3",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1539069B6C5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005A968226FB15",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити Empowerer й потрібні display stands з магічними вставками.",
+        "Фактична умова цього коду: 1 × botania:elementium_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000306C4F31FF21",
+      "title": "Посилені кристали",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00001D5BA2310609",
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "00007620D6BEA095",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000103D386A871E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000018363C8388B8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 empowered_restonia й 4 іншого дозволеного empowered crystal.",
+        "Фактична умова цього коду: 2 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000028C3B1EE7662",
+      "title": "Фабрика з ельфійською шиною",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000306C4F31FF21",
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "0000FFBAD0DBF384",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_restonia_crystal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004366AF39C459",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E40FD5BCC9B6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити mekanism:basic_purifying_factory за зміненим рецептом із botania:elementium_ingot ×2, actuallyadditions:empowered_restonia_crystal ×1. Паралельна 3x фабрика потребує двох магічних матеріальних систем; одиночна 3x лінія й Empowerer існують без фабрики.",
+        "Фактична умова цього коду: 4 × actuallyadditions:empowered_restonia_crystal (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008A94844C6235",
+      "title": "Паралельно, але чесно",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000028C3B1EE7662",
+        "0000F7FB0D32F291"
+      ],
+      "tasks": [
+        {
+          "id": "0000683A1B7A3B31",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C7F510BF72A",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2FD841CCA12",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_reinforced",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009C6DDE8ED480",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000BC80C109AF80",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити 64 рудні операції на дозволеній фабриці й ще 4 empowerments.",
+        "Фактична умова цього коду: 2 × mekanism:advanced_control_circuit (здати — витрачається); 2 × botania:elementium_ingot (здати — витрачається); 2 × mekanism:alloy_reinforced (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_23. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008C936A61373B",
+      "title": "Ключ епохи 23: Збагачення й промислова магія",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000032DAEA32A63F",
+        "00008EE193428CE0",
+        "00001D5BA2310609",
+        "0000306C4F31FF21",
+        "000028C3B1EE7662",
+        "00008A94844C6235"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000571B97FC4C80",
+          "type": "advancement",
+          "advancement": "aia2:keys/e23"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B9274C1536DA",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × mekanism:advanced_control_circuit; 2 × botania:elementium_ingot; 2 × actuallyadditions:empowered_restonia_crystal; 2 × mekanism:alloy_reinforced; 1 × kubejs:aia2_epoch_key_22"
+      ]
+    },
+    {
+      "id": "00003A9EF26EBE6A",
+      "title": "Водень не пропадає",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000032DAEA32A63F"
+      ],
+      "description": [
+        "Зберегти або корисно використати побічний водень дозволеним способом."
+      ],
+      "rewards": [
+        {
+          "id": "0000FF263CBF717E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000990814F12C01",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00001DCA1D4CEDAC",
+      "title": "Кольори кристалів",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000032DAEA32A63F"
+      ],
+      "description": [
+        "Зібрати декоративну експозицію доступних empowered-матеріалів."
+      ],
+      "rewards": [
+        {
+          "id": "0000D7AE77DF2FA9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000F01F9B2ED01E",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

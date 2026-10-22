@@ -1,0 +1,411 @@
+{
+  "id": "0000FA6DDF41D94A",
+  "filename": "aia2_epoch_25",
+  "order_index": 24,
+  "title": "25. Роботизована металургія",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_25",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000083803A23A398",
+      "title": "Ливарна без ручного підживлення",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "0000D3A60D30B606",
+          "type": "item",
+          "item": {
+            "id": "oritech:assembler_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063DD99CE9448",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E592D50E4AAA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати foundry із введенням металів, буфером енергії та виходом сплаву.",
+        "Фактична умова цього коду: 1 × oritech:assembler_block (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002CB0B02E6C3E",
+      "title": "Серія біосталі",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "00003C7D89E41033",
+          "type": "item",
+          "item": {
+            "id": "oritech:biosteel_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003014AB0BA56B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F70A5C263893",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 32 біосталеві зливки через ливарний технологічний маршрут.",
+        "Фактична умова цього коду: 4 × oritech:biosteel_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004180E01C11CD",
+      "title": "Контракт африта",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "0000E09C51DA46FF",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AF2C551E51BF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000119CE170DD76",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати occultism:ritual/summon_unbound_afrit із технічно підсиленою оснасткою; викликати справжнього occultism:afrit_wild.",
+        "Фактична умова цього коду: 1 × occultism:afrit_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000044C911A0A073",
+      "title": "Духовна металургія",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004180E01C11CD",
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "00003525BF087F67",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000156247D69144",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000B8ED2AEDBA60",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 occultism:iesnium_ingot; перемогти власних викликаних afrit_wild і зібрати 4 occultism:afrit_essence.",
+        "Фактична умова цього коду: 2 × occultism:afrit_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B1355526C2F5",
+      "title": "Складальник подвійного походження",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00002CB0B02E6C3E",
+        "000044C911A0A073",
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "00008E8BDE79C464",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066CC4F0A7D4F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DA0E265CEBC3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити oritech:assembler_block за integration_recipe цієї епохи та виконати 16 штатних складальних операцій.",
+        "Фактична умова цього коду: 4 × pneumaticcraft:printed_circuit_board (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008CE5EE20F315",
+      "title": "Стабільна комірка",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B1355526C2F5",
+        "0000C724E5541D48"
+      ],
+      "tasks": [
+        {
+          "id": "0000AD89B3A18E54",
+          "type": "item",
+          "item": {
+            "id": "oritech:biosteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000EB195B64D8A",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD1282B5F935",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007441A197242B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CB2FB092DBF4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Показати 3 хвилини роботи ливарні та складальника без втрати живлення чи переповнення виходу.",
+        "Фактична умова цього коду: 2 × oritech:biosteel_ingot (здати — витрачається); 2 × occultism:afrit_essence (здати — витрачається); 2 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_25. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C2106823AAB8",
+      "title": "Ключ епохи 25: Роботизована металургія",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000083803A23A398",
+        "00002CB0B02E6C3E",
+        "00004180E01C11CD",
+        "000044C911A0A073",
+        "0000B1355526C2F5",
+        "00008CE5EE20F315"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000028BD79EDA77A",
+          "type": "advancement",
+          "advancement": "aia2:keys/e25"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000072971F2640DC",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × oritech:biosteel_ingot; 2 × occultism:afrit_essence; 2 × pneumaticcraft:printed_circuit_board; 2 × botania:elementium_ingot; 1 × kubejs:aia2_epoch_key_24"
+      ]
+    },
+    {
+      "id": "0000C21BC7C8787D",
+      "title": "Енергоаудит",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000083803A23A398"
+      ],
+      "description": [
+        "Порівняти витрати двох рецептів сплаву й налаштувати буфер."
+      ],
+      "rewards": [
+        {
+          "id": "0000A5A21E8A9818",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E9B5C67AC18B",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00004F0468FBBBDC",
+      "title": "Механічний дизайн",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000083803A23A398"
+      ],
+      "description": [
+        "Побудувати безпечну галерею обслуговування для машин."
+      ],
+      "rewards": [
+        {
+          "id": "0000DC23E3E1F1A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00003913E84CABEF",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

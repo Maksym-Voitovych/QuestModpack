@@ -1,0 +1,405 @@
+{
+  "id": "0000C2EF240BA1A0",
+  "filename": "aia2_epoch_07",
+  "order_index": 6,
+  "title": "07. Тотеми й сутінковий ліс",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_07",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00007ED438BD5A6F",
+      "title": "Спорядження експедиції",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "000093DCAE3EE09F",
+          "type": "item",
+          "item": {
+            "id": "totemic:drum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003833F3438CBB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000ABA255242DE7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати відремонтований залізний комплект, їжу й бронзові запасні деталі.",
+        "Фактична умова цього коду: 1 × totemic:drum (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000459205E92221",
+      "title": "Портал після підготовки",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00007ED438BD5A6F",
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "00001911F867D211",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_gear",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005868849E02A8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000BFC4092F944F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Активувати дозволений вхід у TwilightForest й створити карту.",
+        "Фактична умова цього коду: 4 × modern_industrialization:bronze_gear (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E20429A89EF8",
+      "title": "Музика лісу",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "0000FC3864A2E939",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001DA9AAE04AFE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000006AE9CD6A437",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зробити drum і flute й завершити початкову доступну церемонію Totemic.",
+        "Фактична умова цього коду: 1 × twilightforest:naga_scale (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002DD18355086B",
+      "title": "Відновлюване стадо",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000E20429A89EF8",
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "0000718B1CED50BC",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062AEF944B55A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009B5D75D88FF8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Отримати buffalo через дозволену церемонію та зібрати 4 hide без виснаження популяції.",
+        "Фактична умова цього коду: 2 × twilightforest:naga_scale (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F51490BA7787",
+      "title": "Наги більше немає",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00002DD18355086B",
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "0000F0FF06864396",
+          "type": "kill",
+          "entity": "twilightforest:naga",
+          "value": 1
+        },
+        {
+          "id": "00000093EEB1AE63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DC42D0D593C9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити totemic:drum за зміненим рецептом із modern_industrialization:bronze_plate ×1. Технічна оправа музичного ритуального інструмента.",
+        "Серверний kill-task: особисто/командою перемогти зазначену істоту після відкриття завдання.",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000703CBE173234",
+      "title": "Печатка лича",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000F51490BA7787",
+        "00002EE0A796BE65"
+      ],
+      "tasks": [
+        {
+          "id": "000098E929E78AD1",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_gear",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009634EF2C74DA",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD7610DAE8A8",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EF702C68B5C2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FDDAE65F0143",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати нативну послідовність Naga → Lich та перемогти Lich.",
+        "Фактична умова цього коду: 2 × modern_industrialization:bronze_gear (здати — витрачається); 2 × twilightforest:naga_scale (здати — витрачається); 2 × botania:manasteel_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_07. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000037657710F2B8",
+      "title": "Ключ епохи 7: Тотеми й сутінковий ліс",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00007ED438BD5A6F",
+        "0000459205E92221",
+        "0000E20429A89EF8",
+        "00002DD18355086B",
+        "0000F51490BA7787",
+        "0000703CBE173234"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C10A2A42B1F",
+          "type": "advancement",
+          "advancement": "aia2:keys/e07"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008FE9C0C1B770",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:bronze_gear; 2 × twilightforest:naga_scale; 2 × totemic:buffalo_hide; 2 × botania:manasteel_ingot; 1 × kubejs:aia2_epoch_key_06"
+      ]
+    },
+    {
+      "id": "00007E23329131AC",
+      "title": "Сутінкова ботаніка",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00007ED438BD5A6F"
+      ],
+      "description": [
+        "Зібрати декоративне насіння й саджанці без пізніх артефактів."
+      ],
+      "rewards": [
+        {
+          "id": "0000C686947BA911",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E9981FBF6474",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000F534A3DE5C6E",
+      "title": "Церемоніальний майданчик",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00007ED438BD5A6F"
+      ],
+      "description": [
+        "Оформити майданчик Totemic та показати два різні пасивні ефекти."
+      ],
+      "rewards": [
+        {
+          "id": "00003630DAD791A2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00008D0714BCCEE2",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

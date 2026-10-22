@@ -1,0 +1,67 @@
+{
+  "sources": [
+    {
+      "source": "https://github.com/KubeJS-Mods/KubeJS",
+      "commit": "1b4e9b819e4b372d92529f43542e1992c45701a2"
+    },
+    {
+      "source": "https://github.com/KubeJS-Mods/KubeJS-Create",
+      "commit": "b1f7084a6ef0a7e87a385e5deef17e264377261f"
+    },
+    {
+      "source": "https://github.com/FTBTeam/FTB-Quests",
+      "commit": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15"
+    },
+    {
+      "source": "https://github.com/sinkillerj/ProjectE",
+      "commit": "f432b0c66837759fb0731c9144dc53176b949c5d"
+    },
+    {
+      "source": "https://github.com/Creators-of-Create/Create",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "tag": "mc1.21.1-6.0.10"
+    },
+    {
+      "source": "https://github.com/mekanism/Mekanism",
+      "commit": "a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80",
+      "tag": "v1.21.1-10.7.19.85"
+    },
+    {
+      "source": "https://github.com/FTBTeam/FTB-Teams",
+      "commit": "47e8c4faa797a19f41a7a351eb78ae89e41b4a26",
+      "version": "2101.1.11"
+    },
+    {
+      "source": "https://github.com/cambrova/game-stages",
+      "commit": "2917df61bc1c32d85896b78a5d803486b536e342",
+      "version": "15.1.1",
+      "installed_user_version": "not_supplied"
+    }
+  ],
+  "verified_contracts": [
+    "KubeJS recipe.stage() throws by default in2101; not used.",
+    "NativeEvents.onEvent accepts event class and Consumer on server scripts.",
+    "FTB Quests ServerQuestFile.INSTANCE.getOrCreateTeamData(Entity),getQuest(long); TeamData.isCompleted(Quest),getOnlineMembers().",
+    "FTB item,kill,advancement,checkmark,itemreward SNBT schemas verified in2101.1.36 source.",
+    "ProjectE1.1.0 EMCRemapEvent fires after mapping and before ordinary datapack client synchronization.",
+    "ProjectE EMCMappingHandler.updateEmcValues replaces the map and refreshes data-component caches without refiring the remap event.",
+    "NeoForge EntityTravelToDimensionEvent implements ICancellableEvent.",
+    "KubeJS Create2101 mixing schema requires results,ingredients; optional heat defaultsnone.",
+    "Native AttackEntityEvent implements ICancellableEvent and precedes ordinary melee attack.",
+    "KubeJS LevelBlock.getEntity() exposes BlockEntity; ServerEvents.loaded/tick/unloaded exist in2101.",
+    "Four genuine native Create advancement proofs verified against installed6.0.10: water_wheel,mechanical_press,millstone,mechanical_mixer. See create-process-evidence.json.",
+    "FTB Quest.allTasksCompleted uses tasks.stream().allMatch; both E04_M2 process proofs are required.",
+    "Exact native Minecraft/NeoForge crafting and ticker mixins compiled in companion; evidence and smoke-test results recorded separately in companion/verification-report.json.",
+    "FTBTeamsAPI.api()->API.getManager()->TeamManager.getTeamForPlayerID(UUID)->Optional<Team>; Team.getTeamId() exact2101.1.11; live player-team resolution avoids stale team-switch authority.",
+    "Game Stages Reborn15.1.1 net.darkhax.gamestages.GameStageHelper.hasStage(Player,String) checks native stage data.",
+    "Native gamestages:has_stage advancement codec uses conditions.stage; stage sync retriggers registered criteria.",
+    "GameStages commands return0 even on success; code never treats that return as a boolean.",
+    "FTB CommandReward uses claimant CommandSourceStack; auto:invisible,team_reward:false,permission_level:0,command:aia2 sync is claimant-safe and reads the authoritative ledger."
+  ],
+  "not_proved": [
+    "FullModpackMinecraftLoad",
+    "FullModpackNativeRecipeCodecLoad",
+    "AllNativeMachineRecipeStages",
+    "AllContraptionAndCapabilityPaths"
+  ]
+}

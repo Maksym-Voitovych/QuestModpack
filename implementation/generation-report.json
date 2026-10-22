@@ -1,0 +1,40 @@
+{
+  "recipes_added": 91,
+  "source_recipe_ids_removed": 106,
+  "quest_chapters": 48,
+  "required_quests": 336,
+  "optional_quests": 96,
+  "registered_keys": 48,
+  "retained_conversion_ids": [
+    "minecraft:infinity_ingot",
+    "minecraft:infinity_ingot_from_infinity_nugget",
+    "mysticalagradditions:insanium_block_uncraft",
+    "alltheores:crafting/brass/ingot_from_nugget",
+    "alltheores:crafting/brass/ingot_from_block"
+  ],
+  "blocked_missing_templates": [
+    {
+      "id": "ironjetpacks:jetpack",
+      "reason": "Jetpack І cell є tier/component-bearing. Потрібні конкретні component-preserving input/output templates із актуального config. Застосувати stage до tier конкретного stack; не випускати raw ironjetpacks:jetpack і не використовувати raw ironjetpacks:cell як універсальний tier."
+    },
+    {
+      "id": "forbidden_arcanus:eternal_stella",
+      "reason": "В експорті є лише smithing apply_eternal_modifier, а не виробництво Eternal Stella. Зберегти реальну Hephaestus Forge/ритуальну логіку після отримання native definition. Звичайний 3×3 рецепт заборонений до перевірки."
+    }
+  ],
+  "key_forge": "atomic_server_command_at_crafting_table_not_ungated_grid_recipe",
+  "runtime_compatibility": "full_pack_source_reviewed_native_adapter_tested_separately",
+  "milestone_evidence": "FTB deliveries and boss kills, plus four source-verified native Create operation proofs in three milestones",
+  "native_process_proofs": 4,
+  "native_stage_advancements": 48,
+  "mandatory_stage_tasks": 288,
+  "automatic_stage_sync_rewards": 48,
+  "block_registry_entries": 16003,
+  "blocks_without_same_item_id": 1738,
+  "remaining_gaps": [
+    "The companion guards machine block tiers, vanilla player crafting and the vanilla Crafter; it does not yet gate every native recipe in early machines.",
+    "Entity/contraption/global processes and capability IO are outside the standard block-entity tick hook.",
+    "ProjectE 1.1.0 native EMC whitelist hook is source-verified but must be smoke-tested in the pack.",
+    "Exact component-aware jetpack/seed family restrictions still require runtime inspection."
+  ]
+}

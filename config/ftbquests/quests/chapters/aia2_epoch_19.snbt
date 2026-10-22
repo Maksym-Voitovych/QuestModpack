@@ -1,0 +1,410 @@
+{
+  "id": "000036E6E5D718F0",
+  "filename": "aia2_epoch_19",
+  "order_index": 18,
+  "title": "19. Душі та сплави",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_19",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000F977AFF29153",
+      "title": "Два сплави",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "0000A67037AF1A17",
+          "type": "item",
+          "item": {
+            "id": "enderio:ensouled_chassis",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000053371CAFAF9A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008FACE981513C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити Alloy Smelter й виробити по 16 soularium та energetic alloy.",
+        "Фактична умова цього коду: 1 × enderio:ensouled_chassis (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002D74C3EF9198",
+      "title": "Енергетичний буфер",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F977AFF29153",
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "000015D52B9D9E1C",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8F6F9512AA4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000863F215AC057",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити basic capacitor bank й виконати 16 корисних циклів сплавлення.",
+        "Фактична умова цього коду: 4 × enderio:energetic_alloy_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00001702A73269CA",
+      "title": "Душа без боса",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "00008DFB81D25CBB",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000059D4386A213B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E1525E5EF16A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Піймати дозволену звичайну істоту в soul_vial й провести початкову операцію Soul Binder.",
+        "Фактична умова цього коду: 1 × evilcraft:dark_power_gem (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000A895C4EE6857",
+      "title": "Темний каталізатор",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00001702A73269CA",
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "00007D70120E0947",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4D0412B0A36",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005679BD4A36B9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити 4 dark_power_gem з уже доступного EvilCraft ланцюжка.",
+        "Фактична умова цього коду: 2 × evilcraft:dark_power_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000619B3DF78408",
+      "title": "Магія в EnderIO корпусі",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000A895C4EE6857",
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "000022A6AA380101",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E3F1EFDEA34",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000906D8CB991E8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити enderio:ensouled_chassis за зміненим рецептом із evilcraft:dark_power_gem ×1. Темний каталізатор із Blood Infuser, доступного з E13.",
+        "Фактична умова цього коду: 4 × enderio:soularium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000E054C836B07",
+      "title": "Дозволений автоматичний збір",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000619B3DF78408",
+        "000079102E7B00EA"
+      ],
+      "tasks": [
+        {
+          "id": "0000AEA41E334446",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D9727748B8C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005EAF969F4444",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E008C51F0AEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000166EDC2F9A17",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Використати обмежений Cyclic breaker/аналог для 32 звичайних блоків у власній зоні.",
+        "Фактична умова цього коду: 2 × enderio:energetic_alloy_ingot (здати — витрачається); 2 × evilcraft:dark_power_gem (здати — витрачається); 2 × occultism:spirit_attuned_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_19. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000A7F284447976",
+      "title": "Ключ епохи 19: Душі та сплави",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000F977AFF29153",
+        "00002D74C3EF9198",
+        "00001702A73269CA",
+        "0000A895C4EE6857",
+        "0000619B3DF78408",
+        "00000E054C836B07"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE289B5048AB",
+          "type": "advancement",
+          "advancement": "aia2:keys/e19"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003C8620EF7B7F",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × enderio:energetic_alloy_ingot; 2 × evilcraft:dark_power_gem; 2 × enderio:soularium_ingot; 2 × occultism:spirit_attuned_gem; 1 × kubejs:aia2_epoch_key_18"
+      ]
+    },
+    {
+      "id": "0000C8053697DAA0",
+      "title": "Тиха лабораторія",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000F977AFF29153"
+      ],
+      "description": [
+        "Зробити декоративні EnderIO блоки та відокремити звукові ефекти."
+      ],
+      "rewards": [
+        {
+          "id": "0000C457CD2ADFAA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000CE9AEC5AABFE",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000EA44D97CAA3E",
+      "title": "Довідник істот",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000F977AFF29153"
+      ],
+      "description": [
+        "Задокументувати дозволені Soul Vial типи без полювання на рідкісних босів."
+      ],
+      "rewards": [
+        {
+          "id": "0000797D2C2BF288",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000B43876958B1C",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

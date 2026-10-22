@@ -1,0 +1,411 @@
+{
+  "id": "0000A9B71637E038",
+  "filename": "aia2_epoch_29",
+  "order_index": 28,
+  "title": "29. Реакторна енергетика",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_29",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000276D0544F6B9",
+      "title": "Холодна перевірка",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "000055EB78E9342C",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_spirited",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000817F0D1A5454",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000BB0E648A6C35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати базовий реактор, регулювання, вимикач і буфер без запуску на максимум.",
+        "Фактична умова цього коду: 1 × powah:energy_cell_spirited (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B054AFFBE189",
+      "title": "Паливний баланс",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "00002A02183BDF0A",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3A45823E0FC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00002D7A82A671C5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Відпрацювати паливо до отримання 16 cyanite ingot.",
+        "Фактична умова цього коду: 4 × bigreactors:cyanite_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000AD13150546C7",
+      "title": "Вогняна стабілізація",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "00006FC6F9E121C6",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:fire_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000039DA23474945",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00007862414E2182",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 16 fire essence для реакторних кристалічних компонентів.",
+        "Фактична умова цього коду: 1 × ars_nouveau:fire_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00007C4D9EDAADA9",
+      "title": "Кристалічна драбина",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000AD13150546C7",
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "0000B4706F0781EE",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:fire_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A53CA3E94BB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003D2B7535EFAE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Послідовно отримати blazing і spirited crystals; не дозволяти nitro-рецепти.",
+        "Фактична умова цього коду: 2 × ars_nouveau:fire_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000004A39BA8B9A7",
+      "title": "Керований енергоблок",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B054AFFBE189",
+        "00007C4D9EDAADA9",
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "00008A6A164DEF8E",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069C72C556A67",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000047D5A12A7129",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити powah:energy_cell_spirited зі 2 botania:terrasteel_ingot за integration_recipe; зв’язати його з базовим реактором і виробничим навантаженням.",
+        "Фактична умова цього коду: 4 × powah:crystal_spirited (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000071087DFCAC1C",
+      "title": "Пуск і зупинка",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000004A39BA8B9A7",
+        "0000570227EFB779"
+      ],
+      "tasks": [
+        {
+          "id": "000050E401D52E33",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036BFBFD045D4",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:fire_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047309E464325",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F40C5A20867",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009B74E0B04C26",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Пройти повний запуск, 5 хвилин стабільної роботи й контрольовану зупинку.",
+        "Фактична умова цього коду: 2 × bigreactors:cyanite_ingot (здати — витрачається); 2 × ars_nouveau:fire_essence (здати — витрачається); 2 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_29. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000A30803BAD4FB",
+      "title": "Ключ епохи 29: Реакторна енергетика",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000B054AFFBE189",
+        "0000AD13150546C7",
+        "00007C4D9EDAADA9",
+        "000004A39BA8B9A7",
+        "000071087DFCAC1C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A7D5B42441DB",
+          "type": "advancement",
+          "advancement": "aia2:keys/e29"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00007DAB87D73A4F",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × bigreactors:cyanite_ingot; 2 × ars_nouveau:fire_essence; 2 × powah:crystal_spirited; 2 × botania:elementium_ingot; 1 × kubejs:aia2_epoch_key_28"
+      ]
+    },
+    {
+      "id": "000074B1A11DA7F3",
+      "title": "Тепловий обмін",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000276D0544F6B9"
+      ],
+      "description": [
+        "Порівняти прямий вихід із паротурбінним контуром."
+      ],
+      "rewards": [
+        {
+          "id": "0000D68BDE587A23",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000A67A03121514",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000759E82922363",
+      "title": "Енергетичний диспетчер",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000276D0544F6B9"
+      ],
+      "description": [
+        "Додати пріоритет живлення критичних машин."
+      ],
+      "rewards": [
+        {
+          "id": "0000AE8EDC833DC2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000C8B1CEB2C41A",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

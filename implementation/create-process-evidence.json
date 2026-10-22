@@ -1,0 +1,94 @@
+[
+  {
+    "epoch": 2,
+    "milestone_index": 2,
+    "advancement": "create:water_wheel",
+    "kind": "native_operational_state",
+    "actual_condition_uk": "Власноруч поставлене водяне колесо Create має одержати ненульовий потік води на сервері; нативне досягнення Harnessed Hydraulics. Потрібен хоча б один справжній запуск колеса.",
+    "source_files": [
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/waterwheel/WaterWheelBlockEntity.java#L148-L149",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AllAdvancements.java",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AdvancementBehaviour.java#L123-L130",
+      "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java#L119-L132"
+    ],
+    "notes": [
+      "Це доказ ненульової рушійної сили колеса; він не вимірює передане на вал обертання, дві різні RPM чи роботу під навантаженням.",
+      "Вода доступна E02; лава викликає інше досягнення create:lava_wheel_00000 і для цієї віхи не потрібна.",
+      "Перевірено точний тег Create mc1.21.1-6.0.10, commit ac0c444d9828da3453ae8cc65338e8de063286fb.",
+      "AdvancementBehaviour прив’язує нагороду до ServerPlayer, який поставив машину; FakePlayer не стає власником. Власник має бути онлайн. За потреби поставте машину власноруч заново.",
+      "Це одноразовий нативний доказ факту операції, без recipe ID, лічильника виходів, FE, тривалості чи доказу повної автоматизації.",
+      "FTB Quests 2101.1.36: task {type:\"advancement\",advancement:\"namespace:path\"}; canSubmit перевіряє progress.isDone() кожні 5 ticks. Уже одержане до відкриття квесту досягнення також зараховується. Нативні досягнення гравця не слід відкликати заради цього квесту.",
+      "AdvancementBehaviour після здобуття прибирає цей awardable з машини. Тому дублювання builtin trigger у власному JSON advancement не перетворює цю механіку на лічильник повторних процесів."
+    ]
+  },
+  {
+    "epoch": 4,
+    "milestone_index": 1,
+    "advancement": "create:mechanical_press",
+    "kind": "native_completed_process",
+    "actual_condition_uk": "Завершити хоча б один процес пресування предмета механічним пресом Create й одержати непорожній результат; нативне досягнення Bonk!.",
+    "source_files": [
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity.java#L68-L69",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity.java#L113-L145",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity.java#L149-L172",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AllAdvancements.java",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AdvancementBehaviour.java#L123-L130",
+      "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java#L119-L132"
+    ],
+    "notes": [
+      "Слід додати до наявної предметної здачі, а не називати цю одноразову перевірку виробництвом саме 16 мідних і 16 залізних листів.",
+      "Холодне pressing доступне E04; Blaze Burner і Nether не потрібні.",
+      "Перевірено точний тег Create mc1.21.1-6.0.10, commit ac0c444d9828da3453ae8cc65338e8de063286fb.",
+      "AdvancementBehaviour прив’язує нагороду до ServerPlayer, який поставив машину; FakePlayer не стає власником. Власник має бути онлайн. За потреби поставте машину власноруч заново.",
+      "Це одноразовий нативний доказ факту операції, без recipe ID, лічильника виходів, FE, тривалості чи доказу повної автоматизації.",
+      "FTB Quests 2101.1.36: task {type:\"advancement\",advancement:\"namespace:path\"}; canSubmit перевіряє progress.isDone() кожні 5 ticks. Уже одержане до відкриття квесту досягнення також зараховується. Нативні досягнення гравця не слід відкликати заради цього квесту.",
+      "AdvancementBehaviour після здобуття прибирає цей awardable з машини. Тому дублювання builtin trigger у власному JSON advancement не перетворює цю механіку на лічильник повторних процесів."
+    ]
+  },
+  {
+    "epoch": 4,
+    "milestone_index": 2,
+    "advancement": "create:millstone",
+    "kind": "native_completed_process",
+    "actual_condition_uk": "Завершити хоча б один дозволений процес на жорні Create: машина знаходить milling-рецепт, витрачає одну вхідну одиницю й обробляє його результати; нативне досягнення Embrace the Grind.",
+    "source_files": [
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/millstone/MillstoneBlockEntity.java#L149-L168",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AllAdvancements.java",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AdvancementBehaviour.java#L123-L130",
+      "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java#L119-L132"
+    ],
+    "notes": [
+      "Разом із другим записом E04_M2 (create:mechanical_mixer) потрібні ОБИДВА task, не альтернатива OR.",
+      "Нативний trigger не фільтрує рецепт зерна і не доводить 16 перемелених одиниць. Одного завершення достатньо для цієї фактичної перевірки.",
+      "Перевірено точний тег Create mc1.21.1-6.0.10, commit ac0c444d9828da3453ae8cc65338e8de063286fb.",
+      "AdvancementBehaviour прив’язує нагороду до ServerPlayer, який поставив машину; FakePlayer не стає власником. Власник має бути онлайн. За потреби поставте машину власноруч заново.",
+      "Це одноразовий нативний доказ факту операції, без recipe ID, лічильника виходів, FE, тривалості чи доказу повної автоматизації.",
+      "FTB Quests 2101.1.36: task {type:\"advancement\",advancement:\"namespace:path\"}; canSubmit перевіряє progress.isDone() кожні 5 ticks. Уже одержане до відкриття квесту досягнення також зараховується. Нативні досягнення гравця не слід відкликати заради цього квесту.",
+      "AdvancementBehaviour після здобуття прибирає цей awardable з машини. Тому дублювання builtin trigger у власному JSON advancement не перетворює цю механіку на лічильник повторних процесів."
+    ]
+  },
+  {
+    "epoch": 4,
+    "milestone_index": 2,
+    "advancement": "create:mechanical_mixer",
+    "kind": "native_completed_process",
+    "actual_condition_uk": "Успішно завершити хоча б один процес mixing у basin: BasinRecipe.apply повертає true й лише після цього викликається award MIXER; нативне досягнення Mixing It Up.",
+    "source_files": [
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/basin/BasinOperatingBlockEntity.java#L107-L121",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/mixer/MechanicalMixerBlockEntity.java#L304-L307",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AllAdvancements.java",
+      "https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/foundation/advancement/AdvancementBehaviour.java#L123-L130",
+      "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java#L119-L132"
+    ],
+    "notes": [
+      "Разом із першим записом E04_M2 (create:millstone) потрібні ОБИДВА task.",
+      "Для E04 використати ненагрітий доступний mixing-рецепт; trigger не потребує brass, Blaze Burner або Nether.",
+      "Доказ не розрізняє recipe ID і не рахує 8 циклів. Не повторювати цю ж одноразову умову в E10_M1 як доказ нової магічної латуні.",
+      "Перевірено точний тег Create mc1.21.1-6.0.10, commit ac0c444d9828da3453ae8cc65338e8de063286fb.",
+      "AdvancementBehaviour прив’язує нагороду до ServerPlayer, який поставив машину; FakePlayer не стає власником. Власник має бути онлайн. За потреби поставте машину власноруч заново.",
+      "Це одноразовий нативний доказ факту операції, без recipe ID, лічильника виходів, FE, тривалості чи доказу повної автоматизації.",
+      "FTB Quests 2101.1.36: task {type:\"advancement\",advancement:\"namespace:path\"}; canSubmit перевіряє progress.isDone() кожні 5 ticks. Уже одержане до відкриття квесту досягнення також зараховується. Нативні досягнення гравця не слід відкликати заради цього квесту.",
+      "AdvancementBehaviour після здобуття прибирає цей awardable з машини. Тому дублювання builtin trigger у власному JSON advancement не перетворює цю механіку на лічильник повторних процесів."
+    ]
+  }
+]

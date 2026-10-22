@@ -1,0 +1,410 @@
+{
+  "id": "0000DC898CE2E92A",
+  "filename": "aia2_epoch_24",
+  "order_index": 23,
+  "title": "24. Друковані плати та пневмороботи",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_24",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000763CB14E0F96",
+      "title": "Повний PCB-процес",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "00007B9A90055E2F",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:drone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008294C7436AF0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000028FBE5354E25",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 16 printed_circuit_board через дозволені exposure/etching/assembly операції.",
+        "Фактична умова цього коду: 1 × pneumaticcraft:drone (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BB3E10477012",
+      "title": "Кероване складання",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000763CB14E0F96",
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "000083E9C241CA90",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AE4AC7B6D907",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F006F221EE7A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати assembly line й автоматично виконати 16 drill/laser циклів.",
+        "Фактична умова цього коду: 4 × pneumaticcraft:printed_circuit_board (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000096C991275AF8",
+      "title": "Духовний контролер",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "00003B83C09B0B82",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C8C7A0B3CBE3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000024CCC4CD0B28",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 spirit_attuned_gem і 8 empowered_restonia для контролера робота.",
+        "Фактична умова цього коду: 1 × occultism:spirit_attuned_gem (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004ADFC179E7C7",
+      "title": "Живий метал першого рівня",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000096C991275AF8",
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "0000970549DE859B",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000003A4D7972BC4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004F4C15C9014A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити легальний початковий JDT goo route й одержати 16 ferricore_ingot.",
+        "Фактична умова цього коду: 2 × occultism:spirit_attuned_gem (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B4D6EF74AB2D",
+      "title": "Робот із власником",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004ADFC179E7C7",
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "00009CB4F8590749",
+          "type": "item",
+          "item": {
+            "id": "justdirethings:ferricore_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B549DE799B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000034A9769FF2FA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити pneumaticcraft:drone за зміненим рецептом із occultism:spirit_attuned_gem ×1, actuallyadditions:empowered_restonia_crystal ×1. Робот отримує духовний контролер; обидва реагенти доступні до першого drone.",
+        "Фактична умова цього коду: 4 × justdirethings:ferricore_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B7F1E7C28B10",
+      "title": "Безпечна пневрозміна",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B4D6EF74AB2D",
+        "00008C936A61373B"
+      ],
+      "tasks": [
+        {
+          "id": "0000D14A3ADD176F",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096A3F4A7E5C6",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A12A590A139",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_restonia_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000CB46EB0971F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00000F59A35598B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Дати роботу дозволений сценарій переносу/збирання 64 звичайних предметів і перевірити відмову для закритого ресурсу.",
+        "Фактична умова цього коду: 2 × pneumaticcraft:printed_circuit_board (здати — витрачається); 2 × occultism:spirit_attuned_gem (здати — витрачається); 2 × actuallyadditions:empowered_restonia_crystal (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_24. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C724E5541D48",
+      "title": "Ключ епохи 24: Друковані плати та пневмороботи",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000763CB14E0F96",
+        "0000BB3E10477012",
+        "000096C991275AF8",
+        "00004ADFC179E7C7",
+        "0000B4D6EF74AB2D",
+        "0000B7F1E7C28B10"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000014C2148C0B41",
+          "type": "advancement",
+          "advancement": "aia2:keys/e24"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009F81F96F180F",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × pneumaticcraft:printed_circuit_board; 2 × occultism:spirit_attuned_gem; 2 × justdirethings:ferricore_ingot; 2 × actuallyadditions:empowered_restonia_crystal; 1 × kubejs:aia2_epoch_key_23"
+      ]
+    },
+    {
+      "id": "00001CC2FF0206DF",
+      "title": "Програмування маршруту",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000763CB14E0F96"
+      ],
+      "description": [
+        "Зробити альтернативну програму сортування без бойових функцій."
+      ],
+      "rewards": [
+        {
+          "id": "0000B3C995F10529",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000D0BC81E4B4F9",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000925BCB31FBE5",
+      "title": "Феррикорова майстерня",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000763CB14E0F96"
+      ],
+      "description": [
+        "Оформити стенд JDT першого tier та зону карантину goo."
+      ],
+      "rewards": [
+        {
+          "id": "00006E073FCD72D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000061BE8FF26AFA",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

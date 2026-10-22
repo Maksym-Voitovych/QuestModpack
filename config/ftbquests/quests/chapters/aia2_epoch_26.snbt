@@ -1,0 +1,411 @@
+{
+  "id": "0000DAE5FE7E950B",
+  "filename": "aia2_epoch_26",
+  "order_index": 25,
+  "title": "26. Кероване вирощування ресурсів",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_26",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "000011218EFF0F97",
+      "title": "Механічний каркас алтаря",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "0000FF18503B0894",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002BD1F2F0B14F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00000C42612ACDAB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати інфузійний алтар і 8 п’єдесталів за рецептом із біосталлю та магічним компонентом.",
+        "Фактична умова цього коду: 1 × mysticalagriculture:infusion_altar (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000666F2D02E47C",
+      "title": "Чистий старт культури",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "00001EE5E6A5C56D",
+          "type": "item",
+          "item": {
+            "id": "oritech:biosteel_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099A7925F7A9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003B130768EE2D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виростити 64 inferium essence з власноруч посіяного дозволеного насіння.",
+        "Фактична умова цього коду: 4 × oritech:biosteel_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000CBB6E663B8F6",
+      "title": "Третій ступінь есенції",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "0000F629AE26F456",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000060E639C7BBCF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008A684B63630E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Послідовно виготовити prudentium та 8 tertium essence.",
+        "Фактична умова цього коду: 1 × mysticalagriculture:tertium_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000DE72F87765B1",
+      "title": "Зв’язок із природною магією",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000CBB6E663B8F6",
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "0000D7A645FC30E6",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A503496F1D4E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008C2D60C018D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 8 elementium і використати 2 у рецепті першого дозволеного ресурсного насіння.",
+        "Фактична умова цього коду: 2 × mysticalagriculture:tertium_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000DA1769D2694B",
+      "title": "Ферма одного металу",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000666F2D02E47C",
+        "0000DE72F87765B1",
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "000031F8EFA06911",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008DD2C413227A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D6A509199F6A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматизувати збір і перетворення залізної есенції в 64 залізні зливки.",
+        "Фактична умова цього коду: 4 × pneumaticcraft:printed_circuit_board (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C14B87A73ED8",
+      "title": "Обмежений розгін",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000DA1769D2694B",
+        "0000C2106823AAB8"
+      ],
+      "tasks": [
+        {
+          "id": "00000570D8E4C2BE",
+          "type": "item",
+          "item": {
+            "id": "oritech:biosteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D9DE640C690",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B4CE481DF3C",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000315C7A29F517",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CE17280D3156",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Продемонструвати 3 хвилини роботи в межах дозволеної кількості прискорювачів.",
+        "Фактична умова цього коду: 2 × oritech:biosteel_ingot (здати — витрачається); 2 × mysticalagriculture:tertium_essence (здати — витрачається); 2 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_26. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000915C1EDD2D69",
+      "title": "Ключ епохи 26: Кероване вирощування ресурсів",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000666F2D02E47C",
+        "0000CBB6E663B8F6",
+        "0000DE72F87765B1",
+        "0000DA1769D2694B",
+        "0000C14B87A73ED8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007ED9F7391984",
+          "type": "advancement",
+          "advancement": "aia2:keys/e26"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000871BFAA05EF4",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × oritech:biosteel_ingot; 2 × mysticalagriculture:tertium_essence; 2 × pneumaticcraft:printed_circuit_board; 2 × botania:elementium_ingot; 1 × kubejs:aia2_epoch_key_25"
+      ]
+    },
+    {
+      "id": "0000BFF1895AC0DE",
+      "title": "Різноманіття полів",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000011218EFF0F97"
+      ],
+      "description": [
+        "Виростити 4 дозволені звичайні ресурси без зайвого прискорення."
+      ],
+      "rewards": [
+        {
+          "id": "0000A860E676A82A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E50C06C95994",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000140A994AE8E0",
+      "title": "Продовольча автономія",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "000011218EFF0F97"
+      ],
+      "description": [
+        "Побудувати окрему харчову ферму без залежності від ресурсоесенцій."
+      ],
+      "rewards": [
+        {
+          "id": "0000B01EC7D554F1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000045A4E044E536",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "version": "0.2.0-alpha",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "java": 21,
+  "source_evidence": [
+    {
+      "pin": "NeoForge e0e7ab5d273fdc034f23fee7bf91c61ae39d3019",
+      "url": "https://raw.githubusercontent.com/neoforged/NeoForge/e0e7ab5d273fdc034f23fee7bf91c61ae39d3019/patches/net/minecraft/world/level/chunk/LevelChunk.java.patch",
+      "sha256": "cc793979e34d8d9b3c6a522924e506042dad45c385ba63c29b10a2bc96c0f67b",
+      "evidence": "Private BoundTickingBlockEntity<T extends BlockEntity>, blockEntity field and vanilla ticker dispatch"
+    },
+    {
+      "pin": "NeoForge e0e7ab5d273fdc034f23fee7bf91c61ae39d3019",
+      "url": "https://raw.githubusercontent.com/neoforged/NeoForge/e0e7ab5d273fdc034f23fee7bf91c61ae39d3019/patches/net/minecraft/world/level/block/entity/BlockEntity.java.patch",
+      "sha256": "d448e2d093b8328ac8e569d851413a64d1e6bf0d546e976de3a944b7a31561dc",
+      "evidence": "getPersistentData() and NeoForgeData NBT persistence"
+    },
+    {
+      "pin": "MDK f7002b1b6011723c7b12fde95147689491a6ddab",
+      "url": "https://raw.githubusercontent.com/NeoForgeMDKs/MDK-1.21.1-ModDevGradle/f7002b1b6011723c7b12fde95147689491a6ddab/build.gradle",
+      "sha256": "0e13a066fee7b5d33871820018bbdf6f29e996261ecf2e57eb9189657a8c4692",
+      "evidence": "ModDevGradle2.0.148 build and Java21 toolchain"
+    },
+    {
+      "pin": "FTB Teams47e8c4faa797a19f41a7a351eb78ae89e41b4a26",
+      "url": "https://github.com/FTBTeam/FTB-Teams/tree/47e8c4faa797a19f41a7a351eb78ae89e41b4a26/common/src/main/java/dev/ftb/mods/ftbteams/api",
+      "evidence": "Public API interface method signatures used by live team resolver; no private implementation reflection."
+    }
+  ],
+  "guard_policy_tests": {
+    "status": "passed",
+    "assertions": 119,
+    "command": "JAVA_HOME=<JDK21> python companion/test_policy.py",
+    "minecraft_dependencies_used": false
+  },
+  "native_compile": {
+    "status": "passed",
+    "command": "JAVA_HOME=<JDK21> ./gradlew build --no-daemon --console=plain",
+    "gradle": "9.2.1",
+    "jar_created": true,
+    "jar_path": "mods/aia2-machine-guard-0.2.0-alpha.jar",
+    "jar_bytes": 17117,
+    "jar_sha256": "8135a6cb27a6489d5161442c1868e03f780ee90454afa4b3e68feffd87a74361",
+    "zip_crc_verified": true,
+    "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
+    "guard_policy_assertions": 119,
+    "checks_disabled": false,
+    "live_team_resolver_assertions": 9,
+    "total_java_assertions": 128
+  },
+  "minecraft_run": true,
+  "mixin_binding_verified_in_game": true,
+  "required_additional_egress": [
+    "maven.neoforged.net",
+    "piston-meta.mojang.com",
+    "piston-data.mojang.com",
+    "libraries.minecraft.net"
+  ],
+  "coverage": "Standard server BlockEntityTicker dispatch enforces the block epoch and persistent team ownership, including cached recipes when the machine itself is locked. Vanilla2x2/3x3 ResultSlot pickup and vanilla CraftingMenu/InventoryMenu quickMoveStack(slot0) check the output epoch before consumption. Scheduled vanilla Crafter dispense checks machine owner+block epoch+output epoch before callbacks, item output or ingredient consumption. Does not cover later recipes in already-unlocked modded early machines, custom modded result slots/menus, smithing/stonecutting/smelting outputs, entities/contraptions, other scheduled ticks, direct capability IO, component-only tiers, or production telemetry.",
+  "jdk_download": {
+    "url": "https://download.oracle.com/java/21/archive/jdk-21.0.9_linux-x64_bin.tar.gz",
+    "sha256": "0854421306468559813f1e5068e036213f9710e1e239d823c0d63552a1259e25",
+    "distributed_in_package": false
+  },
+  "gradle_distribution_sha256": "72f44c9f8ebcb1af43838f45ee5c4aa9c5444898b3468ab3f4af7b6076c5bc3f",
+  "network_diagnostics": {
+    "initial_python_probe": "Official NeoForge Maven POM URL returned proxy403.",
+    "recovered": true,
+    "evidence": "Gradle with existing configured HTTP/HTTPS proxy and system CA truststore resolved 131 NeoForge/Mojang artifacts and compiled actual patched Minecraft1.21.1+NeoForge21.1.264.",
+    "tls_and_artifact_checks_disabled": false
+  },
+  "mixin_target_bytecode_verified": {
+    "artifact": "Mojang1.21.1 client/server jars merged and Mojmap-renamed by NeoFormRuntime",
+    "target": "net.minecraft.world.level.chunk.LevelChunk$BoundTickingBlockEntity",
+    "field": "private final T blockEntity (erasure BlockEntity)",
+    "method": "public void tick() invokes BlockEntityTicker.tick before any machine logic",
+    "tool": "JDK21 javap -p -c"
+  },
+  "bootstrap_smoke": {
+    "status": "native_bindings_verified_on_minimal_development_server",
+    "command": "./gradlew runServer -x downloadAssets",
+    "mod_list": [
+      "Minecraft1.21.1",
+      "NeoForge21.1.264",
+      "AIA2MachineGuard0.2.0-alpha"
+    ],
+    "binding_log": "16:33:34 AIA2 native ticker and vanilla crafting Mixin bindings verified; no world or machine recipe was executed",
+    "targets_verified": [
+      "LevelChunk$BoundTickingBlockEntity",
+      "Slot",
+      "CraftingMenu",
+      "InventoryMenu",
+      "CrafterBlock"
+    ],
+    "world_created": true,
+    "server_ready_log": "16:33:48 Done (11.168s)!",
+    "eula_file_exists": false,
+    "eula_manually_accepted": false,
+    "development_eula_behavior": "Mojang/NeoForge Eula constructor auto-agrees when SharedConstants.IS_RUNNING_IN_IDE. This was unexpected; no eula.txt or manual acceptance was written. The server was stopped after detecting development-mode world creation.",
+    "termination": "SIGTERM to own development server process; orderly save confirmed; Gradle exit143 after deliberate stop.",
+    "client_assets": "Skipped full client assets download. Only Gradle-required asset metadata was written after verifying official Mojang asset index17 SHA1.",
+    "full_pack_mods_present": false,
+    "ftb_runtime_present": false,
+    "machine_or_crafting_scenarios_executed": false,
+    "final_jar_note": "Binding smoke preceded addition of LiveTeamResolver. Mixin source and binding points unchanged; final JAR rebuilt successfully with 128 pure Java assertions."
+  },
+  "live_team_resolver_tests": {
+    "status": "passed",
+    "assertions": 9,
+    "scope": "Synthetic public interfaces: current membership read on every invocation, immediate team change, no stale fallback on missing data or API failure, nonpublic implementation through public interface methods. No live FTB Teams runtime was launched."
+  },
+  "live_team_api": {
+    "source_pin": "FTB-Teams-1.21.1 commit47e8c4faa797a19f41a7a351eb78ae89e41b4a26",
+    "entry": "dev.ftb.mods.ftbteams.api.FTBTeamsAPI.api()",
+    "public_interfaces": [
+      "FTBTeamsAPI$API.isManagerLoaded()",
+      "FTBTeamsAPI$API.getManager()",
+      "TeamManager.getTeamForPlayerID(java.util.UUID)",
+      "Team.getTeamId()"
+    ],
+    "membership_cached": false,
+    "failure_policy": "Deny staged crafting; no fallback to synchronized old membership."
+  },
+  "full_pack_run": false
+}

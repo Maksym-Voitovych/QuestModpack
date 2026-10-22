@@ -1,0 +1,411 @@
+{
+  "id": "000037C52A4EDD73",
+  "filename": "aia2_epoch_35",
+  "order_index": 34,
+  "title": "35. Надпровідна промисловість",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_35",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000F83E24ADDF1C",
+      "title": "EV без втрати керування",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "00000C48C8F05212",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004457028A08B1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005838B9235020",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Побудувати дозволену EV секцію і перетворення HV/EV із буфером.",
+        "Фактична умова цього коду: 1 × modern_industrialization:superconductor_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000FEB3AB6351C9",
+      "title": "Надпровідна партія",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000F83E24ADDF1C",
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "00002323F1979F32",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000757073397BB5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003B0A85CEBB7B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 32 superconductor_ingot та 8 processing_unit.",
+        "Фактична умова цього коду: 1 × modern_industrialization:superconductor_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000068C83E5E47F7",
+      "title": "Ритуальний енергопровід",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "0000C1BED262C248",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018F962217696",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00009568EB9E0D03",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити магічні стабілізатори із gaia ingot і рідкісним металом.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000055A472534044",
+      "title": "Регенерація реагентів",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000068C83E5E47F7",
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "00009CD25F429C0B",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000921EEAEBE3D0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D6EB5F9A62C4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматизувати відновлювану магічну лінію для 16 стабілізаторів.",
+        "Фактична умова цього коду: 1 × botania:gaia_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000D2D0DF7A37D6",
+      "title": "Масив обробки",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000FEB3AB6351C9",
+        "000055A472534044",
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "0000EB908C49A383",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5F786D7E4A5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005FE914549810",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Паралельно виготовити 4 партії дозволеного виробу з реальним споживанням ресурсів.",
+        "Фактична умова цього коду: 1 × modern_industrialization:processing_unit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005FB7AFDB7633",
+      "title": "Навантага і повернення",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000D2D0DF7A37D6",
+        "00001D39B4D76842"
+      ],
+      "tasks": [
+        {
+          "id": "00006DE575433EFF",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA6C812B41F1",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025035FC51373",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:vibranium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000387ED2B1AE88",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CB61A0384F00",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "П’ять хвилин живити одночасно масив і магічну лінію без зупинки критичних контурів.",
+        "Фактична умова цього коду: 2 × modern_industrialization:superconductor_ingot (здати — витрачається); 2 × botania:gaia_ingot (здати — витрачається); 2 × allthemodium:vibranium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_35. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C902BC4BF099",
+      "title": "Ключ епохи 35: Надпровідна промисловість",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000F83E24ADDF1C",
+        "0000FEB3AB6351C9",
+        "000068C83E5E47F7",
+        "000055A472534044",
+        "0000D2D0DF7A37D6",
+        "00005FB7AFDB7633"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000053275E6EF121",
+          "type": "advancement",
+          "advancement": "aia2:keys/e35"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000EC93816CE083",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:superconductor_ingot; 2 × botania:gaia_ingot; 2 × modern_industrialization:processing_unit; 2 × allthemodium:vibranium_ingot; 1 × kubejs:aia2_epoch_key_34"
+      ]
+    },
+    {
+      "id": "00002E7357809BF2",
+      "title": "Розводка фабрики",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000F83E24ADDF1C"
+      ],
+      "description": [
+        "Винести сервісні та силові мережі в окремі канали."
+      ],
+      "rewards": [
+        {
+          "id": "0000C56BFD9CF3DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00002FD6DB1CDD0B",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00006169580BF51F",
+      "title": "Таблиця собівартості",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000F83E24ADDF1C"
+      ],
+      "description": [
+        "Порівняти одинарну машину й масив на однаковій партії."
+      ],
+      "rewards": [
+        {
+          "id": "0000282CE42668E0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000FD83CBA9ABBF",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "id": "0000D7BB2971C9D2",
+  "filename": "aia2_epoch_21",
+  "order_index": 20,
+  "title": "21. Ельфійські сплави",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_21",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000632A6A542DAF",
+      "title": "Мана великого масштабу",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "0000E135F6AA072A",
+          "type": "item",
+          "item": {
+            "id": "botania:alfheim_portal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000637D202924FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000000835AFB4F1C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Збудувати доступну відновлювану маногенерацію й підготувати перше Terrasteel перетворення.",
+        "Фактична умова цього коду: 1 × botania:alfheim_portal (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000045F59E04A7A7",
+      "title": "Терасталь без втрати",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000632A6A542DAF",
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "000060BF5D6229F6",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E138C3167C23",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A14CBAFF76D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 terrasteel_ingot через власний процес.",
+        "Фактична умова цього коду: 4 × modern_industrialization:analog_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000046D9355C9028",
+      "title": "Портал Альфхейму",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "00006567DD4A1DB7",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052A76ABA1D0F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F47E750A553E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати й активувати portal з потрібними легальними матеріалами.",
+        "Фактична умова цього коду: 1 × botania:terrasteel_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006598BBCCE4B4",
+      "title": "Перший ельфійський обмін",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000046D9355C9028",
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "00009F6B2DE9F70A",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088F05F135CB3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D5A5A7DDE0C1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Одержати 16 elementium і 4 dragonstone.",
+        "Фактична умова цього коду: 2 × botania:terrasteel_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00007DA71F37CBC9",
+      "title": "Ельфійська електроніка",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00006598BBCCE4B4",
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "00003555E10ED036",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046F5E2D82D38",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004C9F912EA348",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити botania:alfheim_portal за зміненим рецептом із modern_industrialization:analog_circuit ×1. Схемний стабілізатор ельфійського порталу доступний до першого elementium.",
+        "Фактична умова цього коду: 4 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F08A43FBE2C1",
+      "title": "Природа витримує фабрику",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00007DA71F37CBC9",
+        "0000258F585EC73D"
+      ],
+      "tasks": [
+        {
+          "id": "0000E1617E1EEC37",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CA7C3252F73",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA91DCDC84C5",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090DF00140998",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008021048F3F4A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 16 infused_iron й ще 2 terrasteel, відновивши витрачені Aura та ману.",
+        "Фактична умова цього коду: 2 × modern_industrialization:analog_circuit (здати — витрачається); 2 × botania:terrasteel_ingot (здати — витрачається); 2 × naturesaura:infused_iron (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_21. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004DA9BB20B560",
+      "title": "Ключ епохи 21: Ельфійські сплави",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000632A6A542DAF",
+        "000045F59E04A7A7",
+        "000046D9355C9028",
+        "00006598BBCCE4B4",
+        "00007DA71F37CBC9",
+        "0000F08A43FBE2C1"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000113B97589C2E",
+          "type": "advancement",
+          "advancement": "aia2:keys/e21"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005638B5727B4E",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:analog_circuit; 2 × botania:terrasteel_ingot; 2 × botania:elementium_ingot; 2 × naturesaura:infused_iron; 1 × kubejs:aia2_epoch_key_20"
+      ]
+    },
+    {
+      "id": "00009CBE0519479C",
+      "title": "Ельфійська архітектура",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000632A6A542DAF"
+      ],
+      "description": [
+        "Використати доступні ельфійські будівельні блоки."
+      ],
+      "rewards": [
+        {
+          "id": "000084DD01454194",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00005B4F9C67D890",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "000056BDFCD69E2D",
+      "title": "Зачарована кузня",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000632A6A542DAF"
+      ],
+      "description": [
+        "Підготувати зону tier2 Forbidden ковки без Eternal Stella."
+      ],
+      "rewards": [
+        {
+          "id": "000034B198EC6E1C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000E7B37243F392",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

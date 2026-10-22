@@ -1,0 +1,430 @@
+{
+  "id": "0000A59E9F7A3A47",
+  "filename": "aia2_epoch_04",
+  "order_index": 3,
+  "title": "04. Андезитова фабрика",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_04",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00004C0D531D713E",
+      "title": "Пресова лінія",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "000055A64BBE3437",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000906FD15C5FA7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        },
+        {
+          "id": "00002365C128F749",
+          "type": "advancement",
+          "advancement": "create:mechanical_press"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000800C95FEE826",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити прес і виробити 16 мідних та 16 залізних листів.",
+        "Фактична умова цього коду: 1 × rootsclassic:altar (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Завершити хоча б один процес пресування предмета механічним пресом Create й одержати непорожній результат; нативне досягнення Bonk!.",
+        "Додатково потрібні ВСІ вказані нативні досягнення Create. Поставте машину власноруч і будьте онлайн. Уже здобуті досягнення зараховуються; це одноразові докази, без лічильника циклів або перевірки FE/t.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000076975D62337B",
+      "title": "Подрібнення й суміш",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00004C0D531D713E",
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "0000DFC647CC7449",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE9EA4862F7C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        },
+        {
+          "id": "0000689F9E120873",
+          "type": "advancement",
+          "advancement": "create:millstone"
+        },
+        {
+          "id": "000098E865ECE472",
+          "type": "advancement",
+          "advancement": "create:mechanical_mixer"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000615ECA37F9C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перемолоти 16 зерна та провести 8 дозволених циклів змішування в basin.",
+        "Фактична умова цього коду: 4 × create:iron_sheet (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Завершити хоча б один дозволений процес на жорні Create: машина знаходить milling-рецепт, витрачає одну вхідну одиницю й обробляє його результати; нативне досягнення Embrace the Grind.",
+        "Успішно завершити хоча б один процес mixing у basin: BasinRecipe.apply повертає true й лише після цього викликається award MIXER; нативне досягнення Mixing It Up.",
+        "Додатково потрібні ВСІ вказані нативні досягнення Create. Поставте машину власноруч і будьте онлайн. Уже здобуті досягнення зараховуються; це одноразові докази, без лічильника циклів або перевірки FE/t.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000063A961D13D89",
+      "title": "Живий вівтар",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "00000CEB91002829",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D69B0D5868E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DD99F2B9CEB0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Збудувати Roots altar з дозволених матеріалів і підготувати runic_focus.",
+        "Фактична умова цього коду: 1 × rootsclassic:runic_focus (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000358255EA9B6C",
+      "title": "Перший ритуальний результат",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "000063A961D13D89",
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "00005EC9B42AC409",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BBF53E5B7ED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000824D76E6FEFF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити один ранній ритуал і приготувати 8 spell_powder.",
+        "Фактична умова цього коду: 2 × rootsclassic:runic_focus (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000066CE59032245",
+      "title": "Ритуал із металевою оправою",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000358255EA9B6C",
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "00000BBF9029A76C",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F3CF2D73A75",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000034C67A2CC292",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити rootsclassic:altar за зміненим рецептом із create:copper_sheet ×2. Мідна оправа вівтаря; листи виготовляються пресом незалежно від вівтаря.",
+        "Фактична умова цього коду: 4 × create:andesite_alloy (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00007F8B81666097",
+      "title": "Безперервний потік",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "000066CE59032245",
+        "000043D7F893AA21"
+      ],
+      "tasks": [
+        {
+          "id": "0000486937CEE929",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E6673E51E18",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C78943175EF",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D960D16B972",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000032F67B79B6D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Автоматично передати сировину на млин/прес і вивести 32 результатів у окрему скриню.",
+        "Фактична умова цього коду: 2 × create:iron_sheet (здати — витрачається); 2 × rootsclassic:runic_focus (здати — витрачається); 2 × create:copper_sheet (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_04. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E46B8975FBDF",
+      "title": "Ключ епохи 4: Андезитова фабрика",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00004C0D531D713E",
+        "000076975D62337B",
+        "000063A961D13D89",
+        "0000358255EA9B6C",
+        "000066CE59032245",
+        "00007F8B81666097"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000039F2A6A7DFE1",
+          "type": "advancement",
+          "advancement": "aia2:keys/e04"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000045295222555E",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × create:iron_sheet; 2 × rootsclassic:runic_focus; 2 × create:andesite_alloy; 2 × create:copper_sheet; 1 × kubejs:aia2_epoch_key_03"
+      ]
+    },
+    {
+      "id": "0000183DFEEEFE0D",
+      "title": "Пекарня біля річки",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00004C0D531D713E"
+      ],
+      "description": [
+        "Організувати лінію борошна й хліба."
+      ],
+      "rewards": [
+        {
+          "id": "0000C4F8A113CE9E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000D49DD0E428A9",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00005819CEF4B202",
+      "title": "Декоративна механіка",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00004C0D531D713E"
+      ],
+      "description": [
+        "Оформити цех копікетами/декором; декоративні блоки не потребують ключів."
+      ],
+      "rewards": [
+        {
+          "id": "000033B538ED64EE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000DD908AF3F1A1",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

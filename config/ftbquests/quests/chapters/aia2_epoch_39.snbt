@@ -1,0 +1,411 @@
+{
+  "id": "0000E93315C33D46",
+  "filename": "aia2_epoch_39",
+  "order_index": 38,
+  "title": "39. Антиматерія й просторові технології",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_39",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000C4663871E884",
+      "title": "SPS із вимірюваним живленням",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "000081B9ACEE0F52",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000013FB3D49F476",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000959E76480D57",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати валідний SPS і підготувати контрольований запас енергії та полонію.",
+        "Фактична умова цього коду: 1 × advanced_ae:quantum_processor (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006E29AF16598B",
+      "title": "Перша антиматерія",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C4663871E884",
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "00007BDC109F9B30",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081C6042CC733",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000946823C0B3FE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 pellet_antimatter штатним SPS-маршрутом.",
+        "Фактична умова цього коду: 1 × mekanism:pellet_antimatter (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005FC403402859",
+      "title": "Контракт маріда",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "00002524A2308A30",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B99EACB387DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005383D17C35F1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати occultism:ritual/summon_unbound_marid, перемогти власного occultism:marid_unbound і зібрати 4 реальні occultism:marid_essence.",
+        "Фактична умова цього коду: 1 × occultism:marid_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000054B10333CEF7",
+      "title": "Квантовий процесор",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00005FC403402859",
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "00008263A4382B8A",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1F5B721AB8C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00000CED9A8D9A97",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 advanced_ae:quantum_processor двома партіями integration_recipe: на кожні 4 процесори витратити 1 marid_essence+1 pellet_antimatter поверх штатних входів.",
+        "Фактична умова цього коду: 1 × occultism:marid_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E72FF33AAC98",
+      "title": "Складальник просторового рівня",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00006E29AF16598B",
+        "000054B10333CEF7",
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "0000B13E868180CA",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002B90ED79A01E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FE673562C889",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити advanced_ae:quantum_crafter за OP-рецептом епохи 39 і виконати ним замовлення на 16 modern_industrialization:processing_unit.",
+        "Фактична умова цього коду: 1 × advanced_ae:quantum_processor (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005A29FAE88B1E",
+      "title": "Енергетичний баланс SPS",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000E72FF33AAC98",
+        "000059447DF977AA"
+      ],
+      "tasks": [
+        {
+          "id": "0000D7B8FA783998",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F3B8CF24DE7E",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000773358363810",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000900222982779",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A8F34E90D55D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виміряти завершену другу партію і довести відсутність позитивної петлі антиматерії.",
+        "Фактична умова цього коду: 2 × mekanism:pellet_antimatter (здати — витрачається); 2 × occultism:marid_essence (здати — витрачається); 2 × modern_industrialization:superconductor_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_39. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006E7027253AE0",
+      "title": "Ключ епохи 39: Антиматерія й просторові технології",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000C4663871E884",
+        "00006E29AF16598B",
+        "00005FC403402859",
+        "000054B10333CEF7",
+        "0000E72FF33AAC98",
+        "00005A29FAE88B1E"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A9821AC65A17",
+          "type": "advancement",
+          "advancement": "aia2:keys/e39"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D2BE691B03D0",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × mekanism:pellet_antimatter; 2 × occultism:marid_essence; 2 × advanced_ae:quantum_processor; 2 × modern_industrialization:superconductor_ingot; 1 × kubejs:aia2_epoch_key_38"
+      ]
+    },
+    {
+      "id": "0000B5D4D12C1656",
+      "title": "Просторова диспетчерська",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C4663871E884"
+      ],
+      "description": [
+        "Обладнати панель запасу полонію, енергії й антиматерії."
+      ],
+      "rewards": [
+        {
+          "id": "0000076F869B7872",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000003038DECFC2E",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00000FAC3E49481B",
+      "title": "Духовний архів",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C4663871E884"
+      ],
+      "description": [
+        "Зібрати дозволені книжки прив’язки без використання їх для обходу стадій."
+      ],
+      "rewards": [
+        {
+          "id": "0000997C5D6D0AB5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000CBF77901D889",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

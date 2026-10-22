@@ -1,0 +1,401 @@
+{
+  "id": "0000358DC0C325E9",
+  "filename": "aia2_epoch_31",
+  "order_index": 30,
+  "title": "31. Воля Ґаї та володарі ритуалів",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_31",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000D7080A3BAF4F",
+      "title": "Арена із захистом фабрики",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "0000E0FD18CF0379",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_pylon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003274757152F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001EF595799E5B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Побудувати арену Ґаї, окрему від працюючої промислової бази.",
+        "Фактична умова цього коду: 1 × botania:gaia_pylon (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B750CBC9A737",
+      "title": "Промислова оправа",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000D7080A3BAF4F",
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "0000413DFBB87EFA",
+          "type": "kill",
+          "entity": "botania:doppleganger",
+          "value": 1
+        },
+        {
+          "id": "000036A7F7C2F301",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000024EA8331983D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 16 електронних схем для ритуальної оснастки.",
+        "Серверний kill-task: особисто/командою перемогти зазначену істоту після відкриття завдання.",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000935C72655B4",
+      "title": "Перша воля Ґаї",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "0000F32490EB5021",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002AC9AFEC2319",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DB1C342D8770",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перемогти Ґаю I й отримати власну life essence.",
+        "Фактична умова цього коду: 1 × botania:life_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000008EDBB380846",
+      "title": "Союз магічних шкіл",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00000935C72655B4",
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "000031617F36A7EE",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A745AB87FA39",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003B947B85637B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виконати один високий ритуал Goety та виготовити 4 deorum.",
+        "Фактична умова цього коду: 2 × botania:life_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00004819617AB4D1",
+      "title": "Повернення Ґаї",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B750CBC9A737",
+        "000008EDBB380846",
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "0000537CFFBF8268",
+          "type": "kill",
+          "entity": "botania:doppleganger",
+          "value": 1
+        },
+        {
+          "id": "000058288BACB520",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000ADA51EF70902",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Законно відкрити й перемогти Ґаю II, застосувавши компоненти першого випробування.",
+        "Серверний kill-task: особисто/командою перемогти зазначену істоту після відкриття завдання.",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000E868DCC1A361",
+      "title": "Сплав для високої напруги",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00004819617AB4D1",
+        "00003B2B3DC45B72"
+      ],
+      "tasks": [
+        {
+          "id": "00005F89ACB3D616",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090461FF76CB8",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3DBC666A45F",
+          "type": "item",
+          "item": {
+            "id": "goety:shadow_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B830DA5A8AAD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000012779BEA3CF3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 4 gaia ingot і передати 2 у виробничу партію високовольтної оснастки.",
+        "Фактична умова цього коду: 2 × modern_industrialization:electronic_circuit (здати — витрачається); 2 × botania:life_essence (здати — витрачається); 2 × goety:shadow_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_31. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000AE14C79E7DF9",
+      "title": "Ключ епохи 31: Воля Ґаї та володарі ритуалів",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000D7080A3BAF4F",
+        "0000B750CBC9A737",
+        "00000935C72655B4",
+        "000008EDBB380846",
+        "00004819617AB4D1",
+        "0000E868DCC1A361"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000089BBBD9EA10",
+          "type": "advancement",
+          "advancement": "aia2:keys/e31"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000EFB5FA607C50",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:electronic_circuit; 2 × botania:life_essence; 2 × forbidden_arcanus:deorum_ingot; 2 × goety:shadow_essence; 1 × kubejs:aia2_epoch_key_30"
+      ]
+    },
+    {
+      "id": "0000F5A27B4EE157",
+      "title": "Колекція шкіл",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000D7080A3BAF4F"
+      ],
+      "description": [
+        "Зібрати комплект дозволених високих заклять різних стихій."
+      ],
+      "rewards": [
+        {
+          "id": "0000DD4750EDFAA4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00000C3BEF13B7D3",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000A5BFEE6DFE92",
+      "title": "Кузня майстра",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000D7080A3BAF4F"
+      ],
+      "description": [
+        "Побудувати повний обслуговуваний комплекс Hephaestus."
+      ],
+      "rewards": [
+        {
+          "id": "0000273028ECA966",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000C26D5D0FD308",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

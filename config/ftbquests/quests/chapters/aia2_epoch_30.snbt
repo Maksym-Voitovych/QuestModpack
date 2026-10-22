@@ -1,0 +1,406 @@
+{
+  "id": "000050A5A343B0B2",
+  "filename": "aia2_epoch_30",
+  "order_index": 29,
+  "title": "30. Завоювання Енду",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_30",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00002BC845033549",
+      "title": "Експедиційний комплект",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "00000BB39AC1C4AE",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archmage_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006E32408FEBF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000221F099B102C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати обладнання, запас енергії, витратні зілля й дозволений спосіб повернення.",
+        "Фактична умова цього коду: 1 × ars_nouveau:archmage_spell_book (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005C3D57B0B438",
+      "title": "Власний портал",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00002BC845033549",
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "0000163870D7DA59",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD161ACCCA87",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000028F1839EF50E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Активувати й використати дозволений вхід до End після відкриття епохи.",
+        "Фактична умова цього коду: 4 × ae2:engineering_processor (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000B192E592D711",
+      "title": "Шлях архімага",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "0000DCBEF35DBDEC",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:abjuration_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000623C41873B08",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000083AFF2A0E8C6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити потрібну для книги магічну підготовку й законно отримати nether star.",
+        "Фактична умова цього коду: 1 × ars_nouveau:abjuration_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000057FB9D9DB03D",
+      "title": "Випробування регіонів",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000B192E592D711",
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "00007A16155D1EA7",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:abjuration_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A3FD3B8325D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F941222A8AC5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Завершити дозволену фінальну ланку Twilight Forest і одну експедицію Aether.",
+        "Фактична умова цього коду: 2 × ars_nouveau:abjuration_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00005AF964C3A9DC",
+      "title": "Падіння дракона",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00005C3D57B0B438",
+        "000057FB9D9DB03D",
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "00008AB2B80EA122",
+          "type": "kill",
+          "entity": "minecraft:ender_dragon",
+          "value": 1
+        },
+        {
+          "id": "0000199F8D31757F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000CC5C67F26596",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Перемогти Ender Dragon без предметів або ефектів майбутніх епох.",
+        "Серверний kill-task: особисто/командою перемогти зазначену істоту після відкриття завдання.",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00006CB2C001D930",
+      "title": "Повернення з реагентом",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00005AF964C3A9DC",
+        "0000A30803BAD4FB"
+      ],
+      "tasks": [
+        {
+          "id": "00003B782220127E",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AE19F99A4EBB",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:abjuration_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCDEC41E717F",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C0EC67AC84F0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004D3260ADEC1B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати 8 dragon breath і повернутися до бази.",
+        "Фактична умова цього коду: 2 × ae2:engineering_processor (здати — витрачається); 2 × ars_nouveau:abjuration_essence (здати — витрачається); 2 × twilightforest:fiery_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_30. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00003B2B3DC45B72",
+      "title": "Ключ епохи 30: Завоювання Енду",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00002BC845033549",
+        "00005C3D57B0B438",
+        "0000B192E592D711",
+        "000057FB9D9DB03D",
+        "00005AF964C3A9DC",
+        "00006CB2C001D930"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CA78D5FCD6A",
+          "type": "advancement",
+          "advancement": "aia2:keys/e30"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D04A9BD807A8",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × ae2:engineering_processor; 2 × ars_nouveau:abjuration_essence; 2 × minecraft:dragon_breath; 2 × twilightforest:fiery_ingot; 1 × kubejs:aia2_epoch_key_29"
+      ]
+    },
+    {
+      "id": "00009FE5768CCA7A",
+      "title": "Картографія Енду",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00002BC845033549"
+      ],
+      "description": [
+        "Дослідити острів і знайти місто без ранньої міжвимірної телепортації."
+      ],
+      "rewards": [
+        {
+          "id": "0000724031C6E2F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000F3775DD50000",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000AC5562CEEFAE",
+      "title": "Пам’ятник експедиції",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00002BC845033549"
+      ],
+      "description": [
+        "Побудувати зал трофеїв без використання ключів як декору."
+      ],
+      "rewards": [
+        {
+          "id": "00001EFC8C1D436D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000B000C1DE4739",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

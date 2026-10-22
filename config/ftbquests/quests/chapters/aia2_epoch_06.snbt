@@ -1,0 +1,410 @@
+{
+  "id": "00007FD7862F4D8D",
+  "filename": "aia2_epoch_06",
+  "order_index": 5,
+  "title": "06. Бронза та пара",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_06",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00005E9FB0C9E714",
+      "title": "Бронзова серія",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "0000DDFCCD168CA6",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_boiler",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FDD8DD8DFB17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005B95AC8ED361",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 32 бронзових злитки й 8 бронзових шестерень.",
+        "Фактична умова цього коду: 1 × modern_industrialization:bronze_boiler (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000444A552B34F4",
+      "title": "Паровий контур",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00005E9FB0C9E714",
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "0000E93938E19478",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_gear",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD8C95EEA9DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003408F3CD73D3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Запустити boiler й macerator з безперервним водопостачанням.",
+        "Фактична умова цього коду: 4 × modern_industrialization:bronze_gear (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BB5CB3BE82A9",
+      "title": "Манасталева арматура",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "000010F8A99B2423",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCFF6767D4FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000021937AC4C011",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 8 manasteel для ущільнення промислового корпусу.",
+        "Фактична умова цього коду: 1 × botania:manasteel_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000FA5E22F154D7",
+      "title": "Конденсація природи",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000BB5CB3BE82A9",
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "0000CC07C8520431",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F92A3C8F69C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000044B8CA803615",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати 4 runic_focus й відновити запас трав після їх виробництва.",
+        "Фактична умова цього коду: 2 × botania:manasteel_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F40C931E0F3C",
+      "title": "Бойлер із магічним ущільненням",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000FA5E22F154D7",
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "0000499ECEEDA1CA",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5BB51B36488",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000821881096033",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити modern_industrialization:bronze_boiler за зміненим рецептом із botania:manasteel_ingot ×2. Манасталеве ущільнення до першого запуску котла; інші бронзові деталі мають ручні маршрути.",
+        "Фактична умова цього коду: 4 × modern_industrialization:bronze_plate (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000030781DF04956",
+      "title": "Партія без ручного дроблення",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000F40C931E0F3C",
+        "000092097EA103EC"
+      ],
+      "tasks": [
+        {
+          "id": "00009AC0EF0E5797",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_gear",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009470281EE3C9",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009778CCC9CA06",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A41B6BB67BEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003FF2D3E555A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Обробити 32 рудні одиниці парою, відвести результат і не спорожнити резерв води.",
+        "Фактична умова цього коду: 2 × modern_industrialization:bronze_gear (здати — витрачається); 2 × botania:manasteel_ingot (здати — витрачається); 2 × rootsclassic:runic_focus (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_06. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00002EE0A796BE65",
+      "title": "Ключ епохи 6: Бронза та пара",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00005E9FB0C9E714",
+        "0000444A552B34F4",
+        "0000BB5CB3BE82A9",
+        "0000FA5E22F154D7",
+        "0000F40C931E0F3C",
+        "000030781DF04956"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000042D80EB135DC",
+          "type": "advancement",
+          "advancement": "aia2:keys/e06"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000049D680720093",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:bronze_gear; 2 × botania:manasteel_ingot; 2 × modern_industrialization:bronze_plate; 2 × rootsclassic:runic_focus; 1 × kubejs:aia2_epoch_key_05"
+      ]
+    },
+    {
+      "id": "000013435564A662",
+      "title": "Бронзова ферма компосту",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00005E9FB0C9E714"
+      ],
+      "description": [
+        "Випробувати ранній EI composter на звичайній біосировині."
+      ],
+      "rewards": [
+        {
+          "id": "00006126F631A60A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "000011AB41DB4CE3",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00002AC842D17868",
+      "title": "Паровий інтер’єр",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00005E9FB0C9E714"
+      ],
+      "description": [
+        "Побудувати окрему котельню з доступним сервісним проходом."
+      ],
+      "rewards": [
+        {
+          "id": "0000C8296C0035D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000FF03EA85EFE8",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

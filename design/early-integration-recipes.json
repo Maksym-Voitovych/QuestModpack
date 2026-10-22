@@ -1,0 +1,1202 @@
+[
+  {
+    "epoch": 1,
+    "target_id": "rootsclassic:mortar",
+    "source_recipe_id": "rootsclassic:mortar",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "minecraft:flint",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_01",
+    "rationale_uk": "Ступка є матеріальним зв’язком ручного кам’яного ремесла з травництвом.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "X": {
+          "tag": "c:stones"
+        },
+        "a": {
+          "item": "minecraft:flint"
+        }
+      },
+      "pattern": [
+        "XaX",
+        "X X",
+        " X "
+      ],
+      "result": {
+        "count": 1,
+        "id": "rootsclassic:mortar"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 2,
+    "target_id": "create:water_wheel",
+    "source_recipe_id": "create:crafting/kinetics/water_wheel",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "rootsclassic:oak_bark",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_02",
+    "rationale_uk": "Природне ущільнення початкового колеса, без пізньої магічної машини.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "C": {
+          "item": "create:shaft"
+        },
+        "S": {
+          "tag": "minecraft:planks"
+        },
+        "a": {
+          "item": "rootsclassic:oak_bark"
+        }
+      },
+      "pattern": [
+        "SSS",
+        "SCS",
+        "SSa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "create:water_wheel"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "minecraft:planks"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 3,
+    "target_id": "rustic_engineer:gear",
+    "source_recipe_id": "rustic_engineer:craft_gear",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "rootsclassic:old_root",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_03",
+    "rationale_uk": "Раннє рослинне мастило ручної шестерні; не відкриває транспорт.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "pattern": [
+        "ca ",
+        "aba",
+        " a "
+      ],
+      "key": {
+        "a": {
+          "tag": "c:ingots/iron"
+        },
+        "b": {
+          "tag": "minecraft:logs"
+        },
+        "c": {
+          "item": "rootsclassic:old_root"
+        }
+      },
+      "result": {
+        "id": "rustic_engineer:gear",
+        "count": 2
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 4,
+    "target_id": "rootsclassic:altar",
+    "source_recipe_id": "rootsclassic:altar",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "create:copper_sheet",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_04",
+    "rationale_uk": "Мідна оправа вівтаря; листи виготовляються пресом незалежно від вівтаря.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "B": {
+          "item": "rootsclassic:verdant_sprig"
+        },
+        "C": {
+          "item": "minecraft:chiseled_stone_bricks"
+        },
+        "F": {
+          "item": "minecraft:poppy"
+        },
+        "G": {
+          "tag": "c:storage_blocks/gold"
+        },
+        "S": {
+          "tag": "c:stones"
+        },
+        "a": {
+          "item": "create:copper_sheet"
+        }
+      },
+      "pattern": [
+        "BFB",
+        "SGS",
+        "aCa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "rootsclassic:altar"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 5,
+    "target_id": "botania:apothecary_default",
+    "source_recipe_id": "botania:apothecary_default",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "create:copper_sheet",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_05",
+    "rationale_uk": "Пелюсткова алхімія потребує вже освоєної технічної обробки.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "C": {
+          "item": "minecraft:cobblestone"
+        },
+        "P": {
+          "tag": "botania:petals"
+        },
+        "a": {
+          "item": "create:copper_sheet"
+        }
+      },
+      "pattern": [
+        "CPC",
+        "aCa",
+        "CCC"
+      ],
+      "result": {
+        "count": 1,
+        "id": "botania:apothecary_default"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 6,
+    "target_id": "modern_industrialization:bronze_boiler",
+    "source_recipe_id": "modern_industrialization:steam_age/bronze/boiler_asbl",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "botania:manasteel_ingot",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_06",
+    "rationale_uk": "Манасталеве ущільнення до першого запуску котла; інші бронзові деталі мають ручні маршрути.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "#T#",
+        "#Fa",
+        "BBa"
+      ],
+      "key": {
+        "#": {
+          "tag": "c:plates/bronze"
+        },
+        "T": {
+          "item": "modern_industrialization:bronze_tank"
+        },
+        "B": {
+          "item": "modern_industrialization:fire_clay_bricks"
+        },
+        "F": {
+          "item": "minecraft:furnace"
+        },
+        "a": {
+          "item": "botania:manasteel_ingot"
+        }
+      },
+      "result": {
+        "id": "modern_industrialization:bronze_boiler",
+        "count": 1
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 2,
+        "column": 3,
+        "ingredient": {
+          "tag": "c:plates/bronze"
+        }
+      },
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "item": "modern_industrialization:fire_clay_bricks"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 7,
+    "target_id": "totemic:drum",
+    "source_recipe_id": "totemic:drum",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "modern_industrialization:bronze_plate",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_07",
+    "rationale_uk": "Технічна оправа музичного ритуального інструмента.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "E": {
+          "tag": "c:leathers"
+        },
+        "L": {
+          "tag": "minecraft:logs_that_burn"
+        },
+        "W": {
+          "tag": "minecraft:wool"
+        },
+        "a": {
+          "item": "modern_industrialization:bronze_plate"
+        }
+      },
+      "pattern": [
+        "EEE",
+        "LWL",
+        "WLa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "totemic:drum"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "minecraft:wool"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 8,
+    "target_id": "enchanted:witch_oven",
+    "source_recipe_id": "enchanted:witch_oven",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "immersiveengineering:plate_steel",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_08",
+    "rationale_uk": "Сталь із нового незалежного blastbrick-маршруту потрібна магічній печі.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "b": {
+          "item": "minecraft:iron_bars"
+        },
+        "i": {
+          "tag": "c:ingots/iron"
+        },
+        "a": {
+          "item": "immersiveengineering:plate_steel"
+        }
+      },
+      "pattern": [
+        "aba",
+        "iii",
+        "ibi"
+      ],
+      "result": {
+        "count": 1,
+        "id": "enchanted:witch_oven"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 9,
+    "target_id": "botania:runic_altar",
+    "source_recipe_id": "botania:runic_altar",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "immersiveengineering:component_iron",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_09",
+    "rationale_uk": "Рунічний вівтар отримує залізну інженерну основу, вироблену до його запуску.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "P": {
+          "item": "botania:mana_pearl"
+        },
+        "S": {
+          "item": "botania:livingrock"
+        },
+        "a": {
+          "item": "immersiveengineering:component_iron"
+        }
+      },
+      "pattern": [
+        "SSS",
+        "SPS",
+        "a  "
+      ],
+      "result": {
+        "count": 1,
+        "id": "botania:runic_altar"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 10,
+    "target_id": "ars_nouveau:imbuement_chamber",
+    "source_recipe_id": "ars_nouveau:imbuement_chamber",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "create:precision_mechanism",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_10",
+    "rationale_uk": "Перший source_gem вимагає латунної точності; латунь доступна попередньою Botania-магією.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "x": {
+          "item": "ars_nouveau:archwood_planks"
+        },
+        "y": {
+          "tag": "c:ingots/gold"
+        },
+        "a": {
+          "item": "create:precision_mechanism"
+        }
+      },
+      "pattern": [
+        "xyx",
+        "xax",
+        "xyx"
+      ],
+      "result": {
+        "count": 1,
+        "id": "ars_nouveau:imbuement_chamber"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 11,
+    "target_id": "createaddition:alternator",
+    "source_recipe_id": "createaddition:mechanical_crafting/alternator",
+    "source_recipe_type": "create:mechanical_crafting",
+    "additional_inputs": [
+      {
+        "id": "botania:rune_water",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_11",
+    "rationale_uk": "Магічна ізоляція кінетичного генератора.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "create:mechanical_crafting",
+      "accept_mirrored": true,
+      "category": "misc",
+      "key": {
+        "A": {
+          "item": "create:andesite_alloy"
+        },
+        "I": {
+          "tag": "c:plates/iron"
+        },
+        "R": {
+          "tag": "c:rods/iron"
+        },
+        "S": {
+          "item": "createaddition:copper_spool"
+        },
+        "a": {
+          "item": "botania:rune_water"
+        }
+      },
+      "pattern": [
+        "a A  ",
+        " ISI ",
+        "ISRSI",
+        " ISI ",
+        "  A  "
+      ],
+      "result": {
+        "count": 1,
+        "id": "createaddition:alternator"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 12,
+    "target_id": "tfmg:diesel_engine_cylinder",
+    "source_recipe_id": "tfmg:engine_cylinder",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "enchanted:attuned_stone",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_12",
+    "rationale_uk": "Відьомський стабілізатор дизельної циліндрової групи.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "P": {
+          "tag": "c:plates/aluminum"
+        },
+        "a": {
+          "item": "enchanted:attuned_stone"
+        }
+      },
+      "pattern": [
+        "a  ",
+        "P P",
+        "P P"
+      ],
+      "result": {
+        "count": 1,
+        "id": "tfmg:diesel_engine_cylinder",
+        "components": {
+          "tfmg:fuel_tags": {
+            "diesel": "c:diesel"
+          },
+          "tfmg:fuels": {
+            "diesel": "fluid.tfmg.diesel"
+          }
+        }
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 13,
+    "target_id": "modern_industrialization:basic_machine_hull",
+    "source_recipe_id": "modern_industrialization:electric_age/hull/lv_machine_hull_asbl",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "evilcraft:dark_gem",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_13",
+    "rationale_uk": "LV-корпус залежить від магічної гілки; dark_gem добувається без цього корпусу.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "aAa",
+        "BCB",
+        "ccc"
+      ],
+      "key": {
+        "A": {
+          "item": "modern_industrialization:analog_circuit"
+        },
+        "c": {
+          "item": "modern_industrialization:tin_cable"
+        },
+        "B": {
+          "item": "modern_industrialization:redstone_battery"
+        },
+        "C": {
+          "item": "modern_industrialization:steel_machine_casing"
+        },
+        "a": {
+          "item": "evilcraft:dark_gem"
+        }
+      },
+      "result": {
+        "id": "modern_industrialization:basic_machine_hull"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 14,
+    "target_id": "pneumaticcraft:pressure_chamber_interface",
+    "source_recipe_id": "pneumaticcraft:pressure_chamber_interface",
+    "source_recipe_type": "minecraft:crafting_shapeless",
+    "additional_inputs": [
+      {
+        "id": "occultism:spirit_attuned_gem",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_14",
+    "rationale_uk": "Духова адресація автоматичного інтерфейсу; перша камера працює вручну без нього.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shapeless",
+      "category": "misc",
+      "ingredients": [
+        {
+          "item": "minecraft:hopper"
+        },
+        {
+          "item": "pneumaticcraft:pressure_chamber_wall"
+        },
+        {
+          "item": "pneumaticcraft:pressure_chamber_wall"
+        },
+        {
+          "item": "occultism:spirit_attuned_gem"
+        }
+      ],
+      "result": {
+        "count": 2,
+        "id": "pneumaticcraft:pressure_chamber_interface"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 15,
+    "target_id": "irons_spellbooks:inscription_table",
+    "source_recipe_id": "irons_spellbooks:inscription_table",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "immersiveengineering:component_steel",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_15",
+    "rationale_uk": "Сталевий механізм потрібний магічному письму.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "a B",
+        "TTT",
+        "L L"
+      ],
+      "key": {
+        "B": {
+          "item": "minecraft:book"
+        },
+        "T": {
+          "tag": "minecraft:wooden_slabs"
+        },
+        "L": {
+          "tag": "minecraft:wooden_fences"
+        },
+        "a": {
+          "item": "immersiveengineering:component_steel"
+        }
+      },
+      "result": {
+        "id": "irons_spellbooks:inscription_table",
+        "count": 1
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 16,
+    "target_id": "mekanism:steel_casing",
+    "source_recipe_id": "mekanism:steel_casing",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "botania:rune_fire",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_16",
+    "rationale_uk": "Вогняна руна потрібна просунутішим Mek корпусам; перший Infuser має незалежний рецепт.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "key": {
+        "G": {
+          "tag": "c:plates/obsidian"
+        },
+        "O": {
+          "item": "tfmg:steel_casing"
+        },
+        "S": {
+          "tag": "c:ingots/steel"
+        },
+        "a": {
+          "item": "botania:rune_fire"
+        }
+      },
+      "pattern": [
+        "SGS",
+        "GOG",
+        "SGa"
+      ],
+      "result": {
+        "id": "mekanism:steel_casing"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "c:ingots/steel"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 17,
+    "target_id": "ae2:drive",
+    "source_recipe_id": "ae2:network/blocks/storage_drive",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "occultism:spirit_attuned_gem",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_17",
+    "rationale_uk": "Локальне цифрове сховище отримує духовний стабілізатор, доступний із E14.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "a": {
+          "tag": "c:ingots/iron"
+        },
+        "b": {
+          "item": "ae2:engineering_processor"
+        },
+        "c": {
+          "item": "ae2:fluix_glass_cable"
+        },
+        "d": {
+          "item": "occultism:spirit_attuned_gem"
+        }
+      },
+      "pattern": [
+        "aba",
+        "cdc",
+        "aba"
+      ],
+      "result": {
+        "count": 1,
+        "id": "ae2:drive"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 18,
+    "target_id": "industrialforegoing:machine_frame_pity",
+    "source_recipe_id": "industrialforegoing:machine_frame_pity",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "botania:manasteel_ingot",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_18",
+    "rationale_uk": "Перший IF-корпус без пластику: магічний матеріал доступний раніше за латекс.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "neoforge:conditions": [
+        {
+          "type": "almostunified:conditional",
+          "conditions_met": true,
+          "original_conditions": [
+            {
+              "type": "neoforge:item_exists",
+              "item": "industrialforegoing:machine_frame_pity"
+            }
+          ]
+        }
+      ],
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "I": {
+          "tag": "c:ingots/iron"
+        },
+        "R": {
+          "tag": "c:storage_blocks/redstone"
+        },
+        "W": {
+          "tag": "minecraft:logs"
+        },
+        "a": {
+          "item": "botania:manasteel_ingot"
+        }
+      },
+      "pattern": [
+        "WIW",
+        "IRI",
+        "Waa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "industrialforegoing:machine_frame_pity"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "minecraft:logs"
+        }
+      },
+      {
+        "row": 3,
+        "column": 2,
+        "ingredient": {
+          "tag": "c:ingots/iron"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 19,
+    "target_id": "enderio:ensouled_chassis",
+    "source_recipe_id": "enderio:ensouled_chassis",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "evilcraft:dark_power_gem",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_19",
+    "rationale_uk": "Темний каталізатор із Blood Infuser, доступного з E13.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "C": {
+          "item": "enderio:soul_chain"
+        },
+        "I": {
+          "tag": "c:ingots/soularium"
+        },
+        "Q": {
+          "tag": "c:gems/quartz"
+        },
+        "a": {
+          "item": "evilcraft:dark_power_gem"
+        }
+      },
+      "pattern": [
+        "CIC",
+        "IQI",
+        "CIa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "enderio:ensouled_chassis"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "item": "enderio:soul_chain"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 20,
+    "target_id": "ars_nouveau:enchanting_apparatus",
+    "source_recipe_id": "ars_nouveau:enchanting_apparatus",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "create:precision_mechanism",
+        "count": 1
+      },
+      {
+        "id": "enderio:basic_capacitor",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_20",
+    "rationale_uk": "Другий рівень магічної збірки потребує точності й електронного компонента.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "d": {
+          "tag": "c:gems/diamond"
+        },
+        "g": {
+          "tag": "c:ingots/gold"
+        },
+        "n": {
+          "tag": "c:nuggets/gold"
+        },
+        "s": {
+          "item": "ars_nouveau:sourcestone"
+        },
+        "a": {
+          "item": "create:precision_mechanism"
+        },
+        "b": {
+          "item": "enderio:basic_capacitor"
+        }
+      },
+      "pattern": [
+        "nsn",
+        "gdg",
+        "bsa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "ars_nouveau:enchanting_apparatus"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "c:nuggets/gold"
+        }
+      },
+      {
+        "row": 3,
+        "column": 1,
+        "ingredient": {
+          "tag": "c:nuggets/gold"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 21,
+    "target_id": "botania:alfheim_portal",
+    "source_recipe_id": "botania:alfheim_portal",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "modern_industrialization:analog_circuit",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_21",
+    "rationale_uk": "Схемний стабілізатор ельфійського порталу доступний до першого elementium.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "T": {
+          "tag": "botania:terrasteel_nuggets"
+        },
+        "W": {
+          "tag": "botania:livingwood_logs"
+        },
+        "a": {
+          "item": "modern_industrialization:analog_circuit"
+        }
+      },
+      "pattern": [
+        "WTW",
+        "WTW",
+        "WTa"
+      ],
+      "result": {
+        "count": 1,
+        "id": "botania:alfheim_portal"
+      }
+    },
+    "replaced_low_tier_slots": [
+      {
+        "row": 3,
+        "column": 3,
+        "ingredient": {
+          "tag": "botania:livingwood_logs"
+        }
+      }
+    ],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 22,
+    "target_id": "modern_industrialization:advanced_machine_hull",
+    "source_recipe_id": "modern_industrialization:electric_age/hull/advanced_machine_hull_asbl",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "botania:elementium_ingot",
+        "count": 2
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_22",
+    "rationale_uk": "Наступний корпус спирається на попередню ельфійську арку.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "pattern": [
+        "aca",
+        "BCB",
+        "ppp"
+      ],
+      "key": {
+        "B": {
+          "item": "modern_industrialization:silicon_battery"
+        },
+        "c": {
+          "item": "modern_industrialization:electronic_circuit"
+        },
+        "C": {
+          "item": "modern_industrialization:advanced_machine_casing"
+        },
+        "p": {
+          "item": "modern_industrialization:electrum_cable"
+        },
+        "a": {
+          "item": "botania:elementium_ingot"
+        }
+      },
+      "result": {
+        "id": "modern_industrialization:advanced_machine_hull"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 23,
+    "target_id": "mekanism:basic_purifying_factory",
+    "source_recipe_id": "mekanism:factory/basic/purifying",
+    "source_recipe_type": "mekanism:mek_data",
+    "additional_inputs": [
+      {
+        "id": "botania:elementium_ingot",
+        "count": 2
+      },
+      {
+        "id": "actuallyadditions:empowered_restonia_crystal",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_23",
+    "rationale_uk": "Паралельна 3x фабрика потребує двох магічних матеріальних систем; одиночна 3x лінія й Empowerer існують без фабрики.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "mekanism:mek_data",
+      "key": {
+        "P": {
+          "item": "mekanism:purification_chamber"
+        },
+        "U": {
+          "item": "mekanism:basic_tier_installer"
+        },
+        "a": {
+          "item": "botania:elementium_ingot"
+        },
+        "b": {
+          "item": "actuallyadditions:empowered_restonia_crystal"
+        }
+      },
+      "pattern": [
+        "PUa",
+        "ab ",
+        "   "
+      ],
+      "result": {
+        "id": "mekanism:basic_purifying_factory"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  },
+  {
+    "epoch": 24,
+    "target_id": "pneumaticcraft:drone",
+    "source_recipe_id": "pneumaticcraft:drone",
+    "source_recipe_type": "minecraft:crafting_shaped",
+    "additional_inputs": [
+      {
+        "id": "occultism:spirit_attuned_gem",
+        "count": 1
+      },
+      {
+        "id": "actuallyadditions:empowered_restonia_crystal",
+        "count": 1
+      }
+    ],
+    "preserve_native_fields": true,
+    "stage": "aia2_epoch_24",
+    "rationale_uk": "Робот отримує духовний контролер; обидва реагенти доступні до першого drone.",
+    "implementation_note_uk": "Повна запропонована формула нижче зберігає нативний serializer, вихід, енергію, час та інші службові поля. Додані реагенти займають порожні слоти; за браку місця замінюють лише повторені базові складові, перелічені в replaced_low_tier_slots. Окремий серверний stage-check ще потрібно реалізувати; JSON сам його не додає. Не встановлено у збірку.",
+    "removal_policy_uk": "Після реалізації замінити конкретний нативний recipe ID; альтернативи перевірити за output, повними компонентами й стадією, без видалення сторонніх рецептів навмання.",
+    "proposed_native_recipe": {
+      "type": "minecraft:crafting_shaped",
+      "category": "misc",
+      "key": {
+        "B": {
+          "item": "pneumaticcraft:turbine_rotor"
+        },
+        "P": {
+          "item": "pneumaticcraft:printed_circuit_board"
+        },
+        "a": {
+          "item": "occultism:spirit_attuned_gem"
+        },
+        "b": {
+          "item": "actuallyadditions:empowered_restonia_crystal"
+        }
+      },
+      "pattern": [
+        "aBb",
+        "BPB",
+        " B "
+      ],
+      "result": {
+        "count": 1,
+        "id": "pneumaticcraft:drone"
+      }
+    },
+    "replaced_low_tier_slots": [],
+    "native_process_and_output_preserved": true
+  }
+]

@@ -1,0 +1,410 @@
+{
+  "id": "00006744DEC01D69",
+  "filename": "aia2_epoch_22",
+  "order_index": 21,
+  "title": "22. Середня напруга",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_22",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "00009385D23D37E0",
+      "title": "Складніша плата",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "00008EBDB91303D9",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_machine_hull",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000674A91C593E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000E27E9B13A13C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виробити 16 electronic_circuit зі всім попереднім ланцюжком заготовок.",
+        "Фактична умова цього коду: 1 × modern_industrialization:advanced_machine_hull (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00008C577DF899FD",
+      "title": "Електрометалургія",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "00009385D23D37E0",
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "00008A242892EF5D",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009EC98B2CED1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000FA2C9CE7FE48",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Зібрати дозволену Electric Blast Furnace й виконати 16 доступних високотемпературних перетворень.",
+        "Фактична умова цього коду: 4 × modern_industrialization:electronic_circuit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000885F7F1CF99",
+      "title": "Ельфійська партія",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "00009351D841989D",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009E4F7223554",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000DBDC5316CED9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Через Alfheim exchange одержати 16 нових elementium та 4 dragonstone.",
+        "Фактична умова цього коду: 1 × botania:elementium_ingot (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00007ED016E415B6",
+      "title": "Рунична підтримка корпусів",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "00000885F7F1CF99",
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "0000759505896356",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B524277C28F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000A993C9C50526",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити 4 допустимі руни й використати їх у гібридному корпусі/ізоляції.",
+        "Фактична умова цього коду: 2 × botania:elementium_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000CAFEC1512182",
+      "title": "Просунутий цех",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "00007ED016E415B6",
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "00003096FF0B74BC",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_machine_hull",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D7B06BDA668D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000F32BD7B3A45A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Скрафтити modern_industrialization:advanced_machine_hull за зміненим рецептом із botania:elementium_ingot ×2. Наступний корпус спирається на попередню ельфійську арку.",
+        "Фактична умова цього коду: 4 × modern_industrialization:advanced_machine_hull (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000071D760EE1B36",
+      "title": "Сортування за програмою",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000CAFEC1512182",
+        "00004DA9BB20B560"
+      ],
+      "tasks": [
+        {
+          "id": "000020372220CCFC",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BF543E252F20",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D1459FAF028",
+          "type": "item",
+          "item": {
+            "id": "botania:dragonstone",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C9CF2D660985",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00008035965E154A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Пропустити 64 звичайні предмети через локальний router із фільтром і захистом власника.",
+        "Фактична умова цього коду: 2 × modern_industrialization:electronic_circuit (здати — витрачається); 2 × botania:elementium_ingot (здати — витрачається); 2 × botania:dragonstone (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_22. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000F7FB0D32F291",
+      "title": "Ключ епохи 22: Середня напруга",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "00009385D23D37E0",
+        "00008C577DF899FD",
+        "00000885F7F1CF99",
+        "00007ED016E415B6",
+        "0000CAFEC1512182",
+        "000071D760EE1B36"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000846C0A571B48",
+          "type": "advancement",
+          "advancement": "aia2:keys/e22"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000D6035197BF59",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × modern_industrialization:electronic_circuit; 2 × botania:elementium_ingot; 2 × modern_industrialization:advanced_machine_hull; 2 × botania:dragonstone; 1 × kubejs:aia2_epoch_key_21"
+      ]
+    },
+    {
+      "id": "000077D639A85699",
+      "title": "Сервісна автоматика",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00009385D23D37E0"
+      ],
+      "description": [
+        "Організувати доступ до обслуговування великого цеху."
+      ],
+      "rewards": [
+        {
+          "id": "000021D71B72B254",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00005C0644F8EDC2",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "00005DB7B664E43C",
+      "title": "Порівняння сплавів",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "00009385D23D37E0"
+      ],
+      "description": [
+        "Випробувати два дозволені металургійні маршрути й порівняти виходи без дублювання маси."
+      ],
+      "rewards": [
+        {
+          "id": "00004CE782578847",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "0000FD57F02D1A17",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}

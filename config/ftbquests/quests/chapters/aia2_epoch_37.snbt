@@ -1,0 +1,411 @@
+{
+  "id": "0000253B35447668",
+  "filename": "aia2_epoch_37",
+  "order_index": 36,
+  "title": "37. Місяць і Марс",
+  "icon": {
+    "id": "kubejs:aia2_epoch_key_37",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "default_quest_shape": "square",
+  "quests": [
+    {
+      "id": "0000C13BD8AC783F",
+      "title": "Життєзабезпечення",
+      "x": 0.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "000013BD25DC6943",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_1_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB75C3EE51DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00003231E8895239",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Підготувати кисень, паливо, скафандр і резерв повернення.",
+        "Фактична умова цього коду: 1 × ad_astra:tier_1_rocket (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "000003E2998AC2CF",
+      "title": "Місячний старт",
+      "x": 2.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000C13BD8AC783F",
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "0000BBA56521E50C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000191C09858B05",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "0000306511FBBD3A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити й запустити T1 rocket, приземлитися на Місяці.",
+        "Фактична умова цього коду: 1 × ad_astra:desh_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000EEC3EB61B517",
+      "title": "Магічна герметизація",
+      "x": 4.0,
+      "y": 0.0,
+      "dependencies": [
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "0000AA4D53598319",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D2DDCC5EAC7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001FE0339D2876",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Виготовити 16 air essence і гібридну оснастку життєзабезпечення.",
+        "Фактична умова цього коду: 1 × botania:life_essence (показати — зберігається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000052B865B9011",
+      "title": "Місячна металургія",
+      "x": 0.0,
+      "y": 2.0,
+      "dependencies": [
+        "0000EEC3EB61B517",
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "00008AD8D4060A0C",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B9EF2968401F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00005E1E8DFB11C0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Добути й обробити 16 desh ingot на дозволеній місячній гілці.",
+        "Фактична умова цього коду: 1 × botania:life_essence (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "00000E2B3FCEE852",
+      "title": "Марсіанська експедиція",
+      "x": 2.0,
+      "y": 2.0,
+      "dependencies": [
+        "000003E2998AC2CF",
+        "0000052B865B9011",
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "000079ABBA26CEED",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046343725CF55",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00004C3F2E637059",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Створити T2 rocket із desh, дістатися Марса й виготовити 16 ostrum ingot.",
+        "Фактична умова цього коду: 1 × ad_astra:ostrum_ingot (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000C9D61B7B3644",
+      "title": "Дві бази з поверненням",
+      "x": 4.0,
+      "y": 2.0,
+      "dependencies": [
+        "00000E2B3FCEE852",
+        "0000EDCC4CD05238"
+      ],
+      "tasks": [
+        {
+          "id": "00003DF4A0168516",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052BE7ECC8DED",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000389D632A0FF5",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB5EC130C702",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "00001AF542965E1B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:baked_potato",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "description": [
+        "Розгорнути малий автономний пост на обох планетах і повернути експедицію на базу.",
+        "Фактична умова цього коду: 2 × ad_astra:desh_ingot (здати — витрачається); 2 × botania:life_essence (здати — витрачається); 2 × modern_industrialization:processing_unit (здати — витрачається).",
+        "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+        "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+      ],
+      "hide_until_deps_complete": true
+    },
+    {
+      "id": "0000BEAC001E25A4",
+      "title": "Ключ епохи 37: Місяць і Марс",
+      "x": 6.0,
+      "y": 1.0,
+      "dependencies": [
+        "0000C13BD8AC783F",
+        "000003E2998AC2CF",
+        "0000EEC3EB61B517",
+        "0000052B865B9011",
+        "00000E2B3FCEE852",
+        "0000C9D61B7B3644"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000077AEF6E1AA7E",
+          "type": "advancement",
+          "advancement": "aia2:keys/e37"
+        }
+      ],
+      "rewards": [
+        {
+          "id": "000068D188131B1D",
+          "type": "command",
+          "command": "aia2 sync",
+          "permission_level": 0,
+          "silent": true,
+          "auto": "invisible",
+          "team_reward": false
+        }
+      ],
+      "description": [
+        "Після шести обов’язкових завдань станьте біля верстака й виконайте /aia2 key.",
+        "Сервер перевіряє FTB-команду й усі шість завдань ДО витрати інгредієнтів.",
+        "Ключ перевіряється неспоживно та витрачається тільки в наступному ключі.",
+        "Склад: 2 × ad_astra:desh_ingot; 2 × botania:life_essence; 2 × ad_astra:ostrum_ingot; 2 × modern_industrialization:processing_unit; 1 × kubejs:aia2_epoch_key_36"
+      ]
+    },
+    {
+      "id": "00005EB442F49DD7",
+      "title": "Орбітальний журнал",
+      "x": 0.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C13BD8AC783F"
+      ],
+      "description": [
+        "Позначити маршрути й витрати експедицій."
+      ],
+      "rewards": [
+        {
+          "id": "0000995A43012715",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00007770DEC73029",
+          "type": "checkmark"
+        }
+      ]
+    },
+    {
+      "id": "0000B9B36E67AA48",
+      "title": "Планетарна архітектура",
+      "x": 3.0,
+      "y": 5.0,
+      "optional": true,
+      "dependencies": [
+        "0000C13BD8AC783F"
+      ],
+      "description": [
+        "Побудувати безпечний шлюз і склад запасів."
+      ],
+      "rewards": [
+        {
+          "id": "00001EFDF69AB680",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "tasks": [
+        {
+          "id": "00000A2B7BCF13A6",
+          "type": "checkmark"
+        }
+      ]
+    }
+  ]
+}
