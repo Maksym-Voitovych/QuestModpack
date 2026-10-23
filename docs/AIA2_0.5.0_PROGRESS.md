@@ -9,7 +9,7 @@
 | № | Етап | Статус | Доказ / наступна дія |
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
-| 1 | Аудит 0.4 | IN_PROGRESS | HEAD збігається з 90ab63f, початкове дерево чисте; завершити baseline-звіт |
+| 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
 | 2 | Дослідження механік | IN_PROGRESS | Read-only дослідження technology/magic/adventure; до hotfix-коміту контент не записувати |
 | 3 | Карти прогресії | TODO | Після перевірки джерел записати карти та зв'язати з квестами |
 | 4 | Перебудова координат | IN_PROGRESS | Read-only вимірювання бази, алгоритм готується поза canonical SNBT |
@@ -122,3 +122,17 @@
   джерел, застосувати DAG layout, додати перевірений контент та нагороди.
 - Знайдено3 exported producer recipes Creative Pool, а не2; Creative Essence
   має namespace mysticalagradditions. Остаточні зміни ще TODO.
+
+### 2026-10-23 — аудит бази й контроль IDs
+
+- FTB hotfix зафіксовано окремим комітом `c620e4e`; план раніше збережено
+  в `1dcdf44`. Перевірка23Python/41Node/5237Java пройшла.
+- DONE baseline: `implementation/v5-baseline-audit.json`,
+  `content/audit/v4-ids.json`:2784квести/130глав/569рецептів/96ключів.
+- Аудит2516предметних+48команднихнагород; їхні IDs збережено в snapshot.
+- Відомі GUI-проблеми:1679перетинів,96зворотнихі72вертикальнихлокальнихліній;
+  накладаньіконок0. Layout ще не застосовано.
+- Дозволено запис окремих v5 каталогів/карт/генераторів після hotfix;
+  canonical SNBT змінюватиме root лише під час інтеграції.
+- Наступна конкретна дія: інтегрувати готові source-backed maps/catalogs,
+  зафіксувати generator layout з метриками, потім тематичні нагороди/баланс.
