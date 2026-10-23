@@ -1,0 +1,732 @@
+{
+  "id": "000007A6EFA6A1A9",
+  "filename": "aia2_branch_technology_productivemetalworks",
+  "title": "productivemetalworks — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 58,
+  "icon": {
+    "id": "productivemetalworks:fire_clay",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00001FAF7EA2C805",
+      "title": "Огляд вікна ливарні",
+      "description": [
+        "Підготуй оглядове вікно для тієї самої серії структури. Через нього зручніше обслуговувати ливарню, але квест не вимірює температуру чи об'єм розплаву.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gray_foundry_window",
+        "count": 1
+      },
+      "dependencies": [
+        "000026B07643D448",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057D1C44DAC06",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:gray_foundry_window",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B42C6ABD10EB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D5A446C768DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000084D81763D3DE",
+      "title": "Вогнетривка сировина ливарні",
+      "description": [
+        "Підготуй Fire Clay для оболонки ливарного вузла. Частину сировини залиш у невипаленій формі для порівняння потрібних рецептів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:fire_clay",
+        "count": 1
+      },
+      "dependencies": [
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F1876C0B1D6F",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:fire_clay",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD36D2AEFCC6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B6A3B54951C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A9F24699C40E",
+      "title": "Велика відливка без нової епохи",
+      "description": [
+        "Установи Casting Basin як інший приймач для сумісних ливарних рецептів. Великі відливки потребують перевірки об'єму й часу охолодження за конкретним рецептом.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:casting_basin",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BE6BA4848889",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002926B69EABE4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:casting_basin",
+          "timer": 40
+        },
+        {
+          "id": "000092ADAF74E8EC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000075990B6EBCEB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000CF1D35C42914",
+      "title": "Проба двох базових розплавів",
+      "description": [
+        "Досліди ливарні маршрути міді й заліза на окремих зразках. Наявність двох рідин не означає, що їх слід бездумно змішувати у спільному резервуарі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:molten_copper_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "000026B07643D448",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000059145FC06F62",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:molten_copper_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000037A69051B126",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:molten_iron_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099FB5DCAC227",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004EB115398C25",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000645B5EEE21F2",
+      "title": "Цегла для розплаву",
+      "description": [
+        "Випали Fire Brick і не змішуй її зі звичайною ванільною цеглою. Різні вогнетривкі системи можуть мати різні точні інгредієнти.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:fire_brick",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D81763D3DE",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE1B9E2D07E8",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:fire_brick",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090175FE00F21",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B9908200E1E2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A00F2BB0CCC7",
+      "title": "Контролер майбутнього розплаву",
+      "description": [
+        "Підготуй контролер однієї обраної кольорової серії Foundry. Колір не створює окремої гілки прогресії, тому решта кольорів не є новими квестовими цілями.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gray_foundry_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D81763D3DE",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F58767997A92",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:gray_foundry_controller",
+          "timer": 40
+        },
+        {
+          "id": "00000CD87AB70ACC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FCEF0B59BE46",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000015004268EED8",
+      "title": "Вогнетривкі стінки",
+      "description": [
+        "Підготуй стінки тієї самої ливарної серії, що й контролер. Геометрію та допустимі межі структури перевір у довіднику мода.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gray_fire_bricks",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A00F2BB0CCC7",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004EA204A65450",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:gray_fire_bricks",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D490F33DDB3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AF5BD6B47506",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000461464A7DEE2",
+      "title": "Буфер ливарної структури",
+      "description": [
+        "Підготуй відповідний Tank і простеж, щоб технічна рідина мала підписане призначення. Не плутай буфер структури з готовим злитком на виході.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gray_foundry_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A00F2BB0CCC7",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004FA18C1767A3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:gray_foundry_tank",
+          "timer": 40
+        },
+        {
+          "id": "00009DAA4E6D4B19",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005BEBA691F16B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007CA45E7A9168",
+      "title": "Керований вихід розплаву",
+      "description": [
+        "Установи Drain у доступному для обслуговування місці. Поруч має бути простір для крана й приймача форми.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gray_foundry_drain",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A00F2BB0CCC7",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004039C6C91892",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:gray_foundry_drain",
+          "timer": 40
+        },
+        {
+          "id": "0000352F6F7F0D10",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D40AAADF3E9F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E11E70DB66BD",
+      "title": "Джерело тепла ливарні",
+      "description": [
+        "Підготуй Powered Heating Coil як функціональний вузол ливарні. Фактичний тепловий режим залежить від зібраної структури й поданої енергії.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:powered_heating_coil",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A00F2BB0CCC7",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000149DDC859E8F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:powered_heating_coil",
+          "timer": 40
+        },
+        {
+          "id": "00001AAB885BC20F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007CCC7CE41FEE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00007680F6BD8C61",
+      "title": "Форма стандартного злитка",
+      "description": [
+        "Підготуй багаторазову форму злитка для зрозумілого базового розміру продукції. Переконайся, що рецепт приймає потрібний вид розплаву.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:ingot_cast",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E11E70DB66BD",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008FA0B3934289",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:ingot_cast",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005ED8B70BE07",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000066F83FBA9C32",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CBC492F9F680",
+      "title": "Стіл окремої форми",
+      "description": [
+        "Установи Casting Table так, щоб на ньому було зручно міняти форми. Це робоче місце одиничних деталей, а не універсальний замінник будь-якого машинного рецепта.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:casting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E11E70DB66BD",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B21E8CA5ACA2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:casting_table",
+          "timer": 40
+        },
+        {
+          "id": "00008F69CA27A4EF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000044D4232614D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005BF386341B3D",
+      "title": "Плоска деталь ливарного цеху",
+      "description": [
+        "Додай форму пластини як окремий тип ливарної продукції. Витрату розплаву перевіряй за нативним рецептом, не виводячи її з розміру картинки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:plate_cast",
+        "count": 1
+      },
+      "dependencies": [
+        "00007680F6BD8C61",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A962A0B557D",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:plate_cast",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCA8FA62D719",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009C78F8E7C7A6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007D3A740A64B3",
+      "title": "Зубчаста форма",
+      "description": [
+        "Підготуй форму шестерні для сумісних рецептів лиття. Не кожна шестерня інших модів автоматично має ливарний маршрут.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "productivemetalworks:gear_cast",
+        "count": 1
+      },
+      "dependencies": [
+        "00007680F6BD8C61",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007F271EAD3917",
+          "type": "item",
+          "item": {
+            "id": "productivemetalworks:gear_cast",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D1B4DAE5D54",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E264BC25D0C6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BF3746430B1F",
+      "title": "Кран між резервуаром і формою",
+      "description": [
+        "Підготуй кран для керованого лиття зі структури. Перед першою подачею переконайся, що форма вже стоїть у правильному приймачі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "productivemetalworks:foundry_tap",
+        "count": 1
+      },
+      "dependencies": [
+        "00007680F6BD8C61",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000016250177AAF2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "productivemetalworks:foundry_tap",
+          "timer": 40
+        },
+        {
+          "id": "00003C4D46BB5FDA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CCA1B078F1E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    }
+  ]
+}

@@ -1,0 +1,1064 @@
+{
+  "id": "0000630D0C09E054",
+  "filename": "aia2_branch_technology_mekanismgenerators",
+  "title": "mekanismgenerators — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 50,
+  "icon": {
+    "id": "mekanismgenerators:fission_reactor_casing",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00001FBEC0AA1EB7",
+      "title": "Парова секція з окремою оболонкою",
+      "description": [
+        "Збережіть Turbine Casings і Turbine Vents для окремої турбінної зали. Цей комплект не визначає готову геометрію або допустимий паровий потік.",
+        "Фактична перевірка: 64 × mekanismgenerators:turbine_casing — мати в інвентарі; 16 × mekanismgenerators:turbine_vent — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:turbine_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "000071EC6B938463",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B9196A9FC6C8",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_casing",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A4FC5C1B91C",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_vent",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CCA912F6FDA7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B9C412557178",
+      "title": "Аварійне керування реактором",
+      "description": [
+        "Підготуйте Fission Reactor Logic Adapter та ручний вимикач, перш ніж під'єднувати паливо. Квест перевіряє комплект, а не працездатність конкретної редстоунової програми.",
+        "Фактична перевірка: 2 × mekanismgenerators:fission_reactor_logic_adapter — мати в інвентарі; 2 × minecraft:lever — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fission_reactor_logic_adapter",
+        "count": 1
+      },
+      "dependencies": [
+        "000071EC6B938463",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001A99382C70A1",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_logic_adapter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000000BDDD0AC7D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE5CDE36E0DB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E676F7C9B01E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CB3C836D1FDF",
+      "title": "Холодна реакторна оболонка",
+      "description": [
+        "Підготуйте Fission Reactor Casings і Reactor Glass до будь-якого введення палива. Кількість блоків є будівельним запасом, а не автоматичною перевіркою форми реактора.",
+        "Фактична перевірка: 64 × mekanismgenerators:fission_reactor_casing — мати в інвентарі; 32 × mekanismgenerators:reactor_glass — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fission_reactor_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "000071EC6B938463",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000159B55BE99AC",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_casing",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057108A863CA6",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:reactor_glass",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030B98CF2EFEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009AE5D145A7B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000158BFC96201B",
+      "title": "Паливні збірки та регулювання",
+      "description": [
+        "Збережіть паливні збірки й Control Rod Assemblies окремими пачками. Доступ до системи керування має залишатися відкритим після встановлення оболонки.",
+        "Фактична перевірка: 8 × mekanismgenerators:fission_fuel_assembly — мати в інвентарі; 4 × mekanismgenerators:control_rod_assembly — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fission_fuel_assembly",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CB3C836D1FDF",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000947913A8B0C2",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_fuel_assembly",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2DC07DC2DDD",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:control_rod_assembly",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000241C688D4729",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C1AC3BC5D253",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E8B3D56FFF93",
+      "title": "Ротор і обертальний комплекс",
+      "description": [
+        "Підготуйте Turbine Rotors, Blades та Rotational Complex як механічний пакет. Після збірки перевірте валідність конструкції в інтерфейсі.",
+        "Фактична перевірка: 8 × mekanismgenerators:turbine_rotor — мати в інвентарі; 16 × mekanismgenerators:turbine_blade — мати в інвентарі; 1 × mekanismgenerators:rotational_complex — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:turbine_rotor",
+        "count": 1
+      },
+      "dependencies": [
+        "00001FBEC0AA1EB7",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000097D91AB02EF9",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_rotor",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016D63548A4C0",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_blade",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7125461B98D",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:rotational_complex",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC3EF342E002",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000230E1DECF274",
+      "title": "Порти до введення палива",
+      "description": [
+        "Підготуйте Fission Reactor Ports і Pressurized Tubes для окремих потоків. Напрямок кожного порта перевірте в інтерфейсі до запуску.",
+        "Фактична перевірка: 4 × mekanismgenerators:fission_reactor_port — мати в інвентарі; 16 × mekanism:elite_pressurized_tube — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fission_reactor_port",
+        "count": 1
+      },
+      "dependencies": [
+        "0000158BFC96201B",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008B9747790B14",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_port",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000849FB8979E08",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_pressurized_tube",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A177024D3532",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006D37749E6462",
+      "title": "Розділення пари й повернення води",
+      "description": [
+        "Збережіть Turbine Valves та Saturating Condensers для керованих потоків турбінної зали. Не змішуйте маршрут пари з предметним поверненням продуктів.",
+        "Фактична перевірка: 4 × mekanismgenerators:turbine_valve — мати в інвентарі; 8 × mekanismgenerators:saturating_condenser — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:turbine_valve",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E8B3D56FFF93",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001DDBE6D561B7",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:turbine_valve",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D4D4E330F2C0",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:saturating_condenser",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000DFFFF8E7C2F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005411BA82F396",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C5B76DB8FCBD",
+      "title": "Електромагнітна частина турбіни",
+      "description": [
+        "Підготуйте Electromagnetic Coils і енергетичні кабелі як окрему частину відведення потужності. Кількість котушок узгоджуйте з реальною конструкцією, а не лише з квестовим мінімумом.",
+        "Фактична перевірка: 8 × mekanismgenerators:electromagnetic_coil — мати в інвентарі; 16 × mekanism:elite_universal_cable — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:electromagnetic_coil",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D37749E6462",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A0673411E0A",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:electromagnetic_coil",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B0FF98B4251",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_universal_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007E99051E7E73",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001E0FC20AB03E",
+      "title": "Холодний резерв двох виробництв",
+      "description": [
+        "Підготуйте Fission Reactor Casings і Biosteel для ремонту суміжної металургійної секції без вилучення матеріалу з гарячої конструкції. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: 8 × mekanismgenerators:fission_reactor_casing — мати в інвентарі; 16 × immersiveengineering:ingot_steel — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fission_reactor_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C24808A95FF",
+        "0000C5B76DB8FCBD",
+        "0000CEED5EA4B96A",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006C2355C496D7",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_casing",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA7EE78007ED",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001CEE704A74CD",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BFF17209043",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002CB88ED5D56A",
+      "title": "Стартовий елемент термоядерного запуску",
+      "description": [
+        "Збережіть Hohlraum і Gold Dust для підготовки штатного стартового компонента. Наявність предмета не перевіряє його внутрішнє заповнення паливом.",
+        "Фактична перевірка: 2 × mekanismgenerators:hohlraum — мати в інвентарі; 16 × mekanism:dust_gold — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:hohlraum",
+        "count": 1
+      },
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001416DC66E2C4",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000080FB9B313B0C",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_gold",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FDB4DE6A197",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000028AC32E73325",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000049938BCA23BB",
+      "title": "Термоядерний запуск і надпровідник",
+      "description": [
+        "Поєднайте Hohlraum та Superconductor Ingots як матеріальний пакет пізньої енергетики. Окремо перевірте штатне заповнення стартового предмета у грі.",
+        "Фактична перевірка: 2 × mekanismgenerators:hohlraum — мати в інвентарі; 8 × modern_industrialization:superconductor_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:hohlraum",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EACA01312938",
+        "0000D4523F699211",
+        "000031F2B4021C96",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005BB9C6E07A50",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000877C0400585E",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044FDCD902985",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CBD9F5F020BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "00004EB04F5C0A46",
+      "title": "Підсумок керованого термоядерного переходу",
+      "description": [
+        "Збережіть Hohlraum, Gaia Ingot, Nitro Crystal і Superconductor Ingot як результати чотирьох гілок цієї епохи. Підсумковий ключ потребуватиме також усіх обов'язкових випробувань.",
+        "Фактична перевірка: 1 × mekanismgenerators:hohlraum — мати в інвентарі; 1 × botania:gaia_ingot — мати в інвентарі; 2 × powah:crystal_nitro — мати в інвентарі; 2 × modern_industrialization:superconductor_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:hohlraum",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EACA01312938",
+        "0000D4523F699211",
+        "000031F2B4021C96",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068817B2D14F4",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B114C07F449B",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009553F307DC1F",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C2BE2EDA96C",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030BA4C0A80A5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000047314602A4E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "000063E0ACB86F14",
+      "title": "Оптична межа реакторного корпуса",
+      "description": [
+        "Збережіть Laser Focus Matrix та Fusion Reactor Frames окремою пачкою. Перевірте правильну грань перед дорогим запуском паливної установки.",
+        "Фактична перевірка: 1 × mekanismgenerators:laser_focus_matrix — мати в інвентарі; 8 × mekanismgenerators:fusion_reactor_frame — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:laser_focus_matrix",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E94A45A9D049",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D948F4ED186B",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:laser_focus_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006145AC480272",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_frame",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D9A50D4390E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00007D76E4155852",
+      "title": "Сервісний контроль термоядерної секції",
+      "description": [
+        "Підготуйте Fusion Reactor Logic Adapter та сигнальні лампи для керованого запуску й обслуговування. Завдання не вимірює реальні показники реактора.",
+        "Фактична перевірка: 2 × mekanismgenerators:fusion_reactor_logic_adapter — мати в інвентарі; 4 × minecraft:redstone_lamp — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fusion_reactor_logic_adapter",
+        "count": 1
+      },
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000044F6B7B24E4E",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_logic_adapter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD54D1327B31",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone_lamp",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F786261F23D2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "00008A8192198D99",
+      "title": "Ремонт без канібалізації реактора",
+      "description": [
+        "Збережіть Fusion Reactor Frames, Laser Focus Matrix та Superconductor Wire як окремий ремонтний фонд. Не вилучайте ці деталі з робочої конструкції для виконання квеста.",
+        "Фактична перевірка: 16 × mekanismgenerators:fusion_reactor_frame — мати в інвентарі; 1 × mekanismgenerators:laser_focus_matrix — мати в інвентарі; 16 × modern_industrialization:superconductor_wire — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fusion_reactor_frame",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EACA01312938",
+        "0000D4523F699211",
+        "000031F2B4021C96",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000164C6DDF785C",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_frame",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA12DE72B7EA",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:laser_focus_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000032731E30E710",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_wire",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2A298E60B4D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000CDABAF6D912E",
+      "title": "Керування термоядерним майданчиком",
+      "description": [
+        "Поставте Fusion Reactor Controller у підготовленій зоні й збережіть Gaia Ingot для гібридного керувального ланцюга. Огляд не доводить запалений реактор.",
+        "Фактична перевірка: оглянути встановлений mekanismgenerators:fusion_reactor_controller протягом 40 ticks; 1 × botania:gaia_ingot — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fusion_reactor_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E8DE784F013",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanismgenerators:fusion_reactor_controller",
+          "timer": 40
+        },
+        {
+          "id": "0000DBC4D9964B4F",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A784FF42904",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002D27B44C32F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "00008572BEC97C21",
+      "title": "Термоядерний каркас до запуску",
+      "description": [
+        "Збережіть Fusion Reactor Frames та Reactor Glass як окремий будівельний комплект. Геометрію перевіряйте в інтерфейсі конструкції, а не за кількістю блоків у квесті.",
+        "Фактична перевірка: 64 × mekanismgenerators:fusion_reactor_frame — мати в інвентарі; 16 × mekanismgenerators:reactor_glass — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fusion_reactor_frame",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CDABAF6D912E",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000733B2C206784",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_frame",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000118CE6A983AC",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:reactor_glass",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D7B627EA91AD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000037B24D971392",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000FFE5BA514B31",
+      "title": "Розділені порти паливної установки",
+      "description": [
+        "Підготуйте Fusion Reactor Ports і Pressurized Tubes для незалежних паливних ліній. Напрямок кожної грані перевіряйте перед початком подачі.",
+        "Фактична перевірка: 4 × mekanismgenerators:fusion_reactor_port — мати в інвентарі; 16 × mekanism:ultimate_pressurized_tube — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mekanismgenerators:fusion_reactor_port",
+        "count": 1
+      },
+      "dependencies": [
+        "00008572BEC97C21",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C38923CDF2D7",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fusion_reactor_port",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E54701ACFD32",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ultimate_pressurized_tube",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C29981D8B4A0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 4.0
+    }
+  ]
+}

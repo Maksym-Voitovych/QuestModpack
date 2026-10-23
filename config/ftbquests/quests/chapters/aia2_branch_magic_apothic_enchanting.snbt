@@ -1,0 +1,312 @@
+{
+  "id": "0000ED452010E722",
+  "filename": "aia2_branch_magic_apothic_enchanting",
+  "title": "apothic_enchanting — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 9,
+  "icon": {
+    "id": "apothic_enchanting:apothic_enchanting_table",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000FA17D8E086C0",
+      "title": "Новий контроль зачарувань",
+      "description": [
+        "Установи Apothic Enchanting Table і порівняй його інтерфейс із ванільним. Параметри оточення залежать від конкретних полиць, а не від довільної кількості книжок.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:apothic_enchanting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F0B8700E489E",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000011AF3E574842",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apothic_enchanting:apothic_enchanting_table",
+          "timer": 40
+        },
+        {
+          "id": "00004E475393A42F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000953EA8211668",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000045851BCE32DA",
+      "title": "Пекельний напрям книжкової зали",
+      "description": [
+        "Підготуй Hellshelf після відкриття пекельних ресурсів. Не вважай будь-яку наступну полицю безумовним поліпшенням усіх параметрів одночасно.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:hellshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA17D8E086C0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000014F36A34835",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:hellshelf",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4D693F5639C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000765EF1C06B81",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E4798A4A014B",
+      "title": "Початкова полиця Apothic",
+      "description": [
+        "Підготуй Basic Bookshelf для першого контрольованого оточення столу. Після розміщення перевір внесок полиці в параметри зачарування.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:basic_bookshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA17D8E086C0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C11298BDF26",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:basic_bookshelf",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D4FAA76216D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008BF02A60C0F7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000032111219730C",
+      "title": "Морський напрям зачарувань",
+      "description": [
+        "Порівняй Seashelf із пекельною полицею на тому самому столі. Збережи місце для зміни конфігурації, а не забудовуй усе випадковими книжками.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:seashelf",
+        "count": 1
+      },
+      "dependencies": [
+        "000045851BCE32DA",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C26C8E3A00C1",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:seashelf",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003099F15A8E6F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000985ABD1859DA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E04CBE0D29CA",
+      "title": "Архів корисних зачарувань",
+      "description": [
+        "Підготуй Library та визнач правила зберігання цінних зачарувань. Першу перевірку проведи з недорогою книгою, перш ніж переносити рідкісні ефекти.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:library",
+        "count": 1
+      },
+      "dependencies": [
+        "000045851BCE32DA",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003FF5D485C8E2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apothic_enchanting:library",
+          "timer": 40
+        },
+        {
+          "id": "000072AE927A917D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BC04353D7AC3",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FA929FEA23F1",
+      "title": "Зняття зайвих чарів",
+      "description": [
+        "Підготуй два різні томи й прочитай їхні описи перед використанням. Операції з чарами можуть мати різну мету, тому дорогу річ не слід використовувати як тестовий зразок.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:extraction_tome",
+        "count": 1
+      },
+      "dependencies": [
+        "000045851BCE32DA",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000097177511B36E",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:extraction_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D95D48A6DC06",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:scrap_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025D8D522BD95",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000635B589BED75",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    }
+  ]
+}

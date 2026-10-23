@@ -69,6 +69,7 @@ function machines(installed = true) {
     clearRuntime() { ready = false; teamProgress.clear(); calls.push('clear'); },
     setRulesJson(s) { assert.equal(Object.keys(JSON.parse(s)).length, 16003); calls.push('rules'); },
     setItemRulesJson(s) { assert.ok(Object.keys(JSON.parse(s)).length > 20000); },
+    setRecipeRulesJson(s) { assert.ok(Object.keys(JSON.parse(s)).length > 40000); },
     setPlayerTeam(id, team) { playerTeams.set(id, team); },
     setTeamProgress(id, n) { teamProgress.set(id, n); }, setReady() { ready = true; }, isReady() { return ready; },
     getOwner(be) { return be.owner || ''; }, setOwner(be, team) { be.owner = team; calls.push('claim'); }

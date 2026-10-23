@@ -79,5 +79,7 @@ public final class GuardPolicyTest {
         expect(!policy.mayTick("create:mechanical_press", "team-a"), "A new server session cannot inherit old team progress");
         System.out.println("GuardPolicyTest: " + assertions + " assertions passed (pure Java policy; Minecraft not launched)");
         LiveTeamResolverTest.main(args);
+        RecipeIdentityIndexTest.main(args);
+        ScopedRecipeOwnerTest.main(args);
     }
 }

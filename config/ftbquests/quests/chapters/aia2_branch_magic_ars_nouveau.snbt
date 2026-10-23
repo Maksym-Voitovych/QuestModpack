@@ -1,0 +1,2781 @@
+{
+  "id": "0000BD4544E1E8DD",
+  "filename": "aia2_branch_magic_ars_nouveau",
+  "title": "Ars Nouveau — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 10,
+  "icon": {
+    "id": "ars_nouveau:archwood_planks",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000C7D5EFDF5A16",
+      "title": "Деревина нового магічного ремесла",
+      "description": [
+        "Ars Nouveau має власну архітектурну деревину для початкового обладнання.",
+        "Збережіть колоди й саджанці окремо від перероблених дощок."
+      ],
+      "icon": {
+        "id": "ars_nouveau:archwood_planks",
+        "count": 1
+      },
+      "dependencies": [
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000099BDB711EE41",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archwood_planks",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C80E837327B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B5834E89840A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009303AD17B258",
+      "title": "Камера насичення на точному механізмі",
+      "description": [
+        "Змінена формула камери потребує Precision Mechanism із технічної гілки.",
+        "Перша магічна обробка Ars більше не обходить латунну автоматизацію.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:imbuement_chamber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C7D5EFDF5A16",
+        "00006AECA1B770EF",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000763473630207",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:imbuement_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000C6373087D766",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004D006492DFCA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C4181A438166",
+      "title": "Магічна продовольча ділянка",
+      "description": [
+        "Кущ Sourceberry додає тему сталого господарства до нової школи магії.",
+        "Цей квест не відкриває пізні Sourcelink та Source Jar поза призначеною епохою."
+      ],
+      "icon": {
+        "id": "ars_nouveau:sourceberry_bush",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C7D5EFDF5A16",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000064ED4FB8F4DC",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082EC33D82157",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CCACA75DCFC2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000D6F268C97FE4",
+      "title": "Перші джерельні самоцвіти",
+      "description": [
+        "Source Gem відкриває базові рецепти школи Ars Nouveau.",
+        "Камеру та вхідні матеріали звіряйте з нативними рецептами, а не з вигаданим універсальним ритуалом."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00009303AD17B258",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A00E67F14CD9",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090336983BAB5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B1325CF75E68",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000403210466491",
+      "title": "Стіл запису гліфів",
+      "description": [
+        "Стіл писаря працює з системою заклять Ars і має власний інтерфейс.",
+        "Розташуйте його поруч із книгою та доступними реагентами.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:scribes_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6F268C97FE4",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000039878A23ADC4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:scribes_table",
+          "timer": 40
+        },
+        {
+          "id": "0000C93E831B3C90",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D92F5E179160",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B89C5B715A91",
+      "title": "Волокно магічного господарства",
+      "description": [
+        "Magebloom підтримує окрему рослинну гілку Ars Nouveau.",
+        "Зберігайте волокно біля писарської майстерні, не змішуючи його зі звичайною ниткою."
+      ],
+      "icon": {
+        "id": "ars_nouveau:magebloom_fiber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6F268C97FE4",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FB8481061651",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A794920C2BC0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000006E9E6F30E2A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001215A7F584DA",
+      "title": "Книга початківця",
+      "description": [
+        "Початкова книга відкриває базове конструювання заклять без стрибка до архімагії.",
+        "Квест перевіряє саму книгу, не вміст усіх її сторінок."
+      ],
+      "icon": {
+        "id": "ars_nouveau:novice_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000403210466491",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EBC37177B68E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:novice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004BCE4B5B4DD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000F8261714413",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A54A30154DD6",
+      "title": "Писарський комплект із точним приводом",
+      "description": [
+        "Скомплектуйте результати технічної та магічної половин епохи.",
+        "Наступне обладнання повинне спиратися на обидві гілки, а не на одну позичену машину."
+      ],
+      "icon": {
+        "id": "ars_nouveau:scribes_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000403210466491",
+        "00006AECA1B770EF",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000299407A37DB2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:scribes_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D60E5F57A2B",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CA5E42B2B26",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000459F4EC65C50",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000905F3A8333AD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F5F09BB498F0",
+      "title": "Форма закляття: дотик",
+      "description": [
+        "Форма Touch визначає, як початкове закляття отримує ціль.",
+        "Спершу випробуйте зрозумілу коротку комбінацію без складних модифікаторів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:glyph_touch",
+        "count": 1
+      },
+      "dependencies": [
+        "00001215A7F584DA",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000322A0333A1DD",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:glyph_touch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A89C625E2557",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003970C16451DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001260770EF013",
+      "title": "Ефект роботи з блоком",
+      "description": [
+        "Ефект Break знайомить із взаємодією закляття та навколишніх блоків.",
+        "Не випробовуйте його на єдиному ключовому обладнанні чи чужій території."
+      ],
+      "icon": {
+        "id": "ars_nouveau:glyph_break",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F5F09BB498F0",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008B8CB8A761C2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:glyph_break",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000652FD5E3DC28",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B28CEAE80322",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "000082E65352927B",
+      "title": "Безпечне світлове закляття",
+      "description": [
+        "Світловий ефект дає небоєве застосування магії в експедиції.",
+        "Перевірте витрату ресурсу та поведінку цілі перед далеким походом."
+      ],
+      "icon": {
+        "id": "ars_nouveau:glyph_light",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F5F09BB498F0",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F90774CAEC0",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:glyph_light",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000067C295E706C9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001792FF6A71D3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000586204D9BFBD",
+      "title": "Книга для другого кола",
+      "description": [
+        "Підготуй Apprentice Spell Book після освоєння початкових інструментів Ars Nouveau. Доступ до книги не відкриває автоматично заборонені майбутні системи збірки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:apprentice_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A200A41880AA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:apprentice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1D15C95DC44",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000086DC7178FB67",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000099CFF7B253AC",
+      "title": "Чотири стихії, чотири ролі",
+      "description": [
+        "Підготуй базові стихійні есенції як різні рецептурні ресурси. Не витрачай усі чотири на один процес, залишивши інші гілки без стартового реагенту.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:air_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000087C6B4E85FFC",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C7AB94A1C6B2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:air_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D7C37F8ABABE",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:earth_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099A7A64389E4",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:fire_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007278AD5C84A",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:water_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077C42A8BB20E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005D4A7F75F08D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E856722F9547",
+      "title": "Створення потребує окремої есенції",
+      "description": [
+        "Збери есенції творення й захисту для відповідних рецептів. Вони не є декоративними кольоровими варіантами одного універсального реагенту.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:conjuration_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000087C6B4E85FFC",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000063A02EB690C9",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:conjuration_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7D91C70BB3E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:abjuration_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D90457EB0DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003F93507B8E57",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000020B5635A7BEF",
+      "title": "Волокно магічної майстерні",
+      "description": [
+        "Порівняй рослинний матеріал із підготовленим волокном. Залиш насадження доступним для повторного збору, не витрачаючи весь відновлюваний запас.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:magebloom",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586204D9BFBD",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000014CDE7E446D6",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005A45FFE44C32",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052E09F4CAFC1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F5F428511BB5",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000032015D214085",
+      "title": "Робоче місце чарівного складання",
+      "description": [
+        "Розмісти Enchanting Apparatus відповідно до його довідника. Перед дорогим рецептом перевір доступність підставок і джерела Source.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "ars_nouveau:enchanting_apparatus",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586204D9BFBD",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E0E6B4F40E55",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:enchanting_apparatus",
+          "timer": 40
+        },
+        {
+          "id": "0000AAF0A64815C6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006F52E18E7D3F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "000052ED38A1568E",
+      "title": "Есенція, душа та друкована логіка",
+      "description": [
+        "Підготуй матеріали трьох взаємопов'язаних виробничих напрямів. Завершення комплекту не замінює обов'язкових квестів, потрібних для фінального ключа.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:conjuration_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E856722F9547",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000013E8AE9FAFBD",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:conjuration_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD6ECAA58331",
+          "type": "item",
+          "item": {
+            "id": "goety:dark_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006A67F1E32FB",
+          "type": "item",
+          "item": {
+            "id": "ae2:logic_processor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5136372B75C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000023584B53B91B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000AAD04FC2430D",
+      "title": "Опора зачарувального вузла",
+      "description": [
+        "Підготуй Arcane Core та комплект педесталів для рецептів апарата. Наявність деталей засвідчує готовність комплекту, а не правильність геометрії всієї структури.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:arcane_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586204D9BFBD",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000581960598DF3",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:arcane_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000021ED70D82C12",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:arcane_pedestal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9538284C360",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AA0FCCDD1E41",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000BBF8E0F99869",
+      "title": "Розподіл між робочими вузлами",
+      "description": [
+        "Підготуй магічний розгалужувач і електронний контрольний комплект. Налаштовуй кожний шлях окремо, щоб один споживач не залишав решту без Source.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:relay_splitter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E856722F9547",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0D3354195EA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:relay_splitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A3C592DDC29",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AA2FAF41905D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009951ECFA855D",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "000028BDFFC9458A",
+      "title": "Джерело з рослинного господарства",
+      "description": [
+        "Підготуй Agronomic Sourcelink біля допоміжної ферми. Перевір реальну область і умови генерації Source, не прирівнюючи кожну рослину до однакового виходу.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "ars_nouveau:agronomic_sourcelink",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AAD04FC2430D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F41B998431E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:agronomic_sourcelink",
+          "timer": 40
+        },
+        {
+          "id": "0000FC04650AD818",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007190DFCC361C",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "000082AD5028D946",
+      "title": "Передавання без плутанини",
+      "description": [
+        "Збери базові реле та Dominion Wand для налаштування зв'язків. Після прив'язування перевір окремо шлях від джерела до буфера і від буфера до споживача.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:relay",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AAD04FC2430D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C540B6B6F5CA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:relay",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECF8D040C356",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E1CD8B81931",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002300FDD2DD47",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "00008C782D14882A",
+      "title": "Окремий вузол збирання Source",
+      "description": [
+        "Підготуй Collector Relay для акуратного компонування магічної мережі. Напрям і дальність зв'язків перевір у нативному інтерфейсі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:relay_collector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AAD04FC2430D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A9D1C25CDD0A",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:relay_collector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E7493E6388D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002CB2C8C893A9",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00008E97E0D97AF7",
+      "title": "Запас джерела для ритуалу",
+      "description": [
+        "Постав Source Jar поблизу споживача й залиш місце для реле. Кількість посудин не доводить, що вони вже наповнені.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_jar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AAD04FC2430D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008F8370BFAB92",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:source_jar",
+          "timer": 40
+        },
+        {
+          "id": "0000AD5CE113706A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006E95D8B00E82",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A286E6BEA8A8",
+      "title": "Жива ферма й агрономічний Source",
+      "description": [
+        "Підготуйте Sourceberry Bush для господарської ділянки та встановіть поряд агрономічний Sourcelink. Розвиток рослин має підтримувати магічну майстерню, а не залишатися окремою харчовою фермою.",
+        "Предметне завдання підтверджує кущі, а огляд — наявність Sourcelink у світі. Радіус роботи, ріст рослин і перенесення Source у банку перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:sourceberry_bush",
+        "count": 1
+      },
+      "dependencies": [
+        "000020B5635A7BEF",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D59C3C53E9AE",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F3325A330A1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:agronomic_sourcelink",
+          "timer": 40
+        },
+        {
+          "id": "00006F627BC6B933",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005A25E613272C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "00006E84A5A83CF4",
+      "title": "Помічник предметної логістики",
+      "description": [
+        "Підготуй Starbuncle Charm і захищену ділянку для помічника. Його маршрути потрібно перевірити на простому наборі предметів до роботи з дорогими компонентами.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:starbuncle_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C782D14882A",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067A3085F07A1",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:starbuncle_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E60CE281AD8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000033E6DB02C77",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000C0E1234825C6",
+      "title": "Керований вихід магічного буфера",
+      "description": [
+        "Підготуй Deposit Relay для розведення входів і виходів. Не створюй зайвих циклів між посудинами лише тому, що вони розміщені поруч.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:relay_deposit",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C782D14882A",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F2F5796D5C5B",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:relay_deposit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BF4BD8892F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000517E703DB583",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "00006451FF689B1E",
+      "title": "Помічник рецептів",
+      "description": [
+        "Підготуй Wixie Charm і заздалегідь визнач один сумісний рецепт. Наявність чарму не підтверджує, що всі інгредієнти вже розведені правильно.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:wixie_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00006E84A5A83CF4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006BDC82E3B4F0",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:wixie_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F8839FCFD4F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F07E32968743",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "000065ECABCC9D09",
+      "title": "Помічник природної ділянки",
+      "description": [
+        "Підготуй Whirlisprig Charm для окремого природного майданчика. Місце роботи має відповідати механіці помічника, а не випадковому вільному кутку цеху.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:whirlisprig_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00006E84A5A83CF4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057772ACAFA38",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:whirlisprig_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B66D15CF6C42",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008ADDE117EACF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A748135E0BAE",
+      "title": "Магічний помічник зберігання",
+      "description": [
+        "Підготуй Bookwyrm Charm для організації магічної робочої зони. Перевір сумісні контейнери за довідником перед перенесенням запасів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "ars_nouveau:bookwyrm_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00006E84A5A83CF4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ED8B178494D9",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:bookwyrm_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061A3C88633C3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B1A0B62DF944",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "00005B0B3D80F78D",
+      "title": "Резерв джерельних самоцвітів",
+      "description": [
+        "Залиште доступ до запасу source gems поза основним машинним складом. Магічне обслуговування не повинно чекати завершення черги металургії.",
+        "Фактична перевірка: 16 × ars_nouveau:source_gem — мати в інвентарі; 8 × botania:mana_powder — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E557CB8369CF",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008FA0FB25A90C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000027C71E585B",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000606991056C86",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000B9BDA67F99AE",
+      "title": "Арсова підтримка агрономії",
+      "description": [
+        "Залиште source gems та природну есенцію в окремому магічному резерві. Він потрібен для подальших допоміжних заклинань, а не для пропуску інфузійного вівтаря.",
+        "Фактична перевірка: 16 × ars_nouveau:source_gem — мати в інвентарі; 8 × mysticalagriculture:nature_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00008463D48FEB12",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000118CEAB903E4",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000037628A4B7F8",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:nature_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C7B1998C3D27",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000056A696FD8260",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000DB8A39AAB862",
+      "title": "Магічний сервісний резерв",
+      "description": [
+        "Збережіть source gems та червоний пил для підтримки магічних сенсорів, але перевіряйте конкретні сигнали у світі, а не за самими матеріалами.",
+        "Фактична перевірка: 16 × ars_nouveau:source_gem — мати в інвентарі; 32 × minecraft:redstone — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AD13150546C7",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B7069FB7A712",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB71F5E19C3D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003634BA510BD7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00006EA5992F0C00",
+      "title": "Книга архімага як інструмент експедиції",
+      "description": [
+        "Підготуйте Archmage Spell Book та source gems для магічного супроводу подорожі, але перевірте конкретні glyphs і витрати джерела у власній конфігурації.",
+        "Фактична перевірка: 1 × ars_nouveau:archmage_spell_book — мати в інвентарі; 24 × ars_nouveau:source_gem — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:archmage_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B192E592D711",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CDA2FD838C68",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archmage_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004288EF086A4A",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088BBAA50BC63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D4830A398AF0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "000055F4FC9AD425",
+      "title": "Сонячна магія паливного майданчика",
+      "description": [
+        "Збережіть Source Gems і Rune Summer для магічного сервісу термоядерної секції. Цей запас залишається окремим від технологічних хімічних резервуарів.",
+        "Фактична перевірка: 48 × ars_nouveau:source_gem — мати в інвентарі; 4 × botania:rune_summer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00005CBC0F9BC645",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000018E0AADC327E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022E04E0A0BF9",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_summer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDCD2873DB64",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000285610AE4089",
+      "title": "Ритуальний орієнтир форпосту",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Розмістіть ритуальну ділянку у безпечній атмосфері та позначте, для якого світу вона призначена.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки.",
+        "Архів підтверджують зразки природної породи та нативні завдання відвідування зазначених вимірів. Декоративний глобус не потрібний."
+      ],
+      "icon": {
+        "id": "ars_nouveau:ritual_scrying",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E3ED5A6F589B",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0F6E513E6C2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:ritual_scrying",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B06C6DA7CFA0",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:moon_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E0788AAA472",
+          "type": "dimension",
+          "dimension": "ad_astra:moon"
+        },
+        {
+          "id": "0000B754FB51BE3F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002E4EFBECAF26",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "00004DFC8D15CBA4",
+      "title": "Повернення без втрати координат",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Підготуйте стабільний сувій і земний компас; перевірте точку повернення перед ризикованою посадкою.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:stable_warp_scroll",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EEC3EB61B517",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2BF5FB56818",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:stable_warp_scroll",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000056B45C7936BA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:compass",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006932753D55D6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004B7AA012172F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 20.0
+    },
+    {
+      "id": "00007A17C0B00F91",
+      "title": "Магічний ремонт скафандра",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Підготуйте ремонтну нитку поруч із спорядженням; застосування залежить від сумісного обладнання, яке показує JEI.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:thread_repairing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A68E2B15932D",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E851624B916",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:thread_repairing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1295482CF74",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_suit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000040FEB752C440",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AB5CD04FC5E4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 22.0
+    },
+    {
+      "id": "000020F72DE0EAE1",
+      "title": "Освітлення без відкритого полум’я",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Підготуйте переносне магічне світло для шлюзової кімнати, не використовуючи його як індикатор кисню.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:jar_of_light",
+        "count": 1
+      },
+      "dependencies": [
+        "0000285610AE4089",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000093C5C1045CF6",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:jar_of_light",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000051210F95A327",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:airlock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1EBBAE289BA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008667EE8E7232",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "00004D479AC5E022",
+      "title": "Духи для колоніальної ферми",
+      "description": [
+        "Життя далекого холодного світу доповнює технічну експедицію природною магією.",
+        "Підготуйте чарунок духа рослин і зразок місцевої деревини для окремої ділянки вирощування.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:whirlisprig_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00000ADBBE25D156",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000724F913A7246",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:whirlisprig_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D108395B0F79",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:glacian_log",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000148E264819D3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000079AF0D3298AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 24.0
+    },
+    {
+      "id": "000083109A3913C4",
+      "title": "Міжпланетна магічна валіза",
+      "description": [
+        "Життя далекого холодного світу доповнює технічну експедицію природною магією.",
+        "Зведіть засоби повернення, складу й мани з фінальним матеріалом космічного циклу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки.",
+        "Космічну частину комплекту представляють доступні калоритові матеріали або нативна зарядна станція Ad Astra."
+      ],
+      "icon": {
+        "id": "ars_nouveau:stable_warp_scroll",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE3F3A477E73",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C3A111FD1436",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:stable_warp_scroll",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B27411130CBA",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_remote",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3A57776F79D",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC91E725050F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000032160D043CB4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DBA468FEDEF6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 26.0
+    },
+    {
+      "id": "00003428021C79C4",
+      "title": "Архімагів лабораторний комплект",
+      "description": [
+        "Вивернове виробництво спирається на вже освоєні школи магії, а не замінює їх.",
+        "Відокремте магічне керування від фізичного носія модулів у лабораторній документації.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:archmage_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E94590FAB1AB",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D8640652D6CF",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archmage_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD144F7E3A05",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:module_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003AB1771D4B2D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C6E76ED1BDB6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 28.0
+    },
+    {
+      "id": "0000DA5044A645EE",
+      "title": "Ритуальна зона сервісу",
+      "description": [
+        "Вивернове виробництво спирається на вже освоєні школи магії, а не замінює їх.",
+        "Підготуйте відновлювальний ритуал біля майстерні, де обслуговується захисне спорядження.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:ritual_restoration",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ACB87F039E47",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5FDCF434389",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:ritual_restoration",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B222F7F67FAE",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_chestpiece",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE4E90A18C7E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F4C056B71028",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000EC8E506441AA",
+      "title": "Джерельна опора інжекторів",
+      "description": [
+        "Пробудження поєднує дорогоцінний матеріал із ресурсами старших магічних шкіл.",
+        "Підготуйте щільний джерельний матеріал і нову периферію для гібридної майстерні.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000055DCFA5C1418",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000587F9416460E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C37DA6FF21D1",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:awakened_crafting_injector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009467B8F5EB0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000072B7D8D8198E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 32.0
+    },
+    {
+      "id": "0000A01A30687242",
+      "title": "Джерельний контроль дорогих компонентів",
+      "description": [
+        "Після бойового випробування трофей Хаосу входить у міжмодові гібридні комплекти.",
+        "Підготуйте щільний джерельний матеріал поруч із завершеним керувальним ядром.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00008967FD199506",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009E19D76F49BA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB1B502CF49E",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033EFD73C3B2B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000123D01FE8222",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 34.0
+    },
+    {
+      "id": "00006BF860B9E2E8",
+      "title": "Джерельне живлення шаблонів",
+      "description": [
+        "Еволюційна фабрика залишається залежною від магічних виробництв попередніх епох.",
+        "Підготуйте щільний джерельний матеріал у контурі складних міжмодових замовлень.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C5D93F4EEDF2",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065F04223BA6E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000303F19484CAD",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007C88222DC9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F658737CF4CC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 36.0
+    },
+    {
+      "id": "00002C733314F7AD",
+      "title": "Джерельна квантова оправа",
+      "description": [
+        "Планетарний цех поєднує ущільнений Source із керувальним компонентом Evolved Mekanism.",
+        "Підготуйте блок джерельного самоцвіту й квантову схему. Це матеріальна готовність двох виробничих гілок; завдання не стверджує, що схеми різних модів взаємозамінні."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00000C34B5BBAFAA",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000319B3A7840D0",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024925D8034F0",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BF8FE16F20C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D680972519A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 38.0
+    },
+    {
+      "id": "0000118D6E40E55E",
+      "title": "Джерельне співналаштування",
+      "description": [
+        "Старші ритуали зберігають власну матеріальну вартість навіть поруч із розвиненою алхімічною базою.",
+        "Підготуйте кристал джерела й старший ковалентний реагент до гібридної перевірки.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00001AC41CF4B7DE",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DE6756805085",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A047C71D2670",
+          "type": "item",
+          "item": {
+            "id": "projecte:high_covalence_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3C152E4F159",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CF68D2A18E6C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 40.0
+    },
+    {
+      "id": "000041BB1F09C740",
+      "title": "Трофейний матеріал у цифровій майстерні",
+      "description": [
+        "Старші ритуали зберігають власну матеріальну вартість навіть поруч із розвиненою алхімічною базою.",
+        "Підготуйте трофей, процесор і темну матерію для фінального гібридного складання цієї епохи.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:wilden_tribute",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EE58FE8B767A",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4AB649DB159",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:wilden_tribute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076A5833434C7",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015F6D2BE7A08",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000053F5A6F7B2B7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006D06C26EF51A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 42.0
+    },
+    {
+      "id": "00005153D679F3AB",
+      "title": "Джерельна вічність",
+      "description": [
+        "Космічна конвергенція вимагає одночасно завершених магічних і технічних ресурсів.",
+        "Поєднайте трофей дикої магії зі старшим ущільненням матерії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ars_nouveau:wilden_tribute",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF73B6160F46",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027BC8F99D7BA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:wilden_tribute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000003A7E74B80C5",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014AEE91DACDB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006781B91BF792",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 44.0
+    }
+  ]
+}

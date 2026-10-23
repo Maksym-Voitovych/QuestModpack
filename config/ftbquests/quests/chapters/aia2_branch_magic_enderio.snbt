@@ -1,0 +1,751 @@
+{
+  "id": "0000B30D4C171411",
+  "filename": "aia2_branch_magic_enderio",
+  "title": "enderio — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 15,
+  "icon": {
+    "id": "enderio:soularium_ingot",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000052369624400A",
+      "title": "Метал, що пам'ятає душу",
+      "description": [
+        "Отримай Soularium як основу душової інженерії. Зберігай його окремо від схожих за кольором сплавів для електрики.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:soularium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000732136E97888",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000053EDFC20658",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000337931DDE2AC",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000034B80D4E8EBB",
+      "title": "Посудина для живої сутності",
+      "description": [
+        "Підготуй Soul Vial перед роботою з істотами. Порожній предмет засвідчує готовність інструмента, а не факт захоплення певного моба.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:soul_vial",
+        "count": 1
+      },
+      "dependencies": [
+        "000052369624400A",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000034DF758ED9CE",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000095397225CE16",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005EA99ECA2BF4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009128ADE5433F",
+      "title": "Робоче місце прив'язування",
+      "description": [
+        "Установи Soul Binder у доступній для обслуговування частині лабораторії. Точну сутність, реагенти й витрати досвіду визначає вибраний рецепт.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:soul_binder",
+        "count": 1
+      },
+      "dependencies": [
+        "000052369624400A",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A1769B4A9473",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:soul_binder",
+          "timer": 40
+        },
+        {
+          "id": "0000F48E1F16A97B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000028ABA7417F8F",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000063007EB8AE7F",
+      "title": "Зачарування за списком матеріалів",
+      "description": [
+        "Встанови Enchanter та підготуй місце для книг і реагентів. Це окрема система рецептів, а не заміна всіх властивостей ванільного столу зачарування.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:enchanter",
+        "count": 1
+      },
+      "dependencies": [
+        "00009128ADE5433F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B46C25981282",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:enchanter",
+          "timer": 40
+        },
+        {
+          "id": "00000C447F3007F7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000494F473B7EEA",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009E7EF4E93E65",
+      "title": "Темна сталь майстерні",
+      "description": [
+        "Підготуй Dark Steel для інструментів і деталей. Перевір, які властивості належать самому матеріалу, а які потребують окремого обладнання.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:dark_steel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00009128ADE5433F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006EC1C10F5F86",
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_steel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006EB3FC0ADF9F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BF1D9D56F78A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000D49120ED00C3",
+      "title": "Досвід має свій приймач",
+      "description": [
+        "Установи XP Vacuum поблизу контрольованого джерела досвіду. Перевір область роботи, щоб важливі сфери не зникали в неочікуваному приймачі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:xp_vacuum",
+        "count": 1
+      },
+      "dependencies": [
+        "00009128ADE5433F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057D7D4CC972C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:xp_vacuum",
+          "timer": 40
+        },
+        {
+          "id": "0000347280A692F7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000440F4E315646",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E54745C59148",
+      "title": "Каркас із магічною основою",
+      "description": [
+        "Підготуй Ensouled Chassis для відповідних машин. Звичайний Void Chassis не замінює його в рецептах лише через схожий зовнішній вигляд.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:ensouled_chassis",
+        "count": 1
+      },
+      "dependencies": [
+        "00009128ADE5433F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4991415AFF1",
+          "type": "item",
+          "item": {
+            "id": "enderio:ensouled_chassis",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082ACE44E094F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E7314D8760E3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "000055027A1DC28F",
+      "title": "Рідини душової інженерії",
+      "description": [
+        "Підготуй Fluid Tank для одного підписаного технологічного потоку. Не змішуй рідкий досвід із довільною технічною рідиною через спільну трасу.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:fluid_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D49120ED00C3",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009F8D47DDEFB3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:fluid_tank",
+          "timer": 40
+        },
+        {
+          "id": "000075D8618FA96C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D9BF897F0035",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CE3FDE61CF9D",
+      "title": "Буфер досвіду лабораторії",
+      "description": [
+        "Відведи XP Obelisk роль запасу для душових процесів. Зберігання досвіду не підтверджує запуск певного рецепта Soul Binder.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:xp_obelisk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D49120ED00C3",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004A06571D9222",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:xp_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "0000E1F1E0CD10F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000263160E8C44A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00006175CC4A7182",
+      "title": "Чан для рідинних рецептів",
+      "description": [
+        "Встанови Vat і продумай незалежні входи для його рецепта. Перед подачею ресурсів звір сумісні предмети та рідини в JEI.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:vat",
+        "count": 1
+      },
+      "dependencies": [
+        "000055027A1DC28F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E1EBADFF8B08",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:vat",
+          "timer": 40
+        },
+        {
+          "id": "000033F48468EE7A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DD3A5D16E2FE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F16ABCF25BC5",
+      "title": "Шестерня темної металургії",
+      "description": [
+        "Зведи механічний компонент і душовий метал в один складський комплект. Їхнє спільне зберігання полегшує підготовку міжмодових корпусів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:dark_bimetal_gear",
+        "count": 1
+      },
+      "dependencies": [
+        "000055027A1DC28F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001656FB6FCEB0",
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_bimetal_gear",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000887056B653F1",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4E92D31C421",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000442CBA3EAB3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F92784334D3A",
+      "title": "Енергія душової лабораторії",
+      "description": [
+        "Підготуй Soul Engine як окремий генераторний напрям. Пальне й фактичну продуктивність перевір у його інтерфейсі, не прирівнюючи всі джерела енергії.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:soul_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "000055027A1DC28F",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000009800F0CB141",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:soul_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000D2B318B46A5C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002ADCA72106AD",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000815A5D7F35EB",
+      "title": "Дві школи душової тари",
+      "description": [
+        "Порівняй Soul Vial та Empty Soul Jar як інструменти різних систем. Спільна тематика душ не робить їх взаємозамінними.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:soul_vial",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E856722F9547",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004E395681967",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA3E998A5F4C",
+          "type": "item",
+          "item": {
+            "id": "goety:empty_soul_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE0EA71A331F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000068811E092D6F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DF4090A56500",
+      "title": "Відбір душевного реагенту",
+      "description": [
+        "Збережіть basic soul filter та soul powder для окремої магічної ділянки. Предмети підтримки не доводять наявності конкретної душі в порожній посудині.",
+        "Фактична перевірка: 2 × enderio:basic_soul_filter — мати в інвентарі; 8 × enderio:soul_powder — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "enderio:basic_soul_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "000046F5C01DFBD2",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC0A387D9378",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_soul_filter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007AE8B77A8611",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000091CBAAEB085D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00001393CA361DB5",
+      "title": "Душевне зв'язування поруч із фабрикою",
+      "description": [
+        "Підготуйте Soul Binder та флакони для магічного обслуговування. Розташовуйте цей процес поза транспортом стандартних prediction matrices.",
+        "Фактична перевірка: оглянути встановлений enderio:soul_binder протягом 40 ticks; 2 × enderio:soul_vial — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "enderio:soul_binder",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DF4090A56500",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000024C01A445DCF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:soul_binder",
+          "timer": 40
+        },
+        {
+          "id": "0000F994D06B92D9",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046E14CE5AD9B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AC8AE457A2D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    }
+  ]
+}

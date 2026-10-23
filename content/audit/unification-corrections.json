@@ -1,0 +1,605 @@
+{
+  "source": "User-exported recipes after AlmostUnified; registry presence alone does not imply obtainability",
+  "replacements": {
+    "rustic_engineer:iron_plate": "create:iron_sheet",
+    "modern_industrialization:steel_plate": "immersiveengineering:plate_steel",
+    "industrialforegoing:iron_gear": "modern_industrialization:iron_gear",
+    "oritech:biosteel_ingot": "immersiveengineering:ingot_steel",
+    "ad_astra:etrium_ingot": "ad_astra:ostrum_ingot",
+    "modern_industrialization:bronze_ingot": "mekanism:ingot_bronze",
+    "modern_industrialization:tin_ingot": "mekanism:ingot_tin",
+    "modern_industrialization:bronze_dust": "mekanism:dust_bronze",
+    "modern_industrialization:tin_dust": "mekanism:dust_tin",
+    "modern_industrialization:copper_dust": "immersiveengineering:dust_copper",
+    "modern_industrialization:copper_plate": "create:copper_sheet",
+    "createaddition:copper_wire": "immersiveengineering:wire_copper",
+    "createaddition:electrum_ingot": "immersiveengineering:ingot_electrum",
+    "createaddition:electrum_wire": "immersiveengineering:wire_electrum",
+    "createaddition:iron_rod": "immersiveengineering:stick_iron",
+    "oritech:steel_ingot": "immersiveengineering:ingot_steel",
+    "oritech:nickel_dust": "immersiveengineering:dust_nickel",
+    "bigreactors:yellorium_ingot": "immersiveengineering:ingot_uranium",
+    "mekanism:ingot_uranium": "immersiveengineering:ingot_uranium",
+    "mekanism:dust_gold": "immersiveengineering:dust_gold",
+    "mekanism:dust_sulfur": "immersiveengineering:dust_sulfur",
+    "ad_astra:steel_ingot": "immersiveengineering:ingot_steel",
+    "ad_astra:steel_rod": "immersiveengineering:stick_steel",
+    "ad_astra:iron_plate": "create:iron_sheet",
+    "mekanism:ingot_steel": "immersiveengineering:ingot_steel",
+    "modern_industrialization:steel_ingot": "immersiveengineering:ingot_steel",
+    "modern_industrialization:aluminum_ingot": "immersiveengineering:ingot_aluminum",
+    "modern_industrialization:aluminum_plate": "immersiveengineering:plate_aluminum",
+    "modern_industrialization:electrum_ingot": "immersiveengineering:ingot_electrum"
+  },
+  "evidence": [
+    {
+      "id": "rustic_engineer:iron_plate",
+      "replacement_recipe": "alltheores:crafting/iron/plate",
+      "note_uk": "Нативний ручний крафт: два залізні злитки й рудний молот дають Create iron sheet; новий рецепт не потрібний."
+    },
+    {
+      "id": "modern_industrialization:steel_plate",
+      "replacement_recipe": "immersiveengineering:crafting/plate_steel_hammering"
+    },
+    {
+      "id": "industrialforegoing:iron_gear",
+      "replacement_recipe": "industrialforegoing:iron_gear"
+    },
+    {
+      "id": "oritech:biosteel_ingot",
+      "replacement_recipe": "oritech:foundry/alloy/biosteel",
+      "note_uk": "Вихід уніфіковано до IE steel; нові матриці E25/26 додатково вимагають raw_biopolymer."
+    },
+    {
+      "id": "ad_astra:etrium_ingot",
+      "note_uk": "Експорт не містить жодного виробника Etrium; планетарний ключ використовує реальний Ostrum, а його технічна гілка зберігає Calorite."
+    },
+    {
+      "item": "modern_industrialization:bronze_ingot",
+      "replacement": "mekanism:ingot_bronze",
+      "recipe": "modern_industrialization:materials/bronze/smelting/dust_to_ingot_smelting",
+      "serializer": "minecraft:smelting",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "mekanism:ingot_bronze"
+      },
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 16,
+      "gate_requires_reconciliation": true,
+      "affected_quests": [
+        {
+          "quest": "E06_X_bronze",
+          "epoch": 6,
+          "required": true,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "modern_industrialization:tin_ingot",
+      "replacement": "mekanism:ingot_tin",
+      "recipe": "modern_industrialization:materials/tin/smelting/raw_metal_to_ingot_smelting",
+      "serializer": "minecraft:smelting",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "mekanism:ingot_tin"
+      },
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 16,
+      "gate_requires_reconciliation": true,
+      "affected_quests": [
+        {
+          "quest": "E06_X_tin",
+          "epoch": 6,
+          "required": true,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "modern_industrialization:bronze_dust",
+      "replacement": "mekanism:dust_bronze",
+      "recipe": "modern_industrialization:materials/bronze_dust",
+      "serializer": "minecraft:crafting_shapeless",
+      "output_field": "result",
+      "exact_output": {
+        "id": "mekanism:dust_bronze",
+        "count": 3
+      },
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 16,
+      "gate_requires_reconciliation": true,
+      "affected_quests": [
+        {
+          "quest": "E06_X_bronze_dust",
+          "epoch": 6,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "modern_industrialization:tin_dust",
+      "replacement": "mekanism:dust_tin",
+      "recipe": "modern_industrialization:materials/tin/craft/dust_from_tiny_dust",
+      "serializer": "minecraft:crafting_shaped",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "mekanism:dust_tin"
+      },
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 16,
+      "gate_requires_reconciliation": true,
+      "affected_quests": [
+        {
+          "quest": "E06_X_tin_dust",
+          "epoch": 6,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "modern_industrialization:copper_dust",
+      "replacement": "immersiveengineering:dust_copper",
+      "recipe": "modern_industrialization:materials/copper/craft/dust_from_tiny_dust",
+      "serializer": "minecraft:crafting_shaped",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:dust_copper"
+      },
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": true,
+      "affected_quests": [
+        {
+          "quest": "E06_X_copper_dust",
+          "epoch": 6,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "modern_industrialization:copper_plate",
+      "replacement": "create:copper_sheet",
+      "recipe": "modern_industrialization:materials/copper/compressor/main",
+      "serializer": "modern_industrialization:compressor",
+      "output_field": "item_outputs",
+      "exact_output": [
+        {
+          "amount": 1,
+          "item": "create:copper_sheet"
+        }
+      ],
+      "earliest_task_epoch": 6,
+      "current_replacement_gate": 2,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E06_X_copper_plate",
+          "epoch": 6,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "createaddition:copper_wire",
+      "replacement": "immersiveengineering:wire_copper",
+      "recipe": "createaddition:rolling/copper_plate",
+      "serializer": "createaddition:rolling",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 2,
+          "id": "immersiveengineering:wire_copper"
+        }
+      ],
+      "earliest_task_epoch": 11,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E11_X_copper_wire",
+          "epoch": 11,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        },
+        {
+          "quest": "E11_X_service_grid",
+          "epoch": 11,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "createaddition:electrum_ingot",
+      "replacement": "immersiveengineering:ingot_electrum",
+      "recipe": "createaddition:mixing/electrum",
+      "serializer": "create:mixing",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 2,
+          "id": "immersiveengineering:ingot_electrum"
+        }
+      ],
+      "earliest_task_epoch": 11,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E11_X_electrum",
+          "epoch": 11,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "createaddition:electrum_wire",
+      "replacement": "immersiveengineering:wire_electrum",
+      "recipe": "createaddition:rolling/electrum_plate",
+      "serializer": "createaddition:rolling",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 2,
+          "id": "immersiveengineering:wire_electrum"
+        }
+      ],
+      "earliest_task_epoch": 11,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E11_X_electrum_wire",
+          "epoch": 11,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "createaddition:iron_rod",
+      "replacement": "immersiveengineering:stick_iron",
+      "recipe": "createaddition:rolling/iron_ingot",
+      "serializer": "createaddition:rolling",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 2,
+          "id": "immersiveengineering:stick_iron"
+        }
+      ],
+      "earliest_task_epoch": 11,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E11_X_iron_rod",
+          "epoch": 11,
+          "required": false,
+          "catalog": "epochs_01_12.json"
+        }
+      ]
+    },
+    {
+      "item": "oritech:steel_ingot",
+      "replacement": "immersiveengineering:ingot_steel",
+      "recipe": "oritech:foundry/alloy/steel",
+      "serializer": "oritech:foundry",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 1,
+          "id": "immersiveengineering:ingot_steel"
+        }
+      ],
+      "earliest_task_epoch": 25,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E25_X_biomass",
+          "epoch": 25,
+          "required": false,
+          "catalog": "epochs_25_36.json"
+        },
+        {
+          "quest": "E25_X_biosteel",
+          "epoch": 25,
+          "required": true,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "oritech:nickel_dust",
+      "replacement": "immersiveengineering:dust_nickel",
+      "recipe": "oritech:grinder/dust/nickel",
+      "serializer": "oritech:grinder",
+      "output_field": "results",
+      "exact_output": [
+        {
+          "count": 1,
+          "id": "immersiveengineering:dust_nickel"
+        }
+      ],
+      "earliest_task_epoch": 25,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E25_X_pulverizer",
+          "epoch": 25,
+          "required": false,
+          "catalog": "epochs_25_36.json"
+        },
+        {
+          "quest": "E25_X_exploration_cache",
+          "epoch": 25,
+          "required": false,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "bigreactors:yellorium_ingot",
+      "replacement": "immersiveengineering:ingot_uranium",
+      "recipe": "bigreactors:blasting/yellorium_from_raw",
+      "serializer": "minecraft:blasting",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:ingot_uranium"
+      },
+      "earliest_task_epoch": 29,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E29_X_yellorium",
+          "epoch": 29,
+          "required": true,
+          "catalog": "epochs_25_36.json"
+        },
+        {
+          "quest": "E29_X_cyanite",
+          "epoch": 29,
+          "required": true,
+          "catalog": "epochs_25_36.json"
+        },
+        {
+          "quest": "E29_X_backup_fuel",
+          "epoch": 29,
+          "required": false,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "mekanism:ingot_uranium",
+      "replacement": "immersiveengineering:ingot_uranium",
+      "recipe": "mekanism:processing/uranium/ingot/from_ore_blasting",
+      "serializer": "minecraft:blasting",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:ingot_uranium"
+      },
+      "earliest_task_epoch": 33,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E33_X_oxidizer",
+          "epoch": 33,
+          "required": true,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "mekanism:dust_gold",
+      "replacement": "immersiveengineering:dust_gold",
+      "recipe": "modern_industrialization:materials/gold/craft/dust_from_tiny_dust",
+      "serializer": "minecraft:crafting_shaped",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:dust_gold"
+      },
+      "earliest_task_epoch": 36,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E36_X_hohlraum",
+          "epoch": 36,
+          "required": true,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "mekanism:dust_sulfur",
+      "replacement": "immersiveengineering:dust_sulfur",
+      "recipe": "mekanism:injecting/gunpowder_to_sulfur",
+      "serializer": "mekanism:injecting",
+      "output_field": "output",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:dust_sulfur"
+      },
+      "earliest_task_epoch": 33,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E33_X_nether_components",
+          "epoch": 33,
+          "required": false,
+          "catalog": "epochs_25_36.json"
+        }
+      ]
+    },
+    {
+      "item": "ad_astra:steel_ingot",
+      "replacement": "immersiveengineering:ingot_steel",
+      "recipe": "ad_astra:steel_ingot",
+      "serializer": "minecraft:crafting_shaped",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "immersiveengineering:ingot_steel"
+      },
+      "earliest_task_epoch": 37,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E37_X_launch_02",
+          "epoch": 37,
+          "required": false,
+          "catalog": "epochs_37_48.json"
+        },
+        {
+          "quest": "E37_X_moonbase_05",
+          "epoch": 37,
+          "required": false,
+          "catalog": "epochs_37_48.json"
+        },
+        {
+          "quest": "E38_X_colony_08",
+          "epoch": 38,
+          "required": true,
+          "catalog": "epochs_37_48.json"
+        }
+      ]
+    },
+    {
+      "item": "ad_astra:steel_rod",
+      "replacement": "immersiveengineering:stick_steel",
+      "recipe": "ad_astra:steel_rod",
+      "serializer": "minecraft:crafting_shaped",
+      "output_field": "result",
+      "exact_output": {
+        "count": 4,
+        "id": "immersiveengineering:stick_steel"
+      },
+      "earliest_task_epoch": 37,
+      "current_replacement_gate": 8,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E37_X_launch_03",
+          "epoch": 37,
+          "required": true,
+          "catalog": "epochs_37_48.json"
+        }
+      ]
+    },
+    {
+      "item": "ad_astra:iron_plate",
+      "replacement": "create:iron_sheet",
+      "recipe": "ad_astra:compressing/iron_plate_from_compressing_iron_ingot",
+      "serializer": "ad_astra:compressing",
+      "output_field": "result",
+      "exact_output": {
+        "count": 1,
+        "id": "create:iron_sheet"
+      },
+      "earliest_task_epoch": 37,
+      "current_replacement_gate": 3,
+      "gate_requires_reconciliation": false,
+      "affected_quests": [
+        {
+          "quest": "E37_X_launch_02",
+          "epoch": 37,
+          "required": false,
+          "catalog": "epochs_37_48.json"
+        }
+      ]
+    },
+    {
+      "item": "mekanism:ingot_steel",
+      "replacement": "immersiveengineering:ingot_steel",
+      "recipe": "modern_industrialization:materials/steel/unpacker/ingot",
+      "serializer": "modern_industrialization:unpacker",
+      "output_field": "item_outputs",
+      "exact_output": [
+        {
+          "amount": 9,
+          "item": "immersiveengineering:ingot_steel"
+        }
+      ],
+      "gate_note": "Use actual earliest quest/design need. Broad MI namespace floor6 must not move established IE steel/electrum8 earlier.",
+      "reason": "Use obtainable unified equivalent of the same metal. Mapped item is a real exported output."
+    },
+    {
+      "item": "modern_industrialization:steel_ingot",
+      "replacement": "immersiveengineering:ingot_steel",
+      "recipe": "modern_industrialization:materials/steel/unpacker/ingot",
+      "serializer": "modern_industrialization:unpacker",
+      "output_field": "item_outputs",
+      "exact_output": [
+        {
+          "amount": 9,
+          "item": "immersiveengineering:ingot_steel"
+        }
+      ],
+      "gate_note": "Use actual earliest quest/design need. Broad MI namespace floor6 must not move established IE steel/electrum8 earlier.",
+      "reason": "Use obtainable unified equivalent of the same metal. Mapped item is a real exported output."
+    },
+    {
+      "item": "modern_industrialization:aluminum_ingot",
+      "replacement": "immersiveengineering:ingot_aluminum",
+      "recipe": "modern_industrialization:materials/blast_furnace/bauxite_to_aluminum_ingot",
+      "serializer": "modern_industrialization:blast_furnace",
+      "output_field": "item_outputs",
+      "exact_output": {
+        "item": "immersiveengineering:ingot_aluminum",
+        "amount": 1
+      },
+      "gate_note": "Use actual earliest quest/design need. Broad MI namespace floor6 must not move established IE steel/electrum8 earlier.",
+      "reason": "Use obtainable unified equivalent of the same metal. Mapped item is a real exported output."
+    },
+    {
+      "item": "modern_industrialization:aluminum_plate",
+      "replacement": "immersiveengineering:plate_aluminum",
+      "recipe": "modern_industrialization:materials/aluminum/compressor/main",
+      "serializer": "modern_industrialization:compressor",
+      "output_field": "item_outputs",
+      "exact_output": [
+        {
+          "amount": 1,
+          "item": "immersiveengineering:plate_aluminum"
+        }
+      ],
+      "gate_note": "Use actual earliest quest/design need. Broad MI namespace floor6 must not move established IE steel/electrum8 earlier.",
+      "reason": "Use obtainable unified equivalent of the same metal. Mapped item is a real exported output."
+    },
+    {
+      "item": "modern_industrialization:electrum_ingot",
+      "replacement": "immersiveengineering:ingot_electrum",
+      "recipe": "modern_industrialization:materials/electrum/packer/ingot",
+      "serializer": "modern_industrialization:packer",
+      "output_field": "item_outputs",
+      "exact_output": [
+        {
+          "amount": 1,
+          "item": "immersiveengineering:ingot_electrum"
+        }
+      ],
+      "gate_note": "Use actual earliest quest/design need. Broad MI namespace floor6 must not move established IE steel/electrum8 earlier.",
+      "reason": "Use obtainable unified equivalent of the same metal. Mapped item is a real exported output."
+    }
+  ]
+}

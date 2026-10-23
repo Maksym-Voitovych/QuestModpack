@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "version_reviewed": "0.3.0-alpha",
+  "result": "source_contracts_reviewed_and_pure_java_tests_passed_native_mod_integration_not_run",
+  "exact_source_contracts": [
+    {
+      "mod": "Mekanism",
+      "version": "10.7.19.85",
+      "commit": "a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80",
+      "repository": "https://github.com/mekanism/Mekanism",
+      "files": [
+        "src/api/java/mekanism/api/recipes/cache/CachedRecipe.java",
+        "src/main/java/mekanism/common/entity/EntityRobit.java"
+      ],
+      "verified": [
+        "CachedRecipe.process() is public void with descriptor ()V; HEAD precedes useEnergy, operatingTicks increment, finishProcessing and useResources.",
+        "CachedRecipe.getRecipe() is public and returns the protected final recipe identity; Class.getMethod can find the inherited public API."
+      ]
+    },
+    {
+      "mod": "Create",
+      "version": "6.0.10",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "repository": "https://github.com/Creators-of-Create/Create",
+      "files": [
+        "src/main/java/com/simibubi/create/content/processing/basin/BasinRecipe.java",
+        "src/main/java/com/simibubi/create/content/fluids/potion/PotionMixingRecipes.java"
+      ],
+      "verified": [
+        "The private static apply(BasinBlockEntity,Recipe,boolean) returns boolean; the full injection descriptor matches the pinned source.",
+        "Both match(simulated) and apply(actual) reach the three-argument method; its HEAD is before capability lookup, simulated extraction and actual input consumption.",
+        "Mixer and press share BasinRecipe.apply; other Create processes are outside this adapter."
+      ]
+    },
+    {
+      "mod": "Minecraft/NeoForge",
+      "version": "1.21.1 / 21.1.264",
+      "artifact": "NeoForm sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+      "file": "net/minecraft/world/item/crafting/RecipeManager.java",
+      "verified": [
+        "RecipeManager.apply and replaceRecipes replace immutable byName map while the manager can retain its identity.",
+        "RecipeManager.getRecipes returns the immutable byName.values snapshot; the revised adapter uses that snapshot as the identity generation token."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "recipe_generation_manager_identity",
+      "severity": "correctness",
+      "status": "fixed_by_parent_during_review",
+      "issue": "A RecipeManager object is reused during replacement. An index keyed only by manager identity could preserve stale permissions and quarantine all replacement objects.",
+      "resolution": "Parent changed the generation token to manager.getRecipes() immutable map-values snapshot. Index tests verify stale identities are removed when the generation changes."
+    },
+    {
+      "id": "mekanism_robit_smelting",
+      "severity": "compatibility_limit",
+      "status": "known_fail_closed_quarantine",
+      "issue": "EntityRobit.baseTick calls RecipeCacheLookupMonitor.updateAndProcess outside a standard BlockEntityTicker. The cached-recipe adapter has no owning block context and denies this operation even after epoch48.",
+      "next_step": "A verified entity-owner/team adapter is required to restore staged Robit smelting; do not allow context-free operations globally."
+    },
+    {
+      "id": "create_generated_potion_mixing",
+      "severity": "compatibility_limit",
+      "status": "known_fail_closed_quarantine",
+      "issue": "PotionMixingRecipes synthesizes recipe objects outside RecipeManager. They have no indexed identity and remain stage100; normal registered mixing/compacting recipes are a separate path.",
+      "next_step": "Index trusted generated brewing recipes using verified output components and stage rules before allowing them."
+    }
+  ],
+  "tests": {
+    "gradle": {
+      "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<prepared-cache> ./gradlew --offline policyTest --no-daemon --console=plain",
+      "status": "passed"
+    },
+    "plain_java": {
+      "command": "JAVA_HOME=<JDK21> python3 companion/test_policy.py",
+      "status": "passed"
+    },
+    "guard_policy_assertions": 119,
+    "live_team_resolver_assertions": 9,
+    "recipe_identity_and_stage_assertions": 5095,
+    "total_java_assertions": 5223,
+    "new_cases": [
+      "unknown and null native identities quarantine at100",
+      "equal recipes retain distinct permissions",
+      "recipe equals/hashCode never invoked",
+      "caller-map mutation cannot grant access",
+      "generation replacement removes stale cached recipes",
+      "empty replacement clears permissions",
+      "world/server reset clears identities",
+      "all49 completion levels crossed with101 required-stage values",
+      "negative/overflow stages rejected",
+      "unowned,blank and absent teams remain denied",
+      "clear immediately revokes late recipes"
+    ],
+    "actual_mekanism_or_create_runtime": "not_run",
+    "new_optional_mixin_binding_runtime": "not_run",
+    "full_pack": "not_run",
+    "tps_benchmark": "not_run"
+  },
+  "static_performance_review": {
+    "hot_path": "IdentityHashMap stage lookup and stage/team policy are O(1); no per-tick registry scan while immutable recipe snapshot is unchanged.",
+    "reload": "A new recipe snapshot triggers one full identity-index build; no claim about measured TPS."
+  },
+  "uncovered_paths": [
+    "Create non-basin processes and contraptions",
+    "AE2 processing/CPU native recipe execution",
+    "Industrial Foregoing and Modern Industrialization process-specific hooks",
+    "component-only tiers",
+    "direct capability I/O",
+    "other entity/global/scheduled processing"
+  ],
+  "reviewed_project_sources": [
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/RecipeIdentityIndex.java",
+      "sha256": "436f9646d888708a23fe74937022cde50f61ffcd7acb7b9ecae7b79644162f65"
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/GuardPolicy.java",
+      "sha256": "9624ee96c1e739e6c98f082827ed3429e913bc43d52436c83b1dc6adecdf543d"
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/Aia2MachineGuard.java",
+      "sha256": "7049879b9b6645374138a4455b4daadd483d594c579805138c3358db6e180f5b"
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/mixin/BoundTickingBlockEntityMixin.java",
+      "sha256": "8dcc0668199aa42f2005ec24d4ae2801c1e1fd766437c0a0a12d0e254194d8c8"
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/mixin/MekanismCachedRecipeMixin.java",
+      "sha256": "81ce06bbe5793a644210d4ef9ec03deddfc4a3a50e34b8f0f4fa854a6d3adae5"
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/mixin/CreateBasinRecipeMixin.java",
+      "sha256": "8c5ed78a6ccef5f711627e5ba9ff2c2efd6ca836512a7c34454f3fe7d73fffed"
+    }
+  ]
+}

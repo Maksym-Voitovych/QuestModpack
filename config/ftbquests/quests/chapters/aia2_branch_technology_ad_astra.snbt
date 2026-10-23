@@ -1,0 +1,3436 @@
+{
+  "id": "0000C68F5BE12B81",
+  "filename": "aia2_branch_technology_ad_astra",
+  "title": "ad_astra — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 28,
+  "icon": {
+    "id": "ad_astra:nasa_workbench",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00006A51E03F2EDD",
+      "title": "Помпа для кисневої лінії",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Підготуйте водяну помпу біля стійкого джерела води для подальшого життєзабезпечення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "ad_astra:water_pump",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C13BD8AC783F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000399593A81607",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:water_pump",
+          "timer": 40
+        },
+        {
+          "id": "0000ABC1A9C83DF7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B7A6465F3BE6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006DB246E279A0",
+      "title": "Перший місячний матеріал",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Поверніть партію сирого деше, щоб перевірити ланцюг видобутку до вкладення в новий двигун.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:raw_desh",
+        "count": 1
+      },
+      "dependencies": [
+        "000003E2998AC2CF",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCFFF44AA7D7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:raw_desh",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007DC9D72AB3F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E05F220C4AB5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CEE5B8C82201",
+      "title": "Майстерня ракетобудування",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Підготуйте NASA Workbench поруч із запасом сталі; у ньому складатимуться корпуси ракет.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "ad_astra:nasa_workbench",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C13BD8AC783F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000088DAEDAE4078",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000A4431683FE95",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000E6B4041D0A6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000936E28838162",
+      "title": "Чистий деше для механіки",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Перетворіть місячну сировину на зливки та залиште їх поза декоративним будівництвом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00006DB246E279A0",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005C5B0EF2DC3A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C22D9AD6E1CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004258A779B366",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A799F7214A5C",
+      "title": "Сталева основа ракети",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Розведіть виготовлення зливків і листового металу, щоб одна лінія не блокувала іншу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CEE5B8C82201",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000396F85EF35A1",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000004A846D440BF",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000451C1236439B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005BABF19DFAD2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000E5D49655B915",
+      "title": "Перший кисневий завантажувач",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Поставте Oxygen Loader у сервісній зоні, де скафандри можна заправляти без розбирання мережі.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_loader",
+        "count": 1
+      },
+      "dependencies": [
+        "00006A51E03F2EDD",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F61BF8D636F5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_loader",
+          "timer": 40
+        },
+        {
+          "id": "00005770D2DAB488",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000868351FAE8F7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000006F491EDB9D9",
+      "title": "Посудина для газу",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Розділіть тару з киснем і бак для спорядження; наявність порожньої ємності не доводить її заправлення.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:gas_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E5D49655B915",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000C7590D9A66C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000000BB28C8E326",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1C87B1BDEA6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D07A20FA263D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000070BA76AEDC69",
+      "title": "Каркас двигуна",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Складіть жорстку рамку для силового агрегату й залиште сервісний запас стрижнів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:engine_frame",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A799F7214A5C",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006DD8334E94CE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:engine_frame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC2D1172661F",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA30B75D1ACE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D1127C4E0704",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009E760E13BD5F",
+      "title": "Листовий деше",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Підготуйте листовий метал для технічних деталей; звірте спосіб обробки з JEI цієї збірки.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "0000936E28838162",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BFD33F75A92C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_plate",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EFDE1E11EDDC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000C07D180FAF1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000009BCDC9FF816",
+      "title": "Рідинний бак першого ступеня",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Зіставте двигун і паливний бак за рецептом першої ракети; бак не замінює каністру для заправлення.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:steel_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "000070BA76AEDC69",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000052C0E970430A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020247AD71EC2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCBA99808529",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003979489F5DBD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000726CDA0EF863",
+      "title": "Двигун місячного покоління",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Завершіть дешеєвий двигун як проміжний вузол між першою посадкою і ракетним ступенем для Марса.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E760E13BD5F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E7B948C14C6C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CAE3654BDC28",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CDBCBC62C454",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000937CB8E41BF2",
+      "title": "Герметична маска",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Зберіть шолом і кисневу гарнітуру як частини одного аварійного комплекту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:space_helmet",
+        "count": 1
+      },
+      "dependencies": [
+        "000006F491EDB9D9",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009AF2FB10402F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000469C4C9AB8FB",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001142FA947B63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B0078F5D8D62",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "000032C9D0282EA1",
+      "title": "Скафандр для першої посадки",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Перевірте повноту базового космічного комплекту перед посадкою в ракету.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:space_suit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000937CB8E41BF2",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A4153B9FEF93",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_suit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009758B537580F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_pants",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000804DDACC73E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BBE5F59373F2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000661EC1BD66CE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000379A7026A9B1",
+      "title": "Паливна місткість другого ступеня",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Зіставте двигун із сумісним баком до складання нового корпусу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000726CDA0EF863",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CA73EB017EEA",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C795A6B75008",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EF2B430D9F43",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DEA2D7AF442C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "000090D7F20E4C3A",
+      "title": "Аеродинамічний комплект",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Зберіть оперення й носовий конус до остаточного складання, щоб не тримати порожній майданчик зайнятим.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:rocket_fin",
+        "count": 1
+      },
+      "dependencies": [
+        "000009BCDC9FF816",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000029691983671E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_fin",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000010865EAA65EA",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_nose_cone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088E2B7615D1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A0242DFA34B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000644B615B0E04",
+      "title": "Розподілення повітря в базі",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Підготуйте розподільник і датчик: стан атмосфери потрібно бачити, а не вгадувати за оформленням кімнати.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_distributor",
+        "count": 1
+      },
+      "dependencies": [
+        "000032C9D0282EA1",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004C4B9D7A02B1",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_distributor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005353D12959D2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_sensor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E76C082B328C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C3B3BAB12892",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B34A7215364D",
+      "title": "Кабель місячної станції",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Підготуйте енергетичну трасу, довжини якої вистачить між заправленням, металургією та житловим блоком.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000379A7026A9B1",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096E396FE327E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B561A7585A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E821AC113C43",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C66196D149D2",
+      "title": "Майданчик для повернення",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Підготуйте окрему стартову площу та фізичне паливо для тесту перед далеким рейсом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:launch_pad",
+        "count": 1
+      },
+      "dependencies": [
+        "000090D7F20E4C3A",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5ED3BF6F6D6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:launch_pad",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003859C9FDB1A2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003662A6668C10",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DA2831292125",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "00006F5509848AEB",
+      "title": "Перший ступінь готовий",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Завершіть першу ракету та візьміть інструмент для обслуговування космічного обладнання.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_1_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C66196D149D2",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000007FF9D3A435A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_1_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A42ECD4D3695",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004BFC17F9BA1B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AAD070FCABAC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "000092165229EF6E",
+      "title": "Компресор місячної майстерні",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Винесіть виробництво плит у окрему робочу ділянку, а не використовуйте машину як нерозміщений запас.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B34A7215364D",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000419E90D884C6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:compressor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C359D9270FB4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_plate",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006BAC481D7E2B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002AD4FF4DB8B3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000EDD874A4D1E6",
+      "title": "Місячний газопровід",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Зберіть окрему рідинно-газову трасу з дешеєвих деталей, не змішуючи її з паливною магістраллю.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_fluid_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000644B615B0E04",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D05520C8BFE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_fluid_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000029FA9BC910C6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D720F1CC49B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000159C95BDB4BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000062A82B6F477",
+      "title": "Резерв наземного запуску",
+      "description": [
+        "Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.",
+        "Перед стартом відокремте запасний бак і харчі від матеріалів, що витрачаються на будівництво бази.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_1_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F5509848AEB",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000010CFA7D7BAA7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_1_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B43CF83A8BE7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E03A1179EC9F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000032CAFFB8FF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000002A5733A4702",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001C7109E5ADA4",
+      "title": "Матеріальний комплект другої ракети",
+      "description": [
+        "Місячна металургія вводить деше як матеріал для наступного покоління транспорту.",
+        "Проведіть передскладальну інвентаризацію силового, паливного й аеродинамічного комплектів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "000092165229EF6E",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000085A3C975C80B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055E9AC698D9C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044819A30A8DD",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_nose_cone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B327B752E055",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_fin",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000041390E0FD0AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003E584317AB9C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F1C8C95CAABA",
+      "title": "Два незалежні контури",
+      "description": [
+        "Киснева система є окремою виробничою гілкою, яку не можна підмінити бронею.",
+        "Підготуйте обладнання для заправлення спорядження та для атмосфери бази; одна система не замінює іншу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_loader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EDD874A4D1E6",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002058AEB7B75",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_loader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003B918D2FB163",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_distributor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000092C8C1256A83",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:large_gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007455E1458AED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000032F827800231",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    },
+    {
+      "id": "00000EF6336D1FAD",
+      "title": "Космічна майстерня без монополії на кисень",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Зберіть набір трьох незалежних машин та виділіть життєзабезпеченню окремий пріоритет.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000965E852DFD8A",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F27B3AC0377",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:compressor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D88257130D1E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:etrionic_blast_furnace",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F6E7281CBA7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_loader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001ED97277F9CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DC6ADAAAC554",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000015670B73215D",
+      "title": "Перший венеріанський концентрат",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Поверніть партію сирого калориту й не витрачайте всю знахідку на оформлення колонії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:raw_calorite",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCCBB28B2AB9",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008633F59AEAD6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:raw_calorite",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000552D7B2DD9DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000055F092B09F5F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "000048647465DD35",
+      "title": "Сенсорна мережа далекої бази",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Підготуйте датчик атмосфери, її джерело й елемент локального контролю.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_sensor",
+        "count": 1
+      },
+      "dependencies": [
+        "00007B45F2C5DFEA",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006721CEC7161A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_sensor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5E28186092B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_distributor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F02CDE2ECABE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC47D72BBE63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C189F94FDE4B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "00004C6DB4605C07",
+      "title": "Третій ракетний корпус",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Складіть ракету третього рівня після марсіанського виробничого циклу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_3_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCCBB28B2AB9",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ECC4C8BA395B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_3_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020C45433CFC7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C664CF9F1992",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000AEAED5690A55",
+      "title": "Два листові метали космічної мережі",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Підготуйте дешеєві й острамові пластини як дві різні основи для корпусів та енергетичних деталей. Предметне завдання перевіряє запас обох металів, а не роботу компресора."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCC266D8F64F",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000085D898C7C369",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000897FEB827AC0",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008C32D05C3A09",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F2725228F3AE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "000017F963A065BF",
+      "title": "Зливки жаростійкого покоління",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Підготуйте чистий метал для двигуна й наступних механізмів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000015670B73215D",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000392F2F543020",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D24981BCD85D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001BFA08E83585",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A1CD00338E1F",
+      "title": "Лабораторія планетарної металургії",
+      "description": [
+        "Розширена лабораторія зберігає окремо виплавлені метали та сирий венеріанський концентрат.",
+        "Підготуйте дешеєвий, острамовий і калоритовий злитки, сирий калорит та уніфіковану сталь. Порівняння п’яти форм допомагає відстежувати виробничий етап, не додаючи недоступний Etrium."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00000EF6336D1FAD",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C28481024D29",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002E16D926308A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000092D3B29BDDFC",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BB2F2FF6D8B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:raw_calorite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000460BCE384A28",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D0617DDCFE74",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EC4FF88AF89A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000F6C0F18E5959",
+      "title": "Силовий каркас зарядної станції",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Зберіть сталеві стрижні, рами двигунів і два блоки остраму для жорсткого монтажу зарядного обладнання. Острамові блоки входять у реальний рецепт Energizer, тому не витрачайте цей запас на оздоблення."
+      ],
+      "icon": {
+        "id": "immersiveengineering:stick_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AEAED5690A55",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A25F6F15A01B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006942605E0246",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:engine_frame",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5343C8AA337",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000806FB11A97F5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009E08E8F9161A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000F7B111FDE2A6",
+      "title": "Нормалізація гравітаційної зони",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Підготуйте Gravity Normalizer для окремої робочої ділянки; поведінку зони перевірте у світі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:gravity_normalizer",
+        "count": 1
+      },
+      "dependencies": [
+        "000048647465DD35",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004544EFD77F35",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:gravity_normalizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081E872295580",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000042A8F6150434",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000F8BE648961E7",
+      "title": "Третій ступінь із заправленням",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Підготуйте корпус разом із заправною тарою, щоб не вирушати до майданчика без витратного ресурсу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_3_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "00004C6DB4605C07",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B80340E827B4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_3_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008D6F1F4D12B5",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006AA90914B358",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DFAFD93097E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "000019794D7F0C0A",
+      "title": "Розділені кабелі колонії",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Підготуйте сталеву та дешеєву кабельні лінії окремими комплектами. Обирайте кабель за нативними характеристиками Ad Astra та залишайте життєзабезпеченню резерв живлення."
+      ],
+      "icon": {
+        "id": "ad_astra:steel_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F6C0F18E5959",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B8F20A672468",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002F0FC6EA99B6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003C9F3882093C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006397AEFFB9A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00005AD943F14D4F",
+      "title": "Калоритовий лист",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Відведіть окрему партію на обробку плит, щоб складальник не розібрав запас зливків.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "000017F963A065BF",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C33473B920F2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_plate",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B97853802177",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A2954A5E139E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "00007646EFA95108",
+      "title": "Посилений шлюз колонії",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Зберіть захисні двері й шлюз як основу контрольованого проходу між зонами.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_sliding_door",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F7B111FDE2A6",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F05C91D5E9E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_sliding_door",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003AEA5BE1D509",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:airlock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000033B6A1655A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000016B18151F83",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000F0D333CD82C4",
+      "title": "Четвертий ракетний корпус",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Завершіть фінальний ракетний ступінь після перевірки калоритових вузлів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_4_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F8BE648961E7",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000938A25971A60",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_4_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000041F7E3268D56",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000014545DE5137C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000432499A885DB",
+      "title": "Кріогенний паливний резерв",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Відокремте кріогенну паливну тару від звичайного пального та сумісної місткості.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:cryo_fuel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F0D333CD82C4",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000D435CB93B0E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cryo_fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004FF9E8F788AF",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5F28BA1C96D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000028131A775406",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "00004557D80820CF",
+      "title": "Бак четвертого ступеня",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Завершіть паливний резервуар фінального транспортного покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "00005AD943F14D4F",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FB93B86EAD17",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000330A0FAE095D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000589ED7C358CA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 8.0
+    },
+    {
+      "id": "00009BA7A63BD941",
+      "title": "Магістраль великого запасу",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Підготуйте місткість і відведену до неї трасу для віддаленої кисневої точки.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:large_gas_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "00007646EFA95108",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2C8911DBEAB",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:large_gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AFB70FD6B079",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_fluid_pipe",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000097A407F29953",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F16BB5F2B63E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000DD939AD04CA8",
+      "title": "Етріонний конденсатор",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Виготовте реальний ємнісний компонент Ad Astra з доступних сталевих пластин, алмазів і редстоуну. Наявність предмета засвідчує складання компонента; заряд тут не вимірюється."
+      ],
+      "icon": {
+        "id": "ad_astra:etrionic_capacitor",
+        "count": 1
+      },
+      "dependencies": [
+        "000019794D7F0C0A",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CDDD9BEBDB1F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:etrionic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A68C4C973166",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000926D7CE26068",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 12.0
+    },
+    {
+      "id": "000039CEFA1F9FA3",
+      "title": "Ізольовані канали мережі",
+      "description": [
+        "Розгалужена космічна мережа має фізично розділяти потоки газу, енергії та вантажу.",
+        "Розділіть канали прокладання проводів і труб, зберігаючи зрозумілу сервісну схему.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:cable_duct",
+        "count": 1
+      },
+      "dependencies": [
+        "00009BA7A63BD941",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006C57B321B27",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cable_duct",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D7A553F1A93",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fluid_pipe_duct",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099B90D6296F9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C695687BE579",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000606E3C129F32",
+      "title": "Зарядна станція для віддаленої бази",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Встановіть Energizer, який складається з остраму та етріонних конденсаторів. Огляньте поставлений блок: цей квест підтверджує монтаж, а не передану кількість FE."
+      ],
+      "icon": {
+        "id": "ad_astra:energizer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD939AD04CA8",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003731432E4440",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:energizer",
+          "timer": 40
+        },
+        {
+          "id": "00007C154CEEBC91",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001CB95A2D20A2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000BCAB10E29FE5",
+      "title": "Четверта ракета в експедиційному комплекті",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Перед рейсом зведіть транспорт, запас газу й харчі в один список перевірки.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_4_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000432499A885DB",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009F60498A85D5",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_4_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A05B9145D33C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:large_gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B60488F7060A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000141A222D02F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000995CF7E6A319",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000D3E4156DD710",
+      "title": "Калоритовий двигун",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Зберіть двигун після підготовки жаростійких компонентів; не підмінюйте його старішим острамовим.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "00004557D80820CF",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EEF98F823069",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D2755743640A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000704561AFE0E3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 12.0
+    },
+    {
+      "id": "000024078FF90E32",
+      "title": "Подвійний стартовий вузол",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Підготуйте одночасно заправлення ракети й спорядження: ці потоки не повинні конкурувати за останній ресурс.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:launch_pad",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BCAB10E29FE5",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007F09D8574CA2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:launch_pad",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E31F8EA103F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_loader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A9CC1EFF5D4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fuel_refinery",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A35BAA9F5C4D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000065ACF66B74A4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 6.0
+    },
+    {
+      "id": "000053A565343328",
+      "title": "Етріонна доменна установка",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Встановіть нативну доменну установку Ad Astra з залізних пластин, редстоуну та звичайної доменної печі. Огляд підтверджує наявність блока; рецепти та виробіток перевіряйте окремо в JEI."
+      ],
+      "icon": {
+        "id": "ad_astra:etrionic_blast_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "0000606E3C129F32",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000755D7B1DA8ED",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:etrionic_blast_furnace",
+          "timer": 40
+        },
+        {
+          "id": "00004C1B136BF2D8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000042AA44F33DE6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A759D6FB52AC",
+      "title": "Компонування четвертої ракети",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Проведіть інвентаризацію силового агрегату, резервуара й оперення перед складанням.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D3E4156DD710",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000BC9FA9F373F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007A3434A496E9",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F1AAE4FA16A7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_fin",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098EF87F6E8AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FD98F41E621C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 10.0
+    },
+    {
+      "id": "00006A47C1B9A8A6",
+      "title": "Сонячна комірка космічної мережі",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Підготуйте фотоелектричну комірку Ad Astra та сонячну панель. Комірка має реальний рецепт із дешеєвих пластин, скла й алмазів; її назва не вимагає неіснуючого у рецептах злитка Etrium."
+      ],
+      "icon": {
+        "id": "ad_astra:photovoltaic_etrium_cell",
+        "count": 1
+      },
+      "dependencies": [
+        "000053A565343328",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009E06E6682AB3",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:photovoltaic_etrium_cell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A6505AC3C4DE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:solar_panel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F975E8B46038",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000900C94AE87B9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 6.0
+    },
+    {
+      "id": "00006C365D318991",
+      "title": "Віддалена ремонтна станція",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Підготуйте складальний і ремонтний комплект для далекої колонії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:nasa_workbench",
+        "count": 1
+      },
+      "dependencies": [
+        "000024078FF90E32",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000041174F812545",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:nasa_workbench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D9BEAB153FF",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_plate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F343BAC9FA32",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AEA95AB44BF8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009A86DE63A3AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000B538EABF3D1B",
+      "title": "Сервісний запас калориту",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Залиште матеріали різних форм для ремонту й розширення, а не лише готовий двигун.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A759D6FB52AC",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000014610AFFCF45",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4073C89DE8D",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_plate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000019A038A0D08A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:engine_frame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057132E8582C8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000051EFD8F2C021",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 10.0
+    },
+    {
+      "id": "00002F18C1764EFB",
+      "title": "Завершена транспортна металургія",
+      "description": [
+        "Венеріанський калорит завершує транспортну металургію Ad Astra.",
+        "Порівняйте три покоління двигунів у майстерні й збережіть хоча б по одному для сервісної документації.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B538EABF3D1B",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF5C15F86C78",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000194D8F28CB9C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000037776F42F0ED",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC6939625B8A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000168ECA891A9A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A47ECCA457F4",
+      "title": "Архів транспортних поколінь",
+      "description": [
+        "Кожен наступний транспортний ступінь має власні компоненти та маршрут обслуговування.",
+        "Зберіть навчальний набір усіх чотирьох корпусів; він показує завершеність транспортної гілки, а не кількість здійснених польотів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_1_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C365D318991",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004D91EB9A473A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_1_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061E5C14520D5",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_2_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000332BA8AEFB9A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_3_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007653D0516486",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_4_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016FD8E8BBD42",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AAE80B334A6C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000C49CE3B18174",
+      "title": "Космічна енергетична збірка",
+      "description": [
+        "Космічна енергетика поєднує планетарну металургію з окремими накопичувальними й зарядними вузлами.",
+        "Зведіть зарядну станцію, конденсатор, жаростійку пластину та кабель у комплект обслуговування колонії. Це контрольний набір реальних підсистем, а не автоматичне вимірювання пропускної здатності мережі."
+      ],
+      "icon": {
+        "id": "ad_astra:energizer",
+        "count": 1
+      },
+      "dependencies": [
+        "00006A47C1B9A8A6",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092C0F9E75314",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:energizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000CC311523BE4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:etrionic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BEDAB167443",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000811C2813F528",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008763614DD374",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A481E4D101C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 10.0
+    },
+    {
+      "id": "00002292989C3DD2",
+      "title": "Космічна оправа нескінченності",
+      "description": [
+        "Фінальна промислова перевірка збирає апаратні результати різних шкіл, не підміняючи одну фабрику іншою.",
+        "Підготуйте космічний осередок, фінальний зливок і планетарний промисловий сплав.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки.",
+        "Космічну частину комплекту представляють доступні калоритові матеріали або нативна зарядна станція Ad Astra."
+      ],
+      "icon": {
+        "id": "ad_astra:energizer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E95B8D62E701",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D609F5019888",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:energizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F94EACBBA7D",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001090B24230DB",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000515C4DDDD6E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000035477DE8C108",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    }
+  ]
+}

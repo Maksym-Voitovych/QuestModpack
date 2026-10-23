@@ -1,0 +1,2634 @@
+{
+  "id": "0000052E5040D6DA",
+  "filename": "aia2_branch_technology_avaritia",
+  "title": "Re-Avaritia — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 33,
+  "icon": {
+    "id": "avaritia:diamond_lattice",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000006BB37F0ACA",
+      "title": "Нейтронний компресор",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Підготуйте центральний апарат ущільнення та звірте доступні в JEI нативні варіанти.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BB77CA535EBD",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C1CEA971898",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:neutron_compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000CC72B3C9D3C3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000956B47468401",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000007B49BA43887",
+      "title": "Екстремальна кузня",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Підготуйте нативний ковальський інструмент окремо від великого складального столу.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:extreme_smithing_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BDEAE5B9489C",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F47C19920BC6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:extreme_smithing_table",
+          "timer": 40
+        },
+        {
+          "id": "00009E166465BBE2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000081D370C2F40F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00006A7708572487",
+      "title": "Алмазна решітка",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Виготовте конструкційний компонент кристалічної матриці й перевірте його рецепт у цій версії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:diamond_lattice",
+        "count": 1
+      },
+      "dependencies": [
+        "000049C4E61EFE4D",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000635E4AF2F3B7",
+          "type": "item",
+          "item": {
+            "id": "avaritia:diamond_lattice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099BDE971ABA9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002AEE28BB04E7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000AE71E55CB0BF",
+      "title": "Паспорт сингулярного виробництва",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Зведіть результат ущільнення, апарат, контролер і магічну есенцію як міжмодовий виробничий комплект.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EB09EB46C8DA",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE0D8059468E",
+          "type": "item",
+          "item": {
+            "id": "avaritia:singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004EABB9E4E213",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_compressor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000087AFC270043F",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D3B325807689",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AF4ACFA6D911",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000093CA7E8D2702",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000BD0152D67961",
+      "title": "Початковий нейтронний колектор",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Підготуйте нативний збирач; наявність блока не вимірює кількість вироблених частинок.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_collector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F1239CED6CF4",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096A093B592D3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:neutron_collector",
+          "timer": 40
+        },
+        {
+          "id": "000066CE9925AF4A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DD568268F7FC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000426AD155B77D",
+      "title": "Блок решітчастого резерву",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Підготуйте щільну форму решітки для контролю матеріальної вартості наступних складань.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:diamond_lattice_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00006A7708572487",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A00725898DA",
+          "type": "item",
+          "item": {
+            "id": "avaritia:diamond_lattice_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E858EB30394",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000096134397C1F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007E87C50AC095",
+      "title": "Щільний компресор",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Виготовте старший апарат після базової лінії ущільнення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:dense_neutron_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000006BB37F0ACA",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C0D43D1F4166",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:dense_neutron_compressor",
+          "timer": 40
+        },
+        {
+          "id": "00006ADE7C61F5BA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000047A19CA7D051",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000081B2477D0023",
+      "title": "Екстремальне ковадло",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Створіть сервісний блок для обладнання старшого рівня.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:extreme_anvil",
+        "count": 1
+      },
+      "dependencies": [
+        "000007B49BA43887",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D40AABB5169B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:extreme_anvil",
+          "timer": 40
+        },
+        {
+          "id": "000084B68F32E013",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B1394B654ED0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000EF4B5EDB28A3",
+      "title": "Перша нейтронна купка",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Збережіть перший фізичний продукт нейтронного виробництва.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_pile",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD0152D67961",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DE35D9883A52",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_pile",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5D49B5721E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A463A6D92881",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00002ECF9B1C3BFA",
+      "title": "Ковальський шаблон старшої майстерні",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Підготуйте нативний шаблон і звірте предмети, до яких він застосовується.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:upgrade_smithing_template",
+        "count": 1
+      },
+      "dependencies": [
+        "000081B2477D0023",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5821B1945F8",
+          "type": "item",
+          "item": {
+            "id": "avaritia:upgrade_smithing_template",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C8A7AB76249C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A0350D088BEC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005EB14765612F",
+      "title": "Перший кристалічний зливок",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Завершіть окремий матеріальний ступінь перед нейтронними машинами.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:crystal_matrix_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000426AD155B77D",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000748B0A0F4D63",
+          "type": "item",
+          "item": {
+            "id": "avaritia:crystal_matrix_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A40E2AEA8865",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004D0A1F20991E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005EF6CDBE1E00",
+      "title": "Посилений компресор",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Підготуйте наступний нативний клас для збільшеної виробничої ділянки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:denser_neutron_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E87C50AC095",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000074393999689E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:denser_neutron_compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000E5FEAC957353",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000388B5C68D74D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E0ADB16388E3",
+      "title": "Нейтронний самородок",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Завершіть проміжне ущільнення частинок перед зливковим ступенем.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_nugget",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EF4B5EDB28A3",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EED1694124EA",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_nugget",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006F2576E3E00B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000908659D7D84B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00003F49EE714D92",
+      "title": "Зливок нейтронію",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Отримайте повноцінний матеріал для майбутніх компресорів і деталей.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E0ADB16388E3",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A0E364BD3F7",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AF6DB2C95540",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008A744898B8B9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004BF7C73D0A26",
+      "title": "Стиснене зберігання",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Виділіть окремий фізичний буфер для проміжних екстремальних компонентів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:compressed_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "00002ECF9B1C3BFA",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC17CF389C48",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:compressed_chest",
+          "timer": 40
+        },
+        {
+          "id": "000058DD5CDF28F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000914AF620A5C6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007262911DA5B9",
+      "title": "Матриця у щільній формі",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Збережіть щільний кристалічний резерв без витрачання його на випадкову декорацію.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:crystal_matrix",
+        "count": 1
+      },
+      "dependencies": [
+        "00005EB14765612F",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005746EE772DB",
+          "type": "item",
+          "item": {
+            "id": "avaritia:crystal_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000089542147F4F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007710999C271D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000A78080C5F3E4",
+      "title": "Граничний компресор",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Завершіть старший ущільнювальний апарат; квест не приписує йому вигаданого коефіцієнта швидкості.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:densest_neutron_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "00005EF6CDBE1E00",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F1E59A2964C2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:densest_neutron_compressor",
+          "timer": 40
+        },
+        {
+          "id": "00005FF91C49EE00",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000ED66DBCDE024",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000ADE42F34C95D",
+      "title": "Стиснений верстак",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Пройдіть перше нативне розширення столу замість пропуску початкових деталей.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:compressed_crafting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "00007262911DA5B9",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3A06BFE1F72",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:compressed_crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "00009209C257194E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005E6855D9938A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D595CBF58CCB",
+      "title": "Тессеракт майстерні",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Підготуйте нативний технічний предмет і перевірте його реальний інтерфейс у встановленій версії.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:tesseract",
+        "count": 1
+      },
+      "dependencies": [
+        "00004BF7C73D0A26",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005DE9C7D185CD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:tesseract",
+          "timer": 40
+        },
+        {
+          "id": "0000A0830486D8AF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000046B855004C61",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DB6CF566C59B",
+      "title": "Перша нативна сингулярність",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Покажіть нативний предмет сингулярності; це загальна перевірка ID без твердження про конкретний data-component варіант.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A78080C5F3E4",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009B69BCFF498A",
+          "type": "item",
+          "item": {
+            "id": "avaritia:singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3F59B56E7FA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002AC608730909",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000F16E954732E4",
+      "title": "Нейтронна шестерня",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Виготовте механічний компонент зі старшого матеріалу, не підмінюючи його звичайною металевою шестернею.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_gear",
+        "count": 1
+      },
+      "dependencies": [
+        "00003F49EE714D92",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DFFEEB257F7B",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008AFAA723FD34",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EE48F5A3081C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000007079FC2B71",
+      "title": "Облік потоків компресора",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Підготуйте інструмент бічного налаштування й контрольований напрям подачі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:side_config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DB6CF566C59B",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F6B79CB07869",
+          "type": "item",
+          "item": {
+            "id": "avaritia:side_config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B192D06E6CA",
+          "type": "item",
+          "item": {
+            "id": "ae2:export_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCD98A79D9ED",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_compressor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B3E20EBF1380",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A902280D7E40",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003CCB19E679D9",
+      "title": "Щільний нейтронний збирач",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Підготуйте перший старший клас нативного збору для окремої виробничої ділянки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:dense_neutron_collector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F16E954732E4",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008870032B47A4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:dense_neutron_collector",
+          "timer": 40
+        },
+        {
+          "id": "00005C2F003D9080",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000028BF7A00C374",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CFE18D9D2805",
+      "title": "Енергетичний резерв екстремальної лінії",
+      "description": [
+        "Екстремальне виробництво потребує справжнього енергетичного буфера поруч із нейтронними механічними деталями.",
+        "Підготуйте нітро-комірку Powah та нейтронну шестерню Re-Avaritia. Завдання перевіряє обладнання, а не заряд; службовий символ FE з інтерфейсу не є матеріалом для виживання."
+      ],
+      "icon": {
+        "id": "powah:energy_cell_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D595CBF58CCB",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AE9C9FC44479",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5226FEB2D62",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3EA59F9BC75",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B1EF5CEA354E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000F50BF8E1CA6F",
+      "title": "Подвійно стиснений верстак",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Підготуйте наступний складальний ступінь і звірте його місце у рецепті великого столу.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:double_compressed_crafting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ADE42F34C95D",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000AC241190021",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:double_compressed_crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "000040A0E25BFAB9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A3CA0CDCB86D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 6.0
+    },
+    {
+      "id": "00003AF614226164",
+      "title": "Граничний клас нейтронного збору",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Завершіть старшу машину тільки після матеріальної підготовки нижчих ступенів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:densest_neutron_collector",
+        "count": 1
+      },
+      "dependencies": [
+        "00003CCB19E679D9",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EF87E0389481",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:densest_neutron_collector",
+          "timer": 40
+        },
+        {
+          "id": "000093FA411BBCEC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B3A0615E1C23",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000725B414C1C32",
+      "title": "Екстремальний робочий стіл",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Створіть центральний складальний інструмент після перевірки його зміненого рецепта.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:extreme_crafting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F50BF8E1CA6F",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F94B87CB8A6A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:extreme_crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "0000D2C8F1CE94F5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DC67BAB8DCA1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BCD313DDDC85",
+      "title": "Осередок удосконалення",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Підготуйте проміжний осередок для нативних покращень екстремального покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:enhancement_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CFE18D9D2805",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000D73615284AD",
+          "type": "item",
+          "item": {
+            "id": "avaritia:enhancement_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007973ECAC22F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DCE3FBF261FA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "000014E623A97080",
+      "title": "Нейтронний сервісний запас",
+      "description": [
+        "Нейтронна лінія розділяє збір частинок, ущільнення матеріалу й виготовлення деталей.",
+        "Покажіть матеріал, готову деталь, джерело частинок і фізичний паливний резерв як різні функції лінії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:neutron_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00003AF614226164",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002074769DE7C7",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069177BCC92B7",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000526064E451F0",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_collector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008D801DB6F6D2",
+          "type": "item",
+          "item": {
+            "id": "projecte:aeternalis_fuel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C23C5CD49F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007D409DCB05FF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "000040C4168E35EF",
+      "title": "Сервісний паспорт великої майстерні",
+      "description": [
+        "Екстремальна майстерня повинна мати окремі інструменти ковальства, зберігання й передавання матеріалів.",
+        "Зведіть чотири різні сервісні функції без вимоги зібрати випадковий набір декоративних блоків.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:extreme_smithing_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BCD313DDDC85",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004DD99A91CB79",
+          "type": "item",
+          "item": {
+            "id": "avaritia:extreme_smithing_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E151E5A9058D",
+          "type": "item",
+          "item": {
+            "id": "avaritia:extreme_anvil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000060BFB199C161",
+          "type": "item",
+          "item": {
+            "id": "avaritia:compressed_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D5CDD29CC906",
+          "type": "item",
+          "item": {
+            "id": "avaritia:side_config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5447B14999E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BB69BD47DBB6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BA6389B0E4F1",
+      "title": "Кристалічний виробничий паспорт",
+      "description": [
+        "Re-Avaritia починається з кристалічної металургії та послідовного розширення робочих столів.",
+        "Зведіть інструмент, новий сплав і внесок попередньої алхімічної епохи в один контрольний комплект.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:extreme_crafting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000725B414C1C32",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006565F1DA8506",
+          "type": "item",
+          "item": {
+            "id": "avaritia:extreme_crafting_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B2617B661FD3",
+          "type": "item",
+          "item": {
+            "id": "avaritia:crystal_matrix_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5713A4380C6",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB0A76CCF587",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003DC79A8BE018",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000B862D7B36E75",
+      "title": "Сингулярний контрольний комплект",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Підготуйте загальний предмет сингулярності й старший компресор; квест не розрізняє компонентні варіанти першого.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "00009D4530278611",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008CE12E833222",
+          "type": "item",
+          "item": {
+            "id": "avaritia:singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDAFBA758A97",
+          "type": "item",
+          "item": {
+            "id": "avaritia:densest_neutron_compressor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000FF33FDD1C83",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001583301136F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "00004268AC377124",
+      "title": "Вічна сингулярність",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Завершіть нативний узагальнювальний матеріал старшого ущільнення.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:eternal_singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B862D7B36E75",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E139702D9F14",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030C8D584A200",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000959335FEE520",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "00006FA6BB860F05",
+      "title": "Перший каталізатор нескінченності",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Виготовте фінальний каталізатор після матеріального завершення різних виробничих гілок.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_catalyst",
+        "count": 1
+      },
+      "dependencies": [
+        "00004268AC377124",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9FC4A37DC22",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001CBD56326E7E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000073387B726EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000C07281F4A0F0",
+      "title": "Каталізатор і просторовий внесок",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Поєднайте складний каталізатор із окремим нативним просторовим компонентом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_catalyst",
+        "count": 1
+      },
+      "dependencies": [
+        "00006FA6BB860F05",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BEDC06F6DE5B",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086FF71AA19F0",
+          "type": "item",
+          "item": {
+            "id": "avaritia:endest_pearl",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C2D1D57F3E8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BA9F7BB551F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 8.0
+    },
+    {
+      "id": "00003D442F3C07EC",
+      "title": "Нейтронна оправа вічності",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Підготуйте вічну сингулярність поряд із реальною нейтронною деталлю.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:eternal_singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C07281F4A0F0",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A8F6D72DBBE4",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000357810A6D0E0",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CAF8768A667",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000021CE67CB24D1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "000008942F55A7D4",
+      "title": "Резерв фізичного каталізатора",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Збережіть два незалежні компоненти поза звичайним складом EMC-матеріалів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_catalyst",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D442F3C07EC",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F553A5214579",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A4928883A91",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC709D3B351A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000119938ED6F15",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 8.0
+    },
+    {
+      "id": "00007D224D1FA917",
+      "title": "Магічна стабілізація вічного матеріалу",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Підготуйте старше ущільнення та внески двох магічних шкіл.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:eternal_singularity",
+        "count": 1
+      },
+      "dependencies": [
+        "000008942F55A7D4",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005154F318A00",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D51C2B1DD21",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065A99FB0CC42",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD4C8FABD586",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FFE18AED3661",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 6.0
+    },
+    {
+      "id": "00001F0BC5E28839",
+      "title": "Паспорт космічного каталізатора",
+      "description": [
+        "Вічна сингулярність поєднує попередні виробничі програми; точні нативні варіанти дивіться в JEI.",
+        "Завершіть матеріальний контроль чотирьох фінальних технологічних ступенів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_catalyst",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D224D1FA917",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046722A37C00F",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002E095EF85E1B",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000073F5AC12182",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022924248C807",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068546A582AD3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009DD2007A5D45",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 6.0
+    },
+    {
+      "id": "00000CB1914BAFD1",
+      "title": "Паспорт усіх індустріальних шкіл",
+      "description": [
+        "Фінальна промислова перевірка збирає апаратні результати різних шкіл, не підміняючи одну фабрику іншою.",
+        "Закрийте індустріальну конвергенцію п’ятьма незалежними матеріальними й керувальними внесками.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00001D2DCDDACA0F",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001364DBF008D5",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC92C8450EC8",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001881000A73AA",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFF2509EC32A",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F79D223375D5",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6006AB9F8F7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002F27F4300B2C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000154ED68F1629",
+      "title": "Перший нескінченний зливок",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Завершіть нативний фінальний зливок після підготовки космічного каталізатора.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00005858C24564D5",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C919A6A119B3",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008F98B1EFD0B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000097619D90F5DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000DF531B5D6E09",
+      "title": "Матеріальний паспорт нескінченності",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Зведіть фінальний метал, каталізатор, вічне ущільнення й рідкісний сплав до одного завершеного комплекту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AB597F7530A6",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000050D934C4062D",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC32C52DFAB4",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006833EBF81820",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E868C8259BFE",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:unobtainium_allthemodium_alloy_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FE3B4F32CB1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005780C0B54775",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000B6BE07731F6D",
+      "title": "Нескінченний самородок",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Перевірте нативний перехід до дрібної форми матеріалу, зберігши можливість зворотного пакування.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_nugget",
+        "count": 1
+      },
+      "dependencies": [
+        "0000154ED68F1629",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003FA113D92788",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_nugget",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000038850A3098FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D0BA9019F9B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000709DA6C66F9D",
+      "title": "Блок нескінченної матерії",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Зберіть щільну форму фінального матеріалу без припущення, що її розпакування створює додаткову матерію.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B6BE07731F6D",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F6310B4B277",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000817F2F0AA95F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008B8DAEEBDBE6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "00004568A4F7138C",
+      "title": "Нескінченне покращення",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Підготуйте нативний компонент покращення окремо від готового спорядження.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "0000709DA6C66F9D",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000B4C14F3857E",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C582D108BFA1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000834B981016D8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 10.0
+    },
+    {
+      "id": "000084C86C336F55",
+      "title": "Нескінченний резервуар",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Створіть нативний фінальний інструмент рідинної логістики й перевірте його режими у власній версії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "00004568A4F7138C",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000044382C420E5F",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000657BA5AB1C3F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000718D27ACB736",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000422E90C6E930",
+      "title": "Нескінченна складська місткість",
+      "description": [
+        "Нескінченність завершує фізичний матеріальний ланцюг усіх попередніх епох; жоден предмет-ключ не входить до звичайних рецептів.",
+        "Підготуйте фізичний буфер старшого покоління для контрольованого архіву фінальних компонентів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "avaritia:infinity_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "000084C86C336F55",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001849B7E89BD8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "avaritia:infinity_chest",
+          "timer": 40
+        },
+        {
+          "id": "0000AD82E64D4595",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001A3BC555A986",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 10.0
+    }
+  ]
+}

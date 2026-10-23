@@ -1,0 +1,1671 @@
+{
+  "id": "0000C58DA615ADE0",
+  "filename": "aia2_branch_magic_naturesaura",
+  "title": "naturesaura — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 21,
+  "icon": {
+    "id": "naturesaura:gold_fiber",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00006E989189D7C7",
+      "title": "Тонка золота нитка природи",
+      "description": [
+        "Nature's Aura починається зі спеціальної роботи із золотом та живою рослинністю.",
+        "Звірте нативний спосіб використання волокна, перш ніж витрачати весь золотий запас."
+      ],
+      "icon": {
+        "id": "naturesaura:gold_fiber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A2AF3BBC50B0",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002430B590458D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000022AB0E97E554",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D73E61D763B7",
+      "title": "Позолочене листя",
+      "description": [
+        "Gold Leaf є власним реагентом Nature's Aura, а не декоративною фарбою.",
+        "Підготуйте невелику відновлювану ділянку позолочення замість одноразового знищення всього дерева."
+      ],
+      "icon": {
+        "id": "naturesaura:gold_leaf",
+        "count": 1
+      },
+      "dependencies": [
+        "00006E989189D7C7",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009988C9AC7971",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_leaf",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024DE20EEB920",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000025A42EFEA06C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005C383FDBF80F",
+      "title": "Порошкова форма позолоти",
+      "description": [
+        "Порошок робить природне золото придатним для наступних ритуальних рецептів.",
+        "Зберігайте його окремо від металевих пилів технічних модів."
+      ],
+      "icon": {
+        "id": "naturesaura:gold_powder",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D73E61D763B7",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BB232725775C",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007114DFCB355B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DA7F09D9D41D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009068F8E873A8",
+      "title": "Підставки для дерева-ритуалу",
+      "description": [
+        "Дерев'яні підставки формують робочі позиції ритуалу Nature's Aura.",
+        "Розташування та склад рецепта звіряйте з нативною книгою, а не з формою звичайного верстака.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:wood_stand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D73E61D763B7",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C91355D13120",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:wood_stand",
+          "timer": 40
+        },
+        {
+          "id": "00001F9698E2D367",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000391B4D344318",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004A118918FDDB",
+      "title": "Знак початкового природного ритуалу",
+      "description": [
+        "Token of Joy відкриває конкретну гілку природних рецептів.",
+        "Підготуйте повторюваний набір реагентів, щоб не будувати ритуал щоразу з нуля."
+      ],
+      "icon": {
+        "id": "naturesaura:token_joy",
+        "count": 1
+      },
+      "dependencies": [
+        "00009068F8E873A8",
+        "00005C383FDBF80F",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000088792DCEE610",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:token_joy",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044CF9887B995",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D85939DF5470",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004FF8EF790C1B",
+      "title": "Саджанець давнього дерева",
+      "description": [
+        "Давнє дерево стане матеріальною базою Nature's Aura.",
+        "Збережіть резерв саджанців до переробки колод у наступні конструкції."
+      ],
+      "icon": {
+        "id": "naturesaura:ancient_sapling",
+        "count": 1
+      },
+      "dependencies": [
+        "00004A118918FDDB",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F870AC22B04",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:ancient_sapling",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C0B953B81CA5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000091E532C51D54",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003D1022E127FF",
+      "title": "Деревина окремої природної школи",
+      "description": [
+        "Давні колоди не замінюють живу деревину Botania автоматично.",
+        "Розведіть два сховища, щоб не зупиняти рецепти через помилково витрачений вид деревини."
+      ],
+      "icon": {
+        "id": "naturesaura:ancient_log",
+        "count": 1
+      },
+      "dependencies": [
+        "00004FF8EF790C1B",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C48D7B78EDB7",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:ancient_log",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D191D0DDC22E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000969DB892D578",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009B2026932B37",
+      "title": "Природний осередок аури",
+      "description": [
+        "Nature Altar починає власну систему перетворення Nature's Aura.",
+        "Його наявність не доводить достатній запас аури в оточенні або правильне обслуговування території.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:nature_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D1022E127FF",
+        "00009068F8E873A8",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007B157DD70C7B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:nature_altar",
+          "timer": 40
+        },
+        {
+          "id": "00001FF608EA526C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008E10FAE51171",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F94342B4F15D",
+      "title": "Точна форма ритуальної заготовки",
+      "description": [
+        "Давня паличка є окремою формою деревини для дрібних природних компонентів.",
+        "Тримайте запас паличок поряд із золотим порошком та підставками."
+      ],
+      "icon": {
+        "id": "naturesaura:ancient_stick",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D1022E127FF",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000074AF76892F9A",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:ancient_stick",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005DC0418FBC0B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D3EB614E859C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "00000802C3463D9B",
+      "title": "Будівельний матеріал аурного двору",
+      "description": [
+        "Оброблений аурою камінь відділяє спеціальну конструктивну сировину від звичайної кладки.",
+        "Відкладіть потрібну партію до оздоблення майданчика."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_stone",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B2026932B37",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003A54D8307DA5",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_stone",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001A0ECFCB013",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EDFA83B53CFD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "000069AF0CA4BAD9",
+      "title": "Залізо, змінене аурою",
+      "description": [
+        "Infused Iron пов'язує металургійну заготівлю з природним осередком.",
+        "Для довгих серій перевіряйте стан оточення, не виснажуючи одну ділянку без відновлення."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B2026932B37",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F7DA22BA585D",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006F090A198DA8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000D6E3C7DA9FB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "000084093D6C7F6D",
+      "title": "Спостереження за невидимим",
+      "description": [
+        "Інструмент спостереження допомагає контролювати стан природної зони.",
+        "Квест приймає предмет; показані ним значення потрібно оцінювати в самому моді."
+      ],
+      "icon": {
+        "id": "naturesaura:eye",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B2026932B37",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000383826F57EE8",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E35D519C9E2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000059026A317D89",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    },
+    {
+      "id": "00000B4F21626EAB",
+      "title": "Межі робочої ділянки",
+      "description": [
+        "Візуалізація радіуса допомагає відокремити сусідні природні вузли.",
+        "Плануйте відстані до встановлення постійної інфраструктури."
+      ],
+      "icon": {
+        "id": "naturesaura:range_visualizer",
+        "count": 1
+      },
+      "dependencies": [
+        "000084093D6C7F6D",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008322E3C1EE95",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:range_visualizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFCF092036E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000038DE944C54A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003BD7FC863CE2",
+      "title": "Два ресурси одного двору",
+      "description": [
+        "Мана й аура створюють різні метали та мають різні правила відновлення.",
+        "Не оцінюйте одну мережу за станом іншої: кожна потребує власного нагляду."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "000069AF0CA4BAD9",
+        "0000B7E2E3555F3C",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004FD892CD4C3A",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2B9A1E4F6A0",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E81A12A587AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000082E7B8D9993C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "000051336A6EAA78",
+      "title": "Межа витрати природи",
+      "description": [
+        "Обмежувальний вузол допомагає будувати контрольовані аурні схеми.",
+        "Прочитайте його нативну дію, перш ніж покладатися на нього як на абсолютний захист від виснаження.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:lower_limiter",
+        "count": 1
+      },
+      "dependencies": [
+        "000084093D6C7F6D",
+        "000069AF0CA4BAD9",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D927B8AB2FED",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:lower_limiter",
+          "timer": 40
+        },
+        {
+          "id": "0000E35D18F25842",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A414D9389311",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 4.0
+    },
+    {
+      "id": "000080178ABFE4CA",
+      "title": "Гірничий інструмент природної школи",
+      "description": [
+        "Аурне залізо повертається у видобуток через власний інструмент.",
+        "Порівняйте його нативні властивості з іншими доступними кирками."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron_pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "000069AF0CA4BAD9",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A0306440E96",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A27E6E4053C1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D57AB1FDD06D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 6.0
+    },
+    {
+      "id": "00009582A24B2BBA",
+      "title": "Перенесений природний ресурс",
+      "description": [
+        "Пляшка аури є спеціальною ємністю цієї школи магії.",
+        "Рецепти вимагають саме її, а не будь-якого зілля або порожньої склянки."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_bottle",
+        "count": 1
+      },
+      "dependencies": [
+        "000069AF0CA4BAD9",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC689651E46F",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_bottle",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000226688FCD6C9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DC160B672CBA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000AD7CBBA6AA40",
+      "title": "Догляд за давнім садом",
+      "description": [
+        "Аурна сокира доповнює цикл заготівлі давньої деревини.",
+        "Не вирубуйте весь резервний розсадник, навіть маючи кращий інструмент."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron_axe",
+        "count": 1
+      },
+      "dependencies": [
+        "000069AF0CA4BAD9",
+        "00004FF8EF790C1B",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002B4D5E62E204",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron_axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF9B1E5BF1CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A6C0EBFBE5A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000AE464A69C563",
+      "title": "Земля для природної майстерні",
+      "description": [
+        "Природна мотичка створює окремий інструмент обслуговування сільськогосподарської частини бази.",
+        "Залиште контрольну ділянку для перевірки її нативних властивостей."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron_hoe",
+        "count": 1
+      },
+      "dependencies": [
+        "000069AF0CA4BAD9",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000061A6F1388E39",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron_hoe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9FE51CFC3C5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D497D0C5CED5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000B1A6EFE76FE1",
+      "title": "Комплект відновлення природного осередку",
+      "description": [
+        "Залиште окремий набір для повторення базового природного ритуалу.",
+        "Резерв потрібен для ремонту та перенесення, а не для обходу наступних епох."
+      ],
+      "icon": {
+        "id": "naturesaura:wood_stand",
+        "count": 1
+      },
+      "dependencies": [
+        "000051336A6EAA78",
+        "0000F94342B4F15D",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008A5200DA4484",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:wood_stand",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000039CE1C85EC4",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000575C6BE6738D",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:ancient_log",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5BFE9B8CDFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009CB43A192C64",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 0.0
+    },
+    {
+      "id": "000043245D5CF7C3",
+      "title": "Небесна металургія аури",
+      "description": [
+        "Підготуй Sky Ingot через доступну систему Nature's Aura. Оберігай баланс аури навколо майстерні та звір нативні умови виготовлення.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:sky_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CEDDD792CCED",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD5BE8561113",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000204873195D64",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005F765637C48F",
+      "title": "Природна ділянка з електронним обліком",
+      "description": [
+        "Порівняй спостереження за аурою та інвентарним запасом. Ці інструменти вимірюють різні речі й не можуть підтверджувати стан один одного.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_detector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000285BC37790D6",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E7410FF87E8C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "0000E445BCC678FD",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000690405CAF67F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005852EFE5163E",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00008CB9D8F3C5CC",
+      "title": "Місце для підношень",
+      "description": [
+        "Підготуй Offering Table для відповідних процесів Nature's Aura. Потрібну структуру й реагенти визначає конкретне підношення.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "naturesaura:offering_table",
+        "count": 1
+      },
+      "dependencies": [
+        "000043245D5CF7C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F258869588E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:offering_table",
+          "timer": 40
+        },
+        {
+          "id": "0000F2DCBCBBF71F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EC4435E829D3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CC5CE96C5638",
+      "title": "Небо, ельфи й промислова душа",
+      "description": [
+        "Зведи результати аурної, ельфійської та душової гілок. Фінальний ключ зберігає зв'язок магії з промисловістю, не перетворюючись на побутовий компонент.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:sky_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F765637C48F",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005EFDED5FA2A0",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000962C91A3D070",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000026416C0F1F12",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069EC9563CDD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F024E2AE7566",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000FB836A876AAD",
+      "title": "Спостереження за живим середовищем",
+      "description": [
+        "Встанови Aura Detector там, де працює магічна майстерня. Показник аури слід оцінювати під час роботи процесів, а не лише на порожній ділянці.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_detector",
+        "count": 1
+      },
+      "dependencies": [
+        "000043245D5CF7C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000509A4509FBFF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "0000DABF9CA8E8E9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000735FA37EBD0C",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "000050565B16C24A",
+      "title": "Керований запас природної аури",
+      "description": [
+        "Встановіть Lower Limiter і Aura Detector та підготуйте компаратори для керування сумісними споживачами. Спроєктуйте відсічення навантаження до того, як розширена майстерня виснажить природне середовище.",
+        "Огляньте обидва блоки та покажіть контрольні компоненти. Конкретні сигнали й пороги звірте з довідником Nature’s Aura; цей огляд не підміняє перевірку правильно зібраної схеми."
+      ],
+      "icon": {
+        "id": "naturesaura:lower_limiter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB836A876AAD",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D91FF7AA305E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:lower_limiter",
+          "timer": 40
+        },
+        {
+          "id": "00004C5F03DD6BBB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "000031E3D8210F88",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A66739DBC4B4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000022BABA9FBFEC",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000088B42312C0D2",
+      "title": "Інструмент небесного матеріалу",
+      "description": [
+        "Підготуй Sky Pickaxe для контрольованого випробування. Властивості інструмента перевіряй на звичайному камені перед експедицією до цінних покладів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:sky_pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB836A876AAD",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000345298684568",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE5344B443AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000845355655624",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000E3F89774B17A",
+      "title": "Карта обслуговування аури",
+      "description": [
+        "Поєднайте Range Visualizer із установленим Aura Detector для обслуговування розширеної магічної ділянки. Спершу визначте область сумісного обладнання, а вже потім прокладайте нові лінії споживання.",
+        "Покажіть візуалізатор та огляньте детектор у світі. Після перенесення обладнання перевірте область повторно: квест не фіксує топологію або числовий рівень аури."
+      ],
+      "icon": {
+        "id": "naturesaura:range_visualizer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB836A876AAD",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A6C4128A2314",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:range_visualizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000715959C744F6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "000093C24F03F1AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005E4EF90DB2B3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000E9DF0A823104",
+      "title": "Буфер природної сили",
+      "description": [
+        "Підготуй Aura Cache для підтримки дозволених механік. Сам блок не підтверджує, що запас аури вже накопичений.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_cache",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB836A876AAD",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000098115E9E9FFE",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_cache",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069EAC109A099",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000315F2DB46F34",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "00001EA10103609C",
+      "title": "Перехід між аурою й енергетикою",
+      "description": [
+        "Підготуй RF Converter для дозволеної міжмодової інтеграції. Налаштуй облік джерела й споживача, щоб генерація не виснажувала живе середовище.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "naturesaura:rf_converter",
+        "count": 1
+      },
+      "dependencies": [
+        "000088B42312C0D2",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046829B4E2619",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:rf_converter",
+          "timer": 40
+        },
+        {
+          "id": "00006D21BA029D9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000966DFDE702B3",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "000021BF5123CCE8",
+      "title": "Захист природного практика",
+      "description": [
+        "Підготуй дві частини небесного обладнання. Умови особливих ефектів перевір у підказках, не прирівнюючи комплект до безумовної невразливості.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:sky_helmet",
+        "count": 1
+      },
+      "dependencies": [
+        "000088B42312C0D2",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FA1C65D8E89C",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007212FFED5353",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E607C309F41",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001AFE3E00ABF5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D4E51E91A595",
+      "title": "Запас настоюваного металу",
+      "description": [
+        "Збережи базові матеріали аурної системи після відкриття небесного рівня. Просунута майстерня все ще залежить від простих реагентів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "00001EA10103609C",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C3C79EA8DAF8",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BC8FF68E166",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_leaf",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B5F63843299",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003B054894C3C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    }
+  ]
+}

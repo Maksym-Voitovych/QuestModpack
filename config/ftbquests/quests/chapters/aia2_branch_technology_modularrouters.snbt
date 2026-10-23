@@ -1,0 +1,410 @@
+{
+  "id": "00004A63D5A7FA33",
+  "filename": "aia2_branch_technology_modularrouters",
+  "title": "modularrouters — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 53,
+  "icon": {
+    "id": "modularrouters:modular_router",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00002823D93C7C38",
+      "title": "Модульний вузол одного завдання",
+      "description": [
+        "Установи Modular Router і спочатку обери одну просту операцію. Напрям, буфер і фільтр перевіряй до додавання наступного модуля.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C6AE6681737C",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D2E613AD3150",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "00000996B5E8DE42",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009775046A88BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002259AC42C42D",
+      "title": "Заготовки програмованої логістики",
+      "description": [
+        "Підготуй різні заготовки модулів і покращень. Модуль визначає операцію, а покращення змінює властивості вузла.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "modularrouters:blank_module",
+        "count": 1
+      },
+      "dependencies": [
+        "00002823D93C7C38",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000051AF448043CC",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:blank_module",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002667FA32ACEE",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:blank_upgrade",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E14A401244D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C4A523236D1A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B569FE753D8D",
+      "title": "Вхід із сусіднього контейнера",
+      "description": [
+        "Підготуй Puller Module Mk1 для локального введення. Спершу перевір вибраний бік та один дозволений предмет.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "modularrouters:puller_module_1",
+        "count": 1
+      },
+      "dependencies": [
+        "00002823D93C7C38",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002BB0EC4B8F6",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:puller_module_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FCB8B8127B0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EE23E48FE2C9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002ECEB50A8379",
+      "title": "Фільтрація за сутністю ресурсу",
+      "description": [
+        "Порівняй фільтрацію за тегом і походженням предмета. Жоден широкий фільтр не варто застосовувати до дорогого буфера без перевірки на зразках.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "modularrouters:tag_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B569FE753D8D",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000060E074B1A248",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:tag_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB1B1A3609DD",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:mod_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D1A64A5455C6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B40F17065456",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003C27069EDE24",
+      "title": "Умова запуску логістики",
+      "description": [
+        "Підготуй інструменти виявлення й сигнального керування. Правило активації потрібно перевірити як для наявного, так і для відсутнього ресурсу.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "modularrouters:detector_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B569FE753D8D",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B5316E4585E7",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:detector_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016C745D33538",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:redstone_augment",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006F1EF9916EE4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F74ABAC516AA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A048F158C6EE",
+      "title": "Вихід локального маршрутизатора",
+      "description": [
+        "Підготуй Sender Module Mk1 для окремого виходу. Не направляй предмети назад у вхідний контейнер без свідомо спроєктованого циклу.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "modularrouters:sender_module_1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B569FE753D8D",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000008FC4A1F92FC",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007801E8C99AF5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A910BB23524F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "00009DBECDC44687",
+      "title": "Фільтроване транспортування",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Складіть керований транспортний вузол і місткість, які можна перевіряти незалежно від алхімічного інтерфейсу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD9792D768A3",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000596A03014B15",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:modular_router",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000188C3F0DEFFC",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000935DC8487B37",
+          "type": "item",
+          "item": {
+            "id": "projecte:white_alchemical_bag",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A88BA0823B82",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D5C9BBF06623",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    }
+  ]
+}

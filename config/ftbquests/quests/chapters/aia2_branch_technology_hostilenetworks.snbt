@@ -1,0 +1,791 @@
+{
+  "id": "00004EE0E1F2DCBF",
+  "filename": "aia2_branch_technology_hostilenetworks",
+  "title": "hostilenetworks — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 42,
+  "icon": {
+    "id": "hostilenetworks:deep_learner",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000021023324CB83",
+      "title": "Вузол перетворення прогнозів",
+      "description": [
+        "Підготуйте Loot Fabricator з окремим приймальним буфером. Вибір бажаного луту налаштовуйте в інтерфейсі машини, не створюючи ще одну симуляційну камеру для того самого виходу.",
+        "Фактична перевірка: оглянути встановлений hostilenetworks:loot_fabricator протягом 40 ticks; 2 × minecraft:barrel — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "hostilenetworks:loot_fabricator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A415756E93B8",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001260D39A1343",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:loot_fabricator",
+          "timer": 40
+        },
+        {
+          "id": "0000ED6A65475637",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D09567A9863E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000064DF34BD9FDC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002B76EA33A658",
+      "title": "Вихід фабрикатора в локальний склад",
+      "description": [
+        "Підготуйте Loot Fabricator та фільтровані труби попередньої епохи. Це обладнання для розділення прогнозів і готового луту, а не вимір пропускної здатності.",
+        "Фактична перевірка: оглянути встановлений hostilenetworks:loot_fabricator протягом 40 ticks; 1 × oritech:item_filter_block — мати в інвентарі; 8 × oritech:item_pipe — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "hostilenetworks:loot_fabricator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000168DED09B9E4",
+        "0000CAE155271A55",
+        "000083B6B5BDB583",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB1B8320C720",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:loot_fabricator",
+          "timer": 40
+        },
+        {
+          "id": "0000483CD0F122B8",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_filter_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006901CEE99F33",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EF40D0583BDF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003CD4A6FCEDD5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000363629C72E46",
+      "title": "Підсумковий комплект живих матриць",
+      "description": [
+        "Поєднайте Simulation Chamber, есенцію африта та готові матриці. Цей набір підсумовує інженерію, магію й ресурсну базу епохи без видачі босових предметів.",
+        "Фактична перевірка: оглянути встановлений hostilenetworks:sim_chamber протягом 40 ticks; 1 × occultism:afrit_essence — мати в інвентарі; 16 × hostilenetworks:prediction_matrix — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "hostilenetworks:sim_chamber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B7230725901E",
+        "0000CAE155271A55",
+        "000083B6B5BDB583",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008E4E17C27E6D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:sim_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000C1F6FB030C78",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030B056654BF1",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000019004DA7D94D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007C8C21070FF5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00005B3E68F2B706",
+      "title": "Корпус симуляційної комірки",
+      "description": [
+        "Підготуйте Simulation Chamber та електронний резерв для її запуску. Спершу перевірте вихід і енергію, а вже потім збільшуйте число камер.",
+        "Фактична перевірка: оглянути встановлений hostilenetworks:sim_chamber протягом 40 ticks; 2 × mekanism:elite_control_circuit — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "hostilenetworks:sim_chamber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A415756E93B8",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C6A9CBC705A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:sim_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00009DE107C63251",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001662D5EAB263",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D7F011EA264B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000E7955FFAACBB",
+      "title": "Перевірка двох виходів",
+      "description": [
+        "Збережіть overworld prediction та реальний мобовий дроп у різних комірках. Це захищає облік від помилкового прирівнювання середовища симуляції до конкретного предмета.",
+        "Фактична перевірка: 8 × hostilenetworks:overworld_prediction — мати в інвентарі; 16 × minecraft:bone — мати в інвентарі; 16 × minecraft:rotten_flesh — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:overworld_prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B7230725901E",
+        "0000CAE155271A55",
+        "000083B6B5BDB583",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000155F475B3978",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:overworld_prediction",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB26AD12C5C5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bone",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000013C51A00489",
+          "type": "item",
+          "item": {
+            "id": "minecraft:rotten_flesh",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000396E56E3E7CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000033C149ED9FF7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000EAD3ACC03864",
+      "title": "Носій навчальних даних",
+      "description": [
+        "Виділіть Deep Learner для підготовки моделей поза бойовим інвентарем. Порожня модель є тільки носієм, а не доказом навченості конкретного типу.",
+        "Фактична перевірка: 1 × hostilenetworks:deep_learner — мати в інвентарі; 2 × hostilenetworks:blank_data_model — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:deep_learner",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A415756E93B8",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FB9F74E35ED4",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:deep_learner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028A7A7F6C0E2",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:blank_data_model",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E0803DD9374",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E5BA7A716574",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000ECBC2523EF16",
+      "title": "Навчальний резерв фабрики",
+      "description": [
+        "Збережіть окремий learner із двома порожніми носіями та матрицями. Резерв дозволяє почати новий тип моделі, не виймаючи робочий носій із симуляції.",
+        "Фактична перевірка: 1 × hostilenetworks:deep_learner — мати в інвентарі; 2 × hostilenetworks:blank_data_model — мати в інвентарі; 8 × hostilenetworks:prediction_matrix — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:deep_learner",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B7230725901E",
+        "0000CAE155271A55",
+        "000083B6B5BDB583",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000047532E4C7A58",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:deep_learner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ACFAA4E687D8",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:blank_data_model",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC2E9140B2F9",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081E16538BC51",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000079BCF33BD682",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00004E7EBA838753",
+      "title": "Робоча партія матриць",
+      "description": [
+        "Матриці витрачаються на симуляцію, тому їх не слід змішувати з довговічними носіями моделі. Виділіть для них власний виробничий буфер.",
+        "Фактична перевірка: 32 × hostilenetworks:prediction_matrix — мати в інвентарі; 16 × minecraft:clay_ball — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:prediction_matrix",
+        "count": 1
+      },
+      "dependencies": [
+        "00005B3E68F2B706",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002DE917A10E80",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B071D4897F81",
+          "type": "item",
+          "item": {
+            "id": "minecraft:clay_ball",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCBA9C93404F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005F54A511D88E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000070186750CA9F",
+      "title": "Матеріал для нової моделі",
+      "description": [
+        "Збережіть blank data models та кварц для наступного типу даних. Не записуйте запас порожніх носіїв як завершені моделі мобів.",
+        "Фактична перевірка: 4 × hostilenetworks:blank_data_model — мати в інвентарі; 16 × minecraft:quartz — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:blank_data_model",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EAD3ACC03864",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF0981B6F873",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:blank_data_model",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008415C4E759D4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006B2956348C7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A9F88D514548",
+      "title": "Матерія звичайного світу",
+      "description": [
+        "Збережіть overworld prediction як окремий вихід симуляцій. Не відправляйте її у той самий слот, де накопичуються типізовані прогнози конкретних мобів.",
+        "Фактична перевірка: 16 × hostilenetworks:overworld_prediction — мати в інвентарі; 8 × minecraft:iron_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:overworld_prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "000021023324CB83",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E203D09EE73D",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:overworld_prediction",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D2E004036436",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001CABF1946C17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "00005EA8F9F68319",
+      "title": "Прогноз і матриця — різні ресурси",
+      "description": [
+        "Збережіть результат prediction разом із невитраченими матрицями для порівняння потоків. Загальний предмет prediction може містити тип у компонентах, який тут окремо не фільтрується.",
+        "Фактична перевірка: 4 × hostilenetworks:prediction — мати в інвентарі; 8 × hostilenetworks:prediction_matrix — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "00004E7EBA838753",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006FF85DCFA607",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A1F48D86E8C",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4E640038CF8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000075A716678653",
+      "title": "Окремий облік навчених носіїв",
+      "description": [
+        "Покажіть data model разом із learner і відокремте її від порожнього запасу. Цей item-task не перевіряє тип або рівень компонентів моделі.",
+        "Фактична перевірка: 1 × hostilenetworks:data_model — мати в інвентарі; 1 × hostilenetworks:deep_learner — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:data_model",
+        "count": 1
+      },
+      "dependencies": [
+        "000070186750CA9F",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A343A50486D0",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:data_model",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDAEB9C7556F",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:deep_learner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001D8C9A547AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F8A11280EF86",
+      "title": "Пекельний симуляційний матеріал",
+      "description": [
+        "Відділіть nether prediction від звичайного середовища симуляцій. Це дозволить планувати перетворення без ручного сортування після кожного циклу.",
+        "Фактична перевірка: 8 × hostilenetworks:nether_prediction — мати в інвентарі; 8 × minecraft:blaze_powder — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "hostilenetworks:nether_prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A9F88D514548",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C74D9287D010",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:nether_prediction",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002135CCE2C43F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blaze_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE0F70296DEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AB390A21139E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    }
+  ]
+}

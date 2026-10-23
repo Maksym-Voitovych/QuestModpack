@@ -58,7 +58,11 @@ public final class GuardPolicy {
     }
 
     public boolean mayTick(String blockId, String ownerTeam) {
-        int required = getRequiredStage(blockId);
+        return mayUseStage(getRequiredStage(blockId), ownerTeam);
+    }
+
+    public boolean mayUseStage(int required, String ownerTeam) {
+        if (required < 0 || required > 100) return false;
         if (required <= 1) {
             return true;
         }

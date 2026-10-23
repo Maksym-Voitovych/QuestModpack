@@ -1,0 +1,207 @@
+{
+  "scope": "Independent audit of source-pinned native progression enforcement; not a full-pack exploit or TPS test",
+  "full_minecraft_pack_executed": false,
+  "new_native_adapters": [
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/mixin/AE2MolecularAssemblerMixin.java",
+      "helper": "companion/src/main/java/ua/aia2/guard/AE2AssemblerAccess.java",
+      "status": "implemented_and_compiled; requires mixin configuration and live AE2 validation",
+      "mechanism": "HEAD of AE2 grid tickingRequest rejects unauthorized assembler block or any item output in myPlan; checks occur before energy draw or inventory mutation. Uses public IPatternDetails/GenericStack/AEItemKey APIs with cached reflection; exact private myPlan field found only on source-pinned target, not a same-named subclass field. Denial returns native IDLE so progression gain can resume the job.",
+      "evidence": [
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/blockentity/crafting/MolecularAssemblerBlockEntity.java",
+          "line_start": 383,
+          "line_end": 486,
+          "sha256": "2d92416b66ce20d7f1ae3a4b7924653045d99ec72f508612c4e56182fc553679"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/me/service/TickManagerService.java",
+          "line_start": 347,
+          "line_end": 358,
+          "sha256": "d253d4660cd825b3e97b651ab25a5a874d8f02c13a1c303254bea11e0e0ef00c"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/api/crafting/IPatternDetails.java",
+          "line_start": 60,
+          "line_end": 69,
+          "sha256": "5cdce7968d4001b8859c22252eeba89536399167ce11f4668f75bab636ec1391"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/api/stacks/GenericStack.java",
+          "line_start": 32,
+          "line_end": 35,
+          "sha256": "f1d23aa4b3c6cb335c7adb637691fe74005071f0ad140effe96861a1c996f8c7"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/api/stacks/AEItemKey.java",
+          "line_start": 135,
+          "line_end": 141,
+          "sha256": "74fc3a5867f82a5783f6b0c0062c48b35f7256f17a49085a7b295d9688dbbc90"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/api/networking/ticking/TickRateModulation.java",
+          "line_start": 24,
+          "line_end": 38,
+          "sha256": "01bbf5f6f2ff855b976d495294f3925533683f36875ca0b02fcc13725d240569"
+        }
+      ]
+    },
+    {
+      "path": "companion/src/main/java/ua/aia2/guard/mixin/AE2CraftingTermSlotMixin.java",
+      "status": "implemented_and_compiled; requires mixin configuration and live AE2 validation",
+      "mechanism": "HEAD of CraftingTermSlot.doClick checks actual displayed output with mayCraft before all ordinary/stack/shift/all custom terminal actions. The class does not use vanilla ResultSlot pickup, so the existing vanilla hook alone does not cover it.",
+      "evidence": [
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/menu/slot/CraftingTermSlot.java",
+          "line_start": 80,
+          "line_end": 155,
+          "sha256": "0496eb30993e468a7c1f84cd6284bad0ce51cba90bdffc56effd1fd0a9cbbd3e"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/menu/slot/CraftingTermSlot.java",
+          "line_start": 189,
+          "line_end": 228,
+          "sha256": "0496eb30993e468a7c1f84cd6284bad0ce51cba90bdffc56effd1fd0a9cbbd3e"
+        },
+        {
+          "repository_checkout": "AE2-19.2.18",
+          "commit": "db17504a86128fdf3dae31f5fb7a112a646e0b93",
+          "file": "src/main/java/appeng/menu/slot/AppEngCraftingSlot.java",
+          "line_start": 38,
+          "line_end": 57,
+          "sha256": "7a9424a7a8c1167e1c48f34df3df843e1ea516f00431a74b64922f851a11819c"
+        }
+      ]
+    }
+  ],
+  "verified_guard_contracts": [
+    {
+      "feature": "Mekanism cached native recipes",
+      "evidence": {
+        "repository_checkout": "Mekanism-1.21.1",
+        "commit": "a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80",
+        "file": "src/api/java/mekanism/api/recipes/cache/CachedRecipe.java",
+        "line_start": 306,
+        "line_end": 348,
+        "sha256": "b2315c649407a227ed221de62766a1ad2d0c950f20cba856067378b57d2fca2c"
+      },
+      "finding": "process() HEAD precedes per-tick energy, operatingTicks increment, finishProcessing and useResources; getRecipe() is public. Covers standard CachedRecipe subclasses including chemical-to-chemical, rotary and reaction recipes when the native cached recipe is indexed and an owning block tick context exists. MekanismRecipe.getResultItem is empty, so inspecting vanilla result alone is insufficient."
+    },
+    {
+      "feature": "Create basin mixing and compacting",
+      "evidence": {
+        "repository_checkout": "Create-1.21.1",
+        "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+        "file": "src/main/java/com/simibubi/create/content/processing/basin/BasinRecipe.java",
+        "line_start": 65,
+        "line_end": 100,
+        "sha256": "6977dd53b86564df6852ce2e3f174c1ff5d35814a16d8aa49186ae42e489ba7e"
+      },
+      "finding": "Private three-argument apply(BasinBlockEntity,Recipe,boolean) starts before simulated or actual capability extraction. The basin owner supplies context directly; recipe lookup cache cannot bypass this entry point."
+    },
+    {
+      "feature": "Vanilla furnace cached lookup",
+      "source": "NeoForge21.1.264 patched Minecraft1.21.1 sourcesAndCompiledWithNeoForge artifact, AbstractFurnaceBlockEntity.serverTick and RecipeManager.CachedCheck",
+      "finding": "quickCheck calls RecipeManager four-argument RecipeHolder overload even with cached recipe; this happens before fuel shrink and cooking progress. A context-only result filter can reject future recipe IDs. Unowned stage0 vanilla furnaces need an authorized owner-claim path, otherwise all later-material cooking would remain denied."
+    }
+  ],
+  "remaining_high_impact_paths": [
+    {
+      "id": "custom_grid_and_global_tickers",
+      "severity": "high",
+      "status": "not universally covered",
+      "finding": "AE2 grid tick is a concrete counterexample to universal standard BlockEntityTicker coverage. Other mods can execute processing in world/entity/network handlers or capability callbacks; machine block gate and RecipeManager context filter do not prove coverage there.",
+      "required_test": "Attempt future outputs through AdvancedAE quantum crafter, Create contraptions and mod-specific global controllers using an early team; record actual adapter entry points before claiming support."
+    },
+    {
+      "id": "cached_recipe_paths_outside_basin_and_mekanism",
+      "severity": "high",
+      "status": "needs targeted adapters or runtime verification",
+      "finding": "Create press, millstone, crushing and fan paths call their own RecipeApplier or cached recipe execution. A RecipeManager lookup filter helps initial acquisition but cannot guarantee already-held recipe objects are rechecked.",
+      "required_test": "Warm a future recipe cache under a late team, switch the owning team to an earlier progress level, then check actual ingredients and results across those paths."
+    },
+    {
+      "id": "custom_player_crafting_menus",
+      "severity": "high",
+      "status": "AE2 terminal covered by the new narrow adapter; other custom menus not universal",
+      "finding": "Native vanilla ResultSlot/quickMove hooks are insufficient for custom slots/protocols; AE2 CraftingTermSlot proves this. Other mod workbenches, rituals and altar menus need verified pre-consumption entry points.",
+      "required_test": "Try future result with ordinary click, shift-click, hotbar swap, drag and mod packet actions; validate no output and no ingredient loss."
+    },
+    {
+      "id": "component_specific_items",
+      "severity": "high",
+      "status": "ID policy only",
+      "finding": "Current item policy classifies registered item IDs. Shared-ID variants such as IronJetpacks components, HNN data models, Avaritia singularity components and configured spells cannot be assigned different epochs by ID alone. The new quests intentionally do not invent variant IDs.",
+      "required_test": "Export actual data components from the exact installed items and add component-aware allow rules before claiming variant-specific locks."
+    },
+    {
+      "id": "passive_armor_and_curios",
+      "severity": "high",
+      "status": "not covered by direct interaction hooks",
+      "finding": "A future armor/Curios item imported from another player can grant passive attributes or tick powers without right-click, block use or attack. LivingEquipmentChangeEvent exists but is not cancellable; blindly cancelling it is an invented solution.",
+      "verified_api": "net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent reports changes; it does not implement ICancellableEvent.",
+      "required_test": "Equip donated future armor through inventory and dispensers, relog and change teams; test attributes, flight and passive effects. A reversible, lossless equipment quarantine requires separate implementation and migration tests."
+    },
+    {
+      "id": "tag_and_chemical_policy_precision",
+      "severity": "medium",
+      "status": "recipe IDs classified statically; semantic audit still required",
+      "finding": "Recipe gate derivation recognizes explicit item/fluid/chemical IDs, while ingredient tags and custom serializer metadata need expansion against exported tag contents. Family heuristics also classify some preparatory chemicals differently from their consuming machine tier; that may be intentional but requires an epoch audit.",
+      "examples": [
+        "mekanism:fissile_fuel",
+        "mekanism:uranium_hexafluoride",
+        "mekanismgenerators:fusion_fuel",
+        "tag c:pellets/polonium"
+      ],
+      "required_test": "For each critical recipe compare gate with resolved inputs/output and required machine availability; do not force every tagged alternative to the highest epoch when an earlier valid alternative exists."
+    },
+    {
+      "id": "projecte_whitelist",
+      "severity": "medium",
+      "status": "source-verified and mocked; actual full-pack remap untested",
+      "finding": "Whitelist callback rebuilds final EMC map and blocks learn/condenser-set for disallowed IDs/components. Old knowledge, persisted condenser target and remaps after login need real ProjectE validation. Dark/red matter must still be craftable physically without an EMC entry.",
+      "required_test": "Load an old save containing learned progression materials and an existing forbidden condenser target, force remap, reconnect clients and verify no forbidden EMC output; confirm all fourteen permitted materials still work."
+    },
+    {
+      "id": "automation_import_and_capability_io",
+      "severity": "high",
+      "status": "not a universal IO firewall",
+      "finding": "Stopping a block tick does not reject item/fluid/chemical transfer through external capabilities, placed blocks moved by contraptions or items imported from a late team. Direct use/output adapter gates prevent specific effects but do not establish that every imported object is inert.",
+      "required_test": "Feed future items/chemicals to an early machine using AE2, pipes and fake players; test custom non-ticking consumers and moved blocks."
+    }
+  ],
+  "recommended_regressions": [
+    "AE2 assembler future plan: inventory and energy unchanged while denied; acquiring required epoch resumes without reinserting pattern.",
+    "AE2 assembler same plan after owner team/progress changes: native grid execution must recheck every request.",
+    "AE2 assembler allowed output works; missing owner/fake source cannot authorize it; non-AE2 server starts without target classes.",
+    "AE2 terminal all click modes refuse future result before network extraction and carried-stack changes.",
+    "RecipeManager lookup outside an owning tick context leaves client JEI, global recipe caches and planning untouched.",
+    "Recipe reload invalidates identity index and stale recipes never gain default access.",
+    "Vanilla furnace future smelt rejects before fuel/input use, then resumes for authorized owner.",
+    "Mekanism gas-only cached recipe and Create basin recipe both reject before any per-tick resource debit."
+  ],
+  "verification": {
+    "compile_command": "JAVA_HOME=/workspace/aia2-toolchains/jdk-21.0.9 GRADLE_USER_HOME=/workspace/aia2-toolchains/gradle-home ./gradlew --offline compileJava --no-daemon --console=plain",
+    "compile_result": "passed current AE2 molecular helper and terminal mixin (Gradle offline compileJava, 13s)",
+    "actual_ae2_runtime": "not run",
+    "actual_native_mixins_with_AE2": "not run",
+    "tps_benchmark": "not run"
+  },
+  "limitations_statement": "This release must not claim complete exploit prevention across all installed mods. Source review, Java compilation and mocked policy tests are distinct from loading exact full mod JARs and exercising real automation."
+}

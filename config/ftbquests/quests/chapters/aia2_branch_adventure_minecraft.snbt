@@ -1,0 +1,3822 @@
+{
+  "id": "00001FB919810527",
+  "filename": "aia2_branch_adventure_minecraft",
+  "title": "Ремесло й дослідження — Пригоди",
+  "group": "000091674FF185C4",
+  "order_index": 2,
+  "icon": {
+    "id": "minecraft:torch",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00003345BF07180F",
+      "title": "Точка повернення",
+      "description": [
+        "Ліжко закріплює повернення після смерті у звичайному світі.",
+        "Залиште навколо нього вільне місце, щоб поява не заблокувалася."
+      ],
+      "icon": {
+        "id": "minecraft:white_bed",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC3FEB26CBCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CAE67352F60C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:white_bed",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008CF4269D43AF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000464517C25445",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DA2D40D743D3",
+      "title": "Освітлена стежка додому",
+      "description": [
+        "Позначте шлях між табором, лісом та входом у копальню світлом.",
+        "Перевіряється запас смолоскипів; їхнє правильне розміщення лишається вашим будівельним рішенням."
+      ],
+      "icon": {
+        "id": "minecraft:torch",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D598C0C551B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F700F1141543",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F55C516E5FBE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D8C2D6A32AB4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000033BBCEB4A49",
+      "title": "Нитка для ранніх ремесел",
+      "description": [
+        "Павуча нитка потрібна не лише луку, а й різним гнучким деталям.",
+        "Заготовляйте її вдень із безпечної позиції або використайте доступний мирний шлях JEI."
+      ],
+      "icon": {
+        "id": "minecraft:string",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA2D40D743D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C37DB76673D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033DF2A0C8349",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BADC478CC2D2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000780E9DCA20F",
+      "title": "Перше нічне чергування",
+      "description": [
+        "Навчіться тримати дистанцію та не впускати павука на дах свого укриття.",
+        "Завдання рахує справжні вбивства, а не наявність позиченої нитки."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA2D40D743D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000554804F7E9BC",
+          "type": "kill",
+          "entity": "minecraft:spider",
+          "value": 3
+        },
+        {
+          "id": "000094DED83890A9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000056C61AC9653A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C537A8292702",
+      "title": "Їжа з води",
+      "description": [
+        "Спіймайте щонайменше три риби та підготуйте приготовлену їжу для експедицій.",
+        "Враховується нативна статистика риболовлі гравця; кулінарний запас перевіряється окремо."
+      ],
+      "icon": {
+        "id": "minecraft:fishing_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000033BBCEB4A49",
+        "00007D598C0C551B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DBC44180D86E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:fishing_rod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC1A683ED505",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_cod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000021147A132597",
+          "type": "stat",
+          "stat": "minecraft:fish_caught",
+          "value": 3
+        },
+        {
+          "id": "0000730FCD6A3371",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BE1C52F813E9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003C6DA07360AF",
+      "title": "Провіант біля водяного приводу",
+      "description": [
+        "Річкова майстерня дає доступ і до обертання, і до їжі.",
+        "Тримайте продовольчі запаси окремо від вхідного контейнера конвеєра."
+      ],
+      "icon": {
+        "id": "minecraft:cooked_salmon",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECF763307B90",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000A90514414B1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_salmon",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCB755302ED2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2E6F08031BE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CE2DDA7E0CA2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000DA10B3A3F73E",
+      "title": "Майбутня гумова стрічка",
+      "description": [
+        "Морська ламінарія потрібна раннім транспортним рішенням Create.",
+        "Висушіть лише частину врожаю, а решту залиште для відновлення підводної ферми."
+      ],
+      "icon": {
+        "id": "minecraft:kelp",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECF763307B90",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000015F412E7B81E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:kelp",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A4D76C29BF1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dried_kelp",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000279F5D216008",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009046BF7A6322",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000C3A290608F3C",
+      "title": "Річкова логістика до фабрики",
+      "description": [
+        "Човен допомагає перевозити лісову сировину вздовж водної лінії.",
+        "Позначте пристань, щоб не шукати берегову майстерню вночі."
+      ],
+      "icon": {
+        "id": "minecraft:oak_boat",
+        "count": 1
+      },
+      "dependencies": [
+        "00003C6DA07360AF",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004820034041CB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:oak_boat",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC5640FA8AA8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D73C08FB1F48",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E83DB93C049F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000086FB1D777639",
+      "title": "Захист перед глибшою шахтою",
+      "description": [
+        "Глибша копальня потребує захисту від стріл та раптового контакту з мобами.",
+        "Щит працює лише за активного використання, тому не забувайте про напрям атаки."
+      ],
+      "icon": {
+        "id": "minecraft:iron_chestplate",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F11221B82F4",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027A859EB0555",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000283A93AEA9E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shield",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D97740BA871",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000801EC1AD91B6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000E61AC2A3CA90",
+      "title": "Обмін як допоміжне джерело",
+      "description": [
+        "Смарагди дозволяють дослідити торгівлю як доповнення до видобутку.",
+        "Торгівля не відкриває стадії й не дозволяє використовувати предмети майбутніх епох."
+      ],
+      "icon": {
+        "id": "minecraft:emerald",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D727F38F01D2",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D6CCC5D2F405",
+          "type": "item",
+          "item": {
+            "id": "minecraft:emerald",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000238AB0C2CF3F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A7F9130059E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "000009150A10BF80",
+      "title": "Шолом для зміни",
+      "description": [
+        "Закрийте вразливу частину комплекту перед ризикованою заготівлею.",
+        "Не спускайтеся в новий розлом без запасного виходу та освітлення."
+      ],
+      "icon": {
+        "id": "minecraft:iron_helmet",
+        "count": 1
+      },
+      "dependencies": [
+        "000086FB1D777639",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F1555AB6523",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E1DEE49C5D3B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001BC4D56BDC9F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00004069FB29A2E9",
+      "title": "Практика щита",
+      "description": [
+        "Перевірте бойову підготовку проти істоти, що атакує з відстані.",
+        "Завдання рахує вбивства скелетів і не замінює перевірку спорядження."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "000086FB1D777639",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057539CB874F2",
+          "type": "kill",
+          "entity": "minecraft:skeleton",
+          "value": 5
+        },
+        {
+          "id": "000050BD4FCDC596",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006F15C1218C65",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000B16C07E32B00",
+      "title": "Павутиння покинутих шахт",
+      "description": [
+        "Дослідіть покинуту шахту й усуньте печерних павуків, що охороняють павутиння.",
+        "Цей вид отруює: беріть їжу, освітлення та відступайте до безпечного коридору."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "000092DDCE98B4FF",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000500EF6C0891B",
+          "type": "kill",
+          "entity": "minecraft:cave_spider",
+          "value": 8
+        },
+        {
+          "id": "0000BAD413E80E89",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000230F2286C1A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00003D1133E6EFCE",
+      "title": "Обсидіан для майбутніх основ",
+      "description": [
+        "Після появи відповідної кирки obsidian стає корисним будівельним і магічним матеріалом.",
+        "Не будуйте й не запалюйте портал: доступ до Пекла належить п'ятнадцятій епосі."
+      ],
+      "icon": {
+        "id": "minecraft:obsidian",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF6A1556E794",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000495F6B6003AD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001527A19B02D8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000135A82A62ED9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "00007BDD2F04D982",
+      "title": "Коло води та лісових квітів",
+      "description": [
+        "Підготуйте матеріали для порталу Twilight Forest після відкриття потрібної стадії.",
+        "Дотримуйтеся нативної форми порталу; наявність інгредієнтів сама його не активує."
+      ],
+      "icon": {
+        "id": "minecraft:diamond",
+        "count": 1
+      },
+      "dependencies": [
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031247E1ADCBA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:diamond",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A4E00B9849C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA549F2740D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:poppy",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F068B8DDE94E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dandelion",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AEAE8E6893BA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003C8CCEBB6070",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000873EC525C9BA",
+      "title": "Схованка біля порталу",
+      "description": [
+        "Залиште біля точки повернення запас їжі та освітлення.",
+        "Похід не повинен забирати єдиний сервісний комплект основної бази."
+      ],
+      "icon": {
+        "id": "minecraft:chest",
+        "count": 1
+      },
+      "dependencies": [
+        "00002355E4344711",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE7A4AC105DA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000392442539400",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009FF08D5D151B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D6D6D9081DF8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009DE372809B85",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000E04A3F82467F",
+      "title": "Невелика сутінкова загроза",
+      "description": [
+        "Кобольди знайомлять із локальною небезпекою до першого великого боса.",
+        "Завдання рахує справжні бої у світі, а не підібрані чужі трофеї."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "00002355E4344711",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000187369CFBDD",
+          "type": "kill",
+          "entity": "twilightforest:kobold",
+          "value": 5
+        },
+        {
+          "id": "0000026930D6F021",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007B87C7C91422",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 20.0
+    },
+    {
+      "id": "000078D20E282531",
+      "title": "Підготовка до відкритої арени",
+      "description": [
+        "Naga змінює дистанцію та напрям бою, тому запас дальньої атаки корисний для тренування.",
+        "Перевірте броню й продовольство перед входом у двір боса."
+      ],
+      "icon": {
+        "id": "minecraft:bow",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E04A3F82467F",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003517E55720D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bow",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD4B5FEEC226",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022802DF1DC2B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071C2ADA1E566",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002A84F52B932D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000D2B6D074657C",
+      "title": "Повернення після заблукання",
+      "description": [
+        "Скомплектуйте засоби для виходу з підземних та лабіринтових структур.",
+        "Не вирушайте до нової пам'ятки без освітлення й запасного маршруту."
+      ],
+      "icon": {
+        "id": "minecraft:ladder",
+        "count": 1
+      },
+      "dependencies": [
+        "0000873EC525C9BA",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009D111BBD684B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ladder",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047D6E2B85DA3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000204F9EA71344",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shield",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065EC11531B99",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001AE6227E9F05",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "00003C2FC1B81643",
+      "title": "Перше велике випробування сутінків",
+      "description": [
+        "Переможіть Naga законним бойовим шляхом після відкриття епохи.",
+        "Трофей, принесений іншою командою, не замінює цього kill-task."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "000078D20E282531",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000580AD268B348",
+          "type": "kill",
+          "entity": "twilightforest:naga",
+          "value": 1
+        },
+        {
+          "id": "00007E520C324323",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004B84690EF0E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005CB08E886114",
+      "title": "Обережність у живоплоті",
+      "description": [
+        "Павуки живоплоту змушують перевірити огляд та напрям захисту.",
+        "Не лізьте в густу ділянку, якщо не маєте шляху відступу."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2B6D074657C",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EF58502D7597",
+          "type": "kill",
+          "entity": "twilightforest:hedge_spider",
+          "value": 5
+        },
+        {
+          "id": "0000F5A2478CAE2E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EC885969CA5E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D52A0AFC92AA",
+      "title": "Безпечний периметр природної зони",
+      "description": [
+        "Перевірте захист території від істоти, що може пошкодити дорогий магічний майданчик.",
+        "Квест рахує вбивства, але не є автоматичним аудитом освітлення бази."
+      ],
+      "icon": {
+        "id": "minecraft:book",
+        "count": 1
+      },
+      "dependencies": [
+        "000029CFD5C81377",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000534B1457552",
+          "type": "kill",
+          "entity": "minecraft:creeper",
+          "value": 5
+        },
+        {
+          "id": "0000099CF67939DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002AECA130F7D1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 22.0
+    },
+    {
+      "id": "00005A92AE732F34",
+      "title": "Шовк для лабораторних ремонтів",
+      "description": [
+        "Переможи павуків і підготуй запас нитки для ремонтів лабораторного спорядження. Бій є окремою серверною умовою, а нитка — матеріальною частиною набору.",
+        "Бойова частина зараховує перемогу над указаною істотою; наявність трофея її не замінює."
+      ],
+      "icon": {
+        "id": "minecraft:string",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B63FDFE2006",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000886F3D69631C",
+          "type": "kill",
+          "entity": "minecraft:spider",
+          "value": 4
+        },
+        {
+          "id": "00001A26C0855EFE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D71043DAC5D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004E70FCE768DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 24.0
+    },
+    {
+      "id": "0000400951DCBD34",
+      "title": "Безпека під час нічної роботи",
+      "description": [
+        "Відпрацюй оборону від відьми, перш ніж розширювати відкриту хімічну ділянку. Не проводь цей бій поруч із незахищеною проводкою та резервуарами.",
+        "Бойова частина зараховує перемогу над указаною істотою; наявність трофея її не замінює."
+      ],
+      "icon": {
+        "id": "minecraft:glass_bottle",
+        "count": 1
+      },
+      "dependencies": [
+        "00005A92AE732F34",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000039016755D74D",
+          "type": "kill",
+          "entity": "minecraft:witch",
+          "value": 1
+        },
+        {
+          "id": "00007583DB9BC203",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C4426AA322E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007F7AD3191F3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "000053690D0A477D",
+      "title": "Нічна варта ритуального майданчика",
+      "description": [
+        "Захисти відкрите ритуальне подвір’я від фантомів і підготуй щит для нічної варти. Завдання рахує перемоги над справжніми ворожими сутностями, тож викликаних помічників Foliot чіпати не потрібно.",
+        "Бойова частина зараховує перемогу над указаною істотою; наявність трофея її не замінює."
+      ],
+      "icon": {
+        "id": "minecraft:shield",
+        "count": 1
+      },
+      "dependencies": [
+        "00004647634DA8A6",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000072549C10E29C",
+          "type": "kill",
+          "entity": "minecraft:phantom",
+          "value": 2
+        },
+        {
+          "id": "0000B64AEABDC98D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shield",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FDEE773DA5EF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EAC49B03C645",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 26.0
+    },
+    {
+      "id": "00007B661FBB58B1",
+      "title": "Захист під час лавових робіт",
+      "description": [
+        "Підготуй реагент і тару для робіт поблизу лави. Не перенось гарячі матеріали через незахищені житлові приміщення.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:magma_cream",
+        "count": 1
+      },
+      "dependencies": [
+        "0000256C743AD2F1",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004AD65490E3B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:magma_cream",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000023E0280FE5C4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bucket",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000021E076E41B4C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000003B934E50EFF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 28.0
+    },
+    {
+      "id": "00008CA741A0EA7B",
+      "title": "Зразки двох душевних ґрунтів",
+      "description": [
+        "Збери окремі зразки Soul Sand і Soul Soil та підпиши їх. Вони не є взаємозамінними в кожному рецепті, хоч належать до однієї екосистеми.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:soul_sand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000256C743AD2F1",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CAE0E21924AB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:soul_sand",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB7298D65E38",
+          "type": "item",
+          "item": {
+            "id": "minecraft:soul_soil",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006229187F9831",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006125925711DD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "x": 0.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000AC30E1F95C01",
+      "title": "Перехід крізь обсидіанову рамку",
+      "description": [
+        "Увійди до Незеру й одразу познач місце повернення. Нативне досягнення підтверджує сам перехід, а обсидіан потрібен для резервного виходу."
+      ],
+      "icon": {
+        "id": "minecraft:obsidian",
+        "count": 1
+      },
+      "dependencies": [
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC843E9028DD",
+          "type": "advancement",
+          "advancement": "minecraft:story/enter_the_nether"
+        },
+        {
+          "id": "000076F9628BD96C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          "count": 10,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000569BCCE92AE0",
+          "type": "dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "id": "0000357694DE3EF4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009573EA60F5FE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 32.0
+    },
+    {
+      "id": "0000DF08E211BC96",
+      "title": "Набір відновлення переходу",
+      "description": [
+        "Збери компактний набір для ремонту виходу та прокладання захищеного коридору. Цей запас має бути з тобою, а не залишатися в скрині по інший бік порталу.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:flint_and_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000256C743AD2F1",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000FE01BE58121",
+          "type": "item",
+          "item": {
+            "id": "minecraft:flint_and_steel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C0F530BC3CE1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000676338D97871",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004165C7E0F8D5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B0292C9D30BE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 34.0
+    },
+    {
+      "id": "000023A2A77B1E13",
+      "title": "Палички живого полум'я",
+      "description": [
+        "Отримай стрижні Blaze у фортеці та залиш частину для магічних рецептів. Не спалюй весь запас у паливному ланцюзі відразу після повернення."
+      ],
+      "icon": {
+        "id": "minecraft:blaze_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC30E1F95C01",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065D8564AA645",
+          "type": "advancement",
+          "advancement": "minecraft:nether/obtain_blaze_rod"
+        },
+        {
+          "id": "000016767569D59F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CB677B14C0A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000085F2AEB882F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000297D8B3B315B",
+      "title": "Сховище за чорнокаменем",
+      "description": [
+        "Знайди бастіон і заплануй шлях відступу до відкриття небезпечних приміщень. Нативне досягнення рахує виявлення структури, а не повне зачищення її мешканців."
+      ],
+      "icon": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC30E1F95C01",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000028C5982A2369",
+          "type": "advancement",
+          "advancement": "minecraft:nether/find_bastion"
+        },
+        {
+          "id": "0000A11F05FCD80E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000078EA4D3F383A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A7A3316722A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 18.0
+    },
+    {
+      "id": "000077FCBCD176AA",
+      "title": "Маршрут до фортеці",
+      "description": [
+        "Знайди фортецю Незеру та збережи безпечний шлях від порталу. Для експедиції підготуй засіб захисту від вогню, якщо він доступний у твоїй алхімії."
+      ],
+      "icon": {
+        "id": "minecraft:golden_carrot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC30E1F95C01",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000001A7C0698974",
+          "type": "advancement",
+          "advancement": "minecraft:nether/find_fortress"
+        },
+        {
+          "id": "0000A9027FAADAAB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000254414906B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003BD14BDE98EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "x": 2.0,
+      "y": 20.0
+    },
+    {
+      "id": "000003C1B48A9FB4",
+      "title": "Повернення вогняної кулі",
+      "description": [
+        "Переможи Ghast відбитою атакою та збережи сльозу для алхімії. Це випробування має нативний бойовий доказ, а не лише вимогу на трофей."
+      ],
+      "icon": {
+        "id": "minecraft:ghast_tear",
+        "count": 1
+      },
+      "dependencies": [
+        "0000297D8B3B315B",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EEC11D401F69",
+          "type": "advancement",
+          "advancement": "minecraft:nether/return_to_sender"
+        },
+        {
+          "id": "00008454B9C6FBBD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ghast_tear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025743C45BBF1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EDE52BBBA00F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000054DC7FA5D7B",
+      "title": "Повернення жаростійкої цегли",
+      "description": [
+        "Тепер звичайні незерські будівельні матеріали доступні законно. Ранній рецепт доменної цегли з Livingrock усе ще залишається частиною вже пройденого шляху.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:nether_brick",
+        "count": 1
+      },
+      "dependencies": [
+        "000023A2A77B1E13",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E68F7FAF3435",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_brick",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000083C4B773EEBD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_bricks",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006EA73BC388A8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A36EBBF6CFDA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:arrow",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "00002752E186638E",
+      "title": "Незерський кварц для двох цехів",
+      "description": [
+        "Збери кварц окремою партією для електроніки й ритуальних реагентів. Познач небезпечні схили, щоб наступне поповнення запасу не перетворилося на рятувальну операцію.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:quartz",
+        "count": 1
+      },
+      "dependencies": [
+        "000023A2A77B1E13",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066C691082E05",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000087B1D8F1945F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FBEADB8E21F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "00008C496B96B997",
+      "title": "Пил світної жили",
+      "description": [
+        "Підготуй світний пил для магії та майбутніх сплавів. Не намагайся добувати підвішену жилу над лавою без резервного маршруту.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:glowstone_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "000023A2A77B1E13",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DCA1EEF1640C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015B74CAA78C2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071FE9A9FAAE8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000FDDB801F8D2B",
+      "title": "Золото для безпечного обміну",
+      "description": [
+        "Відпрацюй нативну взаємодію з Piglin і не тримай цінні речі в зоні випадкового бою. Винагорода не повинна замінювати дослідження торгового пулу у грі."
+      ],
+      "icon": {
+        "id": "minecraft:gold_nugget",
+        "count": 1
+      },
+      "dependencies": [
+        "0000297D8B3B315B",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A869B1D93449",
+          "type": "advancement",
+          "advancement": "minecraft:nether/distract_piglin"
+        },
+        {
+          "id": "0000CD55BBC636A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002AD80255C444",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C8819EF4E1BF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16
+        }
+      ],
+      "x": 4.0,
+      "y": 14.0
+    },
+    {
+      "id": "000037961131CBE9",
+      "title": "Алхімічний пост експедицій",
+      "description": [
+        "Підготуй пост зіллєваріння та відновлюваний запас Nether Wart. Перед наступною поїздкою сформуй окрему експедиційну полицю витратних матеріалів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "minecraft:brewing_stand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000054DC7FA5D7B",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF7E717D94D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:brewing_stand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F18F30EAE2DD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_wart",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063A08B449E98",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007245EE9078CD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B00033AD16C9",
+      "title": "Оборона коридору фортеці",
+      "description": [
+        "Навчись захищатися від Wither Skeleton у вузькому проході. Не став бій поруч із порталом або незахищеним складом експедиції.",
+        "Бойова частина зараховує перемогу над указаною істотою; наявність трофея її не замінює."
+      ],
+      "icon": {
+        "id": "minecraft:shield",
+        "count": 1
+      },
+      "dependencies": [
+        "000003C1B48A9FB4",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001990DA15D6B4",
+          "type": "kill",
+          "entity": "minecraft:wither_skeleton",
+          "value": 3
+        },
+        {
+          "id": "0000BA0B8B199C43",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shield",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E1343643C3F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C1E5D59A493A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004F1ED6882D57",
+      "title": "Маршрут повернення з ритуалу",
+      "description": [
+        "Підготуйте захист від вогню та їжу перед повторними викликами. Підтвердження комплекту не перевіряє тривалість конкретного ефекту зілля.",
+        "Фактична перевірка: 2 × minecraft:golden_apple — мати в інвентарі; 24 × minecraft:cooked_beef — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:golden_apple",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B1355526C2F5",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B523F4AC922B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000947AA819C10C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000091FA6BA84080",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 36.0
+    },
+    {
+      "id": "0000877C938A0340",
+      "title": "Пекельна технічна експедиція",
+      "description": [
+        "Поповніть запас кварцу й світлокаменю для електроніки та ритуалів. Не зводьте експедицію до випадкового луту: обидва матеріали мають конкретних споживачів у майстерні.",
+        "Фактична перевірка: 32 × minecraft:quartz — мати в інвентарі; 16 × minecraft:glowstone_dust — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:quartz",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B1355526C2F5",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B3FD55E52C2D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D59A52AA96A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB2DD4D69205",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 38.0
+    },
+    {
+      "id": "000056650E880698",
+      "title": "Контрольна ділянка звичайного ґрунту",
+      "description": [
+        "Збережіть матеріал для простої контрольної грядки та її інструмент. Порівняння з нею допоможе оцінити, які оновлення справді виправдовують витрати.",
+        "Фактична перевірка: 1 × minecraft:iron_hoe — мати в інвентарі; 24 × minecraft:dirt — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:iron_hoe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA1769D2694B",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ED946766DB4A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_hoe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000521BA55FB406",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dirt",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000087929BB728CA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 40.0
+    },
+    {
+      "id": "0000A0BB2BF897E3",
+      "title": "Пекельна вибірка без босового обходу",
+      "description": [
+        "Переможіть іфритів і поверніть стрижні як звичайний мобовий ресурс. Доступ до цієї вибірки не відкриває моделі закритих босів.",
+        "Фактична перевірка: 8 × minecraft:blaze — перемогти; 8 × minecraft:blaze_rod — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:blaze_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "00008894DF6C356A",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DA4FC5C5E99",
+          "type": "kill",
+          "entity": "minecraft:blaze",
+          "value": 8
+        },
+        {
+          "id": "000049AC321EE32B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009BD065941CB4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 42.0
+    },
+    {
+      "id": "0000D831D48A6020",
+      "title": "Контрольна вибірка кріперів",
+      "description": [
+        "Поповніть бойові дані на кріперах та відкладіть порох для фабрики. Квест не вимагає створення вибуху всередині бази.",
+        "Фактична перевірка: 8 × minecraft:creeper — перемогти; 8 × minecraft:gunpowder — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:gunpowder",
+        "count": 1
+      },
+      "dependencies": [
+        "000054E5908B84BF",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5F3202364D4",
+          "type": "kill",
+          "entity": "minecraft:creeper",
+          "value": 8
+        },
+        {
+          "id": "00002E55550EF363",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gunpowder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000077A35C9AD7D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000078EAE40A7000",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 44.0
+    },
+    {
+      "id": "00000AAAE5458229",
+      "title": "Текстиль польової лабораторії",
+      "description": [
+        "Поєднайте контрольне полювання на павуків із підготовкою магічного текстилю: збережіть нитки та виготовте Manaweave Cloth за ланцюгом Botania. Такий запас обслуговує дослідницьке спорядження поряд із новою фабрикою мобових ресурсів.",
+        "Перевіряються перемоги над павуками та наявність двох текстильних продуктів. Квест не визначає походження кожної нитки й не прирівнює роботу симулятора до справжнього бойового випробування."
+      ],
+      "icon": {
+        "id": "minecraft:string",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D831D48A6020",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031D45BAF7ACB",
+          "type": "kill",
+          "entity": "minecraft:spider",
+          "value": 12
+        },
+        {
+          "id": "0000CB8D0A91AACC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:string",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000073EFD7E31D86",
+          "type": "item",
+          "item": {
+            "id": "botania:manaweave_cloth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000064823077B65B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F123ACEE1757",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 22.0
+    },
+    {
+      "id": "0000C95DFD5EB339",
+      "title": "Двері сервісного тунелю",
+      "description": [
+        "Підготуйте залізні двері й червоні конектори для відокремлення сервісного тунелю від відкритих транспортних ліній.",
+        "Фактична перевірка: 4 × minecraft:iron_door — мати в інвентарі; 2 × xnet:connector_red — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:iron_door",
+        "count": 1
+      },
+      "dependencies": [
+        "00004804F5D79879",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE8A3DEA4C35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_door",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000766AF838EEB7",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_red",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D417BCFD588",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 46.0
+    },
+    {
+      "id": "00003ECBC6172180",
+      "title": "Тепловий маршрут базальтової експедиції",
+      "description": [
+        "Переможіть Magma Cubes та збережіть Basalt для контрольованої експедиції за матеріалами гарячої зони. Завдання не вимагає подавати базальт у реактор як паливо або охолоджувач.",
+        "Фактична перевірка: 8 × minecraft:magma_cube — перемогти; 32 × minecraft:basalt — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:basalt",
+        "count": 1
+      },
+      "dependencies": [
+        "000004A39BA8B9A7",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000270E2E7D8063",
+          "type": "kill",
+          "entity": "minecraft:magma_cube",
+          "value": 8
+        },
+        {
+          "id": "000048A39268D2AD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:basalt",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D5426C497C37",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 48.0
+    },
+    {
+      "id": "000057ED71F02EE7",
+      "title": "Вогняна експедиція за стабілізатором",
+      "description": [
+        "Переможіть магмових кубів і збережіть magma cream для термічної майстерні, не проводячи бойові випробування всередині реакторної зали.",
+        "Фактична перевірка: 8 × minecraft:magma_cube — перемогти; 8 × minecraft:magma_cream — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:magma_cream",
+        "count": 1
+      },
+      "dependencies": [
+        "00001B4D74A99756",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF9B53138965",
+          "type": "kill",
+          "entity": "minecraft:magma_cube",
+          "value": 8
+        },
+        {
+          "id": "0000D746DA4637DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:magma_cream",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004532BF95968C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 50.0
+    },
+    {
+      "id": "000095CC93F8C531",
+      "title": "Сервісний маршрут поза гарячою зоною",
+      "description": [
+        "Підготуйте скло, залізні двері й їжу для відновлення огляду та безпечного доступу після перебудови енергоблока.",
+        "Фактична перевірка: 32 × minecraft:glass — мати в інвентарі; 2 × minecraft:iron_door — мати в інвентарі; 16 × minecraft:cooked_beef — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      "dependencies": [
+        "000004A39BA8B9A7",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000010DEBD6AB2A0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F990DBA74FC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_door",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E098E3E3BD4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002BF9E970122F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 52.0
+    },
+    {
+      "id": "0000B856B4DAE437",
+      "title": "Повернення до Енду після перемоги",
+      "description": [
+        "Відвідайте Енд з підготовленим запасом перлів: дослідження зовнішніх островів є окремим завданням після бою з драконом.",
+        "Фактична перевірка: відвідати minecraft:the_end; 8 × minecraft:ender_pearl — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:ender_pearl",
+        "count": 1
+      },
+      "dependencies": [
+        "00005AF964C3A9DC",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AE99967CD63B",
+          "type": "dimension",
+          "dimension": "minecraft:the_end"
+        },
+        {
+          "id": "00000D0631446414",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B54F880D5BEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000068F099910C86",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 54.0
+    },
+    {
+      "id": "0000B9B5F5183A3D",
+      "title": "Холодний регіон має власне випробування",
+      "description": [
+        "Переможіть Snow Queen та збережіть packed ice для експедиційного складу; холодний біом сам по собі не доводить завершення регіону.",
+        "Фактична перевірка: 1 × twilightforest:snow_queen — перемогти; 16 × minecraft:packed_ice — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:packed_ice",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7EDF52A5063",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008A4DBC6E4B75",
+          "type": "kill",
+          "entity": "twilightforest:snow_queen",
+          "value": 1
+        },
+        {
+          "id": "00000D936C4389EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:packed_ice",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003B01E9A64F2A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 56.0
+    },
+    {
+      "id": "0000214F86C81407",
+      "title": "Зачистка маршруту в ендовому місті",
+      "description": [
+        "Переможіть шалкерів і поверніть shells; не покладайте захист вантажу лише на наявність гарного контейнера.",
+        "Фактична перевірка: 8 × minecraft:shulker — перемогти; 2 × minecraft:shulker_shell — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:shulker_shell",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B856B4DAE437",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092600C12B86C",
+          "type": "kill",
+          "entity": "minecraft:shulker",
+          "value": 8
+        },
+        {
+          "id": "00006CEA6EACCB9B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shulker_shell",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033D77F337BB1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 24.0
+    },
+    {
+      "id": "00003564668CF81A",
+      "title": "Безпечна точка повернення",
+      "description": [
+        "Збережіть carved pumpkins та перли для робіт біля ендерменів; конкретний спосіб екіпірування перевіряється гравцем у світі.",
+        "Фактична перевірка: 2 × minecraft:carved_pumpkin — мати в інвентарі; 16 × minecraft:ender_pearl — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:carved_pumpkin",
+        "count": 1
+      },
+      "dependencies": [
+        "0000214F86C81407",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000043A140EC750A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:carved_pumpkin",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035271EAD7D71",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCB9A18E6ADB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 16.0
+    },
+    {
+      "id": "00001ECEE9063CBB",
+      "title": "Повернення після складного виклику",
+      "description": [
+        "Збережіть Totem of Undying та Golden Apples для повторних ритуальних спроб; квест не вимагає навмисно витрачати тотем.",
+        "Фактична перевірка: 1 × minecraft:totem_of_undying — мати в інвентарі; 4 × minecraft:golden_apple — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      },
+      "dependencies": [
+        "00004819617AB4D1",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D90A1AEA5F10",
+          "type": "item",
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB151974C466",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_apple",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000000D9318D3712",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 58.0
+    },
+    {
+      "id": "0000C4755FFC5978",
+      "title": "Резерв кварцу віддаленої майстерні",
+      "description": [
+        "Збережіть Nether Quartz і Fluix Crystals у польовому комплекті для ремонту мережі. Така пара дозволяє обслуговувати канал без повернення до головного складу.",
+        "Фактична перевірка: 48 × minecraft:quartz — мати в інвентарі; 16 × ae2:fluix_crystal — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:quartz",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BF5F287B1A90",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E026CFD1ED87",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3B51FB66E85",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_crystal",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000863673992241",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 60.0
+    },
+    {
+      "id": "0000FA327CC3D57F",
+      "title": "Експедиційний запас для мережі",
+      "description": [
+        "Поверніться з плодами хорусу й Ender Pearls, які мають конкретні транспортні та технологічні застосування. Збережіть частину запасу поза мережевим сховищем.",
+        "Фактична перевірка: 32 × minecraft:chorus_fruit — мати в інвентарі; 16 × minecraft:ender_pearl — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:chorus_fruit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BF5F287B1A90",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009AB5B44ECDD9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chorus_fruit",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB3FE323F7C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F0333CF8FBE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000709BCDEF1775",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 62.0
+    },
+    {
+      "id": "0000CE807BD401BA",
+      "title": "Ремонт крил після мережевої експедиції",
+      "description": [
+        "Переможіть фантомів і збережіть мембрани разом із дозволеними крилами. Квест не вимагає навмисно ламати єдину елітру.",
+        "Фактична перевірка: 6 × minecraft:phantom — перемогти; 4 × minecraft:phantom_membrane — мати в інвентарі; 1 × minecraft:elytra — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:phantom_membrane",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA327CC3D57F",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D62785572CAD",
+          "type": "kill",
+          "entity": "minecraft:phantom",
+          "value": 6
+        },
+        {
+          "id": "00005604A7889027",
+          "type": "item",
+          "item": {
+            "id": "minecraft:phantom_membrane",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000576B8836AA9B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:elytra",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000783ACC123CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 26.0
+    },
+    {
+      "id": "000013A6782847B1",
+      "title": "Незалежний бойовий рубіж",
+      "description": [
+        "Переможіть Wither і збережіть Nether Star перед наступним великим розширенням енергетики. Реакторні відходи не замінюють власну бойову підготовку.",
+        "Фактична перевірка: 1 × minecraft:wither — перемогти; 1 × minecraft:nether_star — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:nether_star",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF19C930F51E",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000720C7BF7E6B5",
+          "type": "kill",
+          "entity": "minecraft:wither",
+          "value": 1
+        },
+        {
+          "id": "0000A652AA83A423",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000499E4F0F85C5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 64.0
+    },
+    {
+      "id": "00001DE33EF1A918",
+      "title": "Сервісний шлях небезпечної секції",
+      "description": [
+        "Збережіть Obsidian і залізні двері для розділення майстерні й реакторного майданчика. Фізичний маршрут до аварійного вимикача має залишатися доступним.",
+        "Фактична перевірка: 32 × minecraft:obsidian — мати в інвентарі; 4 × minecraft:iron_door — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:obsidian",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF19C930F51E",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000099A27FC66C27",
+          "type": "item",
+          "item": {
+            "id": "minecraft:obsidian",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000990ACCB93441",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_door",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CB6979516760",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 66.0
+    },
+    {
+      "id": "0000882741680F0E",
+      "title": "Експедиція за хімічними реагентами",
+      "description": [
+        "Збережіть Blaze Rods та Sulfur Dust для поповнення дозволених технологічних маршрутів. Перевірте точні рецепти в JEI, перш ніж відправляти реагенти у спільну лінію.",
+        "Фактична перевірка: 16 × minecraft:blaze_rod — мати в інвентарі; 32 × mekanism:dust_sulfur — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:blaze_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF19C930F51E",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E4D404C551D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000523AA7A57DB",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_sulfur",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B28C523640D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 68.0
+    },
+    {
+      "id": "00006ADB6ED39636",
+      "title": "Окрема опорна точка реакторного майданчика",
+      "description": [
+        "Підготуйте Beacon та залізні блоки для сервісної точки поза реакторною оболонкою. Комплект не підтверджує активні ефекти й не дає захисту від радіації.",
+        "Фактична перевірка: 1 × minecraft:beacon — мати в інвентарі; 9 × minecraft:iron_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:beacon",
+        "count": 1
+      },
+      "dependencies": [
+        "00001DE33EF1A918",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005BDF9CFE1EEB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:beacon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0BEC6A8C7A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B29F1ADAEF0B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 28.0
+    },
+    {
+      "id": "00001CD6F148A552",
+      "title": "Глибокий маршрут без примусового бою",
+      "description": [
+        "Збережіть Echo Shards і Wool для підготовки тихого маршруту. Квест не вимагає вбивати Warden і не підміняє реальне пересування перевіркою інвентарю.",
+        "Фактична перевірка: 4 × minecraft:echo_shard — мати в інвентарі; 16 × minecraft:white_wool — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:echo_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A170FA209317",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E8CE022CA068",
+          "type": "item",
+          "item": {
+            "id": "minecraft:echo_shard",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000992A3C48839E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:white_wool",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000004EF2C780E67",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 70.0
+    },
+    {
+      "id": "0000C8B3D52D4405",
+      "title": "Сховище польових зразків",
+      "description": [
+        "Підготуйте Ender Chest та різні зразки двох рідкісних металів для транспортування результатів. Частину матеріалів залиште поза основною фабрикою.",
+        "Фактична перевірка: 1 × minecraft:ender_chest — мати в інвентарі; 2 × allthemodium:raw_allthemodium — мати в інвентарі; 2 × allthemodium:raw_vibranium — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:ender_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A170FA209317",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0B526024C0B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007990C94B2CE3",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:raw_allthemodium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C72EA76D1472",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:raw_vibranium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3B3B3493455",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 72.0
+    },
+    {
+      "id": "00007F53628FD829",
+      "title": "Повернення з далекого пошуку",
+      "description": [
+        "Збережіть Golden Carrots та Phantom Membranes як обслуговувальний запас експедиції. Не плануйте перший далекий маршрут без їжі й можливості ремонту.",
+        "Фактична перевірка: 32 × minecraft:golden_carrot — мати в інвентарі; 8 × minecraft:phantom_membrane — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:golden_carrot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C8B3D52D4405",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007EB5651D6A0E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D6E66308E2A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:phantom_membrane",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C40BF5439C0F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 30.0
+    },
+    {
+      "id": "000024A126E10925",
+      "title": "Пекельна експедиція промислової доби",
+      "description": [
+        "Переможіть Wither Skeletons і збережіть Blaze Rods для поповнення технологічних та магічних рецептів, що вже дозволені команді.",
+        "Фактична перевірка: 12 × minecraft:wither_skeleton — перемогти; 24 × minecraft:blaze_rod — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:blaze_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2D0DF7A37D6",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C4B453BAEE70",
+          "type": "kill",
+          "entity": "minecraft:wither_skeleton",
+          "value": 12
+        },
+        {
+          "id": "0000F0B53C26D0F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blaze_rod",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000889171510D7E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 74.0
+    },
+    {
+      "id": "0000409B9F0C5AA1",
+      "title": "Зачистка маршруту зовнішнього обслуговування",
+      "description": [
+        "Переможіть відьом і збережіть порох для експедиційного спорядження. Промислова майстерня має підтримувати власний безпечний шлях до віддалених вузлів.",
+        "Фактична перевірка: 6 × minecraft:witch — перемогти; 24 × minecraft:gunpowder — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:gunpowder",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2D0DF7A37D6",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002379E999EB8",
+          "type": "kill",
+          "entity": "minecraft:witch",
+          "value": 6
+        },
+        {
+          "id": "0000E55053F363DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gunpowder",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA6830CFDCAD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 76.0
+    },
+    {
+      "id": "0000F6F3927422C6",
+      "title": "Кінцева експедиція за транспортними ресурсами",
+      "description": [
+        "Переможіть Endermen і збережіть Phantom Membranes для ремонтного маршруту між віддаленими виробничими зонами.",
+        "Фактична перевірка: 16 × minecraft:enderman — перемогти; 8 × minecraft:phantom_membrane — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:phantom_membrane",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2D0DF7A37D6",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E9288DADE31",
+          "type": "kill",
+          "entity": "minecraft:enderman",
+          "value": 16
+        },
+        {
+          "id": "000039A68738BB76",
+          "type": "item",
+          "item": {
+            "id": "minecraft:phantom_membrane",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001306C7C2DA5D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 78.0
+    },
+    {
+      "id": "000043EE772FD73A",
+      "title": "Вогняний експедиційний запас",
+      "description": [
+        "Переможіть Blaze та збережіть Gold Ingots для обслуговування стартових компонентів. Не відправляйте весь бойовий запас у необов'язкові предмети спорядження.",
+        "Фактична перевірка: 20 × minecraft:blaze — перемогти; 32 × minecraft:gold_ingot — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000066A0E39B0640",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E251E351B7E",
+          "type": "kill",
+          "entity": "minecraft:blaze",
+          "value": 20
+        },
+        {
+          "id": "0000AC1570099046",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2E8D1058149",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006C3C3DB5DF50",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 80.0
+    },
+    {
+      "id": "00005958185F4821",
+      "title": "Дальня доставка паливної майстерні",
+      "description": [
+        "Переможіть Shulkers і збережіть Ender Pearls для логістики віддалених дозволених установок. Складні енергосистеми все одно потребують звичайної експедиційної інфраструктури.",
+        "Фактична перевірка: 12 × minecraft:shulker — перемогти; 24 × minecraft:ender_pearl — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "minecraft:ender_pearl",
+        "count": 1
+      },
+      "dependencies": [
+        "000066A0E39B0640",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004E6702D7C3C",
+          "type": "kill",
+          "entity": "minecraft:shulker",
+          "value": 12
+        },
+        {
+          "id": "0000BD7CDEA1AFC0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000872F408A6E17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 82.0
+    },
+    {
+      "id": "0000B3FB772C21F8",
+      "title": "Підготовка до повторного запуску",
+      "description": [
+        "Збережіть Golden Carrots, Totem of Undying та запасний Hohlraum для сервісної експедиції. Не перевіряйте безпеку навмисним руйнуванням працюючого реактора.",
+        "Фактична перевірка: 48 × minecraft:golden_carrot — мати в інвентарі; 1 × minecraft:totem_of_undying — мати в інвентарі; 1 × mekanismgenerators:hohlraum — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "minecraft:golden_carrot",
+        "count": 1
+      },
+      "dependencies": [
+        "000066A0E39B0640",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000020F5D7522F67",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000397E8EB9E922",
+          "type": "item",
+          "item": {
+            "id": "minecraft:totem_of_undying",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4A034F7D3FF",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:hohlraum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000019202895C6FC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 84.0
+    },
+    {
+      "id": "00006542DE5844DC",
+      "title": "Трофейна оправа фіналу",
+      "description": [
+        "Фінальний архів пов’язує завершену промисловість із дослідженими світами й трофейними ресурсами.",
+        "Підготуйте два різні босові ресурси й абсолютний метал як трофейну перевірку.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки.",
+        "Бойова перевірка окремо вимагає перемоги над minecraft:ender_dragon після відкриття вузла. Предмет-трофей не замінює нативний лічильник перемог."
+      ],
+      "icon": {
+        "id": "minecraft:dragon_breath",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6B8782B2B33",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BF3E3B81D90B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dragon_breath",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C7A91E53AD6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001EA8AD20FB18",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000401CF1894FE8",
+          "type": "kill",
+          "entity": "minecraft:ender_dragon",
+          "value": 1
+        },
+        {
+          "id": "0000FDD183C6CEDD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000472872A47BF0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 86.0
+    }
+  ]
+}

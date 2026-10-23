@@ -1,0 +1,1901 @@
+{
+  "id": "0000690373E2A500",
+  "filename": "aia2_branch_technology_immersiveengineering",
+  "title": "immersiveengineering — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 43,
+  "icon": {
+    "id": "immersiveengineering:dust_copper",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000BDAD9C5E678E",
+      "title": "Розмелена мідь",
+      "description": [
+        "Подрібнена мідь додає ще один придатний до змішування матеріальний потік.",
+        "Використовуйте окремий буфер, щоб не засмічувати його готовими злитками."
+      ],
+      "icon": {
+        "id": "immersiveengineering:dust_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D308F9C502C",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000406E9226ED6E",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_copper",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E66E9E93EF4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002B30E0113D2C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004FABFE5A2A02",
+      "title": "Інженерний молоток",
+      "description": [
+        "Молоток IE має власні дії складання та налаштування інженерних конструкцій.",
+        "Зберігайте його окремо від молотків інших модів, які не обов'язково сумісні з цими діями."
+      ],
+      "icon": {
+        "id": "immersiveengineering:hammer",
+        "count": 1
+      },
+      "dependencies": [
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000ED21E098E6B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000323F9E5EEFAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000069CDCBC5AF94",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AFB2473B53E6",
+      "title": "Книга інженерної дисципліни",
+      "description": [
+        "Книга IE показує форму мультиблоків і потрібні конструктивні елементи.",
+        "Інвентарний комплект не замінює перевірки складання за схемою книги."
+      ],
+      "icon": {
+        "id": "immersiveengineering:manual",
+        "count": 1
+      },
+      "dependencies": [
+        "00004FABFE5A2A02",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000A8F7BA3A09B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:manual",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006939D9E7D0E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CC64D2DC7837",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000ED0F82EA5385",
+      "title": "Початок коксової печі",
+      "description": [
+        "Підготуйте повний конструктивний набір для коксової печі.",
+        "Завдання перевіряє блоки; активування та правильну форму перевіряйте нативним молотком.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:cokebrick",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AFB2473B53E6",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005DA73BF29D79",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:cokebrick",
+          "timer": 40
+        },
+        {
+          "id": "0000D271743EA6BE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000024FF689CF2FB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D4C1D006C7F4",
+      "title": "Паливо для ранньої сталі",
+      "description": [
+        "Кокс поєднує підготовку палива зі сталевою гілкою епохи.",
+        "Залиште запас для двох потреб: змінених доменних блоків і подальшої плавки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:coal_coke",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ED0F82EA5385",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DE876B2F0F1B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:coal_coke",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006C32FEA87DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000050F05F30FEBD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000057F34C8BDCEB",
+      "title": "Пічний запас двох шкіл",
+      "description": [
+        "Відокремте промисловий кокс від звичайного деревного палива та реагентної тари.",
+        "Так простіше помітити, який саме потік зупиняє ваш виробничий вузол."
+      ],
+      "icon": {
+        "id": "immersiveengineering:coal_coke",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D4C1D006C7F4",
+        "00009D5D5EAA8D72",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A9CD3A69B264",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:coal_coke",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000089B4B5DF607F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:charcoal",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E71FF7F77B78",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005507966A62B8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000012A8F2D80629",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C0EFCF248072",
+      "title": "Доменна основа без Пекла",
+      "description": [
+        "Змінена формула використовує живий камінь, кокс, цеглу та пісок замість пекельної залежності.",
+        "Це забезпечує сталь у восьмій епосі, не відкриваючи Nether завчасно.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:blastbrick",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D4C1D006C7F4",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000053E4DA821FFD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:blastbrick",
+          "timer": 40
+        },
+        {
+          "id": "00009D72851C19DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FEB7EB1269D2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F9E86B5DFDF2",
+      "title": "Побічний продукт не є відходом",
+      "description": [
+        "Креозот із коксової гілки потрібен обробленій деревині.",
+        "Передбачте виведення рідини, щоб заповнена ємність не стала причиною зупинки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:creosote_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D4C1D006C7F4",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000736458713210",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:creosote_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001576A6430FCF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000035E81AE68CA2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "00002A3D3202FDC1",
+      "title": "Деревина для промислового двору",
+      "description": [
+        "Оброблена деревина повертає креозот у корисні конструктивні матеріали.",
+        "Відокремте її від звичайних дощок для точного обліку інженерних рецептів."
+      ],
+      "icon": {
+        "id": "immersiveengineering:treated_wood_horizontal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9E86B5DFDF2",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006BFF85E2260F",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:treated_wood_horizontal",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A75B14EB163A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F113A557BB49",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D2E72AF5F0F3",
+      "title": "Перша інженерна сталь",
+      "description": [
+        "Сталь з'єднує ранню доменну гілку з магічною піччю Enchanted.",
+        "Не витрачайте всю першу партію на броню, залишивши магічну майстерню без компонентів."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C0EFCF248072",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F7A9534FEF59",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000000E8F4C56B22",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F8FE6FB7F0ED",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001D18DCC2F22F",
+      "title": "Листова основа відьомської печі",
+      "description": [
+        "Сталеві листи потрібні зміненій формулі Witch Oven.",
+        "Підтримуйте окремий запас листів, а не лише загальну купу сталевих злитків."
+      ],
+      "icon": {
+        "id": "immersiveengineering:plate_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2E72AF5F0F3",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009D122687A78A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_steel",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027212B17A27F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000094902153C89E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "000041A1289392CF",
+      "title": "Обслуговуваний каркас",
+      "description": [
+        "Ліси дають доступ до багатоблокових та висотних промислових вузлів.",
+        "Плануйте ремонтні проходи до того, як заповните простір декоративними стінами."
+      ],
+      "icon": {
+        "id": "immersiveengineering:steel_scaffolding_standard",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2E72AF5F0F3",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089F495F22B8A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E0525BAD5F23",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004A53B7E666B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B01630C15C80",
+      "title": "Провід як підготовка",
+      "description": [
+        "Мідний дріт готує майстерню до першої електромережі, яка відкриється пізніше.",
+        "Зберігайте форму матеріалу окремо від злитків та листів."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "00002A3D3202FDC1",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000795BF995C4CC",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096F45851FDF1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E52938BCAFA1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "00002653B7A5883F",
+      "title": "Інструмент роботи з дротом",
+      "description": [
+        "Кусачки обслуговують інженерну дротову гілку та її рецепти.",
+        "Тримайте інструмент біля підписаного запасу дроту, а не серед випадкової зброї."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wirecutter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B01630C15C80",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B273370972F1",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecutter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004DDC7F92ED01",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BB7A334C9A46",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C87B3D2B3AC7",
+      "title": "Залізна механічна основа",
+      "description": [
+        "Інженерний компонент потрібен наступному рунічному вівтарю Botania.",
+        "Технічна деталь стане обов'язковою частиною магічного розвитку дев'ятої епохи."
+      ],
+      "icon": {
+        "id": "immersiveengineering:component_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "00001D18DCC2F22F",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B77F1BC89F53",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015335FB65AC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000003283E27A7F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "000004210D0142DD",
+      "title": "Спільний запас інженера й відьми",
+      "description": [
+        "Залиште матеріали обох головних гілок для відновлення майстерні після перенесення.",
+        "Пізніші механізми потребуватимуть саме магічних реагентів разом із металом."
+      ],
+      "icon": {
+        "id": "immersiveengineering:plate_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "00005A5B017E3DFB",
+        "0000C87B3D2B3AC7",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002BA26389FF43",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CAFACB8DBFC5",
+          "type": "item",
+          "item": {
+            "id": "enchanted:whiff_of_magic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C89D8B87B7D6",
+          "type": "item",
+          "item": {
+            "id": "enchanted:attuned_stone",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005622D1759DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000348FA08F48A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000816CABDE0F4F",
+      "title": "Готовність до рунічного мосту",
+      "description": [
+        "Об'єднайте інженерну основу з живим каменем та результатом відьомської гілки.",
+        "Цей набір підкреслює, що наступний магічний розвиток спирається на промисловість."
+      ],
+      "icon": {
+        "id": "immersiveengineering:component_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C87B3D2B3AC7",
+        "00005887DD1B5922",
+        "0000CA3E9379821B",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DCD6D8B506DE",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079B7EE075176",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DB957853DBB7",
+          "type": "item",
+          "item": {
+            "id": "enchanted:breath_of_the_goddess",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC05C44CBC67",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AB7748991C9A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000639761D74791",
+      "title": "Інженерна опора для рун",
+      "description": [
+        "Відкладіть інженерні компоненти та живий камінь до складання рунічного осередку.",
+        "Магія дев'ятої епохи прямо залежить від механічної майстерні попереднього етапу."
+      ],
+      "icon": {
+        "id": "immersiveengineering:component_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B370A5F6F922",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001E1CA82F7C5",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F067D251AC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000947EE02C01DD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "000051B1D453FDE9",
+      "title": "Стрижні для електричних вузлів",
+      "description": [
+        "Залізний стрижень додає нову форму металу до майстерні.",
+        "Невелика серія допомагає тримати запас деталей без постійної зміни налаштувань."
+      ],
+      "icon": {
+        "id": "immersiveengineering:stick_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE3D72052544",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F2CDF05A577",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006AEB7C3FC893",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000970C1E187D7E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "00007617FA4C3730",
+      "title": "Від голого дроту до електричного вводу",
+      "description": [
+        "Результат прокатки міді уніфіковано до дроту Immersive Engineering. Підготуйте його запас і встановіть LV Connector як точку підключення першої електричної мережі.",
+        "Квест перевіряє дріт в інвентарі та огляд установленого конектора. Правильність з’єднання котушкою й наявність енергії перевірте окремим пуском споживача."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE3D72052544",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000090BBA8D8AEAB",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000011854197FBF0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:connector_lv",
+          "timer": 40
+        },
+        {
+          "id": "00001FEBC4EA09C0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000027F2882D5A97",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A68866543120",
+      "title": "Клеми першої електромережі",
+      "description": [
+        "LV-конектори створюють окрему електричну мережу поряд із валами Create.",
+        "Вивчіть обмеження напруги та відстані до підключення дорогого обладнання.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:connector_lv",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006B04567CC54",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:connector_lv",
+          "timer": 40
+        },
+        {
+          "id": "0000AF0E716CAE17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005302AE2EBBF3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000DCE909AECF8C",
+      "title": "Сплав провідної майстерні",
+      "description": [
+        "Електрум готує наступні електричні компоненти без відкриття вищої напруги.",
+        "Звіряйте об'єднані теги металів у JEI, не підміняючи готовий сплав сумою випадкових злитків."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_electrum",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE3D72052544",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000060BDD83EF61A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_electrum",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB0896C09143",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DDF4FFA41D49",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00002FC3D0B1478A",
+      "title": "Мідна лінія низької напруги",
+      "description": [
+        "Котушки IE встановлюють дроти між сумісними конекторами.",
+        "Залиште безпечний прохід під лінією та не змішуйте її з кабелями іншого рівня напруги."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wirecoil_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A68866543120",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000820F074A9510",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecoil_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F26C6C88319",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BB0E49FC26DC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000D801F5D5F3A3",
+      "title": "Провідний сплав у тонкій формі",
+      "description": [
+        "Прокатка електруму дає окремий компонент для електротехнічних рецептів.",
+        "Спочатку відкладіть потрібний дріт, а тоді переробляйте залишок сплаву в інші форми."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_electrum",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DCE909AECF8C",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DE4558FB5C44",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_electrum",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E8183C2A8CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007AA464E3F5CF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000019FCF6321589",
+      "title": "Ізольований маршрут біля проходу",
+      "description": [
+        "Ізольований дріт доречний там, де люди часто проходять поблизу електричної лінії.",
+        "Ізоляція не збільшує пропускну здатність і не виправляє неправильну напругу."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wirecoil_copper_ins",
+        "count": 1
+      },
+      "dependencies": [
+        "00002FC3D0B1478A",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006D69FE623F19",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecoil_copper_ins",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD992B2ABE10",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000079DFB45D6062",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001AB42BF44D0D",
+      "title": "Обертання стає електрикою",
+      "description": [
+        "Кінетичний генератор IE працює з нативними вітровими та водяними приводами цього мода.",
+        "Він не є прямим роз'ємом валів Create: відповідність сусідніх блоків перевіряйте в інженерній книзі.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:dynamo",
+        "count": 1
+      },
+      "dependencies": [
+        "00002FC3D0B1478A",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000362E58F0A4B0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:dynamo",
+          "timer": 40
+        },
+        {
+          "id": "00001C73B304C396",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006C2F5F8F11CA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "00009AF220A240DC",
+      "title": "Поворот дроту без приймача",
+      "description": [
+        "Реле дозволяє змінити маршрут проводу, не встановлюючи на повороті машину.",
+        "Підпишіть магістраль, щоб під час ремонту не від'єднати сусідню гілку.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:connector_lv_relay",
+        "count": 1
+      },
+      "dependencies": [
+        "00002FC3D0B1478A",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F418AED4D697",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:connector_lv_relay",
+          "timer": 40
+        },
+        {
+          "id": "0000ECDC5A278CBD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DBA8FBE86E1E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00000DC80EF92EC8",
+      "title": "Повітряний резерв електростанції",
+      "description": [
+        "Вітряний привід дає альтернативу водному розташуванню першого генератора.",
+        "Резервна система корисна, коли перебудова річкового вузла зупиняє основне живлення."
+      ],
+      "icon": {
+        "id": "immersiveengineering:windmill",
+        "count": 1
+      },
+      "dependencies": [
+        "00001AB42BF44D0D",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A466C77469ED",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:windmill",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055EAD2C60F76",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:windmill_blade",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005950983B78F2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A820C374875C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007BDB57B97C66",
+      "title": "Матеріали для аварійного ремонту",
+      "description": [
+        "Підготуйте запас трьох різних типів електричного матеріалу.",
+        "Такий набір дозволяє відновлювати власні мережі без заміни їх випадковим несумісним кабелем."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wirecoil_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E41AFB781B6E",
+        "00007617FA4C3730",
+        "000019FCF6321589",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000232DC384472C",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecoil_copper",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECBE711236D0",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000090D8BFBE620",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D30313798C1B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CBA98AFCBC55",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "00009299CD028E20",
+      "title": "Водяне колесо інженера",
+      "description": [
+        "Колесо IE має іншу конструкцію та інший генератор, ніж колесо Create.",
+        "Залиште місце для його нативного робочого об'єму та потоку води.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:watermill",
+        "count": 1
+      },
+      "dependencies": [
+        "00001AB42BF44D0D",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000080A465B028B0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:watermill",
+          "timer": 40
+        },
+        {
+          "id": "00003CDF24476232",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C1A5F7B8B078",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "00001785A30355AA",
+      "title": "Буфер низької напруги",
+      "description": [
+        "LV-конденсатор відділяє нерівномірне вироблення від споживання.",
+        "Перевірте кольори сторін приймання та віддавання перед остаточним монтажем.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:capacitor_lv",
+        "count": 1
+      },
+      "dependencies": [
+        "00009299CD028E20",
+        "00009AF220A240DC",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000530DD6A29FDF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:capacitor_lv",
+          "timer": 40
+        },
+        {
+          "id": "0000757327C59270",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002636867EC52E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "00002811119DDB04",
+      "title": "Легкий метал промисловості",
+      "description": [
+        "Порівняй готовий злиток і пластину алюмінію. Форма металу має відповідати рецепту навіть тоді, коли вихідна сировина та сама.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_aluminum",
+        "count": 1
+      },
+      "dependencies": [
+        "00005AE952C79230",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E5A6DFCCED3",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_aluminum",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071F0A6FCCC55",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_aluminum",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B74306B93169",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002A2F7D616358",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000864CCD4EA196",
+      "title": "Біосталь і контрактний реагент",
+      "description": [
+        "Зведіть біосталь та афритову есенцію в один інженерний набір. Це перевірка наявності двох незалежних гілок, а не новий довільний рецепт їх переплавлення. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: 12 × immersiveengineering:ingot_steel — мати в інвентарі; 2 × occultism:afrit_essence — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "00008CE5EE20F315",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000055799873C702",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066B6887B4B13",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2A8D5279CE5",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003EDEE6545D6C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002771AC0A22A4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000B17FAC6B8E54",
+      "title": "Контрольна партія біосталі",
+      "description": [
+        "Збережіть першу партію біосталі як еталон для наступних машин. Відділення готового сплаву від звичайної сталі спрощує фільтрацію складу. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: 16 × immersiveengineering:ingot_steel — мати в інвентарі; 4 × oritech:steel_ingot — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "000057EB74F64175",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC3F55D53F35",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000032210FD720D5",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008EB1215A9608",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094B699F14295",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004C700C957DA6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000E5C8EB3D93C7",
+      "title": "Спадковість роботизованої ферми",
+      "description": [
+        "Поєднайте біосталь попередньої епохи з новим tertium farmland. Так аграрна ділянка залишається частиною промислового комплексу, а не незалежним шляхом обходу. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: 8 × immersiveengineering:ingot_steel — мати в інвентарі; 4 × mysticalagriculture:tertium_farmland — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_steel",
+        "count": 1
+      },
+      "dependencies": [
+        "00000F4D13885F09",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F42FB84CDB1",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F8FD5B63EB2C",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_farmland",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D04B5000AA30",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D1B6A667A67",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 20.0
+    }
+  ]
+}

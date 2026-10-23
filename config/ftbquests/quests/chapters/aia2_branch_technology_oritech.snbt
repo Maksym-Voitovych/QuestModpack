@@ -1,0 +1,1826 @@
+{
+  "id": "00006ABF225C0621",
+  "filename": "aia2_branch_technology_oritech",
+  "title": "oritech — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 55,
+  "icon": {
+    "id": "oritech:machine_frame_block",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00000344CA2A9CB3",
+      "title": "Вуглецеве волокно для корпуса",
+      "description": [
+        "Відділіть вуглецеві нитки від горючої органіки. Це конструкторський матеріал, тому його буфер має живити складальник, а не паливну лінію.",
+        "Фактична перевірка: 24 × oritech:carbon_fibre_strands — мати в інвентарі; 4 × oritech:carbon_plating_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:carbon_fibre_strands",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001BE2EF16A518",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_fibre_strands",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000089CF61D49A90",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_plating_block",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B2648654FF0E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007A8B77FDED8E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000020769D10D3D4",
+      "title": "Предметна шина комірки",
+      "description": [
+        "Зробіть один напрямок руху деталей і окрему точку повернення браку. Фільтр має стояти на межі процесів, а не маскувати переповнення складу.",
+        "Фактична перевірка: 16 × oritech:item_pipe — мати в інвентарі; 2 × oritech:item_filter_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:item_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DA65814030D",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_pipe",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F31DC9BB8567",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_filter_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000003212F06BCAE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002B9564E23091",
+      "title": "Електроживлення нової комірки",
+      "description": [
+        "Проведіть енергію окремою трасою, до якої можна дістатися з сервісного проходу. Батарея має залишатися доступною після закриття корпуса.",
+        "Фактична перевірка: 16 × oritech:energy_pipe — мати в інвентарі; 2 × oritech:basic_battery — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:energy_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A986ADA5C89",
+          "type": "item",
+          "item": {
+            "id": "oritech:energy_pipe",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E794AA9E78F",
+          "type": "item",
+          "item": {
+            "id": "oritech:basic_battery",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC46C611751B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DAF047EFFCCF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00004452326A8371",
+      "title": "Місце для роботизованої ливарні",
+      "description": [
+        "Відокремте каркас Oritech від старої ручної металургії. Тримайте запас машинних рам для ремонту комірки без демонтажу робочої ливарні.",
+        "Фактична перевірка: 4 × oritech:machine_frame_block — мати в інвентарі; 8 × oritech:machine_plating_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:machine_frame_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F726B3853069",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_frame_block",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EBD43B37745A",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_plating_block",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2EFF8B6166E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E1B6434C1B6B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000512936A4F85E",
+      "title": "Підготовка кремнієвої партії",
+      "description": [
+        "Рознесіть необроблений кремній, очищений матеріал і пластини по окремих місцях. Контрольні зразки потрібні для перевірки маршруту без розбирання машин.",
+        "Фактична перевірка: 8 × oritech:raw_silicon — мати в інвентарі; 8 × oritech:silicon — мати в інвентарі; 8 × oritech:silicon_wafer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:raw_silicon",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A06FD1392AD6",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_silicon",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCF0FBD35C23",
+          "type": "item",
+          "item": {
+            "id": "oritech:silicon",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000132357EEC0E0",
+          "type": "item",
+          "item": {
+            "id": "oritech:silicon_wafer",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B0CA15EEF41E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000205BF084FECC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "000083E749137457",
+      "title": "Подрібнення без змішування пилу",
+      "description": [
+        "Поставте подрібнювач перед металургійним буфером. Підпишіть виходи, щоб нікелевий пил не потрапив у партію іншого металу.",
+        "Фактична перевірка: оглянути встановлений oritech:pulverizer_block протягом 40 ticks; 16 × oritech:nickel_dust — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "oritech:pulverizer_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000052DFE641D2AD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:pulverizer_block",
+          "timer": 40
+        },
+        {
+          "id": "00005F3CF0D9D9E0",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_nickel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000108F5B36D766",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000000DC8C310BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "000096EF504DDF90",
+      "title": "Ливарний вузол біосталі",
+      "description": [
+        "Виділіть Foundry окремий вхід для вихідної сировини. Запас оболонки й мотора дозволяє перенести вузол, не розбираючи електромережу.",
+        "Фактична перевірка: оглянути встановлений oritech:foundry_block протягом 40 ticks; 1 × oritech:motor — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "oritech:foundry_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003D60ADE3ADB0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:foundry_block",
+          "timer": 40
+        },
+        {
+          "id": "0000E7A1B32A311C",
+          "type": "item",
+          "item": {
+            "id": "oritech:motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF9D8F2D8479",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002C7D30408DFC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000AE039B631F95",
+      "title": "Обслуговування без нового заводу",
+      "description": [
+        "Залиште інструмент і запас рам біля виробничого осередку. Зручне обслуговування важливіше за раннє накопичення всіх можливих додатків швидкості.",
+        "Фактична перевірка: 1 × oritech:wrench — мати в інвентарі; 2 × oritech:machine_frame_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006204989C717",
+          "type": "item",
+          "item": {
+            "id": "oritech:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000889842E793FD",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_frame_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007C1A1E80209",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F1DD92E5F244",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "00002616C125EACC",
+      "title": "Пакет для наступної автоматизації",
+      "description": [
+        "Підготуйте пластикові листи й вуглецеві нитки окремими пачками. Це корисні будівельні матеріали, а не причина одразу відкривати ядерні додатки Oritech.",
+        "Фактична перевірка: 24 × oritech:plastic_sheet — мати в інвентарі; 16 × oritech:carbon_fibre_strands — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:plastic_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "00008CE5EE20F315",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DDAC668F7FE8",
+          "type": "item",
+          "item": {
+            "id": "oritech:plastic_sheet",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002FF392CEBAE0",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_fibre_strands",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000120746E7559F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004C97E3262FBC",
+      "title": "Комплект стабільної комірки",
+      "description": [
+        "Підготуйте ядро третьої конфігурації, процесор і контрактний реагент як підсумок епохи. Набір об'єднує реальні результати обох напрямків без витрати ключів у побутових рецептах.",
+        "Фактична перевірка: 1 × oritech:machine_core_3 — мати в інвентарі; 2 × oritech:processing_unit — мати в інвентарі; 1 × occultism:afrit_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:machine_core_3",
+        "count": 1
+      },
+      "dependencies": [
+        "00008CE5EE20F315",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D32BB06FA91C",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_core_3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007138600C29B4",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA6FD02E0AA7",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F368F861FE48",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A0372BCDBA84",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000057EB74F64175",
+      "title": "Органіка для металургії",
+      "description": [
+        "Збережіть окремий буфер біомаси, щоб ливарня не залежала від ручного збору рослин перед кожною партією. Не відправляйте весь органічний запас у генератор.",
+        "Фактична перевірка: 32 × oritech:biomass — мати в інвентарі; 8 × oritech:steel_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:biomass",
+        "count": 1
+      },
+      "dependencies": [
+        "000096EF504DDF90",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008007D1868B90",
+          "type": "item",
+          "item": {
+            "id": "oritech:biomass",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA2E1AC56AD9",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CF95ADD24C89",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "00006BA577B6B801",
+      "title": "Полімерний буфер",
+      "description": [
+        "Смола й пластикові листи виконують різні ролі у виробництві. Зберігайте їх у різних комірках, щоб система не вважала напівфабрикат готовим корпусом.",
+        "Фактична перевірка: 16 × oritech:polymer_resin — мати в інвентарі; 16 × oritech:plastic_sheet — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:polymer_resin",
+        "count": 1
+      },
+      "dependencies": [
+        "00000344CA2A9CB3",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AB2C52345764",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F6B152738039",
+          "type": "item",
+          "item": {
+            "id": "oritech:plastic_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000FBDDF598DFC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00008A02EF16B7A3",
+      "title": "Мислення машини й воля духа",
+      "description": [
+        "Збережіть технологічний процесор поруч із налаштованим окультним самоцвітом. Обидва компоненти знадобляться для подальшої координації виробництва.",
+        "Фактична перевірка: 2 × oritech:processing_unit — мати в інвентарі; 4 × occultism:spirit_attuned_gem — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:processing_unit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000864CCD4EA196",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006D55F9440EE1",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3076435AD27",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000054AD4B786751",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A78BD56DE552",
+      "title": "Нікелевий маршрут",
+      "description": [
+        "Зв'яжіть вхід сирого нікелю, подрібнення та склад зливків в одну зрозумілу ділянку. Зразки обох станів допоможуть перевірити фільтри після ремонту.",
+        "Фактична перевірка: 16 × oritech:raw_nickel — мати в інвентарі; 16 × oritech:nickel_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:raw_nickel",
+        "count": 1
+      },
+      "dependencies": [
+        "000083E749137457",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4869C721423",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_nickel",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F0468428C522",
+          "type": "item",
+          "item": {
+            "id": "oritech:nickel_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000137AE2D7070",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000C8ED5B7D3835",
+      "title": "Серійні ядра третьої конфігурації",
+      "description": [
+        "Підготуйте однакові ядра для вузлів виробничої комірки. Не змішуйте встановлення додатків із заміною всього машинного каркаса.",
+        "Фактична перевірка: 4 × oritech:machine_core_3 — мати в інвентарі; 2 × oritech:motor — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:machine_core_3",
+        "count": 1
+      },
+      "dependencies": [
+        "00004452326A8371",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D7F4CE91767",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_core_3",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B36FF84661C1",
+          "type": "item",
+          "item": {
+            "id": "oritech:motor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088C2A332B094",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008ED61C8616CB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000CD7B41B75246",
+      "title": "Ремонтний пакет ливарні",
+      "description": [
+        "Збережіть готовий мотор, біосталь і машинну обшивку для одного локального ремонту. Такий пакет скорочує простій без надмірного запасу всіх матеріалів збірки. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: 2 × oritech:motor — мати в інвентарі; 8 × immersiveengineering:ingot_steel — мати в інвентарі; 4 × oritech:machine_plating_block — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:motor",
+        "count": 1
+      },
+      "dependencies": [
+        "00008CE5EE20F315",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F32437CF5FC4",
+          "type": "item",
+          "item": {
+            "id": "oritech:motor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E51733CCEAD",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F76D08FA4DB7",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_plating_block",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002AB5499D04D3",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001FA2B49B24B1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000010FBF0E621B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000D086F36691EF",
+      "title": "Процесор роботизованого вузла",
+      "description": [
+        "Виділіть виробничим процесорам пріоритет перед запасними декоративними панелями. Це дозволить завершити комірку керування, коли матеріали ще обмежені.",
+        "Фактична перевірка: 4 × oritech:processing_unit — мати в інвентарі; 4 × oritech:silicon_wafer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:processing_unit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000512936A4F85E",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5A0C128A379",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A471C2911A5",
+          "type": "item",
+          "item": {
+            "id": "oritech:silicon_wafer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F96B2138FAF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000960D3DA69382",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000D91F1C2E7945",
+      "title": "Рідинний контур без спільного входу",
+      "description": [
+        "Відокремте рідинні труби від предметної шини та залиште місце для розширення. Малий бак використовуйте як видимий буфер перед споживачем.",
+        "Фактична перевірка: 16 × oritech:fluid_pipe — мати в інвентарі; 2 × oritech:small_tank_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:fluid_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "000020769D10D3D4",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B70E3FF8544B",
+          "type": "item",
+          "item": {
+            "id": "oritech:fluid_pipe",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD3BD0D13101",
+          "type": "item",
+          "item": {
+            "id": "oritech:small_tank_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002EEAA2E6EF52",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 18.0
+    },
+    {
+      "id": "00001170A961B847",
+      "title": "Буфер готових деталей",
+      "description": [
+        "Поєднайте локальний склад Oritech із контрольним запасом процесорів. Новий склад має вміщувати готову продукцію, не замінюючи всі магічні сховища.",
+        "Фактична перевірка: оглянути встановлений oritech:small_storage_block протягом 40 ticks; 4 × oritech:processing_unit — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "oritech:small_storage_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00002616C125EACC",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000439E7E655F85",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:small_storage_block",
+          "timer": 40
+        },
+        {
+          "id": "0000F91E782F8E95",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E215837DF4F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A47205B6C000",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000028E71F95376F",
+      "title": "Незалежний резерв живлення",
+      "description": [
+        "Підготуйте окремий базовий генератор для сервісних операцій. Не використовуйте його як привід залишати основну фабрику без керованої зупинки.",
+        "Фактична перевірка: оглянути встановлений oritech:basic_generator_block протягом 40 ticks; 1 × oritech:basic_battery — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "oritech:basic_generator_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CD7B41B75246",
+        "0000AE039B631F95",
+        "00005B0B3D80F78D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2C04E42535D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:basic_generator_block",
+          "timer": 40
+        },
+        {
+          "id": "0000A20D42A4914A",
+          "type": "item",
+          "item": {
+            "id": "oritech:basic_battery",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4DDF6278C39",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CCF209014105",
+      "title": "Складальник подвійного походження",
+      "description": [
+        "Зберіть окремий складальник для технологічних компонентів. Біосталь у його запасах підкреслює перехід від звичайних металевих корпусів до гібридного виробництва. У цьому експорті AlmostUnified замінює вихід біосталі на immersiveengineering:ingot_steel; окремо збережіть raw biopolymer для підтвердження біотехнологічної сировини.",
+        "Фактична перевірка: оглянути встановлений oritech:assembler_block протягом 40 ticks; 8 × immersiveengineering:ingot_steel — мати в інвентарі; 4 × oritech:raw_biopolymer — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "oritech:assembler_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D086F36691EF",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A29E39FB0BA3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:assembler_block",
+          "timer": 40
+        },
+        {
+          "id": "000070BD86B104B6",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090F42BC2BE2F",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009EB824A7B577",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005D0F7886D265",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E12472F1EEF9",
+      "title": "Фільтр есенції й випадкового насіння",
+      "description": [
+        "Підготуйте фільтр Oritech та дві різні форми врожаю. Есенція має йти на виробництво, а зайве насіння — у власний резерв.",
+        "Фактична перевірка: 1 × oritech:item_filter_block — мати в інвентарі; 8 × mysticalagriculture:iron_essence — мати в інвентарі; 1 × mysticalagriculture:iron_seeds — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "oritech:item_filter_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DBF227105B24",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_filter_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081AF22F00A83",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B2020CAD00F3",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E217ED617D83",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D0806875EEC8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "00007F6A8676AC0C",
+      "title": "Контролер прискорювача",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Підготуйте центральний контролер дозволеного пізнього процесу Oritech.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AA1F0152E538",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009BDB447E44B0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:accelerator_controller",
+          "timer": 40
+        },
+        {
+          "id": "000007F49DDA4E0A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002390210DEF5D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000E44F0568C78A",
+      "title": "Кільце прискорювача",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Зберіть конструкційні елементи кільця та звірте геометрію з нативною документацією.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_ring",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F6A8676AC0C",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001D55C9DCBA70",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_ring",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025EA9756E4D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B2758E46136F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 20.0
+    },
+    {
+      "id": "00004678762205CE",
+      "title": "Привід кільця",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Підготуйте привід, не підмінюючи його загальним мотором ранньої майстерні.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_motor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E44F0568C78A",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE740CEC7587",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:accelerator_motor",
+          "timer": 40
+        },
+        {
+          "id": "00003E8838F12099",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000210D1C88CB84",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000109A032487E3",
+      "title": "Сенсор прискорювача",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Відведіть спостереженню власний спеціалізований вузол.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_sensor",
+        "count": 1
+      },
+      "dependencies": [
+        "00004678762205CE",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B3AB6519AADD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:accelerator_sensor",
+          "timer": 40
+        },
+        {
+          "id": "00007B15DA2496A9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002917E6DF2655",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B78E8F2FD744",
+      "title": "Колектор частинок",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Підготуйте вихідний вузол частинок до розміщення всієї системи.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "oritech:particle_collector_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000109A032487E3",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005EA99350B962",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:particle_collector_block",
+          "timer": 40
+        },
+        {
+          "id": "0000454259D64F83",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005EC1B629D155",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000077F7CA80450E",
+      "title": "Надпровідна опора",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Забезпечте матеріальний і транспортний внески надпровідного покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "oritech:superconductor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B78E8F2FD744",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CA8FC201BD98",
+          "type": "item",
+          "item": {
+            "id": "oritech:superconductor",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003DCC646F84D7",
+          "type": "item",
+          "item": {
+            "id": "oritech:superconductor_duct_block",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000964C0279AB2A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000008DF92FA5750",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000846E34701D3B",
+      "title": "Керований енергетичний шлюз Oritech",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Підготуйте контроль потоку й магнітний компонент перед експериментами.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "oritech:flux_gate",
+        "count": 1
+      },
+      "dependencies": [
+        "000077F7CA80450E",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C804F1A23926",
+          "type": "item",
+          "item": {
+            "id": "oritech:flux_gate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C63CEBD6A83",
+          "type": "item",
+          "item": {
+            "id": "oritech:magnetic_coil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F0C92AF7EB72",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000071037CFC2AF8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009D4CC34D2393",
+      "title": "Паспорт прискорювача",
+      "description": [
+        "Прискорювач Oritech є окремим великим проєктом із кільцем, приводом і засобами керування.",
+        "Зведіть центральний блок, привід, спостереження й приймання продукту до одного апаратного комплекту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000846E34701D3B",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000059D4C5F81CC1",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CEBC461D155",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A2B7236F7F4C",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_sensor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9537611A0A8",
+          "type": "item",
+          "item": {
+            "id": "oritech:particle_collector_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081F17C69FB07",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000302579CA0726",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D10325F921DB",
+      "title": "Прискорювач абсолютної майстерні",
+      "description": [
+        "Фінальна промислова перевірка збирає апаратні результати різних шкіл, не підміняючи одну фабрику іншою.",
+        "Зіставте нативний прискорювальний контролер, абсолютну матерію й хаотичний осередок.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B61AC018ED8",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009FEACEC4308D",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D5E42684148",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000045CF8A1D3EB0",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C725EE251E6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C49E4621232A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 20.0
+    }
+  ]
+}

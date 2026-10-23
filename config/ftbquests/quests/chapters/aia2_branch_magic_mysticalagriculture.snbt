@@ -1,0 +1,445 @@
+{
+  "id": "0000BC05C028668F",
+  "filename": "aia2_branch_magic_mysticalagriculture",
+  "title": "mysticalagriculture — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 20,
+  "icon": {
+    "id": "mysticalagriculture:soulstone",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00008463D48FEB12",
+      "title": "Манасталь біля інфузії",
+      "description": [
+        "Підготуйте prudentium essence та руну землі для магічної обв'язки ферми. Це зв'язок двох шкіл розвитку, а не новий спосіб безкоштовно копіювати насіння.",
+        "Фактична перевірка: 12 × mysticalagriculture:prudentium_essence — мати в інвентарі; 3 × botania:rune_earth — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:prudentium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CBB6E663B8F6",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D97FAFCC6E13",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prudentium_essence",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7DD839C287C",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCEBB7B97761",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000049E9B9125FAB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CE1A36BA58EA",
+      "title": "Матеріал для душевної агрономії",
+      "description": [
+        "Підготуйте soulstone і soulium для інструментів роботи з душами. Не змішуйте цей напрямок із звичайними рослинними есенціями металів.",
+        "Фактична перевірка: 16 × mysticalagriculture:soulstone — мати в інвентарі; 4 × mysticalagriculture:soulium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:soulstone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CBB6E663B8F6",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057E987B9B7F7",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soulstone",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FAE14298D3A",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soulium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F365F1297393",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CDDA5B0884AE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DE2B1C4EA389",
+      "title": "Ферма в живому оточенні",
+      "description": [
+        "Додайте nature essence та звичайні саджанці до аграрного запасу. Вони потрібні для відновлення природного оточення навколо механізованої ділянки.",
+        "Фактична перевірка: 16 × mysticalagriculture:nature_essence — мати в інвентарі; 16 × minecraft:oak_sapling — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:nature_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CBB6E663B8F6",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000BE7C5D52F8F",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:nature_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C5A32D5F69E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:oak_sapling",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9D46DD51F6C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "000061DD9513955C",
+      "title": "Вода як окремий аграрний ресурс",
+      "description": [
+        "Зберігайте water essence поряд із матеріалами для локального водопостачання. Не покладайте всю ферму на один незахищений зовнішній резервуар.",
+        "Фактична перевірка: 16 × mysticalagriculture:water_essence — мати в інвентарі; 4 × minecraft:bucket — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:water_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE2B1C4EA389",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000069324C97854C",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:water_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F32B6B6AC81A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bucket",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007186A3EAC880",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000837E90F113C5",
+      "title": "Ніж для відбору душевних матеріалів",
+      "description": [
+        "Збережіть soulium dagger та soul jars як окремий комплект. Порожня банка не доводить захоплення конкретної душі, тому тут перевіряється лише готовність інструментів.",
+        "Фактична перевірка: 1 × mysticalagriculture:soulium_dagger — мати в інвентарі; 2 × mysticalagriculture:soul_jar — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:soulium_dagger",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CE1A36BA58EA",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006B3C240F203",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soulium_dagger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000579C2FE03ADB",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soul_jar",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055D1D2D17CFC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000007A033757CF3",
+      "title": "Четвертий ступінь аграрної есенції",
+      "description": [
+        "Збережіть Imperium Essence та попередній Tertium як окремі ступені перетворення. Підвищення есенції не означає автоматичний дозвіл на всі види ресурсного насіння.",
+        "Фактична перевірка: 8 × mysticalagriculture:imperium_essence — мати в інвентарі; 8 × mysticalagriculture:tertium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:imperium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B3F16135AC53",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000087AA5D45BC79",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:imperium_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E7E721ADA48",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000988691662B20",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009DE29F3C3933",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000071FCEF4ADABB",
+      "title": "П'ятий ступінь без втрати нижчих рівнів",
+      "description": [
+        "Підготуйте Supremium Essence і залиште частину Imperium для обслуговування ферми. Не перетворюйте весь робочий запас, якщо попередні процеси ще його споживають.",
+        "Фактична перевірка: 4 × mysticalagriculture:supremium_essence — мати в інвентарі; 4 × mysticalagriculture:imperium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:supremium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000007A033757CF3",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000059446515E8FF",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:supremium_essence",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD1AC1446AFB",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:imperium_essence",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001E12CE8C18CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000079D6115EDA77",
+      "title": "Пізніша аграрна основа",
+      "description": [
+        "Збережіть Supremium Essence та Nether Star як різні типи ресурсу для майбутніх аграрних рецептів. Цей комплект не вимагає й не видає недозволене ресурсне насіння.",
+        "Фактична перевірка: 8 × mysticalagriculture:supremium_essence — мати в інвентарі; 2 × minecraft:nether_star — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:supremium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "00008A20E98166D0",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FEC1EAE1A2E8",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:supremium_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7E57BF5A041",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027CBFDD87C9A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 8.0
+    }
+  ]
+}

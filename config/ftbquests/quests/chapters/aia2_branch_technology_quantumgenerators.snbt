@@ -1,0 +1,363 @@
+{
+  "id": "000062B38C4D9B62",
+  "filename": "aia2_branch_technology_quantumgenerators",
+  "title": "quantumgenerators — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 60,
+  "icon": {
+    "id": "quantumgenerators:qg/nsp_gen",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00002FF640E4AE2D",
+      "title": "Паспорт планетарної енергостанції",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Зведіть генератор, локальний буфер і контроль потоку до одного інженерного комплекту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/nsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE8C094743D2",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D0CC69BD2CB1",
+          "type": "item",
+          "item": {
+            "id": "quantumgenerators:qg/nsp_gen",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004ABDE92D80E8",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_energy_cube",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000486123FD9AAA",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:flux_gate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDBCB8F3ADB9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003D4DDB80D56C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009F4770A8015E",
+      "title": "Генератор NSP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Підготуйте нативний генератор NSP; фактичні параметри й вимоги читайте у його інтерфейсі.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/nsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "000065AA4227FDF7",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C17324D7387F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/nsp_gen",
+          "timer": 40
+        },
+        {
+          "id": "00002B7F1E372B51",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F679E08B1C03",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A6C65521C0F0",
+      "title": "Генератор PHSP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Створіть альтернативний нативний генератор PHSP без вигаданих значень потужності.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/phsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "00009F4770A8015E",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C867BD094331",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/phsp_gen",
+          "timer": 40
+        },
+        {
+          "id": "0000186B624995F4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000508030F1192",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B29FDD2FA0B4",
+      "title": "Генератор KVSP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Підготуйте генератор іншої нативної гілки для порівняння на окремому стенді.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/kvsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A6C65521C0F0",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003B72CAD86FF3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/kvsp_gen",
+          "timer": 40
+        },
+        {
+          "id": "00003EB645AF2A6E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008E6531B0817F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000994056F1E126",
+      "title": "Генератор GRASP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Створіть спеціалізований генератор GRASP і звірте його потреби з документацією встановленої версії.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/grasp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B29FDD2FA0B4",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A8CAEDF6221",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/grasp_gen",
+          "timer": 40
+        },
+        {
+          "id": "000004EBC09D45DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FC48F31D1C83",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E2716EBD8810",
+      "title": "Генератор BSP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Підготуйте ще один нативний клас генерації для завершення енергетичного дослідження.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/bsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000994056F1E126",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C82C42D3353A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/bsp_gen",
+          "timer": 40
+        },
+        {
+          "id": "00007FE9B200A321",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006CABFF0FA6A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E26136875A35",
+      "title": "Генератор ADSP",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Завершіть матеріальний набір генерації ADSP без заяви про його виміряну віддачу.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "quantumgenerators:qg/adsp_gen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2716EBD8810",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009E86758282C2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quantumgenerators:qg/adsp_gen",
+          "timer": 40
+        },
+        {
+          "id": "00002EE903C83615",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000955B0A4F992",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    }
+  ]
+}

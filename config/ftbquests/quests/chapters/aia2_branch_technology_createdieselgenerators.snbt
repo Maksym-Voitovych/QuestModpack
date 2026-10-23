@@ -1,0 +1,585 @@
+{
+  "id": "000081797D5B3D5C",
+  "filename": "aia2_branch_technology_createdieselgenerators",
+  "title": "createdieselgenerators — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 37,
+  "icon": {
+    "id": "createdieselgenerators:oil_scanner",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000246E3A32A8C8",
+      "title": "Пошук сировини до будівництва",
+      "description": [
+        "Oil Scanner допомагає обрати місце видобувної гілки Create Diesel Generators.",
+        "Сканер не є доказом наявності резервуара, тому перевірте нативний результат перед перенесенням фабрики."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:oil_scanner",
+        "count": 1
+      },
+      "dependencies": [
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000097CF4594264D",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:oil_scanner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028685ED7C9DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A193AFBA914E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000478A5AD77E7D",
+      "title": "Доступний дизельний привід Create",
+      "description": [
+        "Малий двигун Create Diesel Generators додає ще один паливний шлях до обертання.",
+        "Порівняйте сумісні рідини та підключення з двигуном TFMG, не змішуючи їхні компоненти.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:diesel_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "000043FE967691A8",
+        "00004B7A6EB997C8",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A801F25272D7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000FC0D4A1CF82E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002A51DE1E5765",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007D730549F4B1",
+      "title": "Перенесення проби",
+      "description": [
+        "Каністра дає переносну тару для роботи з паливними рідинами.",
+        "Позначайте призначення тари і не зливайте невідомий вміст у спільний буфер."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:canister",
+        "count": 1
+      },
+      "dependencies": [
+        "0000246E3A32A8C8",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001923C6C7D547",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:canister",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1C704541097",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FA86FAF061D8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A4EB70C6E955",
+      "title": "Обслуговування моторної зони",
+      "description": [
+        "Шумоглушник є штатним додатком дизельної майстерні.",
+        "Він покращує робоче середовище, але не збільшує запас палива та не відкриває пізні рівні двигунів."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_silencer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000478A5AD77E7D",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000DD77A07930F",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_silencer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A6A5E8CB2DF0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E448B00F5DC1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CA0AC773113A",
+      "title": "Механічний вузол нафтовидобутку",
+      "description": [
+        "Різні частини Pumpjack формують окрему складальну гілку.",
+        "Зіставте їх із нативною схемою: комплект предметів не доводить правильне підземне підключення."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:pumpjack_head",
+        "count": 1
+      },
+      "dependencies": [
+        "0000246E3A32A8C8",
+        "00001B666B0E64E0",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BE6DB7ABD7F2",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:pumpjack_head",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031FA6A8B8D04",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:pumpjack_crank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000034814FCA67EA",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:pumpjack_bearing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009430843AB499",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B89206721044",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E007E6C17ED4",
+      "title": "Запасна поршнева деталь",
+      "description": [
+        "Окремий запас поршнів допомагає ремонтувати або дублювати доступну моторну гілку.",
+        "Не витрачайте всі точні деталі на розширення, доки основний двигун не обслуговується стабільно."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_piston",
+        "count": 1
+      },
+      "dependencies": [
+        "0000478A5AD77E7D",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C205C33CDB51",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_piston",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A9313C20C1A4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006F20BAAEF316",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000682B0B520524",
+      "title": "Відновлювана альтернатива нафті",
+      "description": [
+        "Рослинна олія пов'язує сільське господарство з паливною майстернею.",
+        "Відокремте сировину пального від харчового запасу та посівного фонду."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:plant_oil_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D730549F4B1",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000055639C7A1700",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:plant_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AEDC20B842CC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A333D60F4B8C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DF73C9A1E31F",
+      "title": "Ферментаційна частина палива",
+      "description": [
+        "Етанол додає інший матеріальний потік для відновлюваного палива.",
+        "Перевіряйте нативну рецептуру, щоб не підмінити продукт звичайною водою або іншою рідиною."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:ethanol_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000682B0B520524",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F878AC8A773E",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:ethanol_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000309D285AF5D3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000060DDBDA05EDC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F792D6AEFA20",
+      "title": "Позиція серійної ферментації",
+      "description": [
+        "Ферментаційний вузол та кришка готують доступний процес Create Diesel Generators.",
+        "Квест перевіряє встановлювані компоненти; реальну подачу й вихід випробуйте на одній безпечній партії."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:bulk_fermenter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DF73C9A1E31F",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D928DC68C5E9",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:bulk_fermenter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7743DEE103C",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:basin_lid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A564681EC7E4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002125ECDF4007",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F9871A247B78",
+      "title": "Паливо двох сільських потоків",
+      "description": [
+        "Біодизель поєднує результат рослинної та ферментаційної гілок.",
+        "Цей шлях зменшує залежність від нових нафтових ділянок, але потребує догляду за фермами."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:biodiesel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000682B0B520524",
+        "0000DF73C9A1E31F",
+        "0000F792D6AEFA20",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007B6E04EB7108",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:biodiesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D4DFC4C1AC81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D2DA0D58A14D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000068989A37B07",
+      "title": "Маркування паливного складу",
+      "description": [
+        "Окремі бочки допомагають рознести горючі продукти за призначенням.",
+        "Станьте звичними до перевірки вмісту перед з'єднанням трубопроводів.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:oil_barrel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9871A247B78",
+        "000023590EFFC054",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E346FF64C2C2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:oil_barrel",
+          "timer": 40
+        },
+        {
+          "id": "0000ABE1E031E083",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006550ED3F34D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    }
+  ]
+}

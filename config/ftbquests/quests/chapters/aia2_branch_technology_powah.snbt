@@ -1,0 +1,1609 @@
+{
+  "id": "0000FB658E6A0F7C",
+  "filename": "aia2_branch_technology_powah",
+  "title": "powah — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 57,
+  "icon": {
+    "id": "powah:dielectric_paste",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000233989BADACC",
+      "title": "Ізоляційна паста Powah",
+      "description": [
+        "Діелектрик започатковує окремий матеріальний ланцюг Powah.",
+        "Відкладіть пасту для корпусів та стрижнів, не відкриваючи одразу всі рівні генераторів."
+      ],
+      "icon": {
+        "id": "powah:dielectric_paste",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CEA0806A72F",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A513F610DD9D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007E50AB06F1FD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005BA4BC081D80",
+      "title": "Формована ізоляція",
+      "description": [
+        "Дві орієнтації діелектричного стрижня є різними рецептними деталями.",
+        "Тримайте їх у підписаних комірках, щоб серія корпусів не зупинилася через хибну форму."
+      ],
+      "icon": {
+        "id": "powah:dielectric_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000233989BADACC",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D90442CA4298",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BBA0259FBDE",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod_horizontal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD889A7ECCBC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000093D50DD0A295",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C1054789C429",
+      "title": "Корпус початкової електрики",
+      "description": [
+        "Діелектричний корпус є основою доступних вузлів Powah.",
+        "Залиште принаймні один корпус для ремонту буфера до витрати решти на генерацію."
+      ],
+      "icon": {
+        "id": "powah:dielectric_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "00005BA4BC081D80",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000202132154464",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_casing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C17F355F1548",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008295DB4FC7D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006F553519F2D7",
+      "title": "Мала електрична деталь",
+      "description": [
+        "Найменший базовий конденсатор починає компонентний ланцюг Powah.",
+        "Квест стосується цієї конкретної деталі та не відкриває автоматично Hardened або Blazing."
+      ],
+      "icon": {
+        "id": "powah:capacitor_basic_tiny",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C1054789C429",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF2716EA1A52",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic_tiny",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012D2FC8EAB24",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E8717B77AFA3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A8AEA0A1E438",
+      "title": "Наступна складальна сходинка",
+      "description": [
+        "Базовий конденсатор збирає дрібні електричні компоненти у придатний для машин вузол.",
+        "Перевірте рецепт перед складанням великої партії, щоб залишити запас малих деталей."
+      ],
+      "icon": {
+        "id": "powah:capacitor_basic",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F553519F2D7",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000094326DBFD615",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CAA140398366",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000787E30BCDA06",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000077AE2BA06DC6",
+      "title": "Кероване паливне живлення",
+      "description": [
+        "Початковий Furnator перетворює тверде паливо на електрику.",
+        "Порівнюйте витрату палива з реальним навантаженням, а не лише розміром накопичувача.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "powah:furnator_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A8AEA0A1E438",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A39193341D86",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:furnator_starter",
+          "timer": 40
+        },
+        {
+          "id": "00006198C18DB2A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003A14EC598AC7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000902ED232E712",
+      "title": "Перший накопичувач Powah",
+      "description": [
+        "Енергокомірка відділяє вироблення Furnator від короткочасних навантажень.",
+        "Перевірте налаштування приймання та віддавання на потрібних сторонах.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "powah:energy_cell_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "000077AE2BA06DC6",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B2F1558969E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_cell_starter",
+          "timer": 40
+        },
+        {
+          "id": "0000AB4103EEA389",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000029645658A5EE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CCF35036FB08",
+      "title": "Портативний резерв без польоту",
+      "description": [
+        "Батарея дає переносний запас енергії для сумісних потреб.",
+        "Наявність зарядного предмета не є дозволом на технології майбутніх епох."
+      ],
+      "icon": {
+        "id": "powah:battery_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000902ED232E712",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006E03563BD7C6",
+          "type": "item",
+          "item": {
+            "id": "powah:battery_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC438C0693A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D6845BEBB0AA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E41AFB781B6E",
+      "title": "Кабель початкового рівня",
+      "description": [
+        "Початковий кабель пов'язує вузли Powah та сумісні FE-пристрої.",
+        "Перевищення можливостей магістралі не виправляється додаванням нових споживачів."
+      ],
+      "icon": {
+        "id": "powah:energy_cable_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000902ED232E712",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000054692432E175",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_starter",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000097E22E6B4173",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E0328D8A585B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B2B7D697106E",
+      "title": "Інструмент обслуговування Powah",
+      "description": [
+        "Штатний ключ допомагає переносити та налаштовувати електричні вузли.",
+        "Випробуйте його на одному недорогому пристрої до перебудови всієї мережі."
+      ],
+      "icon": {
+        "id": "powah:wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E41AFB781B6E",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002644F8969139",
+          "type": "item",
+          "item": {
+            "id": "powah:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC3760C2704C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DDE899EF07F1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EB6B9546EE4E",
+      "title": "Майданчик енергетичного перетворення",
+      "description": [
+        "Energizing Orb відкриває нативну позицію спеціальних перетворень Powah.",
+        "Підготуйте читабельну зону подачі та заберіть зайві предмети перед запуском рецепта.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "powah:energizing_orb",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E41AFB781B6E",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B771F463B1F4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "000039060E01BCF8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E77F82DE83A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "000050588ACA6598",
+      "title": "Електричний промінь до сфери",
+      "description": [
+        "Початкові стрижні передають енергію до сфери за правилами Powah.",
+        "Їхня кількість не підтверджує конкретну швидкість чи завершення рецепта.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "powah:energizing_rod_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EB6B9546EE4E",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E533A36970E5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_rod_starter",
+          "timer": 40
+        },
+        {
+          "id": "0000DA1705A58406",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000076F0C4F727CE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A7177390E152",
+      "title": "Метал після енергетичного процесу",
+      "description": [
+        "Energized Steel є першим матеріальним результатом нової енергетичної обробки.",
+        "Не переходьте до пізніх кристалів лише тому, що сферу вже встановлено."
+      ],
+      "icon": {
+        "id": "powah:steel_energized",
+        "count": 1
+      },
+      "dependencies": [
+        "000050588ACA6598",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC1ED113BA09",
+          "type": "item",
+          "item": {
+            "id": "powah:steel_energized",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009ACF28BE40FE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009BAAAD5FFDE3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 20.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C42F50992CCB",
+      "title": "Енергетика готова до паливної хімії",
+      "description": [
+        "Об'єднайте результат електричного процесу з точною механікою та водяною руною.",
+        "Наступна епоха додає паливну логістику до вже керованої електромережі."
+      ],
+      "icon": {
+        "id": "powah:steel_energized",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7177390E152",
+        "0000BA0A797AD04B",
+        "00007D35EC877614",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C8B25F4720AC",
+          "type": "item",
+          "item": {
+            "id": "powah:steel_energized",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007570778F98EE",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A5B308DB484",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003C3E69F4FA0A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FDADF04B47E6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 22.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000310B427F5634",
+      "title": "Кристалізаційний вузол електромережі",
+      "description": [
+        "Поставте Energizing Orb у доступній зоні з окремим предметним вводом, щоб енергетичні кристали не затримували паливну логістику.",
+        "Фактична перевірка: оглянути встановлений powah:energizing_orb протягом 40 ticks; 2 × powah:energizing_rod_hardened — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "powah:energizing_orb",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004F1A871BB086",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "000015B83F66CADD",
+          "type": "item",
+          "item": {
+            "id": "powah:energizing_rod_hardened",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000671F8DFAA37A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008B27D636933F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004EAD0F9F5FC6",
+      "title": "Вогняна кристалізація",
+      "description": [
+        "Збережіть перші Blazing Crystals разом із запасом звичайного заряджувального обладнання; кристал є окремим виробом, а не доказом безперервного реакторного навантаження.",
+        "Фактична перевірка: 12 × powah:crystal_blazing — мати в інвентарі; 1 × powah:energizing_rod_hardened — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000310B427F5634",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004E93D4715061",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_blazing",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008638C4B612E6",
+          "type": "item",
+          "item": {
+            "id": "powah:energizing_rod_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079E0567266AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000030EA4294C1BA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009B68EBD78D84",
+      "title": "Духовний ступінь енергокристала",
+      "description": [
+        "Підготуйте Spirited Crystals і конденсатори відповідного ступеня для наступних споживачів мережі.",
+        "Фактична перевірка: 8 × powah:crystal_spirited — мати в інвентарі; 4 × powah:capacitor_spirited — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "00004EAD0F9F5FC6",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007E952E7BA645",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C69CE6FA6CA",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_spirited",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D032E8E0116",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006878AECDD312",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "000021BF891A22F0",
+      "title": "Кабель під нові споживачі",
+      "description": [
+        "Збережіть blazing cable та кристали для конкретного енергокоридору, а не замінюйте всю мережу без вимірювання реального попиту.",
+        "Фактична перевірка: 24 × powah:energy_cable_blazing — мати в інвентарі; 4 × powah:crystal_blazing — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:energy_cable_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B68EBD78D84",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3770130CD2E",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_blazing",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B530A06695D6",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_blazing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000053979D3657E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000002AF3DDA0206",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005A0E533B7033",
+      "title": "Стрижні для дорогих партій",
+      "description": [
+        "Підготуйте Spirited Energizing Rods із окремою частиною кристалічного запасу для обслуговування великої партії без розбирання орба.",
+        "Фактична перевірка: 2 × powah:energizing_rod_spirited — мати в інвентарі; 4 × powah:crystal_spirited — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:energizing_rod_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "000021BF891A22F0",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000047A2A5E2E3C5",
+          "type": "item",
+          "item": {
+            "id": "powah:energizing_rod_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002319C6C1CB97",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076B60D5FB8B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "000099B1D43F3A35",
+      "title": "Ремонт кристалічного енергобуфера",
+      "description": [
+        "Збережіть spirited capacitors і кабель для ремонту конкретного енергоблока, а не для раннього накопичення Nitro до відкриття синтезу.",
+        "Фактична перевірка: 2 × powah:capacitor_spirited — мати в інвентарі; 16 × powah:energy_cable_spirited — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:capacitor_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FDFBBFB0ED1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027C51A13EAD0",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028B0C186FC24",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_spirited",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088EDA8F2204C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009E658107BB35",
+      "title": "Партія кристалів для наступних механізмів",
+      "description": [
+        "Збережіть blazing і spirited кристали окремими пачками, оскільки вони належать різним рецептам і не взаємозамінні.",
+        "Фактична перевірка: 16 × powah:crystal_blazing — мати в інвентарі; 8 × powah:crystal_spirited — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D6A12D3926B1",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_blazing",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE087D467D98",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A57654F62D8F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000EE91DAC9AE77",
+      "title": "Енергія для симуляційної фабрики",
+      "description": [
+        "Підготуйте Spirited Energy Cell та Simulation Chamber як контрольний комплект дорогого споживача, не маскуючи його попит нескінченним резервом.",
+        "Фактична перевірка: 1 × powah:energy_cell_spirited — мати в інвентарі; оглянути встановлений hostilenetworks:sim_chamber протягом 40 ticks. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "powah:energy_cell_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000811FC13C701F",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_spirited",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000098B6415EC97",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:sim_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000FFC7168E8545",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 10.0,
+      "y": 6.0
+    },
+    {
+      "id": "000017B4C721E2A8",
+      "title": "Кристалічний резерв ритуальної зали",
+      "description": [
+        "Поєднайте Spirited Crystals із Shadow Essence як контрольний набір магії та енергетики.",
+        "Фактична перевірка: 8 × powah:crystal_spirited — мати в інвентарі; 2 × goety:shadow_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E868DCC1A361",
+        "00000767DFB1D495",
+        "0000CF730A2F7036",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000081292F953F62",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB04C0D59C09",
+          "type": "item",
+          "item": {
+            "id": "goety:shadow_essence",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061DBB472D2C4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "000005FCFB73FA33",
+      "title": "Магістраль нової потужності",
+      "description": [
+        "Збережіть Nitro Energy Cables та Superconductor Cables для різних мережевих стандартів. Не з'єднуйте їх навмання без перевірки сумісної межі.",
+        "Фактична перевірка: 24 × powah:energy_cable_nitro — мати в інвентарі; 16 × modern_industrialization:superconductor_cable — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:energy_cable_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FEC5655BC4BD",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_nitro",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009C3E6C7A3599",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B04B6E3D840",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A0D9F45E8B42",
+      "title": "Нітро-кристал і воля Ґаї",
+      "description": [
+        "Збережіть Nitro Crystals та Gaia Ingots як підсумок енергетичної й високої магічної ліній. Ключі не використовуються в цьому інженерному пакеті.",
+        "Фактична перевірка: 4 × powah:crystal_nitro — мати в інвентарі; 2 × botania:gaia_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "000049938BCA23BB",
+        "0000D4523F699211",
+        "000031F2B4021C96",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC1AB597218C",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D7F1E4DB6BB",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007B892CD5496D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000092FFF6F2E90D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000C017571C64A7",
+      "title": "Нітро-кристалічна партія",
+      "description": [
+        "Збережіть Nitro Crystals та Nether Stars для дозволеної енергетичної кристалізації. Конкретний склад і витрату енергії перевіряйте у штатному рецепті Powah.",
+        "Фактична перевірка: 8 × powah:crystal_nitro — мати в інвентарі; 2 × minecraft:nether_star — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "00003342BFA662DA",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000013AB83344B36",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000085FE454BA262",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nether_star",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000002B711DABAC9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000004A81CEB69AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000D0A2459B59DE",
+      "title": "Оснастка високої кристалізації",
+      "description": [
+        "Підготуйте Nitro Energizing Rods та додатковий Nitro Crystal для обслуговування окремої енергетичної партії без розбирання всього вузла.",
+        "Фактична перевірка: 2 × powah:energizing_rod_nitro — мати в інвентарі; 2 × powah:crystal_nitro — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "powah:energizing_rod_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C017571C64A7",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005C23911A59F",
+          "type": "item",
+          "item": {
+            "id": "powah:energizing_rod_nitro",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD87AD5AF856",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3029D459642",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000033B9EAA016A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000595054AFB088",
+      "title": "Окремий нітро-буфер фабрики",
+      "description": [
+        "Поставте Nitro Energy Cell у доступній точці й збережіть Nitro Capacitors для подальшого керованого розширення.",
+        "Фактична перевірка: оглянути встановлений powah:energy_cell_nitro протягом 40 ticks; 2 × powah:capacitor_nitro — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "powah:energy_cell_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D0A2459B59DE",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C34E82A5115F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_cell_nitro",
+          "timer": 40
+        },
+        {
+          "id": "0000C0352EEBEA96",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_nitro",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002161F97E352C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000010696AAD1ABB",
+      "title": "Альтернативний пізній енергоблок",
+      "description": [
+        "Поставте Nitro Reactor як окрему дозволену енергетичну гілку. Не плутайте його з термоядерною конструкцією Mekanism: це різні установки.",
+        "Фактична перевірка: оглянути встановлений powah:reactor_nitro протягом 40 ticks; 4 × powah:crystal_nitro — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "powah:reactor_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000595054AFB088",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067F09FED42DE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:reactor_nitro",
+          "timer": 40
+        },
+        {
+          "id": "00004CA66DB1139D",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001A979A167768",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D8A365709809",
+      "title": "Резерв двох джерел енергії",
+      "description": [
+        "Фінальна логістика розділяє запити на великі партії звичайної сировини та унікальні компоненти, які не мають EMC.",
+        "Підготуйте компоненти різних енергетичних систем; цей квест не вимірює спільну пропускну здатність.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "powah:crystal_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "000078F4D0C01466",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E06A27494B4E",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000045AF4C1FA566",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_energy_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009EBB32306D7A",
+          "type": "item",
+          "item": {
+            "id": "projecte:relay_mk3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BD61775F630",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B1FC94BBA405",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    }
+  ]
+}

@@ -1,0 +1,3237 @@
+{
+  "id": "000079D0EE1AC945",
+  "filename": "aia2_branch_technology_create",
+  "title": "Create — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 36,
+  "icon": {
+    "id": "create:andesite_alloy",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000966BA38ADDD4",
+      "title": "Сплав для першої механіки",
+      "description": [
+        "Андезитовий сплав є спільною основою валів, корпусів та передач.",
+        "Порівняйте ручний рецепт із доступними способами JEI, не витрачаючи весь метал на декор."
+      ],
+      "icon": {
+        "id": "create:andesite_alloy",
+        "count": 1
+      },
+      "dependencies": [
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E622E57330C0",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090F0584D38DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000034DD9075D408",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007E59B1A3CD69",
+      "title": "Захищена андезитова основа",
+      "description": [
+        "Корпуси відділяють конструктивні блоки фабрики від самих рухомих деталей.",
+        "Не витрачайте весь сплав на облицювання: наступним машинам потрібен той самий ресурс."
+      ],
+      "icon": {
+        "id": "create:andesite_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000966BA38ADDD4",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009CE25085FC7F",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_casing",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF4A7A541E76",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000DAB3697ED71",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008B3EE0132E41",
+      "title": "Лінія передавання обертання",
+      "description": [
+        "Вал переносить обертання до робочого вузла і не створює енергію сам.",
+        "Спочатку прокладіть коротку зрозумілу лінію, яку легко розібрати для ремонту."
+      ],
+      "icon": {
+        "id": "create:shaft",
+        "count": 1
+      },
+      "dependencies": [
+        "0000966BA38ADDD4",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B2C96AB8401",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002EC6EE11A691",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000041A615236534",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00000B58041AF344",
+      "title": "Кріплення для валової лінії",
+      "description": [
+        "Кронштейни показують, де проходить відкрита механічна магістраль.",
+        "Оформлення вузлів має допомагати читати фабрику, а не приховувати її помилки."
+      ],
+      "icon": {
+        "id": "create:wooden_bracket",
+        "count": 1
+      },
+      "dependencies": [
+        "00008B3EE0132E41",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006A62F45F0899",
+          "type": "item",
+          "item": {
+            "id": "create:wooden_bracket",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082EE3E46739A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D0DDDD449AD6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000048DDD2DE89E4",
+      "title": "Ручний привід для діагностики",
+      "description": [
+        "Ручний кривошип корисний для перевірки короткої механічної лінії без постійного генератора.",
+        "Не сприймайте його як основу великої фабрики: гравець швидко втомлюється."
+      ],
+      "icon": {
+        "id": "create:hand_crank",
+        "count": 1
+      },
+      "dependencies": [
+        "00008B3EE0132E41",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F157510A7B3A",
+          "type": "item",
+          "item": {
+            "id": "create:hand_crank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D7130F4B60AF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E127963F29A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "000069DF6C95C7B6",
+      "title": "Водяне колесо майстерні",
+      "description": [
+        "Колесо відкриває тривале обертання від течії без спалювання палива.",
+        "У зміненій формулі використано дубову кору; звичайний рецепт мода замінено.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:water_wheel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000513650CAD977",
+        "00008B3EE0132E41",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ED52A8E44A27",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:water_wheel",
+          "timer": 40
+        },
+        {
+          "id": "00005A72A42FE9AF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000024BFC8892440",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007C0B9AC46349",
+      "title": "Зміна напряму передачі",
+      "description": [
+        "Малі шестерні дозволяють розгалужувати механічну лінію.",
+        "Залиште доступ до зачеплення, щоб бачити помилку напрямку обертання."
+      ],
+      "icon": {
+        "id": "create:cogwheel",
+        "count": 1
+      },
+      "dependencies": [
+        "00008B3EE0132E41",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E7C11D5E8E4",
+          "type": "item",
+          "item": {
+            "id": "create:cogwheel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000400EFC7F0A6A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003EA418CE350C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "000085FAB1755ABA",
+      "title": "Робоча позиція на столі",
+      "description": [
+        "Депо утримує предмет у видимій робочій точці для наступних обробок.",
+        "Розташуйте його так, щоб підхід гравця не перетинався з валовою лінією.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:depot",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E59B1A3CD69",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002AF1733F762F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:depot",
+          "timer": 40
+        },
+        {
+          "id": "00007AB093635961",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093572EA5EA2A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A6AFE448F108",
+      "title": "Регулювання без демонтажу",
+      "description": [
+        "Ключ Create потрібен для орієнтації та обслуговування кінетичних блоків.",
+        "Перед розбиранням дорогої машини спробуйте штатну взаємодію інструментом."
+      ],
+      "icon": {
+        "id": "create:wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E59B1A3CD69",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089F6B9AE018F",
+          "type": "item",
+          "item": {
+            "id": "create:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E597364AA68F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DA65C2DA3BFD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000ADBD9AE930BC",
+      "title": "Вертикальне падіння вантажу",
+      "description": [
+        "Жолоб передає предмети вниз без складного маніпулятора.",
+        "Передбачте сховище внизу, інакше вузьке місце просто переміститься на інший поверх.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:chute",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E59B1A3CD69",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ABBA7D858088",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:chute",
+          "timer": 40
+        },
+        {
+          "id": "00004F023689FA74",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001ADDB6682E14",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000F0F9453D9203",
+      "title": "Прохід крізь стіну",
+      "description": [
+        "Закритий вал допомагає оформити безпечний прохід обертання крізь майстерню.",
+        "Обшивка не скасовує напрямку або потреби в джерелі руху.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:andesite_encased_shaft",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E59B1A3CD69",
+        "00008B3EE0132E41",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000047B075390459",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:andesite_encased_shaft",
+          "timer": 40
+        },
+        {
+          "id": "0000841EFF21BC81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002A1115C02C83",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 14.0
+    },
+    {
+      "id": "000003DFE9CFB320",
+      "title": "Ручна чистова обробка",
+      "description": [
+        "Наждачний папір відкриває ручне полірування без пізніх складальних вузлів.",
+        "Звіряйте придатні заготовки в JEI, щоб не витрачати абразив навмання."
+      ],
+      "icon": {
+        "id": "create:sand_paper",
+        "count": 1
+      },
+      "dependencies": [
+        "000085FAB1755ABA",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A581E468381",
+          "type": "item",
+          "item": {
+            "id": "create:sand_paper",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF18005619C0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009A9A8A519410",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000061481EB89D4A",
+      "title": "Доступне зачеплення",
+      "description": [
+        "Закрита шестерня робить вузол компактним і зрозумілим для обслуговування.",
+        "Залишайте позначення входу та виходу, коли кілька передач стоять поруч.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:andesite_encased_cogwheel",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E59B1A3CD69",
+        "00007C0B9AC46349",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F53C5540606A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:andesite_encased_cogwheel",
+          "timer": 40
+        },
+        {
+          "id": "00003457FEA951EB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000660ED6329368",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F2BF7C268256",
+      "title": "Вхід у транспортну лінію",
+      "description": [
+        "Андезитова воронка допомагає з'єднати просте сховище з робочим транспортом.",
+        "Перевірка предмета не є доказом безперервної автоматичної передачі."
+      ],
+      "icon": {
+        "id": "create:andesite_funnel",
+        "count": 1
+      },
+      "dependencies": [
+        "00006864BFE71B22",
+        "0000ADBD9AE930BC",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000081F8E22B3B85",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_funnel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000555CB41C8AB4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E31E84E47922",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000F99EF994918A",
+      "title": "Передатне відношення",
+      "description": [
+        "Пара великої та малої шестерень змінює швидкість, але впливає на навантаження мережі.",
+        "Завдання перевіряє комплект передачі, а не вимірювання фактичних RPM."
+      ],
+      "icon": {
+        "id": "create:large_cogwheel",
+        "count": 1
+      },
+      "dependencies": [
+        "00007C0B9AC46349",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000063D8CA0EB59",
+          "type": "item",
+          "item": {
+            "id": "create:large_cogwheel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002044DFE6EEAB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009CEDF7B1720E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000AC6339BA6A11",
+      "title": "Поворот механічного маршруту",
+      "description": [
+        "Редуктор допомагає повернути мережу там, де довгі ряди шестерень незручні.",
+        "Перевірте напрям кожного виходу ручним приводом до остаточного підключення.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:gearbox",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F99EF994918A",
+        "000048DDD2DE89E4",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F529BC9F4BD7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:gearbox",
+          "timer": 40
+        },
+        {
+          "id": "00009C9EECF44E4C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004FFC46708759",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B01BEDC1F953",
+      "title": "Розгалуження конвеєра",
+      "description": [
+        "Тунель упорядковує рух вантажу на перехресті стрічок.",
+        "Почніть із простого маршруту одного матеріалу, перш ніж змішувати кілька потоків."
+      ],
+      "icon": {
+        "id": "create:andesite_tunnel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F2BF7C268256",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B10A93C96B40",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_tunnel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A46B9D01F9F9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EF180C8091DC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003305DC1D550A",
+      "title": "Зібраний модуль приводу",
+      "description": [
+        "Зведіть джерело, лінію та передачу в один запасний комплект.",
+        "Квест перевіряє наявність деталей, а правильну схему з'єднання слід перевірити на місці."
+      ],
+      "icon": {
+        "id": "create:water_wheel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECF763307B90",
+        "0000AC6339BA6A11",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000298294921BF4",
+          "type": "item",
+          "item": {
+            "id": "create:water_wheel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001CFDE96FAA4",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B77016EF1182",
+          "type": "item",
+          "item": {
+            "id": "create:gearbox",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD51F62E73CF",
+          "type": "item",
+          "item": {
+            "id": "create:cogwheel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF76668E4625",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008D54FBCDE924",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A3FF18C394C7",
+      "title": "Підйом обертання",
+      "description": [
+        "Вертикальний редуктор дозволяє рознести робочі зони по поверхах.",
+        "Продумайте сервісну шахту поруч із валом, щоб ремонт не вимагав ламати стіни."
+      ],
+      "icon": {
+        "id": "create:vertical_gearbox",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC6339BA6A11",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007DF8F9CB7725",
+          "type": "item",
+          "item": {
+            "id": "create:vertical_gearbox",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007AEC7808B3A8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000040ABB5E6AF3D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "000091EB4402D775",
+      "title": "Запас перед залізним віком",
+      "description": [
+        "Залиште резерв універсальних механічних матеріалів перед переходом до заліза.",
+        "Ремонт не повинен зупиняти весь виробничий ланцюг через одну зламану лінію."
+      ],
+      "icon": {
+        "id": "create:andesite_alloy",
+        "count": 1
+      },
+      "dependencies": [
+        "00003305DC1D550A",
+        "0000F2BF7C268256",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000095D93AB95B7D",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0E1BA756FC0",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015122B42DFED",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000013E668C2CAE7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000262116497E92",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000D8ABAFBF7B5",
+      "title": "Подача на робочу позицію",
+      "description": [
+        "Складіть запасний комплект входу, транспорту та робочої точки.",
+        "Він дозволяє повторити перевірену позицію без демонтажу вже працюючого преса."
+      ],
+      "icon": {
+        "id": "create:belt_connector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AEB2F6E68CB6",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006298640D0B4",
+          "type": "item",
+          "item": {
+            "id": "create:belt_connector",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9D450A42F8B",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_funnel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000060E852F1A7C6",
+          "type": "item",
+          "item": {
+            "id": "create:depot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000080D5EF97E74E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C855868E6025",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B22CA4F93E7E",
+      "title": "Пресова робоча позиція",
+      "description": [
+        "Прес потребує приводу та правильної робочої точки під штоком.",
+        "Спершу випробуйте одну заготовку, щоб не втратити всю партію через помилку подачі.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_press",
+        "count": 1
+      },
+      "dependencies": [
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000354E2AEBBCFE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_press",
+          "timer": 40
+        },
+        {
+          "id": "00007AC05523CF84",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:depot",
+          "timer": 40
+        },
+        {
+          "id": "0000F770C05ADE3E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000094FC933BC0FF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D48B75F094DA",
+      "title": "Оснащена сервісна платформа",
+      "description": [
+        "Зведіть в один комплект два типи обробки й природний фокус.",
+        "Це ресурсне підсумкове завдання, а не телеметрія топології встановленої фабрики."
+      ],
+      "icon": {
+        "id": "create:mechanical_press",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AEB2F6E68CB6",
+        "000007EC6A9DEDCB",
+        "0000D8541863FC5A",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000071B7873906D1",
+          "type": "item",
+          "item": {
+            "id": "create:mechanical_press",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B27277BAB32",
+          "type": "item",
+          "item": {
+            "id": "create:mechanical_mixer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8B28EA8A8FE",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000171C8B1DD753",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001527BCE89C35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000011DAACAFDF81",
+      "title": "Листова сталь ще попереду",
+      "description": [
+        "Перші залізні листи відкривають механічні корпуси без пізньої електрики.",
+        "Порівняйте витрату злитків і вихід за вашим актуальним рецептом JEI."
+      ],
+      "icon": {
+        "id": "create:iron_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B22CA4F93E7E",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF5CEAC0AFC7",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB63DADC5766",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002D25DEE3DBF6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "00001407F50F6A0A",
+      "title": "Сервісний запас андезитової фабрики",
+      "description": [
+        "Залиште незалежний запас металевих листів та магічного порошку перед переходом до мани.",
+        "Поломка одного преса не повинна зупиняти відновлення вівтарної майстерні."
+      ],
+      "icon": {
+        "id": "create:iron_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D48B75F094DA",
+        "00009E2203B51704",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000010C7FDB8D849",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D4A02F5D8AA",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A194492E9360",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:spell_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024FB59EFF01D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000002726A6EC10F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A8FB5EBD704E",
+      "title": "Мідна обшивка магічних вузлів",
+      "description": [
+        "Мідний лист потрібен зміненим рецептам природного вівтаря та квіткової чаші.",
+        "Не витрачайте весь результат на труби: магічна гілка ділить з технікою одну пресову лінію."
+      ],
+      "icon": {
+        "id": "create:copper_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B22CA4F93E7E",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E075FA8ECE0",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000563D9BA01FF2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008DD3D9D68C1D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "00001698C71DC2B7",
+      "title": "Розкрій колод",
+      "description": [
+        "Механічна пилка відділяє деревообробку від ручної сокири.",
+        "Спрямуйте вихід у підписану скриню, щоб кора Roots не загубилася серед дощок.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_saw",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008DFB979D3C87",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_saw",
+          "timer": 40
+        },
+        {
+          "id": "00004368CA53CA12",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000089ECBAD9F5CC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000DB225F84D59A",
+      "title": "Прохід для майбутньої лінії",
+      "description": [
+        "Механічний бур знайомить з інструментом, який діє перед собою під час обертання.",
+        "Не тестуйте його на єдиній несучій стіні чи контейнері з ключами.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_drill",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006F53D22854EC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_drill",
+          "timer": 40
+        },
+        {
+          "id": "0000912B2AD919C1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004B6A7B8C4135",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000DF7A1972A959",
+      "title": "Обертання в чаші",
+      "description": [
+        "Мішалка переносить частину рецептів із ручного верстака до кінетичного виробництва.",
+        "Поки що обирайте доступні ненагріті процеси без пекельного пальника.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_mixer",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046AC550F3A2E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_mixer",
+          "timer": 40
+        },
+        {
+          "id": "000082635D84E7D1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C81FC6C045F3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 20.0
+    },
+    {
+      "id": "0000E8E3CCDDB121",
+      "title": "Повітря як технологічний інструмент",
+      "description": [
+        "Вентилятор дає окремий спосіб взаємодії потоку повітря з робочою зоною.",
+        "Звірте відстань та напрям перед додаванням предметів у небезпечне середовище.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:encased_fan",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CCF635064373",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:encased_fan",
+          "timer": 40
+        },
+        {
+          "id": "000035A77890E8AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000176E0608471E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 22.0
+    },
+    {
+      "id": "0000F4A615F1748D",
+      "title": "Жорно замість ручної ступки",
+      "description": [
+        "Жорно додає першу автоматичну подрібнювальну позицію Create.",
+        "Перед підключенням поставте контейнер для результату й запасний вихід до машини.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:millstone",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AABAC8AE1069",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:millstone",
+          "timer": 40
+        },
+        {
+          "id": "00007E7E33DF1206",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007F93A9B47F59",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 24.0
+    },
+    {
+      "id": "0000A4E680173787",
+      "title": "Чаша для багатокомпонентної суміші",
+      "description": [
+        "Чаша є окремим робочим блоком, без якого мішалка не отримує потрібний об'єм для інгредієнтів.",
+        "Залиште простір для подачі предметів і вилучення результату.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:basin",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DF7A1972A959",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000050F6C66AB78D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:basin",
+          "timer": 40
+        },
+        {
+          "id": "00009E9EACF842F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007726019FF6D1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000CE50A2B0A718",
+      "title": "Зерно у виробничому циклі",
+      "description": [
+        "Борошно відділяє механічну переробку зерна від звичайного ручного хліба.",
+        "Зберігайте насіннєвий фонд поза вхідним потоком жорна."
+      ],
+      "icon": {
+        "id": "create:wheat_flour",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F4A615F1748D",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3D3B00C8B18",
+          "type": "item",
+          "item": {
+            "id": "create:wheat_flour",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B295D061E879",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018201F2CF050",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009BAE8DE9EC73",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000D076DC663438",
+      "title": "Спрямований потік",
+      "description": [
+        "Насадка змінює форму потоку вентилятора для конкретного робочого місця.",
+        "Цей комплект перевіряє готовність деталей, а не силу фактичного потоку."
+      ],
+      "icon": {
+        "id": "create:nozzle",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E8E3CCDDB121",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A2205222F4A",
+          "type": "item",
+          "item": {
+            "id": "create:nozzle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FEA2B0531046",
+          "type": "item",
+          "item": {
+            "id": "create:encased_fan",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001AAF75BADEC0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B9515AD377F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000E885D778126F",
+      "title": "Керований розрив передачі",
+      "description": [
+        "Муфта дає можливість відключати робочу ділянку під час сервісу.",
+        "Переконайтеся, який сигнал зупиняє передачу, перш ніж покладатися на аварійний важіль.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:clutch",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DF7A1972A959",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC057444345B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:clutch",
+          "timer": 40
+        },
+        {
+          "id": "0000DAC2F32F5311",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007F60B01ACB3F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000FA030373385A",
+      "title": "Межа рухомого та нерухомого",
+      "description": [
+        "Пара інтерфейсів готує знайомство з передаванням вантажу рухомій конструкції.",
+        "Цей квест не перевіряє сам рух або завершення автоматичного циклу.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:portable_storage_interface",
+        "count": 1
+      },
+      "dependencies": [
+        "00001698C71DC2B7",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002B37D8E9A6C6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:portable_storage_interface",
+          "timer": 40
+        },
+        {
+          "id": "0000D071C360CE44",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000095AABED50E5E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 16.0
+    },
+    {
+      "id": "000034C99BBB310F",
+      "title": "Зворотний напрям",
+      "description": [
+        "Перемикання напрямку потрібне рухомим і транспортним вузлам.",
+        "Спочатку перевірте один механізм без вантажу, щоб не створити затор на всій фабриці.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:gearshift",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E885D778126F",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000045FDF17D8397",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:gearshift",
+          "timer": 40
+        },
+        {
+          "id": "000005EC22930F3D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D28DE6CFD62F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "000030E77445E483",
+      "title": "Читання швидкості",
+      "description": [
+        "Тахометр робить обертання мережі видимим для інженера.",
+        "Квест приймає сам прилад, а конкретне значення RPM потрібно перевірити його інтерфейсом.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:speedometer",
+        "count": 1
+      },
+      "dependencies": [
+        "000034C99BBB310F",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008FDC67895133",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:speedometer",
+          "timer": 40
+        },
+        {
+          "id": "0000DB8179FB3A96",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004D42CF6EB064",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "000062D695F2DDA6",
+      "title": "Вісь майбутньої конструкції",
+      "description": [
+        "Підшипник задає опору для конструкції, а не нескінченне джерело обертання.",
+        "Перед великим запуском залиште достатній простір для повороту.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_bearing",
+        "count": 1
+      },
+      "dependencies": [
+        "00001698C71DC2B7",
+        "000034C99BBB310F",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007C8F20E447AC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_bearing",
+          "timer": 40
+        },
+        {
+          "id": "0000A51F4752812D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000005FDA60980FA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 6.0
+    },
+    {
+      "id": "00005FCAB841760A",
+      "title": "Запас навантаження",
+      "description": [
+        "Вимірювач навантаження допомагає відрізнити нестачу потужності від помилкового напрямку вала.",
+        "Не підключайте відразу всі нові машини, не оцінивши резерв мережі.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:stressometer",
+        "count": 1
+      },
+      "dependencies": [
+        "000030E77445E483",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027F3EEDAADA2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:stressometer",
+          "timer": 40
+        },
+        {
+          "id": "000090E82C46A875",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007CAF2B836CA6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009F15D16A88C3",
+      "title": "Каркас рухомої платформи",
+      "description": [
+        "Каркас визначає, які блоки повинні рухатися разом із механізмом.",
+        "Звіряйте налаштування з'єднання, не додаючи до тесту критичні сховища."
+      ],
+      "icon": {
+        "id": "create:linear_chassis",
+        "count": 1
+      },
+      "dependencies": [
+        "000062D695F2DDA6",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066D79EE9C241",
+          "type": "item",
+          "item": {
+            "id": "create:linear_chassis",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008130F6AA772A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BC055C8CE7CD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D3E94324F2BC",
+      "title": "Листовий метал і бронзові передачі",
+      "description": [
+        "Підготуйте мідні листи разом із бронзовими шестернями для обслуговування парового цеху. У цій збірці уніфікований лист має ID Create, навіть коли його виробляє компресор Modern Industrialization.",
+        "Перевіряється комплект двох різних деталей у вашому інвентарі. Розділіть листову й зубчасту продукцію на складі, щоб планові ремонти не зупиняли всю парову лінію."
+      ],
+      "icon": {
+        "id": "create:copper_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F5B5E0C931D4",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000000C3ADE9E01A",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D6328E1F3DB",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_gear",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE9D7D14766F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003FA3D85CA000",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000BAE0770CC26A",
+      "title": "Цинк для нового сплаву",
+      "description": [
+        "Цинк доповнює мідь у латунній гілці Create.",
+        "Залиште власний запас цього металу, не розглядаючи його лише як побічну знахідку."
+      ],
+      "icon": {
+        "id": "create:zinc_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B4CA313E7DEC",
+          "type": "item",
+          "item": {
+            "id": "create:zinc_ingot",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000680EFDAB083D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CEBE6E0ABDE5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "00004D319A7035B6",
+      "title": "Латунь без пекельного пальника",
+      "description": [
+        "Альтернативний mixing-рецепт поєднує мідь, цинк і Mana Powder без вимоги нагрівання.",
+        "Не витрачайте останній магічний порошок: він став частиною промислового ланцюга."
+      ],
+      "icon": {
+        "id": "create:brass_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BAE0770CC26A",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FBA66DF00498",
+          "type": "item",
+          "item": {
+            "id": "create:brass_ingot",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C07A4092731",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E3324B59EB54",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "00003B4F931F8C85",
+      "title": "Корпус точнішої автоматики",
+      "description": [
+        "Латунний корпус відділяє новий рівень автоматики від андезитових машин.",
+        "Відкладіть резерв корпусів перед запуском усіх доступних пристроїв одночасно."
+      ],
+      "icon": {
+        "id": "create:brass_casing",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D319A7035B6",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0271DFFA98B",
+          "type": "item",
+          "item": {
+            "id": "create:brass_casing",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A50F6E44DAF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F4AEDD991E09",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 26.0
+    },
+    {
+      "id": "0000F7F5D43010A6",
+      "title": "Полірована кристалічна деталь",
+      "description": [
+        "Полірований рожевий кварц відділяє кристалічну заготівлю від готової електронної частини.",
+        "Використовуйте придатний процес полірування за JEI."
+      ],
+      "icon": {
+        "id": "create:polished_rose_quartz",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D319A7035B6",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE4A905B7DF3",
+          "type": "item",
+          "item": {
+            "id": "create:polished_rose_quartz",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB4AAA581C7F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000082A35D77F143",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 28.0
+    },
+    {
+      "id": "00006C5222437841",
+      "title": "Механічна рука оператора",
+      "description": [
+        "Brass Hand є складовою пристроїв, які виконують точні дії замість гравця.",
+        "Вона не є самостійним маніпулятором без відповідного механізму."
+      ],
+      "icon": {
+        "id": "create:brass_hand",
+        "count": 1
+      },
+      "dependencies": [
+        "00003B4F931F8C85",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F8D61253D0F0",
+          "type": "item",
+          "item": {
+            "id": "create:brass_hand",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005AD897004746",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AFF516BC8324",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000E7553D73AD54",
+      "title": "Фільтрація перед точною позицією",
+      "description": [
+        "Латунна воронка та фільтр допомагають відділити потрібні предмети від загального потоку.",
+        "Спочатку випробуйте дозволений і заборонений матеріал вручну."
+      ],
+      "icon": {
+        "id": "create:brass_funnel",
+        "count": 1
+      },
+      "dependencies": [
+        "00003B4F931F8C85",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000085183CF24790",
+          "type": "item",
+          "item": {
+            "id": "create:brass_funnel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7E8642CB6E8",
+          "type": "item",
+          "item": {
+            "id": "create:filter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004F8CDC024D31",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000990AEBF721E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 20.0
+    },
+    {
+      "id": "0000FE4113F7B9F7",
+      "title": "Електронна лампа механічної доби",
+      "description": [
+        "Електронна лампа перетворює підготовлений кристал у функціональний компонент Create.",
+        "Зберігайте її партіями для точних механізмів і машинного складання."
+      ],
+      "icon": {
+        "id": "create:electron_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F7F5D43010A6",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B5B94184A0C0",
+          "type": "item",
+          "item": {
+            "id": "create:electron_tube",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC4F1743D76D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A85E0BA93524",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 22.0
+    },
+    {
+      "id": "00000F539261D3E0",
+      "title": "Механічне поле складання",
+      "description": [
+        "Підготуйте перший набір механічних крафтерів для великих рецептних полів.",
+        "Кожен блок потребує зрозумілого маршруту виходу складання.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE4113F7B9F7",
+        "00003B4F931F8C85",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000095DA09BC1305",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_crafter",
+          "timer": 40
+        },
+        {
+          "id": "000097DDFF329778",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001C3F63E60F2C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "00002745B1BAABF5",
+      "title": "Розподіл різних партій",
+      "description": [
+        "Латунні тунелі допомагають організувати складніший рух матеріалів конвеєром.",
+        "Не змішуйте кілька виробничих потоків, доки кожен не перевірено окремо.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:brass_tunnel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E7553D73AD54",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D6303776AF91",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:brass_tunnel",
+          "timer": 40
+        },
+        {
+          "id": "00005C24FAC9D2DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E642ED3D7602",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000745EBD9B250D",
+      "title": "Керований вертикальний відвід",
+      "description": [
+        "Розумний жолоб розширює керовану транспортну гілку.",
+        "Перевіряйте налаштування до підключення спільного складу.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:smart_chute",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E7553D73AD54",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F6FA8FF547F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:smart_chute",
+          "timer": 40
+        },
+        {
+          "id": "00005583D75124AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B2D29A8DC1C1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "000081B09D471921",
+      "title": "Точна дія механізму",
+      "description": [
+        "Deployer додає робочу позицію для покрокового складання та інших нативних дій Create.",
+        "Вивчіть режим і подачу інструментів перед запуском дорогої заготовки.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:deployer",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C5222437841",
+        "0000FE4113F7B9F7",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003044EC42149D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:deployer",
+          "timer": 40
+        },
+        {
+          "id": "00005BD5214C3FDC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EE28B5D532BF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 12.0
+    },
+    {
+      "id": "00006AECA1B770EF",
+      "title": "Повний механізм точності",
+      "description": [
+        "Precision Mechanism є результатом складнішої кінетичної збірки, а не довільним злитком.",
+        "Відкладіть одну готову деталь для першої камери Ars Nouveau."
+      ],
+      "icon": {
+        "id": "create:precision_mechanism",
+        "count": 1
+      },
+      "dependencies": [
+        "000081B09D471921",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A1F16A0066FD",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D0918B0ABCE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B4770FFBD142",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 8.0
+    },
+    {
+      "id": "00008B71A18FB880",
+      "title": "Розширення поля до п'яти клітин",
+      "description": [
+        "Деякі гібридні рецепти використовують поле більше звичайного верстака.",
+        "Цей комплект готує повну площу для майбутнього Alternator, але не перевіряє її геометрію автоматично."
+      ],
+      "icon": {
+        "id": "create:mechanical_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "00000F539261D3E0",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006ECD15CC6972",
+          "type": "item",
+          "item": {
+            "id": "create:mechanical_crafter",
+            "count": 1
+          },
+          "count": 25,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020BCD0F8618E",
+          "type": "item",
+          "item": {
+            "id": "create:brass_casing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001488CF48F3C1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E1F6B37E1380",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 10.0
+    },
+    {
+      "id": "00004E4736EBBD59",
+      "title": "Керування швидкістю ділянки",
+      "description": [
+        "Регулятор швидкості дозволяє налаштовувати окрему кінетичну ділянку.",
+        "Збільшення RPM не звільняє від перевірки навантаження мережі.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:rotation_speed_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "00006AECA1B770EF",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003AE6B3E933E6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:rotation_speed_controller",
+          "timer": 40
+        },
+        {
+          "id": "00008FC6EEDAC818",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009771E186A1FD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 6.0
+    },
+    {
+      "id": "00009D0D40E7AB10",
+      "title": "Маніпулятор робочої зони",
+      "description": [
+        "Механічна рука переносить матеріали між налаштованими позиціями.",
+        "Залишайте простір для доступу до точок подачі й не вважайте кількість рук доказом автоматизації.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:mechanical_arm",
+        "count": 1
+      },
+      "dependencies": [
+        "00006AECA1B770EF",
+        "0000E7553D73AD54",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000091498701C221",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_arm",
+          "timer": 40
+        },
+        {
+          "id": "000027A52FAF45E8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009AACC2AB29BA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000BCAD8A3EEA17",
+      "title": "Послідовність замість випадкового сигналу",
+      "description": [
+        "Послідовний перемикач готує механізми до контрольованого набору рухів.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "create:sequenced_gearshift",
+        "count": 1
+      },
+      "dependencies": [
+        "00006AECA1B770EF",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000073CAAFFE55E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:sequenced_gearshift",
+          "timer": 40
+        },
+        {
+          "id": "0000C9FA517E3C3C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000445328842F64",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000133F36BDDB26",
+      "title": "Відтворювана складальна партія",
+      "description": [
+        "Збережіть різні готові компоненти для відновлення складальної ділянки.",
+        "Така партія корисніша за надмірний запас лише одного типу злитків."
+      ],
+      "icon": {
+        "id": "create:electron_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "00009D0D40E7AB10",
+        "0000BCAD8A3EEA17",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006BD27AC355E5",
+          "type": "item",
+          "item": {
+            "id": "create:electron_tube",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004BBE266E96A3",
+          "type": "item",
+          "item": {
+            "id": "create:brass_hand",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1C39C0E9E0C",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007139DF54D01B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000749939F6ECEB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DB8B5BBF132C",
+      "title": "Резерв нового сплаву",
+      "description": [
+        "Відкладіть компоненти ненагрітого латунного маршруту для ремонту обладнання.",
+        "Природна магія лишається частиною технічного ланцюга після відкриття Ars."
+      ],
+      "icon": {
+        "id": "create:brass_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D319A7035B6",
+        "00009D0D40E7AB10",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE0DC42C480C",
+          "type": "item",
+          "item": {
+            "id": "create:brass_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D9243A096EE",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E79FE798D62D",
+          "type": "item",
+          "item": {
+            "id": "create:zinc_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C21B73887149",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004FFDE421D113",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000798A912FA82D",
+      "title": "Від механіки до першої електрики",
+      "description": [
+        "Об'єднайте точну кінетику, рунічну ізоляцію та новий магічний самоцвіт.",
+        "Цей комплект готує перехід до електромережі без відриву від магічного розвитку."
+      ],
+      "icon": {
+        "id": "create:precision_mechanism",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A54A30154DD6",
+        "0000DB8B5BBF132C",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003FE13187E756",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A05C16A47D0",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3863F735A22",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD9A4CD73482",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004772D47DC512",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "000012183BF4CD32",
+      "title": "Контрольований жар для Create",
+      "description": [
+        "Підготуй справжній Blaze Burner для нагріваних процесів Create. Відтепер можна порівняти гарячий маршрут латуні з попередньою мановою альтернативою.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "create:blaze_burner",
+        "count": 1
+      },
+      "dependencies": [
+        "000023A2A77B1E13",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000056683F3726B6",
+          "type": "item",
+          "item": {
+            "id": "create:blaze_burner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000089D309C6317",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002D7C99A30C1D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    }
+  ]
+}

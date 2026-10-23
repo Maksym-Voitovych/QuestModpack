@@ -1,0 +1,1831 @@
+{
+  "id": "00007B06915542B8",
+  "filename": "aia2_branch_technology_pneumaticcraft",
+  "title": "pneumaticcraft — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 56,
+  "icon": {
+    "id": "pneumaticcraft:manual_compressor",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000001A7ECBCEFF1",
+      "title": "Від ручного стиску до компресора",
+      "description": [
+        "Почни з керованого джерела повітря, щоб зрозуміти заповнення невеликої мережі. Не збільшуй об'єм труб раніше, ніж навчишся читати тиск.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:manual_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BCE57234364E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:manual_compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000C4AFB93B21B0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C4C3F5502530",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004A909131A94C",
+      "title": "Склад деталей високої щільності",
+      "description": [
+        "Підготуй місце для пневматичних деталей окремо від ритуального пального. Скриня не повинна ставати неявним спільним входом двох несумісних ліній.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:reinforced_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D961BC100944",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2E8DF8B5229",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:reinforced_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052A90ED859FA",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherplanks",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022D3FC12DE86",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E4C4775A9808",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000006F3B4D418A8",
+      "title": "Огляд і захист для двох систем",
+      "description": [
+        "Збери набір обслуговування спільного пневморитуального приміщення. Манометр не замінює перевірки крейдяних ліній, а освітлення не запобігає помилці тиску.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:manometer",
+        "count": 1
+      },
+      "dependencies": [
+        "00004A909131A94C",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005CCAB8C20C23",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:manometer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E73482C2F312",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005A7161F50825",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008B585D9BA1EE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000059C994735382",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000286BD8935205",
+      "title": "Компресор із місцем для палива",
+      "description": [
+        "Залиши біля компресора доступ до пального й обслуговування. Попередньо продумай спосіб припинити подачу повітря в невелику замкнену мережу.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:air_compressor",
+        "count": 1
+      },
+      "dependencies": [
+        "000001A7ECBCEFF1",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000BCD41D946D6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:air_compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000A6D5BFC11982",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F8B9E2EBA5C5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00008009EF3E170C",
+      "title": "Метал для герметичної системи",
+      "description": [
+        "Підготуй першу партію стисненого заліза через доступний спосіб PneumaticCraft. Не витрачай увесь запас на оздоблення до складання клапана камери.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:ingot_iron_compressed",
+        "count": 1
+      },
+      "dependencies": [
+        "000001A7ECBCEFF1",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000003EB326F16EA",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A583AECF1731",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008C5BF3484D4D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000B2A0385B2D66",
+      "title": "Захисний модуль тиску",
+      "description": [
+        "Перед розширенням камери передбач захист повітряної лінії. Працездатність захисту перевіряється окремим ігровим дослідом, а цей квест вимагає сам модуль.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:safety_tube_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000286BD8935205",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000887138F2A6E",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:safety_tube_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000049D43517304C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000129E29C76536",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C1EC69458FC6",
+      "title": "Показник замість здогадів",
+      "description": [
+        "Підготуй стаціонарне й переносне зчитування тиску. Перед під'єднанням нового споживача вручну перевір стан джерела та місцевої ділянки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_gauge",
+        "count": 1
+      },
+      "dependencies": [
+        "0000286BD8935205",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008F6130A6B31E",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_gauge",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000059A77FF0B296",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:manometer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062DDCFE72096",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ADBD5D4622A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C5DC6E264FF5",
+      "title": "Коротка випробувальна труба",
+      "description": [
+        "Збери короткий тестовий контур замість довгої магістралі через всю базу. Менший об'єм простіше наповнити й безпечніше використовувати для першого досліду.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000286BD8935205",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005C819F610C01",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_tube",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018FFE20BF194",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DBCF27A13DC5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000EAB4020AA3F4",
+      "title": "Оболонка камери",
+      "description": [
+        "Збери запас стінок для першої камери та залиш місце під функціональні блоки. Фактичну форму структури звір із довідником PneumaticCraft.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_chamber_wall",
+        "count": 1
+      },
+      "dependencies": [
+        "0000286BD8935205",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000672CBA342DC2",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_chamber_wall",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070418BFAF072",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000051991C44B33B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000210D52E52C91",
+      "title": "Огляд процесу без розбирання",
+      "description": [
+        "Передбач оглядове вікно, щоб бачити предмети в камері. Не розбирай оболонку під тиском заради пошуку одного загубленого реагенту.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_chamber_glass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EAB4020AA3F4",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE59C6CC6F6B",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_chamber_glass",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009630FFF89A92",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000058A7C8F925BE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DD6E9EAFA576",
+      "title": "Клапан керує підключенням",
+      "description": [
+        "Встановлюй клапан так, щоб повітряна траса не перекривала доступ до інтерфейсів. Розрізняй керування тиском і переміщення предметів.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_chamber_valve",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EAB4020AA3F4",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000089B80F3AD08",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:pressure_chamber_valve",
+          "timer": 40
+        },
+        {
+          "id": "00005B32DDED3183",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C0A3A4B27E65",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000355D4A80E443",
+      "title": "Шлюз предметів",
+      "description": [
+        "Підготуй два інтерфейси для розділеного введення й виведення. Власне налаштування їх режимів перевір у грі на невеликій пробній партії.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_chamber_interface",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD6E9EAFA576",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F308D1C8D6FE",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_chamber_interface",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B03881A53225",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C2533370D5A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000093BA7F27424A",
+      "title": "Регулювання споживача",
+      "description": [
+        "Підготуй регулятор для окремої гілки повітряної системи. Регулювання гілки не означає, що решта мережі автоматично захищена від надлишкового тиску.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:regulator_tube_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD6E9EAFA576",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCB2AEF30CF1",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:regulator_tube_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000056984812E331",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BFD6912715D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009CD754366307",
+      "title": "Зарядне робоче місце",
+      "description": [
+        "Постав зарядну станцію біля випробувальної мережі, а не за стіною камери. Так зручніше обслуговувати переносні повітряні інструменти.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:charging_station",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD6E9EAFA576",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A8872E912295",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:charging_station",
+          "timer": 40
+        },
+        {
+          "id": "0000D710274E2785",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000282931515AE9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "00002E4B6D4D5A7D",
+      "title": "Пошук збою за програмою",
+      "description": [
+        "Підготуй Diagnostic Subroutine для обслуговування пневматичного помічника. Перевір його використання на тестовій задачі перед перенесенням робочої програми.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:diagnostic_subroutine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC5F5A41B618",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001B1D1E4B056F",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:diagnostic_subroutine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000997AF1EDD227",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001DA610070006",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007870C877453E",
+      "title": "Плата, ієсніум і ферикоровий каркас",
+      "description": [
+        "Зведи електронний, окультний і матеріалознавчий результати епохи. Обидві магічні й технічні гілки мають залишатися частиною фінальної прогресії.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:printed_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "00003EB0E35C2EB4",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A47871C20BB",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F63D3E07C08F",
+          "type": "item",
+          "item": {
+            "id": "occultism:iesnium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4E2371CF48A",
+          "type": "item",
+          "item": {
+            "id": "justdirethings:ferricore_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E655110EE13",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A76CB515BDAF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000B0D40008F50D",
+      "title": "Стіл пневматичної логіки",
+      "description": [
+        "Установи Programmer для доступної гілки дронів. Спочатку спроєктуй коротку програму з очевидною умовою зупинки.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:programmer",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AEB7F69C8117",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:programmer",
+          "timer": 40
+        },
+        {
+          "id": "0000C4DA13EBA958",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007C79027FBB3A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000C997C1B719CE",
+      "title": "Заготовка друкованої плати",
+      "description": [
+        "Підготуй Empty PCB як початок друкованого маршруту. Відділи чисті заготовки від уже оброблених і невдалих плат.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:empty_pcb",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D7D11A8A5C17",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:empty_pcb",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000296E23F9FA0C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D20C2F04B49A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000556BAEC2F4B3",
+      "title": "Освітлення фотошаблону",
+      "description": [
+        "Підготуй UV Light Box і PCB Blueprint. Перед обробкою звір параметри процесу в нативному інтерфейсі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:uv_light_box",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C997C1B719CE",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000007AC36237CFA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:uv_light_box",
+          "timer": 40
+        },
+        {
+          "id": "0000DBFA8DA1B06C",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pcb_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DAF2F7B719D8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000033E8E8DAAD76",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00005692C836066E",
+      "title": "Елемент програмної схеми",
+      "description": [
+        "Підготуй Programming Puzzle для перенесення програми. Кількість пазлів не засвідчує складності або правильності готового алгоритму.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:programming_puzzle",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B0D40008F50D",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A357CAFD1FAE",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:programming_puzzle",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C553ECB095A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000028B93345CB42",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000920490924D46",
+      "title": "Корпус першого керованого дрона",
+      "description": [
+        "Підготуй Drone й безпечний випробувальний майданчик. Перевір тиск, програму й початкові умови перед роботою біля важливих контейнерів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:drone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B0D40008F50D",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008BC2653C4B5E",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:drone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006F9849FB5D70",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003F94F612AE50",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000E82DD7C81EB0",
+      "title": "Керована хімічна обробка",
+      "description": [
+        "Установи Etching Tank і підготуй окрему тару для Etching Acid. Не підключай кислотний маршрут до загального водяного бака без чіткого розділення.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:etching_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C997C1B719CE",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D1DDD626D1C3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:etching_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000C3198C25F9AC",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:etching_acid_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069464E6C2F08",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F0587FD734FA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "000006CA92691218",
+      "title": "Збереження робочої програми",
+      "description": [
+        "Підготуй Memory Stick для перенесення й збереження налаштувань. Після копіювання перевір цільову програму на безпечній тестовій задачі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:memory_stick",
+        "count": 1
+      },
+      "dependencies": [
+        "0000920490924D46",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC4305D4119B",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:memory_stick",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000064DCF321AE22",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000039601C76723E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "000063398CA8A135",
+      "title": "Деталі пневматичної електроніки",
+      "description": [
+        "Збери конденсатори й транзистори PneumaticCraft. Компоненти Modern Industrialization не є гарантованою заміною без відповідного тегу рецепта.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:capacitor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E82DD7C81EB0",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F9233F0897D9",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:capacitor",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009595FE34003",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:transistor",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086757C148D3D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000733F1DFFF75F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "00006B0B048ED997",
+      "title": "Контролер складальної ділянки",
+      "description": [
+        "Підготуй Assembly Controller та простір для сумісних частин лінії. Сам контролер не підтверджує правильності їхнього розташування.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E82DD7C81EB0",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E86445512F29",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_controller",
+          "timer": 40
+        },
+        {
+          "id": "0000012E2969C82A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D35048E5794F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000ADB08C7B1D88",
+      "title": "Зв'язок із керованим помічником",
+      "description": [
+        "Підготуй Drone Interface для доступної взаємодії з програмою. Перевір фактичну поведінку вузла окремо від наявності самого предмета.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:drone_interface",
+        "count": 1
+      },
+      "dependencies": [
+        "0000920490924D46",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB3381DE0BB9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:drone_interface",
+          "timer": 40
+        },
+        {
+          "id": "00005267ECD50A87",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002DD0B6FDCB77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000E1CD37D59051",
+      "title": "Плата до встановлення деталей",
+      "description": [
+        "Підготуй Unassembled PCB та окремий буфер для електроніки. Це проміжний продукт, який ще потребує перевірки наступного рецепта.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:unassembled_pcb",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E82DD7C81EB0",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FFF7E004A8C0",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:unassembled_pcb",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A4EA3BADF88",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000048C1017A2F40",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000EB798C971A91",
+      "title": "Явні координати замість здогадок",
+      "description": [
+        "Збери GPS Tool та GPS Area Tool для різних типів цілей. Відрізняй одну точку від області, щоб дрон не працював за межами підготовленої ділянки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:gps_tool",
+        "count": 1
+      },
+      "dependencies": [
+        "0000920490924D46",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E1F867B52E11",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:gps_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA6203AF9CE1",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:gps_area_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD02E585C23E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D76E6D2AC4BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000F31016D9BE13",
+      "title": "Готова друкована логіка",
+      "description": [
+        "Заверши Printed Circuit Board для доступного пневматичного обладнання. Перед великим замовленням перевір залишки кислоти й дрібних компонентів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:printed_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E82DD7C81EB0",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B1388EDEBF76",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070E4963DE5FA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000625DEB8BF314",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 20.0
+    },
+    {
+      "id": "00005389DEEE5C43",
+      "title": "Механічна обробка за програмою",
+      "description": [
+        "Підготуй Assembly Drill та відповідну програму. Програма іншого інструмента не є універсальною заміною.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_drill",
+        "count": 1
+      },
+      "dependencies": [
+        "00006B0B048ED997",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E884C10FD3AE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_drill",
+          "timer": 40
+        },
+        {
+          "id": "0000F72CA5AA4F23",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_program_drill",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD4E2B898ACD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005F67F6954A32",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E331C1C76F69",
+      "title": "Робоча платформа складання",
+      "description": [
+        "Установи Assembly Platform відповідно до довідника. Залиш доступ до робочої зони й не закривай її випадковими декоративними блоками.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_platform",
+        "count": 1
+      },
+      "dependencies": [
+        "00006B0B048ED997",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E9E0294F98DC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_platform",
+          "timer": 40
+        },
+        {
+          "id": "00003BB4B6C5689F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C0449B1A7C42",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "000087F1DD0A2CEF",
+      "title": "Лазерний крок складання",
+      "description": [
+        "Підготуй Assembly Laser та окрему програму. Перевір потрібну послідовність операцій у рецепті перед подачею дорогих заготовок.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_laser",
+        "count": 1
+      },
+      "dependencies": [
+        "00005389DEEE5C43",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4FE0D75298F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_laser",
+          "timer": 40
+        },
+        {
+          "id": "0000F4E777CFBA33",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_program_laser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000253A94BB9526",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C467DA766579",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000AB10F23396A8",
+      "title": "Розділені входи й виходи лінії",
+      "description": [
+        "Збери імпортний та експортний Assembly IO Unit. Їхні ролі різні, тому після встановлення звір напрям кожного.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_io_unit_import",
+        "count": 1
+      },
+      "dependencies": [
+        "00005389DEEE5C43",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DA08E461F33B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_io_unit_import",
+          "timer": 40
+        },
+        {
+          "id": "0000AD5145DF37BB",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_io_unit_export",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D90314C5BD7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000659DD9BEDCAD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000BBFC52B57E59",
+      "title": "Друкована плата з духово налаштованою основою",
+      "description": [
+        "Зведи пневматичну електроніку й реагент Occultism в один комплект. Магічна частина не замінює програму та налаштування дрона.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:printed_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "00005389DEEE5C43",
+        "0000655BE3F51B72",
+        "0000909D7716B8CE",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DE62DC85A12",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009ADBFA2693A9",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001960761CF91B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000351AD7F4CC20",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000DF9E59048383",
+      "title": "Програма двох операцій",
+      "description": [
+        "Підготуй комбіновану програму Drill and Laser для сумісних рецептів. Протестуй її на одному наборі інгредієнтів перед безперервною роботою.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_program_drill_laser",
+        "count": 1
+      },
+      "dependencies": [
+        "00005389DEEE5C43",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000025C089F1281A",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_program_drill_laser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000751B682564BA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B2D0D52BE6CF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 12.0
+    }
+  ]
+}

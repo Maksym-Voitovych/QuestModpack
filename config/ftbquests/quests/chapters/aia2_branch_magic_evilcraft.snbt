@@ -1,0 +1,616 @@
+{
+  "id": "0000D70D6CCCD71F",
+  "filename": "aia2_branch_magic_evilcraft",
+  "title": "evilcraft — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 16,
+  "icon": {
+    "id": "evilcraft:dark_ore",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000031A28ED55254",
+      "title": "Розвідка темної жили",
+      "description": [
+        "Познач місце видобутку Dark Ore й збережи зразок породи для довідника. Темні самоцвіти потрібні не лише як декоративне оздоблення.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_ore",
+        "count": 1
+      },
+      "dependencies": [
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000053FECADCF52D",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_ore",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CEDC7E5AAA19",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074D57A21616D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000663E2BDDAA17",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000018ADC8F2DF1F",
+      "title": "Інструмент збору крові",
+      "description": [
+        "Підготуй Blood Extractor до контрольованого бою з ворожими мобами. Відпрацьовуй збір у безпечному місці, де можна забрати речі після помилки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_extractor",
+        "count": 1
+      },
+      "dependencies": [
+        "000031A28ED55254",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCD7E0DE81E7",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_extractor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094739844D556",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000052BA038EABCA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D7609D51AD34",
+      "title": "Ядро кровної інфузії",
+      "description": [
+        "Використай доступний рецепт ядра цієї епохи, а не очікуй пізнього артефакта. Ядро з'єднує первинні реагенти зі справжнім інфузійним обладнанням.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infusion_core",
+        "count": 1
+      },
+      "dependencies": [
+        "000031A28ED55254",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002F4862F04A35",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_infusion_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D8AB8659F49",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000061FC1F90BA10",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000309E92E19C44",
+      "title": "Робоче місце інфузії",
+      "description": [
+        "Виділи для Blood Infuser окрему ділянку, захищену від випадкового вилучення інгредієнтів. Рецепти та витрату крові переглядай у JEI перед запуском партії.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7609D51AD34",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005228FE16A266",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "000047048D62B4AD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ED50CC9BA9E4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003F0C292839AF",
+      "title": "Твердий продукт інфузії",
+      "description": [
+        "Підготуй тверді кровні реагенти й відділи їх від витратного рідкого запасу. Такий буфер допомагає планувати наступні рецепти за кількістю готових деталей.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:hardened_blood_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7609D51AD34",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DF23136A03E",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:hardened_blood_shard",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000054818FD3701A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003C5F185656B2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007AEE86CE075D",
+      "title": "Підписаний темний резервуар",
+      "description": [
+        "Виділи темний резервуар для лабораторного реагенту. Переконайся вручну, що суміжна автоматика не вилучає рідину без потреби.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7609D51AD34",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E49683A25AAE",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F428963B2DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000709962A2B5D6",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "00008CE33C8E1D89",
+      "title": "Переносний запас реагенту",
+      "description": [
+        "Створи переносний запас крові для обслуговування лабораторії. Рідину не слід зберігати в непідписаній системі разом із водою та паливом.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:bucket_blood",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7609D51AD34",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F904FEE28EA7",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:bucket_blood",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012DCD782C0B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000297F2A5A4136",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00005C42330BEF99",
+      "title": "Скриня кровного обслуговування",
+      "description": [
+        "Підготуй спеціалізоване місце для кровних операцій з обладнанням. Перед використанням прочитай відповідний розділ Origins of Darkness про допустимі предмети.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "00007AEE86CE075D",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000011D0EAB1A1DA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_chest",
+          "timer": 40
+        },
+        {
+          "id": "0000047BA685CAE8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000259C38E9699B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D6C92189901E",
+      "title": "Темна енергія самоцвіту",
+      "description": [
+        "Доведи звичайний темний самоцвіт до наступної форми через механіку EvilCraft. Готовий артефакт зберігай як компонент, а не як випадкову нагороду з невідомим призначенням.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_power_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00007AEE86CE075D",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BFB4F8A04216",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4DC29795A1C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003857980D0342",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002B2C19DAFE8A",
+      "title": "Походження темного знання",
+      "description": [
+        "Згодуйте тварині Darkened Apple та дочекайтеся появи Spirit Portal після її загибелі. Киньте в утворений портал звичайну книгу: він перетворить її на Origins of Darkness.",
+        "Збережіть отриманий довідник у лабораторії й ознайомтеся з подальшими кровними процесами. Це нативне світове перетворення, тож підготуйте книгу й безпечне місце для магічного досліду."
+      ],
+      "icon": {
+        "id": "evilcraft:origins_of_darkness",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6C92189901E",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005DDBA4911516",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:origins_of_darkness",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004364DEC7A448",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DA5A23768A93",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000040162C488545",
+      "title": "Камінь темної лабораторії",
+      "description": [
+        "Облаштуй стійке місце для роботи з рідинами та скляною тарою. Чіткі зони зберігання запобігають випадковій витраті темних матеріалів у будівництві.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6C92189901E",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A1ECF50C4EDE",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C65A8D557B49",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B195261CD098",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D78DB0FEEEDD",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BDD5B4433267",
+      "title": "Просочене паливо",
+      "description": [
+        "Оціни, чи виправдана витрата крові на паливний продукт у твоїй котельні. Для різних потреб зберігай звичайне й оброблене паливо в окремих комірках.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_waxed_coal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6C92189901E",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067570EA2DABC",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAD34E311DEC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009D1A49269A6F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    }
+  ]
+}

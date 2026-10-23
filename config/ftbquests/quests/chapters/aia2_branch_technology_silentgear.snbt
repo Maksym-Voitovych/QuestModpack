@@ -1,0 +1,819 @@
+{
+  "id": "0000411FA1DC9508",
+  "filename": "aia2_branch_technology_silentgear",
+  "title": "silentgear — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 62,
+  "icon": {
+    "id": "silentgear:gear_smithing_table",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000076F6C37B0CD6",
+      "title": "Стіл інструментальника",
+      "description": [
+        "Стіл Silent Gear відокремлює роботу з модульним спорядженням від звичайного верстака.",
+        "Матеріальні характеристики деталей визначаються компонентами, яких цей item-task не розрізняє.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "silentgear:gear_smithing_table",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F11221B82F4",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000734A91B15206",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:gear_smithing_table",
+          "timer": 40
+        },
+        {
+          "id": "000055BEA90B8BAE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000577DBB1908B8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000290A3C531816",
+      "title": "Основа для майбутньої модифікації",
+      "description": [
+        "Модульна система має окремі основи покращень, а не тільки головки інструментів.",
+        "Заготуйте прості основи, не намагаючись перескочити до пізніх модифікаторів."
+      ],
+      "icon": {
+        "id": "silentgear:upgrade_base",
+        "count": 1
+      },
+      "dependencies": [
+        "000076F6C37B0CD6",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E37785835297",
+          "type": "item",
+          "item": {
+            "id": "silentgear:upgrade_base",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B68A9C3AEF51",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002D5EF3148E72",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007817A0AEE4B0",
+      "title": "Ручний молоток інструментальника",
+      "description": [
+        "Простий молоток готує майстерню до обробки заготовок.",
+        "Для кожного процесу перевіряйте саме інструментальну вимогу рецепта JEI."
+      ],
+      "icon": {
+        "id": "silentgear:crude_hammer",
+        "count": 1
+      },
+      "dependencies": [
+        "000076F6C37B0CD6",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D8096406D341",
+          "type": "item",
+          "item": {
+            "id": "silentgear:crude_hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000507729FD2F4E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007C7DE01365F0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000084D0C27DFF7B",
+      "title": "Папір для креслень",
+      "description": [
+        "Креслення зберігають форму майбутніх частин інструмента.",
+        "Підготуйте окремий запас, щоб не витрачати останній папір на випадковий шаблон."
+      ],
+      "icon": {
+        "id": "silentgear:blueprint_paper",
+        "count": 1
+      },
+      "dependencies": [
+        "000076F6C37B0CD6",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5558F5A0D82",
+          "type": "item",
+          "item": {
+            "id": "silentgear:blueprint_paper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D41F2F4396D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000038628DBE832B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000027A6A4D68252",
+      "title": "Ремісничий інструмент хлібороба",
+      "description": [
+        "Зберіть мотичку для сталої посівної ділянки біля майстерні.",
+        "Надійне харчування зменшує випадкові зупинки шахтарської роботи."
+      ],
+      "icon": {
+        "id": "silentgear:hoe",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D0C27DFF7B",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006B8085EC84BB",
+          "type": "item",
+          "item": {
+            "id": "silentgear:hoe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014B702A1D0A4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E7C7C5EA4174",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008265840B4867",
+      "title": "Креслення кирки",
+      "description": [
+        "Кирка стане першим прикладом розділення головки й руків'я.",
+        "Звірте допустимі матеріали перед складанням: не кожна деталь має однакові властивості."
+      ],
+      "icon": {
+        "id": "silentgear:pickaxe_blueprint",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D0C27DFF7B",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FFCC36D18801",
+          "type": "item",
+          "item": {
+            "id": "silentgear:pickaxe_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7D4D875CEF9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000078E0B82174DC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DCAC908748E2",
+      "title": "Креслення для земляних робіт",
+      "description": [
+        "Лопата готує територію під більші фабричні майданчики.",
+        "Вибір матеріалу має відповідати частоті використання, а не лише красі металу."
+      ],
+      "icon": {
+        "id": "silentgear:shovel_blueprint",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D0C27DFF7B",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000064E28CF45B4B",
+          "type": "item",
+          "item": {
+            "id": "silentgear:shovel_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E6372A548F46",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004C287744DBC7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000EE83AF2FFE08",
+      "title": "Креслення лісового інструмента",
+      "description": [
+        "Сокира працює в заготівельній гілці майстерні й доповнює шахтарську кирку.",
+        "Збережіть креслення як виробничий інструмент, а не як одноразовий ресурс."
+      ],
+      "icon": {
+        "id": "silentgear:axe_blueprint",
+        "count": 1
+      },
+      "dependencies": [
+        "000084D0C27DFF7B",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004D995C9F52B0",
+          "type": "item",
+          "item": {
+            "id": "silentgear:axe_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001E4C438284D0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DA1478609922",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "000021A305AD578C",
+      "title": "Модульна сокира",
+      "description": [
+        "Підготуйте окремий інструмент для деревної сировини й не зношуйте шахтарську кирку на випадкових роботах.",
+        "Компонентний склад сокири переглядайте в підказці самого мода."
+      ],
+      "icon": {
+        "id": "silentgear:axe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EE83AF2FFE08",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000AF4F46B8247",
+          "type": "item",
+          "item": {
+            "id": "silentgear:axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC4A75C52904",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BA3801FE613C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000085C23505ECEA",
+      "title": "Модульна лопата",
+      "description": [
+        "Лопата прискорює вирівнювання будівельної зони та збір глини.",
+        "Квест не нав'язує пізні матеріали, яких ще немає в поточній епосі."
+      ],
+      "icon": {
+        "id": "silentgear:shovel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DCAC908748E2",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002F9BBC6B545E",
+          "type": "item",
+          "item": {
+            "id": "silentgear:shovel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057E746BC0DE7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000090153E020C92",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B01E2B814861",
+      "title": "Зібрана модульна кирка",
+      "description": [
+        "Складіть базову кирку Silent Gear із придатних доступних частин.",
+        "Квест перевіряє тип інструмента, але не підтверджує конкретний сплав або грейд компонентів."
+      ],
+      "icon": {
+        "id": "silentgear:pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "00008265840B4867",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004E827CCF542",
+          "type": "item",
+          "item": {
+            "id": "silentgear:pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CEFBAB86B9D4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001E5220A7BEFE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000B191733A1904",
+      "title": "Креслення пилки",
+      "description": [
+        "Пилка відкриває окремий клас інструментів для роботи з формою матеріалу.",
+        "Підготуйте креслення до розширення лісової ділянки та будівництва."
+      ],
+      "icon": {
+        "id": "silentgear:saw_blueprint",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EE83AF2FFE08",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000007FC20D33AC6",
+          "type": "item",
+          "item": {
+            "id": "silentgear:saw_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F5817F8BBD1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BE3E04AC270F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000173B91912AB0",
+      "title": "Ремонт замість нової кирки",
+      "description": [
+        "Ремонтний набір допомагає повернути робочий інструмент у похідному таборі.",
+        "Перевірте сумісність запасного матеріалу перед далеким походом."
+      ],
+      "icon": {
+        "id": "silentgear:crude_repair_kit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B01E2B814861",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000020D3DBCCA23D",
+          "type": "item",
+          "item": {
+            "id": "silentgear:crude_repair_kit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036831F2A0450",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000B2455C736E2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000059C6E87980E6",
+      "title": "Гнучке з'єднання деталей",
+      "description": [
+        "Обв'язка пов'язує матеріальну та конструктивну частини інструмента.",
+        "Самі частини без продуманого комплекту не утворюють довговічне спорядження."
+      ],
+      "icon": {
+        "id": "silentgear:binding",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B01E2B814861",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF278C4BAD12",
+          "type": "item",
+          "item": {
+            "id": "silentgear:binding",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D850674D976C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000657DFB07E3C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CC963CEB77AE",
+      "title": "Запасні руків'я",
+      "description": [
+        "Руків'я зберігайте поруч із головками, а не в загальній рудній скрині.",
+        "Item-task визначає форму деталі, не її внутрішній матеріальний склад."
+      ],
+      "icon": {
+        "id": "silentgear:rod",
+        "count": 1
+      },
+      "dependencies": [
+        "000059C6E87980E6",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000091B379324F79",
+          "type": "item",
+          "item": {
+            "id": "silentgear:rod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070584D815B2B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008DC879ACA0F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000752A49670420",
+      "title": "Повний сервісний комплект",
+      "description": [
+        "Підготуйте запас ремонту, деталей та металу для тривалої зміни.",
+        "Завдання не споживає комплект, тому він одразу придатний для походу."
+      ],
+      "icon": {
+        "id": "silentgear:crude_repair_kit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000173B91912AB0",
+        "0000CC963CEB77AE",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BC7ED81BE268",
+          "type": "item",
+          "item": {
+            "id": "silentgear:crude_repair_kit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009145B73C9280",
+          "type": "item",
+          "item": {
+            "id": "silentgear:rod",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000C20D9B77D35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007C25AF7C70CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ACAED9A4EFA7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "version": "0.3.0-alpha",
+  "status": "installable_alpha_static_logic_and_toolchain_checks_passed_full_pack_acceptance_pending",
+  "baseline_backup": "/workspace/aia2-backups/before-expansion-20261022T211506Z/tracked-project.tar.gz",
+  "stabilization_commit": "3a44328",
+  "counts": {
+    "epochs": 48,
+    "quests_total": 2512,
+    "substantive_quests": 2416,
+    "preserved_legacy_manual_goals": 96,
+    "authored_new_quests": 1840,
+    "new_component_quests": 192,
+    "new_final_trials": 48,
+    "chapters": 113,
+    "groups": 5,
+    "required_quests": 1605,
+    "optional_quests": 907,
+    "native_recipes": 283,
+    "atomic_key_formulas": 48,
+    "custom_items": 293,
+    "production_items": 240,
+    "decorative_icon_items": 53,
+    "png_textures": 293,
+    "item_models": 293,
+    "unique_key_silhouettes": 48,
+    "item_rules": 28257,
+    "block_rules": 16003,
+    "native_recipe_rules": 42241,
+    "material_normalizations": 29
+  },
+  "checks": {
+    "node_tests": {
+      "passed": 29,
+      "failed": 0,
+      "skipped": 0
+    },
+    "python_tests": {
+      "passed": 15,
+      "failed": 0,
+      "skipped": 0,
+      "includes_real_rhino_build85": true,
+      "includes_installer_tests": 14
+    },
+    "java_assertions": {
+      "passed": 5237,
+      "failed": 0,
+      "gradle_and_plain_runner": true
+    },
+    "snbt_graph_ids": "passed",
+    "registry_and_native_recipe_shapes": "passed",
+    "legacy_ids_and_dependencies": "preserved",
+    "custom_component_graph": "acyclic",
+    "resources_models_alpha": "passed",
+    "runtime_rebuild": {
+      "status": "passed",
+      "files": 814,
+      "changed": []
+    },
+    "archive_verification_command": "python tools/package_runtime.py",
+    "jar_sha256": "f9851a1a99515663d08fef67153c981994a9f56854a6a66b14818a96f011ee48"
+  },
+  "stages": [
+    {
+      "stage": "A",
+      "result": "startup-created shared containers; no server top-level global assignment; exact Rhino85 regression",
+      "content_delta": {
+        "quests": 0,
+        "recipes": 0,
+        "items": 0,
+        "textures": 0
+      }
+    },
+    {
+      "stage": "B",
+      "result": "42064 exported recipes and registry/source audits; canonical material fixes and targeted quest obtainability repairs",
+      "registry_items": 27964,
+      "registry_blocks": 16003
+    },
+    {
+      "stage": "C",
+      "result": "48 epochs with stage and cross-mod dependency graph, old IDs retained",
+      "substantive_quests": 2416
+    },
+    {
+      "stage": "D",
+      "result": "192 component processes plus preserved91 native recipes and48 atomic key formulas",
+      "native_recipes": 283,
+      "production_items": 240
+    },
+    {
+      "stage": "E",
+      "result": "1840 curated additions,192 component quests,48 final trials,5 groups;96 old manual nodes preserved separately",
+      "total_quests": 2512
+    },
+    {
+      "stage": "F",
+      "result": "293 actual transparent32px PNGs and293 models,48 distinct key silhouettes",
+      "textures": 293
+    },
+    {
+      "stage": "G",
+      "result": "native0.3guard and stage/quest/ledger integration; scoped Robit, dynamic vanilla brewing, AE2 specific paths",
+      "full_pack_runtime": "not_run"
+    },
+    {
+      "stage": "H",
+      "result": "static/content/Rhino/Node/Python/Java checks passed; backup/merge/rollback installer ready",
+      "full_pack_gameplay_and_tps": "not_run"
+    }
+  ],
+  "remaining_acceptance": [
+    "Actual mod event dispatch, optional Mixin binding in full Mekanism/Create/AE2 and other installed mods",
+    "Windows instance merge with its extra52 quests and existing save",
+    "Client resource loading/JEI presentation",
+    "Long-term economy and TPS under actual automation load",
+    "Remaining custom caches, passive Curios/armor, component-only variants and other native bypass categories in KNOWN_LIMITATIONS.uk.txt"
+  ],
+  "installation": "README.uk.md; install_runtime.py backs all originals before replacement; full restart required",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.3.0-alpha.zip"
+}

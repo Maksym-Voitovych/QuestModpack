@@ -1,0 +1,301 @@
+{
+  "id": "0000C36760D5A992",
+  "filename": "aia2_branch_magic_irons_spellbooks",
+  "title": "irons_spellbooks — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 19,
+  "icon": {
+    "id": "irons_spellbooks:arcane_essence",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000A12A16FF8023",
+      "title": "Арканна есенція мага",
+      "description": [
+        "Збери Arcane Essence як базовий матеріал Iron's Spells. Вона не замінює ману Botania або Source Ars Nouveau.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:arcane_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC05C7D057F4",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006D90920CDE01",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F89ACD84DD1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BB42ED3A2980",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004F4CEB0A6EF5",
+      "title": "Чорнило початкових сувоїв",
+      "description": [
+        "Почни з чорнила доступного рівня та порівняй його з вимогами сувоїв. Не використовуй рідкісні чорнила там, де рецепт приймає звичайні.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:common_ink",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A12A16FF8023",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B09F726E2806",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:common_ink",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CACE15270EDF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000B90B9470BC6",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007C2362AD2729",
+      "title": "Стіл для впорядкованих заклять",
+      "description": [
+        "Підготуй Inscription Table у захищеному магічному кабінеті. Перевір правила перенесення сувоїв і місткість книги перед зміною набору заклять.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:inscription_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A12A16FF8023",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089E281C8F11D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:inscription_table",
+          "timer": 40
+        },
+        {
+          "id": "0000118DE7BEE000",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000180A2A122131",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001DDA165D9484",
+      "title": "Тканина арканного захисту",
+      "description": [
+        "Підготуй магічну тканину для окремої гілки обладнання. Не підміняй нею Manaweave: це різні матеріальні стандарти двох магічних систем.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:magic_cloth",
+        "count": 1
+      },
+      "dependencies": [
+        "00004F4CEB0A6EF5",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000055535E5BE847",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:magic_cloth",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001FAFB9527403",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FE6A8270C977",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000047424FF19696",
+      "title": "Залізна книга подорожнього мага",
+      "description": [
+        "Підготуй книгу для незерських експедицій, зважаючи на її доступні слоти. Сам предмет не доводить вивчення конкретного закляття.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:iron_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "00004F4CEB0A6EF5",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2C06E6E6FDE",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:iron_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009935475BF53",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B36AA20844D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FA0724AC0240",
+      "title": "Ковадло арканного обладнання",
+      "description": [
+        "Виділи Arcane Anvil для обслуговування магічного спорядження. Перед витратою матеріалів переглянь допустимі предмети й ціну операції в інтерфейсі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:arcane_anvil",
+        "count": 1
+      },
+      "dependencies": [
+        "00004F4CEB0A6EF5",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008F71F9F14AA4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:arcane_anvil",
+          "timer": 40
+        },
+        {
+          "id": "0000D029B9B8F270",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DAF0FDA3508F",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    }
+  ]
+}

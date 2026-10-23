@@ -8,6 +8,10 @@ import re
 import string
 from collections import Counter
 from pathlib import Path
+try:
+    from item_normalization import normalize, RULES as MATERIAL_REPLACEMENTS
+except ModuleNotFoundError:
+    from tools.item_normalization import normalize, RULES as MATERIAL_REPLACEMENTS
 
 ROOT = Path(__file__).resolve().parents[1]
 PACK = ROOT
@@ -15,7 +19,7 @@ DESIGN = ROOT / 'design'
 
 
 def load(p):
-    return json.loads(Path(p).read_text(encoding='utf-8'))
+    return normalize(json.loads(Path(p).read_text(encoding='utf-8')))
 
 
 def emit(relative, data):
@@ -134,9 +138,15 @@ def reversible_storage_conversion(recipe, targets):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--export-root', type=Path, default=Path('/workspace/aia2-reference/export'))
+    ap.add_argument('--base-only', action='store_true', help='Build the preserved 432-quest baseline without curated expansion')
     args = ap.parse_args()
     export = args.export_root
     epochs = load(DESIGN / 'progression.json')['epochs']
+    resource_manifest = ROOT / 'content/resources/manifest.json'
+    key_assets = {k['id']: k for k in load(resource_manifest)['keys']} if resource_manifest.exists() else {}
+    for epoch in epochs:
+        if epoch['key']['id'] in key_assets:
+            epoch['key']['name_uk'] = key_assets[epoch['key']['id']]['name_uk']
     ops = load(DESIGN / 'op-candidates.json')['candidates']
     items = load(export / 'registries/item.json')
     entities = load(export / 'registries/entity_type.json')
@@ -283,25 +293,33 @@ ServerEvents.recipes(function (event) {
                 raise ValueError(('No verified boss entity', key, entity, matches))
     runtime_epochs = []
     key_init = ['// Requires a full game restart when added/changed.', "StartupEvents.registry('item', function (event) {"]
-    key_init += [f"  event.create('kubejs:aia2_epoch_key_{e['number']:02d}').displayName({json.dumps(e['key']['name_uk'], ensure_ascii=False)}).maxStackSize(1).fireResistant().texture('minecraft:item/tripwire_hook');" for e in epochs]
+    key_init += [f"  event.create('kubejs:aia2_epoch_key_{e['number']:02d}').displayName({json.dumps(e['key']['name_uk'], ensure_ascii=False)}).maxStackSize(1).fireResistant().texture('kubejs:item/aia2/keys/epoch_key_{e['number']:02d}');" for e in epochs]
     key_init += ['});', '']
     emit('kubejs/startup_scripts/aia2/00_epoch_keys.js', '\n'.join(key_init))
     emit('kubejs/client_scripts/aia2/40_key_information.js', '''// KubeJS 2101 RecipeViewerEvents (JEI integration), source-verified.
 var aia2ClientRules = JSON.parse(JsonIO.readString('kubejs/config/aia2_runtime.json'));
+var aia2ComponentInfo = JSON.parse(JsonIO.readString('kubejs/config/aia2_components.json'));
 RecipeViewerEvents.addInformation('item', function (event) {
   aia2ClientRules.epochs.forEach(function (epoch) {
-    var lines = ['Завершіть шість обов’язкових квестів епохи ' + epoch.number + '.',
+    var lines = (epoch.lore || []).concat(['Завершіть основні віхи та підсумкове випробування епохи ' + epoch.number + '.',
       'Біля звичайного верстака: /aia2 key',
-      'Сервер перевіряє умови перед списанням матеріалів.'];
+      'Сервер перевіряє умови перед списанням матеріалів.']);
     Object.keys(epoch.cost).forEach(function (id) { lines.push(epoch.cost[id] + ' × ' + id); });
     lines.push('Ключ потрібен лише для завершення глави та створення наступного ключа.');
     event.add(epoch.key, lines);
   });
+  aia2ComponentInfo.items.forEach(function (component) {
+    event.add(component.id, [component.description_uk, 'Процес: ' + component.process,
+      'Потрібна епоха: ' + component.epoch + '. Склад і порядок дивіться у рецептах JEI.']);
+  });
 });
 ItemEvents.modifyTooltips(function (event) {
   aia2ClientRules.epochs.forEach(function (epoch) {
-    event.add(epoch.key, ['Епоха ' + epoch.number, 'Крафт біля верстака: /aia2 key',
-      'Не використовується у звичайних рецептах.']);
+    event.add(epoch.key, (epoch.lore || []).concat(['Епоха ' + epoch.number, 'Крафт біля верстака: /aia2 key',
+      'Не використовується у звичайних рецептах.']));
+  });
+  aia2ComponentInfo.items.forEach(function (component) {
+    event.add(component.id, [component.description_uk, 'Епоха ' + component.epoch]);
   });
 });
 ''')
@@ -382,6 +400,7 @@ ItemEvents.modifyTooltips(function (event) {
         emit(f'kubejs/data/aia2/advancement/stages/e{n:02d}.json', {'criteria': {'active_stage': {
             'trigger': 'gamestages:has_stage', 'conditions': {'stage': f'aia2_epoch_{n:02d}'}}}})
         runtime_epochs.append({'number': n, 'title': e['title'], 'key': e['key']['id'],
+                               'lore': key_assets.get(e['key']['id'], {}).get('lore_uk', []),
                                'cost': {v['id']: v['count'] for v in e['key']['ingredients'].values()},
                                'milestoneQuestIds': milestone_ids, 'finalQuestId': key_quest['id']})
     emit('config/ftbquests/quests/data.snbt', {'version': 13})
@@ -399,6 +418,13 @@ ItemEvents.modifyTooltips(function (event) {
     exact.update({'chunkloaders:single_chunk_loader': 17, 'chunkloaders:basic_chunk_loader': 17,
                   'chunkloaders:advanced_chunk_loader': 28, 'chunkloaders:ultimate_chunk_loader': 39,
                   'minecraft:crafter': 10})
+    for module in ['blank_module', 'blank_upgrade', 'puller_module_1', 'sender_module_1',
+                   'tag_filter', 'mod_filter', 'detector_module', 'redstone_augment']:
+        item = 'modularrouters:' + module
+        assert item in items, item
+        exact[item] = 22
+    reviewed_families = load(ROOT / 'content/audit/late-gate-corrections.json')['families']
+    family_floors = {entry['id']: entry['proposed_epoch'] for family in reviewed_families for entry in family['entries']}
     # Apply the same policy to BOTH registries. Transformed parts and crops often
     # have no item with the same ID, so an item-only lookup leaves real gaps.
     def stage_for(item_id):
@@ -426,13 +452,56 @@ ItemEvents.modifyTooltips(function (event) {
         if 'creative' in path: stage = 99
         if ns in {'funmod', 'sauce', 'productivelib'}: stage = 100
         if item_id in exact: stage = exact[item_id]
-        return stage
+        return max(stage, family_floors.get(item_id, 0))
     # Keep explicit zeroes too: the native guard distinguishes an intentionally
     # available library/QOL item from a new, unclassified modded item.
+    # A canonical unified material must be available wherever its duplicate was
+    # used earlier; this does not lower machines, chemical reactors or equipment.
+    canonical_stages = {}
+    for old, canonical in MATERIAL_REPLACEMENTS.items():
+        canonical_stages[canonical] = min(stage_for(canonical), canonical_stages.get(canonical, 100))
+    def record_material_need(value, epoch):
+        if isinstance(value, str) and value in MATERIAL_REPLACEMENTS:
+            canonical = MATERIAL_REPLACEMENTS[value]
+            canonical_stages[canonical] = min(epoch, canonical_stages[canonical])
+        elif isinstance(value, dict):
+            for child in value.values(): record_material_need(child, epoch)
+        elif isinstance(value, list):
+            for child in value: record_material_need(child, epoch)
+    for epoch in json.loads((DESIGN/'progression.json').read_text())['epochs']:
+        record_material_need(epoch, epoch['number'])
+    for path in (ROOT/'content/quests').glob('epochs_*.json'):
+        catalog_data = json.loads(path.read_text())
+        for quest in catalog_data if isinstance(catalog_data,list) else catalog_data['quests']:
+            record_material_need(quest, quest['epoch'])
+    exact.update(canonical_stages)
     gates = {item_id: stage_for(item_id) for item_id in items}
     gates.update({e['key']['id']: 0 for e in epochs})
     blocks = load(export / 'registries/block.json')
     block_gates = {block_id: stage_for(block_id) for block_id in blocks}
+    # A transient natural death effect must age/expire even without a placing
+    # player. Its book and darkened-apple item use still require epoch 13.
+    block_gates['evilcraft:spirit_portal'] = 0
+    # Native recipes remain guarded after caching: classify real registered item,
+    # fluid and chemical IDs rather than inferring a serializer's output shape.
+    chemical_ids = set(load(export / 'registries/chemical.json'))
+    fluid_ids = set(load(export / 'registries/fluid.json'))
+    def recipe_stage(value):
+        if isinstance(value, dict):
+            stages = [recipe_stage(v) for v in value.values()]
+            for k, v in value.items():
+                if k in {'id', 'item', 'items', 'chemical', 'fluid'} and isinstance(v, str):
+                    if v in items or v in chemical_ids or v in fluid_ids:
+                        stages.append(stage_for(v))
+            return max(stages, default=0)
+        if isinstance(value, list): return max((recipe_stage(v) for v in value), default=0)
+        return 0
+    recipe_gates = {}
+    for file in (export / 'recipes').rglob('*.json'):
+        rel = file.relative_to(export / 'recipes').with_suffix('')
+        rid = rel.parts[0] + ':' + '/'.join(rel.parts[1:])
+        if rid not in removals: recipe_gates[rid] = recipe_stage(load(file))
+    for entry in recipes: recipe_gates[entry['id']] = max(entry['epoch'], recipe_stage(entry['json']))
     dimensions = {}
     for dim in load(export / 'registries/dimension.json'):
         ns, path = dim.split(':', 1)
@@ -446,6 +515,7 @@ ItemEvents.modifyTooltips(function (event) {
         elif ns != 'minecraft': dimensions[dim] = 100
     emit('kubejs/config/aia2_runtime.json', {'schema': 1, 'epochs': runtime_epochs, 'itemGates': gates,
                                           'blockGates': block_gates,
+                                          'recipeGates': recipe_gates,
                                           'machineGuard': {'mode': 'required'},
                                           'dimensionGates': dimensions, 'gameStagesMirror': True,
                                           'enforceItemPickup': False})
@@ -457,7 +527,8 @@ ItemEvents.modifyTooltips(function (event) {
     emit('kubejs/config/aia2_emc_whitelist.json', emc)
     emit('config/ProjectE/custom_emc.json', {'comment': 'AIA2: only these ordinary materials have EMC. Runtime re-applies a strict whitelist after every remap.',
           'entries': [{'id': k, 'emc': v} for k, v in emc.items()]})
-    report = {'recipes_added': len(recipes), 'source_recipe_ids_removed': len(removals),
+    report = {'scope': 'preserved baseline; see expansion-report.json for the complete compiled system',
+              'recipes_added': len(recipes), 'source_recipe_ids_removed': len(removals),
               'quest_chapters': 48, 'required_quests': 336, 'optional_quests': 96, 'registered_keys': 48,
               'retained_conversion_ids': kept_conversions, 'blocked_missing_templates': blocked,
               'key_forge': 'atomic_server_command_at_crafting_table_not_ungated_grid_recipe',
@@ -467,13 +538,16 @@ ItemEvents.modifyTooltips(function (event) {
               'native_stage_advancements': 48, 'mandatory_stage_tasks': 288, 'automatic_stage_sync_rewards': 48,
               'block_registry_entries': len(block_gates),
               'blocks_without_same_item_id': len(set(blocks) - set(items)),
-              'remaining_gaps': ['The companion guards machine block tiers, vanilla player crafting and the vanilla Crafter; it does not yet gate every native recipe in early machines.',
+              'remaining_gaps': ['Native recipe adapters cover context-bound lookup, Mekanism caches, Create Basin and AE2; other custom caches still need individual integration.',
                                  'Entity/contraption/global processes and capability IO are outside the standard block-entity tick hook.',
                                  'ProjectE 1.1.0 native EMC whitelist hook is source-verified but must be smoke-tested in the pack.',
                                  'Exact component-aware jetpack/seed family restrictions still require runtime inspection.']}
     (ROOT / 'implementation').mkdir(exist_ok=True)
     (ROOT / 'implementation/generation-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps({k: v for k, v in report.items() if k not in {'retained_conversion_ids', 'blocked_missing_templates'}}, ensure_ascii=False, indent=2))
+    if not args.base_only:
+        from build_expansion import apply
+        apply(ROOT)
 
 
 if __name__ == '__main__':

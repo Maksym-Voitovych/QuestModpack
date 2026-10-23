@@ -1,0 +1,476 @@
+{
+  "id": "000040C816B9E53A",
+  "filename": "aia2_branch_technology_integrateddynamics",
+  "title": "integrateddynamics — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 46,
+  "icon": {
+    "id": "integrateddynamics:crystalized_menril_chunk",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000C4E596A72F6A",
+      "title": "Матеріальна основа логіки",
+      "description": [
+        "Виділіть crystalized menril для логічної мережі та не витрачайте весь запас на оформлення стін майстерні.",
+        "Фактична перевірка: 24 × integrateddynamics:crystalized_menril_chunk — мати в інвентарі; 16 × integrateddynamics:cable — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:crystalized_menril_chunk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0B633A4B85F",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000092374D0BFFFA",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069BBD9BDF572",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EF752A092C8D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CE48AE377B5D",
+      "title": "Діагностика всієї мережі",
+      "description": [
+        "Збережіть Network Reader та Machine Reader для діагностики з боку інфраструктури й з боку конкретного механізму.",
+        "Фактична перевірка: 1 × integrateddynamics:part_network_reader — мати в інвентарі; 1 × integrateddynamics:part_machine_reader — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:part_network_reader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000800F748BAD27",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_network_reader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BA07197287C",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_machine_reader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BAF5BC2659A9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000235071AA42BF",
+      "title": "Локальний енергетичний резерв",
+      "description": [
+        "Поставте Energy Battery біля віддаленого логічного вузла, щоб сервіс мережі не залежав від розібраної магістралі.",
+        "Фактична перевірка: оглянути встановлений integrateddynamics:energy_battery протягом 40 ticks; 1 × integratedtunnels:part_importer_energy — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "integrateddynamics:energy_battery",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CE48AE377B5D",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FEED73206B64",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:energy_battery",
+          "timer": 40
+        },
+        {
+          "id": "0000F81AE16D6DF0",
+          "type": "item",
+          "item": {
+            "id": "integratedtunnels:part_importer_energy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2AF11FF20CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D5722E9789D3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C0E91CDB7E23",
+      "title": "Програмування біля споживача",
+      "description": [
+        "Збережіть Portable Logic Programmer для обслуговування віддалених вузлів, де повертатися до центральної майстерні незручно.",
+        "Фактична перевірка: 1 × integrateddynamics:portable_logic_programmer — мати в інвентарі; 8 × integrateddynamics:crystalized_menril_chunk — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:portable_logic_programmer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C4E596A72F6A",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001AE8AF6C2F79",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:portable_logic_programmer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009EB88872869B",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006CBCEAD693A4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001C200C7A7CB4",
+      "title": "Вимірювання й фізична зупинка",
+      "description": [
+        "Поєднайте redstone reader та XNet proxy як інструменти двох незалежних систем; перевірку конкретної логічної програми виконайте на тестовому споживачі.",
+        "Фактична перевірка: 1 × integrateddynamics:part_redstone_reader — мати в інвентарі; 1 × xnet:redstone_proxy — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:part_redstone_reader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BBEE7FF9DDDD",
+        "0000235071AA42BF",
+        "0000ED3CA8B3094C",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000536B3B58B711",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_redstone_reader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B2AE6DAE0B37",
+          "type": "item",
+          "item": {
+            "id": "xnet:redstone_proxy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096E0645052A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003A2FBD7FC008",
+      "title": "Логіка та дух сховища",
+      "description": [
+        "Збережіть inventory reader, окультну матрицю та менріл як підсумок двох способів керування запасами.",
+        "Фактична перевірка: 1 × integrateddynamics:part_inventory_reader — мати в інвентарі; 1 × occultism:dimensional_matrix — мати в інвентарі; 8 × integrateddynamics:crystalized_menril_chunk — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:part_inventory_reader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000135AC8968E2B",
+        "0000235071AA42BF",
+        "0000ED3CA8B3094C",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057D5C1C7B49F",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_inventory_reader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030CE9BA375E5",
+          "type": "item",
+          "item": {
+            "id": "occultism:dimensional_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F8D480BF7FF",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015CA01CB14B8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008CFF16566535",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F954D4CB14C7",
+      "title": "Облік залишку перед запуском",
+      "description": [
+        "Підготуйте Inventory Reader та Redstone Writer для схеми, яка відстежує наявність ресурсу перед увімкненням споживача.",
+        "Фактична перевірка: 2 × integrateddynamics:part_inventory_reader — мати в інвентарі; 1 × integrateddynamics:part_redstone_writer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:part_inventory_reader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C0E91CDB7E23",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E1310D438992",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_inventory_reader",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000667991979177",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_redstone_writer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A299BC5BC9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005B2B0C2A6628",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000056629EA20DF3",
+      "title": "Рідинний контрольний канал",
+      "description": [
+        "Підготуйте Fluid Reader та рідинний інтерфейс для розділення вимірювання запасу й фактичного переміщення рідини.",
+        "Фактична перевірка: 1 × integrateddynamics:part_fluid_reader — мати в інвентарі; 1 × integratedtunnels:part_interface_fluid — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "integrateddynamics:part_fluid_reader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F954D4CB14C7",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009BB3A9B3D833",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_fluid_reader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005192DC95982",
+          "type": "item",
+          "item": {
+            "id": "integratedtunnels:part_interface_fluid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5B7C49CF3F2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BFFADE498C30",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    }
+  ]
+}

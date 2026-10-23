@@ -1,0 +1,1149 @@
+{
+  "id": "00003E2D6ABE7545",
+  "filename": "aia2_branch_technology_advanced_ae",
+  "title": "advanced_ae — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 29,
+  "icon": {
+    "id": "advanced_ae:quantum_alloy",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00006B75CC91F9B6",
+      "title": "Квантовий сплав AE",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Створіть партію сплаву для квантових структур і відокремте її від звичайних процесорів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_alloy",
+        "count": 1
+      },
+      "dependencies": [
+        "000054B10333CEF7",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2FD725F115E",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_alloy",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027913570D9AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E6ACA411832F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A3095561BA0D",
+      "title": "Реакційна камера AdvancedAE",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Підготуйте камеру виробництва квантових матеріалів у межах дозволеної гілки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "advanced_ae:reaction_chamber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E72FF33AAC98",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003E970D68F7F6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "advanced_ae:reaction_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00001A2446E6565C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E851F95EBD7C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000754B239B77DE",
+      "title": "Пластини квантового каркаса",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Підготуйте плити наступного складального рівня без витрачання всього запасу сплаву.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_alloy_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "00006B75CC91F9B6",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000088DCB1480B8F",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_alloy_plate",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000118E27D6EB62",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000CA12E1F3804",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A4FC2B4F4231",
+      "title": "Квантове ядро керування",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Завершіть центральний компонент квантового обладнання.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A3095561BA0D",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B32427F4E7E3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "advanced_ae:quantum_core",
+          "timer": 40
+        },
+        {
+          "id": "000032821F993E97",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004691DBD9B80A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AE863428362C",
+      "title": "Паралельний обчислювач",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Підготуйте спеціалізований вузол паралельної роботи й звірте його підключення з документацією мода.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_multi_threader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A4FC2B4F4231",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007CCC88BD6C03",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "advanced_ae:quantum_multi_threader",
+          "timer": 40
+        },
+        {
+          "id": "0000C2B15D0E011E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000410099FD1610",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E316558C90A9",
+      "title": "Квантовий відбиток",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Створіть інструмент формування процесора перед замовленням його серійної партії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_processor_press",
+        "count": 1
+      },
+      "dependencies": [
+        "0000754B239B77DE",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E1ADCBD2E1A",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor_press",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000377FB3F819A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BF6BCBDDDE46",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00000481889534C4",
+      "title": "Прискорювач складальної мережі",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Додайте окремий компонент прискорення замість безконтрольного дублювання всіх машин.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_accelerator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE863428362C",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000D079EF234DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "advanced_ae:quantum_accelerator",
+          "timer": 40
+        },
+        {
+          "id": "00000D005AE228BF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CE0F2A3363A2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008C97E506B986",
+      "title": "Друкований квантовий процесор",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Перевірте проміжний результат друку; відбиток і готова схема виконують різні ролі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:printed_quantum_processor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E316558C90A9",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000037A0D0A1B068",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:printed_quantum_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C81AB6AD29C8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007640CB992E90",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001DA344D27E25",
+      "title": "Завершений квантовий процесор",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Завершіть складання процесора після окремої підготовки друкованого компонента.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_processor",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C97E506B986",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000028F6A0402F80",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009F7ED329563E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007B337265A12F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000050160C30BEF5",
+      "title": "Монітор фактичної пропускної здатності",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Підготуйте монітор та його інструмент налаштування, щоб спостерігати мережу у світі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:throughput_monitor",
+        "count": 1
+      },
+      "dependencies": [
+        "00000481889534C4",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000093B4133EC0BE",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:throughput_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000307134A989C8",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:throughput_monitor_configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D8B21CA90D89",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000099ECCF41C8F8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007525E15AF859",
+      "title": "Кодувальник складних шаблонів",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Відокремте підготовку шаблону від виконання замовлень у квантовому складальнику.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:adv_pattern_encoder",
+        "count": 1
+      },
+      "dependencies": [
+        "000050160C30BEF5",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001AD4E24D7841",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:adv_pattern_encoder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001A952E9B5F45",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:adv_processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001A97DFEC64F0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002E563077D35E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D91750604123",
+      "title": "Складальна квантова структура",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Зберіть конструкційні та обчислювальні елементи за нативним рецептом AdvancedAE.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_structure",
+        "count": 1
+      },
+      "dependencies": [
+        "00001DA344D27E25",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DD0934458A3F",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_structure",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000043EBB253FD71",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FBB809345E79",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000043DBA22B634A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A8D5A42F9ABA",
+      "title": "Постачальник розширених шаблонів",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Підготуйте місце для шаблонів і покращення місткості як різні складальні позиції.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:adv_pattern_provider",
+        "count": 1
+      },
+      "dependencies": [
+        "00007525E15AF859",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BF059A2C52A1",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:adv_pattern_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C7ED6175D64E",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:adv_pattern_provider_capacity_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004511460F43E2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000770D09DEE0D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C492CE375470",
+      "title": "Квантовий складальник",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Підготуйте фінальний складальний вузол перед підключенням його до замовлень.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D91750604123",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000037B1FD874BAC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "advanced_ae:quantum_crafter",
+          "timer": 40
+        },
+        {
+          "id": "000017A71C6CE0CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000071BBE801445F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005CE046854159",
+      "title": "Керування квантовим виробництвом",
+      "description": [
+        "Квантовий складальник AE потребує попередньо підготовленої мережі шаблонів і матеріалів.",
+        "Зберіть термінал, виконавець і контрольну схему; наявність цих предметів не вимірює чергу виконаних замовлень.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_crafter_terminal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C492CE375470",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000055BAA8387B0",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_crafter_terminal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008566AFC8B8C3",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000882F8948B3A3",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004F9CC78D94D6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005E8C6907481D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006BEC395602D0",
+      "title": "Межа й автоматичний запас",
+      "description": [
+        "Великий автокрафт має відокремлювати зберігання, шаблони та контроль пропускної здатності.",
+        "Зберіть контрольований експорт і картку запасу, а пороги встановіть у мережі перед запуском.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:stock_export_bus_part",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A8D5A42F9ABA",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F22E7DED380",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:stock_export_bus_part",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000665D3CA994CA",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:auto_stock_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D0AA55C266B3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007E21D13B13B4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004F8DBA5E8F88",
+      "title": "Дві школи квантового контролю",
+      "description": [
+        "Фінальна логістика розділяє запити на великі партії звичайної сировини та унікальні компоненти, які не мають EMC.",
+        "Зберіть два реальні керувальні сімейства й старший алхімічний матеріал.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_processor",
+        "count": 1
+      },
+      "dependencies": [
+        "00007A6AD8A0C2AE",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C976538955E0",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020B459099077",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D43A789D065D",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005556B6C9360D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BAD05F5BC8A4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00006204109A99F1",
+      "title": "Квантове замовлення каталізатора",
+      "description": [
+        "Фінальна логістика розділяє запити на великі партії звичайної сировини та унікальні компоненти, які не мають EMC.",
+        "Підготуйте старший цифровий складальник і фізичний фінальний каталізатор як різні частини замовлення.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000034185E07DC8",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096D67B853975",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5F988B429FC",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2169D42F182",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AF3C178C6C8D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A1E3B2A438D8",
+      "title": "Паспорт фізичного фінального замовлення",
+      "description": [
+        "Фінальна логістика розділяє запити на великі партії звичайної сировини та унікальні компоненти, які не мають EMC.",
+        "Завершіть комплект складальника, каталізатора, есенції й рідкісного металу без конверсії їх у EMC.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F84BD6C7F3B",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006BD13CA53E02",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002318AF6D5F29",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008152F5587E33",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B2168A4F6E3",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:unobtainium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C60B39A8F92",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000270E1E5A4B60",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000A23D653D10BC",
+      "title": "Нескінченна квантова майстерня",
+      "description": [
+        "Фінальна промислова перевірка збирає апаратні результати різних шкіл, не підміняючи одну фабрику іншою.",
+        "Підготуйте цифровий складальник і фізичний фінальний метал як різні внески виробництва.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "00003F666D12EF6B",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000079E9E0EF513D",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAD366686164",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000041682FC70E87",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000024CFF26D6B2F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    }
+  ]
+}

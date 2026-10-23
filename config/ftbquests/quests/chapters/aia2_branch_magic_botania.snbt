@@ -1,0 +1,5548 @@
+{
+  "id": "0000A83DDD3C3BA7",
+  "filename": "aia2_branch_magic_botania",
+  "title": "Botania — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 12,
+  "icon": {
+    "id": "botania:apothecary_default",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000014F341DCC319",
+      "title": "Квіткова чаша з технічною оправою",
+      "description": [
+        "У зміненій формулі чаші потрібні мідні листи попередньої епохи.",
+        "Поставте її біля води та залиште зручний підхід для ручної роботи.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:apothecary_default",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E9A0B087CF49",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:apothecary_default",
+          "timer": 40
+        },
+        {
+          "id": "0000DC10BEC8B3A2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000742145925E4C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000A0AD250F22B",
+      "title": "Біла основа першої квітки",
+      "description": [
+        "Білі пелюстки забезпечують старт Pure Daisy та ранніх квіткових рецептів.",
+        "Збережіть частину матеріалу для відновлення квіткової ділянки."
+      ],
+      "icon": {
+        "id": "botania:white_petal",
+        "count": 1
+      },
+      "dependencies": [
+        "000014F341DCC319",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000079A4FDB59F96",
+          "type": "item",
+          "item": {
+            "id": "botania:white_petal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000217672B8DC2F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000000E72012B365",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B4484FA43829",
+      "title": "Книга механік Botania",
+      "description": [
+        "Lexica Botania пояснює механіки, які інвентарний квест не здатен виміряти.",
+        "Тримайте книгу біля манозони та перевіряйте обмеження кожної нової квітки."
+      ],
+      "icon": {
+        "id": "botania:lexicon",
+        "count": 1
+      },
+      "dependencies": [
+        "000014F341DCC319",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D580DBA26EC0",
+          "type": "item",
+          "item": {
+            "id": "botania:lexicon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5950A0527A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000031F64199F78C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00000F8C009F89DA",
+      "title": "Квітка перетворення",
+      "description": [
+        "Pure Daisy відкриває перехід від звичайних природних блоків до живих матеріалів.",
+        "Залиште навколо квітки вільні позиції для перетворюваних блоків.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:pure_daisy",
+        "count": 1
+      },
+      "dependencies": [
+        "00000A0AD250F22B",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000034ADD51E102C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:pure_daisy",
+          "timer": 40
+        },
+        {
+          "id": "0000884F78156C3A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000884AD022C8BE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000026FCC992772",
+      "title": "Деревина магічної мережі",
+      "description": [
+        "Жива деревина поєднує роботу Pure Daisy з майбутньою передачею мани.",
+        "Не переробляйте всі колоди в декоративні дошки до виготовлення основних вузлів."
+      ],
+      "icon": {
+        "id": "botania:livingwood_log",
+        "count": 1
+      },
+      "dependencies": [
+        "00000F8C009F89DA",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4784185BE9C",
+          "type": "item",
+          "item": {
+            "id": "botania:livingwood_log",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A182DF6E663",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000070D9EBE2F426",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000051CCAEDD9207",
+      "title": "Камінь, що пройшов природну обробку",
+      "description": [
+        "Живий камінь стане матеріалом басейну, рунічного вівтаря та жаростійкої інфраструктури.",
+        "Зберігайте його окремо від звичайного будівельного каменю."
+      ],
+      "icon": {
+        "id": "botania:livingrock",
+        "count": 1
+      },
+      "dependencies": [
+        "00000F8C009F89DA",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004D7D2B787FD",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A777E28A6029",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008AEE957683A2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000003A1C4D5FA9",
+      "title": "Маногенерація з контрольованим паливом",
+      "description": [
+        "Endoflame дозволяє поєднати паливну дисципліну майстерні з першою генерацією мани.",
+        "Подавайте паливо обережно та тримайте зайві предмети поза робочою ділянкою."
+      ],
+      "icon": {
+        "id": "botania:endoflame",
+        "count": 1
+      },
+      "dependencies": [
+        "000014F341DCC319",
+        "000051CCAEDD9207",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005B3EF9C2C693",
+          "type": "item",
+          "item": {
+            "id": "botania:endoflame",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCDFCD68ED1B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C0107F5D5BA8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008D49A0A6319C",
+      "title": "Жезл лісового техніка",
+      "description": [
+        "Жезл Botania потрібен для налаштування зв'язків магічної мережі.",
+        "Після встановлення вузлів перевіряйте їхні налаштування жезлом, а не лише зовнішнім виглядом."
+      ],
+      "icon": {
+        "id": "botania:twig_wand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000026FCC992772",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006F186A1F363A",
+          "type": "item",
+          "item": {
+            "id": "botania:twig_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015C1531DC018",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003DC7ADAFDED2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001222DF13C753",
+      "title": "Спрямований потік мани",
+      "description": [
+        "Розподілювач передає ману до вибраної цілі, але сам не створює її.",
+        "Перевірте напрям і зв'язок жезлом перед довгою серією виробництва.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:mana_spreader",
+        "count": 1
+      },
+      "dependencies": [
+        "00008D49A0A6319C",
+        "0000003A1C4D5FA9",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CE5D27656A7B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_spreader",
+          "timer": 40
+        },
+        {
+          "id": "0000FC630FD79FDC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000993CB1286C43",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000836589644D2E",
+      "title": "Резервуар магічного ресурсу",
+      "description": [
+        "Басейн відділяє генерацію мани від її витрат у рецептах.",
+        "Не залишайте виробничу схему без запасу, якщо плануєте обробляти метал великими партіями.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:mana_pool",
+        "count": 1
+      },
+      "dependencies": [
+        "000051CCAEDD9207",
+        "00001222DF13C753",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000024EB88BED6AC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_pool",
+          "timer": 40
+        },
+        {
+          "id": "0000875E07A85D32",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000BDC89138668D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001D9E7A6F19ED",
+      "title": "Дослід із водною квіткою",
+      "description": [
+        "Hydroangeas дає альтернативний дослід із генераційною квіткою, пов'язаною з водою.",
+        "Прочитайте її обмеження в Lexica перед тим, як очікувати безумовно постійну генерацію."
+      ],
+      "icon": {
+        "id": "botania:hydroangeas",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B4484FA43829",
+        "0000836589644D2E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006E732D51CE7C",
+          "type": "item",
+          "item": {
+            "id": "botania:hydroangeas",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C3EC2C8A8D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005960DCF5DE42",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001FDFB4006EE8",
+      "title": "Порошок для ненагрітої латуні",
+      "description": [
+        "Мана-порошок стане магічною складовою альтернативного латунного процесу десятого етапу.",
+        "Збережіть його в окремій скрині з позначкою майбутнього сплаву."
+      ],
+      "icon": {
+        "id": "botania:mana_powder",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000076211228FEBE",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F45461204E7A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008680D1093E77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002AAD4E55C3B9",
+      "title": "Кристалічний резерв",
+      "description": [
+        "Мана-алмаз дорожчий за звичайну залізну заготовку, тому потребує планування витрат.",
+        "Підготуйте невеликий резерв для наступних магічних рецептів."
+      ],
+      "icon": {
+        "id": "botania:mana_diamond",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C1E46B21CC61",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_diamond",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A9F8C33B788B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003237AF19A474",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    },
+    {
+      "id": "000041030EA7AB72",
+      "title": "Огляд стану виробництва",
+      "description": [
+        "Manastar допомагає спостерігати за поведінкою маномережі під час випробувань.",
+        "Використовуйте її разом із перевіркою налаштувань жезлом, а не як заміну правильної схеми."
+      ],
+      "icon": {
+        "id": "botania:manastar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "00008D49A0A6319C",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008BD104A21E00",
+          "type": "item",
+          "item": {
+            "id": "botania:manastar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000506F3F0C6323",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000002C535AD046E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 6.0
+    },
+    {
+      "id": "00009258DED19367",
+      "title": "Метал для парової магії",
+      "description": [
+        "Manasteel є першим металевим продуктом базової маномережі та потрібен майбутньому котлу.",
+        "Підготуйте запас металу після налагодження генерації, а не до її запуску."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000900ABBEF5E7B",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6F292CF9BAB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000076B4CD12D634",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 8.0
+    },
+    {
+      "id": "000096D84721651E",
+      "title": "Поживний результат природного циклу",
+      "description": [
+        "Магія може підтримати побут, але її ресурс потрібен і прогресійним сплавам.",
+        "Приготуйте лише невелику пробну партію замість витрати всього запасу басейну."
+      ],
+      "icon": {
+        "id": "botania:mana_cookie",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "000045DAA2C50894",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0DB30B30CE2",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_cookie",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5E20C8CEF8E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004C2438EEC96B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000A3347C3DF2D3",
+      "title": "Просторовий реагент басейну",
+      "description": [
+        "Мана-перлина стане складовою рунічного вівтаря дев'ятої епохи.",
+        "Зберігайте її поруч із іншими реагентами басейну, не віддаючи всю партію на побутові предмети."
+      ],
+      "icon": {
+        "id": "botania:mana_pearl",
+        "count": 1
+      },
+      "dependencies": [
+        "0000836589644D2E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E721654DBFB3",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pearl",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012783B3A8238",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EDCA844C31F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 12.0
+    },
+    {
+      "id": "00008604E24A24CF",
+      "title": "Основа оптичного налаштування",
+      "description": [
+        "Базова лінза відкриває точніше налаштування передачі мани.",
+        "Не встановлюйте складні ефекти, доки не розумієте роботу звичайного променя."
+      ],
+      "icon": {
+        "id": "botania:lens_normal",
+        "count": 1
+      },
+      "dependencies": [
+        "00001222DF13C753",
+        "00009258DED19367",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE0910A09F04",
+          "type": "item",
+          "item": {
+            "id": "botania:lens_normal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A08AA6DB023C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A5597D36740C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009323D5575462",
+      "title": "Бережний збір волокон",
+      "description": [
+        "Манасталеві ножиці створюють окремий інструмент для відновлюваної вовняної гілки.",
+        "Збережіть звичайні ножиці як резерв на час обслуговування магічного спорядження."
+      ],
+      "icon": {
+        "id": "botania:manasteel_shears",
+        "count": 1
+      },
+      "dependencies": [
+        "00009258DED19367",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000094AB769D4F5A",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_shears",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009BCBB91ADE58",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000190FCC40FC9D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DB9EF4484558",
+      "title": "Переносний буфер",
+      "description": [
+        "Таблетка зберігає ману для спорядження й переносних робіт.",
+        "Item-task перевіряє предмет, але не його поточний запас мани."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "00009258DED19367",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007F7CAD4443AC",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000593CC3101533",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB6CCBB3F62E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000F31E127CA00D",
+      "title": "Робоче місце квіткового майстра",
+      "description": [
+        "Міхи додають окремий інструмент взаємодії з вузлами Botania.",
+        "Звірте конкретне застосування в Lexica Botania, перш ніж вбудовувати їх у схему.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:bellows",
+        "count": 1
+      },
+      "dependencies": [
+        "0000026FCC992772",
+        "00009258DED19367",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E9B2F3C501BA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:bellows",
+          "timer": 40
+        },
+        {
+          "id": "0000A3A05DB82E17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C22A91BC4BA9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 6.0
+    },
+    {
+      "id": "000033CAA8408DAE",
+      "title": "Готовність манодвора",
+      "description": [
+        "Підсумуйте інфраструктуру передачі, накопичення, обробки металу та природного фокуса.",
+        "Це матеріальний підсумок гілок, а не автоматичне вимірювання стабільності мережі."
+      ],
+      "icon": {
+        "id": "botania:mana_spreader",
+        "count": 1
+      },
+      "dependencies": [
+        "00008604E24A24CF",
+        "00009258DED19367",
+        "0000FCA411B4AC9E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004659465F2943",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_spreader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D95B1EAA5C11",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF7402BEC50D",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005CA3DED00DB4",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A00DA6CEAD3D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004616966183B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CE15CF8D8980",
+      "title": "Лісова підтримка мани",
+      "description": [
+        "Сокира Botania обслуговує ту саму деревну економіку, яка годує Endoflame.",
+        "Не виносьте весь переносний запас мани на другорядну заготівлю."
+      ],
+      "icon": {
+        "id": "botania:manasteel_axe",
+        "count": 1
+      },
+      "dependencies": [
+        "00009258DED19367",
+        "0000DB9EF4484558",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A771E7F57080",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007120C4ECC6AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002DDFA11AB168",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FF6A1556E794",
+      "title": "Інструмент маномайстерні",
+      "description": [
+        "Манасталева кирка повертає результат магічної переробки в ресурсну гілку.",
+        "Порівняйте її відновлення та витрати з модульною киркою попереднього етапу."
+      ],
+      "icon": {
+        "id": "botania:manasteel_pick",
+        "count": 1
+      },
+      "dependencies": [
+        "00009258DED19367",
+        "0000DB9EF4484558",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF07DA7FC435",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_pick",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D382BB1169A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000075D3370AFC18",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 4.0
+    },
+    {
+      "id": "000044AEA8188937",
+      "title": "Котельна та манодвір",
+      "description": [
+        "Підтримуйте два різні матеріальні джерела для відновлення зміненого котла.",
+        "Магічна гілка не завершується після відкриття першої парової машини."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00001C764F53A5C3",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005966A0083D89",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000058009539DE9B",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_plate",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EBD79C8BD473",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000B6CB73A9715",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002AD4AD7833F4",
+      "title": "Земля, вода й аурний метал",
+      "description": [
+        "Підсумуйте обидві магічні школи та інженерну основу одним ресурсним комплектом.",
+        "Він підтверджує, що майстерня не звела весь розвиток до одного мода."
+      ],
+      "icon": {
+        "id": "botania:rune_earth",
+        "count": 1
+      },
+      "dependencies": [
+        "000045BC75E3A93F",
+        "00003BD7FC863CE2",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D53887906F74",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E73E9A9A7F6",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005947E52091B2",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000898E43EAF984",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:component_iron",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D20B63E1B1E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006102FA00F370",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000DB60FF0C4AB2",
+      "title": "Рунічний вівтар на металевій основі",
+      "description": [
+        "Змінена формула вимагає залізного інженерного компонента, а не лише матеріалів Botania.",
+        "Підготуйте окремий маршрут подачі мани до вівтаря.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "botania:runic_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000639761D74791",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000622628A7772D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:runic_altar",
+          "timer": 40
+        },
+        {
+          "id": "000084E34F33726B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A7594E371CC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000E60E9D0FFEFE",
+      "title": "Манопостачання рунічного двору",
+      "description": [
+        "Рунічний осередок потребує власного доступного запасу та передачі мани.",
+        "Це комплект вузлів, а не вимірювання фактичного потоку під час ритуалу."
+      ],
+      "icon": {
+        "id": "botania:mana_spreader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DB60FF0C4AB2",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068A897891738",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_spreader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D41340BEA6C8",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B58314F27ED9",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000080E5F61B2DFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F2F124E35115",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "00002D11BD851502",
+      "title": "Руна повітря",
+      "description": [
+        "Повітряна руна завершує доступний ранній набір стихій.",
+        "Вогняна руна має інший ресурсний поріг і не є обов'язковою тут."
+      ],
+      "icon": {
+        "id": "botania:rune_air",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E60E9D0FFEFE",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000082CAD2C920E",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_air",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004FED68238A80",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005A0B50ADF979",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A1C61AF01A29",
+      "title": "Руна води",
+      "description": [
+        "Руна води стане магічною складовою генератора Create Addition.",
+        "Залиште запас для технічної гілки, а не витрачайте всі руни на нові квіти."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E60E9D0FFEFE",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000001D893CC5B20",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009151E58FAF3F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007546739B47A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D2DE8A1B240C",
+      "title": "Руна землі",
+      "description": [
+        "Земна руна розширює ритуальну палітру без вимоги пекельного матеріалу.",
+        "Звіряйте набір інгредієнтів для кожної руни окремо."
+      ],
+      "icon": {
+        "id": "botania:rune_earth",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E60E9D0FFEFE",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000302E6B26644D",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003442E88831CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009A1E8D95EA92",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00003DAF0BC0D564",
+      "title": "Три стихії для гібридних рецептів",
+      "description": [
+        "Розділіть руни на виробничі партії, щоб наступний рецепт не зупинився через одну відсутню стихію.",
+        "Це окремий комплект для міжмодових потреб, а не ще один випадковий кольоровий набір."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A1C61AF01A29",
+        "0000D2DE8A1B240C",
+        "00002D11BD851502",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F166237ABBD7",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004568DA9116F6",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000085E89449E8BC",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_air",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE9B15262E30",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004FA82CDCFFD0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000B7E2E3555F3C",
+      "title": "Концентрований символ мани",
+      "description": [
+        "Руна мани зосереджує результат манасталевої та рунічної гілок.",
+        "Не запускайте її серію без запасу базового металу для ремонту мережі."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A1C61AF01A29",
+        "0000D2DE8A1B240C",
+        "00002D11BD851502",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A4513C2F4331",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005845D0419D9D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000069AE271A718E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000BA0A797AD04B",
+      "title": "Рунична ізоляція електростанції",
+      "description": [
+        "Відкладіть магічний та технічний комплект для відновлення гібридного генератора.",
+        "Технологічний перехід не скасовує потребу в рунічній і писарській майстернях."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "00000B1229DEAB9F",
+        "0000494D4B141609",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027B9C87558B4",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D176A1354BE",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000265F43DC38FB",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012F0EED20D19",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000B4E8D9AB7CA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000256C743AD2F1",
+      "title": "Руна четвертої стихії",
+      "description": [
+        "Виконай вогняний рунічний рецепт Botania із законно здобутими незерськими матеріалами. Залиш запас основних стихій для технічних корпусів наступної епохи.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:rune_fire",
+        "count": 1
+      },
+      "dependencies": [
+        "0000054DC7FA5D7B",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B301824C1639",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2FFCE5684DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000034E0A4737BEA",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "00006B1993FF4C7B",
+      "title": "Каталізатор наступного обміну",
+      "description": [
+        "Підготуй Conjuration Catalyst для сумісних рецептів у Mana Pool. Перед дорогою операцією перевір точний результат і витрати, не припускаючи подвоєння всіх ресурсів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:conjuration_catalyst",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F765637C48F",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A093D2289DEE",
+          "type": "item",
+          "item": {
+            "id": "botania:conjuration_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AAAF5C096795",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F57968400E3F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000D02004A9D435",
+      "title": "Платформа земного сплаву",
+      "description": [
+        "Розмісти Terrestrial Agglomeration Plate згідно з Lexica Botania. Перед дорогим рецептом перевір основу та шлях подачі мани.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "botania:terra_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000150B61D65F37",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:terra_plate",
+          "timer": 40
+        },
+        {
+          "id": "00000E36B2730138",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000549774AA3610",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000E39C40D1A089",
+      "title": "Ізоляція манового резерву",
+      "description": [
+        "Підготуй різні модифікатори Sparks і прочитай напрям кожного. Випробуй одну зміну за раз, щоб не загубити причину зупинки магічної мережі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:spark_upgrade_isolated",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F765637C48F",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001173A9F0D4D9",
+          "type": "item",
+          "item": {
+            "id": "botania:spark_upgrade_isolated",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035017B569EB5",
+          "type": "item",
+          "item": {
+            "id": "botania:spark_upgrade_recessive",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E453D8CAD383",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CD1C11B0BAF1",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000412A49D10C2C",
+      "title": "Перший земний метал",
+      "description": [
+        "Отримай Terrasteel як результат окремої магічної металургії. Не витрачай перший злиток на випадкову деталь, не перевіривши подальший шлях до ельфів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:terrasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D02004A9D435",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000ACF982FD911",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D39B91AB787B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000CA7DB012762",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000D391FBE7A1C3",
+      "title": "Іскра на магічному резервуарі",
+      "description": [
+        "Підготуй Sparks для сумісних манових вузлів. Наявність іскор не підтверджує зв'язок чи достатній запас мани.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:spark",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D02004A9D435",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BF85D4E6828E",
+          "type": "item",
+          "item": {
+            "id": "botania:spark",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD0B081FF841",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000034149CFDFCB2",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000D4E4CE5E05BE",
+      "title": "Догляд за ельфійськими рослинами",
+      "description": [
+        "Підготуй Elementium Shears як спеціалізований інструмент. Випробуй їх на доступній рослинності та прочитай обмеження особливих властивостей.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elementium_shears",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D02004A9D435",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F280212CDCF5",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_shears",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004EAED56D69CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000F68CB19B0AD",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000127B1EF5C9E6",
+      "title": "Деревина по той бік обміну",
+      "description": [
+        "Отримай Dreamwood через доступний ельфійський маршрут. Збережи зразок як окремий матеріал, перш ніж перетворювати весь запас на похідні блоки.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:dreamwood",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D391FBE7A1C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0CEF1465134",
+          "type": "item",
+          "item": {
+            "id": "botania:dreamwood",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ADC9615C2782",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E87EB36EC1F8",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000373C18A3A95C",
+      "title": "Робочий інструмент нового металу",
+      "description": [
+        "Підготуй Elementium Pickaxe для порівняння з попереднім інструментом. Ремонт і використання мани плануй до довгого підземного маршруту.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elementium_pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D4E4CE5E05BE",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C6F5F7F2738C",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025F56A6421BE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007EF03A50E5F7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.0
+    },
+    {
+      "id": "000039B9ECF83DAC",
+      "title": "Світна частина рамки",
+      "description": [
+        "Підготуй Glimmering Livingwood для магічної конструкції. Світний варіант має точний ID і не завжди замінюється звичайним Livingwood.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:glimmering_livingwood",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D391FBE7A1C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A3E2EF4D03D",
+          "type": "item",
+          "item": {
+            "id": "botania:glimmering_livingwood",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB6755D92DBB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D2150CBD68C0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "00005796C8D25E86",
+      "title": "Захист на дорогому сплаві",
+      "description": [
+        "Підготуй Terrasteel Helmet як окрему ціль обладнання. Це витратний вибір, тому обов'язкові реагенти порталу слід зберегти заздалегідь.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:terrasteel_helmet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D4E4CE5E05BE",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006D566F9BB22E",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC22B0664AF5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000032D5067B3B93",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000BBF29772268A",
+      "title": "Живлення ельфійського обміну",
+      "description": [
+        "Підготуй Natura Pylons для структури ельфійського порталу. Перевір їхнє положення та відповідні басейни за довідником.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:natura_pylon",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D391FBE7A1C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004C644741B456",
+          "type": "item",
+          "item": {
+            "id": "botania:natura_pylon",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D1E5963F4988",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000678B283FFFED",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000F18993015B8E",
+      "title": "Рама зв'язку з ельфами",
+      "description": [
+        "Підготуй Elven Gateway Core й простір для потрібної рами. Портал обміну предметами не слід плутати з виміром, у який персонаж обов'язково може зайти.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "botania:alfheim_portal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D391FBE7A1C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AD04BE50465A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:alfheim_portal",
+          "timer": 40
+        },
+        {
+          "id": "00003DB7BAB688E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000227DA36FEBC8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000577994A0A930",
+      "title": "Зброя ельфійського ремесла",
+      "description": [
+        "Підготуй Elementium Sword для захисту магічного майданчика. Перевір взаємодію з доступними чарами на безпечній випробувальній ділянці.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elementium_sword",
+        "count": 1
+      },
+      "dependencies": [
+        "00005796C8D25E86",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000084764F536A37",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000034D6B4B6BA93",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C4D31173FB1C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 8.0
+    },
+    {
+      "id": "00008D413940C305",
+      "title": "Ельфійський метал",
+      "description": [
+        "Підготуй невелику партію Elementium. Це новий рецептурний матеріал, а не перейменований запас Manasteel.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elementium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000127B1EF5C9E6",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE58DC9D0094",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000092A9B2CEB9E4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000600EAE5D57D2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000B80CBE8ACDB3",
+      "title": "Кристал ельфійського обміну",
+      "description": [
+        "Отримай Dragonstone та перевір його застосування перед подальшою витратою. Не розбирай готовий дорогий інструмент, щоб виконати завдання на матеріал.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:dragonstone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000127B1EF5C9E6",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000064B6F07064D0",
+          "type": "item",
+          "item": {
+            "id": "botania:dragonstone",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8A4E5D197CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C57C107C7A4C",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000285BC37790D6",
+      "title": "Ельфійська оправа процесора",
+      "description": [
+        "Зведи обчислювальний компонент і метал ельфів у міжмодовий комплект. Цифрова логіка тут доповнює магію, не відкриваючи майбутніх мережевих потужностей.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elementium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B80CBE8ACDB3",
+        "00001EA10103609C",
+        "0000D4E4CE5E05BE",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092D7F547A729",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F2BD436BD87",
+          "type": "item",
+          "item": {
+            "id": "ae2:calculation_processor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A97793DC1639",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000A58FC18267F",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000591D730184C9",
+      "title": "Передавач ельфійського рівня",
+      "description": [
+        "Установи Elven Mana Spreader на окремому перевірочному напрямі. Після заміни звичайного передавача повторно звір орієнтацію й приймач імпульсів.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "botania:elven_spreader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B80CBE8ACDB3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004CC934D5C803",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:elven_spreader",
+          "timer": 40
+        },
+        {
+          "id": "0000547429CD22F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C23CF2FC20BD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000B623D89CB487",
+      "title": "Пил для наступних чарів",
+      "description": [
+        "Підготуй Pixie Dust як реагент нових функціональних рецептів. Збережи частину для міжмодових компонентів, а не лише для декоративних перетворень.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:pixie_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B80CBE8ACDB3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B606C1ADC15B",
+          "type": "item",
+          "item": {
+            "id": "botania:pixie_dust",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009ED915B104D3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F86A790CAE42",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000D84C9F784743",
+      "title": "Скло іншої магічної школи",
+      "description": [
+        "Отримай Elf Glass і порівняй його з Mana Glass. Візуальна прозорість не означає однакову поведінку чи взаємозамінність у рецептах.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:elf_glass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B80CBE8ACDB3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0AC8DF8D360",
+          "type": "item",
+          "item": {
+            "id": "botania:elf_glass",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000509B289B149C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B751E2255FCF",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000708CA1ADFFA8",
+      "title": "Сплав і душовий конденсатор",
+      "description": [
+        "Підготуй контрольний набір магічної металургії та Ender IO. Не встановлюй дорогий конденсатор у довільну машину без перевірки сумісності.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "botania:terrasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000285BC37790D6",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000021A9660F9F09",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003755E63B0F38",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018B8B69BF1AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000433C8462E854",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000E557CB8369CF",
+      "title": "Магічна ізоляція комірки",
+      "description": [
+        "Підготуйте манасталь і руну землі як зрозумілу магічну частину технологічного осередку. Не плутайте цей набір із нескінченним живленням механізмів.",
+        "Фактична перевірка: 8 × botania:manasteel_ingot — мати в інвентарі; 2 × botania:rune_earth — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00004180E01C11CD",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A919A0B84918",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008D3E34A6EE29",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC1ADC1F3AF9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DA465285A8B6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "00007E46B592BCC0",
+      "title": "Рунічна оправа матриці",
+      "description": [
+        "Підготуйте rune mana та готові prediction matrices для міжмодового підсумку. Квест перевіряє два реальні реагенти, не додаючи довільного нового ритуалу Botania.",
+        "Фактична перевірка: 2 × botania:rune_mana — мати в інвентарі; 16 × hostilenetworks:prediction_matrix — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "000086CB5472D167",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096B3397F69D4",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000205B589F157E",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000EEFD8F42789",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 20.0
+    },
+    {
+      "id": "000083B6B5BDB583",
+      "title": "Магічний запас для ремонту",
+      "description": [
+        "Підготуйте manasteel та mana pearls до розширення фабрики. Так ремонт магічного компонента не зупинить усю чергу технологічної електроніки.",
+        "Фактична перевірка: 12 × botania:manasteel_ingot — мати в інвентарі; 4 × botania:mana_pearl — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000070632CD0C9B9",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067E6798746E5",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000624997E593A5",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pearl",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098EDCFFE8A79",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 22.0
+    },
+    {
+      "id": "0000ED3CA8B3094C",
+      "title": "Рунічна підтримка рідинної логістики",
+      "description": [
+        "Поєднайте руну води й окультний кристал у контрольному магічному наборі, який відрізняється від звичайних електронних конекторів.",
+        "Фактична перевірка: 3 × botania:rune_water — мати в інвентарі; 2 × occultism:spirit_attuned_crystal — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "0000600F7BB06F77",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000576DAA2F86D2",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003250B8D98CEE",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000041962FAA1E2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 24.0
+    },
+    {
+      "id": "0000168C138CE33F",
+      "title": "Рунічний майданчик обслуговування",
+      "description": [
+        "Підготуйте руни землі й води для ритуальної частини зали, зберігаючи їх окремо від паливних та відпрацьованих матеріалів.",
+        "Фактична перевірка: 2 × botania:rune_earth — мати в інвентарі; 2 × botania:rune_water — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_earth",
+        "count": 1
+      },
+      "dependencies": [
+        "000039853C42297F",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000012338A11924A",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000034466602683C",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006823C97EBFA6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C9CC36B8C1F3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 26.0
+    },
+    {
+      "id": "00003394AB08C36B",
+      "title": "Руна вогню для енергетичної зали",
+      "description": [
+        "Збережіть rune fire та Blazing Crystals як магічну й технічну частини термічного вузла; жоден предмет не підміняє охолодження реального реактора.",
+        "Фактична перевірка: 4 × botania:rune_fire — мати в інвентарі; 4 × powah:crystal_blazing — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_fire",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AD13150546C7",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066990AB77218",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007940B4670CA5",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_blazing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002531A2537362",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EC70C5E5C009",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 28.0
+    },
+    {
+      "id": "00001FA312DE59A7",
+      "title": "Манасталева підтримка гарячої секції",
+      "description": [
+        "Відкладіть манасталь і livingrock для магічного сервісу енергоблока, не вважаючи їх автоматичним захистом від будь-якої температури.",
+        "Фактична перевірка: 16 × botania:manasteel_ingot — мати в інвентарі; 32 × botania:livingrock — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00003394AB08C36B",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C99E731147A9",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001AD55E9EFD6E",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002CED56C347E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "00006117BCBD57A2",
+      "title": "Магічний запас поза базою",
+      "description": [
+        "Збережіть Mana Tablet і манасталь у спорядженні експедиції; ця перевірка не вимагає певного заповнення мани у компонентах таблетки.",
+        "Фактична перевірка: 1 × botania:mana_tablet — мати в інвентарі; 12 × botania:manasteel_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "00006EA5992F0C00",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF5C5FBC8CE2",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9EE6C4FE88A",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000534F66CC1928",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 30.0
+    },
+    {
+      "id": "00005F4297693323",
+      "title": "Повний річний цикл рун",
+      "description": [
+        "Підготуйте чотири сезонні руни як набір складної природної магії, відокремлений від базових стихійних реагентів.",
+        "Фактична перевірка: 1 × botania:rune_spring — мати в інвентарі; 1 × botania:rune_summer — мати в інвентарі; 1 × botania:rune_autumn — мати в інвентарі; 1 × botania:rune_winter — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_spring",
+        "count": 1
+      },
+      "dependencies": [
+        "00000935C72655B4",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066E6A84F9D17",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_spring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F4D1018B45A1",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_summer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098E365D19119",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_autumn",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007FED8327F10E",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_winter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000471985A3CC3D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007F8E33873BD1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 32.0
+    },
+    {
+      "id": "0000CF730A2F7036",
+      "title": "Віддалений мановий інструмент",
+      "description": [
+        "Збережіть Mana Mirror та dragonstone для польового доступу; коректне прив'язування дзеркала перевіряється у світі.",
+        "Фактична перевірка: 1 × botania:mana_mirror — мати в інвентарі; 8 × botania:dragonstone — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:mana_mirror",
+        "count": 1
+      },
+      "dependencies": [
+        "00000935C72655B4",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F1F95980C64",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_mirror",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D835C0BE1DC4",
+          "type": "item",
+          "item": {
+            "id": "botania:dragonstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FE4C0E3AD1D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 34.0
+    },
+    {
+      "id": "000083ECFE46E588",
+      "title": "Руни складних властивостей",
+      "description": [
+        "Збережіть runes greed, pride та envy для пізніших магічних виробів, а не замінюйте їх загальним предметом rune mana.",
+        "Фактична перевірка: 1 × botania:rune_greed — мати в інвентарі; 1 × botania:rune_pride — мати в інвентарі; 1 × botania:rune_envy — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_greed",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F4297693323",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000035A6568AB1EA",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_greed",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004748ECD4B544",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_pride",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007A3A077EEAB1",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_envy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C8775A57044",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000091C28BFDCCDC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000717ECE59DAD5",
+      "title": "Друга група складних рун",
+      "description": [
+        "Підготуйте wrath, sloth, lust та gluttony як самостійний контрольний набір рунічної майстерні.",
+        "Фактична перевірка: 1 × botania:rune_wrath — мати в інвентарі; 1 × botania:rune_sloth — мати в інвентарі; 1 × botania:rune_lust — мати в інвентарі; 1 × botania:rune_gluttony — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_wrath",
+        "count": 1
+      },
+      "dependencies": [
+        "000083ECFE46E588",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000031EA42FC524",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_wrath",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B439978A7A24",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_sloth",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA8AEB041E55",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_lust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006617FDAC6D7D",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_gluttony",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B84FBE8D951D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 20.0
+    },
+    {
+      "id": "00007C7F5D92275A",
+      "title": "Магічний матеріал керування",
+      "description": [
+        "Збережіть Gaia Ingots та цифрові схеми як реальні результати двох гілок. Ця пара готує матеріальну основу магічно стабілізованої високовольтної оснастки.",
+        "Фактична перевірка: 4 × botania:gaia_ingot — мати в інвентарі; 4 × modern_industrialization:digital_circuit — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B3F16135AC53",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003B85862D640E",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007123E9D70625",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:digital_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002EAB1A649D69",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005D6C6BE4B91B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 36.0
+    },
+    {
+      "id": "0000932816EC0EAD",
+      "title": "Рунічна частина місткої мережі",
+      "description": [
+        "Збережіть Rune Mana та Accumulation Processors як різні матеріальні частини майбутньої інтеграції магічного сховища.",
+        "Фактична перевірка: 4 × botania:rune_mana — мати в інвентарі; 4 × megacells:accumulation_processor — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "00007C7F5D92275A",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000094748A5836B0",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F0127F014CA2",
+          "type": "item",
+          "item": {
+            "id": "megacells:accumulation_processor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC0B7434E342",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 16.0
+    },
+    {
+      "id": "00000B5D9144E890",
+      "title": "Руна води для холодної секції",
+      "description": [
+        "Підготуйте Rune Water та Elementium для магічного сервісу реакторної зали. Не вважайте цю пару заміною реального рідинного потоку.",
+        "Фактична перевірка: 4 × botania:rune_water — мати в інвентарі; 16 × botania:elementium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D8D8C4912F1",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000176A254FD02A",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E6EA3975DB16",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5A048C00EC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 38.0
+    },
+    {
+      "id": "0000E2127B06371B",
+      "title": "Магічний матеріал аварійної автоматики",
+      "description": [
+        "Збережіть Gaia Ingots і Reactor Logic Adapters як різні компоненти міжмодового контролю. Магічний реагент не скасовує вимог до охолодження.",
+        "Фактична перевірка: 4 × botania:gaia_ingot — мати в інвентарі; 2 × mekanismgenerators:fission_reactor_logic_adapter — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D8D8C4912F1",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C513ECD9BF1D",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC8F65848F0A",
+          "type": "item",
+          "item": {
+            "id": "mekanismgenerators:fission_reactor_logic_adapter",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD03776B91A2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A8A966F59BC8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 40.0
+    },
+    {
+      "id": "0000A18FBB0ADC25",
+      "title": "Рунічний ремонт огородження",
+      "description": [
+        "Збережіть Rune Earth та Livingrock для магічної частини сервісного периметра. Вони залишаються окремими матеріалами від металевої реакторної оболонки.",
+        "Фактична перевірка: 4 × botania:rune_earth — мати в інвентарі; 48 × botania:livingrock — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_earth",
+        "count": 1
+      },
+      "dependencies": [
+        "00000B5D9144E890",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009C96F3112CC9",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044ED9C2148D7",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B315F8DC0563",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 18.0
+    },
+    {
+      "id": "00000F477A2F06FE",
+      "title": "Магічна оправа рідкісного пошуку",
+      "description": [
+        "Поєднайте Gaia Ingots та Allthemodium Ingots у контрольній партії. Обидва матеріали мають бути доступні до виготовлення гібридної оснастки.",
+        "Фактична перевірка: 4 × botania:gaia_ingot — мати в інвентарі; 4 × allthemodium:allthemodium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00008A20E98166D0",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067DD2783684F",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009F070ABA7A6C",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:allthemodium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB7405FB2965",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000064646F6B4B8D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 42.0
+    },
+    {
+      "id": "0000844063833C00",
+      "title": "Рунічний комплект глибокої експедиції",
+      "description": [
+        "Підготуйте Rune Earth і Rune Fire для магічної частини геологічної майстерні. Дві руни описують різні реагенти, а не універсальний дозвіл на будь-яку руду.",
+        "Фактична перевірка: 4 × botania:rune_earth — мати в інвентарі; 4 × botania:rune_fire — мати в інвентарі; 2 × allthemodium:raw_allthemodium — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_earth",
+        "count": 1
+      },
+      "dependencies": [
+        "00008A20E98166D0",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004BA0CE43FE57",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D4D52FD95A8",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006160F3D69AA6",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:raw_allthemodium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020814014C7D8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 44.0
+    },
+    {
+      "id": "00007EF879346BAA",
+      "title": "Манова підтримка нового корпуса",
+      "description": [
+        "Збережіть Elementium і Superconductor Plates для окремої магічно-технічної партії. Не змішуйте готові пластини з мановими зливками в одному невизначеному вході.",
+        "Фактична перевірка: 16 × botania:elementium_ingot — мати в інвентарі; 4 × modern_industrialization:superconductor_plate — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:elementium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000068C83E5E47F7",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005BD11117018F",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000528957464AE",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BDC11DFB41CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E156AD241336",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 46.0
+    },
+    {
+      "id": "000083E305F0BCE0",
+      "title": "Рунічний контроль дорогих реагентів",
+      "description": [
+        "Збережіть Rune Mana, Rune Earth та Quantum Circuit для гібридної керувальної оснастки. Конкретний рецепт завжди перевіряйте перед автоматичним замовленням.",
+        "Фактична перевірка: 2 × botania:rune_mana — мати в інвентарі; 2 × botania:rune_earth — мати в інвентарі; 1 × modern_industrialization:quantum_circuit — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "000068C83E5E47F7",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D24C9D8F8E8",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E903C7D7AACF",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A8B859CC95A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:quantum_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EBD6E86B38AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 48.0
+    },
+    {
+      "id": "00009F4BFBE29B00",
+      "title": "Магічний матеріал надпровідного вузла",
+      "description": [
+        "Збережіть Gaia Ingots і Superconductor Ingots як матеріальні результати двох складних гілок. Магічний зливок не є заміною промислового провідника.",
+        "Фактична перевірка: 4 × botania:gaia_ingot — мати в інвентарі; 8 × modern_industrialization:superconductor_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000068C83E5E47F7",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004EE35ACE0C74",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000508BF879D55D",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000383EF15E9794",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000732DA6BB4906",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 50.0
+    },
+    {
+      "id": "00005790EF21BCD1",
+      "title": "Магічна частина термоядерного керування",
+      "description": [
+        "Збережіть Gaia Ingots і Laser Amplifier як різні складові гібридного запускового обладнання. Магічний матеріал не створює паливо або лазерну енергію самостійно.",
+        "Фактична перевірка: 4 × botania:gaia_ingot — мати в інвентарі; оглянути встановлений mekanism:laser_amplifier протягом 40 ticks. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00005CBC0F9BC645",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001B2999227402",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081C7577A13D4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:laser_amplifier",
+          "timer": 40
+        },
+        {
+          "id": "0000E8BDF323F753",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002F898976988B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 52.0
+    },
+    {
+      "id": "000070F549BEB25D",
+      "title": "Вогняний реагент нового енергорівня",
+      "description": [
+        "Поєднайте Rune Fire та Nitro Crystals як контрольний набір рунічної й енергетичної гілок, не вигадуючи взаємне перетворення цих матеріалів.",
+        "Фактична перевірка: 4 × botania:rune_fire — мати в інвентарі; 4 × powah:crystal_nitro — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "botania:rune_fire",
+        "count": 1
+      },
+      "dependencies": [
+        "00005CBC0F9BC645",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E97D2383E6C4",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000097AC1A91FC77",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C8A5F655DF57",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 54.0
+    },
+    {
+      "id": "000094B2C2174D3E",
+      "title": "Гібридний експедиційний комплект",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Зведіть манний резерв, засіб повернення та дихальне спорядження в один перелік перед вильотом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "000020F72DE0EAE1",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000091D22861DFD7",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003AAE49DDAA5E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:stable_warp_scroll",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FDB0BB4C2A1E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA31C0B5BFFB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E288D41ADDC2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 56.0
+    },
+    {
+      "id": "00009B01BC85B164",
+      "title": "Запас мани для виїзду",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Зберіть манний резерв і перевірте заряд у грі; сам item-task перевіряє наявність носія.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "00007A17C0B00F91",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AA861A037660",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F87A6D0DA69B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C927BC2F566",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C4FF92A54088",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 58.0
+    },
+    {
+      "id": "0000A68E2B15932D",
+      "title": "Лікування поза лабораторією",
+      "description": [
+        "Магічна підтримка експедиції доповнює кисень і транспорт, але не скасовує їхні вимоги.",
+        "Залиште лікувальний реагент і їжу в аварійному комплекті, а не в складальній системі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:life_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "00004DFC8D15CBA4",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F634FEDE3B3",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FE7274FDE38",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5F1DC381DD1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C50DD7DF10E7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 60.0
+    },
+    {
+      "id": "00000ADBBE25D156",
+      "title": "Сила природи у герметичній теплиці",
+      "description": [
+        "Життя далекого холодного світу доповнює технічну експедицію природною магією.",
+        "Підготуйте функціональну квітку та шлюзову ізоляцію, перш ніж експериментувати з теплицею.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:agricarnation",
+        "count": 1
+      },
+      "dependencies": [
+        "00005433AF660FD3",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005E4D5A47D67C",
+          "type": "item",
+          "item": {
+            "id": "botania:agricarnation",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065269D6B28F0",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:airlock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B6E872ECBD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000087B8C0B9BD09",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 62.0
+    },
+    {
+      "id": "0000341ECC29F04E",
+      "title": "Манна резервна скриня",
+      "description": [
+        "Життя далекого холодного світу доповнює технічну експедицію природною магією.",
+        "Зберіть магічний резерв поряд із кисневою тарою та зразком середовища, для якого він призначений.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D479AC5E022",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004F648D6F3613",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024A49340E017",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018CB19745673",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:venus_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002858E2DFC366",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B3CB5B2A1B30",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 64.0
+    },
+    {
+      "id": "0000FE3F3A477E73",
+      "title": "Оптика для чужого неба",
+      "description": [
+        "Життя далекого холодного світу доповнює технічну експедицію природною магією.",
+        "Підготуйте магічний інструмент спостереження та навігаційний орієнтир холодного світу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки.",
+        "Архів підтверджують зразки природної породи та нативні завдання відвідування зазначених вимірів. Декоративний глобус не потрібний."
+      ],
+      "icon": {
+        "id": "botania:third_eye",
+        "count": 1
+      },
+      "dependencies": [
+        "00008278F491D488",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000041F18D5D9750",
+          "type": "item",
+          "item": {
+            "id": "botania:third_eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007808494BEF3D",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:glacio_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007037FE69F4EC",
+          "type": "dimension",
+          "dimension": "ad_astra:glacio"
+        },
+        {
+          "id": "0000E8B67F9E2405",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003FD489DE754A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 66.0
+    },
+    {
+      "id": "000018655E656200",
+      "title": "Гайський матеріал для опор",
+      "description": [
+        "Вивернове виробництво спирається на вже освоєні школи магії, а не замінює їх.",
+        "Зберіть магічний сплав поруч із першим драконієвим керувальним компонентом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E7B9B4F43E0C",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000075330F12E947",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000CC8D65C8FC2",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconium_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CF717C6ADB6A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000020C27EBDA4CD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 68.0
+    },
+    {
+      "id": "0000058F0E65EEC6",
+      "title": "Рунічний захисний комплект",
+      "description": [
+        "Пробудження поєднує дорогоцінний матеріал із ресурсами старших магічних шкіл.",
+        "Підготуйте старшу руну для магічного супроводу спорядження без вигадування нового ритуального serializer.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:rune_pride",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EC8E506441AA",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000075900F2C5A7F",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_pride",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A534FE9252D8",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconic_chestpiece",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006439D11597CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006B1A461FFD2F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 70.0
+    },
+    {
+      "id": "00000CBEB2F67839",
+      "title": "Есенція Ґаї для пробудження",
+      "description": [
+        "Пробудження поєднує дорогоцінний матеріал із ресурсами старших магічних шкіл.",
+        "Виділіть життєву есенцію для контрольованих міжмодових операцій нового рівня.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:life_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000018233CC06959",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B8C21A14736E",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B06BDBE80A1",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:awakened_draconium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071B5FE0D4CED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FEE8A7095F70",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 72.0
+    },
+    {
+      "id": "00008967FD199506",
+      "title": "Гайська оправа Хаосу",
+      "description": [
+        "Після бойового випробування трофей Хаосу входить у міжмодові гібридні комплекти.",
+        "Поєднайте матеріальні внески природної й хаотичної гілок у захищеному резерві.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00005FEB6D6E5884",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000019C9F2905606",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D22055C63EE6",
+          "type": "item",
+          "item": {
+            "id": "draconicadditions:item_stable_chaos",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFAD53D925B0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002B5FCC7397C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 74.0
+    },
+    {
+      "id": "0000DA28B0FB004D",
+      "title": "Магічний архів трьох рівнів",
+      "description": [
+        "Після бойового випробування трофей Хаосу входить у міжмодові гібридні комплекти.",
+        "Заархівуйте природний, духовний і пробуджений технологічний компоненти.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000934C14D7AF42",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5F4A269D77D",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A90E67DF8A9",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ADFA4A5F1A14",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:awakened_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AB26D469E981",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000028F00E93CDF8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 76.0
+    },
+    {
+      "id": "0000AEF65564D555",
+      "title": "Рунічне опорядження сервісу",
+      "description": [
+        "Після бойового випробування трофей Хаосу входить у міжмодові гібридні комплекти.",
+        "Підготуйте старшу руну та кінцеву периферію для наступних міжмодових рецептів.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:rune_pride",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA28B0FB004D",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000087E2F9BD66CD",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_pride",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D5D8836C440",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_crafting_injector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4AE94694E2C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E958B6B0E2A9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 20.0
+    },
+    {
+      "id": "00004FF4CEFECE36",
+      "title": "Повний магічний внесок у фабрику",
+      "description": [
+        "Еволюційна фабрика залишається залежною від магічних виробництв попередніх епох.",
+        "Заархівуйте матеріальні внески трьох магічних шкіл і завершеного еволюційного сплаву.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B771E86CA5AF",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E05A51EC3C0C",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DFEAFC59E7BA",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC774896A668",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D5E24F55EEA",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_exoversal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024B38EB29336",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003A3A1E3E54C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 78.0
+    },
+    {
+      "id": "0000C5D93F4EEDF2",
+      "title": "Гайська квантова оправа",
+      "description": [
+        "Еволюційна фабрика залишається залежною від магічних виробництв попередніх епох.",
+        "Зберіть природний сплав поруч із квантовою керувальною схемою.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000027FFFF269BC9",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000937CABCB3AEA",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000002BEBBD2E389",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D8385B6B8EF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C12232BB0389",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 80.0
+    },
+    {
+      "id": "0000FE73795293A8",
+      "title": "Джерельний складський резерв",
+      "description": [
+        "Еволюційний завод зберігає джерельну магію Ars у комірці MegaCells, а манний резерв Botania — окремим предметом.",
+        "Підготуйте джерельну комірку 1M, манний планшет і сингулярний сплав. Це суміжні сховища різних систем: Source не перетворюється на ману."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B6DDE980BB53",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000027FF22AD2C70",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000930D207ACF40",
+          "type": "item",
+          "item": {
+            "id": "megacells:source_storage_cell_1m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027AE0E62AA7B",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_singular",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C29842CCF595",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000CF1BBCE2B1F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 82.0
+    },
+    {
+      "id": "00000C34B5BBAFAA",
+      "title": "Гайський внесок у прискорювач",
+      "description": [
+        "Планетарна установка пов’язує високі технології з рідкісними матеріалами й старшою магією.",
+        "Підготуйте природний сплав і конструкційний компонент прискорювача як окремі внески.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D30238421A96",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005CFC839DBF6C",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE27F29FBFBD",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_ring",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000151AD84C03CA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009AFE18E74656",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 84.0
+    },
+    {
+      "id": "00001AC41CF4B7DE",
+      "title": "Гайський алхімічний вузол",
+      "description": [
+        "Старші ритуали зберігають власну матеріальну вартість навіть поруч із розвиненою алхімічною базою.",
+        "Відокремте босовий природний сплав від відтворюваного лабораторного реагенту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E90971ADA51C",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000099E26685A7E0",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008C6587031E48",
+          "type": "item",
+          "item": {
+            "id": "projecte:medium_covalence_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AFBF1260B3B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001372DD8C0575",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 86.0
+    },
+    {
+      "id": "0000C2AFD3786417",
+      "title": "Рунний сервіс лабораторії",
+      "description": [
+        "Старші ритуали зберігають власну матеріальну вартість навіть поруч із розвиненою алхімічною базою.",
+        "Підготуйте манову руну й нативний ремонтний предмет для обслуговування алхімічного оснащення.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C7AD0409712",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007B83BBD18011",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B3AE58DCB284",
+          "type": "item",
+          "item": {
+            "id": "projecte:repair_talisman",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088FC3E8EBEEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FC5F576CADBB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 88.0
+    },
+    {
+      "id": "00006B94E9E46CF9",
+      "title": "Магічна оправа нейтронію",
+      "description": [
+        "Найскладніші страви й алхімічні матеріали стають окремою логістичною програмою, а не безкоштовною нагородою.",
+        "Поєднайте босовий магічний сплав і нейтронний метал як матеріальні внески двох незалежних ліній.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A0E2A9570928",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BEA700EBB89C",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033A883044FD7",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008376E194AF0C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000D15362D7E65",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 90.0
+    },
+    {
+      "id": "0000FF73B6160F46",
+      "title": "Гайський каталізатор",
+      "description": [
+        "Космічна конвергенція вимагає одночасно завершених магічних і технічних ресурсів.",
+        "Підготуйте природний босовий сплав і складний космічний каталізатор.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "botania:gaia_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EC4BBB15805F",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003DEEB174D8B5",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000611E8E327F2B",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_catalyst",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001E216A8B4A84",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000066B821C6038E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_pearl",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 92.0
+    }
+  ]
+}

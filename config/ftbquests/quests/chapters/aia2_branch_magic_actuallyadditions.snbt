@@ -1,0 +1,402 @@
+{
+  "id": "0000726EB5D11160",
+  "filename": "aia2_branch_magic_actuallyadditions",
+  "title": "actuallyadditions — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 8,
+  "icon": {
+    "id": "actuallyadditions:empowerer",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000064D2495DA94A",
+      "title": "Центр промислової кристалічної магії",
+      "description": [
+        "Постав Empowerer у місці з простором для допоміжних підставок. Для конкретного рецепта перевір взаємне розміщення вузлів і доступність енергії.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowerer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000070A454D01546",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "actuallyadditions:empowerer",
+          "timer": 40
+        },
+        {
+          "id": "00009A50C53F7564",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002FDABCC917FE",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000912362A54C1E",
+      "title": "Посилена електрична кристаліка",
+      "description": [
+        "Отримай Empowered Restonia Crystal за відповідним рецептом. Збережи базову Restonia окремо для старих машин і сервісних компонентів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_restonia_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "000064D2495DA94A",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A262FB0DA928",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_restonia_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000678E4D65D94F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000025B3C4E00E49",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C99E5919B64F",
+      "title": "Підставки окремих реагентів",
+      "description": [
+        "Підготуй комплект Display Stands для системи Empowerer. Самі підставки не підтверджують правильність повної структури чи готовність енергоживлення.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:display_stand",
+        "count": 1
+      },
+      "dependencies": [
+        "000064D2495DA94A",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000060A285E6B50F",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:display_stand",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC4954601FB4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006DA58CFE9430",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005056623FEACD",
+      "title": "Посилений зелений кристал",
+      "description": [
+        "Отримай Empowered Emeradic Crystal як спеціальний рецептурний компонент. Його не слід підміняти звичайним смарагдом через спільний колір.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_emeradic_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000912362A54C1E",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000808E0CCF0C80",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_emeradic_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057A2451F5986",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F6776A9A150D",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007A7360075DCF",
+      "title": "Посилення дорогоцінної основи",
+      "description": [
+        "Підготуй Empowered Diamatine Crystal для дорогих компонентів. Перед повторною партією перевір, чи всі допоміжні ресурси залишаються відновлюваними.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_diamatine_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000912362A54C1E",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000011DE6316429F",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_diamatine_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068F1101BFB31",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B40AE4FEF18D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BE862D3D58C7",
+      "title": "Посилена синя кристаліка",
+      "description": [
+        "Отримай Empowered Palis Crystal та звір його функціональні застосування. Ціль відкриває окремий матеріальний напрям, а не колекцію кольорів заради кількості.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_palis_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000912362A54C1E",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000075000454E485",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_palis_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7E46D813A28",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FAD880BAE5F6",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D1A663488F38",
+      "title": "Посилений структурний кристал",
+      "description": [
+        "Підготуй Empowered Enori Crystal для рецептів, що вимагають саме посиленої форми. Підставки після операції перевір на залишки попередніх реагентів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_enori_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000912362A54C1E",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CD320CA783C0",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_enori_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000810365390B26",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005D5AE85C5406",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00001214DE186CF0",
+      "title": "Посилена темна кристаліка",
+      "description": [
+        "Підготуй Empowered Void Crystal для відповідного обладнання. Залиш місце для різних базових і посилених кристалів у спільному складі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "actuallyadditions:empowered_void_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "00005056623FEACD",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CA3176E4CE67",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_void_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C16AFD144374",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000FAE6361C040",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    }
+  ]
+}

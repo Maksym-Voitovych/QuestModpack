@@ -4,6 +4,9 @@ var AIA2QuestFile = Java.loadClass('dev.ftb.mods.ftbquests.quest.ServerQuestFile
 var AIA2StageHelper = Java.loadClass('net.darkhax.gamestages.GameStageHelper');
 var AIA2Rules = JSON.parse(JsonIO.readString('kubejs/config/aia2_runtime.json'));
 var AIA2StoreKey = 'aia2_runtime_v1';
+// Cache by the authoritative serialized value and server identity. A changed value
+// is revalidated; a damaged journal never becomes an empty/new progression.
+var aia2LedgerCache = {server: null, text: null, state: null};
 
 function aia2Team(player) {
   var file = AIA2QuestFile.INSTANCE;
@@ -15,13 +18,17 @@ function aia2Team(player) {
 
 function aia2State(server) {
   var text = String(server.persistentData.getString(AIA2StoreKey));
-  if (!text) return {schema: 1, teams: {}};
-  return global.AIA2Core.validateState(JSON.parse(text));
+  if (aia2LedgerCache.server === server && aia2LedgerCache.text === text) return aia2LedgerCache.state;
+  var state = !text ? {schema: 1, teams: {}} : global.AIA2Core.validateState(JSON.parse(text));
+  aia2LedgerCache = {server: server, text: text, state: state};
+  return state;
 }
 
 function aia2Save(server, state) {
   global.AIA2Core.validateState(state);
-  server.persistentData.putString(AIA2StoreKey, JSON.stringify(state));
+  var text = JSON.stringify(state);
+  server.persistentData.putString(AIA2StoreKey, text);
+  aia2LedgerCache = {server: server, text: text, state: state};
 }
 
 function aia2TeamRecord(player, state) {
@@ -46,6 +53,15 @@ function aia2Proofs(player, epoch) {
     var quest = AIA2QuestFile.INSTANCE.getQuest(parseInt(id, 16));
     if (!quest) throw new Error('[AIA2] Не завантажено обов’язковий квест ' + id + '. Перевірте встановлення SNBT.');
     return team.isCompleted(quest);
+  });
+}
+
+function aia2ExpansionProofs(player, epoch) {
+  var team = aia2Team(player);
+  (epoch.requiredQuestIds || []).forEach(function (id) {
+    var quest = AIA2QuestFile.INSTANCE.getQuest(parseInt(id, 16));
+    if (!quest) throw new Error('[AIA2] Не завантажено підсумкове випробування ' + id + '. Перевірте SNBT.');
+    if (!team.isCompleted(quest)) throw new Error('[AIA2] Завершіть підсумкове випробування та обов’язкові модові гілки епохи ' + epoch.number + '.');
   });
 }
 
@@ -101,6 +117,8 @@ function aia2Forge(player, restore) {
   if (!AIA2StageHelper.hasStage(player, stage)) {
     throw new Error('[AIA2] Відсутня стадія ' + stage + '. Виконайте /aia2 sync та перевірте Game Stages Reborn.');
   }
+  // Existing completed epochs are grandfathered. Recovery never grants a new epoch.
+  if (!restore) aia2ExpansionProofs(player, epoch);
   if (restore) {
     var cost = {};
     Object.keys(epoch.cost).forEach(function (id) {

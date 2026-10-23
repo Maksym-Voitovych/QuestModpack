@@ -1,0 +1,1048 @@
+{
+  "id": "0000BAA4DAC4915F",
+  "filename": "aia2_branch_magic_rootsclassic",
+  "title": "rootsclassic — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 24,
+  "icon": {
+    "id": "rootsclassic:old_root",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00008FAA8F2C3F13",
+      "title": "Коріння старого лісу",
+      "description": [
+        "Старий корінь — базовий реагент Roots Classic та місток між виживанням і магією.",
+        "Під час збору залишайте запас звичайного насіння для відновлення ділянки."
+      ],
+      "icon": {
+        "id": "rootsclassic:old_root",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FEA3B29EE480"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CBC224CD67F8",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF40DD0F629A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009C189BDF908E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000014A89AC9E721",
+      "title": "Ніж травника",
+      "description": [
+        "Ніж для кори відділяє лісові матеріали від звичайної деревини.",
+        "Звірте дію інструмента з книгою мода, перш ніж вирубувати цілий гай."
+      ],
+      "icon": {
+        "id": "rootsclassic:bark_knife",
+        "count": 1
+      },
+      "dependencies": [
+        "00008FAA8F2C3F13"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CD403B8BC787",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:bark_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F0D5717CC8B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C5928F47B2EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D70CB888942E",
+      "title": "Лісова комора",
+      "description": [
+        "Смородина дозволяє диверсифікувати харчування без складної кухні.",
+        "Порівняйте ягоди як їжу та реагенти і не знищуйте всі кущі біля табору."
+      ],
+      "icon": {
+        "id": "rootsclassic:blackcurrant",
+        "count": 1
+      },
+      "dependencies": [
+        "00008FAA8F2C3F13"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006DFFC7228E5D",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:blackcurrant",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAE0A83665F6",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:redcurrant",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000470235A6A94F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D9A3ADBB449F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F3CFBC003B16",
+      "title": "Кам'яна ступка",
+      "description": [
+        "Посилена ступка поєднує кам'яну основу з крем'яним краєм.",
+        "Її формула замінена скриптом збірки; перевірте актуальний рецепт у JEI.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "rootsclassic:mortar",
+        "count": 1
+      },
+      "dependencies": [
+        "000096253719E017",
+        "00008FAA8F2C3F13"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F9DF55FAB80C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:mortar",
+          "timer": 40
+        },
+        {
+          "id": "00004489C8D2E36F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F4A4AA832B6F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000BDBAC54440C7",
+      "title": "Товкачик і робоча чаша",
+      "description": [
+        "Ступка працює разом із товкачиком, а не сама по собі.",
+        "Тримайте обидва інструменти в майстерні травника для перших рецептів Roots."
+      ],
+      "icon": {
+        "id": "rootsclassic:pestle",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F3CFBC003B16"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B6DFD1B292F8",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:pestle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC38569AA16C",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:mortar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000425ED291AC4D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002DAF2067407D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E7287DFAC85A",
+      "title": "Кора для ритуальних оправ",
+      "description": [
+        "Дубова кора увійде в рецепти механіки та вівтаря наступних епох.",
+        "Зберігайте її окремо від колод, щоб випадково не спалити майбутній каталізатор."
+      ],
+      "icon": {
+        "id": "rootsclassic:oak_bark",
+        "count": 1
+      },
+      "dependencies": [
+        "000014A89AC9E721"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000232385DC4B90",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D29A673BFBA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006D0806BE7B8E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000439EE229033A",
+      "title": "Гаряча вечеря травника",
+      "description": [
+        "Кореневе рагу перетворює прості лісові знахідки на готову страву.",
+        "Приготуйте запас до спуску в печери, а не після виснаження голоду."
+      ],
+      "icon": {
+        "id": "rootsclassic:rooty_stew",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D70CB888942E",
+        "0000BDBAC54440C7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001D07FE56B0D0",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:rooty_stew",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDB84A601B6C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001BCBA1F860F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004A4D7E4B7F78",
+      "title": "Перша зелена заготовка",
+      "description": [
+        "Verdant Sprig збирає ранню ботанічну сировину в один придатний для ритуалів реагент.",
+        "Підготуйте невелику серію, зберігши частину старих коренів недоторканою."
+      ],
+      "icon": {
+        "id": "rootsclassic:verdant_sprig",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BDBAC54440C7",
+        "0000E7287DFAC85A"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009160941FF0FB",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:verdant_sprig",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC1F89B1A7AA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E1B5F12E7E41",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002A82A5FEBB5F",
+      "title": "Польова перев'язка",
+      "description": [
+        "Лікувальна припарка дає травникові витратний запас для ризикованих походів.",
+        "Вона доповнює їжу та захист, але не виправляє небезпечний маршрут."
+      ],
+      "icon": {
+        "id": "rootsclassic:healing_poultice",
+        "count": 1
+      },
+      "dependencies": [
+        "00004A4D7E4B7F78"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B8D4C48BD798",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099655558BE6F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008A488E6FC008",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000513650CAD977",
+      "title": "Дерев'яна оправа приводу",
+      "description": [
+        "Рецепт водяного колеса в цій збірці поєднує механічний вал із корою Roots.",
+        "Заздалегідь відкладіть реагент, щоб деревообробка не зупинила запуск джерела."
+      ],
+      "icon": {
+        "id": "rootsclassic:oak_bark",
+        "count": 1
+      },
+      "dependencies": [
+        "0000966BA38ADDD4",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FC994EF36ED3",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000093D97AA139FC",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006059C73836B1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000143A4DADF43D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AE9A58228979",
+      "title": "Коріння для металевих оправ",
+      "description": [
+        "Не залишайте природну магію після відкриття металів.",
+        "Підготуйте заготівлю для шестерень та наступного вівтаря, не витрачаючи похідні ліки."
+      ],
+      "icon": {
+        "id": "rootsclassic:old_root",
+        "count": 1
+      },
+      "dependencies": [
+        "0000891AA5B7C86A",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F097338CEB0A",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B6EA8D6035E",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC951665A9DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BE8B9F5B766A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "000018BECB0DD343",
+      "title": "Шахтарський перев'язувальний запас",
+      "description": [
+        "Травник забезпечує майстерню витратними засобами для небезпечного видобутку.",
+        "Скомплектуйте їжу та припарки разом, але бережіть реагенти для виготовлення нової партії."
+      ],
+      "icon": {
+        "id": "rootsclassic:healing_poultice",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE9A58228979",
+        "000086FB1D777639",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BE37BE1386D4",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ADB8A4969A51",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F53126B13791",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002568266CA3EB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000D8541863FC5A",
+      "title": "Фокус без замкненого ритуалу",
+      "description": [
+        "Альтернативний рецепт фокуса поєднує листове залізо, коріння та алмаз.",
+        "Він забезпечує початкову доступність Roots без залежності від пізнішого ритуального рівня."
+      ],
+      "icon": {
+        "id": "rootsclassic:runic_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "000011DAACAFDF81",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009305805F75E2",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1111F2626BB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000063D19ABE2746",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000092DDCE98B4FF",
+      "title": "Вівтар із мідною основою",
+      "description": [
+        "Природний вівтар тепер потребує листового металу з механічної гілки.",
+        "Підготуйте місце ритуалу окремо від конвеєрів, які можуть забирати реагенти.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "rootsclassic:altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D8541863FC5A",
+        "0000A8FB5EBD704E",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000041752FE34963",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:altar",
+          "timer": 40
+        },
+        {
+          "id": "0000A81284B5C2AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AC33E5B76D87",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "000045A70E8327A4",
+      "title": "Жаровня ритуальної ділянки",
+      "description": [
+        "Жаровня відділяє ритуальне робоче місце від простого вогнища виживання.",
+        "Вивчіть доступні ритуали Roots перед витратою рідкісних квітів.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "rootsclassic:brazier",
+        "count": 1
+      },
+      "dependencies": [
+        "000092DDCE98B4FF",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000298F0B7A5869",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:brazier",
+          "timer": 40
+        },
+        {
+          "id": "0000512AAEA50FC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009A645AB6428A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000CD674767D226",
+      "title": "Записи природного дослідника",
+      "description": [
+        "Табличка пов'язує новий ритуальний осередок із системою знань Roots.",
+        "Збережіть її біля вівтаря, щоб не добирати інгредієнти методом випадкових спроб."
+      ],
+      "icon": {
+        "id": "rootsclassic:runic_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "000092DDCE98B4FF",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A06CC6501C82",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5852770DC1B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000057BC3325B3A1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00009E2203B51704",
+      "title": "Порошок для початкових чарів",
+      "description": [
+        "Переведіть лісові матеріали у придатний для чарів реагент.",
+        "Для кожної партії залишайте частину базових коренів на повторне виробництво."
+      ],
+      "icon": {
+        "id": "rootsclassic:spell_powder",
+        "count": 1
+      },
+      "dependencies": [
+        "000045A70E8327A4",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D14994A42942",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:spell_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C29013AC3B63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000188958A56187",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000A1468DA834E1",
+      "title": "Живий інструмент",
+      "description": [
+        "Ритуальні матеріали тепер утворюють інструмент, який повертається в гірничу гілку.",
+        "Порівняйте його фактичні властивості зі своєю модульною киркою."
+      ],
+      "icon": {
+        "id": "rootsclassic:living_pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "000045A70E8327A4",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002CEA0CB68A17",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:living_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDA82EC34067",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D44FA7F71A6B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000CCC07F61541E",
+      "title": "Розвиток трав'яної ділянки",
+      "description": [
+        "Порошок росту розширює набір інструментів травника для відновлення ресурсів.",
+        "Не ототожнюйте наявність порошку з доведеним безперервним автоматичним вирощуванням."
+      ],
+      "icon": {
+        "id": "rootsclassic:growth_powder",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E2203B51704",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000184A04FD0DB5",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:growth_powder",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7492127C22B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000285350D3A0E8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FCA411B4AC9E",
+      "title": "Дві природні школи",
+      "description": [
+        "Коріння та мана формують різні реагенти й не повинні витісняти одне одного.",
+        "Підтримуйте обидва запаси перед виробництвом майбутніх гібридних компонентів."
+      ],
+      "icon": {
+        "id": "rootsclassic:verdant_sprig",
+        "count": 1
+      },
+      "dependencies": [
+        "00001FDFB4006EE8",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC63EDAAFA9D",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:verdant_sprig",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A46F41BCFB3F",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000080D265F16569",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C79CD19C99E1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    }
+  ]
+}

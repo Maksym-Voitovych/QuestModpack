@@ -1,0 +1,2067 @@
+{
+  "id": "00003EE558030F7D",
+  "filename": "aia2_branch_technology_evolvedmekanism",
+  "title": "evolvedmekanism — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 40,
+  "icon": {
+    "id": "evolvedmekanism:alloy_hypercharged",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00000319E2CCFA93",
+      "title": "Мультиверсальне збагачення",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Підготуйте старший виконавець збагачення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_enriching_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00003829FA7B48AD",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E82C9108EA6A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:multiversal_enriching_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000DBF7091D3B1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A33EE4C53DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003C0482F188B2",
+      "title": "Розігнане збагачення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Підготуйте спеціалізовану фабрику збагачення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_enriching_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "000032EE983BA491",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000017A33CFBC402",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_enriching_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000C516EFE86E52",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003CAF079BA2DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000047BE6C826E71",
+      "title": "Гіперзаряджений сплав",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Відокремте першу партію нового сплаву від базового атомного матеріалу.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_hypercharged",
+        "count": 1
+      },
+      "dependencies": [
+        "00003C00A24926BF",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A79A3C26ED56",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_hypercharged",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000761EE153DA16",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CAB5CDB07891",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000C80F71076447",
+      "title": "Квантовий енергетичний куб",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Підготуйте локальний енергетичний резерв квантового рівня.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_energy_cube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E0DB452184C3",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000514D2855D1C4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_energy_cube",
+          "timer": 40
+        },
+        {
+          "id": "00005488CE1F9990",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009DD99A55D129",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000CD3493FF6322",
+      "title": "Квантове збагачення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Підготуйте квантовий вузол збагачення для великих замовлень.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_enriching_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000768F819F05C2",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A00F99F4514",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_enriching_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000066012F3D9F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000F232F829038",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "000024D84E45BE75",
+      "title": "Квантова кабельна магістраль",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Підготуйте фізичну трасу між енергетичним буфером і фабрикою.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_universal_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C80F71076447",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000063964EBB6E38",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_universal_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002132F23FE0BC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000931FD7B50469",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000028EF1534646E",
+      "title": "Субатомний сплав",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Підготуйте наступний матеріальний ступінь для пізніх схем.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_subatomic",
+        "count": 1
+      },
+      "dependencies": [
+        "000047BE6C826E71",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CC61F46220A",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_subatomic",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024C91245F005",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E95222A77CD4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CF843C5C35B5",
+      "title": "Розігнане подрібнення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Виділіть подрібненню власний вузол, не підмінюючи ним збагачення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_crushing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00003C0482F188B2",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000062B6270E04B7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_crushing_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000583CC16DCE8C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000B909E0F6E6E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000EA4EDCBD8170",
+      "title": "Мультиверсальне очищення",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Зберіть старший хімічний вузол очищення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_purifying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00000319E2CCFA93",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007E38530CAFEF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:multiversal_purifying_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000990BADFD4110",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000757ABEC3E8D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000FB36C001ADDF",
+      "title": "Квантове подрібнення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Відведіть подрібненню керований квантовий виконавець.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_crushing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CD3493FF6322",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005C8E4410556",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_crushing_factory",
+          "timer": 40
+        },
+        {
+          "id": "00009C2EC3500F21",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000752FBD19D351",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "000005A39B747CD8",
+      "title": "Мультиверсальне введення",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Підготуйте старший виконавець введення реагентів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_injecting_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EA4EDCBD8170",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000043928AB667BC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:multiversal_injecting_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000B5DCC0B36956",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001C0886F92AC4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000434B34085F5A",
+      "title": "Розігнане очищення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Підготуйте очищення як окремий хімічний етап переробки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_purifying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CF843C5C35B5",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E42D71392F3B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_purifying_factory",
+          "timer": 40
+        },
+        {
+          "id": "000033792FA2C30C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000C664B4F4C35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "000047C4EDACFD82",
+      "title": "Квантовий предметний транспорт",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Виділіть предметам транспорт відповідного покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_logistical_transporter",
+        "count": 1
+      },
+      "dependencies": [
+        "000024D84E45BE75",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003A7A96266E8E",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_logistical_transporter",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002CE7EE1FB1E2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000446A969590AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000548FB64155A9",
+      "title": "Розігнана керувальна схема",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Завершіть перший керувальний рівень за межами ultimate.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "000028EF1534646E",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5BF319F3076",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED5B039B0677",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000057B9A6A4F0A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000A6158EDC49BF",
+      "title": "Квантове очищення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Підготуйте хімічний етап квантової переробки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_purifying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB36C001ADDF",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005D215BC18CF7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_purifying_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000408F271EA1ED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B1573FF7319C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 8.0
+    },
+    {
+      "id": "000072BF2FB79CCF",
+      "title": "Мультиверсальне сплавлення",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Відведіть складним сплавам окремий старший виконавець.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_alloying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "000005A39B747CD8",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000061C4541BFC7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:multiversal_alloying_factory",
+          "timer": 40
+        },
+        {
+          "id": "00005A5CB59167B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007CAAFE825FF0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000085162D62232F",
+      "title": "Розігнане введення реагентів",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Створіть фабрику введення для спеціалізованого реагентного потоку.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_injecting_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000434B34085F5A",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F78F18B7996B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_injecting_factory",
+          "timer": 40
+        },
+        {
+          "id": "00005CE93AFE56A9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000027ED91D2D8BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000897E543307D6",
+      "title": "Квантове введення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Створіть квантовий виконавець введення реагентів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_injecting_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A6158EDC49BF",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003E35B062C0DC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_injecting_factory",
+          "timer": 40
+        },
+        {
+          "id": "00004488C3C12962",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005DE95410CD6C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "00008FE279A8C32C",
+      "title": "Квантова керувальна схема",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Створіть схему для нового класу фабрик і транспорту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000548FB64155A9",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E167931C25E5",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BDEA720BE6CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DAA1206E5AB2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000B40FB31CAB58",
+      "title": "Квантовий рідинний транспорт",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Підготуйте рідинну магістраль окремо від предметної.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_mechanical_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "000047C4EDACFD82",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000763EAB60A351",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_mechanical_pipe",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FDB4C4BAF4F9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000ACEF20AB544A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 8.0
+    },
+    {
+      "id": "00002F70040C2331",
+      "title": "Мультиверсальне подрібнення",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Підготуйте подрібнення для найвищої еволюційної лінії.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_crushing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "000072BF2FB79CCF",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FA170A8287B6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:multiversal_crushing_factory",
+          "timer": 40
+        },
+        {
+          "id": "00005DA86DB7772B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001F71A3C3FAB3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006D4343936A2F",
+      "title": "Квантова газова траса",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Забезпечте хімічні процеси відведеною трубною магістраллю.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_pressurized_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B40FB31CAB58",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FAF84468D585",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_pressurized_tube",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A4C665A7DCE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000007A61C830DD5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007658DFF75CEC",
+      "title": "Квантове насичення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Підготуйте фабрику для поповнення дорогих схем і сплавів.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_infusing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000897E543307D6",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000722B03925ECF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_infusing_factory",
+          "timer": 40
+        },
+        {
+          "id": "000073312D506D39",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E0D53720C195",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007F87E3D553DC",
+      "title": "Розігнане насичення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Підготуйте окрему фабрику насичення для виробництва сплавів і схем.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_infusing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "000085162D62232F",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006CE5FA0757C6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_infusing_factory",
+          "timer": 40
+        },
+        {
+          "id": "00000FA5C2A0BBA4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000018B3CA3ACF1F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000EAD0F9453400",
+      "title": "Сингулярний сплав",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Підготуйте спеціалізований сплав пізньої гілки, не плутаючи його з Avaritia Singularity.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_singular",
+        "count": 1
+      },
+      "dependencies": [
+        "00008FE279A8C32C",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C72E40D6D44",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_singular",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007BABEABCE5E8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D95B2413CDD1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 8.0
+    },
+    {
+      "id": "00002EE8CBC6BEB1",
+      "title": "Квантовий рідинний резерв",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Підготуйте місткість для гасіння нерівномірності рідинного споживання.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_fluid_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D4343936A2F",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DEF6A183A260",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3D85F61B461",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007CFD9FD9299A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A75E2B9A2DAD",
+      "title": "Екзоверсальний сплав",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Завершіть старшу матеріальну гілку Evolved Mekanism за нативним рецептом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_exoversal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EAD0F9453400",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EC5D99D02C6E",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_exoversal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B40FB662C9E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002DEA808E161F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C39E24A8A935",
+      "title": "Квантове сплавлення",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Створіть спеціалізований квантовий виконавець сплавлення.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_alloying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00007658DFF75CEC",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C8CF473AA61",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_alloying_factory",
+          "timer": 40
+        },
+        {
+          "id": "00008B28E79E6DDB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D641C98F5DBF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000C63BB79124AA",
+      "title": "Мультиверсальний предметний канал",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Забезпечте старшу лінію предметним транспортом відповідного рівня.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_logistical_transporter",
+        "count": 1
+      },
+      "dependencies": [
+        "00002F70040C2331",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B44C500DBBC",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:multiversal_logistical_transporter",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005DAC69E1AFFD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000065282B6D15B4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000EAAD3BF97FA5",
+      "title": "Розігнане плавлення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Підготуйте завершальний термічний вузол для вихідного матеріалу.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_smelting_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F87E3D553DC",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008A906ED07B88",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_smelting_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000EFD36FA54E21",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000042CE8E9ED749",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 8.0
+    },
+    {
+      "id": "00004284DDA47B01",
+      "title": "Розігнане сплавлення",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Виділіть сплавленню окрему лінію Evolved Mekanism.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_alloying_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EAAD3BF97FA5",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E7183C6C5219",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:overclocked_alloying_factory",
+          "timer": 40
+        },
+        {
+          "id": "00000DD64E31B1D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000047570E477ABC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AA7B44C86538",
+      "title": "Індукційний запас старшого рівня",
+      "description": [
+        "Старший еволюційний рівень має бути керованим завершенням фабричної гілки.",
+        "Підготуйте одночасно місткість і провайдер віддачі накопичувача.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_induction_cell",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C63BB79124AA",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004E74F4323FFD",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:multiversal_induction_cell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003631BBCE5C40",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:multiversal_induction_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009826E2AE8904",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000710232484FD7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000ACCA9876C49E",
+      "title": "Квантовий хімічний резерв",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Відокремте хімічну місткість від рідинної в схемі постачання.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_chemical_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "00002EE8CBC6BEB1",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F1E16044DD95",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_chemical_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027D8F7BAC82E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D018014A13AF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000B4A94B531E97",
+      "title": "Мультиверсальна схема",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Підготуйте керувальний компонент старшого еволюційного покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:multiversal_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A75E2B9A2DAD",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002F93B4856D8F",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:multiversal_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F324F993CE55",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001F950E997904",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000CEE4CB60D6A7",
+      "title": "Квантове розпилювання",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Підготуйте механічну обробку як окремий квантовий процес.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_sawing_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C39E24A8A935",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007DB61207FA83",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:quantum_sawing_factory",
+          "timer": 40
+        },
+        {
+          "id": "00007BC374BEA665",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E959774DC0D1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000B8B61F38ABA7",
+      "title": "Інспекція чотирьох рівнів матеріалів",
+      "description": [
+        "Еволюція Mekanism починається з нових сплавів і керувальних схем, а не з безконтрольного множення фабрик.",
+        "Порівняйте чотири матеріальні ступені й розділіть їх у шаблонах постачання.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_hypercharged",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B4A94B531E97",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000119A2FFD9FEB",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_hypercharged",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007107507184A3",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_subatomic",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B1A5271D47B",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_singular",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071932CB1BAE5",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_exoversal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000091FBEBEE1AD2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B35C2B02618E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D74566A95993",
+      "title": "Квантовий транспортний паспорт",
+      "description": [
+        "Висока пропускна здатність процесів має бути забезпечена відповідним транспортом і буферами.",
+        "Перевірте наявність чотирьох різних транспортних каналів перед переведенням фабрик на новий рівень.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_universal_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ACCA9876C49E",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B6E8AEB7A5FD",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_universal_cable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B9F8D62727F",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_logistical_transporter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DDAA5482689A",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_mechanical_pipe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D05CC6F50A9",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_pressurized_tube",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C19DD6703EB2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CD85B88F8851",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F2A16C22A25F",
+      "title": "Два покоління без втрати рецептури",
+      "description": [
+        "Квантова фабрика має розширювати реальний процес, а не дублювати неузгоджені машини.",
+        "Зберіть старий і новий виконавці та монітор для порівняння у реальній мережі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_enriching_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CEE4CB60D6A7",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007812FBEB1845",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_enriching_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000019822B7B6722",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_enriching_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074CB8CCE28AD",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:throughput_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FB19898F408",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C914AF6BD981",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000F9EDFFE3826C",
+      "title": "Розігнаний технологічний маршрут",
+      "description": [
+        "Розігнані фабрики переводять окремі операції Mekanism на спільну керовану виробничу лінію.",
+        "Зведіть три взаємодоповнювальні процеси в апаратний комплект майбутньої лінії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_enriching_factory",
+        "count": 1
+      },
+      "dependencies": [
+        "00004284DDA47B01",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F893346155A5",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_enriching_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000869374ACB257",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_crushing_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000971DA10CF64",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_smelting_factory",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001DAF8BD154ED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001E70A9FDCA77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000AE8C094743D2",
+      "title": "Резерв для планетарної станції",
+      "description": [
+        "Квантова генерація має бути відокремлена від локального накопичення й мережевого транспорту.",
+        "Підготуйте квантове накопичення з узгодженим провайдером віддачі.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_induction_cell",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E26136875A35",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003F94D6CF4FC6",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_induction_cell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016D05A2D3E81",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_induction_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000083763C11852F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FF1F0E073282",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    }
+  ]
+}

@@ -1,0 +1,1030 @@
+{
+  "id": "00006464CE634546",
+  "filename": "aia2_branch_magic_enchanted",
+  "title": "enchanted — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 14,
+  "icon": {
+    "id": "enchanted:witch_oven",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000C2260B219226",
+      "title": "Відьомська піч на сталевій оправі",
+      "description": [
+        "Witch Oven тепер потребує сталі з технічної гілки.",
+        "Підготуйте місце для отримання як твердого результату, так і спеціальних випарів.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "enchanted:witch_oven",
+        "count": 1
+      },
+      "dependencies": [
+        "00001D18DCC2F22F",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D0F3FAC80267",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:witch_oven",
+          "timer": 40
+        },
+        {
+          "id": "0000FC663DD55489",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000733BE03C3A35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009D5D5EAA8D72",
+      "title": "Ємність для тонких продуктів",
+      "description": [
+        "Глиняні банки потрібні для збирання продуктів відьомського виробництва.",
+        "Випалюйте їх партіями до запуску печі, щоб не втратити час через порожню комору тари."
+      ],
+      "icon": {
+        "id": "enchanted:clay_jar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C2260B219226",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007CFD0128C4C0",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000084A57E77D717",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F36E8B7DEEEE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009B3F5F21B7A7",
+      "title": "Зола з практичним призначенням",
+      "description": [
+        "Деревна зола є реагентом Enchanted, а не просто декоративним залишком горіння.",
+        "Зберігайте її разом з іншими спеціальними результатами Witch Oven."
+      ],
+      "icon": {
+        "id": "enchanted:wood_ash",
+        "count": 1
+      },
+      "dependencies": [
+        "00009D5D5EAA8D72",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000064EB4955BED0",
+          "type": "item",
+          "item": {
+            "id": "enchanted:wood_ash",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006CDFD8B8A015",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A1F25F6248E2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B2DF757FAA89",
+      "title": "Перший запах магії",
+      "description": [
+        "Whiff of Magic поєднує деревну сировину зі спеціальними продуктами відьомської печі.",
+        "Звірте відповідну деревину в JEI: не кожна порода дає той самий випар."
+      ],
+      "icon": {
+        "id": "enchanted:whiff_of_magic",
+        "count": 1
+      },
+      "dependencies": [
+        "00009D5D5EAA8D72",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5A9F0FC5B9D",
+          "type": "item",
+          "item": {
+            "id": "enchanted:whiff_of_magic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018BA0584C6C8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E00E1B97AA41",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005887DD1B5922",
+      "title": "Подих природної сили",
+      "description": [
+        "Другий тип випару розширює реагентну палітру Enchanted.",
+        "Підготуйте його окремо, не змішуючи банки з іншими пічними продуктами."
+      ],
+      "icon": {
+        "id": "enchanted:breath_of_the_goddess",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B2DF757FAA89",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004E3710B37846",
+          "type": "item",
+          "item": {
+            "id": "enchanted:breath_of_the_goddess",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044BA4497E7B3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000712E1CA8CEE5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005A5B017E3DFB",
+      "title": "Налаштований магічний камінь",
+      "description": [
+        "Attuned Stone згодом увійде в змінений дизельний циліндр TFMG.",
+        "Магічну заготовку слід зберегти для промислової гілки, а не витратити всю на побутові досліди."
+      ],
+      "icon": {
+        "id": "enchanted:attuned_stone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B2DF757FAA89",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B91AE2B04787",
+          "type": "item",
+          "item": {
+            "id": "enchanted:attuned_stone",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003B69E13ADBD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004DCBC550EC69",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B8C45489361C",
+      "title": "Відьомський розсадник",
+      "description": [
+        "Різні рослини мають власні ритуальні застосування й способи збору.",
+        "Висадіть окремі позначені ділянки, щоб не змішувати посадковий матеріал."
+      ],
+      "icon": {
+        "id": "enchanted:mandrake_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "00009B3F5F21B7A7",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007253F3096913",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_seeds",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F3447AF3580",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_seeds",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D9DB6A62094A",
+          "type": "item",
+          "item": {
+            "id": "enchanted:water_artichoke_seeds",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BD0B7F1C01BF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000088CB5F0CDBC7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "000011388BAEFECD",
+      "title": "Водний реагент саду",
+      "description": [
+        "Водний артишок потребує свого способу вирощування й не замінюється звичайною пшеницею.",
+        "Позначте умови ділянки для інших учасників команди."
+      ],
+      "icon": {
+        "id": "enchanted:water_artichoke",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B8C45489361C",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002921E8BA322",
+          "type": "item",
+          "item": {
+            "id": "enchanted:water_artichoke",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A36829F3871",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F8EE7668B1A3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000047C667B6F149",
+      "title": "Обережність із коренем",
+      "description": [
+        "Мандрагора є спеціальним реагентом, тож її збір потребує уваги до механік мода.",
+        "Не починайте масову заготівлю без перевірки поведінки рослини."
+      ],
+      "icon": {
+        "id": "enchanted:mandrake_root",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B8C45489361C",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BC691E4C8304",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_root",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A33A52C4C929",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009D9AF292A14D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A04C46550D41",
+      "title": "Різні дерева — різні випари",
+      "description": [
+        "Порівняйте ще один спеціальний продукт деревної переробки.",
+        "Квест перевіряє готовий реагент і не підраховує кількість спалених колод."
+      ],
+      "icon": {
+        "id": "enchanted:exhale_of_the_horned_one",
+        "count": 1
+      },
+      "dependencies": [
+        "00005887DD1B5922",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009497EFA65F02",
+          "type": "item",
+          "item": {
+            "id": "enchanted:exhale_of_the_horned_one",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086B53EAFA5E8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C5D5CE1D0D68",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E8F808A7E08C",
+      "title": "Квітка відьомського саду",
+      "description": [
+        "Беладона доповнює кореневу гілку окремою квітковою складовою.",
+        "Залиште насіння для повторного врожаю, а не лише готовий реагент."
+      ],
+      "icon": {
+        "id": "enchanted:belladonna_flower",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B8C45489361C",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E193180CF51F",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_flower",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047C464E4534C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004C6D2257F92B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "00008C1F70A0AD92",
+      "title": "Перетворення рослинної палітри",
+      "description": [
+        "Mutandis відкриває дослідження спеціальних природних матеріалів Enchanted.",
+        "Перед використанням залиште контрольний запас базових рослин і реагентів."
+      ],
+      "icon": {
+        "id": "enchanted:mutandis",
+        "count": 1
+      },
+      "dependencies": [
+        "000047C667B6F149",
+        "0000E8F808A7E08C",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E94E6CFB7D68",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mutandis",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006099274D368A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004F0207BE0050",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C47D12A7E009",
+      "title": "Паста для підготовки ритуальної роботи",
+      "description": [
+        "Підготовчий реагент з'єднує кілька результатів травництва в одну спеціальну суміш.",
+        "Звірте точний рецепт і не витрачайте останній урожай кожної рослини."
+      ],
+      "icon": {
+        "id": "enchanted:anointing_paste",
+        "count": 1
+      },
+      "dependencies": [
+        "000047C667B6F149",
+        "0000E8F808A7E08C",
+        "000011388BAEFECD",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000199069B91583",
+          "type": "item",
+          "item": {
+            "id": "enchanted:anointing_paste",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9A356BF0610",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C9C0F49A51CA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "00006D2A7A6FFE9F",
+      "title": "Розсадник горобини",
+      "description": [
+        "Горобина додає окремий деревний ресурс відьомської школи.",
+        "Посадіть резервні саджанці до того, як витратите перші колоди на випари."
+      ],
+      "icon": {
+        "id": "enchanted:rowan_sapling",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C1F70A0AD92",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006AE10057AB7D",
+          "type": "item",
+          "item": {
+            "id": "enchanted:rowan_sapling",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD1D5FF538C7",
+          "type": "item",
+          "item": {
+            "id": "enchanted:rowan_log",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000013D32BF170FC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D54CDC5333F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CA3E9379821B",
+      "title": "Осередок відьомського двору",
+      "description": [
+        "Вівтар Enchanted має власні механіки та не є заміною вівтаря Roots.",
+        "Уважно звірте умови навколишньої території за книгою мода.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "enchanted:altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C47D12A7E009",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000751D81ED56FE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:altar",
+          "timer": 40
+        },
+        {
+          "id": "0000131C0221B08F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BA675949F863",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "00006D6999ACC7BC",
+      "title": "Вільха для наступних дослідів",
+      "description": [
+        "Вільха розширює деревну базу для рецептів і випарів.",
+        "Зберігайте її колоди під власним підписом, не змішуючи з горобиною."
+      ],
+      "icon": {
+        "id": "enchanted:alder_sapling",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D2A7A6FFE9F",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DAEAE228F976",
+          "type": "item",
+          "item": {
+            "id": "enchanted:alder_sapling",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000479EA2221632",
+          "type": "item",
+          "item": {
+            "id": "enchanted:alder_log",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B60FB8B840B9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000EB21ACF3D46",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000ED18B699E74B",
+      "title": "Комплект наступних дослідів",
+      "description": [
+        "Відьомський казан формує окрему робочу позицію для наступних рецептів.",
+        "Цей комплект не підтверджує виконання конкретного ритуалу чи завершення варіння."
+      ],
+      "icon": {
+        "id": "enchanted:witch_cauldron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CA3E9379821B",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A74B81FCA4E4",
+          "type": "item",
+          "item": {
+            "id": "enchanted:witch_cauldron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000026387A25274B",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006E2FA99454D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003FD195BCB2CE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C7899EE24C0E",
+      "title": "Глід ритуального саду",
+      "description": [
+        "Третя спеціальна порода завершує базовий деревний розсадник Enchanted.",
+        "Відновлювана посадка корисніша за випадкове разове знаходження кількох колод."
+      ],
+      "icon": {
+        "id": "enchanted:hawthorn_sapling",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D6999ACC7BC",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000084B4E1AA6264",
+          "type": "item",
+          "item": {
+            "id": "enchanted:hawthorn_sapling",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E99DEDA4D19",
+          "type": "item",
+          "item": {
+            "id": "enchanted:hawthorn_log",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC92D3BD63A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000020106F332193",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002696309A10C0",
+      "title": "Новий запас відьомської основи",
+      "description": [
+        "Паливна промисловість не замінює відьомські реагенти в гібридному розвитку.",
+        "Підготуйте три різні результати магічної гілки, зберігаючи окремий запас деревної сировини."
+      ],
+      "icon": {
+        "id": "enchanted:attuned_stone",
+        "count": 1
+      },
+      "dependencies": [
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003A9DCC976F3F",
+          "type": "item",
+          "item": {
+            "id": "enchanted:attuned_stone",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000273A1EAA9D2C",
+          "type": "item",
+          "item": {
+            "id": "enchanted:whiff_of_magic",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCA83A8C0D7E",
+          "type": "item",
+          "item": {
+            "id": "enchanted:exhale_of_the_horned_one",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000789A71178C80",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000B8167E8BE18",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    }
+  ]
+}

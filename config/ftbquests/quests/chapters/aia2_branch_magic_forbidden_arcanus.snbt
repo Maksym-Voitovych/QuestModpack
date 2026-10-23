@@ -1,0 +1,424 @@
+{
+  "id": "0000A87E1AEADEB5",
+  "filename": "aia2_branch_magic_forbidden_arcanus",
+  "title": "forbidden_arcanus — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 17,
+  "icon": {
+    "id": "forbidden_arcanus:arcane_crystal",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000DFC70207D216",
+      "title": "Кристалічна база забороненої кузні",
+      "description": [
+        "Досліди Arcane Crystal як окрему рудну сировину Forbidden Arcanus. Частину кристалів залиш не подрібненою для рецептів, що потребують цілої форми.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB0BB4007A7C",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000042E34EFD7005",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000882E94FC98B3",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BC05C7D057F4",
+      "title": "Перша Hephaestus Forge",
+      "description": [
+        "Заверши доступний перший рівень Hephaestus Forge. Вимоги до її середовища й ритуальних ресурсів перевір у Forbiddenomicon.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:hephaestus_forge_tier_1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DFC70207D216",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2A8637F417C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_1",
+          "timer": 40
+        },
+        {
+          "id": "0000773B843431EF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004B471B91CEEA",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000FBF9796C0EC7",
+      "title": "Пил для кузні й реагентів",
+      "description": [
+        "Підготуй кристалічний пил окремо від цілих самоцвітів. Рецепт точно визначає форму інгредієнта; назва з того самого мода не робить її взаємозамінною.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DFC70207D216",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000073BDD139A6",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal_dust",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096F32599ECA2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E8CD0B4AA414",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005A8F10B92797",
+      "title": "Перший легований Deorum",
+      "description": [
+        "Отримай Deorum через нативну кузневу прогресію. Відокрем готові злитки від проміжних домішок, щоб не витратити рідкісний продукт на декорації.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:deorum_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC05C7D057F4",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E62F5BBCF731",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:deorum_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE38BC698624",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009CC89E752004",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B87014C653F5",
+      "title": "П'єдестали ковальського кола",
+      "description": [
+        "Підготуй п'єдестали для винесених компонентів кузні. Їхня наявність не перевіряє геометрію структури, тому розстановку звір окремо з довідником.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:darkstone_pedestal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC05C7D057F4",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D784F30532BE",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:darkstone_pedestal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D8D518AFF881",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000797689F0AB27",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CF6AE64CAB47",
+      "title": "Інструмент ковальського ритуалу",
+      "description": [
+        "Підготуй залізний Blacksmith Gavel для роботи з кузнею. Рівень інструмента слід узгоджувати з реально доступними операціями, а не з кольором майбутнього артефакта.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:iron_blacksmith_gavel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC05C7D057F4",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000690E4B902172",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:iron_blacksmith_gavel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D6C422CA0122",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B582C9747A5D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000025B639435090",
+      "title": "Посилення забороненої кузні",
+      "description": [
+        "Підготуй метали для наступних дозволених процесів Hephaestus Forge. Наявність набору не засвідчує рівень кузні: його структуру перевір окремо.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:deorum_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00001EA10103609C",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CAB5240580F6",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:deorum_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB5326FB651B",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_nugget",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007DDF686D1666",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FCD4DC3455E4",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B13426DA020B",
+      "title": "Місце дорогих реагентів",
+      "description": [
+        "Підготуй функціональний вузол забороненої магії та запас кристалічного пилу. Перевір його роль у конкретній структурі, перш ніж змінювати розташування.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal_obelisk",
+        "count": 1
+      },
+      "dependencies": [
+        "00001EA10103609C",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003120402C779D",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal_obelisk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007038C42E916F",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal_dust",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA71B0349A6B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E105C6CE2443",
+          "type": "item",
+          "item": {
+            "id": "minecraft:amethyst_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    }
+  ]
+}

@@ -1,0 +1,973 @@
+{
+  "id": "00006417F4268895",
+  "filename": "aia2_branch_technology_bigreactors",
+  "title": "bigreactors — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 34,
+  "icon": {
+    "id": "bigreactors:basic_reactorcontroller",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000003BE3F0BC59B",
+      "title": "Підсумок керованої реакторної епохи",
+      "description": [
+        "Зберіть контролер, cyanite та руну вогню як матеріальне підтвердження технологічного й магічного розвитку енергосистеми.",
+        "Фактична перевірка: оглянути встановлений bigreactors:basic_reactorcontroller протягом 40 ticks; 4 × bigreactors:cyanite_ingot — мати в інвентарі; 2 × botania:rune_fire — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorcontroller",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C30D13DB73F8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_reactorcontroller",
+          "timer": 40
+        },
+        {
+          "id": "0000DEC1484B2AEE",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000622584416444",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8F46DD65E01",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002B14C17B9F85",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000AE96D9E3880",
+      "title": "Окремий центр турбіни",
+      "description": [
+        "Поставте Basic Turbine Controller у майданчику розширення, не змінюючи вже перевірену реакторну оболонку.",
+        "Фактична перевірка: оглянути встановлений bigreactors:basic_turbinecontroller протягом 40 ticks; 16 × bigreactors:basic_turbinecasing — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_turbinecontroller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC55292D0CCE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_turbinecontroller",
+          "timer": 40
+        },
+        {
+          "id": "000017F07752BC03",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinecasing",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE8509604086",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002D316100AC3E",
+      "title": "Логічна команда зупинки",
+      "description": [
+        "Підготуйте reactor redstone port та Integrated Dynamics writer для незалежного контрольного сигналу; цей набір не доводить правильність самої програми.",
+        "Фактична перевірка: 1 × bigreactors:basic_reactorredstoneport — мати в інвентарі; 1 × integrateddynamics:part_redstone_writer — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorredstoneport",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003B1727245396",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorredstoneport",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B65DE37323C4",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:part_redstone_writer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2F29998ADE3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000224DC9CE0AF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00003B28187D9DDD",
+      "title": "Відпрацьований матеріал має власний маршрут",
+      "description": [
+        "Поєднайте cyanite з окремими фільтрами логістики, щоб випадкове повернення виходу не заповнило паливний порт.",
+        "Фактична перевірка: 8 × bigreactors:cyanite_ingot — мати в інвентарі; 2 × oritech:item_filter_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:cyanite_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C4084BCB96E",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC6FF9D63E31",
+          "type": "item",
+          "item": {
+            "id": "oritech:item_filter_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4A8D183710C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005F181A1139F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "000068F51948B75C",
+      "title": "Первинний паливний фонд",
+      "description": [
+        "Збережіть raw yellorium та готові зливки окремими партіями, щоб не сплутати природний видобуток із уже підготовленим реакторним паливом.",
+        "Фактична перевірка: 16 × bigreactors:raw_yellorium — мати в інвентарі; 16 × bigreactors:yellorium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:raw_yellorium",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ABAE3A1F352C",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:raw_yellorium",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AA91474A96B4",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_uranium",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009527EE3AB5C9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007B7EA48465F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "00006B0FF72FFE07",
+      "title": "Окремий доступ до твердого палива",
+      "description": [
+        "Підготуйте Solid Access Port і графіт для реакторного майданчика; порт палива не слід замінювати випадковим предметним входом сусідньої машини.",
+        "Фактична перевірка: 2 × bigreactors:basic_reactorsolidaccessport — мати в інвентарі; 16 × bigreactors:graphite_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorsolidaccessport",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089817C77C475",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorsolidaccessport",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFDCEA9376ED",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:graphite_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000381C8A41E3DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "00007C5B3F43DDA7",
+      "title": "Холодний контролер реактора",
+      "description": [
+        "Поставте Basic Reactor Controller до завантаження палива й залиште доступ до його інтерфейсу з безпечного боку майданчика.",
+        "Фактична перевірка: оглянути встановлений bigreactors:basic_reactorcontroller протягом 40 ticks; 1 × minecraft:lever — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorcontroller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC437DBA68F5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_reactorcontroller",
+          "timer": 40
+        },
+        {
+          "id": "0000EFCA1EDB3179",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B53BC46827BD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000052E2417EC0A3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000FDFBBFB0ED1C",
+      "title": "Резерв для зміни геометрії",
+      "description": [
+        "Збережіть додаткові reactor casing та fuel rods, щоб перебудова однієї стіни не вимагала демонтажу паливних стрижнів.",
+        "Фактична перевірка: 24 × bigreactors:basic_reactorcasing — мати в інвентарі; 4 × bigreactors:basic_reactorfuelrod — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorcasing",
+        "count": 1
+      },
+      "dependencies": [
+        "000071087DFCAC1C",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FBFD21D6EBAB",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcasing",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B36B22E6AC7E",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorfuelrod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B219F5769C6D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 14.0
+    },
+    {
+      "id": "000003B42614036E",
+      "title": "Оболонка контрольованого енергоблока",
+      "description": [
+        "Збережіть корпусні блоки й скло для реакторної оболонки; ця кількість є будівельним запасом, а не перевіркою готової геометрії мультиблока.",
+        "Фактична перевірка: 48 × bigreactors:basic_reactorcasing — мати в інвентарі; 16 × bigreactors:basic_reactorglass — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorcasing",
+        "count": 1
+      },
+      "dependencies": [
+        "00007C5B3F43DDA7",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001FCFF5294F5F",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcasing",
+            "count": 1
+          },
+          "count": 48,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD58A5D18A42",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorglass",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C9E90823E2C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002A3C90FCCB91",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002845A26A9951",
+      "title": "Роторна механіка",
+      "description": [
+        "Підготуйте rotor shaft, blades і bearing як один механічний комплект; правильну форму ротора перевіряйте в інтерфейсі мультиблока.",
+        "Фактична перевірка: 8 × bigreactors:basic_turbinerotorshaft — мати в інвентарі; 16 × bigreactors:basic_turbinerotorblade — мати в інвентарі; 1 × bigreactors:basic_turbinerotorbearing — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_turbinerotorshaft",
+        "count": 1
+      },
+      "dependencies": [
+        "00000AE96D9E3880",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ED5F256CE673",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinerotorshaft",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E0BA600A539E",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinerotorblade",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A81416B2048",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinerotorbearing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D9384FF0051",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004E04A1CC4AAD",
+      "title": "Пасивна точка електричного виходу",
+      "description": [
+        "Підготуйте Reactor Power Tap FE та кабель для відокремлення виробленої енергії від зовнішнього резерву бази.",
+        "Фактична перевірка: 1 × bigreactors:basic_reactorpowertapfe_passive — мати в інвентарі; 16 × powah:energy_cable_hardened — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorpowertapfe_passive",
+        "count": 1
+      },
+      "dependencies": [
+        "00006B0FF72FFE07",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000099087EE9180A",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorpowertapfe_passive",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000039E572C362C7",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_hardened",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031A5EE301124",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000F26F9DDCA72",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000FC890783513C",
+      "title": "Ціаніт як окремий результат",
+      "description": [
+        "Відведіть cyanite власний буфер; відпрацьований реакторний матеріал не повинен повертатися у вхідний слот як свіжий yellorium.",
+        "Фактична перевірка: 8 × bigreactors:cyanite_ingot — мати в інвентарі; 8 × bigreactors:yellorium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:cyanite_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000068F51948B75C",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009997FEBFE826",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027FCD1730215",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_uranium",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000097C135D2A3CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C74B9507E9D2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00004299D03139E3",
+      "title": "Сигнальний порт перед паливом",
+      "description": [
+        "Підготуйте Redstone Port та контрольну лампу до гарячого запуску; спочатку відпрацюйте розумілу схему зупинки на холодній конструкції.",
+        "Фактична перевірка: 1 × bigreactors:basic_reactorredstoneport — мати в інвентарі; 2 × minecraft:redstone_lamp — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorredstoneport",
+        "count": 1
+      },
+      "dependencies": [
+        "00004E04A1CC4AAD",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A46A6EF96C7",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorredstoneport",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F392D1DAF97",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone_lamp",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086A64AC86E62",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007F464A35F39E",
+      "title": "Графіт не декоративний запас",
+      "description": [
+        "Збережіть графітові зливки й блоки для обслуговування реакторної гілки, не віддаючи весь матеріал на зовнішнє оформлення зали.",
+        "Фактична перевірка: 32 × bigreactors:graphite_ingot — мати в інвентарі; 4 × bigreactors:graphite_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:graphite_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FC890783513C",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000009ADD1D0E4A5",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:graphite_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FDDC37198AA",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:graphite_block",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3252C2EC5F4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A5F141657FB0",
+      "title": "Подача й відведення робочого тіла",
+      "description": [
+        "Збережіть активний і пасивний fluid port турбіни окремо, щоб їх не переплутали під час перевірки напрямку потоку.",
+        "Фактична перевірка: 1 × bigreactors:basic_turbinefluidport_forge_active — мати в інвентарі; 1 × bigreactors:basic_turbinefluidport_forge_passive — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_turbinefluidport_forge_active",
+        "count": 1
+      },
+      "dependencies": [
+        "00002845A26A9951",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009929266B4B19",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinefluidport_forge_active",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B577C6B8E69",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinefluidport_forge_passive",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000027AA3F4AB9B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000BF5E173660E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000CC99E1744B51",
+      "title": "Паливні та керуючі стрижні",
+      "description": [
+        "Розділіть fuel rods і control rods у наборі збірки, щоб керуванню реактивністю було відведено власні доступні вузли.",
+        "Фактична перевірка: 8 × bigreactors:basic_reactorfuelrod — мати в інвентарі; 4 × bigreactors:basic_reactorcontrolrod — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorfuelrod",
+        "count": 1
+      },
+      "dependencies": [
+        "000003B42614036E",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3B6655F9A94",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorfuelrod",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000497AC7D46598",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcontrolrod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099D6FB1BCCCF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00009EA43DB913BE",
+      "title": "Електрична межа турбінної зали",
+      "description": [
+        "Підготуйте пасивний FE tap турбіни та окремий енергобуфер для перевірки виходу без змішування зі старими генераторами.",
+        "Фактична перевірка: 1 × bigreactors:basic_turbinepowertapfe_passive — мати в інвентарі; 1 × powah:energy_cell_hardened — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_turbinepowertapfe_passive",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A5F141657FB0",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC83E0384F0F",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_turbinepowertapfe_passive",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009AD1C6C3C523",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076AC86E998AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 6.0,
+      "y": 0.0
+    }
+  ]
+}

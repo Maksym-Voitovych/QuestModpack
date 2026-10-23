@@ -1,0 +1,726 @@
+{
+  "id": "0000E51EC5C71A97",
+  "filename": "aia2_branch_technology_xnet",
+  "title": "xnet — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 64,
+  "icon": {
+    "id": "xnet:controller",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000135AC8968E2B",
+      "title": "Дві системи керування разом",
+      "description": [
+        "Поєднайте XNet Controller та ultimate control circuit: перший організує канали, другий залишається компонентом складніших технологій.",
+        "Фактична перевірка: оглянути встановлений xnet:controller протягом 40 ticks; 2 × mekanism:ultimate_control_circuit — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:controller",
+        "count": 1
+      },
+      "dependencies": [
+        "000074476C4240D4",
+        "0000235071AA42BF",
+        "0000ED3CA8B3094C",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2913355AC0E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "0000935ABDFFA645",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ultimate_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007FBCE708A57F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DD0EA43A39B3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002A03A7D995A3",
+      "title": "Віддалений логістичний вузол",
+      "description": [
+        "Підготуйте Wireless Router та антенну основу для віддаленого осередку; ця перевірка комплекту не вимірює фактичну дальність радіолінії.",
+        "Фактична перевірка: оглянути встановлений xnet:wireless_router протягом 40 ticks; 1 × xnet:antenna_base — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:wireless_router",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008A463FB027E4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:wireless_router",
+          "timer": 40
+        },
+        {
+          "id": "00003653C7D9F930",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C4A909DFEAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E54F32A5F7AA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000041EE67795B4E",
+      "title": "Центр трьох потоків",
+      "description": [
+        "Поставте XNet Controller біля сервісного проходу та підготуйте конектори для розділення предметів, рідин і енергії.",
+        "Фактична перевірка: оглянути встановлений xnet:controller протягом 40 ticks; 4 × xnet:connector_blue — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000D1DFD139E24",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "00008F4B4DE0558F",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_blue",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D82079716BF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D73FE7CADD9F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007E0B4646AB56",
+      "title": "Підсумок розподіленої логістики",
+      "description": [
+        "Зберіть маршрутний вузол, окультний remote та ultimate circuit у комплект епохи, зберігаючи ключі лише для переходу між епохами.",
+        "Фактична перевірка: оглянути встановлений xnet:router протягом 40 ticks; 1 × occultism:storage_remote — мати в інвентарі; 1 × mekanism:ultimate_control_circuit — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:router",
+        "count": 1
+      },
+      "dependencies": [
+        "000074476C4240D4",
+        "0000235071AA42BF",
+        "0000ED3CA8B3094C",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000034322FD7E4A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:router",
+          "timer": 40
+        },
+        {
+          "id": "000080451BBAE564",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_remote",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003B2A4CC3627C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ultimate_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000784452BD5BC1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D01D7FE099BA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000AB12DD2D7722",
+      "title": "Редстоунова точка зупинки",
+      "description": [
+        "Підготуйте Redstone Proxy та контрольний важіль для технологічного осередку, який повинен зупинятися незалежно від віддаленого складу.",
+        "Фактична перевірка: 1 × xnet:redstone_proxy — мати в інвентарі; 2 × minecraft:lever — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:redstone_proxy",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000387F5AE8DCF3",
+          "type": "item",
+          "item": {
+            "id": "xnet:redstone_proxy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009ABBD3815D49",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F5F83F7204D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000888F920C55F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000BBEE7FF9DDDD",
+      "title": "Резерв каналів двох майстерень",
+      "description": [
+        "Збережіть запасні routing connectors і порожні скрині EnderStorage для відновлення маршруту без розбирання діючого вузла.",
+        "Фактична перевірка: 2 × xnet:connector_routing — мати в інвентарі; 2 × enderstorage:ender_chest — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:connector_routing",
+        "count": 1
+      },
+      "dependencies": [
+        "000074476C4240D4",
+        "0000235071AA42BF",
+        "0000ED3CA8B3094C",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000095DD9E68CFA",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_routing",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005CF167358485",
+          "type": "item",
+          "item": {
+            "id": "enderstorage:ender_chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B00FD9209CB0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000F08A3190DD0A",
+      "title": "Межа між майстернями",
+      "description": [
+        "Поставте Router і routing connectors там, де локальні виробничі канали переходять у маршрут між окремими майстернями.",
+        "Фактична перевірка: оглянути встановлений xnet:router протягом 40 ticks; 4 × xnet:connector_routing — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:router",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E05E3959976A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:router",
+          "timer": 40
+        },
+        {
+          "id": "0000D7901FD77203",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_routing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECDD0C62589A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00002CC247BD0278",
+      "title": "Антена з доступом для ремонту",
+      "description": [
+        "Зберіть антенні частини в один ремонтний комплект і залиште навколо вузла простір для перевірки з'єднань.",
+        "Фактична перевірка: 4 × xnet:antenna — мати в інвентарі; 1 × xnet:antenna_dish — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:antenna",
+        "count": 1
+      },
+      "dependencies": [
+        "00002A03A7D995A3",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003278B80A2067",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000083A521AC78AA",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna_dish",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014920D66D774",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008DB4545C2B53",
+      "title": "Колір як частина схеми",
+      "description": [
+        "Виділіть сині й червоні траси різним ділянкам бази; кольори допомагають читати схему, але не замінюють налаштування каналів.",
+        "Фактична перевірка: 16 × xnet:netcable_blue — мати в інвентарі; 16 × xnet:netcable_red — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:netcable_blue",
+        "count": 1
+      },
+      "dependencies": [
+        "000041EE67795B4E",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C8F96D3E9DF",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_blue",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB7EA65796A5",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_red",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D68A891FD368",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CFB7F439F1B8",
+      "title": "Маршрутна магістраль",
+      "description": [
+        "Прокладіть окрему routing-трасу; підміна нею звичайних каналів без схеми лише ускладнює пошук місця розриву.",
+        "Фактична перевірка: 24 × xnet:netcable_routing — мати в інвентарі; 2 × xnet:advanced_connector_routing — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:netcable_routing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F08A3190DD0A",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000838FD69CE99B",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_routing",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005965978F2946",
+          "type": "item",
+          "item": {
+            "id": "xnet:advanced_connector_routing",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008921D5EBCBD8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "000000043F20F1D4",
+      "title": "Точний доступ до граней",
+      "description": [
+        "Підготуйте advanced connectors для машин, де важлива вибрана грань взаємодії, та звичайні конектори для простих буферів.",
+        "Фактична перевірка: 4 × xnet:advanced_connector_blue — мати в інвентарі; 4 × xnet:connector_blue — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:advanced_connector_blue",
+        "count": 1
+      },
+      "dependencies": [
+        "00008DB4545C2B53",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000EC61641327A",
+          "type": "item",
+          "item": {
+            "id": "xnet:advanced_connector_blue",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AA67C6CE903B",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_blue",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E32825C96535",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F7C322C0CEB2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DB3F18F8FBA7",
+      "title": "Модернізація без демонтажу мережі",
+      "description": [
+        "Збережіть connector upgrades для поступової заміни вузлів; не міняйте одразу весь кабельний каркас працюючої майстерні.",
+        "Фактична перевірка: 4 × xnet:connector_upgrade — мати в інвентарі; 8 × xnet:netcable_blue — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "xnet:connector_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "000000043F20F1D4",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000026F7D3754786",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_upgrade",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000849973430794",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_blue",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000979855C294CA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000910A8F3B8B8C",
+      "title": "Віддалений сервіс енергоблока",
+      "description": [
+        "Підготуйте XNet router та реакторний контролер для маршруту до другої майстерні; огляд контролера не замінює контроль місцевого аварійного вимикача.",
+        "Фактична перевірка: оглянути встановлений xnet:router протягом 40 ticks; оглянути встановлений bigreactors:basic_reactorcontroller протягом 40 ticks. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "xnet:router",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E658107BB35",
+        "00005A0E533B7033",
+        "0000DB8A39AAB862",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008224FB77D189",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:router",
+          "timer": 40
+        },
+        {
+          "id": "000035928353BE4E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_reactorcontroller",
+          "timer": 40
+        },
+        {
+          "id": "0000A49EA950CD99",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005A8E60DE339D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 14.0
+    }
+  ]
+}

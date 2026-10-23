@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.2.0-alpha",
+  "version": "0.3.0-alpha",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "java": 21,
@@ -31,7 +31,7 @@
   ],
   "guard_policy_tests": {
     "status": "passed",
-    "assertions": 119,
+    "assertions": 5237,
     "command": "JAVA_HOME=<JDK21> python companion/test_policy.py",
     "minecraft_dependencies_used": false
   },
@@ -40,15 +40,17 @@
     "command": "JAVA_HOME=<JDK21> ./gradlew build --no-daemon --console=plain",
     "gradle": "9.2.1",
     "jar_created": true,
-    "jar_path": "mods/aia2-machine-guard-0.2.0-alpha.jar",
-    "jar_bytes": 17117,
-    "jar_sha256": "8135a6cb27a6489d5161442c1868e03f780ee90454afa4b3e68feffd87a74361",
+    "jar_path": "mods/aia2-machine-guard-0.3.0-alpha.jar",
+    "jar_bytes": 45087,
+    "jar_sha256": "f9851a1a99515663d08fef67153c981994a9f56854a6a66b14818a96f011ee48",
     "zip_crc_verified": true,
     "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
     "guard_policy_assertions": 119,
     "checks_disabled": false,
     "live_team_resolver_assertions": 9,
-    "total_java_assertions": 128
+    "total_java_assertions": 5237,
+    "recipe_identity_assertions": 5095,
+    "scoped_owner_assertions": 14
   },
   "minecraft_run": true,
   "mixin_binding_verified_in_game": true,
@@ -58,7 +60,7 @@
     "piston-data.mojang.com",
     "libraries.minecraft.net"
   ],
-  "coverage": "Standard server BlockEntityTicker dispatch enforces the block epoch and persistent team ownership, including cached recipes when the machine itself is locked. Vanilla2x2/3x3 ResultSlot pickup and vanilla CraftingMenu/InventoryMenu quickMoveStack(slot0) check the output epoch before consumption. Scheduled vanilla Crafter dispense checks machine owner+block epoch+output epoch before callbacks, item output or ingredient consumption. Does not cover later recipes in already-unlocked modded early machines, custom modded result slots/menus, smithing/stonecutting/smelting outputs, entities/contraptions, other scheduled ticks, direct capability IO, component-only tiers, or production telemetry.",
+  "coverage": "Standard BlockEntityTicker with owning-team context; vanilla crafting and Crafter; individual RecipeManager lookups in that context; Mekanism CachedRecipe including scoped Robit ownership; Create Basin and identity-verified generated vanilla brewing; AE2 Molecular Assembler grid processing and crafting-terminal clicks. Full coverage of custom caches, passive armor/Curios, component variants and all mod internals is not certified.",
   "jdk_download": {
     "url": "https://download.oracle.com/java/21/archive/jdk-21.0.9_linux-x64_bin.tar.gz",
     "sha256": "0854421306468559813f1e5068e036213f9710e1e239d823c0d63552a1259e25",
@@ -123,5 +125,26 @@
     "membership_cached": false,
     "failure_policy": "Deny staged crafting; no fallback to synchronized old membership."
   },
-  "full_pack_run": false
+  "full_pack_run": false,
+  "bootstrap_smoke_0_3": {
+    "status": "core_native_bindings_verified_on_minimal_development_server",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.264",
+    "companion": "0.3.0-alpha",
+    "targets_verified": [
+      "LevelChunk$BoundTickingBlockEntity",
+      "Slot",
+      "CraftingMenu",
+      "InventoryMenu",
+      "CrafterBlock",
+      "RecipeManager"
+    ],
+    "optional_mods_present": false,
+    "world": "previous own ignored development world only",
+    "progression_bridge": "KubeJS/FTB absent; runtime configuration initially absent so guard remained closed",
+    "termination": "SIGTERM to own server; no player world or real instance modified",
+    "later_changes": "Robit and potion compatibility helpers were added and compiled afterwards; optional targets require real mod launch",
+    "full_pack": false,
+    "actual_machine_scenarios": false
+  }
 }

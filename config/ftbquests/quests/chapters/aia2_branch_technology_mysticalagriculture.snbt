@@ -1,0 +1,1144 @@
+{
+  "id": "000041D94C0D85CC",
+  "filename": "aia2_branch_technology_mysticalagriculture",
+  "title": "mysticalagriculture — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 54,
+  "icon": {
+    "id": "mysticalagriculture:infusion_altar",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000093622CE3C7E",
+      "title": "Перша інфузована грядка",
+      "description": [
+        "Підготуйте inferium farmland для окремого дослідного поля. Порівнюйте його з контрольним звичайним ґрунтом до масштабування плантації.",
+        "Фактична перевірка: 8 × mysticalagriculture:inferium_farmland — мати в інвентарі; 8 × minecraft:dirt — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:inferium_farmland",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000380BEBE69367",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_farmland",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086E26B85B294",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dirt",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D73B2277737",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000027FB415D326D",
+      "title": "Інфузія починається з конструкції",
+      "description": [
+        "Підготуйте вівтар та повний набір п'єдесталів, перш ніж витрачати коштовні ресурси. Це конструктивна основа інфузії, а не підтвердження вже виконаного ритуалу.",
+        "Фактична перевірка: оглянути встановлений mysticalagriculture:infusion_altar протягом 40 ticks; 8 × mysticalagriculture:infusion_pedestal — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:infusion_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000011F0232EA191",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:infusion_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000D838341173DE",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_pedestal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000024EC5CA5F4BF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B909F1146B53",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003C9423312A18",
+      "title": "Вугільний резерв ферми",
+      "description": [
+        "Зробіть невелику вугільну культуру для місцевих печей та факелів. Вона не повинна забирати площу, потрібну для першого металевого врожаю.",
+        "Фактична перевірка: 2 × mysticalagriculture:coal_seeds — мати в інвентарі; 16 × mysticalagriculture:coal_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:coal_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008B33F03B416A",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:coal_seeds",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCA330E16900",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:coal_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066CB1522CF81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007B65A4D20DBF",
+      "title": "Власний старт inferium",
+      "description": [
+        "Отримайте перший посівний матеріал inferium та залиште частину есенції для розвитку ґрунту. Не споживайте весь перший урожай у наступному ступені.",
+        "Фактична перевірка: 4 × mysticalagriculture:inferium_seeds — мати в інвентарі; 32 × mysticalagriculture:inferium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:inferium_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A269EB5AA7E7",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_seeds",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000543B93B9F36",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A16F1CB32948",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008263BDFF520D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "00007BCC68B22531",
+      "title": "Червоний пил без зупинки експедицій",
+      "description": [
+        "Збережіть редстоунове насіння як кероване додаткове джерело. Природні поклади ще корисні для швидкого поповнення запасу перед великим будівництвом.",
+        "Фактична перевірка: 2 × mysticalagriculture:redstone_seeds — мати в інвентарі; 16 × mysticalagriculture:redstone_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:redstone_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006DD0BBB2E204",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:redstone_seeds",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B3AEB9763D63",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:redstone_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C0FCCEA48D4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000861F92621E68",
+      "title": "Залізо як перша контрольована культура",
+      "description": [
+        "Створіть залізне насіння й збережіть частину есенції заліза окремо від готових зливків. Це дозволить планувати випуск металу без плутанини між урожаєм і продуктом.",
+        "Фактична перевірка: 2 × mysticalagriculture:iron_seeds — мати в інвентарі; 16 × mysticalagriculture:iron_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:iron_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003B92DC25366C",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_seeds",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC44B921541D",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B46DE6664D0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B4AD09CE9E06",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000A174E802E946",
+      "title": "Інструмент конверсії есенцій",
+      "description": [
+        "Підготуйте infusion crystal разом із резервом нижчої есенції. Враховуйте стан інструмента вручну: звичайна предметна перевірка не вимірює залишкову міцність компонента.",
+        "Фактична перевірка: 1 × mysticalagriculture:infusion_crystal — мати в інвентарі; 32 × mysticalagriculture:inferium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:infusion_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "000011218EFF0F97",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A4E510145E04",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EABC1A1149C2",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000058B92A112A1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "000009320C792898",
+      "title": "Два види природного реагенту",
+      "description": [
+        "Збережіть nature essence та mana powder окремо. Вони походять із різних систем і не є взаємозамінними лише через схожу магічну тему.",
+        "Фактична перевірка: 24 × mysticalagriculture:nature_essence — мати в інвентарі; 12 × botania:mana_powder — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:nature_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006DB3213FDB1",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:nature_essence",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062A8C6AF4555",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070466E439DB5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000F4D13885F09",
+      "title": "Непорушний запас поточного ступеня",
+      "description": [
+        "Відкладіть третій ступінь есенції та комплект prosperity bases. Це стартовий фонд відновлення, який не слід віддавати в масову конверсію.",
+        "Фактична перевірка: 16 × mysticalagriculture:tertium_essence — мати в інвентарі; 4 × mysticalagriculture:prosperity_seed_base — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:tertium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF800FFC7A7D",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000059394121B9C8",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_seed_base",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000154F42AA687E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F19C38A25D51",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000011CAA8022FC4",
+      "title": "Урожай для індустріального споживача",
+      "description": [
+        "Підготуйте залізну есенцію та готові залізні пластини Create. Розділення цих двох запасів не дозволяє видати необроблений урожай за готову деталь.",
+        "Фактична перевірка: 24 × mysticalagriculture:iron_essence — мати в інвентарі; 16 × create:iron_sheet — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:iron_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000022D03CA5B5C2",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_essence",
+            "count": 1
+          },
+          "count": 24,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077965E40B48E",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000026B0AD2609A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DAD6599CEE2A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000345AF0446117",
+      "title": "Осколки процвітання для посівного фонду",
+      "description": [
+        "Відділіть prosperity shards від есенцій урожаю. Саме вони обмежують початковий посівний фонд, тому не витрачайте весь запас на необов'язкове спорядження.",
+        "Фактична перевірка: 32 × mysticalagriculture:prosperity_shard — мати в інвентарі; 16 × minecraft:wheat_seeds — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:prosperity_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "000027FB415D326D",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002EEE83618A6C",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4E628C5D125",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094F641B1FDAF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00004DEC942FFE7E",
+      "title": "Другий ступінь есенції",
+      "description": [
+        "Розділіть inferium та prudentium у сховищі. Зразки різних ступенів потрібні, щоб автоматизація не витрачала всі нижчі есенції на одну чергу.",
+        "Фактична перевірка: 16 × mysticalagriculture:prudentium_essence — мати в інвентарі; 16 × mysticalagriculture:inferium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:prudentium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "00007B65A4D20DBF",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000255AB1AEF851",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prudentium_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA170EC44BC3",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C549CA27B29",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000ABC31497647F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "000077A6AA8948EA",
+      "title": "Запас для відновлення інфузії",
+      "description": [
+        "Підготуйте запасні п'єдестали та prosperity ingots. Зруйнована частина кола не повинна змушувати розбирати робочий вівтар іншої школи.",
+        "Фактична перевірка: 4 × mysticalagriculture:infusion_pedestal — мати в інвентарі; 8 × mysticalagriculture:prosperity_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:infusion_pedestal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A976F108DC1F",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_pedestal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000093EB8B23B4FB",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E219B718414F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000970625103D63",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000874097EA201A",
+      "title": "Технологічна форма tertium",
+      "description": [
+        "Виготовте зливки поточного ступеня, не розбираючи весь посівний фонд. Металева форма призначена для спорядження та компонентів, а не для прямого висівання.",
+        "Фактична перевірка: 8 × mysticalagriculture:tertium_ingot — мати в інвентарі; 4 × mysticalagriculture:tertium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:tertium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A174E802E946",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CA44DA006A99",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000266BB4E81293",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C98B660EB96E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000AEC7CB8DEDB0",
+      "title": "Ґрунт для tertium-культур",
+      "description": [
+        "Відведіть tertium farmland під найбільш цінні поточні культури. Не потрібно одразу перебудовувати всі харчові грядки на дорогий ресурсний ґрунт.",
+        "Фактична перевірка: 8 × mysticalagriculture:tertium_farmland — мати в інвентарі; 1 × mysticalagriculture:iron_seeds — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:tertium_farmland",
+        "count": 1
+      },
+      "dependencies": [
+        "0000093622CE3C7E",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C92521BA453E",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_farmland",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000972E28A922C9",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4C3C04A6C47",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000598A040E0A13",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 14.0
+    },
+    {
+      "id": "0000DDF713BF3426",
+      "title": "Підсумок керованої агрономії",
+      "description": [
+        "Зберіть tertium essence, металеве насіння та елітний контур в один підсумковий комплект. Він показує доступ до магії росту, технологій і матеріальної продукції.",
+        "Фактична перевірка: 12 × mysticalagriculture:tertium_essence — мати в інвентарі; 2 × mysticalagriculture:iron_seeds — мати в інвентарі; 1 × mekanism:elite_control_circuit — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:tertium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C14B87A73ED8",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FFFDE75733FC",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000370E0177D783",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:iron_seeds",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009ACA8233461D",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081544F978A00",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000096233EAF7B19",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 16.0
+    },
+    {
+      "id": "0000E4957F469667",
+      "title": "Мідна культура для кабельної лінії",
+      "description": [
+        "Виділіть мідну культуру під попит електромережі. Її есенцію варто переробляти окремо, щоб метал не губився серед загальних фермерських предметів.",
+        "Фактична перевірка: 2 × mysticalagriculture:copper_seeds — мати в інвентарі; 16 × mysticalagriculture:copper_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:copper_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "0000861F92621E68",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000061C66149DDA1",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:copper_seeds",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028722448FD8C",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:copper_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B90E7F0F366",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000A04AB4AA0BB3",
+      "title": "Аграрна підтримка електроніки",
+      "description": [
+        "Збережіть есенцію редстоуну поряд із готовими infused alloy. Обидві форми потрібні для планування витрат у різних технологічних лініях.",
+        "Фактична перевірка: 16 × mysticalagriculture:redstone_essence — мати в інвентарі; 8 × mekanism:alloy_infused — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:redstone_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000011CAA8022FC4",
+        "00007BCC68B22531",
+        "0000B9BDA67F99AE",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000055864BA6FDBA",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:redstone_essence",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066BA0F75E776",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8565AA7E123",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AB5D7097E68B",
+      "title": "Третій ступінь без гонитви за supremium",
+      "description": [
+        "Доведіть поточну аграрну гілку до tertium. Imperium та supremium залишаються окремим пізнішим етапом прогресії.",
+        "Фактична перевірка: 8 × mysticalagriculture:tertium_essence — мати в інвентарі; 8 × mysticalagriculture:prudentium_essence — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:tertium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "00004DEC942FFE7E",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007A2CEBB198C9",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:tertium_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035CECD676B0A",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prudentium_essence",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005FA4945C0719",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00000515A3B87929",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AFD5B8881F75",
+      "title": "Базове насіння без підміни результату",
+      "description": [
+        "Підготуйте prosperity seed bases як окремий напівфабрикат. Готову основу не слід записувати в облік як уже налаштоване ресурсне насіння.",
+        "Фактична перевірка: 8 × mysticalagriculture:prosperity_seed_base — мати в інвентарі; 4 × mysticalagriculture:prosperity_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:prosperity_seed_base",
+        "count": 1
+      },
+      "dependencies": [
+        "0000345AF0446117",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ADC5C9CDFB21",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_seed_base",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000238014D58EB7",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076313C643264",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006B2793B05447",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    }
+  ]
+}

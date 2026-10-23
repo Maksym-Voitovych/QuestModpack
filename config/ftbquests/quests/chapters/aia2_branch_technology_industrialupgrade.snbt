@@ -1,0 +1,1060 @@
+{
+  "id": "0000E47557118F24",
+  "filename": "aia2_branch_technology_industrialupgrade",
+  "title": "industrialupgrade — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 45,
+  "icon": {
+    "id": "industrialupgrade:basemachine3/research_table_space",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00004981046C765A",
+      "title": "Космічний дослідницький стіл",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Підготуйте робоче місце нативних космічних досліджень Industrial Upgrade.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/research_table_space",
+        "count": 1
+      },
+      "dependencies": [
+        "0000355268828E4C",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002358F938D58C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialupgrade:basemachine3/research_table_space",
+          "timer": 40
+        },
+        {
+          "id": "0000DF5D16005486",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000165786FFE707",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000083741EF39992",
+      "title": "Осміридієвий сплав",
+      "description": [
+        "Космічна інженерія потребує керованого виробництва спеціалізованих сплавів і схем.",
+        "Підготуйте партію нативного сплаву Industrial Upgrade для пізніх машин.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:alloyingot/osmiridium",
+        "count": 1
+      },
+      "dependencies": [
+        "0000554B85A4A487",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D4156E36627",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F909209DF32F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F1503E6DF87F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000006B6F1DC2DF",
+      "title": "Процесор керування планетарним сплавом",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Підготуйте процесор Modern Industrialization поруч із осміридієм для апаратної частини планетарного цеху.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "modern_industrialization:processing_unit",
+        "count": 1
+      },
+      "dependencies": [
+        "000083741EF39992",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000051612819B0B2",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000082AC3F58DF7",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000914436E2C535",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009CDEC1C4E968",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009512BDE91C01",
+      "title": "Складальник ракет Industrial Upgrade",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Відокремте складання ракет цієї школи від NASA Workbench Ad Astra.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/rocket_assembler",
+        "count": 1
+      },
+      "dependencies": [
+        "00004981046C765A",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B86E65DBD9EC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialupgrade:basemachine3/rocket_assembler",
+          "timer": 40
+        },
+        {
+          "id": "00007AA3072B3C6E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A5EAA336C750",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001B1BD403A1CD",
+      "title": "Складальник зондів",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Підготуйте спеціалізоване робоче місце для безпілотного дослідницького обладнання.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/probe_assembler",
+        "count": 1
+      },
+      "dependencies": [
+        "00009512BDE91C01",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B69E66C1B2F0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialupgrade:basemachine3/probe_assembler",
+          "timer": 40
+        },
+        {
+          "id": "00006CFC473B779F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B7BE7A95B0C7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BB83AFEA0894",
+      "title": "Квантовий контролер космічної печі",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Підготуйте квантову керувальну схему Evolved Mekanism та конструкційний сплав; обидва предмети мають перевірені виробничі виходи.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000006B6F1DC2DF",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2E9974CF610",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B4B7D1B9189",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000433D6598EC21",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E1BD28143A26",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A4C621D62ED7",
+      "title": "Надпровідне живлення контролера",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Виділіть надпровідний кабель і монтажний сплав для окремої лінії керування; пропускну здатність перевіряйте нативними засобами мода.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "modern_industrialization:superconductor_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BB83AFEA0894",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002B2D38F57776",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_cable",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4A14F428FF4",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009444B44EC61",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FED9A98CE3ED",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D9B08487330F",
+      "title": "Промисловий стартовий майданчик",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Зберіть майданчик, сумісний із транспортною гілкою Industrial Upgrade.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/rocket_launch_pad",
+        "count": 1
+      },
+      "dependencies": [
+        "00001B1BD403A1CD",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000034D94C95BCA1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialupgrade:basemachine3/rocket_launch_pad",
+          "timer": 40
+        },
+        {
+          "id": "00004E947BBA7392",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E06D2E43C506",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000261ECA44C3AB",
+      "title": "Квантова логіка диспетчерської",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Підготуйте квантовий процесор AdvancedAE для диспетчеризації та матеріал апаратної оправи.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "advanced_ae:quantum_processor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A4C621D62ED7",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F217887F9807",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000118F6B77F216",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A03759A6974",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FC441FA1BD4B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000037D9A4AEDBDB",
+      "title": "Дослідницька оптика першого рівня",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Підготуйте нативну лінзу початкового дослідницького покоління.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:research_lens/lens_1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D9B08487330F",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000054D73700CEC8",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088AA3DB5492A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F69BDD35097C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005DA0C57E0FE1",
+      "title": "Резерв планетарної автоматики",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Підготуйте квантову схему MI та сингулярний сплав як незалежний резерв високотехнологічного керування.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "modern_industrialization:quantum_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000261ECA44C3AB",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A99A0990547",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:quantum_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC9131E3A76F",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_singular",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D69B1FABBF60",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A2D9ECCF1F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E3903A6536A9",
+      "title": "Розширена дослідницька оптика",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Створіть старшу лінзу, звіривши передумови її рецепта у власній версії збірки.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:research_lens/lens_4",
+        "count": 1
+      },
+      "dependencies": [
+        "000037D9A4AEDBDB",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092474537377B",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_4",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFA470F43EA1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003131D0BB9364",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003F743C527944",
+      "title": "Квантовий трансформатор",
+      "description": [
+        "Космічна інженерія потребує керованого виробництва спеціалізованих сплавів і схем.",
+        "Підготуйте спеціалізований енергетичний вузол для нового промислового рівня.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/quantum_transformer",
+        "count": 1
+      },
+      "dependencies": [
+        "00005DA0C57E0FE1",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000255911968362",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialupgrade:basemachine3/quantum_transformer",
+          "timer": 40
+        },
+        {
+          "id": "0000325316A2F46D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000073CE2AF088CC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BAB4F4841046",
+      "title": "Високорівнева дослідницька оптика",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Завершіть старший оптичний компонент для дослідницького обладнання.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:research_lens/lens_7",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E3903A6536A9",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E8F108A5565E",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_7",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD1AEDBFBE9F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007ABF4FEA5264",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AD9E22C76757",
+      "title": "Планетарний дослідницький комплекс",
+      "description": [
+        "Планетарна промисловість Industrial Upgrade починається з дослідження й складання обладнання.",
+        "Зведіть дослідницьке робоче місце, складальник і старшу оптику в апаратний паспорт проєкту.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:basemachine3/research_table_space",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BAB4F4841046",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000123E7EB2C622",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:basemachine3/research_table_space",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA62E7AB6CFE",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:basemachine3/probe_assembler",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000054C4A11142DA",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_7",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D3166127B96D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000942D3AE078F4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C5545B34755D",
+      "title": "Технологічний паспорт планетарних матеріалів",
+      "description": [
+        "Планетарна промисловість поєднує сплав Industrial Upgrade з керувальними вузлами доступних високотехнологічних шкіл.",
+        "Зведіть промисловий сплав і три різні керувальні школи в завершений міжмодовий комплект.",
+        "Комплект перевіряється предметним завданням і не підміняє нативні рецепти Industrial Upgrade. Фотонні схеми з внутрішніх машинних реєстрів потребують окремої перевірки у грі."
+      ],
+      "icon": {
+        "id": "industrialupgrade:alloyingot/osmiridium",
+        "count": 1
+      },
+      "dependencies": [
+        "00003F743C527944",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000073ACAF05ACC",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:alloyingot/osmiridium",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECBB60038CF9",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094C19D52216B",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007B9461E10BB",
+          "type": "item",
+          "item": {
+            "id": "advanced_ae:quantum_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AAF87298ADF7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005D85BF9EC00C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007F84BD6C7F3B",
+      "title": "Дослідницька оправа вічності",
+      "description": [
+        "Фінальна логістика розділяє запити на великі партії звичайної сировини та унікальні компоненти, які не мають EMC.",
+        "Підготуйте дві нативні оптичні системи й вічний матеріал для міжмодового контрольного набору.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:research_lens/lens_7",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D8A365709809",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D2F3E54059E",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_7",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004797404CB643",
+          "type": "item",
+          "item": {
+            "id": "avaritia:eternal_singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000040951411A464",
+          "type": "item",
+          "item": {
+            "id": "oritech:enderic_lens",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E414CE420F8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004B2F029AD707",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00001D2DCDDACA0F",
+      "title": "Планетарний виробничий архів",
+      "description": [
+        "Фінальна промислова перевірка збирає апаратні результати різних шкіл, не підміняючи одну фабрику іншою.",
+        "Зведіть дослідницьку оптику, космічний сплав, квантове керування й фінальну матерію.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "industrialupgrade:research_lens/lens_7",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D10325F921DB",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089FAE96412C4",
+          "type": "item",
+          "item": {
+            "id": "industrialupgrade:research_lens/lens_7",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000860CB45A00AE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052642EBD0D5A",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088D9D7D6A59F",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000213918D9B4EC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FD65BA48B130",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    }
+  ]
+}

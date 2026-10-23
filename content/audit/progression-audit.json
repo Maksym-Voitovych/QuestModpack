@@ -1,0 +1,5648 @@
+{
+  "reviewed_at_utc": "2026-10-23T00:55:02.579828+00:00",
+  "status": "passed_targeted_static_audit",
+  "scope": "48 epoch component chains and exact key-material producer audit; temporary compiler output, no production files mutated by this review",
+  "compiler_sha256": "5da5564103cdb7148e8d0ed804a0d13b77b68cf108aab575f288398439e281e9",
+  "counts": {
+    "epochs": 48,
+    "components": 192,
+    "component_recipes": 192,
+    "exported_native_recipe_files": 42064,
+    "component_dependency_edges": 297
+  },
+  "recipe_types": {
+    "minecraft:crafting_shaped": 34,
+    "create:mixing": 33,
+    "create:compacting": 45,
+    "botania:mana_infusion": 4,
+    "botania:runic_altar": 40,
+    "mekanism:metallurgic_infusing": 10,
+    "oritech:foundry": 2,
+    "oritech:assembler": 15,
+    "draconicevolution:fusion_crafting": 9
+  },
+  "checks": {
+    "machine_stage_availability": "passed",
+    "direct_material_stage_availability": "passed",
+    "component_dependency_graph": "acyclic",
+    "key_input_units": "9 for all 48 epochs",
+    "key_previous_artifact": "only the immediate predecessor; no key used by component recipes",
+    "base_material_producer_coverage": "all normalized base materials have native/custom producers or identified non-recipe routes"
+  },
+  "resolved_material_findings": [
+    {
+      "epochs": [
+        3
+      ],
+      "original": "rustic_engineer:iron_plate",
+      "replacement": "create:iron_sheet",
+      "evidence": "No exported producer for original; canonical route alltheores:crafting/iron/plate uses 2 iron ingots and an alltheores:ore_hammers tag tool. Copper/iron ore hammers available epoch1; plate item available epoch2, native recipe gate3. Does not need the epoch4 mechanical press. Original may have a non-recipe procedural hammer route; normalization makes the supported route explicit."
+    },
+    {
+      "epochs": [
+        13
+      ],
+      "original": "modern_industrialization:steel_plate",
+      "replacement": "immersiveengineering:plate_steel",
+      "evidence": "Zero original ID recipe mentions. immersiveengineering:crafting/plate_steel_hammering uses steel ingot + IE hammer, both available epoch8; native Create steel pressing produces the same canonical item."
+    },
+    {
+      "epochs": [
+        18
+      ],
+      "original": "industrialforegoing:iron_gear",
+      "replacement": "modern_industrialization:iron_gear",
+      "evidence": "industrialforegoing:iron_gear recipe output is rewritten to MI iron gear. MI gear available epoch6."
+    },
+    {
+      "epochs": [
+        25,
+        26
+      ],
+      "original": "oritech:biosteel_ingot",
+      "replacement": "immersiveengineering:ingot_steel",
+      "evidence": "No original item producer among 42064 native recipes. Oritech biosteel smelting, foundry and casting all output IE steel after unification. New epoch25/26 matrix recipes use Oritech foundry with steel + raw_biopolymer to retain the biopolymer requirement."
+    },
+    {
+      "epochs": [
+        38
+      ],
+      "original": "ad_astra:etrium_ingot",
+      "replacement": "ad_astra:ostrum_ingot",
+      "evidence": "Zero recipe mentions of Etrium ingot. Ostrum has actual producers and is available epoch37; Calorite remains the epoch38 technical material."
+    }
+  ],
+  "bootstrap_reviews": [
+    {
+      "epochs": [
+        4
+      ],
+      "input": "rootsclassic:runic_focus",
+      "result": "Explicit aia2:bootstrap/epoch_04_1 crafting recipe uses Create iron sheet plus overworld redstone/root/diamond/bark; no future altar dependency."
+    },
+    {
+      "epochs": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "input": "botania:manasteel_ingot",
+      "result": "Native botania:mana_infusion with iron uses epoch5 pool/spreader; livingrock via Pure Daisy/petal apothecary is available epoch5. Component catalysts before epoch9 use pool infusion rather than prematurely requiring Runic Altar."
+    },
+    {
+      "epochs": [
+        8
+      ],
+      "input": "immersiveengineering:blastbrick",
+      "result": "Explicit bootstrap replaces Nether brick dependency with brick, livingrock, coal coke and sand, before Nether opens epoch15."
+    },
+    {
+      "epochs": [
+        9
+      ],
+      "input": "naturesaura:infused_iron / botania:rune_water",
+      "result": "Nature Altar and Runic Altar both open epoch9. Patched Runic Altar crafting needs livingrock, mana pearl, IE iron component, so it does not require its own rune output."
+    },
+    {
+      "epochs": [
+        10
+      ],
+      "input": "create:brass_ingot / minecraft:quartz",
+      "result": "Brass bootstrap mixes unheated, avoiding a Blaze Burner before Nether15. Quartz is obtainable from traded quartz blocks with native cyclic:shapeless/quartz (recipe gate0), so electron tubes do not force early Nether entry."
+    },
+    {
+      "epochs": [
+        25
+      ],
+      "input": "oritech:assembler_block",
+      "result": "Patched crafting uses adamant, motor, copper, vanilla crafter, PCB and iesnium. Adamant and motor retain direct crafting routes independent of assembler; crafter opens10, PCB24, iesnium14. First assembler does not depend on a new convergence component."
+    },
+    {
+      "epochs": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "input": "draconicevolution:fusion_crafting",
+      "result": "Epoch40 uses wyvern injectors available40; epoch41-42 draconic level uses awakened injectors available41; epoch43+ chaotic uses chaotic injectors available42. Native injector upgrades use lower tier injectors, and previous convergence core is always an earlier already craftable component, not an epoch key."
+    },
+    {
+      "epochs": [
+        47
+      ],
+      "input": "avaritia:infinity_catalyst",
+      "result": "Native serializer has implicit output. Existing aia2:rebalance/avaritia/infinity_catalyst removes the bedrock ingredient and original native ID is removed. Export-only output scanning would incorrectly mark this material missing."
+    },
+    {
+      "epochs": [
+        33,
+        34
+      ],
+      "input": "mekanism:pellet_polonium",
+      "result": "Native mechanism recipe uses item_output, not generic result/output. mekanism:processing/lategame/polonium_pellet/from_reaction is a real producer; generic output-only scanning is insufficient."
+    }
+  ],
+  "errors": [],
+  "epochs": [
+    {
+      "epoch": 1,
+      "title_uk": "Вогнище й коріння",
+      "key_input_units": 9,
+      "previous_key": null,
+      "base_magic_input": "rootsclassic:old_root",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_01",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_01",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_01",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_01",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "minecraft:flint",
+          "item_gate": 0,
+          "native_recipe_producers": [
+            "mekanism:enriching/conversion/gunpowder_to_flint",
+            "mekanism:enriching/conversion/gravel_to_flint",
+            "mysticalagriculture:essence/minecraft/flint",
+            "botania:mana_infusion/gunpowder_to_flint",
+            "cyclic:shapeless/flint_block_rev",
+            "allthecompressed:decompress/flint_block",
+            "create:splashing/gravel",
+            "create:crushing/gravel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "rootsclassic:old_root",
+          "item_gate": 1,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Root gathering/drop mechanic; no native crafting producer required.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "R",
+          "item": "minecraft:cobblestone",
+          "item_gate": 0,
+          "native_recipe_producers": [
+            "twilightforest:giant_cobblestone_to_cobblestone",
+            "silentgear:cobblestone_from_pebbles",
+            "mekanism:enriching/conversion/mossy/cobblestone",
+            "mekanism:crushing/stone/to_cobblestone",
+            "industrialforegoing:stonework_generate/cobblestone",
+            "mysticalagriculture:essence/minecraft/cobblestone",
+            "immersiveengineering:crusher/stone",
+            "cyclic:crusher/nylium_w"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "minecraft:oak_planks",
+          "item_gate": 0,
+          "native_recipe_producers": [
+            "minecraft:oak_planks",
+            "immersiveengineering:sawmill/oak_door",
+            "immersiveengineering:sawmill/bookshelf",
+            "immersiveengineering:sawmill/oak_log",
+            "immersiveengineering:sawmill/stripped_oak_log",
+            "immersiveengineering:sawmill/oak_wood",
+            "immersiveengineering:sawmill/oak_stairs",
+            "allthecompressed:decompress/oak_planks_1x"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "title_uk": "Мідь і водяне колесо",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_01",
+      "base_magic_input": "rootsclassic:oak_bark",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_02",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_02",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_02",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_02",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "minecraft:copper_ingot",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "oritech:copper_ingot_from_blasting_copper_dust",
+            "oritech:copper_ingot_from_smelting_copper_gem",
+            "oritech:copper_ingot_from_smelting_copper_dust",
+            "oritech:copper_ingot_from_blasting_copper_gem",
+            "minecraft:copper_ingot_from_blasting_copper_ore",
+            "minecraft:copper_ingot_from_smelting_copper_ore",
+            "minecraft:copper_ingot_from_blasting_raw_copper",
+            "minecraft:copper_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "rootsclassic:oak_bark",
+          "item_gate": 1,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Tree/bark interaction mechanic; no native crafting producer required.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "R",
+          "item": "create:andesite_alloy",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "mekanism_tfmg_compat:andesite_alloy",
+            "create:sequenced_assembly/precision_mechanism",
+            "create:mixing/andesite_alloy",
+            "create:mixing/andesite_alloy_from_zinc",
+            "create:crafting/materials/andesite_alloy_from_block",
+            "create:crafting/materials/andesite_alloy",
+            "create:crafting/materials/andesite_alloy_from_zinc",
+            "modern_industrialization:compat/create/unpacker/_c_storage_blocks_andesite_alloy_to_create_andesite_alloy"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "minecraft:charcoal",
+          "item_gate": 0,
+          "native_recipe_producers": [
+            "mekanism:charcoal",
+            "actuallyadditions:tiny_to_charcoal",
+            "mowziesmobs:charcoal",
+            "justdirethings:charcoal_block_9x9",
+            "minecraft:charcoal",
+            "mekanism:enriching/charcoal",
+            "mysticalagriculture:essence/minecraft/charcoal",
+            "immersiveengineering:cokeoven/charcoal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 3,
+      "title_uk": "Залізна майстерня",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_02",
+      "base_magic_input": "rootsclassic:old_root",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_03",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_03",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_03",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_03",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "create:iron_sheet",
+          "item_gate": 3,
+          "native_recipe_producers": [
+            "immersiveengineering:crafting/plate_iron_hammering",
+            "ad_astra:compressing/iron_plate_from_compressing_iron_ingot",
+            "ad_astra:compressing/iron_plate_from_compressing_iron_block",
+            "create_connected:sequenced_assembly/control_chip",
+            "alltheores:metalpress/iron/plate",
+            "alltheores:crafting/iron/plate",
+            "createdieselgenerators:hammering/iron_sheet",
+            "create:pressing/iron_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "rootsclassic:old_root",
+          "item_gate": 1,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Root gathering/drop mechanic; no native crafting producer required.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "R",
+          "item": "rustic_engineer:gear",
+          "item_gate": 3,
+          "native_recipe_producers": [
+            "aia2:integration/epoch_03"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "minecraft:leather",
+          "item_gate": 0,
+          "native_recipe_producers": [
+            "alexsmobs:kangaroo_hide_to_leather",
+            "naturalist:leather_from_smelting_hide",
+            "born_in_chaos_v1:monster_skin_k",
+            "minecraft:leather",
+            "ars_nouveau:wing_to_leather",
+            "totemic:leather_from_hide",
+            "silentgear:leather_from_scraps",
+            "irons_spellbooks:hogskin_to_leather"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 4,
+      "title_uk": "Андезитова фабрика",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_03",
+      "base_magic_input": "rootsclassic:runic_focus",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_04",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_04",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_04",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_04",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "create:iron_sheet",
+          "item_gate": 3,
+          "native_recipe_producers": [
+            "immersiveengineering:crafting/plate_iron_hammering",
+            "ad_astra:compressing/iron_plate_from_compressing_iron_ingot",
+            "ad_astra:compressing/iron_plate_from_compressing_iron_block",
+            "create_connected:sequenced_assembly/control_chip",
+            "alltheores:metalpress/iron/plate",
+            "alltheores:crafting/iron/plate",
+            "createdieselgenerators:hammering/iron_sheet",
+            "create:pressing/iron_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "rootsclassic:runic_focus",
+          "item_gate": 4,
+          "native_recipe_producers": [
+            "aia2:bootstrap/epoch_04_1"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "create:andesite_alloy",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "mekanism_tfmg_compat:andesite_alloy",
+            "create:sequenced_assembly/precision_mechanism",
+            "create:mixing/andesite_alloy",
+            "create:mixing/andesite_alloy_from_zinc",
+            "create:crafting/materials/andesite_alloy_from_block",
+            "create:crafting/materials/andesite_alloy",
+            "create:crafting/materials/andesite_alloy_from_zinc",
+            "modern_industrialization:compat/create/unpacker/_c_storage_blocks_andesite_alloy_to_create_andesite_alloy"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "create:copper_sheet",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "immersiveengineering:crafting/plate_copper_hammering",
+            "alltheores:metalpress/copper/plate",
+            "alltheores:crafting/copper/plate",
+            "createdieselgenerators:hammering/copper_sheet",
+            "create:pressing/copper_ingot",
+            "productivemetalworks:casting/plates/alltheores/copper",
+            "mekmm:compat/immersiveengineering/stamper/copper_plate",
+            "modern_industrialization:materials/copper/forge_hammer/ingot_to_plate_with_tool"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 5,
+      "title_uk": "Народження мани",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_04",
+      "base_magic_input": "botania:manasteel_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_05",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_05",
+          "serializer": "botania:mana_infusion",
+          "machines": [
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_05",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_05",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "create:copper_sheet",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "immersiveengineering:crafting/plate_copper_hammering",
+            "alltheores:metalpress/copper/plate",
+            "alltheores:crafting/copper/plate",
+            "createdieselgenerators:hammering/copper_sheet",
+            "create:pressing/copper_ingot",
+            "productivemetalworks:casting/plates/alltheores/copper",
+            "mekmm:compat/immersiveengineering/stamper/copper_plate",
+            "modern_industrialization:materials/copper/forge_hammer/ingot_to_plate_with_tool"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:manasteel_ingot",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/manasteel_ingot",
+            "botania:conversions/manasteel_from_nuggets",
+            "botania:conversions/manasteel_block_deconstruct",
+            "botania:mana_infusion/manasteel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "botania:livingrock",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "botania:slab_recombine/livingrock"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "create:andesite_alloy",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "mekanism_tfmg_compat:andesite_alloy",
+            "create:sequenced_assembly/precision_mechanism",
+            "create:mixing/andesite_alloy",
+            "create:mixing/andesite_alloy_from_zinc",
+            "create:crafting/materials/andesite_alloy_from_block",
+            "create:crafting/materials/andesite_alloy",
+            "create:crafting/materials/andesite_alloy_from_zinc",
+            "modern_industrialization:compat/create/unpacker/_c_storage_blocks_andesite_alloy_to_create_andesite_alloy"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 6,
+      "title_uk": "Бронза та пара",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_05",
+      "base_magic_input": "botania:manasteel_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_06",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_06",
+          "serializer": "botania:mana_infusion",
+          "machines": [
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_06",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_06",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:bronze_gear",
+          "item_gate": 6,
+          "native_recipe_producers": [
+            "alltheores:metalpress/bronze/gear",
+            "alltheores:crafting/bronze/gear",
+            "productivemetalworks:casting/gears/alltheores/bronze",
+            "modern_industrialization:materials/bronze/craft/gear",
+            "modern_industrialization:materials/bronze/assembler/gear",
+            "evolvedmekanism:solidifying/bronze/to_gear"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:manasteel_ingot",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/manasteel_ingot",
+            "botania:conversions/manasteel_from_nuggets",
+            "botania:conversions/manasteel_block_deconstruct",
+            "botania:mana_infusion/manasteel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "modern_industrialization:bronze_plate",
+          "item_gate": 6,
+          "native_recipe_producers": [
+            "alltheores:metalpress/bronze/plate",
+            "alltheores:crafting/bronze/plate",
+            "productivemetalworks:casting/plates/alltheores/bronze",
+            "modern_industrialization:materials/bronze/forge_hammer/ingot_to_plate_with_tool",
+            "modern_industrialization:materials/bronze/forge_hammer/double_ingot_to_plate",
+            "modern_industrialization:materials/bronze/forge_hammer/double_ingot_to_plate_with_tool",
+            "modern_industrialization:materials/bronze/forge_hammer/ingot_to_plate",
+            "modern_industrialization:materials/bronze/compressor/main"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "rootsclassic:runic_focus",
+          "item_gate": 4,
+          "native_recipe_producers": [
+            "aia2:bootstrap/epoch_04_1"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 7,
+      "title_uk": "Тотеми й сутінковий ліс",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_06",
+      "base_magic_input": "twilightforest:naga_scale",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_07",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_07",
+          "serializer": "botania:mana_infusion",
+          "machines": [
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_07",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_07",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:bronze_gear",
+          "item_gate": 6,
+          "native_recipe_producers": [
+            "alltheores:metalpress/bronze/gear",
+            "alltheores:crafting/bronze/gear",
+            "productivemetalworks:casting/gears/alltheores/bronze",
+            "modern_industrialization:materials/bronze/craft/gear",
+            "modern_industrialization:materials/bronze/assembler/gear",
+            "evolvedmekanism:solidifying/bronze/to_gear"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "twilightforest:naga_scale",
+          "item_gate": 7,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Naga boss drop in Twilight Forest, dimension opens epoch7.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "R",
+          "item": "totemic:buffalo_hide",
+          "item_gate": 7,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Totemic buffalo drop/ritual breeding mechanic, mod opens epoch7.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:manasteel_ingot",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/manasteel_ingot",
+            "botania:conversions/manasteel_from_nuggets",
+            "botania:conversions/manasteel_block_deconstruct",
+            "botania:mana_infusion/manasteel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 8,
+      "title_uk": "Сталь і відьомство",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_07",
+      "base_magic_input": "enchanted:mutandis",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_08",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_08",
+          "serializer": "botania:mana_infusion",
+          "machines": [
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_08",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_08",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:ingot_steel",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "oritech:biosteel_blockblockinv",
+            "oritech:steel_ingot_from_blasting_steel_dust",
+            "oritech:biosteel_ingot_from_blasting_biosteel_dust",
+            "oritech:steel_ingot_from_smelting_steel_dust",
+            "oritech:biosteel_ingot_from_smelting_biosteel_dust",
+            "ad_astra:steel_ingot",
+            "industrialupgrade:industrialupgrade_9",
+            "immersiveengineering:blastfurnace/steel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "enchanted:mutandis",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "enchanted:kettle/mutandis"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "immersiveengineering:coal_coke",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "immersiveengineering:crafting/coke_to_coal_coke"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:livingrock",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "botania:slab_recombine/livingrock"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 9,
+      "title_uk": "Руни живої природи",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_08",
+      "base_magic_input": "naturesaura:infused_iron",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_09",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_09",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_09",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_09",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:component_iron",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "immersiveengineering:blueprint/component_iron",
+            "immersiveengineering:crafting/component_iron"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "naturesaura:infused_iron",
+          "item_gate": 9,
+          "native_recipe_producers": [
+            "naturesaura:infused_iron",
+            "naturesaura:altar/infused_iron"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "botania:rune_water",
+          "item_gate": 9,
+          "native_recipe_producers": [
+            "botania:runic_altar/water"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "enchanted:attuned_stone",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "enchanted:attuned_stone"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 10,
+      "title_uk": "Латунь і писемна магія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_09",
+      "base_magic_input": "ars_nouveau:source_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_10",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_10",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_10",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_10",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "create:precision_mechanism",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "create:sequenced_assembly/precision_mechanism",
+            "modern_industrialization:compat/create/assembler/precision_mechanism"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "ars_nouveau:source_gem",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:source_gem_block_2",
+            "ars_nouveau:imbuement_amethyst",
+            "ars_nouveau:imbuement_lapis",
+            "create:milling/whirlisprig_charm",
+            "create:milling/arcane_core",
+            "create:milling/relay_splitter",
+            "create:milling/arcane_platform",
+            "create:milling/relay_deposit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "create:brass_sheet",
+          "item_gate": 2,
+          "native_recipe_producers": [
+            "alltheores:metalpress/brass/plate",
+            "alltheores:crafting/brass/plate",
+            "createdieselgenerators:hammering/brass_sheet",
+            "create:pressing/brass_ingot",
+            "productivemetalworks:casting/plates/alltheores/brass",
+            "modern_industrialization:compat/create/compressor/_c_ingots_brass_to_create_brass_sheet",
+            "evolvedmekanism:solidifying/brass/to_plate"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:mana_powder",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "botania:mana_infusion/mana_powder_dye",
+            "botania:mana_infusion/mana_powder_dust",
+            "botania:botania_extras/mana_infusion/mana_powder_bifrost"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 11,
+      "title_uk": "Перша електромережа",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_10",
+      "base_magic_input": "botania:rune_water",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_11",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_11",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_11",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_11",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:component_steel",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "immersiveengineering:blueprint/component_steel",
+            "immersiveengineering:crafting/component_steel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:rune_water",
+          "item_gate": 9,
+          "native_recipe_producers": [
+            "botania:runic_altar/water"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "powah:capacitor_basic",
+          "item_gate": 11,
+          "native_recipe_producers": [
+            "powah:crafting/capacitor_basic"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "ars_nouveau:source_gem",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:source_gem_block_2",
+            "ars_nouveau:imbuement_amethyst",
+            "ars_nouveau:imbuement_lapis",
+            "create:milling/whirlisprig_charm",
+            "create:milling/arcane_core",
+            "create:milling/relay_splitter",
+            "create:milling/arcane_platform",
+            "create:milling/relay_deposit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 12,
+      "title_uk": "Нафта й дизель",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_11",
+      "base_magic_input": "enchanted:attuned_stone",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_12",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_12",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_12",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_12",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "tfmg:steel_mechanism",
+          "item_gate": 12,
+          "native_recipe_producers": [
+            "tfmg:sequenced_assembly/steel_mechanism"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "enchanted:attuned_stone",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "enchanted:attuned_stone"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "tfmg:cast_iron_sheet",
+          "item_gate": 12,
+          "native_recipe_producers": [
+            "tfmg:pressing/cast_iron_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "ars_nouveau:source_gem",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:source_gem_block_2",
+            "ars_nouveau:imbuement_amethyst",
+            "ars_nouveau:imbuement_lapis",
+            "create:milling/whirlisprig_charm",
+            "create:milling/arcane_core",
+            "create:milling/relay_splitter",
+            "create:milling/arcane_platform",
+            "create:milling/relay_deposit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 13,
+      "title_uk": "Низьковольтна алхімія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_12",
+      "base_magic_input": "evilcraft:dark_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_13",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_13",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_13",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_13",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:analog_circuit",
+          "item_gate": 13,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/lv_circuit",
+            "modern_industrialization:electric_age/circuit/craft/lv_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "evilcraft:dark_gem",
+          "item_gate": 13,
+          "native_recipe_producers": [
+            "oritech:grinder/compat/evilcraft/darkores",
+            "oritech:pulverizer/compat/evilcraft/darkores",
+            "evilcraft:crafting/dark_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "immersiveengineering:plate_steel",
+          "item_gate": 6,
+          "native_recipe_producers": [
+            "mekanism:processing/steel/ingot/from_block",
+            "immersiveengineering:crafting/plate_steel_hammering",
+            "tfmg:sequenced_assembly/heavy_plate",
+            "ad_astra:compressing/steel_plate_from_compressing_steel_blocks",
+            "ad_astra:compressing/steel_plate_from_compressing_steel_ingots",
+            "alltheores:metalpress/steel/plate",
+            "alltheores:crafting/steel/plate",
+            "createdieselgenerators:compat/immersiveengineering/steel_sheet"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:rune_water",
+          "item_gate": 9,
+          "native_recipe_producers": [
+            "botania:runic_altar/water"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 14,
+      "title_uk": "Тиск і виклик духів",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_13",
+      "base_magic_input": "occultism:spirit_attuned_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_14",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_14",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_14",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_14",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "pneumaticcraft:compressed_iron_ingot_from_block",
+            "mysticalagriculture:essence/pneumaticcraft/compressed_iron_ingot",
+            "pneumaticcraft:explosion_crafting/compressed_iron_ingot",
+            "pneumaticcraft:pressure_chamber/compressed_iron_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:spirit_attuned_gem",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "ars_ocultas:spirit_attuned_gem",
+            "occultism:spirit_fire/spirit_attuned_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "pneumaticcraft:compressed_iron_gear",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "pneumaticcraft:compressed_iron_gear"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "occultism:otherworld_ashes",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "occultism:spirit_fire/otherworld_ashes"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 15,
+      "title_uk": "Пекло та заборонені знання",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_14",
+      "base_magic_input": "forbidden_arcanus:deorum_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_15",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_15",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_15",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_15",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:component_steel",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "immersiveengineering:blueprint/component_steel",
+            "immersiveengineering:crafting/component_steel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "forbidden_arcanus:deorum_ingot",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "forbidden_arcanus:deorum_ingot_from_deorum_block",
+            "forbidden_arcanus:deorum_ingot",
+            "forbidden_arcanus:deorum_ingot_from_deorum_nugget"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "botania:rune_fire",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "botania:runic_altar/fire"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "minecraft:blaze_rod",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "create_ultimate_factory:compacting_blazepowder",
+            "mysticalagriculture:essence/minecraft/blaze_rod",
+            "immersiveengineering:metalpress/blaze_rod",
+            "oritech:assembler/blazerod",
+            "hostilenetworks:living_matter/hellish/blaze_rod",
+            "reliquary:uncrafting/blaze_rod",
+            "botania:conversions/blazeblock_deconstruct",
+            "allthecompressed:decompress/blaze_rod_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 16,
+      "title_uk": "Осмій і кристали",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_15",
+      "base_magic_input": "botania:rune_fire",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_16",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_16",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_16",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_16",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "mekanism:alloy_infused",
+          "item_gate": 16,
+          "native_recipe_producers": [
+            "mekanism:metallurgic_infusing/alloy/infused",
+            "oritech:foundry/alloy/compat/mekanism/infused_alloy",
+            "evolvedmekanism:block_alloys/infused/from_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:rune_fire",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "botania:runic_altar/fire"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "actuallyadditions:restonia_crystal",
+          "item_gate": 16,
+          "native_recipe_producers": [
+            "actuallyadditions:compress/restonia_crystal",
+            "actuallyadditions:laser/crystalize_restonia_crystal",
+            "actuallyadditions:decompress/restonia_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "mekanism:basic_control_circuit",
+          "item_gate": 16,
+          "native_recipe_producers": [
+            "mekanism:control_circuit/basic",
+            "oritech:atomicforge/compat/mekanism/basic_control_circuit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 17,
+      "title_uk": "Цифровий склад",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_16",
+      "base_magic_input": "occultism:spirit_attuned_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_17",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_17",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_17",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_17",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "ae2:logic_processor",
+          "item_gate": 17,
+          "native_recipe_producers": [
+            "extendedae:assembler/logic_processor",
+            "ae2:inscriber/logic_processor",
+            "mekmm:compat/ae2/presser/logic_processor",
+            "modern_industrialization:compat/ae2/logic_processor",
+            "evolvedmekanism:alloying/compat/ae2/logic_processor"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:spirit_attuned_gem",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "ars_ocultas:spirit_attuned_gem",
+            "occultism:spirit_fire/spirit_attuned_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "ae2:fluix_crystal",
+          "item_gate": 17,
+          "native_recipe_producers": [
+            "advanced_ae:fluixcrystalfromdust",
+            "advanced_ae:fluixcrystals",
+            "mysticalagriculture:essence/appliedenergistics2/fluix",
+            "extendedae:assembler/fluix_transformation",
+            "ae2:transform/fluix_crystal",
+            "ae2:transform/fluix_crystals",
+            "ae2:misc/deconstruction_fluix_block",
+            "create:mixing/compat/ae2/fluix_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "actuallyadditions:restonia_crystal",
+          "item_gate": 16,
+          "native_recipe_producers": [
+            "actuallyadditions:compress/restonia_crystal",
+            "actuallyadditions:laser/crystalize_restonia_crystal",
+            "actuallyadditions:decompress/restonia_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 18,
+      "title_uk": "Полімери та біофабрика",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_17",
+      "base_magic_input": "botania:mana_diamond",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_18",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_18",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_18",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_18",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "industrialforegoing:plastic",
+          "item_gate": 18,
+          "native_recipe_producers": [
+            "industrialforegoing:plastic"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:mana_diamond",
+          "item_gate": 5,
+          "native_recipe_producers": [
+            "botania:conversions/manadiamond_block_deconstruct",
+            "botania:mana_infusion/mana_diamond"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "modern_industrialization:iron_gear",
+          "item_gate": 6,
+          "native_recipe_producers": [
+            "industrialforegoing:iron_gear",
+            "enderio:iron_gear",
+            "alltheores:metalpress/iron/gear",
+            "alltheores:crafting/iron/gear",
+            "productivemetalworks:casting/gears/alltheores/iron",
+            "modern_industrialization:materials/iron/craft/gear",
+            "modern_industrialization:materials/iron/assembler/gear",
+            "evolvedmekanism:solidifying/iron/to_gear"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "forbidden_arcanus:deorum_ingot",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "forbidden_arcanus:deorum_ingot_from_deorum_block",
+            "forbidden_arcanus:deorum_ingot",
+            "forbidden_arcanus:deorum_ingot_from_deorum_nugget"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 19,
+      "title_uk": "Душі та сплави",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_18",
+      "base_magic_input": "evilcraft:dark_power_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_19",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_19",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_19",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_19",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "enderio:energetic_alloy_ingot",
+          "item_gate": 19,
+          "native_recipe_producers": [
+            "enderio:item.enderio.energetic_alloy_nugget_to_ingot",
+            "enderio:energetic_alloy_ingot",
+            "mysticalagriculture:essence/enderio/energetic_alloy_ingot",
+            "oritech:foundry/alloy/compat/enderio/energeticalloy",
+            "enderio:alloy_smelting/energetic_alloy_ingot",
+            "evolvedmekanism:alloying/compat/enderio/energetic_alloy_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "evilcraft:dark_power_gem",
+          "item_gate": 13,
+          "native_recipe_producers": [
+            "evilcraft:crafting/dark_power_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "enderio:soularium_ingot",
+          "item_gate": 19,
+          "native_recipe_producers": [
+            "enderio:soularium_ingot",
+            "enderio:item.enderio.soularium_nugget_to_ingot",
+            "mysticalagriculture:essence/enderio/soularium_ingot",
+            "oritech:foundry/alloy/compat/enderio/soularium",
+            "enderio:alloy_smelting/soularium_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "occultism:spirit_attuned_gem",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "ars_ocultas:spirit_attuned_gem",
+            "occultism:spirit_fire/spirit_attuned_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 20,
+      "title_uk": "Чарівна автоматизація",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_19",
+      "base_magic_input": "ars_nouveau:source_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_20",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_20",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_20",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_20",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "enderio:basic_capacitor",
+          "item_gate": 19,
+          "native_recipe_producers": [
+            "enderio:basic_capacitor"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "ars_nouveau:source_gem",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:source_gem_block_2",
+            "ars_nouveau:imbuement_amethyst",
+            "ars_nouveau:imbuement_lapis",
+            "create:milling/whirlisprig_charm",
+            "create:milling/arcane_core",
+            "create:milling/relay_splitter",
+            "create:milling/arcane_platform",
+            "create:milling/relay_deposit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "goety:dark_ingot",
+          "item_gate": 20,
+          "native_recipe_producers": [
+            "goety:dark/dark_ingot",
+            "goety:dark/dark_ingot_from_block",
+            "goety:dark/dark_ingot_2"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "create:precision_mechanism",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "create:sequenced_assembly/precision_mechanism",
+            "modern_industrialization:compat/create/assembler/precision_mechanism"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 21,
+      "title_uk": "Ельфійські сплави",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_20",
+      "base_magic_input": "botania:terrasteel_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_21",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_21",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_21",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_21",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:analog_circuit",
+          "item_gate": 13,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/lv_circuit",
+            "modern_industrialization:electric_age/circuit/craft/lv_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:terrasteel_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/terrasteel_ingot",
+            "botania:terra_plate/terrasteel_ingot",
+            "botania:conversions/terrasteel_from_nugget",
+            "botania:conversions/terrasteel_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "naturesaura:infused_iron",
+          "item_gate": 9,
+          "native_recipe_producers": [
+            "naturesaura:infused_iron",
+            "naturesaura:altar/infused_iron"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 22,
+      "title_uk": "Середня напруга",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_21",
+      "base_magic_input": "botania:elementium_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_22",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_22",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_22",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_22",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:electronic_circuit",
+          "item_gate": 22,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/electronic_circuit",
+            "modern_industrialization:electric_age/circuit/craft/electronic_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "modern_industrialization:advanced_machine_hull",
+          "item_gate": 22,
+          "native_recipe_producers": [
+            "extended_industrialization:machines/mv_tesla_receiver_hatch/unpacker",
+            "modern_industrialization:hatches/advanced/unpacker/energy_output_hatch",
+            "modern_industrialization:hatches/advanced/unpacker/energy_input_hatch",
+            "modern_industrialization:hatches/advanced/unpacker/fluid_output_hatch",
+            "modern_industrialization:hatches/advanced/unpacker/item_output_hatch",
+            "modern_industrialization:hatches/advanced/unpacker/fluid_input_hatch",
+            "modern_industrialization:hatches/advanced/unpacker/item_input_hatch",
+            "modern_industrialization:assembler_generated/electric_age/hull/advanced_machine_hull"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:dragonstone",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "botania:elven_trade/dragonstone",
+            "botania:conversions/dragonstone_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 23,
+      "title_uk": "Збагачення й промислова магія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_22",
+      "base_magic_input": "botania:elementium_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_23",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_23",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_23",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_23",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "mekanism:advanced_control_circuit",
+          "item_gate": 23,
+          "native_recipe_producers": [
+            "mekanism:control_circuit/advanced",
+            "oritech:atomicforge/compat/mekanism/advanced_control_circuit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "actuallyadditions:empowered_restonia_crystal",
+          "item_gate": 23,
+          "native_recipe_producers": [
+            "actuallyadditions:empowering/restonia",
+            "actuallyadditions:decompress/empowered_restonia_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "mekanism:alloy_reinforced",
+          "item_gate": 23,
+          "native_recipe_producers": [
+            "mekanism:metallurgic_infusing/alloy/reinforced",
+            "oritech:foundry/alloy/compat/mekanism/reinforced_alloy",
+            "evolvedmekanism:block_alloys/reinforced/from_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 24,
+      "title_uk": "Друковані плати та пневмороботи",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_23",
+      "base_magic_input": "occultism:spirit_attuned_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_24",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_24",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_24",
+          "serializer": "minecraft:crafting_shaped",
+          "machines": [],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_24",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "pneumaticcraft:printed_circuit_board"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:spirit_attuned_gem",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "ars_ocultas:spirit_attuned_gem",
+            "occultism:spirit_fire/spirit_attuned_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "justdirethings:ferricore_ingot",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "justdirethings:ferricore_block_9x9",
+            "justdirethings:ferricore_ingot_blasted",
+            "justdirethings:ferricore_ingot_smelted"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "actuallyadditions:empowered_restonia_crystal",
+          "item_gate": 23,
+          "native_recipe_producers": [
+            "actuallyadditions:empowering/restonia",
+            "actuallyadditions:decompress/empowered_restonia_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 25,
+      "title_uk": "Роботизована металургія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_24",
+      "base_magic_input": "occultism:afrit_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_25",
+          "serializer": "oritech:foundry",
+          "machines": [
+            {
+              "id": "oritech:foundry_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_25",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_25",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_25",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:ingot_steel",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "oritech:biosteel_blockblockinv",
+            "oritech:steel_ingot_from_blasting_steel_dust",
+            "oritech:biosteel_ingot_from_blasting_biosteel_dust",
+            "oritech:steel_ingot_from_smelting_steel_dust",
+            "oritech:biosteel_ingot_from_smelting_biosteel_dust",
+            "ad_astra:steel_ingot",
+            "industrialupgrade:industrialupgrade_9",
+            "immersiveengineering:blastfurnace/steel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:afrit_essence",
+          "item_gate": 25,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_afrit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "pneumaticcraft:printed_circuit_board"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 26,
+      "title_uk": "Кероване вирощування ресурсів",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_25",
+      "base_magic_input": "mysticalagriculture:tertium_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_26",
+          "serializer": "oritech:foundry",
+          "machines": [
+            {
+              "id": "oritech:foundry_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_26",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_26",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_26",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "immersiveengineering:ingot_steel",
+          "item_gate": 8,
+          "native_recipe_producers": [
+            "oritech:biosteel_blockblockinv",
+            "oritech:steel_ingot_from_blasting_steel_dust",
+            "oritech:biosteel_ingot_from_blasting_biosteel_dust",
+            "oritech:steel_ingot_from_smelting_steel_dust",
+            "oritech:biosteel_ingot_from_smelting_biosteel_dust",
+            "ad_astra:steel_ingot",
+            "industrialupgrade:industrialupgrade_9",
+            "immersiveengineering:blastfurnace/steel"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "mysticalagriculture:tertium_essence",
+          "item_gate": 26,
+          "native_recipe_producers": [
+            "mysticalagriculture:imperium_essence_uncraft",
+            "mysticalagriculture:tertium_block_uncraft",
+            "mysticalagriculture:tertium_essence",
+            "productivemetalworks:casting/ma/tertium_essence"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "pneumaticcraft:printed_circuit_board"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 27,
+      "title_uk": "Фабрика життєвих матриць",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_26",
+      "base_magic_input": "evilcraft:dark_power_gem",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_27",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_27",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_27",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_27",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "hostilenetworks:prediction_matrix",
+          "item_gate": 27,
+          "native_recipe_producers": [
+            "hostilenetworks:prediction_matrix"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "evilcraft:dark_power_gem",
+          "item_gate": 13,
+          "native_recipe_producers": [
+            "evilcraft:crafting/dark_power_gem"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "industrialforegoing:plastic",
+          "item_gate": 18,
+          "native_recipe_producers": [
+            "industrialforegoing:plastic"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:terrasteel_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/terrasteel_ingot",
+            "botania:terra_plate/terrasteel_ingot",
+            "botania:conversions/terrasteel_from_nugget",
+            "botania:conversions/terrasteel_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 28,
+      "title_uk": "Розподілена логістика",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_27",
+      "base_magic_input": "occultism:spirit_attuned_crystal",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_28",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_28",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_28",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_28",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "ae2:engineering_processor",
+          "item_gate": 17,
+          "native_recipe_producers": [
+            "extendedae:assembler/engineering_processor",
+            "ae2:inscriber/engineering_processor",
+            "mekmm:compat/ae2/presser/engineering_processor",
+            "modern_industrialization:compat/ae2/engineering_processor",
+            "evolvedmekanism:alloying/compat/ae2/engineering_processor"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:spirit_attuned_crystal",
+          "item_gate": 14,
+          "native_recipe_producers": [
+            "occultism:crafting/spirit_attuned_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "enderio:pulsating_alloy_ingot",
+          "item_gate": 19,
+          "native_recipe_producers": [
+            "enderio:item.enderio.pulsating_alloy_nugget_to_ingot",
+            "enderio:pulsating_alloy_ingot",
+            "mysticalagriculture:essence/enderio/pulsating_alloy_ingot",
+            "oritech:foundry/alloy/compat/enderio/pulsatingalloy",
+            "enderio:alloy_smelting/pulsating_alloy_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "pneumaticcraft:printed_circuit_board"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 29,
+      "title_uk": "Реакторна енергетика",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_28",
+      "base_magic_input": "ars_nouveau:fire_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_29",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_29",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_29",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_29",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "bigreactors:cyanite_ingot",
+          "item_gate": 29,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/extremereactors2/cyanite_ingot",
+            "bigreactors:crafting/cyanite_storage_to_component"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "ars_nouveau:fire_essence",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:imbuement_fire_essence"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "powah:crystal_spirited",
+          "item_gate": 29,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/powah/spirited_crystal",
+            "powah:crafting/spirited_crystal",
+            "powah:energizing/spirited_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "botania:elementium_ingot",
+          "item_gate": 21,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/botania/elementium_ingot",
+            "botania:elven_trade/elementium",
+            "botania:conversions/elementium_block_deconstruct",
+            "botania:conversions/elementium_from_nuggets"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 30,
+      "title_uk": "Завоювання Енду",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_29",
+      "base_magic_input": "ars_nouveau:abjuration_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_30",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_30",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_30",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_30",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "ae2:engineering_processor",
+          "item_gate": 17,
+          "native_recipe_producers": [
+            "extendedae:assembler/engineering_processor",
+            "ae2:inscriber/engineering_processor",
+            "mekmm:compat/ae2/presser/engineering_processor",
+            "modern_industrialization:compat/ae2/engineering_processor",
+            "evolvedmekanism:alloying/compat/ae2/engineering_processor"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "ars_nouveau:abjuration_essence",
+          "item_gate": 10,
+          "native_recipe_producers": [
+            "ars_nouveau:imbuement_abjuration_essence"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "minecraft:dragon_breath",
+          "item_gate": 30,
+          "native_recipe_producers": [
+            "minecraft:dragon_breath",
+            "naturesaura:altar/breath"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "twilightforest:fiery_ingot",
+          "item_gate": 30,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/twilightforest/fiery_ingot",
+            "twilightforest:equipment/fiery_ingot_crafting",
+            "twilightforest:compressed_blocks/reversed/fiery_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 31,
+      "title_uk": "Воля Ґаї та володарі ритуалів",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_30",
+      "base_magic_input": "botania:life_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_31",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_31",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_31",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_31",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:electronic_circuit",
+          "item_gate": 22,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/electronic_circuit",
+            "modern_industrialization:electric_age/circuit/craft/electronic_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:life_essence",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "mysticalagradditions:essence/gaia_spirit"
+          ],
+          "non_recipe_route": "Gaia Guardian drop; Gaia branch opens epoch31. Agricultural recipe producer is not required.",
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "forbidden_arcanus:deorum_ingot",
+          "item_gate": 15,
+          "native_recipe_producers": [
+            "forbidden_arcanus:deorum_ingot_from_deorum_block",
+            "forbidden_arcanus:deorum_ingot",
+            "forbidden_arcanus:deorum_ingot_from_deorum_nugget"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "goety:shadow_essence",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "goety:shadow_essence"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 32,
+      "title_uk": "Високовольтна мережа",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_31",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_32",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_32",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_32",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_32",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:digital_circuit",
+          "item_gate": 32,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/digital_circuit",
+            "modern_industrialization:electric_age/circuit/craft/digital_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "megacells:accumulation_processor",
+          "item_gate": 32,
+          "native_recipe_producers": [
+            "extendedae:assembler/accumulation_processor",
+            "megacells:inscriber/accumulation_processor",
+            "mekmm:compat/megacells/presser/accumulation_processor"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "item_gate": 24,
+          "native_recipe_producers": [
+            "pneumaticcraft:printed_circuit_board"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 33,
+      "title_uk": "Розщеплення та радіохімія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_32",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_33",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_33",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_33",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_33",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "mekanism:pellet_polonium",
+          "item_gate": 33,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/polonium_pellet/from_reaction"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "modern_industrialization:digital_circuit",
+          "item_gate": 32,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/digital_circuit",
+            "modern_industrialization:electric_age/circuit/craft/digital_circuit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "powah:crystal_spirited",
+          "item_gate": 29,
+          "native_recipe_producers": [
+            "mysticalagriculture:essence/powah/spirited_crystal",
+            "powah:crafting/spirited_crystal",
+            "powah:energizing/spirited_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 34,
+      "title_uk": "Рідкісні метали світів",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_33",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_34",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_34",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_34",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_34",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "allthemodium:allthemodium_ingot",
+          "item_gate": 34,
+          "native_recipe_producers": [
+            "allthemodium:allthemodium_ingot_from_dust_blasting",
+            "allthemodium:allthemodium_ingot_from_ore_blasting",
+            "allthemodium:allthemodium_ingot",
+            "allthemodium:allthemodium_ingot_from_block",
+            "allthemodium:allthemodium_ingot_from_dust_smelting",
+            "allthemodium:allthemodium_ingot_from_raw_smelting",
+            "allthemodium:allthemodium_ingot_from_raw_blasting",
+            "allthemodium:allthemodium_ingot_from_ore_smelting"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "allthemodium:vibranium_ingot",
+          "item_gate": 34,
+          "native_recipe_producers": [
+            "allthemodium:vibranium_ingot_from_dust_blasting",
+            "allthemodium:vibranium_ingot_from_dust_smelting",
+            "allthemodium:vibranium_ingot_from_raw_blasting",
+            "allthemodium:vibranium_ingot_from_ore_blasting",
+            "allthemodium:vibranium_ingot_from_raw_smelting",
+            "allthemodium:vibranium_ingot_from_ore_smelting",
+            "allthemodium:vibranium_ingot_from_block",
+            "allthemodium:vibranium_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "mekanism:pellet_polonium",
+          "item_gate": 33,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/polonium_pellet/from_reaction"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 35,
+      "title_uk": "Надпровідна промисловість",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_34",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_35",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_35",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_35",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_35",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "modern_industrialization:superconductor_ingot",
+          "item_gate": 35,
+          "native_recipe_producers": [
+            "modern_industrialization:materials/superconductor/craft/ingot_from_nugget",
+            "modern_industrialization:materials/superconductor/packer/ingot",
+            "modern_industrialization:materials/superconductor/vacuum_freezer/hot_ingot",
+            "modern_industrialization:materials/superconductor/heat_exchanger/hot_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "modern_industrialization:processing_unit",
+          "item_gate": 35,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/processing_unit",
+            "modern_industrialization:electric_age/circuit/craft/processing_unit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "allthemodium:vibranium_ingot",
+          "item_gate": 34,
+          "native_recipe_producers": [
+            "allthemodium:vibranium_ingot_from_dust_blasting",
+            "allthemodium:vibranium_ingot_from_dust_smelting",
+            "allthemodium:vibranium_ingot_from_raw_blasting",
+            "allthemodium:vibranium_ingot_from_ore_blasting",
+            "allthemodium:vibranium_ingot_from_raw_smelting",
+            "allthemodium:vibranium_ingot_from_ore_smelting",
+            "allthemodium:vibranium_ingot_from_block",
+            "allthemodium:vibranium_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 36,
+      "title_uk": "Термоядерний синтез",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_35",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_36",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_36",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_36",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_36",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "mekanismgenerators:hohlraum",
+          "item_gate": 36,
+          "native_recipe_producers": [
+            "mekanismgenerators:hohlraum"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "powah:crystal_nitro",
+          "item_gate": 36,
+          "native_recipe_producers": [
+            "mysticalagradditions:essence/nitro_crystal",
+            "powah:crafting/nitro_crystal",
+            "powah:energizing/nitro_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "modern_industrialization:superconductor_ingot",
+          "item_gate": 35,
+          "native_recipe_producers": [
+            "modern_industrialization:materials/superconductor/craft/ingot_from_nugget",
+            "modern_industrialization:materials/superconductor/packer/ingot",
+            "modern_industrialization:materials/superconductor/vacuum_freezer/hot_ingot",
+            "modern_industrialization:materials/superconductor/heat_exchanger/hot_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 37,
+      "title_uk": "Місяць і Марс",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_36",
+      "base_magic_input": "botania:life_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_37",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_37",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_37",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_37",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "ad_astra:desh_ingot",
+          "item_gate": 37,
+          "native_recipe_producers": [
+            "ad_astra:desh_ingot_from_desh_block",
+            "ad_astra:desh_ingot",
+            "ad_astra:smelting/desh_ingot_from_smelting_deepslate_desh_ore",
+            "ad_astra:smelting/desh_ingot_from_smelting_moon_desh_ore",
+            "ad_astra:smelting/desh_ingot_from_smelting_raw_desh",
+            "ad_astra:blasting/desh_ingot_from_blasting_deepslate_desh_ore",
+            "ad_astra:blasting/desh_ingot_from_blasting_raw_desh",
+            "ad_astra:blasting/desh_ingot_from_blasting_moon_desh_ore"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:life_essence",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "mysticalagradditions:essence/gaia_spirit"
+          ],
+          "non_recipe_route": "Gaia Guardian drop; Gaia branch opens epoch31. Agricultural recipe producer is not required.",
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "ad_astra:ostrum_ingot",
+          "item_gate": 37,
+          "native_recipe_producers": [
+            "ad_astra:ostrum_ingot_from_ostrum_block",
+            "ad_astra:ostrum_ingot",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_mars_ostrum_ore",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_deepslate_ostrum_ore",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_raw_ostrum",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_mars_ostrum_ore",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_raw_ostrum",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_deepslate_ostrum_ore"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "modern_industrialization:processing_unit",
+          "item_gate": 35,
+          "native_recipe_producers": [
+            "modern_industrialization:assembler_generated/electric_age/circuit/craft/processing_unit",
+            "modern_industrialization:electric_age/circuit/craft/processing_unit_asbl"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 38,
+      "title_uk": "Венера, Меркурій та Ґласіо",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_37",
+      "base_magic_input": "ars_nouveau:wilden_tribute",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_38",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_38",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_38",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_38",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "ad_astra:calorite_ingot",
+          "item_gate": 38,
+          "native_recipe_producers": [
+            "ad_astra:calorite_ingot",
+            "ad_astra:calorite_ingot_from_calorite_block",
+            "ad_astra:smelting/calorite_ingot_from_smelting_deepslate_calorite_ore",
+            "ad_astra:smelting/calorite_ingot_from_smelting_raw_calorite",
+            "ad_astra:smelting/calorite_ingot_from_smelting_venus_calorite_ore",
+            "ad_astra:blasting/calorite_ingot_from_blasting_raw_calorite",
+            "ad_astra:blasting/calorite_ingot_from_blasting_venus_calorite_ore",
+            "ad_astra:blasting/calorite_ingot_from_blasting_deepslate_calorite_ore"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "ars_nouveau:wilden_tribute",
+          "item_gate": 10,
+          "native_recipe_producers": [],
+          "non_recipe_route": "Wilden Chimera boss drop, Ars content opens epoch10+.",
+          "producer_status": "legitimate_non_recipe_route_requires_ingame_check"
+        },
+        {
+          "symbol": "R",
+          "item": "ad_astra:ostrum_ingot",
+          "item_gate": 37,
+          "native_recipe_producers": [
+            "ad_astra:ostrum_ingot_from_ostrum_block",
+            "ad_astra:ostrum_ingot",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_mars_ostrum_ore",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_deepslate_ostrum_ore",
+            "ad_astra:smelting/ostrum_ingot_from_smelting_raw_ostrum",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_mars_ostrum_ore",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_raw_ostrum",
+            "ad_astra:blasting/ostrum_ingot_from_blasting_deepslate_ostrum_ore"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "powah:crystal_nitro",
+          "item_gate": 36,
+          "native_recipe_producers": [
+            "mysticalagradditions:essence/nitro_crystal",
+            "powah:crafting/nitro_crystal",
+            "powah:energizing/nitro_crystal"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 39,
+      "title_uk": "Антиматерія й просторові технології",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_38",
+      "base_magic_input": "occultism:marid_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_39",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_39",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_39",
+          "serializer": "oritech:assembler",
+          "machines": [
+            {
+              "id": "oritech:assembler_block",
+              "available_epoch": 25
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_39",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "mekanism:pellet_antimatter",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/antimatter_pellet/from_gas",
+            "allthecompressed:decompress/antimatter_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:marid_essence",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_marid"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "advanced_ae:quantum_processor",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "aia2:integration/epoch_39"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "modern_industrialization:superconductor_ingot",
+          "item_gate": 35,
+          "native_recipe_producers": [
+            "modern_industrialization:materials/superconductor/craft/ingot_from_nugget",
+            "modern_industrialization:materials/superconductor/packer/ingot",
+            "modern_industrialization:materials/superconductor/vacuum_freezer/hot_ingot",
+            "modern_industrialization:materials/superconductor/heat_exchanger/hot_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 40,
+      "title_uk": "Виверновий синтез",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_39",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_40",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_40",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_40",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:wyvern_crafting_injector",
+              "available_epoch": 40
+            }
+          ],
+          "tech_level": "wyvern"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_40",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "draconicevolution:wyvern_core",
+          "item_gate": 40,
+          "native_recipe_producers": [
+            "aia2:rebalance/draconicevolution/wyvern_core"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "mekanism:pellet_antimatter",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/antimatter_pellet/from_gas",
+            "allthecompressed:decompress/antimatter_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "ad_astra:calorite_ingot",
+          "item_gate": 38,
+          "native_recipe_producers": [
+            "ad_astra:calorite_ingot",
+            "ad_astra:calorite_ingot_from_calorite_block",
+            "ad_astra:smelting/calorite_ingot_from_smelting_deepslate_calorite_ore",
+            "ad_astra:smelting/calorite_ingot_from_smelting_raw_calorite",
+            "ad_astra:smelting/calorite_ingot_from_smelting_venus_calorite_ore",
+            "ad_astra:blasting/calorite_ingot_from_blasting_raw_calorite",
+            "ad_astra:blasting/calorite_ingot_from_blasting_venus_calorite_ore",
+            "ad_astra:blasting/calorite_ingot_from_blasting_deepslate_calorite_ore"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 41,
+      "title_uk": "Пробуджена драконяча матерія",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_40",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_41",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_41",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_41",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:awakened_crafting_injector",
+              "available_epoch": 41
+            }
+          ],
+          "tech_level": "draconic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_41",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "draconicevolution:awakened_core",
+          "item_gate": 41,
+          "native_recipe_producers": [
+            "aia2:rebalance/draconicevolution/awakened_core"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "draconicevolution:awakened_draconium_ingot",
+          "item_gate": 41,
+          "native_recipe_producers": [
+            "draconicevolution:compress/awakened_draconium_ingot",
+            "draconicevolution:components/awakened_draconium_ingot_from_dust",
+            "draconicevolution:decompress/awakened_draconium_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "occultism:marid_essence",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_marid"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 42,
+      "title_uk": "Випробування Хаосу",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_41",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_42",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_42",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_42",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:awakened_crafting_injector",
+              "available_epoch": 41
+            }
+          ],
+          "tech_level": "draconic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_42",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "draconicevolution:chaotic_core",
+          "item_gate": 42,
+          "native_recipe_producers": [
+            "aia2:rebalance/draconicevolution/chaotic_core"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "draconicevolution:chaos_shard",
+          "item_gate": 42,
+          "native_recipe_producers": [
+            "draconicevolution:compress/chaos_shard"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "mekanism:pellet_antimatter",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/antimatter_pellet/from_gas",
+            "allthecompressed:decompress/antimatter_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 43,
+      "title_uk": "Еволюція механізмів",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_42",
+      "base_magic_input": "occultism:marid_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_43",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_43",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_43",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_43",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "evolvedmekanism:quantum_control_circuit",
+          "item_gate": 43,
+          "native_recipe_producers": [
+            "aia2:rebalance/evolvedmekanism/quantum_control_circuit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:marid_essence",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_marid"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "evolvedmekanism:alloy_subatomic",
+          "item_gate": 43,
+          "native_recipe_producers": [
+            "evolvedmekanism:nucleosynthesizing/alloy_subatomic",
+            "evolvedmekanism:block_alloys/subatomic/from_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "draconicevolution:awakened_draconium_ingot",
+          "item_gate": 41,
+          "native_recipe_producers": [
+            "draconicevolution:compress/awakened_draconium_ingot",
+            "draconicevolution:components/awakened_draconium_ingot_from_dust",
+            "draconicevolution:decompress/awakened_draconium_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 44,
+      "title_uk": "Планетарна промисловість",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_43",
+      "base_magic_input": "occultism:marid_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_44",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_44",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_44",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_44",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "industrialupgrade:alloyingot/osmiridium",
+          "item_gate": 44,
+          "native_recipe_producers": [
+            "industrialupgrade:industrialupgrade_347",
+            "industrialupgrade:industrialupgrade_344",
+            "industrialupgrade:blasting_332",
+            "industrialupgrade:furnace_331"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:marid_essence",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_marid"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "allthemodium:unobtainium_ingot",
+          "item_gate": 44,
+          "native_recipe_producers": [
+            "allthemodium:unobtainium_ingot_from_ore_blasting",
+            "allthemodium:unobtainium_ingot_from_ore_smelting",
+            "allthemodium:unobtainium_ingot_from_block",
+            "allthemodium:unobtainium_ingot_from_dust_smelting",
+            "allthemodium:unobtainium_ingot",
+            "allthemodium:unobtainium_ingot_from_raw_smelting",
+            "allthemodium:unobtainium_ingot_from_dust_blasting",
+            "allthemodium:unobtainium_ingot_from_raw_blasting"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "evolvedmekanism:quantum_control_circuit",
+          "item_gate": 43,
+          "native_recipe_producers": [
+            "aia2:rebalance/evolvedmekanism/quantum_control_circuit"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 45,
+      "title_uk": "Обмежена трансмутація",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_44",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_45",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_45",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_45",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_45",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "projecte:dark_matter",
+          "item_gate": 45,
+          "native_recipe_producers": [
+            "projecte:dark_matter",
+            "projecte:conversions/dark_matter_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "mekanism:pellet_antimatter",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "mekanism:processing/lategame/antimatter_pellet/from_gas",
+            "allthecompressed:decompress/antimatter_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "allthemodium:unobtainium_ingot",
+          "item_gate": 44,
+          "native_recipe_producers": [
+            "allthemodium:unobtainium_ingot_from_ore_blasting",
+            "allthemodium:unobtainium_ingot_from_ore_smelting",
+            "allthemodium:unobtainium_ingot_from_block",
+            "allthemodium:unobtainium_ingot_from_dust_smelting",
+            "allthemodium:unobtainium_ingot",
+            "allthemodium:unobtainium_ingot_from_raw_smelting",
+            "allthemodium:unobtainium_ingot_from_dust_blasting",
+            "allthemodium:unobtainium_ingot_from_raw_blasting"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 46,
+      "title_uk": "Нейтроній і сингулярності",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_45",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_46",
+          "serializer": "mekanism:metallurgic_infusing",
+          "machines": [
+            {
+              "id": "mekanism:metallurgic_infuser",
+              "available_epoch": 16
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_46",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_46",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_46",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "avaritia:neutron_ingot",
+          "item_gate": 46,
+          "native_recipe_producers": [
+            "minecraft:neutron_ingot_from_nuggets",
+            "minecraft:neutron_ingot_from_neutron_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "avaritia:crystal_matrix_ingot",
+          "item_gate": 46,
+          "native_recipe_producers": [
+            "minecraft:crystal_matrix_ingot",
+            "avaritia:crystal_matrix_ingot_normal",
+            "avaritia:crystal_matrix_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "projecte:dark_matter",
+          "item_gate": 45,
+          "native_recipe_producers": [
+            "projecte:dark_matter",
+            "projecte:conversions/dark_matter_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 47,
+      "title_uk": "Космічна конвергенція",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_46",
+      "base_magic_input": "botania:gaia_ingot",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_47",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_47",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_47",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_47",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "avaritia:infinity_catalyst",
+          "item_gate": 47,
+          "native_recipe_producers": [
+            "avaritia:infinity_catalyst_eternal",
+            "aia2:rebalance/avaritia/infinity_catalyst"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "botania:gaia_ingot",
+          "item_gate": 31,
+          "native_recipe_producers": [
+            "botania:gaia_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "projecte:red_matter",
+          "item_gate": 47,
+          "native_recipe_producers": [
+            "projecte:red_matter",
+            "projecte:red_matter_alt",
+            "projecte:conversions/red_matter_block_deconstruct"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "draconicevolution:chaotic_core",
+          "item_gate": 42,
+          "native_recipe_producers": [
+            "aia2:rebalance/draconicevolution/chaotic_core"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    },
+    {
+      "epoch": 48,
+      "title_uk": "Нескінченність",
+      "key_input_units": 9,
+      "previous_key": "kubejs:aia2_epoch_key_47",
+      "base_magic_input": "occultism:marid_essence",
+      "processes": [
+        {
+          "component": "kubejs:aia2_tech_matrix_48",
+          "serializer": "create:mixing",
+          "machines": [
+            {
+              "id": "create:mechanical_mixer",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_arcane_catalyst_48",
+          "serializer": "botania:runic_altar",
+          "machines": [
+            {
+              "id": "botania:runic_altar",
+              "available_epoch": 9
+            },
+            {
+              "id": "botania:mana_pool",
+              "available_epoch": 5
+            },
+            {
+              "id": "botania:mana_spreader",
+              "available_epoch": 5
+            }
+          ],
+          "tech_level": null
+        },
+        {
+          "component": "kubejs:aia2_convergence_core_48",
+          "serializer": "draconicevolution:fusion_crafting",
+          "machines": [
+            {
+              "id": "draconicevolution:crafting_core",
+              "available_epoch": 40
+            },
+            {
+              "id": "draconicevolution:chaotic_crafting_injector",
+              "available_epoch": 42
+            }
+          ],
+          "tech_level": "chaotic"
+        },
+        {
+          "component": "kubejs:aia2_epoch_seal_48",
+          "serializer": "create:compacting",
+          "machines": [
+            {
+              "id": "create:mechanical_press",
+              "available_epoch": 4
+            },
+            {
+              "id": "create:basin",
+              "available_epoch": 4
+            }
+          ],
+          "tech_level": null
+        }
+      ],
+      "base_materials": [
+        {
+          "symbol": "T",
+          "item": "avaritia:infinity_ingot",
+          "item_gate": 48,
+          "native_recipe_producers": [
+            "minecraft:infinity_ingot",
+            "minecraft:infinity_ingot_from_infinity_nugget",
+            "aia2:rebalance/avaritia/infinity_ingot"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "M",
+          "item": "occultism:marid_essence",
+          "item_gate": 39,
+          "native_recipe_producers": [
+            "occultism:ritual/summon_unbound_marid"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "R",
+          "item": "allthemodium:unobtainium_allthemodium_alloy_ingot",
+          "item_gate": 44,
+          "native_recipe_producers": [
+            "allthemodium:unobtainium_allthemodium_alloy_ingot_from_block"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        },
+        {
+          "symbol": "S",
+          "item": "draconicevolution:chaotic_core",
+          "item_gate": 42,
+          "native_recipe_producers": [
+            "aia2:rebalance/draconicevolution/chaotic_core"
+          ],
+          "non_recipe_route": null,
+          "producer_status": "native_recipe_or_explicit_rebalance"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This targeted static audit does not prove full native worldgen, boss spawn tables, ritual dispatch, inventory interaction or gameplay balance.",
+    "Loot/procedural resources (old_root, bark, naga_scale, buffalo_hide, Wilden Tribute, Gaia Spirit) legitimately need non-recipe obtainability checks in the installed modpack.",
+    "Runtime adapters and TPS require actual Minecraft/NeoForge integration testing.",
+    "Authored quest catalogs were incomplete during this review; their full graph and late epoch28 source-network goals are checked separately after compilation."
+  ],
+  "unresolved_base_materials": []
+}

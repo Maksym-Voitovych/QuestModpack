@@ -1,0 +1,1792 @@
+{
+  "id": "0000BC8A8A25A5E2",
+  "filename": "aia2_branch_technology_projecte",
+  "title": "projecte — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 59,
+  "icon": {
+    "id": "projecte:transmutation_table",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000179C164623E1",
+      "title": "Стаціонарний стіл трансмутації",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Підготуйте робоче місце обміну та перевірте, що інтерфейс показує лише дозволену whitelist-сировину.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "projecte:transmutation_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F7BDD84D899B",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000077FEB1CB5D48",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:transmutation_table",
+          "timer": 40
+        },
+        {
+          "id": "0000371F0D22044C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000426835092CFB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000084B61B40C6BE",
+      "title": "Склад звичайного металу",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Підготуйте резерв дозволених металів для ремонтів і базових деталей, не зараховуючи жоден рідкісний сплав.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000005B82270B5FD",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3C36626A47D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000038DEE2AF7CBC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B6E5E97BDBE6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000037EA27394ACF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003AF671882E06",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BB843D1C1111",
+      "title": "Резерв обслуговування конденсатора",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Підготуйте доступ до фізичного буфера й звичайний ремонтний матеріал без видачі високих компонентів у нагороду.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:condenser_mk1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A43CEE2D4903",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000013F9324E91E",
+          "type": "item",
+          "item": {
+            "id": "projecte:condenser_mk1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E05AE1FE943E",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C7BE49AE5939",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055234B9B4AC4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00009D988F5F1D94",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E2E1E180AC69",
+      "title": "Алхімічне вугілля",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Підготуйте перший ступінь алхімічного палива через доступний нативний рецепт.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:alchemical_coal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000687A275BE803",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057E6D8E8B88F",
+          "type": "item",
+          "item": {
+            "id": "projecte:alchemical_coal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DD3D70FE8762",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AEF052B7DC3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "00000096CE8F98C0",
+      "title": "Алхімічна комора",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Відокремте фізичні інгредієнти від ресурсів, що зберігаються у системі обміну.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "projecte:alchemical_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "0000179C164623E1",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F845581472EA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:alchemical_chest",
+          "timer": 40
+        },
+        {
+          "id": "000019284E233E47",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005AA02A9470F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A060F5D9F4A7",
+      "title": "Паливо Мебіуса",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Виділіть наступний ступінь палива в окрему партію й не витрачайте його у звичайній печі без потреби.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:mobius_fuel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2E1E180AC69",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001770FF8B1476",
+          "type": "item",
+          "item": {
+            "id": "projecte:mobius_fuel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB9F2F64AFBF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00002A1607CFDC17",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000E2C58FCC2665",
+      "title": "Контур забороненої підміни",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Продемонструйте три окремі виробничі внески: наявність каменя не означає, що антиматерія чи есенція мають EMC.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:philosophers_stone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BB843D1C1111",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EA24D8B10906",
+          "type": "item",
+          "item": {
+            "id": "projecte:philosophers_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5B09B30EFF3",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001FC0974D334D",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006AF75158098E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000FAC66522FFAB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E881C7A46326",
+      "title": "Скляний резерв лабораторії",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Відведіть окрему місткість під скло й збережіть дорогі компоненти поза цим буфером.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "minecraft:glass",
+        "count": 1
+      },
+      "dependencies": [
+        "000084B61B40C6BE",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D7A30738F8DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E5CC349FB73",
+          "type": "item",
+          "item": {
+            "id": "projecte:alchemical_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000679BE59FE84B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000063F559C91795",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "00001B467070CB4B",
+      "title": "Етерналіс для матерії",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Завершіть старше паливо перед складанням темної матерії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:aeternalis_fuel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A060F5D9F4A7",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D31D45FE0C6",
+          "type": "item",
+          "item": {
+            "id": "projecte:aeternalis_fuel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098B9D484D749",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000069828CF7F217",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007AFE60740A8D",
+      "title": "Паспорт фізичного постачання",
+      "description": [
+        "Трансмутація має постачати дозволену сировину до фізичних виробництв, зберігаючи окремі контури для унікальних предметів.",
+        "Зіставте алхімічний вузол із трьома реальними процесорними сімействами; жодне з них не замінюється whitelist-сировиною.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:condenser_mk1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2C58FCC2665",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000049A4B9FAC4B9",
+          "type": "item",
+          "item": {
+            "id": "projecte:condenser_mk1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D71EA2E22A56",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B9636FFADCCE",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027051685A058",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DDCBC3DDD9BB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00007F11C7F79ACE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A39D2EB8BFB8",
+      "title": "Переносна лабораторна сумка",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Створіть одну стандартну сумку для сервісних компонентів; колекція всіх кольорів не потрібна для прогресії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:white_alchemical_bag",
+        "count": 1
+      },
+      "dependencies": [
+        "00000096CE8F98C0",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F617418AD26F",
+          "type": "item",
+          "item": {
+            "id": "projecte:white_alchemical_bag",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000814823A3A515",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F4B8CCA41AEA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "000021B1212A0082",
+      "title": "Перша темна матерія",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Отримайте матеріал за ускладненим рецептом збірки; предметне завдання не приписує йому EMC.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:dark_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "00001B467070CB4B",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C54BB81730AF",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055307D6BC966",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000079F7634F53C0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DA556F005C8F",
+      "title": "Перший конденсатор",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Підготуйте нативний конденсатор для дозволених матеріалів; відсутність EMC для рідкісного предмета є частиною балансу.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "projecte:condenser_mk1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A39D2EB8BFB8",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000025547D3C0837",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:condenser_mk1",
+          "timer": 40
+        },
+        {
+          "id": "0000B38C773E5057",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001D696F072D52",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005FAC372D2209",
+      "title": "Компактний паливний резерв",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Підготуйте два різні паливні резерви для контрольованого постачання наступної епохи.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:aeternalis_fuel_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000021B1212A0082",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F93017AE237E",
+          "type": "item",
+          "item": {
+            "id": "projecte:aeternalis_fuel_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A80E6D02306D",
+          "type": "item",
+          "item": {
+            "id": "projecte:mobius_fuel_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007ABFC1AA28D3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EC573A78B54B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EA981C8B8FB9",
+      "title": "Чорнодірне сортування",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Підготуйте нативний аксесуар збору й налаштуйте особистий інвентар перед великим будівництвом.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:black_hole_band",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA556F005C8F",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BF916F62FB14",
+          "type": "item",
+          "item": {
+            "id": "projecte:black_hole_band",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CCE13B915FD2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005AE6C7F70E3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002BE93679E9FD",
+      "title": "Ущільнення звичайного складу",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Підготуйте предмет ущільнення й пробу звичайного каменю; налаштування режимів перевіряйте у встановленій версії.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:gem_of_eternal_density",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EA981C8B8FB9",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FC3E99C17282",
+          "type": "item",
+          "item": {
+            "id": "projecte:gem_of_eternal_density",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000941351978FD6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA608159BAEB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00004A235BC1634B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "000048421BE21C37",
+      "title": "Темна матерія у щільній формі",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Збережіть щільну форму як виробничий резерв, а не як обхід вартості розпакування.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:dark_matter_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00005FAC372D2209",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCC266ABB346",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000652EB12BF6B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000A622C8BBB0EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000885B06684874",
+      "title": "Темна матерія й антиматерія",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Зіставте два принципово різні матеріальні потоки; алхімія не замінює SPS Mekanism.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:dark_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "000048421BE21C37",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EA249D71EFE3",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D7F63928D24",
+          "type": "item",
+          "item": {
+            "id": "mekanism:pellet_antimatter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A17E319D18FE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EF145A6B1FFC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000FC3BFCE865E0",
+      "title": "Резервний комплект комори",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Складіть резервну місткість і ремонтний метал окремо від виробничого конденсатора.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:alchemical_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "00002BE93679E9FD",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007093B74782A3",
+          "type": "item",
+          "item": {
+            "id": "projecte:alchemical_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EF7DACC500EA",
+          "type": "item",
+          "item": {
+            "id": "projecte:white_alchemical_bag",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A12422217CA6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000075AA5F0184B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008A9543EC29B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000270894F331A9",
+      "title": "Матеріальна заявка на наступний рівень",
+      "description": [
+        "Темна матерія виготовляється з реальних інгредієнтів; whitelist EMC не робить її безкоштовним джерелом складних компонентів.",
+        "Підготуйте фізичні внески алхімії, рідкісної металургії й природної магії для подальшої конвергенції.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:dark_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000885B06684874",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000080203AD2EE36",
+          "type": "item",
+          "item": {
+            "id": "projecte:dark_matter",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002730AB78551B",
+          "type": "item",
+          "item": {
+            "id": "allthemodium:unobtainium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061E1891A887E",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002249F1E6FF89",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F05E3210A83B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C4A48A80512E",
+      "title": "Паспорт обмеженої трансмутації",
+      "description": [
+        "Алхімічна інфраструктура забезпечує обіг звичайної сировини; вона не є маршрутом отримання ключів, антиматерії чи рідкісних зливків.",
+        "Завершіть фізичну інвентаризацію лабораторії без вимоги створити хоча б один прогресійний матеріал за EMC.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:transmutation_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FC3BFCE865E0",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000555F7A0C8544",
+          "type": "item",
+          "item": {
+            "id": "projecte:transmutation_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000786A719BF000",
+          "type": "item",
+          "item": {
+            "id": "projecte:condenser_mk1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B833B576DE1",
+          "type": "item",
+          "item": {
+            "id": "projecte:alchemical_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B187E6C0955D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CCC59488E969",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000283CE1A9B65C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000EB09EB46C8DA",
+      "title": "Матеріальний резерв ущільнення",
+      "description": [
+        "Сингулярності Re-Avaritia зберігають власні нативні компоненти; квест не вигадує окремі ID кольорових чи матеріальних варіантів.",
+        "Підготуйте звичайний металевий резерв поряд із нейтронним матеріалом, не видаючи резерв за готову сингулярність.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000007079FC2B71",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000506012911585",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B71E45A2880",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BBD6F6FF9B6",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000860227BEBB39",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001689FCD26043",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "00006E02EE5D3D53",
+      "title": "Перший зразок червоної матерії",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Виготовте старший алхімічний матеріал після завершення нейтронної епохи.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:red_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D5B283839453",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000544C3076C0D2",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000739BCB099DEE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005CE1E7D52A3E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 0.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000AACF23012B33",
+      "title": "Щільна червона матерія",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Зберіть щільну форму як контрольований виробничий резерв.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:red_matter_block",
+        "count": 1
+      },
+      "dependencies": [
+        "00006E02EE5D3D53",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E6278DF1D166",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D6ED4158B12A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000006A755C04F55",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "000090036A64700A",
+      "title": "Ручний стіл трансмутації",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Підготуйте переносний інтерфейс дозволеної сировини; перелік EMC залишається тим самим.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:transmutation_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AACF23012B33",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000262A58F5F7F",
+          "type": "item",
+          "item": {
+            "id": "projecte:transmutation_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F76893BE73DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C0DA5309DB73",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000AB568035CD47",
+      "title": "Старший конденсатор",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Завершіть старший апарат конденсації для дозволених матеріалів без надання EMC нейтронію.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "projecte:condenser_mk2",
+        "count": 1
+      },
+      "dependencies": [
+        "000090036A64700A",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000331B17FA0A4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:condenser_mk2",
+          "timer": 40
+        },
+        {
+          "id": "0000EC0B61ADCC0C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000854B2ED682EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "000025BD3644F57B",
+      "title": "Старший колектор",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Створіть пізній колектор після перевірки зміненого рецепта збірки.",
+        "Поставте блок у відведеній ділянці й утримуйте на ньому погляд дві секунди. Спостереження підтверджує розміщений блок; воно не вимірює робочі цикли, FE/t або формування всього мультиблока."
+      ],
+      "icon": {
+        "id": "projecte:collector_mk3",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AB568035CD47",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B445E78FC233",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:collector_mk3",
+          "timer": 40
+        },
+        {
+          "id": "0000018515AA02CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EFA0D38BCFF5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "00003D56E9E879C1",
+      "title": "Старше енергетичне реле",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Підготуйте комплект нативної передачі й генерації для окремого алхімічного стенда.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:relay_mk3",
+        "count": 1
+      },
+      "dependencies": [
+        "000025BD3644F57B",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000571000F1AD66",
+          "type": "item",
+          "item": {
+            "id": "projecte:relay_mk3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E0E495F48402",
+          "type": "item",
+          "item": {
+            "id": "projecte:collector_mk3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000601509251F9A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000F61A557709C7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D6B646758925",
+      "title": "Червона матерія й нейтроній",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Зведіть два різні фізичні матеріальні потоки перед фінальною конвергенцією.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:red_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D56E9E879C1",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008B4C350FD331",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B904D522AB6E",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7F0383F1038",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000062037F68C232",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000C72C0E8775A5",
+      "title": "Алхімічний паспорт конвергенції",
+      "description": [
+        "Червона матерія є новим фізичним матеріальним ступенем; обмежений EMC не відкриває нескінченне виробництво фінальних компонентів.",
+        "Підготуйте старшу матерію, її апаратний контур, природний сплав і хаотичний осередок як незалежні внески.",
+        "Умови вузла перевіряють зазначене обладнання й матеріали у вашому інвентарі; вони не є автоматичним вимірюванням роботи установки."
+      ],
+      "icon": {
+        "id": "projecte:red_matter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6B646758925",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008CCC2534618B",
+          "type": "item",
+          "item": {
+            "id": "projecte:red_matter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E23A2547C506",
+          "type": "item",
+          "item": {
+            "id": "projecte:condenser_mk2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD6D96482C52",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098CFBA300CF1",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAC1E2454020",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000B478AA6BEF0B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
+    }
+  ]
+}

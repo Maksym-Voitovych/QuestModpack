@@ -1,0 +1,817 @@
+{
+  "id": "0000580B23996112",
+  "filename": "aia2_branch_magic_totemic",
+  "title": "totemic — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 26,
+  "icon": {
+    "id": "totemic:totem_whittling_knife",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000024AF33161ACF",
+      "title": "Різьбяр тотемів",
+      "description": [
+        "Ніж Totemic дозволяє підготувати дерев'яні тотемні заготовки.",
+        "Розвинені музичні церемонії залишаються темою сьомої епохи."
+      ],
+      "icon": {
+        "id": "totemic:totem_whittling_knife",
+        "count": 1
+      },
+      "dependencies": [
+        "0000513650CAD977",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000883116770871",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_whittling_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000441B09099DA0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D7D391A4C289",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000086E3677692F7",
+      "title": "Кедровий розсадник",
+      "description": [
+        "Кедр забезпечує власну деревну базу Totemic без залежності від звичайного дуба.",
+        "Посадіть резервні саджанці поза майданчиком майбутнього колеса."
+      ],
+      "icon": {
+        "id": "totemic:cedar_sapling",
+        "count": 1
+      },
+      "dependencies": [
+        "000024AF33161ACF",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0384257964C",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_sapling",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3D06FEF057F",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_log",
+            "count": 1
+          },
+          "count": 12,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009146182DA961",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005B4C44616F13",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000045C0B5F11895",
+      "title": "Основа дерев'яного символу",
+      "description": [
+        "Складіть комплект для невеликого тотема біля табору.",
+        "Наявність блоків ще не доводить вибраний ефект або правильну висоту стовпа."
+      ],
+      "icon": {
+        "id": "totemic:totem_base",
+        "count": 1
+      },
+      "dependencies": [
+        "000086E3677692F7",
+        "000024AF33161ACF",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004F8C03C76048",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009619C535BEA1",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_pole",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005253C156CDCB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001745CFEF78DD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008DEB653C5B1C",
+      "title": "Різьба як мова ритуалу",
+      "description": [
+        "Поверніться до тотемного інструмента вже з виробничою деревною базою.",
+        "Музичний майданчик потребує простору, а не лише випадково складених блоків."
+      ],
+      "icon": {
+        "id": "totemic:totem_whittling_knife",
+        "count": 1
+      },
+      "dependencies": [
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065329473A906",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_whittling_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057C0AC52A739",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_log",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B6CAD770105E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000042E47A05AE90",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000079FD0515804C",
+      "title": "Двір тотемів",
+      "description": [
+        "Підготуйте кілька стовпів для різних налаштувань ритуальної ділянки.",
+        "Зберігайте зрозумілі відстані між майданчиком і житловою частиною бази.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "totemic:totem_base",
+        "count": 1
+      },
+      "dependencies": [
+        "00008DEB653C5B1C",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009C02C96D0CB7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:totem_base",
+          "timer": 40
+        },
+        {
+          "id": "000004D4679FBAFC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:totem_pole",
+          "timer": 40
+        },
+        {
+          "id": "0000B597401D0DDC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000052D1DA4BF617",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FCAB17DA8E72",
+      "title": "Бронзова оправа барабана",
+      "description": [
+        "Рецепт барабана поєднує природну оболонку з бронзовою пластиною MI.",
+        "Це пряма залежність музичної магії від парової металургії.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "totemic:drum",
+        "count": 1
+      },
+      "dependencies": [
+        "00008DEB653C5B1C",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000081765B28311A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:drum",
+          "timer": 40
+        },
+        {
+          "id": "0000D8012851CEB1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00003FF7DA6A9ED3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007EB7AFFBE3E4",
+      "title": "Звуковий вузол майданчика",
+      "description": [
+        "Підвісний інструмент слід розмістити на обраному ритуальному майданчику.",
+        "Не перекривайте місце взаємодії випадковими декоративними блоками.",
+        "Огляньте встановлений блок протягом двох секунд; ця перевірка підтверджує розміщення, а не працездатність чи геометрію всієї установки."
+      ],
+      "icon": {
+        "id": "totemic:wind_chime",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCAB17DA8E72",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2FE326B4874",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:wind_chime",
+          "timer": 40
+        },
+        {
+          "id": "0000B88BB0B8FF0A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002EBBA7A0BBB9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00008F0FD74C45F9",
+      "title": "Друга голосова лінія",
+      "description": [
+        "Флейта доповнює ритмічний інструмент іншим способом музичної взаємодії.",
+        "Вивчіть початок обраної церемонії в книзі Totemic, перш ніж натискати все поспіль."
+      ],
+      "icon": {
+        "id": "totemic:flute",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCAB17DA8E72",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008B3C2CE23DC3",
+          "type": "item",
+          "item": {
+            "id": "totemic:flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000067D1AC16B81F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000AFEF6A2412A6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000550C1949A21F",
+      "title": "Ручний ритмічний інструмент",
+      "description": [
+        "Брязкальце додає мобільний інструмент до ритуального комплекту.",
+        "Наявність інструмента не доводить завершення жодної конкретної церемонії."
+      ],
+      "icon": {
+        "id": "totemic:rattle",
+        "count": 1
+      },
+      "dependencies": [
+        "00008F0FD74C45F9",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000047BFA21DBEFF",
+          "type": "item",
+          "item": {
+            "id": "totemic:rattle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000191D916E3819",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000012146639C21D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003F4096206F58",
+      "title": "Метал у музичному ремеслі",
+      "description": [
+        "Залізні дзвони пов'язують ранню металургію з музичним комплектом Totemic.",
+        "Підготуйте їх до складніших комбінацій інструментів."
+      ],
+      "icon": {
+        "id": "totemic:iron_bells",
+        "count": 1
+      },
+      "dependencies": [
+        "0000550C1949A21F",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF46E2F6F860",
+          "type": "item",
+          "item": {
+            "id": "totemic:iron_bells",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8A66C604193",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009EB180240BAC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000604A0180867D",
+      "title": "Зібрана музична група",
+      "description": [
+        "Скомплектуйте кілька типів інструментів для дослідження церемоній.",
+        "Це перевірка складу комплекту, а не автоматичний доказ успішного музичного виконання."
+      ],
+      "icon": {
+        "id": "totemic:drum",
+        "count": 1
+      },
+      "dependencies": [
+        "00007EB7AFFBE3E4",
+        "0000550C1949A21F",
+        "00008F0FD74C45F9",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D84C4A64BE05",
+          "type": "item",
+          "item": {
+            "id": "totemic:drum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000996D781D0BF4",
+          "type": "item",
+          "item": {
+            "id": "totemic:flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D7FB9696D8C3",
+          "type": "item",
+          "item": {
+            "id": "totemic:rattle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7C05B7E3C3F",
+          "type": "item",
+          "item": {
+            "id": "totemic:wind_chime",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000C168E5580ED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006AFA501FEF07",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C40E4F78F4F2",
+      "title": "Плід тотемної практики",
+      "description": [
+        "Буйволяча шкіра є спеціальним ресурсом Totemic, а не заміною будь-якої ванільної шкіри.",
+        "Дослідіть відповідний шлях мода та збережіть основу для повторюваного отримання."
+      ],
+      "icon": {
+        "id": "totemic:buffalo_hide",
+        "count": 1
+      },
+      "dependencies": [
+        "00008F0FD74C45F9",
+        "0000550C1949A21F",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002AC6B90C882",
+          "type": "item",
+          "item": {
+            "id": "totemic:buffalo_hide",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC67FA874858",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D2230B1CEC08",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000746EDE74F3E1",
+      "title": "Продовольча частина нового господарства",
+      "description": [
+        "Господарство Totemic може підтримати харчування експедицій.",
+        "Не витрачайте відтворюване стадо заради однієї короткої подорожі."
+      ],
+      "icon": {
+        "id": "totemic:cooked_buffalo_meat",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C40E4F78F4F2",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000337F243F8125",
+          "type": "item",
+          "item": {
+            "id": "totemic:cooked_buffalo_meat",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFEF3F5F4B51",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002DE5C89C97E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007B096FEEABD9",
+      "title": "Спорядження учасника церемонії",
+      "description": [
+        "Тематичне спорядження розширює взаємодію з ритуальною музикою.",
+        "Квест приймає сам предмет і не заявляє перевірку вашої ефективності виконання."
+      ],
+      "icon": {
+        "id": "totemic:jingle_dress",
+        "count": 1
+      },
+      "dependencies": [
+        "00003F4096206F58",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BDB61E8B8289",
+          "type": "item",
+          "item": {
+            "id": "totemic:jingle_dress",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE1EE20807D5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CB0D30299C17",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000A2837011B270",
+      "title": "Сумка ритуального мандрівника",
+      "description": [
+        "Сумка Totemic доповнює підготовку до польових ритуальних робіт.",
+        "Звірте умови її використання з книгою мода, не вважаючи її універсальним сховищем."
+      ],
+      "icon": {
+        "id": "totemic:medicine_bag",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C40E4F78F4F2",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FD40D2BE2034",
+          "type": "item",
+          "item": {
+            "id": "totemic:medicine_bag",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000367989A0A054",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C238AD8D1F11",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    }
+  ]
+}

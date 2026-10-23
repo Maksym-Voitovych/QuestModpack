@@ -1,0 +1,1150 @@
+{
+  "id": "000057B89BAE5E2E",
+  "filename": "aia2_branch_technology_enderio",
+  "title": "enderio — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 39,
+  "icon": {
+    "id": "enderio:void_chassis",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000084EB2E4F6A8",
+      "title": "Каркас провідної майстерні",
+      "description": [
+        "Підготуй Void Chassis для базових машин Ender IO. Збережи різницю між порожнім каркасом і корпусом, уже пов'язаним із душею.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:void_chassis",
+        "count": 1
+      },
+      "dependencies": [
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AECDA649C965",
+          "type": "item",
+          "item": {
+            "id": "enderio:void_chassis",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D9693F80ED11",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000045E7731164FE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CEE9E9204D35",
+      "title": "Заряджання ручного обладнання",
+      "description": [
+        "Підготуй Wired Charger та запасний конденсатор для обслуговування. Перевір підтримку конкретного енергопредмета до того, як забирати його в експедицію.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:wired_charger",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B7E635D24F39",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000095D827CCB4C5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:wired_charger",
+          "timer": 40
+        },
+        {
+          "id": "000089C2416A0E4B",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F63DE9BA1D7C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000033284E869D10",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "000061CC6C226049",
+      "title": "Піч змішує, а не лише плавить",
+      "description": [
+        "Встанови Alloy Smelter і залиш окремі буфери для компонентів сплаву. Режим переплавлення звичайних предметів відрізняється від режиму сплавів.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:alloy_smelter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000084EB2E4F6A8",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CBF4AB4EBD46",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:alloy_smelter",
+          "timer": 40
+        },
+        {
+          "id": "00009F3BF226488E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000097738C063C40",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000088BC4FC0BB42",
+      "title": "Режим роботи через конденсатор",
+      "description": [
+        "Підготуй базові конденсатори для сумісних машин. Перед встановленням перевір призначений слот, а не клади компонент у звичайний вхід сировини.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:basic_capacitor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000084EB2E4F6A8",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000938870EECE5B",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED1219B5B9D6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A9ADBAD01082",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003BCE675C3319",
+      "title": "Енергетична металургія",
+      "description": [
+        "Заверши невелику партію Energetic Alloy для доступних пристроїв. Не витрачай увесь світлокамінь, залишивши лабораторію без реагентів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:energetic_alloy_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000061CC6C226049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000003621861CED3",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000072A5D734D9A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FC09CEC799B1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000801A07D8702D",
+      "title": "Провідник із власним рецептом",
+      "description": [
+        "Підготуй Conductive Alloy окремо від сигнального сплаву. Цей матеріал має власні рецептурні ролі в енергетичному обладнанні.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:conductive_alloy_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000061CC6C226049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000029EAE3107AD8",
+          "type": "item",
+          "item": {
+            "id": "enderio:conductive_alloy_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000769C2527FFFE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006C9194B520D5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C71385C0B049",
+      "title": "Млин із контрольованим виходом",
+      "description": [
+        "Постав SAG Mill біля підписаних вхідного й вихідного контейнерів. Додаткові результати конкретного рецепта перевіряй в JEI, а не припускай для кожної руди.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:sag_mill",
+        "count": 1
+      },
+      "dependencies": [
+        "000061CC6C226049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008EB86BC29DE9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:sag_mill",
+          "timer": 40
+        },
+        {
+          "id": "0000C2727B636F3C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000037335ACDF5D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000E3B2EFCD3D9B",
+      "title": "Метал сигналів",
+      "description": [
+        "Підготуй Redstone Alloy для керувальних компонентів. Не підміняй сплав звичайним залізом навіть за однакової форми злитків.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:redstone_alloy_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000061CC6C226049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F01C8402AF8",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_alloy_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B62F6A6AA786",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000203D8624FE8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "00006F7F01E22A79",
+      "title": "Стаціонарний запас цеху",
+      "description": [
+        "Установи Basic Capacitor Bank між генерацією й споживачами. Перевір напрями вводу та виводу перед підключенням нового млина.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:basic_capacitor_bank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C71385C0B049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000ECBDBC2D7AE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:basic_capacitor_bank",
+          "timer": 40
+        },
+        {
+          "id": "0000B033287A7CF2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000058CA3C2714F7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009840C53DF68F",
+      "title": "Витратний інструмент млина",
+      "description": [
+        "Підготуй Dark Steel Grinding Ball та звір її характеристики в інтерфейсі млина. Наявність кулі не перетворює будь-який рецепт на гарантоване множення ресурсів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:dark_steel_grinding_ball",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C71385C0B049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B5E5E3A7A6B1",
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_steel_grinding_ball",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002BBA6C42F665",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000447CEC8EA580",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002B49D49F893A",
+      "title": "Душовий метал і кристалічний провідник",
+      "description": [
+        "Зведи кристалічну електроніку та матеріал Soul Binder у контрольний комплект. Обидві гілки мають залишатися доступними для наступних міжмодових рецептів.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:soularium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F7F01E22A79",
+        "000055027A1DC28F",
+        "0000C157594838BB",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCDD28216745",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE26019E0591",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:restonia_crystal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000196479DBC57F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00006DF4CCF5C997",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000054863C416C7B",
+      "title": "Зв'язувальна суміш трас",
+      "description": [
+        "Порівняй незавершену суміш і готовий Conduit Binder. Це послідовні матеріали, тому один не завжди можна підставити замість іншого.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:conduit_binder_composite",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F7F01E22A79",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F93883859440",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder_composite",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BDBD21205C0C",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BF1BD325CCA7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000065EBB2921825",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00007CF650BC19C2",
+      "title": "Дозволений список продуктів",
+      "description": [
+        "Підготуй два різні засоби відбору предметів. Розділи завдання вибору ресурсу й обмеження запасу, щоб допоміжні деталі не забивали основний склад.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:basic_item_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F7F01E22A79",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001BF30EB6E31E",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000091CF5F910055",
+          "type": "item",
+          "item": {
+            "id": "enderio:limited_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C9AF8859335F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FBED4C1DAE61",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000FC3E352FA5EC",
+      "title": "Інструменти обслуговування трас",
+      "description": [
+        "Збери комплект налаштування й діагностики провідних трас. Після зміни режиму з'єднання перевір його поведінку на одному ресурсі.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:yeta_wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F7F01E22A79",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000142725B936CD",
+          "type": "item",
+          "item": {
+            "id": "enderio:yeta_wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D269C564C472",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_probe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6BD912A1A6F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000002265F5A3B57",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000686C1C82DDA3",
+      "title": "Сигнали передавання",
+      "description": [
+        "Підготуй основу й логічний фільтр для керування трасою. Вхідні сигнали мають відповідати обраному правилу, інакше навіть справна лінія залишиться закритою.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:redstone_filter_base",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B49D49F893A",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005C77935ACBCD",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_filter_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E615C2AB83C7",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_and_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071D60E2EE61B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000416964E8BEDD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F32BFE5C428B",
+      "title": "Ізоляція після біофабрики",
+      "description": [
+        "Порівняй спеціальну ізоляцію Ender IO з базовим пластиком. Спільне походження матеріалів не означає взаємозамінність у кожному рецепті.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:industrial_insulation",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B49D49F893A",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E4D35104429",
+          "type": "item",
+          "item": {
+            "id": "enderio:industrial_insulation",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA4C443FB10C",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004092967B20EE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007595DBC9BF82",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004456E063D7C6",
+      "title": "Генератор із ремонтним резервом",
+      "description": [
+        "Підготуй локальне резервне джерело та сталь для ремонту опорної частини. Воно не повинне приховувати постійний енергетичний дефіцит основної мережі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "enderio:stirling_generator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000686C1C82DDA3",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000028B6B5A252FF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:stirling_generator",
+          "timer": 40
+        },
+        {
+          "id": "0000A6DB6E385590",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008696C9C3BDAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D946DBA77446",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BCE220669F7D",
+      "title": "Душа, сплав і полімер",
+      "description": [
+        "Об'єднай результат душової, металургійної та полімерної гілок. Цей комплект завершує підготовку епохи без використання ключів як деталей звичайних машин.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "enderio:ensouled_chassis",
+        "count": 1
+      },
+      "dependencies": [
+        "0000686C1C82DDA3",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006FD1809E3930",
+          "type": "item",
+          "item": {
+            "id": "enderio:ensouled_chassis",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A966F5FC37BF",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009235984FBE48",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074C8F20E16B8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000785B065D8B62",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003080887A043B",
+      "title": "Матриця з матеріальним корпусом",
+      "description": [
+        "Поєднайте soularium та ensouled chassis як механічну основу роботи з живими даними. Ці компоненти не замінюють навчання моделі в learner.",
+        "Фактична перевірка: 2 × enderio:ensouled_chassis — мати в інвентарі; 8 × enderio:soularium_ingot — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки."
+      ],
+      "icon": {
+        "id": "enderio:ensouled_chassis",
+        "count": 1
+      },
+      "dependencies": [
+        "00002EBB0734E4CE",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002204CF81318C",
+          "type": "item",
+          "item": {
+            "id": "enderio:ensouled_chassis",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005BB1AD62AE5F",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000767753AD23F6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000EF34263F45E4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000975D672978B2",
+      "title": "Живлення без ручного підкладання",
+      "description": [
+        "Підготуйте енергокомірку й запасні конденсатори для фабрики. Буфер потрібен для керованого перезапуску, а не для приховування недостатньої генерації.",
+        "Фактична перевірка: оглянути встановлений enderio:basic_capacitor_bank протягом 40 ticks; 4 × enderio:double_layer_capacitor — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "enderio:basic_capacitor_bank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A415756E93B8",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009DD2C4F4171F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:basic_capacitor_bank",
+          "timer": 40
+        },
+        {
+          "id": "000027BC33DB41E2",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094A2AA6EA6D2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000CAE155271A55",
+      "title": "Збір випадкового дропу",
+      "description": [
+        "Поставте окремий буфер для дропу, який виникає під час навчання моделей. Vacuum Chest має повертати матеріали у сховище, не підміняючи фабрикатор прогнозів.",
+        "Фактична перевірка: оглянути встановлений enderio:vacuum_chest протягом 40 ticks; 4 × minecraft:chest — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "enderio:vacuum_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C0A540E29A27",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F3190FCEF83",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:vacuum_chest",
+          "timer": 40
+        },
+        {
+          "id": "00003D76BD7700BD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B06890CB4AB3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008FE53B6EC8BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    }
+  ]
+}

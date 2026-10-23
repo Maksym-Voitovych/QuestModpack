@@ -1,0 +1,87 @@
+{
+  "status": "source_verified_helpers_compiled_pure_policy_tests_passed_real_mod_runtime_not_run",
+  "compatibility_fixes": {
+    "mekanism_robit": {
+      "owner": "Actual Robit owner UUID resolved through current FTB Teams public API for each native monitor invocation; no membership cache",
+      "scope": "Exact baseTick monitor.updateAndProcess()Z redirected through a try/finally owner scope; generic CachedRecipe guard checks recipe stage using that scope",
+      "constraints": "Requires owning team to have Robit item access and recipe access; offline owner supported by FTB team manager ID lookup, not player presence",
+      "preservation": "Owner context removed/restored after normal return, nested invocation, and native exception; unsupported API denies before energy/input consumption"
+    },
+    "create_potion_mixing": {
+      "approved_identities": "Only actual RecipeHolder values observed from native PotionMixingRecipes.createRecipes(Level) RETURN; class name or recipe prefix alone is insufficient",
+      "identity_storage": "Weak references with identity hash/equality and reference-queue cleanup; no recipe/world strong retention, registrations survive server-script reload while native caches retain their list",
+      "classification": "Reinspect all item ingredient alternatives/results and all fluid alternatives/results for every operation, using current item stage policy; no stale stage cache",
+      "vanilla": "Generated native vanilla potion contents open at epoch15; lingering bottles require epoch30",
+      "quarantine": "Unknown recipe identities, modded potion holder namespaces, custom effects, unknown fluid IDs, unknown data components, empty or unsupported shapes remain stage100",
+      "fluids": "Only actual minecraft:water or create:potion; PotionContents and create:potion_fluid_bottle_type inspected, never a generic potion-fluid ID allowlist bypass"
+    }
+  },
+  "files_added": [
+    "companion/src/main/java/ua/aia2/guard/ScopedRecipeOwner.java",
+    "companion/src/main/java/ua/aia2/guard/RobitRecipeAccess.java",
+    "companion/src/main/java/ua/aia2/guard/CreatePotionRecipeAccess.java",
+    "companion/src/main/java/ua/aia2/guard/mixin/MekanismRobitRecipeMixin.java",
+    "companion/src/main/java/ua/aia2/guard/mixin/CreatePotionRecipesMixin.java",
+    "companion/src/policyTest/java/ua/aia2/guard/ScopedRecipeOwnerTest.java"
+  ],
+  "tests": {
+    "native_compile": "passed actual NeoForge toolchain offline compileJava",
+    "plain_policy_runner": "passed",
+    "pure_java_assertions": 5237,
+    "scoped_owner_assertions": 14,
+    "gradle_policy_runner": "passed offline policyTest (5237 assertions, 9s)",
+    "real_mekanism_robit": "not_run",
+    "real_create_potion_mixing": "not_run",
+    "full_pack": "not_run",
+    "tps": "not_benchmarked"
+  },
+  "source_contracts": [
+    {
+      "repository": "Mekanism-1.21.1",
+      "commit": "a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80",
+      "file": "src/main/java/mekanism/common/entity/EntityRobit.java",
+      "sha256": "03bc5b49d70a3b0eeffd7efb3232a7d2d13248f9fc46a6bc89e8937220a4e380",
+      "evidence": "baseTick invokes RecipeCacheLookupMonitor.updateAndProcess()Z; public getOwnerUUID()"
+    },
+    {
+      "repository": "Mekanism-1.21.1",
+      "commit": "a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80",
+      "file": "src/main/java/mekanism/common/recipe/lookup/monitor/RecipeCacheLookupMonitor.java",
+      "sha256": "fbcbb496e8ec489f59bbe0855fbba1f7a6e34776012c3973fde3d5783ad79c72",
+      "evidence": "Public boolean updateAndProcess() invokes CachedRecipe.process() before operation completion"
+    },
+    {
+      "repository": "Create-1.21.1",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "file": "src/main/java/com/simibubi/create/content/fluids/potion/PotionMixingRecipes.java",
+      "sha256": "5268f8505cbb94356ea0fea7b3305c8b3a03273a08649fbc0f8307b9040915b2",
+      "evidence": "createRecipes(Level) returns exact generated RecipeHolder list, cached for native class lifetime"
+    },
+    {
+      "repository": "Create-1.21.1",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "file": "src/main/java/com/simibubi/create/content/fluids/potion/PotionFluid.java",
+      "sha256": "638f8d2d0800c033e7b0b96255948b0d50f48ab52720eb0f344ee8f0b0ef9a18",
+      "evidence": "PotionContents and BottleType are actual fluid data components"
+    },
+    {
+      "repository": "Create-1.21.1",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "file": "src/main/java/com/simibubi/create/AllDataComponents.java",
+      "sha256": "a37fd3915775dba73a5e090b324b2d81626ad1f8354dd66e5d08a617e0136d7c",
+      "evidence": "POTION_FLUID_BOTTLE_TYPE uses registry path potion_fluid_bottle_type"
+    },
+    {
+      "repository": "Create-1.21.1",
+      "commit": "ac0c444d9828da3453ae8cc65338e8de063286fb",
+      "file": "src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipe.java",
+      "sha256": "c6097afda9202c23cf540a72077d146ed178fdef62747f017217f64a8d04badf",
+      "evidence": "Public getFluidIngredients/getFluidResults/getRollableResultsAsItemStacks actual reflected API"
+    }
+  ],
+  "remaining_limits": [
+    "Modded/custom-effect brewing needs explicit potion/component stage policies before it unlocks; it deliberately remains quarantined.",
+    "This adapter guards Robit smelting, not every Robit movement/pickup ability.",
+    "Actual optional Mixin binding and real mod processing require in-game smoke tests."
+  ]
+}

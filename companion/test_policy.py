@@ -23,8 +23,12 @@ def main() -> None:
     sources = [
         root / "src/main/java/ua/aia2/guard/GuardPolicy.java",
         root / "src/main/java/ua/aia2/guard/LiveTeamResolver.java",
+        root / "src/main/java/ua/aia2/guard/RecipeIdentityIndex.java",
+        root / "src/main/java/ua/aia2/guard/ScopedRecipeOwner.java",
         root / "src/policyTest/java/ua/aia2/guard/GuardPolicyTest.java",
         root / "src/policyTest/java/ua/aia2/guard/LiveTeamResolverTest.java",
+        root / "src/policyTest/java/ua/aia2/guard/RecipeIdentityIndexTest.java",
+        root / "src/policyTest/java/ua/aia2/guard/ScopedRecipeOwnerTest.java",
     ]
     with tempfile.TemporaryDirectory(prefix="aia2-policy-test-") as temporary:
         subprocess.run([javac, "--release", "21", "-encoding", "UTF-8", "-d", temporary,

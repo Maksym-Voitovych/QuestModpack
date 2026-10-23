@@ -1,0 +1,492 @@
+{
+  "id": "0000A84B9E3260CA",
+  "filename": "aia2_branch_adventure_industrialupgrade",
+  "title": "industrialupgrade — Пригоди",
+  "group": "000091674FF185C4",
+  "order_index": 1,
+  "icon": {
+    "id": "minecraft:compass",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00007A1CF4BDA21A",
+      "title": "Система Землі Industrial Upgrade",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Відвідайте рідний світ і Місяць Industrial Upgrade, щоб відокремити їх від однойменних світів Ad Astra.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BA6698F0E1F5",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A473D3696A33",
+          "type": "dimension",
+          "dimension": "industrialupgrade:moon"
+        },
+        {
+          "id": "00007F525749BE82",
+          "type": "dimension",
+          "dimension": "industrialupgrade:earth"
+        },
+        {
+          "id": "0000A672F8BF9466",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000C651447AA891",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000027328274FE2E",
+      "title": "Марсіанський маршрут Industrial Upgrade",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Відвідайте Марс Industrial Upgrade та порівняйте його маршрут із уже розвиненою острамовою металургією Ad Astra.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "00007A1CF4BDA21A",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A1D6A8CEB927",
+          "type": "dimension",
+          "dimension": "industrialupgrade:mars"
+        },
+        {
+          "id": "0000F953A36A5636",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC0BAC69B587",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000E141A2D1866A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000584C27BD84D4",
+      "title": "Супутники Марса",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Зареєструйте відвідування Фобоса й Деймоса як двох окремих експедиційних цілей.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "000027328274FE2E",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A3157463FFB4",
+          "type": "dimension",
+          "dimension": "industrialupgrade:phobos"
+        },
+        {
+          "id": "00003B5A23090BFB",
+          "type": "dimension",
+          "dimension": "industrialupgrade:deimos"
+        },
+        {
+          "id": "0000EAC933FFE2FA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000D9BECD9EE239",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000468E8C676A68",
+      "title": "Внутрішня планетарна пара",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Відвідайте Венеру й Меркурій Industrial Upgrade та перевірте захист перед кожним перельотом.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000584C27BD84D4",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004264E14E5BE9",
+          "type": "dimension",
+          "dimension": "industrialupgrade:venus"
+        },
+        {
+          "id": "00006CF5C9881C0C",
+          "type": "dimension",
+          "dimension": "industrialupgrade:mercury"
+        },
+        {
+          "id": "0000E29F61E92361",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000CDBE365752A4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000518470E4AE02",
+      "title": "Галілеєві супутники",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Завершіть порівняльний маршрут чотирма різними супутниками; завдання кожного виміру зберігається окремо.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000468E8C676A68",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EBE18F66C41E",
+          "type": "dimension",
+          "dimension": "industrialupgrade:io"
+        },
+        {
+          "id": "0000391F9EE07E8C",
+          "type": "dimension",
+          "dimension": "industrialupgrade:europe"
+        },
+        {
+          "id": "00000078248059CD",
+          "type": "dimension",
+          "dimension": "industrialupgrade:ganymede"
+        },
+        {
+          "id": "0000702D24066DCC",
+          "type": "dimension",
+          "dimension": "industrialupgrade:callisto"
+        },
+        {
+          "id": "00002B7DED40057D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00008E6F19B3305F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AF2ABECBEE63",
+      "title": "Холодні супутники",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Відвідайте Титан і Енцелад та зберігайте аварійний запас життєзабезпечення для зворотного маршруту.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000518470E4AE02",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057192A715935",
+          "type": "dimension",
+          "dimension": "industrialupgrade:titan"
+        },
+        {
+          "id": "000045C36F905DE0",
+          "type": "dimension",
+          "dimension": "industrialupgrade:enceladus"
+        },
+        {
+          "id": "000073B639900D0D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000113A630F5D0C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008C811DA57EE5",
+      "title": "Карликові світи",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Зареєструйте Плутон, Харон і Цереру як три різні віддалені світи.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AF2ABECBEE63",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000080380049BD98",
+          "type": "dimension",
+          "dimension": "industrialupgrade:pluto"
+        },
+        {
+          "id": "000045E0AB1059BA",
+          "type": "dimension",
+          "dimension": "industrialupgrade:charon"
+        },
+        {
+          "id": "00003E9EAB134FDC",
+          "type": "dimension",
+          "dimension": "industrialupgrade:ceres"
+        },
+        {
+          "id": "00001E8D6186B711",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000DEFB1281D6EC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002313FF29227E",
+      "title": "Архів крайніх маршрутів",
+      "description": [
+        "Планетарна програма Industrial Upgrade розширює дослідження поза маршрутами Ad Astra.",
+        "Завершіть маршрут Еридою, Макемаке та Гаумеа. Командний архів фіксує реальні відвідування, а не наявність декоративного зразка.",
+        "Нативні завдання FTB Quests реєструють перебування гравця у кожному зазначеному вимірі. Геологічні pebble-предмети без підтвердженого шляху отримання не потрібні."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C811DA57EE5",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000709450B0FC73",
+          "type": "dimension",
+          "dimension": "industrialupgrade:eris"
+        },
+        {
+          "id": "0000F7553D684C9B",
+          "type": "dimension",
+          "dimension": "industrialupgrade:makemake"
+        },
+        {
+          "id": "00001ED428781723",
+          "type": "dimension",
+          "dimension": "industrialupgrade:haumea"
+        },
+        {
+          "id": "0000BF530A7842A9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00005771B70D396F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "000049FCA44D0A09",
+      "title": "Космічна геологія фіналу",
+      "description": [
+        "Фінальний архів пов’язує завершену промисловість із реально пройденими космічними маршрутами.",
+        "Покажіть злиток нескінченності та відвідайте Плутон і Цереру Industrial Upgrade. Кожен вимір фіксується окремим нативним завданням FTB Quests, без вимоги непідтверджених геологічних предметів."
+      ],
+      "icon": {
+        "id": "minecraft:compass",
+        "count": 1
+      },
+      "dependencies": [
+        "00006542DE5844DC",
+        "000073CC29E6976C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008424C2422D48",
+          "type": "item",
+          "item": {
+            "id": "avaritia:infinity_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D992CA3E3E1E",
+          "type": "dimension",
+          "dimension": "industrialupgrade:pluto"
+        },
+        {
+          "id": "0000BAA5FB068D78",
+          "type": "dimension",
+          "dimension": "industrialupgrade:ceres"
+        },
+        {
+          "id": "00005D3C32D9CFB5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e48"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "0000380A8D1416B0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:golden_carrot",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    }
+  ]
+}

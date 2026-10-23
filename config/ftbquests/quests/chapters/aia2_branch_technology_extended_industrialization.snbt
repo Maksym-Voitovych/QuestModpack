@@ -1,0 +1,465 @@
+{
+  "id": "0000722576FB2E3B",
+  "filename": "aia2_branch_technology_extended_industrialization",
+  "title": "extended_industrialization — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 41,
+  "icon": {
+    "id": "extended_industrialization:electric_alloy_smelter",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000035009CA2C162",
+      "title": "Енергетика з небесним матеріалом",
+      "description": [
+        "Підготуй сонячний вузол і небесний метал для спільного технологічного напряму. Фактичний вихід панелі залежить від умов у світі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:mv_solar_panel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000189544945229",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C52C8103272F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:mv_solar_panel",
+          "timer": 40
+        },
+        {
+          "id": "0000EA8EE04688CA",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A91FC5D77A84",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A50C4DCC0FDD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000460F3E89FCF9",
+      "title": "Окремий процес для меду",
+      "description": [
+        "Підготуй Electric Honey Extractor для доступної господарської гілки. Перевір підтримуваний вхід і окремий маршрут вихідних матеріалів.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:electric_honey_extractor",
+        "count": 1
+      },
+      "dependencies": [
+        "000029EACBF7C245",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CBCE204C8F5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:electric_honey_extractor",
+          "timer": 40
+        },
+        {
+          "id": "00002814833B5C6D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000070F3D392EB38",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C6AE6681737C",
+      "title": "Сплави розширеної промисловості",
+      "description": [
+        "Підготуй Electric Alloy Smelter з Extended Industrialization. Не переносиш рецепти іншої однойменної плавильної машини без перевірки сумісності.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:electric_alloy_smelter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000748BA96641B9",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EDC5A82039AF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:electric_alloy_smelter",
+          "timer": 40
+        },
+        {
+          "id": "0000F2F287DFAA27",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000007416E7C2B77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "000032467C36CC16",
+      "title": "Упаковка промислових матеріалів",
+      "description": [
+        "Підготуй Electric Canning Machine та відповідну тару. Квест перевіряє комплект для операції, а не автоматично зафіксований випуск консервів.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:electric_canning_machine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C6AE6681737C",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000914276930503",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:electric_canning_machine",
+          "timer": 40
+        },
+        {
+          "id": "000066827F8C9B77",
+          "type": "item",
+          "item": {
+            "id": "extended_industrialization:tin_can",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014EE9A483732",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009FB5A6F4669F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005B66B62BE5DF",
+      "title": "Фотомодуль середнього рівня",
+      "description": [
+        "Підготуй MV Photovoltaic Cell як компонент дозволеної сонячної системи. Сам фотомодуль ще не засвідчує працюючу панель або достатній добовий баланс енергії.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "extended_industrialization:mv_photovoltaic_cell",
+        "count": 1
+      },
+      "dependencies": [
+        "0000460F3E89FCF9",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092D7F6F345A4",
+          "type": "item",
+          "item": {
+            "id": "extended_industrialization:mv_photovoltaic_cell",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C78651635B27",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001B91D869BE95",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CE7754EFDE65",
+      "title": "Побічний потік теж має маршрут",
+      "description": [
+        "Установи Electric Composter біля підписаного вхідного буфера. Перевір сумісну сировину та вихід рецепта до підключення загального сховища.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:electric_composter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C6AE6681737C",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F746CF6FF32E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:electric_composter",
+          "timer": 40
+        },
+        {
+          "id": "0000F5A106DCA377",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000863A14F6545F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D91DE662B64D",
+      "title": "Налаштування без втрати параметрів",
+      "description": [
+        "Збережи конфігураційні інструменти двох промислових систем. Не вважай картку одного мода придатною для будь-якої машини іншого.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "extended_industrialization:machine_config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000460F3E89FCF9",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002AF28723FB99",
+          "type": "item",
+          "item": {
+            "id": "extended_industrialization:machine_config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007DEE0DB05FED",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A8A04A5361D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009E892213D6EB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000F66FD4CBEE5A",
+      "title": "Формування деталей електрикою",
+      "description": [
+        "Постав Electric Bending Machine у металопрокатній зоні. Перед серією зістав вибраний рецепт із потрібною формою деталі.",
+        "Оглянь установлений зазначений блок протягом двох секунд. Це огляд обладнання; виконання рецепта й правильність повної структури перевір самостійно."
+      ],
+      "icon": {
+        "id": "extended_industrialization:electric_bending_machine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C6AE6681737C",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000579B2D03CE2F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extended_industrialization:electric_bending_machine",
+          "timer": 40
+        },
+        {
+          "id": "0000BF18B64750D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004786CCEEB0A7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
+    },
+    {
+      "id": "00001C005182D5B1",
+      "title": "Стінки великого електроцеху",
+      "description": [
+        "Підготуй Steel Plated Bricks для сумісної структури. Геометрію та допустимі блоки перевір за конкретним контролером.",
+        "Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва."
+      ],
+      "icon": {
+        "id": "extended_industrialization:steel_plated_bricks",
+        "count": 1
+      },
+      "dependencies": [
+        "00005B66B62BE5DF",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000010CB43141F7A",
+          "type": "item",
+          "item": {
+            "id": "extended_industrialization:steel_plated_bricks",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000404319F3EDA5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004B5DE9DEC90F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    }
+  ]
+}

@@ -8,6 +8,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -21,6 +23,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -34,6 +37,15 @@ public final class Aia2MachineGuard {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static final GuardPolicy POLICY = new GuardPolicy();
     private static final GuardPolicy ITEM_POLICY = new GuardPolicy();
+    private static final GuardPolicy RECIPE_POLICY = new GuardPolicy();
+    private static final RecipeIdentityIndex RECIPES = new RecipeIdentityIndex();
+    private static final ThreadLocal<BlockEntity> TICK_CONTEXT = new ThreadLocal<>();
+    private static final ClassValue<java.lang.reflect.Method> CACHED_RECIPE_ACCESSOR = new ClassValue<>() {
+        @Override protected java.lang.reflect.Method computeValue(Class<?> type) {
+            try { return type.getMethod("getRecipe"); }
+            catch (ReflectiveOperationException error) { throw new IllegalStateException("Unsupported Mekanism CachedRecipe API", error); }
+        }
+    };
     private static final Map<UUID, String> PLAYER_TEAMS = new ConcurrentHashMap<>();
     private static final LiveTeamResolver LIVE_TEAMS = new LiveTeamResolver();
     private static final AtomicLong DENIED_TICKS = new AtomicLong();
@@ -52,12 +64,16 @@ public final class Aia2MachineGuard {
     }
 
     public static boolean isReady() {
-        return POLICY.isReady() && ITEM_POLICY.isReady();
+        return POLICY.isReady() && ITEM_POLICY.isReady() && RECIPE_POLICY.isReady();
     }
 
     public static void clearRuntime() {
         POLICY.clear();
         ITEM_POLICY.clear();
+        RECIPE_POLICY.clear();
+        RECIPES.reset();
+        TICK_CONTEXT.remove();
+        RobitRecipeAccess.clear();
         PLAYER_TEAMS.clear();
         LIVE_TEAMS.clear();
         DENIED_TICKS.set(0);
@@ -74,6 +90,11 @@ public final class Aia2MachineGuard {
 
     public static void setItemRulesJson(String json) {
         ITEM_POLICY.setRules(parseRulesJson(json));
+    }
+
+    public static void setRecipeRulesJson(String json) {
+        RECIPE_POLICY.setRules(parseRulesJson(json));
+        RECIPES.reset();
     }
 
     private static Map<String, Number> parseRulesJson(String json) {
@@ -94,6 +115,7 @@ public final class Aia2MachineGuard {
     public static void setTeamProgress(String team, int completed) {
         POLICY.setTeamProgress(team, completed);
         ITEM_POLICY.setTeamProgress(team, completed);
+        RECIPE_POLICY.setTeamProgress(team, completed);
     }
 
     public static void setPlayerTeam(String playerId, String team) {
@@ -106,6 +128,7 @@ public final class Aia2MachineGuard {
     /** Call only after the script has supplied every persisted team's progress. */
     public static void setReady() {
         ITEM_POLICY.setReady();
+        RECIPE_POLICY.setReady();
         POLICY.setReady();
     }
 
@@ -180,6 +203,67 @@ public final class Aia2MachineGuard {
         return ITEM_POLICY.getRequiredStage(id) <= 1 || isReady() && ITEM_POLICY.mayTick(id, getOwner(blockEntity));
     }
 
+    /** Called around the actual ticker in a try/finally; nested ticks restore the parent. */
+    public static BlockEntity enterTick(BlockEntity blockEntity) {
+        BlockEntity parent = TICK_CONTEXT.get();
+        TICK_CONTEXT.set(blockEntity);
+        return parent;
+    }
+
+    public static void exitTick(BlockEntity parent) {
+        if (parent == null) TICK_CONTEXT.remove(); else TICK_CONTEXT.set(parent);
+    }
+
+    public static boolean mayProcessCachedRecipe(Object cachedRecipe) {
+        BlockEntity context = TICK_CONTEXT.get();
+        try {
+            Object recipe = CACHED_RECIPE_ACCESSOR.get(cachedRecipe.getClass()).invoke(cachedRecipe);
+            if (!(recipe instanceof Recipe<?> nativeRecipe)) return false;
+            if (context != null) return mayProcessRecipe(context, nativeRecipe);
+            return RobitRecipeAccess.hasContext() && RobitRecipeAccess.mayProcess(nativeRecipe);
+        } catch (ReflectiveOperationException | RuntimeException failure) {
+            return false;
+        }
+    }
+
+    public static boolean mayLookupRecipeInCurrentTick(Recipe<?> recipe) {
+        BlockEntity context = TICK_CONTEXT.get();
+        return context == null || mayProcessRecipe(context, recipe);
+    }
+
+    public static boolean mayProcessRecipe(BlockEntity owner, Recipe<?> recipe) {
+        if (!(owner.getLevel() instanceof ServerLevel level)) return true;
+        if (!mayTick(owner) || !isReady()) return false;
+        return mayProcessOwnedRecipe(level, getOwner(owner), recipe);
+    }
+
+    public static String resolveCurrentTeam(UUID playerId) {
+        return LIVE_TEAMS.resolve(playerId);
+    }
+
+    public static boolean mayUseItemByTeam(String itemId, String team) {
+        return isReady() && ITEM_POLICY.mayTick(itemId, team);
+    }
+
+    public static boolean mayProcessOwnedRecipe(ServerLevel level, String team, Recipe<?> recipe) {
+        if (!isReady()) return false;
+        RecipeManager manager = level.getRecipeManager();
+        // RecipeManager is reused on reload; its immutable byName.values snapshot changes.
+        var snapshot = manager.getRecipes();
+        if (!RECIPES.isGeneration(snapshot)) {
+            var index = new IdentityHashMap<Object, Integer>();
+            for (var holder : snapshot) {
+                index.put(holder.value(), RECIPE_POLICY.getRequiredStage(holder.id().toString()));
+            }
+            RECIPES.replace(snapshot, index);
+        }
+        int stage = RECIPES.stage(recipe);
+        if (stage == 100) stage = CreatePotionRecipeAccess.requiredStage(recipe, ITEM_POLICY::getRequiredStage);
+        boolean allowed = RECIPE_POLICY.mayUseStage(stage, team);
+        if (!allowed) DENIED_TICKS.incrementAndGet();
+        return allowed;
+    }
+
     private static void verifyMixinBinding() {
         try {
             // Loading this one class does not create a world or accept an EULA.
@@ -190,7 +274,7 @@ public final class Aia2MachineGuard {
             }
             for (String name : new String[] {"net.minecraft.world.inventory.Slot",
                     "net.minecraft.world.inventory.CraftingMenu", "net.minecraft.world.inventory.InventoryMenu",
-                    "net.minecraft.world.level.block.CrafterBlock"}) {
+                    "net.minecraft.world.level.block.CrafterBlock", "net.minecraft.world.item.crafting.RecipeManager"}) {
                 Class<?> craftingTarget = Class.forName(name, false, Aia2MachineGuard.class.getClassLoader());
                 if (!GuardedCrafting.class.isAssignableFrom(craftingTarget)) {
                     throw new IllegalStateException("AIA2 crafting Mixin marker is absent: " + name);
@@ -215,6 +299,10 @@ public final class Aia2MachineGuard {
                 throw new IOException("Missing itemGates object");
             }
             setItemRulesJson(root.getAsJsonObject("itemGates").toString());
+            if (!root.has("recipeGates") || !root.get("recipeGates").isJsonObject()) {
+                throw new IOException("Missing recipeGates object");
+            }
+            setRecipeRulesJson(root.getAsJsonObject("recipeGates").toString());
             LOGGER.info("AIA2 block rules loaded; staged machines await the server progression bridge");
         } catch (IOException | RuntimeException failure) {
             LOGGER.error("AIA2 machine rules could not load from {}. Modded machines remain locked until the progression bridge initializes.",

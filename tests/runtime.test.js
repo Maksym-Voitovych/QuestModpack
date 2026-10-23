@@ -90,7 +90,7 @@ test('stage access and post-final access have distinct boundaries', () => {
   assert.equal(c.mayAccess(99, 47), false);
   assert.equal(c.mayAccess(99, 48), true);
 });
-test('recipe handler installs 91 recipes, uses Create addon, and exposes no ungated key recipe', () => {
+test('recipe handler installs every audited recipe, uses Create addon, and exposes no ungated key recipe', () => {
   const added = [], removed = [];
   let createCalls = 0;
   const event = {
@@ -103,9 +103,9 @@ test('recipe handler installs 91 recipes, uses Create addon, and exposes no unga
   };
   const context = vm.createContext({JsonIO: {readString() { return JSON.stringify(recipes); }}, ServerEvents: {recipes(cb) { cb(event); }}});
   vm.runInContext(fs.readFileSync(path.join(scripts, '10_recipes.js'), 'utf8'), context);
-  assert.equal(added.length, 91);
-  assert.equal(new Set(added.map(r => r.id)).size, 91);
-  assert.equal(createCalls, 1);
+  assert.equal(added.length, recipes.add.length);
+  assert.equal(new Set(added.map(r => r.id)).size, recipes.add.length);
+  assert.equal(createCalls, recipes.add.filter(r => r.json.type === 'create:mixing').length);
   assert.equal(added.some(r => JSON.stringify(r.json).includes('aia2_epoch_key_')), false);
   assert.equal(removed.filter(r => r.output && r.output.includes('epoch_key_')).length, 48);
   assert.ok(removed.some(r => r.id === 'create_mekanism_improvements:antimatter_pellet'));
@@ -133,11 +133,12 @@ function bridge() {
   let loginHandler;
   let fault = false;
   let allProofs = true;
+  const deniedQuests = new Set();
   const file = {
     getQuest(id) { return {id}; },
     getOrCreateTeamData(player) { return {
       getTeamId() { return player.team; },
-      isCompleted() { return allProofs; },
+      isCompleted(quest) { return allProofs && !deniedQuests.has(quest.id); },
       getOnlineMembers() { return players.filter(p => p.team === player.team); }
     }; }
   };
@@ -177,7 +178,7 @@ function bridge() {
     for (let i = 0; i < 36; i++) p.slots[i] = new Stack('minecraft:air', 0);
     Object.entries(e.cost).forEach(([id, count], i) => { p.slots[i] = new Stack(id, count); });
   }
-  return {context, player, supply, commands, nbt, setFault() { fault = true; }, setProofs(v) { allProofs = v; }};
+  return {context, player, supply, commands, nbt, deniedQuests, setFault() { fault = true; }, setProofs(v) { allProofs = v; }};
 }
 
 test('real bridge logic completes all 48 epochs, persists them, and syncs named teammates', () => {
@@ -193,7 +194,7 @@ test('real bridge logic completes all 48 epochs, persists them, and syncs named 
 test('bridge refuses incomplete FTB evidence and rolls inventory back on commit failure', () => {
   const b = bridge(), p = b.player('Alice', 'A'); b.supply(p, rules.epochs[0]);
   const before = JSON.stringify(p.slots);
-  b.setProofs(false); assert.throws(() => b.context.aia2Forge(p), /шість/);
+  b.setProofs(false); assert.throws(() => b.context.aia2Forge(p), /шість|підсумкове випробування/);
   assert.equal(JSON.stringify(p.slots), before);
   b.setProofs(true); b.setFault(); assert.throws(() => b.context.aia2Forge(p), /simulated/);
   assert.equal(JSON.stringify(p.slots), before);
@@ -330,4 +331,68 @@ test('missing startup bootstrap fails with an actionable restart error', () => {
   readonlyGlobal(context);
   assert.throws(() => vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), context),
     /startup bootstrap.*повністю перезапустіть/);
+});
+
+test('new required branch proof blocks only a new key and never spends ingredients', () => {
+  const b = bridge(), p = b.player('Alice', 'A');
+  const first = b.context.AIA2Rules.epochs[0];
+  const previous = first.requiredQuestIds;
+  first.requiredQuestIds = ['0000000000000042'];
+  b.deniedQuests.add(66);
+  b.supply(p, first);
+  const before = JSON.stringify(p.slots);
+  assert.throws(() => b.context.aia2Forge(p), /підсумкове випробування/);
+  assert.equal(JSON.stringify(p.slots), before);
+  assert.equal(b.context.aia2Completed(p), 0);
+  b.deniedQuests.delete(66);
+  b.context.aia2Forge(p);
+  b.deniedQuests.add(66);
+  const recovery = {cost: {...first.cost, 'minecraft:crafting_table': 1}};
+  b.supply(p, recovery);
+  assert.equal(b.context.aia2Forge(p, true), 1, 'Existing legal progress is not invalidated by new branches');
+  assert.equal(b.context.aia2Completed(p), 1);
+  first.requiredQuestIds = previous;
+});
+
+test('ledger cache validates changed serialized state and separates server identities', () => {
+  const b = bridge(), p = b.player('Alice', 'A');
+  const one = b.context.aia2State(p.server);
+  assert.equal(b.context.aia2State(p.server), one);
+  b.nbt.set('aia2_runtime_v1', JSON.stringify({schema: 1, teams: {A: {completed: 12}}}));
+  assert.equal(b.context.aia2Completed(p), 12);
+  assert.notEqual(b.context.aia2State(p.server), one);
+  const other = {persistentData: {getString() { return ''; }}};
+  assert.equal(Object.keys(b.context.aia2State(other).teams).length, 0);
+  assert.equal(b.context.aia2Completed(p), 12);
+});
+
+test('all custom registrations have unique IDs, explicit models and real texture files', () => {
+  const registered = new Map();
+  const context = vm.createContext({StartupEvents: {registry(kind, callback) {
+    assert.equal(kind, 'item');
+    callback({create(id) {
+      assert.equal(registered.has(id), false, 'Duplicate custom registration: ' + id);
+      const record = {}; registered.set(id, record);
+      const builder = {
+        displayName(name) { record.name = name; return this; },
+        maxStackSize(n) { record.stack = n; return this; },
+        fireResistant() { return this; },
+        texture(texture) { record.texture = texture; return this; }
+      };
+      return builder;
+    }});
+  }}});
+  for (const file of ['00_epoch_keys.js', '10_components.js']) {
+    vm.runInContext(fs.readFileSync(path.join(root, 'kubejs/startup_scripts/aia2', file), 'utf8'), context);
+  }
+  assert.equal(registered.size, 293);
+  for (const [id, record] of registered) {
+    assert.ok(record.name && record.texture && record.stack > 0, id);
+    const [namespace, item] = id.split(':');
+    const model = JSON.parse(fs.readFileSync(path.join(root, 'kubejs/assets', namespace, 'models/item', item + '.json')));
+    assert.equal(model.textures.layer0, record.texture);
+    const [textureNS, texture] = record.texture.split(':');
+    assert.ok(fs.existsSync(path.join(root, 'kubejs/assets', textureNS, 'textures', texture + '.png')), record.texture);
+    if (id.includes('epoch_key_')) assert.equal(record.stack, 1);
+  }
 });

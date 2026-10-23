@@ -32,6 +32,8 @@ function aia2InitMachines(server) {
     if (!global.AIA2.rules.blockGates) throw new Error('Відсутня повна карта blockGates.');
     AIA2MachineGuard.setRulesJson(JSON.stringify(global.AIA2.rules.blockGates));
     AIA2MachineGuard.setItemRulesJson(JSON.stringify(global.AIA2.rules.itemGates));
+    if (!global.AIA2.rules.recipeGates) throw new Error('Відсутня карта recipeGates. Потрібен повний пакет оновлення.');
+    AIA2MachineGuard.setRecipeRulesJson(JSON.stringify(global.AIA2.rules.recipeGates));
     var state = global.AIA2.ledger(server);
     Object.keys(state.teams).forEach(function (team) {
       AIA2MachineGuard.setTeamProgress(team, state.teams[team].completed);
@@ -59,7 +61,8 @@ var aia2MachineAPI = {
   claim: function (player, block) {
     if (!this.isReady() || !player || !player.isServerPlayer() || player.isFake()) return;
     var required = global.AIA2.rules.blockGates[String(block.id)] || 0;
-    if (!required || !global.AIA2.canAccess(player, required)) return;
+    // Vanilla furnaces also need a team for recipes producing staged materials.
+    if (!global.AIA2.canAccess(player, required)) return;
     var entity = block.getEntity();
     if (!entity) return;
     try {

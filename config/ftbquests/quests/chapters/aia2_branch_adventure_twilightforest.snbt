@@ -1,0 +1,602 @@
+{
+  "id": "000035431EE260A3",
+  "filename": "aia2_branch_adventure_twilightforest",
+  "title": "twilightforest — Пригоди",
+  "group": "000091674FF185C4",
+  "order_index": 4,
+  "icon": {
+    "id": "twilightforest:magic_map",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00002355E4344711",
+      "title": "Крок за межу сутінків",
+      "description": [
+        "Перейдіть у Twilight Forest через дозволений портал і позначте місце повернення.",
+        "Додаткова dimension-умова перевіряє справжній вхід до виміру."
+      ],
+      "icon": {
+        "id": "twilightforest:magic_map",
+        "count": 1
+      },
+      "dependencies": [
+        "00007BDD2F04D982",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF74CA95BCC5",
+          "type": "dimension",
+          "dimension": "twilightforest:twilight_forest"
+        },
+        {
+          "id": "0000B49DBAB69935",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "000070462AF5DCA9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008A0A9E397B21",
+      "title": "Раціон двох світів",
+      "description": [
+        "Експедиція може підтримуватися місцевою їжею без перенесення всієї комори бази.",
+        "Збережіть відновлювану харчову ділянку поблизу точки повернення."
+      ],
+      "icon": {
+        "id": "twilightforest:cooked_venison",
+        "count": 1
+      },
+      "dependencies": [
+        "0000873EC525C9BA",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCE46C9662A5",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:cooked_venison",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFCFBAC43351",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D0F256565A00",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000057062241D92B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00009DCC7FECB953",
+      "title": "Луска як новий матеріал",
+      "description": [
+        "Луска Naga переходить із бойової гілки до ремісничої.",
+        "Збережіть матеріал для спорядження та ключових потреб, а не витрачайте все на перший доступний рецепт."
+      ],
+      "icon": {
+        "id": "twilightforest:naga_scale",
+        "count": 1
+      },
+      "dependencies": [
+        "00003C2FC1B81643",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FD5A92551F62",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005FE991DB72CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": false,
+      "rewards": [
+        {
+          "id": "00001BA948ECE553",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007F84D0CB6BCD",
+      "title": "Природне світло під кронами",
+      "description": [
+        "Torchberries є одночасно орієнтиром дослідження та спеціальним інгредієнтом Twilight Forest.",
+        "Зберігайте запас окремо від звичайних харчових ягід."
+      ],
+      "icon": {
+        "id": "twilightforest:torchberries",
+        "count": 1
+      },
+      "dependencies": [
+        "00002355E4344711",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BD3EDA737601",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:torchberries",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4682F6D6B47",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000977BA62D42D7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BD62E5B438BA",
+      "title": "Спорядження зі здобичі",
+      "description": [
+        "Створіть частину спорядження з нового бойового матеріалу.",
+        "Порівняйте її фактичні властивості з наявною бронею перед наступною вилазкою."
+      ],
+      "icon": {
+        "id": "twilightforest:naga_chestplate",
+        "count": 1
+      },
+      "dependencies": [
+        "00009DCC7FECB953",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000056386F0EAAF",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006546744716DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093F4E67615B0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000045C99492304E",
+      "title": "Перо місцевого птаха",
+      "description": [
+        "Перо ворона пов'язане з власними картографічними рецептами виміру.",
+        "Не плутайте його зі звичайним курячим пером у рецептах JEI."
+      ],
+      "icon": {
+        "id": "twilightforest:raven_feather",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F84D0CB6BCD",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F6362F3F4F37",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:raven_feather",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B2618DF13A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001C562C8FF25F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AC07DE0C1C26",
+      "title": "Завершення лускатої пари",
+      "description": [
+        "Друга частина лускатого комплекту розширює використання трофейного матеріалу.",
+        "Не підміняйте нею план подальшої послідовності босів Twilight Forest."
+      ],
+      "icon": {
+        "id": "twilightforest:naga_leggings",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD62E5B438BA",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000925B2452DD47",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_leggings",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A162C1DDBEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008EB2C93D6372",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003B202F4876A7",
+      "title": "Сутінкова картографія",
+      "description": [
+        "Магічна карта допомагає планувати дослідження структур Twilight Forest.",
+        "Її спеціальні інгредієнти можуть вимагати окремої вилазки або знахідки, тому це допоміжна гілка."
+      ],
+      "icon": {
+        "id": "twilightforest:magic_map",
+        "count": 1
+      },
+      "dependencies": [
+        "000045C99492304E",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F5BE4F8116CC",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:magic_map",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066889F895B0C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000361CD18539B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B37713182528",
+      "title": "Сутінкова випробувальна кузня",
+      "description": [
+        "Переможіть Hydra й поверніть Fiery Blood для лісової металургії; матеріал не замінює сам факт перемоги.",
+        "Фактична перевірка: 1 × twilightforest:hydra — перемогти; 4 × twilightforest:fiery_blood — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "twilightforest:fiery_blood",
+        "count": 1
+      },
+      "dependencies": [
+        "00005AF964C3A9DC",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000036DC532D929B",
+          "type": "kill",
+          "entity": "twilightforest:hydra",
+          "value": 1
+        },
+        {
+          "id": "0000B3A31615B030",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_blood",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E569C739B2BC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000D7EDF52A5063",
+      "title": "Повернення з Темної вежі",
+      "description": [
+        "Переможіть Ur-Ghast та збережіть Fiery Tears як окремий реагент від крові Гідри.",
+        "Фактична перевірка: 1 × twilightforest:ur_ghast — перемогти; 4 × twilightforest:fiery_tears — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "twilightforest:fiery_tears",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B37713182528",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000036287BC7FBB",
+          "type": "kill",
+          "entity": "twilightforest:ur_ghast",
+          "value": 1
+        },
+        {
+          "id": "0000410B798895A9",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_tears",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECA07A197C86",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 2.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D3384A003BFB",
+      "title": "Охорона рунічної експедиції",
+      "description": [
+        "Переможіть Knight Phantoms у Сутінковому лісі та збережіть knightmetal як окремий регіональний матеріал.",
+        "Фактична перевірка: 3 × twilightforest:knight_phantom — перемогти; 8 × twilightforest:knightmetal_ingot — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00004819617AB4D1",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002AE59E469D0F",
+          "type": "kill",
+          "entity": "twilightforest:knight_phantom",
+          "value": 3
+        },
+        {
+          "id": "0000C4DA482A54BC",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:knightmetal_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035945BE457D5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BB688EA8F379",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000CF6117B3C61C",
+      "title": "Трофей для віддаленої магічної секції",
+      "description": [
+        "Переможіть Tower Golem та збережіть Carminite для ремонту сутінкових механізмів. Це окрема пригода, а не довільне отримання ще одного зливка.",
+        "Фактична перевірка: 3 × twilightforest:carminite_golem — перемогти; 4 × twilightforest:carminite — мати в інвентарі. Предмети не витрачаються."
+      ],
+      "icon": {
+        "id": "twilightforest:carminite",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C4755FFC5978",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000081B6CFF650CC",
+          "type": "kill",
+          "entity": "twilightforest:carminite_golem",
+          "value": 3
+        },
+        {
+          "id": "0000E4C7D2EAB30E",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:carminite",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A9DE510121F8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [],
+      "x": 0.0,
+      "y": 10.0
+    }
+  ]
+}
