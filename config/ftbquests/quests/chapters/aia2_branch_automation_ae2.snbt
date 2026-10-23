@@ -1,0 +1,1175 @@
+{
+  "id": "00007C0B79AD81E7",
+  "filename": "aia2_branch_automation_ae2",
+  "title": "ae2 — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 6,
+  "icon": {
+    "id": "ae2:network_tool",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000A8299E132DCF",
+      "title": "Діагностичний доступ до ME",
+      "description": [
+        "Підготуйте засіб огляду мережі та картку конфігурації поруч із вводом енергії. Діагностика до підключення всіх накопичувачів допоможе розрізнити відсутність живлення та помилку канального плану.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:network_tool",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FC24FD6C914F",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EF6167B9361E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:energy_acceptor",
+          "timer": 40
+        },
+        {
+          "id": "000084798DE436C5",
+          "type": "item",
+          "item": {
+            "id": "ae2:network_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E680EEB8909",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000014BF9CDFB5C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C41728216994",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000091ACE20A8B8",
+      "title": "Комірка з визначеним вмістом",
+      "description": [
+        "Випробуйте попереднє налаштування комірки на дешевому масовому матеріалі. До повернення її в основний накопичувач перевірте, чи обраний режим відповідає вашому плану зберігання.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:item_storage_cell_4k",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A8299E132DCF",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B4728E315319",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:cell_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000338AA366B90D",
+          "type": "item",
+          "item": {
+            "id": "ae2:item_storage_cell_4k",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031004246EE11",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFC99EFD3AD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F2E810B01062",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000075B0E5E26557",
+      "title": "Ручний монітор складу",
+      "description": [
+        "Підготуйте доступний інтерфейс і монітор для одного важливого ресурсу. Видиме число на панелі корисне лише тоді, коли воно показує саме той матеріал, який споживає виробнича лінія.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:storage_monitor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000091ACE20A8B8",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C3CEC205D956",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:interface",
+          "timer": 40
+        },
+        {
+          "id": "000089DF02D903AA",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000211AB310B6BB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B224367E061",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FEE905E29191",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006DD74AFF2910",
+      "title": "Розділені напрямки шин",
+      "description": [
+        "Позначте джерело та приймач перед монтажем шин імпорту й експорту. Два предмети з подібними корпусами виконують протилежні дії; перевірте короткий маршрут на двох бочках.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:import_bus",
+        "count": 1
+      },
+      "dependencies": [
+        "000075B0E5E26557",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000019AF0AE807F1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:controller",
+          "timer": 40
+        },
+        {
+          "id": "0000749C2E64976C",
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A6433B83088F",
+          "type": "item",
+          "item": {
+            "id": "ae2:export_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000050286BE31E34",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000755834D517F2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DDDD2094F54B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C57EB1564E33",
+      "title": "Умова мінімального запасу",
+      "description": [
+        "Виберіть один витратний матеріал і заплануйте сигнал його нижнього порога. Спочатку перевірте зміну стану сигналу вручну, а вже потім під'єднуйте ним виробничий механізм.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:level_emitter",
+        "count": 1
+      },
+      "dependencies": [
+        "00006DD74AFF2910",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000842B9CF295B2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:controller",
+          "timer": 40
+        },
+        {
+          "id": "00003D9282E90E3F",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A0DB348FBBB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E354B22E26EC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F78E715320F7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008FAF74F3CC52",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000586EC825FA17",
+      "title": "Відключення допоміжної гілки",
+      "description": [
+        "Підготуйте перемикання другорядної гілки без розбирання головної магістралі. Збережіть доступ до керування на випадок, коли допоміжний споживач вичерпує резерв енергії мережі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:toggle_bus",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C57EB1564E33",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DADC29D8BCBD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:energy_acceptor",
+          "timer": 40
+        },
+        {
+          "id": "0000E8ECC2B7A8B2",
+          "type": "item",
+          "item": {
+            "id": "ae2:toggle_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008E8A1E3E8C44",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EAE731494153",
+          "type": "item",
+          "item": {
+            "id": "ae2:cable_anchor",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD9E6C7608E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008A5DBF7F2B3C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DE808FACD0DB",
+      "title": "Рідинний склад з окремим носієм",
+      "description": [
+        "Не використовуйте предметну комірку як очікувану заміну рідинній. Підготуйте окремий носій та перевірте зразок води перед зберіганням дорогих технічних середовищ.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:fluid_storage_cell_4k",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586EC825FA17",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F2A2A1C273FC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:cell_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000973456FF735B",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluid_storage_cell_4k",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB24B003D69A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000484C863A95AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BDC807E9D5A5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002C95374C9278",
+      "title": "Картка відновлення мережі",
+      "description": [
+        "Запишіть призначення інтерфейсів і зробіть контрольну копію потрібних налаштувань доступним інструментом. Журнал не замінює резервну копію світу, але допомагає відновити зрозумілу структуру майстерні.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:memory_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE808FACD0DB",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F014A4E41D02",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:interface",
+          "timer": 40
+        },
+        {
+          "id": "00003244CD49B7AC",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C08C96BE998D",
+          "type": "item",
+          "item": {
+            "id": "ae2:network_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057006817205B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA2AEC347DC6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A629964A1FDF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001A96B68B3309",
+      "title": "Шаблон має контрольний вихід",
+      "description": [
+        "Підготуйте робоче місце для кодування шаблонів і виділіть окремі заготовки для тестів. Уточнюйте точний тип шаблону до передавання його провайдеру, щоб крафтова форма не підміняла машинну обробку.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:pattern_encoding_terminal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000594559C753F2",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005FD3A1EE9FDC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "000006AFA0BB78AF",
+          "type": "item",
+          "item": {
+            "id": "ae2:pattern_encoding_terminal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D31D6ABFFE4",
+          "type": "item",
+          "item": {
+            "id": "ae2:blank_pattern",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063E5DBFC2AA9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000954535A5DC2D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "00008F5501981D73",
+      "title": "Складання з видимим буфером",
+      "description": [
+        "Поставте складальник у зоні огляду та залиште місце для пробних матеріалів. Під час першого замовлення перевірте фактичний вихід рецепта, а не лише завершення заявки в терміналі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:crafting_pattern",
+        "count": 1
+      },
+      "dependencies": [
+        "00001A96B68B3309",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D382843AC2B7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:molecular_assembler",
+          "timer": 40
+        },
+        {
+          "id": "0000581F1B823B13",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000134570B76864",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB45B6472F34",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000008651C2DAE15",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "00001898B828911A",
+      "title": "Планування пам'яті замовлень",
+      "description": [
+        "Порівняйте пам'ять обчислення та засоби паралельного виконання на одному зрозумілому процесорі крафту. Додатковий прискорювач не замінює пам'ять або відсутні рецептурні шаблони.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:crafting_accelerator",
+        "count": 1
+      },
+      "dependencies": [
+        "00008F5501981D73",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000021A91B13C1A8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:16k_crafting_storage",
+          "timer": 40
+        },
+        {
+          "id": "0000D09095FBE057",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_accelerator",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076892DCAC02C",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D6B7D8D74E1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C3A7AE9539B3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "00005E285975C45A",
+      "title": "Машинний шаблон без замкненої петлі",
+      "description": [
+        "Підготуйте конкретну машину та її ресурсний контракт для шаблону обробки. Позначте, який предмет входить і який виходить, щоб не закодувати повернення початкової сировини як готовий результат.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:processing_pattern",
+        "count": 1
+      },
+      "dependencies": [
+        "00001898B828911A",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DD61C6D99740",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "0000CA5762EC43E9",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F40B654D318E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enrichment_chamber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BFA0EB3E857",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_osmium",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006DC668EAEA83",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009A5367176128",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002822314D037C",
+      "title": "Повернення продукту до мережі",
+      "description": [
+        "Передбачте окремий шлях повернення результатів машинного замовлення. Картка крафту впливає на поведінку сумісного вузла, але не виправляє неправильний предмет у вході рецепта.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:import_bus",
+        "count": 1
+      },
+      "dependencies": [
+        "00005E285975C45A",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BFC17E9055CE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:interface",
+          "timer": 40
+        },
+        {
+          "id": "0000789EA305930A",
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E44CAEDDF573",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A6365BB91DF1",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000120F582FC281",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004C14983C7345",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "000081B15BFE14C9",
+      "title": "Розмежування каналів фабрики",
+      "description": [
+        "Підготуйте дві кінцеві точки та перевірте їхній зв'язок інструментами ME. Позначайте пари в журналі фабрики, щоб зміна налаштувань одного тунелю не виглядала випадковою поломкою всього складу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:me_p2p_tunnel",
+        "count": 1
+      },
+      "dependencies": [
+        "00002822314D037C",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005F90515B91A6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:controller",
+          "timer": 40
+        },
+        {
+          "id": "0000F83ED4EC977A",
+          "type": "item",
+          "item": {
+            "id": "ae2:me_p2p_tunnel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC54A7CAECC7",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CBDD5B0548EB",
+          "type": "item",
+          "item": {
+            "id": "ae2:network_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1B2CDE340D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B4E3A8E0333E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "000011885EBDA518",
+      "title": "Буфер великого замовлення",
+      "description": [
+        "Підготуйте розширений ресурс обчислення для справді складного замовлення та контрольні шаблони. Великі числа пам'яті не зменшують потребу в реальній сировині чи доступних машинах поточної епохи.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "megacells:accumulation_processor",
+        "count": 1
+      },
+      "dependencies": [
+        "000081B15BFE14C9",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000240C1ED34430",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "megacells:1m_crafting_storage",
+          "timer": 40
+        },
+        {
+          "id": "00002E1EB2863F27",
+          "type": "item",
+          "item": {
+            "id": "megacells:accumulation_processor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009982EE349937",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A043935E0B2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093178F218926",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000AD2BF79750D7",
+      "title": "Спільна перевірка трьох фабрик",
+      "description": [
+        "Зберіть контрольний набір результатів пневматичної, магічної та роботизованої ліній. Усі три джерела повинні залишатися зрозумілими в плані ME, навіть якщо фінальне замовлення приховує їх за одним інтерфейсом.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:printed_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "000011885EBDA518",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B8ED57815D39",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "000068E46EF0D958",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009791F00DCEC0",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002B6EAA15430A",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1D46C402988",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002B0236FE2B1D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    }
+  ]
+}

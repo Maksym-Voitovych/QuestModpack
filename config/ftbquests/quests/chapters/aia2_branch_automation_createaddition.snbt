@@ -1,0 +1,547 @@
+{
+  "id": "0000E1FD9DCF0C99",
+  "filename": "aia2_branch_automation_createaddition",
+  "title": "createaddition — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 8,
+  "icon": {
+    "id": "immersiveengineering:wire_copper",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00002656441B965A",
+      "title": "Кінетичний генератор біля мережі",
+      "description": [
+        "Виділіть окрему механічну гілку для генератора, щоб електричне навантаження не зупиняло всі преси. Підготуйте провід та конденсатори як різні частини енергетичної схеми.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "000074698D9E8145",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006A59C9FF0F44",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:alternator",
+          "timer": 40
+        },
+        {
+          "id": "00003AE3B91B2972",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057CD9116659F",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B19F09F63D38",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BD9C1596EE35",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000085D0CDB2C151",
+      "title": "Пара контактів для передачі",
+      "description": [
+        "Змонтуйте контакти з доступом для перевірки та ремонту. Спочатку випробуйте коротку ділянку, а потім масштабуйте мережу; котушка сама не підтверджує наявності електричного зв'язку.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createaddition:spool",
+        "count": 1
+      },
+      "dependencies": [
+        "00002656441B965A",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000930E247C02B3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:connector",
+          "timer": 40
+        },
+        {
+          "id": "0000B403848ED1F0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:large_connector",
+          "timer": 40
+        },
+        {
+          "id": "0000248042257CB6",
+          "type": "item",
+          "item": {
+            "id": "createaddition:spool",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D908B5268EAE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008996409D6E67",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008C253BEAC9F9",
+      "title": "Акумулятор згладжує зупинки",
+      "description": [
+        "Залиште буфер між змінним механічним виробництвом і постійним споживанням FE. Порівняйте поведінку мережі при короткому вимкненні генератора та запишіть результат у журналі майстерні.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_electrum",
+        "count": 1
+      },
+      "dependencies": [
+        "000085D0CDB2C151",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003647D198F017",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:modular_accumulator",
+          "timer": 40
+        },
+        {
+          "id": "0000B8DF05206422",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_electrum",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF8A1BDDDA75",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086B91DCA260F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007DE775140988",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D7AF2A3219CC",
+      "title": "Мотор для віддаленої ділянки",
+      "description": [
+        "Підготуйте двигун для окремого механічного острова з власною сервісною зупинкою. Не під'єднуйте його до генератора в замкнену петлю в очікуванні безкоштовної енергії.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:clutch",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C253BEAC9F9",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003384ED24CD6E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:electric_motor",
+          "timer": 40
+        },
+        {
+          "id": "0000C8EDA551B5CE",
+          "type": "item",
+          "item": {
+            "id": "create:clutch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B1FECBF8D29",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FA2043B3239",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C20408638239",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000155ECAAD1419",
+      "title": "Прокат дроту та прутків",
+      "description": [
+        "Порівняйте два виходи прокатного стану й збережіть місце для окремого виведення кожного. Уніфікований матеріал у JEI може мати назву іншого мода, що не змінює його виробничого призначення.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "immersiveengineering:stick_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D7AF2A3219CC",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002ACAD5FC37B1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:rolling_mill",
+          "timer": 40
+        },
+        {
+          "id": "00006F65EFA4EA0B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC1E8FC524CF",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F4E66AC769F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000026434F534014",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000459BAF88ECCD",
+      "title": "Міст між генерацією та маною",
+      "description": [
+        "Підготуйте електричний резерв і манасталь для змішаних рецептів майстерні. Енергетична батарея не замінює ману: обидва ресурси повинні мати окремі виробничі джерела.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000155ECAAD1419",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000018B64E30616F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_cell_basic",
+          "timer": 40
+        },
+        {
+          "id": "00005F0BCCAF65A3",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000501370F1E5EF",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B4B5C1BAE47",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000024C70A0458D8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "000033EF62E02339",
+      "title": "Реле для технічного циклу",
+      "description": [
+        "Зберіть комплект для керування електричною ділянкою за зовнішнім сигналом. Перевірте, чи правильний бік реле використано, і передбачте ручне вимкнення на випадок помилкового сигналу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:repeater",
+        "count": 1
+      },
+      "dependencies": [
+        "0000459BAF88ECCD",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF050CAA10E8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:redstone_relay",
+          "timer": 40
+        },
+        {
+          "id": "00005E282BDFD76A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:repeater",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED20DE0B5B8F",
+          "type": "item",
+          "item": {
+            "id": "createaddition:copper_spool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD1129071EA6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DD8D6FF2D19E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008D9166038CFD",
+      "title": "Передавання енергії рухомому вузлу",
+      "description": [
+        "Підготуйте енергетичний та предметний інтерфейси як окремі канали обслуговування рухомого механізму. Суміщення корпусів перевірте дешевим тестовим вантажем перед тривалою експлуатацією.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createaddition:electrum_spool",
+        "count": 1
+      },
+      "dependencies": [
+        "000033EF62E02339",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003EA97E64755F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:portable_energy_interface",
+          "timer": 40
+        },
+        {
+          "id": "0000742B4C4D530D",
+          "type": "item",
+          "item": {
+            "id": "createaddition:electrum_spool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000645428DECDFB",
+          "type": "item",
+          "item": {
+            "id": "create:portable_storage_interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004477D47D5DC6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008E339293E709",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

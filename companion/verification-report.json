@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.3.0-alpha",
+  "version": "0.4.0-alpha",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "java": 21,
@@ -32,17 +32,17 @@
   "guard_policy_tests": {
     "status": "passed",
     "assertions": 5237,
-    "command": "JAVA_HOME=<JDK21> python companion/test_policy.py",
+    "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> companion/gradlew -p companion --offline build --no-daemon --console=plain",
     "minecraft_dependencies_used": false
   },
   "native_compile": {
     "status": "passed",
-    "command": "JAVA_HOME=<JDK21> ./gradlew build --no-daemon --console=plain",
+    "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> companion/gradlew -p companion --offline build --no-daemon --console=plain",
     "gradle": "9.2.1",
     "jar_created": true,
-    "jar_path": "mods/aia2-machine-guard-0.3.0-alpha.jar",
-    "jar_bytes": 45087,
-    "jar_sha256": "f9851a1a99515663d08fef67153c981994a9f56854a6a66b14818a96f011ee48",
+    "jar_path": "mods/aia2-machine-guard-0.4.0-alpha.jar",
+    "jar_bytes": 73105,
+    "jar_sha256": "dcfb79b709d566408550b26eb5fd1e723d8acb2627607fff47d3cb4c9646c892",
     "zip_crc_verified": true,
     "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
     "guard_policy_assertions": 119,
@@ -60,7 +60,7 @@
     "piston-data.mojang.com",
     "libraries.minecraft.net"
   ],
-  "coverage": "Standard BlockEntityTicker with owning-team context; vanilla crafting and Crafter; individual RecipeManager lookups in that context; Mekanism CachedRecipe including scoped Robit ownership; Create Basin and identity-verified generated vanilla brewing; AE2 Molecular Assembler grid processing and crafting-terminal clicks. Full coverage of custom caches, passive armor/Curios, component variants and all mod internals is not certified.",
+  "coverage": "Native BlockEntityTicker, owning-team machine policy, vanilla cached RecipeManager lookup, player crafting slots/shift-click, and Crafter are tested on an actual minimal Minecraft server. Optional Create Basin, Mekanism CachedRecipe/Robit, AE2 assembler/terminal, and generated Create brewing adapters are implemented and source-checked but not exercised with those mods installed. Custom caches, capabilities, mobile contraptions, passive items/Curios, ritual internals, and every mod integration are not certified.",
   "jdk_download": {
     "url": "https://download.oracle.com/java/21/archive/jdk-21.0.9_linux-x64_bin.tar.gz",
     "sha256": "0854421306468559813f1e5068e036213f9710e1e239d823c0d63552a1259e25",
@@ -80,7 +80,25 @@
     "method": "public void tick() invokes BlockEntityTicker.tick before any machine logic",
     "tool": "JDK21 javap -p -c"
   },
-  "bootstrap_smoke": {
+  "live_team_resolver_tests": {
+    "status": "passed",
+    "assertions": 9,
+    "scope": "Synthetic public interfaces: current membership read on every invocation, immediate team change, no stale fallback on missing data or API failure, nonpublic implementation through public interface methods. No live FTB Teams runtime was launched."
+  },
+  "live_team_api": {
+    "source_pin": "FTB-Teams-1.21.1 commit47e8c4faa797a19f41a7a351eb78ae89e41b4a26",
+    "entry": "dev.ftb.mods.ftbteams.api.FTBTeamsAPI.api()",
+    "public_interfaces": [
+      "FTBTeamsAPI$API.isManagerLoaded()",
+      "FTBTeamsAPI$API.getManager()",
+      "TeamManager.getTeamForPlayerID(java.util.UUID)",
+      "Team.getTeamId()"
+    ],
+    "membership_cached": false,
+    "failure_policy": "Deny staged crafting; no fallback to synchronized old membership."
+  },
+  "full_pack_run": false,
+  "bootstrap_smoke_0_2_historical": {
     "status": "native_bindings_verified_on_minimal_development_server",
     "command": "./gradlew runServer -x downloadAssets",
     "mod_list": [
@@ -108,25 +126,7 @@
     "machine_or_crafting_scenarios_executed": false,
     "final_jar_note": "Binding smoke preceded addition of LiveTeamResolver. Mixin source and binding points unchanged; final JAR rebuilt successfully with 128 pure Java assertions."
   },
-  "live_team_resolver_tests": {
-    "status": "passed",
-    "assertions": 9,
-    "scope": "Synthetic public interfaces: current membership read on every invocation, immediate team change, no stale fallback on missing data or API failure, nonpublic implementation through public interface methods. No live FTB Teams runtime was launched."
-  },
-  "live_team_api": {
-    "source_pin": "FTB-Teams-1.21.1 commit47e8c4faa797a19f41a7a351eb78ae89e41b4a26",
-    "entry": "dev.ftb.mods.ftbteams.api.FTBTeamsAPI.api()",
-    "public_interfaces": [
-      "FTBTeamsAPI$API.isManagerLoaded()",
-      "FTBTeamsAPI$API.getManager()",
-      "TeamManager.getTeamForPlayerID(java.util.UUID)",
-      "Team.getTeamId()"
-    ],
-    "membership_cached": false,
-    "failure_policy": "Deny staged crafting; no fallback to synchronized old membership."
-  },
-  "full_pack_run": false,
-  "bootstrap_smoke_0_3": {
+  "bootstrap_smoke_0_3_historical": {
     "status": "core_native_bindings_verified_on_minimal_development_server",
     "minecraft": "1.21.1",
     "neoforge": "21.1.264",
@@ -146,5 +146,63 @@
     "later_changes": "Robit and potion compatibility helpers were added and compiled afterwards; optional targets require real mod launch",
     "full_pack": false,
     "actual_machine_scenarios": false
+  },
+  "native_smoke_0_4": {
+    "status": "passed",
+    "report": "companion/native-smoke-report.json",
+    "real_minecraft_server": true,
+    "server_boots": 2,
+    "assertions": 41,
+    "first_boot_assertions": 37,
+    "restart_assertions": 4,
+    "actual_first_boot_server_ticks": 650,
+    "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> python companion/run_native_smoke.py",
+    "scope": [
+      "Actual team-owned and unowned furnace tick denial before fuel/input consumption",
+      "Independent owner resumes real furnace processing",
+      "Cached vanilla RecipeHolder overload denies future output",
+      "Real hopper feeds a redstone Crafter; stage and key branch blocks preserve ingredients",
+      "Authorized Crafter consumes ingredients and emits actual item entity before recording proof",
+      "Actual CraftingMenu ResultSlot and quick-move reject NeoForge FakePlayer without input loss",
+      "Production proof is not created by item construction or insertion",
+      "Independent team and branch receipts do not substitute for one another",
+      "Actual SavedData serialization and a fresh server JVM recover production proof",
+      "clearRuntime closes the native bridge without clearing saved production proofs"
+    ],
+    "fixture": "One configured vanilla nugget-to-ingot crafting recipe models a production key; the 96 KubeJS key items are not registered in this minimal development server.",
+    "full_pack_mods_present": false,
+    "ftb_runtime_present": false,
+    "kubejs_runtime_present": false,
+    "modded_machine_recipe_paths_executed": false,
+    "tps_benchmark_performed": false,
+    "personal_instance_or_world_used": false,
+    "own_ignored_development_world_only": true,
+    "test_blocks_restored": true
+  },
+  "confirmed_0_3_native_defect": {
+    "file": "companion/src/main/java/ua/aia2/guard/mixin/RecipeManagerContextMixin.java",
+    "cause": "Name-only getRecipeFor injection selected a different overload, leaving CachedCheck RecipeHolder lookups unguarded.",
+    "fix": "Exact JVM descriptor targets the RecipeHolder overload reached by CachedCheck.",
+    "verification": "Actual furnace remains blocked after block epoch unlock until its output recipe epoch is unlocked; no input or fuel is consumed."
+  },
+  "dual_key_provenance": {
+    "rule_count_expected": 96,
+    "supported_serializers": [
+      "minecraft:crafting_shaped",
+      "create:mixing",
+      "create:compacting",
+      "mekanism:metallurgic_infusing"
+    ],
+    "storage": "<world>/data/aia2_key_production_v1.dat",
+    "schema": 1,
+    "grant_paths": [
+      "ResultSlot.onTake RETURN after native input consumption",
+      "CrafterBlock.dispenseFrom TAIL with input count decreased",
+      "Create BasinRecipe.apply RETURN only true and !test",
+      "Mekanism CachedRecipe.process immediately after finishProcessing"
+    ],
+    "record_from_give_pickup_or_inventory_presence": false,
+    "script_reload_clears_receipts": false,
+    "live_ftb_and_modded_production_paths_still_require_full_pack_testing": true
   }
 }

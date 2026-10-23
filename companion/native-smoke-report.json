@@ -1,0 +1,206 @@
+{
+  "status": "passed",
+  "started_at_utc": "2026-10-23T12:26:11.024433343Z",
+  "finished_at_utc": "2026-10-23T12:26:43.590828929Z",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "real_minecraft_server": true,
+  "actual_server_ticks": 650,
+  "checks": [
+    {
+      "description": "native bridge became ready with nonempty rules and teams",
+      "passed": true
+    },
+    {
+      "description": "actual NeoForge block entity NBT roundtrip retains owning FTB team ID",
+      "passed": true
+    },
+    {
+      "description": "a visitor cannot replace an existing machine owner",
+      "passed": true
+    },
+    {
+      "description": "actual NeoForge FakePlayer cannot craft a staged output",
+      "passed": true
+    },
+    {
+      "description": "actual CraftingMenu resolves the vanilla nugget recipe",
+      "passed": true
+    },
+    {
+      "description": "native result-slot mixin denies FakePlayer output pickup",
+      "passed": true
+    },
+    {
+      "description": "native shift-click mixin rejects staged output",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 1",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 2",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 3",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 4",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 5",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 6",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 7",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 8",
+      "passed": true
+    },
+    {
+      "description": "rejected shift-click preserves ingredient slot 9",
+      "passed": true
+    },
+    {
+      "description": "constructing or inserting a key item does not grant a production receipt",
+      "passed": true
+    },
+    {
+      "description": "real vanilla hopper automation inserts nine recipe ingredients into crafter",
+      "passed": true
+    },
+    {
+      "description": "locked team's real furnace ticker leaves input and fuel intact",
+      "passed": true
+    },
+    {
+      "description": "unowned staged furnace remains stopped",
+      "passed": true
+    },
+    {
+      "description": "independent unlocked owner actually smelts raw iron in native furnace ticks",
+      "passed": true
+    },
+    {
+      "description": "redstone-triggered vanilla crafter rejects future output before consuming hopper-fed inputs",
+      "passed": true
+    },
+    {
+      "description": "denied crafter produces no world item output",
+      "passed": true
+    },
+    {
+      "description": "unlocking the furnace block alone cannot run a later recipe through the native cached lookup",
+      "passed": true
+    },
+    {
+      "description": "unlocked low-tier crafter cannot bypass output stage",
+      "passed": true
+    },
+    {
+      "description": "unfinished key branch blocks a real crafter despite sufficient machine/output epochs",
+      "passed": true
+    },
+    {
+      "description": "no successful recipe means no production receipt",
+      "passed": true
+    },
+    {
+      "description": "existing furnace resumes real processing after owning team reaches recipe stage",
+      "passed": true
+    },
+    {
+      "description": "global progress changes do not authorize an unowned machine",
+      "passed": true
+    },
+    {
+      "description": "authorized native crafter consumes exactly its previously blocked inputs",
+      "passed": true
+    },
+    {
+      "description": "authorized redstone crafter creates one actual iron-ingot item entity",
+      "passed": true
+    },
+    {
+      "description": "real crafter records a production receipt only after ingredients were consumed",
+      "passed": true
+    },
+    {
+      "description": "technology production cannot substitute for the independent arcane branch",
+      "passed": true
+    },
+    {
+      "description": "production receipt is bound to the actual machine owner team",
+      "passed": true
+    },
+    {
+      "description": "native SavedData NBT serialization retains the key receipt",
+      "passed": true
+    },
+    {
+      "description": "native tick/recipe guards recorded actual denied operations",
+      "passed": true
+    },
+    {
+      "description": "server-script runtime reset closes guard but never clears durable production receipts",
+      "passed": true
+    }
+  ],
+  "assertions": 37,
+  "receipt_team": "native-test-a-a1cb3f90-7266-47a3-b736-13acd1926e11",
+  "receipt_restart_verification": false,
+  "modded_machines_tested": false,
+  "ftb_kubejs_runtime_present": false,
+  "tps_benchmark": "not performed; this is a small native correctness suite",
+  "test_blocks_restored": true,
+  "runner_exit_code": 0,
+  "console_log": "run/aia2-native-smoke-console.log (ignored, not shipped)",
+  "restart_verification": {
+    "status": "passed",
+    "started_at_utc": "2026-10-23T12:27:18.743791476Z",
+    "finished_at_utc": "2026-10-23T12:27:18.748564929Z",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.264",
+    "real_minecraft_server": true,
+    "actual_server_ticks": 0,
+    "checks": [
+      {
+        "passed": true,
+        "description": "restart verification is restricted to this runner's generated test team"
+      },
+      {
+        "passed": true,
+        "description": "a fresh Minecraft server reloads the actual production receipt from the world SavedData file"
+      },
+      {
+        "passed": true,
+        "description": "restart does not fabricate the independent missing arcane proof"
+      },
+      {
+        "passed": true,
+        "description": "runtime bridge initialization never resets a receipt loaded after restart"
+      }
+    ],
+    "assertions": 4,
+    "receipt_team": "native-test-a-a1cb3f90-7266-47a3-b736-13acd1926e11",
+    "receipt_restart_verification": true,
+    "modded_machines_tested": false,
+    "ftb_kubejs_runtime_present": false,
+    "tps_benchmark": "not performed; this is a small native correctness suite",
+    "test_blocks_restored": true,
+    "runner_exit_code": 0,
+    "console_log": "run/aia2-native-smoke-restart-console.log (ignored, not shipped)"
+  },
+  "assertions_total": 41,
+  "runner_command": "./gradlew --offline runServer -x downloadAssets --no-daemon --console=plain; second JVM verifies SavedData persistence"
+}

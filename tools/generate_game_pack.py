@@ -304,7 +304,8 @@ RecipeViewerEvents.addInformation('item', function (event) {
     var lines = (epoch.lore || []).concat(['Завершіть основні віхи та підсумкове випробування епохи ' + epoch.number + '.',
       'Біля звичайного верстака: /aia2 key',
       'Сервер перевіряє умови перед списанням матеріалів.']);
-    Object.keys(epoch.cost).forEach(function (id) { lines.push(epoch.cost[id] + ' × ' + id); });
+    var cost = epoch.transitionCost || epoch.cost;
+    Object.keys(cost).forEach(function (id) { lines.push(cost[id] + ' × ' + id); });
     lines.push('Ключ потрібен лише для завершення глави та створення наступного ключа.');
     event.add(epoch.key, lines);
   });

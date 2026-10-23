@@ -17,7 +17,7 @@ var __server = {persistentData: {
 }, getPlayerList: function () { return {getPlayers: function () { return [__player]; }}; }};
 var __player = {username: 'Alice', server: __server, blockX: 0, blockY: 64, blockZ: 0,
   isServerPlayer: function () { return true; }, isFake: function () { return false; },
-  getUUID: function () { return 'fixture-player'; },
+  uuid: 'fixture-player',
   level: {getBlock: function () { return {id: 'minecraft:crafting_table'}; }},
   getInventory: function () { return {
     getStackInSlot: function (i) { return __fixture.inventory[i]; },
@@ -30,7 +30,8 @@ var __team = {getTeamId: function () { return 'fixture-team'; },
   isCompleted: function () { return true; }, getOnlineMembers: function () { return [__player]; }};
 var __guard = {clearRuntime: function () { __fixture.guardReady = false; },
   setRulesJson: function () {}, setItemRulesJson: function () {}, setRecipeRulesJson: function () {}, setTeamProgress: function () {},
-  setPlayerTeam: function () {}, setReady: function () { __fixture.guardReady = true; },
+  apiVersion: function () { return 4; }, syncPlayer: function () {}, configureKeyRulesJson: function () {},
+  hasProductionProof: function () { return true; }, setTeamKeyReady: function () {}, setPlayerTeam: function () {}, setReady: function () { __fixture.guardReady = true; },
   isReady: function () { return __fixture.guardReady; }};
 var Java = {loadClass: function (name) {
   if (name === 'dev.ftb.mods.ftbquests.quest.ServerQuestFile') return {INSTANCE: {
@@ -43,7 +44,7 @@ var Java = {loadClass: function (name) {
 var JsonIO = {readString: function () { return __rulesJSON; }};
 var Platform = {isLoaded: function (name) { return name === 'aia2_machine_guard'; }};
 var Item = {of: function (id, count) { return fixtureStack(id, count || 1); }};
-var console = {error: function (s) { __fixture.messages.push(String(s)); }, warn: function () {}};
+var console = {error: function (s) { __fixture.messages.push(String(s)); }, warn: function () {}, info: function () {}};
 function fixtureCommand(name) { return {executes: function (callback) {
   __fixture.commands[name] = callback; return this;
 }, then: function () { return this; }}; }
@@ -56,6 +57,7 @@ var PlayerEvents = {loggedIn: function (callback) { __fixture.callbacks.login = 
 function fixtureCommandContext() { return {source: {getPlayer: function () { return __player; }}}; }
 function fixtureActivate() {
   __fixture.callbacks.loaded({server: __server});
+  __fixture.callbacks.serverTick({server: __server});
   __fixture.callbacks.login({player: __player});
   fixtureAssert(global.AIA2Machines.isReady(), 'Machine Guard initialized');
   fixtureAssert(__fixture.commands.status(fixtureCommandContext()) === 1, '/aia2 status succeeds');
@@ -63,7 +65,8 @@ function fixtureActivate() {
 function fixtureForgeFirst() {
   var epoch = global.AIA2.rules.epochs[0];
   for (var i = 0; i < 36; i++) __fixture.inventory[i] = fixtureStack('minecraft:air', 0);
-  Object.keys(epoch.cost).forEach(function (id, i) { __fixture.inventory[i] = fixtureStack(id, epoch.cost[id]); });
+  var cost = epoch.transitionCost || epoch.cost;
+  Object.keys(cost).forEach(function (id, i) { __fixture.inventory[i] = fixtureStack(id, cost[id]); });
   fixtureAssert(__fixture.commands.key(fixtureCommandContext()) === 1, '/aia2 key succeeds');
   fixtureAssert(global.AIA2.completed(__player) === 1, 'ledger completed epoch one');
   fixtureAssert(__fixture.stages.aia2_epoch_02, 'Game Stages mirror advanced');

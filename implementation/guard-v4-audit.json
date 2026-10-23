@@ -1,0 +1,62 @@
+{
+  "scope": "Machine Guard and ProjectE Java/Rhino boundaries; full Windows instance not mounted",
+  "confirmed_from_user_error_text": [
+    {
+      "error": "Cannot call property uuid in object ServerPlayer; it is not a function, it is object",
+      "cause": "The installed local edit calls uuid() although KubeJS exposes a UUID bean property. The repository v0.3 instead calls getUUID(), which is also not exposed under that name."
+    },
+    {
+      "error": "ProjectE Object2LongOpenHashMap.put(ItemInfo,number) is ambiguous",
+      "cause": "Rhino cannot choose primitive long versus boxed Long and bridge Object overloads. Explicit Long.valueOf(String) also remains ambiguous in real build.85."
+    }
+  ],
+  "confirmed_from_pinned_source": [
+    "EntityMixin remaps getUUID() to getUuid(); its bean property uuid is an object.",
+    "KubeJS ServerEvents.loaded is emitted from ServerStartingEvent.",
+    "FTB Quests creates ServerQuestFile before start but calls load() only at SERVER_STARTED.",
+    "Old script stops after one failed initialization and never retries automatically until reload/restart.",
+    "Lifecycle readiness is a confirmed source-order hazard; the provided log directly confirms UUID and EMC failures, not an observed FTB load exception."
+  ],
+  "changes": {
+    "25_machine_guard.js": [
+      "Use typed native API4 syncPlayer(ServerPlayer,String,int), obtaining UUID inside Java without any JS uuid method call.",
+      "Initialize only on first server tick; verify the first known FTB final quest is loaded before restoring rules/progress.",
+      "Configure all96 dual-key recipe rules before declaring ready.",
+      "Retry transient FTB readiness at bounded exponential delays, max6attempts; fatal ledger/config/API errors remain closed.",
+      "Expose status phase, lastError, attempts, API version, rule counts and explicit retry().",
+      "Detect external native resets and rebuild persisted projections next tick; never reset player/team ledger.",
+      "Unknown modded block claims are quarantined instead of falling through to stage0."
+    ],
+    "35_projecte.js": [
+      "Use actual native RhinoLongMapBridge.putValue with one primitive-long signature.",
+      "Validate positive exact integer EMC values before conversion.",
+      "On bad/missing helper, malformed configuration or invalid whitelist, replace inherited EMC with an empty map and surface the error.",
+      "Refuse learning/condenser-setting before a complete whitelist has successfully installed."
+    ]
+  },
+  "source_pins": {
+    "KubeJS-2101": "1b4e9b819e4b372d92529f43542e1992c45701a2",
+    "FTB-Quests-1.21.1": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+    "ProjectE-1.21.1": "f432b0c66837759fb0731c9144dc53176b949c5d"
+  },
+  "tests": {
+    "node_access_and_projecte": {
+      "passed": 13,
+      "failed": 0,
+      "command": "node --test tests/access-and-guard.test.js tests/projecte-bridge.test.js"
+    },
+    "real_rhino_fastutil_interop": {
+      "passed": 1,
+      "skipped": 0,
+      "command": "python -m unittest discover -s tests -p test_guard_interop.py -v",
+      "engine": "Rhino2101.2.7-build.85 exact source-built core",
+      "fastutil": "8.5.12",
+      "production_code": "actual25/35scripts and RhinoLongMapBridge.java",
+      "modeled": "Minecraft ServerPlayer/FTB/team APIs and ProjectE ItemInfo/update dispatch"
+    },
+    "javascript_syntax": "node --check passed for both modified scripts",
+    "whitespace": "git diff --check passed for owned modified files",
+    "minecraft_full_pack": "not_run_here; native agent supplies separate real server guard smoke evidence"
+  },
+  "preservation": "No stages/progress reset, required mode retained, no worlds/logs/backups included in Git."
+}

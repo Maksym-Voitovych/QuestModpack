@@ -1,0 +1,46 @@
+{
+  "node_tests": {
+    "passed": 41,
+    "failed": 0,
+    "skipped": 0,
+    "command": "node --test tests/*.test.js"
+  },
+  "python_tests": {
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "includes_real_rhino_build85": 2,
+    "includes_installer_tests": 15,
+    "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
+  },
+  "java_policy_assertions": {
+    "passed": 5237,
+    "failed": 0
+  },
+  "native_minecraft_smoke": {
+    "passed": 41,
+    "failed": 0,
+    "server_jvm_boots": 2,
+    "ticks": 650,
+    "report": "companion/native-smoke-report.json",
+    "key_fixture": "Configured vanilla recipe/output; KubeJS/FTB/optional mods absent"
+  },
+  "javascript_syntax_files": 12,
+  "snbt_graph_ids": "passed",
+  "registry_and_native_recipe_shapes": "passed",
+  "preserved_v3_quests": 2512,
+  "preserved_v3_native_recipes": 283,
+  "custom_component_and_machine_graph": "acyclic 362 nodes/696 edges; explicit sources only",
+  "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
+  "runtime_rebuild": {
+    "status": "passed",
+    "runtime_files": 1124,
+    "changed": []
+  },
+  "jar_sha256": "dcfb79b709d566408550b26eb5fd1e723d8acb2627607fff47d3cb4c9646c892",
+  "jar_path": "mods/aia2-machine-guard-0.4.0-alpha.jar",
+  "archive_verification_command": "python tools/package_runtime.py",
+  "packaged_installer_dry_run": "passed after extracting the generated ZIP; no backup/runtime write or test-world change",
+  "archive_crc_and_all_sha256_entries": "passed",
+  "historical_0_1_archive": "exists and CRC passed; preserved unchanged"
+}

@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.3.0-alpha'
+VERSION = '0.4.0-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -22,6 +22,11 @@ def main():
             parser.error('Required mode needs exactly one compiled AIA2 Machine Guard JAR in mods/')
         with zipfile.ZipFile(jars[0]) as jar:
             assert 'ua/aia2/guard/Aia2MachineGuard.class' in jar.namelist()
+            assert jar.testzip() is None, 'Compiled companion JAR CRC failed'
+            if config.get('progressionVersion', 0) >= 4:
+                for name in ['KeyProductionBridge', 'RhinoLongMapBridge']:
+                    assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                assert 'ua/aia2/guard/mixin/KeyResultProductionMixin.class' in jar.namelist()
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',
                          'CraftingQuickMoveMixin', 'ResultPickupMixin', 'RecipeManagerContextMixin',
                          'MekanismCachedRecipeMixin', 'CreateBasinRecipeMixin',

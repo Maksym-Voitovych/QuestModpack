@@ -1,0 +1,562 @@
+{
+  "id": "0000B1181E4759AD",
+  "filename": "aia2_branch_automation_powah",
+  "title": "powah — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 19,
+  "icon": {
+    "id": "powah:steel_energized",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00003DEB7C9517F9",
+      "title": "Замовлення навколо енергетичної сфери",
+      "description": [
+        "Відокремте замовлення енергетичної обробки від звичайного крафту матеріалу. Шаблон ME готується для майбутньої інтеграції й не є дозволом підключати ще закриті механізми автокрафту епохи32.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:steel_energized",
+        "count": 1
+      },
+      "dependencies": [
+        "0000276D0544F6B9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000056D4D3B9F185",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "00009394210D614A",
+          "type": "item",
+          "item": {
+            "id": "powah:steel_energized",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F20B05D1B5B4",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001CD182AD4137",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D1A4BFC14441",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000EB759AA716F",
+      "title": "Кілька стрижнів — один процес",
+      "description": [
+        "Перевірте підключення стрижнів до джерела FE та контрольний вихід енергетичного рецепта. Наявність багатьох стрижнів не усуває вузьке місце в кабелі або генераторі, тому починайте з однієї партії.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:crystal_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "00003DEB7C9517F9",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000264C6CD70237",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_rod_blazing",
+          "timer": 40
+        },
+        {
+          "id": "0000A34985A6CD64",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_blazing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005CA59DC9E2EC",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_blazing",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A27CDB17E666",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000651B6A3239D0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009CD6DD64337D",
+      "title": "Резерв для тривалого заряду",
+      "description": [
+        "Залиште окремий буфер для енергетичної обробки, щоб коротке замовлення не зупиняло всі допоміжні системи. Засіб зчитування стану підготуйте до підключення зовнішнього керування.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:capacitor_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "00000EB759AA716F",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF1210F90BF7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_cell_blazing",
+          "timer": 40
+        },
+        {
+          "id": "0000BF741CCE9CAE",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_blazing",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A6EA6FD6E529",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028A4C2223E93",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E2DCC8F00D43",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DAA2AA221C18",
+      "title": "Інший кристал потребує свого рецепта",
+      "description": [
+        "Підготуйте два пізні кристали як різні контрольні зразки. Звіряйте конкретні інгредієнти й енергію в JEI, не очікуючи перетворення одного рівня на інший звичайною переплавкою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:crystal_niotic",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CD6DD64337D",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000030F6B010ED87",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "00002A007DF1E6BA",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_niotic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008136E38371FC",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5A2AC65F349",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB5CABAB7450",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002E5D7538F3F2",
+      "title": "Підтримка потужнішого стрижня",
+      "description": [
+        "Підготуйте силову частину в тому самому масштабі, що й енергетичний споживач. Після заміни одного вузла перевірте решту ланцюга, а не вважайте весь цех автоматично покращеним.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:energy_cable_spirited",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DAA2AA221C18",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000083D17434866C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_rod_spirited",
+          "timer": 40
+        },
+        {
+          "id": "000070A2E19CC48E",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cable_spirited",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EF9EA81E67CD",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002096C2465FA9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005055E1D1D67A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000056F4C58EBA7D",
+      "title": "Відокремлений паливний генератор",
+      "description": [
+        "Виділіть звичайне відновлюване паливо для допоміжної генерації та запас ізоляційних компонентів. Перевірте поведінку буфера, коли паливо закінчується, до запуску довгого енергетичного замовлення.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:charcoal",
+        "count": 1
+      },
+      "dependencies": [
+        "00002E5D7538F3F2",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000060B7055CD219",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:furnator_blazing",
+          "timer": 40
+        },
+        {
+          "id": "0000CF387D4A8923",
+          "type": "item",
+          "item": {
+            "id": "minecraft:charcoal",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5B8E75EDFED",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D4C63D98D1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000081079EA5CECE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "000093979CB09DAE",
+      "title": "Електричне живлення інструментів",
+      "description": [
+        "Підготуйте переносний енергетичний резерв і засіб обслуговування машин. Звірте напрям енергетичного обміну розрядника за довідником, не плутаючи заряджання інструмента та живлення мережі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "powah:battery_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "000056F4C58EBA7D",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF7F1DFEBAB3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_discharger_blazing",
+          "timer": 40
+        },
+        {
+          "id": "000041097C3DCB7B",
+          "type": "item",
+          "item": {
+            "id": "powah:battery_blazing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007C3F62ABD1E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF8B00AF2F93",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CEDA0DEAA02C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009781941E153C",
+      "title": "Техномагічний сервіс реакторної бази",
+      "description": [
+        "Зберіть результати манової, промислової та енергетичної гілок у контрольному комплекті. Такий запас готує складні міжмодові рецепти, але не видає безкоштовно жоден реактор або генератор.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "botania:elementium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000093979CB09DAE",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0BEB47F0AD4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_cell_spirited",
+          "timer": 40
+        },
+        {
+          "id": "00006F260EA92AE2",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5236525C22B",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A6981B7E168",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_spirited",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001EE621687D74",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C084A421EAB8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

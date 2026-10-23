@@ -1,0 +1,573 @@
+{
+  "id": "0000BF62FA8F6218",
+  "filename": "aia2_branch_automation_xnet",
+  "title": "xnet — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 21,
+  "icon": {
+    "id": "xnet:netcable_routing",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00001E3DA58208C8",
+      "title": "Контролер і карта фізичних вузлів",
+      "description": [
+        "Почніть XNet з короткої фізичної мережі та зрозумілих позначень вузлів. Запишіть призначення каналів до підключення виробничих машин, а не після першого змішування їхніх ресурсів.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:netcable_routing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000059E91379483D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "00008D23B534FAF0",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_routing",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000546F6EBC6028",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5D2742C5A09",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000089DA0BAD029D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00008C13F8EC234A",
+      "title": "Канал із різними ролями",
+      "description": [
+        "Позначте джерело й приймач окремого каналу, перевіряючи реальну сумісність конекторів. Колір допомагає читати монтаж, але сам по собі не задає правильні правила перенесення.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:connector_blue",
+        "count": 1
+      },
+      "dependencies": [
+        "00001E3DA58208C8",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003694D24408BD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "00002AC32AABC415",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_blue",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F1842C29509",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_yellow",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E4C02B101C6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A9C43141681E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004E4CB20AE8D3",
+      "title": "Розширений доступ до сторін",
+      "description": [
+        "Випробуйте розширений конектор на машині з чітко позначеними портами. Не використовуйте доступ до іншого боку для обходу серверних епох або для відбирання компонентів чужої команди.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:advanced_connector_blue",
+        "count": 1
+      },
+      "dependencies": [
+        "00008C13F8EC234A",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003710108E1867",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "0000E2F9EB981AAD",
+          "type": "item",
+          "item": {
+            "id": "xnet:advanced_connector_blue",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F3F2EAD114B5",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_upgrade",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020BA2AFA5AF9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B2D1B1A217CD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F56DCEEBE249",
+      "title": "Відокремлений енергоканал",
+      "description": [
+        "Підготуйте енергетичний маршрут окремо від предметного каналу. Перед великим навантаженням перевірте джерело, пріоритет і місце накопичувача, щоб вхідний буфер не спорожнювався непомітно.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:advanced_connector_red",
+        "count": 1
+      },
+      "dependencies": [
+        "00004E4CB20AE8D3",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003CFD6BF4412D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "000035ED14FBFC27",
+          "type": "item",
+          "item": {
+            "id": "xnet:advanced_connector_red",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009DB54A8524DE",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB1D974A598F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000042736B1A142E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D27DD65AB7FF",
+      "title": "Маршрутизатор з відомими межами",
+      "description": [
+        "Зберіть вузол маршрутизації та перевірте, які мережі він поєднує. Розділення ділянок потрібне для читабельності схеми, а не для створення непомітної петлі повернення предметів.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:netcable_routing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F56DCEEBE249",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C08636898CB9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:router",
+          "timer": 40
+        },
+        {
+          "id": "00003C098160D727",
+          "type": "item",
+          "item": {
+            "id": "xnet:netcable_routing",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A42FCF96579",
+          "type": "item",
+          "item": {
+            "id": "xnet:connector_routing",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006589E5B3C36C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F9ABD69867E9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004C31BE33FA14",
+      "title": "Червоний сигнал на відстані",
+      "description": [
+        "Підготуйте просту перевірку перенесення керувального сигналу до підключення небезпечного обладнання. Порівняйте обидва положення важеля та переконайтеся, що індикатор показує потрібний стан.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:lever",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D27DD65AB7FF",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000023F39F82F528",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:redstone_proxy",
+          "timer": 40
+        },
+        {
+          "id": "00000FDFFB6149A0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ABF8EFA482FD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone_lamp",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AF132C6D1913",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000094C29180B057",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EC4415F81252",
+      "title": "Підготовка бездротової ділянки",
+      "description": [
+        "Звірте склад антенного вузла з довідником і передбачте доступ до його частин. Наявність деталей не підтверджує готовий дальній канал, тому фактичне з'єднання перевірте невеликим тестовим потоком.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "xnet:antenna_base",
+        "count": 1
+      },
+      "dependencies": [
+        "00004C31BE33FA14",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006A3198C36114",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:wireless_router",
+          "timer": 40
+        },
+        {
+          "id": "000066D9B8747C09",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001BECF4A98D3F",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna_dish",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003815E4874D4F",
+          "type": "item",
+          "item": {
+            "id": "xnet:antenna",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001264B3C2B22C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C1F3C85B0D23",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004FFB94DB14C9",
+      "title": "Спільна карта промислової мережі",
+      "description": [
+        "Зберіть інструменти різних машинних інтерфейсів і позначте, де закінчується відповідальність XNet. Контролер мережі не підміняє правильні налаштування портів Modern Industrialization та Mekanism.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EC4415F81252",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000009BC5EF66FB6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "xnet:controller",
+          "timer": 40
+        },
+        {
+          "id": "000027ACF39FF701",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005CF4A51749E4",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000817CE23C30B8",
+          "type": "item",
+          "item": {
+            "id": "xnet:advanced_connector_green",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8D70C0969A0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DE404D2A59DD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

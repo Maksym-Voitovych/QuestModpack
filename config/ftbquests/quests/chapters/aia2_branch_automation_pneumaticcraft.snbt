@@ -1,0 +1,558 @@
+{
+  "id": "0000FE85E309E82B",
+  "filename": "aia2_branch_automation_pneumaticcraft",
+  "title": "pneumaticcraft — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 18,
+  "icon": {
+    "id": "pneumaticcraft:logistics_configurator",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00006AEFA554DF3E",
+      "title": "Камера з визначеними шлюзами",
+      "description": [
+        "Позначте введення й виведення предметів перед налаштуванням пневматичної логістики. Дві бочки дають окремі точки перевірки маршруту без ризику змішати готову плату з вихідною заготовкою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:logistics_configurator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000763CB14E0F96",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EBB80FE901D2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:pressure_chamber_interface",
+          "timer": 40
+        },
+        {
+          "id": "0000FEF8666BDAAE",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:logistics_configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001AD0DD2DE775",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003147E82033CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000008BB3B4BA129",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000642A0133B2A1",
+      "title": "Пасивний і активний постачальники",
+      "description": [
+        "Порівняйте ролі двох рамок за довідником PneumaticCraft до монтажу всієї мережі. Активний поштовх предметів і очікування запиту мають різні наслідки для вільного місця в приймачах.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:logistics_frame_passive_provider",
+        "count": 1
+      },
+      "dependencies": [
+        "00006AEFA554DF3E",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCF2A79ACE32",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:pressure_tube",
+          "timer": 40
+        },
+        {
+          "id": "00007EBEABF35D5B",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:logistics_frame_passive_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2D9CB97A7EB",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:logistics_frame_active_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005CA20ED8708C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003F9F56408344",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000031DBF9FFA9BD",
+      "title": "Замовлення потрібного запасу",
+      "description": [
+        "Підготуйте окремий запитувач та резервне сховище для витратних матеріалів. Перевірте поведінку мережі, коли замовлений предмет закінчується, замість безкінечного повторення порожньої операції.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:logistics_frame_requester",
+        "count": 1
+      },
+      "dependencies": [
+        "0000642A0133B2A1",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000398754A1B5E5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:pressure_tube",
+          "timer": 40
+        },
+        {
+          "id": "00002684F8FF46A7",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:logistics_frame_requester",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070B04EB3CF5F",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:logistics_frame_storage",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D35DA0B29E5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000414534AD268C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000035C4459E99C6",
+      "title": "Контроль пропускної ділянки",
+      "description": [
+        "Залиште на трубі точки для читання стану та виявлення потоку. Ці модулі показують різні речі, тому один датчик не повинен підміняти всі засоби діагностики пневматичної мережі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:flow_detector_module",
+        "count": 1
+      },
+      "dependencies": [
+        "000031DBF9FFA9BD",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ECA4FE81F977",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:pressure_tube",
+          "timer": 40
+        },
+        {
+          "id": "0000FD4AB494CEF6",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:flow_detector_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000001AF7A3E8BF",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:pressure_gauge_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FCA792D8763",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B81A99DB0A55",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000029886B9ACC14",
+      "title": "Підготовка друкованої основи",
+      "description": [
+        "Відокремте освітлення заготовок від наступного складання друкованої плати. Перевірте фактичний рецепт і стан заготовки в JEI перед тим, як передати партію роботизованій станції.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:unassembled_pcb",
+        "count": 1
+      },
+      "dependencies": [
+        "000035C4459E99C6",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C834775A3A4A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:uv_light_box",
+          "timer": 40
+        },
+        {
+          "id": "0000C8DF4946C5B9",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:unassembled_pcb",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D017A9671C2C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E13153535C28",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F4051C92D63F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000043693EF17625",
+      "title": "Контролер знає програму",
+      "description": [
+        "Підготуйте конкретну програму для послідовності свердління й лазерної обробки. Завершена плата в наборі є контрольним зразком, а не доказом, що контролер самостійно завершив усі цикли.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_program_drill_laser",
+        "count": 1
+      },
+      "dependencies": [
+        "000029886B9ACC14",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0769B9C0554",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_controller",
+          "timer": 40
+        },
+        {
+          "id": "00003070487ECDA2",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_program_drill_laser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007B5ECB8652B",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E053D5C1E41A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C4C32927C669",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "000070E4CC305835",
+      "title": "Роботизований ввід та вивід",
+      "description": [
+        "Збережіть різні сторони для подавання заготовки та отримання результату складання. Перед розширенням станції вручну перевірте, що платформа й обидва інтерфейси належать саме до запланованої конструкції.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:assembly_platform",
+        "count": 1
+      },
+      "dependencies": [
+        "000043693EF17625",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000870E05F2909",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_io_unit_import",
+          "timer": 40
+        },
+        {
+          "id": "0000B030B92C377E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:assembly_io_unit_export",
+          "timer": 40
+        },
+        {
+          "id": "00001AF246CA34DF",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:assembly_platform",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000935F6C65A1F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D7A727E96717",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001BBE07791F6E",
+      "title": "Програматор має безпечний тест",
+      "description": [
+        "Підготуйте заряджання й одну зрозумілу точку GPS для випробування дрона. Починайте з дешевих предметів та короткого маршруту, а не з перенесення всього складу за неперевіреною програмою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:drone",
+        "count": 1
+      },
+      "dependencies": [
+        "000070E4CC305835",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006B5AB197B649",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:programmer",
+          "timer": 40
+        },
+        {
+          "id": "00004493782A3E7D",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:drone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000316AA38AC6C4",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:gps_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000197BCC0E946C",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:charging_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004DB5DD4B5151",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F173A9726387",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

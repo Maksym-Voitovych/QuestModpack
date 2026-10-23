@@ -83,6 +83,19 @@ test('state survives JSON reload; corrupt state never silently resets progress',
   }
   assert.throws(() => c.validateState({schema: 2, teams: {}}));
 });
+test('ledger rejects arrays that would lose UUID properties on JSON save and validates pending order', () => {
+  const c = core(), teams = [];
+  teams['sample-team-uuid'] = {completed: 12};
+  assert.equal(JSON.stringify(teams), '[]', 'Array JSON would silently drop a UUID-keyed record');
+  assert.throws(() => c.validateState({schema: 1, teams}), /журнал/);
+  const record = []; record.completed = 12;
+  assert.throws(() => c.validateState({schema: 1, teams: {a: record}}), /запис/);
+  for (const pending of [0, 12, 14, 49, '13', null]) {
+    assert.throws(() => c.validateState({schema: 1, teams: {a: {completed: 12, pending}}}), /перехід/);
+  }
+  const saved = JSON.parse(JSON.stringify({schema: 1, teams: {a: {completed: 12, pending: 13}}}));
+  assert.equal(c.validateState(saved).teams.a.pending, 13);
+});
 test('stage access and post-final access have distinct boundaries', () => {
   const c = core();
   assert.equal(c.mayAccess(2, 0), false);
@@ -134,6 +147,10 @@ function bridge() {
   let fault = false;
   let allProofs = true;
   const deniedQuests = new Set();
+  const deniedProduction = new Set();
+  const nativeGuard = {setTeamKeyReady() {}, hasProductionProof(server, team, epoch, branch) {
+    return !deniedProduction.has(team + ':' + epoch + ':' + branch);
+  }};
   const file = {
     getQuest(id) { return {id}; },
     getOrCreateTeamData(player) { return {
@@ -146,6 +163,7 @@ function bridge() {
   const context = vm.createContext({global: {}, console,
     Java: {loadClass(name) {
       if (name === 'dev.ftb.mods.ftbquests.quest.ServerQuestFile') return {INSTANCE: file};
+      if (name === 'ua.aia2.guard.Aia2MachineGuard') return nativeGuard;
       assert.equal(name, 'net.darkhax.gamestages.GameStageHelper');
       return {hasStage(player, stage) { return player.nativeStages.has(stage); }};
     }},
@@ -176,9 +194,9 @@ function bridge() {
   function supply(p, e) {
     p.slots.fill(null);
     for (let i = 0; i < 36; i++) p.slots[i] = new Stack('minecraft:air', 0);
-    Object.entries(e.cost).forEach(([id, count], i) => { p.slots[i] = new Stack(id, count); });
+    Object.entries(e.number && e.transitionCost ? e.transitionCost : e.cost).forEach(([id, count], i) => { p.slots[i] = new Stack(id, count); });
   }
-  return {context, player, supply, commands, nbt, deniedQuests, setFault() { fault = true; }, setProofs(v) { allProofs = v; }};
+  return {context, player, supply, commands, nbt, deniedQuests, deniedProduction, setFault() { fault = true; }, setProofs(v) { allProofs = v; }};
 }
 
 test('real bridge logic completes all 48 epochs, persists them, and syncs named teammates', () => {
@@ -232,6 +250,7 @@ test('ProjectE remap hook replaces all inherited EMC with the finite whitelist',
       if (name.endsWith('EMCMappingHandler')) return {updateEmcValues(map) { actual = map; }};
       if (name.endsWith('ItemInfo')) return {fromStack(item) { return item.id; }};
       if (name.endsWith('Object2LongOpenHashMap')) return LongMap;
+      if (name.endsWith('RhinoLongMapBridge')) return {putValue(map, key, value) { map.put(key, value); }};
       return name;
     }}
   });
@@ -382,10 +401,10 @@ test('all custom registrations have unique IDs, explicit models and real texture
       return builder;
     }});
   }}});
-  for (const file of ['00_epoch_keys.js', '10_components.js']) {
+  for (const file of ['00_epoch_keys.js', '10_components.js', '20_dual_keys.js']) {
     vm.runInContext(fs.readFileSync(path.join(root, 'kubejs/startup_scripts/aia2', file), 'utf8'), context);
   }
-  assert.equal(registered.size, 293);
+  assert.equal(registered.size, 390);
   for (const [id, record] of registered) {
     assert.ok(record.name && record.texture && record.stack > 0, id);
     const [namespace, item] = id.split(':');
@@ -395,4 +414,76 @@ test('all custom registrations have unique IDs, explicit models and real texture
     assert.ok(fs.existsSync(path.join(root, 'kubejs/assets', textureNS, 'textures', texture + '.png')), record.texture);
     if (id.includes('epoch_key_')) assert.equal(record.stack, 1);
   }
+});
+
+test('gifted or creative dual keys never substitute for either native manufacturing receipt', () => {
+  for (const branch of ['tech', 'arcane']) {
+    const b = bridge(), p = b.player('Alice', 'A');
+    b.supply(p, rules.epochs[0]);
+    const before = JSON.stringify(p.slots);
+    b.deniedProduction.add('A:1:' + branch);
+    assert.throws(() => b.context.aia2Forge(p), /справжнє виготовлення/);
+    assert.equal(JSON.stringify(p.slots), before);
+    assert.equal(b.context.aia2Completed(p), 0);
+  }
+});
+
+test('final FTB quest holds a paid transition closed across reload and never charges twice', () => {
+  const b = bridge(), p = b.player('Alice', 'A'), e = rules.epochs[0];
+  b.deniedQuests.add(parseInt(e.finalQuestId, 16));
+  b.supply(p, e);
+  assert.equal(b.context.aia2Forge(p), 1);
+  assert.equal(b.context.aia2Completed(p), 0);
+  assert.equal(p.nativeStages.has('aia2_epoch_02'), false);
+  assert.equal(JSON.parse(b.nbt.get('aia2_runtime_v1')).teams.A.pending, 1);
+  const after = JSON.stringify(p.slots);
+  assert.throws(() => b.context.aia2Forge(p), /повторного списання/);
+  assert.equal(JSON.stringify(p.slots), after);
+  vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), b.context);
+  Object.assign(b.context.global.AIA2Machines, {isReady() { return true; }, syncPlayer() {}});
+  vm.runInContext(fs.readFileSync(path.join(scripts, '20_progression.js'), 'utf8'), b.context);
+  assert.equal(b.context.aia2FinishPending(p), false);
+  assert.equal(b.context.aia2Completed(p), 0);
+  b.deniedQuests.delete(parseInt(e.finalQuestId, 16));
+  assert.equal(b.context.aia2FinishPending(p), true);
+  assert.equal(b.context.aia2Completed(p), 1);
+  assert.equal(p.nativeStages.has('aia2_epoch_02'), true);
+  assert.equal(JSON.stringify(p.slots), after);
+  assert.equal(b.context.aia2FinishPending(p), false);
+});
+
+test('branch manufacturing quests must finish as well as the legacy final task', () => {
+  const b = bridge(), p = b.player('Alice', 'A'), e = rules.epochs[0];
+  const keyQuest = parseInt(e.branchKeyQuestIds.arcane,16);
+  b.deniedQuests.add(keyQuest); b.supply(p,e); b.context.aia2Forge(p);
+  assert.equal(b.context.aia2Completed(p),0);
+  b.deniedQuests.delete(keyQuest); assert.equal(b.context.aia2FinishPending(p),true);
+});
+
+test('old completed ledgers are preserved without manufacturing receipts or new retroactive goals', () => {
+  const b = bridge(), p = b.player('Alice', 'A');
+  b.nbt.set('aia2_runtime_v1', JSON.stringify({schema:1,teams:{A:{completed:25}}}));
+  b.deniedProduction.add('A:25:tech'); b.deniedProduction.add('A:25:arcane');
+  b.context.aia2Sync(p);
+  assert.equal(b.context.aia2Completed(p),25);
+  assert.equal(p.nativeStages.has('aia2_epoch_26'),true);
+  const e=rules.epochs[24], cost=Object.fromEntries(Object.entries(e.cost).filter(([id])=>!id.includes('epoch_key_')));
+  cost['minecraft:crafting_table']=1; b.supply(p,{cost});
+  assert.equal(b.context.aia2Forge(p,true),1);
+  assert.equal(b.context.aia2Completed(p),25);
+});
+
+test('unchanged receipt polling emits no repeated advancement commands and still repairs changed proofs', () => {
+  const b = bridge(), p = b.player('Alice', 'A');
+  b.commands.length = 0;
+  for (let i = 0; i < 50; i++) b.context.aia2RefreshBranches(p);
+  assert.equal(b.commands.length, 0);
+  b.deniedProduction.add('A:1:tech');
+  b.context.aia2RefreshBranches(p);
+  assert.deepEqual(b.commands, ['advancement revoke Alice only aia2:production/tech_01']);
+  b.context.aia2RefreshBranches(p);
+  assert.equal(b.commands.length, 1);
+  b.deniedProduction.delete('A:1:tech');
+  b.context.aia2RefreshBranches(p);
+  assert.equal(b.commands[1], 'advancement grant Alice only aia2:production/tech_01');
 });

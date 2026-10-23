@@ -1,0 +1,1109 @@
+{
+  "id": "00006A1B72513541",
+  "filename": "aia2_branch_automation_create",
+  "title": "Create — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 7,
+  "icon": {
+    "id": "create:shaft",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00003605F35BA807",
+      "title": "Паспорт кінетичної лінії",
+      "description": [
+        "Підготуйте журнал майстерні та позначте початкову передачу від водяного колеса. Запишіть напрям обертання до підключення навантаження, щоб наступні розвороти не стали випадковістю.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:shaft",
+        "count": 1
+      },
+      "dependencies": [
+        "00004C0D531D713E",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9CDE13862E7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:water_wheel",
+          "timer": 40
+        },
+        {
+          "id": "0000BD754E1B18D9",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AEC65BE76416",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009DC96A918759",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003104B2907D46",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000085FC6C1CC1F9",
+      "title": "Два масштаби передачі",
+      "description": [
+        "Порівняйте велику й малу шестерні на одному тестовому валу. Зміна швидкості змінює й потребу в напрузі; збережіть обидва типи деталей як ремонтний комплект.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:cogwheel",
+        "count": 1
+      },
+      "dependencies": [
+        "00003605F35BA807",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A168B50BA37A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:gearbox",
+          "timer": 40
+        },
+        {
+          "id": "000037BCA3768814",
+          "type": "item",
+          "item": {
+            "id": "create:cogwheel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D6E64E8B646",
+          "type": "item",
+          "item": {
+            "id": "create:large_cogwheel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E55CCBB47C24",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008A77AAE9D744",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F1C81A6A4559",
+      "title": "Реверс без перебудови",
+      "description": [
+        "Зробіть доступне місце для перемикання напряму перед рухомими механізмами. Перевірте обидва положення важеля до роботи з предметами, які небажано загубити під час зміни напрямку.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:lever",
+        "count": 1
+      },
+      "dependencies": [
+        "000085FC6C1CC1F9",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B140ABEF6639",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:gearshift",
+          "timer": 40
+        },
+        {
+          "id": "0000506215CAD1C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000037C7EC04F7B1",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000038019750ABD3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A202ED38911B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004B30E3DF99FA",
+      "title": "Сервісна зупинка",
+      "description": [
+        "Розділіть зупинку машини та вимкнення всієї водяної станції. Зчеплення дає змогу обслуговувати одну ділянку, поки інші механізми зберігають своє джерело обертання.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:redstone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F1C81A6A4559",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000059354A1EE602",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:clutch",
+          "timer": 40
+        },
+        {
+          "id": "0000E630F6BCA5DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D74BEA1A8D94",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stone_button",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002823169DA6DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E5DC368E5DB0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006D83F3C1ECD7",
+      "title": "Швидкість має показник",
+      "description": [
+        "Поставте вимірювач на доступній ділянці вала та підготуйте окуляри інженера. Порівняйте показник до й після передавальної пари; завдання не вимагає вигаданої фіксованої швидкості.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:goggles",
+        "count": 1
+      },
+      "dependencies": [
+        "00004B30E3DF99FA",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F2BD09A1982D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:speedometer",
+          "timer": 40
+        },
+        {
+          "id": "00004D7FEAB0EC75",
+          "type": "item",
+          "item": {
+            "id": "create:goggles",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000045C5440FF6CE",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099180BAF7472",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DF9229F504EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E9A900EED7AD",
+      "title": "Резерв навантаження",
+      "description": [
+        "Підготуйте схему резервної передачі та вимірювач навантаження. Залиште запас для нового преса: додавання споживача до вже перевантаженої лінії не виправляється швидшими шестернями.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:large_cogwheel",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D83F3C1ECD7",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068407F81BD82",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:stressometer",
+          "timer": 40
+        },
+        {
+          "id": "00009DE25B18080A",
+          "type": "item",
+          "item": {
+            "id": "create:large_cogwheel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A18A099C81F1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C9D8DE68ACD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D514912EDA8C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009CCEE1C5A31D",
+      "title": "Перша матеріальна проба",
+      "description": [
+        "Випробуйте прес на двох металах, а не на одній випадковій пластині. Розділіть вихідні лотки для заліза й міді та перевірте, чи не змішується готовий матеріал із необробленими злитками.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:iron_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E9A900EED7AD",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000061EC40DF125B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_press",
+          "timer": 40
+        },
+        {
+          "id": "0000F3B5D141DE96",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A29F9842D4FB",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FE1D50AB4C4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B45CECECD120",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "000092C5FE1B560D",
+      "title": "Пакет технічного обслуговування",
+      "description": [
+        "Зберіть у ремонтному наборі інструмент, матеріал для корпусів і запас палива для майбутніх процесів. Позначте безпечне місце зупинки перед переналаштуванням мішалки та преса.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CCEE1C5A31D",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000895949A64F15",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:basin",
+          "timer": 40
+        },
+        {
+          "id": "00006880B81C9099",
+          "type": "item",
+          "item": {
+            "id": "create:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004EDEEF089BC5",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B7B20FEEDEE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:charcoal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE0C7E2EC573",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000290A624A9497",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F6D216C31756",
+      "title": "Вхід із визначеним напрямком",
+      "description": [
+        "Позначте одну скриню як вхід, іншу як вихід випробувальної стрічки. Спочатку пропустіть простий матеріал і переконайтеся, що воронка працює в потрібний бік.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:belt_connector",
+        "count": 1
+      },
+      "dependencies": [
+        "000089C2D1E2FE33",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000089FBF1360BF7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:andesite_funnel",
+          "timer": 40
+        },
+        {
+          "id": "0000399B30741435",
+          "type": "item",
+          "item": {
+            "id": "create:belt_connector",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F15531BBDDD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F3D1927FEEF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000047EB4675DB06",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000729BFDB46182",
+      "title": "Латунь для вибіркового потоку",
+      "description": [
+        "Додайте вибіркове подавання предметів після освоєння латуні. Відокремте деталь, яка має потрапляти в машину, від предметів, що лише проходять транзитом повз неї.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:filter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F6D216C31756",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007BE0DE458BD8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:brass_funnel",
+          "timer": 40
+        },
+        {
+          "id": "0000632DFB230371",
+          "type": "item",
+          "item": {
+            "id": "create:filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7FADEDD4B5B",
+          "type": "item",
+          "item": {
+            "id": "create:brass_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1B03CA7D287",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000480DCF5766A0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000C457FA9E6FD3",
+      "title": "Категорія замість одного предмета",
+      "description": [
+        "Порівняйте звичайний список предметів із фільтруванням за властивістю. Перед використанням у спільному складі перевірте правило на залізі та на іншому звичайному матеріалі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:attribute_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000729BFDB46182",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E67673B1F20F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:smart_chute",
+          "timer": 40
+        },
+        {
+          "id": "00000EABEF1C0F25",
+          "type": "item",
+          "item": {
+            "id": "create:attribute_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D97983BC2207",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008E4E0F27F440",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AA59795AA7CE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000ED0447E0BED6",
+      "title": "Тунель розподілу",
+      "description": [
+        "Передбачте два приймачі після латунного тунелю та окремий шлях повернення надлишку. Вибір режиму розподілу має відповідати виробництву, а не випадковій симетрії стрічок.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:brass_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C457FA9E6FD3",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000964E1075E145",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:brass_tunnel",
+          "timer": 40
+        },
+        {
+          "id": "00000A2884FD361A",
+          "type": "item",
+          "item": {
+            "id": "create:brass_sheet",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001BF8936A212B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000350BBFD6E179",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000037B97D67E3E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000DE162570027D",
+      "title": "Сигнал про запас",
+      "description": [
+        "Підготуйте вимірювання запасу замість безкінечного подавання сировини. Перевірте поведінку сигналу на порожньому й частково заповненому сховищі, перш ніж керувати ним машиною.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:comparator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ED0447E0BED6",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0B364C1312C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:stockpile_switch",
+          "timer": 40
+        },
+        {
+          "id": "0000D978C1ED8BB9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000439D686FC9CF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008F634053993E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C1264B0A57AF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000D053CD68DC19",
+      "title": "Розумна рука біля двох машин",
+      "description": [
+        "Заплануйте приймачі руки так, щоб готовий виріб не повертався на вхід власного рецепта. Три бочки дають окремі місця для сировини, проміжного продукту та завершеної партії.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:precision_mechanism",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE162570027D",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B19E47E9DB59",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_arm",
+          "timer": 40
+        },
+        {
+          "id": "00008BA67F4EAE3F",
+          "type": "item",
+          "item": {
+            "id": "create:precision_mechanism",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B558A924CE44",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061FBE12042E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ABA04BFCC7FC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "000066E4B4A49F22",
+      "title": "Сумісний буфер деталей",
+      "description": [
+        "Відведіть силос для одного масового типу деталі та перевірте доступ через його інтерфейс. Різні пластини залишайте в підписаних буферах, навіть якщо основний склад уже вміє їх змішувати.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:iron_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D053CD68DC19",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C0EC443F5E92",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create_connected:item_silo",
+          "timer": 40
+        },
+        {
+          "id": "00001FF70BAC565E",
+          "type": "item",
+          "item": {
+            "id": "create:iron_sheet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001F6B7F62126",
+          "type": "item",
+          "item": {
+            "id": "create:brass_sheet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006293CEF21D1A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D4E6D3D91166",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000655AABC7A78E",
+      "title": "Випуск без затору",
+      "description": [
+        "Спрямуйте викидач у реальну ціль і передбачте місце для недоставленої партії. Відстань та траєкторію перевірте дешевим матеріалом до роботи з точними механізмами.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "create:filter",
+        "count": 1
+      },
+      "dependencies": [
+        "000066E4B4A49F22",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9976031D0DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:weighted_ejector",
+          "timer": 40
+        },
+        {
+          "id": "0000E50C6C3BC550",
+          "type": "item",
+          "item": {
+            "id": "create:filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D7B05CA53E2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047CA5C707BF5",
+          "type": "item",
+          "item": {
+            "id": "create:andesite_alloy",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008EFC264582F3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D23FA3030D77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    }
+  ]
+}

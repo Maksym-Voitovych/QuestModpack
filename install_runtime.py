@@ -11,6 +11,7 @@ import re
 import stat
 import sys
 import tempfile
+import zipfile
 
 
 class InstallError(RuntimeError):
@@ -344,6 +345,19 @@ def plan_install(source, instance):
     bundled_jars = sorted((source / 'mods').glob('aia2-machine-guard-*.jar'))
     if len(bundled_jars) != 1 or not bundled_jars[0].is_file() or _is_link(bundled_jars[0]):
         raise InstallError('Package must contain exactly one regular aia2-machine-guard-*.jar')
+    runtime_path = source / 'kubejs/config/aia2_runtime.json'
+    if runtime_path.exists():
+        runtime = json.loads(runtime_path.read_text(encoding='utf-8'))
+        if runtime.get('progressionVersion', 0) >= 4:
+            try:
+                with zipfile.ZipFile(bundled_jars[0]) as jar:
+                    required = {'ua/aia2/guard/Aia2MachineGuard.class',
+                                'ua/aia2/guard/KeyProductionBridge.class',
+                                'ua/aia2/guard/RhinoLongMapBridge.class'}
+                    if not required <= set(jar.namelist()) or jar.testzip() is not None:
+                        raise InstallError('Progression v4 needs the matching API4 companion with manufacturing receipts and Rhino bridge')
+            except zipfile.BadZipFile as error:
+                raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)
     operations = []
     for item in sorted(files):

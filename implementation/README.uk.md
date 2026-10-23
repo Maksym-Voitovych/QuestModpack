@@ -1,17 +1,29 @@
-# Стан реалізації 0.3.0-alpha
+# Стан реалізації 0.4.0-alpha
 
 Основна інструкція: [README.uk.md](../README.uk.md). Встановлення:
 [INSTALL.uk.txt](INSTALL.uk.txt), [резервування й відкат](INSTALLER-SAFETY.uk.md).
 
-- Етап A: [Rhino й спільний стан](stabilization-report.json).
-- Аудит: [виробничий граф](../content/audit/progression-audit.json), [джерела предметів](../content/audit/quest-obtainability.json), [пізні епохи](../content/audit/late-obtainability.json).
-- Квести й компоненти: [expansion-report.json](expansion-report.json).
-- Ресурси: [resource-report.json](resource-report.json), [огляд](assets-preview.png).
-- Інтеграція: [обходи](bypass-audit.json), [native adapters](native-adapter-review.json), [Robit і brewing](compatibility-adapters-report.json).
-- Перевірки: [SNBT і граф](validation-report.json), [контент](content-validation-report.json), [реліз](release-report.json).
-- [Відомі обмеження](KNOWN_LIMITATIONS.uk.txt) і [зміни](CHANGELOG.uk.md).
+Поточна версія містить 48 епох, 2784 квести (2688 без 96 старих ручних
+цілей), 130 глав, шість груп, 569 нативних рецептів, 48 серверних формул
+фінального гравіювання, 390 власних предметів, моделей і PNG. Результати
+завершеного запуску перевірок і контрольні суми беріть зі
+[звіту релізу](release-report.json).
 
-`generation-report.json` описує збережений базовий генератор перед розширенням;
-`phase-02-report.json` та старі нативні докази — історичні результати попередніх
-версій. Поточні кількості беріть із `expansion-report.json` і звіту релізу.
-Повний Minecraft-інстанс та TPS ще не перевірені.
+- Machine Guard, Java/Rhino UUID та ProjectE: [guard-v4-audit.json](guard-v4-audit.json).
+- Дві обов'язкові гілки та 96 виробничих ключів: [механіка й міграція](../design/progression-v4.md), [dual-key-report.json](dual-key-report.json).
+- Нові рецепти 22 просторів імен: [recipes-v4-audit.json](recipes-v4-audit.json), [каталог](../content/recipes/v4_expansion.json).
+- Авторські курси й автоматизація: [quests-v4-audit.json](quests-v4-audit.json), [каталог](../content/quests/v4_mod_depth.json).
+- Усі епохи, компоненти й підсумкові кількості: [expansion-report.json](expansion-report.json).
+- Ресурси: [resource-report.json](resource-report.json), [96 нових ключів](resource-dual-report.json), [огляд](dual-keys-preview.png).
+- Нативний JAR і серверні перевірки: [companion/verification-report.json](../companion/verification-report.json).
+- SNBT, ID та граф: [validation-report.json](validation-report.json), [content-validation-report.json](content-validation-report.json).
+- Виробнича доступність: [прогресія](../content/audit/progression-audit.json), [джерела предметів](../content/audit/quest-obtainability.json), [пізні епохи](../content/audit/late-obtainability.json).
+- Межі інтеграції: [обходи](bypass-audit.json), [адаптери](native-adapter-review.json), [Robit і brewing](compatibility-adapters-report.json).
+- [Відомі обмеження й ручні тести](KNOWN_LIMITATIONS.uk.txt), [зміни](CHANGELOG.uk.md).
+
+`generation-report.json`, `phase-02-report.json`, `stabilization-report.json`
+та попередні секції нативного звіту містять історичні результати. Вони не
+замінюють поточний release-report. Справжній Rhino, мінімальний нативний
+сервер і повна Minecraft-збірка є різними рівнями перевірки. Повний
+Windows-інстанс, додаткові модові перехоплення, клієнтські ресурси й TPS
+залишаються приймальними перевірками у грі.

@@ -1,0 +1,573 @@
+{
+  "id": "0000B6F673955BB2",
+  "filename": "aia2_branch_automation_industrialforegoing",
+  "title": "industrialforegoing — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 12,
+  "icon": {
+    "id": "industrialforegoing:latex_bucket",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000B556B6D5250B",
+      "title": "Латекс має відведений приймач",
+      "description": [
+        "Відокремте місце добування латексу та його транспортний контур від водяної мережі. Перевірте швидкість заповнення приймача перед тим, як збільшити кількість джерел на фермі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:latex_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A415756E93B8",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000061F013C2A7D4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:fluid_extractor",
+          "timer": 40
+        },
+        {
+          "id": "0000B77A75B94141",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:latex_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC99D5C66146",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_mechanical_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000971CF899D5EC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006390FB9A2D87",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000073270F7F1CDC",
+      "title": "Переробка зі зрозумілою водою",
+      "description": [
+        "Підготуйте воду та контрольний продукт латексної переробки в окремих буферах. Готовий каучук у наборі не означає, що машина зможе безперервно працювати без обох потрібних середовищ.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:water_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B556B6D5250B",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000043EA9CFF6239",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:latex_processing_unit",
+          "timer": 40
+        },
+        {
+          "id": "0000D1435ADA68D2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D0CD0F8E31C",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:dryrubber",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007CE4164CA540",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002C1F32C5047C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EF8C49AF8CD7",
+      "title": "Шлам не повертається на ферму",
+      "description": [
+        "Виділіть переробку побічного продукту в окрему ділянку з власним резервом. Не приєднуйте її вихід до живильного входу ферми лише тому, що обидва контури містять рідину.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:sludge_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "000073270F7F1CDC",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DBC2205763FB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:sludge_refiner",
+          "timer": 40
+        },
+        {
+          "id": "0000D7DF4EEB4B0D",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:sludge_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000621EA6C57088",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F171C2868733",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000281364522C5A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A2BE01E7A716",
+      "title": "Відходи тваринництва як ресурс",
+      "description": [
+        "Підготуйте контур збору та перевірте виробництво добрива невеликою пробою. Зберігайте добриво окремо від звичайного насіння, щоб наступне подавання не заповнило неправильні слоти агромашини.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:sewage_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EF8C49AF8CD7",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C2683347957",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:sewage_composter",
+          "timer": 40
+        },
+        {
+          "id": "00001C542C3772C8",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:sewage_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B15A17CE1248",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:fertilizer",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081D5F8BF168B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000091D755E1E1DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000050EEB18635C9",
+      "title": "Живлення автоматичної агролінії",
+      "description": [
+        "Відведіть для агролінії сталий запас добрива та окремий посівний матеріал. Під час запуску перевірте робочу зону машини, не вважаючи її корпус доказом обробки всієї ферми.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:fertilizer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A2BE01E7A716",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031D85D0DB0DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:plant_fertilizer",
+          "timer": 40
+        },
+        {
+          "id": "000018F6303A30F2",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:fertilizer",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B03AA556C051",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000608913583090",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004649F5514AFE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D6274360716F",
+      "title": "Біореактор знає асортимент",
+      "description": [
+        "Підготуйте декілька різних рослинних ресурсів і звірте допустиму сировину біореактора. Виробничий асортимент варто розширювати реальними фермами, а не сподіватися на нескінченний запас одного випадкового насіння.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:wheat_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "000050EEB18635C9",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000001F7E8795D4A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:bioreactor",
+          "timer": 40
+        },
+        {
+          "id": "0000C5C97DD1C577",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000093436DE39FF7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:beetroot_seeds",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB08F4F45AEB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:melon_seeds",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C063200B48F5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000046FB15770E9C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AA2A82288066",
+      "title": "Окреме використання біопалива",
+      "description": [
+        "Виділіть власний генератор та електричний резерв для біопаливного контуру. Не підміняйте його паливом іншого мода без перевірки конкретного Fluid ID у JEI.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:biofuel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6274360716F",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AFA919B3CD20",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:biofuel_generator",
+          "timer": 40
+        },
+        {
+          "id": "00008ED41A071658",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:biofuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CC3A731CB68",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005237D279953E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006C3A584D998E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E9399A133E7B",
+      "title": "Сортування побічних продуктів",
+      "description": [
+        "Підготуйте розділення та сигналізацію на транспортері біофабрики. Перевірте окремо напрям виходу й поведінку сигналу, перш ніж під'єднувати до нього аварійну зупинку всього цеху.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "industrialforegoing:conveyor_splitting_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AA2A82288066",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F182358E0AF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:conveyor",
+          "timer": 40
+        },
+        {
+          "id": "0000C88BD3BABC49",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:conveyor_splitting_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004055834944AE",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:conveyor_detection_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D7B4D9EF0F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000021C8703A3F2E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000054842D65010E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

@@ -15,4 +15,11 @@ abstract class MekanismCachedRecipeMixin {
     private void aia2$guardCachedProcess(CallbackInfo callback) {
         if (!Aia2MachineGuard.mayProcessCachedRecipe(this)) callback.cancel();
     }
+
+    @Inject(method = "process()V", at = @At(value = "INVOKE",
+            target = "Lmekanism/api/recipes/cache/CachedRecipe;finishProcessing(I)V", shift = At.Shift.AFTER),
+            remap = false, require = 1)
+    private void aia2$recordCompletedProcess(CallbackInfo callback) {
+        Aia2MachineGuard.finishedCachedRecipe(this);
+    }
 }

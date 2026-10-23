@@ -1,0 +1,584 @@
+{
+  "id": "0000E18B47761422",
+  "filename": "aia2_branch_automation_modularrouters",
+  "title": "modularrouters — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 16,
+  "icon": {
+    "id": "modularrouters:puller_module_2",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000925A475AD94D",
+      "title": "Контракт двох інвентарів",
+      "description": [
+        "Визначте джерело, приймач і вміст для одного маршрутизатора до встановлення багатьох модулів. Два інвентарі дозволяють побачити напрям помилки, не розбираючи великий склад.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:puller_module_2",
+        "count": 1
+      },
+      "dependencies": [
+        "0000763CB14E0F96",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C56CB1656167",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "00004F63171AB6C5",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:puller_module_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000050F9E582DD1F",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008326624227F3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000058BE8F37A154",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DDC2C1AB8C72",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002E60F0B90786",
+      "title": "Ліміт партії до прискорення",
+      "description": [
+        "Порівняйте регулювання кількості та переміщення пачок на короткому тестовому маршруті. Спершу визначте потрібну партію, а вже потім збільшуйте швидкість перенесення між машинами.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:regulator_augment",
+        "count": 1
+      },
+      "dependencies": [
+        "0000925A475AD94D",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F85FF825AE06",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000ECE7DE6169DB",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:regulator_augment",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3E106876857",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:stack_augment",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ACF099997F1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005A2B105F0408",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000058261458B692",
+      "title": "Пошук потрібної групи деталей",
+      "description": [
+        "Звірте призначення фільтрів у довіднику та підготуйте контрольний набір предметів для перевірки. Правило за назвою та огляд властивостей не повинні випадково захоплювати дорогі інструменти зі спільної скрині.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:regex_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "00002E60F0B90786",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000045A2A230B793",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "000026C5F759FDE8",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:regex_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009174D9BD275F",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:inspection_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7A89AF9EC07",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009A7ABA0D25CB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AE3905F95AEF",
+      "title": "Рівномірне подавання двом приймачам",
+      "description": [
+        "Перед розподілом підготуйте рівнозначні приймачі та окремий резерв для надлишку. Перевірте, що обраний режим відповідає логіці ваших рецептів, а не лише бажанню мати симетричні труби.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:distributor_module",
+        "count": 1
+      },
+      "dependencies": [
+        "000058261458B692",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC3A0CE4C386",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000CCCE1779A1EA",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:distributor_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCA6376B0B42",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:filter_round_robin_augment",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000FE554BCC549",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C943B30807D8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "000016992618716E",
+      "title": "Рідинна операція має власні модулі",
+      "description": [
+        "Випробуйте рідинне перенесення на воді й уточніть вимоги модулів до сусідніх резервуарів. Предметні модулі попередніх завдань не переносять рідину лише через те, що стоять у тому самому корпусі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:fluid_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE3905F95AEF",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000EE0F8AC3E67",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000BE605392EE8F",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:fluid_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CB7259CE5DFD",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:fluid_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000064A4C776578",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005BA3ACBC94B9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003FD50594CA79",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000064C3F15D5E0",
+      "title": "Живлення відокремлене від предметів",
+      "description": [
+        "Підготуйте окрему енергетичну операцію маршрутизатора й перевірте доступне джерело. Енергетичні модулі доповнюють логістику, але не створюють живлення без генератора або накопичувача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:energy_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "000016992618716E",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D92253FC791A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000E5789F457DFA",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:energy_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007ABAB5C67D75",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:energy_output_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000534B7007FA52",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000054A52ADBE04D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BC40A7E537B6",
+      "title": "Захист від випадкової активації",
+      "description": [
+        "Залиште засіб керованого запуску та перевірте, хто має змогу налаштовувати вузол у спільній базі. Це корисний сервісний шар, але він не замінює серверні правила епох AIA2.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:security_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "0000064C3F15D5E0",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066D8F4CE2D55",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "00008A989E53BECD",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:security_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCA0FE46EC70",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:redstone_augment",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E253B166B90",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C9C0D7C6719C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001952EE444BBF",
+      "title": "Міжмодовий шлюз складання",
+      "description": [
+        "Зберіть контрольні деталі пневматичної та промислової ліній для одного маршруту обміну. Уточніть, які саме форми схем очікує наступний рецепт, перш ніж під'єднувати обидві фабрики до спільного приймача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:sender_module_2",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC40A7E537B6",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000761387661201",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000187C75C430BC",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071794B708F9F",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:printed_circuit_board",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007FC5C0B72D7A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0648311063C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E2ADAE87BA6D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

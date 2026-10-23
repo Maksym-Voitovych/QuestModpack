@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -63,8 +64,11 @@ public final class Aia2MachineGuard {
         return true;
     }
 
+    /** Monotonic bridge contract; loading a class alone never implies readiness. */
+    public static int apiVersion() { return 4; }
+
     public static boolean isReady() {
-        return POLICY.isReady() && ITEM_POLICY.isReady() && RECIPE_POLICY.isReady();
+        return POLICY.isReady() && ITEM_POLICY.isReady() && RECIPE_POLICY.isReady() && KeyProductionBridge.isConfigured();
     }
 
     public static void clearRuntime() {
@@ -74,6 +78,7 @@ public final class Aia2MachineGuard {
         RECIPES.reset();
         TICK_CONTEXT.remove();
         RobitRecipeAccess.clear();
+        KeyProductionBridge.clearRuntime();
         PLAYER_TEAMS.clear();
         LIVE_TEAMS.clear();
         DENIED_TICKS.set(0);
@@ -95,6 +100,15 @@ public final class Aia2MachineGuard {
     public static void setRecipeRulesJson(String json) {
         RECIPE_POLICY.setRules(parseRulesJson(json));
         RECIPES.reset();
+    }
+
+    public static void configureKeyRulesJson(String json) { KeyProductionBridge.configure(json); }
+    public static void setKeyRulesJson(String json) { configureKeyRulesJson(json); }
+    public static void setTeamKeyReady(String team, int epoch, String branch, boolean ready) {
+        KeyProductionBridge.setReady(team, epoch, branch, ready);
+    }
+    public static boolean hasProductionProof(MinecraftServer server, String team, int epoch, String branch) {
+        return KeyProductionBridge.hasProof(server, team, epoch, branch);
     }
 
     private static Map<String, Number> parseRulesJson(String json) {
@@ -125,8 +139,18 @@ public final class Aia2MachineGuard {
         PLAYER_TEAMS.put(UUID.fromString(playerId), team);
     }
 
+    /** Keep Java UUID access behind the native boundary: KubeJS remaps getUUID. */
+    public static void syncPlayer(ServerPlayer player, String team, int completed) {
+        if (player == null || player instanceof FakePlayer) {
+            throw new IllegalArgumentException("A real server player is required for guard synchronization");
+        }
+        setTeamProgress(team, completed);
+        PLAYER_TEAMS.put(player.getUUID(), team);
+    }
+
     /** Call only after the script has supplied every persisted team's progress. */
     public static void setReady() {
+        if (!KeyProductionBridge.isConfigured()) throw new IllegalStateException("Dual key proof rules have not been configured");
         ITEM_POLICY.setReady();
         RECIPE_POLICY.setReady();
         POLICY.setReady();
@@ -176,7 +200,7 @@ public final class Aia2MachineGuard {
             return true;
         }
         String id = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
-        if (ITEM_POLICY.getRequiredStage(id) <= 1) {
+        if (ITEM_POLICY.getRequiredStage(id) <= 1 && !KeyProductionBridge.isKeyOutput(id)) {
             return true;
         }
         if (!isReady() || player instanceof FakePlayer) {
@@ -185,7 +209,7 @@ public final class Aia2MachineGuard {
         String synchronizedTeam = PLAYER_TEAMS.get(player.getUUID());
         String currentTeam = LIVE_TEAMS.resolve(player.getUUID());
         return synchronizedTeam != null && synchronizedTeam.equals(currentTeam)
-                && ITEM_POLICY.mayTick(id, currentTeam);
+                && ITEM_POLICY.mayTick(id, currentTeam) && KeyProductionBridge.mayCraftOutput(id, currentTeam);
     }
 
     /** Native automation has an owning team, rather than a crafting player. */
@@ -200,7 +224,9 @@ public final class Aia2MachineGuard {
             return true;
         }
         String id = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
-        return ITEM_POLICY.getRequiredStage(id) <= 1 || isReady() && ITEM_POLICY.mayTick(id, getOwner(blockEntity));
+        String team = getOwner(blockEntity);
+        return (ITEM_POLICY.getRequiredStage(id) <= 1 || isReady() && ITEM_POLICY.mayTick(id, team))
+                && KeyProductionBridge.mayCraftOutput(id, team);
     }
 
     /** Called around the actual ticker in a try/finally; nested ticks restore the parent. */
@@ -223,6 +249,18 @@ public final class Aia2MachineGuard {
             return RobitRecipeAccess.hasContext() && RobitRecipeAccess.mayProcess(nativeRecipe);
         } catch (ReflectiveOperationException | RuntimeException failure) {
             return false;
+        }
+    }
+
+    /** Runs only immediately after Mekanism finishProcessing consumed resources. */
+    public static void finishedCachedRecipe(Object cachedRecipe) {
+        BlockEntity context = TICK_CONTEXT.get();
+        if (context == null) return;
+        try {
+            Object recipe = CACHED_RECIPE_ACCESSOR.get(cachedRecipe.getClass()).invoke(cachedRecipe);
+            if (recipe instanceof Recipe<?> nativeRecipe) KeyProductionBridge.finishedMachine(context, nativeRecipe);
+        } catch (ReflectiveOperationException failure) {
+            LOGGER.error("Could not record a completed key process", failure);
         }
     }
 
@@ -259,7 +297,7 @@ public final class Aia2MachineGuard {
         }
         int stage = RECIPES.stage(recipe);
         if (stage == 100) stage = CreatePotionRecipeAccess.requiredStage(recipe, ITEM_POLICY::getRequiredStage);
-        boolean allowed = RECIPE_POLICY.mayUseStage(stage, team);
+        boolean allowed = RECIPE_POLICY.mayUseStage(stage, team) && KeyProductionBridge.mayProcess(level, team, recipe);
         if (!allowed) DENIED_TICKS.incrementAndGet();
         return allowed;
     }
@@ -303,6 +341,8 @@ public final class Aia2MachineGuard {
                 throw new IOException("Missing recipeGates object");
             }
             setRecipeRulesJson(root.getAsJsonObject("recipeGates").toString());
+            if (!root.has("dualKeys") || !root.get("dualKeys").isJsonArray()) throw new IOException("Missing dualKeys array");
+            configureKeyRulesJson(root.getAsJsonArray("dualKeys").toString());
             LOGGER.info("AIA2 block rules loaded; staged machines await the server progression bridge");
         } catch (IOException | RuntimeException failure) {
             LOGGER.error("AIA2 machine rules could not load from {}. Modded machines remain locked until the progression bridge initializes.",

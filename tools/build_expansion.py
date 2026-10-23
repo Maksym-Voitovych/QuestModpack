@@ -35,7 +35,7 @@ KINDS = ('tech_matrix', 'arcane_catalyst', 'convergence_core', 'epoch_seal')
 KIND_NAMES = {'tech_matrix': 'Матриця ремесла', 'arcane_catalyst': 'Арканний каталізатор',
               'convergence_core': 'Осередок узгодження', 'epoch_seal': 'Печатка випробування'}
 GROUPS = {'epochs': 'Епохи', 'technology': 'Технології', 'magic': 'Магія',
-          'adventure': 'Пригоди', 'collection': 'Колекції'}
+          'adventure': 'Пригоди', 'collection': 'Колекції', 'automation': 'Автоматизація'}
 
 
 def crafting(pattern, keys, output, count=1):
@@ -173,6 +173,8 @@ def compile_quests(root=ROOT):
     for path in paths:
         data = read(path)
         records.extend(data if isinstance(data, list) else data['quests'])
+    v4 = root/'content/quests/v4_mod_depth.json'
+    if v4.exists(): records.extend(read(v4)['quests'])
     epochs = read(root/'design/progression.json')['epochs']
     runtime = read(root/'kubejs/config/aia2_runtime.json')
     components = read(root/'content/components/catalog.json')['items']
@@ -308,7 +310,7 @@ def compile_quests(root=ROOT):
     write(root/'kubejs/config/aia2_runtime.json', runtime)
     report = {'authored_quests':len(records),'legacy_quests_preserved':432,'component_quests':len(components),
               'new_final_trials':48,'total_quests':432+len(records)+len(components)+48,
-              'epoch_chapters':48,'mod_chapters':len(mods),'groups':5,
+              'epoch_chapters':48,'mod_chapters':len(mods),'groups':len(GROUPS),
               'chapter_files':sorted(chapter_files),
               'task_types':dict(Counter(t['type'] for r in records for t in r['tasks'])),
               'required_authored_quests':sum(bool(r.get('required')) for r in records),
@@ -322,6 +324,20 @@ def apply(root=ROOT):
     components, recipes = component_chains(root)
     report = compile_quests(root)
     report.update(new_components=len(components),new_component_recipes=len(recipes))
+    try:
+        from build_dual_keys import apply as dual_apply
+    except ImportError:
+        from tools.build_dual_keys import apply as dual_apply
+    dual_report=dual_apply(root)
+    report.update(dual_report)
+    recipe_module=root/'tools/build_recipe_expansion.py'
+    if recipe_module.exists() and (root/'content/recipes/v4_expansion.json').exists():
+        try:
+            from build_recipe_expansion import apply as recipe_apply
+        except ImportError:
+            from tools.build_recipe_expansion import apply as recipe_apply
+        recipe_apply(root)
+    report['native_recipes'] = len(read(root/'kubejs/config/aia2_recipes.json')['add'])
     write(root/'implementation/expansion-report.json',report)
     print(json.dumps(report,ensure_ascii=False,indent=2))
 

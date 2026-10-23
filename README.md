@@ -1,11 +1,13 @@
 # QuestModpack — All in One Adventure 2.0
 
-[Українська інструкція та стан перевірок](README.uk.md).
+[Українська інструкція](README.uk.md).
 
-Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** / Rhino **2101.2.7 build.85**.
+Version **0.4.0-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
 
-Version **0.3.0-alpha** contains 48 epochs, 2,512 quests (2,416 substantive quests and 96 preserved legacy manual goals), 283 native recipes, 48 server-validated key formulas, 293 custom items, and 293 transparent pixel-art textures/models.
+The update fixes the reported UUID and ProjectE overload failures, requires Machine Guard **API 4**, and adds **two manufactured keys per epoch**. Native production receipts are saved separately from item possession; `/give` does not manufacture a key or open the next epoch. Existing epoch IDs and completed team progress are retained.
 
-Installable files are in `kubejs/`, `config/`, and `mods/`. Use `install_runtime.py` for backup, merging and rollback. Existing worlds, team progress, quest IDs and foreign chapters are retained. A full game restart is required.
+The pack contains **48 epochs, 2784 quests across 130 chapters**, six groups, 569 native recipes and 390 custom item models/textures. The quest total includes 96 preserved legacy manual goals, leaving 2688 substantive quests.
 
-**Full-pack gameplay and TPS are not certified.** Static content, real Rhino and native Java validation have separate evidence; see [validation and limits](implementation/KNOWN_LIMITATIONS.uk.txt). Source, reproducible generators and tests are included.
+Installable files are in `kubejs/`, `config/` and `mods/`. Use `install_runtime.py` for preflight, backups, merging and rollback. Update the companion JAR and scripts together, then fully restart the game/server.
+
+Current counts, validation results and remaining acceptance work are in [release-report.json](implementation/release-report.json). See [v4 progression](design/progression-v4.md), [guard audit](implementation/guard-v4-audit.json) and [known limits](implementation/KNOWN_LIMITATIONS.uk.txt). Full-pack gameplay, optional mod hooks and TPS are separate from static/Rhino/native smoke tests.

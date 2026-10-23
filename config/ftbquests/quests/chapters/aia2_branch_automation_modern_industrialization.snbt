@@ -1,0 +1,562 @@
+{
+  "id": "0000F4136630527E",
+  "filename": "aia2_branch_automation_modern_industrialization",
+  "title": "Modern Industrialization — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 15,
+  "icon": {
+    "id": "modern_industrialization:electronic_circuit",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00006D89AB4E2374",
+      "title": "Ввід середньої напруги",
+      "description": [
+        "Позначте рівень живлення на вводі промислової ділянки та звірте його з її корпусами. До подавання енергії відокремте схеми керування від силових деталей у ремонтному наборі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:electronic_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "00009385D23D37E0",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C3E39AEA3265",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:mv_energy_input_hatch",
+          "timer": 40
+        },
+        {
+          "id": "0000F98ABFC50A54",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C47BB0D8F555",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EBB3B723C6DB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007172DA5541ED",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005039E11ED82C",
+      "title": "Повернення енергії іншому рівню",
+      "description": [
+        "Підготуйте окрему трансформацію для допоміжних низьковольтних споживачів. Напрям перетворення та сумісність кабелю перевірте в Modern Industrialization, а не за кольором сусіднього корпусу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "00006D89AB4E2374",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000500496AB428",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:mv_lv_transformer",
+          "timer": 40
+        },
+        {
+          "id": "0000DABEF2486D3A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000089F807F753C8",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000026BE5993CBD6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ED06CE37E13A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A28E677E30F5",
+      "title": "Складальник отримує підготовлені деталі",
+      "description": [
+        "Розділіть заготовки плат, компоненти й завершені схеми перед входом у складальник. Конфігураційна картка допомагає відтворити налаштування, але не замінює правильну сировину.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:electronic_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "00005039E11ED82C",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000757EA2F9E7B5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:assembler",
+          "timer": 40
+        },
+        {
+          "id": "0000D0DF58A698BD",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit_board",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015126ED9C0F8",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B48FD98520FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EB1E4CAF166D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000009D4ADCE2C0A",
+      "title": "Один вхід — визначений набір",
+      "description": [
+        "Підготуйте два буфери для різних груп деталей перед промисловим входом. Перевірте, що залишок попереднього рецепта не займає весь доступний простір наступного замовлення.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:barrel",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A28E677E30F5",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000035919E6EF2DC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:advanced_item_input_hatch",
+          "timer": 40
+        },
+        {
+          "id": "000033E6092F4496",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF6974884D1A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D8EF6B60CFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BB6ED9B164AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009CAD8183E8B4",
+      "title": "Рідинний шлюз для складання",
+      "description": [
+        "Випробуйте правильний бік рідинного шлюзу на воді до роботи з дорогими середовищами. Позначте призначення резервуара, щоб випадково не під'єднати паливну гілку до реагентної.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "000009D4ADCE2C0A",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B675CA3EC249",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:advanced_fluid_input_hatch",
+          "timer": 40
+        },
+        {
+          "id": "000043BCD5B4A8F4",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000195282868AD4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000045448849B459",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000248580F17285",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B77516F636C2",
+      "title": "Розпакування без втрати форми",
+      "description": [
+        "Перевірте повернення компактного матеріалу до потрібної форми в окремому тестовому замовленні. Шаблон пакування зберігайте поруч і звіряйте рецепт, щоб не підміняти розпакування іншою обробкою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:packer_block_template",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CAD8183E8B4",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A0D3C0831111",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_unpacker",
+          "timer": 40
+        },
+        {
+          "id": "00003A40E3BB6310",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:packer_block_template",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006691ED3B83D4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000008D852AFFAA9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C9A4121D7798",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B23920D7B278",
+      "title": "Контроль вихідного буфера",
+      "description": [
+        "Підготуйте окремий контроль запасу на виході промислової лінії. Модуль Modular Routers використовується у власному маршрутизаторі, а не вставляється без перевірки в промисловий шлюз.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modularrouters:detector_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B77516F636C2",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CFC71F1BC756",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:advanced_item_output_hatch",
+          "timer": 40
+        },
+        {
+          "id": "0000C9C2A297DA69",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:detector_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F70B2DAF2713",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004EA7859ACD43",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ED44879DD47F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004B215741B476",
+      "title": "Техномагічний комплект наладчика",
+      "description": [
+        "Зберіть набір для технічної та магічної частин нової виробничої дільниці. Ельфійський метал і волокно залишаються результатами своїх процесів, навіть якщо наступний рецепт поєднає їх зі схемою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "modern_industrialization:config_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B23920D7B278",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000FB39CB3E73B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_wiremill",
+          "timer": 40
+        },
+        {
+          "id": "0000DDAA0C23E9DE",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:config_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F6583531DF8E",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020B07FB7701B",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A3CD54B3819D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C7110FABA01D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

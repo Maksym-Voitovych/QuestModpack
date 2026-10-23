@@ -1,0 +1,4781 @@
+{
+  "schema": 1,
+  "catalog_file": "content/quests/v4_mod_depth.json",
+  "catalog_sha256": "9d2e6d16e0c6ed50effb1cadc00d71dc2b514fa4353a3a67a971ba8d423d435c",
+  "quests": 176,
+  "tasks": 564,
+  "courses": 22,
+  "primary_mods": [
+    "ad_astra",
+    "ae2",
+    "ars_nouveau",
+    "botania",
+    "create",
+    "createaddition",
+    "createdieselgenerators",
+    "draconicevolution",
+    "evolvedmekanism",
+    "industrialforegoing",
+    "integrateddynamics",
+    "mekanism",
+    "modern_industrialization",
+    "modularrouters",
+    "oritech",
+    "pneumaticcraft",
+    "powah",
+    "tfmg",
+    "xnet"
+  ],
+  "primary_mod_count": 19,
+  "item_namespaces": [
+    "ad_astra",
+    "ae2",
+    "ars_nouveau",
+    "botania",
+    "create",
+    "createaddition",
+    "createdieselgenerators",
+    "draconicevolution",
+    "evolvedmekanism",
+    "immersiveengineering",
+    "industrialforegoing",
+    "integrateddynamics",
+    "megacells",
+    "mekanism",
+    "minecraft",
+    "modern_industrialization",
+    "modularrouters",
+    "occultism",
+    "oritech",
+    "pneumaticcraft",
+    "powah",
+    "tfmg",
+    "xnet"
+  ],
+  "item_namespace_count": 23,
+  "task_types": {
+    "observation": 181,
+    "item": 383
+  },
+  "all_optional": true,
+  "duplicate_objectives_ignoring_counts": 0,
+  "missing_registry_ids": [],
+  "future_gate_conflicts": [],
+  "distinct_item_objectives": 248,
+  "items_without_explicit_recipe_or_prior_loot": [
+    "ae2:crafting_pattern",
+    "createdieselgenerators:diesel_bucket",
+    "industrialforegoing:biofuel_bucket",
+    "ae2:processing_pattern",
+    "createdieselgenerators:ethanol_bucket",
+    "createdieselgenerators:plant_oil_bucket",
+    "createdieselgenerators:gasoline_bucket",
+    "industrialforegoing:fertilizer",
+    "industrialforegoing:sewage_bucket",
+    "tfmg:lubrication_oil_bucket",
+    "industrialforegoing:latex_bucket",
+    "createdieselgenerators:biodiesel_bucket",
+    "industrialforegoing:sludge_bucket",
+    "industrialforegoing:dryrubber"
+  ],
+  "producer_evidence": {
+    "ad_astra:desh_cable": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/desh_cable",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "feeaaa7057f6e9445333cab12fa145da2b2a93de0df5ab227babb46a8d1c2795"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:desh_fluid_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/desh_fluid_pipe",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "aebda6027afe03cd4efd642f763cc392c4c6dfa0f1d698ddc1bb05d7e42c90a8"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:desh_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/desh_ingot_from_desh_block",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e73231f0d360d56344f6c32b5416d9e24b3658dd8d3e55e3a373869c47c148c1"
+        },
+        {
+          "recipe": "ad_astra/desh_ingot",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ec644ecc12257cd36cee9610e77dc7098fda7b6b473e8d29a25ee9c4fdf970e4"
+        },
+        {
+          "recipe": "ad_astra/smelting/desh_ingot_from_smelting_deepslate_desh_ore",
+          "serializer": "minecraft:smelting",
+          "sha256": "2b02f579448f43bcdc7e1c23494ed6f0ed2e60fb19c2e3b6f86d11cc3b9c090b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "ad_astra/chests/village/moon/house",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "ad_astra/chests/village/moon/blacksmith",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "ad_astra:engine_frame": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/engine_frame",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "098dfdf2a9f5808ca2505227cdfa916ab94b5b898b8637e0b5ee71ec04c2a0ad"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:fuel_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "ad_astra/chests/village/moon/blacksmith",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "ad_astra:gas_tank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/gas_tank",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "7180cdd87e59fdecbdfc3d1d0ac44c47c1134ccabf285cac83d7c9f18412adc5"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "ad_astra/chests/village/moon/blacksmith",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "ad_astra:oxygen_distributor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/oxygen_distributor",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8aaa511693a28d4d6961293fde46477d7ce4640cc6c7436d4fb34245b151836b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:oxygen_gear": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/oxygen_gear",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "f7781783103ffef7a346f70d8745ea85c7c197c861ff6a540295ce3d0b39bb72"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:photovoltaic_etrium_cell": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/photovoltaic_etrium_cell",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "b54ca06c0f7da324896557bf3935af14263cb3d2007b3576a54a692f0dd345f8"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:rocket_fin": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/rocket_fin",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "65fd1724d901c05c38797a25b8709480d885bc966140cd649a816253303b8dbf"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:steel_door": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/steel_door",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "cd8f81882d811ef23925ab206c5bc83c217bf0b784c7c5407d2ea216e2179d5d"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ad_astra:steel_tank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/steel_tank",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "6d4faabe8a7e42d239d746cbdc8f92dbce9e07c37fee46bd12618fcf867b3932"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ad_astra:vent": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/vent",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ca84dd1701e799ce36bf6ea54e628f5be3f2dbf2b474e0bf0c45ff4fee62c258"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:blank_pattern": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/crafting/patterns_blank",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "3ea006a69b7ebca7c7195af3ab4399d69639dfb33d852ac49a42829f30a223ae"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:cable_anchor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/cable_anchor",
+          "serializer": "ae2:quartz_cutting",
+          "sha256": "f995a47f14971af1ff77b9d664ee193d1f57826e5999f7388f6a605ecc015562"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:crafting_accelerator": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/crafting/cpu_crafting_accelerator",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b258a49409666db2f091e5c58cc236ee7c2aa0662dd827c3bb46854c258ec94f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:crafting_card": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/materials/cardcrafting",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e5e9cc691a43ae677c226ed077727ae58f8af66f0afb853f52ab7efa64396ee6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:crafting_monitor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/crafting/cpu_crafting_monitor",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "a8a4241e8353339563543725c304c79eda1c825f199c52942bd9c479d6dd6b64"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:crafting_pattern": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "ae2:export_bus": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/export_bus",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "3c7055ad68cf5c44e733b1190b4b9ee389aa368ed018cf7cf853dafb5fc83703"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:fluid_storage_cell_4k": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/cells/fluid_storage_cell_4k_storage",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "cfbdff23b18ac247a1e0252535000130db430daefff222c5b3972d880a4b199d"
+        },
+        {
+          "recipe": "ae2/network/cells/fluid_storage_cell_4k",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "802db6e94dcd915551ad6f3a19e55120157b54159b7ec180dcb6d76b4405a9fe"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:import_bus": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/import_bus",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e67e4b544a080dd597a58fe31ac23f0dcff083085c013b74e92aab7d02f48250"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:interface": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/blocks/interfaces_interface_alt",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "eb218796efaacdb4fd127caf325715b393c15604d907d1a08c5f0c3aabb0176c"
+        },
+        {
+          "recipe": "ae2/network/blocks/interfaces_interface",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "20b1b4fa134150dd3073c911e2d5c70bd2941721d7f8210d3348980b4134f2f5"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:item_storage_cell_4k": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/cells/item_storage_cell_4k_storage",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e6d5e5d8235794d63fd3985f9f5f1cf63a4ff37faf752ef9fa5147f804cda9fd"
+        },
+        {
+          "recipe": "ae2/network/cells/item_storage_cell_4k",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "b69bb3ababb2d18b3b557997c928467d942603fe1f683e57ac751a0f947076ef"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:level_emitter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/level_emitter",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "af4fcae95ba8d68ebccca025da3d6e85b3e47e41f961a88f341859f11ab324e2"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:me_p2p_tunnel": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/tunnels_me",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "49810da9aa19f3ca2103e99ce50c863379a8c26703d24ee39edba1874c17a71e"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:memory_card": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/tools/network_memory_card",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "5427deb8f492a3e8e7e1e5888db7edd53d9d331c254fc7311eaeb5e308dece27"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ae2:network_tool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/tools/network_tool",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e3b439462e2ef2c7407118644b42f1c9fbf499e382721614964957e8d8a5c83d"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:pattern_encoding_terminal": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/terminals_pattern_encoding",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "2883bfc6369e70b92c3f52d0a537646e6e46e18025395daaefde2ae123df40e1"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:processing_pattern": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "ae2:storage_monitor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/monitors_storage",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "777802a840611a332abff167ade1729a5bd9652f3c02168c0d404df38e91bc7a"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ae2:toggle_bus": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ae2/network/parts/toggle_bus",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "d055e3db2b0ceaafa3bb656ecaf6e17321230b6da7598f4eeed8c7b330aac44f"
+        },
+        {
+          "recipe": "ae2/network/parts/toggle_bus_alt",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "1aaa8f2f231f55db8a5891e3ec06df5bd30f29b3b591c6175515fbbe882dcce1"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ars_nouveau:dominion_wand": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/dominion_wand",
+          "serializer": "ars_nouveau:enchanting_apparatus",
+          "sha256": "1a71e9e42a27d388e730decf133fb3449712899efe837476837e29c5b7a47cc6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ars_nouveau:magebloom_fiber": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/magebloom_fiber",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "40239d6a4b0641b7dbdc549ebdfeb81e46e7daebea1fcb56ee441f186b573c3f"
+        },
+        {
+          "recipe": "ars_nouveau/magebloom_block_to_magebloom",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d9b6b52720ea167ae0b5e3e147f6d2aee30bb8381dac7198318152c4d63c4b11"
+        },
+        {
+          "recipe": "create/milling/magebloom",
+          "serializer": "create:milling",
+          "sha256": "8c8bb6a0a351306c3a81a0e7f86e6bd81138c35998459ce723404e29f19623f2"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ars_nouveau:source_gem": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/source_gem_block_2",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "6528b42a97d4e43617fe9110e9e3c80d32e2afe5e868e73688c782cfbf49f84e"
+        },
+        {
+          "recipe": "ars_nouveau/imbuement_amethyst",
+          "serializer": "ars_nouveau:imbuement",
+          "sha256": "65f91a5d03234437deb2bd7f7a86c61615363f974007b78abf654fd9913bb0e8"
+        },
+        {
+          "recipe": "ars_nouveau/imbuement_lapis",
+          "serializer": "ars_nouveau:imbuement",
+          "sha256": "1a72727412aaf9e015c3fd8e383794b5e9c0adddb212a9a7bc092bf68c0cb6d6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ars_nouveau:source_jar": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/source_jar",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "71f8edaa6b150afd58dd75adfec2786cd52fac954cc114e66dc0143084dfe4b9"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ars_nouveau:spell_prism": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/spell_prism",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "679abc270f9f643696600a720f7dce2d6985eb52c052a9030f0c0be8837769c4"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "ars_nouveau:starbuncle_charm": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/starbuncle_charm",
+          "serializer": "ars_nouveau:enchanting_apparatus",
+          "sha256": "7cd1106fed081c3dcf792e85a1f85591fc5e858a86068ae05be27b5636d6a708"
+        },
+        {
+          "recipe": "ars_nouveau/clear_starbuncle_charm",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "0faefdb15c51e99b560f7c58f2d8751b442358e11446bb0bd26aa1b68f1c270b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ars_nouveau:whirlisprig_charm": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/whirlisprig_charm",
+          "serializer": "ars_nouveau:enchanting_apparatus",
+          "sha256": "8c7a50bb027df5e5b673873eb7b34b466350e14d01c5156515db5004e9be69f6"
+        },
+        {
+          "recipe": "ars_nouveau/clear_whirlisprig_charm",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "50d4d106f0794121741244379006f514550c8e836ada8d7399cac7c82ca5ccbd"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "ars_nouveau:wixie_charm": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/wixie_charm",
+          "serializer": "ars_nouveau:enchanting_apparatus",
+          "sha256": "d14d9bbb5ae362d39c64d8427c57f4053fc8467825a0b211659b6a37738a3b69"
+        },
+        {
+          "recipe": "ars_nouveau/clear_wixie_charm",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b0b274c99d22d523c1ba431102b21cce5b588256d6efe58cbe0f677e4d56cd5e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:elementium_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/botania/elementium_ingot",
+          "serializer": "crafting_shaped",
+          "sha256": "3d8b40735090ec1c2a194c04d0f4d9986541ed97c6d8b15c6ad7add583da15e2"
+        },
+        {
+          "recipe": "botania/elven_trade/elementium",
+          "serializer": "botania:elven_trade",
+          "sha256": "35d670c04c07f3711e7213afc37e6ca2c9ecffb787dee47f617fab8a2d06e488"
+        },
+        {
+          "recipe": "botania/conversions/elementium_block_deconstruct",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "ebb1136f5e2957524df743fdcc137fa52df6a43a29dcbb2544bbe795fbe7ace4"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:gaia_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/gaia_ingot",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "b0a7948381e77b3910bd8316a1f1458a2bf642ab9c16da430c2cb99af394ac41"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:livingrock": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/slab_recombine/livingrock",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "08f52a6f0cf40607a98f4cc218ffb7a99b3cdccd2438451a594e3c30f20a1b79"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:livingwood": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/livingwood",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a6ffe80af4da2c854c106d6f80e1483ae83aff3b3cd4e1e827ba30630147182b"
+        },
+        {
+          "recipe": "botania/slab_recombine/livingwood",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "84f049c0a2207e0a02c1b171869a46d3ee11dbdabb0c1f00a1df23cd2bf241de"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "botania:manasteel_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/botania/manasteel_ingot",
+          "serializer": "crafting_shaped",
+          "sha256": "d7e1db81da25383c29353a76e1275298db9007e6d7b827b8f8481e1108f73c21"
+        },
+        {
+          "recipe": "botania/conversions/manasteel_from_nuggets",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "f7a981caafe7a66ffc1f385669e5373eb27f4c9b4f798b736fff15557e5ef165"
+        },
+        {
+          "recipe": "botania/conversions/manasteel_block_deconstruct",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "247ad8815b8b1d58fec3d678e38b661c636bc152cd1f83aae475ac335330df77"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "botania/inject/simple_dungeon",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "botania/inject/stronghold_corridor",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "botania:rune_water": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/runic_altar/water",
+          "serializer": "botania:runic_altar",
+          "sha256": "bf1bfb77def7078fbf434f608ed720e327ad76b6fda989046350291a058f9785"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "botania/gaia_guardian/runes",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "botania:spark": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/spark",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a75648094caa38ce18b8baae60b4aee302014b435cfaa0a5f16207653adcfad5"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:spark_upgrade_dominant": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/spark_upgrade_dominant",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "52416ff5c82f9d8d6e32c2520661171983f712d6021dfa00352351039a94a886"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:spark_upgrade_isolated": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/spark_upgrade_isolated",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "79bb87d4c619011931d2e0899844748e416f21d22ee7de8fe23ae0bca11500f7"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:spark_upgrade_recessive": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/spark_upgrade_recessive",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b02f601ce432470a42e1cdd6011e4f83fd2004a77511a07128cc2782a685aa44"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:terrasteel_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/botania/terrasteel_ingot",
+          "serializer": "crafting_shaped",
+          "sha256": "ac2d8be7cbdb4b7fe95ca0a6cf49bce655788be1513f915e52dd5b6d0c894745"
+        },
+        {
+          "recipe": "botania/terra_plate/terrasteel_ingot",
+          "serializer": "botania:terra_plate",
+          "sha256": "bfee886ad0d373688d359bc1b63827e3bf7e0aacf5c983c2c4c98ff4ba5d5c99"
+        },
+        {
+          "recipe": "botania/conversions/terrasteel_from_nugget",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ef4f106906cd0d24af7e792abe2912825f6e01976403b3a8d7df2092727af52f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "botania:twig_wand": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "botania/twig_wand",
+          "serializer": "botania:twig_wand",
+          "sha256": "ad67073df76d0bd02bf1d46bbd486db8be07ce8e99914c8ce21af5ac121f25e8"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "create:andesite_alloy": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism_tfmg_compat/andesite_alloy",
+          "serializer": "mekanism:combining",
+          "sha256": "3c219d3390d658e8c153491bd175513af7076388d493b88748b1ad1fa643074b"
+        },
+        {
+          "recipe": "create/sequenced_assembly/precision_mechanism",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "e6709abdd307c4ae9729362f6dbdc5459ccda6bf772f616654f12bc79ed0835e"
+        },
+        {
+          "recipe": "create/mixing/andesite_alloy",
+          "serializer": "create:mixing",
+          "sha256": "d08d9ec0e519ac41ce9a842a702b171080e4d321449bf7551fbb6d915bb3f727"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dynamicvillage/chests/village/train_mechanic",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "dynamicvillage/chests/village/hydraulic",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:attribute_filter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/attribute_filter",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a9ec2089c5961648151cdc2e2000be178321e3c9449c33c8a1531ba0b79b3921"
+        },
+        {
+          "recipe": "create/crafting/appliances/attribute_filter_clear",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "2c5603bf9d5ab6e9088c6890a58d71f2f584d72e92a52ff6f341c629a7649b5d"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "create:belt_connector": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/belt_connector",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "2f4b96fc964f74681714232b3949dbb5c1327bd16e1a1738875a2df40f517300"
+        },
+        {
+          "recipe": "modern_industrialization/compat/create/craft/belt",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "03e6139f1ef76bd4b2a9c649c408b94de7f835b84de77cd5e7362f2fa1495aee"
+        },
+        {
+          "recipe": "modern_industrialization/compat/create/compressor/modern_industrialization_rubber_sheet_to_create_belt_connector",
+          "serializer": "modern_industrialization:compressor",
+          "sha256": "724f20a536e97a93725b1fd75e11a033b293439a45ff4f7dd418a84065204ef5"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "create/blocks/belt",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:brass_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/foundry/alloy/compat/create/brass",
+          "serializer": "oritech:foundry",
+          "sha256": "897f16a223ec569e052e8d5fd9b17558232a21284c32b4ff74fbafb6bb5ec735"
+        },
+        {
+          "recipe": "extended_industrialization/materials/brass/alloy_smelter/block",
+          "serializer": "extended_industrialization:alloy_smelter",
+          "sha256": "577dc4535e2757f83d46cf4615e55dcab27b3a2d265c6ac3de7fd556bfe1c6dd"
+        },
+        {
+          "recipe": "extended_industrialization/materials/brass/alloy_smelter/nugget",
+          "serializer": "extended_industrialization:alloy_smelter",
+          "sha256": "fe1e6c1e64d410ba2a0abac1e9bc4671a85b3bc316c01c40040fa99b63238b8b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "create:brass_sheet": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "alltheores/metalpress/brass/plate",
+          "serializer": "immersiveengineering:metal_press",
+          "sha256": "24e98ca58197cf0bd9d4bd11abfb7ef671c362fdb790d3901091a4741f748e63"
+        },
+        {
+          "recipe": "alltheores/crafting/brass/plate",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8cedfb774b82a52ab15f441e53e3e09dc333f95af22aeeb29b89fd32967a1634"
+        },
+        {
+          "recipe": "createdieselgenerators/hammering/brass_sheet",
+          "serializer": "createdieselgenerators:hammering",
+          "sha256": "97635ee6b3df111ede623ae820bd8fc9a0a8646db7ecbd215d0653d06c2ad1d1"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "create:clutch": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create_connected/crafting/kinetics/clutch_from_conversion",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "a24d96c538cda528f4d9bdc4f7bd84d09dc7ca961bc114b7646bb6e7c20f0643"
+        },
+        {
+          "recipe": "create/crafting/kinetics/clutch",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "793846291b8478527e26af9f44775c666b27821b36c120c7780c683b732d9931"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "create:cogwheel": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/sequenced_assembly/precision_mechanism",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "e6709abdd307c4ae9729362f6dbdc5459ccda6bf772f616654f12bc79ed0835e"
+        },
+        {
+          "recipe": "create/deploying/cogwheel",
+          "serializer": "create:deploying",
+          "sha256": "94df970b01a37694e59cb4e2cdb4fee2d2ca29833186560809e50e89203a9dc8"
+        },
+        {
+          "recipe": "create/crafting/kinetics/cogwheel",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b1cb01badd5f5673372ea3ff45588fff1e8610aa973bf823b525101d4e3f15df"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dynamicvillage/chests/village/mechanical_engineer",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "tfmg/blocks/steel_encased_aluminum_cogwheel",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:copper_sheet": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/crafting/plate_copper_hammering",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "890f9b62c9d1a2ce69ba1d00091670b130697d1091fb6041485626bf93a62b04"
+        },
+        {
+          "recipe": "alltheores/metalpress/copper/plate",
+          "serializer": "immersiveengineering:metal_press",
+          "sha256": "08ac9061e3cd405701940836426c1e3422af52e4c2f43c77c3d6c082abcd2bd7"
+        },
+        {
+          "recipe": "alltheores/crafting/copper/plate",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ba89e8ba6a60924480235f3c12f3ae191eea8a27ed7701c8624bf7c251b0328b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dynamicvillage/chests/village/hydraulic",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:filter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/filter",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "b44347d5dc9e120fc1b284132fa7f477e899dd19d76dd5b6c9fc524f0a6533d4"
+        },
+        {
+          "recipe": "create/crafting/appliances/filter_clear",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "9d95935a85d8002df75352fef185dbbc99f42a33ed556cce14256eff439cf82f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "create:goggles": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/goggles",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a77c32bcdb31234c572df6d928598741a9ffbed1d735e78c0d124cb021480d6c"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "create:iron_sheet": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/crafting/plate_iron_hammering",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d79cb87efc16372f394ffac8a6041b70e4764342347caa6d2dca8e03e21d86ab"
+        },
+        {
+          "recipe": "ad_astra/compressing/iron_plate_from_compressing_iron_ingot",
+          "serializer": "ad_astra:compressing",
+          "sha256": "01471c4e43088479764224a9a643860476a4a020e2881ede83909067ff762c09"
+        },
+        {
+          "recipe": "ad_astra/compressing/iron_plate_from_compressing_iron_block",
+          "serializer": "ad_astra:compressing",
+          "sha256": "3add138eabde0042e5c35a2b1d6a3d32e9e0377d5866e98c174e7b6a02994990"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dynamicvillage/chests/village/train_mechanic",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "dynamicvillage/chests/village/mechanical_engineer",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:large_cogwheel": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/deploying/large_cogwheel",
+          "serializer": "create:deploying",
+          "sha256": "98d3af8cd83df62ff198509947f0d88543ce7fb018c5ca82084738312b3ca22f"
+        },
+        {
+          "recipe": "create/crafting/kinetics/large_cogwheel",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f2d722e659e41bad6bea4876e5c5d59f98484daf3bd25ca26ad0f1deea9fdd58"
+        },
+        {
+          "recipe": "create/crafting/kinetics/large_cogwheel_from_little",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "753b07e2278909496cfec0e816584e68cd64d92982cd4ad82d96a0d426eaf650"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "tfmg/blocks/steel_encased_large_aluminum_cogwheel",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "tfmg/blocks/steel_encased_large_steel_cogwheel",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:portable_storage_interface": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/portable_storage_interface",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "cc36e86e80cb93508d882659953d56ca09f8583f43c60f1ed662210b4a94407f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "create:precision_mechanism": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/sequenced_assembly/precision_mechanism",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "e6709abdd307c4ae9729362f6dbdc5459ccda6bf772f616654f12bc79ed0835e"
+        },
+        {
+          "recipe": "modern_industrialization/compat/create/assembler/precision_mechanism",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "844aaa4ba84c90f0a0888df76add1901877211f4130d7aed7d40b7d86679de8d"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "create:shaft": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/sequenced_assembly/precision_mechanism",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "e6709abdd307c4ae9729362f6dbdc5459ccda6bf772f616654f12bc79ed0835e"
+        },
+        {
+          "recipe": "create/cutting/andesite_alloy",
+          "serializer": "create:cutting",
+          "sha256": "514c4c53111cd17ef0100e10f3e1721dffe445334c81a62eb3c36c44f71cbfb6"
+        },
+        {
+          "recipe": "create/crafting/kinetics/shaft",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "5e25025cc88c2d396a37bfff359124ddad424836c0e585c5276caa149bff457e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dynamicvillage/chests/village/mechanical_engineer",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "tfmg/blocks/steel_encased_shaft",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "create:wrench": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create/crafting/kinetics/wrench",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "58efcea7a17c4a70006d2cd9246cae371fa56e806fce0bc265dcdd746461fc08"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createaddition:capacitor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createaddition/crafting/capacitor_2",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "5d5817f4aef4975e4f898ab1f81183d57f541e9ecb5de4d11b698f45f48a510a"
+        },
+        {
+          "recipe": "createaddition/crafting/capacitor_1",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "f3a15ae5f15c3947075dd776fcd8282323c3449528c60a797a12996ec001ef06"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createaddition:copper_spool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createaddition/crafting/copper_spool",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "bf197c6b0aeacbdaa08dca9101bd931696dbd9f3191947de7f2925784a4d2c07"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createaddition:electrum_spool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createaddition/crafting/electrum_spool",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1e7897d417ebbc46b0925d9251afd943788fa0237ce2a5976ede0dc0450ed804"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createaddition:spool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createaddition/crafting/spool",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "985b9aa197064d46dca45d244abd2e8a516a519bd4486d3060f4dd18bd271d8b"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:biodiesel_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:canister": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/canister",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "621b661de53948697ef272d584618372e4c61c53a0c0070955bf247b93e54b4a"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:diesel_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:distillation_controller": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/distillation_controller",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "af1be6053520a427f96f3ff26db98d54048fa2e4779b924dc794fe64b0d58a1f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:engine_piston": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/engine_piston",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "6c55873449a9333eb8e75b30a0193e0be547a0b3a35dd01d0dc57b4c73a519a0"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:engine_silencer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/engine_silencer",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "694cf7e96f415316e22ec9ada48e4e78a9aa71ad1e465d375366924d4db6b20f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:engine_turbocharger": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/engine_turbocharger",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "376ca5ef69e789fbd2834f0300c70ec25adc96a714e3c90bbccdf16cccc5dc71"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:ethanol_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:gasoline_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:hammer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/hammer",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "63bddeab1f4d995142cd1d2afd7adc6c76d447fcf9fd4c5534927b40e47c69e6"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "createdieselgenerators:oil_scanner": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/oil_scanner",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "7db7c5162b695ef860cc9acb766fdea1e128e64d6459315225eb1f044f0ae7b0"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:plant_oil_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:pumpjack_crank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/mechanical_crafting/pumpjack_crank",
+          "serializer": "create:mechanical_crafting",
+          "sha256": "d9f79cd56abe839f5da67e9c11731dd825e0ba595a078e8e7ced1aea9f55e52f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "createdieselgenerators:wire_cutters": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "createdieselgenerators/crafting/wire_cutters",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "574a040439bd944c5ffa29b14a1006900c6d00c33f611eb5cedc8a1ac0f78984"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "draconicevolution:basic_wireless_crystal": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/machines/basic_wireless_crystal",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "09e5b5f1e001fef3485bb7c985b085aeffb7828e2dc4f2077a81bd2a0d5e3c6f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "draconicevolution:crystal_binder": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/tools/crystal_binder",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "570427c9f39de2a08b0a1b6f57c410d94d23dc0249500d61e798360675eecac6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "draconicevolution:energy_core_stabilizer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/machines/energy_core_stabilizer",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "dfaa4053cc2fc5c2bc1a5fd4b039c66aef83e684b19908527eb85fe8b956f944"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "draconicevolution:wyvern_core": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/components/wyvern_core",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ebbddc4c2aa6f2cb14aa1843a11903b39ab35c4a4eca7b7f37e9ec49c9db52fd"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "draconicevolution:wyvern_crafting_injector": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/machines/wyvern_crafting_injector",
+          "serializer": "draconicevolution:fusion_crafting",
+          "sha256": "fac438826c970410e5ab578901d9b077005d4465e0960b5a5aa806a4e60bfdae"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "draconicevolution:wyvern_energy_core": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "draconicevolution/components/wyvern_energy_core",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e89e2f2f0ba6d2759441f4a333f8dbcdfb92b5fa38a33c69af80454537ae9a24"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "evolvedmekanism:alloy_hypercharged": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/block_alloys/hypercharged/from_block",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b18a36eb62d0d1453fec8c49442d77f75b8f5ded252dabce09a2c28524d1f8ef"
+        },
+        {
+          "recipe": "evolvedmekanism/metallurgic_infusing/alloy/hypercharged",
+          "serializer": "mekanism:metallurgic_infusing",
+          "sha256": "50f41a544a19367367edf5eb12974e8cf58248bd87881a811fb65f14e7d31d90"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "evolvedmekanism:alloy_subatomic": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/nucleosynthesizing/alloy_subatomic",
+          "serializer": "mekanism:nucleosynthesizing",
+          "sha256": "e342ded489b64ae8ba9fdce4c8cbbbf2c06fa6947c2be06fc5dd5ea7dad576ca"
+        },
+        {
+          "recipe": "evolvedmekanism/block_alloys/subatomic/from_block",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "36b5f72ef9de23331b619a8673be720e791f1654d815108ac21418b91a3ad7ac"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "evolvedmekanism:dense_control_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/control_circuit/dense",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8e8386b59e5ed083e997ecc9eed28d7f1c22d2a6fda5d793f3b540721b237635"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "evolvedmekanism:dense_tier_installer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/tier_installer/dense",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e9a78a97fcd12b406577fcdbe61215a41ee582d61f9fbcdc372dbc8d319490ac"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "evolvedmekanism:overclocked_control_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/control_circuit/overclocked",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "aebbc4499db7829fff66b546055c9a14bf354da8fb86e5748d28a2357717de33"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "evolvedmekanism:overclocked_tier_installer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/tier_installer/overclocked",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "885ea534e94345c5fb4c8ac31fe44ab6b0471f06127bfaa8d2d87090996bef77"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "evolvedmekanism:quantum_control_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/control_circuit/quantum",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "3719d4ac6f85df649ab7e80f572e895df3fbf7663fb320d1ced9f52ca9022957"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "evolvedmekanism:quantum_tier_installer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "evolvedmekanism/tier_installer/quantum",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a1d3b2ac4ea80a733ef548e96d2b124fdd51930bcd3c525bdaf0b2506603b663"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "immersiveengineering:ingot_steel": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/biosteel_blockblockinv",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "95cc3b78c06fede3c49783a129d3f2a0dce775ae13eb0e394fd584d66584a8e5"
+        },
+        {
+          "recipe": "oritech/steel_ingot_from_blasting_steel_dust",
+          "serializer": "minecraft:blasting",
+          "sha256": "ac73d6d177f24f240d8adbdb095801cccd9b5db9e7c74164e95f95d310594c86"
+        },
+        {
+          "recipe": "oritech/biosteel_ingot_from_blasting_biosteel_dust",
+          "serializer": "minecraft:blasting",
+          "sha256": "1abc6c5de662406bf941b3fb77d10fa0f3fdd3593e20334b530fc6c1509e370f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "immersiveengineering:stick_iron": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ad_astra/iron_rod",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "47d5cd4d663dcd493a1293e2dc279bad95c35ed6e7bb133e319bb14e84c1193e"
+        },
+        {
+          "recipe": "silentgear/iron_rod",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "0f0522a65abca1c4e146e9af07e185d50327bd892cc3c96f67df27d473eaebb4"
+        },
+        {
+          "recipe": "createaddition/rolling/iron_ingot",
+          "serializer": "createaddition:rolling",
+          "sha256": "950341a84f3405b2f95d9c8afaf87e3843813bcf28f91e04b505aa43b446cd91"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "immersiveengineering:wire_copper": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/copper_wire_from_ingots_copper_stonecutting",
+          "serializer": "minecraft:stonecutting",
+          "sha256": "36ebe3c84320972924257691806912c128b9dd2fe5d7576829c279462094a32e"
+        },
+        {
+          "recipe": "immersiveengineering/crafting/wire_copper",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "4fd9f6c6954c7f3eedf792d2cb72ca251ea84b86075f234b2f0334ff3ce65936"
+        },
+        {
+          "recipe": "createaddition/rolling/copper_plate",
+          "serializer": "createaddition:rolling",
+          "sha256": "c7ae80f737fa7c0477b80feeaa053d64b4a92fef63cbd4b7bdb80c2303b78f79"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "immersiveengineering:wire_electrum": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/crafting/wire_electrum",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "0093475a08d5181e425d2e76c27d6bb7d223ae6eecacdde8803d4a049392f60f"
+        },
+        {
+          "recipe": "createaddition/rolling/electrum_plate",
+          "serializer": "createaddition:rolling",
+          "sha256": "39364fec4d0cc70986433082761228caafca1d7690b7024d494557541bcef45f"
+        },
+        {
+          "recipe": "createaddition/charging/electrify_gold_wire",
+          "serializer": "createaddition:charging",
+          "sha256": "753687a383a8227308e35cf0e206a6e7deec595a7fbe91a61f8736c67604666f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "industrialforegoing:biofuel_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "industrialforegoing:conveyor_detection_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "industrialforegoing/conveyor_detection_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1efd35b11f76c5a5b309b0d42c12dff3225b955f496621511b986fd600a24eb8"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "industrialforegoing:conveyor_splitting_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "industrialforegoing/conveyor_splitting_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e1756dd688d13218e1d742eaa76f1cccde2965af88119d480ebd88da8983c9e7"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "industrialforegoing:dryrubber": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "industrialforegoing:fertilizer": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "industrialforegoing:latex_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "industrialforegoing:sewage_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "industrialforegoing:sludge_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "integrateddynamics:crystalized_menril_chunk": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "integrateddynamics/crafting/crystalized_menril_chunk",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "ee1da2aa645be74b3f93fe934cfbee071fad68d346af9d24efe00404e0d5c0a4"
+        },
+        {
+          "recipe": "productivemetalworks/casting/id/crystalized_menril_chunk",
+          "serializer": "productivemetalworks:item_casting",
+          "sha256": "a6bfe72f2e0391258eab6f7eacf1c908697ef8831527cc58e5742a6a87bd3bd0"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "integrateddynamics/blocks/menril_log_filled",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "integrateddynamics:labeller": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "integrateddynamics/crafting/labeller",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "b0701c3a5d5fc9aa6ac5668268a6b760af0aa334dcf00bc284e8c056187b6845"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "integrateddynamics:variable": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "integrateddynamics/crafting/variable",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "d1941d968feb7964819e4dcf486abd17cbf724508d04364d21c12d0703437cbd"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "megacells:accumulation_processor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "extendedae/assembler/accumulation_processor",
+          "serializer": "extendedae:crystal_assembler",
+          "sha256": "edd449ef8351a7211aa464e0f69d41c14e2fb15d5d37941925a7558a68fe6ac2"
+        },
+        {
+          "recipe": "megacells/inscriber/accumulation_processor",
+          "serializer": "ae2:inscriber",
+          "sha256": "bac2e2eac5db85f5409ce3ceeaef44600dba6cb01955100b08aa2f50227ea350"
+        },
+        {
+          "recipe": "mekmm/compat/megacells/presser/accumulation_processor",
+          "serializer": "mekmm:pressing",
+          "sha256": "1bc157516780ed8fb124634c4a03118c284c75e82578d34cc3dc77bf017c6dff"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:advanced_chemical_tank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/chemical_tank/advanced",
+          "serializer": "mekanism:mek_data",
+          "sha256": "b7815f44562fa08978453cb63c57d575805ffff704f34ab07ff601033cf066c6"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:advanced_fluid_tank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/fluid_tank/advanced",
+          "serializer": "mekanism:mek_data",
+          "sha256": "1a3a6c1b94a2c4a5fd5c09d7d92241fcab22c07a08c5385f293bc0e77f1a435f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:advanced_logistical_transporter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/logistical_transporter/advanced",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "bf81bf636289256a817fde2d8164f6d084bf23f03a8ccf0e57a53701fbf3c72d"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:advanced_mechanical_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/mechanical_pipe/advanced",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "58fd9b30a650f973c29d7ff478a55c39ce7f143663a6446834bb78e74a281e8b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:advanced_pressurized_tube": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/pressurized_tube/advanced",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "d00a340c4757d9d346fc0a426197b247dfd3fe9332a21a1544a774f86a78a31e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:basic_fluid_tank": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/fluid_tank/basic",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "fe41c0d45b073513987ca4db93678b4ecbb4a05baa06e89938afa8fb8ab780a0"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:basic_logistical_transporter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/logistical_transporter/basic",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "7c0956aa045ad9c896aa4e1ec58e9e46528ff0077aec179aab80cce72be18ac9"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:basic_mechanical_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/mechanical_pipe/basic",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "0f0e1a5277dae57542d8b52232d15b1f52d16292ae26b807fe781d8a04f988f8"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:basic_pressurized_tube": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/transmitter/pressurized_tube/basic",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ce3e879cb5aed219ee278bed7018260e0be4b86af242b6b07ee8123e4032fc47"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:configurator": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/configurator",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e1ee45b5db1d96b4bdf348465a82aee969b236e15a65a216f6f625f234a6e2cf"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:dust_osmium": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/crafting/hammercrushing_osmium",
+          "serializer": "immersiveengineering:hammer_crushing",
+          "sha256": "4df2f18670704521adf3261d5dc7cd2e7fc0adda8b878c613dccb3514b8113d3"
+        },
+        {
+          "recipe": "immersiveengineering/crafting/raw_hammercrushing_osmium",
+          "serializer": "immersiveengineering:hammer_crushing",
+          "sha256": "efc383ad8d972ad7142e5988f7d12b47c8c4682d977992da412e93ab4c47d4fc"
+        },
+        {
+          "recipe": "immersiveengineering/crusher/raw_ore_osmium",
+          "serializer": "immersiveengineering:crusher",
+          "sha256": "ce28844745828823317d816bdc54133bdf815d31b185e2272fb74df936ba867a"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:enriched_iron": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/processing/iron/enriched_dust",
+          "serializer": "mekanism:metallurgic_infusing",
+          "sha256": "6053bf7c6228441a2fd3542fce52a0c443a994e11fd996cecfc268492a1c422c"
+        },
+        {
+          "recipe": "mekanism/processing/iron/enriched",
+          "serializer": "mekanism:metallurgic_infusing",
+          "sha256": "5c2243dc69686a5f78bf5f018a4728a4dc6ae2451445853b86d380df22a6bacc"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:enrichment_chamber": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/enrichment_chamber",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "fc67b3cd99e0b08848e5c9c37bab0929ca1d95e0c81199c3a366b84c10f4e402"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:gauge_dropper": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/gauge_dropper",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e40d6bd0833c6794947f051401da7831f960c3737ba74442f9fa6104521442fd"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:hdpe_pellet": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/reaction/substrate/ethene_oxygen",
+          "serializer": "mekanism:reaction",
+          "sha256": "f5f618775417dd7149a174d663051aa7f1cb4356ff120e12a45e54ceaa1b89a9"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:ingot_osmium": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create_mekanism_improvements/osmium_ingot",
+          "serializer": "create:mixing",
+          "sha256": "0133bca71f7c2fcabbe27fe19f7952243d7481dd4e8fd0db497bb7fb4c2d6f29"
+        },
+        {
+          "recipe": "industrialupgrade/industrialupgrade_227",
+          "serializer": "industrialupgrade:shapeless_recipe",
+          "sha256": "bd5bac82d4584e61b2145b3b589de2c9970042cbb2f8d41db6dc9f234ea68e09"
+        },
+        {
+          "recipe": "industrialupgrade/industrialupgrade_229",
+          "serializer": "industrialupgrade:shaped_recipe",
+          "sha256": "6541b15e7dedffd931b79cf120979772e5d315bf6c6f14fb862d6bb0bd0e787b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:raw_osmium": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "industrialupgrade/industrialupgrade_2385",
+          "serializer": "industrialupgrade:shapeless_recipe",
+          "sha256": "05e175fb1d522eb61b785eb5f5f53ad25ebd284ce53a86dace0106c345a2ecb6"
+        },
+        {
+          "recipe": "industrialforegoing/laser_drill_ore/raw_materials/osmium",
+          "serializer": "industrialforegoing:laser_drill_ore",
+          "sha256": "01f82fb16f7aae99f44ba814ffda95e696e544b43bfdd5c36de3ddc18dded7f3"
+        },
+        {
+          "recipe": "oritech/grinder/compat/mekanism/ore/osmium",
+          "serializer": "oritech:grinder",
+          "sha256": "e36c8bcb6615c6e94b6d8be688c12edc4cb44002c32580a8b76e4bfbafc65725"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "mekanism/blocks/deepslate_osmium_ore",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "mekanism/blocks/osmium_ore",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "mekanism:substrate": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/reaction/substrate/water_ethene",
+          "serializer": "mekanism:reaction",
+          "sha256": "2eeffbd41d2fd200afcf5e85466a2e7f39d0f0a648e7b8f689dcfdf794486732"
+        },
+        {
+          "recipe": "mekanism/reaction/substrate/water_hydrogen",
+          "serializer": "mekanism:reaction",
+          "sha256": "8a054ef12bba83c745dc99474f4d7f65b008b53ed4e402758282e8d316724569"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "mekanism:thermal_evaporation_block": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/thermal_evaporation/block",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e74fc1b655dba377643aa30d2bc452a932f2d136d7836e098ae36efa853e120a"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "mekanism:thermal_evaporation_valve": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/thermal_evaporation/valve",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8505bde7dbf3d55b142b88dbdc5a76ffbc940e45a477c57335fb19050b4220af"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "minecraft:barrel": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/barrel",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "2cd468e253a7172580e32aeba982e9414ccc4150c59cb6cea189db5e6256f384"
+        },
+        {
+          "recipe": "aether/skyroot_barrel",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e674734b4c92f0e9c5c0964d35676872ac4be7ba10bfe879429a07e4f1089ebb"
+        },
+        {
+          "recipe": "modern_industrialization/vanilla_recipes/assembler/barrel",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "70d253e57a8d4a8119f29077bc92b4ceefdc2dabd061fb6c645843f61d6eacb3"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "born_in_chaos_v1/entities/barrel_zombie",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "minecraft/chests/village/village_fisher",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:beetroot_seeds": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/cloche/beetroot",
+          "serializer": "immersiveengineering:cloche",
+          "sha256": "66f7a1ef9a7591b2e434899b1f97addca7bd940462170a56847f450c0cde7510"
+        },
+        {
+          "recipe": "botania/mana_infusion/carrot_to_beetroot_seeds",
+          "serializer": "botania:mana_infusion",
+          "sha256": "6bf97ca4e5ea26007f8a08a467cb266fb495b183ace16002a61eed766370709f"
+        },
+        {
+          "recipe": "create/milling/beetroot",
+          "serializer": "create:milling",
+          "sha256": "412bf53642803d3ccadfff1a1ede1aff5b1e5d3ec1fd5b121ce58553f441f5ea"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:book": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/book",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "62d41af2b287c30260239f5d7c9427be994eea5ad14e32eeda3bf873059bc124"
+        },
+        {
+          "recipe": "mekanism/sawing/bookshelf",
+          "serializer": "mekanism:sawing",
+          "sha256": "54ec9667aad843069fae9c9c5ed1dda493cfba1601c6de56b43acbf446a0c281"
+        },
+        {
+          "recipe": "mekanism/sawing/lectern",
+          "serializer": "mekanism:sawing",
+          "sha256": "df077c45d68b62dd977248fcfdc62aab0dfdf94983a02722a5d820a81add969c"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:charcoal": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/charcoal",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "6c0f4e68e06963212048c5ebdb7f338458c3519e950e31a4334443f465e4e453"
+        },
+        {
+          "recipe": "actuallyadditions/tiny_to_charcoal",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "c64a74767c948e1ef217652024c336a0a359bb0782ad551b2147023240c52fc7"
+        },
+        {
+          "recipe": "mowziesmobs/charcoal",
+          "serializer": "minecraft:smelting",
+          "sha256": "e1faba18300ce30f8cdcb546223cbd0a0b524a7f04daf122bea7736335c9a956"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/darktower_cache",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "born_in_chaos_v1/entities/seared_spirit_not_despawn",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:chest": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/chest",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "fe43732624c4ff44d6d2a5f5f1458a291e8e21cb7395d3568f31f82d5904ef38"
+        },
+        {
+          "recipe": "aether/skyroot_chest",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "f39d95140201ce7f137e4785fba549f96d0c66d5d501298171823d0d6f520bb9"
+        },
+        {
+          "recipe": "ars_nouveau/archwood_to_chest",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "9c8f33c8e9d68d19c2a45ed94f6061fc17b3e9524f1c2b5bc42712787dd24ea6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "aether/entities/mimic",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "lootr/blocks/lootr_chest",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:clay_ball": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/enriching/clay_ball",
+          "serializer": "mekanism:enriching",
+          "sha256": "9ae9b607a201e8ea61c05280a7e9acc7d3c8f4994797f8212eb46340f1003550"
+        },
+        {
+          "recipe": "mekanism/injecting/brick_to_clay_ball",
+          "serializer": "mekanism:injecting",
+          "sha256": "26210b252fefeb4383fccf1f1a4cb9d6700b24cca414a7ef325f8aeb699efa3a"
+        },
+        {
+          "recipe": "mysticalagriculture/essence/minecraft/clay_ball",
+          "serializer": "crafting_shaped",
+          "sha256": "d2daf2eebf499639f9db189309efc9187fee0e24aee7c01070d4fc98943b12a1"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "alexsmobs/gameplay/platypus_reward",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "alexsmobs/gameplay/seal_reward",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:cobblestone": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "twilightforest/giant_cobblestone_to_cobblestone",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "aa5c90eff0d3fa5c30b69bc519435742d9fbb4ac4c9e218491577ecefb198e32"
+        },
+        {
+          "recipe": "silentgear/cobblestone_from_pebbles",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f02cec255283daac69e1c8238982f8e1178a10c75b9fc514b937a4ee2f713910"
+        },
+        {
+          "recipe": "mekanism/enriching/conversion/mossy/cobblestone",
+          "serializer": "mekanism:enriching",
+          "sha256": "7c3244d9320520da9f3d531e5cfe4d6b85361fb1947dad83db0bd48c750aacf1"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "alexsmobs/gameplay/transmutation_table_common",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "minecraft/blocks/infested_cobblestone",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:comparator": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/comparator",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "3cfed961e0c505d28c9feec63c9168d4eee1f095c3132bc7a7adb2cc6a018989"
+        },
+        {
+          "recipe": "cyclic/solidifier/solidifier_redstone_comparator",
+          "serializer": "cyclic:solidifier",
+          "sha256": "96cb32d7a81543974d68ccb87a17c37db0581a5a1448f257bf49bd14b8fb5b31"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "dimdungeons/chest/kit_redstone",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:glass": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create_compat_core/compacting_glass",
+          "serializer": "create:compacting",
+          "sha256": "461d7a9f7ce5e940411918401e112f5ff78939b60f463a759b5e6e9680fe94a0"
+        },
+        {
+          "recipe": "create_compat_core/glass",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ff406695ae16a673a6e89e35a547be2219e2a8de2573fbb4d6b43a5943e028a1"
+        },
+        {
+          "recipe": "minecraft/glass",
+          "serializer": "minecraft:smelting",
+          "sha256": "2acee941b64fbd4904525ea16078d452d06b0a5b14488f5bd9e9c8710c7186d9"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "minecraft:glass_bottle": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/glass_bottle",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "22fe03c2f309e78499e00a7055571b4e42ed46524a74afc839cb9bfc5ce9a4ef"
+        },
+        {
+          "recipe": "immersiveengineering/fermenter/honey",
+          "serializer": "immersiveengineering:fermenter",
+          "sha256": "d4ef7907d058ed62294e2094a964b60c5cfd40dd29529b828785b9b4cf948d93"
+        },
+        {
+          "recipe": "reliquary/uncrafting/glass_bottle",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a8900f507381b278a95f02c48dd1d72858c416987f282ad8fb817edf5e227717"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "minecraft/entities/witch",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "twilightforest/chests/hut_junk",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:iron_block": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/iron_block",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ab5a247f373e4fb437f70b01e4a16d5f8fc80ba522492951c8e6cc876421512f"
+        },
+        {
+          "recipe": "botania/elven_trade/iron_block_return",
+          "serializer": "botania:elven_trade",
+          "sha256": "22583735769a7724e0509c5b6c1a6b102b2ed42b46495c64bc8ac26d3565efab"
+        },
+        {
+          "recipe": "allthecompressed/decompress/iron_block_1x",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "704010025bdb533a6df6ba1b93e2d2590df12da71e20aa899c9821dd5c8dcfe3"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "minecraft/chests/bastion_treasure",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "minecraft/chests/bastion_other",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:iron_ingot": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/iron_ingot_from_smelting_iron_gem",
+          "serializer": "minecraft:smelting",
+          "sha256": "7c3f8c99773ec9746f95973f2d43e70b435fdd88c268f94c3376b3d2348b6371"
+        },
+        {
+          "recipe": "oritech/iron_ingot_from_blasting_iron_gem",
+          "serializer": "minecraft:blasting",
+          "sha256": "56e7cb6968bd8811e3f6fd6df64264e603a940e80b08d7db97511b98825aae1d"
+        },
+        {
+          "recipe": "oritech/iron_ingot_from_blasting_iron_dust",
+          "serializer": "minecraft:blasting",
+          "sha256": "61d68acf169e60ec654bc22051a47841b6b94776ee9049ed624b6e067d563712"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "minecraft/loot",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "minecraft/loot",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:item_frame": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/item_frame",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ed7a069e5b45c167b2dd0ee53d9ce9f2cc426c2aa25f8a264cfc5382a5dc8d2b"
+        },
+        {
+          "recipe": "create/crafting/appliances/item_frame",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "26b0b160eb2871412b1975abe6076b53dc06940939c50e950778dfc7fc312b97"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "minecraft:lever": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/lever",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1276a019e1246422eb4a9f75e9b7aa41af33b0b006fdbe732f25ef13323dbaa4"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "minecraft:melon_seeds": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/melon_seeds",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "bdac16636a4c295e0dc738f7f3867f7607e86fc573b5ef3fefdc7477326e766a"
+        },
+        {
+          "recipe": "botania/mana_infusion/beetroot_seeds_to_melon_seeds",
+          "serializer": "botania:mana_infusion",
+          "sha256": "f18f110d164dcf3d7faeba3dc24098dcb7106732a44f80b0f5b7c8d215990231"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:obsidian": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "aether/obsidian_from_bucket_freezing",
+          "serializer": "aether:freezing",
+          "sha256": "db44c5bc0dc7edf8c7dc4e2cdd5ab0c663753b1e88b25c532c4c3b68ac798ac0"
+        },
+        {
+          "recipe": "ars_nouveau/water_essence_to_obsidian",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "48e3cc7c9bced4f44ebb809112031853ecc68d472cb389b2d260be59c828ce6d"
+        },
+        {
+          "recipe": "twilightforest/giant_obsidian_to_obsidian",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d6682e0fd2f260c5dc88bf887ec1b35ef4a3dd07dda03e500494d4906fd60345"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/troll_vault",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "alexsmobs/entities/laviathan_obsidian",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:paper": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mekanism/paper",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "848822e67a36df2d43d0d1253ba043e0b4ce0b8b8cfb1f34bf1fe829e35c0838"
+        },
+        {
+          "recipe": "actuallyadditions/rice_paper",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "d6bc100b774f9d97f21d0d9b3d3e8dc59f9ce4756a0208919867f27bc0154627"
+        },
+        {
+          "recipe": "minecraft/paper",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e069a87c45d8399f0838d2ad29fd1348041837f99b9aa1bf8e8c010a1ad314d7"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/labyrinth_dead_end",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "twilightforest/labyrinth_dead_end",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:redstone": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "create_ultimate_factory/mixing_redstone",
+          "serializer": "create:mixing",
+          "sha256": "248b8371e3a8f9acc52beb21347bcbc0fe72c3a586100d126b260159106c0330"
+        },
+        {
+          "recipe": "create_more_automation/redstone_recipe_2",
+          "serializer": "create:filling",
+          "sha256": "7d49646cf55225a860ad9e438d1af8fadad7d7f53cc9346327ea143b51f9c80d"
+        },
+        {
+          "recipe": "minecraft/redstone_from_smelting_deepslate_redstone_ore",
+          "serializer": "minecraft:smelting",
+          "sha256": "676bc48494740b22522bafb466e574af9e780b87a92c287918df84900e8878d1"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "minecraft/loot",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "twilightforest/darktower_cache",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:redstone_block": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/redstone_block",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8a8aed1fe50c18a83419e323bf3b61be61bebf193b17cf520d4cb09c6e416b26"
+        },
+        {
+          "recipe": "mekanism/nucleosynthesizing/redstone_block",
+          "serializer": "mekanism:nucleosynthesizing",
+          "sha256": "140d5ec7fa6634f4de50066e7799819218cf8dcbaa72c16ef9611ece91eafecf"
+        },
+        {
+          "recipe": "allthecompressed/decompress/redstone_block_1x",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "51962b67ea4ecc2b13d88c9d45fa16018af32bdd90496c89440774d819085e52"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:redstone_lamp": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/redstone_lamp",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8e0cf0271be4ab27b96fe99df8b829945f30cb1349664a70326ec7a25ed4e501"
+        },
+        {
+          "recipe": "cyclic/solidifier/solidifier_redstone_lamp0",
+          "serializer": "cyclic:solidifier",
+          "sha256": "c6ea654317e20daea0a7fa6e8d3f2a7ced2c010ce10e3c6a3d12b098fbdc5383"
+        },
+        {
+          "recipe": "cyclic/solidifier/solidifier_redstone_lamp",
+          "serializer": "cyclic:solidifier",
+          "sha256": "f7da565870c663dda0ba88135a3c51334ea3a6dd997e57ee4fdc6973aea7416c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/darktower_cache",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "dimdungeons/chest/kit_redstone",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:repeater": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/repeater",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ee79e2589b4104f033e0fcdfb9b6e669284b4fee2b763112c451250005632389"
+        },
+        {
+          "recipe": "cyclic/solidifier/solidifier_redstone_repeater",
+          "serializer": "cyclic:solidifier",
+          "sha256": "19f1ae06ae9a37c9282748a374ef278f69711b63c45b7e06803bcd9ea6eeeb92"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:sand": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/sandstone_to_sand",
+          "serializer": "ars_nouveau:crush",
+          "sha256": "0d4a2b16a54a4719b4e60ff5e2cfe29d87c8b834670185b63d42e129051ed007"
+        },
+        {
+          "recipe": "ars_nouveau/gravel",
+          "serializer": "ars_nouveau:crush",
+          "sha256": "3d4af5b2be14a30e467b20f8bb69e38ed15e041f10366b202dc29281b31dad56"
+        },
+        {
+          "recipe": "mekanism/crushing/gravel_to_sand",
+          "serializer": "mekanism:crushing",
+          "sha256": "16d44bf1c8de2fa4d6a9bc55bdf01c56b0b72881af125ffa04bc6d026bb18969"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/useless",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "alexsmobs/gameplay/seal_reward",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:stone_button": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "minecraft/stone_button",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f6caeab55db644cb661706585a1cf352c068bee75afe48bd4835a21077af882f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "minecraft:water_bucket": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_nouveau/water_essence_to_bucket",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f4907ecfc851098668a1513e016ecaff6e15f5139a537199d988c6ea96be78ef"
+        },
+        {
+          "recipe": "mysticalagriculture/essence/minecraft/water_bucket",
+          "serializer": "crafting_shaped",
+          "sha256": "3dbe2de2b52a2478ed96d736b0b0d935021c84be1d10d41740e7c695eca1a762"
+        },
+        {
+          "recipe": "evilcraft/crafting/minecraft_water_bucket",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e5fb35fc35b175799db0322d10934fef515df165bf9ea005185bd4bd9c068497"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/fancy_well",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "twilightforest/well",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "minecraft:wheat_seeds": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "immersiveengineering/cloche/wheat",
+          "serializer": "immersiveengineering:cloche",
+          "sha256": "d50275828c908056901edceea78ceb7e0c52702895102fdf1e69a7b813072b20"
+        },
+        {
+          "recipe": "botania/mana_infusion/cocoa_beans_to_wheat_seeds",
+          "serializer": "botania:mana_infusion",
+          "sha256": "2530a4c7172ed5de899fd7fb6f0ad5874ab382fce8c06f2417eed28ebae0cf2d"
+        },
+        {
+          "recipe": "create/milling/short_grass",
+          "serializer": "create:milling",
+          "sha256": "c2b687dce06d15fd6b7eaa5bd8865ebf9c9b1443936fa039c50ce6eb7f422970"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "twilightforest/useless",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "twilightforest/troll_garden",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "modern_industrialization:analog_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/assembler_generated/electric_age/circuit/craft/lv_circuit",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "b3a0dd076f9cd9db1061c20f1799639f29050f451c4ac2bbc19734df4c122d3a"
+        },
+        {
+          "recipe": "modern_industrialization/electric_age/circuit/craft/lv_circuit_asbl",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e6a2622a41ea03c4ee4b4e5de212e42ceeca48f3e66079558b136fc2a1fe50bc"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modern_industrialization:config_card": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/tools/config_card",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "466dd8ab54ab5431a39681aa9ab3a88fa1dea5236a10c39ec8b7ef69f237e4f6"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modern_industrialization:digital_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/assembler_generated/electric_age/circuit/craft/digital_circuit",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "99faa225c5b41dd76dc6f0fea7f31edb00143181ca10b4b9ccde99abcbd454bd"
+        },
+        {
+          "recipe": "modern_industrialization/electric_age/circuit/craft/digital_circuit_asbl",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e5de76597ba07a68489c32e75d20d734fa6c74cdef845abf8f5c3050089f7d4d"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modern_industrialization:electronic_circuit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/assembler_generated/electric_age/circuit/craft/electronic_circuit",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "e8d8db86ce4cd28aa5aa0130439e169943a4a95696c639197dfff905ed9d829f"
+        },
+        {
+          "recipe": "modern_industrialization/electric_age/circuit/craft/electronic_circuit_asbl",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "0469d5e2532524b71b5477a95e65508421221e326c5989056528d79716612e1c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modern_industrialization:electronic_circuit_board": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/assembler_generated/electric_age/circuit/craft/electronic_circuit_board",
+          "serializer": "modern_industrialization:assembler",
+          "sha256": "ad98b4282fa44c1b41ce6351d87d84b65de82aa9888756f11d5616aa12fe358e"
+        },
+        {
+          "recipe": "modern_industrialization/electric_age/circuit/craft/electronic_circuit_board_asbl",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "cc11259d1ef39f73f91377971236144f39bf827f5a35db91b6ca782e23a7f1c9"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modern_industrialization:packer_block_template": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modern_industrialization/other/packer_block_template",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8eeb922a4dec74d367c62bf205713584a245abe3da818f5907ccf861444e0029"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:detector_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/detector_module",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "00e5db5b9d99d46321866b5fa0dd39efb6610ab45d6f77202867b476f4e77c9a"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modularrouters:distributor_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/distributor_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "524ac1acf7fc77589834aed14afe0fb645ff392f84f014d9fe638473974b1180"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:energy_output_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/energy_output_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "6ea9c20ac6149c7bf7da22192f0ff76cf0a251d95cc274aaae78fd3cda1dad1a"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:energy_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/energy_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1787600dacafa6fcdcd2020aceb2fdbeab10522705fa427887bcd47babe86c16"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:filter_round_robin_augment": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/filter_round_robin_augment",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "97218dd985c95ba39a028ded42b5d11e01b7bb982c7e44f0f51666b38df8c685"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:fluid_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/fluid_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "c44886f7214f85901d74c4baefc078d45c3dbf15d8b59c91a264845eefdde27e"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:fluid_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/fluid_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a4310c5a9de4f0f47f13d490189684abfc51afa7f3e15771cef4995a8a637848"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:inspection_filter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/inspection_filter",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "afc04fe19b7945ef7857c836e10d8ccf5309e3e7a218f1fd9cffccab83fa4f68"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:puller_module_2": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/puller_module_2_x4",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "9f3ede42d02ea5724d918e64a441ec0da177ccbccf8b7ce5e77301fe1a4b549b"
+        },
+        {
+          "recipe": "modularrouters/puller_module_2",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "360c5cb92618a1d7f648ccfa3865d148ae4f6b572ba39dc24169110bcc1e489a"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:redstone_augment": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/redstone_augment",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "3879f28e62c475edf61225f23795fcd1f8a392485525b4f31bfc8b58280e473e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modularrouters:regex_filter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/regex_filter",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "317baf7fac2808230b5950296fe46ec885ffe774e2dada989cde621a4958f083"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:regulator_augment": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/regulator_augment",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "12c0b4816cbd890f158adf90b2bfd8b9baca38d13b175df5bc7953296eb28625"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:security_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/security_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "865a3f57c4bfb97425952f408c7fc7afb16f869540b208193f7d90886f33a465"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "modularrouters:sender_module_2": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/sender_module_2",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "cb6270bf0fdb63d36b1f477caa8cfee6612c5de4753e22e4e6b510f467609f0f"
+        },
+        {
+          "recipe": "modularrouters/sender_module_2_x4",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "dc3fd2165b1fe17675afd6584fac976d8bcf58e4790c42e7cd81a123af3c6b23"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "modularrouters:stack_augment": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "modularrouters/stack_augment",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "34f66f6852e70debfde904f9990bb37316092cfc612629184449c6a1462b9507"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "occultism:marid_essence": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "occultism/ritual/summon_unbound_marid",
+          "serializer": "occultism:ritual",
+          "sha256": "de407667470735e029f4dd2fa57c1cffecc4cd172b542fa52483da72962ce6c5"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "occultism/entities/marid_unbound",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "occultism:spirit_attuned_gem": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "ars_ocultas/spirit_attuned_gem",
+          "serializer": "ars_nouveau:enchanting_apparatus",
+          "sha256": "0e8f9c33587cf361a7c805c601455aca00ecea59d3728ace686e87e70c152051"
+        },
+        {
+          "recipe": "occultism/spirit_trade/gambler_spirit",
+          "serializer": "occultism:spirit_trade",
+          "sha256": "1fbacf7940a83b620628e5badfaa97f4fa2baa2706cd6ae78977165423e84211"
+        },
+        {
+          "recipe": "occultism/spirit_fire/spirit_attuned_gem",
+          "serializer": "occultism:spirit_fire",
+          "sha256": "cfc38b2b93c4314f7f37a86a1790e7c1d18976a5d96df79c4f72de3e58d2989f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:basic_battery": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/assembler/battery",
+          "serializer": "oritech:assembler",
+          "sha256": "cba836948681d3fde32dc2107b3188257d584455a195e7d02e8673f45c0cd1f6"
+        },
+        {
+          "recipe": "oritech/assembler/batterybetter",
+          "serializer": "oritech:assembler",
+          "sha256": "b592b3d6a33677ee564468742ee7ccad88f33a228b0f3a32ed144b773768fcc3"
+        },
+        {
+          "recipe": "oritech/motor/manualbattery",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "79725f9c1f1b7afb96618dfa04528d6ed5207806be19328db6f063ea78b989e5"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:carbon_fibre_strands": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/centrifuge/carbon",
+          "serializer": "oritech:centrifuge",
+          "sha256": "a91a334402ecd7ed24ffd88cf34dedb9a3cd92d968682f74e50adbc6b3b85dab"
+        },
+        {
+          "recipe": "oritech/centrifuge/compat/immersiveengineering/carbon_fibre_strands",
+          "serializer": "oritech:centrifuge",
+          "sha256": "1a5558b11a575cd2b97b0e9f9191cfbb8bf14cb909e04804770cf53a2168c7c2"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:fluid_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/fluidpipe",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "32106186a2e9eb765d25d5c6d03cd3ad57f733a831c106b0117de99cb1109516"
+        },
+        {
+          "recipe": "oritech/crafting/unframe_fluid",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "431a5ed59b8e21f1b6ef229f881895d8951933c9ff34f2cba3a269c47c9eef4f"
+        },
+        {
+          "recipe": "oritech/crafting/unduct_fluid",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "0df04c0e18e4b3c48ba2ce90e78b08139d461a64b1aa474ed1629650f179c41c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "oritech/blocks/fluid_pipe_connection",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "oritech:item_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/unframe_item",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "5d408b3fb9d61c97141767280a300a08ddffd312768e26db4309357506657ce0"
+        },
+        {
+          "recipe": "oritech/crafting/fromtransparent",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "c62b8a648342347e19625d3efda0d18b5fe12a2a899e806a4131ae4e3fbf25d5"
+        },
+        {
+          "recipe": "oritech/crafting/item",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "cb641119b446c67b6dadd86e3986dd076a1b853c0002c7922d5f813867001039"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "oritech/blocks/item_pipe_connection",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "oritech:machine_capacitor_addon": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/addon/capacitor",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ff326ed35f68b98f4479b442e9d344a2516e5b70dcca8840228af308eacbc294"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "oritech:machine_frame_block": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/frame",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "83c1662f5b3a912d0b2cb670fd166cfaaa8353fa2e267dd5c1c6f61be2c6951d"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:magnetic_coil": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/magnet",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "415df0fadad79f722f5c386f322007059b1501a741518678ecd9b8239c3a9f29"
+        },
+        {
+          "recipe": "oritech/assembler/magnet",
+          "serializer": "oritech:assembler",
+          "sha256": "af363a0a2948ad69945629ac27aa1f10b1c0c4eb0a1b69cceca11210ac251ab8"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:motor": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/assembler/motor",
+          "serializer": "oritech:assembler",
+          "sha256": "1c8e77d3319cbad7e3b4cdd2e49ea6cc650fda0e6208a625958070da069e23ea"
+        },
+        {
+          "recipe": "oritech/motor/motorcraft",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "5654c3b1e6f5da523d85d94e7b085be8da32031841a9977bd3584177f8a79913"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:processing_unit": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/assembler/processingunit",
+          "serializer": "oritech:assembler",
+          "sha256": "fe2c8250bc04d70d33f1ad79d3f9d0c4454c155fa2b74674ca50810a11379eed"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:raw_biopolymer": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/centrifuge/fluid/biopolymer_biomass",
+          "serializer": "oritech:centrifuge_fluid",
+          "sha256": "b3bc074bbe9aa6a6529dfc9eec035b5dc5d25b24f496aae5c2e4f8538da3731b"
+        },
+        {
+          "recipe": "oritech/centrifuge/fluid/biopolymer",
+          "serializer": "oritech:centrifuge_fluid",
+          "sha256": "47d760772e3baa68216f8b15835accc224750380b6c51221b594bf67c3c604ba"
+        },
+        {
+          "recipe": "oritech/centrifuge/fluid/biopolymer_bioblock",
+          "serializer": "oritech:centrifuge_fluid",
+          "sha256": "2a05d54d74d737059e81af84c7c6a7d995ddd8486dfdd18a335c508bffde76fb"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:small_tank_block": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/stank",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "2e4fc9da5294c34533ace99bee2dcf63f15231090a2ced16fcd9611fb763bdcb"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "oritech:wrench": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "oritech/crafting/wrench",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "2388183a32ce59afe097b80bd8fc2ebf7c16e26f379c42bf85233397a39fe220"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "pneumaticcraft:assembly_platform": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/assembly_platform",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "e3651cf0b84baac657f5bd69e0aa75adc1b78ec91a9be2568436d6c18a643323"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:assembly_program_drill_laser": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/assembly_program_drill_laser",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "475c6292935a8864407e21e524a348385340ed102b6793c4dbb9d5bdc3e93533"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "pneumaticcraft:charging_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/charging_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "bf95c45ce0ac04578b58215a8f92436b2576cf01b815534a30635cade60f91c3"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:drone": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/drone",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "87b192f1c76602e6e43cb4230dfc98d55cdab4cc8dc3d66b1acc0756084f9d16"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "pneumaticcraft:flow_detector_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/flow_detector_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "fbb92420f974f21e09e6be6d1057847e0e1e635a3c42c4a954aa2bea6ac0289c"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:gps_tool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/gps_tool_from_gps_area_tool",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "4523a2d09fd8fddc4301d993767a795eb8279fa65bb2a48b036762e887fb18d1"
+        },
+        {
+          "recipe": "pneumaticcraft/gps_tool",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1a530682f6225faf9764d4c20d21037c10d6dfdf4c89ee45bf12739e7091400a"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "pneumaticcraft:logistics_configurator": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/logistics_configurator",
+          "serializer": "pneumaticcraft:crafting_shaped_pressurizable",
+          "sha256": "26ee1d851017b722b1a1b002e6bef553985a3043e8ef458f44d3bd9853247482"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:logistics_frame_active_provider": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/logistics_frame_active_provider_self",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "a039d76a7dcaa3cbf444c35a845d3bb38feb796dda71eb04c0cbdd7fc384d745"
+        },
+        {
+          "recipe": "pneumaticcraft/logistics_frame_active_provider",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "50570fc293ae08a4e0d2b2655a1659516bf676557259693ba201eb738439bf71"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:logistics_frame_passive_provider": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/logistics_frame_passive_provider",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "bef060ea3beee67136339ace01d0a2252b7170af5a6338b4a852d7243bbdf4e9"
+        },
+        {
+          "recipe": "pneumaticcraft/logistics_frame_passive_provider_self",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "2d6325c607f483b50bb032246cea8ae0cae5434bc52cf1228b2524b803195ce3"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:logistics_frame_requester": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/logistics_frame_requester_self",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "692dfb8764397bded40fb1c905f71ab195867df0fc96df6ad65f6cf6f3c42ecd"
+        },
+        {
+          "recipe": "pneumaticcraft/logistics_frame_requester",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "729e16b3a70492b7aa4601284984161fa57e8fe1456e6c030bbe171b5e01e47b"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:logistics_frame_storage": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/logistics_frame_storage_self",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "43e273fc8fc0e5254a0d227bd5cf042b4f348ad06bf98f044f7afa376655cd9f"
+        },
+        {
+          "recipe": "pneumaticcraft/logistics_frame_storage",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8b5c701aff55da6bcfff8d82e6c1862416d6ff23f3d892a24dc96c9f0ba34332"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:pressure_gauge_module": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/pressure_gauge_module",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "31585f6b7c1e36796fbf41ae4e50158fce969b7f616294f8043f7b8dc82c2e82"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "pneumaticcraft:printed_circuit_board": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/printed_circuit_board",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "9e2604eaa92bfaa297f206bde3d539b21c145d46f58b115c4e3dfa71f426d38c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "pneumaticcraft:unassembled_pcb": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "pneumaticcraft/assembly/unassembled_pcb",
+          "serializer": "pneumaticcraft:assembly_laser",
+          "sha256": "f96c764b60192a93b634a68ab33d9222de7f731908340d4c69cd8feb7fafcf9b"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:battery_blazing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/battery_blazing",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "c578132d2cd3848ed178dbcecc116742548cfa0dc7eecff60e5f517146ecafe1"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "powah:capacitor_blazing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/capacitor_blazing",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "9e0759527c90d7607ace842e0d4f46b359ac59ecaba145621a1dd6cd1235e69f"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "powah:capacitor_nitro": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/capacitor_nitro",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a203e7d635a00bf2606fc9f776db9a83cc336c0f483e5e495f46473a8de94210"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:capacitor_spirited": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/capacitor_spirited",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "cfa78020e6152b92391634780912917cf6072d4cd0af3d7bfe4a3c9eed2ef2a4"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:crystal_blazing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/powah/blazing_crystal",
+          "serializer": "crafting_shaped",
+          "sha256": "bba16e6699c8732d30266e61ac794f21cc72ffe061e28ac1a7097afb3ddda240"
+        },
+        {
+          "recipe": "powah/crafting/blazing_crystal",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d75dbcf4506a2585eefc400e331c947f5ba3503e29874f89b24dd4b2931ed981"
+        },
+        {
+          "recipe": "powah/energizing/blazing_crystal",
+          "serializer": "powah:energizing",
+          "sha256": "7537dad56e1c10e53eec30cdfa5698f132ab53d8344f72688c7b2b0fdce78a62"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:crystal_niotic": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/powah/niotic_crystal",
+          "serializer": "crafting_shaped",
+          "sha256": "218af8bf1cf184da41fd59ed1f36a15f3dcb048f0d1d0fb4e384e3c65975bdf6"
+        },
+        {
+          "recipe": "powah/crafting/niotic_crystal",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "4b7b37d7ff1be3fdbb12d60b2249a9ba4940aac0e00426ca15bc1a0a15b0f32a"
+        },
+        {
+          "recipe": "powah/energizing/niotic_crystal",
+          "serializer": "powah:energizing",
+          "sha256": "0951af769c0d484e97f5780fb867c5e6a24f5ad6447694a75891b12f81c64dbc"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "powah:crystal_nitro": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagradditions/essence/nitro_crystal",
+          "serializer": "cucumber:shaped_no_mirror",
+          "sha256": "dc54f7619abe9959e84c3d3728106e2379b653721a65922e7b756ebb75c5b79f"
+        },
+        {
+          "recipe": "powah/crafting/nitro_crystal",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b1cbaf31414798a00dbbbecc0131b1d2fdb2c6f2626300d4871ef80c07dc6ab7"
+        },
+        {
+          "recipe": "powah/energizing/nitro_crystal",
+          "serializer": "powah:energizing",
+          "sha256": "de260c0660dd02ea209d62c2bb6cfbee133c3e277ef28569cadf62e3b96e454c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:crystal_spirited": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/powah/spirited_crystal",
+          "serializer": "crafting_shaped",
+          "sha256": "ec587f70b47b166ffde8cec9d17b7313720f56bcf7919ca08a37b98f6fe26786"
+        },
+        {
+          "recipe": "powah/crafting/spirited_crystal",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d26538048495734e6e1caaa17d298ce05c2db3bbd486666f01dd9d8184847e1a"
+        },
+        {
+          "recipe": "powah/energizing/spirited_crystal",
+          "serializer": "powah:energizing",
+          "sha256": "3515705cc0a2a54c0a96c9c352b3cae3d5177e907bc899fa274f04bea1ed8df3"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:dielectric_paste": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/dielectric_paste_2",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "4fa2202327a0724b565a6651617f276c4edabf2ab40ac05a35e368afe068d521"
+        },
+        {
+          "recipe": "powah/crafting/dielectric_paste",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f1f3c9a65e99384d266397d2ff203910d18a11c9da08427c1debaa744e1e43fb"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:energy_cable_blazing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/cable_blazing_2",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "580adcb05049047be2ea8007b3e62ef86a15fbed0f90cda9bc52d1000225efde"
+        },
+        {
+          "recipe": "powah/crafting/cable_blazing",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "060a51e45fe581dd91ac08156f5fc8bf790d6dfa6b96d6048abf402e85d3ed4f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:energy_cable_spirited": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/cable_spirited_2",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "0636b6c511cae524737e009791851505d1c7d29d1229f261e02a9079f45ddb88"
+        },
+        {
+          "recipe": "powah/crafting/cable_spirited",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "295f972b0ecd8038f11cb7f97c84337a3dc6b1f50a62805db5df9529d6196b3f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:energy_cell_hardened": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/energy_cell_hardened",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "bdd8149f8cca3ae381c6bfba2ca2414308c55c33ec78f35e140e0d98cb57cf94"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:energy_cell_nitro": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "powah/crafting/energy_cell_nitro",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "98fe00fd2781c5317870d3cbce74605437d53c272464841a4e61be7d16acad6e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "powah:steel_energized": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "mysticalagriculture/essence/powah/energized_steel",
+          "serializer": "crafting_shaped",
+          "sha256": "efb3e21393f9abe38cf61c9367fd76daebd8e456243714e753d723f5fc1f2ccb"
+        },
+        {
+          "recipe": "powah/crafting/energized_steel",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "a123b500685e5b394fa67929d0c28af4aca5ef34e982acea5e82d1e44e9c4dd9"
+        },
+        {
+          "recipe": "powah/energizing/energized_steel",
+          "serializer": "powah:energizing",
+          "sha256": "4239791357b6d63ca7bd719de684c9dc970172d9c44cc9b1aaa26bb9a592c3d2"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "tfmg:coated_circuit_board": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/deploying/coated_circuit_board",
+          "serializer": "create:deploying",
+          "sha256": "48215db083a9402c723361f2dbae1a85872657b047dec66289f76d9446a1df7a"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:empty_spool": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/empty_spool_from_hardened_planks_stonecutting",
+          "serializer": "minecraft:stonecutting",
+          "sha256": "fe2702d31c1cecb59952ee4cf69e8b4a3dcfb0b3a15fd269301c45321aa68942"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:exhaust": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/exhaust",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "33e41c4d7d01b4e49da0e4cd324103c8196def1e5aa9753de513c090eb2ff580"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "tfmg:glass_insulator_segment": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/glass_insulator_segment",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "32b0dda740ecf768d7e64c287fd6101f5ff8e7e1c3e8b842f86634f475c45a88"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:lubrication_oil_bucket": {
+      "exported_recipe_outputs": [],
+      "baseline_audit_status": "manual_review_no_exported_non_circular_producer",
+      "baseline_loot": []
+    },
+    "tfmg:mixer_blade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/mixer_blade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "a396be106888a51b00e4363fec068c77f24c038e1ca8ebf54880137e29697ced"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:multimeter": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/multimeter",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "4868ee2df309411f4f9d72d5acf728c512667ba4045c945c3339036415df23c9"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:oil_can": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/oil_can",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1d269795b2226c7d9cf415ac7559b4ba59b0011ef18a6313b55c1e0c40596ae3"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "tfmg:stator": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/mechanical_crafting/stator",
+          "serializer": "create:mechanical_crafting",
+          "sha256": "a9d9690a62989798c937492c20399f011275d5160b3ed0fc554e4037d1a48f96"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:steel_casing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/sequenced_assembly/generator",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "5a8239d2603dd7102fcfe40e5fdb743ea99eecab38eff008c427f66a14d7f4e5"
+        },
+        {
+          "recipe": "tfmg/sequenced_assembly/potentiometer",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "b376e031cb5e97720e4a2daefac2e4e5c7459c5c3d030a2343392495dc66c93f"
+        },
+        {
+          "recipe": "tfmg/sequenced_assembly/motor",
+          "serializer": "create:sequenced_assembly",
+          "sha256": "484c7b136498663447d23ad6c100e42bffb78026cacf8719fa1a8177f7605c92"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "tfmg:steel_distillation_controller": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/steel_distillation_controller",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1cdbf55dd80ee766ee5937a40d461f95c864a04d01e45377c0ce4bea6b3a8023"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "tfmg:steel_fluid_valve": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/steel_fluid_valve",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "d1daf961e1291aa9395c2021b1b3e8630e55fbaf327124a333f81d439071a516"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "tfmg:steel_pipe": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "tfmg/crafting/materials/steel_pipe",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "617d8272574700b747641f044105416c21ae9a7a3aedeb2e3066b0b5f28ede51"
+        },
+        {
+          "recipe": "tfmg/crafting/materials/steel_pipe_vertical",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "ea5dd6a9930ba53a54960e997fbd2ec89204e010398ebce9b4280690624222dd"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "tfmg/blocks/encased_steel_pipe",
+          "kind": "loot_item"
+        },
+        {
+          "loot_table": "tfmg/blocks/glass_steel_pipe",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "xnet:advanced_connector_blue": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/advanced_connector_blue",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "8df677aad647a6e5ce474dbf6cb746edc2c1feb7ff5090f3185ccefd9da39ab8"
+        },
+        {
+          "recipe": "xnet/advanced_connector_blue_dye",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "f828ac9494c480dd9903f8c47fa446871c289c62a6e8f330569d033e323c2ed3"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "xnet/blocks/advanced_connector",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "xnet:advanced_connector_green": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/advanced_connector_green_dye",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "7c06637bc26d3df128a8a4e2dd615e49d3369a04771c54d1f612201c06cfc56a"
+        },
+        {
+          "recipe": "xnet/advanced_connector_green",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "6f53a9cb85dc56b538cb3cb2a157244a3069692644e4c02a732de839cb2e72c1"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "xnet:advanced_connector_red": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/advanced_connector_red",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "d5c0f55adb750db193d0e65d01ffc1c10643fab24e88559b8e042df9b1ea375d"
+        },
+        {
+          "recipe": "xnet/advanced_connector_red_dye",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "e04499599f9335ee115e03b56bdc16264577bd5a6915d4d91f07352655896e50"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "xnet:antenna": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/antenna",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "837ca36a3d9bc4721116fea6e1922798bb5227ea5a44c060147565c78d41316c"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "xnet:antenna_base": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/antenna_base",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "cde8fb6d9424a7f060f53a6beda9a6def3a52727595721dd1d939c044183bbfb"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "xnet:antenna_dish": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/antenna_dish",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "5f2d8764df40dffb2c569c674e0961e225c639945c2098e289f36babd6bc8918"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "xnet:connector_blue": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/connector_blue",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "1cb522e8d9eed127f3eb6a0e034d60bfa5ec9943a3c5681b336d451f08bd1bf2"
+        },
+        {
+          "recipe": "xnet/connector_blue_dye",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "b0a51eb415db6bc390f0ec88cb037e580ceaebec2cd7e66627c420e7bfcd2dcf"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "xnet/blocks/connector",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "xnet:connector_routing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/connector_routing",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "025cf82b49dccbd9610d5a08f449fb847b4b5c9edb41924c88cc95c23157394e"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "xnet/blocks/connector",
+          "kind": "loot_item"
+        }
+      ]
+    },
+    "xnet:connector_upgrade": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/connector_upgrade",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "90df6da8200db0cc10120fdfa8cc12584a4f48e5343e5fbd40b12dfa1012ae9f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": []
+    },
+    "xnet:connector_yellow": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/connector_yellow_dye",
+          "serializer": "minecraft:crafting_shapeless",
+          "sha256": "040b3f0bdd385964f97582225a1c20e228149879ee45760fa1295d6cd972bf1b"
+        },
+        {
+          "recipe": "xnet/connector_yellow",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "30d976290c72ccdb9f237884b1d560776ddb88ef1882ea064b56e332c2f62279"
+        }
+      ],
+      "baseline_audit_status": null,
+      "baseline_loot": []
+    },
+    "xnet:netcable_routing": {
+      "exported_recipe_outputs": [
+        {
+          "recipe": "xnet/netcable_routing",
+          "serializer": "minecraft:crafting_shaped",
+          "sha256": "324254e5a844b5f6febb742bf42f7fbc5403f527c5bb2b13b3c2431b8340a33f"
+        }
+      ],
+      "baseline_audit_status": "exported_producer_reference_found_not_stage_reachability_proof",
+      "baseline_loot": [
+        {
+          "loot_table": "xnet/blocks/netcable",
+          "kind": "loot_item"
+        }
+      ]
+    }
+  },
+  "validation_scope": [
+    "Exact exported item/block registry IDs and current epoch gates",
+    "Global task signatures after canonical material normalization, ignoring quantities",
+    "Existing/new logical dependencies and stable unique IDs",
+    "Semantic native recipe output fields and prior loot evidence; not arbitrary ingredient mentions",
+    "Descriptions distinguish block observation/resource possession from machine operation telemetry"
+  ],
+  "full_modpack_run": false,
+  "tps_test": false,
+  "non_recipe_producer_items": {
+    "ae2:crafting_pattern": {
+      "kind": "native_pattern_encoding_terminal_action",
+      "source_pin": "AE2 19.2.18 db17504a86128fdf3dae31f5fb7a112a646e0b93",
+      "source_file": "src/main/java/appeng/menu/me/items/PatternEncodingTermMenu.java",
+      "source_sha256": "22a2c7ace7f29d7ff8bf909f5514657ad798b56be2c361f92de989eae6e1e771",
+      "method": "encodeCraftingPattern",
+      "full_pack_runtime_tested": false
+    },
+    "createdieselgenerators:diesel_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "createdieselgenerators:diesel",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "createdieselgenerators/distillation/superheated_crude_oil",
+          "serializer": "createdieselgenerators:distillation",
+          "sha256": "43f4aaba42f99328da5bf993ae009049bea7f5186d9b6c300b8265a0b57bab84"
+        },
+        {
+          "recipe": "createdieselgenerators/distillation/crude_oil",
+          "serializer": "createdieselgenerators:distillation",
+          "sha256": "a20d4e7e9b38d7ce3b359eb5689a489cac6d5b108ebedbc9d9ae5dc621627c1e"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "industrialforegoing:biofuel_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "industrialforegoing:biofuel",
+      "fluid_export_output_recipes": [],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "ae2:processing_pattern": {
+      "kind": "native_pattern_encoding_terminal_action",
+      "source_pin": "AE2 19.2.18 db17504a86128fdf3dae31f5fb7a112a646e0b93",
+      "source_file": "src/main/java/appeng/menu/me/items/PatternEncodingTermMenu.java",
+      "source_sha256": "22a2c7ace7f29d7ff8bf909f5514657ad798b56be2c361f92de989eae6e1e771",
+      "method": "encodeProcessingPattern",
+      "full_pack_runtime_tested": false
+    },
+    "createdieselgenerators:ethanol_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "createdieselgenerators:ethanol",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "createdieselgenerators/bulk_fermenting/fermentable",
+          "serializer": "createdieselgenerators:bulk_fermenting",
+          "sha256": "c1a5e3c2fd0adfc687880eb20eefe00e15b7da2089cfb23e0c459b5ff4c0b9dc"
+        },
+        {
+          "recipe": "createdieselgenerators/basin_fermenting/fermented_spider_eye",
+          "serializer": "createdieselgenerators:basin_fermenting",
+          "sha256": "9c6b74d62fb348c7aafa9f2223ee8d8c729ac8f577e1f27a219cd83c2e6affc9"
+        },
+        {
+          "recipe": "createdieselgenerators/basin_fermenting/fermentable",
+          "serializer": "createdieselgenerators:basin_fermenting",
+          "sha256": "df09481fd3f07f0f9ba5e88d971affaa15af6a6ad93cd34ea875d600674b1443"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "createdieselgenerators:plant_oil_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "createdieselgenerators:plant_oil",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "createdieselgenerators/compacting/plant_oil",
+          "serializer": "create:compacting",
+          "sha256": "71326996c3d2587d096c1c07acd1ce0a0a805b147023cdb19766d171aab274c6"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "createdieselgenerators:gasoline_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "createdieselgenerators:gasoline",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "createdieselgenerators/distillation/superheated_crude_oil",
+          "serializer": "createdieselgenerators:distillation",
+          "sha256": "43f4aaba42f99328da5bf993ae009049bea7f5186d9b6c300b8265a0b57bab84"
+        },
+        {
+          "recipe": "createdieselgenerators/distillation/crude_oil",
+          "serializer": "createdieselgenerators:distillation",
+          "sha256": "a20d4e7e9b38d7ce3b359eb5689a489cac6d5b108ebedbc9d9ae5dc621627c1e"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "industrialforegoing:fertilizer": {
+      "kind": "native_machine_code",
+      "source_evidence": {
+        "repository_checkout": "Industrial-Foregoing-1.21",
+        "commit": "ce2852db4b34af3ab1b9637cff0b327d4bb561d5",
+        "version_scope": "compatible1.21sourcebranch; exact3.6.38binary not verified",
+        "scope": "Hardcoded dryrubber/fertilizer output explains absence from exported JSON. Full mod runtime remains untested.",
+        "files": [
+          {
+            "path": "src/main/java/com/buuz135/industrial/block/core/tile/LatexProcessingUnitTile.java",
+            "sha256": "a7cfb1f332719687c572aa92799ba333f57650d5921247e6974ed17fb4236041"
+          },
+          {
+            "path": "src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SewageComposterTile.java",
+            "sha256": "3e5c6de507457b2cd4c02e2e4e5397b61b0af25c9f6044047c21d16d38fd7147"
+          }
+        ]
+      },
+      "exact_binary_runtime_tested": false
+    },
+    "industrialforegoing:sewage_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "industrialforegoing:sewage",
+      "fluid_export_output_recipes": [],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "tfmg:lubrication_oil_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "tfmg:lubrication_oil",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "tfmg/distillation/heavy_oil_light_distillation",
+          "serializer": "tfmg:distillation",
+          "sha256": "9a96cab8cf9594a8ad4b2e7c4dfa1bc641eb4dde2340b6db3603c816440d6cfc"
+        },
+        {
+          "recipe": "tfmg/distillation/heavy_oil_no_naphtha",
+          "serializer": "tfmg:distillation",
+          "sha256": "9fd896be6c4e0c8b586fde0507453e859b3263bb5c787deff63d79caf3114a47"
+        },
+        {
+          "recipe": "tfmg/distillation/heavy_oil",
+          "serializer": "tfmg:distillation",
+          "sha256": "b1c51b3e520b4bc40d3867d9f88b9708281602a158260fa616e8aa402faa05b1"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "industrialforegoing:latex_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "industrialforegoing:latex",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "industrialforegoing/fluid_extractor/dark_oak",
+          "serializer": "industrialforegoing:fluid_extractor",
+          "sha256": "5f125546376bb5153925515122d5f0bb40e53f4812e3524c56032aa32bbb93ca"
+        },
+        {
+          "recipe": "industrialforegoing/fluid_extractor/cherry",
+          "serializer": "industrialforegoing:fluid_extractor",
+          "sha256": "a1854be67dbce6c3ea4f4710e07c0ec6c1e754bed2e0315c0a99ce79946b51bd"
+        },
+        {
+          "recipe": "industrialforegoing/fluid_extractor/acacia",
+          "serializer": "industrialforegoing:fluid_extractor",
+          "sha256": "fbc87cd8cb7206aba5d0d5b100e37574f27a443ee0d25f46573941bdc646b4f8"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "createdieselgenerators:biodiesel_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "createdieselgenerators:biodiesel",
+      "fluid_export_output_recipes": [
+        {
+          "recipe": "createdieselgenerators/mixing/biodiesel",
+          "serializer": "create:mixing",
+          "sha256": "08173f6e3efb75afb87a13259e40c6ce73406fb6ead762fcf8a7e25e6dac3454"
+        }
+      ],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "industrialforegoing:sludge_bucket": {
+      "kind": "registered_fluid_container",
+      "fluid": "industrialforegoing:sludge",
+      "fluid_export_output_recipes": [],
+      "requires_native_fill_and_full_pack_test": true,
+      "note": "Some Industrial Foregoing fluids are produced by native machine code outside RecipeManager."
+    },
+    "industrialforegoing:dryrubber": {
+      "kind": "native_machine_code",
+      "source_evidence": {
+        "repository_checkout": "Industrial-Foregoing-1.21",
+        "commit": "ce2852db4b34af3ab1b9637cff0b327d4bb561d5",
+        "version_scope": "compatible1.21sourcebranch; exact3.6.38binary not verified",
+        "scope": "Hardcoded dryrubber/fertilizer output explains absence from exported JSON. Full mod runtime remains untested.",
+        "files": [
+          {
+            "path": "src/main/java/com/buuz135/industrial/block/core/tile/LatexProcessingUnitTile.java",
+            "sha256": "a7cfb1f332719687c572aa92799ba333f57650d5921247e6974ed17fb4236041"
+          },
+          {
+            "path": "src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SewageComposterTile.java",
+            "sha256": "3e5c6de507457b2cd4c02e2e4e5397b61b0af25c9f6044047c21d16d38fd7147"
+          }
+        ]
+      },
+      "exact_binary_runtime_tested": false
+    }
+  },
+  "unresolved_producer_ids": [],
+  "producer_summary": {
+    "explicit_export_recipe_or_prior_loot": 234,
+    "identified_native_or_fluid_acquisition": 14,
+    "unresolved": 0,
+    "limitation": "Static source/template evidence is not a full in-game reachability certificate. Dynamic variants, fill operations and native machine behavior require the full modpack."
+  },
+  "v4_recipe_target_gate_conflicts": [],
+  "known_upstream_checks": [
+    {
+      "item": "tfmg:fireclay_ball",
+      "scope": "Not used by any new quest; zero explicit output found in export, but native production may exist. Original TFMG fireproof-brick upstream route requires full-pack confirmation, no baseline recipe or gate changed by this task."
+    }
+  ],
+  "observation_block_producers": {
+    "ad_astra:airlock": {
+      "exported_item_recipe_output": [
+        "ad_astra/airlock"
+      ]
+    },
+    "ad_astra:fuel_refinery": {
+      "exported_item_recipe_output": [
+        "ad_astra/fuel_refinery"
+      ]
+    },
+    "ad_astra:nasa_workbench": {
+      "exported_item_recipe_output": [
+        "ad_astra/nasa_workbench"
+      ]
+    },
+    "ad_astra:oxygen_loader": {
+      "exported_item_recipe_output": [
+        "ad_astra/oxygen_loader"
+      ]
+    },
+    "ad_astra:oxygen_sensor": {
+      "exported_item_recipe_output": [
+        "ad_astra/oxygen_sensor"
+      ]
+    },
+    "ad_astra:solar_panel": {
+      "exported_item_recipe_output": [
+        "ad_astra/solar_panel"
+      ]
+    },
+    "ad_astra:water_pump": {
+      "exported_item_recipe_output": [
+        "ad_astra/water_pump"
+      ]
+    },
+    "ae2:16k_crafting_storage": {
+      "exported_item_recipe_output": [
+        "ae2/network/crafting/16k_cpu_crafting_storage"
+      ]
+    },
+    "ae2:cell_workbench": {
+      "exported_item_recipe_output": [
+        "ae2/network/blocks/cell_workbench"
+      ]
+    },
+    "ae2:controller": {
+      "exported_item_recipe_output": [
+        "ae2/network/blocks/controller"
+      ]
+    },
+    "ae2:energy_acceptor": {
+      "exported_item_recipe_output": [
+        "ae2/network/blocks/energy_energy_acceptor",
+        "ae2/network/blocks/energy_energy_acceptor_alt"
+      ]
+    },
+    "ae2:interface": {
+      "exported_item_recipe_output": [
+        "ae2/network/blocks/interfaces_interface_alt",
+        "ae2/network/blocks/interfaces_interface"
+      ]
+    },
+    "ae2:molecular_assembler": {
+      "exported_item_recipe_output": [
+        "ae2/network/crafting/molecular_assembler"
+      ]
+    },
+    "ae2:pattern_provider": {
+      "exported_item_recipe_output": [
+        "ae2/network/blocks/pattern_providers_interface_alt",
+        "ae2/network/blocks/pattern_providers_interface"
+      ]
+    },
+    "ars_nouveau:agronomic_sourcelink": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/agronomic_sourcelink"
+      ]
+    },
+    "ars_nouveau:archwood_chest": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/archwood_chest"
+      ]
+    },
+    "ars_nouveau:relay_collector": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/relay_collector"
+      ]
+    },
+    "ars_nouveau:relay_deposit": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/relay_deposit"
+      ]
+    },
+    "ars_nouveau:relay_splitter": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/relay_splitter"
+      ]
+    },
+    "ars_nouveau:storage_lectern": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/storage_lectern"
+      ]
+    },
+    "ars_nouveau:timer_spell_turret": {
+      "exported_item_recipe_output": [
+        "ars_nouveau/timer_spell_turret"
+      ]
+    },
+    "ars_nouveau:whirlisprig_flower": {
+      "exported_item_recipe_output": [],
+      "kind": "native_charm_created_world_block",
+      "native_item": "ars_nouveau:whirlisprig_charm",
+      "acceptance": "Observation checks the native world block; does not demand an unobtainable inventory item of that block",
+      "exact_mod_runtime_tested": false
+    },
+    "ars_nouveau:wixie_cauldron": {
+      "exported_item_recipe_output": [],
+      "kind": "native_charm_created_world_block",
+      "native_item": "ars_nouveau:wixie_charm",
+      "acceptance": "Observation checks the native world block; does not demand an unobtainable inventory item of that block",
+      "exact_mod_runtime_tested": false
+    },
+    "botania:hopperhock": {
+      "exported_item_recipe_output": [
+        "botania/petal_apothecary/hopperhock"
+      ]
+    },
+    "botania:hourglass": {
+      "exported_item_recipe_output": [
+        "botania/hourglass"
+      ]
+    },
+    "botania:mana_detector": {
+      "exported_item_recipe_output": [
+        "botania/mana_detector"
+      ]
+    },
+    "botania:mana_distributor": {
+      "exported_item_recipe_output": [
+        "botania/mana_distributor"
+      ]
+    },
+    "botania:mana_pool": {
+      "exported_item_recipe_output": [
+        "botania/mana_pool"
+      ]
+    },
+    "botania:rannuncarpus": {
+      "exported_item_recipe_output": [
+        "botania/petal_apothecary/rannuncarpus"
+      ]
+    },
+    "botania:terra_plate": {
+      "exported_item_recipe_output": [
+        "botania/terra_plate"
+      ]
+    },
+    "create:andesite_funnel": {
+      "exported_item_recipe_output": [
+        "create/crafting/logistics/andesite_funnel"
+      ]
+    },
+    "create:basin": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/basin"
+      ]
+    },
+    "create:brass_funnel": {
+      "exported_item_recipe_output": [
+        "create/crafting/logistics/brass_funnel"
+      ]
+    },
+    "create:brass_tunnel": {
+      "exported_item_recipe_output": [
+        "create/crafting/logistics/brass_tunnel"
+      ]
+    },
+    "create:clutch": {
+      "exported_item_recipe_output": [
+        "create_connected/crafting/kinetics/clutch_from_conversion",
+        "create/crafting/kinetics/clutch"
+      ]
+    },
+    "create:gearbox": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/gearbox_from_conversion",
+        "create/crafting/kinetics/gearbox"
+      ]
+    },
+    "create:gearshift": {
+      "exported_item_recipe_output": [
+        "create_connected/crafting/kinetics/gearshift_from_conversion",
+        "create/crafting/kinetics/gearshift"
+      ]
+    },
+    "create:mechanical_arm": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/mechanical_arm"
+      ]
+    },
+    "create:mechanical_press": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/mechanical_press"
+      ]
+    },
+    "create:smart_chute": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/smart_chute"
+      ]
+    },
+    "create:speedometer": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/speedometer",
+        "create/crafting/kinetics/speedometer_from_conversion"
+      ]
+    },
+    "create:stockpile_switch": {
+      "exported_item_recipe_output": [
+        "create/crafting/logistics/stockpile_switch"
+      ]
+    },
+    "create:stressometer": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/stressometer_from_conversion"
+      ]
+    },
+    "create:water_wheel": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/water_wheel"
+      ]
+    },
+    "create:weighted_ejector": {
+      "exported_item_recipe_output": [
+        "create/crafting/kinetics/weighted_ejector"
+      ]
+    },
+    "create_connected:item_silo": {
+      "exported_item_recipe_output": [
+        "create_connected/crafting/kinetics/item_silo",
+        "create_connected/crafting/kinetics/item_silo_from_conversion"
+      ]
+    },
+    "createaddition:alternator": {
+      "exported_item_recipe_output": [
+        "createaddition/mechanical_crafting/alternator"
+      ]
+    },
+    "createaddition:connector": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/connector"
+      ]
+    },
+    "createaddition:electric_motor": {
+      "exported_item_recipe_output": [
+        "createaddition/mechanical_crafting/electric_motor"
+      ]
+    },
+    "createaddition:large_connector": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/large_connector"
+      ]
+    },
+    "createaddition:modular_accumulator": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/modular_accumulator"
+      ]
+    },
+    "createaddition:portable_energy_interface": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/portable_energy_interface"
+      ]
+    },
+    "createaddition:redstone_relay": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/redstone_relay"
+      ]
+    },
+    "createaddition:rolling_mill": {
+      "exported_item_recipe_output": [
+        "createaddition/crafting/rolling_mill"
+      ]
+    },
+    "createdieselgenerators:basin_lid": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/basin_lid"
+      ]
+    },
+    "createdieselgenerators:bulk_fermenter": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/bulk_fermenter"
+      ]
+    },
+    "createdieselgenerators:diesel_engine": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/diesel_engine"
+      ]
+    },
+    "createdieselgenerators:huge_diesel_engine": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/huge_diesel_engine"
+      ]
+    },
+    "createdieselgenerators:large_diesel_engine": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/large_diesel_engine"
+      ]
+    },
+    "createdieselgenerators:oil_barrel": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/oil_barrel"
+      ]
+    },
+    "createdieselgenerators:pumpjack_bearing": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/pumpjack_bearing"
+      ]
+    },
+    "createdieselgenerators:pumpjack_head": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/pumpjack_head"
+      ]
+    },
+    "createdieselgenerators:pumpjack_hole": {
+      "exported_item_recipe_output": [
+        "createdieselgenerators/crafting/pumpjack_hole"
+      ]
+    },
+    "draconicevolution:crafting_core": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/crafting_core"
+      ]
+    },
+    "draconicevolution:energy_core": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/energy_core"
+      ]
+    },
+    "draconicevolution:energy_pylon": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/energy_pylon"
+      ]
+    },
+    "draconicevolution:energy_transfuser": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/energy_transfuser"
+      ]
+    },
+    "draconicevolution:wyvern_crafting_injector": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/wyvern_crafting_injector"
+      ]
+    },
+    "draconicevolution:wyvern_wireless_crystal": {
+      "exported_item_recipe_output": [
+        "draconicevolution/machines/wyvern_wireless_crystal"
+      ]
+    },
+    "evolvedmekanism:alloyer": {
+      "exported_item_recipe_output": [
+        "evolvedmekanism/alloyer"
+      ]
+    },
+    "industrialforegoing:biofuel_generator": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/biofuel_generator"
+      ]
+    },
+    "industrialforegoing:bioreactor": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/bioreactor"
+      ]
+    },
+    "industrialforegoing:conveyor": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/conveyor"
+      ]
+    },
+    "industrialforegoing:fluid_extractor": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/fluid_extractor"
+      ]
+    },
+    "industrialforegoing:latex_processing_unit": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/latex_processing_unit"
+      ]
+    },
+    "industrialforegoing:plant_fertilizer": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/plant_fertilizer"
+      ]
+    },
+    "industrialforegoing:sewage_composter": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/sewage_composter"
+      ]
+    },
+    "industrialforegoing:sludge_refiner": {
+      "exported_item_recipe_output": [
+        "industrialforegoing/sludge_refiner"
+      ]
+    },
+    "integrateddynamics:logic_programmer": {
+      "exported_item_recipe_output": [
+        "integrateddynamics/crafting/logic_programmer",
+        "integrateddynamics/crafting/logic_programmer_from_portable"
+      ]
+    },
+    "integrateddynamics:part_display_panel": {
+      "exported_item_recipe_output": [
+        "integrateddynamics/crafting/part_display_panel"
+      ]
+    },
+    "integrateddynamics:part_fluid_reader": {
+      "exported_item_recipe_output": [
+        "integrateddynamics/crafting/part_fluid_reader"
+      ]
+    },
+    "integrateddynamics:part_inventory_reader": {
+      "exported_item_recipe_output": [
+        "integrateddynamics/crafting/part_inventory_reader"
+      ]
+    },
+    "integrateddynamics:variablestore": {
+      "exported_item_recipe_output": [
+        "integrateddynamics/crafting/variablestore"
+      ]
+    },
+    "integratedtunnels:part_exporter_item": {
+      "exported_item_recipe_output": [
+        "integratedtunnels/crafting/part_exporter_item"
+      ]
+    },
+    "integratedtunnels:part_importer_item": {
+      "exported_item_recipe_output": [
+        "integratedtunnels/crafting/part_importer_item"
+      ]
+    },
+    "integratedtunnels:part_interface_energy": {
+      "exported_item_recipe_output": [
+        "integratedtunnels/crafting/part_interface_energy"
+      ]
+    },
+    "megacells:1m_crafting_storage": {
+      "exported_item_recipe_output": [
+        "megacells/crafting/1m_crafting_storage"
+      ]
+    },
+    "mekanism:basic_bin": {
+      "exported_item_recipe_output": [
+        "mekanism/bin/basic"
+      ]
+    },
+    "mekanism:basic_chemical_tank": {
+      "exported_item_recipe_output": [
+        "mekanism/chemical_tank/basic"
+      ]
+    },
+    "mekanism:basic_energy_cube": {
+      "exported_item_recipe_output": [
+        "mekanism/energy_cube/basic"
+      ]
+    },
+    "mekanism:basic_fluid_tank": {
+      "exported_item_recipe_output": [
+        "mekanism/fluid_tank/basic"
+      ]
+    },
+    "mekanism:chemical_crystallizer": {
+      "exported_item_recipe_output": [
+        "mekanism/chemical_crystallizer"
+      ]
+    },
+    "mekanism:chemical_dissolution_chamber": {
+      "exported_item_recipe_output": [
+        "mekanism/chemical_dissolution_chamber"
+      ]
+    },
+    "mekanism:chemical_infuser": {
+      "exported_item_recipe_output": [
+        "mekanism/chemical_infuser"
+      ]
+    },
+    "mekanism:chemical_washer": {
+      "exported_item_recipe_output": [
+        "mekanism/chemical_washer"
+      ]
+    },
+    "mekanism:crusher": {
+      "exported_item_recipe_output": [
+        "mekanism/crusher"
+      ]
+    },
+    "mekanism:electrolytic_separator": {
+      "exported_item_recipe_output": [
+        "mekanism/electrolytic_separator"
+      ]
+    },
+    "mekanism:enrichment_chamber": {
+      "exported_item_recipe_output": [
+        "mekanism/enrichment_chamber"
+      ]
+    },
+    "mekanism:logistical_sorter": {
+      "exported_item_recipe_output": [
+        "mekanism/logistical_sorter"
+      ]
+    },
+    "mekanism:metallurgic_infuser": {
+      "exported_item_recipe_output": [
+        "mekanism/metallurgic_infuser"
+      ]
+    },
+    "mekanism:pressurized_reaction_chamber": {
+      "exported_item_recipe_output": [
+        "mekanism/pressurized_reaction_chamber"
+      ]
+    },
+    "mekanism:rotary_condensentrator": {
+      "exported_item_recipe_output": [
+        "mekanism/rotary_condensentrator"
+      ]
+    },
+    "mekanism:thermal_evaporation_controller": {
+      "exported_item_recipe_output": [
+        "mekanism/thermal_evaporation/controller"
+      ]
+    },
+    "mekanism:ultimate_energy_cube": {
+      "exported_item_recipe_output": [
+        "mekanism/energy_cube/ultimate"
+      ]
+    },
+    "modern_industrialization:advanced_fluid_input_hatch": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/hatches/advanced/fluid_input_hatch",
+        "modern_industrialization/hatches/advanced/fluid_input_from_output",
+        "modern_industrialization/hatches/advanced/assembler/fluid_input_hatch"
+      ]
+    },
+    "modern_industrialization:advanced_item_input_hatch": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/hatches/advanced/item_input_from_output",
+        "modern_industrialization/hatches/advanced/item_input_hatch",
+        "modern_industrialization/hatches/advanced/assembler/item_input_hatch"
+      ]
+    },
+    "modern_industrialization:advanced_item_output_hatch": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/hatches/advanced/item_output_from_input",
+        "modern_industrialization/hatches/advanced/item_output_hatch",
+        "modern_industrialization/hatches/advanced/assembler/item_output_hatch"
+      ]
+    },
+    "modern_industrialization:assembler": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/assembler_generated/electric_age/machine/assembler",
+        "modern_industrialization/electric_age/machine/assembler_asbl"
+      ]
+    },
+    "modern_industrialization:electric_unpacker": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/assembler_generated/electric_age/machine/unpacker",
+        "modern_industrialization/electric_age/machine/unpacker_asbl"
+      ]
+    },
+    "modern_industrialization:electric_wiremill": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/assembler_generated/electric_age/machine/wiremill",
+        "modern_industrialization/electric_age/machine/wiremill_asbl"
+      ]
+    },
+    "modern_industrialization:mv_energy_input_hatch": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/hatches/advanced/energy_input_hatch",
+        "modern_industrialization/hatches/advanced/energy_input_from_output",
+        "modern_industrialization/hatches/advanced/assembler/energy_input_hatch"
+      ]
+    },
+    "modern_industrialization:mv_lv_transformer": {
+      "exported_item_recipe_output": [
+        "modern_industrialization/assembler_generated/electric_age/transformer/lv_mv/down",
+        "modern_industrialization/electric_age/transformer/lv_mv/down_asbl",
+        "modern_industrialization/electric_age/transformer/lv_mv/up_to_down"
+      ]
+    },
+    "modularrouters:modular_router": {
+      "exported_item_recipe_output": [
+        "modularrouters/modular_router"
+      ]
+    },
+    "oritech:assembler_block": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/assembleralt",
+        "oritech/crafting/assembler"
+      ]
+    },
+    "oritech:foundry_block": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/foundry"
+      ]
+    },
+    "oritech:machine_efficiency_addon": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/addon/eff"
+      ]
+    },
+    "oritech:machine_extender": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/extender"
+      ]
+    },
+    "oritech:machine_fluid_addon": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/addon/fluid"
+      ]
+    },
+    "oritech:machine_inventory_proxy_addon": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/addon/invproxy"
+      ]
+    },
+    "oritech:machine_redstone_addon": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/addon/redstone"
+      ]
+    },
+    "oritech:machine_speed_addon": {
+      "exported_item_recipe_output": [
+        "oritech/crafting/addon/speed"
+      ]
+    },
+    "pneumaticcraft:assembly_controller": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/assembly_controller"
+      ]
+    },
+    "pneumaticcraft:assembly_io_unit_export": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/assembly_io_unit_export_from_import",
+        "pneumaticcraft/assembly_io_unit_export"
+      ]
+    },
+    "pneumaticcraft:assembly_io_unit_import": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/assembly_io_unit_import",
+        "pneumaticcraft/assembly_io_unit_import_from_export"
+      ]
+    },
+    "pneumaticcraft:pressure_chamber_interface": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/pressure_chamber_interface"
+      ]
+    },
+    "pneumaticcraft:pressure_tube": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/pressure_tube"
+      ]
+    },
+    "pneumaticcraft:programmer": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/programmer"
+      ]
+    },
+    "pneumaticcraft:uv_light_box": {
+      "exported_item_recipe_output": [
+        "pneumaticcraft/uv_light_box"
+      ]
+    },
+    "powah:energizing_orb": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energizing_orb"
+      ]
+    },
+    "powah:energizing_rod_blazing": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energizing_rod_blazing"
+      ]
+    },
+    "powah:energizing_rod_spirited": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energizing_rod_spirited"
+      ]
+    },
+    "powah:energy_cell_basic": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energy_cell_basic_2",
+        "powah/crafting/energy_cell_basic"
+      ]
+    },
+    "powah:energy_cell_blazing": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energy_cell_blazing"
+      ]
+    },
+    "powah:energy_cell_spirited": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energy_cell_spirited"
+      ]
+    },
+    "powah:energy_discharger_blazing": {
+      "exported_item_recipe_output": [
+        "powah/crafting/energy_discharger_blazing"
+      ]
+    },
+    "powah:furnator_blazing": {
+      "exported_item_recipe_output": [
+        "powah/crafting/furnator_blazing"
+      ]
+    },
+    "tfmg:cable_connector": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/cable_connector"
+      ]
+    },
+    "tfmg:casting_basin": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/casting_basin"
+      ]
+    },
+    "tfmg:electrical_switch": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/electrical_switch"
+      ]
+    },
+    "tfmg:flarestack": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/flarestack"
+      ]
+    },
+    "tfmg:industrial_mixer": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/industrial_mixer"
+      ]
+    },
+    "tfmg:steel_distillation_output": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/steel_distillation_output"
+      ]
+    },
+    "tfmg:steel_fluid_tank": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/steel_fluid_tank"
+      ]
+    },
+    "tfmg:voltmeter": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/voltmeter"
+      ]
+    },
+    "tfmg:winding_machine": {
+      "exported_item_recipe_output": [
+        "tfmg/crafting/materials/winding_machine"
+      ]
+    },
+    "xnet:controller": {
+      "exported_item_recipe_output": [
+        "xnet/controller"
+      ]
+    },
+    "xnet:redstone_proxy": {
+      "exported_item_recipe_output": [
+        "xnet/redstone_proxy"
+      ]
+    },
+    "xnet:router": {
+      "exported_item_recipe_output": [
+        "xnet/router"
+      ]
+    },
+    "xnet:wireless_router": {
+      "exported_item_recipe_output": [
+        "xnet/wireless_router"
+      ]
+    }
+  },
+  "observed_blocks_without_explicit_item_producer": [
+    "ars_nouveau:whirlisprig_flower",
+    "ars_nouveau:wixie_cauldron"
+  ],
+  "observation_producer_summary": {
+    "observed_block_ids": 149,
+    "explicit_export_item_producers": 147,
+    "native_charm_world_conversions_requiring_pack_test": 2
+  }
+}

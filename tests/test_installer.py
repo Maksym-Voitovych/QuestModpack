@@ -327,3 +327,18 @@ custom_exponent: 1E4
 
 if __name__ == '__main__':
     unittest.main()
+
+class V4PackagePairingTest(unittest.TestCase):
+    def test_outdated_guard_fails_before_any_instance_change(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+            (package/'mods/aia2-machine-guard-0.3.0-alpha.jar').write_bytes(b'old companion')
+            (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+            old=instance/'mods/aia2-machine-guard-0.3.0-alpha.jar';old.write_bytes(b'player installed companion')
+            with self.assertRaisesRegex(installer.InstallError,'damaged|outdated|API4'):
+                installer.install(package,instance)
+            self.assertEqual(old.read_bytes(),b'player installed companion')
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())

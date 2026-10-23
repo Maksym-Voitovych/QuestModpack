@@ -1,0 +1,573 @@
+{
+  "id": "0000B9A69772B2C9",
+  "filename": "aia2_branch_automation_ad_astra",
+  "title": "ad_astra — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 5,
+  "icon": {
+    "id": "ad_astra:fuel_bucket",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000CF56262C1C7C",
+      "title": "Паливна станція перед стартом",
+      "description": [
+        "Розділіть переробку ракетного палива та його резерв до підключення стартового майданчика. Перевірте конкретний Fluid ID: дизель сусіднього мода не стає ракетним пальним лише через подібну назву.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:fuel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C13BD8AC783F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC96D2EA7BED",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:fuel_refinery",
+          "timer": 40
+        },
+        {
+          "id": "000093FF35A8D2D1",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000660AAC030F15",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE881C8DA829",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EE6146A42ECB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A1E435C3FF9F",
+      "title": "Кисень має незалежний резерв",
+      "description": [
+        "Підготуйте засоби кисневого обслуговування окремо від паливної гілки. Перед відльотом перевірте заряд і фактичне наповнення спорядження в грі, оскільки предметна перевірка не читає вміст балона.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:gas_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CF56262C1C7C",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000051CA3638CE76",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_loader",
+          "timer": 40
+        },
+        {
+          "id": "000015CF477BB7A2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C77287D3D51",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E81C0F3437F0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000017EB8461C1BB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000B864B7D2953",
+      "title": "Вода для відновлення запасу",
+      "description": [
+        "Підготуйте сумісну рідинну трасу для водяного постачання станції. Не змішуйте її з паливним контуром і залиште місце для ручного огляду джерела перед кожним довгим циклом.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:water_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A1E435C3FF9F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000240F7140A568",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:water_pump",
+          "timer": 40
+        },
+        {
+          "id": "0000162659107AE7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FBC2025BAB0",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_fluid_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2C5F3C42198",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000218E4B71C9CE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000088EEB518F50A",
+      "title": "Перевірка локальної атмосфери",
+      "description": [
+        "Зберіть засоби розподілу та контролю атмосфери, а не лише кисневий балон у скрині. Межі герметичної зони та реальні показники сенсора необхідно перевірити у відповідному приміщенні.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_distributor",
+        "count": 1
+      },
+      "dependencies": [
+        "00000B864B7D2953",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000080120494436",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_sensor",
+          "timer": 40
+        },
+        {
+          "id": "00001528E50048EE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_distributor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007764218053F1",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:vent",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000381AB1722D63",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000012067DE1C75A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000997A457FE6DA",
+      "title": "Герметичний сервісний прохід",
+      "description": [
+        "Підготуйте контрольований прохід до обслуговуваного приміщення станції. Зовнішній вигляд шлюзу не є доказом герметичності, тому перевірте поведінку кисневого контролю при відкриванні дверей.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:steel_door",
+        "count": 1
+      },
+      "dependencies": [
+        "000088EEB518F50A",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004D86EE8C01B3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:airlock",
+          "timer": 40
+        },
+        {
+          "id": "0000319AD332131F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_door",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D02DCDD605C9",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006310DA21ABC1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005B1D57913B38",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005E6965AC1E64",
+      "title": "Панель для планетарної електромережі",
+      "description": [
+        "Підготуйте реальну фотоелектричну деталь і кабель для енергетики поза базою. Назва Etrium у цій деталі не означає, що всі сирі Etrium-предмети з реєстру мають окремі рецепти отримання.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:photovoltaic_etrium_cell",
+        "count": 1
+      },
+      "dependencies": [
+        "0000997A457FE6DA",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002815F7F65849",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:solar_panel",
+          "timer": 40
+        },
+        {
+          "id": "00000E263D2EB5CD",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:photovoltaic_etrium_cell",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A71DAEBE384C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C04B06386551",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001166168E5F41",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "000007B382E11C2F",
+      "title": "Ремонтний набір для двох світів",
+      "description": [
+        "Залиште на орбітальній або планетарній базі запас типових ракетних деталей та інструмент налаштування. Один збережений комплект може запобігти вимушеному поверненню через дрібну помилку монтажу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ad_astra:rocket_fin",
+        "count": 1
+      },
+      "dependencies": [
+        "00005E6965AC1E64",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004111B6FAE644",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000AD08289570C9",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:rocket_fin",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1AECB37E806",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:engine_frame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D926CA90A3CD",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016C6E92FCC9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000513CC1B87A40",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BF6924664B47",
+      "title": "Порт обслуговування між фабриками",
+      "description": [
+        "Поєднайте в сервісному наборі планетарний метал, магічну підтримку та інтерфейс основної фабрики. Перевіряйте сумісність енергетичного обладнання окремо від списку матеріалів у транспортному замовленні.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:interface",
+        "count": 1
+      },
+      "dependencies": [
+        "000007B382E11C2F",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000178E20F5A3FB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_loader",
+          "timer": 40
+        },
+        {
+          "id": "00009EEBB48C01CC",
+          "type": "item",
+          "item": {
+            "id": "ae2:interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F4817F89C63",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5650530702E",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A053A4C56D95",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000A2DDDEB4DBB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

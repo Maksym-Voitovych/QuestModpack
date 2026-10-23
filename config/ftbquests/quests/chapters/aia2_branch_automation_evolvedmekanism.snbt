@@ -1,0 +1,584 @@
+{
+  "id": "000072E0DD0613C9",
+  "filename": "aia2_branch_automation_evolvedmekanism",
+  "title": "evolvedmekanism — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 11,
+  "icon": {
+    "id": "evolvedmekanism:alloy_hypercharged",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000EF1D0BC32409",
+      "title": "Сплави нового покоління мають окремі буфери",
+      "description": [
+        "Розділіть два нові сплави за завершеними виробничими станами й перевірте їхні рецепти. Подібні кольори компонентів не дозволяють підставляти один матеріал замість іншого у складному рецепті.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_hypercharged",
+        "count": 1
+      },
+      "dependencies": [
+        "000032EE983BA491",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000588F16A55B2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:alloyer",
+          "timer": 40
+        },
+        {
+          "id": "0000E607FDBE9A66",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_hypercharged",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE4065F642D1",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_subatomic",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000029682DF77137",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008516BBFC1484",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000815BF32CF048",
+      "title": "Схема не замінює монтажний комплект",
+      "description": [
+        "Підготуйте керувальну схему та засіб установлення рівня як різні вироби. Перед застосуванням звірте сумісну машину й послідовність переходу, щоб не втратити налаштовану робочу комірку.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EF1D0BC32409",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000ED5E89775B6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:alloyer",
+          "timer": 40
+        },
+        {
+          "id": "00006F03BB68E70F",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008F67CB8F175D",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_tier_installer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A84A448187BC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A1915DD549EA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EB50BE5DE79D",
+      "title": "Перехід до щільної компоновки",
+      "description": [
+        "Виділіть окреме замовлення для наступного монтажного рівня та збережіть відомості про базову машину. Факт отримання встановлювача не доводить, що всі залежні модулі виробничої лінії вже сумісні.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:dense_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000815BF32CF048",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DB30718A21F7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:alloyer",
+          "timer": 40
+        },
+        {
+          "id": "0000DCC58B52281E",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:dense_control_circuit",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007EE16F88A14B",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:dense_tier_installer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E4E8EBB874C1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008D229127F9E0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000017A07149A52F",
+      "title": "Квантовий керувальний вузол",
+      "description": [
+        "Підготуйте високорівневу схему, встановлювач та інструмент перевірки портів. Після зміни рівня вручну перевірте напрямки входів і виходів, навіть якщо корпус стоїть на тому самому місці.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EB50BE5DE79D",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E47C1C60E904",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:alloyer",
+          "timer": 40
+        },
+        {
+          "id": "0000276346BAB821",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A0F8A58FB7E",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_tier_installer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009B5A9FD8288",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001B25B0C88A0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D75EA2C50340",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004866E0525495",
+      "title": "Технічне зберігання нових сплавів",
+      "description": [
+        "Підготуйте окремі замовлення для високорівневих сплавів і виділений інтерфейс їх повернення. Перевіряйте точний вихід кожного рецепта, щоб ME не очікувала іншу форму матеріалу з подібною назвою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_hypercharged",
+        "count": 1
+      },
+      "dependencies": [
+        "000017A07149A52F",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A7AEEF3A3F8D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:interface",
+          "timer": 40
+        },
+        {
+          "id": "0000B09FC23075DD",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_hypercharged",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082371F4964B7",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E45261B39411",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C8390F4EF2CB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009A59134369E9",
+      "title": "Контроль живлення модернізованої комірки",
+      "description": [
+        "Залиште енергетичний буфер для модернізованої ділянки та перевірте джерело її постійного навантаження. Заміна керувальної схеми не робить стару кабельну магістраль необмеженою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:dense_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "00004866E0525495",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F4AEC29A1625",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:ultimate_energy_cube",
+          "timer": 40
+        },
+        {
+          "id": "000064AE5F36859F",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:dense_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000CB825F8DA54",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_nitro",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0E41BB20A71",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001C7C21E39781",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000868BC68517B8",
+      "title": "Арканний резерв для нової електроніки",
+      "description": [
+        "Зберіть результати високої електроніки та двох магічних гілок перед міжмодовим складанням. Рідкісні магічні компоненти зберігайте окремо від масових сплавів, щоб уникнути випадкового витрачання в іншій заявці.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:quantum_control_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "00009A59134369E9",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096709F5DD733",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evolvedmekanism:alloyer",
+          "timer": 40
+        },
+        {
+          "id": "00003A2CAA8B1B51",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:quantum_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A73253E21FA1",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005A33577A2A40",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C790F0CE942",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071D3454F1B0A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004EAF8999EB1C",
+      "title": "Пакет відновлення еволюційного цеху",
+      "description": [
+        "Підготуйте перевірений ремонтний комплект і копії потрібних налаштувань ME. Встановлювачі потрібні для сумісних нативних машин; вони не обходять серверне відкриття епох або правила власника AIA2.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:overclocked_tier_installer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000868BC68517B8",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000CEC332AC542",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "00001D9D73866A03",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:overclocked_tier_installer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FBEC971BF4A2",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:dense_tier_installer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E8F72E18B34",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000566265948094",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003659F5B19086",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

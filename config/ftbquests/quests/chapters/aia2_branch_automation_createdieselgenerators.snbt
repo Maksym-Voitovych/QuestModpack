@@ -1,0 +1,558 @@
+{
+  "id": "0000CD2835EABA67",
+  "filename": "aia2_branch_automation_createdieselgenerators",
+  "title": "createdieselgenerators — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 9,
+  "icon": {
+    "id": "createdieselgenerators:oil_scanner",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000092F6EE1D1BD4",
+      "title": "Пошук палива починається з вимірювання",
+      "description": [
+        "Відведіть тару для розвідувальної проби й використайте сканер до монтажу стаціонарного обладнання. Позначте джерело та маршрут повернення, щоб нафта не стала лише випадковою знахідкою в інвентарі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:oil_scanner",
+        "count": 1
+      },
+      "dependencies": [
+        "000042B3D0338DA7",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C07EEE9232CF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:oil_barrel",
+          "timer": 40
+        },
+        {
+          "id": "000076B46844A2BD",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:oil_scanner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063804C59E143",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:canister",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E13F80DFF56E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002AC8E0F41685",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C18F1E0A0360",
+      "title": "Голова насосної установки",
+      "description": [
+        "Підготуйте верхню частину насоса та механічну передачу для її обслуговування. Звірте склад структури з довідником аддона й не плутайте предметний комплект із доказом завершеного мультиблока.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:pumpjack_crank",
+        "count": 1
+      },
+      "dependencies": [
+        "000092F6EE1D1BD4",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009232418D684C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:pumpjack_head",
+          "timer": 40
+        },
+        {
+          "id": "0000E2D1974357E8",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:pumpjack_crank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BF7C6B97BBD",
+          "type": "item",
+          "item": {
+            "id": "create:shaft",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B67F862E7310",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AABF8F0D8728",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007F1D4CB7BA0A",
+      "title": "Опора бурового вузла",
+      "description": [
+        "Огляньте несучу частину насосної установки та місце її контакту з родовищем. Залиште доступ для огляду нижньої частини, а не ховайте весь вузол під суцільною підлогою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C18F1E0A0360",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000096BFA6BBFB12",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:pumpjack_bearing",
+          "timer": 40
+        },
+        {
+          "id": "00002FF40BF9BD2E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:pumpjack_hole",
+          "timer": 40
+        },
+        {
+          "id": "00006315B742565C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000030BF88098302",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003D27C1905EFD",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A04A41B69B0E",
+      "title": "Паливна проба двигуна",
+      "description": [
+        "Перед довгою паливною лінією перевірте двигун на невеликій партії дизеля. Підготуйте запасну рухому деталь і місце для ізоляції подавання палива під час ремонту.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:diesel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "00007F1D4CB7BA0A",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001E6E476BECE7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000DFE7BBF91547",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:diesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018F3CA8B1BFF",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_piston",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000025A037E6C0DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BDAA182B6685",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C720DA25F7EB",
+      "title": "Біопаливо має рослинний початок",
+      "description": [
+        "Розділіть біологічну сировину та продукти переробки ще до з'єднання труб. Порівняйте нативні рецепти олії й етанолу в JEI та не називайте один резервуар повною біопаливною фабрикою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:plant_oil_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A04A41B69B0E",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC079CDF802B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:bulk_fermenter",
+          "timer": 40
+        },
+        {
+          "id": "00005EA37EDD3D0F",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:plant_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E2ABA4256AC",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:ethanol_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002515F3E9690E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A364D91D5E0D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E48BB036F91E",
+      "title": "Паливо для іншого двигуна",
+      "description": [
+        "Перевірте сумісність обраного палива з великим двигуном та подбайте про зручне місце обслуговування. Глушник є допоміжною деталлю і не збільшує виробництво енергії сам по собі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:biodiesel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C720DA25F7EB",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008AE80775DE30",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:large_diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "000066936D4FD080",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:biodiesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFB974879394",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_silencer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FC32C6F2B749",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001FBAC5810394",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000814F8695B7C",
+      "title": "Дві ділянки переробки",
+      "description": [
+        "Відокремте контрольовану переробку від простого зберігання сирої нафти. Перевірте реальний рецепт фракції в JEI, перш ніж під'єднувати її до паливного споживача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:distillation_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E48BB036F91E",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007ED39E6C4879",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:basin_lid",
+          "timer": 40
+        },
+        {
+          "id": "00002F9296F26264",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:distillation_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031260957F038",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:gasoline_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000654F0263B4A1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FC35DE4E4D61",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F39243A27585",
+      "title": "Планове обслуговування турбіни",
+      "description": [
+        "Зберіть інструменти й деталі для обслуговування потужнішого двигуна, а не лише його корпус. Під час пробного запуску контролюйте подавання палива та окремо перевірте механічний вихід.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_turbocharger",
+        "count": 1
+      },
+      "dependencies": [
+        "00000814F8695B7C",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000086A6222B78DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:huge_diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000062DD69C8BBE",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_turbocharger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A2912E02779F",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000050675473FD1D",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wire_cutters",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AB31C9EE0243",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000035130A7D1FCF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

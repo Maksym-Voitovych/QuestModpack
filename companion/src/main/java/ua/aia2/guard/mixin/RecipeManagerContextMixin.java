@@ -13,7 +13,10 @@ import ua.aia2.guard.GuardedCrafting;
 /** Filter only a running block entity's individual lookup, never global recipe lists or JEI. */
 @Mixin(RecipeManager.class)
 abstract class RecipeManagerContextMixin implements GuardedCrafting {
-    @Inject(method = "getRecipeFor", at = @At("RETURN"), cancellable = true, require = 1)
+    // A name-only selector matched the first overload and missed CachedCheck's
+    // canonical RecipeHolder path. All vanilla cached lookups reach this method.
+    @Inject(method = "getRecipeFor(Lnet/minecraft/world/item/crafting/RecipeType;Lnet/minecraft/world/item/crafting/RecipeInput;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/item/crafting/RecipeHolder;)Ljava/util/Optional;",
+            at = @At("RETURN"), cancellable = true, require = 1)
     private void aia2$guardOwnedLookup(CallbackInfoReturnable<Optional<RecipeHolder<?>>> callback) {
         var holder = callback.getReturnValue();
         if (holder.isPresent() && !Aia2MachineGuard.mayLookupRecipeInCurrentTick(holder.get().value())) {

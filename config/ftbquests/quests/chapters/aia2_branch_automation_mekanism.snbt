@@ -1,0 +1,1109 @@
+{
+  "id": "0000A2692A02EE22",
+  "filename": "aia2_branch_automation_mekanism",
+  "title": "Mekanism — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 14,
+  "icon": {
+    "id": "mekanism:configurator",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000B6E1433A400C",
+      "title": "Шафа конфігурації машин",
+      "description": [
+        "Зберіть інструмент конфігурації та локальний енергетичний буфер у зоні обслуговування. Запишіть кольори входів і виходів до копіювання схем на всю майстерню.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:configurator",
+        "count": 1
+      },
+      "dependencies": [
+        "000040D637E45047",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0455712012F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:basic_energy_cube",
+          "timer": 40
+        },
+        {
+          "id": "00004B2F592AF382",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068790FD65F15",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D85FB6A336A5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DAA76D2E282D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000414390F03EE2",
+      "title": "Предметна мережа із сортуванням",
+      "description": [
+        "Почніть мережу з двох визначених приймачів і одного правила сортування. Перевірте, куди піде предмет без відповідного правила, перш ніж додавати нові типи продукції.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:basic_logistical_transporter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B6E1433A400C",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF8808E86F4C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:logistical_sorter",
+          "timer": 40
+        },
+        {
+          "id": "0000DD507CF423A7",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_logistical_transporter",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E11A1313363",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FE73ED944CF0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B5313E3A2659",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000902848B653A3",
+      "title": "Окремий рідинний контур",
+      "description": [
+        "Відокремте рідинні труби від предметних транспортерів та позначте воду як тестове середовище. Базовий резервуар повинен залишатися доступним для перевірки після підключення машини.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:basic_mechanical_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000414390F03EE2",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E0E3CD09B08C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:basic_fluid_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000B3F2EA9E39FE",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_mechanical_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFBD44CADF1C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001883D144DFB9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003AC7EB8FBD9C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005DE075DC2077",
+      "title": "Хімічний контур без змішаних труб",
+      "description": [
+        "Підготуйте хімічний резервуар і пристрій для малих проб, не використовуючи водяні труби як заміну. Тип середовища важливіший за зовнішню схожість двох мереж.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:basic_pressurized_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000902848B653A3",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004CF32093E852",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:basic_chemical_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000AE7A204F086E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_pressurized_tube",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000181CFE8D6E12",
+          "type": "item",
+          "item": {
+            "id": "mekanism:gauge_dropper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D5E66E52A11",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000602D074685E0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000ECADCE57C058",
+      "title": "Бін для одного масового продукту",
+      "description": [
+        "Зберігайте масовий пил у виділеному буфері та перевірте доступність сигналу запасу. Не направляйте в той самий бін усі побічні продукти лише тому, що вони також називаються пилом.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:dust_osmium",
+        "count": 1
+      },
+      "dependencies": [
+        "00005DE075DC2077",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BB20BCDE7665",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:basic_bin",
+          "timer": 40
+        },
+        {
+          "id": "0000AB00EEAFD237",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_osmium",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009AAD49EFEA37",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C212E648A173",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000E191D44AF6B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000028ABF12803A",
+      "title": "Промивання інвентарю перед новою рудами",
+      "description": [
+        "Порівняйте напрямки входу сировини та виходу продукту на збагачувальній камері. Після тесту приберіть залишки попередньої сировини, щоб наступний рецепт не отримав випадкову домішку.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:raw_osmium",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECADCE57C058",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000079149AF19F19",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:enrichment_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00000B4AD909712C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:raw_osmium",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B56E5760FFBE",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8C45954E0D6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DAEE93681577",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B520187B2319",
+      "title": "Пил не дорівнює злитку",
+      "description": [
+        "Підготуйте окремі етикетки для пилу й готового металу. Порівняння двох станів допомагає не закодувати в складському замовленні неправильний етап обробки.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:dust_osmium",
+        "count": 1
+      },
+      "dependencies": [
+        "0000028ABF12803A",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BC17FF384968",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:crusher",
+          "timer": 40
+        },
+        {
+          "id": "00000ABC56D34341",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_osmium",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D4239575260",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_osmium",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027A93568CD35",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000603CA9D239AA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004A01B2BA0850",
+      "title": "Міжмодовий комплект запуску",
+      "description": [
+        "Поєднайте кабель, магічний метал і проміжний продукт інфузії в наборі для спільної майстерні. Ці речі готуються різними процесами; жодна з них не підміняє налаштування самого інфузора.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_copper",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B520187B2319",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000182D2C4C62BD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:metallurgic_infuser",
+          "timer": 40
+        },
+        {
+          "id": "00003650619D51C0",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D480C3B21A3D",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000028009C933F6",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B99A9B0D41DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000072E69FB00FEF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "000089E8BC61C517",
+      "title": "Електроліз із двома виходами",
+      "description": [
+        "Перед електролізом визначте приймач для кожного продукту та залиште доступ до їх перевірки. Заповнений побічний резервуар може зупинити всю лінію, тому не зводьте схему лише до корисного газу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:gauge_dropper",
+        "count": 1
+      },
+      "dependencies": [
+        "000032DAEA32A63F",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A24C88DD6A34",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:electrolytic_separator",
+          "timer": 40
+        },
+        {
+          "id": "0000D64263A1AF2E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:gauge_dropper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4F4E4764CCF",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_chemical_tank",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000794EB6C2B1F2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000042DB5E9AB830",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000255C784FD3C2",
+      "title": "Промивна гілка руд",
+      "description": [
+        "Виділіть рідинне живлення промивання окремо від хімічної подачі. Випробуйте водяну трасу до встановлення довгого переробного каскаду, щоб одна порожня труба не маскувала помилки рецепта.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:advanced_mechanical_pipe",
+        "count": 1
+      },
+      "dependencies": [
+        "000089E8BC61C517",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000957394C35676",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:chemical_washer",
+          "timer": 40
+        },
+        {
+          "id": "00001508489DBAB5",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_mechanical_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4A7D4BB8622",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000389F3BFDEFFF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DC887E144432",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 2.0
+    },
+    {
+      "id": "000000C96233F3A2",
+      "title": "Окрема камера розчинення",
+      "description": [
+        "Підготуйте хімічну трасу й доступ до налаштувань камери розчинення. Перевірте нативну послідовність обробки конкретної руди, перш ніж очікувати однакову поведінку від усіх мінералів.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:advanced_pressurized_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000255C784FD3C2",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000053467BE769DF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:chemical_dissolution_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000CCDC2A7CE72F",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_pressurized_tube",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000078E394D2E93A",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C3191B07C6DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000088BA6926DE3A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000FA0D83ED37A9",
+      "title": "Кристалізація завершує свою ділянку",
+      "description": [
+        "Відокремте кристали від сировини попередніх стадій і залиште буфер на виході. Предметний транспортер не переносить хімічний вхід камери — для нього потрібна власна сумісна мережа.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:advanced_logistical_transporter",
+        "count": 1
+      },
+      "dependencies": [
+        "000000C96233F3A2",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000453DB7E13A3A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:chemical_crystallizer",
+          "timer": 40
+        },
+        {
+          "id": "00008F3EAECD6786",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_logistical_transporter",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E9040D8977D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E781F36F847B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A2C14DD521BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000B1D256322841",
+      "title": "Реактор із трьома середовищами",
+      "description": [
+        "Підготуйте два характерні продукти реакцій і звірте їхні конкретні рецепти в JEI. Предметні, рідинні й хімічні входи плануйте окремо, а не намагайтеся пропустити все через одну універсальну трубу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:substrate",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA0D83ED37A9",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D0DD6CEC596",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:pressurized_reaction_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000D84276AFC9D5",
+          "type": "item",
+          "item": {
+            "id": "mekanism:substrate",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007569D5D03265",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hdpe_pellet",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DC00C69A7AF1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006F9E3EC54873",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "00004BE811FDA1E3",
+      "title": "Рідка й газова форми",
+      "description": [
+        "Порівняйте сторони та режим конденсації на виділеній тестовій ділянці. Резервуари двох типів потрібні для різних станів середовища й не є взаємозамінними комірками.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:advanced_fluid_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B1D256322841",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF1816F31BA3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:rotary_condensentrator",
+          "timer": 40
+        },
+        {
+          "id": "000084F1744FB3E8",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F2FC6B41E1E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_chemical_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA0C9FD0EEBB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B378AF351F47",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000F7BA86B7EB0C",
+      "title": "Випарювання має сервісний доступ",
+      "description": [
+        "Огляньте контролер і підготуйте клапани для зрозумілих напрямків подачі та відведення. Фактичну форму структури й температурні умови перевірте в грі за довідником Mekanism.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:thermal_evaporation_valve",
+        "count": 1
+      },
+      "dependencies": [
+        "00004BE811FDA1E3",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D2E306B48D45",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:thermal_evaporation_controller",
+          "timer": 40
+        },
+        {
+          "id": "000080A0408E4964",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_valve",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AFFB920E052E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_block",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7E0E4F1AD2D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004BECB1753DF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000576FB019DF1C",
+      "title": "Контур реагентів з магічним запасом",
+      "description": [
+        "Зберіть сервісний набір для реагентної ділянки та магічних рецептів поруч із нею. Руна й самоцвіт не заливаються в хімічну трубу: їхнє призначення — окремі міжмодові формули епохи.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "mekanism:gauge_dropper",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F7BA86B7EB0C",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065C404E2CCBB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:chemical_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000B02DDA4FDEE0",
+          "type": "item",
+          "item": {
+            "id": "mekanism:gauge_dropper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA96C6B655C8",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001AA989A2708C",
+          "type": "item",
+          "item": {
+            "id": "occultism:spirit_attuned_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B87EF1DE5AE1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CFC4BB0423C8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    }
+  ]
+}

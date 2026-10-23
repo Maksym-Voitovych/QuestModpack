@@ -1,0 +1,573 @@
+{
+  "id": "000009C910BDC83F",
+  "filename": "aia2_branch_automation_integrateddynamics",
+  "title": "integrateddynamics — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 13,
+  "icon": {
+    "id": "integrateddynamics:variable",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "000078CB7CAC3093",
+      "title": "Мова даних починається з програматора",
+      "description": [
+        "Виділіть кілька чистих карток для різних значень, а не зберігайте всі логічні вирази в одному незрозумілому наборі. Підпишіть призначення першої змінної до перенесення її в робочу мережу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002EAEA163BE4C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:logic_programmer",
+          "timer": 40
+        },
+        {
+          "id": "00005510C971459F",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD257BCAE3AE",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCF959D935E9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000FA7106C2F98",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005C2E62F29FD6",
+      "title": "Читання одного інвентарю",
+      "description": [
+        "Підготуйте контрольний інвентар з відомим вмістом і зчитайте його через окрему змінну. Порівнюйте результат із реальною бочкою, щоб помилка типу даних не маскувалася під порожній склад.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "000078CB7CAC3093",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001F2E9C1830DF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:part_inventory_reader",
+          "timer": 40
+        },
+        {
+          "id": "0000F0558E3EC8F9",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006254B276FDFA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A97FB609EE6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F70A901519A6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E88AE9F8C0EF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005F9B79E91593",
+      "title": "Читання рідини окремим типом",
+      "description": [
+        "Випробуйте рідинне читання на простій воді та перевірте тип отриманого значення. Предметний список із попереднього завдання не є універсальним представленням усіх станів мережі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "00005C2E62F29FD6",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F916A0D606F2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:part_fluid_reader",
+          "timer": 40
+        },
+        {
+          "id": "000033E6CE842387",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA83E8AB8C05",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C13BE18A51A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006F93DE683F4A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CF5E24E7481F",
+      "title": "Сигнал на зрозумілий показник",
+      "description": [
+        "Підготуйте видиме відображення даних і дешевий індикатор для перевірки умов. Панель потрібна для спостереження, а не для приховування складного виразу, який ніхто не може пояснити.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F9B79E91593",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000C433A1939CB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:part_display_panel",
+          "timer": 40
+        },
+        {
+          "id": "0000823A1CF7E900",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C64D3D48543",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone_lamp",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D5B93B6A0867",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006CF28D34FC6A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005174C88B8151",
+      "title": "Сховище змінних з етикетками",
+      "description": [
+        "Підпишіть службові змінні та збережіть їх у визначеному місці мережі. Наявність дубліката картки не означає, що вона незалежна від тих самих даних або залежних виразів.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:labeller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CF5E24E7481F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000F83AD429B1E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integrateddynamics:variablestore",
+          "timer": 40
+        },
+        {
+          "id": "000029BF95D990C2",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:labeller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C6515BCA0EE",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003572523A4AE8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001F2B5933A85E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006BC0DCE47A3B",
+      "title": "Предметний вихід під умовою",
+      "description": [
+        "Підготуйте один умовний експорт до окремого приймача й перевірте його на звичайному матеріалі. Помилка логічного значення не повинна вилучати всі компоненти з основного складу.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "00005174C88B8151",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002EA3E78EAF0E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integratedtunnels:part_exporter_item",
+          "timer": 40
+        },
+        {
+          "id": "000011DF2413B4C0",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003316B09B873F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D913BCBF2A3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D00295274E93",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CFCF6FF3B733",
+      "title": "Енергія має власний інтерфейс",
+      "description": [
+        "Відокремте дані про енергію від самого енергетичного підключення. Спочатку перевірте роль інтерфейсу в довіднику Integrated Tunnels, а потім плануйте керування потужною виробничою лінією.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "00006BC0DCE47A3B",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005BE5CA6B740",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integratedtunnels:part_interface_energy",
+          "timer": 40
+        },
+        {
+          "id": "0000D201934CB1E4",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008B98C7885A27",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003BBCF17883D1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000069BDC0F492B4",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "000029615863015C",
+      "title": "Логічний шлюз до ME-майстерні",
+      "description": [
+        "Підготуйте контрольовану точку обміну між мережами без взаємного безкінечного перекачування. Зберігайте правило напряму та його конфігурацію поруч із місцем фактичного перенесення ресурсів.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:interface",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CFCF6FF3B733",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006595E6EBC35B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "integratedtunnels:part_importer_item",
+          "timer": 40
+        },
+        {
+          "id": "0000BAFD873F8C6E",
+          "type": "item",
+          "item": {
+            "id": "ae2:interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E95932CD80CB",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:variable",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003C836D24E7E4",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000756DDD07F4E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005C41305FADA6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

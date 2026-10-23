@@ -1,0 +1,558 @@
+{
+  "id": "0000493D985D896E",
+  "filename": "aia2_branch_automation_tfmg",
+  "title": "tfmg — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 20,
+  "icon": {
+    "id": "tfmg:multimeter",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00000AAC83FCF522",
+      "title": "Електричний паспорт нафтової ділянки",
+      "description": [
+        "Підготуйте стаціонарне та переносне вимірювання для електричної частини переробки. Ізолятори залиште в ремонтному наборі: невеликий запас потрібен для зміни траси без демонтажу всіх опор.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:multimeter",
+        "count": 1
+      },
+      "dependencies": [
+        "000042B3D0338DA7",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000072A6ECE39C3C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:voltmeter",
+          "timer": 40
+        },
+        {
+          "id": "00001E56C703B186",
+          "type": "item",
+          "item": {
+            "id": "tfmg:multimeter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004C5F3F35A57D",
+          "type": "item",
+          "item": {
+            "id": "tfmg:glass_insulator_segment",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000877D637CE8CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006052E2778B37",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000092468035C88C",
+      "title": "Польове підключення без плутанини",
+      "description": [
+        "Позначте контакти вимикача та кабельної ділянки до подавання живлення. Порівняйте монтажну схему з інструкцією TFMG, оскільки зовні схожі кабельні деталі можуть мати різні ролі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:empty_spool",
+        "count": 1
+      },
+      "dependencies": [
+        "00000AAC83FCF522",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F73FE3627D5B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:cable_connector",
+          "timer": 40
+        },
+        {
+          "id": "000078230C642A01",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:electrical_switch",
+          "timer": 40
+        },
+        {
+          "id": "0000DAB48A09C8BA",
+          "type": "item",
+          "item": {
+            "id": "tfmg:empty_spool",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FBB568CDABF7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C349C467157B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00009ECBC6A69FEC",
+      "title": "Груба переробка перед точною",
+      "description": [
+        "Підготуйте мішалку до роботи з промисловою сировиною та залиште місце для очищення виходу. Глина тут є запасом для суміжних будівельних процесів, а не безкоштовною заміною енергопостачання.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:mixer_blade",
+        "count": 1
+      },
+      "dependencies": [
+        "000092468035C88C",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004A297FABB6C8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:industrial_mixer",
+          "timer": 40
+        },
+        {
+          "id": "0000591DE664710B",
+          "type": "item",
+          "item": {
+            "id": "tfmg:mixer_blade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD23C62C7C3D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:clay_ball",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063F0049EB185",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A3FF08A79E7C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000AC2D86E21BF0",
+      "title": "Контроль фракцій у колоні",
+      "description": [
+        "Позначте виходи фракцій і перевірте їхній порядок за нативним довідником. Один правильний контролер не гарантує правильної колони; предметне завдання лише готує необхідні вузли.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:steel_distillation_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "00009ECBC6A69FEC",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B008CA99446A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:steel_distillation_output",
+          "timer": 40
+        },
+        {
+          "id": "00002A84768A105A",
+          "type": "item",
+          "item": {
+            "id": "tfmg:steel_distillation_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002042FE9417C9",
+          "type": "item",
+          "item": {
+            "id": "tfmg:steel_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000056F172C1EA45",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A7A4FFF11EA9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00002B4DDA16C255",
+      "title": "Окремий резерв важкої фракції",
+      "description": [
+        "Збережіть мастильну фракцію в окремому контурі та підготуйте переносну тару для технічних робіт. Не повертайте мастило в резервуар сирої нафти після випадкового змішування потоків.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:lubrication_oil_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC2D86E21BF0",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046A5B23FF80B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:steel_fluid_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000137FD4EB6703",
+          "type": "item",
+          "item": {
+            "id": "tfmg:lubrication_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AEE625E08F89",
+          "type": "item",
+          "item": {
+            "id": "tfmg:oil_can",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DDA715209A5B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004362D5493D44",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000071F39876C426",
+      "title": "Газовий вихід має маршрут",
+      "description": [
+        "Передбачте керований вихід для газових продуктів і можливість ізолювати ділянку. Зовнішнє розміщення труби саме по собі не доводить, що потрібна фракція доходить до призначеного споживача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:exhaust",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B4DDA16C255",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A316FF05BF96",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:flarestack",
+          "timer": 40
+        },
+        {
+          "id": "00000752D4C0E631",
+          "type": "item",
+          "item": {
+            "id": "tfmg:exhaust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003453DA07DEC4",
+          "type": "item",
+          "item": {
+            "id": "tfmg:steel_fluid_valve",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007250979FAEC7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000091A3BB107314",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F9589D2F5695",
+      "title": "Плата для електромеханічної перебудови",
+      "description": [
+        "Підготуйте електромеханічні компоненти окремою лінією від паливної. Позначення заготовок і завершених плат зменшує ризик підставити недороблену деталь у міжмодовий рецепт.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "tfmg:coated_circuit_board",
+        "count": 1
+      },
+      "dependencies": [
+        "000071F39876C426",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F710109171F0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:winding_machine",
+          "timer": 40
+        },
+        {
+          "id": "0000DEEB0329C8CA",
+          "type": "item",
+          "item": {
+            "id": "tfmg:coated_circuit_board",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000042E473D85528",
+          "type": "item",
+          "item": {
+            "id": "tfmg:stator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C099F37C4767",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B35DEDECE362",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000D19CB272BEC",
+      "title": "Спільний ремонт двох нафтових шкіл",
+      "description": [
+        "Зберіть ремонтний комплект, у якому деталі Create Diesel Generators не підміняють корпуси TFMG. Два моди можуть працювати на одній базі, але їхні рецепти та середовища потрібно перевіряти окремо.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_piston",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9589D2F5695",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001FF1B2A70BB3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "tfmg:casting_basin",
+          "timer": 40
+        },
+        {
+          "id": "00000B5F502B9B28",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_piston",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F087525C15A3",
+          "type": "item",
+          "item": {
+            "id": "tfmg:steel_casing",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A93ABE09345B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000629B1F9519B7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EE271C3E1376",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cooked_beef",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

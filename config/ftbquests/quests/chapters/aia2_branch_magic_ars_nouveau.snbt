@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_ars_nouveau",
   "title": "Ars Nouveau — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 10,
+  "order_index": 27,
   "icon": {
     "id": "ars_nouveau:archwood_planks",
     "count": 1
@@ -568,6 +568,73 @@
       "y": 2.0
     },
     {
+      "id": "000017D4F8ACE451",
+      "title": "Джерело й резерв як різні вузли",
+      "description": [
+        "Розділіть вирощування рослин, збирання Source та його зберігання. Під час проби перевірте розташування джерела відносно ферми, а не вважайте будь-яку банку поруч автоматично підключеною.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_jar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BAC68064CFC0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F3DCD221B9B0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:agronomic_sourcelink",
+          "timer": 40
+        },
+        {
+          "id": "00009D24053B0E34",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E4CFB3DE6E9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BAA57245580D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000535412D4ECEF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.0
+    },
+    {
       "id": "0000586204D9BFBD",
       "title": "Книга для другого кола",
       "description": [
@@ -613,7 +680,7 @@
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "000099CFF7B253AC",
@@ -695,7 +762,7 @@
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 6.0
     },
     {
       "id": "0000E856722F9547",
@@ -755,7 +822,7 @@
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 8.0
     },
     {
       "id": "000020B5635A7BEF",
@@ -934,6 +1001,73 @@
       "y": 8.0
     },
     {
+      "id": "0000696A1989B454",
+      "title": "Керування реле без перевитрати",
+      "description": [
+        "Підготуйте розподільче реле та інструмент прив'язування для двох напрямків споживання. Перевірте зв'язки послідовно, щоб резерв не йшов лише до найближчого добре видимого споживача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:dominion_wand",
+        "count": 1
+      },
+      "dependencies": [
+        "000017D4F8ACE451",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006AE5C0A7F0D0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:relay_splitter",
+          "timer": 40
+        },
+        {
+          "id": "0000D354D3D87D3C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFCF77C48625",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A77FD55C65D4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000092482F6BCAC3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 10.0
+    },
+    {
       "id": "0000AAD04FC2430D",
       "title": "Опора зачарувального вузла",
       "description": [
@@ -991,7 +1125,7 @@
         }
       ],
       "x": 2.0,
-      "y": 10.0
+      "y": 12.0
     },
     {
       "id": "0000BBF8E0F99869",
@@ -1051,7 +1185,7 @@
         }
       ],
       "x": 2.0,
-      "y": 12.0
+      "y": 14.0
     },
     {
       "id": "000028BDFFC9458A",
@@ -1309,6 +1443,69 @@
       "y": 10.0
     },
     {
+      "id": "0000B1892412ABA9",
+      "title": "Повернення залишку Source",
+      "description": [
+        "Окремо позначте збирання та віддавання Source у допоміжній ділянці. Після перенесення банки повторно перевірте прив'язки: зовнішня симетрія реле не доводить правильного маршруту.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:dominion_wand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000696A1989B454",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003130DFEEE266",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:relay_collector",
+          "timer": 40
+        },
+        {
+          "id": "000098F8977FBADD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:relay_deposit",
+          "timer": 40
+        },
+        {
+          "id": "000084DA19F7D4B1",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002115A288AD8A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000081967C7EBA45",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
       "id": "00006E84A5A83CF4",
       "title": "Помічник предметної логістики",
       "description": [
@@ -1358,6 +1555,73 @@
       "y": 4.0
     },
     {
+      "id": "00009C382DC871EA",
+      "title": "Робоче місце старбанкла",
+      "description": [
+        "Підготуйте скриню та засіб прив'язування для транспортного помічника. Визначте джерело, приймач і шлях повернення зайвих предметів перед тим, як доручити йому цінні компоненти.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:starbuncle_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B1892412ABA9",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005E2DDAE7A437",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:archwood_chest",
+          "timer": 40
+        },
+        {
+          "id": "0000595BC460696C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:starbuncle_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000264B6B67C111",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D942626AEAEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B9EB388C7C11",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
+    },
+    {
       "id": "0000C0E1234825C6",
       "title": "Керований вихід магічного буфера",
       "description": [
@@ -1404,7 +1668,7 @@
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 8.0
     },
     {
       "id": "00006451FF689B1E",
@@ -1554,6 +1818,285 @@
       "y": 8.0
     },
     {
+      "id": "0000C6B309B3F5AD",
+      "title": "Алхімічний стіл віксі",
+      "description": [
+        "Залиште біля робочого місця тару та вільні місця для результатів алхімії. Уточніть потрібний рецепт у довіднику Ars і не замінюйте його уявним автоматичним крафтом будь-якого предмета.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:wixie_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00009C382DC871EA",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000035D4BD505523",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:wixie_cauldron",
+          "timer": 40
+        },
+        {
+          "id": "0000778ACF27A5F2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:wixie_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002FF3C912D4C3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009847074F713",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006A5D48B1FFC7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_bottle",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 10.0
+    },
+    {
+      "id": "00009EC4D331BCBE",
+      "title": "Живе господарство вихоропаростка",
+      "description": [
+        "Перед розширенням живої ферми виділіть її зону та матеріали для обслуговування. Перевірте умови помічника за довідником: просто поставлена квітка ще не є доказом налагодженого врожаю.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:whirlisprig_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C6B309B3F5AD",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B9128DEFDB0C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:whirlisprig_flower",
+          "timer": 40
+        },
+        {
+          "id": "0000D642450DEF48",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:whirlisprig_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068FB9D6DF136",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B23CF8502F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C7F7C2D912F6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000BB4DDFE24283",
+      "title": "Контрольована турель",
+      "description": [
+        "Підготуйте засіб перенаправлення та доступне ручне вимкнення магічної турелі. Спочатку випробуйте безпечне заклинання на окремій мішені, а не спрямовуйте його в населений цех.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ars_nouveau:spell_prism",
+        "count": 1
+      },
+      "dependencies": [
+        "00009EC4D331BCBE",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004AFE9F09805B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:timer_spell_turret",
+          "timer": 40
+        },
+        {
+          "id": "0000779ABC973598",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:spell_prism",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CB1448DC77CB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005979F3E2CE9D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000011432F251871",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000DB61AD5EDC51",
+      "title": "Магічна логістика в технічній базі",
+      "description": [
+        "Зберіть набір для обслуговування магічного та цифрового складу поруч. Lectern і ME залишаються різними мережами: документуйте місце їхнього обміну, щоб не шукати зниклі матеріали у двох системах одночасно.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": {
+        "id": "ae2:memory_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BB4DDFE24283",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D5FEAB93F323",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:storage_lectern",
+          "timer": 40
+        },
+        {
+          "id": "00005985BB6E5F89",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000095248B8BA62",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED9A7C5EE28F",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FCD9DD29E484",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B7DF1D9B32A5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_nugget",
+            "count": 1
+          },
+          "count": 8
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
       "id": "00005B0B3D80F78D",
       "title": "Резерв джерельних самоцвітів",
       "description": [
@@ -1601,7 +2144,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 8.0
+      "y": 10.0
     },
     {
       "id": "0000B9BDA67F99AE",
@@ -1661,7 +2204,7 @@
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 12.0
     },
     {
       "id": "0000DB8A39AAB862",
@@ -1711,7 +2254,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 12.0
+      "y": 14.0
     },
     {
       "id": "00006EA5992F0C00",
@@ -1771,7 +2314,7 @@
         }
       ],
       "x": 0.0,
-      "y": 14.0
+      "y": 16.0
     },
     {
       "id": "000055F4FC9AD425",
@@ -1821,7 +2364,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 16.0
+      "y": 18.0
     },
     {
       "id": "0000285610AE4089",
@@ -1888,7 +2431,7 @@
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 20.0
     },
     {
       "id": "00004DFC8D15CBA4",
@@ -1949,7 +2492,7 @@
         }
       ],
       "x": 0.0,
-      "y": 20.0
+      "y": 22.0
     },
     {
       "id": "00007A17C0B00F91",
@@ -2010,7 +2553,7 @@
         }
       ],
       "x": 0.0,
-      "y": 22.0
+      "y": 24.0
     },
     {
       "id": "000020F72DE0EAE1",
@@ -2071,7 +2614,7 @@
         }
       ],
       "x": 2.0,
-      "y": 14.0
+      "y": 16.0
     },
     {
       "id": "00004D479AC5E022",
@@ -2132,7 +2675,7 @@
         }
       ],
       "x": 0.0,
-      "y": 24.0
+      "y": 26.0
     },
     {
       "id": "000083109A3913C4",
@@ -2216,7 +2759,7 @@
         }
       ],
       "x": 0.0,
-      "y": 26.0
+      "y": 28.0
     },
     {
       "id": "00003428021C79C4",
@@ -2277,7 +2820,7 @@
         }
       ],
       "x": 0.0,
-      "y": 28.0
+      "y": 30.0
     },
     {
       "id": "0000DA5044A645EE",
@@ -2338,7 +2881,7 @@
         }
       ],
       "x": 0.0,
-      "y": 30.0
+      "y": 32.0
     },
     {
       "id": "0000EC8E506441AA",
@@ -2399,7 +2942,7 @@
         }
       ],
       "x": 0.0,
-      "y": 32.0
+      "y": 34.0
     },
     {
       "id": "0000A01A30687242",
@@ -2460,7 +3003,7 @@
         }
       ],
       "x": 0.0,
-      "y": 34.0
+      "y": 36.0
     },
     {
       "id": "00006BF860B9E2E8",
@@ -2521,7 +3064,7 @@
         }
       ],
       "x": 0.0,
-      "y": 36.0
+      "y": 38.0
     },
     {
       "id": "00002C733314F7AD",
@@ -2581,7 +3124,7 @@
         }
       ],
       "x": 0.0,
-      "y": 38.0
+      "y": 40.0
     },
     {
       "id": "0000118D6E40E55E",
@@ -2642,7 +3185,7 @@
         }
       ],
       "x": 0.0,
-      "y": 40.0
+      "y": 42.0
     },
     {
       "id": "000041BB1F09C740",
@@ -2714,7 +3257,7 @@
         }
       ],
       "x": 0.0,
-      "y": 42.0
+      "y": 44.0
     },
     {
       "id": "00005153D679F3AB",
@@ -2775,7 +3318,7 @@
         }
       ],
       "x": 0.0,
-      "y": 44.0
+      "y": 46.0
     }
   ]
 }

@@ -246,4 +246,5 @@ StartupEvents.registry('item', function (event) {
   event.create("kubejs:aia2_section_magic").displayName("Магія").maxStackSize(1).texture("kubejs:item/aia2/sections/magic");
   event.create("kubejs:aia2_section_adventure").displayName("Пригоди").maxStackSize(1).texture("kubejs:item/aia2/sections/adventure");
   event.create("kubejs:aia2_section_collection").displayName("Колекції").maxStackSize(1).texture("kubejs:item/aia2/sections/collection");
+  event.create("kubejs:aia2_section_automation").displayName("Автоматизація").maxStackSize(1).texture("kubejs:item/aia2/sections/automation");
 });

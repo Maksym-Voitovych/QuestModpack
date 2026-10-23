@@ -5,12 +5,19 @@
 global.AIA2Core = (function () {
   function fail(message) { throw new Error('[AIA2] ' + message); }
   function validateState(state) {
-    if (!state || state.schema !== 1 || !state.teams || typeof state.teams !== 'object') {
+    if (!state || state.schema !== 1 || !state.teams || typeof state.teams !== 'object' || Array.isArray(state.teams)) {
       fail('Несумісний журнал прогресії. Не скидайте його автоматично.');
     }
     Object.keys(state.teams).forEach(function (id) {
+      if (!state.teams[id] || typeof state.teams[id] !== 'object' || Array.isArray(state.teams[id])) {
+        fail('Пошкоджений запис команди ' + id);
+      }
       var n = state.teams[id].completed;
       if (typeof n !== 'number' || n % 1 !== 0 || n < 0 || n > 48) fail('Пошкоджений стан команди ' + id);
+      var pending = state.teams[id].pending;
+      if (pending !== undefined && (typeof pending !== 'number' || pending % 1 !== 0 || pending !== n + 1 || pending > 48)) {
+        fail('Пошкоджений незавершений перехід команди ' + id);
+      }
     });
     return state;
   }
