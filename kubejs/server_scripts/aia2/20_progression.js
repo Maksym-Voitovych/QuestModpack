@@ -147,7 +147,7 @@ function aia2Forge(player, restore) {
   return 1;
 }
 
-global.AIA2 = {
+var aia2ServerAPI = {
   rules: AIA2Rules,
   completed: aia2Completed,
   ledger: aia2State,
@@ -171,6 +171,9 @@ global.AIA2 = {
     }
   }
 };
+
+// Mutate the startup-created container; global itself is read-only here.
+Object.keys(aia2ServerAPI).forEach(function (key) { global.AIA2[key] = aia2ServerAPI[key]; });
 
 ServerEvents.commandRegistry(function (event) {
   var C = event.commands;

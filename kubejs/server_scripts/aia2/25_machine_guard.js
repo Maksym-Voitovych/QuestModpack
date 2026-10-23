@@ -42,7 +42,7 @@ function aia2InitMachines(server) {
   } catch (error) { aia2MachineFailure(error); }
 }
 
-global.AIA2Machines = {
+var aia2MachineAPI = {
   isReady: function () {
     return !!(AIA2MachineGuard && aia2MachineReady && AIA2MachineGuard.isReady());
   },
@@ -71,6 +71,9 @@ global.AIA2Machines = {
     } catch (error) { aia2MachineFailure(error); }
   }
 };
+
+// Preserve the startup-created alias across reloads without assigning global.
+Object.keys(aia2MachineAPI).forEach(function (key) { global.AIA2Machines[key] = aia2MachineAPI[key]; });
 
 ServerEvents.loaded(function (event) { aia2InitMachines(event.server); });
 // Reloading server scripts doesn't run ServerEvents.loaded; lazily reinitialize

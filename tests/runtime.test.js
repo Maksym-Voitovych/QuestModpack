@@ -6,11 +6,26 @@ const path = require('node:path');
 const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const scripts = path.join(root, 'kubejs/server_scripts/aia2');
+const startup = path.join(root, 'kubejs/startup_scripts/aia2/00_shared_state.js');
+
+function readonlyGlobal(context) {
+  context.global = new Proxy(context.global, {
+    set() { throw new Error("'global' cannot be assigned to in client or server scripts"); },
+    deleteProperty() { throw new Error("'global' cannot be assigned to in client or server scripts"); }
+  });
+  context.globalThis = undefined;
+}
+function bootstrap(context) {
+  vm.runInContext(fs.readFileSync(startup, 'utf8'), context);
+  readonlyGlobal(context);
+}
+
 const rules = JSON.parse(fs.readFileSync(path.join(root, 'kubejs/config/aia2_runtime.json')));
 const recipes = JSON.parse(fs.readFileSync(path.join(root, 'kubejs/config/aia2_recipes.json')));
 
 function core() {
   const context = vm.createContext({global: {}});
+  bootstrap(context);
   vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), context);
   return context.global.AIA2Core;
 }
@@ -127,7 +142,7 @@ function bridge() {
     }; }
   };
   const chain = {executes() { return this; }, then() { return this; }};
-  const context = vm.createContext({global: {AIA2Machines: {isReady() { return true; }, syncPlayer() {}}}, console,
+  const context = vm.createContext({global: {}, console,
     Java: {loadClass(name) {
       if (name === 'dev.ftb.mods.ftbquests.quest.ServerQuestFile') return {INSTANCE: file};
       assert.equal(name, 'net.darkhax.gamestages.GameStageHelper');
@@ -138,7 +153,10 @@ function bridge() {
     ServerEvents: {commandRegistry(cb) { cb({commands: {literal() { return chain; }}, register() {}}); }},
     PlayerEvents: {loggedIn(cb) { loginHandler = cb; }, tick() {}}
   });
-  for (const name of ['00_core.js', '20_progression.js']) vm.runInContext(fs.readFileSync(path.join(scripts, name), 'utf8'), context);
+  bootstrap(context);
+  vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), context);
+  Object.assign(context.global.AIA2Machines, {isReady() { return true; }, syncPlayer() {}});
+  vm.runInContext(fs.readFileSync(path.join(scripts, '20_progression.js'), 'utf8'), context);
   function player(name, team) {
     const slots = Array.from({length: 36}, () => new Stack('minecraft:air', 0));
     const data = new Map();
@@ -216,6 +234,7 @@ test('ProjectE remap hook replaces all inherited EMC with the finite whitelist',
       return name;
     }}
   });
+  readonlyGlobal(context);
   vm.runInContext(fs.readFileSync(path.join(scripts, '35_projecte.js'), 'utf8'), context);
   callbacks.get('moze_intel.projecte.api.event.EMCRemapEvent')();
   assert.equal(actual.size, 14);
@@ -233,7 +252,7 @@ test('required machine guard refuses key forging before spending when adapter is
   const previous = b.context.AIA2Rules.machineGuard.mode;
   try {
     b.context.AIA2Rules.machineGuard.mode = 'required';
-    b.context.global.AIA2Machines = {isReady() { return false; }};
+    b.context.global.AIA2Machines.isReady = function () { return false; };
     assert.throws(() => b.context.aia2Forge(p), /захист машин не готовий/);
     assert.equal(JSON.stringify(p.slots), before);
     assert.equal(b.context.aia2Completed(p), 0);
@@ -277,4 +296,38 @@ test('a gifted future stage cannot bypass the ledger; team change revokes stage 
   assert.equal(p.nativeStages.has('aia2_epoch_02'), false);
   assert.ok(b.commands.includes('advancement revoke Alice only aia2:stages/e02'));
   assert.equal(b.context.aia2Completed(p), 0);
+});
+
+
+test('server scripts use startup-created containers with a read-only global map', () => {
+  const b = bridge();
+  assert.throws(() => vm.runInContext('global.AIA2 = {};', b.context), /cannot be assigned/);
+  assert.equal(b.context.globalThis, undefined);
+  assert.equal(typeof b.context.global.AIA2Core.prepareKey, 'function');
+  assert.equal(typeof b.context.global.AIA2.completed, 'function');
+});
+
+test('server reload keeps alias identities and saved team progress while replacing old closures', () => {
+  const b = bridge(), p = b.player('Alice', 'A');
+  b.supply(p, rules.epochs[0]); b.context.aia2Forge(p);
+  const coreAlias = b.context.global.AIA2Core, apiAlias = b.context.global.AIA2;
+  const machinesAlias = b.context.global.AIA2Machines;
+  apiAlias.obsolete = true;
+  vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), b.context);
+  Object.assign(machinesAlias, {isReady() { return true; }, syncPlayer() {}});
+  vm.runInContext(fs.readFileSync(path.join(scripts, '20_progression.js'), 'utf8'), b.context);
+  assert.equal(b.context.global.AIA2Core, coreAlias);
+  assert.equal(b.context.global.AIA2, apiAlias);
+  assert.equal(b.context.global.AIA2Machines, machinesAlias);
+  assert.equal(apiAlias.obsolete, undefined);
+  assert.equal(b.context.aia2Completed(p), 1);
+  b.supply(p, rules.epochs[1]); b.context.aia2Forge(p);
+  assert.equal(b.context.aia2Completed(p), 2);
+});
+
+test('missing startup bootstrap fails with an actionable restart error', () => {
+  const context = vm.createContext({global: {}});
+  readonlyGlobal(context);
+  assert.throws(() => vm.runInContext(fs.readFileSync(path.join(scripts, '00_core.js'), 'utf8'), context),
+    /startup bootstrap.*повністю перезапустіть/);
 });

@@ -1,0 +1,54 @@
+{
+  "generatedAtUtc": "2026-10-22T21:23:13.846309+00:00",
+  "testCommand": "python -m unittest discover -s tests -p test_rhino_compat.py -v",
+  "result": "PASS",
+  "tests": 1,
+  "skipped": 0,
+  "engine": {
+    "name": "Rhino",
+    "version": "2101.2.7-build.85",
+    "artifactKind": "unmodified exact-pin Java core compiled from official source; not published mod binary",
+    "sourceCommit": "2d95ef41d02cbaf82e72f2ee0e21a03f5d34557a",
+    "officialWorkflow": "https://github.com/kube-mods/rhino/actions/runs/27170058218",
+    "localJar": "/workspace/aia2-toolchains/rhino-2101.2.7-build.85-core-from-source.jar",
+    "sha256": "cab40ada9ea05389837ded0707c8190693967d2f77f12f1d0f8439fa3f2cb321"
+  },
+  "scriptsExecuted": [
+    "kubejs/startup_scripts/aia2/00_shared_state.js",
+    "kubejs/server_scripts/aia2/00_core.js",
+    "kubejs/server_scripts/aia2/20_progression.js",
+    "kubejs/server_scripts/aia2/25_machine_guard.js"
+  ],
+  "verified": [
+    "globalThis absent",
+    "startup Java HashMap writable",
+    "server top-level global writes rejected",
+    "nested JavaScript state mutation allowed",
+    "startup aliases retained across distinct server contexts",
+    "/aia2 status",
+    "first epoch key transaction",
+    "native Game Stages projection",
+    "future epoch access denied",
+    "serialized ledger rehydration after server context reload",
+    "stale API closure cleanup"
+  ],
+  "modeled": [
+    "KubeJS readonly NativeJavaMap wrapper rejects put/delete",
+    "FTB Quests Java API",
+    "Game Stages Java API",
+    "Machine Guard Java API",
+    "inventory stacks",
+    "Minecraft server/player/event APIs",
+    "server persistentData string storage"
+  ],
+  "notVerified": [
+    "Minecraft startup",
+    "NeoForge event dispatch",
+    "actual FTB Quests team storage",
+    "real Game Stages commands",
+    "Machine Guard native tick interception",
+    "real inventory serialization",
+    "TPS impact"
+  ],
+  "minecraftLaunched": false
+}

@@ -8,6 +8,13 @@ const root = path.resolve(__dirname, '..');
 const scripts = path.join(root, 'kubejs/server_scripts/aia2');
 const rules = JSON.parse(fs.readFileSync(path.join(root, 'kubejs/config/aia2_runtime.json')));
 const load = (ctx, file) => vm.runInContext(fs.readFileSync(path.join(scripts, file), 'utf8'), ctx);
+function readonlyGlobal(context) {
+  context.global = new Proxy(context.global, {
+    set() { throw new Error("'global' cannot be assigned to in client or server scripts"); },
+    deleteProperty() { throw new Error("'global' cannot be assigned to in client or server scripts"); }
+  });
+  context.globalThis = undefined;
+}
 
 test('transformed blocks without item forms retain independent stage checks', () => {
   assert.equal(Object.keys(rules.blockGates).length, 16003);
@@ -19,6 +26,7 @@ test('transformed blocks without item forms retain independent stage checks', ()
     ItemEvents: {rightClicked() {}, entityInteracted() {}},
     NativeEvents: {onEvent(cls, cb) { native[cls] = cb; }}, Java: {loadClass: x => x}
   });
+  readonlyGlobal(c);
   load(c, '30_access.js');
   const p = {isServerPlayer() { return true; }, tickCount: 1};
   for (const id of ['bigreactors:energizerpowerportfe', 'tfmg:encased_steel_pipe']) {
@@ -42,6 +50,7 @@ test('native melee event rejects a locked weapon before damage', () => {
     BlockEvents: {placed() {}, rightClicked() {}, broken() {}},
     ItemEvents: {rightClicked() {}, entityInteracted() {}},
     NativeEvents: {onEvent(cls, cb) { native[cls] = cb; }}, Java: {loadClass: x => x}});
+  readonlyGlobal(c);
   load(c, '30_access.js');
   const attack = native['net.neoforged.neoforge.event.entity.player.AttackEntityEvent'];
   assert.equal(typeof attack, 'function');
@@ -67,11 +76,12 @@ function machines(installed = true) {
   const c = vm.createContext({global: {AIA2: {rules,
     ledger() { if (ledger instanceof Error) throw ledger; return ledger; },
     teamId: p => p.team, completed: p => p.completed,
-    canAccess: (p, stage) => !p.fake && stage <= p.completed + 1}},
+    canAccess: (p, stage) => !p.fake && stage <= p.completed + 1}, AIA2Machines: {}},
     Platform: {isLoaded(id) { assert.equal(id, 'aia2_machine_guard'); return installed; }},
     Java: {loadClass(id) { assert.equal(id, 'ua.aia2.guard.Aia2MachineGuard'); return guard; }},
     console: {warn: x => logs.push(x), error: x => logs.push(x)},
     ServerEvents: Object.fromEntries(['loaded', 'tick', 'unloaded'].map(k => [k, cb => callbacks[k] = cb]))});
+  readonlyGlobal(c);
   load(c, '25_machine_guard.js');
   return {c, guard, callbacks, server, teamProgress, playerTeams, calls, logs, setLedger(v) { ledger = v; }};
 }

@@ -1,0 +1,68 @@
+{
+  "stage": "A — stabilization",
+  "status": "passed_node_and_exact_pin_rhino_validation_full_minecraft_not_run",
+  "baseline_commit": "58a9827ca7d52446c245fa23f8c567eee151bdca",
+  "backup": "/workspace/aia2-backups/before-expansion-20261022T211506Z/tracked-project.tar.gz",
+  "root_cause": "KubeJS2101 wraps the top-level global Map in GlobalUnmodifiableMap in client/server scripts; replacing global.AIA2Core, global.AIA2 or global.AIA2Machines is forbidden. Rhino2101.2.7 does not expose globalThis.",
+  "fix": [
+    "startup_scripts/aia2/00_shared_state.js initializes the pure AIA2Core and stable AIA2/AIA2Machines object containers in the writable startup phase.",
+    "server_scripts/aia2/00_core.js validates the bootstrap and removes old nested API closures on server-script reload.",
+    "20_progression.js and 25_machine_guard.js copy members into existing containers without writing top-level global entries.",
+    "Existing dependent scripts keep the same global.AIA2Core/global.AIA2/global.AIA2Machines aliases. No globalThis is used.",
+    "Persistent team data remains in server.persistentData under aia2_runtime_v1; schema and prior quest/item IDs are unchanged."
+  ],
+  "actual_repository_counts": {
+    "epochs": 48,
+    "quest_chapters": 48,
+    "quests": 432,
+    "required_quests": 336,
+    "optional_quests": 96,
+    "native_recipes": 91,
+    "custom_keys": 48,
+    "custom_key_textures": 0
+  },
+  "reported_installed_counts_not_available_in_workspace": {
+    "quest_chapters": 50,
+    "quests": 484,
+    "chapter_groups": 1
+  },
+  "tests": {
+    "node_script_tests": 26,
+    "node_status": "passed",
+    "readonly_global_regression": "passed",
+    "startup_missing_diagnostic": "passed",
+    "reload_alias_identity_and_persistent_progress": "passed",
+    "real_rhino": "passed_exact_build85_source_core_1_test_0_skips",
+    "minecraft_full_pack": "not_run",
+    "real_rhino_evidence": "tests/rhino/verification.json"
+  },
+  "source_contracts": [
+    {
+      "repository": "https://github.com/KubeJS-Mods/KubeJS",
+      "commit": "1b4e9b819e4b372d92529f43542e1992c45701a2",
+      "files": [
+        "src/main/java/dev/latvian/mods/kubejs/plugin/builtin/BuiltinKubeJSPlugin.java",
+        "src/main/java/dev/latvian/mods/kubejs/util/GlobalUnmodifiableMap.java",
+        "src/main/java/dev/latvian/mods/kubejs/util/NativeJavaReadonlyMap.java",
+        "src/main/java/dev/latvian/mods/kubejs/script/ScriptFile.java"
+      ]
+    },
+    {
+      "repository": "https://github.com/kube-mods/rhino",
+      "commit": "2d95ef41d02cbaf82e72f2ee0e21a03f5d34557a",
+      "version": "2101.2.7-build.85",
+      "official_workflow": "https://github.com/kube-mods/rhino/actions/runs/27170058218",
+      "artifact_kind": "Unmodified exact-pin official Java core compiled from source, not the published mod JAR",
+      "jar_sha256": "cab40ada9ea05389837ded0707c8190693967d2f77f12f1d0f8439fa3f2cb321"
+    }
+  ],
+  "installation": "A full game/client/server restart is required once to load the new startup bootstrap. /reload alone cannot supply missing startup state.",
+  "preservation": "No world files, player/team progress or quest IDs were removed or reset. Unknown chapters in the actual Windows instance remain outside this repository and must be retained by the installer.",
+  "test_scope": "Actual Rhino executes the unchanged startup/server scripts against modeled Java API bindings. Minecraft/NeoForge startup, real mod event dispatch, inventory serialization, native guard tick interception and TPS require in-game validation.",
+  "phase_a_content_delta": {
+    "quests": 0,
+    "recipes": 0,
+    "custom_items": 0,
+    "custom_textures": 0
+  }
+}
