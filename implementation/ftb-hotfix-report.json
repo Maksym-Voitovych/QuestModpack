@@ -1,0 +1,33 @@
+{
+  "version": "0.4.1-alpha",
+  "status": "passed_real_rhino_regression_and_native_compile",
+  "fix": {
+    "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
+    "uuid_overload": "TEAM UUID, not player UUID",
+    "regression": "16 actual Rhino85 assertions, unmodified pinned FTB public interface and KubeJS UUIDWrapper, production bridge and script20; fixtures for Minecraft entities/FTB storage",
+    "full_ftb_runtime": "not run",
+    "progression": "48 epochs,96 production keys,569 recipes,2784 quests unchanged"
+  },
+  "checks": {
+    "node": {
+      "passed": 41,
+      "failed": 0
+    },
+    "python": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0
+    },
+    "rhino_ftb_assertions": 16,
+    "java_policy_assertions": 5237,
+    "snbt_and_existing_content": "passed"
+  },
+  "other_overload_audit": [
+    "getQuest(long), TeamData.isCompleted(QuestObject), getTeamId(), getOnlineMembers() unique",
+    "GameStageHelper.hasStage overloads differ in arity",
+    "native guard methods unique; ProjectE put already fixed by primitive bridge"
+  ],
+  "baseline_commit": "90ab63f",
+  "jar_sha256": "008f43d5ee0c1930c6cc8e5a32d69ec0344063fd1e6dc05934c1eb737846040d",
+  "full_windows_modpack_run": false
+}

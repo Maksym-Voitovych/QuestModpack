@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.0-alpha'
+VERSION = '0.4.1-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -24,7 +24,7 @@ def main():
             assert 'ua/aia2/guard/Aia2MachineGuard.class' in jar.namelist()
             assert jar.testzip() is None, 'Compiled companion JAR CRC failed'
             if config.get('progressionVersion', 0) >= 4:
-                for name in ['KeyProductionBridge', 'RhinoLongMapBridge']:
+                for name in ['KeyProductionBridge', 'RhinoLongMapBridge', 'FtbQuestBridge']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 assert 'ua/aia2/guard/mixin/KeyResultProductionMixin.class' in jar.namelist()
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',
@@ -33,7 +33,7 @@ def main():
                          'AE2MolecularAssemblerMixin', 'AE2CraftingTermSlotMixin', 'MekanismRobitRecipeMixin']:
                 assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
     selected = []
-    for folder in ['kubejs', 'config', 'mods', 'implementation', 'tools', 'tests', 'design', 'content', 'companion']:
+    for folder in ['kubejs', 'config', 'mods', 'implementation', 'tools', 'tests', 'design', 'docs', 'content', 'companion']:
         for file in (ROOT / folder).rglob('*'):
             rel = file.relative_to(ROOT)
             if not file.is_file() or any(p in {'.gradle', 'build', 'run', '__pycache__'} for p in rel.parts):

@@ -163,6 +163,7 @@ function bridge() {
   const context = vm.createContext({global: {}, console,
     Java: {loadClass(name) {
       if (name === 'dev.ftb.mods.ftbquests.quest.ServerQuestFile') return {INSTANCE: file};
+      if (name === 'ua.aia2.guard.FtbQuestBridge') return {getTeamData(questFile, player) { return questFile.getOrCreateTeamData(player); }};
       if (name === 'ua.aia2.guard.Aia2MachineGuard') return nativeGuard;
       assert.equal(name, 'net.darkhax.gamestages.GameStageHelper');
       return {hasStage(player, stage) { return player.nativeStages.has(stage); }};

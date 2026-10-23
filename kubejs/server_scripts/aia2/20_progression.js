@@ -1,5 +1,6 @@
 // KubeJS 2101 / FTB Quests 2101.1.36. No recipe.stage() or fictitious canUse hook.
 var AIA2QuestFile = Java.loadClass('dev.ftb.mods.ftbquests.quest.ServerQuestFile');
+var AIA2QuestBridge = Java.loadClass('ua.aia2.guard.FtbQuestBridge');
 // Public API verified against Game Stages Reborn 15.1.1.
 var AIA2StageHelper = Java.loadClass('net.darkhax.gamestages.GameStageHelper');
 var AIA2Rules = JSON.parse(JsonIO.readString('kubejs/config/aia2_runtime.json'));
@@ -15,7 +16,8 @@ var aia2BranchProjection = {};
 function aia2Team(player) {
   var file = AIA2QuestFile.INSTANCE;
   if (!file) throw new Error('[AIA2] FTB Quests ще не завантажено.');
-  var data = file.getOrCreateTeamData(player);
+  // UUID overload takes a TEAM UUID, not a player's UUID. Select Entity in Java.
+  var data = AIA2QuestBridge.getTeamData(file, player);
   if (!data) throw new Error('[AIA2] Не знайдено FTB-команду гравця.');
   return data;
 }

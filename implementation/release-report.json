@@ -1,6 +1,6 @@
 {
-  "version": "0.4.0-alpha",
-  "status": "installable_alpha_static_rhino_and_native_fixture_passed_full_pack_acceptance_pending",
+  "version": "0.4.1-alpha",
+  "status": "ftb_overload_hotfix_verified_content_v5_in_progress",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
@@ -8,15 +8,15 @@
     "quests_total": 2784,
     "substantive_quests": 2688,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 272,
-    "authored_new_courses_this_release": 176,
-    "manufacturing_quests_added": 96,
+    "quests_added_this_release": 0,
+    "authored_new_courses_this_release": 0,
+    "manufacturing_quests_added": 0,
     "chapters": 130,
     "groups": 6,
     "required_quests": 1701,
     "optional_quests": 1083,
     "native_recipes": 569,
-    "native_recipes_added_this_release": 286,
+    "native_recipes_added_this_release": 0,
     "dual_key_recipes": 96,
     "reviewed_machine_recipe_patches": 190,
     "machine_recipe_targets": 170,
@@ -24,7 +24,7 @@
     "custom_items": 390,
     "production_items": 336,
     "decorative_icon_items": 54,
-    "new_items_and_textures": 97,
+    "new_items_and_textures": 0,
     "png_textures": 390,
     "item_models": 390,
     "unique_legacy_key_silhouettes": 48,
@@ -54,10 +54,10 @@
       "command": "node --test tests/*.test.js"
     },
     "python_tests": {
-      "passed": 22,
+      "passed": 23,
       "failed": 0,
       "skipped": 0,
-      "includes_real_rhino_build85": 2,
+      "includes_real_rhino_build85": 3,
       "includes_installer_tests": 15,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
@@ -71,7 +71,8 @@
       "server_jvm_boots": 2,
       "ticks": 650,
       "report": "companion/native-smoke-report.json",
-      "key_fixture": "Configured vanilla recipe/output; KubeJS/FTB/optional mods absent"
+      "key_fixture": "Configured vanilla recipe/output; KubeJS/FTB/optional mods absent",
+      "version_tested": "0.4.0-alpha; unchanged hooks, not rerun for0.4.1 FTB-only helper"
     },
     "javascript_syntax_files": 12,
     "snbt_graph_ids": "passed",
@@ -85,8 +86,8 @@
       "runtime_files": 1124,
       "changed": []
     },
-    "jar_sha256": "dcfb79b709d566408550b26eb5fd1e723d8acb2627607fff47d3cb4c9646c892",
-    "jar_path": "mods/aia2-machine-guard-0.4.0-alpha.jar",
+    "jar_sha256": "008f43d5ee0c1930c6cc8e5a32d69ec0344063fd1e6dc05934c1eb737846040d",
+    "jar_path": "mods/aia2-machine-guard-0.4.1-alpha.jar",
     "archive_verification_command": "python tools/package_runtime.py",
     "packaged_installer_dry_run": "passed after extracting the generated ZIP; no backup/runtime write or test-world change",
     "archive_crc_and_all_sha256_entries": "passed",
@@ -102,5 +103,13 @@
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately"
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.0-alpha.zip"
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.1-alpha.zip",
+  "ftb_hotfix": {
+    "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
+    "uuid_overload": "TEAM UUID, not player UUID",
+    "regression": "16 actual Rhino85 assertions, unmodified pinned FTB public interface and KubeJS UUIDWrapper, production bridge and script20; fixtures for Minecraft entities/FTB storage",
+    "full_ftb_runtime": "not run",
+    "progression": "48 epochs,96 production keys,569 recipes,2784 quests unchanged"
+  },
+  "v5_progress": "docs/AIA2_0.5.0_PROGRESS.md"
 }

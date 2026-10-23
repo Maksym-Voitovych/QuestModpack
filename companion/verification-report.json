@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.4.0-alpha",
+  "version": "0.4.1-alpha",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "java": 21,
@@ -40,9 +40,9 @@
     "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> companion/gradlew -p companion --offline build --no-daemon --console=plain",
     "gradle": "9.2.1",
     "jar_created": true,
-    "jar_path": "mods/aia2-machine-guard-0.4.0-alpha.jar",
-    "jar_bytes": 73105,
-    "jar_sha256": "dcfb79b709d566408550b26eb5fd1e723d8acb2627607fff47d3cb4c9646c892",
+    "jar_path": "mods/aia2-machine-guard-0.4.1-alpha.jar",
+    "jar_bytes": 74436,
+    "jar_sha256": "008f43d5ee0c1930c6cc8e5a32d69ec0344063fd1e6dc05934c1eb737846040d",
     "zip_crc_verified": true,
     "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
     "guard_policy_assertions": 119,
@@ -177,7 +177,8 @@
     "tps_benchmark_performed": false,
     "personal_instance_or_world_used": false,
     "own_ignored_development_world_only": true,
-    "test_blocks_restored": true
+    "test_blocks_restored": true,
+    "tested_companion_version": "0.4.0-alpha"
   },
   "confirmed_0_3_native_defect": {
     "file": "companion/src/main/java/ua/aia2/guard/mixin/RecipeManagerContextMixin.java",
@@ -204,5 +205,17 @@
     "record_from_give_pickup_or_inventory_presence": false,
     "script_reload_clears_receipts": false,
     "live_ftb_and_modded_production_paths_still_require_full_pack_testing": true
+  },
+  "ftb_overload_hotfix": {
+    "status": "compiled_against_real_minecraft_neoforge",
+    "helper": "ua.aia2.guard.FtbQuestBridge.getTeamData(Object, ServerPlayer)",
+    "api_version": 4,
+    "selected_api": "dev.ftb.mods.ftbquests.api.QuestFile.getOrCreateTeamData(net.minecraft.world.entity.Entity)",
+    "source_pin": "FTB-Quests-1.21.1 8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+    "source_url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/BaseQuestFile.java#L1246",
+    "uuid_overload_semantics": "Accepts FTB TEAM UUID; never substitute player UUID. Entity overload resolves current player membership.",
+    "rhino_regression": "Run separately by tests/test_ftb_interop.py; see its checked-in evidence report.",
+    "full_ftb_runtime_tested": false,
+    "native_smoke_note": "41 real Minecraft assertions were run on 0.4.0-alpha. Native hooks are unchanged in 0.4.1; this hotfix adds the separately tested FTB reflection bridge, not a new full-pack launch."
   }
 }

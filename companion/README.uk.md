@@ -1,7 +1,7 @@
-# AIA2 Machine Guard — 0.4.0-alpha
+# AIA2 Machine Guard — 0.4.1-alpha
 
 Допоміжний мод для Minecraft 1.21.1, NeoForge 21.1.264 та Java 21.
-Скомпільований JAR: `mods/aia2-machine-guard-0.4.0-alpha.jar` у корені репозиторію.
+Скомпільований JAR: `mods/aia2-machine-guard-0.4.1-alpha.jar` у корені репозиторію.
 Не залишайте одночасно дві версії цього моду в інстансі.
 
 Мод перехоплює стандартний серверний `BlockEntityTicker.tick` перед виконанням
@@ -38,6 +38,12 @@ FakePlayer не може підтвердити гравця або отрима
 Інші API: `getOwner`, `setOwner`, `mayCraft`, `mayProduce`, `getDeniedTicks`.
 Перед staged-крафтом публічний FTB Teams API перевіряє поточне членство;
 помилка API не дозволяє використати стару командну прив'язку.
+
+`FtbQuestBridge.getTeamData(questFile, ServerPlayer)` явно вибирає публічний
+`QuestFile.getOrCreateTeamData(Entity)`. Це обходить неоднозначність Rhino
+між Entity/UUID/Team без підміни UUID гравця UUID команди. Повернення `null`
+означає, що FTB Teams ще не підготував команду; помилки API зберігають причину
+в описовому винятку. Допоміжний клас не потребує FTB залежності для компіляції.
 
 `RhinoLongMapBridge.putValue(map, key, long)` має єдину сигнатуру та потрібен
 ProjectE-мосту: Rhino неоднозначно вибирає між fastutil `put(Object,long)`
@@ -76,8 +82,9 @@ python run_native_smoke.py
 Mixin мають обов'язкові точки перехоплення; несумісний основний target
 спричиняє видиму помилку запуску.
 
-`run_native_smoke.py` запускає два справжні сервери в окремому ignored
-`companion/run/world`, перевіряє 41 умову та збереження доказу після перезапуску.
+На версії 0.4.0 `run_native_smoke.py` запустив два справжні сервери в окремому ignored
+`companion/run/world`, перевірив 41 умову та збереження доказу після перезапуску.
+У 0.4.1 native hooks збережено; додано міст FTB, перевірений окремим тестом Rhino.
 У цьому тесті справжні піч, hopper, Crafter, CraftingMenu і FakePlayer;
 тестова ванільна формула моделює рецепт ключа. Це перевірка native механіки,
 не всіх 96 реальних KubeJS-рецептів. Тест вмикається лише explicit JVM-параметром,

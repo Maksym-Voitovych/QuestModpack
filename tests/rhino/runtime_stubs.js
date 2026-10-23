@@ -34,6 +34,7 @@ var __guard = {clearRuntime: function () { __fixture.guardReady = false; },
   hasProductionProof: function () { return true; }, setTeamKeyReady: function () {}, setPlayerTeam: function () {}, setReady: function () { __fixture.guardReady = true; },
   isReady: function () { return __fixture.guardReady; }};
 var Java = {loadClass: function (name) {
+  if (name === 'ua.aia2.guard.FtbQuestBridge') return {getTeamData: function (file, player) { return file.getOrCreateTeamData(player); }};
   if (name === 'dev.ftb.mods.ftbquests.quest.ServerQuestFile') return {INSTANCE: {
     getQuest: function (id) { return {id: id}; }, getOrCreateTeamData: function () { return __team; }}};
   if (name === 'net.darkhax.gamestages.GameStageHelper') return {

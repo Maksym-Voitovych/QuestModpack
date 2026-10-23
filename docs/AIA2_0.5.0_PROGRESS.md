@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-23. База `90ab63f`, робоча версія 0.4.0-alpha.
+Останнє оновлення: 2026-10-23. База `90ab63f`, робоча версія 0.4.1-alpha (FTB hotfix); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -8,7 +8,7 @@
 
 | № | Етап | Статус | Доказ / наступна дія |
 |---|---|---|---|
-| 0 | FTB Quests overload hotfix | IN_PROGRESS | Перевірено Entity overload та командний зміст UUID overload; міст і Rhino-регресія в роботі |
+| 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | IN_PROGRESS | HEAD збігається з 90ab63f, початкове дерево чисте; завершити baseline-звіт |
 | 2 | Дослідження механік | IN_PROGRESS | Read-only дослідження technology/magic/adventure; до hotfix-коміту контент не записувати |
 | 3 | Карти прогресії | TODO | Після перевірки джерел записати карти та зв'язати з квестами |
@@ -105,3 +105,20 @@
 
 У новій сесії перевірити активність цих агентів, фактичні файли та Git;
 імена агентів не гарантують, що попередні процеси досі працюють.
+
+### 2026-10-23 — FTB hotfix 0.4.1-alpha
+
+- DONE: новий FtbQuestBridge явно обирає Entity overload public API FTB
+  2101.1.36. UUID overload із UUID гравця не використовується.
+- Перевірено: Node41, Python23 (0skip, три справжні Rhino-сценарії),
+  16 FTB/Rhino assertions, 5237 Java assertions та збірка JAR, SNBT/DAG/ID.
+- Файли: Java bridge/JAR, script20, fixtures, test_ftb_interop.py,
+  FtbQuestInteropHarness.java, installer/package preflight, README/CHANGELOG,
+  verification-report.json, ftb-hotfix-report.json, release-report.json.
+- Дані, 2784 квести/130 глав/569 рецептів/96 ключів не змінено. Native41
+  запуск був на0.4.0, повний FTB runtime на0.4.1 не запускався.
+- Інші перевірені Java-виклики не мають підтвердженої неоднозначності.
+- Наступна конкретна дія: baseline snapshot v4 ID/нагород; завершити карти
+  джерел, застосувати DAG layout, додати перевірений контент та нагороди.
+- Знайдено3 exported producer recipes Creative Pool, а не2; Creative Essence
+  має namespace mysticalagradditions. Остаточні зміни ще TODO.

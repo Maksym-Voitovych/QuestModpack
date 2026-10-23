@@ -353,6 +353,7 @@ def plan_install(source, instance):
                 with zipfile.ZipFile(bundled_jars[0]) as jar:
                     required = {'ua/aia2/guard/Aia2MachineGuard.class',
                                 'ua/aia2/guard/KeyProductionBridge.class',
+                                'ua/aia2/guard/FtbQuestBridge.class',
                                 'ua/aia2/guard/RhinoLongMapBridge.class'}
                     if not required <= set(jar.namelist()) or jar.testzip() is not None:
                         raise InstallError('Progression v4 needs the matching API4 companion with manufacturing receipts and Rhino bridge')
