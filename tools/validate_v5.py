@@ -449,12 +449,21 @@ def validate(root=ROOT, include_layout=True):
     reward_details = import_tool('build_rewards_v5').validate(root)
     rewards = {key: value for key, value in reward_details.items() if key != 'decisions'}
     rewards['detailed_audit'] = 'implementation/rewards-v5-audit.json'
+    variants = {'enabled': False}
+    if (root/'content/recipes/v5_component_variants.json').is_file():
+        module = import_tool('build_variant_balance_v5')
+        variants = module.validate(root, read(root/module.CATALOG), bundle, rules)
+        expected = read(root/module.CATALOG)
+        require(set(expected['remove']) <= set(bundle['remove']), 'Creative variant producers remain active')
+        require(any(entry == expected['add'][0] for entry in bundle['add']) and
+                rules['recipeGates'].get(module.RECIPE) == 99, 'Creative variant lacks completed48 recipe gate')
     return {'enabled': True, 'status': 'passed', 'catalogs': [p.name for p in paths],
             'compiled_quests': len(compiled), **preservation, **catalog, **research,
             'layout': layout, 'reward_validation': rewards,
             'native_mechanic_proofs': sorted(mechanic_advancements),
             'native_action_proofs': native_actions,
             'checkpoint_preservation': checkpoint_preservation,
+            'component_variant_validation': variants,
             'full_pack_run': False, 'tps_benchmark': 'not run'}
 
 

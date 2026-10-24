@@ -116,6 +116,49 @@
       "y": 0.0
     },
     {
+      "id": "00005E7028B267F7",
+      "title": "Ключ, у якому справді є повітря",
+      "description": [
+        "Зарядіть Pneumatic Wrench до щонайменше 3 bar та потримайте його у своєму інвентарі. Вбудований критерій перевіряє фактичний тиск інструмента на сервері; порожній ключ не підходить.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pneumatic_wrench",
+        "count": 1
+      },
+      "dependencies": [
+        "00004E2D9CAA56BE",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AF6A6E8F0CE4",
+          "type": "advancement",
+          "advancement": "pneumaticcraft:pneumatic_wrench_charged"
+        },
+        {
+          "id": "0000ECE3BC8CED9A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000041CA9B2B4FBE",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 9.0
+    },
+    {
       "id": "000006F3B4D418A8",
       "title": "Огляд і захист для двох систем",
       "description": [
@@ -230,6 +273,49 @@
       ],
       "x": 2.0,
       "y": 3.0
+    },
+    {
+      "id": "000053A45AACD3AA",
+      "title": "Порожниста камера проходить нативну перевірку",
+      "description": [
+        "Зберіть порожнисту камеру 3×3×3, 4×4×4 або 5×5×5 за Patchouli. Клапан поставте останнім: саме встановлення клапана гравцем викликає перевірку сформованої структури й нативне досягнення. Передбачте окремі input/output interfaces; це завдання ще не вимагає тиску.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:pressure_chamber_valve",
+        "count": 1
+      },
+      "dependencies": [
+        "00005E7028B267F7",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005E769B6E6DE6",
+          "type": "advancement",
+          "advancement": "pneumaticcraft:pressure_chamber"
+        },
+        {
+          "id": "00009833B383F197",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005014C8316338",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 9.0
     },
     {
       "id": "00008009EF3E170C",
@@ -390,6 +476,73 @@
       "y": 0.0
     },
     {
+      "id": "0000C457703801DC",
+      "title": "Нафтові фракції мають визначений порядок",
+      "description": [
+        "Огляньте Refinery Controller та підготуйте щонайменше два Refinery Outputs. Книга дозволяє 2–4 виходи: найлегша фракція розташовується зверху, найважча знизу; нагрів починає роботу від 100°C. Окремо збережіть зразок LPG для наступного полімерного кроку.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:refinery_output",
+        "count": 1
+      },
+      "dependencies": [
+        "000053A45AACD3AA",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000882646F96CC2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:refinery",
+          "timer": 40
+        },
+        {
+          "id": "0000548A1F9AB3AE",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:refinery_output",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000035E432EEF1F6",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:lpg_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA66A5F01EEB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009A2B69911C57",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
+    },
+    {
       "id": "0000C5DC6E264FF5",
       "title": "Коротка випробувальна труба",
       "description": [
@@ -535,6 +688,84 @@
       ],
       "x": 6.0,
       "y": 1.0
+    },
+    {
+      "id": "0000D1F082AA98B4",
+      "title": "LPG проходить термопневматичний етап",
+      "description": [
+        "Звірте в JEI перетворення LPG та Coal у рідкий Plastic у Thermopneumatic Processing Plant. Спосіб затвердіння залежить від конфігурації: світове розливання може бути дозволене, а охолоджуваний Heat Frame працює з тарою в інвентарі. Порівняйте полімер із сировиною; IF-пластик не замінює цей зразок.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:lpg_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C457703801DC",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068F0F62A82FA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:thermopneumatic_processing_plant",
+          "timer": 40
+        },
+        {
+          "id": "0000134721F96CD9",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:lpg_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000085C484A11A84",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000101186C741E0",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:plastic",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A18AB4205B6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A4D7DFA42F9B",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 9.0
     },
     {
       "id": "0000DD6E9EAFA576",
@@ -725,6 +956,73 @@
       "y": 1.0
     },
     {
+      "id": "00000399C520B548",
+      "title": "Високий тиск потребує відповідної магістралі",
+      "description": [
+        "Огляньте Advanced Air Compressor та підготуйте Advanced Pressure Tubes і Safety Tube Module. Зіставте допустимий тиск кожної ділянки за червоною зоною її GUI: просунутий компресор не підвищує міцність звичайної труби. Не змішуйте тепловий відвід із повітряною мережею.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:advanced_pressure_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FEE677C01968",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000722ADA9AC7E5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "pneumaticcraft:advanced_air_compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000CD28D4458129",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:advanced_pressure_tube",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000362C21F8DF0D",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:safety_tube_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000831E7F67D1F1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C900AB422805",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 3.0,
+      "y": 21.0
+    },
+    {
       "id": "00002E4B6D4D5A7D",
       "title": "Пошук збою за програмою",
       "description": [
@@ -771,7 +1069,7 @@
         }
       ],
       "x": 11.0,
-      "y": 9.0
+      "y": 12.0
     },
     {
       "id": "00007870C877453E",
@@ -842,7 +1140,7 @@
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 21.0
     },
     {
       "id": "0000B0D40008F50D",
@@ -886,7 +1184,7 @@
         }
       ],
       "x": 14.0,
-      "y": 12.0
+      "y": 15.0
     },
     {
       "id": "0000C997C1B719CE",
@@ -934,7 +1232,50 @@
         }
       ],
       "x": 0.0,
-      "y": 13.0
+      "y": 16.0
+    },
+    {
+      "id": "0000E6BBC3D81D54",
+      "title": "Програма справді записана",
+      "description": [
+        "У Programmer складіть коротку навчальну програму та запишіть її в Drone. Нативний критерій спрацьовує після успішного запису, а не від отримання програматора чи дрона. Спершу тестуйте без руйнування блоків; правильність майбутніх доставок цим критерієм не перевіряється.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:programmer",
+        "count": 1
+      },
+      "dependencies": [
+        "00001BBE07791F6E",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001A672DCE7AEF",
+          "type": "advancement",
+          "advancement": "pneumaticcraft:program_drone"
+        },
+        {
+          "id": "0000EABC56F1E662",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000EC0634F71B1",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 21.0
     },
     {
       "id": "0000556BAEC2F4B3",
@@ -990,7 +1331,7 @@
         }
       ],
       "x": 2.0,
-      "y": 14.0
+      "y": 17.0
     },
     {
       "id": "00005692C836066E",
@@ -1039,7 +1380,7 @@
         }
       ],
       "x": 16.0,
-      "y": 13.0
+      "y": 16.0
     },
     {
       "id": "0000920490924D46",
@@ -1088,7 +1429,7 @@
         }
       ],
       "x": 16.0,
-      "y": 11.0
+      "y": 14.0
     },
     {
       "id": "0000E82DD7C81EB0",
@@ -1144,7 +1485,7 @@
         }
       ],
       "x": 2.0,
-      "y": 12.0
+      "y": 15.0
     },
     {
       "id": "000006CA92691218",
@@ -1193,7 +1534,7 @@
         }
       ],
       "x": 18.0,
-      "y": 13.0
+      "y": 16.0
     },
     {
       "id": "000063398CA8A135",
@@ -1253,7 +1594,7 @@
         }
       ],
       "x": 4.0,
-      "y": 9.0
+      "y": 12.0
     },
     {
       "id": "00006B0B048ED997",
@@ -1298,7 +1639,7 @@
         }
       ],
       "x": 4.0,
-      "y": 13.0
+      "y": 16.0
     },
     {
       "id": "0000ADB08C7B1D88",
@@ -1343,7 +1684,7 @@
         }
       ],
       "x": 18.0,
-      "y": 9.0
+      "y": 12.0
     },
     {
       "id": "0000E1CD37D59051",
@@ -1392,7 +1733,7 @@
         }
       ],
       "x": 4.0,
-      "y": 15.0
+      "y": 18.0
     },
     {
       "id": "0000EB798C971A91",
@@ -1452,7 +1793,7 @@
         }
       ],
       "x": 18.0,
-      "y": 11.0
+      "y": 14.0
     },
     {
       "id": "0000F31016D9BE13",
@@ -1501,7 +1842,7 @@
         }
       ],
       "x": 4.0,
-      "y": 11.0
+      "y": 14.0
     },
     {
       "id": "00005389DEEE5C43",
@@ -1557,7 +1898,7 @@
         }
       ],
       "x": 6.0,
-      "y": 12.0
+      "y": 15.0
     },
     {
       "id": "0000E331C1C76F69",
@@ -1602,7 +1943,7 @@
         }
       ],
       "x": 6.0,
-      "y": 14.0
+      "y": 17.0
     },
     {
       "id": "000087F1DD0A2CEF",
@@ -1658,7 +1999,7 @@
         }
       ],
       "x": 8.0,
-      "y": 11.0
+      "y": 14.0
     },
     {
       "id": "0000AB10F23396A8",
@@ -1714,7 +2055,7 @@
         }
       ],
       "x": 8.0,
-      "y": 9.0
+      "y": 12.0
     },
     {
       "id": "0000BBFC52B57E59",
@@ -1776,7 +2117,7 @@
         }
       ],
       "x": 8.0,
-      "y": 15.0
+      "y": 18.0
     },
     {
       "id": "0000DF9E59048383",
@@ -1825,7 +2166,50 @@
         }
       ],
       "x": 8.0,
-      "y": 13.0
+      "y": 16.0
+    },
+    {
+      "id": "0000C9338593299D",
+      "title": "Пневматичний політ потребує запуску",
+      "description": [
+        "Підготуйте заряджені Pneumatic Boots з Jet Boots Upgrade та виконайте короткий контрольований запуск над безпечним майданчиком. Нативний критерій викликається серверним обробником під час початку активної роботи черевиків, тому сам предмет не завершує квест.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": {
+        "id": "pneumaticcraft:jet_boots_upgrade_1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E6BBC3D81D54",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005F3282E15C17",
+          "type": "advancement",
+          "advancement": "pneumaticcraft:flight"
+        },
+        {
+          "id": "0000CDBFA500D146",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C75440785292",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 21.0
     }
   ]
 }

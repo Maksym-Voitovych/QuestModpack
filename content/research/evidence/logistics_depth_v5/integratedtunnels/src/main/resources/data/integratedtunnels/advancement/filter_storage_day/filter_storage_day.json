@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "integrateddynamics:variable",
+      "components": {
+        "integrateddynamics:variable_facade": {
+          "partId": 1,
+          "_id": 1,
+          "_type": "integrateddynamics:aspect",
+          "aspectName": "integratedtunnels:write_boolean_item_filter"
+        }
+      }
+    },
+    "title": {
+      "translate": "advancement.integratedtunnels.filter_storage_day"
+    },
+    "description": {
+      "translate": "advancement.integratedtunnels.filter_storage_day.desc"
+    }
+  },
+  "parent": "integratedtunnels:interfaces/interface_item",
+  "criteria": {
+    "criteria_0": {
+      "trigger": "integrateddynamics:part_writer_aspect",
+      "conditions": {
+        "part_type": "integratedtunnels:interface_filter_item",
+        "aspect": "integratedtunnels:write_boolean_item_filter",
+        "variable": {
+          "type": "aspect",
+          "aspect": "integrateddynamics:read_boolean_world_isday"
+        }
+      }
+    }
+  }
+}

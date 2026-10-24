@@ -76,7 +76,51 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.962
+    },
+    {
+      "id": "0000E434D18507E1",
+      "title": "Мережа, яка справді зібрана",
+      "description": [
+        "Після менрилової підготовки з’єднайте щонайменше десять Logic Cables в одну мережу. Останній кабель установіть самі, щоб нативна подія мала гравця-власника.",
+        "Досягнення перевіряє подію ініціалізації та мінімум десять кабелів у мережі; це більше за запас кабелів у кишені.",
+        "FTB перевіряє нативне досягнення integrateddynamics:network_foundations/networks_logic. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C4E596A72F6A",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000826992943476",
+          "type": "advancement",
+          "advancement": "integrateddynamics:network_foundations/networks_logic"
+        },
+        {
+          "id": "00008F6E5B74EBE9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000087E36AD9775C",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_block",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.962
     },
     {
       "id": "00005C2E62F29FD6",
@@ -154,7 +198,96 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.462
+    },
+    {
+      "id": "0000A7380B2172EE",
+      "title": "Відкрийте редактор логіки",
+      "description": [
+        "Відкрийте Logic Programmer і знайдіть розділ числових значень. Блоковий і переносний програматори використовують спільну базову GUI-систему.",
+        "Цей крок перевіряє відкриття GUI програматора; запис константи буде окремою дією наступного кроку.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/logic_programming. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E434D18507E1",
+        "000078CB7CAC3093",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E8D5EA53C838",
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/logic_programming"
+        },
+        {
+          "id": "0000770534683DE9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D0C8F97C20C9",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.462
+    },
+    {
+      "id": "0000317FD7900148",
+      "title": "Запишіть ціле число на картку",
+      "description": [
+        "У Logic Programmer виберіть Integer, задайте число та запишіть його на порожню Variable Card. Повторіть з іншим числом для майбутнього додавання.",
+        "Перевірка вимагає створення integer-змінної саме програматором; порожня картка або предмет із Creative цього не доводять.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/constant_definition. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7380B2172EE",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A424F0C30B80",
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/constant_definition"
+        },
+        {
+          "id": "0000116D1CB45294",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006111672A04EE",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_block",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.462
     },
     {
       "id": "00005F9B79E91593",
@@ -221,7 +354,51 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.462
+    },
+    {
+      "id": "000013270803B56A",
+      "title": "Зчитаний сигнал має тип",
+      "description": [
+        "Приєднайте Redstone Reader до живої мережі й направте його на джерело сигналу. У слоті Integer Redstone Value зв’яжіть нову Variable Card із поточним аспектом.",
+        "Нативна умова перевіряє redstone_reader та read_integer_redstone_value; на цьому кроці не потрібно видавати читання за готову автоматику.",
+        "FTB перевіряє нативне досягнення integrateddynamics:aspects/redstone_capturing. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000317FD7900148",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D45F58EC4EC2",
+          "type": "advancement",
+          "advancement": "integrateddynamics:aspects/redstone_capturing"
+        },
+        {
+          "id": "0000D3EDE2E20597",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000011424AEEC175",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.847
     },
     {
       "id": "0000CF5E24E7481F",
@@ -288,7 +465,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.5
     },
     {
       "id": "00005174C88B8151",
@@ -355,7 +532,7 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.5
     },
     {
       "id": "00006BC0DCE47A3B",
@@ -423,6 +600,140 @@
       ],
       "x": 10.0,
       "y": 0.0
+    },
+    {
+      "id": "0000F06474708449",
+      "title": "Обчислення замість числа вручну",
+      "description": [
+        "Запишіть оператор Addition, посилаючись на дві числові картки. Покладіть обидві вихідні картки у Variable Store тієї самої мережі, а результат вставте в Display Panel.",
+        "Integrated Dynamics обчислює посилання ліниво: без доступних в мережі вихідних карток ви отримаєте помилку. Досягнення перевіряє operator arithmetic_addition на панелі.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/arithmetic_addition. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000317FD7900148",
+        "00005174C88B8151",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002FD241F9DD6A",
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/arithmetic_addition"
+        },
+        {
+          "id": "0000553392214C88",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A2AD9C9DA1B6",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:menril_log",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
+    },
+    {
+      "id": "00005ADB0C98D520",
+      "title": "Зафіксуйте динамічне значення",
+      "description": [
+        "Вставте динамічну картку з мережі у верхній слот Materializer. Лівий слот записує на порожню картку значення, яке джерело має в цей момент.",
+        "Нативний доказ — створення змінної блоком Materializer. Отримана статична картка не оновлюватиметься разом із початковим сигналом.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_network_components/variable_materialization. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "000013270803B56A",
+        "0000F06474708449",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000540F69F245D4",
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_network_components/variable_materialization"
+        },
+        {
+          "id": "0000F74171A0CB01",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005B1173106F52",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_block",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
+    },
+    {
+      "id": "000073DD840A5E68",
+      "title": "Список — це окремий тип",
+      "description": [
+        "Створіть у програматорі List з цілими числами 1, 10 і 100 саме в цьому порядку та покажіть його на Display Panel. Це основа для подальшої роботи зі списками інвентарів.",
+        "Досягнення порівнює серіалізований integer-список [1,10,100] на панелі, а не кількість карток у гравця.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_operations/logical_list_building. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F06474708449",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000053C084BD2B79",
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_operations/logical_list_building"
+        },
+        {
+          "id": "00003AB6F1E5E59E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EA33C2D261B2",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:menril_log",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
     },
     {
       "id": "0000CFCF6FF3B733",
@@ -567,7 +878,141 @@
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 0.153
+    },
+    {
+      "id": "0000E236F1C32577",
+      "title": "Змінне джерело без переписування схеми",
+      "description": [
+        "Підготуйте Proxy і створіть проксовану Variable Card. Посилайтеся на неї у схемі, а джерело надалі замінюйте в Proxy замість перезапису всіх залежних карток.",
+        "Досягнення фіксує створення змінної саме через Proxy; це перевірка операції прив’язки, а не тривалий тест усієї схеми.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_network_components/variable_proxying. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "00005ADB0C98D520",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E85DE5792996",
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_network_components/variable_proxying"
+        },
+        {
+          "id": "000019E74714D2CC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000028706FB76CA3",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.694
+    },
+    {
+      "id": "00005221A5EE260F",
+      "title": "Історія значення для керування",
+      "description": [
+        "Після статичних знімків і проксі підготуйте Delay. Створіть через нього картку затриманого значення, щоб працювати з попередніми станами сигналу.",
+        "Досягнення вимагає створення змінної блоком Delay; налаштування тривалості та поведінку під час перезапуску перевіряйте на своїй установці окремо.",
+        "FTB перевіряє нативне досягнення integrateddynamics:saving_state/variable_delaying. Просте отримання предмета його не замінює."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E236F1C32577",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E0F48B2F69E1",
+          "type": "advancement",
+          "advancement": "integrateddynamics:saving_state/variable_delaying"
+        },
+        {
+          "id": "0000E234F969E60D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071AB4921F730",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:crystalized_menril_chunk",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 3.694
+    },
+    {
+      "id": "000038DF6EED2B49",
+      "title": "Передайте зчитані п’ятнадцять",
+      "description": [
+        "З’єднайте Redstone Reader і Writer однією мережею. Зчитайте цілий сигнал рівня 15 та вставте саме цю aspect-картку в Integer Redstone Writer.",
+        "Нативна умова вимагає reader-aspect read_integer_redstone_value зі значенням 15 на writer-aspect write_integer_redstone. Це перевіряє налаштований логічний зв’язок, а не просту наявність двох вузлів.",
+        "FTB перевіряє нативне досягнення integrateddynamics:aspects/redstone_transmission. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": {
+        "id": "integrateddynamics:variable",
+        "count": 1
+      },
+      "dependencies": [
+        "000013270803B56A",
+        "00005221A5EE260F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB7E6C669D95",
+          "type": "advancement",
+          "advancement": "integrateddynamics:aspects/redstone_transmission"
+        },
+        {
+          "id": "0000E3A15D63CBFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BC8B3217D633",
+          "type": "item",
+          "item": {
+            "id": "integrateddynamics:menril_log",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 3.694
     }
   ]
 }

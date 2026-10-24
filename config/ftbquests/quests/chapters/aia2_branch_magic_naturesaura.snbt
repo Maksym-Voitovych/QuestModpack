@@ -117,7 +117,7 @@
         }
       ],
       "x": 0.0,
-      "y": 15.152
+      "y": 22.678
     },
     {
       "id": "00003F46BB04922C",
@@ -185,7 +185,7 @@
         }
       ],
       "x": 2.0,
-      "y": 15.152
+      "y": 23.152
     },
     {
       "id": "0000D73E61D763B7",
@@ -397,7 +397,7 @@
         }
       ],
       "x": 4.0,
-      "y": 15.152
+      "y": 23.152
     },
     {
       "id": "00004A118918FDDB",
@@ -515,7 +515,7 @@
         }
       ],
       "x": 6.0,
-      "y": 15.152
+      "y": 22.704
     },
     {
       "id": "00004FF8EF790C1B",
@@ -632,7 +632,85 @@
         }
       ],
       "x": 8.0,
-      "y": 15.152
+      "y": 22.704
+    },
+    {
+      "id": "00003631156412FA",
+      "title": "Зворотний зв’язок від аури до редстоуну",
+      "description": [
+        "Виготовте Aura Detector та встановіть компаратор. Детектор не видає керувальний сигнал сам по собі: саме компаратор читає місцеву ауру. Порівняйте покази з Environmental Eye, перш ніж під’єднувати відсічення генератора.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_detector",
+        "count": 1
+      },
+      "dependencies": [
+        "000091F79B590BFE",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000569746089A7A",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_detector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00001D7B280E723D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "000003C4905A915E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D1B0226AB38A",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000133C961E649",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AA8D8679FA1C",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 23.704
     },
     {
       "id": "00003D1022E127FF",
@@ -729,6 +807,128 @@
       ],
       "x": 12.0,
       "y": 5.35
+    },
+    {
+      "id": "0000DE40EE6A3E2F",
+      "title": "Шість квітів для відновлення ділянки",
+      "description": [
+        "Виготовте Herbivorous Absorber і підготуйте шість різних малих квітів. Він споживає квіти навколо себе тільки у Верхньому світі; повторення одного виду знижує ефективність. Продумайте ротацію та зупинку подачі за показом детектора. Комплект квітів є підготовкою, а не лічильником спожитих квітів.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:flower_generator",
+        "count": 1
+      },
+      "dependencies": [
+        "00003631156412FA",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A75B03C52F04",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:flower_generator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005A1CE1AEF98D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:flower_generator",
+          "timer": 40
+        },
+        {
+          "id": "00008B1B355BABD5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dandelion",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF51132FCA85",
+          "type": "item",
+          "item": {
+            "id": "minecraft:poppy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000FFEFE39DA84",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blue_orchid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DB87C2F6046A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:allium",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A2541E3B4AF0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cornflower",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005DB21C0DD4FF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:oxeye_daisy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000715A2E033F96",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000094302F0FF57B",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 23.145
     },
     {
       "id": "0000F94342B4F15D",
@@ -925,6 +1125,73 @@
       ],
       "x": 14.0,
       "y": 3.0
+    },
+    {
+      "id": "0000FF97A09DB72E",
+      "title": "Переносний запас має місце заряджання",
+      "description": [
+        "Виготовте Aura Cache й огляньте Natural Altar. Покладіть кеш на вівтар: аура переходить із запасу вівтаря до переносного предмета. Environmental Eye показує запас, але завдання не читає заряд компонента — новий крафт і огляд підтверджують підготовку.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_cache",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE40EE6A3E2F",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CDBE5DCAB983",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_cache",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D099D718DB86",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:nature_altar",
+          "timer": 40
+        },
+        {
+          "id": "000020412918F045",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C2F9200E7540",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000076AD5D510027",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 23.145
     },
     {
       "id": "00000B4F21626EAB",
@@ -1398,7 +1665,7 @@
         }
       ],
       "x": 0.0,
-      "y": 22.152
+      "y": 20.631
     },
     {
       "id": "00005F765637C48F",
@@ -1453,8 +1720,8 @@
           "count": 4
         }
       ],
-      "x": 11.0,
-      "y": 18.152
+      "x": 0.0,
+      "y": 28.264
     },
     {
       "id": "00008CB9D8F3C5CC",
@@ -1499,7 +1766,7 @@
         }
       ],
       "x": 2.0,
-      "y": 23.152
+      "y": 20.597
     },
     {
       "id": "0000CC5CE96C5638",
@@ -1569,8 +1836,8 @@
           "count": 4
         }
       ],
-      "x": 13.0,
-      "y": 18.152
+      "x": 2.0,
+      "y": 28.264
     },
     {
       "id": "0000FB836A876AAD",
@@ -1615,7 +1882,7 @@
         }
       ],
       "x": 2.0,
-      "y": 21.152
+      "y": 18.152
     },
     {
       "id": "000050565B16C24A",
@@ -1678,7 +1945,7 @@
         }
       ],
       "x": 4.0,
-      "y": 20.152
+      "y": 17.152
     },
     {
       "id": "000088B42312C0D2",
@@ -1727,7 +1994,7 @@
         }
       ],
       "x": 4.0,
-      "y": 22.152
+      "y": 19.152
     },
     {
       "id": "0000E3F89774B17A",
@@ -1783,7 +2050,7 @@
         }
       ],
       "x": 4.0,
-      "y": 24.152
+      "y": 21.152
     },
     {
       "id": "0000E9DF0A823104",
@@ -1832,7 +2099,7 @@
         }
       ],
       "x": 4.0,
-      "y": 18.152
+      "y": 15.152
     },
     {
       "id": "00001EA10103609C",
@@ -1877,7 +2144,7 @@
         }
       ],
       "x": 6.0,
-      "y": 21.152
+      "y": 18.264
     },
     {
       "id": "000021BF5123CCE8",
@@ -1937,7 +2204,7 @@
         }
       ],
       "x": 6.0,
-      "y": 23.152
+      "y": 20.264
     },
     {
       "id": "0000D4E51E91A595",
@@ -1997,7 +2264,7 @@
         }
       ],
       "x": 8.0,
-      "y": 21.152
+      "y": 18.264
     },
     {
       "id": "000016BFD960948A",
@@ -2065,7 +2332,151 @@
         }
       ],
       "x": 10.0,
-      "y": 15.152
+      "y": 21.704
+    },
+    {
+      "id": "000071A1BBACC259",
+      "title": "Автоконструктор із зрозумілою орієнтацією",
+      "description": [
+        "Виготовте Automatic Constructor зі Sky Ingot. Зберіть структуру з Ancient Logs за книгою: стрілка пристрою позначає верхній ряд рецепта. Інґредієнти треба покласти на відповідні колоди, а результат падає знизу. Огляд і комплект не підтверджують кожен автоматичний цикл.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:auto_crafter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FF97A09DB72E",
+        "000043245D5CF7C3",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C071F93F6E6F",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:auto_crafter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E1492AC7C320",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:auto_crafter",
+          "timer": 40
+        },
+        {
+          "id": "000096B9AF5FD91E",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:ancient_log",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006FC49738DF6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDDB91DC652A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000022D0703C1339",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 23.145
+    },
+    {
+      "id": "00000BA574E4D006",
+      "title": "Глибинний метал: рецепт саме цієї версії",
+      "description": [
+        "Після відкриття Nether і Sky Ingot виготовте Depth Ingot. У Nature’s Aura 41.10 активний рецепт depth_ingot_creation використовує Sky Ingot, Tainted Gold та Netherite Scrap на верстаку; це не старий ритуал інфузії, скопійований з іншої версії. Зразок потрібен для подальших природних інструментів.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:depth_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000071A1BBACC259",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000653211B3943D",
+          "type": "dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "id": "000010E9F69918B6",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:depth_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000932DACE0755C",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:tainted_gold",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C14920D2FF17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007D144541EF0F",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 23.145
     },
     {
       "id": "000071D3CDEB014E",
@@ -2144,7 +2555,7 @@
         }
       ],
       "x": 0.0,
-      "y": 27.152
+      "y": 24.678
     },
     {
       "id": "0000A090268743F3",
@@ -2212,7 +2623,122 @@
         }
       ],
       "x": 2.0,
-      "y": 27.152
+      "y": 25.264
+    },
+    {
+      "id": "0000BB355C69BD47",
+      "title": "Ліміт генератора — окремий рівень керування",
+      "description": [
+        "Виготовте Creational Catalyst та встановіть його безпосередньо під генератором. Він знімає звичайний поріг утворення аури, але надлишок може розсіюватися. Залиште компараторний контроль: зняття обмеження не означає, що слід нескінченно перевантажувати територію.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:generator_limit_remover",
+        "count": 1
+      },
+      "dependencies": [
+        "00000BA574E4D006",
+        "000071D3CDEB014E",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B7D53C38089B",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:generator_limit_remover",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000BEF02A134645",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:generator_limit_remover",
+          "timer": 40
+        },
+        {
+          "id": "00000E7C691078A7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "0000E720EA86F82A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009935CFA95554",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 20.0,
+      "y": 23.145
+    },
+    {
+      "id": "00002C492CE6855A",
+      "title": "Середовище справді накопичило ауру",
+      "description": [
+        "Відновіть і посильте природну ділянку та залишайтеся поруч, доки штатний серверний контроль Nature’s Aura не зафіксує позитивний дисбаланс. Код 41.10 перевіряє ауру раз на 200 тіків у радіусі 25, поріг — 1 500 000. Після демонстрації відрегулюйте відсічення. Досягнення підтверджує стан середовища, а не роботу конкретного генератора.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": {
+        "id": "naturesaura:eye_improved",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BB355C69BD47",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF74FA8CBC6B",
+          "type": "advancement",
+          "advancement": "naturesaura:positive_imbalance"
+        },
+        {
+          "id": "000066FEAFAA652A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "00002DE1B0CBC66F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000037F9C546116C",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 22.0,
+      "y": 23.145
     },
     {
       "id": "0000528A1EFC103D",
@@ -2280,7 +2806,7 @@
         }
       ],
       "x": 4.0,
-      "y": 27.152
+      "y": 25.264
     }
   ]
 }

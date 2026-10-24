@@ -1,0 +1,868 @@
+{
+  "schema": 1,
+  "quest_count": 23,
+  "scope": "Source-backed missing industrial mechanics; native action proofs separate from setup/product checks. Existing quests and IDs retained.",
+  "quests": [
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_CRUSHER",
+      "epoch": 18,
+      "title_uk": "Дробарка має бути сформована",
+      "description_uk": [
+        "Зберіть структуру Crusher за поточною книгою інженера й завершіть її інженерним молотком. Приймайте сировину через визначений вхід, а вихід залиште вільним для конвеєра. Тут перевіряється саме утворення конструкції, а не її енергоспоживання.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:crusher",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_crusher"
+        }
+      ],
+      "after": [
+        "E11_X_capacitor"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_IMPROVED_BLAST",
+      "epoch": 18,
+      "title_uk": "Доменний цех із механізованим завантаженням",
+      "description_uk": [
+        "Після ранньої ручної сталі перейдіть до Improved Blast Furnace: звірте армовану цеглу, орієнтацію та точки обслуговування в книзі. Сформуйте конструкцію молотком; попередні запаси сталі не замінюють цей крок.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:advanced_blast_furnace",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_improvedblastfurnace"
+        }
+      ],
+      "after": [
+        "V5_E08_ie_workshop_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_SQUEEZER",
+      "epoch": 18,
+      "title_uk": "Олійний прес відділяє рідину від макухи",
+      "description_uk": [
+        "Сформуйте Squeezer інженерним молотком. Заплануйте окремі місця для рослинної олії та твердого побічного продукту: забитий вихід може зупинити майбутню паливну лінію. Нативний критерій підтверджує структуру, а не першу партію олії.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:squeezer",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_squeezer"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_CRUSHER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_FERMENTER",
+      "epoch": 18,
+      "title_uk": "Ферментер постачає другий паливний потік",
+      "description_uk": [
+        "Сформуйте Fermenter за кресленням. Порівняйте дозволену рослинну сировину в JEI й передбачте окремий резервуар етанолу; не зливайте його в буфер олії Squeezer.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:fermenter",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_fermenter"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_SQUEEZER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_REFINERY",
+      "epoch": 18,
+      "title_uk": "Біодизель поєднує два потоки",
+      "description_uk": [
+        "Сформуйте Refinery після підготовки Squeezer і Fermenter. Її рідинні входи приймають рослинну олію й етанол, а поточний рецепт біодизелю також потребує невитратного каталізатора c:dusts/saltpeter. Обирайте прийнятний матеріал за поточним JEI: квест не вимагає дубліката пилу конкретного мода. Нативний критерій підтверджує формування Refinery, а не запуск труб або виробництво пального.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:refinery",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_refinery"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_SQUEEZER",
+        "V5_DEPTH_IMMERSIVEENGINEERING_FERMENTER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_DIESEL_GENERATOR",
+      "epoch": 18,
+      "title_uk": "Паливна електростанція завершує біолінію",
+      "description_uk": [
+        "Сформуйте Diesel Generator, передбачте підведення дозволеного палива та відведення FE у буфер. Власне біодизельне виробництво дає йому матеріальну основу; список прийнятного палива беріть із книги встановленої версії.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:diesel_generator",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_dieselgen"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_REFINERY"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_ASSEMBLER",
+      "epoch": 23,
+      "title_uk": "Три шаблони одного складальника",
+      "description_uk": [
+        "Огляньте Assembler і підготуйте контрольний комплект конвеєра та механічного компонента. У GUI плануйте до трьох послідовних рецептів, явно залишаючи місце для проміжних результатів. FTB перевірить станцію й комплект, але не вміст шаблонів.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "immersiveengineering:component_iron",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersiveengineering:assembler",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:component_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:conveyor_basic",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_DIESEL_GENERATOR"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_ARC_FURNACE",
+      "epoch": 32,
+      "title_uk": "Дугова піч є справжньою конструкцією",
+      "description_uk": [
+        "Сформуйте Arc Furnace молотком, після чого пройдіть наявну перевірку графітового електрода. Електроди є витратною частиною процесу; нативне досягнення тут засвідчує складання печі й не підміняє окрему перевірку її матеріалів.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:arc_furnace",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_arcfurnace"
+        }
+      ],
+      "after": [
+        "V5_E32_ie_workshop_04"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_IMMERSIVEENGINEERING_EXCAVATOR",
+      "epoch": 32,
+      "title_uk": "Екскаватор починається з геології",
+      "description_uk": [
+        "Дослідіть пробу буром та знайдіть мінеральне родовище за інженерною книгою. Зберіть привід Excavator і відповідне Bucket Wheel. Завдання зараховує нативну подію формування екскаватора; існування та виснаження конкретного родовища FTB не вимірює.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "immersiveengineering:excavator",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "immersiveengineering:multiblocks/mb_excavator"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_IMMERSIVEENGINEERING_ARC_FURNACE"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:hemp_fiber",
+          "count": 2
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_map": "immersiveengineering"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_CHARGED_WRENCH",
+      "epoch": 14,
+      "title_uk": "Ключ, у якому справді є повітря",
+      "description_uk": [
+        "Зарядіть Pneumatic Wrench до щонайменше 3 bar та потримайте його у своєму інвентарі. Вбудований критерій перевіряє фактичний тиск інструмента на сервері; порожній ключ не підходить.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "pneumaticcraft:pneumatic_wrench",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "pneumaticcraft:pneumatic_wrench_charged"
+        }
+      ],
+      "after": [
+        "V5_E14_pneumatic_mechanics_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_PRESSURE_CHAMBER",
+      "epoch": 14,
+      "title_uk": "Порожниста камера проходить нативну перевірку",
+      "description_uk": [
+        "Зберіть порожнисту камеру 3×3×3, 4×4×4 або 5×5×5 за Patchouli. Клапан поставте останнім: саме встановлення клапана гравцем викликає перевірку сформованої структури й нативне досягнення. Передбачте окремі input/output interfaces; це завдання ще не вимагає тиску.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "pneumaticcraft:pressure_chamber_valve",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "pneumaticcraft:pressure_chamber"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_PNEUMATICCRAFT_CHARGED_WRENCH"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_REFINERY",
+      "epoch": 14,
+      "title_uk": "Нафтові фракції мають визначений порядок",
+      "description_uk": [
+        "Огляньте Refinery Controller та підготуйте щонайменше два Refinery Outputs. Книга дозволяє 2–4 виходи: найлегша фракція розташовується зверху, найважча знизу; нагрів починає роботу від 100°C. Окремо збережіть зразок LPG для наступного полімерного кроку.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "pneumaticcraft:refinery_output",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:refinery",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:refinery_output",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:lpg_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_PNEUMATICCRAFT_PRESSURE_CHAMBER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_PLASTIC",
+      "epoch": 14,
+      "title_uk": "LPG проходить термопневматичний етап",
+      "description_uk": [
+        "Звірте в JEI перетворення LPG та Coal у рідкий Plastic у Thermopneumatic Processing Plant. Спосіб затвердіння залежить від конфігурації: світове розливання може бути дозволене, а охолоджуваний Heat Frame працює з тарою в інвентарі. Порівняйте полімер із сировиною; IF-пластик не замінює цей зразок.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "pneumaticcraft:lpg_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:thermopneumatic_processing_plant",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:lpg_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:plastic",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_PNEUMATICCRAFT_REFINERY"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_ADVANCED_PRESSURE",
+      "epoch": 24,
+      "title_uk": "Високий тиск потребує відповідної магістралі",
+      "description_uk": [
+        "Огляньте Advanced Air Compressor та підготуйте Advanced Pressure Tubes і Safety Tube Module. Зіставте допустимий тиск кожної ділянки за червоною зоною її GUI: просунутий компресор не підвищує міцність звичайної труби. Не змішуйте тепловий відвід із повітряною мережею.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "pneumaticcraft:advanced_pressure_tube",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:advanced_air_compressor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:advanced_pressure_tube",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:safety_tube_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E24_pneumatic_mechanics_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_PROGRAM_DRONE",
+      "epoch": 24,
+      "title_uk": "Програма справді записана",
+      "description_uk": [
+        "У Programmer складіть коротку навчальну програму та запишіть її в Drone. Нативний критерій спрацьовує після успішного запису, а не від отримання програматора чи дрона. Спершу тестуйте без руйнування блоків; правильність майбутніх доставок цим критерієм не перевіряється.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "pneumaticcraft:programmer",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "pneumaticcraft:program_drone"
+        }
+      ],
+      "after": [
+        "V4_E24_pneumatic_io_08"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_PNEUMATICCRAFT_JET_BOOTS",
+      "epoch": 28,
+      "title_uk": "Пневматичний політ потребує запуску",
+      "description_uk": [
+        "Підготуйте заряджені Pneumatic Boots з Jet Boots Upgrade та виконайте короткий контрольований запуск над безпечним майданчиком. Нативний критерій викликається серверним обробником під час початку активної роботи черевиків, тому сам предмет не завершує квест.",
+        "Зарахування потребує нативного досягнення мода за описану дію. Сам предмет або огляд блока його не замінює. Досягнення з попереднього законного проходження зберігається; адміністраторські команди поза Survival можуть його видати."
+      ],
+      "icon": "pneumaticcraft:jet_boots_upgrade_1",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "pneumaticcraft:flight"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_PNEUMATICCRAFT_PROGRAM_DRONE"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "pneumaticcraft:ingot_iron_compressed",
+          "count": 2
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_map": "pneumaticcraft"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_DISSOLUTION",
+      "epoch": 18,
+      "title_uk": "Рамка з рідинним реагентом",
+      "description_uk": [
+        "Огляньте Dissolution Chamber і підготуйте просту рамку та латекс. Рецепти цієї машини поєднують до восьми предметних позицій з одним рідинним реагентом; перевірте активний рецепт рамки в JEI, не змішуючи резервуари довільними рідинами.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:machine_frame_simple",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:dissolution_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:machine_frame_simple",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:latex_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_if_specialization_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_HYDROPONIC",
+      "epoch": 27,
+      "title_uk": "Грядка розрізняє будівельний і робочий ресурс",
+      "description_uk": [
+        "Огляньте Hydroponic Bed і звірте її активний рецепт: Fertilizer входить до будівельного складу самої грядки. Підготуйте насіння та воду для подальшого знайомства з інтерфейсом; не вважайте будівельний Fertilizer автоматичною вимогою постійної роботи. Режими прискорення перевіряйте в книзі та GUI встановленої версії.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:fertilizer",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:hydroponic_bed",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:fertilizer",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_if_specialization_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_PINK_SLIME",
+      "epoch": 27,
+      "title_uk": "Два рідинні продукти забійної фабрики",
+      "description_uk": [
+        "Огляньте Mob Slaughter Factory й відокремте зразки Meat та Pink Slime. Це два різні рідинні виходи для різних цілей; не заливайте ними один спільний резервуар. Рожева сировина підтримує наступний рівень рамок у Dissolution Chamber.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:pink_slime_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:mob_slaughter_factory",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:pink_slime_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:meat_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E27_X_mob_transport"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_ADVANCED_FRAME",
+      "epoch": 27,
+      "title_uk": "Просунута рамка має попередника",
+      "description_uk": [
+        "Підготуйте просту й просунуту рамки біля Dissolution Chamber. У поточному рецепті перевірте потрібну рідину та діамантовий компонент: апгрейд спирається на попередній виробничий рівень, а не замінює його безкоштовно.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:machine_frame_simple",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:dissolution_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:machine_frame_simple",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:machine_frame_advanced",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:pink_slime_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_INDUSTRIALFOREGOING_DISSOLUTION",
+        "V5_DEPTH_INDUSTRIALFOREGOING_PINK_SLIME"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_MOB_DUPLICATOR",
+      "epoch": 27,
+      "title_uk": "Дублювання використовує окрему есенцію",
+      "description_uk": [
+        "Огляньте Mob Duplicator і підготуйте Mob Imprisonment Tool та зразок Essence. Зразок моба задає ціль, а рідка есенція є робочим ресурсом: Pink Slime із забійної фабрики її не замінює. Наявність інструмента не означає, що всередині вже потрібний моб.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:mob_imprisonment_tool",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:mob_duplicator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:mob_imprisonment_tool",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:essence_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_INDUSTRIALFOREGOING_ADVANCED_FRAME",
+        "E27_X_essence_service"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_ETHER_GAS",
+      "epoch": 34,
+      "title_uk": "Ефірний газ — окрема лазерна спеціалізація",
+      "description_uk": [
+        "Огляньте Stasis Chamber і Fluid Laser Base, підготуйте Purple Laser Lens та зразок Ether Gas. Порівняйте цей процес із рудною базою: джерело, лінза й стабілізація цілі мають окремі умови в актуальному JEI. Цей комплект не доводить живого Wither у камері чи швидкість видобутку.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:purple_laser_lens",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:stasis_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "industrialforegoing:fluid_laser_base",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:purple_laser_lens",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:ether_gas_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E34_if_specialization_04"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    },
+    {
+      "id": "V5_DEPTH_INDUSTRIALFOREGOING_MYCELIAL",
+      "epoch": 34,
+      "title_uk": "Реактор не замінює мережу генераторів",
+      "description_uk": [
+        "Огляньте Mycelial Reactor та підготуйте Supreme Machine Frame й Ether Gas. Його рецепт завершує матеріальний шлях, але велика генерація FE залежить від одночасної роботи різних Mycelial Generators у мережі. FTB перевіряє реактор і зразки, не обіцяючи, що вся генераторна мережа вже працює.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": "industrialforegoing:machine_frame_supreme",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:mycelial_reactor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:machine_frame_supreme",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:ether_gas_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_INDUSTRIALFOREGOING_ETHER_GAS"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "industrialforegoing:plastic",
+          "count": 2
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_map": "industrialforegoing"
+    }
+  ]
+}

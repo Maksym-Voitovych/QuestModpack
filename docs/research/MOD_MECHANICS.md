@@ -131,6 +131,754 @@
 - [AIA2 native recipe policy with frozen exported codec templates](../../content/recipes/v5_balance.json) — SHA перевірено
 - [installed registry snapshot](../../content/audit/registries.json) — SHA перевірено
 
+## Integrated Dynamics
+
+Версія експорту: **1.38.1**. Статус: `complete`.
+[Структурована карта](../../content/research/logistics_v5.json).
+
+Основний маршрут: смола менрилу → кристали → кабелі → картки й типи → зчитування → посилання/оператори → materializer/proxy/delay → фізичний вихід.
+
+### 1. Менрил: смола й кристалізація
+
+Епохи: 28.
+
+Виділіть crystalized menril для логічної мережі та не витрачайте весь запас на оформлення стін майстерні. Фактична перевірка: 24 × integrateddynamics:crystalized_menril_chunk — мати в інвентарі; 16 × integrateddynamics:cable — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Ресурси й результати: `integrateddynamics:crystalized_menril_chunk`, `integrateddynamics:cable`.
+Квести: `E28_X_menril`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 2. Зібрана мережа з десяти кабелів
+
+Епохи: 28.
+
+Після менрилової підготовки з’єднайте щонайменше десять Logic Cables в одну мережу. Останній кабель установіть самі, щоб нативна подія мала гравця-власника. Досягнення перевіряє подію ініціалізації та мінімум десять кабелів у мережі; це більше за запас кабелів у кишені.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.01.
+Ресурси й результати: `integrateddynamics:cable`.
+Квести: `V5_LOG_ID_NETWORK`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 3. Редактор і статичне число
+
+Епохи: 28.
+
+У Logic Programmer виберіть Integer, задайте число та запишіть його на порожню Variable Card. Повторіть з іншим числом для майбутнього додавання. Перевірка вимагає створення integer-змінної саме програматором; порожня картка або предмет із Creative цього не доводять.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.02.
+Машини: `integrateddynamics:logic_programmer`.
+Ресурси й результати: `integrateddynamics:logic_programmer`, `integrateddynamics:variable`.
+Квести: `V5_LOG_ID_PROGRAMMER_GUI`, `V5_LOG_ID_INTEGER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 4. Типізоване читання редстоуну
+
+Епохи: 28.
+
+Приєднайте Redstone Reader до живої мережі й направте його на джерело сигналу. У слоті Integer Redstone Value зв’яжіть нову Variable Card із поточним аспектом. Нативна умова перевіряє redstone_reader та read_integer_redstone_value; на цьому кроці не потрібно видавати читання за готову автоматику.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.03.
+Машини: `integrateddynamics:part_redstone_reader`.
+Ресурси й результати: `integrateddynamics:part_redstone_reader`, `integrateddynamics:variable`.
+Квести: `V5_LOG_ID_REDSTONE`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 5. Посилання та ліниве додавання
+
+Епохи: 28.
+
+Запишіть оператор Addition, посилаючись на дві числові картки. Покладіть обидві вихідні картки у Variable Store тієї самої мережі, а результат вставте в Display Panel. Integrated Dynamics обчислює посилання ліниво: без доступних в мережі вихідних карток ви отримаєте помилку. Досягнення перевіряє operator arithmetic_addition на панелі.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.04.
+Машини: `integrateddynamics:variablestore`, `integrateddynamics:part_display_panel`.
+Ресурси й результати: `integrateddynamics:labeller`, `integrateddynamics:variable`, `integrateddynamics:variablestore`, `integrateddynamics:part_display_panel`.
+Квести: `V4_E28_logic_contracts_05`, `V5_LOG_ID_ADDITION`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 6. Тип списку на панелі
+
+Епохи: 28.
+
+Створіть у програматорі List з цілими числами 1, 10 і 100 саме в цьому порядку та покажіть його на Display Panel. Це основа для подальшої роботи зі списками інвентарів. Досягнення порівнює серіалізований integer-список [1,10,100] на панелі, а не кількість карток у гравця.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.05.
+Машини: `integrateddynamics:part_display_panel`.
+Ресурси й результати: `integrateddynamics:variable`, `integrateddynamics:part_display_panel`.
+Квести: `V5_LOG_ID_LIST`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 7. Знімок динамічного значення
+
+Епохи: 28.
+
+Вставте динамічну картку з мережі у верхній слот Materializer. Лівий слот записує на порожню картку значення, яке джерело має в цей момент. Нативний доказ — створення змінної блоком Materializer. Отримана статична картка не оновлюватиметься разом із початковим сигналом.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.06.
+Машини: `integrateddynamics:materializer`.
+Ресурси й результати: `integrateddynamics:materializer`.
+Квести: `V5_LOG_ID_MATERIALIZE`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 8. Непряме посилання через Proxy
+
+Епохи: 28.
+
+Підготуйте Proxy і створіть проксовану Variable Card. Посилайтеся на неї у схемі, а джерело надалі замінюйте в Proxy замість перезапису всіх залежних карток. Досягнення фіксує створення змінної саме через Proxy; це перевірка операції прив’язки, а не тривалий тест усієї схеми.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.07.
+Машини: `integrateddynamics:proxy`.
+Ресурси й результати: `integrateddynamics:proxy`.
+Квести: `V5_LOG_ID_PROXY`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 9. Відкладені значення
+
+Епохи: 28.
+
+Після статичних знімків і проксі підготуйте Delay. Створіть через нього картку затриманого значення, щоб працювати з попередніми станами сигналу. Досягнення вимагає створення змінної блоком Delay; налаштування тривалості та поведінку під час перезапуску перевіряйте на своїй установці окремо.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.08.
+Машини: `integrateddynamics:delay`.
+Ресурси й результати: `integrateddynamics:delay`.
+Квести: `V5_LOG_ID_DELAY`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 10. Зворотний шлях до Redstone Writer
+
+Епохи: 28.
+
+З’єднайте Redstone Reader і Writer однією мережею. Зчитайте цілий сигнал рівня 15 та вставте саме цю aspect-картку в Integer Redstone Writer. Нативна умова вимагає reader-aspect read_integer_redstone_value зі значенням 15 на writer-aspect write_integer_redstone. Це перевіряє налаштований логічний зв’язок, а не просту наявність двох вузлів.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.09.
+Машини: `integrateddynamics:part_redstone_writer`.
+Ресурси й результати: `integrateddynamics:part_redstone_writer`.
+Квести: `V5_LOG_ID_WRITE15`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 11. Рідинний і машинний контроль
+
+Епохи: 28.
+
+Збережіть Network Reader та Machine Reader для діагностики з боку інфраструктури й з боку конкретного механізму. Фактична перевірка: 1 × integrateddynamics:part_network_reader — мати в інвентарі; 1 × integrateddynamics:part_machine_reader — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.10.
+Машини: `integrateddynamics:part_fluid_reader`.
+Ресурси й результати: `integrateddynamics:variable`, `minecraft:water_bucket`, `integrateddynamics:part_network_reader`, `integrateddynamics:part_machine_reader`.
+Квести: `V4_E28_logic_contracts_03`, `E28_X_network_reader`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 12. Логіка як вхід транспортного шару
+
+Епохи: 28.
+
+Підготуйте контрольовану точку обміну між мережами без взаємного безкінечного перекачування. Зберігайте правило напряму та його конфігурацію поруч із місцем фактичного перенесення ресурсів. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integrateddynamics.core.11.
+Машини: `integratedtunnels:part_importer_item`.
+Ресурси й результати: `ae2:interface`, `integrateddynamics:variable`, `ae2:memory_card`.
+Квести: `V4_E28_logic_contracts_08`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+Фінальні цілі:
+- Логіка як вхід транспортного шару
+
+Міжмодові зв’язки:
+- {"mod_id": "ae2", "role_uk": "Вхід до транспортного або складського шару після опанування типів даних; налаштування конкретних слотів і прав доступу перевіряється на своїй установці."}
+
+Джерела:
+
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/assets/integrateddynamics/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/info/on_the_dynamics_of_integration.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/CableHelpers.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartReader.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/write/PartTypeWriteBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartPanelVariableDriven.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/item/VariableFacadeHandlerRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/Codecs.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariablePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariableFacadePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/ValuePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/IntegratedDynamics.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerLogicProgrammerBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/network_foundations/networks_logic.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/logic_programming.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/constant_definition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_capturing.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/arithmetic_addition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_operations/logical_list_building.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_materialization.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_proxying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/saving_state/variable_delaying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_transmission.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/squeezer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/drying_basin.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/squeezer/base/menril_resin_logs.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/drying_basin/base/crystalized_menril_block.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/logic_programmer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/variablestore.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/materializer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/proxy.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/delay.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-neoforge/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerEventHooksNeoForge.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/RegistryEntriesCommon.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/operator/OperatorRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/aspect/AspectRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeList.java) — SHA перевірено
+
+## Integrated Tunnels
+
+Версія експорту: **1.13.0**. Статус: `complete`.
+[Структурована карта](../../content/research/logistics_v5.json).
+
+Основний транспортний маршрут над Integrated Dynamics: interface → importer/exporter → boolean/list/operator → фільтр → рідини/енергія → міжмодовий шлюз.
+
+### 1. Інтерфейс відкриває сховище
+
+Епохи: 28.
+
+Збережіть окремі item importer та exporter; напрямок потоку має бути зрозумілий зі схеми, а не з пробного викидання предметів. Фактична перевірка: 2 × integratedtunnels:part_importer_item — мати в інвентарі; 2 × integratedtunnels:part_exporter_item — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Машини: `integratedtunnels:part_interface_item`.
+Ресурси й результати: `integratedtunnels:part_importer_item`, `integratedtunnels:part_exporter_item`, `integratedtunnels:part_interface_item`.
+Квести: `E28_X_item_tunnel`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 2. Імпорт під boolean-дозволом
+
+Епохи: 28.
+
+Приєднайте до мережі Item Interface зі сховищем і Item Importer біля джерела. Вставте boolean true (порожню картку за правилами книги) у потрібний boolean-aspect імпорту. Порівняйте ролі: interface відкриває інвентар мережі, importer намагається забрати ресурс із цільового контейнера. Нативний доказ підтверджує саме вибір аспекту з true.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.01.
+Машини: `integratedtunnels:part_importer_item`.
+Ресурси й результати: `integratedtunnels:part_importer_item`, `integrateddynamics:variable`.
+Квести: `V5_LOG_IT_IMPORT_TRUE`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 3. Імпорт за списком
+
+Епохи: 28.
+
+Зчитайте список ItemStacks через Inventory Reader і передайте list-картку в list-aspect Item Importer. Так вибір ресурсів залежить від даних, а не від суцільного boolean true. Досягнення в цій версії перевіряє активацію write_list_item_import; фактичний вміст списку та перенесений обсяг нативна умова не вимірює.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.02.
+Машини: `integratedtunnels:part_importer_item`.
+Ресурси й результати: `integrateddynamics:part_inventory_reader`, `integratedtunnels:part_importer_item`.
+Квести: `V5_LOG_IT_IMPORT_LIST`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 4. Предикат замість суцільного потоку
+
+Епохи: 28.
+
+Створіть константу-предикат Item Enchantable й вставте її в operator-aspect Item Exporter. Відокремте спорядження для зачарування від решти складських ресурсів. Перевірений upstream-предикат вимагає operator itemstack_enchantable на вибраному аспекті; перевірку успішної доставки у приймач не підміняємо цим досягненням.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.03.
+Машини: `integratedtunnels:part_exporter_item`.
+Ресурси й результати: `integratedtunnels:part_exporter_item`, `integrateddynamics:variable`.
+Квести: `V5_LOG_IT_ENCHANTABLE`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 5. Видимість сховища за днем
+
+Епохи: 28.
+
+Зчитайте World Reader boolean Is Day та поставте Filtering Item Interface біля окремої скрині. У boolean filter-aspect вставте картку Is Day. Удень ресурси цієї скрині мають бути доступні мережі, вночі — приховані. Нативне досягнення перевіряє підключення саме world-isday aspect; зміну доступності перевірте на установці самі.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.04.
+Машини: `integratedtunnels:part_interface_filter_item`.
+Ресурси й результати: `integratedtunnels:part_interface_filter_item`, `integrateddynamics:part_world_reader`.
+Квести: `V5_LOG_IT_DAY_FILTER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 6. Рідинний інтерфейс та маршрут
+
+Епохи: 28.
+
+Підготуйте importer і exporter рідини для одного контрольованого резервуара, перш ніж під'єднувати решту хімічної фабрики. Фактична перевірка: 1 × integratedtunnels:part_importer_fluid — мати в інвентарі; 1 × integratedtunnels:part_exporter_fluid — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.05.
+Ресурси й результати: `integratedtunnels:part_importer_fluid`, `integratedtunnels:part_exporter_fluid`.
+Квести: `E28_X_fluid_tunnel`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 7. Енергетична підмережа
+
+Епохи: 28.
+
+Відокремте дані про енергію від самого енергетичного підключення. Спочатку перевірте роль інтерфейсу в довіднику Integrated Tunnels, а потім плануйте керування потужною виробничою лінією. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.06.
+Машини: `integratedtunnels:part_interface_energy`.
+Ресурси й результати: `integrateddynamics:variable`, `powah:energy_cell_hardened`.
+Квести: `V4_E28_logic_contracts_07`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 8. Читання запасу й умовний експорт
+
+Епохи: 28.
+
+Підготуйте один умовний експорт до окремого приймача й перевірте його на звичайному матеріалі. Помилка логічного значення не повинна вилучати всі компоненти з основного складу. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.07.
+Машини: `integratedtunnels:part_exporter_item`.
+Ресурси й результати: `integrateddynamics:variable`, `minecraft:barrel`.
+Квести: `V4_E28_logic_contracts_06`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 9. Границя доступного інвентарю
+
+Епохи: 28.
+
+Збережіть interface filter item та фільтр Oritech для межі двох мереж, де помилковий вхід дорожчий за коротку зупинку. Фактична перевірка: 1 × integratedtunnels:part_interface_filter_item — мати в інвентарі; 1 × oritech:item_filter_block — мати в інвентарі. Предмети не витрачаються. Наявність комплекту не вимірює швидкість виробництва чи безперервну роботу установки.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.08.
+Ресурси й результати: `integratedtunnels:part_interface_filter_item`, `oritech:item_filter_block`.
+Квести: `E28_X_filter_boundary`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 10. Вхід до іншої системи зберігання
+
+Епохи: 28.
+
+Підготуйте контрольовану точку обміну між мережами без взаємного безкінечного перекачування. Зберігайте правило напряму та його конфігурацію поруч із місцем фактичного перенесення ресурсів. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedtunnels.core.09.
+Машини: `integratedtunnels:part_importer_item`.
+Ресурси й результати: `ae2:interface`, `integrateddynamics:variable`, `ae2:memory_card`.
+Квести: `V4_E28_logic_contracts_08`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+Фінальні цілі:
+- Вхід до іншої системи зберігання
+
+Міжмодові зв’язки:
+- {"mod_id": "integrateddynamics", "role_uk": "Вхід до транспортного або складського шару після опанування типів даних; налаштування конкретних слотів і прав доступу перевіряється на своїй установці."}
+
+Джерела:
+
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/assets/integratedtunnels/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/info/tunnels_tutorials.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/info/tunnels_info.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/advancement/import_all_items/import_all_items.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/advancement/import_items_list/import_items_list.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/advancement/export_enchantable_items/export_enchantable_items.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTunnels/blob/dd9ade64e31b0f56c2dc672541d0e9583119670f/src/main/resources/data/integratedtunnels/advancement/filter_storage_day/filter_storage_day.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_interface_item.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_importer_item.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_exporter_item.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_interface_fluid.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_interface_energy.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedtunnels/export/recipes/crafting/part_interface_filter_item.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-neoforge/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerEventHooksNeoForge.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/RegistryEntriesCommon.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/assets/integrateddynamics/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/info/on_the_dynamics_of_integration.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/CableHelpers.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartReader.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/write/PartTypeWriteBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartPanelVariableDriven.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/item/VariableFacadeHandlerRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/Codecs.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariablePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariableFacadePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/ValuePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/IntegratedDynamics.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerLogicProgrammerBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/network_foundations/networks_logic.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/logic_programming.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/constant_definition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_capturing.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/arithmetic_addition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_operations/logical_list_building.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_materialization.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_proxying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/saving_state/variable_delaying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_transmission.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/squeezer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/drying_basin.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/squeezer/base/menril_resin_logs.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/drying_basin/base/crystalized_menril_block.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/logic_programmer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/variablestore.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/materializer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/proxy.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/delay.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/operator/OperatorRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/aspect/AspectRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeList.java) — SHA перевірено
+
+## Integrated Terminals
+
+Версія експорту: **1.11.1**. Статус: `reviewed_partial`.
+[Структурована карта](../../content/research/logistics_v5.json).
+
+Короткий addon-курс над готовою Integrated Tunnels мережею: термінал → predicate-фільтр → особистий Ender Chest.
+
+### 1. Менрилове скло й інтерфейс GUI
+
+Епохи: 28.
+
+Зробіть Menril Glass у Drying Basin, установіть Storage Terminal на кабель і відкрийте його GUI. Перевірте, що предметний інтерфейс справді включений до тієї самої мережі. Нативне досягнення підтверджує відкриття ContainerTerminalStorageBase; наповнення вкладок залежить від доступних item/fluid/energy-інтерфейсів і перевіряється окремо.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Машини: `integratedterminals:part_terminal_storage`.
+Ресурси й результати: `integratedterminals:menril_glass`, `integratedterminals:part_terminal_storage`.
+Квести: `V5_LOG_TERMINAL_GUI`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 2. Фільтр-предикат у терміналі
+
+Епохи: 28.
+
+Створіть у Logic Programmer predicate Item Enchantable та вставте його в нижній правий variable-слот предметної вкладки Storage Terminal. Це інший механізм, ніж текстовий пошук: нативний тригер перевіряє operator-картку itemstack_enchantable у terminal_storage, а не введення рядка в пошукове поле.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedterminals.core.01.
+Машини: `integratedterminals:part_terminal_storage`.
+Ресурси й результати: `integrateddynamics:variable`, `integratedterminals:part_terminal_storage`.
+Квести: `V5_LOG_TERMINAL_FILTER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 3. Особиста Ender-вкладка
+
+Епохи: 28.
+
+Натисніть ПКМ по встановленому Storage Terminal з Eye of Ender. Відкрийте нову Ender Storage-вкладку: вона показує особисту скриню гравця, а не спільний інвентар мережі. Досягнення має окремий terminal_storage_ender_upgraded trigger. Нативний виклик виконується при успішному перетворенні блочного термінала, тому однієї наявності ока недостатньо.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: integratedterminals.core.02.
+Машини: `integratedterminals:part_terminal_storage`.
+Ресурси й результати: `minecraft:ender_eye`, `integratedterminals:part_terminal_storage`.
+Квести: `V5_LOG_TERMINAL_ENDER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+Фінальні цілі:
+- Особиста Ender-вкладка
+
+Міжмодові зв’язки:
+- {"mod_id": "integrateddynamics", "role_uk": "Вхід до транспортного або складського шару після опанування типів даних; налаштування конкретних слотів і прав доступу перевіряється на своїй установці."}
+
+Джерела:
+
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/assets/integratedterminals/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/data/integratedterminals/info/terminals_tutorials.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/data/integratedterminals/info/terminals_info.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/inventory/container/ContainerTerminalStorageBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/advancement/criterion/TerminalStorageEnderUpgradedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/advancement/criterion/TerminalStorageEnderUpgradedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/part/PartTypeTerminalStorage.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/IntegratedTerminals.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/java/org/cyclops/integratedterminals/GeneralConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/data/integratedterminals/advancement/storage_terminal/gui_storage_terminal.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/data/integratedterminals/advancement/storage_terminal_filtering/filter_enchantable.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedTerminals/blob/24ccb55d0cee9c0cf23034ae55814451b1890b59/src/main/resources/data/integratedterminals/advancement/storage_terminal_ender/ender_upgrade_storage_terminal.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedterminals/export/recipes/drying_basin/menril_glass.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedterminals/export/recipes/crafting/part_terminal_storage.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integratedterminals/export/recipes/crafting/terminal_storage_portable.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-neoforge/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerEventHooksNeoForge.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/RegistryEntriesCommon.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/assets/integrateddynamics/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/info/on_the_dynamics_of_integration.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/NetworkInitializedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/CableHelpers.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartReaderAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartReader.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartWriterAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/write/PartTypeWriteBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/PartVariableDrivenAspectTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerPartPanelVariableDriven.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/advancement/criterion/VariableCreatedTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/item/VariableFacadeHandlerRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/helper/Codecs.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariablePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/VariableFacadePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/api/advancement/criterion/ValuePredicate.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/IntegratedDynamics.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/inventory/container/ContainerLogicProgrammerBase.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/network_foundations/networks_logic.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/logic_programming.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/constant_definition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_capturing.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/logic_operations/arithmetic_addition.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_operations/logical_list_building.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_materialization.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/advanced_network_components/variable_proxying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/saving_state/variable_delaying.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/resources/data/integrateddynamics/advancement/aspects/redstone_transmission.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/squeezer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/drying_basin.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/squeezer/base/menril_resin_logs.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/drying_basin/base/crystalized_menril_block.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/logic_programmer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/variablestore.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/materializer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/proxy.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/integrateddynamics/export/recipes/crafting/delay.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/operator/OperatorRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/part/aspect/AspectRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeRegistry.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/src/main/java/org/cyclops/integrateddynamics/core/evaluate/variable/ValueTypeList.java) — SHA перевірено
+
+## Modular Routers
+
+Версія експорту: **13.2.7**. Статус: `complete`.
+[Структурована карта](../../content/research/logistics_v5.json).
+
+Основний маршрут від заготовок і локальної передачі до фільтрів, порядку виконання, різних середовищ, fake player та віддаленої персональної логістики.
+
+### 1. Початкові модулі та локальні напрямки
+
+Епохи: 22.
+
+Підготуй Sender Module Mk1 для окремого виходу. Не направляй предмети назад у вхідний контейнер без свідомо спроєктованого циклу. Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Ресурси й результати: `modularrouters:blank_module`, `modularrouters:blank_upgrade`, `modularrouters:puller_module_1`, `modularrouters:sender_module_1`.
+Квести: `E22_X_blank_module`, `E22_X_puller`, `E22_X_sender`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 2. Керування сигналом
+
+Епохи: 22.
+
+Підготуй інструменти виявлення й сигнального керування. Правило активації потрібно перевірити як для наявного, так і для відсутнього ресурсу. Предметна перевірка потребує зазначеного комплекту в інвентарі й не витрачає його; вона не веде журнал походження чи автоматичного виробництва.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.01.
+Ресурси й результати: `modularrouters:detector_module`, `modularrouters:redstone_augment`.
+Квести: `E22_X_router_signal`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 3. Вхід, буфер, вихід Mk2
+
+Епохи: 24.
+
+Визначте джерело, приймач і вміст для одного маршрутизатора до встановлення багатьох модулів. Два інвентарі дозволяють побачити напрям помилки, не розбираючи великий склад. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.02.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:puller_module_2`, `modularrouters:sender_module_2`, `minecraft:barrel`.
+Квести: `V4_E24_router_contracts_01`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 4. Обсяг і частота кроку
+
+Епохи: 24.
+
+Порівняйте регулювання кількості та переміщення пачок на короткому тестовому маршруті. Спершу визначте потрібну партію, а вже потім збільшуйте швидкість перенесення між машинами. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.03.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:regulator_augment`, `modularrouters:stack_augment`.
+Квести: `V4_E24_router_contracts_02`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 5. Фільтри за властивостями
+
+Епохи: 24.
+
+Звірте призначення фільтрів у довіднику та підготуйте контрольний набір предметів для перевірки. Правило за назвою та огляд властивостей не повинні випадково захоплювати дорогі інструменти зі спільної скрині. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.04.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:regex_filter`, `modularrouters:inspection_filter`.
+Квести: `V4_E24_router_contracts_03`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 6. Зупинка наступних модулів
+
+Епохи: 24.
+
+Виготовте Void Module і розмістіть його перед Sender у списку модулів. Увімкніть Termination кнопкою T саме на Void Module, щоб після видалення дозволеного сміття наступний модуль не відправив решту того самого стеку. Нативна книга пояснює: Termination зупиняє наступні модулі лише коли поточний справді виконав роботу цього тіку. FTB перевіряє новий крафт модуля та огляд роутера, але не читає прапорець T або його GUI.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.05.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:void_module`, `modularrouters:sender_module_1`.
+Квести: `V5_LOG_ROUTER_TERMINATION`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 7. Розподіл між приймачами
+
+Епохи: 24.
+
+Перед розподілом підготуйте рівнозначні приймачі та окремий резерв для надлишку. Перевірте, що обраний режим відповідає логіці ваших рецептів, а не лише бажанню мати симетричні труби. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.06.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:distributor_module`, `modularrouters:filter_round_robin_augment`.
+Квести: `V4_E24_router_contracts_04`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 8. Рідинний та енергетичний режими
+
+Епохи: 24.
+
+Підготуйте окрему енергетичну операцію маршрутизатора й перевірте доступне джерело. Енергетичні модулі доповнюють логістику, але не створюють живлення без генератора або накопичувача. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.07.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:fluid_module`, `modularrouters:fluid_upgrade`, `minecraft:water_bucket`, `modularrouters:energy_upgrade`, `modularrouters:energy_output_module`.
+Квести: `V4_E24_router_contracts_05`, `V4_E24_router_contracts_06`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 9. Захист доступу
+
+Епохи: 24.
+
+Залиште засіб керованого запуску та перевірте, хто має змогу налаштовувати вузол у спільній базі. Це корисний сервісний шар, але він не замінює серверні правила епох AIA2. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.08.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:security_upgrade`, `modularrouters:redstone_augment`.
+Квести: `V4_E24_router_contracts_07`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 10. Використання предмета fake player
+
+Епохи: 24.
+
+Виготовте Activator Module і підготуйте тестову ділянку з Iron Hoe. Виберіть Right-click та потрібний напрямок; режим атаки сутності має інші витрати енергії й підпорядковується cooldown зброї. FTB фіксує нове виготовлення Activator і огляд роутера з комплектом. Успішну дію fake player та сумісність із Machine Guard перевіряйте на доступній епосі; цей квест їх не засвідчує.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.09.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:activator_module`, `minecraft:iron_hoe`.
+Квести: `V5_LOG_ROUTER_ACTIVATOR`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 11. Віртуальний шаблон Mk2
+
+Епохи: 24.
+
+Виготовте Extruder Module Mk2 і задайте в його шаблоні короткий міст із блоків. На відміну від Mk1, Mk2 розміщує віртуальні блоки з ghost-шаблону, а не витрачає предмети буфера. Такі блоки нічого не дають після руйнування й не призначені для ферми ресурсів. FTB перевіряє крафт Mk2 та огляд станції; схему, дистанцію й вільний прохід перевірте на своїй ділянці.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.10.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:extruder_module_2`, `minecraft:stone`.
+Квести: `V5_LOG_ROUTER_EXTRUDER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 12. Міжмодовий виробничий шлюз
+
+Епохи: 24.
+
+Зберіть контрольні деталі пневматичної та промислової ліній для одного маршруту обміну. Уточніть, які саме форми схем очікує наступний рецепт, перш ніж під'єднувати обидві фабрики до спільного приймача. Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.11.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:sender_module_2`, `pneumaticcraft:printed_circuit_board`, `modern_industrialization:electronic_circuit`.
+Квести: `V4_E24_router_contracts_08`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 13. Віддалена доставка після End
+
+Епохи: 32.
+
+Після відкриття End виготовте Sender Module Mk3: його рецепт використовує End Stone, тому цей маршрут навмисно стоїть пізніше за локальні Mk1/Mk2. Mk3 відправляє ресурси до цілі в іншому вимірі, але не завантажує чанк цілі самостійно. FTB перевіряє саме новий крафт Mk3; працездатність пари завантажених вузлів і право доступу команди перевіряються окремо.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.12.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:sender_module_3`, `minecraft:ender_chest`.
+Квести: `V5_LOG_ROUTER_DIMENSIONAL`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+### 14. Персональний інвентар і власник
+
+Епохи: 32.
+
+Виготовте Player Module вже після Mk3. Модуль прив’язується до автора крафту; для переприв’язки власник тримає модуль і виконує sneak-right-click. Підготуйте Security Upgrade для роутера. Player Module працює з інвентарем конкретного гравця, його бронею, offhand або Ender-скринею та може діяти між вимірами. FTB перевіряє новий крафт і захисний комплект; UUID компонента та захищеність сервера цим не перевіряються.
+Цей крок вводить окремий тип даних, спосіб керування або інтерфейс; подальша схема використовує його результат.
+Попередні кроки: modularrouters.core.13.
+Машини: `modularrouters:modular_router`.
+Ресурси й результати: `modularrouters:player_module`, `modularrouters:security_upgrade`.
+Квести: `V5_LOG_ROUTER_PLAYER`.
+Точний тип FTB task наведено в каталозі. Нативні досягнення підтверджують лише свої конкретні trigger-умови; setup-задачі не сертифікують потік або GUI-параметри.
+
+Фінальні цілі:
+- Персональний інвентар і власник
+
+Міжмодові зв’язки:
+- {"mod_id": "ae2", "role_uk": "Вхід до транспортного або складського шару після опанування типів даних; налаштування конкретних слотів і прав доступу перевіряється на своїй установці."}
+- {"mod_id": "pneumaticcraft", "role_uk": "Існуючий V4_E24_router_contracts_08 пов’язує складальні компоненти PneumaticCraft із маршрутизатором."}
+- {"mod_id": "modern_industrialization", "role_uk": "Той самий виробничий шлюз використовує electronic_circuit Modern Industrialization."}
+
+Джерела:
+
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/README.md) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/intro/modular_router.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/intro/modules.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/intro/filters.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/router/modular_router.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/router/termination.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/puller_1.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/puller_2.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/sender_1.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/sender_2.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/sender_3.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/player.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/activator.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/extruder_2.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/void.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/distributor.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/fluid.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/modules/energy_output.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/augments/regulator.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/augments/redstone.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/filters/inspection.json) — SHA перевірено
+- [джерело](https://github.com/desht/ModularRouters/blob/1df4d085a76c763d8eb2cefd8baeda5f4a4188ed/src/main/resources/assets/modularrouters/patchouli_books/book/en_us/entries/upgrades/security.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/modular_router.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/void_module.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/activator_module.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/extruder_module_2.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/sender_module_3.json) — SHA перевірено
+- [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/player_module.json) — SHA перевірено
+
 ## Roots Classic
 
 Версія експорту: **1.21.1-1.5.10**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
@@ -246,7 +994,7 @@
 
 ## Totemic
 
-Версія експорту: **1.21.1-0.12.18**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **1.21.1-0.12.18**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Почніть Totemic із різьбярського ножа. Ним деревина перетворюється на частини тотема; вибір тварини визначає ефект, тому звіртеся з Totempedia до різьблення.
@@ -271,7 +1019,18 @@
 Квести: `V5_MAG_TOTEMIC_02`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 3. Ритм і мелодія
+### 3. Посох для діагностики тотема
+
+Епохи: 2.
+
+Виготовте Totemic Staff та огляньте основу. ПКМ показує стан тотема, а удар посохом по основі скасовує вибір або церемонію. Перед складними мелодіями навчіться безпечно виходити з помилкового вибору.
+Попередні кроки: totemic:02.
+Машини: `totemic:totem_base`.
+Ресурси й результати: `totemic:totemic_staff`.
+Квести: `V5_DEPTH_TOTEMIC_STAFF`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 4. Ритм і мелодія
 
 Епохи: 7.
 
@@ -282,7 +1041,17 @@
 Квести: `E07_X_flute`, `E07_X_ceremony_kit`, `V5_MAG_TOTEMIC_03`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 4. Танець відновлюваного стада
+### 5. Мелодія родючості: перший справжній виступ
+
+Епохи: 7.
+
+Виберіть Fertility флейтою та барабаном у режимі вибору, потім припиніть присідати й грайте різними інструментами. Підготуйте дубовий саджанець: ця церемонія дає доступ до кедра. З кедра виготовте Wind Chime для наступного танцю. Залишайтеся не далі 8 блоків від основи в момент запуску ефекту.
+Попередні кроки: totemic:03, totemic:depth_staff.
+Ресурси й результати: `totemic:cedar_sapling`, `totemic:wind_chime`.
+Квести: `V5_DEPTH_TOTEMIC_FERTILITY`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 6. Танець відновлюваного стада
 
 Епохи: 7.
 
@@ -293,7 +1062,17 @@
 Квести: `E07_X_buffalo_hide`, `E07_X_bronze_soul`, `V5_MAG_TOTEMIC_04`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 5. Брязкальце з результату церемонії
+### 7. Бізони після завершеної мелодії
+
+Епохи: 7.
+
+Виберіть Buffalo Dance барабаном і Wind Chime. Корова поруч із тотемом стає бізоном після успішної церемонії. Збережіть стадо, перш ніж отримувати шкіру: наступні інструменти залежать від відновлюваних бізонів.
+Попередні кроки: totemic:depth_fertility.
+Ресурси й результати: `totemic:buffalo_hide`.
+Квести: `V5_DEPTH_TOTEMIC_BUFFALO`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 8. Брязкальце з результату церемонії
 
 Епохи: 7.
 
@@ -304,7 +1083,7 @@
 Квести: `E07_X_rattle`, `E07_X_ceremony_kit`, `V5_MAG_TOTEMIC_05`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 6. Підвісний інструмент із кедра
+### 9. Підвісний інструмент із кедра
 
 Епохи: 7.
 
@@ -315,7 +1094,7 @@
 Квести: `E07_X_wind_chime`, `E07_X_ceremony_kit`, `V5_MAG_TOTEMIC_06`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 7. Налаштована флейта
+### 10. Налаштована флейта
 
 Епохи: 7.
 
@@ -326,7 +1105,38 @@
 Квести: `V5_MAG_TOTEMIC_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 8. Байкок: підготовлений виклик
+### 11. Флейта, посилена самою церемонією
+
+Епохи: 7.
+
+Для Flute Infusion використайте флейту та брязкальце як селектори. Розподіліть мелодію між інструментами: білий дим означає, що поріг одного інструмента вичерпано. Результат — Infused Flute; сам позичений результат не замінює нативний доказ виступу.
+Попередні кроки: totemic:depth_buffalo, totemic:05.
+Ресурси й результати: `totemic:infused_flute`.
+Квести: `V5_DEPTH_TOTEMIC_FLUTE`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 12. Орлиний танець і кістяний свисток
+
+Епохи: 7.
+
+Підготуйте папугу та виконайте Eagle Dance, обравши брязкальце й Wind Chime. Церемонія повертає білоголових орланів; їхні кістки потрібні Eagle-Bone Whistle. Виготовлений свисток розширює набір інструментів для найскладніших мелодій.
+Попередні кроки: totemic:depth_buffalo, totemic:06.
+Ресурси й результати: `totemic:eagle_bone_whistle`.
+Квести: `V5_DEPTH_TOTEMIC_EAGLE`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 13. Пасивний ефект у дорожній сумці
+
+Епохи: 7.
+
+Виготовте Medicine Bag. Присядьте й натисніть ПКМ сумкою по різьбленій частині тотема, щоб вибрати її ефект; звичайний ПКМ відкриває або закриває сумку. Для заряджання станьте біля тотема з тим самим ефектом. Завдання перевіряє новий крафт сумки, а не її заряд або записаний ефект.
+Попередні кроки: totemic:depth_buffalo, totemic:depth_staff.
+Машини: `totemic:totem_pole`.
+Ресурси й результати: `totemic:medicine_bag`, `totemic:totemic_staff`.
+Квести: `V5_DEPTH_TOTEMIC_MEDICINE_BAG`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 14. Байкок: підготовлений виклик
 
 Епохи: 31.
 
@@ -336,6 +1146,16 @@
 Ресурси й результати: `totemic:baykok_bow`, `totemic:infused_flute`.
 Квести: `V5_MAG_TOTEMIC_08`.
 
+### 15. Байкок: від виконаної мелодії до перемоги
+
+Епохи: 31.
+
+Облаштуйте арену й виберіть Baykok Summon через Wind Chime та Eagle-Bone Whistle. Це складний виступ: сильніша флейта, різні інструменти та ритм важливіші за дублювання одного інструмента. Завершіть виклик поруч з основою, переможіть Байкока й заберіть його лук.
+Попередні кроки: totemic:depth_flute, totemic:depth_eagle.
+Ресурси й результати: `totemic:baykok_bow`.
+Квести: `V5_DEPTH_TOTEMIC_BAYKOK`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
 Фінальні цілі:
 - Після освоєння музики підготуйте арену та викличте Байкока за Totempedia. Квест перевіряє справжню перемогу й лук, а не лише позичений трофей.
 
@@ -343,8 +1163,8 @@
 - {"recipe_id": "aia2:integration/epoch_07", "target": "totemic:drum", "epoch": 7, "ingredient_ids": ["modern_industrialization:bronze_plate"], "direction": "incoming", "description_uk": "Рецепт AIA2 для totemic:drum споживає міжмодові матеріали modern_industrialization:bronze_plate. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Повний NeoForge-інстанс із FTB Quests та всіма модами не запускався; нативні тригери й recipe IDs перевірено статично за точним кодом.
+- Побічні функції поза явно визначеним core-маршрутом не позначені завершеним дослідженням.
 
 Джерела:
 
@@ -356,10 +1176,37 @@
 - [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/buffalo_dance.json) — SHA перевірено
 - [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/ceremony_basics.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/LICENSE) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/advancements/criterion/CeremonyTrigger.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/block/totem/entity/StateStartup.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/advancements/ModCriteriaTriggers.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/init/ModContent.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/FertilityCeremony.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/BuffaloDanceCeremony.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/FluteInfusionCeremony.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/EagleDanceCeremony.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/BaykokSummonCeremony.java) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/basics/totemic_staff.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/basics/totem_effects.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/basics/music.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/ceremony_basics.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/fertility.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/buffalo_dance.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/flute_infusion.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/eagle_dance.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/baykok_summon.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/instruments/eagle_bone_whistle.json) — SHA перевірено
+- [джерело](https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/misc/medicine_bag.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/totemic/export/recipes/totemic/totemic_staff.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/totemic/export/recipes/totemic/wind_chime.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/totemic/export/recipes/totemic/eagle_bone_whistle.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/totemic/export/recipes/totemic/medicine_bag.json) — SHA перевірено
 
 ## Botania Revived
 
-Версія експорту: **1.0.2**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **1.0.2**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Приготуйте Pure Daisy через Petal Apothecary. Ця квітка перетворює природні блоки на Livingwood і Livingrock — матеріальну основу всієї мережі мани.
@@ -440,7 +1287,31 @@
 Квести: `E09_X_mana_rune`, `V5_MAG_BOTANIA_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 8. Террасталь перед ельфійським порталом
+### 8. Живий сортувальник із підписаними скринями
+
+Епохи: 15.
+
+Hopperhock підбирає предмети навколо й кладе їх у сусідні інвентарі. Рамка з предметом на скрині задає фільтр; підписані скрині мають пріоритет. Змініть режим фільтра Wand of the Forest та відокремте паливо від цінних продуктів майстерні.
+Мана для цієї квітки необов’язкова: вона збільшує радіус. Підготуйте дві скрині з різними рамками та огляньте квітку. Автоматично перевіряється комплект для сортування, а не фактичний маршрут кожного предмета.
+Попередні кроки: botania:07.
+Машини: `botania:hopperhock`.
+Ресурси й результати: `minecraft:item_frame`, `minecraft:chest`, `botania:twig_wand`.
+Квести: `V5_DEPTH_BOTANIA_SORTING`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 9. Каталізатор під басейном
+
+Епохи: 15.
+
+Alchemy Catalyst встановлюють під Mana Pool: він відкриває окремі рецепти перетворення, а не замінює генерацію мани. Знайдіть у JEI один доступний рецепт із цим каталізатором і відокремте його вхідний матеріал від готового виходу.
+Огляньте каталізатор і басейн, підготуйте жезл для налаштування. FTB підтверджує встановлення та комплект; конкретне виконання алхімічної конверсії тут не вимірюється. Не використовуйте непідтверджені таблиці рецептів зі старих версій.
+Попередні кроки: botania:07.
+Машини: `botania:alchemy_catalyst`, `botania:mana_pool`.
+Ресурси й результати: `botania:twig_wand`, `botania:mana_powder`.
+Квести: `V5_DEPTH_BOTANIA_ALCHEMY`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 10. Террасталь перед ельфійським порталом
 
 Епохи: 21.
 
@@ -451,7 +1322,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E21_X_terrasteel`, `E21_X_terra_capacitor`, `V4_E21_mana_operations_08`, `V5_MAG_BOTANIA_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 9. Портал за ціною першого сплаву
+### 11. Портал за ціною першого сплаву
 
 Епохи: 21.
 
@@ -462,7 +1333,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E21_X_portal`, `V5_MAG_BOTANIA_09`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 10. Обмін із Альфгаймом
+### 12. Обмін із Альфгаймом
 
 Епохи: 21.
 
@@ -473,7 +1344,52 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E21_X_elementium`, `E21_X_elf_electronics`, `E21_X_key_trial`, `V5_MAG_BOTANIA_10`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 11. Перша воля Ґаї
+### 13. Іскри для керованої Терра-пластини
+
+Епохи: 21.
+
+Terra Plate бере ману через Sparks: установіть одну іскру над басейном, іншу над пластинoю. Правий клік жезлом показує доступні зв’язки; іскри різних кольорів не обмінюються маною.
+Перевірте маршрут живлення до того, як кидати Manasteel, Mana Pearl та Mana Diamond. Цей квест перевіряє басейн, пластину й дві іскри в комплекті; запас мани та успішний цикл Terra Plate автоматично не вимірюються.
+Попередні кроки: botania:08.
+Машини: `botania:terra_plate`, `botania:mana_pool`.
+Ресурси й результати: `botania:spark`, `botania:twig_wand`.
+Квести: `V5_DEPTH_BOTANIA_SPARK_TRANSFER`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 14. Альфгайм відповідає на відкритий портал
+
+Епохи: 21.
+
+Зберіть портал за Lexica Botania, додайте Natura Pylons і манові басейни. Після Terrasteel активуйте конструкцію Wand of the Forest. Це канал торгівлі, а не вимір для проходу гравця.
+Потрібне справжнє досягнення Botania за успішне відкриття порталу: звичайне отримання блока порталу не зараховується. Раніше законно виконане досягнення також визнається, тому повторно витрачати ресурси не потрібно.
+Попередні кроки: botania:09.
+Квести: `V5_DEPTH_BOTANIA_PORTAL_OPEN`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 15. Структура манового зачарування
+
+Епохи: 21.
+
+За Lexica Botania побудуйте Mana Enchanter з лазуритовим центром, обсидіаном, квітами та Mana Pylons. Натисніть жезлом на центральний лазуритовий блок: лише правильна структура перетворюється на робочий зачаровувач.
+Перевіряється нативне досягнення за формування конструкції. Воно не видається за просте отримання блока і не означає, що предмет уже зачаровано. Подальше зачарування потребує манового живлення, предмета та придатних зачарованих книг.
+Попередні кроки: botania:10.
+Машини: `botania:enchanter`.
+Квести: `V5_DEPTH_BOTANIA_ENCHANTER_FORM`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 16. Порційні настої замість звичайних зіль
+
+Епохи: 21.
+
+Botanical Brewery готує Brews за окремими рецептами з маною та реагентами. Звичайний Brewing Stand ці рецепти не виконує; один заповнений флакон містить кілька доз настою.
+Підготуйте порожню Mana Vial, встановіть Brewery та забезпечте шлях мани. Оберіть доступний настій у поточному JEI. Квест перевіряє саме станцію та тару; вміст компонента Brews і факт варіння цим завданням не засвідчуються.
+Попередні кроки: botania:10.
+Машини: `botania:brewery`, `botania:mana_pool`.
+Ресурси й результати: `botania:vial`, `botania:twig_wand`.
+Квести: `V5_DEPTH_BOTANIA_BREWING`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 17. Перша воля Ґаї
 
 Епохи: 31.
 
@@ -483,7 +1399,19 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Ресурси й результати: `botania:life_essence`, `botania:terrasteel_ingot`.
 Квести: `E31_X_gaia_result`, `E31_X_resonance`, `E31_X_gaia_battle`, `E31_X_life_contract`, `V5_MAG_BOTANIA_11`.
 
-### 12. Мережа мани для пізньої фабрики
+### 18. Запит складу через Corporea
+
+Епохи: 31.
+
+Corporea Index приймає запити від гравця поруч, а Corporea Funnel придатний для сигналізованої видачі. Під’єднайте їх до скринь через Corporea Sparks; це інша мережа, ніж Sparks для передачі мани.
+Огляньте обидва інтерфейси та підготуйте іскри. Для практичної перевірки зробіть малий запит матеріалу зі складу й перевірте залишок. FTB засвідчує комплект і робочі блоки, але не стверджує, що довільний чат-запит або сигнал уже оброблено.
+Попередні кроки: botania:16, botania:11.
+Машини: `botania:corporea_index`, `botania:corporea_funnel`.
+Ресурси й результати: `botania:corporea_spark`, `minecraft:chest`.
+Квести: `V5_DEPTH_BOTANIA_CORPOREA_REQUEST_LINE`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 19. Мережа мани для пізньої фабрики
 
 Епохи: 41.
 
@@ -494,8 +1422,18 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E31_X_gaia_spreader`, `V5_MAG_BOTANIA_12`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 20. Другий виклик Ґаї
+
+Епохи: 41.
+
+Після першого Guardian of Gaia створіть Gaia Spirit Ingot і пожертвуйте його маяку на придатній арені. Посилений Guardian швидший та витриваліший; це окреме бойове випробування, а не повторне збирання Gaia Spirit зі складу.
+Потрібне нативне досягнення за перемогу саме над hardMode Guardian. Звичайний Guardian або переданий з іншого інвентарю трофей його не замінює. Нове досягнення може зарахуватися й члену команди згідно з правилами FTB.
+Попередні кроки: botania:11, botania:16.
+Квести: `V5_DEPTH_BOTANIA_GAIA_HARDMODE`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
 Фінальні цілі:
-- Після ритуалу Ґаї підготуйте високорівневий передавач і резерв планшетів. Порівняйте потреби рунічної майстерні та промислових компонентів; басейн Creative до завершення всієї прогресії не використовується.
+- Відкритий портал, ельфійський обмін, керована мережа мани й Corporea та перемога над посиленим Guardian of Gaia.
 
 Міжмодові зв’язки:
 - {"recipe_id": "aia2:rebalance/botania/orechid", "target": "botania:orechid", "epoch": 31, "ingredient_ids": ["ars_nouveau:earth_essence", "mekanism:elite_control_circuit"], "direction": "incoming", "description_uk": "Рецепт AIA2 для botania:orechid споживає міжмодові матеріали ars_nouveau:earth_essence, mekanism:elite_control_circuit. Це власна інтеграція збірки, а не правило оригінального мода."}
@@ -503,10 +1441,11 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 - {"recipe_id": "aia2:integration/epoch_05", "target": "botania:apothecary_default", "epoch": 5, "ingredient_ids": ["create:copper_sheet"], "direction": "incoming", "description_uk": "Рецепт AIA2 для botania:apothecary_default споживає міжмодові матеріали create:copper_sheet. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
-- Офіційний посібник точної встановленої версії для цієї карти недоступний; підтверджено лише зазначені registry/recipe факти.
-- Botania Revived1.0.2 — неофіційний fork. Upstream wiki не вважається точним API цього fork; TerraSteel-before-Alfheim перевірено реальним рецептом.
+- Повний Windows-інстанс, клієнтські інтерфейси, JEI, довготривалі витрати й TPS ще не запускалися.
+- Огляд та інвентарні комплекти не підміняють реального виконання процесу. Лише явно позначені native action advancements перевіряють нативну дію.
+- Старі завершені квести та їхні ID не переписано. Нові навчальні гілки необов’язкові для вже збереженого прогресу.
+- Усі рецепти навчальної карти звіряються з чинними AIA2-правками: upstream-книга не є джерелом точних витрат після ребалансу.
+- Повний набір generating/functional flowers, Relics і component-aware creative-варианти поза завершеною основною картою. Enchanter потребує увімкненого відповідного common config.
 
 Джерела:
 
@@ -514,10 +1453,55 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 - [джерело](../../content/research/evidence/magic_adventure_v5/active_native_recipes.json) — SHA перевірено
 - [джерело](https://github.com/VazkiiMods/Botania) — контекст, без заяви про перевірений вміст
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/License.md) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/generated/resources/assets/botania/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/advancements/AlfheimPortalTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/registry/BotaniaCriteriaTriggers.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/block/block_entity/AlfheimPortalBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/item/WandOfTheForestItem.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/block/block_entity/ManaEnchanterBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/entity/GaiaGuardianEntity.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/java/velrondevs/botania/common/helper/PlayerHelper.java) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/basics/apothecary.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/basics/pure_daisy.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/basics/rune_altar.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/basics/terrasteel.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/basics/wand.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/generating_flowers/endoflame.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/mana/spreader.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/mana/pool.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/mana/mana_tablet.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/mana/sparks.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/mana/spark_upgrades.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/devices/mana_alchemy.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/devices/mana_conjuration.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/devices/mana_enchanting.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/devices/brewery.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/functional_flowers/hopperhock.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/alfhomancy/intro.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/alfhomancy/elf_resources.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/alfhomancy/gaia_ritual.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/alfhomancy/gaia_ritual_hardmode.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/ender/corporea.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/ender/corporea_index.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/main/resources/assets/botania/patchouli_books/lexicon/en_us/entries/ender/corporea_funnel.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/generated/resources/data/botania/advancement/main/elf_portal_open.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/generated/resources/data/botania/advancement/main/enchanter_make.json) — SHA перевірено
+- [джерело](https://github.com/Velron-Devs/Botania-Revived/blob/06fe34cb8c6a91e90295126eead067dc4be107e0/src/generated/resources/data/botania/advancement/challenge/gaia_guardian_hardmode.json) — SHA перевірено
+- [botania:petal_apothecary](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/petal_apothecary/hopperhock.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/alchemy_catalyst.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/spark.json) — SHA перевірено
+- [botania:terra_plate](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/terra_plate/terrasteel_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/aia2/integration/epoch_21.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/aia2/v4/botania/corporea_index.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/aia2/v4/botania/corporea_funnel.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/gaia_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/botania/recipes/botania/brewery.json) — SHA перевірено
 
 ## Ars Nouveau
 
-Версія експорту: **5.13.3**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **5.13.3**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Відкрийте Worn Notebook та виготовте книгу початківця. Scribes Table потрібен для освоєння гліфів; не переносіть сюди механіку чорнил Iron’s Spells — це інша система.
@@ -554,7 +1538,19 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `V5_MAG_ARS_NOUVEAU_03`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 4. Source від росту рослин
+### 4. Форма задає шлях, ефект — дію
+
+Епохи: 10.
+
+У Scribes Table книга відкриває кодекс гліфів: обраний гліф потребує своїх предметів і досвіду. Підготуйте Projectile як форму та Light як ефект, потім складіть просте закляття з формою перед ефектом.
+Стіл може брати реагенти із сусідніх інвентарів; Dominion Wand змінює автопідбирання. Перевіряються гліфи й встановлений стіл, а не вміст компонентів книги, вивчення гліфа або успішний постріл. Для glyph-рецепта не використовується прапорець звичайного верстатного крафту.
+Попередні кроки: ars_nouveau:01.
+Машини: `ars_nouveau:scribes_table`.
+Ресурси й результати: `ars_nouveau:glyph_projectile`, `ars_nouveau:glyph_light`, `ars_nouveau:novice_spell_book`.
+Квести: `V5_DEPTH_ARS_GLYPH_SYNTAX`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 5. Source від росту рослин
 
 Епохи: 20.
 
@@ -565,7 +1561,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E20_X_agronomic`, `E20_X_sourceberry`, `V4_E20_source_operations_01`, `V5_MAG_ARS_NOUVEAU_04`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 5. Арканний апарат із вісьмома місцями
+### 6. Арканний апарат із вісьмома місцями
 
 Епохи: 20.
 
@@ -576,7 +1572,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `V5_MAG_ARS_NOUVEAU_05`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 6. Книга наступного рівня
+### 7. Книга наступного рівня
 
 Епохи: 20.
 
@@ -587,7 +1583,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E20_X_apprentice`, `V5_MAG_ARS_NOUVEAU_06`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 7. Логістика старбанклів
+### 8. Логістика старбанклів
 
 Епохи: 20.
 
@@ -598,7 +1594,7 @@ Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 м�
 Квести: `E20_X_starbuncle`, `V4_E20_source_operations_04`, `V5_MAG_ARS_NOUVEAU_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 8. Ресурси без знищення істот
+### 9. Ресурси без знищення істот
 
 Епохи: 20.
 
@@ -609,7 +1605,86 @@ Drygmy працює біля істот, витрачаючи Source за пра
 Квести: `V5_MAG_ARS_NOUVEAU_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 9. Архімаг після попередньої книги
+### 10. Ритуальна жаровня має активний режим
+
+Епохи: 20.
+
+Ritual Brazier може бути декором або виконувати ритуал. Саме світіння від Light не означає виконання ритуалу. Для навчального досліду виготовте Tablet of Gravity і підготуйте жаровню за Worn Notebook.
+Редстоун вимикає активний ритуал. Перевіряються новий крафт таблички звичайного верстатного рецепта та огляд жаровні; ефект ритуалу перевіряється окремим наступним квестом. Запас Source й конкретні реагенти звіряйте з поточним JEI.
+Попередні кроки: ars_nouveau:04.
+Машини: `ars_nouveau:ritual_brazier`.
+Ресурси й результати: `ars_nouveau:ritual_gravity`, `ars_nouveau:dominion_wand`.
+Квести: `V5_DEPTH_ARS_RITUAL_PREPARATION`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 11. Збір і роздача Source мають напрямок
+
+Епохи: 20.
+
+Collector сам збирає Source з неприв’язаних банок у радіусі п’яти блоків; Depositor роздає його неприв’язаним банкам у такому ж радіусі. Звичайний Relay та Dominion Wand задають зв’язки між ділянками.
+Зберіть розділені зони генерації та споживання, огляньте Collector і Depositor. Квест перевіряє інфраструктуру та комплект інструментів. Він не вимірює заповнення Source Jar, напрямок зв’язку або пропускну здатність мережі.
+Попередні кроки: ars_nouveau:04.
+Машини: `ars_nouveau:relay_collector`, `ars_nouveau:relay_deposit`, `ars_nouveau:source_jar`.
+Ресурси й результати: `ars_nouveau:dominion_wand`.
+Квести: `V5_DEPTH_ARS_RELAY_DIRECTION`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 12. Джерело від складності зілля
+
+Епохи: 20.
+
+Alchemical Sourcelink споживає зілля із сусідніх Potion Jars. Вихід Source залежить від ефектів, сили та тривалості; це перетворення витратних зіль, а не безкоштовна генерація від самого встановлення блока.
+Огляньте Sourcelink, Potion Jar і Source Jar та підготуйте Potion Flask. Для практичного досліду використайте доступне зілля й порівняйте залишки. FTB підтверджує комплект, але не перевіряє компонент зілля чи обсяг реально згенерованого Source.
+Попередні кроки: ars_nouveau:13.
+Машини: `ars_nouveau:alchemical_sourcelink`, `ars_nouveau:potion_jar`, `ars_nouveau:source_jar`.
+Ресурси й результати: `ars_nouveau:potion_flask`.
+Квести: `V5_DEPTH_ARS_ALCHEMICAL_SOURCE`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 13. Wixie з керованою чергою рецептів
+
+Епохи: 20.
+
+Застосуйте Wixie Charm до казана. Предмет, використаний на Wixie Cauldron, задає ціль крафту; сусідні педестали дозволяють чергувати кілька цілей. Wixie бере матеріали зі складу й витрачає Source, а редстоун зупиняє крафт.
+У AIA2 є окремий апаратний рецепт charm. Огляньте готовий казан, підготуйте педестали та спробуйте малу серію простого витратного компонента. Завдання підтверджує станцію й інфраструктуру, а не виконання довільного рецепта чи сталість роботи.
+Попередні кроки: ars_nouveau:05, ars_nouveau:13.
+Машини: `ars_nouveau:wixie_cauldron`, `ars_nouveau:source_jar`.
+Ресурси й результати: `ars_nouveau:arcane_pedestal`, `ars_nouveau:dominion_wand`, `minecraft:redstone`.
+Квести: `V5_DEPTH_ARS_WIXIE_BATCH`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 14. Завершене зв’язування фамільяра
+
+Епохи: 20.
+
+У версії 5.13.3 Ritual of Binding перетворює придатну істоту поруч на Bound Script для виклику Familiar. Виберіть істоту за Worn Notebook і виконайте ритуал, замість пошуку старої механіки з іншої версії.
+Потрібне нативне досягнення Familiar: код видає його гравцям у межах восьми блоків під час успішного перетворення. Тримання таблички чи скрипту не замінює цей доказ. Раніше виконане досягнення зберігається й визнається.
+Попередні кроки: ars_nouveau:12, ars_nouveau:07.
+Квести: `V5_DEPTH_ARS_BINDING_ACTION`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 15. Відчути ефект ритуальної гравітації
+
+Епохи: 20.
+
+Запустіть підготовлений Ritual of Gravity й увійдіть у його дію. Потрібно справді отримати ефект ars_nouveau:gravity; декоративно освітлена жаровня або табличка в інвентарі його не дають.
+Нативне досягнення Ritual Gravity слухає зміну ефектів гравця. Це доказ отриманого ефекту, а не лічильник витрат Source чи перевірка власника жаровні. Раніше законно отримане досягнення також зараховується.
+Попередні кроки: ars_nouveau:12.
+Квести: `V5_DEPTH_ARS_GRAVITY_ACTION`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 16. Химера перед книгою архімага
+
+Епохи: 20.
+
+Ritual of Summon Wilden без підсилення викликає звичайних Wilden. Додайте Wilden Horn, Wing та Spike для виклику Chimera. Вона руйнує блоки біля жаровні, тому відведіть арену від фабрики та магічної інфраструктури.
+Переможіть Wilden Chimera особисто. FTB перевіряє вбивство ars_nouveau:wilden_boss; сам предмет Wilden Tribute або вбивство звичайного Hunter не замінює випробування. Трофей стане матеріальною основою майбутнього покращення книги.
+Попередні кроки: ars_nouveau:06, ars_nouveau:12.
+Машини: `ars_nouveau:ritual_brazier`.
+Квести: `V5_DEPTH_ARS_WILDEN_TRIAL`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
+### 17. Архімаг після попередньої книги
 
 Епохи: 30.
 
@@ -620,7 +1695,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `E30_X_archmage`, `E30_X_expedition_contract`, `V5_MAG_ARS_NOUVEAU_09`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 10. Магічна виробнича ділянка
+### 18. Магічна виробнича ділянка
 
 Епохи: 30.
 
@@ -631,8 +1706,19 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `V5_MAG_ARS_NOUVEAU_10`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 19. Три перенаправлення одного закляття
+
+Епохи: 30.
+
+Spell Prism повертає снаряд у напрямку свого блока й дає сигнал сусіднім Observers. Побудуйте маршрут із трьома послідовними призмами та спрямуйте через нього безпечне Projectile-закляття; на фабриці це дозволяє відокремити місце запуску від робочої зони.
+Нативне досягнення Prismatic видається гравцям у межах десяти блоків, коли один снаряд має щонайменше три перенаправлення. Три призми в інвентарі не є доказом. Квест не перевіряє довільну виробничу дію самого закляття.
+Попередні кроки: ars_nouveau:10, ars_nouveau:11.
+Машини: `ars_nouveau:spell_prism`.
+Квести: `V5_DEPTH_ARS_PRISMATIC_ACTION`.
+Нативний action proof не означає повний Survival/TPS-тест модпаку; огляд та предмети засвідчують лише вказаний комплект.
+
 Фінальні цілі:
-- Налаштуйте Spell Turret для відтворюваної операції й забезпечте його Source. Відокремте тригер, закляття та виведення продукту; квест перевіряє комплект і станцію, а не довільний зміст закляття.
+- Перемога над Wilden Chimera перед розвитком архімага; зв’язування Familiar за native action; керована Source-мережа, Wixie і три перенаправлення закляття призмами.
 
 Міжмодові зв’язки:
 - {"recipe_id": "aia2:integration/epoch_10", "target": "ars_nouveau:imbuement_chamber", "epoch": 10, "ingredient_ids": ["create:precision_mechanism"], "direction": "incoming", "description_uk": "Рецепт AIA2 для ars_nouveau:imbuement_chamber споживає міжмодові матеріали create:precision_mechanism. Це власна інтеграція збірки, а не правило оригінального мода."}
@@ -640,8 +1726,12 @@ Native Book Upgrade до Archmage використовує книгу попер
 - {"recipe_id": "aia2:v4/ars_nouveau/arcane_pedestal", "target": "ars_nouveau:arcane_pedestal", "epoch": 20, "ingredient_ids": ["kubejs:aia2_tech_matrix_18"], "direction": "incoming", "description_uk": "Рецепт AIA2 для ars_nouveau:arcane_pedestal споживає міжмодові матеріали kubejs:aia2_tech_matrix_18. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Повний Windows-інстанс, клієнтські інтерфейси, JEI, довготривалі витрати й TPS ще не запускалися.
+- Огляд та інвентарні комплекти не підміняють реального виконання процесу. Лише явно позначені native action advancements перевіряють нативну дію.
+- Старі завершені квести та їхні ID не переписано. Нові навчальні гілки необов’язкові для вже збереженого прогресу.
+- Усі рецепти навчальної карти звіряються з чинними AIA2-правками: upstream-книга не є джерелом точних витрат після ребалансу.
+- Старі Patchouli-файли з гілки1.21.x відповідають5.1.0; нова карта використовує exact5.13.3 main pin, wiki export та Documentation.java. Той самий version number не є SHA встановленого JAR.
+- Повний простір комбінацій заклять, armor perks, усі фамільяри та портал-мережі поза основним курсом.
 
 Джерела:
 
@@ -653,10 +1743,62 @@ Native Book Upgrade до Archmage використовує книгу попер
 - [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/8f0faf35e95dcad4578f33181779e5387b29dd3d/src/generated/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/getting_started/apparatus_crafting.json) — SHA перевірено; upstream-версія відрізняється
 - [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/8f0faf35e95dcad4578f33181779e5387b29dd3d/src/generated/resources/assets/ars_nouveau/patchouli_books/worn_notebook/en_us/entries/source/source_jar.json) — SHA перевірено; upstream-версія відрізняється
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/license.txt) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/README.md) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/setup/registry/Documentation.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/generated/resources/assets/ars_nouveau/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/advancement/ANCriteriaTriggers.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/ritual/RitualBinding.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/ritual/RitualGravity.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/ritual/RitualWildenSummoning.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/SpellPrismBlock.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/ScribesTile.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/RelayCollectorTile.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/RelayDepositTile.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/WixieCauldronTile.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/common/block/tile/AlchemicalSourcelinkTile.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/setup/registry/ModPotions.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/setup/registry/ModEntities.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/main/java/com/hollingsworth/arsnouveau/api/ritual/RangeEffectRitual.java) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.agronomic_sourcelink.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.alchemical_sourcelink.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.relay.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.relay_collector.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.relay_deposit.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.ritual_brazier.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.source_jar.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/block.ars_nouveau.spell_prism.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/drygmy_charm.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/enchanting_apparatus.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/imbuement_chamber.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/magebloom_crop.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/ritual_binding.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/ritual_gravity.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/ritual_wilden_summon.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/scribes_table.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/spell_casting.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/starbuncle_charm.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/wilden.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/wiki/ars_nouveau/entries/wixie_charm.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/generated/resources/data/ars_nouveau/advancement/familiar.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/generated/resources/data/ars_nouveau/advancement/ritual_gravity.json) — SHA перевірено
+- [джерело](https://github.com/baileyholl/Ars-Nouveau/blob/7ee8826269df07cc599a9738d76bcaaea4d8daa7/src/generated/resources/data/ars_nouveau/advancement/prismatic.json) — SHA перевірено
+- [ars_nouveau:glyph](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/glyph_projectile.json) — SHA перевірено
+- [ars_nouveau:glyph](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/glyph_light.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/ritual_gravity.json) — SHA перевірено
+- [ars_nouveau:enchanting_apparatus](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/relay_collector.json) — SHA перевірено
+- [ars_nouveau:enchanting_apparatus](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/relay_deposit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/aia2/v4/ars_nouveau/alchemical_sourcelink.json) — SHA перевірено
+- [ars_nouveau:enchanting_apparatus](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/aia2/v4/ars_nouveau/wixie_charm.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/ritual_binding.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/ritual_wilden_summon.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/aia2/v4/ars_nouveau/spell_prism.json) — SHA перевірено
+- [ars_nouveau:enchanting_apparatus](../../content/research/evidence/ars_botania_depth_v5/ars_nouveau/recipes/ars_nouveau/magebloom_crop.json) — SHA перевірено
 
 ## Occultism
 
-Версія експорту: **1.224.5**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **1.224.5**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Почніть із Dictionary of Spirits та жертовної чаші. Книга розділяє Otherworld, pentacles і зв’язування духів; перевірте коло перед витратою книжки зв’язування.
@@ -693,7 +1835,36 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `E14_X_chalk`, `E14_X_service_pair`, `V5_MAG_OCCULTISM_03`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 4. Основа сховища через зв’язування
+### 4. Перший дух-дробар: завершений виклик
+
+Епохи: 14.
+
+Завершіть summon_foliot_crusher за Dictionary of Spirits. Foliot Crusher підбирає придатну руду та викидає пил; базовий дух дає дві одиниці пилу з однієї руди. Для автоматичної подачі та збирання далі потрібні Transporter і Janitor. Досягнення підтверджує саме закінчення виклику, а не виготовлення пилу.
+Попередні кроки: occultism:03.
+Квести: `V5_DEPTH_OCCULTISM_CRUSHER`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 5. Дух-переносник і початковий білий список
+
+Епохи: 14.
+
+Завершіть виклик Transporter. Книгою виклику виберіть джерело й призначення, а присівши відкрийте його фільтри. Початковий режим — білий список, тому порожній фільтр не переміщує нічого. Дух може подавати предмети в інвентар іншого духа; це основа лінії дроблення.
+Попередні кроки: occultism:depth_crusher.
+Ресурси й результати: `occultism:book_of_calling_foliot_transport_items`.
+Квести: `V5_DEPTH_OCCULTISM_TRANSPORTER`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 6. Лісоруб, який повертає саджанці
+
+Епохи: 14.
+
+Добудьте стабільний Otherworld Sapling через відповідного торгового духа та викличте Lumberjack. Книгою визначте робочу зону й скриню. За наявності місця вивантаження він збирає деревину та висаджує саджанці; пауза після очищення ділянки є штатною оптимізацією.
+Попередні кроки: occultism:depth_transporter.
+Ресурси й результати: `occultism:book_of_calling_foliot_lumberjack`.
+Квести: `V5_DEPTH_OCCULTISM_LUMBERJACK`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 7. Основа сховища через зв’язування
 
 Епохи: 14.
 
@@ -704,7 +1875,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `V5_MAG_OCCULTISM_04`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 5. Ієсній для наступного рівня
+### 8. Ієсній для наступного рівня
 
 Епохи: 24.
 
@@ -715,7 +1886,16 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `E24_X_iesnium`, `E24_X_key_trial`, `V5_MAG_OCCULTISM_05`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 6. Контракт африта
+### 9. Кристалізація як окрема спеціалізація
+
+Епохи: 24.
+
+Завершіть виклик Foliot Crystallizer за окремим ритуалом. Не підміняйте його Crusher: кристалізація має власні рецепти. Передайте підтримуваний вхід через Transporter; квест підтверджує виклик спеціаліста, але не вимірює кількість виконаних ним перетворень.
+Попередні кроки: occultism:depth_lumberjack.
+Квести: `V5_DEPTH_OCCULTISM_CRYSTALLIZER`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 10. Контракт африта
 
 Епохи: 25.
 
@@ -725,7 +1905,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Ресурси й результати: `occultism:afrit_essence`, `occultism:book_of_binding_afrit`.
 Квести: `E25_X_afrit_essence`, `E25_X_contract_trial`, `E25_X_biosteel_contract`, `E25_X_stable_cell`, `V5_MAG_OCCULTISM_06`.
 
-### 7. Контролер і керований доступ
+### 11. Контролер і керований доступ
 
 Епохи: 28.
 
@@ -736,7 +1916,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `E28_X_storage_controller`, `V5_MAG_OCCULTISM_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 8. Розширення стабільності сховища
+### 12. Розширення стабільності сховища
 
 Епохи: 28.
 
@@ -747,7 +1927,37 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `E28_X_stabilizer_one`, `V5_MAG_OCCULTISM_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 9. Видобуток у вимірній шахті
+### 13. Перший шахтар у магічній лампі
+
+Епохи: 28.
+
+Виконайте саме чинний ритуал AIA2 для Miner Foliot: він поєднує духа з Earth Essence та електронною схемою. Оригінальний upstream recipe ID у збірці замінено, тому спеціальне досягнення слухає активний ID AIA2. Надалі лампа працює в Dimensional Mineshaft.
+Попередні кроки: occultism:depth_crystallizer, occultism:07.
+Ресурси й результати: `occultism:miner_foliot_unspecialized`.
+Квести: `V5_DEPTH_OCCULTISM_MINER_FOLIOT`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 14. Прив’язаний віддалений доступ
+
+Епохи: 28.
+
+Завершіть ритуал зв’язування Storage Remote. Інвентарна присутність пульта сама не перевіряє його прив’язку: назва духа й контролер мають відповідати інструкції Dictionary of Spirits. Нативне досягнення фіксує завершення ритуалу, а не дальність доступу до сховища.
+Попередні кроки: occultism:depth_miner_foliot.
+Ресурси й результати: `occultism:storage_remote`.
+Квести: `V5_DEPTH_OCCULTISM_STORAGE_REMOTE`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 15. Шахтар джинів успадковує попередню лампу
+
+Епохи: 28.
+
+Покращте Foliot Miner ритуалом craft_miner_djinni_ores. Поточний рецепт споживає попередню лампу, Iesnium Pickaxe та зв’язану книгу джина; це зміна спеціалізації, а не ще одна випадкова колекція. Після ритуалу перевірте допуск лампи до шахти.
+Попередні кроки: occultism:depth_storage_remote.
+Ресурси й результати: `occultism:miner_djinni_ores`.
+Квести: `V5_DEPTH_OCCULTISM_MINER_DJINNI`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 16. Видобуток у вимірній шахті
 
 Епохи: 39.
 
@@ -758,7 +1968,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `V5_MAG_OCCULTISM_09`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 10. Марид як фінальний контракт
+### 17. Марид як фінальний контракт
 
 Епохи: 39.
 
@@ -767,6 +1977,16 @@ Native Book Upgrade до Archmage використовує книгу попер
 Машини: `occultism:sacrificial_bowl`.
 Ресурси й результати: `occultism:marid_essence`, `occultism:book_of_binding_marid`.
 Квести: `E39_X_marid_02`, `E39_X_marid_07`, `V5_MAG_OCCULTISM_10`.
+
+### 18. Майстер-шахтар: підтверджене зв’язування
+
+Епохи: 39.
+
+Виконайте пізній ритуал AIA2 для Miner Marid. Його Terrasteel і Processing Unit поєднують магію та техніку. Спеціальне досягнення реагує на замінений активний рецепт AIA2, тому стара книга або позичена лампа не відкривають цей виробничий доказ.
+Попередні кроки: occultism:depth_miner_djinni, occultism:10.
+Ресурси й результати: `occultism:miner_marid_master`.
+Квести: `V5_DEPTH_OCCULTISM_MINER_MARID`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
 
 Фінальні цілі:
 - Після попередніх духів виконайте дозволений пізній виклик марида. Збережіть есенцію для високотехнологічних компонентів і не підмінюйте нею попередні типи контрактів.
@@ -777,8 +1997,8 @@ Native Book Upgrade до Archmage використовує книгу попер
 - {"recipe_id": "aia2:v4/occultism/ritual/craft_infused_pickaxe", "target": "occultism:infused_pickaxe", "epoch": 24, "ingredient_ids": ["kubejs:aia2_tech_matrix_22"], "direction": "incoming", "description_uk": "Рецепт AIA2 для occultism:infused_pickaxe споживає міжмодові матеріали kubejs:aia2_tech_matrix_22. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Повний NeoForge-інстанс із FTB Quests та всіма модами не запускався; нативні тригери й recipe IDs перевірено статично за точним кодом.
+- Побічні функції поза явно визначеним core-маршрутом не позначені завершеним дослідженням.
 
 Джерела:
 
@@ -796,10 +2016,39 @@ Native Book Upgrade до Archmage використовує книгу попер
 - [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/DimensionalMatrixEntry.java) — SHA перевірено
 - [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/DimensionalMineshaftEntry.java) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/LICENSE) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/common/advancement/RitualTrigger.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/common/ritual/Ritual.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/registry/OccultismAdvancements.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/summoning_rituals/CrusherFoliotEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/summoning_rituals/CrystallizerFoliotEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/summoning_rituals/TransporterEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/summoning_rituals/LumberjackEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/MinerFoliotEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/MinerDjinniEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/MinerMaridEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/StabilizerTier2Entry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/binding_rituals/StorageRemoteEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/main/java/com/klikli_dev/occultism/datagen/book/storage_system/StorageOverviewEntry.java) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/summon_foliot_crusher.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/summon_foliot_crusher.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/summon_foliot_transport_items.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/summon_foliot_transport_items.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/summon_foliot_lumberjack.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/summon_foliot_lumberjack.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/summon_foliot_crystallizer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/summon_foliot_crystallizer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/active_aia2_recipes/aia2/rebalance/occultism/miner_foliot_unspecialized.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/craft_storage_remote.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/craft_storage_remote.json) — SHA перевірено
+- [джерело](https://github.com/klikli-dev/occultism/blob/4877cdefd243089c9cf8d2935fe0a465d1e91b5a/src/generated/resources/data/occultism/advancement/occultism/craft_miner_djinni_ores.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/export/recipes/occultism/ritual/craft_miner_djinni_ores.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/occultism/active_aia2_recipes/aia2/rebalance/occultism/miner_marid_master.json) — SHA перевірено
 
 ## NaturesAura
 
-Версія експорту: **41.10**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **41.10**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Почніть із Golden Fiber та отримання Gold Leaf на дереві за Book of Natural Aura. Аура належить місцевості: порожня зона після надмірного споживання відновлюється поступово.
@@ -857,7 +2106,40 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `V5_MAG_NATURESAURA_05`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 6. Окремий генератор аури
+### 6. Зворотний зв’язок від аури до редстоуну
+
+Епохи: 9.
+
+Виготовте Aura Detector та встановіть компаратор. Детектор не видає керувальний сигнал сам по собі: саме компаратор читає місцеву ауру. Порівняйте покази з Environmental Eye, перш ніж під’єднувати відсічення генератора.
+Попередні кроки: naturesaura:05.
+Машини: `naturesaura:aura_detector`.
+Ресурси й результати: `naturesaura:aura_detector`, `minecraft:comparator`, `naturesaura:eye`.
+Квести: `V5_DEPTH_NATURESAURA_DETECTOR`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 7. Шість квітів для відновлення ділянки
+
+Епохи: 9.
+
+Виготовте Herbivorous Absorber і підготуйте шість різних малих квітів. Він споживає квіти навколо себе тільки у Верхньому світі; повторення одного виду знижує ефективність. Продумайте ротацію та зупинку подачі за показом детектора. Комплект квітів є підготовкою, а не лічильником спожитих квітів.
+Попередні кроки: naturesaura:depth_detector.
+Машини: `naturesaura:flower_generator`.
+Ресурси й результати: `naturesaura:flower_generator`, `minecraft:dandelion`, `minecraft:poppy`, `minecraft:blue_orchid`, `minecraft:allium`, `minecraft:cornflower`, `minecraft:oxeye_daisy`.
+Квести: `V5_DEPTH_NATURESAURA_FLOWERS`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 8. Переносний запас має місце заряджання
+
+Епохи: 9.
+
+Виготовте Aura Cache й огляньте Natural Altar. Покладіть кеш на вівтар: аура переходить із запасу вівтаря до переносного предмета. Environmental Eye показує запас, але завдання не читає заряд компонента — новий крафт і огляд підтверджують підготовку.
+Попередні кроки: naturesaura:depth_flowers.
+Машини: `naturesaura:nature_altar`.
+Ресурси й результати: `naturesaura:aura_cache`, `naturesaura:eye`.
+Квести: `V5_DEPTH_NATURESAURA_CACHE`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 9. Окремий генератор аури
 
 Епохи: 21.
 
@@ -868,7 +2150,7 @@ Native Book Upgrade до Archmage використовує книгу попер
 Квести: `V5_MAG_NATURESAURA_06`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 7. Збирання аури в пляшку
+### 10. Збирання аури в пляшку
 
 Епохи: 21.
 
@@ -879,7 +2161,39 @@ Bottle and Cork збирає різні форми аури залежно ві�
 Квести: `E09_X_aura_bottle`, `V5_MAG_NATURESAURA_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 8. Природна ділянка для міжмодових сплавів
+### 11. Перше підношення перед автоматичним будівництвом
+
+Епохи: 21.
+
+Складіть Offering Table за книгою, покладіть вхід у чашу й киньте Spirit of Calling поруч. Уперше отриманий Sky Ingot потрібен автоматичному конструктору та Depth Ingot; пізня глава31 повторює цей процес для стабільного міжмодового постачання, а не вперше відкриває метал.
+Попередні кроки: naturesaura:07, naturesaura:depth_cache.
+Машини: `naturesaura:offering_table`.
+Ресурси й результати: `naturesaura:sky_ingot`, `naturesaura:calling_spirit`.
+Квести: `E21_X_sky_ingot`, `E21_X_offering`.
+Предметний доказ E21 не засвідчує точну кількість виконаних підношень.
+
+### 12. Автоконструктор із зрозумілою орієнтацією
+
+Епохи: 21.
+
+Виготовте Automatic Constructor зі Sky Ingot. Зберіть структуру з Ancient Logs за книгою: стрілка пристрою позначає верхній ряд рецепта. Інґредієнти треба покласти на відповідні колоди, а результат падає знизу. Огляд і комплект не підтверджують кожен автоматичний цикл.
+Попередні кроки: naturesaura:depth_first_offering.
+Машини: `naturesaura:auto_crafter`.
+Ресурси й результати: `naturesaura:auto_crafter`, `naturesaura:ancient_log`, `minecraft:chest`.
+Квести: `V5_DEPTH_NATURESAURA_CONSTRUCTOR`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 13. Глибинний метал: рецепт саме цієї версії
+
+Епохи: 21.
+
+Після відкриття Nether і Sky Ingot виготовте Depth Ingot. У Nature’s Aura 41.10 активний рецепт depth_ingot_creation використовує Sky Ingot, Tainted Gold та Netherite Scrap на верстаку; це не старий ритуал інфузії, скопійований з іншої версії. Зразок потрібен для подальших природних інструментів.
+Попередні кроки: naturesaura:depth_constructor.
+Ресурси й результати: `naturesaura:depth_ingot`, `naturesaura:tainted_gold`.
+Квести: `V5_DEPTH_NATURESAURA_DEPTH_METAL`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 14. Природна ділянка для міжмодових сплавів
 
 Епохи: 31.
 
@@ -890,7 +2204,7 @@ Bottle and Cork збирає різні форми аури залежно ві�
 Квести: `V5_MAG_NATURESAURA_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 9. Підношення замість звичайного переплавлення
+### 15. Підношення замість звичайного переплавлення
 
 Епохи: 31.
 
@@ -901,7 +2215,28 @@ Bottle and Cork збирає різні форми аури залежно ві�
 Квести: `E21_X_sky_ingot`, `E21_X_aura_archive`, `E21_X_key_trial`, `E22_X_solar_mount`, `V5_MAG_NATURESAURA_09`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 10. Підношення для просунутого символу
+### 16. Ліміт генератора — окремий рівень керування
+
+Епохи: 31.
+
+Виготовте Creational Catalyst та встановіть його безпосередньо під генератором. Він знімає звичайний поріг утворення аури, але надлишок може розсіюватися. Залиште компараторний контроль: зняття обмеження не означає, що слід нескінченно перевантажувати територію.
+Попередні кроки: naturesaura:depth_depth_metal, naturesaura:08.
+Машини: `naturesaura:generator_limit_remover`, `naturesaura:aura_detector`.
+Ресурси й результати: `naturesaura:generator_limit_remover`.
+Квести: `V5_DEPTH_NATURESAURA_CATALYST`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 17. Середовище справді накопичило ауру
+
+Епохи: 31.
+
+Відновіть і посильте природну ділянку та залишайтеся поруч, доки штатний серверний контроль Nature’s Aura не зафіксує позитивний дисбаланс. Код 41.10 перевіряє ауру раз на 200 тіків у радіусі 25, поріг — 1 500 000. Після демонстрації відрегулюйте відсічення. Досягнення підтверджує стан середовища, а не роботу конкретного генератора.
+Попередні кроки: naturesaura:depth_catalyst.
+Машини: `naturesaura:aura_detector`.
+Квести: `V5_DEPTH_NATURESAURA_POSITIVE_BALANCE`.
+Нативне досягнення підтверджує тільки описану подію; інші предмети й огляди не підтверджують продуктивність або компоненти.
+
+### 18. Підношення для просунутого символу
 
 Епохи: 35.
 
@@ -921,8 +2256,8 @@ Bottle and Cork збирає різні форми аури залежно ві�
 - {"recipe_id": "aia2:v4/naturesaura/generator_limit_remover", "target": "naturesaura:generator_limit_remover", "epoch": 9, "ingredient_ids": ["kubejs:aia2_tech_matrix_08"], "direction": "incoming", "description_uk": "Рецепт AIA2 для naturesaura:generator_limit_remover споживає міжмодові матеріали kubejs:aia2_tech_matrix_08. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Повний NeoForge-інстанс із FTB Quests та всіма модами не запускався; нативні тригери й recipe IDs перевірено статично за точним кодом.
+- Побічні функції поза явно визначеним core-маршрутом не позначені завершеним дослідженням.
 
 Джерела:
 
@@ -934,6 +2269,27 @@ Bottle and Cork збирає різні форми аури залежно ві�
 - [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/practices/offering.json) — SHA перевірено
 - [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/using/altar.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/LICENSE) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/java/de/ellpeck/naturesaura/events/CommonEvents.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/java/de/ellpeck/naturesaura/Helper.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/intro/aura.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/items/eye.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/items/aura_cache.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/creating/on_generating.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/creating/flower_generator.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/creating/generator_limit_remover.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/devices/aura_detector.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/devices/auto_crafter.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/practices/offering.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/using/altar.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/active_aia2_recipes/aia2/v4/naturesaura/aura_detector.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/export/recipes/naturesaura/flower_generator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/active_aia2_recipes/aia2/v4/naturesaura/aura_cache.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/export/recipes/naturesaura/auto_crafter.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/export/recipes/naturesaura/depth_ingot_creation.json) — SHA перевірено
+- [джерело](../../content/research/evidence/natural_magic_depth_v5/naturesaura/active_aia2_recipes/aia2/v4/naturesaura/generator_limit_remover.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/data/naturesaura/advancement/positive_imbalance.json) — SHA перевірено
 
 ## EvilCraft
 
@@ -1174,9 +2530,10 @@ Bottle and Cork збирає різні форми аури залежно ві�
 
 Побудуйте Inscription Table та підготуйте початкову книгу. За офіційною книгою знайдений сувій вигідніше вписати, щоб користуватися закляттям повторно, ніж одразу витратити одноразово.
 Машини: `irons_spellbooks:inscription_table`.
-Ресурси й результати: `irons_spellbooks:inscription_table`, `irons_spellbooks:wimpy_spell_book`.
+Ресурси й результати: `irons_spellbooks:inscription_table`, `irons_spellbooks:copper_spell_book`.
 Квести: `E15_X_inscription`, `V5_MAG_IRONS_SPELLBOOKS_01`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
+Виправлено помилкову початкову книгу: copper_spell_book замінює недоступну нуль-слотову wimpy_spell_book без зміни квестового ID.
 
 ### 2. Мана початкового спорядження
 
@@ -1274,6 +2631,11 @@ Scroll Forge використовує папір, чорнило та фокус
 - [джерело](https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/resources/assets/irons_spellbooks/patchouli_books/iss_guide_book/en_us/entries/progression/late_game.json) — SHA перевірено
 - [джерело](https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/resources/assets/irons_spellbooks/patchouli_books/iss_guide_book/en_us/entries/progression/mid_game.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](../../content/research/evidence/source_gap_followup_v5/installed_metadata.json) — SHA перевірено
+- [джерело](https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/java/io/redspace/ironsspellbooks/registries/ItemRegistry.java) — SHA перевірено
+- [джерело](https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/resources/assets/irons_spellbooks/patchouli_books/iss_guide_book/en_us/entries/progression/early_game.json) — SHA перевірено
+- [джерело](../../content/research/evidence/source_gap_followup_v5/irons_spellbooks/export/recipes/irons_spellbooks/copper_spell_book.json) — SHA перевірено
 
 ## Mystical Agriculture
 
@@ -4266,7 +5628,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## Immersive Engineering
 
-Версія експорту: **12.4.2-194**. Статус: `reviewed_partial`.
+Версія експорту: **12.4.2-194**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Подрібнена мідь додає ще один придатний до змішування матеріальний потік.
@@ -4303,57 +5665,179 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `E08_X_manual`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 4. Сталь і кокс у різних буферах
+### 4. Креозот повертається в деревину
+
+Епохи: 8.
+
+Коксове виробництво дає креозот: збережіть його і використовуйте для просоченої деревини, не викидаючи необхідний будівельний ресурс.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.phase.03.
+Ресурси й результати: `immersiveengineering:coal_coke`, `immersiveengineering:creosote_bucket`, `immersiveengineering:treated_wood_horizontal`.
+Квести: `E08_X_coke_bricks`, `E08_X_coke`, `E08_X_creosote`, `E08_X_treated_wood`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 5. Сталь і кокс у різних буферах
 
 Епохи: 8.
 
 Підготуйте кокс як паливну частину сталеплавильного циклу, а сталь — як його матеріальний результат. Залиште місце для побічних продуктів і ремонту конструкції; повний вхід палива не гарантує вільного виходу металу.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: immersiveengineering.phase.03.
+Попередні кроки: immersiveengineering.depth.treated_wood.
 Машини: `immersiveengineering:blast_furnace`.
 Ресурси й результати: `immersiveengineering:coal_coke`, `immersiveengineering:ingot_steel`, `immersiveengineering:hammer`.
 Квести: `V5_E08_ie_workshop_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 5. Дротова мережа має розрив для ремонту
+### 6. Динамо має механічне джерело
+
+Епохи: 11.
+
+Водяне колесо або вітряк обертають динамо; проводи й LV-накопичувач створюють обслуговуваний шлях до споживача.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.phase.04.
+Машини: `immersiveengineering:dynamo`, `immersiveengineering:watermill`, `immersiveengineering:capacitor_lv`.
+Квести: `E11_X_dynamo`, `E11_X_watermill`, `E11_X_windmill`, `E11_X_capacitor`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 7. Дротова мережа має розрив для ремонту
 
 Епохи: 11.
 
 Підготуйте вимикач і ізольований дріт для доступної сервісної ділянки LV. Реле змінює трасу дроту, а вимикач керує з'єднанням; перед подаванням напруги перевірте, які контакти справді під'єднані до споживача.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: immersiveengineering.phase.04.
+Попередні кроки: immersiveengineering.depth.kinetic_power.
 Машини: `immersiveengineering:breaker_switch`.
 Ресурси й результати: `immersiveengineering:wirecoil_copper_ins`, `immersiveengineering:connector_lv_relay`, `immersiveengineering:wirecutter`.
 Квести: `V5_E11_ie_workshop_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Модель преса задає деталь
+### 8. Доменний цех із механізованим завантаженням
+
+Епохи: 18.
+
+Після ранньої ручної сталі перейдіть до Improved Blast Furnace: звірте армовану цеглу, орієнтацію та точки обслуговування в книзі. Сформуйте конструкцію молотком; попередні запаси сталі не замінюють цей крок.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.phase.05.
+Машини: `immersiveengineering:advanced_blast_furnace`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_IMPROVED_BLAST`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 9. Дробарка має бути сформована
+
+Епохи: 18.
+
+Зберіть структуру Crusher за поточною книгою інженера й завершіть її інженерним молотком. Приймайте сировину через визначений вхід, а вихід залиште вільним для конвеєра. Тут перевіряється саме утворення конструкції, а не її енергоспоживання.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.improved_blast.
+Машини: `immersiveengineering:crusher`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_CRUSHER`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 10. Модель преса задає деталь
 
 Епохи: 18.
 
 Порівняйте дві форми металевого преса та їхні продукти у спільному міжмодовому складі. Заміна форми змінює вид виходу, тому матеріальний контракт має вказувати не лише метал, а й потрібну форму деталі.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: immersiveengineering.phase.05.
+Попередні кроки: immersiveengineering.depth.crusher.
 Машини: `immersiveengineering:metal_press`.
 Ресурси й результати: `immersiveengineering:mold_gear`, `immersiveengineering:mold_wire`, `immersiveengineering:wire_copper`, `modern_industrialization:iron_gear`.
 Квести: `V5_E18_ie_workshop_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 7. Дугова піч має витратний електрод
+### 11. Олійний прес відділяє рідину від макухи
+
+Епохи: 18.
+
+Сформуйте Squeezer інженерним молотком. Заплануйте окремі місця для рослинної олії та твердого побічного продукту: забитий вихід може зупинити майбутню паливну лінію. Нативний критерій підтверджує структуру, а не першу партію олії.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.phase.06.
+Машини: `immersiveengineering:squeezer`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_SQUEEZER`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 12. Ферментер постачає другий паливний потік
+
+Епохи: 18.
+
+Сформуйте Fermenter за кресленням. Порівняйте дозволену рослинну сировину в JEI й передбачте окремий резервуар етанолу; не зливайте його в буфер олії Squeezer.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.squeezer.
+Машини: `immersiveengineering:fermenter`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_FERMENTER`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 13. Біодизель поєднує два потоки
+
+Епохи: 18.
+
+Сформуйте Refinery після підготовки Squeezer і Fermenter. Її рідинні входи приймають рослинну олію й етанол, а поточний рецепт біодизелю також потребує невитратного каталізатора c:dusts/saltpeter. Обирайте прийнятний матеріал за поточним JEI: квест не вимагає дубліката пилу конкретного мода. Нативний критерій підтверджує формування Refinery, а не запуск труб або виробництво пального.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.fermenter.
+Машини: `immersiveengineering:refinery`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_REFINERY`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 14. Паливна електростанція завершує біолінію
+
+Епохи: 18.
+
+Сформуйте Diesel Generator, передбачте підведення дозволеного палива та відведення FE у буфер. Власне біодизельне виробництво дає йому матеріальну основу; список прийнятного палива беріть із книги встановленої версії.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.refinery.
+Машини: `immersiveengineering:diesel_generator`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_DIESEL_GENERATOR`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 15. Три шаблони одного складальника
+
+Епохи: 23.
+
+Огляньте Assembler і підготуйте контрольний комплект конвеєра та механічного компонента. У GUI плануйте до трьох послідовних рецептів, явно залишаючи місце для проміжних результатів. FTB перевірить станцію й комплект, але не вміст шаблонів.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.diesel_generator.
+Машини: `immersiveengineering:assembler`.
+Ресурси й результати: `immersiveengineering:component_iron`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_ASSEMBLER`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 16. Дугова піч має витратний електрод
 
 Епохи: 32.
 
 Підготуйте електроди як витратну частину дугової металургії та окремий резерв HV. Перевіряйте знос поряд із запасом сировини: зупинена через електрод піч не відновиться від додаткового подавання руди.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: immersiveengineering.phase.06.
+Попередні кроки: immersiveengineering.depth.assembler.
 Машини: `immersiveengineering:arc_furnace`.
 Ресурси й результати: `immersiveengineering:graphite_electrode`, `immersiveengineering:ingot_steel`, `immersiveengineering:capacitor_hv`.
 Квести: `V5_E32_ie_workshop_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 17. Дугова піч є справжньою конструкцією
+
+Епохи: 32.
+
+Сформуйте Arc Furnace молотком, після чого пройдіть наявну перевірку графітового електрода. Електроди є витратною частиною процесу; нативне досягнення тут засвідчує складання печі й не підміняє окрему перевірку її матеріалів.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.phase.07.
+Машини: `immersiveengineering:arc_furnace`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_ARC_FURNACE`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 18. Екскаватор починається з геології
+
+Епохи: 32.
+
+Дослідіть пробу буром та знайдіть мінеральне родовище за інженерною книгою. Зберіть привід Excavator і відповідне Bucket Wheel. Завдання зараховує нативну подію формування екскаватора; існування та виснаження конкретного родовища FTB не вимірює.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: immersiveengineering.depth.arc_furnace.
+Машини: `immersiveengineering:excavator`.
+Квести: `V5_DEPTH_IMMERSIVEENGINEERING_EXCAVATOR`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
 Фінальні цілі:
-- Модель преса задає деталь
-- Дугова піч має витратний електрод
+- Дугова піч є справжньою конструкцією
+- Екскаватор починається з геології
 
 Міжмодові зв’язки:
 - {"mod_id": "modern_industrialization", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -4362,8 +5846,8 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/immersiveengineering/crafting/connector_lv", "target": "immersiveengineering:connector_lv", "epoch": 11, "ingredient_ids": ["kubejs:aia2_arcane_catalyst_09"], "direction": "incoming", "description_uk": "Рецепт AIA2 для immersiveengineering:connector_lv споживає міжмодові матеріали kubejs:aia2_arcane_catalyst_09. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний Minecraft/FTB/JEI runtime та довготривалий TPS не тестувалися.
+- Основний виробничий курс: кокс/сталь, енергія, переробка, біодизель, складання, дугова піч та мінеральний видобуток. Зброя, всі декоративні блоки й усі варіанти логіки не є частиною core-охоплення.
 
 Джерела:
 
@@ -4380,6 +5864,48 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [immersiveengineering:blueprint](../../content/research/evidence/technology_v5/immersiveengineering/recipes/immersiveengineering/blueprint/mold_gear.json) — SHA перевірено
 - [immersiveengineering:bottling_machine](../../content/research/evidence/technology_v5/immersiveengineering/recipes/immersiveengineering/bottling/graphite_electrode.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/LICENSE) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/coke_oven.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/coke_oven.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/treated_wood.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/treated_wood.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/kinetic_generators.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/kinetic_generators.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/improved_blast_furnace.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/improved_blast_furnace.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/crusher.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/crusher.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/metal_press.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/metal_press.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/squeezer.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/squeezer.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/fermenter.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/fermenter.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/refinery.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/refinery.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/diesel_generator.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/diesel_generator.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/assembler.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/assembler.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/arc_furnace.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/arc_furnace.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/mineral_deposits.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/mineral_deposits.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/excavator.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/en_us/excavator.txt) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_crusher.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/api/java/blusunrize/immersiveengineering/api/multiblocks/MultiblockAdvancementTrigger.java) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/IEContent.java) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/items/HammerItem.java) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_improvedblastfurnace.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_squeezer.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_fermenter.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_refinery.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/immersiveengineering/export/recipes/immersiveengineering/refinery/biodiesel.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_dieselgen.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_arcfurnace.json) — SHA перевірено
+- [джерело](https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/advancement/multiblocks/mb_excavator.json) — SHA перевірено
 
 ## Immersive Petroleum
 
@@ -4484,7 +6010,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## Industrial Foregoing
 
-Версія експорту: **1.21-3.6.38**. Статус: `reviewed_partial`.
+Версія експорту: **1.21-3.6.38**. Статус: `reviewed_partial_exact_source_release_gap`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Початкова рамка цієї збірки не повинна вимагати пластику до першого екстрактора. Залиш один корпус для послідовного розширення біофабрики.
@@ -4533,45 +6059,129 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E18_if_specialization_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 5. Шаблон налаштувань для повторюваної ферми
+### 5. Рамка з рідинним реагентом
+
+Епохи: 18.
+
+Огляньте Dissolution Chamber і підготуйте просту рамку та латекс. Рецепти цієї машини поєднують до восьми предметних позицій з одним рідинним реагентом; перевірте активний рецепт рамки в JEI, не змішуючи резервуари довільними рідинами.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.phase.04.
+Машини: `industrialforegoing:dissolution_chamber`.
+Ресурси й результати: `industrialforegoing:machine_frame_simple`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_DISSOLUTION`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 6. Шаблон налаштувань для повторюваної ферми
 
 Епохи: 18.
 
 Підготуйте керовану посівну ділянку та інструмент перенесення сумісних налаштувань. Після копіювання звірте робочу зону й напрям машини: однакові параметри не переносять саму землю, воду або насіння.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: industrialforegoing.phase.04.
+Попередні кроки: industrialforegoing.depth.dissolution.
 Машини: `industrialforegoing:plant_sower`.
 Ресурси й результати: `industrialforegoing:machine_settings_copier`, `industrialforegoing:range_addon_tier_1`, `minecraft:wheat_seeds`.
 Квести: `V5_E18_if_specialization_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Біореактор оцінює склад сировини
+### 7. Грядка розрізняє будівельний і робочий ресурс
+
+Епохи: 27.
+
+Огляньте Hydroponic Bed і звірте її активний рецепт: Fertilizer входить до будівельного складу самої грядки. Підготуйте насіння та воду для подальшого знайомства з інтерфейсом; не вважайте будівельний Fertilizer автоматичною вимогою постійної роботи. Режими прискорення перевіряйте в книзі та GUI встановленої версії.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.phase.05.
+Машини: `industrialforegoing:hydroponic_bed`.
+Ресурси й результати: `industrialforegoing:fertilizer`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_HYDROPONIC`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 8. Біореактор оцінює склад сировини
 
 Епохи: 27.
 
 Підготуйте різні рослинні входи для перевірки біопаливної ділянки та окремий генератор-споживач. Порівняйте рецепти й показники інтерфейсу у грі; квест не прирівнює кількість видів у цій пробі до вигаданого гарантованого виходу.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: industrialforegoing.phase.05.
+Попередні кроки: industrialforegoing.depth.hydroponic.
 Машини: `industrialforegoing:bioreactor`.
 Ресурси й результати: `minecraft:carrot`, `minecraft:potato`, `minecraft:beetroot`, `industrialforegoing:biofuel_generator`.
 Квести: `V5_E27_if_specialization_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 7. Лінза має відповідати потрібній руді
+### 9. Два рідинні продукти забійної фабрики
+
+Епохи: 27.
+
+Огляньте Mob Slaughter Factory й відокремте зразки Meat та Pink Slime. Це два різні рідинні виходи для різних цілей; не заливайте ними один спільний резервуар. Рожева сировина підтримує наступний рівень рамок у Dissolution Chamber.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.phase.06.
+Машини: `industrialforegoing:mob_slaughter_factory`.
+Ресурси й результати: `industrialforegoing:pink_slime_bucket`, `industrialforegoing:meat_bucket`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_PINK_SLIME`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 10. Просунута рамка має попередника
+
+Епохи: 27.
+
+Підготуйте просту й просунуту рамки біля Dissolution Chamber. У поточному рецепті перевірте потрібну рідину та діамантовий компонент: апгрейд спирається на попередній виробничий рівень, а не замінює його безкоштовно.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.depth.pink_slime.
+Машини: `industrialforegoing:dissolution_chamber`.
+Ресурси й результати: `industrialforegoing:machine_frame_simple`, `industrialforegoing:machine_frame_advanced`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_ADVANCED_FRAME`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 11. Дублювання використовує окрему есенцію
+
+Епохи: 27.
+
+Огляньте Mob Duplicator і підготуйте Mob Imprisonment Tool та зразок Essence. Зразок моба задає ціль, а рідка есенція є робочим ресурсом: Pink Slime із забійної фабрики її не замінює. Наявність інструмента не означає, що всередині вже потрібний моб.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.depth.advanced_frame.
+Машини: `industrialforegoing:mob_duplicator`.
+Ресурси й результати: `industrialforegoing:essence_bucket`, `industrialforegoing:mob_imprisonment_tool`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_MOB_DUPLICATOR`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 12. Лінза має відповідати потрібній руді
 
 Епохи: 34.
 
 Підготуйте дві лінзи для різних цілей лазерного видобутку й контроль запасу на складі. Перевіряйте висоту, вимір і таблицю JEI конкретної руди: зміна кольору не скасовує інші умови рецепта.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: industrialforegoing.phase.06.
+Попередні кроки: industrialforegoing.depth.mob_duplicator.
 Машини: `industrialforegoing:ore_laser_base`.
 Ресурси й результати: `industrialforegoing:laser_drill`, `industrialforegoing:yellow_laser_lens`, `industrialforegoing:blue_laser_lens`, `ae2:level_emitter`.
 Квести: `V5_E34_if_specialization_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 13. Ефірний газ — окрема лазерна спеціалізація
+
+Епохи: 34.
+
+Огляньте Stasis Chamber і Fluid Laser Base, підготуйте Purple Laser Lens та зразок Ether Gas. Порівняйте цей процес із рудною базою: джерело, лінза й стабілізація цілі мають окремі умови в актуальному JEI. Цей комплект не доводить живого Wither у камері чи швидкість видобутку.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.phase.07.
+Машини: `industrialforegoing:stasis_chamber`, `industrialforegoing:fluid_laser_base`.
+Ресурси й результати: `industrialforegoing:ether_gas_bucket`, `industrialforegoing:purple_laser_lens`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_ETHER_GAS`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 14. Реактор не замінює мережу генераторів
+
+Епохи: 34.
+
+Огляньте Mycelial Reactor та підготуйте Supreme Machine Frame й Ether Gas. Його рецепт завершує матеріальний шлях, але велика генерація FE залежить від одночасної роботи різних Mycelial Generators у мережі. FTB перевіряє реактор і зразки, не обіцяючи, що вся генераторна мережа вже працює.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: industrialforegoing.depth.ether_gas.
+Машини: `industrialforegoing:mycelial_reactor`.
+Ресурси й результати: `industrialforegoing:machine_frame_supreme`.
+Квести: `V5_DEPTH_INDUSTRIALFOREGOING_MYCELIAL`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
 Фінальні цілі:
-- Біореактор оцінює склад сировини
-- Лінза має відповідати потрібній руді
+- Ефірний газ — окрема лазерна спеціалізація
+- Реактор не замінює мережу генераторів
 
 Міжмодові зв’язки:
 - {"mod_id": "ae2", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -4580,10 +6190,9 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:integration/epoch_18", "target": "industrialforegoing:machine_frame_pity", "epoch": 18, "ingredient_ids": ["botania:manasteel_ingot"], "direction": "incoming", "description_uk": "Рецепт AIA2 для industrialforegoing:machine_frame_pity споживає міжмодові матеріали botania:manasteel_ingot. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Офіційний pin є суміжною гілкою Minecraft1.21, а не підтвердженим тегом установленого JAR; версійні деталі обмежено експортом.
-- Етап industrialforegoing.phase.03: окремий нативний рецепт не зафіксовано; джерело може бути кодом, loot або раніше наведеним рецептом.
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний Minecraft/FTB/JEI runtime та довготривалий TPS не тестувалися.
+- Розширено виробничий маршрут за точними рецептами експорту; джерело книг upstream3.6.39 відрізняється від встановленої3.6.38, тому повна карта не заявляється.
+- Знайдено predecessor1f8a325 з CHANGELOG3.6.38, але CI BUILD_NUMBER не дозволяє довести точний binary/source pin. Потрібна подальша перевірка release artifact та поведінки генераторної мережі.
 
 Джерела:
 
@@ -4599,6 +6208,26 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/industrialforegoing/recipes/industrialforegoing/bioreactor.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/industrialforegoing/recipes/industrialforegoing/ore_laser_base.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/gradle.properties) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/LICENSE) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/CHANGELOG.md) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/build.gradle) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/basics/dissolution_chamber.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/agr_hus/mob_slaughter_factory.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/agr_hus/pink_slime.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/agr_hus/mob_duplicator.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/agr_hus/hydroponic_bed.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/resource_production/ether_gas.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/resource_production/fluid_laser_base.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/ce2852db4b34af3ab1b9637cff0b327d4bb561d5/src/main/resources/assets/industrialforegoing/patchouli_books/industrial_foregoing/en_us/entries/generators/mycelial_reactor.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/dissolution_chamber/simple_machine_frame.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/hydroponic_bed.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/mob_slaughter_factory.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/dissolution_chamber/advanced_machine_frame.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/mob_duplicator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/fluid_laser_base.json) — SHA перевірено
+- [джерело](../../content/research/evidence/industrial_depth_v5/industrialforegoing/export/recipes/industrialforegoing/dissolution_chamber/mycelial_reactor.json) — SHA перевірено
+- [джерело](https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md) — SHA перевірено; upstream-версія відрізняється
 
 ## Industrialization Overdrive
 
@@ -5360,7 +6989,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## PneumaticCraft: Repressurized
 
-Версія експорту: **8.2.23**. Статус: `reviewed_partial`.
+Версія експорту: **8.2.23**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Почни з керованого джерела повітря, щоб зрозуміти заповнення невеликої мережі. Не збільшуй об'єм труб раніше, ніж навчишся читати тиск.
@@ -5409,45 +7038,138 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E14_pneumatic_mechanics_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 5. Теплопровід відокремлено від повітря
+### 5. Ключ, у якому справді є повітря
+
+Епохи: 14.
+
+Зарядіть Pneumatic Wrench до щонайменше 3 bar та потримайте його у своєму інвентарі. Вбудований критерій перевіряє фактичний тиск інструмента на сервері; порожній ключ не підходить.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.phase.04.
+Ресурси й результати: `pneumaticcraft:pneumatic_wrench`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_CHARGED_WRENCH`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 6. Порожниста камера проходить нативну перевірку
+
+Епохи: 14.
+
+Зберіть порожнисту камеру 3×3×3, 4×4×4 або 5×5×5 за Patchouli. Клапан поставте останнім: саме встановлення клапана гравцем викликає перевірку сформованої структури й нативне досягнення. Передбачте окремі input/output interfaces; це завдання ще не вимагає тиску.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.depth.charged_wrench.
+Машини: `pneumaticcraft:pressure_chamber_valve`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_PRESSURE_CHAMBER`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 7. Теплопровід відокремлено від повітря
 
 Епохи: 14.
 
 Підготуйте тепловий контур поряд із пневматичною обробкою та передбачте відведення зайвого тепла. Повітряна труба й теплопровід не взаємозамінні; звірте потрібний температурний діапазон саме вибраного рецепта.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: pneumaticcraft.phase.04.
+Попередні кроки: pneumaticcraft.depth.pressure_chamber.
 Машини: `pneumaticcraft:thermopneumatic_processing_plant`.
 Ресурси й результати: `pneumaticcraft:heat_pipe`, `pneumaticcraft:heat_sink`, `pneumaticcraft:thermostat_module`.
 Квести: `V5_E14_pneumatic_mechanics_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Плата проходить освітлення й травлення
+### 8. Нафтові фракції мають визначений порядок
+
+Епохи: 14.
+
+Огляньте Refinery Controller та підготуйте щонайменше два Refinery Outputs. Книга дозволяє 2–4 виходи: найлегша фракція розташовується зверху, найважча знизу; нагрів починає роботу від 100°C. Окремо збережіть зразок LPG для наступного полімерного кроку.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.phase.05.
+Машини: `pneumaticcraft:refinery`.
+Ресурси й результати: `pneumaticcraft:lpg_bucket`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_REFINERY`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 9. LPG проходить термопневматичний етап
+
+Епохи: 14.
+
+Звірте в JEI перетворення LPG та Coal у рідкий Plastic у Thermopneumatic Processing Plant. Спосіб затвердіння залежить від конфігурації: світове розливання може бути дозволене, а охолоджуваний Heat Frame працює з тарою в інвентарі. Порівняйте полімер із сировиною; IF-пластик не замінює цей зразок.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.depth.refinery.
+Машини: `pneumaticcraft:thermopneumatic_processing_plant`.
+Ресурси й результати: `pneumaticcraft:plastic`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_PLASTIC`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 10. Плата проходить освітлення й травлення
 
 Епохи: 24.
 
 Порівняйте заготовку, проміжну й завершену друковану плату біля двох різних машин. Перевірте ступінь обробки перед травленням, щоб не перетворити матеріали на невдалу плату через поспіх або неправильний порядок.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: pneumaticcraft.phase.05.
+Попередні кроки: pneumaticcraft.depth.plastic.
 Машини: `pneumaticcraft:uv_light_box`, `pneumaticcraft:etching_tank`.
 Ресурси й результати: `pneumaticcraft:empty_pcb`, `pneumaticcraft:unassembled_pcb`, `pneumaticcraft:printed_circuit_board`.
 Квести: `V5_E24_pneumatic_mechanics_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 7. Дрон отримує визначені джерело й ціль
+### 11. Високий тиск потребує відповідної магістралі
+
+Епохи: 24.
+
+Огляньте Advanced Air Compressor та підготуйте Advanced Pressure Tubes і Safety Tube Module. Зіставте допустимий тиск кожної ділянки за червоною зоною її GUI: просунутий компресор не підвищує міцність звичайної труби. Не змішуйте тепловий відвід із повітряною мережею.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.phase.06.
+Машини: `pneumaticcraft:advanced_air_compressor`.
+Ресурси й результати: `pneumaticcraft:advanced_pressure_tube`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_ADVANCED_PRESSURE`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 12. Програмоване складання відокремлене від друку плати
+
+Епохи: 24.
+
+Контролер має відповідну програму, платформу, свердло/лазер та окремі порти import/export. Це станція автоматизації після базових PCB, а не звичайний верстак.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.depth.advanced_pressure.
+Машини: `pneumaticcraft:assembly_controller`.
+Ресурси й результати: `pneumaticcraft:assembly_program_drill_laser`.
+Квести: `V4_E24_pneumatic_io_06`, `V4_E24_pneumatic_io_07`.
+Предметні та observation-задачі підтверджують зразки/станції, а не успішну роботу довільної фабрики.
+
+### 13. Програма справді записана
+
+Епохи: 24.
+
+У Programmer складіть коротку навчальну програму та запишіть її в Drone. Нативний критерій спрацьовує після успішного запису, а не від отримання програматора чи дрона. Спершу тестуйте без руйнування блоків; правильність майбутніх доставок цим критерієм не перевіряється.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.depth.assembly.
+Машини: `pneumaticcraft:programmer`.
+Ресурси й результати: `pneumaticcraft:drone`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_PROGRAM_DRONE`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
+### 14. Дрон отримує визначені джерело й ціль
 
 Епохи: 28.
 
 Підготуйте визначені координати та два різні логістичні ролі для дрона. Спочатку випробуйте малий маршрут дешевими предметами; наявність програми в інвентарі не доводить, що її діапазон не зачіпає сторонню скриню.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
-Попередні кроки: pneumaticcraft.phase.06.
+Попередні кроки: pneumaticcraft.depth.program_drone.
 Машини: `pneumaticcraft:programmer`.
 Ресурси й результати: `pneumaticcraft:logistics_drone`, `pneumaticcraft:logistics_frame_passive_provider`, `pneumaticcraft:logistics_frame_requester`, `pneumaticcraft:gps_tool`.
 Квести: `V5_E28_pneumatic_mechanics_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 15. Пневматичний політ потребує запуску
+
+Епохи: 28.
+
+Підготуйте заряджені Pneumatic Boots з Jet Boots Upgrade та виконайте короткий контрольований запуск над безпечним майданчиком. Нативний критерій викликається серверним обробником під час початку активної роботи черевиків, тому сам предмет не завершує квест.
+Цей крок додає окрему підтверджену виробничу функцію до попередньої інфраструктури; наступний використовує її матеріали або транспортні можливості.
+Попередні кроки: pneumaticcraft.phase.07.
+Ресурси й результати: `pneumaticcraft:pneumatic_boots`, `pneumaticcraft:jet_boots_upgrade_1`.
+Квести: `V5_DEPTH_PNEUMATICCRAFT_JET_BOOTS`.
+Нативний серверний trigger підтверджує тільки описану дію, без вимірювання подальшого виробництва.
+
 Фінальні цілі:
-- Плата проходить освітлення й травлення
 - Дрон отримує визначені джерело й ціль
+- Пневматичний політ потребує запуску
 
 Міжмодові зв’язки:
 - {"recipe_id": "aia2:integration/epoch_14", "target": "pneumaticcraft:pressure_chamber_interface", "epoch": 14, "ingredient_ids": ["occultism:spirit_attuned_gem"], "direction": "incoming", "description_uk": "Рецепт AIA2 для pneumaticcraft:pressure_chamber_interface споживає міжмодові матеріали occultism:spirit_attuned_gem. Це власна інтеграція збірки, а не правило оригінального мода."}
@@ -5455,8 +7177,8 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/pneumaticcraft/air_compressor", "target": "pneumaticcraft:air_compressor", "epoch": 14, "ingredient_ids": ["kubejs:aia2_tech_matrix_13"], "direction": "incoming", "description_uk": "Рецепт AIA2 для pneumaticcraft:air_compressor споживає міжмодові матеріали kubejs:aia2_tech_matrix_13. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний Minecraft/FTB/JEI runtime та довготривалий TPS не тестувалися.
+- Основний курс: тиск і безпека, сформована камера, тепло/нафта/пластик, PCB/складання, запис програм, логістика та активні Jet Boots. Всі види дронових програм, хакінг і every armor upgrade поза core-охопленням.
 
 Джерела:
 
@@ -5473,6 +7195,28 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/pneumaticcraft/recipes/pneumaticcraft/uv_light_box.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/pneumaticcraft/recipes/pneumaticcraft/programmer.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/LICENSE) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/base_concepts/pressure.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/manufacturing/pressure_chamber.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/manufacturing/refinery.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/manufacturing/thermopneumatic_processing_plant.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/components/plastic.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/compressors/advanced_air_compressor.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/programming/programmer.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/armor/pneumatic_boots.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/generated/resources/data/pneumaticcraft/advancement/pneumatic_wrench_charged.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/advancements/CustomTrigger.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/registry/ModCriterionTriggers.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/PneumaticCraftRepressurized.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/item/PneumaticWrenchItem.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/generated/resources/data/pneumaticcraft/advancement/pressure_chamber.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/PressureChamberValveBlock.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/processing/PressureChamberValveBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/generated/resources/data/pneumaticcraft/advancement/program_drone.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/drone/ProgrammerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/generated/resources/data/pneumaticcraft/advancement/flight.json) — SHA перевірено
+- [джерело](https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/pneumatic_armor/handlers/JetBootsHandler.java) — SHA перевірено
 
 ## Powah
 

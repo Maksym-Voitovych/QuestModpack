@@ -16,7 +16,7 @@
 | Extended Industrialization | technology_addon | IN_PROGRESS — часткова карта |
 | Extreme Reactors | technology_core | IN_PROGRESS — часткова карта |
 | Hostile Neural Networks | technology_core | IN_PROGRESS — часткова карта |
-| Immersive Engineering | technology_core | IN_PROGRESS — часткова карта |
+| Immersive Engineering | technology_core | DONE — основна карта |
 | Immersive Petroleum | technology_core | IN_PROGRESS — часткова карта |
 | Industrial Foregoing | technology_core | IN_PROGRESS — часткова карта |
 | Industrialization Overdrive | technology_addon | IN_PROGRESS — часткова карта |
@@ -28,7 +28,7 @@
 | Mekanism Tools | technology_core | TODO — карта не досліджена |
 | Modern Industrialization | technology_core | IN_PROGRESS — часткова карта |
 | Oritech | technology_core | IN_PROGRESS — часткова карта |
-| PneumaticCraft: Repressurized | technology_core | IN_PROGRESS — часткова карта |
+| PneumaticCraft: Repressurized | technology_core | DONE — основна карта |
 | Powah! | technology_core | IN_PROGRESS — часткова карта |
 | ProjectE | technology_core | TODO — карта не досліджена |
 | Create: The Factory Must Grow | technology_core | IN_PROGRESS — часткова карта |
@@ -79,12 +79,12 @@
 | Chunk Loaders | storage_logistics | TODO — карта не досліджена |
 | DimStorage | storage_logistics | TODO — карта не досліджена |
 | EnderStorage | storage_logistics | TODO — карта не досліджена |
-| Integrated Dynamics | storage_logistics | TODO — карта не досліджена |
-| Integrated Terminals | storage_logistics | TODO — карта не досліджена |
-| Integrated Tunnels | storage_logistics | TODO — карта не досліджена |
+| Integrated Dynamics | storage_logistics | DONE — основна карта |
+| Integrated Terminals | storage_logistics | IN_PROGRESS — часткова карта |
+| Integrated Tunnels | storage_logistics | DONE — основна карта |
 | Iron Chests | storage_logistics | TODO — карта не досліджена |
 | Mekanistic Routers | technology_addon | TODO — карта не досліджена |
-| Modular Routers | storage_logistics | TODO — карта не досліджена |
+| Modular Routers | storage_logistics | DONE — основна карта |
 | Pipez | storage_logistics | TODO — карта не досліджена |
 | Pylons | storage_logistics | TODO — карта не досліджена |
 | RFTools Builder | storage_logistics | IN_PROGRESS — часткова карта |
@@ -96,17 +96,17 @@
 | Trash Cans | storage_logistics | TODO — карта не досліджена |
 | XNet | storage_logistics | TODO — карта не досліджена |
 | Apotheosis | magic_core | IN_PROGRESS — часткова карта |
-| Ars Nouveau | magic_core | IN_PROGRESS — часткова карта |
-| Botania Revived | magic_core | IN_PROGRESS — часткова карта |
+| Ars Nouveau | magic_core | DONE — основна карта |
+| Botania Revived | magic_core | DONE — основна карта |
 | Enchanted | magic_core | IN_PROGRESS — часткова карта |
 | EvilCraft | magic_core | IN_PROGRESS — часткова карта |
 | Forbidden & Arcanus | magic_core | IN_PROGRESS — часткова карта |
 | Goety | magic_core | IN_PROGRESS — часткова карта |
 | Iron's Spells 'n Spellbooks | magic_core | IN_PROGRESS — часткова карта |
-| Nature's Aura | magic_core | IN_PROGRESS — часткова карта |
-| Occultism | magic_core | IN_PROGRESS — часткова карта |
+| Nature's Aura | magic_core | DONE — основна карта |
+| Occultism | magic_core | DONE — основна карта |
 | Roots Classic | magic_core | IN_PROGRESS — часткова карта |
-| Totemic | magic_core | IN_PROGRESS — часткова карта |
+| Totemic | magic_core | DONE — основна карта |
 | All the Arcanist Gear | magic_addon | TODO — карта не досліджена |
 | All the Wizard Gear | magic_addon | TODO — карта не досліджена |
 | Apothic Enchanting | magic_core | TODO — карта не досліджена |

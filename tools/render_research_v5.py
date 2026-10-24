@@ -96,6 +96,25 @@ def render(root=ROOT):
                     entry = actual_sources.setdefault(target, {'verified_file':False, 'mods':set()})
                     entry['verified_file'] |= checked; entry['mods'].add(row['item'].split(':')[0])
             native_lines += ['']
+    # Action contracts and component guards have independent codec/dispatch
+    # evidence in addition to the mod maps. Include them in the public index.
+    extra_sources = []
+    action_path = root/'content/audit/v5-native-advancement-contracts.json'
+    if action_path.is_file():
+        extra_sources += [(row['mod_id'], source) for row in read(action_path)['advancements'] for source in row['sources']]
+    for relative, owner, field in [('content/recipes/v5_component_variants.json', 'botania', 'source_evidence'),
+                                    ('content/audit/v5-creative-mana-guard.json', 'botania', 'sources')]:
+        if (root/relative).is_file():
+            extra_sources += [(owner, source) for source in read(root/relative).get(field, [])]
+    for owner, source in extra_sources:
+        local = source.get('path', source.get('local_path'))
+        url = source.get('url', '')
+        target = url if url.startswith(('http://','https://')) else ('../../'+local if local else '')
+        checked = bool(local and (root/local).is_file() and
+                       hashlib.sha256((root/local).read_bytes()).hexdigest() == source.get('sha256'))
+        if target:
+            entry = actual_sources.setdefault(target, {'verified_file':False, 'mods':set()})
+            entry['verified_file'] |= checked; entry['mods'].add(owner)
     gap_lines = ['# Охоплення каталогу модів', '',
                  'Відсутня або часткова карта не прирівнюється до завершеного дослідження.',
                  'Невеликі аддони можуть мати тематичні цілі; бібліотеки й оптимізації',

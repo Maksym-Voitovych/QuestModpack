@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "quests": [
+    {
+      "id": "V5_MAG_IRONS_SPELLBOOKS_01",
+      "reason_uk": "WIMPY_SPELL_BOOK зареєстровано як SpellBook(0), тобто без слотів заклять; підтвердженого survival-рецепта не знайдено. Офіційний early_game посібник прямо показує copper_spell_book як початкову книгу. Квест V5_MAG_IRONS_SPELLBOOKS_01 має вимагати craftable copper_spell_book (gate15), зберігаючи його quest/task IDs; не створювати рецепт для нуль-слотової книги.",
+      "source_audit": "content/audit/v5-source-gaps-followup.json",
+      "item_targets": [
+        {
+          "task_index": 2,
+          "from": "irons_spellbooks:wimpy_spell_book",
+          "to": "irons_spellbooks:copper_spell_book"
+        }
+      ],
+      "description_note_uk": "Початкова книга цієї версії — copper_spell_book із п’ятьма слотами. Нуль-слотова wimpy_spell_book не потрібна; її зареєстрований ID не означає доступного способу отримання."
+    },
+    {
+      "id": "V5_POST_POOL",
+      "reason_uk": "Досліджено окремий творчий компонент Mana Tablet: базовий ID спільний зі звичайною планшеткою, тому змінено лише підтверджені альтернативні рецепти.",
+      "source_audit": "content/recipes/v5_component_variants.json",
+      "item_targets": [],
+      "description_note_uk": "Після завершення 48 епох доступна також творча Mana Tablet через Terra Plate, Creative Essence та фінальні міжмодові матеріали. Вона має той самий ID, що й звичайна планшетка, але відрізняється компонентами; ця ціль перевіряє Creative Pool, а не виготовлення чи компоненти планшетки."
+    }
+  ]
+}

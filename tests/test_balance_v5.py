@@ -140,7 +140,10 @@ class BalanceV5Tests(unittest.TestCase):
             self.assertEqual(first, (root/'kubejs/config/aia2_recipes.json').read_bytes())
             self.assertEqual(report['forge_gate_floors'], [15,21,21,21,31])
             bundle = read(root/'kubejs/config/aia2_recipes.json')
-            self.assertEqual(len(bundle['add']), len([r for r in self.bundle['add'] if not r['id'].startswith(PREFIX)]) + len(self.catalog['add']))
+            owned = {r['id'] for r in self.catalog['add']}
+            foreign = {r['id']:r for r in self.bundle['add'] if r['id'] not in owned}
+            self.assertEqual({r['id']:r for r in bundle['add'] if r['id'] not in owned}, foreign)
+            self.assertEqual(len(bundle['add']), len(foreign) + len(owned))
             rules=read(root/'kubejs/config/aia2_runtime.json')
             self.assertEqual(rules['itemGates']['forbidden_arcanus:hephaestus_forge_tier_3'],21)
             self.assertEqual(rules['blockGates']['forbidden_arcanus:hephaestus_forge_tier_4'],21)

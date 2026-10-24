@@ -222,7 +222,10 @@ def apply(root=ROOT):
     bundle = read(root/'kubejs/config/aia2_recipes.json')
     rules = read(root/'kubejs/config/aia2_runtime.json')
     checks = validate(root, catalog, bundle, rules)
-    bundle['add'] = [r for r in bundle['add'] if not r['id'].startswith(PREFIX)] + copy.deepcopy(catalog['add'])
+    owned_ids = {r['id'] for r in catalog['add']}
+    # Other reviewed compilers also use aia2:v5/. Rebuilding this catalog
+    # must not remove their component-variant recipes.
+    bundle['add'] = [r for r in bundle['add'] if r['id'] not in owned_ids] + copy.deepcopy(catalog['add'])
     previous = set(bundle.get('aia2_v5_source_removals', []))
     bundle['remove'] = sorted((set(bundle['remove'])-previous) | set(catalog['remove']))
     bundle['aia2_v5_source_removals'] = list(catalog['remove'])

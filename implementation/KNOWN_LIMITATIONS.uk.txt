@@ -1,4 +1,4 @@
-AIA2 0.4.2.1-alpha — перевірені компоненти та межі захисту
+AIA2 0.4.3-alpha — перевірені компоненти та межі захисту
 
 Дозвіл виробництва двох ключів відновлюється після входу учасника поточної
 FTB-команди та перевірки її квестів. Після рестарту автоматичне виготовлення
@@ -99,12 +99,14 @@ mixing/compacting і Mekanism metallurgic_infusing. Для іншої кінце
 content/audit/quest-obtainability.json, recipes-v4-audit.json,
 quests-v4-audit.json, validation-report.json.
 
-Проміжна інтеграція0.5:3повні core-карти,51неповна карта;
-22важливих предметів без явного статичного джерела,49native-context
+Проміжна інтеграція0.5:13повних core-карт,45неповних карт;
+7важливих fluid-bucket предметів без остаточно перевіреного джерела,49native-context
 випадків та1implicit-codec target не вважаються підтверджено отримуваними
 лише через відсутність помилки. Дивіться obtainability-v5-audit.json.
 Нативні4спостереження source-verified та compiled; liveCreate/Mek
 ще потребують повного інстансу. Vanilla49smoke перевіряв справжній
 Crafter/піч і restart SavedData, не всі модові обробники.
 
-Додаткові source-докази й канонізація матеріалів: docs/research/OBTAINABILITY.md та content/audit/v5-item-normalization-migrations.json. Невідомих статичних джерел залишилося22, не35.
+Додаткові source-докази й канонізація матеріалів: docs/research/OBTAINABILITY.md та content/audit/v5-item-normalization-migrations.json. Початкові22sourcegapвипадки досліджено:18джерел,1виправлення книги,3незавершені IF-випадки; з новими fluid-цілями відкритими лишаються7.
+
+49нових nativeaction критеріїв перевірено за JSON/codec/dispatch джерелами; реальний fullpack trigger dispatch не запускався. Новий component-aware guard закриває творчі планшетки у нативних player handler і pool exchange, але не кожен прямий сторонній ManaItem-виклик. Докладні сценарії: docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md.

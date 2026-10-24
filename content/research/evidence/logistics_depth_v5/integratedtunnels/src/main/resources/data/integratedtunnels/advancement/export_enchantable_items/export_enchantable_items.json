@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "id": "integrateddynamics:variable",
+      "components": {
+        "integrateddynamics:variable_facade": {
+          "partId": 1,
+          "_id": 1,
+          "_type": "integrateddynamics:aspect",
+          "aspectName": "integratedtunnels:write_operator_item_export"
+        }
+      }
+    },
+    "title": {
+      "translate": "advancement.integratedtunnels.export_enchantable_items"
+    },
+    "description": {
+      "translate": "advancement.integratedtunnels.export_enchantable_items.desc"
+    },
+    "frame": "challenge"
+  },
+  "parent": "integratedtunnels:importer_exporter/exporter_item",
+  "criteria": {
+    "criteria_0": {
+      "trigger": "integrateddynamics:part_writer_aspect",
+      "conditions": {
+        "part_type": "integratedtunnels:exporter_item",
+        "aspect": "integratedtunnels:write_operator_item_export",
+        "variable": {
+          "type": "value_type",
+          "value": {
+            "type": "operator",
+            "operator": "integrateddynamics:itemstack_enchantable"
+          }
+        }
+      }
+    }
+  }
+}

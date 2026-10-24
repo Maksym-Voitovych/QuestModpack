@@ -1,0 +1,18 @@
+{
+  "source_path": "src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java",
+  "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+  "source_original_sha256": "3cb44d57257cd175c17b5984c00ac6aee42971a1593bbf1b71f70413a9bd88f9",
+  "source_url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java",
+  "excerpts": [
+    {
+      "start_line": 35,
+      "end_line": 100,
+      "text": "import java.util.Optional;\nimport java.util.function.Function;\n\npublic class RitualRecipe implements Recipe<RecipeInput> {\n\n\tprivate final NonNullList<Ingredient> materials;\n\tprivate final NonNullList<Ingredient> incenses;\n\tpublic final int level;\n\tpublic final String color;\n\tprivate final int colorInt;\n\tpublic final String secondaryColor;\n\tprivate final int secondaryColorInt;\n\tpublic final ResourceLocation effectId;\n\tpublic final RitualEffect effect;\n\t@Nullable\n\tpublic final CompoundTag effectConfig;\n\n\tpublic RitualRecipe(ResourceLocation effectId, @Nullable CompoundTag effectConfig, NonNullList<Ingredient> materials,\n\t                    NonNullList<Ingredient> incenses, int level, String color, String secondaryColor) {\n\t\tthis.materials = materials;\n\t\tthis.incenses = incenses;\n\t\tthis.level = level;\n\t\tthis.effectId = effectId;\n\t\tthis.effect = RitualBaseRegistry.RITUALS.get(effectId);\n\t\tthis.effectConfig = effectConfig;\n\t\tthis.color = color;\n\t\tthis.colorInt = RootsUtil.intColorFromHexString(color);\n\t\tthis.secondaryColor = secondaryColor;\n\t\tthis.secondaryColorInt = RootsUtil.intColorFromHexString(secondaryColor);\n\t}\n\n\tpublic RitualRecipe(ResourceLocation effectId, Optional<CompoundTag> optionalConfig, NonNullList<Ingredient> materials,\n\t                    NonNullList<Ingredient> incenses, int level, String color, String secondaryColor) {\n\t\tthis(effectId, optionalConfig.orElse(null), materials, incenses, level, color, secondaryColor);\n\t}\n\n\t@Override\n\tpublic RecipeSerializer<?> getSerializer() {\n\t\treturn RootsRecipes.RITUAL_SERIALIZER.get();\n\t}\n\n\t@Override\n\tpublic ItemStack assemble(RecipeInput recipeInput, HolderLookup.Provider provider) {\n\t\treturn getResultItem(provider);\n\t}\n\n\t@Override\n\tpublic ItemStack getResultItem(HolderLookup.Provider provider) {\n\t\treturn effect.getResult(effectConfig, provider).copy();\n\t}\n\n\t@Override\n\tpublic NonNullList<Ingredient> getIngredients() {\n\t\treturn materials;\n\t}\n\n\t@Override\n\tpublic RecipeType<?> getType() {\n\t\treturn RootsRecipes.RITUAL_RECIPE_TYPE.get();\n\t}\n\n\t@Override\n\tpublic boolean canCraftInDimensions(int p_43999_, int p_44000_) {\n\t\treturn false;\n\t}\n\n"
+    },
+    {
+      "start_line": 122,
+      "end_line": 130,
+      "text": "\tpublic static class SerializeRitualRecipe implements RecipeSerializer<RitualRecipe> {\n\t\tprivate static final MapCodec<RitualRecipe> CODEC = RecordCodecBuilder.mapCodec(\n\t\t\tinstance -> instance.group(\n\t\t\t\t\tResourceLocation.CODEC.fieldOf(\"effect\").forGetter(recipe -> recipe.effectId),\n\t\t\t\t\tCompoundTag.CODEC.optionalFieldOf(\"effectConfig\").forGetter(recipe -> Optional.ofNullable(recipe.effectConfig)),\n\t\t\t\t\tIngredient.CODEC_NONEMPTY\n\t\t\t\t\t\t.listOf()\n\t\t\t\t\t\t.fieldOf(\"ingredients\")\n\t\t\t\t\t\t.flatXmap(\n"
+    }
+  ]
+}

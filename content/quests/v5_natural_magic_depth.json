@@ -1,0 +1,940 @@
+{
+  "schema": 1,
+  "quest_count": 22,
+  "quests": [
+    {
+      "id": "V5_DEPTH_TOTEMIC_STAFF",
+      "epoch": 2,
+      "title_uk": "Посох для діагностики тотема",
+      "description_uk": [
+        "Виготовте Totemic Staff та огляньте основу. ПКМ показує стан тотема, а удар посохом по основі скасовує вибір або церемонію. Перед складними мелодіями навчіться безпечно виходити з помилкового вибору.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:totemic_staff",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "totemic:totemic_staff",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "totemic:totem_base",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_TOTEMIC_02"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_staff"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_FERTILITY",
+      "epoch": 7,
+      "title_uk": "Мелодія родючості: перший справжній виступ",
+      "description_uk": [
+        "Виберіть Fertility флейтою та барабаном у режимі вибору, потім припиніть присідати й грайте різними інструментами. Підготуйте дубовий саджанець: ця церемонія дає доступ до кедра. З кедра виготовте Wind Chime для наступного танцю. Залишайтеся не далі 8 блоків від основи в момент запуску ефекту.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:wind_chime",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:ceremonies/fertility"
+        },
+        {
+          "type": "item",
+          "item": "totemic:cedar_sapling",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "totemic:wind_chime",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_MAG_TOTEMIC_03",
+        "V5_DEPTH_TOTEMIC_STAFF"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_fertility"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_BUFFALO",
+      "epoch": 7,
+      "title_uk": "Бізони після завершеної мелодії",
+      "description_uk": [
+        "Виберіть Buffalo Dance барабаном і Wind Chime. Корова поруч із тотемом стає бізоном після успішної церемонії. Збережіть стадо, перш ніж отримувати шкіру: наступні інструменти залежать від відновлюваних бізонів.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:buffalo_hide",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:ceremonies/buffalo_dance"
+        },
+        {
+          "type": "item",
+          "item": "totemic:buffalo_hide",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_TOTEMIC_FERTILITY"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_buffalo"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_FLUTE",
+      "epoch": 7,
+      "title_uk": "Флейта, посилена самою церемонією",
+      "description_uk": [
+        "Для Flute Infusion використайте флейту та брязкальце як селектори. Розподіліть мелодію між інструментами: білий дим означає, що поріг одного інструмента вичерпано. Результат — Infused Flute; сам позичений результат не замінює нативний доказ виступу.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:infused_flute",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:ceremonies/flute_infusion"
+        },
+        {
+          "type": "item",
+          "item": "totemic:infused_flute",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_TOTEMIC_BUFFALO",
+        "V5_MAG_TOTEMIC_05"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_flute"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_EAGLE",
+      "epoch": 7,
+      "title_uk": "Орлиний танець і кістяний свисток",
+      "description_uk": [
+        "Підготуйте папугу та виконайте Eagle Dance, обравши брязкальце й Wind Chime. Церемонія повертає білоголових орланів; їхні кістки потрібні Eagle-Bone Whistle. Виготовлений свисток розширює набір інструментів для найскладніших мелодій.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:eagle_bone_whistle",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:ceremonies/eagle_dance"
+        },
+        {
+          "type": "item",
+          "item": "totemic:eagle_bone_whistle",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_DEPTH_TOTEMIC_BUFFALO",
+        "V5_MAG_TOTEMIC_06"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_eagle"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_MEDICINE_BAG",
+      "epoch": 7,
+      "title_uk": "Пасивний ефект у дорожній сумці",
+      "description_uk": [
+        "Виготовте Medicine Bag. Присядьте й натисніть ПКМ сумкою по різьбленій частині тотема, щоб вибрати її ефект; звичайний ПКМ відкриває або закриває сумку. Для заряджання станьте біля тотема з тим самим ефектом. Завдання перевіряє новий крафт сумки, а не її заряд або записаний ефект.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:medicine_bag",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "totemic:medicine_bag",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "totemic:totemic_staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "totemic:totem_pole",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_TOTEMIC_BUFFALO",
+        "V5_DEPTH_TOTEMIC_STAFF"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_medicine_bag"
+    },
+    {
+      "id": "V5_DEPTH_TOTEMIC_BAYKOK",
+      "epoch": 31,
+      "title_uk": "Байкок: від виконаної мелодії до перемоги",
+      "description_uk": [
+        "Облаштуйте арену й виберіть Baykok Summon через Wind Chime та Eagle-Bone Whistle. Це складний виступ: сильніша флейта, різні інструменти та ритм важливіші за дублювання одного інструмента. Завершіть виклик поруч з основою, переможіть Байкока й заберіть його лук.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "totemic:baykok_bow",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:ceremonies/baykok_summon"
+        },
+        {
+          "type": "kill",
+          "entity": "totemic:baykok",
+          "count": 1
+        },
+        {
+          "type": "item",
+          "item": "totemic:baykok_bow",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_TOTEMIC_FLUTE",
+        "V5_DEPTH_TOTEMIC_EAGLE"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "totemic:cedar_planks",
+          "count": 2
+        }
+      ],
+      "mod": "totemic",
+      "research_map": "totemic",
+      "mechanic_stage": "totemic:depth_baykok"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_CRUSHER",
+      "epoch": 14,
+      "title_uk": "Перший дух-дробар: завершений виклик",
+      "description_uk": [
+        "Завершіть summon_foliot_crusher за Dictionary of Spirits. Foliot Crusher підбирає придатну руду та викидає пил; базовий дух дає дві одиниці пилу з однієї руди. Для автоматичної подачі та збирання далі потрібні Transporter і Janitor. Досягнення підтверджує саме закінчення виклику, а не виготовлення пилу.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії."
+      ],
+      "icon": "occultism:copper_dust",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/summon_foliot_crusher"
+        }
+      ],
+      "after": [
+        "V5_MAG_OCCULTISM_03"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_crusher"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_TRANSPORTER",
+      "epoch": 14,
+      "title_uk": "Дух-переносник і початковий білий список",
+      "description_uk": [
+        "Завершіть виклик Transporter. Книгою виклику виберіть джерело й призначення, а присівши відкрийте його фільтри. Початковий режим — білий список, тому порожній фільтр не переміщує нічого. Дух може подавати предмети в інвентар іншого духа; це основа лінії дроблення.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:book_of_calling_foliot_transport_items",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/summon_foliot_transport_items"
+        },
+        {
+          "type": "item",
+          "item": "occultism:book_of_calling_foliot_transport_items",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_CRUSHER"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_transporter"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_LUMBERJACK",
+      "epoch": 14,
+      "title_uk": "Лісоруб, який повертає саджанці",
+      "description_uk": [
+        "Добудьте стабільний Otherworld Sapling через відповідного торгового духа та викличте Lumberjack. Книгою визначте робочу зону й скриню. За наявності місця вивантаження він збирає деревину та висаджує саджанці; пауза після очищення ділянки є штатною оптимізацією.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:book_of_calling_foliot_lumberjack",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/summon_foliot_lumberjack"
+        },
+        {
+          "type": "item",
+          "item": "occultism:book_of_calling_foliot_lumberjack",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_TRANSPORTER"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_lumberjack"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_CRYSTALLIZER",
+      "epoch": 24,
+      "title_uk": "Кристалізація як окрема спеціалізація",
+      "description_uk": [
+        "Завершіть виклик Foliot Crystallizer за окремим ритуалом. Не підміняйте його Crusher: кристалізація має власні рецепти. Передайте підтримуваний вхід через Transporter; квест підтверджує виклик спеціаліста, але не вимірює кількість виконаних ним перетворень.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії."
+      ],
+      "icon": "occultism:spirit_attuned_crystal",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/summon_foliot_crystallizer"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_LUMBERJACK"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_crystallizer"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_MINER_FOLIOT",
+      "epoch": 28,
+      "title_uk": "Перший шахтар у магічній лампі",
+      "description_uk": [
+        "Виконайте саме чинний ритуал AIA2 для Miner Foliot: він поєднує духа з Earth Essence та електронною схемою. Оригінальний upstream recipe ID у збірці замінено, тому спеціальне досягнення слухає активний ID AIA2. Надалі лампа працює в Dimensional Mineshaft.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:miner_foliot_unspecialized",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:rituals/foliot_miner"
+        },
+        {
+          "type": "item",
+          "item": "occultism:miner_foliot_unspecialized",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_CRYSTALLIZER",
+        "V5_MAG_OCCULTISM_07"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_miner_foliot"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_STORAGE_REMOTE",
+      "epoch": 28,
+      "title_uk": "Прив’язаний віддалений доступ",
+      "description_uk": [
+        "Завершіть ритуал зв’язування Storage Remote. Інвентарна присутність пульта сама не перевіряє його прив’язку: назва духа й контролер мають відповідати інструкції Dictionary of Spirits. Нативне досягнення фіксує завершення ритуалу, а не дальність доступу до сховища.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:storage_remote",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/craft_storage_remote"
+        },
+        {
+          "type": "item",
+          "item": "occultism:storage_remote",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_MINER_FOLIOT"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_storage_remote"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_MINER_DJINNI",
+      "epoch": 28,
+      "title_uk": "Шахтар джинів успадковує попередню лампу",
+      "description_uk": [
+        "Покращте Foliot Miner ритуалом craft_miner_djinni_ores. Поточний рецепт споживає попередню лампу, Iesnium Pickaxe та зв’язану книгу джина; це зміна спеціалізації, а не ще одна випадкова колекція. Після ритуалу перевірте допуск лампи до шахти.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:miner_djinni_ores",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "occultism:occultism/craft_miner_djinni_ores"
+        },
+        {
+          "type": "item",
+          "item": "occultism:miner_djinni_ores",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_STORAGE_REMOTE"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_miner_djinni"
+    },
+    {
+      "id": "V5_DEPTH_OCCULTISM_MINER_MARID",
+      "epoch": 39,
+      "title_uk": "Майстер-шахтар: підтверджене зв’язування",
+      "description_uk": [
+        "Виконайте пізній ритуал AIA2 для Miner Marid. Його Terrasteel і Processing Unit поєднують магію та техніку. Спеціальне досягнення реагує на замінений активний рецепт AIA2, тому стара книга або позичена лампа не відкривають цей виробничий доказ.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "occultism:miner_marid_master",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:rituals/marid_miner"
+        },
+        {
+          "type": "item",
+          "item": "occultism:miner_marid_master",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_OCCULTISM_MINER_DJINNI",
+        "V5_MAG_OCCULTISM_10"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "occultism:tallow",
+          "count": 2
+        }
+      ],
+      "mod": "occultism",
+      "research_map": "occultism",
+      "mechanic_stage": "occultism:depth_miner_marid"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_DETECTOR",
+      "epoch": 9,
+      "title_uk": "Зворотний зв’язок від аури до редстоуну",
+      "description_uk": [
+        "Виготовте Aura Detector та встановіть компаратор. Детектор не видає керувальний сигнал сам по собі: саме компаратор читає місцеву ауру. Порівняйте покази з Environmental Eye, перш ніж під’єднувати відсічення генератора.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:aura_detector",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "naturesaura:aura_detector",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:aura_detector",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "naturesaura:eye",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_NATURESAURA_05"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_detector"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_FLOWERS",
+      "epoch": 9,
+      "title_uk": "Шість квітів для відновлення ділянки",
+      "description_uk": [
+        "Виготовте Herbivorous Absorber і підготуйте шість різних малих квітів. Він споживає квіти навколо себе тільки у Верхньому світі; повторення одного виду знижує ефективність. Продумайте ротацію та зупинку подачі за показом детектора. Комплект квітів є підготовкою, а не лічильником спожитих квітів.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:flower_generator",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "naturesaura:flower_generator",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:flower_generator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:dandelion",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:poppy",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:blue_orchid",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:allium",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cornflower",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:oxeye_daisy",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_DETECTOR"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_flowers"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_CACHE",
+      "epoch": 9,
+      "title_uk": "Переносний запас має місце заряджання",
+      "description_uk": [
+        "Виготовте Aura Cache й огляньте Natural Altar. Покладіть кеш на вівтар: аура переходить із запасу вівтаря до переносного предмета. Environmental Eye показує запас, але завдання не читає заряд компонента — новий крафт і огляд підтверджують підготовку.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:aura_cache",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "naturesaura:aura_cache",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:nature_altar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "naturesaura:eye",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_FLOWERS"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_cache"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_CONSTRUCTOR",
+      "epoch": 21,
+      "title_uk": "Автоконструктор із зрозумілою орієнтацією",
+      "description_uk": [
+        "Виготовте Automatic Constructor зі Sky Ingot. Зберіть структуру з Ancient Logs за книгою: стрілка пристрою позначає верхній ряд рецепта. Інґредієнти треба покласти на відповідні колоди, а результат падає знизу. Огляд і комплект не підтверджують кожен автоматичний цикл.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:auto_crafter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "naturesaura:auto_crafter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:auto_crafter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "naturesaura:ancient_log",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_CACHE",
+        "E21_X_sky_ingot"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_constructor"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_DEPTH_METAL",
+      "epoch": 21,
+      "title_uk": "Глибинний метал: рецепт саме цієї версії",
+      "description_uk": [
+        "Після відкриття Nether і Sky Ingot виготовте Depth Ingot. У Nature’s Aura 41.10 активний рецепт depth_ingot_creation використовує Sky Ingot, Tainted Gold та Netherite Scrap на верстаку; це не старий ритуал інфузії, скопійований з іншої версії. Зразок потрібен для подальших природних інструментів.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:depth_ingot",
+      "tasks": [
+        {
+          "type": "dimension",
+          "dimension": "minecraft:the_nether"
+        },
+        {
+          "type": "item",
+          "item": "naturesaura:depth_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "naturesaura:tainted_gold",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_CONSTRUCTOR"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_depth_metal"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_CATALYST",
+      "epoch": 31,
+      "title_uk": "Ліміт генератора — окремий рівень керування",
+      "description_uk": [
+        "Виготовте Creational Catalyst та встановіть його безпосередньо під генератором. Він знімає звичайний поріг утворення аури, але надлишок може розсіюватися. Залиште компараторний контроль: зняття обмеження не означає, що слід нескінченно перевантажувати територію.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:generator_limit_remover",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "naturesaura:generator_limit_remover",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:generator_limit_remover",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:aura_detector",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_DEPTH_METAL",
+        "V5_MAG_NATURESAURA_08"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_catalyst"
+    },
+    {
+      "id": "V5_DEPTH_NATURESAURA_POSITIVE_BALANCE",
+      "epoch": 31,
+      "title_uk": "Середовище справді накопичило ауру",
+      "description_uk": [
+        "Відновіть і посильте природну ділянку та залишайтеся поруч, доки штатний серверний контроль Nature’s Aura не зафіксує позитивний дисбаланс. Код 41.10 перевіряє ауру раз на 200 тіків у радіусі 25, поріг — 1 500 000. Після демонстрації відрегулюйте відсічення. Досягнення підтверджує стан середовища, а не роботу конкретного генератора.",
+        "Автоматичний облік вимагає вказаного нативного досягнення. /give предмета не виконує цю умову; старе законно отримане досягнення може зарахуватися без повторення дії.",
+        "Огляд підтверджує встановлений блок, предметні завдання — саме зазначений комплект. Вони не вимірюють вміст компонентів, швидкість, безперервність або налаштування всієї установки."
+      ],
+      "icon": "naturesaura:eye_improved",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "naturesaura:positive_imbalance"
+        },
+        {
+          "type": "observation",
+          "block": "naturesaura:aura_detector",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_NATURESAURA_CATALYST"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "naturesaura:gold_leaf",
+          "count": 2
+        }
+      ],
+      "mod": "naturesaura",
+      "research_map": "naturesaura",
+      "mechanic_stage": "naturesaura:depth_positive_balance"
+    }
+  ]
+}

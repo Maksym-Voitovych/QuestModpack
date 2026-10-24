@@ -1,0 +1,41 @@
+{
+  "scope": "Minimal exact excerpts for FTB Quests2101.1.36 serialization and matching, not a complete redistributed implementation. No FTB code is executed by AIA2.",
+  "sources": [
+    {
+      "upstream_url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/ItemTask.java",
+      "upstream_sha256": "9848b7f4fb537c453614ca5407dc367a2b6acc0b934158d35411af0b1b717fb9",
+      "source_path": "common/src/main/java/dev/ftb/mods/ftbquests/quest/task/ItemTask.java",
+      "source_pin": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+      "excerpts": [
+        {
+          "line": 95,
+          "text": "\t\tif (matchComponents != ComponentMatchType.NONE) {\n\t\t\tnbt.putString(\"match_components\", ComponentMatchType.NAME_MAP.getName(matchComponents));\n\t\t}\n\n\t\tif (taskScreenOnly) {"
+        },
+        {
+          "line": 111,
+          "text": "\t\tmatchComponents = ComponentMatchType.NAME_MAP.get(nbt.getString(\"match_components\"));"
+        }
+      ]
+    },
+    {
+      "upstream_url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/integration/item_filtering/ItemMatchingSystem.java",
+      "upstream_sha256": "3eee1a1b0e1ebec8774d21fe118658319c31f77abfb10146047710d34c59b865",
+      "source_path": "common/src/main/java/dev/ftb/mods/ftbquests/integration/item_filtering/ItemMatchingSystem.java",
+      "source_pin": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+      "excerpts": [
+        {
+          "line": 54,
+          "text": "                case NONE -> true;\n                case FUZZY -> fuzzyMatch(stackA.getComponents(), stackB.getComponents());\n                case STRICT -> ItemStack.isSameItemSameComponents(stackA, stackB);\n            };"
+        },
+        {
+          "line": 61,
+          "text": "    private boolean fuzzyMatch(DataComponentMap map, DataComponentMap toMatch) {\n        return map.stream().allMatch(tc -> toMatch.has(tc.type()) && toMatch.get(tc.type()).equals(tc.value()));\n    }"
+        },
+        {
+          "line": 69,
+          "text": "    public enum ComponentMatchType {\n        NONE(\"none\"),\n        FUZZY(\"fuzzy\"),\n        STRICT(\"strict\");\n"
+        }
+      ]
+    }
+  ]
+}

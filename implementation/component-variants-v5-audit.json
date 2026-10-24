@@ -1,0 +1,26 @@
+{
+  "recipes": 1,
+  "source_removals": 3,
+  "preserved_normal_routes": [
+    "botania:mana_tablet",
+    "botania:mana_tablet_alt"
+  ],
+  "baseline_recipes_preserved": 602,
+  "minimum_completed_epochs": 48,
+  "ordinary_item_gate": 5,
+  "component_aware_output_verified": true,
+  "catalog_file": "content/recipes/v5_component_variants.json",
+  "catalog_sha256": "51a664d32476ea07bd2b09c22fd28bc73605a1abaabfcaee204815535d9412e2",
+  "creative_tablet_removed_native_routes": [
+    "avaritia:botania_mana_tablet",
+    "botania:cre/creative_mana_tablet_extreme",
+    "botania:cre/terra_plate/creative_mana_tablet"
+  ],
+  "retained_producer": "aia2:v5/variants/creative_mana_tablet",
+  "full_pack_execution": false,
+  "limitations": [
+    "Guard0.4.3 фільтрує творчі планшетки в нативних player inventory/accessories ManaItemHandler та pool exchange до completed48, включно з імпортованими предметами. Прямі сторонні виклики ManaItem поза цими маршрутами потребують окремого аудиту.",
+    "Нативний Terra Plate, JEI та FTB component matcher у повному інстансі не запускалися.",
+    "Звичайний Ingredient із mana_tablet приймає будь-який її варіант; результат1:1 та Creative Essence у вході не створюють самопідживлення або дублювання."
+  ]
+}

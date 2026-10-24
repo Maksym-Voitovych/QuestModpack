@@ -1,0 +1,13 @@
+{
+  "source_path": "src/main/java/dev/shadowsoffire/apotheosis/AdventureEvents.java",
+  "pin": "7dd7cec26830074f1745529eb8f1f533092733d0",
+  "source_original_sha256": "6cd935259b1f6dfb063cec75b2380e32527cdf30288bbfb1d098451fee983685",
+  "source_url": "https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/AdventureEvents.java",
+  "excerpts": [
+    {
+      "start_line": 262,
+      "end_line": 276,
+      "text": "    }\n\n    @SubscribeEvent\n    public void gemSmashing(AnvilLandEvent e) {\n        Level level = e.getLevel();\n        BlockPos pos = e.getPos();\n        List<ItemEntity> items = level.getEntitiesOfClass(ItemEntity.class, new AABB(pos));\n        for (ItemEntity ent : items) {\n            ItemStack stack = ent.getItem();\n            if (stack.is(Items.GEM)) {\n                ent.setItem(new ItemStack(Items.GEM_DUST, stack.getCount()));\n            }\n        }\n    }\n\n"
+    }
+  ]
+}

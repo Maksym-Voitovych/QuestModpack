@@ -1,0 +1,18 @@
+{
+  "source_path": "src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java",
+  "pin": "659c494e044a87137547b5305bb267d2a73ab702",
+  "source_original_sha256": "0bc103a4c1ba4aa1ea33b5a1e8c6ab7049acfa828811b41320dbd6845b8ac870",
+  "source_url": "https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java",
+  "excerpts": [
+    {
+      "start_line": 150,
+      "end_line": 160,
+      "text": "\t@Override\n\t@Nonnull\n\tpublic Fluid getSource(){\n\t\treturn this.entry.source.get();\n\t}\n\t\n\t@Override\n\t@Nonnull\n\tpublic Item getBucket(){\n\t\treturn this.entry.bucket.get();\n\t}\n"
+    },
+    {
+      "start_line": 230,
+      "end_line": 254,
+      "text": "\t\t}\n\t\t\n\t\tprotected static <S extends IPFluid, F extends IPFluid, B extends IPFluidBlock> IPFluidEntry make(String name, Function<IPFluidEntry, S> makeSource, Function<IPFluidEntry, F> makeFlowing, BiFunction<IPFluidEntry, BlockBehaviour.Properties, B> makeBlock, @Nullable Consumer<FluidType.Properties> buildAttributes, List<Property<?>> properties){\n\t\t\treturn make(name, 0, makeSource, makeFlowing, makeBlock, buildAttributes, properties);\n\t\t}\n\t\t\n\t\tprotected static <S extends IPFluid, F extends IPFluid, B extends IPFluidBlock> IPFluidEntry make(String name, int burnTime, Function<IPFluidEntry, S> makeSource, Function<IPFluidEntry, F> makeFlowing, BiFunction<IPFluidEntry, BlockBehaviour.Properties, B> makeBlock, @Nullable Consumer<FluidType.Properties> buildAttributes, List<Property<?>> properties){\n\t\t\tFluidType.Properties builder = FluidType.Properties.create();\n\t\t\tif(buildAttributes != null){\n\t\t\t\tbuildAttributes.accept(builder);\n\t\t\t}\n\t\t\t\n\t\t\tDeferredHolder<FluidType, CustomFluidType> type = IPRegisters.registerFluidType(name, () -> new CustomFluidType(name, builder));\n\t\t\t\n\t\t\tMutable<IPFluidEntry> thisMutable = new MutableObject<>();\n\t\t\t\n\t\t\tDeferredHolder<Fluid, IPFluid> source = IPRegisters.registerFluid(name, () -> IPFluid.makeFluid(makeSource, thisMutable.getValue()));\n\t\t\tDeferredHolder<Fluid, IPFluid> flow = IPRegisters.registerFluid(name + \"_flowing\", () -> IPFluid.makeFluid(makeFlowing, thisMutable.getValue()));\n\t\t\tDeferredHolder<Block, IPFluidBlock> block = IPRegisters.registerBlock(name + \"_fluid_block\", () -> makeBlock.apply(thisMutable.getValue(), Properties.ofFullCopy(Blocks.WATER).noLootTable()));\n\t\t\tDeferredHolder<Item, IPBucketItem> bucket = IPRegisters.registerItem(name + \"_bucket\", () -> new IPBucketItem(source, burnTime));\n\t\t\t\n\t\t\tIPFluidEntry entry = new IPFluidEntry(source, flow, block, bucket, type, properties);\n\t\t\tthisMutable.setValue(entry);\n\t\t\tFLUIDS.add(entry);\n\t\t\treturn entry;\n"
+    }
+  ]
+}

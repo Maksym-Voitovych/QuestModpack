@@ -1,0 +1,13 @@
+{
+  "source_path": "neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/BlackHoleBlockEntity.java",
+  "pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+  "source_original_sha256": "d623a297e945f3b02593324c08975ba21f0a348b13368b45acd50cd5fba15955",
+  "source_url": "https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/BlackHoleBlockEntity.java",
+  "excerpts": [
+    {
+      "start_line": 58,
+      "end_line": 94,
+      "text": "        }\n    }\n\n    public static void serverTick(Level level, BlockPos pos, BlockState state, BlackHoleBlockEntity blockEntity) {\n        List<Entity> entities = level.getEntities(null, new AABB(pos.getX() + 0.5 - 5, pos.getY() + 0.5 - 5, pos.getZ() + 0.5 - 5, pos.getX() + 0.5 + 5, pos.getY() + 0.5 + 5, pos.getZ() + 0.5 + 5));\n\n        for (Entity entity : entities) {\n            if (!entity.getType().is(ModTags.EntityTypes.BLACK_HOLE_AFFECTED)) {\n                continue;\n            }\n\n            if (entity instanceof ItemEntity itemEntity && !blockEntity.isAffectedItem(itemEntity)) {\n                continue;\n            }\n\n            double distance = entity.position().distanceTo(pos.getCenter());\n            double movementFactor = blockEntity.getMovementFactor(distance);\n\n            entity.push((pos.getX() + 0.5 - entity.getX()) * movementFactor, (pos.getY() + 0.5 - entity.getY() + 1.25) * movementFactor, (pos.getZ() + 0.5 - entity.getZ()) * movementFactor);\n\n            if (distance <= DAMAGE_DISTANCE) {\n                if (entity instanceof ExperienceOrb experienceOrb) {\n                    blockEntity.stored_xp += experienceOrb.getValue();\n\n                    if (blockEntity.stored_xp >= 60) {\n                        blockEntity.throwOutItemStack(level, new ItemStack(ModItems.XPETRIFIED_ORB.get()), pos.getCenter());\n                        blockEntity.stored_xp = 0;\n                    }\n                    experienceOrb.kill();\n                } else {\n                    entity.hurt(level.damageSources().magic(), 4);\n                }\n            }\n        }\n\n        blockEntity.thrownOutItems.removeIf(itemEntity -> !itemEntity.isAlive());\n    }\n"
+    }
+  ]
+}

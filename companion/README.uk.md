@@ -1,7 +1,7 @@
-# AIA2 Machine Guard — 0.4.2-alpha
+# AIA2 Machine Guard — 0.4.3-alpha
 
 Допоміжний мод для Minecraft 1.21.1, NeoForge 21.1.264 та Java 21.
-Скомпільований JAR: `mods/aia2-machine-guard-0.4.2-alpha.jar` у корені репозиторію.
+Скомпільований JAR: `mods/aia2-machine-guard-0.4.3-alpha.jar` у корені репозиторію.
 Не залишайте одночасно дві версії цього моду в інстансі.
 
 Мод перехоплює стандартний серверний `BlockEntityTicker.tick` перед виконанням
@@ -146,3 +146,9 @@ assertions справжнього mixin-handler і GuardPolicy у модельн
 Evolution: optional Mixin binding та реальні інжектори потрібно перевірити
 в повному модпаку.49ванільних серверних перевірок належать версії0.4.2.
 Докази: `implementation/draconic-cache-v5-audit.json` у корені проєкту.
+
+## 0.4.3 — компонентний захист творчої мани
+
+CreativeManaGuard розрізняє звичайну й творчу Mana Tablet через CUSTOM_DATA.creative. Два optional mixin перевіряють нативні ManaItemHandler inventory/accessories списки та canExport/canReceiveManaFromPool. До completed48 творчі джерела фільтруються; чужа/невідома команда, fake player, unready та pool без власника залишаються закритими. Стек і його NBT не змінюються; окремого tick-сканера інвентарів немає. Перевірки creative output додано також до mayCraft/mayProduce.
+
+5237Java assertions і Gradle build PASS;22реальні helper/policy assertions у модельованому host PASS. Мінімальний сервер0.4.3 у2JVM пройшов49перевірок і restart persistence. Справжній Botania/DE dispatch у повному інстансі не запускався. Прямі сторонні ManaItem capability-виклики поза перехопленими шляхами ще не сертифіковані.

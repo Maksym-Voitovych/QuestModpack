@@ -1,0 +1,130 @@
+package org.cyclops.integratedterminals;
+
+import net.neoforged.fml.config.ModConfig;
+import org.cyclops.cyclopscore.config.ConfigurableProperty;
+import org.cyclops.cyclopscore.config.extendedconfig.DummyConfig;
+import org.cyclops.cyclopscore.tracking.Analytics;
+import org.cyclops.cyclopscore.tracking.Versions;
+
+/**
+ * A config with general options for this mod.
+ * @author rubensworks
+ *
+ */
+public class GeneralConfig extends DummyConfig {
+
+    @ConfigurableProperty(category = "core", comment = "If an anonymous mod startup analytics request may be sent to our analytics service.")
+    public static boolean analytics = true;
+
+    @ConfigurableProperty(category = "core", comment = "If the version checker should be enabled.")
+    public static boolean versionChecker = true;
+
+    @ConfigurableProperty(category = "core", comment = "The maximum number of terminal storage instances that can be sent in a single packet. Reduce this when you have packet overflows.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static int terminalStoragePacketMaxInstances = 512;
+    @ConfigurableProperty(category = "core", comment = "The maximum number of terminal storage crafting recipes that can be sent in a single packet. Reduce this when you have packet overflows.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static int terminalStoragePacketMaxRecipes = 128;
+    @ConfigurableProperty(category = "core", comment = "If crafting plans should default to the graph-based view. If false, it will default to the flattened view.", isCommandable = true, configLocation = ModConfig.Type.COMMON)
+    public static boolean terminalStorageDefaultToCraftingPlanGraph = true;
+    @ConfigurableProperty(category = "core", comment = "If crafting plans can also be shown as a tree list, next to the graph and compact views.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean terminalStorageCraftingPlanTreeListEnabled = false;
+    @ConfigurableProperty(category = "core", comment = "The limit for the number of leaves in a tree-based crafting plan after which it won't be sent to the client anymore.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static int terminalStorageMaxTreePlanSize = 64;
+    @ConfigurableProperty(category = "core", comment = "If storage terminals can be ender-upgraded with an eye of ender to gain a tab with the player's ender chest contents.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static boolean terminalStorageTabEnderChestEnabled = true;
+    @ConfigurableProperty(category = "core", comment = "If ender-upgraded storage terminals should emit ender particles.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static boolean terminalStorageEnderParticles = false;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be selected when clicking on an item in the storage terminal.", isCommandable = true)
+    public static int guiStorageItemInitialQuantity = 64;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be removed when right-clicking when an item is selected in the storage terminal.", isCommandable = true)
+    public static int guiStorageItemIncrementalQuantity = 1;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be selected when clicking on a fluid in the storage terminal.", isCommandable = true)
+    public static int guiStorageFluidInitialQuantity = 100000;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be removed when right-clicking when a fluid is selected in the storage terminal.", isCommandable = true)
+    public static int guiStorageFluidIncrementalQuantity = 1000;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be selected when clicking on energy in the storage terminal.", isCommandable = true)
+    public static int guiStorageEnergyInitialQuantity = 100000;
+
+    @ConfigurableProperty(category = "machine", comment = "The number of items that should be removed when right-clicking when energy is selected in the storage terminal.", isCommandable = true)
+    public static int guiStorageEnergyIncrementalQuantity = 1000;
+
+    @ConfigurableProperty(category = "machine", comment = "The update frequency in milliseconds for the crafting jobs gui.", isCommandable = true)
+    public static int guiTerminalCraftingJobsUpdateFrequency = 1000;
+
+    @ConfigurableProperty(category = "machine", comment = "If a toast should be shown when a crafting job that you requested has been completed.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean craftingJobFinishedToast = true;
+
+    @ConfigurableProperty(category = "core", comment = "The number of threads that the crafting plan calculator can use.", minimalValue = 1, requiresMcRestart = true, configLocation = ModConfig.Type.SERVER)
+    public static int craftingPlannerThreads = 2;
+
+    // TODO: consider removing this in next major.
+    @ConfigurableProperty(category = "core", comment = "If the crafting planners can work on separate thread. WARNING: THIS IS UNSAFE, AND WILL CAUSE SOME JOBS TO FAIL!!!", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static boolean craftingPlannerEnableMultithreading = false;
+    @ConfigurableProperty(category = "core", comment = "If client-directed packets should be serialized in a separate thread.", isCommandable = true, configLocation = ModConfig.Type.SERVER)
+    public static boolean packetSerializationEnableMultithreading = true;
+    @ConfigurableProperty(category = "core", comment = "If client-received packets should be deserialized in a separate thread.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean packetDeserializationEnableMultithreading = true;
+
+    @ConfigurableProperty(category = "general", comment = "The base energy usage for the crafting terminal.", minimalValue = 0, configLocation = ModConfig.Type.SERVER)
+    public static int terminalCraftingBaseConsumption = 1;
+    @ConfigurableProperty(category = "general", comment = "The base energy usage for the storage terminal.", minimalValue = 0, configLocation = ModConfig.Type.SERVER)
+    public static int terminalStorageBaseConsumption = 2;
+
+    @ConfigurableProperty(category = "general", comment = "If the search box and button states should be synchronized between the item storage and crafting tabs.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean syncItemStorageAndCraftingTabStates = true;
+
+    @ConfigurableProperty(category = "general", comment = "If storage terminal interactions should be shown immediately, before the server confirms them.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean guiStoragePredictInteractions = true;
+
+    @ConfigurableProperty(category = "general", comment = "For testing only: hold storage terminal clicks back by this many milliseconds, to imitate a server that is far away. 0 disables this.", isCommandable = true, minimalValue = 0, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageSimulatedLatency = 0;
+
+    @ConfigurableProperty(category = "general", comment = "If shift-clicking on the crafting terminal's crafting result slot should only produce a single result.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean shiftClickCraftingResultLimit = false;
+
+    @ConfigurableProperty(category = "general", comment = "The number of rows in the small scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleSmallRows = 5;
+    @ConfigurableProperty(category = "general", comment = "The number of columns in the small scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleSmallColumns = 9;
+    @ConfigurableProperty(category = "general", comment = "The number of rows in the medium scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleMediumRows = 7;
+    @ConfigurableProperty(category = "general", comment = "The number of columns in the medium scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleMediumColumns = 10;
+    @ConfigurableProperty(category = "general", comment = "The number of rows in the large scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleLargeRows = 9;
+    @ConfigurableProperty(category = "general", comment = "The number of columns in the large scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleLargeColumns = 11;
+    @ConfigurableProperty(category = "general", comment = "The number of columns in the height-based scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleHeightColumns = 9;
+    @ConfigurableProperty(category = "general", comment = "The number of rows in the width-based scale of the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleWidthRows = 5;
+    @ConfigurableProperty(category = "general", comment = "The maximum number of rows in when scaling the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleMaxRows = 20;
+    @ConfigurableProperty(category = "general", comment = "The maximum number of columns in when scaling the storage terminal.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static int guiStorageScaleMaxColumns = 32;
+    @ConfigurableProperty(category = "general", comment = "If the crafting grid should always be shown centrally, and not be responsive based on screen size.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean guiStorageForceCraftingGridCenter = false;
+    @ConfigurableProperty(category = "general", comment = "If the automatic re-sorting of the storage terminal contents should be paused while the shift key is held down.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean guiStoragePauseSortingWhileShifting = true;
+    @ConfigurableProperty(category = "general", comment = "If the tooltips in the storage terminal should indicate the channels in which ingredients are available when all channels are shown at once.", isCommandable = true, configLocation = ModConfig.Type.CLIENT)
+    public static boolean guiStorageTooltipChannels = true;
+
+    public GeneralConfig() {
+        super(IntegratedTerminals._instance, "general");
+    }
+
+    @Override
+    public void onRegistered() {
+        if(analytics) {
+            Analytics.registerMod(getMod(), Reference.GA_TRACKING_ID);
+        }
+        if(versionChecker) {
+            Versions.registerMod(getMod(), IntegratedTerminals._instance, Reference.VERSION_URL);
+        }
+    }
+
+}

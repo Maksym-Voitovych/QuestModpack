@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "id": "integrateddynamics:variable",
+      "components": {
+        "integrateddynamics:variable_facade": {
+          "partId": 1,
+          "_id": 1,
+          "_type": "integrateddynamics:aspect",
+          "aspectName": "integrateddynamics:write_integer_redstone"
+        }
+      }
+    },
+    "title": {
+      "translate": "advancement.integrateddynamics.redstone_transmission"
+    },
+    "description": {
+      "translate": "advancement.integrateddynamics.redstone_transmission.desc"
+    }
+  },
+  "parent": "integrateddynamics:aspects/redstone_observement",
+  "criteria": {
+    "criteria_0": {
+      "trigger": "integrateddynamics:part_writer_aspect",
+      "conditions": {
+        "parttype": "integrateddynamics:redstone_writer",
+        "aspect": "integrateddynamics:write_integer_redstone",
+        "variable": {
+          "type": "aspect",
+          "aspect": "integrateddynamics:read_integer_redstone_value",
+          "value": {
+            "type": "serialized",
+            "value_type": "integrateddynamics:integer",
+            "value": "{Primitive:15}"
+          }
+        }
+      }
+    }
+  }
+}

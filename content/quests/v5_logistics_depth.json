@@ -1,0 +1,747 @@
+{
+  "schema": 1,
+  "quests": [
+    {
+      "id": "V5_LOG_ID_NETWORK",
+      "epoch": 28,
+      "title_uk": "Мережа, яка справді зібрана",
+      "description_uk": [
+        "Після менрилової підготовки з’єднайте щонайменше десять Logic Cables в одну мережу. Останній кабель установіть самі, щоб нативна подія мала гравця-власника.",
+        "Досягнення перевіряє подію ініціалізації та мінімум десять кабелів у мережі; це більше за запас кабелів у кишені.",
+        "FTB перевіряє нативне досягнення integrateddynamics:network_foundations/networks_logic. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:network_foundations/networks_logic"
+        }
+      ],
+      "after": [
+        "E28_X_menril"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_PROGRAMMER_GUI",
+      "epoch": 28,
+      "title_uk": "Відкрийте редактор логіки",
+      "description_uk": [
+        "Відкрийте Logic Programmer і знайдіть розділ числових значень. Блоковий і переносний програматори використовують спільну базову GUI-систему.",
+        "Цей крок перевіряє відкриття GUI програматора; запис константи буде окремою дією наступного кроку.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/logic_programming. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/logic_programming"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_NETWORK",
+        "V4_E28_logic_contracts_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_INTEGER",
+      "epoch": 28,
+      "title_uk": "Запишіть ціле число на картку",
+      "description_uk": [
+        "У Logic Programmer виберіть Integer, задайте число та запишіть його на порожню Variable Card. Повторіть з іншим числом для майбутнього додавання.",
+        "Перевірка вимагає створення integer-змінної саме програматором; порожня картка або предмет із Creative цього не доводять.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/constant_definition. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/constant_definition"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_PROGRAMMER_GUI"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_REDSTONE",
+      "epoch": 28,
+      "title_uk": "Зчитаний сигнал має тип",
+      "description_uk": [
+        "Приєднайте Redstone Reader до живої мережі й направте його на джерело сигналу. У слоті Integer Redstone Value зв’яжіть нову Variable Card із поточним аспектом.",
+        "Нативна умова перевіряє redstone_reader та read_integer_redstone_value; на цьому кроці не потрібно видавати читання за готову автоматику.",
+        "FTB перевіряє нативне досягнення integrateddynamics:aspects/redstone_capturing. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:aspects/redstone_capturing"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_INTEGER"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_ADDITION",
+      "epoch": 28,
+      "title_uk": "Обчислення замість числа вручну",
+      "description_uk": [
+        "Запишіть оператор Addition, посилаючись на дві числові картки. Покладіть обидві вихідні картки у Variable Store тієї самої мережі, а результат вставте в Display Panel.",
+        "Integrated Dynamics обчислює посилання ліниво: без доступних в мережі вихідних карток ви отримаєте помилку. Досягнення перевіряє operator arithmetic_addition на панелі.",
+        "FTB перевіряє нативне досягнення integrateddynamics:logic_operations/arithmetic_addition. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:logic_operations/arithmetic_addition"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_INTEGER",
+        "V4_E28_logic_contracts_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_LIST",
+      "epoch": 28,
+      "title_uk": "Список — це окремий тип",
+      "description_uk": [
+        "Створіть у програматорі List з цілими числами 1, 10 і 100 саме в цьому порядку та покажіть його на Display Panel. Це основа для подальшої роботи зі списками інвентарів.",
+        "Досягнення порівнює серіалізований integer-список [1,10,100] на панелі, а не кількість карток у гравця.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_operations/logical_list_building. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_operations/logical_list_building"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_ADDITION"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_MATERIALIZE",
+      "epoch": 28,
+      "title_uk": "Зафіксуйте динамічне значення",
+      "description_uk": [
+        "Вставте динамічну картку з мережі у верхній слот Materializer. Лівий слот записує на порожню картку значення, яке джерело має в цей момент.",
+        "Нативний доказ — створення змінної блоком Materializer. Отримана статична картка не оновлюватиметься разом із початковим сигналом.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_network_components/variable_materialization. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_network_components/variable_materialization"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_REDSTONE",
+        "V5_LOG_ID_ADDITION"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_PROXY",
+      "epoch": 28,
+      "title_uk": "Змінне джерело без переписування схеми",
+      "description_uk": [
+        "Підготуйте Proxy і створіть проксовану Variable Card. Посилайтеся на неї у схемі, а джерело надалі замінюйте в Proxy замість перезапису всіх залежних карток.",
+        "Досягнення фіксує створення змінної саме через Proxy; це перевірка операції прив’язки, а не тривалий тест усієї схеми.",
+        "FTB перевіряє нативне досягнення integrateddynamics:advanced_network_components/variable_proxying. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:advanced_network_components/variable_proxying"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_MATERIALIZE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_DELAY",
+      "epoch": 28,
+      "title_uk": "Історія значення для керування",
+      "description_uk": [
+        "Після статичних знімків і проксі підготуйте Delay. Створіть через нього картку затриманого значення, щоб працювати з попередніми станами сигналу.",
+        "Досягнення вимагає створення змінної блоком Delay; налаштування тривалості та поведінку під час перезапуску перевіряйте на своїй установці окремо.",
+        "FTB перевіряє нативне досягнення integrateddynamics:saving_state/variable_delaying. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:saving_state/variable_delaying"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_PROXY"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_ID_WRITE15",
+      "epoch": 28,
+      "title_uk": "Передайте зчитані п’ятнадцять",
+      "description_uk": [
+        "З’єднайте Redstone Reader і Writer однією мережею. Зчитайте цілий сигнал рівня 15 та вставте саме цю aspect-картку в Integer Redstone Writer.",
+        "Нативна умова вимагає reader-aspect read_integer_redstone_value зі значенням 15 на writer-aspect write_integer_redstone. Це перевіряє налаштований логічний зв’язок, а не просту наявність двох вузлів.",
+        "FTB перевіряє нативне досягнення integrateddynamics:aspects/redstone_transmission. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": "integrateddynamics:variable",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integrateddynamics:aspects/redstone_transmission"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_REDSTONE",
+        "V5_LOG_ID_DELAY"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integrateddynamics",
+      "research_map": "integrateddynamics"
+    },
+    {
+      "id": "V5_LOG_IT_IMPORT_TRUE",
+      "epoch": 28,
+      "title_uk": "Увімкніть імпортер логічним дозволом",
+      "description_uk": [
+        "Приєднайте до мережі Item Interface зі сховищем і Item Importer біля джерела. Вставте boolean true (порожню картку за правилами книги) у потрібний boolean-aspect імпорту.",
+        "Порівняйте ролі: interface відкриває інвентар мережі, importer намагається забрати ресурс із цільового контейнера. Нативний доказ підтверджує саме вибір аспекту з true.",
+        "FTB перевіряє нативне досягнення integratedtunnels:import_all_items/import_all_items. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": "integratedtunnels:part_exporter_item",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedtunnels:import_all_items/import_all_items"
+        }
+      ],
+      "after": [
+        "V5_LOG_ID_INTEGER",
+        "E28_X_item_tunnel"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedtunnels",
+      "research_map": "integratedtunnels"
+    },
+    {
+      "id": "V5_LOG_IT_IMPORT_LIST",
+      "epoch": 28,
+      "title_uk": "Список інвентарю задає вибір",
+      "description_uk": [
+        "Зчитайте список ItemStacks через Inventory Reader і передайте list-картку в list-aspect Item Importer. Так вибір ресурсів залежить від даних, а не від суцільного boolean true.",
+        "Досягнення в цій версії перевіряє активацію write_list_item_import; фактичний вміст списку та перенесений обсяг нативна умова не вимірює.",
+        "FTB перевіряє нативне досягнення integratedtunnels:import_items_list/import_items_list. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": "integratedtunnels:part_exporter_item",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedtunnels:import_items_list/import_items_list"
+        }
+      ],
+      "after": [
+        "V5_LOG_IT_IMPORT_TRUE",
+        "V5_LOG_ID_LIST"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedtunnels",
+      "research_map": "integratedtunnels"
+    },
+    {
+      "id": "V5_LOG_IT_ENCHANTABLE",
+      "epoch": 28,
+      "title_uk": "Експорт за предикатом предмета",
+      "description_uk": [
+        "Створіть константу-предикат Item Enchantable й вставте її в operator-aspect Item Exporter. Відокремте спорядження для зачарування від решти складських ресурсів.",
+        "Перевірений upstream-предикат вимагає operator itemstack_enchantable на вибраному аспекті; перевірку успішної доставки у приймач не підміняємо цим досягненням.",
+        "FTB перевіряє нативне досягнення integratedtunnels:export_enchantable_items/export_enchantable_items. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": "integratedtunnels:part_exporter_item",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedtunnels:export_enchantable_items/export_enchantable_items"
+        }
+      ],
+      "after": [
+        "V5_LOG_IT_IMPORT_LIST"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedtunnels",
+      "research_map": "integratedtunnels"
+    },
+    {
+      "id": "V5_LOG_IT_DAY_FILTER",
+      "epoch": 28,
+      "title_uk": "Видимість сховища за часом доби",
+      "description_uk": [
+        "Зчитайте World Reader boolean Is Day та поставте Filtering Item Interface біля окремої скрині. У boolean filter-aspect вставте картку Is Day.",
+        "Удень ресурси цієї скрині мають бути доступні мережі, вночі — приховані. Нативне досягнення перевіряє підключення саме world-isday aspect; зміну доступності перевірте на установці самі.",
+        "FTB перевіряє нативне досягнення integratedtunnels:filter_storage_day/filter_storage_day. Просте отримання предмета його не замінює.",
+        "Доказ — вибір writer-aspect і відповідної змінної в GUI, а не виміряний перенос предметів або пропускна здатність."
+      ],
+      "icon": "integratedtunnels:part_exporter_item",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedtunnels:filter_storage_day/filter_storage_day"
+        }
+      ],
+      "after": [
+        "V5_LOG_IT_ENCHANTABLE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedtunnels",
+      "research_map": "integratedtunnels"
+    },
+    {
+      "id": "V5_LOG_TERMINAL_GUI",
+      "epoch": 28,
+      "title_uk": "Термінал відкритий у мережі",
+      "description_uk": [
+        "Зробіть Menril Glass у Drying Basin, установіть Storage Terminal на кабель і відкрийте його GUI. Перевірте, що предметний інтерфейс справді включений до тієї самої мережі.",
+        "Нативне досягнення підтверджує відкриття ContainerTerminalStorageBase; наповнення вкладок залежить від доступних item/fluid/energy-інтерфейсів і перевіряється окремо.",
+        "FTB перевіряє нативне досягнення integratedterminals:storage_terminal/gui_storage_terminal. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integratedterminals:part_terminal_storage",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedterminals:storage_terminal/gui_storage_terminal"
+        }
+      ],
+      "after": [
+        "V5_LOG_IT_IMPORT_TRUE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedterminals",
+      "research_map": "integratedterminals"
+    },
+    {
+      "id": "V5_LOG_TERMINAL_FILTER",
+      "epoch": 28,
+      "title_uk": "Предикат у слоті термінала",
+      "description_uk": [
+        "Створіть у Logic Programmer predicate Item Enchantable та вставте його в нижній правий variable-слот предметної вкладки Storage Terminal.",
+        "Це інший механізм, ніж текстовий пошук: нативний тригер перевіряє operator-картку itemstack_enchantable у terminal_storage, а не введення рядка в пошукове поле.",
+        "FTB перевіряє нативне досягнення integratedterminals:storage_terminal_filtering/filter_enchantable. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integratedterminals:part_terminal_storage",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedterminals:storage_terminal_filtering/filter_enchantable"
+        }
+      ],
+      "after": [
+        "V5_LOG_TERMINAL_GUI",
+        "V5_LOG_IT_ENCHANTABLE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedterminals",
+      "research_map": "integratedterminals"
+    },
+    {
+      "id": "V5_LOG_TERMINAL_ENDER",
+      "epoch": 28,
+      "title_uk": "Окрема вкладка особистого Ender Chest",
+      "description_uk": [
+        "Натисніть ПКМ по встановленому Storage Terminal з Eye of Ender. Відкрийте нову Ender Storage-вкладку: вона показує особисту скриню гравця, а не спільний інвентар мережі.",
+        "Досягнення має окремий terminal_storage_ender_upgraded trigger. Нативний виклик виконується при успішному перетворенні блочного термінала, тому однієї наявності ока недостатньо.",
+        "FTB перевіряє нативне досягнення integratedterminals:storage_terminal_ender/ender_upgrade_storage_terminal. Просте отримання предмета його не замінює."
+      ],
+      "icon": "integratedterminals:part_terminal_storage",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "integratedterminals:storage_terminal_ender/ender_upgrade_storage_terminal"
+        }
+      ],
+      "after": [
+        "V5_LOG_TERMINAL_FILTER"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "integrateddynamics:crystalized_menril_chunk",
+          "count": 2
+        }
+      ],
+      "mod": "integratedterminals",
+      "research_map": "integratedterminals"
+    },
+    {
+      "id": "V5_LOG_ROUTER_TERMINATION",
+      "epoch": 24,
+      "title_uk": "Порядок модулів і зупинка тіку",
+      "description_uk": [
+        "Виготовте Void Module і розмістіть його перед Sender у списку модулів. Увімкніть Termination кнопкою T саме на Void Module, щоб після видалення дозволеного сміття наступний модуль не відправив решту того самого стеку.",
+        "Нативна книга пояснює: Termination зупиняє наступні модулі лише коли поточний справді виконав роботу цього тіку. FTB перевіряє новий крафт модуля та огляд роутера, але не читає прапорець T або його GUI."
+      ],
+      "icon": "modularrouters:modular_router",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modularrouters:modular_router",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:void_module",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:sender_module_1",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E24_router_contracts_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "modularrouters:blank_module",
+          "count": 2
+        }
+      ],
+      "mod": "modularrouters",
+      "research_map": "modularrouters"
+    },
+    {
+      "id": "V5_LOG_ROUTER_ACTIVATOR",
+      "epoch": 24,
+      "title_uk": "Дії інструмента через Activator",
+      "description_uk": [
+        "Виготовте Activator Module і підготуйте тестову ділянку з Iron Hoe. Виберіть Right-click та потрібний напрямок; режим атаки сутності має інші витрати енергії й підпорядковується cooldown зброї.",
+        "FTB фіксує нове виготовлення Activator і огляд роутера з комплектом. Успішну дію fake player та сумісність із Machine Guard перевіряйте на доступній епосі; цей квест їх не засвідчує."
+      ],
+      "icon": "modularrouters:modular_router",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modularrouters:modular_router",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:activator_module",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_hoe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E24_router_contracts_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "modularrouters:blank_module",
+          "count": 2
+        }
+      ],
+      "mod": "modularrouters",
+      "research_map": "modularrouters"
+    },
+    {
+      "id": "V5_LOG_ROUTER_EXTRUDER",
+      "epoch": 24,
+      "title_uk": "Шаблон віртуального мосту",
+      "description_uk": [
+        "Виготовте Extruder Module Mk2 і задайте в його шаблоні короткий міст із блоків. На відміну від Mk1, Mk2 розміщує віртуальні блоки з ghost-шаблону, а не витрачає предмети буфера.",
+        "Такі блоки нічого не дають після руйнування й не призначені для ферми ресурсів. FTB перевіряє крафт Mk2 та огляд станції; схему, дистанцію й вільний прохід перевірте на своїй ділянці."
+      ],
+      "icon": "modularrouters:modular_router",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modularrouters:modular_router",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:extruder_module_2",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:stone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_LOG_ROUTER_ACTIVATOR"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "modularrouters:blank_module",
+          "count": 2
+        }
+      ],
+      "mod": "modularrouters",
+      "research_map": "modularrouters"
+    },
+    {
+      "id": "V5_LOG_ROUTER_DIMENSIONAL",
+      "epoch": 32,
+      "title_uk": "Міжвимірний вихід потребує завантаження",
+      "description_uk": [
+        "Після відкриття End виготовте Sender Module Mk3: його рецепт використовує End Stone, тому цей маршрут навмисно стоїть пізніше за локальні Mk1/Mk2.",
+        "Mk3 відправляє ресурси до цілі в іншому вимірі, але не завантажує чанк цілі самостійно. FTB перевіряє саме новий крафт Mk3; працездатність пари завантажених вузлів і право доступу команди перевіряються окремо."
+      ],
+      "icon": "modularrouters:modular_router",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modularrouters:modular_router",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:sender_module_3",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:ender_chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E24_router_contracts_08"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "modularrouters:blank_module",
+          "count": 2
+        }
+      ],
+      "mod": "modularrouters",
+      "research_map": "modularrouters"
+    },
+    {
+      "id": "V5_LOG_ROUTER_PLAYER",
+      "epoch": 32,
+      "title_uk": "Власник персонального модуля",
+      "description_uk": [
+        "Виготовте Player Module вже після Mk3. Модуль прив’язується до автора крафту; для переприв’язки власник тримає модуль і виконує sneak-right-click. Підготуйте Security Upgrade для роутера.",
+        "Player Module працює з інвентарем конкретного гравця, його бронею, offhand або Ender-скринею та може діяти між вимірами. FTB перевіряє новий крафт і захисний комплект; UUID компонента та захищеність сервера цим не перевіряються."
+      ],
+      "icon": "modularrouters:modular_router",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modularrouters:modular_router",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:player_module",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "modularrouters:security_upgrade",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_LOG_ROUTER_DIMENSIONAL"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "modularrouters:blank_module",
+          "count": 2
+        }
+      ],
+      "mod": "modularrouters",
+      "research_map": "modularrouters"
+    }
+  ]
+}

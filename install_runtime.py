@@ -360,6 +360,11 @@ def plan_install(source, instance):
                         required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
                     if not required <= set(jar.namelist()) or jar.testzip() is not None:
                         raise InstallError('Progression v4 needs the matching API4 companion with FTB, manufacturing, Rhino and cached-fusion guards')
+                    creative_guard = {'ua/aia2/guard/CreativeManaGuard.class',
+                                      'ua/aia2/guard/mixin/BotaniaManaItemHandlerMixin.class',
+                                      'ua/aia2/guard/mixin/BotaniaManaTabletPoolMixin.class'}
+                    if not creative_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching component-aware creative mana guard')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

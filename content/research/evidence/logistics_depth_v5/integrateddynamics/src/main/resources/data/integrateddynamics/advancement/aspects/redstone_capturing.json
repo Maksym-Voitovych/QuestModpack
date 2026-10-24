@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "id": "integrateddynamics:variable",
+      "components": {
+        "integrateddynamics:variable_facade": {
+          "partId": 1,
+          "_id": 1,
+          "_type": "integrateddynamics:aspect",
+          "aspectName": "integrateddynamics:read_integer_redstone_value"
+        }
+      }
+    },
+    "title": {
+      "translate": "advancement.integrateddynamics.redstone_capturing"
+    },
+    "description": {
+      "translate": "advancement.integrateddynamics.redstone_capturing.desc"
+    }
+  },
+  "parent": "integrateddynamics:basic_network_components/redstone_reading",
+  "criteria": {
+    "criteria_0": {
+      "trigger": "integrateddynamics:part_reader_aspect",
+      "conditions": {
+        "parttype": "integrateddynamics:redstone_reader",
+        "aspect": "integrateddynamics:read_integer_redstone_value"
+      }
+    }
+  }
+}

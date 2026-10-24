@@ -181,6 +181,73 @@
       "y": 0.0
     },
     {
+      "id": "000093C207AA6265",
+      "title": "Рамка з рідинним реагентом",
+      "description": [
+        "Огляньте Dissolution Chamber і підготуйте просту рамку та латекс. Рецепти цієї машини поєднують до восьми предметних позицій з одним рідинним реагентом; перевірте активний рецепт рамки в JEI, не змішуючи резервуари довільними рідинами.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:machine_frame_simple",
+        "count": 1
+      },
+      "dependencies": [
+        "0000712198F09511",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000016546515DB84",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:dissolution_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00005F75002062CC",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_frame_simple",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9BE66303D58",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:latex_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003224FEEA3C85",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004A6FD4F1F442",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 3.0,
+      "y": 11.0
+    },
+    {
       "id": "0000B4B180AFC2F7",
       "title": "Проста рамка без пластикового кола",
       "description": [
@@ -944,7 +1011,7 @@
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 14.0
     },
     {
       "id": "00000A8A0E0D8425",
@@ -996,7 +1063,7 @@
       "optional": true,
       "rewards": [],
       "x": 3.0,
-      "y": 15.0
+      "y": 17.0
     },
     {
       "id": "00002EBB0734E4CE",
@@ -1056,8 +1123,8 @@
       ],
       "optional": false,
       "rewards": [],
-      "x": 16.0,
-      "y": 15.0
+      "x": 11.0,
+      "y": 17.0
     },
     {
       "id": "00003B522B1A3074",
@@ -1104,8 +1171,86 @@
       ],
       "optional": false,
       "rewards": [],
-      "x": 11.0,
-      "y": 15.0
+      "x": 6.0,
+      "y": 17.0
+    },
+    {
+      "id": "0000ADC34B6309C2",
+      "title": "Грядка розрізняє будівельний і робочий ресурс",
+      "description": [
+        "Огляньте Hydroponic Bed і звірте її активний рецепт: Fertilizer входить до будівельного складу самої грядки. Підготуйте насіння та воду для подальшого знайомства з інтерфейсом; не вважайте будівельний Fertilizer автоматичною вимогою постійної роботи. Режими прискорення перевіряйте в книзі та GUI встановленої версії.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:fertilizer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F49DD5D34966",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007275AC52B1A9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:hydroponic_bed",
+          "timer": 40
+        },
+        {
+          "id": "000053F444C6DCA9",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:fertilizer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F6B2EE98A34",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000728A21A5D956",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B0DDD6D97AF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E71AE248B581",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 14.0,
+      "y": 17.0
     },
     {
       "id": "0000C0A540E29A27",
@@ -1151,7 +1296,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 15.0
+      "y": 17.0
     },
     {
       "id": "0000E5627021F7BC",
@@ -1202,8 +1347,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 6.0,
-      "y": 15.0
+      "x": 3.0,
+      "y": 9.0
     },
     {
       "id": "00006C51B65E6E93",
@@ -1254,8 +1399,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 8.0,
-      "y": 15.0
+      "x": 5.0,
+      "y": 10.0
     },
     {
       "id": "0000938161392121",
@@ -1323,8 +1468,363 @@
           "count": 2
         }
       ],
-      "x": 13.0,
-      "y": 15.0
+      "x": 8.0,
+      "y": 17.0
+    },
+    {
+      "id": "0000E886707D929F",
+      "title": "Два рідинні продукти забійної фабрики",
+      "description": [
+        "Огляньте Mob Slaughter Factory й відокремте зразки Meat та Pink Slime. Це два різні рідинні виходи для різних цілей; не заливайте ними один спільний резервуар. Рожева сировина підтримує наступний рівень рамок у Dissolution Chamber.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:pink_slime_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C51B65E6E93",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DC1C19E90F7D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:mob_slaughter_factory",
+          "timer": 40
+        },
+        {
+          "id": "0000E33D840E9935",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:pink_slime_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062C07B6CF4DE",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:meat_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065F67C8C594D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000027A47684F8C3",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 7.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000D6D32C5D7842",
+      "title": "Просунута рамка має попередника",
+      "description": [
+        "Підготуйте просту й просунуту рамки біля Dissolution Chamber. У поточному рецепті перевірте потрібну рідину та діамантовий компонент: апгрейд спирається на попередній виробничий рівень, а не замінює його безкоштовно.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:machine_frame_simple",
+        "count": 1
+      },
+      "dependencies": [
+        "000093C207AA6265",
+        "0000E886707D929F",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BDAC402E1BD1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:dissolution_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00007889A4A76E25",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_frame_simple",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5E1C4B763B4",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_frame_advanced",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000652F34893C5A",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:pink_slime_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED098E481E93",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ACAA066F0DD9",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 9.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000DBB3C2B4681B",
+      "title": "Дублювання використовує окрему есенцію",
+      "description": [
+        "Огляньте Mob Duplicator і підготуйте Mob Imprisonment Tool та зразок Essence. Зразок моба задає ціль, а рідка есенція є робочим ресурсом: Pink Slime із забійної фабрики її не замінює. Наявність інструмента не означає, що всередині вже потрібний моб.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:mob_imprisonment_tool",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D6D32C5D7842",
+        "0000E5627021F7BC",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C1A1ED77FBE2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:mob_duplicator",
+          "timer": 40
+        },
+        {
+          "id": "00009ECDD516A096",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:mob_imprisonment_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000691CCC891AE7",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:essence_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D89EA97409F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000042109B7314AB",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 11.0,
+      "y": 10.0
+    },
+    {
+      "id": "00007D4E68B4F44F",
+      "title": "Ефірний газ — окрема лазерна спеціалізація",
+      "description": [
+        "Огляньте Stasis Chamber і Fluid Laser Base, підготуйте Purple Laser Lens та зразок Ether Gas. Порівняйте цей процес із рудною базою: джерело, лінза й стабілізація цілі мають окремі умови в актуальному JEI. Цей комплект не доводить живого Wither у камері чи швидкість видобутку.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:purple_laser_lens",
+        "count": 1
+      },
+      "dependencies": [
+        "00000AB1D6439E96",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A933F789D3C0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:stasis_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000E368F92BD0B6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:fluid_laser_base",
+          "timer": 40
+        },
+        {
+          "id": "00006AAF556786A0",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:purple_laser_lens",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D807318BC89",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:ether_gas_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000028D260105BB3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000138C4378DA50",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 20.0
+    },
+    {
+      "id": "00005C4A552E7EDA",
+      "title": "Реактор не замінює мережу генераторів",
+      "description": [
+        "Огляньте Mycelial Reactor та підготуйте Supreme Machine Frame й Ether Gas. Його рецепт завершує матеріальний шлях, але велика генерація FE залежить від одночасної роботи різних Mycelial Generators у мережі. FTB перевіряє реактор і зразки, не обіцяючи, що вся генераторна мережа вже працює.",
+        "FTB перевіряє встановлені станції та вказані зразки в інвентарі. Це підготовка й звірка продуктів, а не автоматичне вимірювання роботи мережі, тиску, FE/t або кількості виробничих циклів."
+      ],
+      "icon": {
+        "id": "industrialforegoing:machine_frame_supreme",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D4E68B4F44F",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002E56B84403F5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:mycelial_reactor",
+          "timer": 40
+        },
+        {
+          "id": "000019433D9DF751",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_frame_supreme",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D84ADA29FA3E",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:ether_gas_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003ED96960CD87",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B46EF083E3E1",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 20.0
     }
   ]
 }

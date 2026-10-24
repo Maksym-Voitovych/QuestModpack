@@ -1,0 +1,739 @@
+{
+  "schema": 1,
+  "quests": [
+    {
+      "id": "V5_DEPTH_BOTANIA_SORTING",
+      "epoch": 15,
+      "title_uk": "Живий сортувальник із підписаними скринями",
+      "description_uk": [
+        "Hopperhock підбирає предмети навколо й кладе їх у сусідні інвентарі. Рамка з предметом на скрині задає фільтр; підписані скрині мають пріоритет. Змініть режим фільтра Wand of the Forest та відокремте паливо від цінних продуктів майстерні.",
+        "Мана для цієї квітки необов’язкова: вона збільшує радіус. Підготуйте дві скрині з різними рамками та огляньте квітку. Автоматично перевіряється комплект для сортування, а не фактичний маршрут кожного предмета."
+      ],
+      "icon": "botania:hopperhock",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "botania:hopperhock",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:item_frame",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "botania:twig_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_07"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:13"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_ALCHEMY",
+      "epoch": 15,
+      "title_uk": "Каталізатор під басейном",
+      "description_uk": [
+        "Alchemy Catalyst встановлюють під Mana Pool: він відкриває окремі рецепти перетворення, а не замінює генерацію мани. Знайдіть у JEI один доступний рецепт із цим каталізатором і відокремте його вхідний матеріал від готового виходу.",
+        "Огляньте каталізатор і басейн, підготуйте жезл для налаштування. FTB підтверджує встановлення та комплект; конкретне виконання алхімічної конверсії тут не вимірюється. Не використовуйте непідтверджені таблиці рецептів зі старих версій."
+      ],
+      "icon": "botania:alchemy_catalyst",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "botania:alchemy_catalyst",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "botania:mana_pool",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "botania:twig_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "botania:mana_powder",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_07"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:14"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_SPARK_TRANSFER",
+      "epoch": 21,
+      "title_uk": "Іскри для керованої Терра-пластини",
+      "description_uk": [
+        "Terra Plate бере ману через Sparks: установіть одну іскру над басейном, іншу над пластинoю. Правий клік жезлом показує доступні зв’язки; іскри різних кольорів не обмінюються маною.",
+        "Перевірте маршрут живлення до того, як кидати Manasteel, Mana Pearl та Mana Diamond. Цей квест перевіряє басейн, пластину й дві іскри в комплекті; запас мани та успішний цикл Terra Plate автоматично не вимірюються."
+      ],
+      "icon": "botania:terra_plate",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "botania:terra_plate",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "botania:mana_pool",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "botania:spark",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "botania:twig_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_08"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:15"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_PORTAL_OPEN",
+      "epoch": 21,
+      "title_uk": "Альфгайм відповідає на відкритий портал",
+      "description_uk": [
+        "Зберіть портал за Lexica Botania, додайте Natura Pylons і манові басейни. Після Terrasteel активуйте конструкцію Wand of the Forest. Це канал торгівлі, а не вимір для проходу гравця.",
+        "Потрібне справжнє досягнення Botania за успішне відкриття порталу: звичайне отримання блока порталу не зараховується. Раніше законно виконане досягнення також визнається, тому повторно витрачати ресурси не потрібно."
+      ],
+      "icon": "botania:alfheim_portal",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "botania:main/elf_portal_open"
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_09"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:16"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_ENCHANTER_FORM",
+      "epoch": 21,
+      "title_uk": "Структура манового зачарування",
+      "description_uk": [
+        "За Lexica Botania побудуйте Mana Enchanter з лазуритовим центром, обсидіаном, квітами та Mana Pylons. Натисніть жезлом на центральний лазуритовий блок: лише правильна структура перетворюється на робочий зачаровувач.",
+        "Перевіряється нативне досягнення за формування конструкції. Воно не видається за просте отримання блока і не означає, що предмет уже зачаровано. Подальше зачарування потребує манового живлення, предмета та придатних зачарованих книг."
+      ],
+      "icon": "botania:enchanter",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "botania:main/enchanter_make"
+        },
+        {
+          "type": "observation",
+          "block": "botania:enchanter",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_10"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:17"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_CORPOREA_REQUEST_LINE",
+      "epoch": 31,
+      "title_uk": "Запит складу через Corporea",
+      "description_uk": [
+        "Corporea Index приймає запити від гравця поруч, а Corporea Funnel придатний для сигналізованої видачі. Під’єднайте їх до скринь через Corporea Sparks; це інша мережа, ніж Sparks для передачі мани.",
+        "Огляньте обидва інтерфейси та підготуйте іскри. Для практичної перевірки зробіть малий запит матеріалу зі складу й перевірте залишок. FTB засвідчує комплект і робочі блоки, але не стверджує, що довільний чат-запит або сигнал уже оброблено."
+      ],
+      "icon": "botania:corporea_index",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "botania:corporea_index",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "botania:corporea_funnel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "botania:corporea_spark",
+          "count": 3,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_BOTANIA_PORTAL_OPEN",
+        "V5_MAG_BOTANIA_11"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:18"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_GAIA_HARDMODE",
+      "epoch": 41,
+      "title_uk": "Другий виклик Ґаї",
+      "description_uk": [
+        "Після першого Guardian of Gaia створіть Gaia Spirit Ingot і пожертвуйте його маяку на придатній арені. Посилений Guardian швидший та витриваліший; це окреме бойове випробування, а не повторне збирання Gaia Spirit зі складу.",
+        "Потрібне нативне досягнення за перемогу саме над hardMode Guardian. Звичайний Guardian або переданий з іншого інвентарю трофей його не замінює. Нове досягнення може зарахуватися й члену команди згідно з правилами FTB."
+      ],
+      "icon": "botania:gaia_ingot",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "botania:challenge/gaia_guardian_hardmode"
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_11",
+        "V5_DEPTH_BOTANIA_PORTAL_OPEN"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:19"
+    },
+    {
+      "id": "V5_DEPTH_BOTANIA_BREWING",
+      "epoch": 21,
+      "title_uk": "Порційні настої замість звичайних зіль",
+      "description_uk": [
+        "Botanical Brewery готує Brews за окремими рецептами з маною та реагентами. Звичайний Brewing Stand ці рецепти не виконує; один заповнений флакон містить кілька доз настою.",
+        "Підготуйте порожню Mana Vial, встановіть Brewery та забезпечте шлях мани. Оберіть доступний настій у поточному JEI. Квест перевіряє саме станцію та тару; вміст компонента Brews і факт варіння цим завданням не засвідчуються."
+      ],
+      "icon": "botania:brewery",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "botania:brewery",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "botania:mana_pool",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "botania:vial",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "botania:twig_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_BOTANIA_10"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "botania:mana_powder",
+          "count": 2
+        }
+      ],
+      "mod": "botania",
+      "research_map": "botania",
+      "mechanic_stage": "botania:20"
+    },
+    {
+      "id": "V5_DEPTH_ARS_GLYPH_SYNTAX",
+      "epoch": 10,
+      "title_uk": "Форма задає шлях, ефект — дію",
+      "description_uk": [
+        "У Scribes Table книга відкриває кодекс гліфів: обраний гліф потребує своїх предметів і досвіду. Підготуйте Projectile як форму та Light як ефект, потім складіть просте закляття з формою перед ефектом.",
+        "Стіл може брати реагенти із сусідніх інвентарів; Dominion Wand змінює автопідбирання. Перевіряються гліфи й встановлений стіл, а не вміст компонентів книги, вивчення гліфа або успішний постріл. Для glyph-рецепта не використовується прапорець звичайного верстатного крафту."
+      ],
+      "icon": "ars_nouveau:glyph_projectile",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ars_nouveau:scribes_table",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:glyph_projectile",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:glyph_light",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:novice_spell_book",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_01"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:11"
+    },
+    {
+      "id": "V5_DEPTH_ARS_RITUAL_PREPARATION",
+      "epoch": 20,
+      "title_uk": "Ритуальна жаровня має активний режим",
+      "description_uk": [
+        "Ritual Brazier може бути декором або виконувати ритуал. Саме світіння від Light не означає виконання ритуалу. Для навчального досліду виготовте Tablet of Gravity і підготуйте жаровню за Worn Notebook.",
+        "Редстоун вимикає активний ритуал. Перевіряються новий крафт таблички звичайного верстатного рецепта та огляд жаровні; ефект ритуалу перевіряється окремим наступним квестом. Запас Source й конкретні реагенти звіряйте з поточним JEI."
+      ],
+      "icon": "ars_nouveau:ritual_gravity",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ars_nouveau:ritual_brazier",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:ritual_gravity",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:dominion_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_04"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:12"
+    },
+    {
+      "id": "V5_DEPTH_ARS_RELAY_DIRECTION",
+      "epoch": 20,
+      "title_uk": "Збір і роздача Source мають напрямок",
+      "description_uk": [
+        "Collector сам збирає Source з неприв’язаних банок у радіусі п’яти блоків; Depositor роздає його неприв’язаним банкам у такому ж радіусі. Звичайний Relay та Dominion Wand задають зв’язки між ділянками.",
+        "Зберіть розділені зони генерації та споживання, огляньте Collector і Depositor. Квест перевіряє інфраструктуру та комплект інструментів. Він не вимірює заповнення Source Jar, напрямок зв’язку або пропускну здатність мережі."
+      ],
+      "icon": "ars_nouveau:relay_collector",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ars_nouveau:relay_collector",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:relay_deposit",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:source_jar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:dominion_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:13"
+    },
+    {
+      "id": "V5_DEPTH_ARS_ALCHEMICAL_SOURCE",
+      "epoch": 20,
+      "title_uk": "Джерело від складності зілля",
+      "description_uk": [
+        "Alchemical Sourcelink споживає зілля із сусідніх Potion Jars. Вихід Source залежить від ефектів, сили та тривалості; це перетворення витратних зіль, а не безкоштовна генерація від самого встановлення блока.",
+        "Огляньте Sourcelink, Potion Jar і Source Jar та підготуйте Potion Flask. Для практичного досліду використайте доступне зілля й порівняйте залишки. FTB підтверджує комплект, але не перевіряє компонент зілля чи обсяг реально згенерованого Source."
+      ],
+      "icon": "ars_nouveau:alchemical_sourcelink",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ars_nouveau:alchemical_sourcelink",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:potion_jar",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:source_jar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:potion_flask",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ARS_RELAY_DIRECTION"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:14"
+    },
+    {
+      "id": "V5_DEPTH_ARS_WIXIE_BATCH",
+      "epoch": 20,
+      "title_uk": "Wixie з керованою чергою рецептів",
+      "description_uk": [
+        "Застосуйте Wixie Charm до казана. Предмет, використаний на Wixie Cauldron, задає ціль крафту; сусідні педестали дозволяють чергувати кілька цілей. Wixie бере матеріали зі складу й витрачає Source, а редстоун зупиняє крафт.",
+        "У AIA2 є окремий апаратний рецепт charm. Огляньте готовий казан, підготуйте педестали та спробуйте малу серію простого витратного компонента. Завдання підтверджує станцію й інфраструктуру, а не виконання довільного рецепта чи сталість роботи."
+      ],
+      "icon": "ars_nouveau:wixie_charm",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ars_nouveau:wixie_cauldron",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:source_jar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:arcane_pedestal",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ars_nouveau:dominion_wand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:redstone",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_05",
+        "V5_DEPTH_ARS_RELAY_DIRECTION"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:15"
+    },
+    {
+      "id": "V5_DEPTH_ARS_BINDING_ACTION",
+      "epoch": 20,
+      "title_uk": "Завершене зв’язування фамільяра",
+      "description_uk": [
+        "У версії 5.13.3 Ritual of Binding перетворює придатну істоту поруч на Bound Script для виклику Familiar. Виберіть істоту за Worn Notebook і виконайте ритуал, замість пошуку старої механіки з іншої версії.",
+        "Потрібне нативне досягнення Familiar: код видає його гравцям у межах восьми блоків під час успішного перетворення. Тримання таблички чи скрипту не замінює цей доказ. Раніше виконане досягнення зберігається й визнається."
+      ],
+      "icon": "ars_nouveau:ritual_binding",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "ars_nouveau:familiar"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ARS_RITUAL_PREPARATION",
+        "V5_MAG_ARS_NOUVEAU_07"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:16"
+    },
+    {
+      "id": "V5_DEPTH_ARS_GRAVITY_ACTION",
+      "epoch": 20,
+      "title_uk": "Відчути ефект ритуальної гравітації",
+      "description_uk": [
+        "Запустіть підготовлений Ritual of Gravity й увійдіть у його дію. Потрібно справді отримати ефект ars_nouveau:gravity; декоративно освітлена жаровня або табличка в інвентарі його не дають.",
+        "Нативне досягнення Ritual Gravity слухає зміну ефектів гравця. Це доказ отриманого ефекту, а не лічильник витрат Source чи перевірка власника жаровні. Раніше законно отримане досягнення також зараховується."
+      ],
+      "icon": "ars_nouveau:ritual_gravity",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "ars_nouveau:ritual_gravity"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ARS_RITUAL_PREPARATION"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:17"
+    },
+    {
+      "id": "V5_DEPTH_ARS_WILDEN_TRIAL",
+      "epoch": 20,
+      "title_uk": "Химера перед книгою архімага",
+      "description_uk": [
+        "Ritual of Summon Wilden без підсилення викликає звичайних Wilden. Додайте Wilden Horn, Wing та Spike для виклику Chimera. Вона руйнує блоки біля жаровні, тому відведіть арену від фабрики та магічної інфраструктури.",
+        "Переможіть Wilden Chimera особисто. FTB перевіряє вбивство ars_nouveau:wilden_boss; сам предмет Wilden Tribute або вбивство звичайного Hunter не замінює випробування. Трофей стане матеріальною основою майбутнього покращення книги."
+      ],
+      "icon": "ars_nouveau:wilden_tribute",
+      "tasks": [
+        {
+          "type": "kill",
+          "entity": "ars_nouveau:wilden_boss",
+          "count": 1
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:ritual_brazier",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_06",
+        "V5_DEPTH_ARS_RITUAL_PREPARATION"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:18"
+    },
+    {
+      "id": "V5_DEPTH_ARS_PRISMATIC_ACTION",
+      "epoch": 30,
+      "title_uk": "Три перенаправлення одного закляття",
+      "description_uk": [
+        "Spell Prism повертає снаряд у напрямку свого блока й дає сигнал сусіднім Observers. Побудуйте маршрут із трьома послідовними призмами та спрямуйте через нього безпечне Projectile-закляття; на фабриці це дозволяє відокремити місце запуску від робочої зони.",
+        "Нативне досягнення Prismatic видається гравцям у межах десяти блоків, коли один снаряд має щонайменше три перенаправлення. Три призми в інвентарі не є доказом. Квест не перевіряє довільну виробничу дію самого закляття."
+      ],
+      "icon": "ars_nouveau:spell_prism",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "ars_nouveau:prismatic"
+        },
+        {
+          "type": "observation",
+          "block": "ars_nouveau:spell_prism",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_ARS_NOUVEAU_10",
+        "V5_DEPTH_ARS_GLYPH_SYNTAX"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "ars_nouveau:source_gem",
+          "count": 2
+        }
+      ],
+      "mod": "ars_nouveau",
+      "research_map": "ars_nouveau",
+      "mechanic_stage": "ars_nouveau:19"
+    }
+  ]
+}

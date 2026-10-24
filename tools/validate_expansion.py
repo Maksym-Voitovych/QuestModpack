@@ -55,6 +55,17 @@ def validate(root=ROOT):
         v5_authored.extend(normalize(load(path))['quests'])
     authored.extend(v5_authored)
     assert len({q['id'] for q in authored}) == len(authored)
+    try:
+        from quest_content_migrations import apply as migrate_quest_content
+        from validate_native_advancements_v5 import validate as validate_native_actions
+        from validate_v5 import installed_versions
+    except ImportError:
+        from tools.quest_content_migrations import apply as migrate_quest_content
+        from tools.validate_native_advancements_v5 import validate as validate_native_actions
+        from tools.validate_v5 import installed_versions
+    authored = migrate_quest_content(authored, root)
+    v5_ids = {q['id'] for q in v5_authored}
+    native_actions = validate_native_actions(root, [q for q in authored if q['id'] in v5_ids], rules, installed_versions(root))
     signatures = defaultdict(list)
     byepoch = Counter()
     tasktypes = Counter()
@@ -77,12 +88,13 @@ def validate(root=ROOT):
         try: from validate_v5 import verified_mechanic_advancements
         except ImportError: from tools.validate_v5 import verified_mechanic_advancements
         allowed_advancements.update(verified_mechanic_advancements(root, rules, bundle))
+    allowed_advancements.update(native_actions['approved_advancements'])
     for q in authored:
         n=q['epoch']; byepoch[n]+=1
         gate_limit = 99 if q.get('post_completion') else n
         assert q['title_uk'].strip() and len(' '.join(q['description_uk'])) >= 80, q['id']
         assert q['icon'] in items, (q['id'],'icon',q['icon'])
-        assert q['tasks'] and any(t['type'] != 'advancement' or not t['advancement'].startswith('aia2:') for t in q['tasks'])
+        assert q['tasks'] and any(t['type'] != 'advancement' or t['advancement'] in allowed_advancements for t in q['tasks'])
         assert rules['itemGates'][q['icon']] <= gate_limit, (q['id'],'future icon',q['icon'])
         signature=[]
         for t in q['tasks']:

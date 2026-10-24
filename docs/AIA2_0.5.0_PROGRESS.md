@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-24 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.2.1-alpha (FTB hotfix та native observers); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.3-alpha (native action goals та component-aware mana guard); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 54 моди/56 записів,386 перевірених файлів доказів; 51 неповна карта та решта каталогу потребують дослідження |
-| 3 | Карти прогресії | IN_PROGRESS | Create/Mek/AE2 core-карти DONE по 14 етапів; інші 51 карта явно часткові |
-| 4 | Перебудова координат | DONE | Усі 136 глав; стара 2784 когорта:1679→1129 перетинів; 0 накладань/зворотних;15 тестів; клієнтський UI окремо |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 277 нових квестів у всіх 48 епохах реалізовано/перевірено; старі лінії та решта модів ще не повністю перероблені |
-| 6 | Перегляд нагород | DONE | 2793 предметні нагороди перевірено,2780payloadзмінено(2511 старих),48 команд збережено;0 майбутніх/OP/машин |
-| 7 | Розширення рецептів | IN_PROGRESS | Поточний 33-рецептнийпідблок DONE(14 тестів),569 старих збережено; подальший міжмодовий баланс у плані |
-| 8 | Предмети без джерел | IN_PROGRESS | 2261 важливий предмет: 11 native-шляхів підтверджено, 2 канонізації виправлено; 22 без явного джерела +49 native-context +1 implicit-codec лишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | Essence/3Poolroutes/29targets DONE; глобальні native/loot/невідомі обходи ще не повністю покрито |
-| 10 | Інтеграційні тести | IN_PROGRESS | Node50/Python91/Java5237/native49(0.4.2)/DEhandler16 PASS, rebuild1136 файлівbyte-identical; повний інстанс/Survival/JEI/TPS BLOCKED—недоступний |
-| 11 | Реліз і push | IN_PROGRESS | Проміжні перевірені коміти/push є; 0.5 не готовий реліз. Пакет hotfix 0.4.2.1, checkpoint нижче |
+| 2 | Дослідження механік | IN_PROGRESS | 58 модів/60 записів,765 SHA-файлів у картах; 45 часткових карт і невивчений контент лишаються |
+| 3 | Карти прогресії | IN_PROGRESS | 13 core-карт DONE;45 часткових карт; повний перелік у REMAINING_COVERAGE |
+| 4 | Перебудова координат | DONE | Усі136глав,0накладань/зворотних/вертикальних; стара2784когорта1679→1129перетинів; UI окремо |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 361 новий квест від v4, з них84 у поточному блоці і49 native action цілей; решта старих ліній ще переглядається |
+| 6 | Перегляд нагород | DONE | 2877 item-нагород перевірено;84нові тематичні,2793старі з checkpoint не змінено;48команд збережено |
+| 7 | Розширення рецептів | IN_PROGRESS | 603рецепти;34v5формули(33+1variant),602попередніJSON збережено; подальший баланс у плані |
+| 8 | Предмети без джерел | IN_PROGRESS | 2288важливихпредметів;29native-source доказів,одна Iron-книга виправлена;7fluid-bucket gap +49native-context +1implicit-codec |
+| 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool і3creativeTablet producers закрито; guard player/pool exchange додано; прямі сторонні capability-виклики ще потребують аудиту |
+| 10 | Інтеграційні тести | IN_PROGRESS | 110Python/50JS/5237Java PASS;49actualMC@0.4.3 у2JVM,22mana-model і16DE-model; fullpack/JEI/TPS не запускалися |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.3—проміжний перевірений блок,0.5ще не готовий; коміти/пакет фіксуються нижче |
 
 ## Окремий стан 48 епох
 
@@ -29,46 +29,46 @@
 | Епоха | Дослідження | Квести v5 | Рецепти v5 | Залежності v5 |
 |---|---|---|---|---|
 | 01 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 02 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
+| 02 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 03 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 04 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 05 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 06 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 07 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
+| 07 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
-| 09 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
-| 14 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (11) | TODO | DONE (static) |
+| 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 18 | IN_PROGRESS | IN_PROGRESS (4) | IN_PROGRESS | DONE (static) |
+| 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
-| 20 | IN_PROGRESS | IN_PROGRESS (18) | TODO | DONE (static) |
-| 21 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
+| 20 | IN_PROGRESS | IN_PROGRESS (25) | TODO | DONE (static) |
+| 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 23 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
-| 24 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
+| 23 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 25 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 26 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
-| 27 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
-| 28 | IN_PROGRESS | IN_PROGRESS (16) | TODO | DONE (static) |
+| 27 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 28 | IN_PROGRESS | IN_PROGRESS (37) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
-| 30 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS | DONE (static) |
-| 31 | IN_PROGRESS | IN_PROGRESS (18) | TODO | DONE (static) |
-| 32 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
+| 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS | DONE (static) |
+| 31 | IN_PROGRESS | IN_PROGRESS (22) | TODO | DONE (static) |
+| 32 | IN_PROGRESS | IN_PROGRESS (24) | TODO | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 34 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
+| 34 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 37 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
 | 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 39 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 39 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 41 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
+| 41 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
 | 42 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 43 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 44 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
@@ -257,3 +257,20 @@
 - Наступна конкретна дія: інтегрувати перевірені карти/контракти/квести,
   виправити стартову книгу Iron's Spells та альтернативи creative tablet;
   завершити генерацію ПЕРЕД повним прогоном тестів і оновленням пакета.
+
+### 2026-10-25 — інтегровано поглиблення механік і творчої мани
+
+- Інфраструктуру нативних доказів/міграцій/нового snapshot збережено й push у `6e7e174`.
+- DONE цього підблоку:84 нові квести (natural22,Ars/Botania17,industrial23,logistics22),49 контрактів нативних дій і7AIA2advancementJSON. Поточний runtime3145квестів/136глав/603рецепти.
+- 10додаткових core-карт завершено: Occultism, NatureAura, Totemic, Ars, Botania, IE, PNC, IntegratedDynamics/Tunnels і ModularRouters. Усього13complete,45partial,58модів/60записів/482етапи. IF збережено partial: newer3.6.39source не видається за точний3.6.38artifact.
+- Nativeцілі перевіряють ритуали, церемонії, формування мультиблоків, логічні типи/оператори, конфігурацію та конкретні магічні дії. Proof_scope не обіцяє виробництва лише за формування машини. ORinventoryfallback відхиляється.
+- Виправлено два Occultism miner-докази під чинні AIA2recipe IDs. Iron beginnerbook замінено wimpy→copper точково без зміни task/quest IDs. Пил біодизельного каталізатора описаний як tag, без необґрунтованої вимоги дубліката конкретного мода.
+- Source-аудит усіх22попередніх випадків:18 підтверджених nativeшляхів,1ремонт книги,3IFпрогалини. Нові fluid-цілі додають4випадки, разом7явних gap; без вигаданих рецептів.
+- Закрито3creativeManaTablet producers, збережено2ordinaryroutes і gate5. Новий TerraPlate вимагає completed48/CreativeEssence/фінальних матеріалів;602старіrecipeJSON byte-preserved.
+- Guard0.4.3 з новими native player inventory/accessories та pool exchange mixin блокує творчий компонент до completed48, включно з імпортом. Native crafting/automation output також перевіряються. Стек/NBT не змінюються, окремого tick-сканера немає. Прямі сторонні ManaItem capability-виклики поза цими маршрутами лишаються в обмеженнях.
+- Тести:110Python/50JS PASS,5237Java build PASS;22 productionhelper/realpolicy умови в модельованому host PASS. Реальний мінімальний Minecraft0.4.3 пройшов49assertions у2JVM і restart SavedData. Botania/DE та інші optional моди в цьому сервері відсутні — це НЕ fullpack dispatch.
+- Повторна генерація:1144runtime-файли byte-identical. Останній точковий перегляд прибрав зайвий матеріальний task із нової IE-цілі; повторний static/DAG/SNBT/контрактний прогін пройшов.
+- Усі3061попередніquest/task/reward ID,136контейнерів глав і залежності збережено.84нові тематичні нагороди;2793старі payload з checkpoint не змінено.390предметів/PNG і96виробничих ключів збережено; нових предметів/текстур0.
+- Наступна конкретна дія: завершити core-карти Roots Classic, Apotheosis та Immersive Petroleum за новими exact-version джерелами з followup-аудиту; далі решту45часткових карт і старі обов'язкові лінії. Паралельно перевірити7fluid-bucket джерел (IF6,PNC1). Fullpack49action-proof/96key/JEI/Survival/TPS сценарії наведені в docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md.
+- Пакет0.4.3-alpha створено й перевірено за CRC та повним SHA-маніфестом. Dry-run з розпакованого пакета не змінює інстанс; справжнє встановлення у тимчасовий інстанс успішно резервує старий0.4.2.1JAR і зберігає world-marker. Windows-інстанс користувача не змінювався.
+- 0.5не оголошено завершеною. Код, ресурси, документація й інсталятор цього підблоку збережені разом; точний фінальний commit/push перевіряти через git log/origin і delivery-звіт поруч із ZIP.

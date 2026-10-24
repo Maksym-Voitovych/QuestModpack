@@ -1,5 +1,18 @@
 # 0.4.2.1-alpha — cached Fusion і джерела матеріалів
 
+## 0.4.3-alpha — 2026-10-25, продовження розробки0.5
+
+- Додано84квести:49nativeaction цілей і35навчальних craft/setup завдань. Усього3145квестів/136глав.
+- Завершено10додаткових core-карт; загалом13complete/45partial із58досліджених модів. Джерела exact-version збережено з SHA.
+- Нативні критерії охоплюють Totemic/Occultism, NA, Ars/Botania, IE/PNC, IntegratedDynamics/Tunnels/Terminals; inventory-OR fallback відхиляється.
+- Два Occultism miner-докази слухають чинні рецепти AIA2; початкову книгу Iron замінено на copper із збереженням quest/task IDs.
+- Закрито3creativeManaTablet producers;1postgame TerraPlate рецепт додає Creative Essence, зберігає компоненти й звичайні планшетки.603рецепти,602старі JSON збережено.
+- Новий Guard0.4.3: component-aware player inventory/accessories і pool exchange; native output і live-team checks; API4 збережено. Прямі сторонні capability-виклики залишені в обмеженнях.
+- Snapshot усіх3061опублікованих квестів і136глав захищає також нові v5 IDs. Нові84нагороди тематичні; попередні2793предметні нагороди не змінено.
+- Перевірено110Python/50JS/5237Java,22guard-model assertions,49actualMinecraft assertions у2JVM на0.4.3. Повний модпак/JEI/TPS не тестовано.
+- 0.5 залишається незавершеною; стан і наступні дії в docs/AIA2_0.5.0_PROGRESS.md.
+
+
 - Усунуто підтверджений обхід кешованого Draconic Fusion: дозвіл перевіряється до активного тіку, зокрема для packet-start/byKey/NBT кешів. Заборонене завдання скасовує заряджання інжекторів без витрати інгредієнтів.
 - Два optional-завдання тепер використовують реальні канонічні матеріали після AlmostUnified, з тими самими quest/task/reward IDs: порошок Create замість EnderIO-дубліката та нікель IE замість Oritech-дубліката.602рецепти, зокрема569старихJSON, не змінено.
 - Додано перевірені source-докази11нативних джерел: Amadron, wrapper-рецепти IE, implicitEternalSingularity, церемонія Totemic, nativeBaykokdrop, аура при розмноженні, кров у пробірці та Hephaestusритуал. Нових рецептів для цих предметів не додано.

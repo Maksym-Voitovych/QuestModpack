@@ -87,7 +87,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "00002E60F0B90786",
@@ -154,7 +154,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "000058261458B692",
@@ -221,7 +221,74 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "0000D75F67D19D03",
+      "title": "Порядок модулів і зупинка тіку",
+      "description": [
+        "Виготовте Void Module і розмістіть його перед Sender у списку модулів. Увімкніть Termination кнопкою T саме на Void Module, щоб після видалення дозволеного сміття наступний модуль не відправив решту того самого стеку.",
+        "Нативна книга пояснює: Termination зупиняє наступні модулі лише коли поточний справді виконав роботу цього тіку. FTB перевіряє новий крафт модуля та огляд роутера, але не читає прапорець T або його GUI."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "00002E60F0B90786",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A37904C2B7B2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000261A748ACCB2",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:void_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C2E52157A3B5",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D51C1DEB58B4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A76C20FB6974",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
     },
     {
       "id": "0000AE3905F95AEF",
@@ -288,7 +355,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "000016992618716E",
@@ -366,7 +433,7 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000064C3F15D5E0",
@@ -433,7 +500,7 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000BC40A7E537B6",
@@ -500,7 +567,7 @@
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00001952EE444BBF",
@@ -578,6 +645,274 @@
         }
       ],
       "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007E215B94BCE7",
+      "title": "Дії інструмента через Activator",
+      "description": [
+        "Виготовте Activator Module і підготуйте тестову ділянку з Iron Hoe. Виберіть Right-click та потрібний напрямок; режим атаки сутності має інші витрати енергії й підпорядковується cooldown зброї.",
+        "FTB фіксує нове виготовлення Activator і огляд роутера з комплектом. Успішну дію fake player та сумісність із Machine Guard перевіряйте на доступній епосі; цей квест їх не засвідчує."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BC40A7E537B6",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ADD0612A3E4F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "0000C57750AB1C26",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:activator_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000091ED8B772705",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_hoe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC8D57367445",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000000E7F6009048",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
+    },
+    {
+      "id": "00002C2D645DAF78",
+      "title": "Шаблон віртуального мосту",
+      "description": [
+        "Виготовте Extruder Module Mk2 і задайте в його шаблоні короткий міст із блоків. На відміну від Mk1, Mk2 розміщує віртуальні блоки з ghost-шаблону, а не витрачає предмети буфера.",
+        "Такі блоки нічого не дають після руйнування й не призначені для ферми ресурсів. FTB перевіряє крафт Mk2 та огляд станції; схему, дистанцію й вільний прохід перевірте на своїй ділянці."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E215B94BCE7",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E6DF258F538C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "00005AE8C9D4D2F5",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:extruder_module_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000010B7F2EE1B1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000549381FA5402",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000090D4985B55FF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "000080A94DAD0E37",
+      "title": "Міжвимірний вихід потребує завантаження",
+      "description": [
+        "Після відкриття End виготовте Sender Module Mk3: його рецепт використовує End Stone, тому цей маршрут навмисно стоїть пізніше за локальні Mk1/Mk2.",
+        "Mk3 відправляє ресурси до цілі в іншому вимірі, але не завантажує чанк цілі самостійно. FTB перевіряє саме новий крафт Mk3; працездатність пари завантажених вузлів і право доступу команди перевіряються окремо."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "00001952EE444BBF",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A90439C77D31",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "000035727A0533EF",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:sender_module_3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000033EB453D41A8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:ender_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFB33573D03A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000095D84A31CA10",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A9EFFA991A67",
+      "title": "Власник персонального модуля",
+      "description": [
+        "Виготовте Player Module вже після Mk3. Модуль прив’язується до автора крафту; для переприв’язки власник тримає модуль і виконує sneak-right-click. Підготуйте Security Upgrade для роутера.",
+        "Player Module працює з інвентарем конкретного гравця, його бронею, offhand або Ender-скринею та може діяти між вимірами. FTB перевіряє новий крафт і захисний комплект; UUID компонента та захищеність сервера цим не перевіряються."
+      ],
+      "icon": {
+        "id": "modularrouters:modular_router",
+        "count": 1
+      },
+      "dependencies": [
+        "000080A94DAD0E37",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ACDF89672BBC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modularrouters:modular_router",
+          "timer": 40
+        },
+        {
+          "id": "000046A6004EC353",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:player_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00001A9C9A44FED2",
+          "type": "item",
+          "item": {
+            "id": "modularrouters:security_upgrade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002201D9276FFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E4AF1A1A2B66",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
       "y": 0.0
     }
   ]

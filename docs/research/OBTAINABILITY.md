@@ -4,6 +4,264 @@
 Наведені висновки перевірені за конкретними версіями й SHA файлів;
 повне Survival-проходження та сторонні overrides ще не тестувалися.
 
+[Структуровані докази](../../content/audit/v5-source-gaps-followup.json).
+
+## `actuallyadditions:canola_oil_bucket`
+
+Статус: `source_verified_native_path`; версія: 1.3.26.
+
+Canola Press виробляє actuallyadditions:canola_oil за нативним pressing-рецептом. FluidAA реєструє canola_oil_bucket як відро цієї рідини; взаємодія з резервуаром наповнює порожнє відро. Відсутність окремого item-output JSON для повного відра очікувана.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/gradle.properties — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/fluids/InitFluids.java — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/fluids/FluidAA.java — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/blocks/base/BlockContainerBase.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/actuallyadditions/export/recipes/actuallyadditions/pressing/canola.json — SHA перевірено
+
+## `apotheosis:mysterious_scrap_metal`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Матеріал отримується у Salvaging Table зі спорядження звичайного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/common містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingRecipe.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/apotheosis/export/recipes/apotheosis/salvaging/affix_item/common.json — SHA перевірено
+
+## `apotheosis:timeworn_fabric`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Матеріал отримується у Salvaging Table зі спорядження незвичайного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/uncommon містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingRecipe.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/apotheosis/export/recipes/apotheosis/salvaging/affix_item/uncommon.json — SHA перевірено
+
+## `apotheosis:luminous_crystal_shard`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Матеріал отримується у Salvaging Table зі спорядження рідкісного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/rare містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingRecipe.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/apotheosis/export/recipes/apotheosis/salvaging/affix_item/rare.json — SHA перевірено
+
+## `apotheosis:arcane_sands`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Матеріал отримується у Salvaging Table зі спорядження епічного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/epic містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingRecipe.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/apotheosis/export/recipes/apotheosis/salvaging/affix_item/epic.json — SHA перевірено
+
+## `apotheosis:godforged_pearl`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Матеріал отримується у Salvaging Table зі спорядження міфічного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/mythic містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingRecipe.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/salvaging/SalvagingMenu.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/apotheosis/export/recipes/apotheosis/salvaging/affix_item/mythic.json — SHA перевірено
+
+## `apotheosis:gem_dust`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Обробник AdventureEvents.gemSmashing(AnvilLandEvent) замінює предметні сутності apotheosis:gem у клітині приземлення ковадла на gem_dust у тій самій кількості. Це навмисна світова дія; відсутність crafting JSON не означає прогалину.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/AdventureEvents.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/Apoth.java — SHA перевірено
+
+## `create:incomplete_precision_mechanism`
+
+Статус: `source_verified_native_path`; версія: 6.0.10.
+
+Незавершений precision mechanism — проміжний стек Sequenced Assembly. Метод advance() після нефінальної операції повертає transitionalItem з компонентом прогресу SEQUENCED_ASSEMBLY. Нативний рецепт precision_mechanism визначає цей transitionalItem; його не слід додавати як окремий побутовий рецепт.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/gradle.properties — SHA перевірено
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/sequenced/SequencedAssemblyRecipe.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/create/export/recipes/create/sequenced_assembly/precision_mechanism.json — SHA перевірено
+
+## `createdieselgenerators:diesel_bucket`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.3.15.
+
+Дистиляція crude_oil виробляє дизель як рідинний вихід. Реєстрація CDGFluids для diesel викликає .bucket(); повне відро отримується наповненням порожнього відра цією рідиною, а не окремим рецептом верстака.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties — SHA перевірено
+- https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGFluids.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/createdieselgenerators/export/recipes/createdieselgenerators/distillation/crude_oil.json — SHA перевірено
+
+## `createdieselgenerators:gasoline_bucket`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.3.15.
+
+Дистиляція crude_oil виробляє бензин як рідинний вихід. Реєстрація CDGFluids для gasoline викликає .bucket(); повне відро отримується наповненням порожнього відра цією рідиною, а не окремим рецептом верстака.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties — SHA перевірено
+- https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGFluids.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/createdieselgenerators/export/recipes/createdieselgenerators/distillation/crude_oil.json — SHA перевірено
+
+## `forbidden_arcanus:xpetrified_orb`
+
+Статус: `source_verified_native_path`; версія: 2.6.1.
+
+Black Hole поглинає ExperienceOrb у своїй зоні. За stored_xp не менше60 нативний serverTick викидає XPETRIFIED_ORB і обнуляє накопичувач. Це спеціальна світова механіка; XP-значення предмета визначається його компонентом і не є звичайним рецептом.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/gradle.properties — SHA перевірено
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/BlackHoleBlockEntity.java — SHA перевірено
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModItems.java — SHA перевірено
+
+## `immersivepetroleum:bitumen`
+
+Статус: `source_verified_native_path`; версія: 4.5.0-39.
+
+Точний installed рецепт immersivepetroleum:distillationtower/oil має byproducts[0].output.id=immersivepetroleum:bitumen із chance0.07. Це реальний побічний продукт дистиляції, який старий парсер не читав; додатковий crafting-рецепт зруйнував би логіку нафтохімії.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/immersivepetroleum/export/recipes/immersivepetroleum/distillationtower/oil.json — SHA перевірено
+
+## `immersivepetroleum:lubricant_bucket`
+
+Статус: `source_verified_native_path`; версія: 4.5.0-39.
+
+Distillation Tower виробляє мастило як рідинний result у рецепті oil. IPContent реєструє цю рідину, а IPFluidEntry.make створює відповідне lubricant_bucket. Повне відро є результатом наповнення рідиною, не пропущеним рецептом верстака.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/IPContent.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/immersivepetroleum/export/recipes/immersivepetroleum/distillationtower/oil.json — SHA перевірено
+
+## `immersivepetroleum:naphtha_bucket`
+
+Статус: `source_verified_native_path`; версія: 4.5.0-39.
+
+Distillation Tower виробляє нафта-фракція як рідинний result у рецепті oil. IPContent реєструє цю рідину, а IPFluidEntry.make створює відповідне naphtha_bucket. Повне відро є результатом наповнення рідиною, не пропущеним рецептом верстака.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/IPContent.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/immersivepetroleum/export/recipes/immersivepetroleum/distillationtower/oil.json — SHA перевірено
+
+## `immersivepetroleum:diesel_bucket`
+
+Статус: `source_verified_native_path`; версія: 4.5.0-39.
+
+Нативний Hydrotreater за sulfur_recovery перетворює diesel_sulfur у immersivepetroleum:diesel. IPFluidEntry.make зв’язує рідину diesel із diesel_bucket; відро наповнюється готовим десульфурованим паливом. Не плутати з окремим diesel_sulfur_bucket.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/IPContent.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/immersivepetroleum/export/recipes/immersivepetroleum/hydrotreater/sulfur_recovery.json — SHA перевірено
+
+## `rootsclassic:charged_runic_focus`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.5.10.
+
+Ритуал rootsclassic:ritual/crafting/charged_runic_focus створює заряджений рунічний фокус. Вихід закодовано в effectConfig.result, а не на верхньому рівні result; RitualCrafting читає його та створює предмет після ритуалу. Не додавати звичайний рецепт для обходу жаровні й пахощів.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/rootsclassic/export/recipes/rootsclassic/ritual/crafting/charged_runic_focus.json — SHA перевірено
+
+## `rootsclassic:living_pickaxe`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.5.10.
+
+Ритуал rootsclassic:ritual/crafting/living_pickaxe створює живу кирку. Вихід закодовано в effectConfig.result, а не на верхньому рівні result; RitualCrafting читає його та створює предмет після ритуалу. Не додавати звичайний рецепт для обходу жаровні й пахощів.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/rootsclassic/export/recipes/rootsclassic/ritual/crafting/living_pickaxe.json — SHA перевірено
+
+## `rootsclassic:spruce_bark`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.5.10.
+
+Bark Knife (DruidKnifeItem) на spruce_log або spruce_wood створює RootsRegistry.SPRUCE_BARK. Ніж втрачає міцність; перетворення блока на обтесаний залежить від конфігурації. Це нативна взаємодія зі світом, а не рецепт верстака.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/DruidKnifeItem.java — SHA перевірено
+
+## `industrialforegoing:biofuel_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Офіційний код у release-context3.6.38 показує: BioReactor перетворює рослинні входи та воду на BIOFUEL через fillForced. Однак точне зіставлення CI artifact3.6.38 із sourcepin та Titanium-fluid↔bucket ще не підтверджено; випадок лишається незавершеним. Не додавати випадковий рецепт відра.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/generator/tile/BioReactorTile.java — SHA перевірено
+
+## `industrialforegoing:sewage_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Офіційний код у release-context3.6.38 показує: Sewer знаходить Animal у робочій області й заповнює SEWAGE. Однак точне зіставлення CI artifact3.6.38 із sourcepin та Titanium-fluid↔bucket ще не підтверджено; випадок лишається незавершеним. Не додавати випадковий рецепт відра.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SewerTile.java — SHA перевірено
+
+## `industrialforegoing:sludge_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Офіційний код у release-context3.6.38 показує: PlantGatherer заповнює SLUDGE під час збирання рослин. Однак точне зіставлення CI artifact3.6.38 із sourcepin та Titanium-fluid↔bucket ще не підтверджено; випадок лишається незавершеним. Не додавати випадковий рецепт відра.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/PlantGathererTile.java — SHA перевірено
+
+## `irons_spellbooks:wimpy_spell_book`
+
+Статус: `confirmed_unsuitable_quest_target`; версія: 1.21.1-3.16.3.
+
+WIMPY_SPELL_BOOK зареєстровано як SpellBook(0), тобто без слотів заклять; підтвердженого survival-рецепта не знайдено. Офіційний early_game посібник прямо показує copper_spell_book як початкову книгу. Квест V5_MAG_IRONS_SPELLBOOKS_01 має вимагати craftable copper_spell_book (gate15), зберігаючи його quest/task IDs; не створювати рецепт для нуль-слотової книги.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/gradle.properties — SHA перевірено
+- https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/java/io/redspace/ironsspellbooks/registries/ItemRegistry.java — SHA перевірено
+- https://github.com/iron431/Irons-Spells-n-Spellbooks/blob/532c98dfa5b219f3927aca9b23d9042c00e767bb/src/main/resources/assets/irons_spellbooks/patchouli_books/iss_guide_book/en_us/entries/progression/early_game.json — SHA перевірено
+- ../../content/research/evidence/source_gap_followup_v5/irons_spellbooks/export/recipes/irons_spellbooks/copper_spell_book.json — SHA перевірено
+
 [Структуровані докази](../../content/audit/v5-source-gaps-magic.json).
 
 ## `totemic:infused_flute`

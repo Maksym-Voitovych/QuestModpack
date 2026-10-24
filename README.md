@@ -2,18 +2,16 @@
 
 [Українська інструкція](README.uk.md).
 
-Version **0.4.2.1-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
-This interim version adds four native team-bound production observations. Their persistence is separate from epoch keys. The complete 0.5 update remains in progress; see PROGRESS.
+Version **0.4.3-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests 2101.1.36, KubeJS 2101.7.2 and Rhino 2101.2.7 build 85. The complete 0.5 update remains in progress.
 
+The current runtime contains **48 epochs, 96 manufactured keys, 3145 quests in 136 chapters, 603 native recipes and 390 custom item models/textures**. The total retains 96 legacy manual goals. All 3061 published checkpoint quest/task/reward IDs and dependencies, 602 existing recipe JSONs and completed team progress are preserved.
 
-The FTB team lookup hotfix selects the Entity overload in a typed Java bridge; the UUID overload expects a team UUID. Install its matching companion JAR and scripts together. Ongoing 0.5 work is tracked in [PLAN](docs/AIA2_0.5.0_PLAN.md) and [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md).
+This block adds 84 mechanic quests, 49 native action contracts, 10 completed core maps and a postgame creative Mana Tablet recipe. Component-aware guards cover its native player mana-source lists and pool exchange. Three creative tablet producer routes are closed; ordinary tablets remain available at epoch 5. FTB team lookup uses a typed Java bridge; key manufacture uses separate team-bound post-consumption receipts.
 
-The update fixes the reported UUID and ProjectE overload failures, requires Machine Guard **API 4**, and adds **two manufactured keys per epoch**. Native production receipts are saved separately from item possession; `/give` does not manufacture a key or open the next epoch. Existing epoch IDs and completed team progress are retained.
+Install matching `kubejs/`, `config/` and `mods/` through `install_runtime.py` with `--dry-run` first, with the game stopped. The installer backs up originals and preserves saves/foreign quests. Fully restart both client and server.
 
-The pack contains **48 epochs, 2784 quests across 130 chapters**, six groups, 569 native recipes and 390 custom item models/textures. The quest total includes 96 preserved legacy manual goals, leaving 2688 substantive quests.
+Validated: 110 Python tests, 50 Node tests, 5237 Java assertions, 22 modeled creative-mana guard assertions, and 49 minimal native Minecraft assertions across two server JVMs with restart persistence. Optional mod dispatch, JEI/UI, full Survival and TPS remain untested.
 
-Installable files are in `kubejs/`, `config/` and `mods/`. Use `install_runtime.py` for preflight, backups, merging and rollback. Update the companion JAR and scripts together, then fully restart the game/server.
+[PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Milestone report](implementation/v5-milestone-report.json) · [Mechanic maps](docs/research/MOD_MECHANICS.md) · [Sources](docs/research/SOURCE_INDEX.md) · [Remaining coverage](docs/research/REMAINING_COVERAGE.md) · [Manual acceptance](docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md).
 
-Current counts, validation results and remaining acceptance work are in [release-report.json](implementation/release-report.json). See [v4 progression](design/progression-v4.md), [guard audit](implementation/guard-v4-audit.json) and [known limits](implementation/KNOWN_LIMITATIONS.uk.txt). Full-pack gameplay, optional mod hooks and TPS are separate from static/Rhino/native smoke tests.
-
-The current 0.5 development milestone contains 3,061 quests in 136 chapters and 602 native recipes. All 2,784 v4 quest IDs and 569 recipe JSONs are retained. See [mechanic maps](docs/research/MOD_MECHANICS.md), [source index](docs/research/SOURCE_INDEX.md), [remaining coverage](docs/research/REMAINING_COVERAGE.md), and the [milestone report](implementation/v5-milestone-report.json). Complete core maps cover Create/Mekanism/AE2; remaining maps and full-pack acceptance are unfinished. This is not a completed 0.5 release.
+Core maps are complete for 13 mods; 45 maps are partial and additional content mods remain unmapped. This is an interim development build. The 0.5 release remains unfinished.

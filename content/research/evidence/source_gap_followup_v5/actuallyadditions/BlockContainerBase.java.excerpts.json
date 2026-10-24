@@ -1,0 +1,13 @@
+{
+  "source_path": "src/main/java/de/ellpeck/actuallyadditions/mod/blocks/base/BlockContainerBase.java",
+  "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+  "source_original_sha256": "8ce3bef263760645c92fe5e2bd598436fe564b265a00e1562388f23ff482cd59",
+  "source_url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/blocks/base/BlockContainerBase.java",
+  "excerpts": [
+    {
+      "start_line": 150,
+      "end_line": 173,
+      "text": "    public void updateRedstoneState(Level world, BlockPos pos) {\n        if (!world.isClientSide) {\n            BlockEntity tile = world.getBlockEntity(pos);\n            if (tile instanceof TileEntityBase base) {\n                boolean powered = world.getBestNeighborSignal(pos) > 0;\n                boolean wasPowered = base.isRedstonePowered;\n                if (powered && !wasPowered) {\n                    base.setRedstonePowered(true);\n                    if (base.respondsToPulses()) {\n                        base.activateOnPulse();\n                    }\n                } else if (!powered && wasPowered) {\n                    base.setRedstonePowered(false);\n                }\n            }\n        }\n    }\n\n    protected boolean tryUseItemOnTank(Player player, InteractionHand hand, FluidTank tank) {\n        ItemStack heldItem = player.getItemInHand(hand);\n        return !heldItem.isEmpty() && FluidUtil.interactWithFluidHandler(player, hand, tank);\n\n    }\n\n"
+    }
+  ]
+}

@@ -98,6 +98,10 @@ class V5ContentValidationTests(unittest.TestCase):
         self.assertGreater(report['preserved_quests'],2000)
         quests={q['id']:q for chapter in chapters.values() for q in chapter['quests']}
         self.assertEqual(V.validate_graph(quests),len(quests))
+        current = V.validate(ROOT)
+        self.assertEqual(current['status'], 'passed')
+        self.assertEqual(current['compiled_quests'],len(quests))
+        self.assertGreaterEqual(len(current['native_action_proofs']['approved_advancements']),49)
 
     def test_old_ids_dependencies_and_recipes_are_preserved(self):
         chapters={'one.snbt':{'id':'CHAPTER','quests':[{'id':'QUEST','tasks':[{'id':'TASK'}],

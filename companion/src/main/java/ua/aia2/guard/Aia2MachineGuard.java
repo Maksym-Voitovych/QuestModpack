@@ -200,6 +200,7 @@ public final class Aia2MachineGuard {
         if (!(player instanceof ServerPlayer) || output.isEmpty()) {
             return true;
         }
+        if (CreativeManaGuard.isCreativeTablet(output) && !mayUsePostgameMana(player)) return false;
         String id = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
         if (ITEM_POLICY.getRequiredStage(id) <= 1 && !KeyProductionBridge.isKeyOutput(id)) {
             return true;
@@ -226,8 +227,20 @@ public final class Aia2MachineGuard {
         }
         String id = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
         String team = getOwner(blockEntity);
+        if (!CreativeManaGuard.mayExchangeWithPool(blockEntity, output)) return false;
         return (ITEM_POLICY.getRequiredStage(id) <= 1 || isReady() && ITEM_POLICY.mayTick(id, team))
                 && KeyProductionBridge.mayCraftOutput(id, team);
+    }
+
+    /** Same live-team validation as crafting; completed48 is distinct from being in epoch48. */
+    public static boolean mayUsePostgameMana(Player player) {
+        if (player == null) return false;
+        if (player.level().isClientSide()) return true;
+        if (!(player instanceof ServerPlayer) || player instanceof FakePlayer || !isReady()) return false;
+        String synchronizedTeam = PLAYER_TEAMS.get(player.getUUID());
+        String currentTeam = LIVE_TEAMS.resolve(player.getUUID());
+        return synchronizedTeam != null && synchronizedTeam.equals(currentTeam)
+                && RECIPE_POLICY.mayUseStage(99, currentTeam);
     }
 
     /** Called around the actual ticker in a try/finally; nested ticks restore the parent. */
