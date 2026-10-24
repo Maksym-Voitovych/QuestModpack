@@ -75,6 +75,27 @@ def render(root=ROOT):
             lines.append('- '+detail)
             if target: actual_sources.setdefault(target, {'verified_file': checked, 'mods': set()})['mods'].add(mid)
         lines += ['']
+    native_lines = ['# Перевірені джерела без звичайного crafting-рецепта', '',
+                    'Нативне джерело, торгівля або boss-drop не означають пропущений рецепт.',
+                    'Наведені висновки перевірені за конкретними версіями й SHA файлів;',
+                    'повне Survival-проходження та сторонні overrides ще не тестувалися.', '']
+    for path in sorted((root/'content/audit').glob('v5-source-gaps-*.json')):
+        native_lines += [f'[Структуровані докази](../../{path.relative_to(root).as_posix()}).', '']
+        for row in read(path).get('items', []):
+            native_lines += ['## `'+row['item']+'`', '',
+                             'Статус: `'+row['status']+'`; версія: '+row['installed_version']+'.', '',
+                             row['description_uk'], '']
+            for source in row.get('sources', []):
+                url = source.get('url', '')
+                local = source.get('path', source.get('local_path'))
+                checked = bool(local and (root/local).is_file() and
+                               hashlib.sha256((root/local).read_bytes()).hexdigest() == source.get('sha256'))
+                target = url if url.startswith(('http://','https://')) else ('../../'+local if local else '')
+                if target:
+                    native_lines.append('- '+target+(' — SHA перевірено' if checked else ' — контекст'))
+                    entry = actual_sources.setdefault(target, {'verified_file':False, 'mods':set()})
+                    entry['verified_file'] |= checked; entry['mods'].add(row['item'].split(':')[0])
+            native_lines += ['']
     gap_lines = ['# Охоплення каталогу модів', '',
                  'Відсутня або часткова карта не прирівнюється до завершеного дослідження.',
                  'Невеликі аддони можуть мати тематичні цілі; бібліотеки й оптимізації',
@@ -95,7 +116,8 @@ def render(root=ROOT):
         source_lines += ['- '+url+' — '+', '.join(sorted(source['mods']))+
                          ('; є перевірений файл' if source['verified_file'] else '; лише контекст')]
     folder = root/'docs/research'; folder.mkdir(parents=True, exist_ok=True)
-    for name, content in [('MOD_MECHANICS.md', lines), ('REMAINING_COVERAGE.md', gap_lines), ('SOURCE_INDEX.md', source_lines)]:
+    for name, content in [('MOD_MECHANICS.md', lines), ('REMAINING_COVERAGE.md', gap_lines),
+                          ('SOURCE_INDEX.md', source_lines), ('OBTAINABILITY.md', native_lines)]:
         (folder/name).write_text('\n'.join(content).rstrip()+'\n', encoding='utf-8')
     summary = {'map_documents':len(documents), 'map_records':len(maps), 'mapped_mods':len(mapped),
                'complete_core_maps':len(full), 'complete_core_mod_ids':sorted(full),

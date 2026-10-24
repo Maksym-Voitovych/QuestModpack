@@ -1,5 +1,5 @@
 {
-  "version": "0.4.2-alpha",
+  "version": "0.4.2.1-alpha",
   "target_version": "0.5.0-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "90ab63f6a32794edb9d97b0ee61b976cf69b4585",
@@ -88,7 +88,8 @@
     "recipe_split": {
       "new_process": 10,
       "reworked_native": 23
-    }
+    },
+    "material_normalizations": 31
   },
   "creative_essence": {
     "item": "mysticalagradditions:creative_essence",
@@ -151,9 +152,10 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 85,
+      "passed": 91,
       "failed": 0,
-      "skipped": 0
+      "skipped": 0,
+      "includes_installer_tests": 16
     },
     "real_rhino_scenarios": 3,
     "java_policy_assertions": 5237,
@@ -169,29 +171,43 @@
       "runtime_files": 1136,
       "changed": []
     },
-    "full_pack_survival_jei_tps": "not_run"
+    "full_pack_survival_jei_tps": "not_run",
+    "draconic_cache_handler_assertions": {
+      "passed": 16,
+      "host": "modeled Minecraft/DE host + real GuardPolicy",
+      "live_draconic_dispatch": false
+    },
+    "jar_sha256": "09b598845d5c2e236b34f168634dd895f6415516bb825a1f34952478bfe38fe4"
   },
   "obtainability": {
     "exported_recipes_scanned": 42064,
     "loot_tables_scanned": 14615,
     "important_items": 2261,
     "classification": {
-      "explicit_recipe_source": 2106,
-      "unresolved_no_explicit_static_source": 35,
+      "explicit_recipe_source": 2113,
+      "unresolved_no_explicit_static_source": 22,
       "previous_native_context_requires_runtime": 49,
       "loot_source_not_a_recipe_gap": 70,
+      "verified_native_source_not_a_recipe_gap": 6,
       "declared_native_target_requires_codec_review": 1
     },
+    "source_verified_native_items": 11,
+    "confirmed_canonical_mismatches": 2,
     "automatic_recipes_added": 0
   },
   "sources": "docs/research/SOURCE_INDEX.md; official version-pinned source/Ponder/Patchouli/Modonomicon books and actual exported recipes, not inferred old-version wiki mechanics",
   "remaining": [
     "Complete remaining51 partial mod maps and unresearched content records listed in docs/research/REMAINING_COVERAGE.md",
-    "Resolve35 items without explicit static source,49 earlier native-context cases and1 implicit native codec target; never add boss/world-only recipes blindly",
+    "Resolve22 items without explicit static source,49 earlier native-context cases and1 implicit native codec target; never add boss/world-only recipes blindly",
     "Review every legacy quest line against the maps; new courses do not imply all old inventory goals were reauthored",
     "Full modpack Create/Mek/AE2/FTB dispatch, JEI/UI and real Survival path acceptance",
     "Long-term economy/TPS and native bypass categories beyond documented hooks"
   ],
   "installation": "Use install_runtime.py with --dry-run then apply with client/server stopped; backups before first write; full restart; worlds/foreign quests retained",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.2-alpha.zip"
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.2.1-alpha.zip",
+  "draconic_cache_fix": "implementation/draconic-cache-v5-audit.json",
+  "source_gap_proofs": [
+    "content/audit/v5-source-gaps-technology.json",
+    "content/audit/v5-source-gaps-magic.json"
+  ]
 }

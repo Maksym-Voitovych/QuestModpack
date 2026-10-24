@@ -1,5 +1,5 @@
 {
-  "version": "0.4.2-alpha",
+  "version": "0.4.2.1-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
@@ -36,7 +36,8 @@
     "all_task_mod_namespaces_excluding_vanilla": 66,
     "new_recipe_target_namespaces": 22,
     "new_quest_primary_mods": 19,
-    "new_quest_item_namespaces": 23
+    "new_quest_item_namespaces": 23,
+    "material_normalizations": 31
   },
   "confirmed_fixes": [
     "UUID remapping/property-as-function failure removed with typed Java syncPlayer",
@@ -53,11 +54,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 85,
+      "passed": 91,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 15,
+      "includes_installer_tests": 16,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -84,12 +85,17 @@
       "runtime_files": 1136,
       "changed": []
     },
-    "jar_sha256": "45333bc40277169fbdd10c1cfd8d9e4e33ce0671a343e87b1c7279a535c9392c",
-    "jar_path": "mods/aia2-machine-guard-0.4.2-alpha.jar",
+    "jar_sha256": "09b598845d5c2e236b34f168634dd895f6415516bb825a1f34952478bfe38fe4",
+    "jar_path": "mods/aia2-machine-guard-0.4.2.1-alpha.jar",
     "archive_verification_command": "python tools/package_runtime.py",
     "packaged_installer_dry_run": "passed after extracting the generated ZIP; no backup/runtime write or test-world change",
     "archive_crc_and_all_sha256_entries": "passed",
-    "historical_0_1_archive": "exists and CRC passed; preserved unchanged"
+    "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
+    "draconic_cache_handler_assertions": {
+      "passed": 16,
+      "host": "modeled Minecraft/DE host + real GuardPolicy",
+      "live_draconic_dispatch": false
+    }
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -101,7 +107,7 @@
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately"
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.2-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.2.1-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -113,5 +119,6 @@
   "native_mechanic_observations": 4,
   "native_mechanic_recipes": 6,
   "target_version": "0.5.0-alpha",
-  "v5_milestone_report": "implementation/v5-milestone-report.json"
+  "v5_milestone_report": "implementation/v5-milestone-report.json",
+  "draconic_cache_fix": "implementation/draconic-cache-v5-audit.json"
 }

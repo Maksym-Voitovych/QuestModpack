@@ -2,7 +2,7 @@
 
 [Українська інструкція](README.uk.md).
 
-Version **0.4.2-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
+Version **0.4.2.1-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
 This interim version adds four native team-bound production observations. Their persistence is separate from epoch keys. The complete 0.5 update remains in progress; see PROGRESS.
 
 

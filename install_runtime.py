@@ -355,10 +355,11 @@ def plan_install(source, instance):
                                 'ua/aia2/guard/KeyProductionBridge.class',
                                 'ua/aia2/guard/FtbQuestBridge.class',
                                 'ua/aia2/guard/RhinoLongMapBridge.class'}
+                    required.add('ua/aia2/guard/mixin/DraconicFusionCoreMixin.class')
                     if (source / 'kubejs/config/aia2_mechanics.json').is_file():
                         required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
                     if not required <= set(jar.namelist()) or jar.testzip() is not None:
-                        raise InstallError('Progression v4 needs the matching API4 companion with manufacturing receipts and Rhino bridge')
+                        raise InstallError('Progression v4 needs the matching API4 companion with FTB, manufacturing, Rhino and cached-fusion guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

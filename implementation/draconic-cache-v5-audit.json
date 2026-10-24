@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "mod": "draconicevolution",
+  "installed_version": "3.1.4.633",
+  "source_version": "3.1.4",
+  "source_pin": "6251e32bc93eb4bfcd910236ec1eaa6546516229",
+  "status": "confirmed_source_cache_bypass_fixed",
+  "sources": [
+    {
+      "source_path": "src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileFusionCraftingCore.java",
+      "path": "content/research/evidence/draconic_cache_v5/TileFusionCraftingCore.java",
+      "sha256": "e5a86f0018432df9939d34aac1a1f88402060b5deb0c7f091062e3d70faddb36",
+      "url": "https://github.com/Draconic-Inc/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileFusionCraftingCore.java"
+    },
+    {
+      "source_path": "src/main/java/com/brandon3055/draconicevolution/api/crafting/IFusionRecipe.java",
+      "path": "content/research/evidence/draconic_cache_v5/IFusionRecipe.java",
+      "sha256": "eedc6a338cd0be185f9653cec0fac44220471765316a97532f725d1a0cb5217e",
+      "url": "https://github.com/Draconic-Inc/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/crafting/IFusionRecipe.java"
+    },
+    {
+      "source_path": "gradle.properties",
+      "path": "content/research/evidence/draconic_cache_v5/gradle.properties",
+      "sha256": "1c6ac9a3a93d81894eb5bf457909fd404678e3e0a296ae8acd497770608bd537",
+      "url": "https://github.com/Draconic-Inc/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/gradle.properties"
+    }
+  ],
+  "cause": "Client packet startCraft selects and caches RecipeHolder outside BlockEntityTicker context; tick then invokes cached tickFusionState and restored jobs use byKey without contextual lookup.",
+  "fix": "Optional exact tick()V HEAD check uses native recipe policy on every active server tick; denied craft uses DE cancelCraft to stop injector requirements while retaining item stacks.",
+  "source_consumption": "canStartCraft only validates output/tier. Input/catalyst shrink occurs in IFusionRecipe.completeCraft, reached from guarded tickFusionState.",
+  "tests": {
+    "python_tests_passed": 2,
+    "actual_handler_real_policy_assertions": 16,
+    "pinned_source_contract": "passed",
+    "real_native_compile": "passed",
+    "java_policy_assertions": 5237,
+    "optional_de_mixin_dispatch": "not_run"
+  },
+  "native_de_runtime_tested": false,
+  "jar": {
+    "path": "mods/aia2-machine-guard-0.4.2.1-alpha.jar",
+    "bytes": 86228,
+    "sha256": "09b598845d5c2e236b34f168634dd895f6415516bb825a1f34952478bfe38fe4"
+  },
+  "old_jar_backup": "/workspace/aia2-backups/before-de-cache-20261024T113455Z/aia2-machine-guard-0.4.2-alpha.jar"
+}

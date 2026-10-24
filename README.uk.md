@@ -1,6 +1,6 @@
 # All in One Adventure 2.0 — 48 епох
 
-Версія **0.4.2-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests 2101.1.36, KubeJS 2101.7.2 і Rhino 2101.2.7 build.85.
+Версія **0.4.2.1-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests 2101.1.36, KubeJS 2101.7.2 і Rhino 2101.2.7 build.85.
 Проміжна версія додає чотири серверні виробничі докази Create/Mekanism. Вони зберігаються окремо від ключів і не зараховуються через /give. Повне оновлення 0.5 ще розробляється; поточний стан дивіться у PROGRESS.
 
 
@@ -62,3 +62,7 @@ Java-перевірки потребують JDK 21. Реальний Rhino-те
 [Завантажити поточний GitHub ZIP](https://github.com/Maksym-Voitovych/QuestModpack/archive/refs/heads/main.zip) · [Зміни](implementation/CHANGELOG.uk.md) · [Звіти](implementation/README.uk.md).
 
 Поточна інтеграція 0.5: [карти механік](docs/research/MOD_MECHANICS.md), [джерела](docs/research/SOURCE_INDEX.md), [незавершене охоплення](docs/research/REMAINING_COVERAGE.md), [перевірений milestone](implementation/v5-milestone-report.json). Create/Mekanism/AE2 мають повні основні маршрути; інші карти ще доповнюються. 0.5.0-alpha не оголошено завершеним релізом.
+
+Hotfix0.4.2.1 перевіряє також кешований Draconic Fusion перед кожним активним тиком, включно із запуском через пакет і відновленням із NBT. Відмова скасовує заряджання інжекторів без витрати входів.49native-smoke перевірок виконано на0.4.2; додатковий DE-handler перевірено16умовами з реальним GuardPolicy у модельованому host і новим JARbuild. LiveDraconic binding ще потребує повного інстансу.
+
+Додаткові source-докази й канонізація матеріалів: docs/research/OBTAINABILITY.md та content/audit/v5-item-normalization-migrations.json. Невідомих статичних джерел залишилося22, не35.

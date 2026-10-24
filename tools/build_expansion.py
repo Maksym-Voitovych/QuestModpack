@@ -27,6 +27,15 @@ def uid(name):
     return hashlib.sha256(('aia2-runtime-v1:' + name).encode()).hexdigest()[:12].upper().rjust(16, '0')
 
 
+def compile_description(record, migration=None):
+    description = list(record['description_uk'])
+    if migration:
+        description = [line.replace(migration['from'], migration['to']) for line in description]
+        if migration.get('description_note_uk'):
+            description.append(migration['description_note_uk'])
+    return description
+
+
 def component_id(kind, n):
     return f'kubejs:aia2_{kind}_{n:02d}'
 
@@ -199,6 +208,9 @@ def compile_quests(root=ROOT):
             q['icon'] = {'id': next((t['item']['id'] for t in q['tasks'] if t['type'] == 'item'), e['key']['id']), 'count': 1}
         core_chapters[n] = chapter
     logical = {record['id']: uid(record['id']) for record in records}
+    migration_path = root/'content/audit/v5-item-normalization-migrations.json'
+    # Keep the raw 'from' ID: read() would normalize it before text migration.
+    material_migrations = {row['id']: row for row in json.loads(migration_path.read_text(encoding='utf-8')).get('quests', [])} if migration_path.exists() else {}
     if len(logical) != len(records): raise ValueError('Duplicate authored logical IDs')
     all_logical = dict(baseline, **logical)
     mods = defaultdict(list)
@@ -216,7 +228,8 @@ def compile_quests(root=ROOT):
                          'advancement': 'aia2:keys/e48' if r.get('post_completion') else f'aia2:stages/e{n:02d}'})
         rewards = [{'id': uid(r['id']+':reward:'+str(i)), 'type': 'item', 'item': {'id': reward['item'], 'count': 1},
                     'count': reward['count']} for i,reward in enumerate(r.get('reward', []))]
-        q = {'id': logical[r['id']], 'title': r['title_uk'], 'description': r['description_uk'],
+        description = compile_description(r, material_migrations.get(r['id']))
+        q = {'id': logical[r['id']], 'title': r['title_uk'], 'description': description,
              'icon': {'id': r['icon'], 'count': 1}, 'dependencies': list(dict.fromkeys(deps)),
              'hide_until_deps_complete': True, 'tasks': tasklist, 'optional': not r.get('required', False), 'rewards': rewards}
         primary = r.get('mod') or r['icon'].split(':')[0]

@@ -3814,7 +3814,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: enderio.phase.03.
 Машини: `enderio:sag_mill`.
-Ресурси й результати: `enderio:dark_steel_grinding_ball`, `enderio:powdered_obsidian`, `enderio:basic_capacitor`.
+Ресурси й результати: `enderio:dark_steel_grinding_ball`, `create:powdered_obsidian`, `enderio:basic_capacitor`.
 Квести: `V5_E19_enderio_process_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 

@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -325,9 +326,6 @@ custom_exponent: 1E4
         self.assertFalse((self.instance / 'aia2-backups').exists())
 
 
-if __name__ == '__main__':
-    unittest.main()
-
 class V4PackagePairingTest(unittest.TestCase):
     def test_outdated_guard_fails_before_any_instance_change(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -342,3 +340,21 @@ class V4PackagePairingTest(unittest.TestCase):
             self.assertEqual(old.read_bytes(),b'player installed companion')
             self.assertFalse((instance/'aia2-backups').exists())
             self.assertFalse((instance/'kubejs').exists())
+
+    def test_missing_cached_fusion_guard_is_rejected_even_with_other_v4_bridges(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+            with zipfile.ZipFile(package/'mods/aia2-machine-guard-0.4.2-alpha.jar','w') as jar:
+                for name in ['Aia2MachineGuard','KeyProductionBridge','FtbQuestBridge','RhinoLongMapBridge','ProductionMilestoneBridge']:
+                    jar.writestr('ua/aia2/guard/'+name+'.class',b'fixture')
+            (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+            with self.assertRaisesRegex(installer.InstallError,'cached-fusion'):
+                installer.install(package,instance)
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -3,6 +3,7 @@
 import argparse
 from collections import Counter, defaultdict
 import csv
+import hashlib
 import json
 from pathlib import Path
 try:
@@ -16,14 +17,19 @@ OUTPUT_FIELDS = {'result', 'results', 'output', 'outputs', 'item_output', 'item_
 
 
 def outputs(recipe):
+    def stack_items(stack):
+        if isinstance(stack, str) and ':' in stack:
+            yield stack
+        elif isinstance(stack, dict):
+            ident = stack.get('id', stack.get('item'))
+            if isinstance(ident, str) and ':' in ident: yield ident
+            for nested in ['item', 'resource']:
+                if isinstance(stack.get(nested), dict): yield from stack_items(stack[nested])
     for field in OUTPUT_FIELDS:
         value = recipe.get(field, [])
         for stack in value if isinstance(value, list) else [value]:
-            if isinstance(stack, str) and ':' in stack: yield stack
-            elif isinstance(stack, dict):
-                ident = stack.get('id', stack.get('item'))
-                if isinstance(ident, str) and ':' in ident: yield ident
-    for field in ['recipe', 'base', 'gog']:
+            yield from stack_items(stack)
+    for field in ['recipe', 'base', 'gog', 'baseRecipe']:
         if isinstance(recipe.get(field), dict): yield from outputs(recipe[field])
 
 
@@ -34,6 +40,31 @@ def loot_items(value):
         for child in value.values(): yield from loot_items(child)
     elif isinstance(value, list):
         for child in value: yield from loot_items(child)
+
+
+def source_context(root):
+    """Accept native-source claims only with exact metadata and portable SHA proofs."""
+    root = Path(root)
+    read = lambda p: json.loads(p.read_text(encoding='utf-8'))
+    versions = {m['id']:m['version'] for row in read(root/'design/mod-catalog.json')['mods']
+                for m in row.get('exported_metadata', [])}
+    known = set(read(root/'content/audit/registries.json')['registries']['item'])
+    result = {}
+    for path in sorted((root/'content/audit').glob('v5-source-gaps-*.json')):
+        data = read(path); assert data['schema'] == 1
+        for row in data['items']:
+            item = row['item']; assert item in known, ('Unknown native source item', item)
+            assert versions[item.split(':')[0]] == row['installed_version'], ('Native source version mismatch', item)
+            assert row.get('sources'), ('Missing native source evidence', item)
+            for source in row['sources']:
+                local = Path(source['path'])
+                assert not local.is_absolute() and '..' not in local.parts, ('Nonportable native evidence', item)
+                assert hashlib.sha256((root/local).read_bytes()).hexdigest() == source['sha256'], ('Stale native evidence', item)
+            if row['status'] == 'source_verified_native_path':
+                assert any(s.get('version_match') is True for s in row['sources']), ('Unverified native source version', item)
+            assert item not in result, ('Duplicate native source classification', item)
+            result[item] = row
+    return result
 
 
 def audit(export, root=ROOT):
@@ -72,19 +103,21 @@ def audit(export, root=ROOT):
     for entry in bundle['add']:
         if entry.get('target'): uses[entry['target']].append('recipe:'+entry['id'])
     findings = {row['item']: row for row in read(root/'content/audit/quest-obtainability.json')['findings']}
+    context = source_context(root)
     rows = []
     for item in sorted(uses):
         recipes, tables = sorted(producers[item]), sorted(loot[item])
         if recipes: status = 'explicit_recipe_source'
         elif implicit_targets[item]: status = 'declared_native_target_requires_codec_review'
         elif tables: status = 'loot_source_not_a_recipe_gap'
+        elif context.get(item, {}).get('status') == 'source_verified_native_path': status = 'verified_native_source_not_a_recipe_gap'
         elif item in findings: status = 'previous_native_context_requires_runtime'
         else: status = 'unresolved_no_explicit_static_source'
         rows.append({'item':item, 'gate':rules['itemGates'].get(item, 100), 'status':status,
                      'recipe_sources':len(recipes), 'loot_sources':len(tables),
                      'recipe_examples':' | '.join(recipes[:5]), 'loot_examples':' | '.join(tables[:3]),
                      'implicit_native_recipes':' | '.join(sorted(implicit_targets[item])),
-                     'quest_uses':len(set(uses[item])), 'context':findings.get(item, {}).get('note', '')})
+                     'quest_uses':len(set(uses[item])), 'context':context.get(item, {}).get('description_uk', findings.get(item, {}).get('note', ''))})
     folder = root/'implementation'; folder.mkdir(parents=True, exist_ok=True)
     with (folder/'obtainability-v5-items.csv').open('w', encoding='utf-8', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0])); writer.writeheader(); writer.writerows(rows)
@@ -92,6 +125,8 @@ def audit(export, root=ROOT):
               'exported_recipes_scanned':scanned, 'compiled_recipes':len(bundle['add']),
               'loot_tables_scanned':loot_scanned, 'important_items':len(rows),
               'classification':dict(Counter(row['status'] for row in rows)),
+              'source_verified_native_items':sum(row['status']=='source_verified_native_path' for row in context.values()),
+              'confirmed_canonical_mismatches':sum(row.get('replacement_evidence_verified') is True for row in context.values()),
               'unresolved':[row['item'] for row in rows if row['status']=='unresolved_no_explicit_static_source'],
               'creative_essence_producers':sorted(producers['mysticalagradditions:creative_essence']),
               'creative_pool_producers':sorted(producers['botania:creative_pool']),

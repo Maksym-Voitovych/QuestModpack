@@ -1,0 +1,49 @@
+{
+  "attribution": "BluSunrize / ImmersiveEngineering; brief credited source excerpts only, not redistribution of the project. See LICENSE.",
+  "installed_version": "12.4.2-194",
+  "minecraft": "1.21.1",
+  "pin": "583a182549d284a35c813b55ac2a0d1fddcf945a",
+  "files": [
+    {
+      "source_path": "src/main/java/blusunrize/immersiveengineering/common/crafting/serializers/NoContainerSerializer.java",
+      "url": "https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/crafting/serializers/NoContainerSerializer.java",
+      "source_sha256": "acc5d9abb047801d490471e81e4f43bc649225d2af851e40d15f650088224d4a",
+      "excerpts": [
+        {
+          "first_line": 24,
+          "last_line": 33,
+          "text": "public class NoContainerSerializer implements RecipeSerializer<INoContainersRecipe>\n{\n\tpublic static final String BASE_RECIPE = \"baseRecipe\";\n\n\tpublic static final DualMapCodec<RegistryFriendlyByteBuf, INoContainersRecipe> CODECS = DualCodecs.RECIPE.fieldOf(BASE_RECIPE).map(inner -> {\n\t\tif(inner instanceof ShapedRecipe shaped)\n\t\t\treturn new NoContainersShapedRecipe<>(shaped);\n\t\telse\n\t\t\treturn new NoContainersRecipe<>((CraftingRecipe)inner);\n\t}, INoContainersRecipe::baseRecipe);\n"
+        }
+      ]
+    },
+    {
+      "source_path": "src/main/java/blusunrize/immersiveengineering/common/crafting/INoContainersRecipe.java",
+      "url": "https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/crafting/INoContainersRecipe.java",
+      "source_sha256": "feb9607ced742e95807385c873a5e77ab22133e6cb14bf614dcefa92f622ceae",
+      "excerpts": [
+        {
+          "first_line": 31,
+          "last_line": 49,
+          "text": "\t@Nonnull\n\t@Override\n\tdefault ItemStack assemble(@Nonnull CraftingInput pContainer, Provider access)\n\t{\n\t\treturn baseRecipe().assemble(pContainer, access);\n\t}\n\n\t@Override\n\tdefault boolean canCraftInDimensions(int pWidth, int pHeight)\n\t{\n\t\treturn baseRecipe().canCraftInDimensions(pWidth, pHeight);\n\t}\n\n\t@Nonnull\n\t@Override\n\tdefault ItemStack getResultItem(Provider access)\n\t{\n\t\treturn baseRecipe().getResultItem(access);\n\t}\n"
+        }
+      ]
+    },
+    {
+      "source_path": "src/main/java/blusunrize/immersiveengineering/common/register/IEItems.java",
+      "url": "https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/register/IEItems.java",
+      "source_sha256": "fe464b1f697a1b901d6077ab3000bb36c6af9b426301e4520a280b2894f24cec",
+      "excerpts": [
+        {
+          "first_line": 214,
+          "last_line": 214,
+          "text": "\t\tpublic static final ItemRegObject<SurveyToolsItem> SURVEY_TOOLS = register(\"survey_tools\", SurveyToolsItem::new);\n"
+        },
+        {
+          "first_line": 302,
+          "last_line": 302,
+          "text": "\t\tpublic static final ItemRegObject<MaintenanceKitItem> MAINTENANCE_KIT = register(\"maintenance_kit\", MaintenanceKitItem::new);\n"
+        }
+      ]
+    }
+  ]
+}

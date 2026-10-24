@@ -8,6 +8,12 @@ SHA означає перевірку збереженого файла. Від�
 - ../../content/research/evidence/active_aia2_bridges_v5.json — actuallyadditions, ad_astra, ae2, ars_nouveau, avaritia, bigreactors, botania, botanypots, create, createaddition, draconicevolution, enchanted, enderio, evilcraft, evolvedmekanism, forbidden_arcanus, goety, hostilenetworks, immersiveengineering, industrialforegoing, industrialupgrade, irons_spellbooks, megacells, mekanism, modern_industrialization, mysticalagriculture, naturesaura, occultism, oritech, pneumaticcraft, powah, quarryplus, rftoolsbuilder, rftoolsutility, rootsclassic, tfmg, totemic, twilightforest; є перевірений файл
 - ../../content/research/evidence/magic_adventure_v5/active_native_recipes.json — aether, apotheosis, ars_creo, ars_elemental, ars_nouveau, artifacts, botania, botanypots, cataclysm, enchanted, evilcraft, forbidden_arcanus, gobber2, goety, irons_spellbooks, mysticalagriculture, naturesaura, occultism, reliquary, rootsclassic, silentgear, silentgems, totemic, twilightforest; є перевірений файл
 - ../../content/research/evidence/magic_adventure_v5/installed_metadata.json — aether, apotheosis, ars_creo, ars_elemental, ars_nouveau, artifacts, botania, botanypots, cataclysm, enchanted, evilcraft, forbidden_arcanus, gobber2, goety, irons_spellbooks, mysticalagriculture, naturesaura, occultism, reliquary, rootsclassic, silentgear, silentgems, totemic, twilightforest; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/enderio/export/recipes/enderio/sag_milling/obsidian.json — enderio; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/oritech/export/recipes/oritech/nickel_ingot.json — oritech; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/oritech/export/recipes/oritech/nickel_ingot_from_smelting_raw_nickel.json — oritech; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/pneumaticcraft/export/recipes/pneumaticcraft/amadron/assembly_program_drill.json — pneumaticcraft; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/pneumaticcraft/export/recipes/pneumaticcraft/amadron/assembly_program_laser.json — pneumaticcraft; є перевірений файл
+- ../../content/research/evidence/source_gap_v5/technology/pneumaticcraft/export/recipes/pneumaticcraft/amadron/pcb_blueprint.json — pneumaticcraft; є перевірений файл
 - ../../content/research/evidence/technology_v5/actuallyadditions/recipes/actuallyadditions/atomic_reconstructor.json — actuallyadditions; є перевірений файл
 - ../../content/research/evidence/technology_v5/actuallyadditions/recipes/actuallyadditions/basic_coil.json — actuallyadditions; є перевірений файл
 - ../../content/research/evidence/technology_v5/actuallyadditions/recipes/actuallyadditions/black_quartz_ore_blasting.json — actuallyadditions; є перевірений файл
@@ -245,7 +251,11 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/BlakeBr0/MysticalAgriculture/blob/f38a092852538905de72a999f462936b71181554/src/main/resources/assets/mysticalagriculture/patchouli_books/guide/en_us/entries/basics/essence_farmland.json — mysticalagriculture; є перевірений файл
 - https://github.com/BlakeBr0/MysticalAgriculture/blob/f38a092852538905de72a999f462936b71181554/src/main/resources/assets/mysticalagriculture/patchouli_books/guide/en_us/entries/basics/infusion_altar.json — mysticalagriculture; є перевірений файл
 - https://github.com/BlakeBr0/MysticalAgriculture/blob/f38a092852538905de72a999f462936b71181554/src/main/resources/assets/mysticalagriculture/patchouli_books/guide/en_us/entries/basics/resource_crops.json — mysticalagriculture; є перевірений файл
+- https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/LICENSE — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/gradle.properties — immersiveengineering; є перевірений файл
+- https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/recipe/crafting/maintenance_kit.json — immersiveengineering; є перевірений файл
+- https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/generated/resources/data/immersiveengineering/recipe/crafting/survey_tools.json — immersiveengineering; є перевірений файл
+- https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/java/blusunrize/immersiveengineering/common/crafting/serializers/NoContainerSerializer.java — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/arc_furnace.json — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/crude_blast_furnace.json — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/improved_blast_furnace.json — immersiveengineering; є перевірений файл
@@ -268,6 +278,9 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityAtomicReconstructor.java — actuallyadditions; є перевірений файл
 - https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityCanolaPress.java — actuallyadditions; є перевірений файл
 - https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityDisplayStand.java — actuallyadditions; є перевірений файл
+- https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/gradle.properties — naturesaura; є перевірений файл
+- https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/java/de/ellpeck/naturesaura/items/ItemBirthSpirit.java — naturesaura; є перевірений файл
+- https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/java/de/ellpeck/naturesaura/items/ModItems.java — naturesaura; є перевірений файл
 - https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/intro/aura.json — naturesaura; є перевірений файл
 - https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/practices/aura_bottle.json — naturesaura; є перевірений файл
 - https://github.com/Ellpeck/NaturesAura/blob/70b93d37037f3559312834f0f42e824431090b64/src/main/resources/assets/naturesaura/patchouli_books/book/en_us/entries/practices/offering.json — naturesaura; є перевірений файл
@@ -297,12 +310,20 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/McJtyMods/RFToolsUtility/blob/f799314007d68042df8504e83cd549360f2627c7/src/main/resources/assets/rftoolsbase/patchouli_books/manual/en_us/entries/machines/screen_controller.json — rftoolsutility; є перевірений файл
 - https://github.com/McJtyMods/RFToolsUtility/blob/f799314007d68042df8504e83cd549360f2627c7/src/main/resources/assets/rftoolsbase/patchouli_books/manual/en_us/entries/machines/screen_link.json — rftoolsutility; є перевірений файл
 - https://github.com/MysticMods/RootsClassic — rootsclassic; лише контекст
+- https://github.com/Nova-Committee/Re-Avaritia/blob/8e2f0f7bdfbd1bc229e14c3c4dc0808d55ed526a/LICENSE — avaritia; є перевірений файл
+- https://github.com/Nova-Committee/Re-Avaritia/blob/8e2f0f7bdfbd1bc229e14c3c4dc0808d55ed526a/gradle.properties — avaritia; є перевірений файл
+- https://github.com/Nova-Committee/Re-Avaritia/blob/8e2f0f7bdfbd1bc229e14c3c4dc0808d55ed526a/src/generated/resources/data/avaritia/recipe/eternal_singularity.json — avaritia; є перевірений файл
+- https://github.com/Nova-Committee/Re-Avaritia/blob/8e2f0f7bdfbd1bc229e14c3c4dc0808d55ed526a/src/main/java/committee/nova/mods/avaritia/common/crafting/recipe/EternalSingularityCraftRecipe.java — avaritia; є перевірений файл
+- https://github.com/Nova-Committee/Re-Avaritia/tree/8e2f0f7bdfbd1bc229e14c3c4dc0808d55ed526a — avaritia; є перевірений файл
 - https://github.com/P3pp3rF1y/Reliquary/blob/20de88066c41dcb19e50d1744d3edd3627064629/src/main/java/reliquary/crafting/AlkahestryCraftingRecipe.java — reliquary; є перевірений файл
 - https://github.com/Polarice3/Goety-2 — goety; лише контекст
+- https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/LICENSE.md — oritech; є перевірений файл
 - https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/interaction/LaserArmBlockEntity.java — oritech; є перевірений файл
 - https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/AssemblerBlockEntity.java — oritech; є перевірений файл
 - https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/CentrifugeBlockEntity.java — oritech; є перевірений файл
 - https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/gradle.properties — oritech; є перевірений файл
+- https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/neoforge/src/main/generated/data/oritech/recipe/nickel_ingot_from_smelting_raw_nickel.json — oritech; є перевірений файл
+- https://github.com/Rearth/Oritech/tree/4069b6dd14b05dfe0c80126618739b64054630ea — oritech; є перевірений файл
 - https://github.com/Shadows-of-Fire/Apotheosis — apotheosis; лише контекст
 - https://github.com/Shadows-of-Fire/Hostile-Neural-Networks/blob/4610c9c38c7233a33c2fb79a2558acb49a2b2c07/gradle.properties — hostilenetworks; є перевірений файл
 - https://github.com/Shadows-of-Fire/Hostile-Neural-Networks/blob/4610c9c38c7233a33c2fb79a2558acb49a2b2c07/src/main/java/dev/shadowsoffire/hostilenetworks/tile/DataCenterIOPortTileEntity.java — hostilenetworks; є перевірений файл
@@ -310,19 +331,36 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/Shadows-of-Fire/Hostile-Neural-Networks/blob/4610c9c38c7233a33c2fb79a2558acb49a2b2c07/src/main/java/dev/shadowsoffire/hostilenetworks/tile/SimChamberTileEntity.java — hostilenetworks; є перевірений файл
 - https://github.com/SilentChaos512/Silent-Gear/blob/aa936c3ec4d54ccec0fad178488b60fae0243543/src/main/java/net/silentchaos512/gear/block/alloymaker/entity/AlloyForgeBlockEntity.java — silentgear; є перевірений файл
 - https://github.com/SilentChaos512/Silent-Gear/blob/aa936c3ec4d54ccec0fad178488b60fae0243543/src/main/java/net/silentchaos512/gear/block/salvager/SalvagerBlockEntity.java — silentgear; є перевірений файл
+- https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/LICENSE.txt — enderio; є перевірений файл
+- https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/generated/resources/data/enderio/recipe/sag_milling/obsidian.json — enderio; є перевірений файл
 - https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/alloy/AlloySmelterBlockEntity.java — enderio; є перевірений файл
 - https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/impulse_hopper/ImpulseHopperBlockEntity.java — enderio; є перевірений файл
 - https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/sag_mill/SagMillBlockEntity.java — enderio; є перевірений файл
 - https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/gradle.properties — enderio; є перевірений файл
+- https://github.com/Team-EnderIO/EnderIO/tree/9d35cace6895f451b4478a8608ff0fa0506530a5 — enderio; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/LICENSE — pneumaticcraft; є перевірений файл
 - https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/gradle.properties — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/api/java/me/desht/pneumaticcraft/api/crafting/AmadronTradeResource.java — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/recipes/amadron/AmadronOffer.java — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/villages/VillagerTradesRegistration.java — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/components/pcb_blueprint.json — pneumaticcraft; є перевірений файл
 - https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/compressors/advanced_air_compressor.json — pneumaticcraft; є перевірений файл
 - https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/compressors/air_compressor.json — pneumaticcraft; є перевірений файл
 - https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/logistics/logistics_drone.json — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/resources/assets/pneumaticcraft/patchouli_books/book/en_us/entries/manufacturing/assembly_programs.json — pneumaticcraft; є перевірений файл
+- https://github.com/TeamPneumatic/pnc-repressurized/tree/98e656af1977a2c0587c563c90c7d06e0d30c091 — pneumaticcraft; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/gradle.properties — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/generated/resources/data/totemic/loot_table/entities/baykok.json — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/ceremony/FluteInfusionCeremony.java — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/entity/Baykok.java — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/init/ModContent.java — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/java/pokefenn/totemic/init/ModItems.java — totemic; є перевірений файл
 - https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/basics/music.json — totemic; є перевірений файл
 - https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/basics/totem_poles.json — totemic; є перевірений файл
 - https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/baykok_summon.json — totemic; є перевірений файл
 - https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/buffalo_dance.json — totemic; є перевірений файл
 - https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/ceremony_basics.json — totemic; є перевірений файл
+- https://github.com/TeamTotemic/Totemic/blob/1a253b29815842aa4359d6118b8cd84cce3048a1/src/main/resources/assets/totemic/patchouli_books/totempedia/en_us/entries/ceremonies/flute_infusion.json — totemic; є перевірений файл
 - https://github.com/TeamTwilight/twilightforest/blob/9e40a75721c716b2fdf80c16d1058fe718825e9f/src/main/java/twilightforest/events/ProgressionEvents.java — twilightforest; є перевірений файл
 - https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/gradle.properties — powah; є перевірений файл
 - https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/generators/magmator.md — powah; є перевірений файл
@@ -386,8 +424,11 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/mrh0/createaddition/blob/1c81fab9aaaf157c58e16ad0acbe95c8523cd4e4/src/main/java/com/mrh0/createaddition/blocks/connector/LargeConnectorBlockEntity.java — createaddition; є перевірений файл
 - https://github.com/mrh0/createaddition/blob/1c81fab9aaaf157c58e16ad0acbe95c8523cd4e4/src/main/java/com/mrh0/createaddition/blocks/electric_motor/ElectricMotorBlockEntity.java — createaddition; є перевірений файл
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/gradle.properties — forbidden_arcanus; є перевірений файл
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/event/EntityEvents.java — forbidden_arcanus; є перевірений файл
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/BloodTestTubeItem.java — forbidden_arcanus; є перевірений файл
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/CreateForgeInteraction.java — forbidden_arcanus; є перевірений файл
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/MundabiturInteractions.java — forbidden_arcanus; є перевірений файл
+- https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModItems.java — forbidden_arcanus; є перевірений файл
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java — forbidden_arcanus; є перевірений файл
 - https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/gradle.properties — ad_astra; є перевірений файл
 - https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CryoFreezerBlockEntity.java — ad_astra; є перевірений файл
