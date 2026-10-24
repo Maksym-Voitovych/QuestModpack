@@ -1,0 +1,132 @@
+{
+  "recipes": 33,
+  "targets": 29,
+  "source_removals": 26,
+  "baseline_recipes_preserved": 569,
+  "serializers": {
+    "draconicevolution:fusion_crafting": 4,
+    "botania:terra_plate": 2,
+    "avaritia:shaped_table": 9,
+    "mekanism:mek_data": 4,
+    "create:mechanical_crafting": 1,
+    "powah:energizing": 1,
+    "pneumaticcraft:pressure_chamber": 1,
+    "minecraft:crafting_shaped": 5,
+    "industrialforegoing:dissolution_chamber": 6
+  },
+  "post_completion_recipes": 25,
+  "creative_essence_direct_consumers": 22,
+  "explicit_graph_nodes": 221,
+  "explicit_graph_edges": 372,
+  "explicit_graph_acyclic": true,
+  "graph_scope": "Explicit custom-component/selected-target ingredients plus creative-alloy tags and component-machine prerequisites; native code/world producers require in-game testing.",
+  "add_count": 33,
+  "remove_count": 26,
+  "catalog_file": "content/recipes/v5_balance.json",
+  "catalog_sha256": "447c3387558cc135767031dfdb3da966a6903f6785cbaed4411386f9ad363eaf",
+  "exported_recipes_scanned": 42064,
+  "audited_named_targets": 104,
+  "audited_named_native_routes": 113,
+  "creative_pool_removed_native_routes": [
+    "avaritia:botania_creative_pool",
+    "botania:cre/creative_pool_extreme",
+    "botania:cre/terra_plate/creative_pool"
+  ],
+  "preserved_free_conversions": [
+    "appliedcreate:creative_stress_cell",
+    "appliedcreate:creative_motor_from_stress_cell",
+    "allthearcanistgear:creative_spell_book",
+    "ars_nouveau:dye_creative_spell_book",
+    "evolvedmekanism:block_alloys/creative/from_block",
+    "evolvedmekanism:block_alloys/creative/from_ingots",
+    "minecraft:infinity_block_from_infinity_ingot",
+    "minecraft:infinity_ingot",
+    "minecraft:infinity_ingot_from_infinity_nugget",
+    "minecraft:infinity_nugget"
+  ],
+  "native_ritual_audit": [
+    {
+      "registry": "forbidden_arcanus:hephaestus_forge/ritual",
+      "id": "forbidden_arcanus:upgrade_tier_2",
+      "required_forge_tier": 1,
+      "result_block": "forbidden_arcanus:hephaestus_forge_tier_2",
+      "is_item_recipe": false,
+      "result_item_empty": true,
+      "effect": "UpgradeTierResult.executeLevelEffect -> Level.setBlockAndUpdate at same position",
+      "action": "Preserve native ritual; enforce block owner/access, not inventory acquisition or RecipeSerializer removal.",
+      "source_commit": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+      "source_version": "2.6.1",
+      "source_file": "neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java",
+      "source_line": 134,
+      "gate_action": "Raise tier3/4 item and block gates to21; tier1/2/5 remain15/21/31. No existing quest references to tier2–5 found in all authored catalogs and generated chapters."
+    },
+    {
+      "registry": "forbidden_arcanus:hephaestus_forge/ritual",
+      "id": "forbidden_arcanus:upgrade_tier_3",
+      "required_forge_tier": 2,
+      "result_block": "forbidden_arcanus:hephaestus_forge_tier_3",
+      "is_item_recipe": false,
+      "result_item_empty": true,
+      "effect": "UpgradeTierResult.executeLevelEffect -> Level.setBlockAndUpdate at same position",
+      "action": "Preserve native ritual; enforce block owner/access, not inventory acquisition or RecipeSerializer removal.",
+      "source_commit": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+      "source_version": "2.6.1",
+      "source_file": "neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java",
+      "source_line": 135,
+      "gate_action": "Raise tier3/4 item and block gates to21; tier1/2/5 remain15/21/31. No existing quest references to tier2–5 found in all authored catalogs and generated chapters."
+    },
+    {
+      "registry": "forbidden_arcanus:hephaestus_forge/ritual",
+      "id": "forbidden_arcanus:upgrade_tier_4",
+      "required_forge_tier": 3,
+      "result_block": "forbidden_arcanus:hephaestus_forge_tier_4",
+      "is_item_recipe": false,
+      "result_item_empty": true,
+      "effect": "UpgradeTierResult.executeLevelEffect -> Level.setBlockAndUpdate at same position",
+      "action": "Preserve native ritual; enforce block owner/access, not inventory acquisition or RecipeSerializer removal.",
+      "source_commit": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+      "source_version": "2.6.1",
+      "source_file": "neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java",
+      "source_line": 136,
+      "gate_action": "Raise tier3/4 item and block gates to21; tier1/2/5 remain15/21/31. No existing quest references to tier2–5 found in all authored catalogs and generated chapters."
+    },
+    {
+      "registry": "forbidden_arcanus:hephaestus_forge/ritual",
+      "id": "forbidden_arcanus:upgrade_tier_5",
+      "required_forge_tier": 4,
+      "result_block": "forbidden_arcanus:hephaestus_forge_tier_5",
+      "is_item_recipe": false,
+      "result_item_empty": true,
+      "effect": "UpgradeTierResult.executeLevelEffect -> Level.setBlockAndUpdate at same position",
+      "action": "Preserve native ritual; enforce block owner/access, not inventory acquisition or RecipeSerializer removal.",
+      "source_commit": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+      "source_version": "2.6.1",
+      "source_file": "neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java",
+      "source_line": 137,
+      "gate_action": "Raise tier3/4 item and block gates to21; tier1/2/5 remain15/21/31. No existing quest references to tier2–5 found in all authored catalogs and generated chapters."
+    }
+  ],
+  "native_codec_evidence": {
+    "file": "content/research/evidence/balance_v5/native-codecs.json",
+    "sha256": "99ee187d3bea09fe6b5c1cee29657dc9f15bdf2476dcc67519dd92e10dfe7737"
+  },
+  "forge_gate_floors": [
+    15,
+    21,
+    21,
+    21,
+    31
+  ],
+  "full_pack_execution": false,
+  "manual_checks": [
+    "Complete48 then craft every new Creative capstone using its real native process.",
+    "Check JEI has one Creative Pool producer; all three original source IDs absent.",
+    "Exercise native Hephaestus upgrades at tier2/3/4/5; check inherited ownership and inaccessible upgraded block at epoch below floor.",
+    "IF tools retain zero charge and need ordinary fuel/energy; validate no automatic Infinite tier.",
+    "Verify import/fake-player/machine processing under Machine Guard; no blanket TPS claim."
+  ],
+  "limitations": [
+    "Source output audit does not enumerate commands, loot tables, hardcoded recipes, or arbitrary external datapacks.",
+    "Native Hephaestus ritual creation is not intercepted by a ritual-specific permission hook; Machine Guard must block use/ticking of the transformed block."
+  ]
+}

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_evilcraft",
   "title": "evilcraft — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 33,
+  "order_index": 38,
   "icon": {
     "id": "evilcraft:dark_ore",
     "count": 1
@@ -61,14 +61,81 @@
           "id": "0000663E2BDDAA17",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.0
+    },
+    {
+      "id": "000038E7E352F065",
+      "title": "Початок темної алхімії",
+      "description": [
+        "Відкрийте Origins of Darkness і встановіть Blood Infuser. Перевірте його сторінку до підключення рідини: основним ресурсом процесів є кров, а не звичайна вода.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "evilcraft:origins_of_darkness",
+        "count": 1
+      },
+      "dependencies": [
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000A2D71AD3EDE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000D8F878940998",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:origins_of_darkness",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAAA9FFA1139",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ACF12E8D6D59",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001D95A934EF08",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 9.0
     },
     {
       "id": "000018ADC8F2DF1F",
@@ -110,14 +177,82 @@
           "id": "000052BA038EABCA",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "0000A575EA1962E6",
+      "title": "Екстрактор і окремий резервуар",
+      "description": [
+        "Підготуйте Blood Extractor і Dark Tank для рідини. Майте контрольований запас перед інфузіями, щоб виробництво не зупинялося посеред складного рецепта.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_extractor",
+        "count": 1
+      },
+      "dependencies": [
+        "000038E7E352F065",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A594CEB80FD5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:dark_tank",
+          "timer": 40
+        },
+        {
+          "id": "00001AD9A7CD5A03",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_extractor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DF8A68626863",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000616A0509C7EB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007B1D24FB4D7C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dull_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 9.0
     },
     {
       "id": "0000D7609D51AD34",
@@ -159,14 +294,82 @@
           "id": "000061FC1F90BA10",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "evilcraft:blood_waxed_coal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 3.0
+    },
+    {
+      "id": "0000205B399ECB62",
+      "title": "Перша інфузія крові",
+      "description": [
+        "Перетворіть Dark Gem у Dark Power Gem через Blood Infuser. Це основний проміжний матеріал, що відкриває пристрої та ядро інфузії.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_power_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A575EA1962E6",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000207EC8E08FC6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000C06A4292292C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAE43ECA6AD4",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_extractor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ECA4DB799229",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CB5367E13CD0",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
     },
     {
       "id": "0000309E92E19C44",
@@ -204,14 +407,14 @@
           "id": "0000ED50CC9BA9E4",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "evilcraft:golden_string",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "00003F0C292839AF",
@@ -253,14 +456,14 @@
           "id": "00003C5F185656B2",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "00007AEE86CE075D",
@@ -302,14 +505,14 @@
           "id": "0000709962A2B5D6",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "evilcraft:blood_waxed_coal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 2.0
     },
     {
       "id": "00008CE33C8E1D89",
@@ -351,14 +554,14 @@
           "id": "0000297F2A5A4136",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 0.0
     },
     {
       "id": "00005C42330BEF99",
@@ -396,14 +599,14 @@
           "id": "0000259C38E9699B",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "evilcraft:blood_waxed_coal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000D6C92189901E",
@@ -445,14 +648,82 @@
           "id": "00003857980D0342",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "evilcraft:golden_string",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 3.0
+    },
+    {
+      "id": "0000E659F14B7B3C",
+      "title": "Воскове паливо",
+      "description": [
+        "Виконайте рецепт обробки вугілля кров’ю та порівняйте витрати з паливною ділянкою. Кров тут є виробничим входом; квест не видає її нескінченною нагородою.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_waxed_coal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000205B399ECB62",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000912436579FEF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "00008EC2B8F585BB",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7EEA5223759",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000836EADBA1D64",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D4CEFC4053CD",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 9.0
     },
     {
       "id": "00002B2C19DAFE8A",
@@ -494,14 +765,14 @@
           "id": "0000DA5A23768A93",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "evilcraft:blood_waxed_coal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 5.0
     },
     {
       "id": "000040162C488545",
@@ -554,14 +825,82 @@
           "id": "0000D78DB0FEEEDD",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 3.0
+    },
+    {
+      "id": "00005F1A0D764276",
+      "title": "Ядро наступного виробничого рівня",
+      "description": [
+        "Підготуйте Hardened Blood Shards і Dark Power Gem для Blood Infusion Core. Це компонент рецептів наступного рівня, а не довільний сувенір із мода.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infusion_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E659F14B7B3C",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001FD90ED87FB6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000EA4AEF6A25A5",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_infusion_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005F5E26513BCE",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:hardened_blood_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2A9219E561A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AD0D1C46DC38",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 9.0
     },
     {
       "id": "0000BDD5B4433267",
@@ -603,14 +942,150 @@
           "id": "00009D1A49269A6F",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "evilcraft:blood_waxed_coal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 1.0
+    },
+    {
+      "id": "00006C2F12E650BE",
+      "title": "Ремонт із витратами крові",
+      "description": [
+        "Зберіть Blood Chest і підготуйте джерело крові за книгою. Перевірте ремонт на дозволеному інструменті; огляд блока й наявність екстрактора не є автоматичним доказом успішного ремонту.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F1A0D764276",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CF86EC90532F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_chest",
+          "timer": 40
+        },
+        {
+          "id": "000061650816C44E",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005437EBF5AA1C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_extractor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000085043ACCD5CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006ACF3EBA31CC",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 9.0
+    },
+    {
+      "id": "0000C41D93DED695",
+      "title": "Обіцянка покращення",
+      "description": [
+        "Виготовте tier-покращення за рецептом після базових інфузій. Звіряйте вимогу мінімального рівня процесу в JEI, щоб не змішувати покращення швидкості та доступ до рецептів.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "evilcraft:promise_tier_1",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C2F12E650BE",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C1631BB154E7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "00002A7C95B7BD6F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_tier_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005C3FEE956B19",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_infusion_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007572FFA60932",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008410170114FE",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 9.0
     }
   ]
 }

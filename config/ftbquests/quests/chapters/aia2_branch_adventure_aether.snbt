@@ -1,0 +1,278 @@
+{
+  "id": "0000785F27EA5E67",
+  "filename": "aia2_branch_adventure_aether",
+  "title": "aether — Пригоди",
+  "group": "000091674FF185C4",
+  "order_index": 1,
+  "icon": {
+    "id": "aether:book_of_lore",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000671ACA05C257",
+      "title": "Дослідницький вихід в Етер",
+      "description": [
+        "Відвідайте Aether і відкрийте Book of Lore. Перш ніж шукати підземелля, підготуйте місцеве джерело їжі та безпечне повернення до порталу.",
+        "Відвідування виміру перевіряється нативною умовою FTB; книга й матеріали самі його не замінюють.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "aether:book_of_lore",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C32525EBFCCD",
+          "type": "dimension",
+          "dimension": "aether:the_aether"
+        },
+        {
+          "id": "00008122BE95D23F",
+          "type": "item",
+          "item": {
+            "id": "aether:book_of_lore",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077D2B0482CB6",
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_log",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009397C671BB52",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A0EFA0EEDE42",
+          "type": "item",
+          "item": {
+            "id": "aether:blue_berry",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000083005C6680B0",
+      "title": "Бронзове підземелля",
+      "description": [
+        "Дослідіть Bronze Dungeon і переможіть Slider. Ключ є результатом бою; для нього не додається випадковий верстаковий рецепт.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "aether:bronze_dungeon_key",
+        "count": 1
+      },
+      "dependencies": [
+        "0000551CCE70D7E4",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000050D9DDF8A27B",
+          "type": "kill",
+          "entity": "aether:slider",
+          "value": 1
+        },
+        {
+          "id": "000083F1F04B9068",
+          "type": "item",
+          "item": {
+            "id": "aether:bronze_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EAF74D29E4A9",
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009F50369EFC57",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FBCF12E375BE",
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000B43AFDA63B30",
+      "title": "Випробування валькірії",
+      "description": [
+        "Після початкового підземелля підготуйтеся до Valkyrie Queen за правилами Silver Dungeon. Завдання вимагає реальної перемоги, а не лише переданого ключа.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "aether:silver_dungeon_key",
+        "count": 1
+      },
+      "dependencies": [
+        "000083005C6680B0",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000022E893A91824",
+          "type": "kill",
+          "entity": "aether:valkyrie_queen",
+          "value": 1
+        },
+        {
+          "id": "0000B503644589C7",
+          "type": "item",
+          "item": {
+            "id": "aether:silver_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000596AAEC0F88E",
+          "type": "item",
+          "item": {
+            "id": "aether:enchanted_gravitite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014295A1BA76C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001BC7D5C95DCF",
+          "type": "item",
+          "item": {
+            "id": "aether:blue_berry",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000E1BD05033A2",
+      "title": "Сонячний володар",
+      "description": [
+        "Завершіть дослідження Golden Dungeon та переможіть Sun Spirit. Трофей лишається пригодницьким ресурсом, а не безкоштовною нагородою попередньої епохи.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "aether:gold_dungeon_key",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B43AFDA63B30",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DA0FB9A5A089",
+          "type": "kill",
+          "entity": "aether:sun_spirit",
+          "value": 1
+        },
+        {
+          "id": "00004192545C9901",
+          "type": "item",
+          "item": {
+            "id": "aether:gold_dungeon_key",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002C9F7D1BFE6B",
+          "type": "item",
+          "item": {
+            "id": "aether:enchanted_gravitite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D140190CCBE2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E1F5CBA13BD6",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 0.0
+    }
+  ]
+}

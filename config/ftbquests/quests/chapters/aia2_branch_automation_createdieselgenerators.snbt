@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_createdieselgenerators",
   "title": "createdieselgenerators — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 9,
+  "order_index": 11,
   "icon": {
     "id": "createdieselgenerators:oil_scanner",
     "count": 1
@@ -11,6 +11,95 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "000087537340E9D6",
+      "title": "Нафтовий насос має споживача",
+      "description": [
+        "Підготуйте пошук, видобувний вузол і контрольований механічний споживач як один паливний контракт. Розвідка не підтверджує правильної збірки насоса; відокремте її перевірку від першого запуску двигуна.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:diesel_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CA0AC773113A",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000091F8F5A5E55E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:pumpjack_head",
+          "timer": 40
+        },
+        {
+          "id": "0000613DE4C03A6B",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:diesel_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008368FAF6DBF2",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:oil_scanner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ADB1AFE7F038",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:canister",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007C2C0C98280D",
+          "type": "item",
+          "item": {
+            "id": "create:clutch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090D1CFF48BF5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000015FDE29B5149",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
     {
       "id": "000092F6EE1D1BD4",
       "title": "Пошук палива починається з вимірювання",
@@ -69,7 +158,7 @@
           "id": "00002AC8E0F41685",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -136,10 +225,10 @@
           "id": "0000AABF8F0D8728",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
@@ -199,7 +288,7 @@
           "id": "00003D27C1905EFD",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -266,7 +355,7 @@
           "id": "0000BDAA182B6685",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -333,10 +422,10 @@
           "id": "0000A364D91D5E0D",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -400,7 +489,7 @@
           "id": "00001FBAC5810394",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -467,7 +556,7 @@
           "id": "0000FC35DE4E4D61",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -545,7 +634,7 @@
           "id": "000035130A7D1FCF",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "createdieselgenerators:wood_chip",
             "count": 1
           },
           "count": 4
@@ -553,6 +642,262 @@
       ],
       "x": 14.0,
       "y": 0.0
+    },
+    {
+      "id": "000093169D716CFA",
+      "title": "Бродіння постачає реальну паливну партію",
+      "description": [
+        "Підготуйте сільськогосподарський вихід до окремої біопаливної ділянки. Етанол та олія мають різні рецепти і сховища; перед спільним виробництвом перевірте, який саме двигун приймає завершене паливо.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:ethanol_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "000087537340E9D6",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007BF8873B19EA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:bulk_fermenter",
+          "timer": 40
+        },
+        {
+          "id": "0000171695F21E4F",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:ethanol_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DDFB2E557EF5",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:plant_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C89872F1C1E7",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plant_gatherer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001D97C5E50C0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A9E99C571545",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000083D259FA2F6",
+      "title": "Двигун отримує обслуговувану передачу",
+      "description": [
+        "Підготуйте сервісний розрив і запасні деталі великого двигуна. Порівняйте показник навантаження під час зупинки споживача й при його роботі; квест не задає вигадану універсальну потужність для всіх типів палива.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_piston",
+        "count": 1
+      },
+      "dependencies": [
+        "000093169D716CFA",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000049DF2509BFDE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:large_diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000E2F0D093E412",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_piston",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A4CB15FB5797",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_silencer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000171DC2FD9B10",
+          "type": "item",
+          "item": {
+            "id": "create:stressometer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C95D8EDC520",
+          "type": "item",
+          "item": {
+            "id": "create:clutch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F41FDFC58826",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093618B366932",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "00003F9A7773D596",
+      "title": "Паливний двигун лишається частиною заводу",
+      "description": [
+        "Підготуйте контроль паливного запасу та окремий буфер для резервної механічної генерації заводу. Велика електрична мережа не скасовує потребу перевіряти тип палива, напрям обертання та аварійну зупинку локального двигуна.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_turbocharger",
+        "count": 1
+      },
+      "dependencies": [
+        "0000083D259FA2F6",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006E5F04C4D3CF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:huge_diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "00004B9055FF28F9",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_turbocharger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000072E14042E28A",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA049EDEA3DD",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004505B06323E6",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:biodiesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000680783804954",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000029FE9A2BD1A6",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     }
   ]
 }

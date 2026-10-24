@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_mekanism",
   "title": "Mekanism — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 14,
+  "order_index": 16,
   "icon": {
     "id": "mekanism:configurator",
     "count": 1
@@ -11,6 +11,139 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "000036BBC5FF6F2C",
+      "title": "Перша зафіксована металургійна інфузія",
+      "description": [
+        "Підведіть енергію та редстоуновий реагент до Metallurgic Infuser і завершіть виробництво Infused Alloy. У рецепті збірки використовується андезитовий сплав Create: кінетична металургія стає основою електричної автоматизації. Перевірте потрібну сторону подавання реагенту перед запуском.",
+        "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+        "Це необов’язкова навчальна ціль. Вона не замінює два ключі, обов’язкові гілки чи фінальний квест епохи. Збережений виробничий запис автоматично синхронізується з квестом; у інвентарі залиште одну одиницю отриманого сплаву."
+      ],
+      "icon": {
+        "id": "mekanism:alloy_infused",
+        "count": 1
+      },
+      "dependencies": [
+        "000080465675C20B",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009AF5ED584DC7",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/infused_alloy"
+        },
+        {
+          "id": "0000F47EE761A89C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074743ADFAC3F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EC5B4F93968E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_osmium",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 17.0,
+      "y": 3.0
+    },
+    {
+      "id": "000064F66913D509",
+      "title": "Вуглець має свій бік інфузора",
+      "description": [
+        "Підготуйте вуглецевий реагент і збагачене залізо біля інфузора. Режим боків для інфузійного матеріалу відрізняється від входу основного предмета; перевірте обидва окремо перед підключенням спільного транспортера.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:enriched_carbon",
+        "count": 1
+      },
+      "dependencies": [
+        "000080465675C20B",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001DBC4346C9FD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:metallurgic_infuser",
+          "timer": 40
+        },
+        {
+          "id": "000012BDC23ADD3A",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_carbon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E28990FED0E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000330F634611F3",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000735A25FEB243",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F76E3B33DE3F",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
     {
       "id": "0000B6E1433A400C",
       "title": "Шафа конфігурації машин",
@@ -69,14 +202,92 @@
           "id": "0000DAA76D2E282D",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000373CD906E528",
+      "title": "Збагачення перед електроплавленням",
+      "description": [
+        "Порівняйте сире залізо з уніфікованим чистим пилом після базового збагачення. Ця ділянка передує складним хімічним множникам; звірте конкретний вихід JEI для сировини та не змішуйте його з очищенням забрудненого пилу пізніших ланцюгів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:dirty_dust_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "000064F66913D509",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C7359749DEF7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:enrichment_chamber",
+          "timer": 40
+        },
+        {
+          "id": "000013029CCF184F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:raw_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007349D3A8AA1B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_iron",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000481A223176C8",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000C5B95DEBE1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000032D94BA76255",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 0.0
+      "x": 2.0,
+      "y": 3.0
     },
     {
       "id": "0000414390F03EE2",
@@ -136,10 +347,10 @@
           "id": "0000B5313E3A2659",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "mekanism:dust_coal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
@@ -203,7 +414,7 @@
           "id": "00003AC7EB8FBD9C",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "mekanism:enriched_iron",
             "count": 1
           },
           "count": 4
@@ -270,7 +481,7 @@
           "id": "0000602D074685E0",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "mekanism:dust_osmium",
             "count": 1
           },
           "count": 4
@@ -337,10 +548,10 @@
           "id": "00000E191D44AF6B",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "mekanism:dust_osmium",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -404,7 +615,7 @@
           "id": "0000DAEE93681577",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "mekanism:enriched_iron",
             "count": 1
           },
           "count": 4
@@ -471,7 +682,7 @@
           "id": "0000603CA9D239AA",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "mekanism:dust_coal",
             "count": 1
           },
           "count": 4
@@ -549,14 +760,69 @@
           "id": "000072E69FB00FEF",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006EB6CBE42204",
+      "title": "Алмазне армування в інфузорі",
+      "description": [
+        "Завершіть у Metallurgic Infuser справжній процес армованого сплаву з попереднього Infused Alloy та алмазного реагенту. Ця операція продовжує ту саму металургійну лінію, але потребує іншого середовища; розділіть буфери реагентів, щоб не зупинити попереднє виробництво.",
+        "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+        "Це необов’язкова навчальна ціль. Вона не замінює два ключі, обов’язкові гілки чи фінальний квест епохи. Збережений виробничий запис автоматично синхронізується з квестом; у інвентарі залиште одну одиницю отриманого сплаву."
+      ],
+      "icon": {
+        "id": "mekanism:alloy_reinforced",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C644819DF906",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C49E847FAC7",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/reinforced_alloy"
+        },
+        {
+          "id": "0000F31F09350AE9",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_reinforced",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000524E694D4E43",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000C445235F6EB",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_osmium",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 14.0,
-      "y": 0.0
+      "x": 17.0,
+      "y": 6.0
     },
     {
       "id": "000089E8BC61C517",
@@ -616,14 +882,14 @@
           "id": "000042DB5E9AB830",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "mekanism:enriched_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000255C784FD3C2",
@@ -683,14 +949,14 @@
           "id": "0000DC887E144432",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "mekanism:dust_coal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "000000C96233F3A2",
@@ -750,14 +1016,170 @@
           "id": "000088BA6926DE3A",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "mekanism:enriched_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "0000C28041B647A5",
+      "title": "Хімічний впорскувач очікує реагент",
+      "description": [
+        "Підготуйте уламки та резервуар реагенту для наступної сходинки обробки. Хімічний вхід не замінюється водяною трубою; зіставте тип реагенту з рецептом перед спробою пояснювати зупинку браком енергії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:shard_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000373CD906E528",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CFD349E610FA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:chemical_injection_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00003417A07D0335",
+          "type": "item",
+          "item": {
+            "id": "mekanism:shard_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1E1417D5A8C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_chemical_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F14F12E8A83F",
+          "type": "item",
+          "item": {
+            "id": "mekanism:gauge_dropper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9BC181DC4BE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004FCEC45BD20B",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000E714D843CB1D",
+      "title": "Сепаратору потрібні два виходи",
+      "description": [
+        "Позначте обидва виходи електролізу та передбачте поведінку кожного при переповненні. Забитий побічний газ може зупинити весь процес; спочатку випробуйте два незалежні буфери, а потім вирішуйте, який газ справді потрібен.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:basic_pressurized_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C28041B647A5",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000025C51AC997CC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:electrolytic_separator",
+          "timer": 40
+        },
+        {
+          "id": "0000571DC28AF451",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_pressurized_tube",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B011D372858",
+          "type": "item",
+          "item": {
+            "id": "mekanism:basic_chemical_tank",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C726AAB3D73F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000081B411AFCF3A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004D94CEE337B4",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     },
     {
       "id": "0000FA0D83ED37A9",
@@ -817,14 +1239,14 @@
           "id": "0000A2C14DD521BC",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "mekanism:dust_osmium",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000B1D256322841",
@@ -884,14 +1306,92 @@
           "id": "00006F9E3EC54873",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "mekanism:dust_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "0000DA1BC54A7C16",
+      "title": "Термоколона між двома процесами",
+      "description": [
+        "Зберіть вузли керованого випаровування та окреме джерело тепла. Порти входу й виходу варто позначити до з'єднання колон у каскад; предметний комплект не підтверджує правильної висоти або температури мультиблока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:thermal_evaporation_valve",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E714D843CB1D",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001658A6F4F1E7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:thermal_evaporation_controller",
+          "timer": 40
+        },
+        {
+          "id": "00005AE8A2BD0D82",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_valve",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007757B794B377",
+          "type": "item",
+          "item": {
+            "id": "mekanism:thermal_evaporation_block",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001A541120B0A3",
+          "type": "item",
+          "item": {
+            "id": "mekanism:resistive_heater",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009DAE1E488EEC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A989FFAE8FFF",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 3.0
     },
     {
       "id": "00004BE811FDA1E3",
@@ -951,14 +1451,14 @@
           "id": "0000B378AF351F47",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "mekanism:alloy_infused",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000F7BA86B7EB0C",
@@ -1018,14 +1518,14 @@
           "id": "000004BECB1753DF",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "mekanism:alloy_infused",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000576FB019DF1C",
@@ -1096,14 +1596,436 @@
           "id": "0000CFC4BB0423C8",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "mekanism:dust_osmium",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "0000579E0CA860C6",
+      "title": "Пластмаса починається з етилену",
+      "description": [
+        "Порівняйте субстрат, гранулу й лист HDPE як різні етапи полімерного циклу. Для кожної реакції перевіряйте не лише предмет, а й хімічні середовища та рідину: одна й та сама камера виконує кілька несумісних схем.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:substrate",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DA1BC54A7C16",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000061E97569D6D6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:pressurized_reaction_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00003ADA10F06436",
+          "type": "item",
+          "item": {
+            "id": "mekanism:substrate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CD555CA87E86",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hdpe_pellet",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D4F269B4333",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hdpe_sheet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076C278176FE3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EBAD522CE6C9",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000FBBE79077B53",
+      "title": "Цифровий кар’єр із контрольованим виходом",
+      "description": [
+        "Побудуйте Digital Miner як окрему керовану лінію видобутку. Почніть із малої робочої області й конкретного фільтра руди, потім підготуйте сортування та буфер виходу. Configurator допоможе обслуговувати транспорт; параметри області й самі фільтри задаються у GUI кар’єру.",
+        "FTB підтверджує встановлені кар’єр і сортувальник та наявність сервісного комплекту. Це не автоматична перевірка фільтра, меж, кількості добутої руди або навантаження TPS. Перевірте пробний запуск перед підключенням до постійного складу."
+      ],
+      "icon": {
+        "id": "mekanism:digital_miner",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003CE97129BE13",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:digital_miner",
+          "timer": 60
+        },
+        {
+          "id": "0000BEA21C64275B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:logistical_sorter",
+          "timer": 40
+        },
+        {
+          "id": "0000AB5D8F347A7C",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configurator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BF84A041BD57",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A8BD6BB72CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002E9800725726",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 9.0
+    },
+    {
+      "id": "0000F8CD5183235D",
+      "title": "Відходи не є паливним буфером",
+      "description": [
+        "Виділіть контрольоване місце для радіоактивного побічного продукту та підготуйте засоби вимірювання й захисту. Не розбирайте заповнені вузли під час пробного запуску; маршрут відходів планується до ввімкнення реактора.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:dosimeter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000579E0CA860C6",
+        "0000F0ACC7694D75"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000073727A57C5B1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:radioactive_waste_barrel",
+          "timer": 40
+        },
+        {
+          "id": "000082B5C19D0F32",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dosimeter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000536A3ECD335B",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hazmat_mask",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003F3450445970",
+          "type": "item",
+          "item": {
+            "id": "mekanism:hazmat_gown",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003356D97A7F15",
+          "type": "advancement",
+          "advancement": "aia2:stages/e33"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A07E5E99E8F5",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000959FE4D8429B",
+      "title": "Передача матерії має частоту",
+      "description": [
+        "Розділіть документи налаштувань Mekanism та AE2, навіть якщо обидві мережі використовують спільний склад. Для просторової передачі перевірте вибрану частоту й напрям каналів, а картку використовуйте лише для сумісних параметрів свого мода.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "mekanism:configuration_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F8CD5183235D",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009019A177971D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:quantum_entangloporter",
+          "timer": 40
+        },
+        {
+          "id": "00008772AC1AE569",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configuration_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E77696BE3E96",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C37C93A87BB",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_control_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CF0412768FF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000055038D92B9E3",
+          "type": "item",
+          "item": {
+            "id": "mekanism:enriched_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000AA651E41D87C",
+      "title": "Межа рідинного сховища",
+      "description": [
+        "Підготуйте фінальний рідинний резервуар після освоєння транспорту й фільтрації. Перевірте режими вводу/виводу на тестовому контурі, щоб творче джерело не змішало різні виробничі рідини. Основні епохи не залежать від цього сховища.",
+        "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи."
+      ],
+      "icon": {
+        "id": "mekanism:creative_fluid_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A760BB4C3345",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CDAFA3904CE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:creative_fluid_tank",
+          "timer": 60
+        },
+        {
+          "id": "0000655AA28A52AA",
+          "type": "item",
+          "item": {
+            "id": "mekanism:creative_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008A4CFAF20278",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000831DD7F35C2E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:dust_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00006155AA9AE0A9",
+      "title": "Межа хімічного сховища",
+      "description": [
+        "Побудуйте окремий стенд для фінального хімічного резервуара. Рідини та chemicals у Mekanism мають різні транспортні інтерфейси; перенесіть сюди вивчені режими сторін і контроль газових ліній. Творчий резерв доступний тільки після закінчення кампанії.",
+        "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи."
+      ],
+      "icon": {
+        "id": "mekanism:creative_chemical_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AA651E41D87C",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0275B81FE21",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mekanism:creative_chemical_tank",
+          "timer": 60
+        },
+        {
+          "id": "0000622425F900E4",
+          "type": "item",
+          "item": {
+            "id": "mekanism:creative_chemical_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B69FCF9A309",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004D31C0C2106",
+          "type": "item",
+          "item": {
+            "id": "mekanism:alloy_infused",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
     }
   ]
 }

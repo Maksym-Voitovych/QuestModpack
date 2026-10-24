@@ -1,0 +1,110 @@
+Source: https://github.com/mekanism/Mekanism/blob/a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80/src/main/java/mekanism/common/tile/TileEntityQuantumEntangloporter.java
+Original SHA256: 6d9eefe73ae49b23af424b7a2a5fc601911d08742a77dd72494ed44ed89b7692
+Lines 65-169 (exact original lines; contextual excerpt)
+License: see LICENSE in this evidence directory.
+
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+public class TileEntityQuantumEntangloporter extends TileEntityConfigurableMachine implements IChunkLoader {
+
+    private final Map<TransmissionType, Map<Direction, BlockCapabilityCache<?, @Nullable Direction>>> capabilityCaches = new EnumMap<>(TransmissionType.class);
+    private final Map<Direction, BlockEnergyCapabilityCache> adjacentEnergyCaps = new EnumMap<>(Direction.class);
+    private final TileComponentChunkLoader<TileEntityQuantumEntangloporter> chunkLoaderComponent;
+
+    private double lastTransferLoss;
+    private double lastEnvironmentLoss;
+
+    public TileEntityQuantumEntangloporter(BlockPos pos, BlockState state) {
+        super(MekanismBlocks.QUANTUM_ENTANGLOPORTER, pos, state);
+
+        setupConfig(TransmissionType.ITEM, InventoryProxy::new, () -> hasFrequency() ? getFreq().getInventorySlots(null) : Collections.emptyList());
+        setupConfig(TransmissionType.FLUID, FluidProxy::new, () -> hasFrequency() ? getFreq().getFluidTanks(null) : Collections.emptyList());
+        setupConfig(TransmissionType.CHEMICAL, ChemicalProxy::new, () -> hasFrequency() ? getFreq().getChemicalTanks(null) : Collections.emptyList());
+        setupConfig(TransmissionType.ENERGY, EnergyProxy::new, () -> hasFrequency() ? getFreq().getEnergyContainers(null) : Collections.emptyList());
+
+        ConfigInfo heatConfig = configComponent.getConfig(TransmissionType.HEAT);
+        if (heatConfig != null) {
+            Supplier<List<IHeatCapacitor>> capacitorSupplier = () -> hasFrequency() ? getFreq().getHeatCapacitors(null) : Collections.emptyList();
+            heatConfig.addSlotInfo(DataType.INPUT_OUTPUT, new HeatProxy(true, false, capacitorSupplier));
+            heatConfig.setCanEject(false);
+        }
+
+        ejectorComponent = new TileComponentEjector(this);
+        //Note: All eject types except for items is handled by the frequency
+        //Only allow trying to eject if we have a frequency, because otherwise all our containers and sides will just be empty anyway
+        // also require that we can function before auto ejecting
+        ejectorComponent.setOutputData(configComponent, TransmissionType.ITEM).setCanEject(type -> hasFrequency() && canFunction());
+
+        chunkLoaderComponent = new TileComponentChunkLoader<>(this);
+        frequencyComponent.track(FrequencyType.INVENTORY, true, true, true);
+        cacheCoord();
+    }
+
+    private <T> void setupConfig(TransmissionType type, ProxySlotInfoCreator<T> proxyCreator, Supplier<List<T>> supplier) {
+        ConfigInfo config = configComponent.getConfig(type);
+        if (config != null) {
+            config.addSlotInfo(DataType.INPUT, proxyCreator.create(true, false, supplier));
+            config.addSlotInfo(DataType.OUTPUT, proxyCreator.create(false, true, supplier));
+            config.addSlotInfo(DataType.INPUT_OUTPUT, proxyCreator.create(true, true, supplier));
+        }
+    }
+
+    @NotNull
+    @Override
+    public IChemicalTankHolder getInitialChemicalTanks(IContentsListener listener) {
+        return new QuantumEntangloporterChemicalTankHolder(this, TransmissionType.CHEMICAL, InventoryFrequency::getChemicalTanks);
+    }
+
+    @NotNull
+    @Override
+    protected IFluidTankHolder getInitialFluidTanks(IContentsListener listener) {
+        return new QuantumEntangloporterFluidTankHolder(this);
+    }
+
+    @NotNull
+    @Override
+    protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener) {
+        return new QuantumEntangloporterEnergyContainerHolder(this);
+    }
+
+    @NotNull
+    @Override
+    protected IHeatCapacitorHolder getInitialHeatCapacitors(IContentsListener listener, CachedAmbientTemperature ambientTemperature) {
+        return new QuantumEntangloporterHeatCapacitorHolder(this);
+    }
+
+    @NotNull
+    @Override
+    protected IInventorySlotHolder getInitialInventory(IContentsListener listener) {
+        return new QuantumEntangloporterInventorySlotHolder(this);
+    }
+
+    @Override
+    protected boolean onUpdateServer() {
+        boolean sendUpdatePacket = super.onUpdateServer();
+        InventoryFrequency freq = getFreq();
+        if (freq != null && freq.isValid() && !freq.isRemoved()) {
+            freq.handleEject(level.getGameTime());
+            updateHeatCapacitors(null); // manually trigger heat capacitor update
+            HeatTransfer loss = simulate();
+            lastTransferLoss = loss.adjacentTransfer();
+            lastEnvironmentLoss = loss.environmentTransfer();
+        } else {
+            lastTransferLoss = 0;
+            lastEnvironmentLoss = 0;
+        }
+        return sendUpdatePacket;
+    }
+
+    @ComputerMethod
+    public boolean hasFrequency() {
+        Frequency freq = getFreq();
+        return freq != null && freq.isValid() && !freq.isRemoved();
+    }
+
+    @Override
+    public boolean persists(ContainerType<?, ?, ?> type) {
+        // don't persist ANY substance types

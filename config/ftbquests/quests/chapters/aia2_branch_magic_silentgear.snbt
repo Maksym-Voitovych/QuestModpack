@@ -1,0 +1,433 @@
+{
+  "id": "00002CF82A36C928",
+  "filename": "aia2_branch_magic_silentgear",
+  "title": "silentgear — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 48,
+  "icon": {
+    "id": "silentgear:material_book",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000489712BB49A5",
+      "title": "Матеріал перед готовим інструментом",
+      "description": [
+        "Відкрийте Material Book та перевірте властивості базового матеріалу. У Silent Gear компоненти визначають характеристики, тому одна лише назва готової кирки не описує її якість.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:material_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000555C8C210786",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:material_grader",
+          "timer": 40
+        },
+        {
+          "id": "000006C1A8149402",
+          "type": "item",
+          "item": {
+            "id": "silentgear:material_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D55F2D961827",
+          "type": "item",
+          "item": {
+            "id": "silentgear:guide_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006C1ADC69D01A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CEADBD9C73A5",
+          "type": "item",
+          "item": {
+            "id": "silentgear:blueprint_paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000031B1BE63124E",
+      "title": "Креслення й головна частина",
+      "description": [
+        "Виготовте креслення кирки перед складанням спорядження. Частини та їхній матеріал зберігаються у компонентах предмета; цей квест перевіряє підготовку креслення.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:pickaxe_blueprint",
+        "count": 1
+      },
+      "dependencies": [
+        "0000489712BB49A5",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000093DE18C0667",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:material_grader",
+          "timer": 40
+        },
+        {
+          "id": "0000E04736F23939",
+          "type": "item",
+          "item": {
+            "id": "silentgear:pickaxe_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008BE2B7B3CDD5",
+          "type": "item",
+          "item": {
+            "id": "silentgear:rod_blueprint",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003DE1677B2D7D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AEDDF39B3B1C",
+          "type": "item",
+          "item": {
+            "id": "silentgear:leather_scrap",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C65DD606E610",
+      "title": "Ремонтний комплект для походу",
+      "description": [
+        "Підготуйте Repair Kit та запас дозволеного металу. Ремонт витрачає матеріал, а не видає новий інструмент як нагороду.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:crude_repair_kit",
+        "count": 1
+      },
+      "dependencies": [
+        "000031B1BE63124E",
+        "0000E21646D828D5"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009AF70E60BFE2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:material_grader",
+          "timer": 40
+        },
+        {
+          "id": "00004BC31FD1E170",
+          "type": "item",
+          "item": {
+            "id": "silentgear:crude_repair_kit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00004E0201DBD8AC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F12DAF1A97B9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e03"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C89B8A91B83C",
+          "type": "item",
+          "item": {
+            "id": "silentgear:flax_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "000063C83C48FBF8",
+      "title": "Сплави окремою операцією",
+      "description": [
+        "Побудуйте Alloy Forge та підготуйте два дозволені метали. Alloy Making формує матеріал для деталей; це окремий крок від звичайного переплавлення руди.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:alloy_forge",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C65DD606E610",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004A957FD25A01",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:alloy_forge",
+          "timer": 40
+        },
+        {
+          "id": "0000884C2530CB69",
+          "type": "item",
+          "item": {
+            "id": "silentgear:alloy_forge",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B7C2A0A633C5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000073A831A6DCF9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:copper_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FEB8D712B797",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EB55CD9AD2C5",
+          "type": "item",
+          "item": {
+            "id": "silentgear:flax_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A8B0E3820D1A",
+      "title": "Контрольований розбір деталей",
+      "description": [
+        "Поставте Salvager для розбору дозволеного спорядження й збереження матеріалів. Не використовуйте його як неперевірений спосіб перетворення босових або заблокованих компонентів.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:salvager",
+        "count": 1
+      },
+      "dependencies": [
+        "000063C83C48FBF8",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ECFFFCE30D4E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:salvager",
+          "timer": 40
+        },
+        {
+          "id": "0000C075018B9D41",
+          "type": "item",
+          "item": {
+            "id": "silentgear:salvager",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000007D51277F391",
+          "type": "item",
+          "item": {
+            "id": "silentgear:crude_repair_kit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082CE38EFD7CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FCA5ACAB2704",
+          "type": "item",
+          "item": {
+            "id": "silentgear:leather_scrap",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C346388772AB",
+      "title": "Пізня майстерня з паспортом матеріалів",
+      "description": [
+        "Підготуйте Modification Kit і Material Book для порівняння пізніх матеріалів. Завдання не перевіряє довільні NBT-характеристики: справжній компонентний аудит виконується окремо у грі.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "silentgear:upgrade_base",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A8B0E3820D1A",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003BDC72EC246D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "silentgear:alloy_forge",
+          "timer": 40
+        },
+        {
+          "id": "0000AAC142CE04C2",
+          "type": "item",
+          "item": {
+            "id": "silentgear:upgrade_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DEB1A46D7E41",
+          "type": "item",
+          "item": {
+            "id": "silentgear:material_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000348AFCCBC032",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007D2C67EBE1AA",
+          "type": "item",
+          "item": {
+            "id": "silentgear:blueprint_paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    }
+  ]
+}

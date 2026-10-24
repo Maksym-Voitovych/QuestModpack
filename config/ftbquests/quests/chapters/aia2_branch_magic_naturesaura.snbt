@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_naturesaura",
   "title": "naturesaura — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 38,
+  "order_index": 43,
   "icon": {
     "id": "naturesaura:gold_fiber",
     "count": 1
@@ -50,14 +50,142 @@
           "id": "000022AB0E97E554",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.969
+    },
+    {
+      "id": "0000AE58B6133663",
+      "title": "Аура — властивість місцевості",
+      "description": [
+        "Почніть із Golden Fiber та отримання Gold Leaf на дереві за Book of Natural Aura. Аура належить місцевості: порожня зона після надмірного споживання відновлюється поступово.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:gold_fiber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D951BF6711B9",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B8FABF47284E",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_leaf",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000144CCB0AB066",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C3409F85E238",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 15.152
+    },
+    {
+      "id": "00003F46BB04922C",
+      "title": "Коло росту дерева",
+      "description": [
+        "Поставте Wooden Stands навколо золотого порошку та правильного саджанця. Ріст дерева запускає Ritual of the Forest і створює token із заданих природних інгредієнтів.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:tree_ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:token_joy",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE58B6133663",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E4ED1F6B29E8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:wood_stand",
+          "timer": 40
+        },
+        {
+          "id": "0000ED239D299355",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:token_joy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E00AA445675F",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DAC0D4BD9A04",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000088AC234FDCA",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 15.152
     },
     {
       "id": "0000D73E61D763B7",
@@ -99,14 +227,14 @@
           "id": "000025A42EFEA06C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.969
     },
     {
       "id": "00005C383FDBF80F",
@@ -148,14 +276,14 @@
           "id": "0000DA7F09D9D41D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.969
     },
     {
       "id": "00009068F8E873A8",
@@ -194,14 +322,82 @@
           "id": "0000391B4D344318",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 3.969
+    },
+    {
+      "id": "0000C84E882D53DE",
+      "title": "Nature Altar після token",
+      "description": [
+        "Виготовте Nature Altar саме ритуалом дерева: його рецепт використовує Token of Joy. Це перехід від підготовки природних символів до обробки матеріалів за рахунок аури.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:tree_ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:nature_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "00003F46BB04922C",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003E066AA408DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:wood_stand",
+          "timer": 40
+        },
+        {
+          "id": "0000DD354D598C62",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:nature_altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D40B90F2631F",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:token_joy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000259DF071E55B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003AF1DFEE7DEE",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 15.152
     },
     {
       "id": "00004A118918FDDB",
@@ -244,14 +440,82 @@
           "id": "0000D85939DF5470",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 2.175
+    },
+    {
+      "id": "0000FD42E2252A44",
+      "title": "Залізо з місцевою аурою",
+      "description": [
+        "Перетворіть залізо у Nature Altar, відстежуючи витрати аури. Матеріал потрібен пристроям контролю й генерації; переносити робочу точку після виснаження краще, ніж ігнорувати деградацію зони.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:altar. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:infused_iron",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C84E882D53DE",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005CB151B993A1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:nature_altar",
+          "timer": 40
+        },
+        {
+          "id": "00001B7C4247CADE",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000054AD9FD32160",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC36D43D5569",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F6B0C01F0B86",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 15.152
     },
     {
       "id": "00004FF8EF790C1B",
@@ -293,14 +557,82 @@
           "id": "000091E532C51D54",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 2.175
+    },
+    {
+      "id": "000091F79B590BFE",
+      "title": "Огляд стану довкілля",
+      "description": [
+        "Поставте Aura Detector поруч із ділянкою обробки. Він дає автоматизації інформацію про довкілля; підготуйте також Environmental Eye для ручного огляду.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_detector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FD42E2252A44",
+        "0000C9015E9D68A0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002E283B8C7D0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:aura_detector",
+          "timer": 40
+        },
+        {
+          "id": "00004C83CD483659",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_detector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00001DBEC82E61A2",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:eye",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000880617C0EE8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e09"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A3EB4EBD5BE6",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 15.152
     },
     {
       "id": "00003D1022E127FF",
@@ -342,14 +674,14 @@
           "id": "0000969DB892D578",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 4.35
     },
     {
       "id": "00009B2026932B37",
@@ -389,14 +721,14 @@
           "id": "00008E10FAE51171",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 5.35
     },
     {
       "id": "0000F94342B4F15D",
@@ -438,14 +770,14 @@
           "id": "0000D3EB614E859C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 3.35
     },
     {
       "id": "00000802C3463D9B",
@@ -487,14 +819,14 @@
           "id": "0000EDFA83B53CFD",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 5.004
     },
     {
       "id": "000069AF0CA4BAD9",
@@ -536,14 +868,14 @@
           "id": "00000D6E3C7DA9FB",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 7.004
     },
     {
       "id": "000084093D6C7F6D",
@@ -585,14 +917,14 @@
           "id": "000059026A317D89",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 4.0
+      "y": 3.0
     },
     {
       "id": "00000B4F21626EAB",
@@ -634,14 +966,14 @@
           "id": "000038DE944C54A1",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "00003BD7FC863CE2",
@@ -695,14 +1027,14 @@
           "id": "000082E7B8D9993C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 2.0
+      "y": 6.152
     },
     {
       "id": "000051336A6EAA78",
@@ -742,7 +1074,7 @@
           "id": "0000A414D9389311",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
@@ -791,14 +1123,14 @@
           "id": "0000D57AB1FDD06D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 6.0
+      "y": 12.152
     },
     {
       "id": "00009582A24B2BBA",
@@ -840,14 +1172,14 @@
           "id": "0000DC160B672CBA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 8.0
+      "y": 8.152
     },
     {
       "id": "0000AD7CBBA6AA40",
@@ -890,14 +1222,14 @@
           "id": "0000A6C0EBFBE5A9",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 10.0
+      "y": 0.0
     },
     {
       "id": "0000AE464A69C563",
@@ -939,14 +1271,14 @@
           "id": "0000D497D0C5CED5",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 12.0
+      "y": 10.152
     },
     {
       "id": "0000B1A6EFE76FE1",
@@ -1011,14 +1343,14 @@
           "id": "00009CB43A192C64",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 18.0,
-      "y": 0.0
+      "y": 3.696
     },
     {
       "id": "000043245D5CF7C3",
@@ -1059,14 +1391,14 @@
           "id": "0000204873195D64",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 22.152
     },
     {
       "id": "00005F765637C48F",
@@ -1115,14 +1447,14 @@
           "id": "00005852EFE5163E",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 4.0
+      "x": 11.0,
+      "y": 18.152
     },
     {
       "id": "00008CB9D8F3C5CC",
@@ -1160,14 +1492,14 @@
           "id": "0000EC4435E829D3",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 23.152
     },
     {
       "id": "0000CC5CE96C5638",
@@ -1231,14 +1563,14 @@
           "id": "0000F024E2AE7566",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 4.0
+      "x": 13.0,
+      "y": 18.152
     },
     {
       "id": "0000FB836A876AAD",
@@ -1276,14 +1608,14 @@
           "id": "0000735FA37EBD0C",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 21.152
     },
     {
       "id": "000050565B16C24A",
@@ -1339,14 +1671,14 @@
           "id": "000022BABA9FBFEC",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 20.152
     },
     {
       "id": "000088B42312C0D2",
@@ -1388,14 +1720,14 @@
           "id": "0000845355655624",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 22.152
     },
     {
       "id": "0000E3F89774B17A",
@@ -1444,14 +1776,14 @@
           "id": "00005E4EF90DB2B3",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 8.0
+      "y": 24.152
     },
     {
       "id": "0000E9DF0A823104",
@@ -1493,14 +1825,14 @@
           "id": "0000315F2DB46F34",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "naturesaura:infused_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 10.0
+      "y": 18.152
     },
     {
       "id": "00001EA10103609C",
@@ -1538,14 +1870,14 @@
           "id": "0000966DFDE702B3",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 21.152
     },
     {
       "id": "000021BF5123CCE8",
@@ -1598,14 +1930,14 @@
           "id": "00001AFE3E00ABF5",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "naturesaura:gold_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 23.152
     },
     {
       "id": "0000D4E51E91A595",
@@ -1658,14 +1990,297 @@
           "id": "00003B054894C3C3",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "naturesaura:gold_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 21.152
+    },
+    {
+      "id": "000016BFD960948A",
+      "title": "Окремий генератор аури",
+      "description": [
+        "Використайте Animal Generator за Book of Natural Aura й відокремте генерацію від споживача. Наявність ресурсу на складі не гарантує відновлення зони; перевірте умови роботи в книзі.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:animal_generator",
+        "count": 1
+      },
+      "dependencies": [
+        "000091F79B590BFE",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FA14415EA618",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:animal_generator",
+          "timer": 40
+        },
+        {
+          "id": "0000587A1C4DCCD3",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:animal_generator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000CBF3A5F8345A",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:birth_spirit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000039513D5C3F93",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000149BF2A5ADC9",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 15.152
+    },
+    {
+      "id": "000071D3CDEB014E",
+      "title": "Природна ділянка для міжмодових сплавів",
+      "description": [
+        "Завершіть окремий потік Tainted Gold і тримайте інструменти контролю аури поруч. Це не декоративний золотий блок, а реагент магічно-промислового ланцюга.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:altar. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:tainted_gold",
+        "count": 1
+      },
+      "dependencies": [
+        "0000456987CA3C64",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000443E115D4E1E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:nature_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000910352FCF624",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:tainted_gold",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A2651F4D052",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_detector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000085B34746DBC",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000043D77EA114E5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C6A5FE72D0EB",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:infused_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 27.152
+    },
+    {
+      "id": "0000A090268743F3",
+      "title": "Підношення замість звичайного переплавлення",
+      "description": [
+        "За Book of Natural Aura розмістіть Offering Table серед квітів, покладіть реагенти та використайте Spirit of Calling. Sky Ingot приходить як результат Offering, а не як звичайний продукт печі.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:offering. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:sky_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000071D3CDEB014E",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CBFCCE350B5F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:offering_table",
+          "timer": 40
+        },
+        {
+          "id": "0000BAD6F19AB571",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065F6B56D62A7",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:calling_spirit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000067F9CA3C2AEA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000075E59E8CA168",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 27.152
+    },
+    {
+      "id": "0000528A1EFC103D",
+      "title": "Підношення для просунутого символу",
+      "description": [
+        "Після першого Sky Ingot виконайте offering-перетворення Token of Joy у Token of Euphoria. Сильніший token підтримує пізні природні механізми, зберігаючи матеріальну ціну початкового ритуалу.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: naturesaura:offering. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "naturesaura:token_euphoria",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A090268743F3",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C1A169420D10",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:offering_table",
+          "timer": 40
+        },
+        {
+          "id": "0000EC8A034C964E",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:token_euphoria",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA60161313DF",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:sky_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000493FDBDF102F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E2FC0149E8B1",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 27.152
     }
   ]
 }

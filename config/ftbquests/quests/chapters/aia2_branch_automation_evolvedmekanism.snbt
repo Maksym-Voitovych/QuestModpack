@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_evolvedmekanism",
   "title": "evolvedmekanism — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 11,
+  "order_index": 13,
   "icon": {
     "id": "evolvedmekanism:alloy_hypercharged",
     "count": 1
@@ -69,7 +69,7 @@
           "id": "00008516BBFC1484",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
@@ -136,10 +136,10 @@
           "id": "0000A1915DD549EA",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
@@ -203,7 +203,7 @@
           "id": "00008D229127F9E0",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
@@ -281,7 +281,7 @@
           "id": "0000D75EA2C50340",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
@@ -348,10 +348,10 @@
           "id": "0000C8390F4EF2CB",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -415,7 +415,7 @@
           "id": "00001C7C21E39781",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
@@ -493,7 +493,7 @@
           "id": "000071D3454F1B0A",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
@@ -571,7 +571,7 @@
           "id": "00003659F5B19086",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
@@ -579,6 +579,63 @@
       ],
       "x": 14.0,
       "y": 0.0
+    },
+    {
+      "id": "0000A760BB4C3345",
+      "title": "Сплав творчої інженерії",
+      "description": [
+        "Відокремте синтез творчого сплаву від основної лінії металів. Есенція стає витратним каталізатором фінальних механізмів, тому виробництво сплаву потребує запасу ресурсів і працюючої fusion-інфраструктури.",
+        "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи."
+      ],
+      "icon": {
+        "id": "evolvedmekanism:alloy_creative",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F0861E855A1",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DA76B3CDF002",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:crafting_core",
+          "timer": 60
+        },
+        {
+          "id": "000035BF8614C7D8",
+          "type": "item",
+          "item": {
+            "id": "evolvedmekanism:alloy_creative",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AB4EF9DF1F72",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000677BECAEB1EC",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
     }
   ]
 }

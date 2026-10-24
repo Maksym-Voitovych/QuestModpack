@@ -50,6 +50,11 @@ def validate(root=ROOT):
         new_audit=load(new_audit_path)
         assert new_audit['catalog_sha256']==hashlib.sha256(v4_path.read_bytes()).hexdigest(), 'v4 quest source audit is stale'
     assert len({q['id'] for q in authored}) == len(authored)
+    v5_authored = []
+    for path in sorted((root/'content/quests').glob('v5_*.json')):
+        v5_authored.extend(normalize(load(path))['quests'])
+    authored.extend(v5_authored)
+    assert len({q['id'] for q in authored}) == len(authored)
     signatures = defaultdict(list)
     byepoch = Counter()
     tasktypes = Counter()
@@ -68,23 +73,28 @@ def validate(root=ROOT):
         'minecraft:husbandry/root','minecraft:husbandry/plant_seed','minecraft:husbandry/breed_an_animal',
         'minecraft:husbandry/tame_an_animal','minecraft:husbandry/fishy_business',
         'create:water_wheel','create:mechanical_press','create:millstone','create:mechanical_mixer'}
+    if (root/'kubejs/config/aia2_mechanics.json').is_file():
+        try: from validate_v5 import verified_mechanic_advancements
+        except ImportError: from tools.validate_v5 import verified_mechanic_advancements
+        allowed_advancements.update(verified_mechanic_advancements(root, rules, bundle))
     for q in authored:
         n=q['epoch']; byepoch[n]+=1
+        gate_limit = 99 if q.get('post_completion') else n
         assert q['title_uk'].strip() and len(' '.join(q['description_uk'])) >= 80, q['id']
         assert q['icon'] in items, (q['id'],'icon',q['icon'])
         assert q['tasks'] and any(t['type'] != 'advancement' or not t['advancement'].startswith('aia2:') for t in q['tasks'])
-        assert rules['itemGates'][q['icon']] <= n, (q['id'],'future icon',q['icon'])
+        assert rules['itemGates'][q['icon']] <= gate_limit, (q['id'],'future icon',q['icon'])
         signature=[]
         for t in q['tasks']:
             kind=t['type'];tasktypes[kind]+=1
             if kind=='item':
                 assert t['item'] in items,(q['id'],t)
-                assert rules['itemGates'][t['item']] <= n,(q['id'],'future item',t['item'],rules['itemGates'][t['item']])
+                assert rules['itemGates'][t['item']] <= gate_limit,(q['id'],'future item',t['item'],rules['itemGates'][t['item']])
                 assert 1<=t.get('count',1)<=10000000,(q['id'],t)
                 signature.append((kind,t['item'],t.get('consume',False),t.get('craft',False)))
             elif kind=='observation':
                 assert t['block'] in regs['block'],(q['id'],t)
-                assert rules['blockGates'][t['block']] <= n,(q['id'],'future block',t['block'],rules['blockGates'][t['block']])
+                assert rules['blockGates'][t['block']] <= gate_limit,(q['id'],'future block',t['block'],rules['blockGates'][t['block']])
                 signature.append((kind,t['block']))
             elif kind=='dimension':
                 assert t['dimension'] in regs['dimension'],(q['id'],t)
@@ -106,7 +116,7 @@ def validate(root=ROOT):
         signatures[tuple(sorted(signature))].append(q['id'])
         for reward in q.get('reward',[]):
             assert reward['item'] in items,(q['id'],reward)
-            assert rules['itemGates'][reward['item']] <= n,(q['id'],'future reward',reward)
+            assert rules['itemGates'][reward['item']] <= gate_limit,(q['id'],'future reward',reward)
             assert not reward['item'].startswith('kubejs:aia2_epoch_key_'),q['id']
             assert reward['item'] not in {r['output'] for r in rules.get('dualKeys',[])}, ('Free manufacture key reward',q['id'])
     # Identical item lists with only a larger amount do not create a new design goal.

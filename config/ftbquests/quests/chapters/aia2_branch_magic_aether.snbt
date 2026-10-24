@@ -1,0 +1,287 @@
+{
+  "id": "0000ABE912BE5D6B",
+  "filename": "aia2_branch_magic_aether",
+  "title": "aether — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 29,
+  "icon": {
+    "id": "aether:ambrosium_shard",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00004D35E0B2D9E0",
+      "title": "Амброзій і початкова обробка",
+      "description": [
+        "Побудуйте Altar та підготуйте амброзій. У Aether ця станція використовує власні рецепти repairing/enchanting; вона не тотожна ванільному столу зачарувань.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:smelting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "aether:ambrosium_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "0000671ACA05C257",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E37345234A2A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "aether:altar",
+          "timer": 40
+        },
+        {
+          "id": "0000BB12C28C5EDE",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001149701FDDFC",
+          "type": "item",
+          "item": {
+            "id": "aether:zanite_gemstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F66422480D15",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001AACD3825A4D",
+          "type": "item",
+          "item": {
+            "id": "aether:blue_berry",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DCC1E7B777FC",
+      "title": "Гравітит перетворюється у вівтарі",
+      "description": [
+        "За native enchanting-рецептом обробіть Gravitite Ore у станції Altar. Цей продукт відкриває місцеві інструменти й не отримується звичайним випалюванням.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: aether:enchanting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "aether:enchanted_gravitite",
+        "count": 1
+      },
+      "dependencies": [
+        "00004D35E0B2D9E0",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000408880AF23B4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "aether:altar",
+          "timer": 40
+        },
+        {
+          "id": "000057DD44627A4C",
+          "type": "item",
+          "item": {
+            "id": "aether:enchanted_gravitite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D9C56AF8CE42",
+          "type": "item",
+          "item": {
+            "id": "aether:gravitite_ore",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F4B9ADB1F1CF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C954E4969D10",
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000551CCE70D7E4",
+      "title": "Окрема станція охолодження",
+      "description": [
+        "Побудуйте Freezer та підготуйте доступний місцевий лід. Окремо звірте freezing-рецепти; температурні процеси Aether не використовують хімічні API Mekanism.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "aether:freezer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DCC1E7B777FC",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005FD0539F0AA3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "aether:freezer",
+          "timer": 40
+        },
+        {
+          "id": "0000C87911CF441D",
+          "type": "item",
+          "item": {
+            "id": "aether:freezer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000016AB1813015C",
+          "type": "item",
+          "item": {
+            "id": "aether:icestone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8B620FB7E9B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000018FCD9492CCA",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000057C239C8CEA",
+      "title": "Інкубатор після експедиції",
+      "description": [
+        "Підготуйте Incubator та Ambrosium для місцевої тваринницької гілки. Наявність блока не підтверджує вилуплення Moa; позитивний тест процесу виконайте в інстансі.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "aether:incubator",
+        "count": 1
+      },
+      "dependencies": [
+        "00000E1BD05033A2",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002ACD2926984A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "aether:incubator",
+          "timer": 40
+        },
+        {
+          "id": "0000A9DBFC42176B",
+          "type": "item",
+          "item": {
+            "id": "aether:incubator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00009D97F450B8F1",
+          "type": "item",
+          "item": {
+            "id": "aether:ambrosium_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000042A486C0FD39",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003FDACDF1AB72",
+          "type": "item",
+          "item": {
+            "id": "aether:skyroot_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    }
+  ]
+}

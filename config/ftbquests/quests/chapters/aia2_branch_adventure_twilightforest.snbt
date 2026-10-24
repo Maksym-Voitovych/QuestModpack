@@ -3,7 +3,7 @@
   "filename": "aia2_branch_adventure_twilightforest",
   "title": "twilightforest — Пригоди",
   "group": "000091674FF185C4",
-  "order_index": 4,
+  "order_index": 6,
   "icon": {
     "id": "twilightforest:magic_map",
     "count": 1
@@ -45,14 +45,79 @@
           "id": "000070462AF5DCA9",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:raw_ironwood",
             "count": 1
           },
-          "count": 2
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007360863EEFB6",
+      "title": "Перший маршрут Сутінкового лісу",
+      "description": [
+        "Відвідайте Twilight Forest і підготуйте Magic Map. Маршрут відкривається за власними правилами boss progression мода; ранній портал не дозволяє пропустити захисні бар’єри.",
+        "Відвідування виміру перевіряється нативною умовою FTB; книга й матеріали самі його не замінюють.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "twilightforest:magic_map",
+        "count": 1
+      },
+      "dependencies": [
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000028D8C026F202",
+          "type": "dimension",
+          "dimension": "twilightforest:twilight_forest"
+        },
+        {
+          "id": "0000193536EC61DC",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:magic_map",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EED01593CA48",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:torchberries",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B26D43CCB7C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D317EE648719",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:raw_ironwood",
+            "count": 1
+          },
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00008A0A9E397B21",
@@ -105,14 +170,14 @@
           "id": "000057062241D92B",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:torchberries",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "00009DCC7FECB953",
@@ -154,14 +219,80 @@
           "id": "00001BA948ECE553",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:raw_ironwood",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 4.0
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000065446EE0AB0",
+      "title": "Наги — початок ланцюга босів",
+      "description": [
+        "Здолайте Naga та збережіть луску. Ця перемога є початком штатного порядку прогресії; трофей іншої команди не заміняє реального бою.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:naga_scale",
+        "count": 1
+      },
+      "dependencies": [
+        "00007360863EEFB6",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002CF3F2E4E7D5",
+          "type": "kill",
+          "entity": "twilightforest:naga",
+          "value": 1
+        },
+        {
+          "id": "000001595410CCBF",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001A0DAA0896C4",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:magic_map",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000130800D6A09B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FC76567214A9",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:torchberries",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
     },
     {
       "id": "00007F84D0CB6BCD",
@@ -203,13 +334,13 @@
           "id": "0000977BA62D42D7",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:raw_ironwood",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 2.0,
+      "x": 5.0,
       "y": 0.0
     },
     {
@@ -252,14 +383,14 @@
           "id": "000093F4E67615B0",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:canopy_planks",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 2.0
+      "x": 14.0,
+      "y": 0.0
     },
     {
       "id": "000045C99492304E",
@@ -301,14 +432,80 @@
           "id": "00001C562C8FF25F",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:raw_ironwood",
             "count": 1
           },
-          "count": 2
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 0.0
+    },
+    {
+      "id": "000046A9779F9488",
+      "title": "Вежа лича після Наги",
+      "description": [
+        "Після Наги дослідіть Lich Tower і здолайте Twilight Lich. Враховуйте фази бою й залиште скіпетр для дозволених пригодницьких задач.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:twilight_scepter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000065446EE0AB0",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006F09DC1FC4C",
+          "type": "kill",
+          "entity": "twilightforest:lich",
+          "value": 1
+        },
+        {
+          "id": "0000C555BBD4CD1E",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:twilight_scepter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000280C89CB61E3",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:naga_scale",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A57B0EFE3C5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000017B04119FB4D",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:canopy_planks",
+            "count": 1
+          },
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000AC07DE0C1C26",
@@ -350,14 +547,14 @@
           "id": "00008EB2C93D6372",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:torchberries",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 2.0
+      "x": 16.0,
+      "y": 0.0
     },
     {
       "id": "00003B202F4876A7",
@@ -399,14 +596,80 @@
           "id": "00000361CD18539B",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "twilightforest:torchberries",
             "count": 1
           },
-          "count": 2
+          "count": 4
+        }
+      ],
+      "x": 9.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007E5222257EDD",
+      "title": "Лабіринт і Minoshroom",
+      "description": [
+        "Після базових босів підготуйте карту лабіринту та здолайте Minoshroom. Їжа з лабіринту має роль у штатній прогресії, тому не замінюється випадковим крафтом.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:meef_stroganoff",
+        "count": 1
+      },
+      "dependencies": [
+        "000046A9779F9488",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000615757B92A6F",
+          "type": "kill",
+          "entity": "twilightforest:minoshroom",
+          "value": 1
+        },
+        {
+          "id": "000041116E1F7397",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:meef_stroganoff",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BBE225F9D7B",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:maze_map_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000026109B0C63A2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000522E44E6A2AC",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:canopy_planks",
+            "count": 1
+          },
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000B37713182528",
@@ -496,7 +759,345 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 4.0
+      "y": 6.0
+    },
+    {
+      "id": "0000BCF3E267C2A2",
+      "title": "Вогняна кров Гідри",
+      "description": [
+        "Підготуйтеся до Hydra у відповідній гілці. Трофей і реальна перемога потрібні окремо; Fiery Blood підтримує пізню металургію.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:fiery_blood",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E5222257EDD",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000555648F24459",
+          "type": "kill",
+          "entity": "twilightforest:hydra",
+          "value": 1
+        },
+        {
+          "id": "000022623A38A1BE",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_blood",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003FA9D3C3DD5E",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:meef_stroganoff",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A94E3F2B8D6D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000A85D81C4DE7",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:raw_ironwood",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000F1A0E449602A",
+      "title": "Лицарі в темному лісі",
+      "description": [
+        "Здолайте Knight Phantom і дослідіть підземну гілку Dark Forest. Збирайте місцеві метали після дозволеного просування, не обходячи захисні механіки структури.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса.",
+        "Перевірений виробничий тип цього етапу: minecraft:smelting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "twilightforest:knightmetal_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BCF3E267C2A2",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000056EC4BDA05B0",
+          "type": "kill",
+          "entity": "twilightforest:knight_phantom",
+          "value": 1
+        },
+        {
+          "id": "0000EEADE21143C8",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:knightmetal_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3E5EBE7D12D",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:magic_map",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000085420F151299",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005CCEB2D5606C",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:canopy_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000F1533174CE8B",
+      "title": "Механізми Темної вежі",
+      "description": [
+        "Після лицарів пройдіть Dark Tower та здолайте Ur-Ghast. Fiery Tears і Carminite пов’язують дослідження з подальшою обробкою ресурсів.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:fiery_tears",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F1A0E449602A",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A53FAF54BAAB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "twilightforest:carminite_reactor",
+          "timer": 40
+        },
+        {
+          "id": "0000D8EC3B60075B",
+          "type": "kill",
+          "entity": "twilightforest:ur_ghast",
+          "value": 1
+        },
+        {
+          "id": "00009C9DA53D265A",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_tears",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2E377F191E5",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:carminite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BFE9479333E1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007824AF6E2CA9",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:torchberries",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 3.0
+    },
+    {
+      "id": "000079F42B330661",
+      "title": "Лід Альфа-Єті",
+      "description": [
+        "Пройдіть снігову гілку та переможіть Alpha Yeti. Підготуйте утеплення до продовження, а не намагайтеся компенсувати обмеження біому випадковою бронею.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:alpha_yeti_fur",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F1533174CE8B",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D015C963A337",
+          "type": "kill",
+          "entity": "twilightforest:alpha_yeti",
+          "value": 1
+        },
+        {
+          "id": "0000B1309C9F427E",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:alpha_yeti_fur",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001609BF422D21",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:arctic_fur",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005936C8ECBAAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009C72E2CC7EF1",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:torchberries",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000526E08AFC4C5",
+      "title": "Снігова королева",
+      "description": [
+        "Після Alpha Yeti підніміться до Aurora Palace й здолайте Snow Queen. Нативна умова бою відокремлена від наявності трофея.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса."
+      ],
+      "icon": {
+        "id": "twilightforest:triple_bow",
+        "count": 1
+      },
+      "dependencies": [
+        "000079F42B330661",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000092C3A97C516D",
+          "type": "kill",
+          "entity": "twilightforest:snow_queen",
+          "value": 1
+        },
+        {
+          "id": "0000AC4CE4573B1D",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:triple_bow",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014B1B2B73B37",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:alpha_yeti_fur",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BB66E22B575B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E01F840FCA80",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:raw_ironwood",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 3.0
     },
     {
       "id": "0000D3384A003BFB",
@@ -544,14 +1145,14 @@
           "id": "0000BB688EA8F379",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "twilightforest:torchberries",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 9.0
     },
     {
       "id": "0000CF6117B3C61C",
@@ -596,7 +1197,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 10.0
+      "y": 12.0
     }
   ]
 }

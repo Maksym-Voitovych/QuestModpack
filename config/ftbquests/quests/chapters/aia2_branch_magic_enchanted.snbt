@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_enchanted",
   "title": "enchanted — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 31,
+  "order_index": 36,
   "icon": {
     "id": "enchanted:witch_oven",
     "count": 1
@@ -11,6 +11,73 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "000023555F770BE5",
+      "title": "Сушіння й побічні продукти відьми",
+      "description": [
+        "Почніть із Witch Oven та Clay Jar. Побічні випари з рослин потрібні подальшій алхімії; звичайне деревне вугілля не замінює потрібний компонент.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:witch_oven",
+        "count": 1
+      },
+      "dependencies": [
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FFC28350B93C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:witch_oven",
+          "timer": 40
+        },
+        {
+          "id": "00002C5D1A17FA89",
+          "type": "item",
+          "item": {
+            "id": "enchanted:witch_oven",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007CF7B4B01EF4",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000019663548450E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000028BA01C7D612",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 9.167
+    },
     {
       "id": "0000C2260B219226",
       "title": "Відьомська піч на сталевій оправі",
@@ -48,14 +115,14 @@
           "id": "0000733BE03C3A35",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:mandrake_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.583
     },
     {
       "id": "00009D5D5EAA8D72",
@@ -97,14 +164,150 @@
           "id": "0000F36E8B7DEEEE",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.583
+    },
+    {
+      "id": "0000E128FCF3E4BB",
+      "title": "Дихання богині",
+      "description": [
+        "Зберіть правильний побічний продукт печі за рецептом byproduct. Тримайте глиняні банки у виробничому комплекті, бо без них подальші дистиляції не матимуть тари.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:byproduct. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:breath_of_the_goddess",
+        "count": 1
+      },
+      "dependencies": [
+        "000023555F770BE5",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B1AEA78B4730",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:witch_oven",
+          "timer": 40
+        },
+        {
+          "id": "000035EF40D8499E",
+          "type": "item",
+          "item": {
+            "id": "enchanted:breath_of_the_goddess",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F45C51DB3DC",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F73768750811",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006AD19E899E2E",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 9.167
+    },
+    {
+      "id": "00002B72CFC2EDD2",
+      "title": "Вівтар природної сили",
+      "description": [
+        "Поставте Witch Altar і прочитайте правила живлення в посібнику мода. Вівтар підтримує частину алхімічних рецептів; його наявність не означає достатнього запасу сили.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E128FCF3E4BB",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000546DA3DE00DC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:altar",
+          "timer": 40
+        },
+        {
+          "id": "000044FAF031F1A6",
+          "type": "item",
+          "item": {
+            "id": "enchanted:altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000077451C87CE8D",
+          "type": "item",
+          "item": {
+            "id": "enchanted:attuned_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B7FAE197DFD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000012F934E16E33",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.167
     },
     {
       "id": "00009B3F5F21B7A7",
@@ -146,14 +349,14 @@
           "id": "0000A1F25F6248E2",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 4.167
     },
     {
       "id": "0000B2DF757FAA89",
@@ -195,14 +398,14 @@
           "id": "0000E00E1B97AA41",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 1.0
     },
     {
       "id": "00005887DD1B5922",
@@ -244,7 +447,7 @@
           "id": "0000712E1CA8CEE5",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:mandrake_seeds",
             "count": 1
           },
           "count": 4
@@ -293,7 +496,7 @@
           "id": "00004DCBC550EC69",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
@@ -364,14 +567,14 @@
           "id": "000088CB5F0CDBC7",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 4.167
     },
     {
       "id": "000011388BAEFECD",
@@ -413,14 +616,14 @@
           "id": "0000F8EE7668B1A3",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 2.167
     },
     {
       "id": "000047C667B6F149",
@@ -462,14 +665,14 @@
           "id": "00009D9AF292A14D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 6.167
     },
     {
       "id": "0000A04C46550D41",
@@ -511,14 +714,14 @@
           "id": "0000C5D5CE1D0D68",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:belladonna_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 0.0
     },
     {
       "id": "0000E8F808A7E08C",
@@ -560,14 +763,14 @@
           "id": "00004C6D2257F92B",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:mandrake_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 6.0
+      "y": 4.167
     },
     {
       "id": "00008C1F70A0AD92",
@@ -610,14 +813,14 @@
           "id": "00004F0207BE0050",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 5.5
     },
     {
       "id": "0000C47D12A7E009",
@@ -661,14 +864,14 @@
           "id": "0000C9C0F49A51CA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:belladonna_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 3.5
     },
     {
       "id": "00006D2A7A6FFE9F",
@@ -721,14 +924,14 @@
           "id": "0000D54CDC5333F4",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:belladonna_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 5.5
     },
     {
       "id": "0000CA3E9379821B",
@@ -767,14 +970,14 @@
           "id": "0000BA675949F863",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:belladonna_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 3.5
     },
     {
       "id": "00006D6999ACC7BC",
@@ -827,14 +1030,14 @@
           "id": "00000EB21ACF3D46",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:mandrake_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 5.5
     },
     {
       "id": "0000ED18B699E74B",
@@ -887,14 +1090,14 @@
           "id": "00003FD195BCB2CE",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 3.5
     },
     {
       "id": "0000C7899EE24C0E",
@@ -947,14 +1150,14 @@
           "id": "000020106F332193",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:mandrake_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 0.0
+      "y": 5.5
     },
     {
       "id": "00002696309A10C0",
@@ -1017,14 +1220,376 @@
           "id": "00000B8167E8BE18",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "enchanted:wood_ash",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 12.167
+    },
+    {
+      "id": "00005266E7B4EA61",
+      "title": "Дистиляція двох входів",
+      "description": [
+        "Підготуйте дистилятор: Breath of the Goddess, лазурит і банки дають набір продуктів. Відводьте всі результати, щоб побічні речовини не блокували цикл.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:distilling. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:tear_of_the_goddess",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B72CFC2EDD2",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005B1CEB87518B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:distillery",
+          "timer": 40
+        },
+        {
+          "id": "00002C008405E91C",
+          "type": "item",
+          "item": {
+            "id": "enchanted:tear_of_the_goddess",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6CAF39BEA94",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063F1B04F5CA7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000492C5130BD47",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 9.167
+    },
+    {
+      "id": "0000AD43DF2B849E",
+      "title": "Котел для мутагену",
+      "description": [
+        "Виготовте Mutandis у Witch Kettle за рецептом із мандрагорою та потрібним випаром. Це крок до рослинних перетворень, тому спочатку організуйте відновлювану сировину.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:kettle. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:mutandis",
+        "count": 1
+      },
+      "dependencies": [
+        "00005266E7B4EA61",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007C94E023CDE2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:kettle",
+          "timer": 40
+        },
+        {
+          "id": "00009F553C2D0108",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mutandis",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009599FD610C38",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_root",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006E6476FE15AC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D2F8B0465660",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 9.167
+    },
+    {
+      "id": "0000A6EB34B4F063",
+      "title": "Суп як багатокомпонентна основа",
+      "description": [
+        "Підготуйте всі входи Redstone Soup та живлення вівтаря. Ця основа використовується у складніших варіннях; випадкова звичайна їжа її не замінює.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:kettle. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:redstone_soup",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AD43DF2B849E",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009F6904651859",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:kettle",
+          "timer": 40
+        },
+        {
+          "id": "0000AC32523E1E9F",
+          "type": "item",
+          "item": {
+            "id": "enchanted:redstone_soup",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C396A5301AFA",
+          "type": "item",
+          "item": {
+            "id": "enchanted:belladonna_flower",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000014D59D2DF1B8",
+          "type": "item",
+          "item": {
+            "id": "enchanted:clay_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000011369FEB670F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D4BD54370514",
+          "type": "item",
+          "item": {
+            "id": "enchanted:wood_ash",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 9.167
+    },
+    {
+      "id": "0000426336DB63FD",
+      "title": "Золота крейда за ціною сили",
+      "description": [
+        "Виконайте варіння Golden Chalk із ритуальною крейдою, мандрагорою й золотом. У вихідному рецепті вказано вимогу сили, тому перевірте вівтар до запуску.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:kettle. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:golden_chalk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A6EB34B4F063",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FEDD977D683A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:kettle",
+          "timer": 40
+        },
+        {
+          "id": "0000D8DC9BA9B27A",
+          "type": "item",
+          "item": {
+            "id": "enchanted:golden_chalk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000008D1DAE14D47",
+          "type": "item",
+          "item": {
+            "id": "enchanted:ritual_chalk",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D764642B451",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004CE00BFCF9AA",
+          "type": "item",
+          "item": {
+            "id": "enchanted:wood_ash",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 9.167
+    },
+    {
+      "id": "00008542F50CF320",
+      "title": "Резерв складної дистиляції",
+      "description": [
+        "Завершіть виробничий комплект просунутої дистиляції та відведіть побічні продукти в окремі сховища. Рецепти спеціальних випарів перевіряються за поточним JEI, а не за старими версіями Witchery.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: enchanted:distilling. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "enchanted:oil_of_vitriol",
+        "count": 1
+      },
+      "dependencies": [
+        "0000426336DB63FD",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000543C849072D7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enchanted:distillery",
+          "timer": 40
+        },
+        {
+          "id": "0000334234F8D1BB",
+          "type": "item",
+          "item": {
+            "id": "enchanted:oil_of_vitriol",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000EC6D6FE892E",
+          "type": "item",
+          "item": {
+            "id": "enchanted:tear_of_the_goddess",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC3ED1E41287",
+          "type": "item",
+          "item": {
+            "id": "enchanted:redstone_soup",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F8206A402EA1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FB11481D0735",
+          "type": "item",
+          "item": {
+            "id": "enchanted:mandrake_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 9.167
     }
   ]
 }

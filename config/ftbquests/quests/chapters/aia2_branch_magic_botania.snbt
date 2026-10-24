@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_botania",
   "title": "Botania — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 29,
+  "order_index": 34,
   "icon": {
     "id": "botania:apothecary_default",
     "count": 1
@@ -47,14 +47,81 @@
           "id": "0000742145925E4C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 7.353
+    },
+    {
+      "id": "0000D9D570ADBC8E",
+      "title": "Робочий апотекарій",
+      "description": [
+        "Приготуйте Pure Daisy через Petal Apothecary. Ця квітка перетворює природні блоки на Livingwood і Livingrock — матеріальну основу всієї мережі мани.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:petal_apothecary. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:pure_daisy",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000009D57D35F53",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:apothecary_default",
+          "timer": 40
+        },
+        {
+          "id": "000096740BEFDC73",
+          "type": "item",
+          "item": {
+            "id": "botania:pure_daisy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000677D907D1440",
+          "type": "item",
+          "item": {
+            "id": "botania:white_petal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C5D37915D7A7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D63F4C9FC9F1",
+          "type": "item",
+          "item": {
+            "id": "botania:white_petal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 17.534
     },
     {
       "id": "00000A0AD250F22B",
@@ -96,14 +163,82 @@
           "id": "000000E72012B365",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 9.109
+    },
+    {
+      "id": "000048075FC219CD",
+      "title": "Жива деревина й живий камінь",
+      "description": [
+        "Розташуйте сировину біля Pure Daisy та дочекайтеся перетворення. Збережіть також Livingrock: деревина потрібна передавачам, камінь — сховищам і вівтарям.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "botania:livingwood_log",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D9D570ADBC8E",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C2FE94B7F865",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:pure_daisy",
+          "timer": 40
+        },
+        {
+          "id": "0000F85E041EDCF7",
+          "type": "item",
+          "item": {
+            "id": "botania:livingwood_log",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006CF240D59084",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9AC2EB7BAC7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000041370994B768",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 17.534
     },
     {
       "id": "0000B4484FA43829",
@@ -145,14 +280,14 @@
           "id": "000031F64199F78C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00000F8C009F89DA",
@@ -191,14 +326,93 @@
           "id": "0000884AD022C8BE",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 9.109
+    },
+    {
+      "id": "0000BF59D0E0938B",
+      "title": "Генерація перед накопиченням",
+      "description": [
+        "Створіть Endoflame й забезпечте її дозволеним паливом. Прив’яжіть квітку до Mana Spreader за допомогою Wand of the Forest; без цього паливо не перетворюється на корисний потік до басейна.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:petal_apothecary. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:endoflame",
+        "count": 1
+      },
+      "dependencies": [
+        "000048075FC219CD",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003FC70C127DB0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_spreader",
+          "timer": 40
+        },
+        {
+          "id": "00007FD6A37837DC",
+          "type": "item",
+          "item": {
+            "id": "botania:endoflame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065F660379B90",
+          "type": "item",
+          "item": {
+            "id": "botania:twig_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B702694BC66D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:charcoal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E80B1C05E6D6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000530F52537BE6",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 17.534
     },
     {
       "id": "0000026FCC992772",
@@ -240,14 +454,14 @@
           "id": "000070D9EBE2F426",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 11.742
     },
     {
       "id": "000051CCAEDD9207",
@@ -289,14 +503,82 @@
           "id": "00008AEE957683A2",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 6.475
+    },
+    {
+      "id": "000067BE8BBE4D73",
+      "title": "Контур накопичення мани",
+      "description": [
+        "Під’єднайте передавач до звичайного Mana Pool і підготуйте переносний планшет. Стежте за напрямком переливання: планшет є буфером, а не генератором.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: avaritia:shaped_table. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:mana_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BF59D0E0938B",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003849B10DB64D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_pool",
+          "timer": 40
+        },
+        {
+          "id": "0000ECAA11ED850E",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000175C70244046",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_spreader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4D272134425",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000194F64E58A17",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 17.534
     },
     {
       "id": "0000003A1C4D5FA9",
@@ -339,14 +621,82 @@
           "id": "0000C0107F5D5BA8",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 6.95
+    },
+    {
+      "id": "00003605E0DB3182",
+      "title": "Матеріали інфузії",
+      "description": [
+        "Занурте залізо в заповнений басейн за рецептом Mana Infusion. Перевірте також Mana Pearl як наступний реагент; обидва матеріали потрібні рунічному етапу.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:mana_infusion. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:manasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000067BE8BBE4D73",
+        "0000E46B8975FBDF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F10B1FCBE5D4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_pool",
+          "timer": 40
+        },
+        {
+          "id": "00004FEA7EFD81F2",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000084AE81B6A1E0",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_pearl",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFAB8CEF5791",
+          "type": "advancement",
+          "advancement": "aia2:stages/e05"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000F46FD29CE99",
+          "type": "item",
+          "item": {
+            "id": "botania:green_petal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 17.534
     },
     {
       "id": "00008D49A0A6319C",
@@ -388,14 +738,14 @@
           "id": "00003DC7ADAFDED2",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 8.95
     },
     {
       "id": "00001222DF13C753",
@@ -435,14 +785,14 @@
           "id": "0000993CB1286C43",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 7.267
     },
     {
       "id": "0000836589644D2E",
@@ -482,14 +832,14 @@
           "id": "0000BDC89138668D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "00001D9E7A6F19ED",
@@ -532,14 +882,14 @@
           "id": "00005960DCF5DE42",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "00001FDFB4006EE8",
@@ -581,14 +931,14 @@
           "id": "00008680D1093E77",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "00002AAD4E55C3B9",
@@ -630,14 +980,14 @@
           "id": "00003237AF19A474",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 4.0
+      "y": 2.0
     },
     {
       "id": "000041030EA7AB72",
@@ -680,14 +1030,14 @@
           "id": "000002C535AD046E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 6.0
+      "y": 10.0
     },
     {
       "id": "00009258DED19367",
@@ -729,14 +1079,14 @@
           "id": "000076B4CD12D634",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 8.0
+      "y": 12.0
     },
     {
       "id": "000096D84721651E",
@@ -779,14 +1129,14 @@
           "id": "00004C2438EEC96B",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 10.0
+      "y": 0.0
     },
     {
       "id": "0000A3347C3DF2D3",
@@ -828,14 +1178,14 @@
           "id": "0000EDCA844C31F5",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 12.0
+      "y": 8.0
     },
     {
       "id": "00008604E24A24CF",
@@ -878,14 +1228,14 @@
           "id": "0000A5597D36740C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 0.0
+      "y": 8.534
     },
     {
       "id": "00009323D5575462",
@@ -927,14 +1277,14 @@
           "id": "0000190FCC40FC9D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 2.0
+      "y": 12.534
     },
     {
       "id": "0000DB9EF4484558",
@@ -976,14 +1326,14 @@
           "id": "0000DB6CCBB3F62E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 4.0
+      "y": 10.534
     },
     {
       "id": "0000F31E127CA00D",
@@ -1023,14 +1373,14 @@
           "id": "0000C22A91BC4BA9",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 6.0
+      "y": 14.534
     },
     {
       "id": "000033CAA8408DAE",
@@ -1107,14 +1457,14 @@
           "id": "000004616966183B",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 18.0,
-      "y": 0.0
+      "y": 8.68
     },
     {
       "id": "0000CE15CF8D8980",
@@ -1157,14 +1507,14 @@
           "id": "00002DDFA11AB168",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 18.0,
-      "y": 2.0
+      "y": 10.68
     },
     {
       "id": "0000FF6A1556E794",
@@ -1207,14 +1557,14 @@
           "id": "000075D3370AFC18",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 18.0,
-      "y": 4.0
+      "y": 12.68
     },
     {
       "id": "000044AEA8188937",
@@ -1267,14 +1617,14 @@
           "id": "00000B6CB73A9715",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 20.534
     },
     {
       "id": "00002AD4AD7833F4",
@@ -1350,14 +1700,14 @@
           "id": "00006102FA00F370",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 4.0
+      "x": 9.0,
+      "y": 23.534
     },
     {
       "id": "0000DB60FF0C4AB2",
@@ -1396,14 +1746,14 @@
           "id": "00004A7594E371CC",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 25.534
     },
     {
       "id": "0000E60E9D0FFEFE",
@@ -1467,14 +1817,14 @@
           "id": "0000F2F124E35115",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 25.534
     },
     {
       "id": "00002D11BD851502",
@@ -1516,14 +1866,14 @@
           "id": "00005A0B50ADF979",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 23.534
     },
     {
       "id": "0000A1C61AF01A29",
@@ -1565,14 +1915,14 @@
           "id": "00007546739B47A9",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 27.534
     },
     {
       "id": "0000D2DE8A1B240C",
@@ -1614,14 +1964,14 @@
           "id": "00009A1E8D95EA92",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 25.534
     },
     {
       "id": "00003DAF0BC0D564",
@@ -1687,14 +2037,14 @@
           "id": "00004FA82CDCFFD0",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 26.534
     },
     {
       "id": "0000B7E2E3555F3C",
@@ -1738,14 +2088,14 @@
           "id": "000069AE271A718E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 24.534
     },
     {
       "id": "0000BA0A797AD04B",
@@ -1810,14 +2160,14 @@
           "id": "00000B4E8D9AB7CA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 30.534
     },
     {
       "id": "0000256C743AD2F1",
@@ -1859,14 +2209,172 @@
           "id": "000034E0A4737BEA",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "botania:white_petal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 33.534
+    },
+    {
+      "id": "0000C88625F77B90",
+      "title": "Руни чотирьох стихій",
+      "description": [
+        "Побудуйте Runic Altar та зв’яжіть його з маною. Руни потребують власного завершення ритуалу, тому заздалегідь підготуйте Livingrock і магічний інструмент.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:runic_altar. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:rune_water",
+        "count": 1
+      },
+      "dependencies": [
+        "00003605E0DB3182",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000767A074EC30D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:runic_altar",
+          "timer": 40
+        },
+        {
+          "id": "000026CA237EA4D7",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_water",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A97352476C92",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_fire",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007B439B8D0987",
+          "type": "item",
+          "item": {
+            "id": "botania:livingrock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D1AB494E84D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F658EE043D94",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 17.534
+    },
+    {
+      "id": "0000A2AC7D2E84A0",
+      "title": "Рунічна схема складнішає",
+      "description": [
+        "Після стихійних рун виготовте Rune of Mana. Ця руна разом із чотирма стихіями входить до Terra Plate; майбутній сплав починається з керованого виробництва рун.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:runic_altar. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:rune_mana",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C88625F77B90",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008AAE96E0E614",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:runic_altar",
+          "timer": 40
+        },
+        {
+          "id": "000078A5A9F44556",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_mana",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008667A3A5EA84",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_earth",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E97D6979368",
+          "type": "item",
+          "item": {
+            "id": "botania:rune_air",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000939936E3E701",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000075D408DFBE7A",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_powder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 17.534
     },
     {
       "id": "00006B1993FF4C7B",
@@ -1908,14 +2416,14 @@
           "id": "0000F57968400E3F",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 36.534
     },
     {
       "id": "0000B4DB6FFA3EDB",
@@ -1975,14 +2483,14 @@
           "id": "0000A0F4FCDEB274",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 14.0
+      "y": 51.843
     },
     {
       "id": "0000D02004A9D435",
@@ -2019,14 +2527,14 @@
           "id": "0000549774AA3610",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "botania:green_petal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 16.0
+      "x": 3.0,
+      "y": 43.186
     },
     {
       "id": "0000E39C40D1A089",
@@ -2079,14 +2587,14 @@
           "id": "0000CD1C11B0BAF1",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 18.0
+      "x": 16.0,
+      "y": 36.534
     },
     {
       "id": "0000412A49D10C2C",
@@ -2128,14 +2636,14 @@
           "id": "00000CA7DB012762",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 6.0
+      "x": 5.0,
+      "y": 43.147
     },
     {
       "id": "0000B4E7A47161E1",
@@ -2195,14 +2703,14 @@
           "id": "000000C05900E8D6",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "botania:elementium_nugget",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 51.843
     },
     {
       "id": "0000D391FBE7A1C3",
@@ -2244,14 +2752,14 @@
           "id": "000034149CFDFCB2",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 10.0
+      "x": 5.0,
+      "y": 45.264
     },
     {
       "id": "0000D4E4CE5E05BE",
@@ -2293,14 +2801,14 @@
           "id": "00000F68CB19B0AD",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 12.0
+      "x": 5.0,
+      "y": 41.147
     },
     {
       "id": "0000127B1EF5C9E6",
@@ -2342,14 +2850,14 @@
           "id": "0000E87EB36EC1F8",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 8.0
+      "x": 7.0,
+      "y": 40.527
     },
     {
       "id": "0000373C18A3A95C",
@@ -2391,14 +2899,14 @@
           "id": "00007EF03A50E5F7",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 10.0
+      "x": 7.0,
+      "y": 38.527
     },
     {
       "id": "000039B9ECF83DAC",
@@ -2440,14 +2948,14 @@
           "id": "0000D2150CBD68C0",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 12.0
+      "x": 7.0,
+      "y": 44.843
     },
     {
       "id": "00004AA781C8B5D9",
@@ -2507,14 +3015,14 @@
           "id": "000043C0F91C7C5C",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 14.0
+      "y": 51.843
     },
     {
       "id": "00005796C8D25E86",
@@ -2556,14 +3064,14 @@
           "id": "000032D5067B3B93",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 16.0
+      "x": 7.0,
+      "y": 42.843
     },
     {
       "id": "0000BBF29772268A",
@@ -2605,14 +3113,14 @@
           "id": "0000678B283FFFED",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "botania:green_petal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 18.0
+      "x": 7.0,
+      "y": 48.843
     },
     {
       "id": "0000F18993015B8E",
@@ -2650,14 +3158,14 @@
           "id": "0000227DA36FEBC8",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 20.0
+      "x": 7.0,
+      "y": 46.843
     },
     {
       "id": "0000577994A0A930",
@@ -2699,14 +3207,14 @@
           "id": "0000C4D31173FB1C",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 6.0,
-      "y": 8.0
+      "x": 9.0,
+      "y": 43.395
     },
     {
       "id": "00008D413940C305",
@@ -2748,14 +3256,14 @@
           "id": "0000600EAE5D57D2",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 6.0,
-      "y": 10.0
+      "x": 9.0,
+      "y": 41.395
     },
     {
       "id": "0000B61A04664F6C",
@@ -2815,14 +3323,14 @@
           "id": "00001272A3DB770A",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 12.0
+      "y": 51.843
     },
     {
       "id": "0000B80CBE8ACDB3",
@@ -2864,14 +3372,14 @@
           "id": "0000C57C107C7A4C",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "botania:white_petal",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 6.0,
-      "y": 14.0
+      "x": 9.0,
+      "y": 39.395
     },
     {
       "id": "0000285BC37790D6",
@@ -2926,14 +3434,14 @@
           "id": "00000A58FC18267F",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 8.0,
-      "y": 4.0
+      "x": 11.0,
+      "y": 42.534
     },
     {
       "id": "0000591D730184C9",
@@ -2971,14 +3479,14 @@
           "id": "0000C23CF2FC20BD",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 8.0,
-      "y": 6.0
+      "x": 11.0,
+      "y": 38.534
     },
     {
       "id": "0000B623D89CB487",
@@ -3020,14 +3528,14 @@
           "id": "0000F86A790CAE42",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "botania:elementium_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 8.0,
-      "y": 8.0
+      "x": 11.0,
+      "y": 40.534
     },
     {
       "id": "0000BAEBE3A25DBC",
@@ -3087,14 +3595,14 @@
           "id": "00000D42CDFD20AD",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "botania:green_petal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 10.0
+      "y": 51.843
     },
     {
       "id": "0000D84C9F784743",
@@ -3136,14 +3644,14 @@
           "id": "0000B751E2255FCF",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 8.0,
-      "y": 12.0
+      "x": 11.0,
+      "y": 36.534
     },
     {
       "id": "0000708CA1ADFFA8",
@@ -3196,14 +3704,14 @@
           "id": "0000433C8462E854",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 10.0,
-      "y": 2.0
+      "x": 13.0,
+      "y": 42.534
     },
     {
       "id": "000082E4BF639A01",
@@ -3263,14 +3771,14 @@
           "id": "000044AE20097AF4",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 4.0
+      "y": 51.843
     },
     {
       "id": "0000BBED125D60C5",
@@ -3330,14 +3838,14 @@
           "id": "00001962E3117A71",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 51.843
     },
     {
       "id": "000058F6F751DD16",
@@ -3408,14 +3916,229 @@
           "id": "00006749D5172C11",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 14.0
+      "y": 51.843
+    },
+    {
+      "id": "00007057B1E354BD",
+      "title": "Террасталь перед ельфійським порталом",
+      "description": [
+        "Terra Plate споживає Manasteel, Mana Pearl, Mana Diamond та 500000 мани. У поточному рецепті Alfheim Portal потрібні самородки Terrasteel, тому ельфійський обмін не ставиться перед цим сплавом.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:terra_plate. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:terrasteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A2AC7D2E84A0",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AC5D92AE275B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:terra_plate",
+          "timer": 40
+        },
+        {
+          "id": "0000966B2905E6A5",
+          "type": "item",
+          "item": {
+            "id": "botania:terrasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A940088849F0",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_diamond",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044CE0F75F125",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA9549A1330E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000007E7133FDBAC",
+          "type": "item",
+          "item": {
+            "id": "botania:white_petal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 17.534
+    },
+    {
+      "id": "00006F781B55E0D7",
+      "title": "Портал за ціною першого сплаву",
+      "description": [
+        "Після отримання Terrasteel підготуйте портал та Natura Pylons за Lexica Botania. Перевірте конструкцію й манові резерви; це крок до торгівлі, а не вхід гравця в новий вимір.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:alfheim_portal",
+        "count": 1
+      },
+      "dependencies": [
+        "00007057B1E354BD",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000057F5E4F06AAE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:alfheim_portal",
+          "timer": 40
+        },
+        {
+          "id": "0000260504CCAE95",
+          "type": "item",
+          "item": {
+            "id": "botania:alfheim_portal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007EA9DAC95842",
+          "type": "item",
+          "item": {
+            "id": "botania:natura_pylon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061CFA97FFE4D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000871762C5C8D",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 17.534
+    },
+    {
+      "id": "0000DEB2CFD84BC3",
+      "title": "Обмін із Альфгаймом",
+      "description": [
+        "Виконайте Elven Trade із Manasteel. Elementium є результатом обміну, а не звичайного переплавлення; тримайте окремий запас для мережевих пристроїв та спорядження.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: botania:elven_trade. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:elementium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F781B55E0D7",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008242F411E758",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:alfheim_portal",
+          "timer": 40
+        },
+        {
+          "id": "0000363AA04BCF08",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000599183A2938F",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000643BED648876",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AEF413969F3E",
+          "type": "item",
+          "item": {
+            "id": "botania:elementium_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 17.534
     },
     {
       "id": "0000E557CB8369CF",
@@ -3468,14 +4191,14 @@
           "id": "0000DA465285A8B6",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 20.0
+      "y": 54.843
     },
     {
       "id": "00007E46B592BCC0",
@@ -3524,8 +4247,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 22.0
+      "x": 3.0,
+      "y": 57.843
     },
     {
       "id": "000083B6B5BDB583",
@@ -3575,7 +4298,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 24.0
+      "y": 57.843
     },
     {
       "id": "0000ED3CA8B3094C",
@@ -3625,7 +4348,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 26.0
+      "y": 60.843
     },
     {
       "id": "0000168C138CE33F",
@@ -3678,14 +4401,14 @@
           "id": "0000C9CC36B8C1F3",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 28.0
+      "x": 5.0,
+      "y": 63.843
     },
     {
       "id": "00003394AB08C36B",
@@ -3738,14 +4461,14 @@
           "id": "0000EC70C5E5C009",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 30.0
+      "y": 63.843
     },
     {
       "id": "00001FA312DE59A7",
@@ -3795,7 +4518,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 14.0
+      "y": 63.843
     },
     {
       "id": "00006117BCBD57A2",
@@ -3845,7 +4568,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 32.0
+      "y": 66.843
     },
     {
       "id": "00005F4297693323",
@@ -3920,14 +4643,14 @@
           "id": "00007F8E33873BD1",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 34.0
+      "x": 3.0,
+      "y": 69.843
     },
     {
       "id": "0000CF730A2F7036",
@@ -3977,7 +4700,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 36.0
+      "y": 69.843
     },
     {
       "id": "000083ECFE46E588",
@@ -4041,14 +4764,14 @@
           "id": "000091C28BFDCCDC",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 16.0
+      "x": 5.0,
+      "y": 69.843
     },
     {
       "id": "0000717ECE59DAD5",
@@ -4119,8 +4842,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 4.0,
-      "y": 22.0
+      "x": 7.0,
+      "y": 69.843
     },
     {
       "id": "00007C7F5D92275A",
@@ -4173,14 +4896,14 @@
           "id": "00005D6C6BE4B91B",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 38.0
+      "y": 72.843
     },
     {
       "id": "0000932816EC0EAD",
@@ -4230,7 +4953,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 18.0
+      "y": 72.843
     },
     {
       "id": "00000B5D9144E890",
@@ -4280,7 +5003,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 40.0
+      "y": 75.843
     },
     {
       "id": "0000E2127B06371B",
@@ -4333,14 +5056,14 @@
           "id": "0000A8A966F59BC8",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 42.0
+      "x": 5.0,
+      "y": 75.843
     },
     {
       "id": "0000A18FBB0ADC25",
@@ -4390,7 +5113,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 20.0
+      "y": 75.843
     },
     {
       "id": "00000F477A2F06FE",
@@ -4443,14 +5166,14 @@
           "id": "000064646F6B4B8D",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 44.0
+      "y": 78.843
     },
     {
       "id": "0000844063833C00",
@@ -4510,8 +5233,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 46.0
+      "x": 3.0,
+      "y": 78.843
     },
     {
       "id": "00007EF879346BAA",
@@ -4564,14 +5287,14 @@
           "id": "0000E156AD241336",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 48.0
+      "x": 3.0,
+      "y": 81.843
     },
     {
       "id": "000083E305F0BCE0",
@@ -4631,8 +5354,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 50.0
+      "x": 6.0,
+      "y": 81.843
     },
     {
       "id": "00009F4BFBE29B00",
@@ -4685,14 +5408,14 @@
           "id": "0000732DA6BB4906",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 52.0
+      "y": 81.843
     },
     {
       "id": "00005790EF21BCD1",
@@ -4741,14 +5464,14 @@
           "id": "00002F898976988B",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 54.0
+      "x": 3.0,
+      "y": 84.843
     },
     {
       "id": "000070F549BEB25D",
@@ -4798,7 +5521,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 56.0
+      "y": 84.843
     },
     {
       "id": "000094B2C2174D3E",
@@ -4863,14 +5586,14 @@
           "id": "0000E288D41ADDC2",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 58.0
+      "x": 6.0,
+      "y": 87.843
     },
     {
       "id": "00009B01BC85B164",
@@ -4924,14 +5647,14 @@
           "id": "0000C4FF92A54088",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 60.0
+      "x": 3.0,
+      "y": 87.843
     },
     {
       "id": "0000A68E2B15932D",
@@ -4985,14 +5708,14 @@
           "id": "0000C50DD7DF10E7",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:elementium_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 62.0
+      "y": 87.843
     },
     {
       "id": "00000ADBBE25D156",
@@ -5046,14 +5769,14 @@
           "id": "000087B8C0B9BD09",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 64.0
+      "y": 90.843
     },
     {
       "id": "0000341ECC29F04E",
@@ -5118,14 +5841,14 @@
           "id": "0000B3CB5B2A1B30",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 66.0
+      "x": 3.0,
+      "y": 90.843
     },
     {
       "id": "0000FE3F3A477E73",
@@ -5185,14 +5908,14 @@
           "id": "00003FD489DE754A",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 68.0
+      "x": 6.0,
+      "y": 90.843
     },
     {
       "id": "000018655E656200",
@@ -5246,14 +5969,14 @@
           "id": "000020C27EBDA4CD",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 70.0
+      "y": 93.843
     },
     {
       "id": "0000058F0E65EEC6",
@@ -5307,14 +6030,14 @@
           "id": "00006B1A461FFD2F",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 72.0
+      "x": 3.0,
+      "y": 96.843
     },
     {
       "id": "00000CBEB2F67839",
@@ -5368,14 +6091,93 @@
           "id": "0000FEE8A7095F70",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 74.0
+      "y": 96.843
+    },
+    {
+      "id": "000063C9808FBD6C",
+      "title": "Мережа мани для пізньої фабрики",
+      "description": [
+        "Після ритуалу Ґаї підготуйте високорівневий передавач і резерв планшетів. Порівняйте потреби рунічної майстерні та промислових компонентів; басейн Creative до завершення всієї прогресії не використовується.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botania:gaia_spreader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD24AFA8B4F2",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007BC935A23780",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:mana_pool",
+          "timer": 40
+        },
+        {
+          "id": "000001DE173E6269",
+          "type": "item",
+          "item": {
+            "id": "botania:gaia_spreader",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E8730810D802",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009BAB0BD47C69",
+          "type": "item",
+          "item": {
+            "id": "botania:life_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D4B51CA199D7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AB5E2FE5F2A5",
+          "type": "item",
+          "item": {
+            "id": "botania:manasteel_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 96.843
     },
     {
       "id": "00008967FD199506",
@@ -5429,14 +6231,14 @@
           "id": "00002B5FCC7397C8",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:manasteel_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 76.0
+      "y": 99.843
     },
     {
       "id": "0000DA28B0FB004D",
@@ -5501,14 +6303,14 @@
           "id": "000028F00E93CDF8",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 78.0
+      "x": 3.0,
+      "y": 99.843
     },
     {
       "id": "0000AEF65564D555",
@@ -5562,14 +6364,14 @@
           "id": "0000E958B6B0E2A9",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 22.0
+      "x": 5.0,
+      "y": 99.843
     },
     {
       "id": "00004FF4CEFECE36",
@@ -5645,14 +6447,14 @@
           "id": "00003A3A1E3E54C3",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 80.0
+      "x": 6.0,
+      "y": 102.843
     },
     {
       "id": "0000C5D93F4EEDF2",
@@ -5706,14 +6508,14 @@
           "id": "0000C12232BB0389",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 82.0
+      "y": 102.843
     },
     {
       "id": "0000FE73795293A8",
@@ -5777,14 +6579,14 @@
           "id": "00000CF1BBCE2B1F",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 84.0
+      "x": 3.0,
+      "y": 102.843
     },
     {
       "id": "00000C34B5BBAFAA",
@@ -5838,14 +6640,14 @@
           "id": "00009AFE18E74656",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 86.0
+      "y": 105.843
     },
     {
       "id": "00001AC41CF4B7DE",
@@ -5899,14 +6701,14 @@
           "id": "00001372DD8C0575",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:green_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 88.0
+      "y": 108.843
     },
     {
       "id": "0000C2AFD3786417",
@@ -5960,14 +6762,14 @@
           "id": "0000FC5F576CADBB",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:mana_string",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 90.0
+      "x": 3.0,
+      "y": 108.843
     },
     {
       "id": "00006B94E9E46CF9",
@@ -6021,14 +6823,14 @@
           "id": "00000D15362D7E65",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:mana_powder",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 92.0
+      "y": 111.843
     },
     {
       "id": "0000FF73B6160F46",
@@ -6082,14 +6884,14 @@
           "id": "000066B821C6038E",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "botania:white_petal",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 94.0
+      "y": 114.843
     }
   ]
 }

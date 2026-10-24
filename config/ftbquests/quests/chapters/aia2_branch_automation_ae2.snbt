@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_ae2",
   "title": "ae2 — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 6,
+  "order_index": 8,
   "icon": {
     "id": "ae2:network_tool",
     "count": 1
@@ -11,6 +11,84 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "0000135F640BB52B",
+      "title": "Комірка розрізняє тип і кількість",
+      "description": [
+        "Відкрийте налаштування комірки та відокремте місткість від переліку дозволених типів предметів. Комірка огляду фільтрує видимість термінала, а не створює додаткове сховище; підпишіть ці ролі до перенесення всього складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:item_storage_cell_4k",
+        "count": 1
+      },
+      "dependencies": [
+        "0000796D1466A2AB",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000FB172550460",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:cell_workbench",
+          "timer": 40
+        },
+        {
+          "id": "000091929970226F",
+          "type": "item",
+          "item": {
+            "id": "ae2:item_storage_cell_4k",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000A4EC65B481E",
+          "type": "item",
+          "item": {
+            "id": "ae2:view_cell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D5C5A4299E0",
+          "type": "item",
+          "item": {
+            "id": "ae2:basic_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0DF9E0ADEE5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002EF3E93E69F6",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
     {
       "id": "0000A8299E132DCF",
       "title": "Діагностичний доступ до ME",
@@ -69,7 +147,7 @@
           "id": "0000C41728216994",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "ae2:silicon",
             "count": 1
           },
           "count": 4
@@ -136,14 +214,192 @@
           "id": "0000F2E810B01062",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "ae2:fluix_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
       "y": 0.0
+    },
+    {
+      "id": "0000629E1C0C70C5",
+      "title": "Шина зберігання залишає скриню зовні",
+      "description": [
+        "Підготуйте зовнішню бочку для предметів, які не варто тримати у цифровій комірці. Перевірте пріоритет і фільтр шини на двох типах матеріалів; інвертор змінює логіку списку, а не збільшує кількість каналів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:storage_bus",
+        "count": 1
+      },
+      "dependencies": [
+        "0000135F640BB52B",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068FA31596EEB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:barrel",
+          "timer": 40
+        },
+        {
+          "id": "0000F87BCA363429",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6DBD47C92A7",
+          "type": "item",
+          "item": {
+            "id": "ae2:inverter_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008C5CF3BE409C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000076F7B5EC6BB7",
+          "type": "item",
+          "item": {
+            "id": "ae2:annihilation_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079FE777C241A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000077642FE79EB7",
+          "type": "item",
+          "item": {
+            "id": "ae2:quartz_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "000057409FBF2062",
+      "title": "Рівень запасу керує експортом",
+      "description": [
+        "Позначте контрольний запас матеріалу й спробуйте керувати експортом зовнішнім сигналом. Порівняйте поведінку емітера рівня та звичайного компаратора; у цифровій мережі не кожен фізичний блок є скринею з ванільним сигналом заповнення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:level_emitter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000629E1C0C70C5",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007CB4E002E8A4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:barrel",
+          "timer": 40
+        },
+        {
+          "id": "000094311AD1CF6F",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA094CA3D5D5",
+          "type": "item",
+          "item": {
+            "id": "ae2:redstone_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001251925D2B4D",
+          "type": "item",
+          "item": {
+            "id": "ae2:export_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A22F2CC082D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007F28D01A7957",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D4B37F92FD86",
+          "type": "item",
+          "item": {
+            "id": "ae2:silicon",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
     },
     {
       "id": "000075B0E5E26557",
@@ -203,7 +459,7 @@
           "id": "0000FEE905E29191",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "ae2:fluix_dust",
             "count": 1
           },
           "count": 4
@@ -211,6 +467,84 @@
       ],
       "x": 4.0,
       "y": 0.0
+    },
+    {
+      "id": "000062E3C469A30C",
+      "title": "Тунель не є другим контролером",
+      "description": [
+        "Підготуйте пару ME-тунелів і картку прив'язки, залишивши видиму ділянку смарт-кабелю на вході. Перевірте напрям і призначення тунелю; його наявність сама по собі не додає контролеру каналів або живлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:me_p2p_tunnel",
+        "count": 1
+      },
+      "dependencies": [
+        "000057409FBF2062",
+        "00003BFFFBA54478"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FC4B556B7181",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:controller",
+          "timer": 40
+        },
+        {
+          "id": "000092EF7314704A",
+          "type": "item",
+          "item": {
+            "id": "ae2:me_p2p_tunnel",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BAFAC103A3CA",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006EC457388AB6",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_smart_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AB67D56B9EB4",
+          "type": "advancement",
+          "advancement": "aia2:stages/e17"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009F5645F01785",
+          "type": "item",
+          "item": {
+            "id": "ae2:certus_quartz_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     },
     {
       "id": "00006DD74AFF2910",
@@ -281,7 +615,7 @@
           "id": "0000DDDD2094F54B",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
           "count": 4
@@ -359,10 +693,10 @@
           "id": "00008FAF74F3CC52",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "ae2:quartz_fiber",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -437,7 +771,7 @@
           "id": "00008A5DBF7F2B3C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ae2:quartz_fiber",
             "count": 1
           },
           "count": 4
@@ -504,7 +838,7 @@
           "id": "0000BDC807E9D5A5",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
           "count": 4
@@ -582,7 +916,7 @@
           "id": "0000A629964A1FDF",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "ae2:silicon",
             "count": 1
           },
           "count": 4
@@ -649,14 +983,14 @@
           "id": "0000954535A5DC2D",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "ae2:quartz_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00008F5501981D73",
@@ -716,14 +1050,14 @@
           "id": "000008651C2DAE15",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "ae2:quartz_fiber",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00001898B828911A",
@@ -783,14 +1117,14 @@
           "id": "0000C3A7AE9539B3",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "ae2:silicon",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00005E285975C45A",
@@ -861,14 +1195,14 @@
           "id": "00009A5367176128",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "ae2:fluix_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00002822314D037C",
@@ -939,14 +1273,170 @@
           "id": "00004C14983C7345",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "0000587C00443A11",
+      "title": "Процесор бачить повний обсяг замовлення",
+      "description": [
+        "Зберіть один визначений CPU для контрольного замовлення й порівняйте пам'ять із паралельністю операцій. Співпроцесор не замінює пам'ять для великого плану; перевірте обидві потреби до розширення кількості складальників.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:16k_crafting_storage",
+        "count": 1
+      },
+      "dependencies": [
+        "000062E3C469A30C",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009BF37634E99A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:crafting_monitor",
+          "timer": 40
+        },
+        {
+          "id": "0000AA103E7424EB",
+          "type": "item",
+          "item": {
+            "id": "ae2:16k_crafting_storage",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B17939B0001",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_accelerator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000029000659CA82",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C7F49BACEE35",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E808BFA0E5A9",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 3.0
+    },
+    {
+      "id": "000059B0A66E8182",
+      "title": "Блокувальний шаблон для однієї камери",
+      "description": [
+        "Підготуйте шаблон для зовнішньої камери з визначеним входом і поверненням виходу. Перевірте режим блокування постачальника та поведінку реагенту, щоб друге замовлення не перемішало рецепти в уже зайнятому інфузорі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:processing_pattern",
+        "count": 1
+      },
+      "dependencies": [
+        "0000587C00443A11",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EDB6DD2BEBCA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "0000FE19806F25A1",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000117D05AD2800",
+          "type": "item",
+          "item": {
+            "id": "ae2:redstone_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005C62E2F646D",
+          "type": "item",
+          "item": {
+            "id": "mekanism:metallurgic_infuser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E130DDF8556A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008D970968F6A7",
+          "type": "item",
+          "item": {
+            "id": "ae2:silicon",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
     },
     {
       "id": "000081B15BFE14C9",
@@ -1017,14 +1507,14 @@
           "id": "0000B4E3A8E0333E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ae2:silicon",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "000011885EBDA518",
@@ -1084,14 +1574,14 @@
           "id": "000093178F218926",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "ae2:fluix_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000AD2BF79750D7",
@@ -1162,14 +1652,170 @@
           "id": "00002B0236FE2B1D",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "00008DA22968BD34",
+      "title": "Хімія зберігається своїм типом комірки",
+      "description": [
+        "Порівняйте локальний хімічний резервуар із сумісною цифровою коміркою. Звичайна предметна комірка не є заміною хімічному сховищу; визначте, звідки повертатиметься реагент після виконання машинного замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "appmek:chemical_storage_cell_4k",
+        "count": 1
+      },
+      "dependencies": [
+        "000059B0A66E8182",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CE67BD0D667C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:drive",
+          "timer": 40
+        },
+        {
+          "id": "000045DFEA94AD75",
+          "type": "item",
+          "item": {
+            "id": "appmek:chemical_storage_cell_4k",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA3B83D3512B",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_chemical_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000056B879F1598",
+          "type": "item",
+          "item": {
+            "id": "ae2:capacity_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4FEE3BF0945",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005FEDCD1FA242",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000EAB148F4F7CD",
+      "title": "Просторовий вузол із сервісним відступом",
+      "description": [
+        "Виділіть малий випробувальний об'єм для просторової операції та залиште доступ до живлення й порту. Не починайте випробування зі складної чужої машини; сумісність блоків зі зберіганням простору перевіряється окремо у грі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:spatial_storage_cell_2",
+        "count": 1
+      },
+      "dependencies": [
+        "00008DA22968BD34",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000844E2F547E28",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:spatial_io_port",
+          "timer": 40
+        },
+        {
+          "id": "0000F0A1CE64DA4C",
+          "type": "item",
+          "item": {
+            "id": "ae2:spatial_storage_cell_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000002B326D62EC0",
+          "type": "item",
+          "item": {
+            "id": "ae2:spatial_pylon",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E29949F1FF27",
+          "type": "item",
+          "item": {
+            "id": "ae2:energy_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB805FB9807D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DF8316209AB2",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.0
     }
   ]
 }

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_projecte",
   "title": "projecte — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 76,
+  "order_index": 82,
   "icon": {
     "id": "projecte:transmutation_table",
     "count": 1
@@ -48,14 +48,14 @@
           "id": "0000426835092CFB",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 7.0
     },
     {
       "id": "000084B61B40C6BE",
@@ -120,14 +120,14 @@
           "id": "00003AF671882E06",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "0000BB843D1C1111",
@@ -192,14 +192,14 @@
           "id": "00009D988F5F1D94",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 4.0
+      "x": 5.0,
+      "y": 3.0
     },
     {
       "id": "0000E2E1E180AC69",
@@ -242,14 +242,14 @@
           "id": "0000AEF052B7DC3C",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 0.0
     },
     {
       "id": "00000096CE8F98C0",
@@ -288,14 +288,103 @@
           "id": "00005AA02A9470F9",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 6.0
+    },
+    {
+      "id": "0000772D553AD945",
+      "title": "Трансмутація з перевіреним балансом EMC",
+      "description": [
+        "Підготуйте лабораторний комплект біля столу трансмутації: залізо, вугілля й бруківку. У whitelist AIA2 вони мають відповідно 256, 128 і 1 EMC за одиницю. Порівняйте обмін одного залізного злитка на дві одиниці вугілля: це демонстрація збереження вартості, а не джерело безкоштовної енергії.",
+        "FTB перевіряє стіл та комплект матеріалів, а не натискання кнопок обміну. Сам обмін перевірте у GUI. Магічні артефакти, епохальні ключі й Creative Essence не входять до whitelist і не можуть бути отримані цим шляхом. Дотримуйтесь обмеженого списку замість перенесення старих загальних EMC-таблиць."
+      ],
+      "icon": {
+        "id": "projecte:transmutation_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000179C164623E1",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0131E778194",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:transmutation_table",
+          "timer": 60
+        },
+        {
+          "id": "0000FD6AC7D9DE2E",
+          "type": "item",
+          "item": {
+            "id": "projecte:philosophers_stone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E0366FC76DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FAF47E585A3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EEB5E482BF32",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 64,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000472E6872B4EC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DEB53B313ACE",
+          "type": "item",
+          "item": {
+            "id": "projecte:medium_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.0
     },
     {
       "id": "0000A060F5D9F4A7",
@@ -338,14 +427,14 @@
           "id": "00002A1607CFDC17",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "0000E2C58FCC2665",
@@ -410,14 +499,14 @@
           "id": "0000FAC66522FFAB",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 4.0
+      "x": 7.0,
+      "y": 3.0
     },
     {
       "id": "0000E881C7A46326",
@@ -471,14 +560,14 @@
           "id": "000063F559C91795",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 3.0
     },
     {
       "id": "00001B467070CB4B",
@@ -521,10 +610,10 @@
           "id": "000069828CF7F217",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 4.0,
@@ -604,14 +693,14 @@
           "id": "00007F11C7F79ACE",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
-      "x": 4.0,
-      "y": 2.0
+      "x": 9.0,
+      "y": 3.0
     },
     {
       "id": "0000A39D2EB8BFB8",
@@ -654,14 +743,14 @@
           "id": "0000F4B8CCA41AEA",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 6.0
     },
     {
       "id": "000021B1212A0082",
@@ -704,10 +793,10 @@
           "id": "000079F7634F53C0",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 6.0,
@@ -750,14 +839,14 @@
           "id": "00001D696F072D52",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00005FAC372D2209",
@@ -811,10 +900,10 @@
           "id": "0000EC573A78B54B",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -861,14 +950,14 @@
           "id": "00005AE6C7F70E3C",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "00002BE93679E9FD",
@@ -922,14 +1011,14 @@
           "id": "00004A235BC1634B",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "000048421BE21C37",
@@ -972,14 +1061,14 @@
           "id": "0000A622C8BBB0EF",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "0000885B06684874",
@@ -1033,10 +1122,10 @@
           "id": "0000EF145A6B1FFC",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 12.0,
@@ -1105,14 +1194,14 @@
           "id": "00008A9543EC29B7",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000270894F331A9",
@@ -1177,10 +1266,10 @@
           "id": "0000F05E3210A83B",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 14.0,
@@ -1260,14 +1349,14 @@
           "id": "0000283CE1A9B65C",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000EB09EB46C8DA",
@@ -1332,14 +1421,14 @@
           "id": "00001689FCD26043",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 11.0
     },
     {
       "id": "00006E02EE5D3D53",
@@ -1382,14 +1471,14 @@
           "id": "00005CE1E7D52A3E",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 14.0
     },
     {
       "id": "0000AACF23012B33",
@@ -1432,14 +1521,14 @@
           "id": "000006A755C04F55",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 14.0
     },
     {
       "id": "000090036A64700A",
@@ -1482,14 +1571,14 @@
           "id": "0000C0DA5309DB73",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 14.0
     },
     {
       "id": "0000AB568035CD47",
@@ -1528,14 +1617,14 @@
           "id": "0000854B2ED682EF",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "000025BD3644F57B",
@@ -1574,14 +1663,14 @@
           "id": "0000EFA0D38BCFF5",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "00003D56E9E879C1",
@@ -1635,14 +1724,14 @@
           "id": "0000F61A557709C7",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:low_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 10.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "0000D6B646758925",
@@ -1696,14 +1785,14 @@
           "id": "000062037F68C232",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:alchemical_coal",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 12.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "0000C72C0E8775A5",
@@ -1779,14 +1868,14 @@
           "id": "0000B478AA6BEF0B",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "projecte:medium_covalence_dust",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 14.0,
-      "y": 4.0
+      "y": 14.0
     }
   ]
 }

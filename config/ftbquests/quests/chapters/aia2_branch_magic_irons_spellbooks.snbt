@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_irons_spellbooks",
   "title": "irons_spellbooks — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 36,
+  "order_index": 41,
   "icon": {
     "id": "irons_spellbooks:arcane_essence",
     "count": 1
@@ -11,6 +11,73 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "00007FD792711871",
+      "title": "Сувій зберігається для книги",
+      "description": [
+        "Побудуйте Inscription Table та підготуйте початкову книгу. За офіційною книгою знайдений сувій вигідніше вписати, щоб користуватися закляттям повторно, ніж одразу витратити одноразово.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:inscription_table",
+        "count": 1
+      },
+      "dependencies": [
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000703E5F9632DA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:inscription_table",
+          "timer": 40
+        },
+        {
+          "id": "00005E0D015F9DB7",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:inscription_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00001DBCE407B5AE",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:wimpy_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F51A08DA4297",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DC6126AD23DC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 0.0
+    },
     {
       "id": "0000A12A16FF8023",
       "title": "Арканна есенція мага",
@@ -51,14 +118,14 @@
           "id": "0000BB42ED3A2980",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "minecraft:lapis_lazuli",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00004F4CEB0A6EF5",
@@ -100,14 +167,14 @@
           "id": "00000B90B9470BC6",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "irons_spellbooks:arcane_essence",
             "count": 1
           },
           "count": 2
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "00007C2362AD2729",
@@ -145,14 +212,75 @@
           "id": "0000180A2A122131",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "minecraft:lapis_lazuli",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 4.0
+    },
+    {
+      "id": "00007FBF2B3AB292",
+      "title": "Мана початкового спорядження",
+      "description": [
+        "За рецептом поєднайте Arcane Essence зі шкіряним спорядженням. Початковий комплект підтримує запас мани без передчасної видачі фінальної броні.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:wandering_magician_chestplate",
+        "count": 1
+      },
+      "dependencies": [
+        "00007FD792711871",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004A46F03DB3B0",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:wandering_magician_chestplate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000099A50DB1029D",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A87BF6D54084",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E28C99DF6DCE",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 9.0,
+      "y": 0.0
     },
     {
       "id": "00001DDA165D9484",
@@ -194,14 +322,14 @@
           "id": "0000FE6A8270C977",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "irons_spellbooks:arcane_essence",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "000047424FF19696",
@@ -243,14 +371,93 @@
           "id": "0000B36AA20844D9",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "minecraft:paper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 4.0
+    },
+    {
+      "id": "00006C5F72E91D56",
+      "title": "Кузня сувоїв після Nether-ресурсів",
+      "description": [
+        "Scroll Forge використовує папір, чорнило та фокус школи. Чорнило визначає доступну рідкість і рівень, а фокус — школу; це окремий процес від Inscription Table.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:scroll_forge",
+        "count": 1
+      },
+      "dependencies": [
+        "00007FBF2B3AB292",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F7C301FC460A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:scroll_forge",
+          "timer": 40
+        },
+        {
+          "id": "00001D14950F138C",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:scroll_forge",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00000318CDCB8600",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:common_ink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000913B39B4CC10",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022E0B6CDC741",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CCAB88D3A6BC",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 11.0,
+      "y": 0.0
     },
     {
       "id": "0000FA0724AC0240",
@@ -288,14 +495,286 @@
           "id": "0000DAF0FDA3508F",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "minecraft:lapis_lazuli",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 0.0
+    },
+    {
+      "id": "0000ECE5B3A792F4",
+      "title": "Підготовка чорнил різної рідкості",
+      "description": [
+        "Перевірте рецепти зміни чорнил у Alchemist Cauldron. Рідкісне чорнило не відкриває будь-який рівень закляття: обмеження визначаються конкретним сувоєм.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: irons_spellbooks:alchemist_cauldron_brew. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:rare_ink",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C5F72E91D56",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BF033576F528",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:alchemist_cauldron",
+          "timer": 40
+        },
+        {
+          "id": "00001C591754154A",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:rare_ink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001EAA95732A93",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:uncommon_ink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B581B958FEB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D799753A57F9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 13.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000C25F0003332C",
+      "title": "Арканне ковадло",
+      "description": [
+        "Побудуйте Arcane Anvil для підвищення рівнів сувоїв і покращення спорядження. Не плутайте його із Scroll Forge, де створюється базовий сувій.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:arcane_anvil",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECE5B3A792F4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000606C0B349A08",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:arcane_anvil",
+          "timer": 40
+        },
+        {
+          "id": "00001FBE286AE98E",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_anvil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000013C48EDE5ED1",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004EFEBF86DF6D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000801ECD90B061",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 0.0
+    },
+    {
+      "id": "000098CFD2B55335",
+      "title": "Легендарне чорнило й кероване підвищення",
+      "description": [
+        "Підготуйте легендарне чорнило після рідкісного й арканне ковадло. Деякі легендарні рівні заклять потребують подальшого об’єднання; сама банка чорнила не є доказом максимального закляття.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: irons_spellbooks:alchemist_cauldron_brew. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:legendary_ink",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE0C2A7A9169",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B1CFA49E67F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:arcane_anvil",
+          "timer": 40
+        },
+        {
+          "id": "00002640F3EF6D27",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:legendary_ink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B731C958DBDE",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:epic_ink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009127B21D7FAD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B304A75FC4BC",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 7.0
+    },
+    {
+      "id": "0000EF2965BAB845",
+      "title": "Кузня магічної тканини",
+      "description": [
+        "Підготуйте Upgrade Orb і шкільну руну за поточними рецептами. В офіційній книзі покращення атрибутів є пізньою гілкою після книги та спорядження, тому не починайте з безкоштовних готових бонусів.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "irons_spellbooks:upgrade_orb",
+        "count": 1
+      },
+      "dependencies": [
+        "000098CFD2B55335",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000021BCB349A4D0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "irons_spellbooks:arcane_anvil",
+          "timer": 40
+        },
+        {
+          "id": "00002760DF07793F",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:upgrade_orb",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00001FC2A9C5DE9B",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:magic_cloth",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003A4A2D965A03",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000020D11B0B72E2",
+          "type": "item",
+          "item": {
+            "id": "irons_spellbooks:arcane_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 7.0
     }
   ]
 }

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_goety",
   "title": "goety — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 35,
+  "order_index": 40,
   "icon": {
     "id": "goety:dark_ingot",
     "count": 1
@@ -50,14 +50,14 @@
           "id": "00005E0913714435",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00000924D066C6AD",
@@ -99,14 +99,149 @@
           "id": "000031102005DF04",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 1.0
+    },
+    {
+      "id": "0000C79D9CEEF72D",
+      "title": "Порожній фокус до темного жезла",
+      "description": [
+        "Почніть із Empty Focus і Magic Fabric. Вихідний grid-рецепт Dark Wand споживає фокус; підготуйте базові частини до переходу в ритуальну систему, а не колекцію випадкових заклять.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: goety:cursed_infuser_recipes. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:empty_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005309CDE72172",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "00003E3078F9276E",
+          "type": "item",
+          "item": {
+            "id": "goety:empty_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000195EBC3E6612",
+          "type": "item",
+          "item": {
+            "id": "goety:magic_fabric",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000192BECABB485",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E6DFA1744E71",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 7.0
+    },
+    {
+      "id": "0000525D636050D4",
+      "title": "Жезл із власним фокусом",
+      "description": [
+        "Виготовте Dark Wand після підготовки порожнього фокуса. Установлення й використання конкретного фокуса перевірте у посібнику поточної версії; предметний комплект не є доказом успішного закляття.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:dark_wand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C79D9CEEF72D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000091160D94F4BF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "000018FFD2613E36",
+          "type": "item",
+          "item": {
+            "id": "goety:dark_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005AE4283D87BC",
+          "type": "item",
+          "item": {
+            "id": "goety:soul_light_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AE63CB49D56F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000041FAF21FF22F",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 7.0
     },
     {
       "id": "00008888F20917BC",
@@ -159,14 +294,14 @@
           "id": "00009D10D03389B6",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 0.0
+      "x": 9.0,
+      "y": 2.0
     },
     {
       "id": "0000AC8931752D12",
@@ -208,14 +343,14 @@
           "id": "0000F14FB05F51D5",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 2.0
+      "x": 9.0,
+      "y": 0.0
     },
     {
       "id": "0000C2B26D4A6651",
@@ -253,14 +388,14 @@
           "id": "0000ACB149FBA34F",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 0.0
     },
     {
       "id": "0000F0B8700E489E",
@@ -302,14 +437,14 @@
           "id": "00002258959DC503",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 2.0
     },
     {
       "id": "000009FE83FE5DD1",
@@ -351,14 +486,82 @@
           "id": "000019326707F20F",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
       "y": 0.0
+    },
+    {
+      "id": "0000B4723878FC9D",
+      "title": "Темний вівтар і місця реагентів",
+      "description": [
+        "Побудуйте Dark Altar і педестали за реальними рецептами. Ритуальний контекст Goety використовує activation_item, soulCost та craftType; звичайний верстак їх не виконує.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:dark_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000525D636050D4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F60C92E05AA5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "goety:dark_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000ED34E5F48D35",
+          "type": "item",
+          "item": {
+            "id": "goety:dark_altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000038B322220E97",
+          "type": "item",
+          "item": {
+            "id": "goety:dark_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000038BCF9CEC548",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000076CC9A8D66C0",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 7.0
     },
     {
       "id": "0000C088EF2042AD",
@@ -400,7 +603,7 @@
           "id": "0000504D80D74FAC",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
@@ -449,7 +652,7 @@
           "id": "0000832B2246F04B",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
@@ -457,6 +660,142 @@
       ],
       "x": 4.0,
       "y": 4.0
+    },
+    {
+      "id": "00009A789C86484D",
+      "title": "Перша некротургічна спеціалізація",
+      "description": [
+        "Пройдіть ritual-рецепт Rotting Focus, де в експорті вказано craftType necroturgy та Animation Core як активаційний предмет. Станцію й готовий результат можна перевірити, але це не вимірює витрачену Soul Energy.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: goety:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:rotting_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B4723878FC9D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B6AF0F1616E3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "goety:dark_altar",
+          "timer": 40
+        },
+        {
+          "id": "000060CEE544C756",
+          "type": "item",
+          "item": {
+            "id": "goety:rotting_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB70CCA4DC11",
+          "type": "item",
+          "item": {
+            "id": "goety:animation_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F38ECC0CB98",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B18AAFB754B3",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 7.0
+    },
+    {
+      "id": "00002B487FF30E98",
+      "title": "Поглинач як результат forge-ритуалу",
+      "description": [
+        "Перевірений рецепт Soul Absorber належить ritual craftType forge та використовує Cursed Infuser. Відокремте цей промисловий ритуал від necroturgy і залиште готовий блок для наступного стенда.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: goety:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:soul_absorber",
+        "count": 1
+      },
+      "dependencies": [
+        "00009A789C86484D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007348F41C842E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "goety:dark_altar",
+          "timer": 40
+        },
+        {
+          "id": "000026C72066837C",
+          "type": "item",
+          "item": {
+            "id": "goety:soul_absorber",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7B15A6EBAE4",
+          "type": "item",
+          "item": {
+            "id": "goety:cursed_infuser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000379C114E0F4C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093AF428584A2",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 7.0
     },
     {
       "id": "000070632CD0C9B9",
@@ -509,14 +848,14 @@
           "id": "00009C24F55DE597",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 10.0
     },
     {
       "id": "00000FA3124BBECD",
@@ -569,14 +908,14 @@
           "id": "0000F812BA185C5E",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 13.0
     },
     {
       "id": "000083CAA5D4721A",
@@ -629,14 +968,14 @@
           "id": "0000E2129CB43862",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 8.0
+      "x": 7.0,
+      "y": 13.0
     },
     {
       "id": "0000021AADD5AE0B",
@@ -689,14 +1028,14 @@
           "id": "000098353D39736F",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 13.0
     },
     {
       "id": "000077798581495D",
@@ -745,8 +1084,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 2.0,
-      "y": 10.0
+      "x": 9.0,
+      "y": 13.0
     },
     {
       "id": "0000BDC2DB424846",
@@ -792,7 +1131,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 6.0
+      "y": 13.0
     },
     {
       "id": "0000C79298C57CF3",
@@ -842,7 +1181,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 10.0
+      "y": 16.0
     }
   ]
 }

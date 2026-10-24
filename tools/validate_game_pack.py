@@ -151,6 +151,9 @@ def main():
                 task_types[t['type']] += 1
                 assert t['type'] != 'checkmark' or q.get('optional'), 'Mandatory checkbox forbidden'
     if not expansion: assert required == 336 and optional == 96
+    elif list((ROOT/'content/quests').glob('v5_*.json')):
+        additions = sum(len(read(p)['quests']) for p in (ROOT/'content/quests').glob('v5_*.json'))
+        assert len(quests) == 2784 + additions, 'Every reviewed v5 goal must compile once, preserving the v4 baseline'
     else: assert 2000 <= len(quests) - 96 <= 3000, 'Exclude the 96 preserved legacy manual tasks from substantive quest count'
     for q in quests.values():
         for dependency in q.get('dependencies', []): assert dependency in quests
@@ -281,6 +284,11 @@ def main():
     if expansion:
         from validate_expansion import validate
         print(json.dumps(validate(ROOT), ensure_ascii=False, indent=2))
+    if list((ROOT/'content/quests').glob('v5_*.json')):
+        from validate_v5 import validate as validate_v5
+        result = validate_v5(ROOT)
+        (ROOT/'implementation/v5-validation-report.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+        print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__': main()

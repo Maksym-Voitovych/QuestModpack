@@ -1,0 +1,110 @@
+Source: https://github.com/mekanism/Mekanism/blob/a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80/src/generators/java/mekanism/generators/common/content/fusion/FusionReactorMultiblockData.java
+Original SHA256: c7175c41cd27e0eddfcb41457d17698a3fd9b6ee8c07bbf87211a0f7cd11d3b9
+Lines 306-410 (exact original lines; contextual excerpt)
+License: see LICENSE in this evidence directory.
+
+            reactorSlot.setEmpty();
+            setBurning(true);
+        }
+    }
+
+    private void injectFuel() {
+        long amountNeeded = fuelTank.getNeeded();
+        long amountAvailable = 2 * Math.min(deuteriumTank.getStored(), tritiumTank.getStored());
+        long amountToInject = Math.min(amountNeeded, Math.min(amountAvailable, injectionRate));
+        amountToInject -= amountToInject % 2;
+        long injectingAmount = amountToInject / 2;
+        MekanismUtils.logMismatchedStackSize(deuteriumTank.shrinkStack(injectingAmount, Action.EXECUTE), injectingAmount);
+        MekanismUtils.logMismatchedStackSize(tritiumTank.shrinkStack(injectingAmount, Action.EXECUTE), injectingAmount);
+        fuelTank.insert(GeneratorsChemicals.FUSION_FUEL.asStack(amountToInject), Action.EXECUTE, AutomationType.INTERNAL);
+    }
+
+    private long burnFuel() {
+        long fuelBurned = MathUtils.clampToLong(Mth.clamp((lastPlasmaTemperature - burnTemperature) * burnRatio, 0, fuelTank.getStored()));
+        MekanismUtils.logMismatchedStackSize(fuelTank.shrinkStack(fuelBurned, Action.EXECUTE), fuelBurned);
+        setPlasmaTemp(getPlasmaTemp() + (MathUtils.multiplyClamped(MekanismGeneratorsConfig.generators.energyPerFusionFuel.get(), fuelBurned) / (double) plasmaHeatCapacity));
+        return fuelBurned;
+    }
+
+    private void transferHeat() {
+        //Transfer from plasma to casing
+        double plasmaCaseHeat = plasmaCaseConductivity * (lastPlasmaTemperature - lastCaseTemperature);
+        if (Math.abs(plasmaCaseHeat) > HeatAPI.EPSILON) {
+            setPlasmaTemp(getPlasmaTemp() - plasmaCaseHeat / plasmaHeatCapacity);
+            heatCapacitor.handleHeat(plasmaCaseHeat);
+        }
+
+        //Transfer from casing to water if necessary
+        double caseWaterHeat = MekanismGeneratorsConfig.generators.fusionWaterHeatingRatio.get() * (lastCaseTemperature - biomeAmbientTemp);
+        if (Math.abs(caseWaterHeat) > HeatAPI.EPSILON) {
+            int waterToVaporize = (int) (HeatUtils.getSteamEnergyEfficiency() * caseWaterHeat / HeatUtils.getWaterThermalEnthalpy());
+            waterToVaporize = Math.min(waterToVaporize, Math.min(waterTank.getFluidAmount(), MathUtils.clampToInt(steamTank.getNeeded())));
+            if (waterToVaporize > 0) {
+                MekanismUtils.logMismatchedStackSize(waterTank.shrinkStack(waterToVaporize, Action.EXECUTE), waterToVaporize);
+                steamTank.insert(MekanismChemicals.STEAM.asStack(waterToVaporize), Action.EXECUTE, AutomationType.INTERNAL);
+                caseWaterHeat = waterToVaporize * HeatUtils.getWaterThermalEnthalpy() / HeatUtils.getSteamEnergyEfficiency();
+                heatCapacitor.handleHeat(-caseWaterHeat);
+            }
+        }
+
+        HeatTransfer heatTransfer = simulate();
+        lastEnvironmentLoss = heatTransfer.environmentTransfer();
+        lastTransferLoss = heatTransfer.adjacentTransfer();
+
+        //Passive energy generation
+        double caseAirHeat = MekanismGeneratorsConfig.generators.fusionCasingThermalConductivity.get() * (lastCaseTemperature - biomeAmbientTemp);
+        if (Math.abs(caseAirHeat) > HeatAPI.EPSILON) {
+            heatCapacitor.handleHeat(-caseAirHeat);
+            energyContainer.insert(MathUtils.clampToLong(caseAirHeat * MekanismGeneratorsConfig.generators.fusionThermocoupleEfficiency.get()), Action.EXECUTE, AutomationType.INTERNAL);
+        }
+    }
+
+    @NotNull
+    @Override
+    public HeatTransfer simulate() {
+        double environmentTransfer = 0;
+        double adjacentTransfer = 0;
+        for (ITileHeatHandler source : heatHandlers) {
+            HeatTransfer heatTransfer = source.simulate();
+            adjacentTransfer += heatTransfer.adjacentTransfer();
+            environmentTransfer += heatTransfer.environmentTransfer();
+        }
+        return new HeatTransfer(adjacentTransfer, environmentTransfer);
+    }
+
+    public void setLastPlasmaTemp(double temp) {
+        lastPlasmaTemperature = temp;
+    }
+
+    @ComputerMethod(nameOverride = "getPlasmaTemperature")
+    public double getLastPlasmaTemp() {
+        return lastPlasmaTemperature;
+    }
+
+    @ComputerMethod(nameOverride = "getCaseTemperature")
+    public double getLastCaseTemp() {
+        return lastCaseTemperature;
+    }
+
+    public double getPlasmaTemp() {
+        return plasmaTemperature;
+    }
+
+    public void setPlasmaTemp(double temp) {
+        if (plasmaTemperature != temp) {
+            plasmaTemperature = temp;
+            markDirty();
+        }
+    }
+
+    @ComputerMethod
+    public int getInjectionRate() {
+        return injectionRate;
+    }
+
+    public void setInjectionRate(int rate) {
+        if (injectionRate != rate) {
+            injectionRate = rate;
+            maxWater = injectionRate * MekanismGeneratorsConfig.generators.fusionWaterPerInjection.get();
+            maxSteam = injectionRate * MekanismGeneratorsConfig.generators.fusionSteamPerInjection.get();
+            if (getLevel() != null && !isRemote()) {

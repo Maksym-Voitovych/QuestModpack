@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_ars_nouveau",
   "title": "Ars Nouveau — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 27,
+  "order_index": 32,
   "icon": {
     "id": "ars_nouveau:archwood_planks",
     "count": 1
@@ -50,14 +50,149 @@
           "id": "0000B5834E89840A",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.0
+    },
+    {
+      "id": "0000E44C7FB73166",
+      "title": "Нотатник і перша книга заклять",
+      "description": [
+        "Відкрийте Worn Notebook та виготовте книгу початківця. Scribes Table потрібен для освоєння гліфів; не переносіть сюди механіку чорнил Iron’s Spells — це інша система.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:dye. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:novice_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000005396829BFF1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:scribes_table",
+          "timer": 40
+        },
+        {
+          "id": "0000C36093628F3F",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:novice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B2183B2C5C5C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:worn_notebook",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000663A7F2927B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BA9B19F829F5",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000605BA94FDDEE",
+      "title": "Інфузія самоцвіту Source",
+      "description": [
+        "Застосуйте Imbuement Chamber для отримання Source Gem із відповідного кристала. Самоцвіт живить ремісничий розвиток Ars і не є заповненою банкою Source.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: create:milling. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:source_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E44C7FB73166",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F07388D35942",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:imbuement_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000D9BE0180DBA2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002B65D67D1562",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:novice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E39FEC2D6245",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D7DF465B7CC5",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
     },
     {
       "id": "00009303AD17B258",
@@ -97,14 +232,14 @@
           "id": "00004D006492DFCA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000C4181A438166",
@@ -146,14 +281,82 @@
           "id": "0000CCACA75DCFC2",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 3.0
+    },
+    {
+      "id": "000012FE64DFED6B",
+      "title": "Стихійна есенція в камері",
+      "description": [
+        "Підготуйте предмети навколо камери за рецептом Air Essence. Есенції є входами гліфів і пристроїв; розрізняйте інгредієнти камери та рукописну книгу.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:imbuement. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:air_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000605BA94FDDEE",
+        "000083B2185CFC5C"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F6C8E02C1900",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:imbuement_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00001FAB09CDBC40",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:air_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000004E7A0205803",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F28823CA7E33",
+          "type": "advancement",
+          "advancement": "aia2:stages/e10"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E52F48D6E15C",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
     },
     {
       "id": "0000D6F268C97FE4",
@@ -195,14 +398,14 @@
           "id": "0000B1325CF75E68",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000403210466491",
@@ -241,14 +444,14 @@
           "id": "0000D92F5E179160",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "0000B89C5B715A91",
@@ -290,14 +493,14 @@
           "id": "000006E9E6F30E2A",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "00001215A7F584DA",
@@ -339,14 +542,14 @@
           "id": "00000F8261714413",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000A54A30154DD6",
@@ -411,14 +614,14 @@
           "id": "0000905F3A8333AD",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "0000F5F09BB498F0",
@@ -460,14 +663,14 @@
           "id": "00003970C16451DF",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00001260770EF013",
@@ -509,7 +712,7 @@
           "id": "0000B28CEAE80322",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
@@ -558,7 +761,7 @@
           "id": "00001792FF6A71D3",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
@@ -625,14 +828,14 @@
           "id": "0000535412D4ECEF",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 20.0
     },
     {
       "id": "0000586204D9BFBD",
@@ -673,14 +876,14 @@
           "id": "000086DC7178FB67",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 14.4
     },
     {
       "id": "000099CFF7B253AC",
@@ -755,14 +958,14 @@
           "id": "00005D4A7F75F08D",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 6.0
+      "x": 16.0,
+      "y": 9.0
     },
     {
       "id": "0000E856722F9547",
@@ -815,14 +1018,14 @@
           "id": "00003F93507B8E57",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 8.0
+      "x": 11.0,
+      "y": 10.0
     },
     {
       "id": "000020B5635A7BEF",
@@ -875,14 +1078,14 @@
           "id": "0000F5F428511BB5",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 17.0
     },
     {
       "id": "000032015D214085",
@@ -920,14 +1123,14 @@
           "id": "00006F52E18E7D3F",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 14.2
     },
     {
       "id": "000052ED38A1568E",
@@ -991,14 +1194,14 @@
           "id": "000023584B53B91B",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 8.0
+      "x": 13.0,
+      "y": 9.0
     },
     {
       "id": "0000696A1989B454",
@@ -1058,14 +1261,14 @@
           "id": "000092482F6BCAC3",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 10.0
+      "y": 20.0
     },
     {
       "id": "0000AAD04FC2430D",
@@ -1118,7 +1321,7 @@
           "id": "0000AA0FCCDD1E41",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
@@ -1178,14 +1381,14 @@
           "id": "00009951ECFA855D",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 14.0
+      "x": 13.0,
+      "y": 11.0
     },
     {
       "id": "000028BDFFC9458A",
@@ -1223,14 +1426,14 @@
           "id": "00007190DFCC361C",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 9.0
     },
     {
       "id": "000082AD5028D946",
@@ -1283,14 +1486,14 @@
           "id": "00002300FDD2DD47",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 13.0
     },
     {
       "id": "00008C782D14882A",
@@ -1332,14 +1535,14 @@
           "id": "00002CB2C8C893A9",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 11.0
     },
     {
       "id": "00008E97E0D97AF7",
@@ -1377,14 +1580,14 @@
           "id": "00006E95D8B00E82",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 8.0
+      "y": 15.0
     },
     {
       "id": "0000A286E6BEA8A8",
@@ -1433,14 +1636,14 @@
           "id": "00005A25E613272C",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 10.0
+      "y": 17.0
     },
     {
       "id": "0000B1892412ABA9",
@@ -1496,14 +1699,82 @@
           "id": "000081967C7EBA45",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 12.0
+      "y": 20.0
+    },
+    {
+      "id": "0000441F581A8FB4",
+      "title": "Source від росту рослин",
+      "description": [
+        "Поставте Agronomic Sourcelink біля керованої ферми та Source Jar у зоні передачі. Source накопичується від роботи sourcelink; порожня банка сама нічого не генерує.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:agronomic_sourcelink",
+        "count": 1
+      },
+      "dependencies": [
+        "000012FE64DFED6B",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FEBEA64C0DB5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:source_jar",
+          "timer": 40
+        },
+        {
+          "id": "0000D39612FB16ED",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:agronomic_sourcelink",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000EA3247C7FD7E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005ADEC9B5555E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DBA370CFD9C1",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
     },
     {
       "id": "00006E84A5A83CF4",
@@ -1545,14 +1816,14 @@
           "id": "0000033E6DB02C77",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 12.0
     },
     {
       "id": "00009C382DC871EA",
@@ -1612,14 +1883,14 @@
           "id": "0000B9EB388C7C11",
           "type": "item",
           "item": {
-            "id": "minecraft:bread",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 20.0
     },
     {
       "id": "0000C0E1234825C6",
@@ -1661,14 +1932,14 @@
           "id": "0000517E703DB583",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 8.0
+      "y": 10.0
     },
     {
       "id": "00006451FF689B1E",
@@ -1710,14 +1981,14 @@
           "id": "0000F07E32968743",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "000065ECABCC9D09",
@@ -1759,14 +2030,14 @@
           "id": "00008ADDE117EACF",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 6.0
+      "y": 12.0
     },
     {
       "id": "0000A748135E0BAE",
@@ -1808,14 +2079,14 @@
           "id": "0000B1A0B62DF944",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 8.0
+      "y": 10.0
     },
     {
       "id": "0000C6B309B3F5AD",
@@ -1875,14 +2146,161 @@
           "id": "00006A5D48B1FFC7",
           "type": "item",
           "item": {
-            "id": "minecraft:glass_bottle",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 10.0
+      "y": 20.0
+    },
+    {
+      "id": "0000E2CAA8C752D0",
+      "title": "Арканний апарат із вісьмома місцями",
+      "description": [
+        "Побудуйте Enchanting Apparatus з Arcane Core і педесталами. Перший Magebloom потрібен для тканини магічного спорядження; розміщуйте інгредієнти за реальним рецептом.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: create:milling. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:magebloom_crop",
+        "count": 1
+      },
+      "dependencies": [
+        "0000441F581A8FB4",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BFD22D62F628",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:enchanting_apparatus",
+          "timer": 40
+        },
+        {
+          "id": "00001B13F1C50AAF",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_crop",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F39E3A291A4D",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:arcane_pedestal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EAFE138595DC",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:arcane_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5B3938A635F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000049843617FA3D",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.0
+    },
+    {
+      "id": "00003FBE898B6790",
+      "title": "Книга наступного рівня",
+      "description": [
+        "Покращення книги зберігає систему вивчених заклять і відкриває вищий рівень гліфів. Виконайте native Book Upgrade після підготовки Nether-матеріалів, а не створюйте порожню заміну вручну.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:book_upgrade. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:apprentice_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2CAA8C752D0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000002CC20EE774",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:scribes_table",
+          "timer": 40
+        },
+        {
+          "id": "0000350ACA1CEDE7",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:apprentice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001D6F01ADD4E2",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:novice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000049BF79E59E13",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C0EDA07F184B",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 6.0
     },
     {
       "id": "00009EC4D331BCBE",
@@ -1942,14 +2360,82 @@
           "id": "0000C7F7C2D912F6",
           "type": "item",
           "item": {
-            "id": "minecraft:wheat_seeds",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 20.0
+    },
+    {
+      "id": "00007E865E975245",
+      "title": "Логістика старбанклів",
+      "description": [
+        "Приручення дикого Starbuncle починається з золотого самородка. Charm і Dominion Wand переводять цю взаємодію в налаштоване перенесення предметів між місцями.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:enchanting_apparatus. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:starbuncle_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00003FBE898B6790",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007C88846B55D8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:enchanting_apparatus",
+          "timer": 40
+        },
+        {
+          "id": "000030A93E81B407",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:starbuncle_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CCBC3B5B66F4",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:dominion_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077BDB26D507A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BDDEC66D032E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 6.0
     },
     {
       "id": "0000BB4DDFE24283",
@@ -2009,14 +2495,82 @@
           "id": "000011432F251871",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 4.0
+      "y": 20.0
+    },
+    {
+      "id": "00009214F4D3D121",
+      "title": "Ресурси без знищення істот",
+      "description": [
+        "Drygmy працює біля істот, витрачаючи Source за правилами Worn Notebook. Підготуйте charm і запас Source окремо від мобоферми з убивствами; огляд банки не вимірює її заповнення.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:enchanting_apparatus. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:drygmy_charm",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E865E975245",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046DC946C6310",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:source_jar",
+          "timer": 40
+        },
+        {
+          "id": "000040E7FDAAABEB",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:drygmy_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C50579D2064B",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:starbuncle_charm",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B91F28DA463",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007AA0B025E2DA",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:magebloom_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 6.0
     },
     {
       "id": "0000DB61AD5EDC51",
@@ -2087,14 +2641,14 @@
           "id": "0000B7DF1D9B32A5",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 20.0
     },
     {
       "id": "00005B0B3D80F78D",
@@ -2144,7 +2698,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 10.0
+      "y": 23.0
     },
     {
       "id": "0000B9BDA67F99AE",
@@ -2197,14 +2751,14 @@
           "id": "000056A696FD8260",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 26.0
     },
     {
       "id": "0000DB8A39AAB862",
@@ -2254,7 +2808,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 14.0
+      "y": 29.0
     },
     {
       "id": "00006EA5992F0C00",
@@ -2307,14 +2861,82 @@
           "id": "0000D4830A398AF0",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 16.0
+      "y": 32.0
+    },
+    {
+      "id": "0000D789ADDFD282",
+      "title": "Архімаг після попередньої книги",
+      "description": [
+        "Native Book Upgrade до Archmage використовує книгу попереднього рівня та пізні ресурси. Завершіть цей крок перед гліфами високого рівня й складними комбінованими закляттями.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:book_upgrade. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:archmage_spell_book",
+        "count": 1
+      },
+      "dependencies": [
+        "00009214F4D3D121",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000017250691DC4C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:scribes_table",
+          "timer": 40
+        },
+        {
+          "id": "000046DAFC2CCFC5",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archmage_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A2EC4DF0BA29",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:apprentice_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008D4547B4A1E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F777BC40EAA6",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:source_gem",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 6.0
     },
     {
       "id": "000055F4FC9AD425",
@@ -2364,7 +2986,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 18.0
+      "y": 35.0
     },
     {
       "id": "0000285610AE4089",
@@ -2424,14 +3046,14 @@
           "id": "00002E4EFBECAF26",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 20.0
+      "x": 6.0,
+      "y": 38.0
     },
     {
       "id": "00004DFC8D15CBA4",
@@ -2485,14 +3107,14 @@
           "id": "00004B7AA012172F",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 22.0
+      "y": 38.0
     },
     {
       "id": "00007A17C0B00F91",
@@ -2546,14 +3168,14 @@
           "id": "0000AB5CD04FC5E4",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 24.0
+      "x": 3.0,
+      "y": 38.0
     },
     {
       "id": "000020F72DE0EAE1",
@@ -2607,14 +3229,14 @@
           "id": "00008667EE8E7232",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 16.0
+      "x": 8.0,
+      "y": 38.0
     },
     {
       "id": "00004D479AC5E022",
@@ -2668,14 +3290,14 @@
           "id": "000079AF0D3298AC",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 26.0
+      "y": 41.0
     },
     {
       "id": "000083109A3913C4",
@@ -2752,14 +3374,14 @@
           "id": "0000DBA468FEDEF6",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 28.0
+      "x": 3.0,
+      "y": 41.0
     },
     {
       "id": "00003428021C79C4",
@@ -2813,14 +3435,14 @@
           "id": "0000C6E76ED1BDB6",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 30.0
+      "y": 44.0
     },
     {
       "id": "0000DA5044A645EE",
@@ -2874,14 +3496,14 @@
           "id": "0000F4C056B71028",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 32.0
+      "x": 3.0,
+      "y": 44.0
     },
     {
       "id": "0000EC8E506441AA",
@@ -2935,14 +3557,14 @@
           "id": "000072B7D8D8198E",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 34.0
+      "y": 47.0
     },
     {
       "id": "0000A01A30687242",
@@ -2996,14 +3618,14 @@
           "id": "0000123D01FE8222",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 36.0
+      "y": 50.0
     },
     {
       "id": "00006BF860B9E2E8",
@@ -3057,14 +3679,14 @@
           "id": "0000F658737CF4CC",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 38.0
+      "y": 53.0
     },
     {
       "id": "00002C733314F7AD",
@@ -3117,14 +3739,14 @@
           "id": "0000D680972519A7",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 40.0
+      "y": 56.0
     },
     {
       "id": "0000118D6E40E55E",
@@ -3178,14 +3800,14 @@
           "id": "0000CF68D2A18E6C",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 42.0
+      "y": 59.0
     },
     {
       "id": "000041BB1F09C740",
@@ -3250,14 +3872,14 @@
           "id": "00006D06C26EF51A",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:source_gem",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 44.0
+      "x": 3.0,
+      "y": 59.0
     },
     {
       "id": "00005153D679F3AB",
@@ -3311,14 +3933,14 @@
           "id": "00006781B91BF792",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ars_nouveau:sourceberry_bush",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 46.0
+      "y": 62.0
     }
   ]
 }

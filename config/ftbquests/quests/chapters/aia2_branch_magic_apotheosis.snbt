@@ -1,0 +1,433 @@
+{
+  "id": "0000F36E0962324B",
+  "filename": "aia2_branch_magic_apotheosis",
+  "title": "apotheosis — Магія",
+  "group": "00002E830BCB69F5",
+  "order_index": 30,
+  "icon": {
+    "id": "apotheosis:salvaging_table",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000D70BEA08831D",
+      "title": "Розбір спорядження за рідкістю",
+      "description": [
+        "Побудуйте Salvaging Table після отримання Gem Dust. Рецепти salvage відрізняють матеріал і рідкість спорядження; зберігайте результати в окремих комірках.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:salvaging_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D94DEC803E3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:salvaging_table",
+          "timer": 40
+        },
+        {
+          "id": "0000209FD2B6FA1B",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:salvaging_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000059F052C90BBD",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090E6F57FDAB8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000011A886D867D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00005B4F58ADB58C",
+      "title": "Початкова перековка",
+      "description": [
+        "Рецепти common/uncommon допускають Simple Reforging Table. Підготуйте матеріали розбору перед перековкою; висока рідкість має іншу ціну й допустимі столи.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:simple_reforging_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D70BEA08831D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000820FFFADBAA0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:simple_reforging_table",
+          "timer": 40
+        },
+        {
+          "id": "00006464E592206A",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:simple_reforging_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008D550A302A6F",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:mysterious_scrap_metal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047E9CF955E82",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001442A862C0CF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CA6B72BD65BF",
+      "title": "Чистота самоцвітів",
+      "description": [
+        "Gem Cutting Table використовує матеріали, що залежать від цільової purity. Відокремте це від рідкості affix-спорядження: це дві пов’язані, але різні шкали.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:gem_cutting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "00005B4F58ADB58C",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000067EDC3E12382",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:gem_cutting_table",
+          "timer": 40
+        },
+        {
+          "id": "0000393EB091937C",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem_cutting_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000020FCEB7E9913",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:timeworn_fabric",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001AC98EE69BC3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001D1A459F82C2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BE353E701C15",
+      "title": "Вища перековка з arcane sands",
+      "description": [
+        "Просунутий Reforging Table створюється з попереднього столу. Epic і mythic recipes у перевіреному експорті вимагають саме цей стіл, більшу кількість матеріалів і рівні досвіду.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:reforging_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CA6B72BD65BF",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BCE1F22F2E48",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:reforging_table",
+          "timer": 40
+        },
+        {
+          "id": "0000F60816747007",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:reforging_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000689C78BB9EF2",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:arcane_sands",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000070EECB5010BB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000034A331CA86E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000BD09A419E156",
+      "title": "Виведення каменя без втрати основи",
+      "description": [
+        "Підготуйте Sigil of Withdrawal для керованої зміни самоцвітів. Застосовуйте його за правилами socketing замість заміни цілої обов’язкової машини нагородою.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:sigil_of_withdrawal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BE353E701C15",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000058D0E78FB166",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:gem_cutting_table",
+          "timer": 40
+        },
+        {
+          "id": "000091D21A152158",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:sigil_of_withdrawal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D23723B3C350",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB29D8491BB5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007237D8808B43",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D08B918A4857",
+      "title": "Пізня ціна чистого каменя",
+      "description": [
+        "Завершіть збір матеріалів пізньої якості та перевірте витрати flawless-рецепта. Цей вузол перевіряє підготовлену станцію й комплект, а не невидимі компоненти випадкового самоцвіту.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: apotheosis:salvaging. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "apotheosis:godforged_pearl",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD09A419E156",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004FF52C79F619",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:gem_cutting_table",
+          "timer": 40
+        },
+        {
+          "id": "000088E79CA80B5A",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:godforged_pearl",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002E37109225DF",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:arcane_sands",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CB18913D1022",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:luminous_crystal_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E8A3611DB481",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A6FD46A0780D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    }
+  ]
+}

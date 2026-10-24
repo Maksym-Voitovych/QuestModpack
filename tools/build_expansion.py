@@ -175,6 +175,8 @@ def compile_quests(root=ROOT):
         records.extend(data if isinstance(data, list) else data['quests'])
     v4 = root/'content/quests/v4_mod_depth.json'
     if v4.exists(): records.extend(read(v4)['quests'])
+    for path in sorted((root/'content/quests').glob('v5_*.json')):
+        records.extend(read(path)['quests'])
     epochs = read(root/'design/progression.json')['epochs']
     runtime = read(root/'kubejs/config/aia2_runtime.json')
     components = read(root/'content/components/catalog.json')['items']
@@ -206,8 +208,12 @@ def compile_quests(root=ROOT):
         assert 1 <= n <= 48 and group in GROUPS and group != 'epochs'
         deps = [all_logical[x] for x in r.get('after', [])]
         if n > 1: deps.append(runtime['epochs'][n-2]['finalQuestId'])
+        if r.get('post_completion'):
+            assert n == 48 and not r.get('required'), 'Post-completion goals must remain optional'
+            deps.append(runtime['epochs'][47]['finalQuestId'])
         tasklist = [compile_task(t, r['id'], i) for i,t in enumerate(r['tasks'])]
-        tasklist.append({'id': uid(r['id']+':stage'), 'type': 'advancement', 'advancement': f'aia2:stages/e{n:02d}'})
+        tasklist.append({'id': uid(r['id']+':stage'), 'type': 'advancement',
+                         'advancement': 'aia2:keys/e48' if r.get('post_completion') else f'aia2:stages/e{n:02d}'})
         rewards = [{'id': uid(r['id']+':reward:'+str(i)), 'type': 'item', 'item': {'id': reward['item'], 'count': 1},
                     'count': reward['count']} for i,reward in enumerate(r.get('reward', []))]
         q = {'id': logical[r['id']], 'title': r['title_uk'], 'description': r['description_uk'],
@@ -266,8 +272,20 @@ def compile_quests(root=ROOT):
     # Small addon/cross-mod fragments share a readable chapter rather than dozens
     # of one-node chapters. Every quest keeps its own stable ID and stage proof.
     grouped = defaultdict(list)
+    old_locations = {}
+    snapshot_path = root/'content/audit/v4-ids.json'
+    if snapshot_path.exists():
+        for filename, old in read(snapshot_path)['chapters'].items():
+            if filename.startswith('aia2_branch_'):
+                for quest in old['quests']: old_locations[quest['id']] = filename
     for (group, mod), entries in mods.items():
-        grouped[(group, mod if len(entries) >= 6 else 'shared_studies')].extend(entries)
+        for entry in entries:
+            old_filename = old_locations.get(entry[1]['id'])
+            # New courses must not empty/retire a published chapter or move its
+            # old quests when a small addon grows past the grouping threshold.
+            target = old_filename[len('aia2_branch_'+group+'_'):-5] if old_filename else (
+                mod if len(entries) >= 6 else 'shared_studies')
+            grouped[(group, target)].append(entry)
     mods = grouped
     chapter_files = set()
     mod_names = {m: n for m, n in [('shared_studies','Спільні дослідження'), ('minecraft','Ремесло й дослідження'), ('create','Create'),
@@ -337,6 +355,17 @@ def apply(root=ROOT):
         except ImportError:
             from tools.build_recipe_expansion import apply as recipe_apply
         recipe_apply(root)
+    for module_name, source in [('build_balance_v5', 'content/recipes/v5_balance.json'),
+                                ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
+        if (root/source).exists():
+            import importlib
+            try: module = importlib.import_module(module_name)
+            except ModuleNotFoundError: module = importlib.import_module('tools.'+module_name)
+            module.apply(root)
+    if (root/'tools/layout_quests.py').exists():
+        try: from layout_quests import apply as layout_apply
+        except ImportError: from tools.layout_quests import apply as layout_apply
+        layout_apply(root)
     report['native_recipes'] = len(read(root/'kubejs/config/aia2_recipes.json')['add'])
     write(root/'implementation/expansion-report.json',report)
     print(json.dumps(report,ensure_ascii=False,indent=2))

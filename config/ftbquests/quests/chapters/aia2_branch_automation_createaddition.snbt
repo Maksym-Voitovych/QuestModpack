@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_createaddition",
   "title": "createaddition — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 8,
+  "order_index": 10,
   "icon": {
     "id": "immersiveengineering:wire_copper",
     "count": 1
@@ -69,7 +69,7 @@
           "id": "0000BD9C1596EE35",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "create:copper_sheet",
             "count": 1
           },
           "count": 4
@@ -77,6 +77,84 @@
       ],
       "x": 0.0,
       "y": 0.0
+    },
+    {
+      "id": "0000DDEA13496D98",
+      "title": "Генератор і мотор мають різні входи",
+      "description": [
+        "Порівняйте перетворення FE в обертання й обертання у FE на роз'єднаних стендах. Не замикайте їх у петлю заради уявної безкоштовної енергії; спочатку визначте зовнішнє джерело і корисне навантаження кожної ділянки.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createaddition:alternator",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D35EC877614",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000068039916C2CE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:electric_motor",
+          "timer": 40
+        },
+        {
+          "id": "000094EB5B0D1261",
+          "type": "item",
+          "item": {
+            "id": "createaddition:alternator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009B386CE400E5",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000064E50D421D13",
+          "type": "item",
+          "item": {
+            "id": "minecraft:repeater",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044CA73D9F513",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000046E9E6977A12",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
     },
     {
       "id": "000085D0CDB2C151",
@@ -132,10 +210,10 @@
           "id": "00008996409D6E67",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "create:copper_sheet",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
@@ -199,7 +277,7 @@
           "id": "00007DE775140988",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
@@ -266,7 +344,7 @@
           "id": "0000C20408638239",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "create:copper_sheet",
             "count": 1
           },
           "count": 4
@@ -333,10 +411,10 @@
           "id": "000026434F534014",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -400,7 +478,7 @@
           "id": "000024C70A0458D8",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
@@ -467,7 +545,7 @@
           "id": "0000DD8D6FF2D19E",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
@@ -534,7 +612,7 @@
           "id": "00008E339293E709",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
@@ -542,6 +620,240 @@
       ],
       "x": 14.0,
       "y": 0.0
+    },
+    {
+      "id": "0000308E6E3B17D9",
+      "title": "Прокатна машина постачає інший мод",
+      "description": [
+        "Підготуйте уніфіковані дріт і прутки для суміжної електроніки, зберігши окремі шаблони формування. Простір імен матеріалу може відрізнятися від мода машини; перевірте фактичний результат рецепта після уніфікації.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wire_electrum",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DDEA13496D98",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000070ED14D165B7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:rolling_mill",
+          "timer": 40
+        },
+        {
+          "id": "0000F30EDA89C079",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_electrum",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B3B787510670",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004FF1102DAE72",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000093813BCD5174",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006E766FD9AB24",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000533A746FA366",
+      "title": "Заряджання на рухомому майданчику",
+      "description": [
+        "Розділіть енергетичне стикування рухомої конструкції та звичайну станцію заряджання інструментів. Спочатку перевірте момент з'єднання контактів і локальний акумулятор, а потім під'єднуйте решту сервісних функцій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createaddition:modular_accumulator",
+        "count": 1
+      },
+      "dependencies": [
+        "0000308E6E3B17D9",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000335C453CE25D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:portable_energy_interface",
+          "timer": 40
+        },
+        {
+          "id": "0000B9DF5D8D0E48",
+          "type": "item",
+          "item": {
+            "id": "createaddition:modular_accumulator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DBB38A77F40E",
+          "type": "item",
+          "item": {
+            "id": "create:portable_fluid_interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B6CCA356436",
+          "type": "item",
+          "item": {
+            "id": "pneumaticcraft:charging_station",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002DD2AD4128ED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000727FDED6ABF2",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000F68370687ADF",
+      "title": "Реле завершує електромеханічний контракт",
+      "description": [
+        "Підготуйте сигнал дозволу роботи для електромеханічного острова й ізольований ремонтний маршрут. Перевірте полярність керування на малому навантаженні, перш ніж зв'язувати його з автоматичними замовленнями цифрового складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "createaddition:large_connector",
+        "count": 1
+      },
+      "dependencies": [
+        "0000533A746FA366",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000038734F5B7FF3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:redstone_relay",
+          "timer": 40
+        },
+        {
+          "id": "00002619EEE5106B",
+          "type": "item",
+          "item": {
+            "id": "createaddition:large_connector",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000072D946053D28",
+          "type": "item",
+          "item": {
+            "id": "ae2:redstone_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020CEE1E47766",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecoil_electrum_ins",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007BD134D1DB04",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB9B16697D03",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     }
   ]
 }

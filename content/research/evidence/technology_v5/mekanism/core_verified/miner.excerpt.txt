@@ -1,0 +1,110 @@
+Source: https://github.com/mekanism/Mekanism/blob/a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80/src/main/java/mekanism/common/tile/machine/TileEntityDigitalMiner.java
+Original SHA256: 673b40c0a66b584e33fd4ba37948a8db5ea19780392686f8abff8a03935da0e7
+Lines 317-421 (exact original lines; contextual excerpt)
+License: see LICENSE in this evidence directory.
+
+    public boolean getSilkTouch() {
+        return silkTouch;
+    }
+
+    @ComputerMethod(methodDescription = "Get the current radius configured (blocks)")
+    public int getRadius() {
+        return radius;
+    }
+
+    @ComputerMethod(methodDescription = "Gets the configured minimum Y level for mining")
+    public int getMinY() {
+        return minY;
+    }
+
+    @ComputerMethod(methodDescription = "Gets the configured maximum Y level for mining")
+    public int getMaxY() {
+        return maxY;
+    }
+
+    @ComputerMethod(nameOverride = "getInverseMode", methodDescription = "Whether Inverse Mode is enabled or not")
+    public boolean getInverse() {
+        return inverse;
+    }
+
+    @ComputerMethod(nameOverride = "getInverseModeRequiresReplacement", methodDescription = "Whether Inverse Mode Require Replacement is turned on")
+    public boolean getInverseRequiresReplacement() {
+        return inverseRequiresReplacement;
+    }
+
+    @ComputerMethod(nameOverride = "getInverseModeReplaceTarget", methodDescription = "Get the configured Replacement target item")
+    public Item getInverseReplaceTarget() {
+        return inverseReplaceTarget;
+    }
+
+    private void setSilkTouch(boolean newSilkTouch) {
+        if (silkTouch != newSilkTouch) {
+            silkTouch = newSilkTouch;
+            if (hasLevel() && !isRemote()) {
+                energyContainer.updateMinerEnergyPerTick();
+            }
+        }
+    }
+
+    public void toggleSilkTouch() {
+        setSilkTouch(!getSilkTouch());
+        markForSave();
+    }
+
+    public void toggleInverse() {
+        inverse = !inverse;
+        markForSave();
+    }
+
+    public void toggleInverseRequiresReplacement() {
+        inverseRequiresReplacement = !inverseRequiresReplacement;
+        markForSave();
+    }
+
+    public void setInverseReplaceTarget(Item target) {
+        if (target != inverseReplaceTarget) {
+            inverseReplaceTarget = target;
+            markForSave();
+        }
+    }
+
+    public void toggleAutoEject() {
+        doEject = !doEject;
+        markForSave();
+    }
+
+    public void toggleAutoPull() {
+        doPull = !doPull;
+        markForSave();
+    }
+
+    public void setRadiusFromPacket(int newRadius) {
+        setRadius(Mth.clamp(newRadius, 0, MekanismConfig.general.minerMaxRadius.get()));
+        //Send a packet to update the visual renderer
+        //TODO: Only do this if the renderer is actually active
+        sendUpdatePacket();
+        markForSave();
+    }
+
+    private void setRadius(int newRadius) {
+        if (radius != newRadius && newRadius >= 0) {
+            radius = newRadius;
+            if (hasLevel() && !isRemote()) {
+                energyContainer.updateMinerEnergyPerTick();
+                // If the radius changed, and we're on the server, go ahead and refresh the chunk set
+                getChunkLoader().refreshChunkTickets();
+            }
+        }
+    }
+
+    public void setMinYFromPacket(int newMinY) {
+        if (level != null) {
+            setMinY(Mth.clamp(newMinY, level.getMinBuildHeight(), getMaxY()));
+            //Send a packet to update the visual renderer
+            //TODO: Only do this if the renderer is actually active
+            sendUpdatePacket();
+            markForSave();
+        }
+    }
+
+    private void setMinY(int newMinY) {

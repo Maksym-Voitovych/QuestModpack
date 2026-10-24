@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_oritech",
   "title": "oritech — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 17,
+  "order_index": 19,
   "icon": {
     "id": "oritech:machine_frame_block",
     "count": 1
@@ -69,14 +69,92 @@
           "id": "000098C5F06B7BC9",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "oritech:plastic_sheet",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007253FD4CE79D",
+      "title": "Центрифуга відділяє потрібну частку",
+      "description": [
+        "Відцентруйте залізну грудку й порівняйте основний продукт із нікелевим побічним пилом. Нативний рецепт oritech:centrifuge/clump/iron дає залізну кристалічну сировину та три малі порції нікелю; для обох продуктів потрібне місце на виході.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "oritech:iron_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "000083803A23A398",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000063AB461B226C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:centrifuge_block",
+          "timer": 40
+        },
+        {
+          "id": "000023DDE735A99A",
+          "type": "item",
+          "item": {
+            "id": "oritech:iron_clump",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7225F1FA317",
+          "type": "item",
+          "item": {
+            "id": "oritech:iron_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E1BC3F06DCB",
+          "type": "item",
+          "item": {
+            "id": "oritech:small_nickel_dust",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB1D2D6667BF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006CA4220D5983",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000631EC4C85869",
@@ -136,14 +214,92 @@
           "id": "00001D03656C52B7",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "000092F1015B6822",
+      "title": "Аддон має торкатися потрібної машини",
+      "description": [
+        "Підготуйте різні типи розширення та порівняйте місця їхнього під'єднання. Після монтажу перевірте інтерфейс машини: фізична близькість до корпусу без правильного з'єднання не підтверджує застосування бонусу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "oritech:machine_speed_addon",
+        "count": 1
+      },
+      "dependencies": [
+        "00007253FD4CE79D",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E755A27C5B6B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:machine_extender",
+          "timer": 40
+        },
+        {
+          "id": "0000AE908519E839",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_speed_addon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096EB16997AAA",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_efficiency_addon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F5A896FB2F17",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_fibre_strands",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EC209870CEC3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000914AA46B79E5",
+          "type": "item",
+          "item": {
+            "id": "oritech:plastic_sheet",
             "count": 1
           },
           "count": 2
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000E53DD73D7388",
@@ -203,7 +359,7 @@
           "id": "0000B708E9472FE8",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "oritech:small_copper_dust",
             "count": 1
           },
           "count": 4
@@ -270,7 +426,7 @@
           "id": "0000F1ADC362E688",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "oritech:polymer_resin",
             "count": 1
           },
           "count": 4
@@ -337,10 +493,10 @@
           "id": "0000D681EBF31436",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "oritech:polymer_resin",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -404,10 +560,10 @@
           "id": "00005C71A99074FA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "oritech:plastic_sheet",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 10.0,
@@ -471,7 +627,7 @@
           "id": "00009176326BA724",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "oritech:small_copper_dust",
             "count": 1
           },
           "count": 4
@@ -549,7 +705,7 @@
           "id": "0000CE7A3E5898B4",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "oritech:raw_biopolymer",
             "count": 1
           },
           "count": 4
@@ -557,6 +713,162 @@
       ],
       "x": 14.0,
       "y": 0.0
+    },
+    {
+      "id": "000094265C633402",
+      "title": "Вуглецевий компонент до електроніки",
+      "description": [
+        "Підготуйте вуглецевий матеріал і два різні типи обчислювальних компонентів для міжмодового складання. Порівняйте нативні рецепти до створення шаблону; процесор AE2 не є автоматичною заміною блока обробки Oritech.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "oritech:reinforced_carbon_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "000092F1015B6822",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000041883CAF2507",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:assembler_block",
+          "timer": 40
+        },
+        {
+          "id": "0000BC349E887800",
+          "type": "item",
+          "item": {
+            "id": "oritech:reinforced_carbon_sheet",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E3A4072F18E",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000606A3A6BFE1A",
+          "type": "item",
+          "item": {
+            "id": "ae2:engineering_processor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000265D6C1D3406",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005119EA7FB421",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "000020E5BF728981",
+      "title": "Просторовий сервіс має локальний запас",
+      "description": [
+        "Відокремте просторовий матеріальний вузол від транспортної частини Mekanism і позначте їхні входи. Порівняйте фактичні рецепти JEI; назва ендерного компонента не означає, що дві машини працюють з однаковим середовищем.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "oritech:enderic_compound",
+        "count": 1
+      },
+      "dependencies": [
+        "000094265C633402",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000171F7417A4E0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:laser_arm_block",
+          "timer": 40
+        },
+        {
+          "id": "0000DDBF1ED170FB",
+          "type": "item",
+          "item": {
+            "id": "oritech:enderic_compound",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000016861CCC4E8",
+          "type": "item",
+          "item": {
+            "id": "oritech:fluxite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C54E41A0522A",
+          "type": "item",
+          "item": {
+            "id": "mekanism:quantum_entangloporter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031C8CB65EE52",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A1F9B310B397",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     }
   ]
 }

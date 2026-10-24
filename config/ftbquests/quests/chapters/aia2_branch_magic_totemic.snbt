@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_totemic",
   "title": "totemic — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 43,
+  "order_index": 49,
   "icon": {
     "id": "totemic:totem_whittling_knife",
     "count": 1
@@ -51,7 +51,7 @@
           "id": "0000D7D391A4C289",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
@@ -59,6 +59,66 @@
       ],
       "x": 0.0,
       "y": 0.0
+    },
+    {
+      "id": "0000BBFAF2A70243",
+      "title": "Різьбяр тотемів",
+      "description": [
+        "Почніть Totemic із різьбярського ножа. Ним деревина перетворюється на частини тотема; вибір тварини визначає ефект, тому звіртеся з Totempedia до різьблення.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "totemic:totem_whittling_knife",
+        "count": 1
+      },
+      "dependencies": [
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C0FC6DD3F2C",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_whittling_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007CC2400548F0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:oak_log",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C797C40B24B2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000096FF643F9D25",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
     },
     {
       "id": "000086E3677692F7",
@@ -111,7 +171,7 @@
           "id": "00005B4C44616F13",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
@@ -119,6 +179,74 @@
       ],
       "x": 2.0,
       "y": 0.0
+    },
+    {
+      "id": "0000E19E89D067F1",
+      "title": "Основа й вертикаль тотема",
+      "description": [
+        "Поставте основу тотема, а над нею різьблені секції. Посох допомагає взаємодіяти із системою; перевірте радіус ефекту біля основи перед перенесенням робочих місць.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "totemic:totemic_staff",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BBFAF2A70243",
+        "000055963FA9D704"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006CEBFCE8D008",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:totem_base",
+          "timer": 40
+        },
+        {
+          "id": "0000317BBF1C0CBF",
+          "type": "item",
+          "item": {
+            "id": "totemic:totemic_staff",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B3F8DA118F34",
+          "type": "item",
+          "item": {
+            "id": "totemic:totem_whittling_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000812FD1C8FC65",
+          "type": "advancement",
+          "advancement": "aia2:stages/e02"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000762AC42F6A9A",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
     },
     {
       "id": "000045C0B5F11895",
@@ -172,7 +300,7 @@
           "id": "00001745CFEF78DD",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
@@ -231,14 +359,14 @@
           "id": "000042E47A05AE90",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 10.782
     },
     {
       "id": "000079FD0515804C",
@@ -284,14 +412,14 @@
           "id": "000052D1DA4BF617",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 11.782
     },
     {
       "id": "0000FCAB17DA8E72",
@@ -330,14 +458,82 @@
           "id": "00003FF7DA6A9ED3",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 9.782
+    },
+    {
+      "id": "000004D4E51BF9E0",
+      "title": "Ритм і мелодія",
+      "description": [
+        "Підготуйте флейту та встановлений барабан. Церемонії накопичують музику від різних інструментів; повторення лише одного інструмента має обмеження, описані Totempedia.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "totemic:flute",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E19E89D067F1",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009903A2B123D4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:drum",
+          "timer": 40
+        },
+        {
+          "id": "00004E28C2F02A06",
+          "type": "item",
+          "item": {
+            "id": "totemic:flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00004765066EAF22",
+          "type": "item",
+          "item": {
+            "id": "totemic:totemic_staff",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000001D07199C085",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D4AC1A73279E",
+          "type": "item",
+          "item": {
+            "id": "totemic:cooked_buffalo_meat",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
     },
     {
       "id": "00007EB7AFFBE3E4",
@@ -376,14 +572,14 @@
           "id": "00002EBBA7A0BBB9",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 11.12
     },
     {
       "id": "00008F0FD74C45F9",
@@ -425,14 +621,14 @@
           "id": "0000AFEF6A2412A6",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 9.12
     },
     {
       "id": "0000550C1949A21F",
@@ -474,14 +670,161 @@
           "id": "000012146639C21D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 8.556
+    },
+    {
+      "id": "0000E2E3CC01FC53",
+      "title": "Танець відновлюваного стада",
+      "description": [
+        "Проведіть Buffalo Dance за Totempedia й організуйте відтворення стада. Шкіра та зуби бізонів підтримують інструменти; не замінюйте всю популяцію разовим забоєм.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "totemic:buffalo_hide",
+        "count": 1
+      },
+      "dependencies": [
+        "000004D4E51BF9E0",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5C8D292A7F3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:totem_base",
+          "timer": 40
+        },
+        {
+          "id": "00003A04075DCAE8",
+          "type": "item",
+          "item": {
+            "id": "totemic:buffalo_hide",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD3778574899",
+          "type": "item",
+          "item": {
+            "id": "totemic:flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DAD65E380053",
+          "type": "item",
+          "item": {
+            "id": "totemic:buffalo_tooth",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CDE817DD2A8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BAB8CFF1A87B",
+          "type": "item",
+          "item": {
+            "id": "totemic:cooked_buffalo_meat",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000270135BBF7DD",
+      "title": "Брязкальце з результату церемонії",
+      "description": [
+        "Використайте зуб бізона для брязкальця. Воно додає окреме джерело музики до барабана й флейти, підвищуючи можливості ансамблю без випадкового збільшення ресурсів.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "totemic:rattle",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2E3CC01FC53",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001807B58E2DEE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:drum",
+          "timer": 40
+        },
+        {
+          "id": "00001FDEEB778FEE",
+          "type": "item",
+          "item": {
+            "id": "totemic:rattle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007978D61EBB43",
+          "type": "item",
+          "item": {
+            "id": "totemic:buffalo_tooth",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D8A2F9BDFEFA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071FDB4FC1CC8",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 3.0
     },
     {
       "id": "00003F4096206F58",
@@ -523,14 +866,14 @@
           "id": "00009EB180240BAC",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "0000604A0180867D",
@@ -607,14 +950,14 @@
           "id": "00006AFA501FEF07",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 10.833
     },
     {
       "id": "0000C40E4F78F4F2",
@@ -657,14 +1000,82 @@
           "id": "0000D2230B1CEC08",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cooked_buffalo_meat",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 8.833
+    },
+    {
+      "id": "00005604AD327BF9",
+      "title": "Підвісний інструмент із кедра",
+      "description": [
+        "Завершіть кедрову й мідну частини ансамблю. Поставте wind chime поряд із церемоніальним майданчиком та перевірте правила його роботи в Totempedia.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "totemic:wind_chime",
+        "count": 1
+      },
+      "dependencies": [
+        "0000270135BBF7DD",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004F1BBCB5B7AE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:wind_chime",
+          "timer": 40
+        },
+        {
+          "id": "00006C468F7FBD12",
+          "type": "item",
+          "item": {
+            "id": "totemic:wind_chime",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000028E725414B55",
+          "type": "item",
+          "item": {
+            "id": "totemic:rattle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF9E4A51D051",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A88F8A2D2AFF",
+          "type": "item",
+          "item": {
+            "id": "totemic:cooked_buffalo_meat",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
     },
     {
       "id": "0000746EDE74F3E1",
@@ -706,14 +1117,14 @@
           "id": "00002DE5C89C97E5",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 8.0
     },
     {
       "id": "00007B096FEEABD9",
@@ -755,14 +1166,14 @@
           "id": "0000CB0D30299C17",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 6.0
     },
     {
       "id": "0000A2837011B270",
@@ -804,14 +1215,93 @@
           "id": "0000C238AD8D1F11",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "totemic:cedar_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 4.0
+      "y": 10.0
+    },
+    {
+      "id": "0000FAEE017631B3",
+      "title": "Налаштована флейта",
+      "description": [
+        "Виконайте описану в Totempedia церемонію покращення флейти після побудови ансамблю. Збережіть звичайну флейту для порівняння та резервного виступу.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "totemic:infused_flute",
+        "count": 1
+      },
+      "dependencies": [
+        "00005604AD327BF9",
+        "00002EE0A796BE65"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E44DBBA51FEB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "totemic:totem_base",
+          "timer": 40
+        },
+        {
+          "id": "00000A371FD3E532",
+          "type": "item",
+          "item": {
+            "id": "totemic:infused_flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000C47BC2C742A",
+          "type": "item",
+          "item": {
+            "id": "totemic:flute",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1C9CC6D72EF",
+          "type": "item",
+          "item": {
+            "id": "totemic:rattle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000872BBCD8A303",
+          "type": "advancement",
+          "advancement": "aia2:stages/e07"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B851F34A4A0F",
+          "type": "item",
+          "item": {
+            "id": "totemic:cedar_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 3.0
     }
   ]
 }

@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "scope": "Exact installed-version source serializers for the new fusion/pressure processes. Other formats retain their exported native templates. Not an in-game execution test.",
+  "sources": [
+    {
+      "mod_id": "draconicevolution",
+      "source_version": "3.1.4",
+      "minecraft_version": "1.21.1",
+      "repository": "https://github.com/Draconic-Inc/Draconic-Evolution",
+      "commit": "6251e32bc93eb4bfcd910236ec1eaa6546516229",
+      "path": "src/main/java/com/brandon3055/draconicevolution/api/crafting/FusionRecipe.java",
+      "url": "https://github.com/Draconic-Inc/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/crafting/FusionRecipe.java",
+      "raw_file_sha256": "7baf2f22dfca92e4f4e5c4f578b06c9a576182b85aaa8d868d5dc7b920901691",
+      "excerpt": {
+        "first_line": 131,
+        "last_line": 137,
+        "text": "        private static final MapCodec<FusionRecipe> CODEC = RecordCodecBuilder.mapCodec(builder -> builder.group(\n                        ItemStack.CODEC.fieldOf(\"result\").forGetter(e -> e.result),\n                        Ingredient.CODEC_NONEMPTY.fieldOf(\"catalyst\").forGetter(e -> e.catalyst),\n                        Codec.LONG.fieldOf(\"totalEnergy\").forGetter(e -> e.totalEnergy),\n                        TechLevel.CODEC.fieldOf(\"techLevel\").forGetter(e -> e.techLevel),\n                        Codec.list(FusionIngredient.CODEC).fieldOf(\"ingredients\").forGetter(e -> e.ingredients)\n                ).apply(builder, FusionRecipe::new)"
+      }
+    },
+    {
+      "mod_id": "pneumaticcraft",
+      "source_version": "8.2.23",
+      "minecraft_version": "1.21.1",
+      "repository": "https://github.com/TeamPneumatic/pnc-repressurized",
+      "commit": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+      "path": "src/main/java/me/desht/pneumaticcraft/common/recipes/machine/PressureChamberRecipeImpl.java",
+      "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/recipes/machine/PressureChamberRecipeImpl.java",
+      "raw_file_sha256": "1d48fb136f74158952f0fe428287061172923e56689cd7dfa65af00c56edf5e8",
+      "excerpt": {
+        "first_line": 177,
+        "last_line": 183,
+        "text": "        public Serializer(IFactory<T> factory) {\n            codec = RecordCodecBuilder.mapCodec(builder -> builder.group(\n                    SizedIngredient.FLAT_CODEC.listOf().fieldOf(\"inputs\").forGetter(PressureChamberRecipe::getInputs),\n                    Codec.floatRange(-1f, 20f).fieldOf(\"pressure\").forGetter(PressureChamberRecipe::getPressure),\n                    ItemStack.CODEC.listOf().fieldOf(\"results\").forGetter(PressureChamberRecipe::getOutputs)\n            ).apply(builder, factory::create));\n            streamCodec = StreamCodec.composite("
+      }
+    }
+  ],
+  "codec_review": {
+    "draconicevolution:fusion_crafting": "ItemStack result; nonempty Ingredient catalyst; long totalEnergy; TechLevel; list of nonempty Ingredient + boolean consume.",
+    "pneumaticcraft:pressure_chamber": "Flat counted SizedIngredient inputs; float pressure; ItemStack results.",
+    "powah:energizing": "Installed6.2.10 export template is primary evidence. A cached5.1.0-alpha source clone is context only and is not claimed exact."
+  }
+}

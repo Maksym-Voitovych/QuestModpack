@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_shared_studies",
   "title": "Спільні дослідження — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 78,
+  "order_index": 84,
   "icon": {
     "id": "rustic_engineer:gear",
     "count": 1
@@ -75,13 +75,13 @@
           "id": "00006200708F6DDA",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "create:andesite_alloy",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
-      "x": 0.0,
+      "x": 6.0,
       "y": 0.0
     },
     {
@@ -121,14 +121,14 @@
           "id": "0000462EFC2F71D0",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "minecraft:paper",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 2.0
+      "x": 3.0,
+      "y": 0.0
     },
     {
       "id": "0000891AA5B7C86A",
@@ -170,14 +170,14 @@
           "id": "00003510A041C251",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "create:andesite_alloy",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 0.0
     },
     {
       "id": "00000B1229DEAB9F",
@@ -216,14 +216,14 @@
           "id": "0000509452DA2D06",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 5.0
     },
     {
       "id": "0000494D4B141609",
@@ -265,14 +265,14 @@
           "id": "0000916287AA65A5",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 3.0
     },
     {
       "id": "000013833C51C347",
@@ -325,14 +325,14 @@
           "id": "0000707C4A7C9E8D",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.375
     },
     {
       "id": "0000FE3D72052544",
@@ -371,14 +371,14 @@
           "id": "0000B4A9300F257C",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 5.875
     },
     {
       "id": "00007D35EC877614",
@@ -418,14 +418,326 @@
           "id": "0000F6AD2A7B6CA4",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "create:copper_sheet",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.375
+    },
+    {
+      "id": "000047941B0C0979",
+      "title": "Розвідка до насосної станції",
+      "description": [
+        "Підготуйте інструменти для пошуку нафтової ділянки й візуалізації промислової конструкції. Результат розвідки та правильно зібрана установка — послідовні кроки; не витрачайте повний комплект будматеріалів до вибору місця.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:seismic_survey",
+        "count": 1
+      },
+      "dependencies": [
+        "000042B3D0338DA7",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C674EE52743",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersivepetroleum:derrick",
+          "timer": 40
+        },
+        {
+          "id": "00007774DC5F8F26",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:seismic_survey",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000032D040DF0545",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:survey_tools",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065334AB5F969",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:projector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000050134225336C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B9B32B9F921B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.875
+    },
+    {
+      "id": "0000DEFEC01EEAF1",
+      "title": "Колона розділяє фракції",
+      "description": [
+        "Порівняйте твердий побічний продукт із рідкою паливною фракцією. Виводьте їх окремо й перевірте запас місця для кожного, адже забитий побічний вихід може перетворити достатній запас сирої нафти на простій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:bitumen",
+        "count": 1
+      },
+      "dependencies": [
+        "000047941B0C0979",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000522274C4DB4B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersivepetroleum:distillation_tower",
+          "timer": 40
+        },
+        {
+          "id": "0000C3D59A28197F",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:bitumen",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002B7261D8F8D6",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:diesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007AFC98906640",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:jerrycan",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000084F1B6F18CC5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EDD712DC8E7E",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hemp_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 8.875
+    },
+    {
+      "id": "0000AD0926A9B603",
+      "title": "Коксування потребує нового маршруту",
+      "description": [
+        "Окремо позначте коксохімічну ділянку та її тверді й рідкі продукти. Не повертайте нафту й нафтові фракції у спільний непідписаний резервуар; для запуску звірте відповідний нативний рецепт із JEI.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:petcoke",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DEFEC01EEAF1",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004CCE660EBCCC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersivepetroleum:coker_unit",
+          "timer": 40
+        },
+        {
+          "id": "000089899671D4DA",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:petcoke",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D469D23DD4A5",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:naphtha_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007BC5682C7D25",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:oil_can",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC9500965625",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000097AFF1573A77",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
+      "y": 8.875
+    },
+    {
+      "id": "00008E0CAF546D7E",
+      "title": "Сервіс мастила не є генерацією",
+      "description": [
+        "Зберіть мастильний контур поряд із доступними точками обслуговування промислової машини. Мастило підтримує сумісне обладнання, але не є заміною його електроживленню або механічній сировині.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:lubricant_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AD0926A9B603",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ADD036570526",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersivepetroleum:auto_lubricator",
+          "timer": 40
+        },
+        {
+          "id": "0000AEFD4020DFCD",
+          "type": "item",
+          "item": {
+            "id": "immersivepetroleum:lubricant_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CE32E280610",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:maintenance_kit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009694DA476545",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:fluid_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FCE311F6639",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E7DCAFB9977F",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 8.875
     },
     {
       "id": "00005F61EAC1B2C3",
@@ -478,14 +790,14 @@
           "id": "0000C2AA03D511EA",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_ingot",
+            "id": "evilcraft:dull_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 11.875
     },
     {
       "id": "0000D961BC100944",
@@ -540,14 +852,14 @@
           "id": "0000B3C962713C43",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_ingot",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 14.875
     },
     {
       "id": "00008A539575B40D",
@@ -596,14 +908,14 @@
           "id": "0000BA4ABA08B711",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_ingot",
+            "id": "minecraft:leather",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 14.0
+      "x": 7.0,
+      "y": 17.875
     },
     {
       "id": "0000C157594838BB",
@@ -641,14 +953,14 @@
           "id": "0000D361391448CE",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "minecraft:paper",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 16.0
+      "y": 18.875
     },
     {
       "id": "0000B7E635D24F39",
@@ -686,14 +998,14 @@
           "id": "0000B151717730B1",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_ingot",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 17.875
     },
     {
       "id": "0000D20C66E6CEA3",
@@ -731,14 +1043,14 @@
           "id": "00005663B638370A",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:leather",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 19.875
     },
     {
       "id": "0000BC35B3FD01CE",
@@ -791,14 +1103,14 @@
           "id": "0000BFE4292FD8B3",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 17.875
     },
     {
       "id": "0000C7EDB9E547C1",
@@ -850,7 +1162,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 18.0
+      "y": 22.875
     },
     {
       "id": "0000451EFBAE5BC5",
@@ -902,7 +1214,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 20.0
+      "y": 25.875
     },
     {
       "id": "00001D3F95642B40",
@@ -954,7 +1266,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 8.0
+      "y": 25.875
     },
     {
       "id": "00006CF74F02DF15",
@@ -1009,14 +1321,14 @@
           "id": "000060EA2B10A3BC",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 22.0
+      "x": 7.0,
+      "y": 28.875
     },
     {
       "id": "000079B9BC19349F",
@@ -1069,14 +1381,14 @@
           "id": "0000F5C1B54FF72C",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 24.0
+      "y": 28.875
     },
     {
       "id": "0000482CF0A74C25",
@@ -1126,7 +1438,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 10.0
+      "y": 28.875
     },
     {
       "id": "0000C76954622D65",
@@ -1176,7 +1488,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 4.0
+      "y": 28.875
     },
     {
       "id": "0000425C491D64D0",
@@ -1231,14 +1543,14 @@
           "id": "000029091405E752",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "aether:ambrosium_shard",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 26.0
+      "x": 8.0,
+      "y": 31.875
     },
     {
       "id": "00006E0B56AE148B",
@@ -1304,14 +1616,14 @@
           "id": "000098FE6C1055BA",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "ars_nouveau:magebloom_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 28.0
+      "y": 31.875
     },
     {
       "id": "0000B9C455F81B43",
@@ -1362,8 +1674,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 30.0
+      "x": 3.0,
+      "y": 31.875
     },
     {
       "id": "0000E98FF7B70C19",
@@ -1414,8 +1726,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 2.0,
-      "y": 12.0
+      "x": 5.0,
+      "y": 31.875
     },
     {
       "id": "0000F22F32EC4FBB",
@@ -1470,14 +1782,14 @@
           "id": "000021F4BFD7FBA9",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "goety:nightshade_seeds",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 32.0
+      "y": 34.875
     },
     {
       "id": "000070B118ED849B",
@@ -1530,14 +1842,14 @@
           "id": "00000FD6A1F8B500",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 34.0
+      "y": 37.875
     },
     {
       "id": "000065F74162DFCA",
@@ -1587,7 +1899,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 14.0
+      "y": 37.875
     },
     {
       "id": "0000255B48807132",
@@ -1637,7 +1949,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 6.0
+      "y": 37.875
     },
     {
       "id": "00000D07CB68AA34",
@@ -1686,14 +1998,14 @@
           "id": "0000003DD0414E48",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "mekanism:ingot_bronze",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
-      "x": 0.0,
-      "y": 36.0
+      "x": 3.0,
+      "y": 40.875
     },
     {
       "id": "0000D89BF05A227F",
@@ -1744,14 +2056,14 @@
           "id": "000091B9F09B8234",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "mekanism:ingot_bronze",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 38.0
+      "y": 40.875
     },
     {
       "id": "0000EC69725AE2E2",
@@ -1804,14 +2116,14 @@
           "id": "00001A42BFA77800",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 16.0
+      "x": 5.0,
+      "y": 40.875
     },
     {
       "id": "0000506E46123E9A",
@@ -1856,8 +2168,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 4.0,
-      "y": 8.0
+      "x": 7.0,
+      "y": 40.875
     },
     {
       "id": "0000965E852DFD8A",
@@ -1911,14 +2223,14 @@
           "id": "0000E3299494612F",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:paper",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 40.0
+      "y": 43.875
     },
     {
       "id": "0000A7B8C086054B",
@@ -1972,14 +2284,14 @@
           "id": "0000081A6A29224D",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "ae2:quartz_fiber",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 42.0
+      "y": 46.875
     },
     {
       "id": "00003467FDFAD3BF",
@@ -2022,14 +2334,14 @@
           "id": "0000928EDA5212B9",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:quartz",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 44.0
+      "x": 7.0,
+      "y": 49.875
     },
     {
       "id": "0000642EC899473E",
@@ -2072,14 +2384,14 @@
           "id": "000027918B4ED0CF",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:quartz",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 46.0
+      "y": 49.875
     },
     {
       "id": "00002B14156F090E",
@@ -2122,14 +2434,14 @@
           "id": "00006AA325274934",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "draconicevolution:draconium_nugget",
             "count": 1
           },
-          "count": 8
+          "count": 2
         }
       ],
       "x": 2.0,
-      "y": 18.0
+      "y": 49.875
     },
     {
       "id": "00009B5C1DDFA42D",
@@ -2194,14 +2506,14 @@
           "id": "0000E7EF788A0FAA",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:quartz",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 20.0
+      "x": 9.0,
+      "y": 49.875
     },
     {
       "id": "0000362BA33D0D77",
@@ -2244,14 +2556,14 @@
           "id": "0000C86F5EE84E5A",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:quartz",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 10.0
+      "y": 49.875
     },
     {
       "id": "0000A43CEE2D4903",
@@ -2327,14 +2639,14 @@
           "id": "0000B7FEDCF80964",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 48.0
+      "y": 52.875
     }
   ]
 }

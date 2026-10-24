@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_occultism",
   "title": "Occultism — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 39,
+  "order_index": 44,
   "icon": {
     "id": "occultism:otherworld_ashes",
     "count": 1
@@ -62,14 +62,81 @@
           "id": "000060EC927F1305",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "occultism:chalk_white_impure",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 11.0,
+      "y": 0.0
+    },
+    {
+      "id": "000021F9B66A451C",
+      "title": "Словник духів і ритуальний посуд",
+      "description": [
+        "Почніть із Dictionary of Spirits та жертовної чаші. Книга розділяє Otherworld, pentacles і зв’язування духів; перевірте коло перед витратою книжки зв’язування.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:dictionary_of_spirits",
+        "count": 1
+      },
+      "dependencies": [
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC31C819E8F7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "0000226D58CA23C0",
+          "type": "item",
+          "item": {
+            "id": "occultism:dictionary_of_spirits",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007D8717471704",
+          "type": "item",
+          "item": {
+            "id": "occultism:datura_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000050FA5426121F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B80ED7B181A2",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 9.0
     },
     {
       "id": "0000FF473605BFAD",
@@ -110,14 +177,14 @@
           "id": "000033F0FE32BB77",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "000078AF55789D48",
@@ -159,14 +226,82 @@
           "id": "0000FC5E614F1372",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 5.0
+    },
+    {
+      "id": "00008DCBF9818D82",
+      "title": "Вогонь іншого світу",
+      "description": [
+        "Використайте Spirit Fire за довідником для перетворення доступної сировини. Otherstone стає основою педесталів і сховища, тому відділіть цей процес від звичайного випалювання.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: occultism:miner. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:otherstone",
+        "count": 1
+      },
+      "dependencies": [
+        "000021F9B66A451C",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D1943CFFA75F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "0000C4EBA5807453",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C03062E1A735",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000065FA778D4D2F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004F32400D09E",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white_impure",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 9.0
     },
     {
       "id": "0000A305953660E9",
@@ -208,14 +343,14 @@
           "id": "0000EEC18AF21DB5",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "000017A21468F11D",
@@ -257,14 +392,14 @@
           "id": "0000C6E7E5CE8E48",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 4.0
     },
     {
       "id": "00006A9E3E483CF0",
@@ -306,14 +441,14 @@
           "id": "0000875502CA04E1",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "00009B31FE90FCAD",
@@ -355,14 +490,14 @@
           "id": "00002E3CDE0CF574",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 6.0
     },
     {
       "id": "00009FABA57C1EEA",
@@ -404,14 +539,82 @@
           "id": "0000DBC8D3067495",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 2.0
+    },
+    {
+      "id": "0000FCD00CDB698E",
+      "title": "Підготовлена крейда",
+      "description": [
+        "Виготовте та очистіть ритуальну крейду відповідно до рецепта. Колір і точна геометрія pentacle визначають доступний дух, а не довільний візерунок навколо чаші.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: occultism:spirit_fire. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:chalk_white",
+        "count": 1
+      },
+      "dependencies": [
+        "00008DCBF9818D82",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000082DD2D2B407A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "0000C597787D8474",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096AB78A1E26C",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E497A51AF1D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C6A2E945DD39",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white_impure",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
     },
     {
       "id": "0000048657AF8A3C",
@@ -453,14 +656,14 @@
           "id": "0000843B32DA82C5",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00006DFF8E2AE2D0",
@@ -502,14 +705,82 @@
           "id": "0000733F52F58C77",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 5.0
+    },
+    {
+      "id": "0000FBCBFBDF9F5D",
+      "title": "Основа сховища через зв’язування",
+      "description": [
+        "Виконайте ритуал craft_foliot із bound Foliot book та вказаними металами. Ритуальна основа потрібна контролеру; наявність чаші без завершеної прив’язки її не замінює.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: occultism:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:storage_controller_base",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FCD00CDB698E",
+        "0000654F324390C2"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000909B6E3E2A0E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:otherstone_pedestal",
+          "timer": 40
+        },
+        {
+          "id": "0000C006103B4E7A",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_controller_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005D2DFA39C5E6",
+          "type": "item",
+          "item": {
+            "id": "occultism:book_of_binding_bound_foliot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009631BB4DECE2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e14"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000033475E65DDDF",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 9.0
     },
     {
       "id": "00000E1B2DAADCD6",
@@ -551,14 +822,14 @@
           "id": "0000DAE200A88689",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "000016CB19AE58B0",
@@ -600,14 +871,14 @@
           "id": "0000C903BDEDC6AA",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "00002FCD899564A9",
@@ -649,14 +920,14 @@
           "id": "0000C8C2ECC2EE92",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 5.0
     },
     {
       "id": "0000B611413569CA",
@@ -709,14 +980,14 @@
           "id": "0000E4E4103D52BF",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 12.0
     },
     {
       "id": "0000909D7716B8CE",
@@ -758,14 +1029,14 @@
           "id": "0000E8B33618C567",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 16.0
     },
     {
       "id": "00009503E948769A",
@@ -807,14 +1078,14 @@
           "id": "00001CA32CC3EB64",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 17.0
     },
     {
       "id": "0000AC5F5A41B618",
@@ -856,14 +1127,82 @@
           "id": "0000A96D6AE050AF",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 15.0
+    },
+    {
+      "id": "00009ACD6FA0DB01",
+      "title": "Ієсній для наступного рівня",
+      "description": [
+        "Пройдіть механіку Otherworld і добудьте справжній ієсній за Dictionary of Spirits. Він обмежує прогрес духів і сховища, тому не замінюється дешевим декоративним металом.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:smelting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:iesnium_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FBCBFBDF9F5D",
+        "00008C936A61373B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006586534BEA17",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "000041D6C99FD3A1",
+          "type": "item",
+          "item": {
+            "id": "occultism:iesnium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E68D377FA0A",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_goggles",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000061CF56AFBF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e24"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CE1B9F1A5B66",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 9.0
     },
     {
       "id": "00002646471EFB8E",
@@ -912,8 +1251,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 8.0
+      "x": 5.0,
+      "y": 20.0
     },
     {
       "id": "0000D16001E26B42",
@@ -966,14 +1305,14 @@
           "id": "0000C053F9CFF353",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 20.0
     },
     {
       "id": "0000521183602D04",
@@ -1026,14 +1365,14 @@
           "id": "0000ED6D1125D8F0",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 20.0
     },
     {
       "id": "00007024CE8B91A3",
@@ -1082,8 +1421,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 2.0,
-      "y": 10.0
+      "x": 7.0,
+      "y": 20.0
     },
     {
       "id": "000086CB5472D167",
@@ -1136,14 +1475,14 @@
           "id": "0000719736348BE9",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 23.0
     },
     {
       "id": "00005B573A450055",
@@ -1192,8 +1531,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 14.0
+      "x": 3.0,
+      "y": 26.0
     },
     {
       "id": "0000600F7BB06F77",
@@ -1246,14 +1585,14 @@
           "id": "0000F1C6E40F1E85",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 16.0
+      "y": 26.0
     },
     {
       "id": "0000D49C532BE706",
@@ -1306,14 +1645,82 @@
           "id": "00006603D34CEC45",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 18.0
+      "x": 8.0,
+      "y": 26.0
+    },
+    {
+      "id": "0000F9F04EF70F80",
+      "title": "Розширення стабільності сховища",
+      "description": [
+        "Додайте стабілізатор першого рівня в дозволену конструкцію. Після цього перевірте збереження вмісту й доступ через remote; квест не вимірює саму місткість структури.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: occultism:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:storage_stabilizer_tier1",
+        "count": 1
+      },
+      "dependencies": [
+        "00006C98AB574772",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003E0D2D94173F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:storage_controller",
+          "timer": 40
+        },
+        {
+          "id": "000095A7056AB6E5",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_stabilizer_tier1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000064F79662988E",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_remote",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E7059BF2F90",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E7A1F4079DC1",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white_impure",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 26.0
     },
     {
       "id": "000028212B05894B",
@@ -1366,14 +1773,14 @@
           "id": "0000EFCA90E7969A",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 12.0
+      "x": 5.0,
+      "y": 26.0
     },
     {
       "id": "00004400C670CBAD",
@@ -1422,14 +1829,14 @@
           "id": "0000B00CC5B06DDB",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 14.0
+      "x": 10.0,
+      "y": 26.0
     },
     {
       "id": "0000B8F499DC14D1",
@@ -1478,8 +1885,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 4.0,
-      "y": 8.0
+      "x": 12.0,
+      "y": 26.0
     },
     {
       "id": "000039853C42297F",
@@ -1532,14 +1939,14 @@
           "id": "0000D333E5B012CB",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 20.0
+      "y": 29.0
     },
     {
       "id": "00009298984138B1",
@@ -1589,7 +1996,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 22.0
+      "y": 32.0
     },
     {
       "id": "0000CEED5EA4B96A",
@@ -1642,14 +2049,14 @@
           "id": "0000E7D01A3E4D4B",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 24.0
+      "y": 35.0
     },
     {
       "id": "00008BF3809727F8",
@@ -1699,7 +2106,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 26.0
+      "y": 38.0
     },
     {
       "id": "000030F6A110DC77",
@@ -1749,7 +2156,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 28.0
+      "y": 41.0
     },
     {
       "id": "000031F2B4021C96",
@@ -1799,7 +2206,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 30.0
+      "y": 44.0
     },
     {
       "id": "0000E3ED5A6F589B",
@@ -1853,14 +2260,14 @@
           "id": "0000BF19184E3C56",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 32.0
+      "y": 47.0
     },
     {
       "id": "00008278F491D488",
@@ -1920,14 +2327,14 @@
           "id": "000052C7991DF1A5",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 34.0
+      "y": 50.0
     },
     {
       "id": "000096FA2806E2C7",
@@ -1970,14 +2377,14 @@
           "id": "00003F41B9CA2DE0",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 36.0
+      "y": 53.0
     },
     {
       "id": "0000B11538F3B91D",
@@ -2042,14 +2449,14 @@
           "id": "0000C70BA47279FE",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 38.0
+      "x": 13.0,
+      "y": 53.0
     },
     {
       "id": "000090F974A98315",
@@ -2092,14 +2499,14 @@
           "id": "0000C7722B22BD06",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 16.0
+      "y": 53.0
     },
     {
       "id": "00001A4997F1C7F7",
@@ -2153,14 +2560,14 @@
           "id": "0000C02B24022F86",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 10.0
+      "y": 53.0
     },
     {
       "id": "0000B7AA55CBB389",
@@ -2214,14 +2621,14 @@
           "id": "0000AD142EBB250A",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 53.0
     },
     {
       "id": "0000AB900DCF52D6",
@@ -2264,14 +2671,14 @@
           "id": "0000ADD984A3D4DB",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 6.0
+      "y": 53.0
     },
     {
       "id": "0000AB027EA2C38D",
@@ -2325,14 +2732,14 @@
           "id": "0000FCF98688FA18",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 53.0
     },
     {
       "id": "0000E94590FAB1AB",
@@ -2386,14 +2793,14 @@
           "id": "0000F37D859FBABA",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 40.0
+      "y": 56.0
     },
     {
       "id": "000055DCFA5C1418",
@@ -2447,14 +2854,14 @@
           "id": "0000977A3DF67B24",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 42.0
+      "y": 59.0
     },
     {
       "id": "00005FEB6D6E5884",
@@ -2508,14 +2915,14 @@
           "id": "0000046F693F04BB",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 44.0
+      "y": 62.0
     },
     {
       "id": "000061C37D0AD5C0",
@@ -2569,14 +2976,14 @@
           "id": "0000A3DAE617D939",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 46.0
+      "x": 3.0,
+      "y": 62.0
     },
     {
       "id": "00007F0B60134419",
@@ -2630,14 +3037,14 @@
           "id": "0000B593ACFCB132",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 48.0
+      "y": 65.0
     },
     {
       "id": "0000B6DDE980BB53",
@@ -2691,14 +3098,14 @@
           "id": "000073C14C6EF4B4",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 50.0
+      "x": 5.0,
+      "y": 65.0
     },
     {
       "id": "0000B771E86CA5AF",
@@ -2752,14 +3159,14 @@
           "id": "0000A184B82E3677",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 52.0
+      "x": 8.0,
+      "y": 65.0
     },
     {
       "id": "000027FFFF269BC9",
@@ -2813,14 +3220,14 @@
           "id": "0000A4619B6DB158",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 18.0
+      "y": 65.0
     },
     {
       "id": "0000D30238421A96",
@@ -2874,14 +3281,14 @@
           "id": "0000C290A387C5D9",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 54.0
+      "y": 68.0
     },
     {
       "id": "0000F788BBCC4974",
@@ -2939,14 +3346,14 @@
           "id": "000094BB7CBBCBD0",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 56.0
+      "x": 3.0,
+      "y": 68.0
     },
     {
       "id": "0000E90971ADA51C",
@@ -3000,14 +3407,14 @@
           "id": "0000E0B3584AF9F3",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 58.0
+      "y": 71.0
     },
     {
       "id": "0000EE58FE8B767A",
@@ -3061,14 +3468,14 @@
           "id": "00008479E9F1DB17",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:chalk_white_impure",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 60.0
+      "x": 3.0,
+      "y": 71.0
     },
     {
       "id": "00007295CF5D7D74",
@@ -3122,14 +3529,14 @@
           "id": "00004FF167545BDF",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 62.0
+      "y": 74.0
     },
     {
       "id": "00000FBE2061D3AD",
@@ -3183,14 +3590,14 @@
           "id": "0000700036722ADA",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "occultism:otherworld_ashes",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 64.0
+      "y": 77.0
     }
   ]
 }

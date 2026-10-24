@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "quest_count": 2,
+  "quests": [
+    {
+      "id": "V5_MEK_CORE_DIGITAL_MINER",
+      "epoch": 28,
+      "title_uk": "Цифровий кар’єр із контрольованим виходом",
+      "description_uk": [
+        "Побудуйте Digital Miner як окрему керовану лінію видобутку. Почніть із малої робочої області й конкретного фільтра руди, потім підготуйте сортування та буфер виходу. Configurator допоможе обслуговувати транспорт; параметри області й самі фільтри задаються у GUI кар’єру.",
+        "FTB підтверджує встановлені кар’єр і сортувальник та наявність сервісного комплекту. Це не автоматична перевірка фільтра, меж, кількості добутої руди або навантаження TPS. Перевірте пробний запуск перед підключенням до постійного складу."
+      ],
+      "icon": "mekanism:digital_miner",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:digital_miner",
+          "ticks": 60
+        },
+        {
+          "type": "observation",
+          "block": "mekanism:logistical_sorter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:configurator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E28_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "mod": "mekanism",
+      "reward": [
+        {
+          "item": "mekanism:enriched_redstone",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "V5_PROJECTE_FINITE_EXCHANGE",
+      "epoch": 45,
+      "title_uk": "Трансмутація з перевіреним балансом EMC",
+      "description_uk": [
+        "Підготуйте лабораторний комплект біля столу трансмутації: залізо, вугілля й бруківку. У whitelist AIA2 вони мають відповідно 256, 128 і 1 EMC за одиницю. Порівняйте обмін одного залізного злитка на дві одиниці вугілля: це демонстрація збереження вартості, а не джерело безкоштовної енергії.",
+        "FTB перевіряє стіл та комплект матеріалів, а не натискання кнопок обміну. Сам обмін перевірте у GUI. Магічні артефакти, епохальні ключі й Creative Essence не входять до whitelist і не можуть бути отримані цим шляхом. Дотримуйтесь обмеженого списку замість перенесення старих загальних EMC-таблиць."
+      ],
+      "icon": "projecte:transmutation_table",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:transmutation_table",
+          "ticks": 60
+        },
+        {
+          "type": "item",
+          "item": "projecte:philosophers_stone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 64,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E45_X_transmutation_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "mod": "projecte",
+      "reward": [
+        {
+          "item": "minecraft:copper_ingot",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}

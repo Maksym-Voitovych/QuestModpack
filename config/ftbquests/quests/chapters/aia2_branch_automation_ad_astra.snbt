@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_ad_astra",
   "title": "ad_astra — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 5,
+  "order_index": 7,
   "icon": {
     "id": "ad_astra:fuel_bucket",
     "count": 1
@@ -11,6 +11,84 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "0000AD0574A72CAE",
+      "title": "Киснева станція має тестовий об'єм",
+      "description": [
+        "Підготуйте малу ізольовану кімнату з датчиком і шлюзом перед заселенням космічної бази. Перевіряйте наявність кисню в самій кімнаті, а не лише в резервуарі; негерметичний прохід може витрачати весь запас.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_sensor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000644B615B0E04",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006209CD8EF281",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_distributor",
+          "timer": 40
+        },
+        {
+          "id": "0000023BF7B1EFB4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_sensor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000556671774B68",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:airlock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004B9A1AE503F6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:gas_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EFAB7A2087D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000013E4D0136261",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
     {
       "id": "0000CF56262C1C7C",
       "title": "Паливна станція перед стартом",
@@ -69,7 +147,7 @@
           "id": "0000EE6146A42ECB",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "ad_astra:desh_nugget",
             "count": 1
           },
           "count": 4
@@ -136,14 +214,92 @@
           "id": "000017EB8461C1BB",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "ad_astra:desh_nugget",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
       "y": 0.0
+    },
+    {
+      "id": "0000D206A98B3D6C",
+      "title": "Посадкова база повертає паливо",
+      "description": [
+        "Відокремте переробку ракетного палива від місця посадки та позначте резерв на повернення. Перевірте сумісність палива з обраною ракетою у JEI, а потім випробуйте маршрут подавання на порожньому баку.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AD0574A72CAE",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000019D788EB5BE9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:fuel_refinery",
+          "timer": 40
+        },
+        {
+          "id": "0000427F00C1E7C6",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B16DE32C3913",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E10FDA7037C2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:launch_pad",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000006EB5AEBE75",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006DEA98098C3B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
     },
     {
       "id": "00000B864B7D2953",
@@ -203,7 +359,7 @@
           "id": "0000218E4B71C9CE",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "ad_astra:desh_nugget",
             "count": 1
           },
           "count": 4
@@ -270,7 +426,7 @@
           "id": "000012067DE1C75A",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "ad_astra:desh_nugget",
             "count": 1
           },
           "count": 4
@@ -337,10 +493,10 @@
           "id": "00005B1D57913B38",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "ad_astra:cheese",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
@@ -404,7 +560,7 @@
           "id": "00001166168E5F41",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "ad_astra:cheese",
             "count": 1
           },
           "count": 4
@@ -482,7 +638,7 @@
           "id": "0000513CC1B87A40",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "ad_astra:cheese",
             "count": 1
           },
           "count": 4
@@ -560,7 +716,7 @@
           "id": "00000A2DDDEB4DBB",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "ad_astra:cheese",
             "count": 1
           },
           "count": 4
@@ -568,6 +724,173 @@
       ],
       "x": 14.0,
       "y": 0.0
+    },
+    {
+      "id": "000076CDD45D92EB",
+      "title": "Холодне паливо має власну лінію",
+      "description": [
+        "Підготуйте холодну ділянку й деталі високого рівня для далекого польоту. Не змішуйте запас звичайного та кріогенного палива без перевірки рецепта й сумісності споживача; назва бака не визначає його вміст.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ad_astra:ice_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D206A98B3D6C",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB35BF59C30D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:cryo_freezer",
+          "timer": 40
+        },
+        {
+          "id": "0000187C9DA246AB",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ice_shard",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F35E532DFBBF",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CBC670E705C4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096AD4E4EF302",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000526E61D97F74",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "00001B5C95DAAE93",
+      "title": "Планетарна база обслуговує інструменти",
+      "description": [
+        "Зберіть локальний енергетичний і сервісний вузол для віддаленої бази. Окремо перевірте заряджання інструментів, керування гравітацією та доступ до складу: наявність термінала не створює міжвимірного з'єднання сама по собі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ad_astra:solar_panel",
+        "count": 1
+      },
+      "dependencies": [
+        "000076CDD45D92EB",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF8A394D76B2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:energizer",
+          "timer": 40
+        },
+        {
+          "id": "0000015F3B35800D",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:solar_panel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003CB512391260",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:gravity_normalizer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000388B199FE191",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configuration_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086842929D454",
+          "type": "item",
+          "item": {
+            "id": "ae2:wireless_terminal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004763E16B2DDF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000817641B22C5B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
     }
   ]
 }

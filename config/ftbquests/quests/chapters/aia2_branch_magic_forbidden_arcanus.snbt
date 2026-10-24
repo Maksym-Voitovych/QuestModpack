@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_forbidden_arcanus",
   "title": "forbidden_arcanus — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 34,
+  "order_index": 39,
   "icon": {
     "id": "forbidden_arcanus:arcane_crystal",
     "count": 1
@@ -11,6 +11,73 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "0000586A4E771DAF",
+      "title": "Кристал і порошок перетворення",
+      "description": [
+        "Підготуйте Mundabitur Dust і звичайний Smithing Table. У версії2.6.1 перша Hephaestus Forge створюється взаємодією з правильною конструкцією; її не слід шукати як звичайний результат верстака.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:mundabitur_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001B6E78995316",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:smithing_table",
+          "timer": 40
+        },
+        {
+          "id": "00009E678F57B30B",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000702690F3694D",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008DE1A7E727D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B3AFE1CECC8B",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 7.0
+    },
     {
       "id": "0000DFC70207D216",
       "title": "Кристалічна база забороненої кузні",
@@ -50,14 +117,82 @@
           "id": "0000882E94FC98B3",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "00003C4C5BEF5782",
+      "title": "Перший робочий рівень Hephaestus",
+      "description": [
+        "Огляньте реально створену Forge tier1 та відкрийте її вимоги есенцій. Квест не вимагає покласти внутрішній tier-блок в інвентар і не підміняє будівництво Creative-предметом.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:smelting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000586A4E771DAF",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FDBFB3412325",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_1",
+          "timer": 40
+        },
+        {
+          "id": "0000259AB9462BEC",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001DA8E60492C5",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F87A6EFE91D0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008EB3FF00565E",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 7.0
     },
     {
       "id": "0000BC05C7D057F4",
@@ -95,14 +230,14 @@
           "id": "00004B471B91CEEA",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "0000FBF9796C0EC7",
@@ -144,14 +279,14 @@
           "id": "0000E8CD0B4AA414",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 0.0
     },
     {
       "id": "00005A8F10B92797",
@@ -193,7 +328,7 @@
           "id": "00009CC89E752004",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
@@ -201,6 +336,74 @@
       ],
       "x": 4.0,
       "y": 0.0
+    },
+    {
+      "id": "000087F4AB8EC03E",
+      "title": "Окремий носій крові",
+      "description": [
+        "Підготуйте Blood Test Tube та XPetrified Orb для ресурсної частини кузні. Blood, experience та інші параметри ритуалу мають різні джерела; саме оглядання блока не вимірює їхній запас.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:blood_test_tube",
+        "count": 1
+      },
+      "dependencies": [
+        "00003C4C5BEF5782",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BA1C98AE86BB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_1",
+          "timer": 40
+        },
+        {
+          "id": "00003F460B479A3C",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:blood_test_tube",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0AF94248FB1",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:xpetrified_orb",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E6BC038B5741",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EBB5D03CC3E5",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 7.0
     },
     {
       "id": "0000B87014C653F5",
@@ -242,14 +445,14 @@
           "id": "0000797689F0AB27",
           "type": "item",
           "item": {
-            "id": "botania:mana_powder",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "0000CF6AE64CAB47",
@@ -291,14 +494,14 @@
           "id": "0000B582C9747A5D",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 2.0
     },
     {
       "id": "000025B639435090",
@@ -351,14 +554,14 @@
           "id": "0000FCD4DC3455E4",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 10.0
     },
     {
       "id": "0000B13426DA020B",
@@ -411,14 +614,354 @@
           "id": "0000E105C6CE2443",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "forbidden_arcanus:mundabitur_dust",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 4.0
+      "x": 3.0,
+      "y": 10.0
+    },
+    {
+      "id": "0000E93A0A8BC7AB",
+      "title": "Ритуальний перехід на другий рівень",
+      "description": [
+        "Проведіть штатний upgrade_tier_2 після початкового рівня. Вихід ритуалу змінює блок кузні у світі; це datapack ritual, а не RecipeSerializer із готовим предметом.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:spawner_scrap",
+        "count": 1
+      },
+      "dependencies": [
+        "000087F4AB8EC03E",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031C951ECDA35",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_2",
+          "timer": 40
+        },
+        {
+          "id": "0000B2EB859FFDF4",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:spawner_scrap",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DA9CCBC1444E",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079A16152E68C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006A9DC2300171",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 7.0
+    },
+    {
+      "id": "00006642B62B4640",
+      "title": "Деорум до третього рівня",
+      "description": [
+        "Завершіть native upgrade_tier_3 післяtier2. Джерело2.6.1 вимагає попередній рівень і Deorum; довільно встановлений майбутній tier-блок не надає дозволів AIA2.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:deorum_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E93A0A8BC7AB",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AA78D596F27B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_3",
+          "timer": 40
+        },
+        {
+          "id": "0000C83A4F20165C",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:deorum_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A31F732FA72B",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D257B9801129",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000758AA28130F8",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 7.0
+    },
+    {
+      "id": "0000E5C0397CC1EF",
+      "title": "Сталларит і четвертий рівень",
+      "description": [
+        "Післяtier3 виконайте upgrade_tier_4 із Stellarite та рунами за нативними даними. Попередні рівні не видаляються з карти розвитку: ритуал перевіряє точний попередній tier.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:stellarite_piece",
+        "count": 1
+      },
+      "dependencies": [
+        "00006642B62B4640",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002317B5E592D5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_4",
+          "timer": 40
+        },
+        {
+          "id": "0000CE67F5A9B2E3",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:stellarite_piece",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000537DDEC571DA",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:rune",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082D50BB573FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB8AD8D6ED37",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 7.0
+    },
+    {
+      "id": "00005C05501CCA8B",
+      "title": "П’ятий рівень за ціною пізніх ресурсів",
+      "description": [
+        "Підготуйте Dark Nether Star та фінальний штатний upgrade_tier_5. Рівень5 залишається пізнім: встановлений блок і допоміжний реагент перевіряються окремо від внутрішніх запасів есенцій.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:dark_nether_star",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E5C0397CC1EF",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000125822553098",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_5",
+          "timer": 40
+        },
+        {
+          "id": "00005ABBD20E3813",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:dark_nether_star",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B8D7116674F",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:dragon_scale",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B0935B586929",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000009B5092B2D2E",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 7.0
+    },
+    {
+      "id": "00001BBA48567AE4",
+      "title": "Ритуальна кузня для складного артефакта",
+      "description": [
+        "Виготовте Eternal Stella за ritual-даними, використавши вивчену кузню та реальні вимоги есенцій. Ритуал має власний мінімальний tier; вищий робочий рівень тут є фінальним оглядом освоєної інфраструктури.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:eternal_stella",
+        "count": 1
+      },
+      "dependencies": [
+        "00005C05501CCA8B",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002549F45BE3D3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:hephaestus_forge_tier_5",
+          "timer": 40
+        },
+        {
+          "id": "0000671B76B9C3D6",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:eternal_stella",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008CE79033FC04",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:xpetrified_orb",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FFBB907ABE07",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E17A829A01B8",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 7.0
     }
   ]
 }

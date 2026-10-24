@@ -1,0 +1,5860 @@
+{
+  "schema": 1,
+  "quests": [
+    {
+      "id": "V5_E02_create_process_01",
+      "epoch": 2,
+      "title_uk": "Вал не проходить крізь передачу",
+      "description_uk": [
+        "Порівняйте звичайний ланцюговий привід із регульованою передачею в одному компактному стенді. Залиште доступ до керувального сигналу, щоб змінювати співвідношення без переставляння всієї кінетичної мережі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:adjustable_chain_gearshift",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:encased_chain_drive",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:adjustable_chain_gearshift",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lever",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E02_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.1"
+    },
+    {
+      "id": "V5_E03_create_process_02",
+      "epoch": 3,
+      "title_uk": "Ручне полірування має інструмент",
+      "description_uk": [
+        "Збережіть кварц до і після полірування та окремо виготовте наждачний папір. Ця пара пояснює різницю між заготовкою й завершеним компонентом до появи автоматичного маніпулятора.",
+        "Мета з позначкою виготовлення рахує реальну подію звичайного крафту; огляд блока й інвентарні цілі перевіряються окремо. Сам огляд не вимірює робочу потужність або правильність налаштувань."
+      ],
+      "icon": "create:sand_paper",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "create:sand_paper",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "create:rose_quartz",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:polished_rose_quartz",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E02_create_process_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.2"
+    },
+    {
+      "id": "V5_E04_create_process_03",
+      "epoch": 4,
+      "title_uk": "Промивання перед сортуванням",
+      "description_uk": [
+        "Підготуйте мийну ділянку з вентилятором і водою та порівняйте подрібнену руду з вихідними самородками. Перевірте напрям повітря до підключення транспортера; предмети, які пролітають повз воду, не утворюють процес промивання.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "minecraft:iron_nugget",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:encased_fan",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_nugget",
+          "count": 9,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:crushed_raw_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E03_create_process_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.3"
+    },
+    {
+      "id": "V5_E04_create_process_04",
+      "epoch": 4,
+      "title_uk": "Тепло й повітря — різні режими",
+      "description_uk": [
+        "Відокремте копчення їжі від інших режимів обдування. Вогнище дає один режим, а джерело високої температури — інший; перевіряйте режим у JEI перед переробкою руди, а не за кольором полум'я.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "minecraft:campfire",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:encased_fan",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:campfire",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cooked_chicken",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:raw_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E04_create_process_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.4"
+    },
+    {
+      "id": "V5_E04_create_process_05",
+      "epoch": 4,
+      "title_uk": "Пила повертає обрізки в потік",
+      "description_uk": [
+        "Організуйте окреме подавання колод і вихід дощок після пилки. Рецепт предметної обробки та валка дерева — різні можливості того самого механізму; цей стенд присвячений саме підготовці столярної сировини.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "minecraft:oak_log",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_saw",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:oak_log",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:oak_planks",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:andesite_funnel",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E04_create_process_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.5"
+    },
+    {
+      "id": "V5_E10_create_process_06",
+      "epoch": 10,
+      "title_uk": "Послідовність із поверненням заготовки",
+      "description_uk": [
+        "Порівняйте незавершену й готову точну деталь та підготуйте маніпулятор до багатокрокового складання. Проміжний предмет має повертатися на наступну операцію, а завершений — виходити з петлі; звірте кількість циклів із JEI.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:incomplete_precision_mechanism",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:deployer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:incomplete_precision_mechanism",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:precision_mechanism",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:brass_hand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E04_create_process_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.6"
+    },
+    {
+      "id": "V5_E10_create_process_07",
+      "epoch": 10,
+      "title_uk": "Плита отримує форму у пресі",
+      "description_uk": [
+        "Підготуйте прес до окремої серії латунних пластин після завершення виплавлення. Розділіть лоток із злитками та вихід пластин, щоб зміна форми матеріалу була видимою у виробничому ланцюгу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:brass_sheet",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:brass_sheet",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:brass_ingot",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:chute",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E10_create_process_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.7"
+    },
+    {
+      "id": "V5_E15_create_process_08",
+      "epoch": 15,
+      "title_uk": "Клапан для нагрітого басейну",
+      "description_uk": [
+        "Позначте нагрітий басейн як окрему виробничу ділянку для латуні. Перевірте температуру рецепта й вхідні метали до відкриття рідинного контуру: сам клапан не замінює джерела тепла під мішалкою.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:brass_ingot",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_mixer",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "create:blaze_burner",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:brass_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:fluid_valve",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E10_create_process_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.8"
+    },
+    {
+      "id": "V5_E20_create_process_09",
+      "epoch": 20,
+      "title_uk": "Порт рухомої рідинної лінії",
+      "description_uk": [
+        "Зберіть окремі вузли для рідин та предметів на рухомій установці. Дочекайтеся правильного суміщення інтерфейсів під час зупинки й перевірте воду як дешеву пробу перед перевезенням дорожчих технологічних рідин.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:portable_storage_interface",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:portable_fluid_interface",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:portable_storage_interface",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:fluid_tank",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:mechanical_pump",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_create_process_08"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.9"
+    },
+    {
+      "id": "V5_E28_create_process_10",
+      "epoch": 28,
+      "title_uk": "Дозатор пакує, а розпаковувач приймає",
+      "description_uk": [
+        "Сплануйте маршрут пакунка між двома визначеними складами, а не безіменну стрічку посилок. Уточніть адресу й доступність приймача перед запуском; репакувальний вузол потрібен там, де замовлення доводиться збирати з кількох частин.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:package_frogport",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:packager",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "create:repackager",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:package_frogport",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:cardboard",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E20_create_process_09"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.10"
+    },
+    {
+      "id": "V5_E32_create_process_11",
+      "epoch": 32,
+      "title_uk": "Замовлення починається з запасу",
+      "description_uk": [
+        "Порівняйте ручне замовлення з викликом через сигнал червоного каменю. Прив'яжіть обидва до запланованої складської мережі й визначте, як припиняється повторний запит після надходження необхідної партії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:factory_gauge",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:stock_ticker",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "create:redstone_requester",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:factory_gauge",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:stock_link",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_create_process_10"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.11"
+    },
+    {
+      "id": "V5_E44_create_process_12",
+      "epoch": 44,
+      "title_uk": "Складальна лінія має маршрут повернення",
+      "description_uk": [
+        "Підготуйте обчислюваний контракт для великої механічної збірки: список входів, готовий вихід і маршрут повернення надлишку. Шаблон AE2 описує замовлення, а механічна лінія виконує власний рецепт; порівняйте обидва перед автоматичним викликом.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "create:precision_mechanism",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_crafter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:precision_mechanism",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:mechanical_arm",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_create_process_11"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "create",
+      "research_stage": "create.create_process.12"
+    },
+    {
+      "id": "V5_E16_mek_process_01",
+      "epoch": 16,
+      "title_uk": "Вуглець має свій бік інфузора",
+      "description_uk": [
+        "Підготуйте вуглецевий реагент і збагачене залізо біля інфузора. Режим боків для інфузійного матеріалу відрізняється від входу основного предмета; перевірте обидва окремо перед підключенням спільного транспортера.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:enriched_carbon",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:metallurgic_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:enriched_carbon",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:enriched_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:configurator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E16_X_infuser"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.1"
+    },
+    {
+      "id": "V5_E16_mek_process_02",
+      "epoch": 16,
+      "title_uk": "Збагачення перед електроплавленням",
+      "description_uk": [
+        "Порівняйте сире залізо з уніфікованим чистим пилом після базового збагачення. Ця ділянка передує складним хімічним множникам; звірте конкретний вихід JEI для сировини та не змішуйте його з очищенням забрудненого пилу пізніших ланцюгів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:dirty_dust_iron",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:enrichment_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:raw_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:dust_iron",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:basic_control_circuit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E16_mek_process_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.2"
+    },
+    {
+      "id": "V5_E23_mek_process_03",
+      "epoch": 23,
+      "title_uk": "Хімічний впорскувач очікує реагент",
+      "description_uk": [
+        "Підготуйте уламки та резервуар реагенту для наступної сходинки обробки. Хімічний вхід не замінюється водяною трубою; зіставте тип реагенту з рецептом перед спробою пояснювати зупинку браком енергії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:shard_iron",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:chemical_injection_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:shard_iron",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:advanced_chemical_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:gauge_dropper",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E16_mek_process_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.3"
+    },
+    {
+      "id": "V5_E23_mek_process_04",
+      "epoch": 23,
+      "title_uk": "Сепаратору потрібні два виходи",
+      "description_uk": [
+        "Позначте обидва виходи електролізу та передбачте поведінку кожного при переповненні. Забитий побічний газ може зупинити весь процес; спочатку випробуйте два незалежні буфери, а потім вирішуйте, який газ справді потрібен.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:basic_pressurized_tube",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:electrolytic_separator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:basic_pressurized_tube",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:basic_chemical_tank",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E23_mek_process_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.4"
+    },
+    {
+      "id": "V5_E23_mek_process_05",
+      "epoch": 23,
+      "title_uk": "Термоколона між двома процесами",
+      "description_uk": [
+        "Зберіть вузли керованого випаровування та окреме джерело тепла. Порти входу й виходу варто позначити до з'єднання колон у каскад; предметний комплект не підтверджує правильної висоти або температури мультиблока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:thermal_evaporation_valve",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:thermal_evaporation_controller",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:thermal_evaporation_valve",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:thermal_evaporation_block",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:resistive_heater",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E23_mek_process_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.5"
+    },
+    {
+      "id": "V5_E26_mek_process_06",
+      "epoch": 26,
+      "title_uk": "Пластмаса починається з етилену",
+      "description_uk": [
+        "Порівняйте субстрат, гранулу й лист HDPE як різні етапи полімерного циклу. Для кожної реакції перевіряйте не лише предмет, а й хімічні середовища та рідину: одна й та сама камера виконує кілька несумісних схем.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:substrate",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:pressurized_reaction_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:substrate",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:hdpe_pellet",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:hdpe_sheet",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E23_mek_process_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.6"
+    },
+    {
+      "id": "V5_E33_mek_process_07",
+      "epoch": 33,
+      "title_uk": "Відходи не є паливним буфером",
+      "description_uk": [
+        "Виділіть контрольоване місце для радіоактивного побічного продукту та підготуйте засоби вимірювання й захисту. Не розбирайте заповнені вузли під час пробного запуску; маршрут відходів планується до ввімкнення реактора.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:dosimeter",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:radioactive_waste_barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:dosimeter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:hazmat_mask",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:hazmat_gown",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E26_mek_process_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.7"
+    },
+    {
+      "id": "V5_E39_mek_process_08",
+      "epoch": 39,
+      "title_uk": "Передача матерії має частоту",
+      "description_uk": [
+        "Розділіть документи налаштувань Mekanism та AE2, навіть якщо обидві мережі використовують спільний склад. Для просторової передачі перевірте вибрану частоту й напрям каналів, а картку використовуйте лише для сумісних параметрів свого мода.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "mekanism:configuration_card",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "mekanism:quantum_entangloporter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "mekanism:configuration_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:memory_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:elite_control_circuit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E33_mek_process_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "mekanism",
+      "research_stage": "mekanism.mek_process.8"
+    },
+    {
+      "id": "V5_E17_ae_mechanics_01",
+      "epoch": 17,
+      "title_uk": "Комірка розрізняє тип і кількість",
+      "description_uk": [
+        "Відкрийте налаштування комірки та відокремте місткість від переліку дозволених типів предметів. Комірка огляду фільтрує видимість термінала, а не створює додаткове сховище; підпишіть ці ролі до перенесення всього складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:item_storage_cell_4k",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:cell_workbench",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:item_storage_cell_4k",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:view_cell",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:basic_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E17_X_cell_workbench"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.1"
+    },
+    {
+      "id": "V5_E17_ae_mechanics_02",
+      "epoch": 17,
+      "title_uk": "Шина зберігання залишає скриню зовні",
+      "description_uk": [
+        "Підготуйте зовнішню бочку для предметів, які не варто тримати у цифровій комірці. Перевірте пріоритет і фільтр шини на двох типах матеріалів; інвертор змінює логіку списку, а не збільшує кількість каналів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:storage_bus",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "minecraft:barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:inverter_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:barrel",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:annihilation_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E17_ae_mechanics_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.2"
+    },
+    {
+      "id": "V5_E17_ae_mechanics_03",
+      "epoch": 17,
+      "title_uk": "Рівень запасу керує експортом",
+      "description_uk": [
+        "Позначте контрольний запас матеріалу й спробуйте керувати експортом зовнішнім сигналом. Порівняйте поведінку емітера рівня та звичайного компаратора; у цифровій мережі не кожен фізичний блок є скринею з ванільним сигналом заповнення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:level_emitter",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "minecraft:barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:redstone_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:export_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E17_ae_mechanics_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.3"
+    },
+    {
+      "id": "V5_E17_ae_mechanics_04",
+      "epoch": 17,
+      "title_uk": "Тунель не є другим контролером",
+      "description_uk": [
+        "Підготуйте пару ME-тунелів і картку прив'язки, залишивши видиму ділянку смарт-кабелю на вході. Перевірте напрям і призначення тунелю; його наявність сама по собі не додає контролеру каналів або живлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:me_p2p_tunnel",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:controller",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:me_p2p_tunnel",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:memory_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:fluix_smart_cable",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E17_ae_mechanics_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.4"
+    },
+    {
+      "id": "V5_E32_ae_mechanics_05",
+      "epoch": 32,
+      "title_uk": "Процесор бачить повний обсяг замовлення",
+      "description_uk": [
+        "Зберіть один визначений CPU для контрольного замовлення й порівняйте пам'ять із паралельністю операцій. Співпроцесор не замінює пам'ять для великого плану; перевірте обидві потреби до розширення кількості складальників.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:16k_crafting_storage",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:crafting_monitor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:16k_crafting_storage",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_accelerator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_unit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E17_ae_mechanics_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.5"
+    },
+    {
+      "id": "V5_E32_ae_mechanics_06",
+      "epoch": 32,
+      "title_uk": "Блокувальний шаблон для однієї камери",
+      "description_uk": [
+        "Підготуйте шаблон для зовнішньої камери з визначеним входом і поверненням виходу. Перевірте режим блокування постачальника та поведінку реагенту, щоб друге замовлення не перемішало рецепти в уже зайнятому інфузорі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:processing_pattern",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:pattern_provider",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:redstone_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:metallurgic_infuser",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_ae_mechanics_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.6"
+    },
+    {
+      "id": "V5_E35_ae_mechanics_07",
+      "epoch": 35,
+      "title_uk": "Хімія зберігається своїм типом комірки",
+      "description_uk": [
+        "Порівняйте локальний хімічний резервуар із сумісною цифровою коміркою. Звичайна предметна комірка не є заміною хімічному сховищу; визначте, звідки повертатиметься реагент після виконання машинного замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "appmek:chemical_storage_cell_4k",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:drive",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "appmek:chemical_storage_cell_4k",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:advanced_chemical_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:capacity_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_ae_mechanics_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.7"
+    },
+    {
+      "id": "V5_E44_ae_mechanics_08",
+      "epoch": 44,
+      "title_uk": "Просторовий вузол із сервісним відступом",
+      "description_uk": [
+        "Виділіть малий випробувальний об'єм для просторової операції та залиште доступ до живлення й порту. Не починайте випробування зі складної чужої машини; сумісність блоків зі зберіганням простору перевіряється окремо у грі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:spatial_storage_cell_2",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:spatial_io_port",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:spatial_storage_cell_2",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:spatial_pylon",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:energy_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E35_ae_mechanics_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "ae2",
+      "research_stage": "ae2.ae_mechanics.8"
+    },
+    {
+      "id": "V5_E06_mi_specialization_01",
+      "epoch": 6,
+      "title_uk": "Паровій машині потрібне відведення",
+      "description_uk": [
+        "Підготуйте окремі підключення рідинної сировини та пари до ранньої майстерні. Перевірте фактичні порти вибраної конструкції у довіднику MI: схожість корпусу не означає взаємозамінність входу й виходу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:bronze_fluid_input_hatch",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:bronze_boiler",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:bronze_fluid_input_hatch",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:bronze_fluid_output_hatch",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:fluid_pipe",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E06_X_boiler"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.1"
+    },
+    {
+      "id": "V5_E13_mi_specialization_02",
+      "epoch": 13,
+      "title_uk": "Лінія дроту перед мотором",
+      "description_uk": [
+        "Відокремте виробництво дроту від складання двигунів і підготуйте низьковольтну ділянку. Порівняйте реальні рецепти дроту та кабелю: ізоляція й металевий провідник виконують різні ролі та не повинні губитися в одному шаблоні.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:copper_wire",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:electric_wiremill",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:copper_wire",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:motor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:tin_cable",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E06_mi_specialization_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.2"
+    },
+    {
+      "id": "V5_E13_mi_specialization_03",
+      "epoch": 13,
+      "title_uk": "Пакувальник має визначену форму",
+      "description_uk": [
+        "Підготуйте дві форми пакування для різних станів матеріалу. Шаблон задає операцію пакувальника, а не витрачається як сировина; перевірте обраний режим перед поверненням металу до масового складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:packer_block_template",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:electric_packer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:packer_block_template",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:packer_double_ingot_template",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_mi_specialization_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.3"
+    },
+    {
+      "id": "V5_E22_mi_specialization_04",
+      "epoch": 22,
+      "title_uk": "Мікросхема не виникає з корпусу",
+      "description_uk": [
+        "Порівняйте аналогову та електронну плату біля складальника середньої напруги. Корпус відкриває наступний рівень машин, але залишає потребу в окремому виробництві дроту, компонентів і монтажних матеріалів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:analog_circuit",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:assembler",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:analog_circuit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:electronic_circuit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:advanced_machine_hull",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_mi_specialization_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.4"
+    },
+    {
+      "id": "V5_E22_mi_specialization_05",
+      "epoch": 22,
+      "title_uk": "Нержавіюча сталь має окрему карту",
+      "description_uk": [
+        "Збережіть звичайну та нержавіючу сталь як різні матеріальні потоки. Рецепти промислових сплавів перевіряйте за складом і температурними вимогами; назва матеріалу не дозволяє підмінити його будь-яким сталевим злитком.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:stainless_steel_ingot",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:electric_blast_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:stainless_steel_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:stainless_steel_plate",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_steel",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E22_mi_specialization_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.5"
+    },
+    {
+      "id": "V5_E32_mi_specialization_06",
+      "epoch": 32,
+      "title_uk": "Висока напруга починається з розв'язки",
+      "description_uk": [
+        "Перед підключенням високовольтного вузла позначте сторони трансформатора й рівні кабелю. Змішаний склад може зберігати обидва типи дроту, але електромережа потребує правильної межі між напругами.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:aluminum_cable",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:hv_mv_transformer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:aluminum_cable",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:electrum_cable",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:highly_advanced_machine_hull",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E22_mi_specialization_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.6"
+    },
+    {
+      "id": "V5_E35_mi_specialization_07",
+      "epoch": 35,
+      "title_uk": "Надпровідний матеріал досягнуто",
+      "description_uk": [
+        "Порівняйте кілька форм надпровідного матеріалу та підготуйте холодну ділянку обробки. Перевірте нативний рецепт JEI для кожної форми: холодильна машина не є універсальним способом перетворити будь-який сплав у надпровідник.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:superconductor_wire",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:vacuum_freezer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:superconductor_wire",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:superconductor_plate",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:superconductor_ingot",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_mi_specialization_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.7"
+    },
+    {
+      "id": "V5_E44_mi_specialization_08",
+      "epoch": 44,
+      "title_uk": "Промислова карта запасних частин",
+      "description_uk": [
+        "Зберіть три різні виконавчі компоненти й опишіть їхні входи для зовнішнього планувальника. Так ремонт великого заводу спирається на повторювані лінії деталей, а не на одноразове ручне виготовлення нового корпусу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "modern_industrialization:advanced_motor",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "modern_industrialization:assembler",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:advanced_motor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:advanced_pump",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:piston",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E35_mi_specialization_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "modern_industrialization",
+      "research_stage": "modern_industrialization.mi_specialization.8"
+    },
+    {
+      "id": "V5_E08_ie_workshop_01",
+      "epoch": 8,
+      "title_uk": "Сталь і кокс у різних буферах",
+      "description_uk": [
+        "Підготуйте кокс як паливну частину сталеплавильного циклу, а сталь — як його матеріальний результат. Залиште місце для побічних продуктів і ремонту конструкції; повний вхід палива не гарантує вільного виходу металу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersiveengineering:coal_coke",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersiveengineering:blast_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:coal_coke",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_steel",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:hammer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E08_M1"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_stage": "immersiveengineering.ie_workshop.1"
+    },
+    {
+      "id": "V5_E11_ie_workshop_02",
+      "epoch": 11,
+      "title_uk": "Дротова мережа має розрив для ремонту",
+      "description_uk": [
+        "Підготуйте вимикач і ізольований дріт для доступної сервісної ділянки LV. Реле змінює трасу дроту, а вимикач керує з'єднанням; перед подаванням напруги перевірте, які контакти справді під'єднані до споживача.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersiveengineering:wirecoil_copper_ins",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersiveengineering:breaker_switch",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wirecoil_copper_ins",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:connector_lv_relay",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wirecutter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E08_ie_workshop_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_stage": "immersiveengineering.ie_workshop.2"
+    },
+    {
+      "id": "V5_E18_ie_workshop_03",
+      "epoch": 18,
+      "title_uk": "Модель преса задає деталь",
+      "description_uk": [
+        "Порівняйте дві форми металевого преса та їхні продукти у спільному міжмодовому складі. Заміна форми змінює вид виходу, тому матеріальний контракт має вказувати не лише метал, а й потрібну форму деталі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersiveengineering:mold_gear",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersiveengineering:metal_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:mold_gear",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:mold_wire",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wire_copper",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:iron_gear",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_ie_workshop_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_stage": "immersiveengineering.ie_workshop.3"
+    },
+    {
+      "id": "V5_E32_ie_workshop_04",
+      "epoch": 32,
+      "title_uk": "Дугова піч має витратний електрод",
+      "description_uk": [
+        "Підготуйте електроди як витратну частину дугової металургії та окремий резерв HV. Перевіряйте знос поряд із запасом сировини: зупинена через електрод піч не відновиться від додаткового подавання руди.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersiveengineering:graphite_electrode",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersiveengineering:arc_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:graphite_electrode",
+          "count": 3,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_steel",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:capacitor_hv",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_ie_workshop_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "immersiveengineering",
+      "research_stage": "immersiveengineering.ie_workshop.4"
+    },
+    {
+      "id": "V5_E12_ip_refinery_01",
+      "epoch": 12,
+      "title_uk": "Розвідка до насосної станції",
+      "description_uk": [
+        "Підготуйте інструменти для пошуку нафтової ділянки й візуалізації промислової конструкції. Результат розвідки та правильно зібрана установка — послідовні кроки; не витрачайте повний комплект будматеріалів до вибору місця.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersivepetroleum:seismic_survey",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersivepetroleum:derrick",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:seismic_survey",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:survey_tools",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:projector",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E12_M1"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "immersivepetroleum",
+      "research_stage": "immersivepetroleum.ip_refinery.1"
+    },
+    {
+      "id": "V5_E12_ip_refinery_02",
+      "epoch": 12,
+      "title_uk": "Колона розділяє фракції",
+      "description_uk": [
+        "Порівняйте твердий побічний продукт із рідкою паливною фракцією. Виводьте їх окремо й перевірте запас місця для кожного, адже забитий побічний вихід може перетворити достатній запас сирої нафти на простій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersivepetroleum:bitumen",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersivepetroleum:distillation_tower",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:bitumen",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:diesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:jerrycan",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E12_ip_refinery_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "immersivepetroleum",
+      "research_stage": "immersivepetroleum.ip_refinery.2"
+    },
+    {
+      "id": "V5_E12_ip_refinery_03",
+      "epoch": 12,
+      "title_uk": "Коксування потребує нового маршруту",
+      "description_uk": [
+        "Окремо позначте коксохімічну ділянку та її тверді й рідкі продукти. Не повертайте нафту й нафтові фракції у спільний непідписаний резервуар; для запуску звірте відповідний нативний рецепт із JEI.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersivepetroleum:petcoke",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersivepetroleum:coker_unit",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:petcoke",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:naphtha_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:oil_can",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E12_ip_refinery_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "immersivepetroleum",
+      "research_stage": "immersivepetroleum.ip_refinery.3"
+    },
+    {
+      "id": "V5_E12_ip_refinery_04",
+      "epoch": 12,
+      "title_uk": "Сервіс мастила не є генерацією",
+      "description_uk": [
+        "Зберіть мастильний контур поряд із доступними точками обслуговування промислової машини. Мастило підтримує сумісне обладнання, але не є заміною його електроживленню або механічній сировині.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersivepetroleum:lubricant_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "immersivepetroleum:auto_lubricator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersivepetroleum:lubricant_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:maintenance_kit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:fluid_pipe",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E12_ip_refinery_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "immersivepetroleum",
+      "research_stage": "immersivepetroleum.ip_refinery.4"
+    },
+    {
+      "id": "V5_E18_if_specialization_01",
+      "epoch": 18,
+      "title_uk": "Латекс проходить водяну обробку",
+      "description_uk": [
+        "Порівняйте суху гуму з завершеним пластиком і залиште окреме підведення води до латексної установки. Перевіряйте етап обробки до налаштування автокрафту корпусів: латекс у резервуарі ще не є пластиком у складі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "industrialforegoing:dryrubber",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:latex_processing_unit",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:dryrubber",
+          "count": 9,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:plastic",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E18_X_processing"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_stage": "industrialforegoing.if_specialization.1"
+    },
+    {
+      "id": "V5_E18_if_specialization_02",
+      "epoch": 18,
+      "title_uk": "Шаблон налаштувань для повторюваної ферми",
+      "description_uk": [
+        "Підготуйте керовану посівну ділянку та інструмент перенесення сумісних налаштувань. Після копіювання звірте робочу зону й напрям машини: однакові параметри не переносять саму землю, воду або насіння.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "industrialforegoing:machine_settings_copier",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:plant_sower",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:machine_settings_copier",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:range_addon_tier_1",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_if_specialization_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_stage": "industrialforegoing.if_specialization.2"
+    },
+    {
+      "id": "V5_E27_if_specialization_03",
+      "epoch": 27,
+      "title_uk": "Біореактор оцінює склад сировини",
+      "description_uk": [
+        "Підготуйте різні рослинні входи для перевірки біопаливної ділянки та окремий генератор-споживач. Порівняйте рецепти й показники інтерфейсу у грі; квест не прирівнює кількість видів у цій пробі до вигаданого гарантованого виходу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "minecraft:carrot",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:bioreactor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:carrot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:potato",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:beetroot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:biofuel_generator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_if_specialization_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_stage": "industrialforegoing.if_specialization.3"
+    },
+    {
+      "id": "V5_E34_if_specialization_04",
+      "epoch": 34,
+      "title_uk": "Лінза має відповідати потрібній руді",
+      "description_uk": [
+        "Підготуйте дві лінзи для різних цілей лазерного видобутку й контроль запасу на складі. Перевіряйте висоту, вимір і таблицю JEI конкретної руди: зміна кольору не скасовує інші умови рецепта.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "industrialforegoing:laser_drill",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "industrialforegoing:ore_laser_base",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:laser_drill",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:yellow_laser_lens",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:blue_laser_lens",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E27_if_specialization_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "industrialforegoing",
+      "research_stage": "industrialforegoing.if_specialization.4"
+    },
+    {
+      "id": "V5_E19_enderio_process_01",
+      "epoch": 19,
+      "title_uk": "Куля млина є витратним реагентом",
+      "description_uk": [
+        "Порівняйте дробильну кулю, оброблюваний матеріал і конденсатор як три різні частини SAG-млина. Звірте допустимість кулі з рецептом і перевіряйте її витрату поряд із енергетичним буфером.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "enderio:dark_steel_grinding_ball",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "enderio:sag_mill",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "enderio:dark_steel_grinding_ball",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:powdered_obsidian",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:basic_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E19_X_sag_mill"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "enderio",
+      "research_stage": "enderio.enderio_process.1"
+    },
+    {
+      "id": "V5_E19_enderio_process_02",
+      "epoch": 19,
+      "title_uk": "Сплав має матеріальні складові",
+      "description_uk": [
+        "Підготуйте два послідовні сплави та порівняйте їхні рецепти до розширення енергетичної інфраструктури. Кращий конденсатор змінює можливості машини, але не замінює жоден із матеріальних компонентів сплаву.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "enderio:energetic_alloy_ingot",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "enderio:alloy_smelter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "enderio:energetic_alloy_ingot",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:vibrant_alloy_ingot",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:double_layer_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_enderio_process_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "enderio",
+      "research_stage": "enderio.enderio_process.2"
+    },
+    {
+      "id": "V5_E28_enderio_process_03",
+      "epoch": 28,
+      "title_uk": "Предметний фільтр має обмеження",
+      "description_uk": [
+        "Порівняйте звичайний список дозволених предметів із фільтром, який контролює кількість. Пробником перевірте маршрут і пріоритет біля тестової скрині, перш ніж під'єднувати його до рідкісних компонентів фабрики.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "enderio:limited_item_filter",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "enderio:impulse_hopper",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "enderio:limited_item_filter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:advanced_item_filter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:conduit_probe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_enderio_process_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "enderio",
+      "research_stage": "enderio.enderio_process.3"
+    },
+    {
+      "id": "V5_E32_enderio_process_04",
+      "epoch": 32,
+      "title_uk": "Конденсаторний банк обслуговує майстерню",
+      "description_uk": [
+        "Підготуйте локальний енергетичний резерв Ender IO та суміжний вузол заряджання. Спільна одиниця FE полегшує інтеграцію, але режими боків і ліміти передачі потрібно перевірити для кожного блока окремо.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "enderio:octadic_capacitor",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "enderio:advanced_capacitor_bank",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "enderio:octadic_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:yeta_wrench",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:energy_discharger_hardened",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_enderio_process_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "enderio",
+      "research_stage": "enderio.enderio_process.4"
+    },
+    {
+      "id": "V5_E11_powah_behaviour_01",
+      "epoch": 11,
+      "title_uk": "Теплова станція має середовище",
+      "description_uk": [
+        "Підготуйте кероване джерело тепла й запас води для термогенератора. Сумісність конкретного нагрівального блока звірте з JEI; цей набір не оголошує довільну температуру або гарантоване виробництво FE.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "powah:thermoelectric_plate",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "powah:thermo_generator_basic",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:thermoelectric_plate",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:magma_block",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E11_M1"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.powah_behaviour.1"
+    },
+    {
+      "id": "V5_E11_powah_behaviour_02",
+      "epoch": 11,
+      "title_uk": "Куля заряджання приймає одну партію",
+      "description_uk": [
+        "Залиште визначений розмір партії перед енергетичною сферою та окремий шлях для готового матеріалу. Кілька стрижнів працюють із тією самою операцією; сторонній предмет у сфері може завадити розпізнаванню потрібного рецепта.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "powah:energizing_rod_hardened",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "powah:energizing_orb",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:energizing_rod_hardened",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:steel_energized",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.powah_behaviour.2"
+    },
+    {
+      "id": "V5_E29_powah_behaviour_03",
+      "epoch": 29,
+      "title_uk": "Реактор потребує витратних ресурсів",
+      "description_uk": [
+        "Підготуйте паливний і охолоджувальний запас для перевірки реакторної установки. Порівняйте прийнятні витратні матеріали в довіднику Powah та не плутайте кристал рівня машини з паливом, яке вона споживає під час роботи.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "powah:uraninite",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "powah:reactor_niotic",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:uraninite",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:dry_ice",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:crystal_niotic",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.powah_behaviour.3"
+    },
+    {
+      "id": "V5_E40_powah_behaviour_04",
+      "epoch": 40,
+      "title_uk": "Енергія для пізньої кристалізації",
+      "description_uk": [
+        "Підготуйте високий рівень енергетичної обробки як ресурс для наступного драконячого розвитку. Перевірте доступну енергію перед дорогою операцією; потужний стрижень не створює FE, а споживає запас мережі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "powah:crystal_nitro",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "powah:energizing_rod_nitro",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:crystal_nitro",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:energy_cell_nitro",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:draconium_ingot",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E29_powah_behaviour_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.powah_behaviour.4"
+    },
+    {
+      "id": "V5_E25_oritech_process_01",
+      "epoch": 25,
+      "title_uk": "Центрифуга відділяє потрібну частку",
+      "description_uk": [
+        "Відцентруйте залізну грудку й порівняйте основний продукт із нікелевим побічним пилом. Нативний рецепт oritech:centrifuge/clump/iron дає залізну кристалічну сировину та три малі порції нікелю; для обох продуктів потрібне місце на виході.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "oritech:iron_gem",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "oritech:centrifuge_block",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "oritech:iron_clump",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:iron_gem",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:small_nickel_dust",
+          "count": 3,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E25_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "oritech",
+      "research_stage": "oritech.oritech_process.1"
+    },
+    {
+      "id": "V5_E25_oritech_process_02",
+      "epoch": 25,
+      "title_uk": "Аддон має торкатися потрібної машини",
+      "description_uk": [
+        "Підготуйте різні типи розширення та порівняйте місця їхнього під'єднання. Після монтажу перевірте інтерфейс машини: фізична близькість до корпусу без правильного з'єднання не підтверджує застосування бонусу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "oritech:machine_speed_addon",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "oritech:machine_extender",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "oritech:machine_speed_addon",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:machine_efficiency_addon",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:carbon_fibre_strands",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E25_oritech_process_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "oritech",
+      "research_stage": "oritech.oritech_process.2"
+    },
+    {
+      "id": "V5_E32_oritech_process_03",
+      "epoch": 32,
+      "title_uk": "Вуглецевий компонент до електроніки",
+      "description_uk": [
+        "Підготуйте вуглецевий матеріал і два різні типи обчислювальних компонентів для міжмодового складання. Порівняйте нативні рецепти до створення шаблону; процесор AE2 не є автоматичною заміною блока обробки Oritech.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "oritech:reinforced_carbon_sheet",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "oritech:assembler_block",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "oritech:reinforced_carbon_sheet",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:processing_unit",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:engineering_processor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E25_oritech_process_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "oritech",
+      "research_stage": "oritech.oritech_process.3"
+    },
+    {
+      "id": "V5_E39_oritech_process_04",
+      "epoch": 39,
+      "title_uk": "Просторовий сервіс має локальний запас",
+      "description_uk": [
+        "Відокремте просторовий матеріальний вузол від транспортної частини Mekanism і позначте їхні входи. Порівняйте фактичні рецепти JEI; назва ендерного компонента не означає, що дві машини працюють з однаковим середовищем.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "oritech:enderic_compound",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "oritech:laser_arm_block",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "oritech:enderic_compound",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "oritech:fluxite",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:quantum_entangloporter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_oritech_process_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "oritech",
+      "research_stage": "oritech.oritech_process.4"
+    },
+    {
+      "id": "V5_E14_pneumatic_mechanics_01",
+      "epoch": 14,
+      "title_uk": "Запобіжник і регулятор мають різні ролі",
+      "description_uk": [
+        "Підготуйте регулятор тиску та окремий запобіжний модуль біля компресора. Перевіряйте показник манометра під час пробного запуску: регулювання робочої ділянки та захист від небезпечного надлишку не є однією операцією.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "pneumaticcraft:safety_tube_module",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:air_compressor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:safety_tube_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:regulator_tube_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:manometer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E14_X_air_compressor"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_stage": "pneumaticcraft.pneumatic_mechanics.1"
+    },
+    {
+      "id": "V5_E14_pneumatic_mechanics_02",
+      "epoch": 14,
+      "title_uk": "Теплопровід відокремлено від повітря",
+      "description_uk": [
+        "Підготуйте тепловий контур поряд із пневматичною обробкою та передбачте відведення зайвого тепла. Повітряна труба й теплопровід не взаємозамінні; звірте потрібний температурний діапазон саме вибраного рецепта.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "pneumaticcraft:heat_pipe",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:thermopneumatic_processing_plant",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:heat_pipe",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:heat_sink",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:thermostat_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E14_pneumatic_mechanics_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_stage": "pneumaticcraft.pneumatic_mechanics.2"
+    },
+    {
+      "id": "V5_E24_pneumatic_mechanics_03",
+      "epoch": 24,
+      "title_uk": "Плата проходить освітлення й травлення",
+      "description_uk": [
+        "Порівняйте заготовку, проміжну й завершену друковану плату біля двох різних машин. Перевірте ступінь обробки перед травленням, щоб не перетворити матеріали на невдалу плату через поспіх або неправильний порядок.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "pneumaticcraft:empty_pcb",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:uv_light_box",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:etching_tank",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:empty_pcb",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:unassembled_pcb",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:printed_circuit_board",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E14_pneumatic_mechanics_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_stage": "pneumaticcraft.pneumatic_mechanics.3"
+    },
+    {
+      "id": "V5_E28_pneumatic_mechanics_04",
+      "epoch": 28,
+      "title_uk": "Дрон отримує визначені джерело й ціль",
+      "description_uk": [
+        "Підготуйте визначені координати та два різні логістичні ролі для дрона. Спочатку випробуйте малий маршрут дешевими предметами; наявність програми в інвентарі не доводить, що її діапазон не зачіпає сторонню скриню.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "pneumaticcraft:logistics_drone",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "pneumaticcraft:programmer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:logistics_drone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:logistics_frame_passive_provider",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:logistics_frame_requester",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:gps_tool",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E24_pneumatic_mechanics_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "pneumaticcraft",
+      "research_stage": "pneumaticcraft.pneumatic_mechanics.4"
+    },
+    {
+      "id": "V5_E19_rftools_controls_01",
+      "epoch": 19,
+      "title_uk": "Періодичний сигнал має керування",
+      "description_uk": [
+        "Підготуйте таймер, послідовність і лічильник як різні інструменти керування машиною. Перевіряйте скидання й ручну зупинку на простій лампі до підключення до паливної або ритуальної лінії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsutility:sequencer",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsutility:timer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:sequencer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:counter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lever",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E19_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "rftoolsutility",
+      "research_stage": "rftoolsutility.rftools_controls.1"
+    },
+    {
+      "id": "V5_E19_rftools_controls_02",
+      "epoch": 19,
+      "title_uk": "Екран показує обраний ресурс",
+      "description_uk": [
+        "Підготуйте окремі модулі для енергії та рідини й визначте, які машини вони мають читати. Підпис екрана не є автоматичним доказом вимірювання: перевірте, чи справді модуль прив'язаний до потрібного сумісного блока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsutility:screen",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsutility:screen_controller",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:screen",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:energy_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:fluid_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_rftools_controls_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "rftoolsutility",
+      "research_stage": "rftoolsutility.rftools_controls.2"
+    },
+    {
+      "id": "V5_E28_rftools_controls_03",
+      "epoch": 28,
+      "title_uk": "Автокрафтеру потрібен резерв виходу",
+      "description_uk": [
+        "Підготуйте дві скрині та контроль запасу для локального автокрафтера. Розділіть залишки інгредієнтів і готовий виріб, а поведінку при заповненому виході перевірте до замовлення дорогої деталі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsutility:invchecker",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsutility:crafter2",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:invchecker",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_rftools_controls_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "rftoolsutility",
+      "research_stage": "rftoolsutility.rftools_controls.3"
+    },
+    {
+      "id": "V5_E32_rftools_controls_04",
+      "epoch": 32,
+      "title_uk": "Екран для цілого машинного острова",
+      "description_uk": [
+        "Порівняйте інформацію про машину, інвентар і сигнал керування на одному сервісному екрані. Вибирайте лише доступні сумісні джерела даних; модулі не дають загальної телеметрії будь-якого чужого мультиблока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsutility:machineinformation_module",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsutility:screen",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:machineinformation_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:redstone_information",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:inventory_module",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:screen_link",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_rftools_controls_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "rftoolsutility",
+      "research_stage": "rftoolsutility.rftools_controls.4"
+    },
+    {
+      "id": "V5_E28_builder_boundaries_01",
+      "epoch": 28,
+      "title_uk": "Карта будівництва має дві межі",
+      "description_uk": [
+        "Підготуйте базову карту й окремий рідинний інструмент та позначте межі випробувальної області. Перевіряйте операцію до подавання енергії: карта задає завдання будівельника, а не лише декоративний контур.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsbuilder:shape_card_def",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsbuilder:builder",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_def",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_pump",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:torch",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E28_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "rftoolsbuilder",
+      "research_stage": "rftoolsbuilder.builder_boundaries.1"
+    },
+    {
+      "id": "V5_E28_builder_boundaries_02",
+      "epoch": 28,
+      "title_uk": "Кар'єр із поверненням матеріалів",
+      "description_uk": [
+        "Виділіть буфер для кожного очікуваного масового ресурсу та перевірте виведення кар'єру до повного запуску. Забитий вихід є причиною зупинки навіть за достатнього запасу FE; не направляйте першу пробу в непідготовлений спільний склад.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsbuilder:shape_card_quarry",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsbuilder:builder",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_quarry",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:import_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:barrel",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_builder_boundaries_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "rftoolsbuilder",
+      "research_stage": "rftoolsbuilder.builder_boundaries.2"
+    },
+    {
+      "id": "V5_E32_builder_boundaries_03",
+      "epoch": 32,
+      "title_uk": "Порожнина не повинна приховувати цінне",
+      "description_uk": [
+        "Порівняйте картки з видобутком і знищенням матеріалу перед їхньою заміною у будівельнику. Окремо збережіть профіль області та перевірте фільтр: порожній вихід не означає, що в ділянці не було цінних блоків.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsbuilder:shape_card_quarry_clear",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsbuilder:builder",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_quarry_clear",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_void",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_builder_boundaries_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "rftoolsbuilder",
+      "research_stage": "rftoolsbuilder.builder_boundaries.3"
+    },
+    {
+      "id": "V5_E44_builder_boundaries_04",
+      "epoch": 44,
+      "title_uk": "Будівельник як завершення контракту",
+      "description_uk": [
+        "Підготуйте повторюваний будівельний контракт із двох матеріалів для промислової платформи. Окремо визначте геометрію карти й виробничий шаблон матеріалів, щоб склад міг поповнювати будівельника без випадкової заміни конструкційних блоків.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "rftoolsbuilder:shape_card_def",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rftoolsbuilder:builder",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rftoolsbuilder:shape_card_def",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:stone_bricks",
+          "count": 32,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:steel_scaffolding_standard",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_builder_boundaries_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "rftoolsbuilder",
+      "research_stage": "rftoolsbuilder.builder_boundaries.4"
+    },
+    {
+      "id": "V5_E37_space_operations_01",
+      "epoch": 37,
+      "title_uk": "Киснева станція має тестовий об'єм",
+      "description_uk": [
+        "Підготуйте малу ізольовану кімнату з датчиком і шлюзом перед заселенням космічної бази. Перевіряйте наявність кисню в самій кімнаті, а не лише в резервуарі; негерметичний прохід може витрачати весь запас.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ad_astra:oxygen_sensor",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ad_astra:oxygen_distributor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:oxygen_sensor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:airlock",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:gas_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E37_X_oxygen_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "ad_astra",
+      "research_stage": "ad_astra.space_operations.1"
+    },
+    {
+      "id": "V5_E37_space_operations_02",
+      "epoch": 37,
+      "title_uk": "Посадкова база повертає паливо",
+      "description_uk": [
+        "Відокремте переробку ракетного палива від місця посадки та позначте резерв на повернення. Перевірте сумісність палива з обраною ракетою у JEI, а потім випробуйте маршрут подавання на порожньому баку.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ad_astra:desh_tank",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ad_astra:fuel_refinery",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:desh_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:steel_engine",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:launch_pad",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E37_space_operations_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "ad_astra",
+      "research_stage": "ad_astra.space_operations.2"
+    },
+    {
+      "id": "V5_E38_space_operations_03",
+      "epoch": 38,
+      "title_uk": "Холодне паливо має власну лінію",
+      "description_uk": [
+        "Підготуйте холодну ділянку й деталі високого рівня для далекого польоту. Не змішуйте запас звичайного та кріогенного палива без перевірки рецепта й сумісності споживача; назва бака не визначає його вміст.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ad_astra:ice_shard",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ad_astra:cryo_freezer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:ice_shard",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:calorite_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:calorite_engine",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E37_space_operations_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "ad_astra",
+      "research_stage": "ad_astra.space_operations.3"
+    },
+    {
+      "id": "V5_E44_space_operations_04",
+      "epoch": 44,
+      "title_uk": "Планетарна база обслуговує інструменти",
+      "description_uk": [
+        "Зберіть локальний енергетичний і сервісний вузол для віддаленої бази. Окремо перевірте заряджання інструментів, керування гравітацією та доступ до складу: наявність термінала не створює міжвимірного з'єднання сама по собі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ad_astra:solar_panel",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ad_astra:energizer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:solar_panel",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ad_astra:gravity_normalizer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:configuration_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:wireless_terminal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E38_space_operations_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "ad_astra",
+      "research_stage": "ad_astra.space_operations.4"
+    },
+    {
+      "id": "V5_E40_draconic_operations_01",
+      "epoch": 40,
+      "title_uk": "Кристал прив'язується інструментом",
+      "description_uk": [
+        "Підготуйте ролі введення, ретрансляції та бездротового споживання в одному малому стенді. Перевірте напрям з'єднань зв'язувачем і не підміняйте їх близьким розміщенням кристалів біля енергетичного ядра.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "draconicevolution:crystal_binder",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:wyvern_io_crystal",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:crystal_binder",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_relay_crystal",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_wireless_crystal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_crystals_04"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.draconic_operations.1"
+    },
+    {
+      "id": "V5_E41_draconic_operations_02",
+      "epoch": 41,
+      "title_uk": "Пробуджений синтез має повний комплект",
+      "description_uk": [
+        "Порівняйте рівень інжекторів із вимогами пробудженого рецепта та перевірте доступність усіх позицій. Достатня енергія не компенсує неправильний рівень інжектора або матеріал, що залишився поза зоною синтезу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "draconicevolution:awakened_crafting_injector",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:crafting_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:awakened_crafting_injector",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:awakened_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:awakened_draconium_ingot",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E40_draconic_operations_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.draconic_operations.2"
+    },
+    {
+      "id": "V5_E42_draconic_operations_03",
+      "epoch": 42,
+      "title_uk": "Реактор має окрему керувальну енергію",
+      "description_uk": [
+        "Підготуйте вузли реактора та окремий контур його контрольованого живлення. Перед запуском у грі звірте документацію й аварійний порядок дій; цей квест засвідчує комплектування, а не гарантує безпечну температуру чи стабільний режим.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "draconicevolution:reactor_stabilizer",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:reactor_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:reactor_stabilizer",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:reactor_injector",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:flux_gate",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E41_draconic_operations_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.draconic_operations.3"
+    },
+    {
+      "id": "V5_E47_draconic_operations_04",
+      "epoch": 47,
+      "title_uk": "Фінальний інструмент має сервісний запас",
+      "description_uk": [
+        "Підготуйте обслуговування хаотичного інструмента та локальний запас енергії перед фінальними випробуваннями. Рівень інструмента не скасовує потребу в заряджанні й правильних модульних налаштуваннях; перевірте їх окремо від складання.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "draconicevolution:chaotic_capacitor",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:energy_transfuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:chaotic_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:chaotic_staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:energy_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:crystal_binder",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E42_draconic_operations_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.draconic_operations.4"
+    },
+    {
+      "id": "V5_E16_aa_operations_01",
+      "epoch": 16,
+      "title_uk": "Реконструктор має визначену мішень",
+      "description_uk": [
+        "Підготуйте дві базові кристалічні проби та залиште контрольований простір перед реконструктором. Перевірте лінзу й лінію променя до серії перетворень, щоб випадкові предмети поруч не потрапили під технологічну операцію.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "actuallyadditions:lens",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:atomic_reconstructor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:lens",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:restonia_crystal",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:enori_crystal",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E16_X_reconstructor"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.aa_operations.1"
+    },
+    {
+      "id": "V5_E16_aa_operations_02",
+      "epoch": 16,
+      "title_uk": "Ріпакова лінія має проміжне бродіння",
+      "description_uk": [
+        "Порівняйте сире та підготовлене масло й підпишіть два різні буфери. Ріпаковий прес і бродильна бочка виконують послідовні ролі; переповнений вихід першого вузла не виправляється заміною генератора в кінці лінії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "actuallyadditions:canola_oil_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:fermenting_barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:canola_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:refined_canola_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:canola_press",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E16_aa_operations_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.aa_operations.2"
+    },
+    {
+      "id": "V5_E23_aa_operations_03",
+      "epoch": 23,
+      "title_uk": "Емпауерер очікує чотири позиції",
+      "description_uk": [
+        "Підготуйте центральний вузол і чотири стійки для посилення кристала. Звірте просторове розташування, склад реагентів і енергетичне живлення всіх позицій; набір предметів не означає, що структура вже виконує рецепт.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "actuallyadditions:display_stand",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:empowerer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:display_stand",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:empowered_restonia_crystal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:advanced_coil",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E16_aa_operations_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.aa_operations.3"
+    },
+    {
+      "id": "V5_E28_aa_operations_04",
+      "epoch": 28,
+      "title_uk": "Фантомний інтерфейс не є транспортером",
+      "description_uk": [
+        "Підготуйте прив'язаний інтерфейс та інструмент зв'язування для віддаленого доступу до одного визначеного інвентаря. Перевірте дальність і доступність цілі у грі; фантомна грань надає доступ, а переміщення предметів виконує окрема система.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "actuallyadditions:phantom_connector",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:phantom_itemface",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:phantom_connector",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:item_interface",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:filter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E23_aa_operations_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.aa_operations.4"
+    },
+    {
+      "id": "V5_E29_reactor_operations_01",
+      "epoch": 29,
+      "title_uk": "Паливо й відходи мають два маршрути",
+      "description_uk": [
+        "Позначте незалежні маршрути паливного входу та твердих відходів у базовому реакторі. Виведення ціаніту планується до старту; спільний непідписаний буфер ускладнить діагностику навіть справної паливної системи.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "bigreactors:basic_reactorfuelrod",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "bigreactors:basic_reactorsolidaccessport",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:basic_reactorfuelrod",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:cyanite_ingot",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_uranium",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E29_X_solid_ports"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "bigreactors",
+      "research_stage": "bigreactors.reactor_operations.1"
+    },
+    {
+      "id": "V5_E29_reactor_operations_02",
+      "epoch": 29,
+      "title_uk": "Керувальний стрижень і редстоун-порт",
+      "description_uk": [
+        "Підготуйте керований реакторний вузол і окремий ручний сигнал для випробування. Порівняйте налаштування порту зі станом керувальних стрижнів, не приписуючи одному важелю автоматичного захисту від усіх позаштатних ситуацій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "bigreactors:basic_reactorcontrolrod",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "bigreactors:basic_reactorredstoneport",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:basic_reactorcontrolrod",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:redstone",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lever",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E29_reactor_operations_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "bigreactors",
+      "research_stage": "bigreactors.reactor_operations.2"
+    },
+    {
+      "id": "V5_E32_reactor_operations_03",
+      "epoch": 32,
+      "title_uk": "Турбіна має пару входу й виходу",
+      "description_uk": [
+        "Підготуйте ротор і рідинний порт парової турбіни та звірте структуру з довідником. Енергетичний реактор і паровий контур — різні конфігурації; перевірте обраний режим до з'єднання всіх вузлів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "bigreactors:reinforced_turbinerotorshaft",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "bigreactors:reinforced_turbinecontroller",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:reinforced_turbinerotorshaft",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:reinforced_turbinerotorblade",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:reinforced_turbinefluidport_forge_active",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E29_reactor_operations_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "bigreactors",
+      "research_stage": "bigreactors.reactor_operations.3"
+    },
+    {
+      "id": "V5_E36_reactor_operations_04",
+      "epoch": 36,
+      "title_uk": "Велика турбіна має доступний вихід FE",
+      "description_uk": [
+        "Підготуйте турбінний енергетичний вихід і контроль стану суміжного буфера. Правильно складений ротор не передає енергію в склад без сумісного порту та маршруту; перевірте поведінку при заповненій батареї.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "bigreactors:reinforced_turbinerotorbearing",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "bigreactors:reinforced_turbinepowertapfe_active",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "bigreactors:reinforced_turbinerotorbearing",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:energy_cell_nitro",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:energy_level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_reactor_operations_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "bigreactors",
+      "research_stage": "bigreactors.reactor_operations.4"
+    },
+    {
+      "id": "V5_E11_electromechanical_work_01",
+      "epoch": 11,
+      "title_uk": "Генератор і мотор мають різні входи",
+      "description_uk": [
+        "Порівняйте перетворення FE в обертання й обертання у FE на роз'єднаних стендах. Не замикайте їх у петлю заради уявної безкоштовної енергії; спочатку визначте зовнішнє джерело і корисне навантаження кожної ділянки.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createaddition:alternator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:electric_motor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createaddition:alternator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:repeater",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E11_X_motor"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.electromechanical_work.1"
+    },
+    {
+      "id": "V5_E19_electromechanical_work_02",
+      "epoch": 19,
+      "title_uk": "Прокатна машина постачає інший мод",
+      "description_uk": [
+        "Підготуйте уніфіковані дріт і прутки для суміжної електроніки, зберігши окремі шаблони формування. Простір імен матеріалу може відрізнятися від мода машини; перевірте фактичний результат рецепта після уніфікації.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "immersiveengineering:wire_electrum",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:rolling_mill",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wire_electrum",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:stick_iron",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "enderio:basic_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_electromechanical_work_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.electromechanical_work.2"
+    },
+    {
+      "id": "V5_E28_electromechanical_work_03",
+      "epoch": 28,
+      "title_uk": "Заряджання на рухомому майданчику",
+      "description_uk": [
+        "Розділіть енергетичне стикування рухомої конструкції та звичайну станцію заряджання інструментів. Спочатку перевірте момент з'єднання контактів і локальний акумулятор, а потім під'єднуйте решту сервісних функцій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createaddition:modular_accumulator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:portable_energy_interface",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createaddition:modular_accumulator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:portable_fluid_interface",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pneumaticcraft:charging_station",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_electromechanical_work_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.electromechanical_work.3"
+    },
+    {
+      "id": "V5_E32_electromechanical_work_04",
+      "epoch": 32,
+      "title_uk": "Реле завершує електромеханічний контракт",
+      "description_uk": [
+        "Підготуйте сигнал дозволу роботи для електромеханічного острова й ізольований ремонтний маршрут. Перевірте полярність керування на малому навантаженні, перш ніж зв'язувати його з автоматичними замовленнями цифрового складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createaddition:large_connector",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:redstone_relay",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createaddition:large_connector",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:redstone_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wirecoil_electrum_ins",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_electromechanical_work_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.electromechanical_work.4"
+    },
+    {
+      "id": "V5_E12_diesel_contract_01",
+      "epoch": 12,
+      "title_uk": "Нафтовий насос має споживача",
+      "description_uk": [
+        "Підготуйте пошук, видобувний вузол і контрольований механічний споживач як один паливний контракт. Розвідка не підтверджує правильної збірки насоса; відокремте її перевірку від першого запуску двигуна.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createdieselgenerators:diesel_engine",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:pumpjack_head",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:diesel_engine",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:oil_scanner",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:canister",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:clutch",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E12_X_pumpjack_parts"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.diesel_contract.1"
+    },
+    {
+      "id": "V5_E18_diesel_contract_02",
+      "epoch": 18,
+      "title_uk": "Бродіння постачає реальну паливну партію",
+      "description_uk": [
+        "Підготуйте сільськогосподарський вихід до окремої біопаливної ділянки. Етанол та олія мають різні рецепти і сховища; перед спільним виробництвом перевірте, який саме двигун приймає завершене паливо.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createdieselgenerators:ethanol_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:bulk_fermenter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:ethanol_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:plant_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "industrialforegoing:plant_gatherer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E12_diesel_contract_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.diesel_contract.2"
+    },
+    {
+      "id": "V5_E28_diesel_contract_03",
+      "epoch": 28,
+      "title_uk": "Двигун отримує обслуговувану передачу",
+      "description_uk": [
+        "Підготуйте сервісний розрив і запасні деталі великого двигуна. Порівняйте показник навантаження під час зупинки споживача й при його роботі; квест не задає вигадану універсальну потужність для всіх типів палива.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createdieselgenerators:engine_piston",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:large_diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_piston",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_silencer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:stressometer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:clutch",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E18_diesel_contract_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.diesel_contract.3"
+    },
+    {
+      "id": "V5_E44_diesel_contract_04",
+      "epoch": 44,
+      "title_uk": "Паливний двигун лишається частиною заводу",
+      "description_uk": [
+        "Підготуйте контроль паливного запасу та окремий буфер для резервної механічної генерації заводу. Велика електрична мережа не скасовує потребу перевіряти тип палива, напрям обертання та аварійну зупинку локального двигуна.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "createdieselgenerators:engine_turbocharger",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:huge_diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_turbocharger",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:basic_fluid_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:biodiesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_diesel_contract_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.diesel_contract.4"
+    },
+    {
+      "id": "V5_E32_extendedae_workflow_01",
+      "epoch": 32,
+      "title_uk": "Постачальник і приймач мають спільний контракт",
+      "description_uk": [
+        "Підготуйте розширений постачальник та інтерфейс, зберігаючи одну визначену пару входів і виходів. Більший інтерфейс не виправляє неправильний рецепт шаблону; перевірте мале замовлення перед перенесенням усього виробничого каталогу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "extendedae:ex_interface",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "extendedae:ex_pattern_provider",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "extendedae:ex_interface",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:memory_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E32_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "extendedae",
+      "research_stage": "extendedae.extendedae_workflow.1"
+    },
+    {
+      "id": "V5_E32_extendedae_workflow_02",
+      "epoch": 32,
+      "title_uk": "Складальник розширює майстерню",
+      "description_uk": [
+        "Підготуйте розширений складальник і зручний доступ до його шаблонів. Окремо перевіряйте пам'ять CPU та доступні складальні виконавці: кількість машин у світі не гарантує, що конкретний план може стартувати.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "extendedae:ex_pattern_access_part",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "extendedae:ex_molecular_assembler",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "extendedae:ex_pattern_access_part",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_accelerator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_extendedae_workflow_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "extendedae",
+      "research_stage": "extendedae.extendedae_workflow.2"
+    },
+    {
+      "id": "V5_E39_extendedae_workflow_03",
+      "epoch": 39,
+      "title_uk": "Віддалена шина має явну ціль",
+      "description_uk": [
+        "Підготуйте інструменти прив'язки та діагностики для віддаленого сегмента мережі. Перевірте ціль з'єднання й обмеження дальності у грі; картка іншого мода не переносить налаштування ExtendedAE автоматично.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "extendedae:wireless_tool",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "extendedae:wireless_connect",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "extendedae:wireless_tool",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:network_tool",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:configuration_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_extendedae_workflow_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "extendedae",
+      "research_stage": "extendedae.extendedae_workflow.3"
+    },
+    {
+      "id": "V5_E44_extendedae_workflow_04",
+      "epoch": 44,
+      "title_uk": "Масове замовлення має окремий монітор",
+      "description_uk": [
+        "Підготуйте окремі канали ввезення й вивезення продукції для великої фабрики та визначений інженерний виріб. Стежте за поверненням результату замовлення, а не лише за спорожненням входу постачальника.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "extendedae:ex_export_bus_part",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "extendedae:ex_pattern_provider",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "extendedae:ex_export_bus_part",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "extendedae:ex_import_bus_part",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:crafting_monitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:advanced_motor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E39_extendedae_workflow_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "extendedae",
+      "research_stage": "extendedae.extendedae_workflow.4"
+    },
+    {
+      "id": "V5_E32_megacell_policy_01",
+      "epoch": 32,
+      "title_uk": "Велика комірка все ще має призначення",
+      "description_uk": [
+        "Підготуйте велику предметну комірку та зафіксуйте перелік дозволених матеріалів перед перенесенням складу. Місткість не замінює продуманого розподілу типів; перевірте поведінку фільтра на дешевій пробі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "megacells:item_storage_cell_1m",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:cell_workbench",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "megacells:item_storage_cell_1m",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "megacells:cell_component_1m",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:inverter_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E32_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "megacells",
+      "research_stage": "megacells.megacell_policy.1"
+    },
+    {
+      "id": "V5_E32_megacell_policy_02",
+      "epoch": 32,
+      "title_uk": "Рідини мають власну мегакомірку",
+      "description_uk": [
+        "Порівняйте малу й велику рідинні комірки з локальним фізичним резервуаром. Прив'язуйте всі три до реального технологічного середовища, а не заповнюйте випадковими рідинами заради самої цифри обсягу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "megacells:fluid_storage_cell_1m",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:drive",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "megacells:fluid_storage_cell_1m",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:advanced_fluid_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:fluid_storage_cell_4k",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_megacell_policy_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "megacells",
+      "research_stage": "megacells.megacell_policy.2"
+    },
+    {
+      "id": "V5_E39_megacell_policy_03",
+      "epoch": 39,
+      "title_uk": "Місткість CPU відділено від сховища",
+      "description_uk": [
+        "Підготуйте мегаблок пам'яті планувальника й компонент більшої предметної комірки як різні системи. Простір для предметів не збільшує автоматично пам'ять плану автокрафту; перевіряйте обидва обмеження у вікні замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "megacells:1m_crafting_storage",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:crafting_monitor",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "megacells:1m_crafting_storage",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "megacells:mega_crafting_accelerator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "megacells:cell_component_4m",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_megacell_policy_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "megacells",
+      "research_stage": "megacells.megacell_policy.3"
+    },
+    {
+      "id": "V5_E46_megacell_policy_04",
+      "epoch": 46,
+      "title_uk": "Пакет нейтронної фабрики у великому складі",
+      "description_uk": [
+        "Підготуйте визначений цифровий запас для матеріалів нейтронної фабрики та окремі виробничі шаблони. Склад не створює нейтроній: зберігайте реальний вхід від відповідної машини й перевіряйте, чи не накопичуються недоставлені замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "megacells:item_storage_cell_4m",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "ae2:drive",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "megacells:item_storage_cell_4m",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "megacells:mega_pattern_provider",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "avaritia:neutron_pile",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:processing_pattern",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E39_megacell_policy_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "megacells",
+      "research_stage": "megacells.megacell_policy.4"
+    },
+    {
+      "id": "V5_E27_neural_workflow_01",
+      "epoch": 27,
+      "title_uk": "Камера симуляції має матеріальний вхід",
+      "description_uk": [
+        "Підготуйте матриці та порожню модель для ознайомлення із симуляційною камерою. Перед запуском перевірте, чи модель справді навчена потрібному мобу; чистий носій не містить знань лише від перебування поряд із камерою.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "hostilenetworks:prediction_matrix",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "hostilenetworks:sim_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:prediction_matrix",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:blank_data_model",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:deep_learner",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E27_X_life_factory"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "hostilenetworks",
+      "research_stage": "hostilenetworks.neural_workflow.1"
+    },
+    {
+      "id": "V5_E27_neural_workflow_02",
+      "epoch": 27,
+      "title_uk": "Продукт симуляції має свій приймач",
+      "description_uk": [
+        "Порівняйте типи симуляційного продукту й позначте окремий вихід фабрикатора. Вибір нагороди у машині не замінює відповідну модель та витратні матеріали; перевірте малу партію перед масовою автоматизацією.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "hostilenetworks:overworld_prediction",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "hostilenetworks:loot_fabricator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:overworld_prediction",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:nether_prediction",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:import_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E27_neural_workflow_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "hostilenetworks",
+      "research_stage": "hostilenetworks.neural_workflow.2"
+    },
+    {
+      "id": "V5_E32_neural_workflow_03",
+      "epoch": 32,
+      "title_uk": "Моделі не повинні губитися у загальному вході",
+      "description_uk": [
+        "Підготуйте контрольований запас витратних матриць і окреме місце для моделей. Не дозволяйте універсальному вводу автоматично переміщувати дорогий носій між несумісними камерами; визначте його роль у локальній схемі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "hostilenetworks:deep_learner",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "hostilenetworks:sim_chamber",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:deep_learner",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:prediction_matrix",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E27_neural_workflow_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "hostilenetworks",
+      "research_stage": "hostilenetworks.neural_workflow.3"
+    },
+    {
+      "id": "V5_E44_neural_workflow_04",
+      "epoch": 44,
+      "title_uk": "Симуляційна ферма має межу запасу",
+      "description_uk": [
+        "Підготуйте сигнал зупинки для симуляційної продукції та явний ліміт на складі. Нативна камера споживає енергію й матеріали навіть у великій базі; запас без межі лише приховує зайве навантаження й транспортні затори.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "hostilenetworks:end_prediction",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "hostilenetworks:loot_fabricator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "hostilenetworks:end_prediction",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:export_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:redstone_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rftoolsutility:counter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_neural_workflow_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "hostilenetworks",
+      "research_stage": "hostilenetworks.neural_workflow.4"
+    },
+    {
+      "id": "V5_E28_quarry_service_01",
+      "epoch": 28,
+      "title_uk": "Кар'єр має власний сервісний інструмент",
+      "description_uk": [
+        "Підготуйте межі робочої ділянки й інструмент обслуговування перед запуском кар'єру. Перевірте доступність енергетичного входу та місця виведення предметів; сама рамка не підтверджує безпечної області робіт.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "quarryplus:marker",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "quarryplus:quarry",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "quarryplus:marker",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "quarryplus:status_checker",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:torch",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E28_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 6
+        }
+      ],
+      "mod": "quarryplus",
+      "research_stage": "quarryplus.quarry_service.1"
+    },
+    {
+      "id": "V5_E32_quarry_service_02",
+      "epoch": 32,
+      "title_uk": "Великий видобуток має вихідний буфер",
+      "description_uk": [
+        "Підготуйте фізичний буфер і визначений цифровий ввід для кар'єрної продукції. При заповненні складу ділянка повинна зупинятися зрозуміло; не приховуйте затор випадковим знищенням усіх нових предметів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:import_bus",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "quarryplus:quarry",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:import_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:capacity_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:steel_barrel",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E28_quarry_service_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 12
+        }
+      ],
+      "mod": "quarryplus",
+      "research_stage": "quarryplus.quarry_service.2"
+    },
+    {
+      "id": "V5_E43_quarry_service_03",
+      "epoch": 43,
+      "title_uk": "Прокачаний кар'єр має документовану область",
+      "description_uk": [
+        "Підготуйте окреме місце для оновлення обладнання й журнал із координатами робочої області. Перевіряйте поточну конфігурацію та фактичну версію кар'єру у грі; звичайна карта в цілі є записом маршруту, а не автоматичною перевіркою меж.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "quarryplus:quarry",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "quarryplus:adv_quarry",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "quarryplus:quarry",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:memory_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:book",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:map",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E32_quarry_service_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 8
+        }
+      ],
+      "mod": "quarryplus",
+      "research_stage": "quarryplus.quarry_service.3"
+    },
+    {
+      "id": "V5_E44_quarry_service_04",
+      "epoch": 44,
+      "title_uk": "Видобувний вузол входить у контракт заводу",
+      "description_uk": [
+        "Підготуйте кінцевий матеріальний буфер для масової сировини й компонент наступного виробничого споживача. Зупинка за запасом важливіша за безмежне накопичення каменю; перевірте маршрут від видобутку до реального машинного замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": "ae2:level_emitter",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "quarryplus:quarry",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "ae2:level_emitter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "ae2:storage_bus",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "mekanism:elite_bin",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:advanced_motor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E43_quarry_service_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "quarryplus",
+      "research_stage": "quarryplus.quarry_service.4"
+    }
+  ],
+  "quest_count": 112,
+  "source_scope": "Portable official source evidence and exact installed export are recorded in content/research/technology_v5.json; recipe/config assumptions are stated as limits."
+}

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_modern_industrialization",
   "title": "Modern Industrialization — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 15,
+  "order_index": 17,
   "icon": {
     "id": "modern_industrialization:electronic_circuit",
     "count": 1
@@ -11,6 +11,240 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "0000AE93690394F1",
+      "title": "Паровій машині потрібне відведення",
+      "description": [
+        "Підготуйте окремі підключення рідинної сировини та пари до ранньої майстерні. Перевірте фактичні порти вибраної конструкції у довіднику MI: схожість корпусу не означає взаємозамінність входу й виходу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:bronze_fluid_input_hatch",
+        "count": 1
+      },
+      "dependencies": [
+        "00001C764F53A5C3",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000006DC2828797E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:bronze_boiler",
+          "timer": 40
+        },
+        {
+          "id": "000011F6A3F6547A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_fluid_input_hatch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004FFCF20B3AD1",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:bronze_fluid_output_hatch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052BBF2A619EC",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:fluid_pipe",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000092BBC4D6A875",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002988350A9DE1",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "000023E51735BEBF",
+      "title": "Лінія дроту перед мотором",
+      "description": [
+        "Відокремте виробництво дроту від складання двигунів і підготуйте низьковольтну ділянку. Порівняйте реальні рецепти дроту та кабелю: ізоляція й металевий провідник виконують різні ролі та не повинні губитися в одному шаблоні.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:copper_wire",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE93690394F1",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CFB2A771DEB3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_wiremill",
+          "timer": 40
+        },
+        {
+          "id": "00009141F07F7695",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:copper_wire",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007956F8181F02",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000F18F03661A3",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000145B77044FDD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007F10192AC3DE",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003136EBAAA0D9",
+      "title": "Пакувальник має визначену форму",
+      "description": [
+        "Підготуйте дві форми пакування для різних станів матеріалу. Шаблон задає операцію пакувальника, а не витрачається як сировина; перевірте обраний режим перед поверненням металу до масового складу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:packer_block_template",
+        "count": 1
+      },
+      "dependencies": [
+        "000023E51735BEBF",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ED9370D5546B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_packer",
+          "timer": 40
+        },
+        {
+          "id": "0000EA98B98A3081",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:packer_block_template",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F16F9875C80E",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:packer_double_ingot_template",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001469A67D5BC1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DDC40D275870",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FDFD92BC8FA0",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:coke",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
     {
       "id": "00006D89AB4E2374",
       "title": "Ввід середньої напруги",
@@ -69,14 +303,14 @@
           "id": "00007172DA5541ED",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "mekanism:ingot_bronze",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00005039E11ED82C",
@@ -136,14 +370,14 @@
           "id": "0000ED06CE37E13A",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
-          "count": 2
+          "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000A28E677E30F5",
@@ -203,14 +437,14 @@
           "id": "0000EB1E4CAF166D",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "000009D4ADCE2C0A",
@@ -270,13 +504,169 @@
           "id": "0000BB6ED9B164AC",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
+    },
+    {
+      "id": "000076F86DFE475E",
+      "title": "Мікросхема не виникає з корпусу",
+      "description": [
+        "Порівняйте аналогову та електронну плату біля складальника середньої напруги. Корпус відкриває наступний рівень машин, але залишає потребу в окремому виробництві дроту, компонентів і монтажних матеріалів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:analog_circuit",
+        "count": 1
+      },
+      "dependencies": [
+        "00003136EBAAA0D9",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000076FBE02D8B89",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:assembler",
+          "timer": 40
+        },
+        {
+          "id": "00005D6D581F5569",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:analog_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005C2CBA6E2168",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electronic_circuit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCCC3FE3383B",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_machine_hull",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094A4F82A651D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000034B11EBB66EB",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:coke",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "00000D7567EA8DC2",
+      "title": "Нержавіюча сталь має окрему карту",
+      "description": [
+        "Збережіть звичайну та нержавіючу сталь як різні матеріальні потоки. Рецепти промислових сплавів перевіряйте за складом і температурними вимогами; назва матеріалу не дозволяє підмінити його будь-яким сталевим злитком.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:stainless_steel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "000076F86DFE475E",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006B2BE15D046F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_blast_furnace",
+          "timer": 40
+        },
+        {
+          "id": "0000822C42ADF10A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:stainless_steel_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D18B0A768291",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:stainless_steel_plate",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002D25BE96988C",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000301B1F66FFF2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CF0992ED8AD1",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
       "y": 0.0
     },
     {
@@ -337,14 +727,14 @@
           "id": "0000248580F17285",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "modern_industrialization:coke",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000B77516F636C2",
@@ -404,14 +794,14 @@
           "id": "0000C9A4121D7798",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "modern_industrialization:coke",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000B23920D7B278",
@@ -471,14 +861,14 @@
           "id": "0000ED44879DD47F",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "mekanism:ingot_bronze",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00004B215741B476",
@@ -549,10 +939,255 @@
           "id": "0000C7110FABA01D",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "modern_industrialization:coke",
             "count": 1
           },
           "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000EE53E3197212",
+      "title": "Висока напруга починається з розв'язки",
+      "description": [
+        "Перед підключенням високовольтного вузла позначте сторони трансформатора й рівні кабелю. Змішаний склад може зберігати обидва типи дроту, але електромережа потребує правильної межі між напругами.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:aluminum_cable",
+        "count": 1
+      },
+      "dependencies": [
+        "00000D7567EA8DC2",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DF6724BFC8D6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:hv_mv_transformer",
+          "timer": 40
+        },
+        {
+          "id": "0000847D985DFED9",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:aluminum_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B063DC007D7",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:electrum_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000198C95B1F237",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:highly_advanced_machine_hull",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B85D18AAE9DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000143D65CACD0E",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00006083A53C55F8",
+      "title": "Надпровідний матеріал досягнуто",
+      "description": [
+        "Порівняйте кілька форм надпровідного матеріалу та підготуйте холодну ділянку обробки. Перевірте нативний рецепт JEI для кожної форми: холодильна машина не є універсальним способом перетворити будь-який сплав у надпровідник.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:superconductor_wire",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EE53E3197212",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9D92F3B3B0E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:vacuum_freezer",
+          "timer": 40
+        },
+        {
+          "id": "0000B4119C324C4B",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_wire",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ACDDD9CDC2BC",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_plate",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E439A0B6D23",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:superconductor_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5577C2F9910",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DCC4E6220066",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A8A1400E704E",
+      "title": "Промислова карта запасних частин",
+      "description": [
+        "Зберіть три різні виконавчі компоненти й опишіть їхні входи для зовнішнього планувальника. Так ремонт великого заводу спирається на повторювані лінії деталей, а не на одноразове ручне виготовлення нового корпусу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "modern_industrialization:advanced_motor",
+        "count": 1
+      },
+      "dependencies": [
+        "00006083A53C55F8",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E37221B4A0F5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:assembler",
+          "timer": 40
+        },
+        {
+          "id": "00007AB5CE059941",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000063E57E0885BC",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_pump",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036DDEC5D9293",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:piston",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000AEFA40D914F",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006FC9833AC92E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003BFA00C75325",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
         }
       ],
       "x": 14.0,

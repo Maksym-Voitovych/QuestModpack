@@ -1,0 +1,4007 @@
+{
+  "id": "00002BD38C1C3E90",
+  "filename": "aia2_branch_automation_shared_studies",
+  "title": "Спільні дослідження — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 22,
+  "icon": {
+    "id": "botania:creative_pool",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00000A10F36334D2",
+      "title": "Реконструктор має визначену мішень",
+      "description": [
+        "Підготуйте дві базові кристалічні проби та залиште контрольований простір перед реконструктором. Перевірте лінзу й лінію променя до серії перетворень, щоб випадкові предмети поруч не потрапили під технологічну операцію.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "actuallyadditions:lens",
+        "count": 1
+      },
+      "dependencies": [
+        "000002D08F4F9DC7",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004523DD94ADB2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "actuallyadditions:atomic_reconstructor",
+          "timer": 40
+        },
+        {
+          "id": "00000546BA723111",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:lens",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B610E6383398",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:restonia_crystal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007DCF1B9465D4",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:enori_crystal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2964D006CA7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AB1F4D68D1C3",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:tiny_charcoal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F56F97ECACD7",
+      "title": "Ріпакова лінія має проміжне бродіння",
+      "description": [
+        "Порівняйте сире та підготовлене масло й підпишіть два різні буфери. Ріпаковий прес і бродильна бочка виконують послідовні ролі; переповнений вихід першого вузла не виправляється заміною генератора в кінці лінії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "actuallyadditions:canola_oil_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "00000A10F36334D2",
+        "000055DFC3C3A8E4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000055BD4701A45F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "actuallyadditions:fermenting_barrel",
+          "timer": 40
+        },
+        {
+          "id": "0000E61C5BAE2F80",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:canola_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005B5DAD39588",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:refined_canola_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD01B5AB2170",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:canola_press",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B71937C3DA7A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e16"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000374D3042A6C",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:canola_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004001BF5A4F16",
+      "title": "Куля млина є витратним реагентом",
+      "description": [
+        "Порівняйте дробильну кулю, оброблюваний матеріал і конденсатор як три різні частини SAG-млина. Звірте допустимість кулі з рецептом і перевіряйте її витрату поряд із енергетичним буфером.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "enderio:dark_steel_grinding_ball",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C71385C0B049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000333BAEB01611",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:sag_mill",
+          "timer": 40
+        },
+        {
+          "id": "00008F50D695CA17",
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_steel_grinding_ball",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A274D29AE05",
+          "type": "item",
+          "item": {
+            "id": "enderio:powdered_obsidian",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E6B9F345DFB",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000736BF7203445",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001D8FDC4F65F0",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000CBD12716BFCF",
+      "title": "Періодичний сигнал має керування",
+      "description": [
+        "Підготуйте таймер, послідовність і лічильник як різні інструменти керування машиною. Перевіряйте скидання й ручну зупинку на простій лампі до підключення до паливної або ритуальної лінії.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsutility:sequencer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F977AFF29153",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000008CB48DF2E12",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsutility:timer",
+          "timer": 40
+        },
+        {
+          "id": "00007F7AD2144271",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:sequencer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000005CE7A842805",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:counter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000039B886249141",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003ED44B8C146B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000F6E401B5273",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 9.0,
+      "y": 3.0
+    },
+    {
+      "id": "000040E79F59221E",
+      "title": "Екран показує обраний ресурс",
+      "description": [
+        "Підготуйте окремі модулі для енергії та рідини й визначте, які машини вони мають читати. Підпис екрана не є автоматичним доказом вимірювання: перевірте, чи справді модуль прив'язаний до потрібного сумісного блока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsutility:screen",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CBD12716BFCF",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000BE5A4B8301B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsutility:screen_controller",
+          "timer": 40
+        },
+        {
+          "id": "0000B869DD544C9F",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:screen",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B8E8F793DD62",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:energy_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000077979AA3991",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:fluid_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D911E4042559",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008741EA775351",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 11.0,
+      "y": 3.0
+    },
+    {
+      "id": "00009E8AEEC37B21",
+      "title": "Сплав має матеріальні складові",
+      "description": [
+        "Підготуйте два послідовні сплави та порівняйте їхні рецепти до розширення енергетичної інфраструктури. Кращий конденсатор змінює можливості машини, але не замінює жоден із матеріальних компонентів сплаву.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "enderio:energetic_alloy_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "00004001BF5A4F16",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB7E65719389",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:alloy_smelter",
+          "timer": 40
+        },
+        {
+          "id": "00000904E13E8B28",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000491155101AC7",
+          "type": "item",
+          "item": {
+            "id": "enderio:vibrant_alloy_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000426112948D6E",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE1D9C94635A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AEC165EA633C",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder_composite",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000456987CA3C64",
+      "title": "Збирання аури в пляшку",
+      "description": [
+        "Bottle and Cork збирає різні форми аури залежно від виміру. За книгою дію можна автоматизувати Dispenser і збором викинутих пляшок; підготуйте цей комплект без твердження про виміряний потік.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "naturesaura:aura_bottle",
+        "count": 1
+      },
+      "dependencies": [
+        "000016BFD960948A",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ABE85D822D6A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "naturesaura:nature_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000616586F9D9AD",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:aura_bottle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B07BB9C7BF6B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dispenser",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009F21757A1986",
+          "type": "item",
+          "item": {
+            "id": "minecraft:hopper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E7D5E9C8D35",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E714AB43F371",
+          "type": "item",
+          "item": {
+            "id": "naturesaura:gold_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
+      "id": "00006430B6FB4507",
+      "title": "Емпауерер очікує чотири позиції",
+      "description": [
+        "Підготуйте центральний вузол і чотири стійки для посилення кристала. Звірте просторове розташування, склад реагентів і енергетичне живлення всіх позицій; набір предметів не означає, що структура вже виконує рецепт.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "actuallyadditions:display_stand",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F56F97ECACD7",
+        "0000F7FB0D32F291"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C962FDEF7C02",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "actuallyadditions:empowerer",
+          "timer": 40
+        },
+        {
+          "id": "00007C0D61D24419",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:display_stand",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007905678BFB3C",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:empowered_restonia_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008349788E4F20",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:advanced_coil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B15620087771",
+          "type": "advancement",
+          "advancement": "aia2:stages/e23"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003D9226DBCF3F",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:tiny_charcoal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000D8142DAADF21",
+      "title": "Ґрунт і рослина для горщика",
+      "description": [
+        "Поставте Botany Pot і звірте категорію ґрунту з crop-рецептом. Реєстр містить окремі soil/crop дані; будь-яка земля не підтримує кожну рослину.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botanypots:terracotta_botany_pot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F56EF8242D5F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botanypots:terracotta_botany_pot",
+          "timer": 40
+        },
+        {
+          "id": "00004E7F06DC9C4C",
+          "type": "item",
+          "item": {
+            "id": "botanypots:terracotta_botany_pot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007E50528FA8F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002717CC3B8438",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dirt",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000459698EB2AA5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E58A2BE3E754",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 9.0
+    },
+    {
+      "id": "000095A9A3AAF8F2",
+      "title": "Збирання через hopper-варіант",
+      "description": [
+        "Перейдіть до Hopper Botany Pot після звичайного горщика. Виводьте продукт у дозволене сховище та збережіть посівний резерв окремо від лінії переробки.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "botanypots:terracotta_hopper_botany_pot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D8142DAADF21",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006ECA4AF5A29F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botanypots:terracotta_hopper_botany_pot",
+          "timer": 40
+        },
+        {
+          "id": "000048C9E78C2239",
+          "type": "item",
+          "item": {
+            "id": "botanypots:terracotta_hopper_botany_pot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000470E1ECE3947",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062D26798E8D0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000BCBB781814C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 9.0
+    },
+    {
+      "id": "000026C3B1799F7F",
+      "title": "Звичайна культура як контроль",
+      "description": [
+        "Спочатку перевірте просту культуру й ґрунт, перш ніж переносити дорогі матеріальні насіння. Спостереження горщика та наявність пшениці не вимірюють кількість його циклів.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: immersiveengineering:cloche. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "minecraft:wheat",
+        "count": 1
+      },
+      "dependencies": [
+        "000095A9A3AAF8F2",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009D4E21E12532",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botanypots:terracotta_hopper_botany_pot",
+          "timer": 40
+        },
+        {
+          "id": "0000141517206BF0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000061A2864A4722",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E73F84430C8F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:dirt",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DE352C9FCD69",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000052EA78B0BA90",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
+    },
+    {
+      "id": "0000354FCBD72B16",
+      "title": "Камера симуляції має матеріальний вхід",
+      "description": [
+        "Підготуйте матриці та порожню модель для ознайомлення із симуляційною камерою. Перед запуском перевірте, чи модель справді навчена потрібному мобу; чистий носій не містить знань лише від перебування поряд із камерою.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "hostilenetworks:prediction_matrix",
+        "count": 1
+      },
+      "dependencies": [
+        "0000363629C72E46",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008A568B02B179",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:sim_chamber",
+          "timer": 40
+        },
+        {
+          "id": "00002758D08CF01A",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E118EC65426A",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:blank_data_model",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F2976FED8790",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:deep_learner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000078CC3FA7EA64",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009FC083A06352",
+          "type": "item",
+          "item": {
+            "id": "minecraft:clay_ball",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.0
+    },
+    {
+      "id": "00005A0A8069AB9E",
+      "title": "Продукт симуляції має свій приймач",
+      "description": [
+        "Порівняйте типи симуляційного продукту й позначте окремий вихід фабрикатора. Вибір нагороди у машині не замінює відповідну модель та витратні матеріали; перевірте малу партію перед масовою автоматизацією.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "hostilenetworks:overworld_prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "0000354FCBD72B16",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A5402E7D8425",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:loot_fabricator",
+          "timer": 40
+        },
+        {
+          "id": "0000AFFEDA319461",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:overworld_prediction",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DAA6A1CEE0A4",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:nether_prediction",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000066612DAD713B",
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E90ADDEF6606",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E1988F14A116",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass_pane",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 12.0
+    },
+    {
+      "id": "00002A6EA3631929",
+      "title": "Карта будівництва має дві межі",
+      "description": [
+        "Підготуйте базову карту й окремий рідинний інструмент та позначте межі випробувальної області. Перевіряйте операцію до подавання енергії: карта задає завдання будівельника, а не лише декоративний контур.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_def",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001DA13CC5AACF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsbuilder:builder",
+          "timer": 40
+        },
+        {
+          "id": "0000E688DD3286F6",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_def",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E80A47F5A23D",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_pump",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000048B325317295",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000263596CA1982",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C59FDC9D1CF2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 15.0
+    },
+    {
+      "id": "000040696F203384",
+      "title": "Алкахестрія з оплачуваним зарядом",
+      "description": [
+        "Перевірте charging/drain рецепти Alkahestry Tome перед дозволеним дублюванням. Воно витрачає заряд і не повинно використовуватися для компонентів AIA2 або ключів.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: create:filling. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "minecraft:redstone",
+        "count": 1
+      },
+      "dependencies": [
+        "0000391F1330128D",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AA04465709D7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:alkahestry_altar",
+          "timer": 40
+        },
+        {
+          "id": "000053A2C44C5B53",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E79A9512C201",
+          "type": "item",
+          "item": {
+            "id": "reliquary:alkahestry_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002AD9F2D00E22",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glowstone_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002FC5642C88DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C6A81093E5E3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 18.0
+    },
+    {
+      "id": "00004B0E1D313563",
+      "title": "Кар'єр має власний сервісний інструмент",
+      "description": [
+        "Підготуйте межі робочої ділянки й інструмент обслуговування перед запуском кар'єру. Перевірте доступність енергетичного входу та місця виведення предметів; сама рамка не підтверджує безпечної області робіт.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "quarryplus:marker",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7DB3DA4DF8F",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000693B8DEBB295",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quarryplus:quarry",
+          "timer": 40
+        },
+        {
+          "id": "0000A57358900393",
+          "type": "item",
+          "item": {
+            "id": "quarryplus:marker",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F0066C603264",
+          "type": "item",
+          "item": {
+            "id": "quarryplus:status_checker",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000003B511109E08",
+          "type": "item",
+          "item": {
+            "id": "minecraft:torch",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000090D80A70ACD7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000770567BD5A8B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 9.0,
+      "y": 15.0
+    },
+    {
+      "id": "00004B64A2B825F1",
+      "title": "Рідина між ділянками",
+      "description": [
+        "Підготуйте Entangled Chalice для дозволеної логістики рідин. Збережіть окремий резервуар та перевірте пов’язування за Origins of Darkness; команда-власник машин залишається частиною захисту AIA2.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Звичайний рецепт результату в активному експорті не знайдено: передбачена природна або спеціальна механіка. Її серверний виклик потребує окремої перевірки; новий рецепт трофею не додається."
+      ],
+      "icon": {
+        "id": "evilcraft:entangled_chalice",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C41D93DED695",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006AC609CA27BD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:dark_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000F6BF4A542A5A",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:entangled_chalice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000124A8C137B0F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_extractor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A5B94E464E53",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ABE965995BDF",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dull_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 15.0
+    },
+    {
+      "id": "00006C98AB574772",
+      "title": "Контролер і керований доступ",
+      "description": [
+        "Завершіть конструкцію Dimensional Storage за довідником і підготуйте Storage Remote. Відрізняйте стабілізатори місткості від способу доступу, щоб додаткова місткість не виглядала як друга незалежна мережа.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:storage_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000795055BDB94E",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000080F486E341D3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:storage_controller",
+          "timer": 40
+        },
+        {
+          "id": "00002FBE49BD59C5",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000EB680239E868",
+          "type": "item",
+          "item": {
+            "id": "occultism:storage_remote",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074539E70A676",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000091499BB77144",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 18.0
+    },
+    {
+      "id": "00001A33F9564B69",
+      "title": "Кар'єр із поверненням матеріалів",
+      "description": [
+        "Виділіть буфер для кожного очікуваного масового ресурсу та перевірте виведення кар'єру до повного запуску. Забитий вихід є причиною зупинки навіть за достатнього запасу FE; не направляйте першу пробу в непідготовлений спільний склад.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_quarry",
+        "count": 1
+      },
+      "dependencies": [
+        "00002A6EA3631929",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008C6C66BD2864",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsbuilder:builder",
+          "timer": 40
+        },
+        {
+          "id": "0000FA140CE66E4C",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_quarry",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000031608CBCF30A",
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009574CC5BE109",
+          "type": "item",
+          "item": {
+            "id": "minecraft:barrel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006903DF29FCBF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007CAC848E3EDF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 15.0
+    },
+    {
+      "id": "0000210F75E8A4C1",
+      "title": "П’єдестал допоміжної автоматизації",
+      "description": [
+        "Підготуйте п’єдестал і дозволений допоміжний предмет. Правила активації перевірте в Reliquary; сам огляд п’єдестала не доводить конкретного пасивного ефекту.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "reliquary:pedestals/blue_pedestal",
+        "count": 1
+      },
+      "dependencies": [
+        "000040696F203384",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002D98955AAB8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:pedestals/blue_pedestal",
+          "timer": 40
+        },
+        {
+          "id": "0000D5CC76C63FAC",
+          "type": "item",
+          "item": {
+            "id": "reliquary:pedestals/blue_pedestal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D677A71EB40A",
+          "type": "item",
+          "item": {
+            "id": "reliquary:fortune_coin",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036FFA393E30B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000014722336465B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 18.0
+    },
+    {
+      "id": "00001820776651F9",
+      "title": "Предметний фільтр має обмеження",
+      "description": [
+        "Порівняйте звичайний список дозволених предметів із фільтром, який контролює кількість. Пробником перевірте маршрут і пріоритет біля тестової скрині, перш ніж під'єднувати його до рідкісних компонентів фабрики.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "enderio:limited_item_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E8AEEC37B21",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C2F4C72F0957",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:impulse_hopper",
+          "timer": 40
+        },
+        {
+          "id": "00008C78BCB66C17",
+          "type": "item",
+          "item": {
+            "id": "enderio:limited_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000E4FD34619E7",
+          "type": "item",
+          "item": {
+            "id": "enderio:advanced_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA1CC8D981D3",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_probe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046D4FC0FC740",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E849BC7C1F1A",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000636EF298F2CB",
+      "title": "Автокрафтеру потрібен резерв виходу",
+      "description": [
+        "Підготуйте дві скрині та контроль запасу для локального автокрафтера. Розділіть залишки інгредієнтів і готовий виріб, а поведінку при заповненому виході перевірте до замовлення дорогої деталі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsutility:invchecker",
+        "count": 1
+      },
+      "dependencies": [
+        "000040E79F59221E",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000004DB76FA510D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsutility:crafter2",
+          "timer": 40
+        },
+        {
+          "id": "00008994AD1F11C1",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:invchecker",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E37467D0709A",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9F49012123E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008B8FF54CAF98",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F4AB08F2C157",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 13.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000C02443184328",
+      "title": "Фантомний інтерфейс не є транспортером",
+      "description": [
+        "Підготуйте прив'язаний інтерфейс та інструмент зв'язування для віддаленого доступу до одного визначеного інвентаря. Перевірте дальність і доступність цілі у грі; фантомна грань надає доступ, а переміщення предметів виконує окрема система.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "actuallyadditions:phantom_connector",
+        "count": 1
+      },
+      "dependencies": [
+        "00006430B6FB4507",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CB0094C90FE8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "actuallyadditions:phantom_itemface",
+          "timer": 40
+        },
+        {
+          "id": "000064E2E31C9424",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:phantom_connector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000695698719C5F",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:item_interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000069956A49F497",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E117C64CCD7C",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001F3822D741AD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000044806D42DE31",
+          "type": "item",
+          "item": {
+            "id": "actuallyadditions:tiny_charcoal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000790F3F0BDE5C",
+      "title": "Паливо й відходи мають два маршрути",
+      "description": [
+        "Позначте незалежні маршрути паливного входу та твердих відходів у базовому реакторі. Виведення ціаніту планується до старту; спільний непідписаний буфер ускладнить діагностику навіть справної паливної системи.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorfuelrod",
+        "count": 1
+      },
+      "dependencies": [
+        "00006B0FF72FFE07",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000974DF90D812A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_reactorsolidaccessport",
+          "timer": 40
+        },
+        {
+          "id": "00004E707C6554D7",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorfuelrod",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005867D7B3D2C1",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:cyanite_ingot",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D831411016A9",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_uranium",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000002E9C09CAEF3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B17DA5E294EF",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 21.0
+    },
+    {
+      "id": "00006AB18E908021",
+      "title": "Керувальний стрижень і редстоун-порт",
+      "description": [
+        "Підготуйте керований реакторний вузол і окремий ручний сигнал для випробування. Порівняйте налаштування порту зі станом керувальних стрижнів, не приписуючи одному важелю автоматичного захисту від усіх позаштатних ситуацій.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "bigreactors:basic_reactorcontrolrod",
+        "count": 1
+      },
+      "dependencies": [
+        "0000790F3F0BDE5C",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000410F1AE698C1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:basic_reactorredstoneport",
+          "timer": 40
+        },
+        {
+          "id": "0000D1FD34B135A1",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:basic_reactorcontrolrod",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A05942899A93",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E3E949128D6E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B6C7F730D629",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000076C22BA7A97E",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 21.0
+    },
+    {
+      "id": "0000969952AE0AA1",
+      "title": "Магічна виробнича ділянка",
+      "description": [
+        "Налаштуйте Spell Turret для відтворюваної операції й забезпечте його Source. Відокремте тригер, закляття та виведення продукту; квест перевіряє комплект і станцію, а не довільний зміст закляття.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: ars_nouveau:enchanting_apparatus. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "ars_nouveau:spell_turret",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D789ADDFD282",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000088B464075330",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ars_nouveau:source_jar",
+          "timer": 40
+        },
+        {
+          "id": "00006D63790F4746",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:spell_turret",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008E8502272B7E",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:spell_prism",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000054F5B64A1AFD",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:archmage_spell_book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000819404774A1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005BCEE32018F9",
+          "type": "item",
+          "item": {
+            "id": "ars_nouveau:sourceberry_bush",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 24.0
+    },
+    {
+      "id": "0000A9E66D0BCA2A",
+      "title": "Ритуальне постачання з окремим стендом",
+      "description": [
+        "Після освоєння ритуалів підготуйте Crafting Focus та встановлений Soul Absorber. Курс фіксує різницю між grid-фокусом і ритуально створеним пристроєм; спосіб налаштування перевірте у поточному Goety3.2.1.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "goety:crafting_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B487FF30E98",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000328561C0F64D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "goety:soul_absorber",
+          "timer": 40
+        },
+        {
+          "id": "000028A2932DFD12",
+          "type": "item",
+          "item": {
+            "id": "goety:crafting_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000AE425D870DF0",
+          "type": "item",
+          "item": {
+            "id": "goety:dark_wand",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006033CC192BD5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000093C9B23A04FA",
+          "type": "item",
+          "item": {
+            "id": "goety:nightshade_seeds",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 27.0
+    },
+    {
+      "id": "000066CAB090394F",
+      "title": "Велика комірка все ще має призначення",
+      "description": [
+        "Підготуйте велику предметну комірку та зафіксуйте перелік дозволених матеріалів перед перенесенням складу. Місткість не замінює продуманого розподілу типів; перевірте поведінку фільтра на дешевій пробі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "megacells:item_storage_cell_1m",
+        "count": 1
+      },
+      "dependencies": [
+        "0000594559C753F2",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007BDAC8645A28",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:cell_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000F251DD89BB31",
+          "type": "item",
+          "item": {
+            "id": "megacells:item_storage_cell_1m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A477934110D0",
+          "type": "item",
+          "item": {
+            "id": "megacells:cell_component_1m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036DEDD15B01C",
+          "type": "item",
+          "item": {
+            "id": "ae2:inverter_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007C4A6D41D3E8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000467DFDB30400",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 9.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000F8B1D03B4A43",
+      "title": "Постачальник і приймач мають спільний контракт",
+      "description": [
+        "Підготуйте розширений постачальник та інтерфейс, зберігаючи одну визначену пару входів і виходів. Більший інтерфейс не виправляє неправильний рецепт шаблону; перевірте мале замовлення перед перенесенням усього виробничого каталогу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "extendedae:ex_interface",
+        "count": 1
+      },
+      "dependencies": [
+        "0000594559C753F2",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000CE561AC72D8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extendedae:ex_pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "0000C8125C888108",
+          "type": "item",
+          "item": {
+            "id": "extendedae:ex_interface",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000741D090752C0",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036F94FE73AC5",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D38E58A851F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E9420C10E14F",
+          "type": "item",
+          "item": {
+            "id": "ae2:silicon",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000393D05073D08",
+      "title": "Великий видобуток має вихідний буфер",
+      "description": [
+        "Підготуйте фізичний буфер і визначений цифровий ввід для кар'єрної продукції. При заповненні складу ділянка повинна зупинятися зрозуміло; не приховуйте затор випадковим знищенням усіх нових предметів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:import_bus",
+        "count": 1
+      },
+      "dependencies": [
+        "00004B0E1D313563",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009B389D5CD8BA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quarryplus:quarry",
+          "timer": 40
+        },
+        {
+          "id": "0000D6831BC97990",
+          "type": "item",
+          "item": {
+            "id": "ae2:import_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005450FB108757",
+          "type": "item",
+          "item": {
+            "id": "ae2:capacity_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008EAEF3BAD665",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:steel_barrel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0A2E145F692",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000099ED525C8F34",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DC6CEEC19832",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 11.0,
+      "y": 15.0
+    },
+    {
+      "id": "0000A6E62E0DA7F2",
+      "title": "Складальник розширює майстерню",
+      "description": [
+        "Підготуйте розширений складальник і зручний доступ до його шаблонів. Окремо перевіряйте пам'ять CPU та доступні складальні виконавці: кількість машин у світі не гарантує, що конкретний план може стартувати.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "extendedae:ex_pattern_access_part",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F8B1D03B4A43",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000703DA105C7D9",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extendedae:ex_molecular_assembler",
+          "timer": 40
+        },
+        {
+          "id": "0000E9873CC942E6",
+          "type": "item",
+          "item": {
+            "id": "extendedae:ex_pattern_access_part",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000744B7444685D",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E202032A881A",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_accelerator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD1EC78C2FFC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C2416CAA9EA9",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000D1F256620EE0",
+      "title": "Рідини мають власну мегакомірку",
+      "description": [
+        "Порівняйте малу й велику рідинні комірки з локальним фізичним резервуаром. Прив'язуйте всі три до реального технологічного середовища, а не заповнюйте випадковими рідинами заради самої цифри обсягу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "megacells:fluid_storage_cell_1m",
+        "count": 1
+      },
+      "dependencies": [
+        "000066CAB090394F",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006607D671306D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:drive",
+          "timer": 40
+        },
+        {
+          "id": "000044CEFB2A2CA0",
+          "type": "item",
+          "item": {
+            "id": "megacells:fluid_storage_cell_1m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D6AED59568F5",
+          "type": "item",
+          "item": {
+            "id": "mekanism:advanced_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006F143F6328A9",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluid_storage_cell_4k",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AA8C8D7739B1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E43AB81090C5",
+          "type": "item",
+          "item": {
+            "id": "ae2:silicon",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 11.0,
+      "y": 30.0
+    },
+    {
+      "id": "00000CBB80D4BC62",
+      "title": "Моделі не повинні губитися у загальному вході",
+      "description": [
+        "Підготуйте контрольований запас витратних матриць і окреме місце для моделей. Не дозволяйте універсальному вводу автоматично переміщувати дорогий носій між несумісними камерами; визначте його роль у локальній схемі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "hostilenetworks:deep_learner",
+        "count": 1
+      },
+      "dependencies": [
+        "00005A0A8069AB9E",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B30EC86DD8BA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:sim_chamber",
+          "timer": 40
+        },
+        {
+          "id": "0000CF000CBF9E8F",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:deep_learner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000226CB399639E",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000489F2EEF192E",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC1BDE48693D",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:prediction_matrix",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B763FF03383D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000083B2F52B2157",
+          "type": "item",
+          "item": {
+            "id": "minecraft:clay_ball",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000D0D845E75F10",
+      "title": "Порожнина не повинна приховувати цінне",
+      "description": [
+        "Порівняйте картки з видобутком і знищенням матеріалу перед їхньою заміною у будівельнику. Окремо збережіть профіль області та перевірте фільтр: порожній вихід не означає, що в ділянці не було цінних блоків.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_quarry_clear",
+        "count": 1
+      },
+      "dependencies": [
+        "00001A33F9564B69",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000002CDB46D617A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsbuilder:builder",
+          "timer": 40
+        },
+        {
+          "id": "0000D538E95898C8",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_quarry_clear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A673849063C",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_void",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004A89A0C8E9A8",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000029A3F7F333F8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009D3CE04C0ABB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 15.0
+    },
+    {
+      "id": "0000F737CF5BEF8C",
+      "title": "Турбіна має пару входу й виходу",
+      "description": [
+        "Підготуйте ротор і рідинний порт парової турбіни та звірте структуру з довідником. Енергетичний реактор і паровий контур — різні конфігурації; перевірте обраний режим до з'єднання всіх вузлів.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "bigreactors:reinforced_turbinerotorshaft",
+        "count": 1
+      },
+      "dependencies": [
+        "00006AB18E908021",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000948E2ECD1B35",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:reinforced_turbinecontroller",
+          "timer": 40
+        },
+        {
+          "id": "000007B2DCD365C8",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorshaft",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002A740AFBF385",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorblade",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C7894656CD26",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinefluidport_forge_active",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A69420B65D0A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EFF930AFD3E3",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 21.0
+    },
+    {
+      "id": "0000787017E0C6A1",
+      "title": "Ресурсні культури без обходу тиру",
+      "description": [
+        "Використовуйте лише наявний mystical_crop-рецепт і дозволене Essence Farmland. Підвищення горщика не відкриває заблоковане насіння або фінальні есенції.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: cyclic:crusher. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:inferium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000026C3B1799F7F",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DEE4001F67B5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botanypots:terracotta_hopper_botany_pot",
+          "timer": 40
+        },
+        {
+          "id": "0000A10CF1F19ACF",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000062A3E4C41C93",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_farmland",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003D07A1B335DB",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC5B34763C50",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001B5F90E1E371",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 9.0
+    },
+    {
+      "id": "0000AA835BABF780",
+      "title": "Конденсаторний банк обслуговує майстерню",
+      "description": [
+        "Підготуйте локальний енергетичний резерв Ender IO та суміжний вузол заряджання. Спільна одиниця FE полегшує інтеграцію, але режими боків і ліміти передачі потрібно перевірити для кожного блока окремо.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "enderio:octadic_capacitor",
+        "count": 1
+      },
+      "dependencies": [
+        "00001820776651F9",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003C1A96098CDE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:advanced_capacitor_bank",
+          "timer": 40
+        },
+        {
+          "id": "00000EF7E06CFB26",
+          "type": "item",
+          "item": {
+            "id": "enderio:octadic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000508F9345C09A",
+          "type": "item",
+          "item": {
+            "id": "enderio:yeta_wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D24DC4CDD45E",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_discharger_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006EB5673E685",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FBB44B7AEAFD",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000F76044E16034",
+      "title": "Екран для цілого машинного острова",
+      "description": [
+        "Порівняйте інформацію про машину, інвентар і сигнал керування на одному сервісному екрані. Вибирайте лише доступні сумісні джерела даних; модулі не дають загальної телеметрії будь-якого чужого мультиблока.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsutility:machineinformation_module",
+        "count": 1
+      },
+      "dependencies": [
+        "0000636EF298F2CB",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000049AE1EE8FAA3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsutility:screen",
+          "timer": 40
+        },
+        {
+          "id": "0000F814AD32C55A",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:machineinformation_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000428F6BDABF3E",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:redstone_information",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B100C78CAEE",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:inventory_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007E6CCB686533",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:screen_link",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000856922EE764A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071B6449150B9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000E9AA3F8C72F0",
+      "title": "Велика турбіна має доступний вихід FE",
+      "description": [
+        "Підготуйте турбінний енергетичний вихід і контроль стану суміжного буфера. Правильно складений ротор не передає енергію в склад без сумісного порту та маршруту; перевірте поведінку при заповненій батареї.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "bigreactors:reinforced_turbinerotorbearing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F737CF5BEF8C",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004A7CC9D8B912",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "bigreactors:reinforced_turbinepowertapfe_active",
+          "timer": 40
+        },
+        {
+          "id": "0000A05FF9B8553B",
+          "type": "item",
+          "item": {
+            "id": "bigreactors:reinforced_turbinerotorbearing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000094A112744E7C",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046B8336E4453",
+          "type": "item",
+          "item": {
+            "id": "ae2:energy_level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001C0894349D31",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E429A2007242",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 21.0
+    },
+    {
+      "id": "000008CDC090A24C",
+      "title": "Видобуток у вимірній шахті",
+      "description": [
+        "Пройдіть ритуальний ланцюг до Dimensional Mineshaft і підготуйте Mining Dimensional Matrix. Відведіть вихід у контрольоване сховище, оскільки результати залежать від рівня духа й списку miner-рецептів.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: occultism:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:dimensional_mineshaft",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9F04EF70F80",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000110F2E66FA3F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:dimensional_mineshaft",
+          "timer": 40
+        },
+        {
+          "id": "000053F7CE3F5109",
+          "type": "item",
+          "item": {
+            "id": "occultism:dimensional_mineshaft",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BEF88C124111",
+          "type": "item",
+          "item": {
+            "id": "occultism:dimensional_matrix",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DAD95F22216C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BCB7961A8C3C",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 33.0
+    },
+    {
+      "id": "000053FB1ACFB322",
+      "title": "Місткість CPU відділено від сховища",
+      "description": [
+        "Підготуйте мегаблок пам'яті планувальника й компонент більшої предметної комірки як різні системи. Простір для предметів не збільшує автоматично пам'ять плану автокрафту; перевіряйте обидва обмеження у вікні замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "megacells:1m_crafting_storage",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D1F256620EE0",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D16BBCE4B427",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:crafting_monitor",
+          "timer": 40
+        },
+        {
+          "id": "00001A50597ED35C",
+          "type": "item",
+          "item": {
+            "id": "megacells:1m_crafting_storage",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D44F2ED1E91",
+          "type": "item",
+          "item": {
+            "id": "megacells:mega_crafting_accelerator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F70353F1D524",
+          "type": "item",
+          "item": {
+            "id": "megacells:cell_component_4m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052CF22449CDF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AD3BD95F98B1",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 13.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000809BBDBDED9A",
+      "title": "Віддалена шина має явну ціль",
+      "description": [
+        "Підготуйте інструменти прив'язки та діагностики для віддаленого сегмента мережі. Перевірте ціль з'єднання й обмеження дальності у грі; картка іншого мода не переносить налаштування ExtendedAE автоматично.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "extendedae:wireless_tool",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A6E62E0DA7F2",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000189ADEB36A23",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extendedae:wireless_connect",
+          "timer": 40
+        },
+        {
+          "id": "0000E96EE131E86E",
+          "type": "item",
+          "item": {
+            "id": "extendedae:wireless_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000080A30106101B",
+          "type": "item",
+          "item": {
+            "id": "ae2:network_tool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1200EFFBFCC",
+          "type": "item",
+          "item": {
+            "id": "mekanism:configuration_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C6D012A46043",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000694C57A0A6A3",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 30.0
+    },
+    {
+      "id": "00008D5D25CFF1CC",
+      "title": "Прокачаний кар'єр має документовану область",
+      "description": [
+        "Підготуйте окреме місце для оновлення обладнання й журнал із координатами робочої області. Перевіряйте поточну конфігурацію та фактичну версію кар'єру у грі; звичайна карта в цілі є записом маршруту, а не автоматичною перевіркою меж.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "quarryplus:quarry",
+        "count": 1
+      },
+      "dependencies": [
+        "0000393D05073D08",
+        "00002A0684036143"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004396AA40ADED",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quarryplus:adv_quarry",
+          "timer": 40
+        },
+        {
+          "id": "000059D989417A6C",
+          "type": "item",
+          "item": {
+            "id": "quarryplus:quarry",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007C5EBBB5A4B9",
+          "type": "item",
+          "item": {
+            "id": "ae2:memory_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009081644BB00B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7FC980722E5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:map",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007EB96FE100EB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e43"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000019B297919692",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 13.0,
+      "y": 15.0
+    },
+    {
+      "id": "00006CA23A0C0F02",
+      "title": "Відтворювана ферма з переробкою",
+      "description": [
+        "Завершіть дозволену переробку зайвого насіння й відокремте вихід есенції від посівного резерву. Не використовуйте Creative Essence до післяфінальної гілки AIA2.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:seed_reprocessor",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D4D7E0119CB",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000128DF943DB80",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:seed_reprocessor",
+          "timer": 40
+        },
+        {
+          "id": "00003879F08BE05F",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:seed_reprocessor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C420C208EFF4",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E5581813EC76",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_seed_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CE1C88FCD80",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000095BABAA0332D",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 36.0
+    },
+    {
+      "id": "0000588656118BD3",
+      "title": "Видобувний вузол входить у контракт заводу",
+      "description": [
+        "Підготуйте кінцевий матеріальний буфер для масової сировини й компонент наступного виробничого споживача. Зупинка за запасом важливіша за безмежне накопичення каменю; перевірте маршрут від видобутку до реального машинного замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "ae2:level_emitter",
+        "count": 1
+      },
+      "dependencies": [
+        "00008D5D25CFF1CC",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C02B4101798B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "quarryplus:quarry",
+          "timer": 40
+        },
+        {
+          "id": "0000F3F5E6E632CA",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ADBFC2A9425F",
+          "type": "item",
+          "item": {
+            "id": "ae2:storage_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000073C52EF16A42",
+          "type": "item",
+          "item": {
+            "id": "mekanism:elite_bin",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000BC329E8274D",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA141C915BDD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000286A76D3C026",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 15.0
+    },
+    {
+      "id": "0000610AAA232E06",
+      "title": "Будівельник як завершення контракту",
+      "description": [
+        "Підготуйте повторюваний будівельний контракт із двох матеріалів для промислової платформи. Окремо визначте геометрію карти й виробничий шаблон матеріалів, щоб склад міг поповнювати будівельника без випадкової заміни конструкційних блоків.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "rftoolsbuilder:shape_card_def",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D0D845E75F10",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C8DBB54A6216",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rftoolsbuilder:builder",
+          "timer": 40
+        },
+        {
+          "id": "000027B9AC6B0CA4",
+          "type": "item",
+          "item": {
+            "id": "rftoolsbuilder:shape_card_def",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B81C36D7DB1",
+          "type": "item",
+          "item": {
+            "id": "minecraft:stone_bricks",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002659C200C8EA",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:steel_scaffolding_standard",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007A54ED6BE8FB",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FAAE5FFC13DF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003EAD53339D5C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 15.0
+    },
+    {
+      "id": "0000879A36DBD23E",
+      "title": "Симуляційна ферма має межу запасу",
+      "description": [
+        "Підготуйте сигнал зупинки для симуляційної продукції та явний ліміт на складі. Нативна камера споживає енергію й матеріали навіть у великій базі; запас без межі лише приховує зайве навантаження й транспортні затори.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "hostilenetworks:end_prediction",
+        "count": 1
+      },
+      "dependencies": [
+        "00000CBB80D4BC62",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CF3271595DD6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "hostilenetworks:loot_fabricator",
+          "timer": 40
+        },
+        {
+          "id": "0000A258A262309A",
+          "type": "item",
+          "item": {
+            "id": "hostilenetworks:end_prediction",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009A0E9ABA6AAA",
+          "type": "item",
+          "item": {
+            "id": "ae2:export_bus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033038E3DA704",
+          "type": "item",
+          "item": {
+            "id": "ae2:redstone_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052E8EBE584BB",
+          "type": "item",
+          "item": {
+            "id": "rftoolsutility:counter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000731AEAFC95F8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C583D0A93007",
+          "type": "item",
+          "item": {
+            "id": "minecraft:clay_ball",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 12.0
+    },
+    {
+      "id": "0000DA0E1A871E1E",
+      "title": "Масове замовлення має окремий монітор",
+      "description": [
+        "Підготуйте окремі канали ввезення й вивезення продукції для великої фабрики та визначений інженерний виріб. Стежте за поверненням результату замовлення, а не лише за спорожненням входу постачальника.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "extendedae:ex_export_bus_part",
+        "count": 1
+      },
+      "dependencies": [
+        "0000809BBDBDED9A",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000766BD57C7659",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "extendedae:ex_pattern_provider",
+          "timer": 40
+        },
+        {
+          "id": "0000DBC02089EAB3",
+          "type": "item",
+          "item": {
+            "id": "extendedae:ex_export_bus_part",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BE807CC31033",
+          "type": "item",
+          "item": {
+            "id": "extendedae:ex_import_bus_part",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000939E771AA1BA",
+          "type": "item",
+          "item": {
+            "id": "ae2:crafting_monitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F506799C8641",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_motor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D08D0C5FA83B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000420BF1B53F78",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000667C3B6A6153",
+      "title": "Пакет нейтронної фабрики у великому складі",
+      "description": [
+        "Підготуйте визначений цифровий запас для матеріалів нейтронної фабрики та окремі виробничі шаблони. Склад не створює нейтроній: зберігайте реальний вхід від відповідної машини й перевіряйте, чи не накопичуються недоставлені замовлення.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "megacells:item_storage_cell_4m",
+        "count": 1
+      },
+      "dependencies": [
+        "000053FB1ACFB322",
+        "0000B25E6408F625"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BA26AE12EE5C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ae2:drive",
+          "timer": 40
+        },
+        {
+          "id": "0000C975839138AE",
+          "type": "item",
+          "item": {
+            "id": "megacells:item_storage_cell_4m",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000089BBB775E983",
+          "type": "item",
+          "item": {
+            "id": "megacells:mega_pattern_provider",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B0C928651D52",
+          "type": "item",
+          "item": {
+            "id": "avaritia:neutron_pile",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005A51B2B44B21",
+          "type": "item",
+          "item": {
+            "id": "ae2:processing_pattern",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033AE0EF556DB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e46"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004F1F2856D059",
+          "type": "item",
+          "item": {
+            "id": "ae2:fluix_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000B4036A61BB68",
+      "title": "Нескінченна мана після завершення шляху",
+      "description": [
+        "Використайте Terra Plate та манову інфраструктуру для фінального басейну. Звичайні пул, руни, Gaia-ресурси й виробництво есенції мають бути освоєні раніше. Безмежна мана відкривається лише після всіх48епох; жоден попередній компонент ключа її не вимагає.",
+        "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи."
+      ],
+      "icon": {
+        "id": "botania:creative_pool",
+        "count": 1
+      },
+      "dependencies": [
+        "00005F0861E855A1",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009316F8EBCFD7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:terra_plate",
+          "timer": 60
+        },
+        {
+          "id": "0000CCD3ABD279D2",
+          "type": "item",
+          "item": {
+            "id": "botania:creative_pool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000208BFA7F933B",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000054B48DB6BD43",
+          "type": "item",
+          "item": {
+            "id": "botania:green_petal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 39.0
+    },
+    {
+      "id": "00009A2ED5FAE029",
+      "title": "Творчий вузол Corporea",
+      "description": [
+        "Підключіть фінальну Corporea-іскру до дослідженої системи індексування. Нескінченна мана та доступ до предметів є різними системами: джерело мани саме не замінює мережу Corporea. Її конфігурацію перевірте запитами до індексу.",
+        "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи."
+      ],
+      "icon": {
+        "id": "botania:corporea_spark_creative",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B4036A61BB68",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000010754FA44A33",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "botania:corporea_index",
+          "timer": 60
+        },
+        {
+          "id": "000036EB604604B3",
+          "type": "item",
+          "item": {
+            "id": "botania:corporea_spark_creative",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C42E0846F563",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A14FF80AFBFB",
+          "type": "item",
+          "item": {
+            "id": "botania:mana_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 39.0
+    }
+  ]
+}

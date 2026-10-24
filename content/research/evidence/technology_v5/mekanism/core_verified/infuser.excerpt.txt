@@ -1,0 +1,75 @@
+Source: https://github.com/mekanism/Mekanism/blob/a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80/src/main/java/mekanism/common/tile/machine/TileEntityMetallurgicInfuser.java
+Original SHA256: 3bff9b1f33e462422497556eabd164f68dc909884dd360b067cba1f712b1dceb
+Lines 97-166 (exact original lines; contextual excerpt)
+License: see LICENSE in this evidence directory.
+
+    @WrappingComputerMethod(wrapper = ComputerIInventorySlotWrapper.class, methodNames = "getEnergyItem", docPlaceholder = "energy slot")
+    EnergyInventorySlot energySlot;
+
+    public TileEntityMetallurgicInfuser(BlockPos pos, BlockState state) {
+        super(MekanismBlocks.METALLURGIC_INFUSER, pos, state, TRACKED_ERROR_TYPES, BASE_TICKS_REQUIRED);
+        configComponent.setupItemIOExtraConfig(inputSlot, outputSlot, infusionSlot, energySlot);
+        configComponent.setupInputConfig(TransmissionType.ENERGY, energyContainer);
+        configComponent.setupIOConfig(TransmissionType.CHEMICAL, infusionTank, RelativeSide.RIGHT).setCanEject(false);
+
+        ejectorComponent = new TileComponentEjector(this);
+        ejectorComponent.setOutputData(configComponent, TransmissionType.ITEM);
+
+        infusionInputHandler = InputHelper.getInputHandler(infusionTank, RecipeError.NOT_ENOUGH_INPUT);
+        itemInputHandler = InputHelper.getInputHandler(inputSlot, RecipeError.NOT_ENOUGH_SECONDARY_INPUT);
+        outputHandler = OutputHelper.getOutputHandler(outputSlot, RecipeError.NOT_ENOUGH_OUTPUT_SPACE);
+    }
+
+    @NotNull
+    @Override
+    public IChemicalTankHolder getInitialChemicalTanks(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        ChemicalTankHelper builder = ChemicalTankHelper.forSideWithConfig(this);
+        builder.addTank(infusionTank = BasicChemicalTank.createModern(MAX_INFUSE, ConstantPredicates.alwaysTrueBi(),
+              (infuseType, automationType) -> containsRecipeBA(inputSlot.getStack(), infuseType), this::containsRecipeB, recipeCacheListener));
+        return builder.build();
+    }
+
+    @NotNull
+    @Override
+    protected IEnergyContainerHolder getInitialEnergyContainers(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        EnergyContainerHelper builder = EnergyContainerHelper.forSideWithConfig(this);
+        builder.addContainer(energyContainer = MachineEnergyContainer.input(this, recipeCacheUnpauseListener));
+        return builder.build();
+    }
+
+    @NotNull
+    @Override
+    protected IInventorySlotHolder getInitialInventory(IContentsListener listener, IContentsListener recipeCacheListener, IContentsListener recipeCacheUnpauseListener) {
+        InventorySlotHelper builder = InventorySlotHelper.forSideWithConfig(this);
+        builder.addSlot(infusionSlot = ChemicalInventorySlot.fillOrConvert(infusionTank, this::getLevel, listener, 17, 35));
+        builder.addSlot(inputSlot = InputInventorySlot.at(item -> containsRecipeAB(item, infusionTank.getStack()), this::containsRecipeA, recipeCacheListener, 51, 43))
+              .tracksWarnings(slot -> slot.warning(WarningType.NO_MATCHING_RECIPE, getWarningCheck(RecipeError.NOT_ENOUGH_INPUT)));
+        builder.addSlot(outputSlot = OutputInventorySlot.at(recipeCacheUnpauseListener, 109, 43))
+              .tracksWarnings(slot -> slot.warning(WarningType.NO_SPACE_IN_OUTPUT, getWarningCheck(RecipeError.NOT_ENOUGH_OUTPUT_SPACE)));
+        builder.addSlot(energySlot = EnergyInventorySlot.fillOrConvert(energyContainer, this::getLevel, listener, 143, 35));
+        return builder.build();
+    }
+
+    @Override
+    protected boolean onUpdateServer() {
+        boolean sendUpdatePacket = super.onUpdateServer();
+        energySlot.fillContainerOrConvert();
+        infusionSlot.fillTankOrConvert();
+        recipeCacheLookupMonitor.updateAndProcess();
+        return sendUpdatePacket;
+    }
+
+    @NotNull
+    @Override
+    public IMekanismRecipeTypeProvider<SingleItemChemicalRecipeInput, ItemStackChemicalToItemStackRecipe, ItemChemical<ItemStackChemicalToItemStackRecipe>> getRecipeType() {
+        return MekanismRecipeType.METALLURGIC_INFUSING;
+    }
+
+    @Override
+    public IRecipeViewerRecipeType<ItemStackChemicalToItemStackRecipe> recipeViewerType() {
+        return RecipeViewerRecipeType.METALLURGIC_INFUSING;
+    }
+
+    @Nullable
+    @Override
+    public ItemStackChemicalToItemStackRecipe getRecipe(int cacheIndex) {

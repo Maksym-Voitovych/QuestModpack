@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_immersiveengineering",
   "title": "immersiveengineering — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 60,
+  "order_index": 66,
   "icon": {
     "id": "immersiveengineering:dust_copper",
     "count": 1
@@ -51,7 +51,7 @@
           "id": "00002B30E0113D2C",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
@@ -99,14 +99,92 @@
           "id": "000069CDCBC5AF94",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 6.0
+    },
+    {
+      "id": "0000CEF67222C69A",
+      "title": "Сталь і кокс у різних буферах",
+      "description": [
+        "Підготуйте кокс як паливну частину сталеплавильного циклу, а сталь — як його матеріальний результат. Залиште місце для побічних продуктів і ремонту конструкції; повний вхід палива не гарантує вільного виходу металу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersiveengineering:coal_coke",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D46547876B39",
+        "000037657710F2B8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000014C4711F7D73",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:blast_furnace",
+          "timer": 40
+        },
+        {
+          "id": "0000B12B13369A0F",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:coal_coke",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000185FEAD47527",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000912A9C9AFE2E",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hammer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DF310DE27901",
+          "type": "advancement",
+          "advancement": "aia2:stages/e08"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006702CAD25FF6",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 11.0
     },
     {
       "id": "0000AFB2473B53E6",
@@ -148,14 +226,14 @@
           "id": "0000CC64D2DC7837",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:ingot_steel",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "0000ED0F82EA5385",
@@ -194,14 +272,14 @@
           "id": "000024FF689CF2FB",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "0000D4C1D006C7F4",
@@ -243,14 +321,14 @@
           "id": "000050F05F30FEBD",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "000057F34C8BDCEB",
@@ -315,14 +393,14 @@
           "id": "000012A8F2D80629",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "0000C0EFCF248072",
@@ -361,14 +439,14 @@
           "id": "0000FEB7EB1269D2",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "0000F9E86B5DFDF2",
@@ -410,14 +488,14 @@
           "id": "000035E81AE68CA2",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 4.0
+      "y": 8.0
     },
     {
       "id": "00002A3D3202FDC1",
@@ -459,14 +537,14 @@
           "id": "0000F113A557BB49",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 8.0
     },
     {
       "id": "0000D2E72AF5F0F3",
@@ -508,14 +586,14 @@
           "id": "0000F8FE6FB7F0ED",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:ingot_steel",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 10.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "00001D18DCC2F22F",
@@ -557,14 +635,14 @@
           "id": "000094902153C89E",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 5.0
     },
     {
       "id": "000041A1289392CF",
@@ -606,14 +684,14 @@
           "id": "00004A53B7E666B2",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "0000B01630C15C80",
@@ -655,14 +733,14 @@
           "id": "0000E52938BCAFA1",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 4.0
+      "y": 8.0
     },
     {
       "id": "00002653B7A5883F",
@@ -704,14 +782,14 @@
           "id": "0000BB7A334C9A46",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 8.0
     },
     {
       "id": "0000C87B3D2B3AC7",
@@ -753,14 +831,14 @@
           "id": "000003283E27A7F4",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 14.0,
-      "y": 2.0
+      "y": 5.0
     },
     {
       "id": "000004210D0142DD",
@@ -825,14 +903,14 @@
           "id": "00000348FA08F48A",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 0.0
+      "y": 6.0
     },
     {
       "id": "0000816CABDE0F4F",
@@ -898,14 +976,14 @@
           "id": "0000AB7748991C9A",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "0000639761D74791",
@@ -957,14 +1035,14 @@
           "id": "0000947EE02C01DD",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 14.0
     },
     {
       "id": "000051B1D453FDE9",
@@ -1006,14 +1084,14 @@
           "id": "0000970C1E187D7E",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 6.0
+      "x": 16.0,
+      "y": 17.0
     },
     {
       "id": "00007617FA4C3730",
@@ -1062,14 +1140,14 @@
           "id": "000027F2882D5A97",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 22.06
     },
     {
       "id": "0000A68866543120",
@@ -1107,14 +1185,14 @@
           "id": "00005302AE2EBBF3",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 19.937
     },
     {
       "id": "0000DCE909AECF8C",
@@ -1156,14 +1234,14 @@
           "id": "0000DDF4FFA41D49",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 12.0
+      "x": 11.0,
+      "y": 17.0
     },
     {
       "id": "00002FC3D0B1478A",
@@ -1205,14 +1283,92 @@
           "id": "0000BB0E49FC26DC",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 19.937
+    },
+    {
+      "id": "0000BEC151CEBDDC",
+      "title": "Дротова мережа має розрив для ремонту",
+      "description": [
+        "Підготуйте вимикач і ізольований дріт для доступної сервісної ділянки LV. Реле змінює трасу дроту, а вимикач керує з'єднанням; перед подаванням напруги перевірте, які контакти справді під'єднані до споживача.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersiveengineering:wirecoil_copper_ins",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CEF67222C69A",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000975AEC98844C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:breaker_switch",
+          "timer": 40
+        },
+        {
+          "id": "0000F56A6B1518C5",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecoil_copper_ins",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000058AC5B0D8B1",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:connector_lv_relay",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086D7CA39D96A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wirecutter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008ABDB72A7F4E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002EAA849E7030",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 11.0
     },
     {
       "id": "0000D801F5D5F3A3",
@@ -1254,14 +1410,14 @@
           "id": "00007AA464E3F5CF",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 4.0
+      "x": 13.0,
+      "y": 17.0
     },
     {
       "id": "000019FCF6321589",
@@ -1303,14 +1459,14 @@
           "id": "000079DFB45D6062",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 22.06
     },
     {
       "id": "00001AB42BF44D0D",
@@ -1349,14 +1505,14 @@
           "id": "00006C2F5F8F11CA",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:ingot_steel",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 17.875
     },
     {
       "id": "00009AF220A240DC",
@@ -1395,14 +1551,14 @@
           "id": "0000DBA8FBE86E1E",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:wire_copper",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 19.875
     },
     {
       "id": "00000DC80EF92EC8",
@@ -1455,14 +1611,14 @@
           "id": "0000A820C374875C",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 17.0
     },
     {
       "id": "00007BDB57B97C66",
@@ -1528,14 +1684,14 @@
           "id": "0000CBA98AFCBC55",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 22.06
     },
     {
       "id": "00009299CD028E20",
@@ -1574,14 +1730,14 @@
           "id": "0000C1A5F7B8B078",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:ingot_steel",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 19.5
     },
     {
       "id": "00001785A30355AA",
@@ -1621,14 +1777,103 @@
           "id": "00002636867EC52E",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "immersiveengineering:stick_iron",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 6.0
+      "y": 19.5
+    },
+    {
+      "id": "0000A27221F324C8",
+      "title": "Модель преса задає деталь",
+      "description": [
+        "Порівняйте дві форми металевого преса та їхні продукти у спільному міжмодовому складі. Заміна форми змінює вид виходу, тому матеріальний контракт має вказувати не лише метал, а й потрібну форму деталі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersiveengineering:mold_gear",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BEC151CEBDDC",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C723D941D67B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:metal_press",
+          "timer": 40
+        },
+        {
+          "id": "00002C1743A08D0B",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:mold_gear",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B29F3CF8AE1",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:mold_wire",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000645C14503122",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CA25D6C3B11C",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:iron_gear",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000051229B7DDE33",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ED2F45883F97",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 11.0
     },
     {
       "id": "00002811119DDB04",
@@ -1681,14 +1926,14 @@
           "id": "00002A2F7D616358",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "mekanism:ingot_bronze",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 14.0
+      "y": 25.06
     },
     {
       "id": "0000864CCD4EA196",
@@ -1754,14 +1999,14 @@
           "id": "00002771AC0A22A4",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "immersiveengineering:hemp_fiber",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 16.0
+      "x": 3.0,
+      "y": 28.06
     },
     {
       "id": "0000B17FAC6B8E54",
@@ -1825,14 +2070,14 @@
           "id": "00004C700C957DA6",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "immersiveengineering:ingot_steel",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 28.06
     },
     {
       "id": "0000E5C8EB3D93C7",
@@ -1895,7 +2140,85 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 20.0
+      "y": 31.06
+    },
+    {
+      "id": "00005F1992A0B2E1",
+      "title": "Дугова піч має витратний електрод",
+      "description": [
+        "Підготуйте електроди як витратну частину дугової металургії та окремий резерв HV. Перевіряйте знос поряд із запасом сировини: зупинена через електрод піч не відновиться від додаткового подавання руди.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "immersiveengineering:graphite_electrode",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A27221F324C8",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F55E1F162DF2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "immersiveengineering:arc_furnace",
+          "timer": 40
+        },
+        {
+          "id": "0000788C081916AA",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:graphite_electrode",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E0406665E134",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000071A780085941",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:capacitor_hv",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006A50B8092727",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000036496CD1BD27",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 11.0
     }
   ]
 }

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_automation_industrialforegoing",
   "title": "industrialforegoing — Автоматизація",
   "group": "0000278E41F3DC5E",
-  "order_index": 12,
+  "order_index": 14,
   "icon": {
     "id": "industrialforegoing:latex_bucket",
     "count": 1
@@ -11,6 +11,162 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "0000712198F09511",
+      "title": "Латекс проходить водяну обробку",
+      "description": [
+        "Порівняйте суху гуму з завершеним пластиком і залиште окреме підведення води до латексної установки. Перевіряйте етап обробки до налаштування автокрафту корпусів: латекс у резервуарі ще не є пластиком у складі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "industrialforegoing:dryrubber",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E22208E99B46",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000816D1EDEB4DF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:latex_processing_unit",
+          "timer": 40
+        },
+        {
+          "id": "0000ED0B672E4A83",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:dryrubber",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC2864527F3C",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AD2FFB36C1B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A36AEA03F286",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000037691C12CE8",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000F49DD5D34966",
+      "title": "Шаблон налаштувань для повторюваної ферми",
+      "description": [
+        "Підготуйте керовану посівну ділянку та інструмент перенесення сумісних налаштувань. Після копіювання звірте робочу зону й напрям машини: однакові параметри не переносять саму землю, воду або насіння.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "industrialforegoing:machine_settings_copier",
+        "count": 1
+      },
+      "dependencies": [
+        "0000712198F09511",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000411BEC4753E8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:plant_sower",
+          "timer": 40
+        },
+        {
+          "id": "00002F4389BC04AA",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:machine_settings_copier",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B25DE43D2B40",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:range_addon_tier_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000424B15F9B00",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D018FBE5A0A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007D22B3A56CAF",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
     {
       "id": "0000B556B6D5250B",
       "title": "Латекс має відведений приймач",
@@ -69,14 +225,14 @@
           "id": "00006390FB9A2D87",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "000073270F7F1CDC",
@@ -136,13 +292,102 @@
           "id": "00002C1F32C5047C",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
           "count": 2
         }
       ],
       "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000A1D3DB7A734D",
+      "title": "Біореактор оцінює склад сировини",
+      "description": [
+        "Підготуйте різні рослинні входи для перевірки біопаливної ділянки та окремий генератор-споживач. Порівняйте рецепти й показники інтерфейсу у грі; квест не прирівнює кількість видів у цій пробі до вигаданого гарантованого виходу.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "minecraft:carrot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F49DD5D34966",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C18E39076C9C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:bioreactor",
+          "timer": 40
+        },
+        {
+          "id": "0000D7ECF799D934",
+          "type": "item",
+          "item": {
+            "id": "minecraft:carrot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009610CC204508",
+          "type": "item",
+          "item": {
+            "id": "minecraft:potato",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDE05A609153",
+          "type": "item",
+          "item": {
+            "id": "minecraft:beetroot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000033CE548BBF6A",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:biofuel_generator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BE8C157AF4F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E72F2CBE5932",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 4.0,
       "y": 0.0
     },
     {
@@ -203,14 +448,14 @@
           "id": "0000281364522C5A",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000A2BE01E7A716",
@@ -270,14 +515,14 @@
           "id": "000091D755E1E1DB",
           "type": "item",
           "item": {
-            "id": "minecraft:glass",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "000050EEB18635C9",
@@ -337,14 +582,14 @@
           "id": "00004649F5514AFE",
           "type": "item",
           "item": {
-            "id": "minecraft:iron_nugget",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 8
+          "count": 2
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000D6274360716F",
@@ -415,14 +660,14 @@
           "id": "000046FB15770E9C",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000AA2A82288066",
@@ -482,14 +727,14 @@
           "id": "00006C3A584D998E",
           "type": "item",
           "item": {
-            "id": "minecraft:gold_nugget",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000E9399A133E7B",
@@ -560,13 +805,102 @@
           "id": "000054842D65010E",
           "type": "item",
           "item": {
-            "id": "minecraft:cooked_beef",
+            "id": "industrialforegoing:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 14.0,
+      "y": 3.0
+    },
+    {
+      "id": "00000AB1D6439E96",
+      "title": "Лінза має відповідати потрібній руді",
+      "description": [
+        "Підготуйте дві лінзи для різних цілей лазерного видобутку й контроль запасу на складі. Перевіряйте висоту, вимір і таблицю JEI конкретної руди: зміна кольору не скасовує інші умови рецепта.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "industrialforegoing:laser_drill",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A1D3DB7A734D",
+        "000042CB3F6CFEE8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031A2A2A8CB53",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "industrialforegoing:ore_laser_base",
+          "timer": 40
+        },
+        {
+          "id": "0000EDD12B2406D4",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:laser_drill",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000427A9EE1FF19",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:yellow_laser_lens",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012030F9D388F",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:blue_laser_lens",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007E08B0DF159A",
+          "type": "item",
+          "item": {
+            "id": "ae2:level_emitter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B4A27AE7B401",
+          "type": "advancement",
+          "advancement": "aia2:stages/e34"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E2A637CDFF53",
+          "type": "item",
+          "item": {
+            "id": "industrialforegoing:plastic",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
       "y": 0.0
     }
   ]

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_shared_studies",
   "title": "Спільні дослідження — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 42,
+  "order_index": 47,
   "icon": {
     "id": "minecraft:wheat_seeds",
     "count": 1
@@ -99,14 +99,14 @@
           "id": "000057E4B7175661",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "create:andesite_alloy",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 3.0
     },
     {
       "id": "000095EA15DDAD57",
@@ -171,14 +171,14 @@
           "id": "00000159F8D6A3FA",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 6.0
     },
     {
       "id": "0000DD2552CD49DB",
@@ -243,14 +243,14 @@
           "id": "000073D17046BE48",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 9.0
     },
     {
       "id": "0000C03EEEB94FD0",
@@ -315,14 +315,14 @@
           "id": "0000F86FCC7E1D3A",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "tfmg:cast_iron_ingot",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 12.0
     },
     {
       "id": "000011FE5ED4FFBE",
@@ -386,14 +386,14 @@
           "id": "00009C5755C84B2A",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 10.0
+      "x": 3.0,
+      "y": 15.0
     },
     {
       "id": "00009DC9FDC345A1",
@@ -446,14 +446,14 @@
           "id": "00004796891AB3D8",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 15.0
     },
     {
       "id": "0000A7572D30D4AC",
@@ -517,14 +517,14 @@
           "id": "0000762E5BB8A794",
           "type": "item",
           "item": {
-            "id": "minecraft:lapis_lazuli",
+            "id": "modern_industrialization:tin_plate",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 14.0
+      "x": 6.0,
+      "y": 15.0
     },
     {
       "id": "000037DD464F2649",
@@ -584,14 +584,14 @@
           "id": "0000796DA68A474E",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "pneumaticcraft:plastic",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
-      "y": 16.0
+      "y": 18.0
     },
     {
       "id": "0000921DEC024883",
@@ -644,14 +644,217 @@
           "id": "0000B3DAEB1A6C5B",
           "type": "item",
           "item": {
-            "id": "minecraft:amethyst_shard",
+            "id": "pneumaticcraft:ingot_iron_compressed",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 3.0,
+      "y": 18.0
+    },
+    {
+      "id": "0000EFA0A12AFB1E",
+      "title": "Мобові реагенти мають походження",
+      "description": [
+        "Відкрийте Alkahestry-гілку та розділіть реагенти, заряд і продукт. Трофеї мобів не отримують випадкових альтернативних рецептів лише через відсутність звичайного крафту.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "reliquary:alkahestry_tome",
+        "count": 1
+      },
+      "dependencies": [
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000E9CEF8A2911",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:alkahestry_altar",
+          "timer": 40
+        },
+        {
+          "id": "000047302AAA506E",
+          "type": "item",
+          "item": {
+            "id": "reliquary:alkahestry_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B7C8560A2932",
+          "type": "item",
+          "item": {
+            "id": "reliquary:nebulous_heart",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000007B9EB75A81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000046F8A04FF624",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 21.0
+    },
+    {
+      "id": "00005094ACF8136C",
+      "title": "Ступка для алхімічних сумішей",
+      "description": [
+        "Побудуйте Apothecary Mortar та підготуйте базові компоненти з книги. Подальші суміші мають власні рецепти й не є стандартними ванільними зіллями.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "reliquary:apothecary_mortar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EFA0A12AFB1E",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A829C987D9B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:apothecary_mortar",
+          "timer": 40
+        },
+        {
+          "id": "0000D3D42456B911",
+          "type": "item",
+          "item": {
+            "id": "reliquary:apothecary_mortar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D337F852756B",
+          "type": "item",
+          "item": {
+            "id": "reliquary:empty_potion_vial",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000171784950F8F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B22FD5937D8B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 21.0
+    },
+    {
+      "id": "0000391F1330128D",
+      "title": "Казан і тара",
+      "description": [
+        "Поставте Apothecary Cauldron після ступки й підготуйте порожні флакони. Розділіть виробництво суміші та наповнення тари, щоб матеріали не накопичувалися у випадковому порядку.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "reliquary:apothecary_cauldron",
+        "count": 1
+      },
+      "dependencies": [
+        "00005094ACF8136C",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002B712F3A59AA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:apothecary_cauldron",
+          "timer": 40
+        },
+        {
+          "id": "00006AA3B333D3A0",
+          "type": "item",
+          "item": {
+            "id": "reliquary:apothecary_cauldron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D27F71DF958D",
+          "type": "item",
+          "item": {
+            "id": "reliquary:apothecary_mortar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9CAE2F2CA75",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F999F56177E0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 21.0
     },
     {
       "id": "000087C6B4E85FFC",
@@ -706,14 +909,14 @@
           "id": "00004DC687FA170F",
           "type": "item",
           "item": {
-            "id": "botania:manasteel_nugget",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 20.0
+      "y": 24.0
     },
     {
       "id": "000031381A5DAADD",
@@ -766,14 +969,14 @@
           "id": "0000670A9BB69D3A",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "twilightforest:torchberries",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 22.0
+      "x": 7.0,
+      "y": 27.0
     },
     {
       "id": "0000A9F47F27FD86",
@@ -823,7 +1026,86 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 24.0
+      "y": 27.0
+    },
+    {
+      "id": "0000F52187BF9D5B",
+      "title": "Вогняний сплав після експедиції",
+      "description": [
+        "Переробіть Fiery Blood або Fiery Tears у Fiery Ingot за native-рецептом. Збережіть карту й виділіть метал у міжмодовий виробничий резерв.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "twilightforest:fiery_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000526E08AFC4C5",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000072B66D5DBFF5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:crafting_table",
+          "timer": 40
+        },
+        {
+          "id": "00007503B9B280C0",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000044F42133FD43",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_blood",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F42295C42796",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:fiery_tears",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000196D4DA9F224",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005C67F02F404C",
+          "type": "item",
+          "item": {
+            "id": "twilightforest:canopy_planks",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 27.0
     },
     {
       "id": "0000D9E09C677563",
@@ -873,7 +1155,7 @@
       "optional": false,
       "rewards": [],
       "x": 2.0,
-      "y": 0.0
+      "y": 27.0
     },
     {
       "id": "0000E93DE847FD7C",
@@ -922,8 +1204,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 2.0,
-      "y": 2.0
+      "x": 9.0,
+      "y": 27.0
     },
     {
       "id": "000012A24F7E2CC9",
@@ -972,14 +1254,218 @@
           "id": "0000D0470F850573",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "aether:skyroot_planks",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 27.0
+    },
+    {
+      "id": "0000511BC88FFD8C",
+      "title": "Ковадло злиття зброї",
+      "description": [
+        "Побудуйте Mechanical Fusion Anvil після пригодницьких ресурсів. Weapon Fusion є окремим типом рецептів; він не тотожний звичайній кузні чи верстаку.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "cataclysm:mechanical_fusion_anvil",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CAE1F5AA8E1F",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001AB4A9FA41A0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "cataclysm:mechanical_fusion_anvil",
+          "timer": 40
+        },
+        {
+          "id": "0000AE0A5B17F7D5",
+          "type": "item",
+          "item": {
+            "id": "cataclysm:mechanical_fusion_anvil",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000099269BDE9B99",
+          "type": "item",
+          "item": {
+            "id": "cataclysm:witherite_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B555342AC957",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000627315F3D498",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 30.0
+    },
+    {
+      "id": "0000A3A6BDDA26AB",
+      "title": "Польовий комплект без Creative-обходу",
+      "description": [
+        "Завершіть допоміжний комплект походу з дозволеними флаконами. Це необов’язкова підтримка дослідження, а не спосіб замінити обов’язкові ключі чи машини безкоштовними нагородами.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "reliquary:hero_medallion",
+        "count": 1
+      },
+      "dependencies": [
+        "0000210F75E8A4C1",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E9133CB6395F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "reliquary:apothecary_cauldron",
+          "timer": 40
+        },
+        {
+          "id": "000025CFE164892A",
+          "type": "item",
+          "item": {
+            "id": "reliquary:hero_medallion",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C949B5B1D230",
+          "type": "item",
+          "item": {
+            "id": "reliquary:empty_potion_vial",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000060ED239333AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006182FE38BD0B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 30.0
+    },
+    {
+      "id": "00006B65C4C2B65E",
+      "title": "Левіафан й абісальна гілка",
+      "description": [
+        "Підготуйте Abyssal Sacrifice та Altar of Abyss за рецептом. Цей комплект служить конкретному виклику; водне спорядження готуйте до взаємодії з вівтарем.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "cataclysm:abyssal_sacrifice",
+        "count": 1
+      },
+      "dependencies": [
+        "0000511BC88FFD8C",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000745783320A33",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "cataclysm:altar_of_abyss",
+          "timer": 40
+        },
+        {
+          "id": "0000A33BF8FEAA93",
+          "type": "item",
+          "item": {
+            "id": "cataclysm:abyssal_sacrifice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E7B49C780975",
+          "type": "item",
+          "item": {
+            "id": "minecraft:nautilus_shell",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022315536D304",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A9B517535927",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 30.0
     },
     {
       "id": "00008A7A235F32D5",
@@ -1032,14 +1518,14 @@
           "id": "000036D006E97721",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "ae2:certus_quartz_dust",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 26.0
+      "x": 3.0,
+      "y": 33.0
     },
     {
       "id": "00009760626F1F4E",
@@ -1089,7 +1575,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 28.0
+      "y": 33.0
     },
     {
       "id": "000012812A8A73E6",
@@ -1143,14 +1629,14 @@
           "id": "0000B300317A5D3F",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ad_astra:ostrum_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 30.0
+      "y": 36.0
     },
     {
       "id": "00005433AF660FD3",
@@ -1204,14 +1690,82 @@
           "id": "0000BDC552F3B9E5",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ad_astra:ostrum_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 36.0
+    },
+    {
+      "id": "0000ECFD5366AE6A",
+      "title": "Фінальне злиття вогняної зброї",
+      "description": [
+        "Зберіть дозволений високорівневий клинок за актуальним рецептом. Збережіть вогняні ресурси для наступного ремонту й порівняйте його ціну з попереднім спорядженням.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "cataclysm:the_incinerator",
+        "count": 1
+      },
+      "dependencies": [
+        "00006DE3F22EB4E2",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F66D8CA277EB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "cataclysm:mechanical_fusion_anvil",
+          "timer": 40
+        },
+        {
+          "id": "00004B4D2FAFC0C3",
+          "type": "item",
+          "item": {
+            "id": "cataclysm:the_incinerator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000CCC7F9E01703",
+          "type": "item",
+          "item": {
+            "id": "cataclysm:ignitium_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB5723E63590",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005BE6307CF7E3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 39.0
     },
     {
       "id": "00006EEE7F5A2A11",
@@ -1265,14 +1819,14 @@
           "id": "0000ACA9CB0088D6",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "draconicevolution:draconium_nugget",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
-      "x": 0.0,
-      "y": 32.0
+      "x": 5.0,
+      "y": 42.0
     },
     {
       "id": "000080B779247310",
@@ -1348,14 +1902,14 @@
           "id": "00005391A80E2704",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "minecraft:iron_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 34.0
+      "x": 8.0,
+      "y": 42.0
     },
     {
       "id": "0000CEB1F346E89E",
@@ -1398,14 +1952,14 @@
           "id": "0000F9B734FE2D93",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "minecraft:cooked_beef",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 36.0
+      "y": 42.0
     },
     {
       "id": "0000CDC57C55C0BD",
@@ -1448,14 +2002,14 @@
           "id": "0000BD51E818CEA4",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "minecraft:torch",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 42.0
     },
     {
       "id": "00001099D0E09EAE",
@@ -1520,14 +2074,14 @@
           "id": "000018AC12F2BB01",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "minecraft:torch",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 38.0
+      "y": 45.0
     },
     {
       "id": "000003EA0119B872",
@@ -1593,14 +2147,14 @@
           "id": "0000F23DF1C16087",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "ad_astra:desh_nugget",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 40.0
+      "y": 48.0
     },
     {
       "id": "000095E82297BA8F",
@@ -1665,14 +2219,14 @@
           "id": "0000226683434CB4",
           "type": "item",
           "item": {
-            "id": "minecraft:ender_pearl",
+            "id": "modern_industrialization:coke",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 48.0
     }
   ]
 }

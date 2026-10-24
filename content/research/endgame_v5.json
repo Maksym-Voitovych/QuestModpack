@@ -1,0 +1,264 @@
+{
+  "schema": 1,
+  "mods": [
+    {
+      "mod_id": "mysticalagradditions",
+      "name_uk": "Mystical Agradditions — післяігрова есенція AIA2",
+      "installed_version": "8.0.15",
+      "status": "focused_postgame_course_not_full_mod_map",
+      "complete": false,
+      "sources": [
+        {
+          "kind": "AIA2 native recipe policy with frozen exported codec templates",
+          "path": "content/recipes/v5_balance.json",
+          "sha256": "447c3387558cc135767031dfdb3da966a6903f6785cbaed4411386f9ad363eaf",
+          "verified": true,
+          "scope_uk": "Власний баланс AIA2 та зафіксовані нативні JSON-шаблони; не офіційний сценарій проходження мода."
+        },
+        {
+          "kind": "installed registry snapshot",
+          "path": "content/audit/registries.json",
+          "sha256": "29ff638a02999c733750ec98d4de98891d62ffdecb8b87273287c1ba4f501094",
+          "verified": true,
+          "scope_uk": "Існування Item/Block/RecipeSerializer ID у наданому експорті; не тест клієнта."
+        }
+      ],
+      "stages": [
+        {
+          "id": "V5_POST_ESSENCE",
+          "title_uk": "Есенція за межею сорока восьми епох",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [],
+          "mechanic_uk": "Завершіть основний шлях і зберіть окрему лінію Chaotic Fusion. Insanium, пробуджена аграрна речовина, сингулярність, антиматерія та компоненти епохи 47 сходяться в Creative Essence. Це довгий синтез різних виробництв, а не нагорода за фінальну кнопку.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "mysticalagradditions:creative_essence"
+          ],
+          "machine_ids": [
+            "draconicevolution:crafting_core"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_ESSENCE"
+          ]
+        },
+        {
+          "id": "V5_POST_ALLOY",
+          "title_uk": "Сплав творчої інженерії",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ESSENCE"
+          ],
+          "mechanic_uk": "Відокремте синтез творчого сплаву від основної лінії металів. Есенція стає витратним каталізатором фінальних механізмів, тому виробництво сплаву потребує запасу ресурсів і працюючої fusion-інфраструктури.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "evolvedmekanism:alloy_creative"
+          ],
+          "machine_ids": [
+            "draconicevolution:crafting_core"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_ALLOY"
+          ]
+        },
+        {
+          "id": "V5_POST_POOL",
+          "title_uk": "Нескінченна мана після завершення шляху",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ESSENCE"
+          ],
+          "mechanic_uk": "Використайте Terra Plate та манову інфраструктуру для фінального басейну. Звичайні пул, руни, Gaia-ресурси й виробництво есенції мають бути освоєні раніше. Безмежна мана відкривається лише після всіх48епох; жоден попередній компонент ключа її не вимагає.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "botania:creative_pool"
+          ],
+          "machine_ids": [
+            "botania:terra_plate"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_POOL"
+          ]
+        },
+        {
+          "id": "V5_POST_SPARK",
+          "title_uk": "Творчий вузол Corporea",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_POOL"
+          ],
+          "mechanic_uk": "Підключіть фінальну Corporea-іскру до дослідженої системи індексування. Нескінченна мана та доступ до предметів є різними системами: джерело мани саме не замінює мережу Corporea. Її конфігурацію перевірте запитами до індексу.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "botania:corporea_spark_creative"
+          ],
+          "machine_ids": [
+            "botania:corporea_index"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_SPARK"
+          ]
+        },
+        {
+          "id": "V5_POST_MOTOR",
+          "title_uk": "Еталонний привід фінальної фабрики",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ALLOY"
+          ],
+          "mechanic_uk": "Після завершення основної прогресії побудуйте стенд із творчим двигуном. Його роль — зняти обмеження кінетичної потужності у фінальному будівництві. До цього всі обов’язкові фабрики працюють від звичайних джерел обертання.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "create:creative_motor"
+          ],
+          "machine_ids": [
+            "create:creative_motor"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_MOTOR"
+          ]
+        },
+        {
+          "id": "V5_POST_POWAH",
+          "title_uk": "Фінальний енергетичний резерв Powah",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ESSENCE"
+          ],
+          "mechanic_uk": "Виготовте творчу комірку через справжній процес Energizing. Есенція в рецепті споживається; попередні стрижні, кристали та живлення лишаються необхідними частинами лінії. Така комірка не є ранньою нагородою за знайомство з Powah.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "powah:energy_cell_creative"
+          ],
+          "machine_ids": [
+            "powah:energizing_orb"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_POWAH"
+          ]
+        },
+        {
+          "id": "V5_POST_PRESSURE",
+          "title_uk": "Еталонне джерело пневматики",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ESSENCE"
+          ],
+          "mechanic_uk": "Збережіть робочу Pressure Chamber і використайте її для фінального компресора. Безмежне джерело тиску завершує освоєну пневматику, тому не замінює початкові компресори, клапани та підготовку пластмас.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "pneumaticcraft:creative_compressor"
+          ],
+          "machine_ids": [
+            "pneumaticcraft:pressure_chamber_valve"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_PRESSURE"
+          ]
+        },
+        {
+          "id": "V5_POST_FLUID",
+          "title_uk": "Межа рідинного сховища",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_ALLOY"
+          ],
+          "mechanic_uk": "Підготуйте фінальний рідинний резервуар після освоєння транспорту й фільтрації. Перевірте режими вводу/виводу на тестовому контурі, щоб творче джерело не змішало різні виробничі рідини. Основні епохи не залежать від цього сховища.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "mekanism:creative_fluid_tank"
+          ],
+          "machine_ids": [
+            "mekanism:creative_fluid_tank"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_FLUID"
+          ]
+        },
+        {
+          "id": "V5_POST_CHEMICAL",
+          "title_uk": "Межа хімічного сховища",
+          "epoch": 48,
+          "post_completion": true,
+          "prerequisites": [
+            "V5_POST_FLUID"
+          ],
+          "mechanic_uk": "Побудуйте окремий стенд для фінального хімічного резервуара. Рідини та chemicals у Mekanism мають різні транспортні інтерфейси; перенесіть сюди вивчені режими сторін і контроль газових ліній. Творчий резерв доступний тільки після закінчення кампанії.",
+          "verification_uk": "Точний нативний рецепт і витрату ресурсів дивіться в JEI. Завдання перевіряє готовий продукт та огляд установленого блока; воно не вимірює потужність, тиск чи кількість виробничих циклів. Це необов’язковий післяігровий курс після фіналу 48-ї епохи.",
+          "item_ids": [
+            "mekanism:creative_chemical_tank"
+          ],
+          "machine_ids": [
+            "mekanism:creative_chemical_tank"
+          ],
+          "existing_quest_ids": [
+            "E48_KEY"
+          ],
+          "new_quest_ids": [
+            "V5_POST_CHEMICAL"
+          ]
+        }
+      ],
+      "mandatory_quest_ids": [],
+      "optional_quest_ids": [
+        "V5_POST_ESSENCE",
+        "V5_POST_ALLOY",
+        "V5_POST_POOL",
+        "V5_POST_SPARK",
+        "V5_POST_MOTOR",
+        "V5_POST_POWAH",
+        "V5_POST_PRESSURE",
+        "V5_POST_FLUID",
+        "V5_POST_CHEMICAL"
+      ],
+      "intermod_links": [
+        "Draconic Evolution Chaotic Fusion",
+        "Re-Avaritia singularities/infinity",
+        "Mekanism antimatter",
+        "Botania Gaia and Terra Plate",
+        "Evolved Mekanism creative alloy",
+        "Powah Energizing",
+        "PneumaticCraft Pressure Chamber",
+        "Create final kinetics"
+      ],
+      "final_goals": [
+        "Creative Essence and native creative capstones after completed48, never required for an epoch key"
+      ],
+      "uncertainties": [
+        "All new native recipes still require full-pack JEI/process acceptance testing",
+        "This map describes the custom postgame course, not all Mystical Agriculture/Agradditions mechanics"
+      ]
+    }
+  ]
+}

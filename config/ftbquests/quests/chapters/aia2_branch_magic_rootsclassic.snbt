@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_rootsclassic",
   "title": "rootsclassic — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 41,
+  "order_index": 46,
   "icon": {
     "id": "rootsclassic:old_root",
     "count": 1
@@ -11,6 +11,71 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "00003BDC8790886D",
+      "title": "Польовий довідник травника",
+      "description": [
+        "Відкрийте Runic Tablet і знайдіть опис ступки: вона є робочою точкою для підготовки рослинних компонентів. Огляньте встановлену ступку перед першою сумішшю.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:runic_tablet",
+        "count": 1
+      },
+      "dependencies": [],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0F6C3A5A5FB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:mortar",
+          "timer": 40
+        },
+        {
+          "id": "0000306F7CD853D6",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000375F592185DB",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:old_root",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000209628BE673A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000926569BA706F",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:fruit_salad",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 7.0
+    },
     {
       "id": "00008FAA8F2C3F13",
       "title": "Коріння старого лісу",
@@ -50,14 +115,14 @@
           "id": "00009C189BDF908E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "000014A89AC9E721",
@@ -98,7 +163,7 @@
           "id": "0000C5928F47B2EF",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
@@ -106,6 +171,73 @@
       ],
       "x": 2.0,
       "y": 0.0
+    },
+    {
+      "id": "00003B7755616DC6",
+      "title": "Кора як відновлюваний реагент",
+      "description": [
+        "Виготовте ніж для кори, зніміть кору з дерев та збережіть рослинну сировину окремо від палива. Кора потрібна наступним ритуальним сумішам.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:bark_knife",
+        "count": 1
+      },
+      "dependencies": [
+        "00003BDC8790886D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000351F56D05B61",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:mortar",
+          "timer": 40
+        },
+        {
+          "id": "00000CFEED336DA3",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:bark_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000035111FEF59E6",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000B1D28384988",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000EEF75C6BF2C",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 7.0
     },
     {
       "id": "0000D70CB888942E",
@@ -157,14 +289,14 @@
           "id": "0000D9A3ADBB449F",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 4.0
     },
     {
       "id": "0000F3CFBC003B16",
@@ -203,14 +335,81 @@
           "id": "0000F4A4AA832B6F",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 2.0
+    },
+    {
+      "id": "0000118491416872",
+      "title": "Порошок росту з насіння",
+      "description": [
+        "За справжнім рецептом поєднайте насіння, траву й редстоун із товкачем. Порошок підтримує рослинну базу майстерні; це витратний реагент, а не нескінченне джерело врожаю.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:growth_powder",
+        "count": 1
+      },
+      "dependencies": [
+        "00003B7755616DC6"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E453A2B1E19B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:mortar",
+          "timer": 40
+        },
+        {
+          "id": "000043F1E8ACDA96",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:growth_powder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000064B1DE8BCC88",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:pestle",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000036C21F7D33C5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002044842349FA",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 7.0
     },
     {
       "id": "0000BDBAC54440C7",
@@ -262,14 +461,14 @@
           "id": "00002DAF2067407D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 2.5
     },
     {
       "id": "0000E7287DFAC85A",
@@ -310,14 +509,14 @@
           "id": "00006D0806BE7B8E",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 0.5
     },
     {
       "id": "0000439EE229033A",
@@ -359,14 +558,14 @@
           "id": "00001BCBA1F860F6",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00004A4D7E4B7F78",
@@ -408,14 +607,81 @@
           "id": "0000E1B5F12E7E41",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 1.0
+    },
+    {
+      "id": "0000D2567384EBEC",
+      "title": "Пов’язка польового травника",
+      "description": [
+        "Переробіть червону смородину та verdant sprig у припарку. Тримайте її разом із ножем для кори, щоб забезпечувати експедиції відновлюваними засобами лікування.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:healing_poultice",
+        "count": 1
+      },
+      "dependencies": [
+        "0000118491416872"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9EB9C7FE9F8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:mortar",
+          "timer": 40
+        },
+        {
+          "id": "000015629E9BCC99",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000062D9A27C8B7E",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:bark_knife",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000D2C14C02509",
+          "type": "advancement",
+          "advancement": "aia2:stages/e01"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004E17067D598",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 7.0
     },
     {
       "id": "00002A82A5FEBB5F",
@@ -456,14 +722,14 @@
           "id": "00008A488E6FC008",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000513650CAD977",
@@ -516,14 +782,14 @@
           "id": "0000143A4DADF43D",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 10.0
     },
     {
       "id": "0000AE9A58228979",
@@ -576,14 +842,14 @@
           "id": "0000BE8B9F5B766A",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 4.0
+      "y": 13.0
     },
     {
       "id": "000018BECB0DD343",
@@ -637,14 +903,14 @@
           "id": "00002568266CA3EB",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 13.0
     },
     {
       "id": "0000D8541863FC5A",
@@ -686,14 +952,14 @@
           "id": "000063D19ABE2746",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 18.0
     },
     {
       "id": "000092DDCE98B4FF",
@@ -733,14 +999,14 @@
           "id": "0000AC33E5B76D87",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 18.0
     },
     {
       "id": "000045A70E8327A4",
@@ -779,14 +1045,14 @@
           "id": "00009A645AB6428A",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 17.0
     },
     {
       "id": "0000CD674767D226",
@@ -828,14 +1094,14 @@
           "id": "000057BC3325B3A1",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:fruit_salad",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 19.0
     },
     {
       "id": "00009E2203B51704",
@@ -877,14 +1143,14 @@
           "id": "0000188958A56187",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 4.0
+      "y": 18.0
     },
     {
       "id": "0000A1468DA834E1",
@@ -926,14 +1192,82 @@
           "id": "0000D44FA7F71A6B",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 16.0
+    },
+    {
+      "id": "000054A6794BEFBC",
+      "title": "Майданчик ритуалів Roots",
+      "description": [
+        "Зберіть вівтар і жаровню за кресленням Runic Tablet. Їхня геометрія та пахощі визначають доступний ритуал; одного предмета в інвентарі для ритуальної практики недостатньо.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2567384EBEC",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000630CFCC0E6C4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:brazier",
+          "timer": 40
+        },
+        {
+          "id": "00003C2227088E9D",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000092F48E579988",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C299B20790C2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002A398E197CC9",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 7.0
     },
     {
       "id": "0000CCC07F61541E",
@@ -975,14 +1309,240 @@
           "id": "0000285350D3A0E8",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 2.0
+      "y": 18.0
+    },
+    {
+      "id": "00001D4643EC1D3B",
+      "title": "Перше рунічне фокусування",
+      "description": [
+        "Підготуйте ритуал Runic Focus із рослинним реагентом, алмазом та корою різних дерев. Фокус є основою наступного заряджання, тому не використовуйте його як випадкову колекційну прикрасу.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: rootsclassic:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:runic_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "000054A6794BEFBC",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000071F7C00CB3FA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:altar",
+          "timer": 40
+        },
+        {
+          "id": "0000166B835F3882",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0E6B5FA7D6D",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:oak_bark",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074DEEAF30A8E",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:spruce_bark",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008EEB4578F687",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B38ED609DB52",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:fruit_salad",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 7.0
+    },
+    {
+      "id": "0000A724978CB998",
+      "title": "Заряджений фокус",
+      "description": [
+        "Ритуал заряджання витрачає попередній фокус, редстоун і світлопил. Завершіть його після базового фокуса та збережіть готовий заряд для наступних магічних інструментів.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: rootsclassic:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:charged_runic_focus",
+        "count": 1
+      },
+      "dependencies": [
+        "00001D4643EC1D3B",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065F714D8E5ED",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:altar",
+          "timer": 40
+        },
+        {
+          "id": "0000F0A8CA5CAA8F",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:charged_runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000020A317847CCB",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:runic_focus",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003DBB5CA2DA2A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000092A7DA91E009",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:fruit_salad",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 7.0
+    },
+    {
+      "id": "00000322E2FE616F",
+      "title": "Ритуальна майстерня з резервом",
+      "description": [
+        "Порівняйте ритуальне виготовлення живого інструмента зі звичайним ремеслом. Майте запас порошку росту та припарок, щоб експлуатація майстерні підтримувала і видобуток, і природну гілку.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: rootsclassic:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "rootsclassic:living_pickaxe",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A724978CB998",
+        "000043D7F893AA21"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000033202FB7180D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "rootsclassic:altar",
+          "timer": 40
+        },
+        {
+          "id": "00003630905F15D6",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:living_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009CF8CC3CCA53",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:growth_powder",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001FF38DAE087F",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:healing_poultice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F51C495B87D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e04"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B40869079F80",
+          "type": "item",
+          "item": {
+            "id": "rootsclassic:fruit_salad",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 7.0
     },
     {
       "id": "0000FCA411B4AC9E",
@@ -1035,14 +1595,14 @@
           "id": "0000C79CD19C99E1",
           "type": "item",
           "item": {
-            "id": "minecraft:paper",
+            "id": "rootsclassic:healing_poultice",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 8.0
+      "y": 22.0
     }
   ]
 }

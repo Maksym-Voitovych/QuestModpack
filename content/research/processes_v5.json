@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "mods": [
+    {
+      "mod_id": "create",
+      "installed_version": "6.0.10",
+      "name_uk": "Create — докази роботи Basin",
+      "status": "focused_native_process_observations",
+      "complete": false,
+      "sources": [
+        {
+          "kind": "audited native production contract with frozen source recipes",
+          "path": "kubejs/config/aia2_mechanics.json",
+          "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+          "verified": true,
+          "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+        }
+      ],
+      "stages": [
+        {
+          "id": "andesite_mixing",
+          "title_uk": "Андезитовий сплав із працюючої чаші",
+          "epoch": 4,
+          "prerequisites": [],
+          "mechanic_uk": "Установіть Mechanical Mixer над Basin і подайте обертання. Проведіть одну справжню операцію андезитового сплаву з залізними або цинковими самородками. Так ви переходите від отримання змішувача до повторюваної обробки сировини.",
+          "verification_uk": "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+          "item_ids": [
+            "create:andesite_alloy"
+          ],
+          "machine_ids": [
+            "create:mechanical_mixer",
+            "create:basin"
+          ],
+          "existing_quest_ids": [
+            "E04_X_mixer"
+          ],
+          "new_quest_ids": [
+            "V5_NATIVE_ANDESITE_MIXING"
+          ],
+          "recipe_ids": [
+            "create:mixing/andesite_alloy",
+            "create:mixing/andesite_alloy_from_zinc"
+          ],
+          "recipe_evidence": [
+            {
+              "kind": "audited native production contract with frozen source recipes",
+              "path": "kubejs/config/aia2_mechanics.json",
+              "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+              "verified": true,
+              "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+            }
+          ]
+        },
+        {
+          "id": "brass_mixing",
+          "title_uk": "Латунь, змішана за допомогою мани",
+          "epoch": 10,
+          "prerequisites": [
+            "andesite_mixing"
+          ],
+          "mechanic_uk": "Повторіть доступний у цій епосі мановий рецепт: три мідні зливки, цинк і дві порції Mana Powder змішуються в Basin без підігрівання. Це перевіряє справжню міжмодову операцію до відкриття Blaze Burner в епосі 15; звичайний гарячий рецепт залишається пізнішою альтернативою.",
+          "verification_uk": "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+          "item_ids": [
+            "create:brass_ingot"
+          ],
+          "machine_ids": [
+            "create:mechanical_mixer",
+            "create:basin"
+          ],
+          "existing_quest_ids": [
+            "E10_X_brass"
+          ],
+          "new_quest_ids": [
+            "V5_NATIVE_BRASS_MIXING"
+          ],
+          "recipe_ids": [
+            "create:mixing/brass_ingot",
+            "aia2:bootstrap/epoch_10_1"
+          ],
+          "recipe_evidence": [
+            {
+              "kind": "audited native production contract with frozen source recipes",
+              "path": "kubejs/config/aia2_mechanics.json",
+              "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+              "verified": true,
+              "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+            }
+          ]
+        }
+      ],
+      "mandatory_quest_ids": [],
+      "optional_quest_ids": [
+        "V5_NATIVE_ANDESITE_MIXING",
+        "V5_NATIVE_BRASS_MIXING"
+      ],
+      "intermod_links": [
+        "Create andesite into Mekanism infusion",
+        "Botania Mana Powder enables unheated brass before epoch15"
+      ],
+      "final_goals": [
+        "Complete the audited native production operation in an owned machine, not merely acquire the product"
+      ],
+      "uncertainties": [
+        "This focused map covers two observed processes, not the whole mod progression",
+        "Create Basin and Mekanism Mixin binding and actual source processes require full-pack acceptance testing; the contract is separately statically verified"
+      ]
+    },
+    {
+      "mod_id": "mekanism",
+      "installed_version": "10.7.19",
+      "name_uk": "Mekanism — докази роботи інфузора",
+      "status": "focused_native_process_observations",
+      "complete": false,
+      "sources": [
+        {
+          "kind": "audited native production contract with frozen source recipes",
+          "path": "kubejs/config/aia2_mechanics.json",
+          "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+          "verified": true,
+          "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+        }
+      ],
+      "stages": [
+        {
+          "id": "infused_alloy",
+          "title_uk": "Перша зафіксована металургійна інфузія",
+          "epoch": 16,
+          "prerequisites": [],
+          "mechanic_uk": "Підведіть енергію та редстоуновий реагент до Metallurgic Infuser і завершіть виробництво Infused Alloy. У рецепті збірки використовується андезитовий сплав Create: кінетична металургія стає основою електричної автоматизації. Перевірте потрібну сторону подавання реагенту перед запуском.",
+          "verification_uk": "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+          "item_ids": [
+            "mekanism:alloy_infused"
+          ],
+          "machine_ids": [
+            "mekanism:metallurgic_infuser"
+          ],
+          "existing_quest_ids": [
+            "E16_X_infuser"
+          ],
+          "new_quest_ids": [
+            "V5_NATIVE_INFUSED_ALLOY"
+          ],
+          "recipe_ids": [
+            "mekanism:metallurgic_infusing/alloy/infused"
+          ],
+          "recipe_evidence": [
+            {
+              "kind": "audited native production contract with frozen source recipes",
+              "path": "kubejs/config/aia2_mechanics.json",
+              "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+              "verified": true,
+              "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+            }
+          ]
+        },
+        {
+          "id": "reinforced_alloy",
+          "title_uk": "Алмазне армування в інфузорі",
+          "epoch": 23,
+          "prerequisites": [
+            "infused_alloy"
+          ],
+          "mechanic_uk": "Завершіть у Metallurgic Infuser справжній процес армованого сплаву з попереднього Infused Alloy та алмазного реагенту. Ця операція продовжує ту саму металургійну лінію, але потребує іншого середовища; розділіть буфери реагентів, щоб не зупинити попереднє виробництво.",
+          "verification_uk": "Серверний доказ виникає лише після успішного нативного процесу й витрати матеріалів у машині, що належить вашій FTB-команді. Симуляція рецепта, огляд машини, предмет із /give або передача готового сплаву не підтверджують виробництво.",
+          "item_ids": [
+            "mekanism:alloy_reinforced"
+          ],
+          "machine_ids": [
+            "mekanism:metallurgic_infuser"
+          ],
+          "existing_quest_ids": [
+            "E23_X_reinforced"
+          ],
+          "new_quest_ids": [
+            "V5_NATIVE_REINFORCED_ALLOY"
+          ],
+          "recipe_ids": [
+            "mekanism:metallurgic_infusing/alloy/reinforced"
+          ],
+          "recipe_evidence": [
+            {
+              "kind": "audited native production contract with frozen source recipes",
+              "path": "kubejs/config/aia2_mechanics.json",
+              "sha256": "c9e3217be98565605358d1c9a34eff13a398709a873bad629e28986b6002a65d",
+              "verified": true,
+              "scope_uk": "Точні ID рецептів, нативні JSON, джерело спеціального bootstrap-рецепта AIA2 та epoch floors. Зазначені механізми обробляються окремим Java-спостерігачем; відповідність його Mixin реальним модам перевіряється окремо."
+            }
+          ]
+        }
+      ],
+      "mandatory_quest_ids": [],
+      "optional_quest_ids": [
+        "V5_NATIVE_INFUSED_ALLOY",
+        "V5_NATIVE_REINFORCED_ALLOY"
+      ],
+      "intermod_links": [
+        "Create andesite into Mekanism infusion",
+        "Botania Mana Powder enables unheated brass before epoch15"
+      ],
+      "final_goals": [
+        "Complete the audited native production operation in an owned machine, not merely acquire the product"
+      ],
+      "uncertainties": [
+        "This focused map covers two observed processes, not the whole mod progression",
+        "Create Basin and Mekanism Mixin binding and actual source processes require full-pack acceptance testing; the contract is separately statically verified"
+      ]
+    }
+  ]
+}

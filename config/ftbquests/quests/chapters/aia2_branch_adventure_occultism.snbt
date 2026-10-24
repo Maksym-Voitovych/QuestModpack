@@ -1,0 +1,163 @@
+{
+  "id": "000016E2F9A15A68",
+  "filename": "aia2_branch_adventure_occultism",
+  "title": "Occultism — Пригоди",
+  "group": "000091674FF185C4",
+  "order_index": 4,
+  "icon": {
+    "id": "occultism:afrit_essence",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000795055BDB94E",
+      "title": "Контракт африта",
+      "description": [
+        "Після підготовки кола викличте дикого африта й переможіть його. Есенція потрібна подальшим ритуалам, а справжня перемога перевіряється окремо від трофея.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса.",
+        "Перевірений виробничий тип цього етапу: occultism:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:afrit_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "00009ACD6FA0DB01",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C874C4B22124",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "0000B32D63857A08",
+          "type": "kill",
+          "entity": "occultism:afrit_wild",
+          "value": 1
+        },
+        {
+          "id": "0000F67955E1CAA7",
+          "type": "item",
+          "item": {
+            "id": "occultism:afrit_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE279E639787",
+          "type": "item",
+          "item": {
+            "id": "occultism:book_of_binding_afrit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000009BC97DFD68E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E5BFF2D47E80",
+          "type": "item",
+          "item": {
+            "id": "occultism:otherworld_ashes",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CFFA185662F9",
+      "title": "Марид як фінальний контракт",
+      "description": [
+        "Після попередніх духів виконайте дозволений пізній виклик марида. Збережіть есенцію для високотехнологічних компонентів і не підмінюйте нею попередні типи контрактів.",
+        "Перевіряються справжнє вбивство зазначеної істоти та матеріальний комплект. Огляд станції, якщо він є, не доводить спосіб виклику боса.",
+        "Перевірений виробничий тип цього етапу: occultism:ritual. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "occultism:marid_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000008CDC090A24C",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001631FD87E20A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "occultism:sacrificial_bowl",
+          "timer": 40
+        },
+        {
+          "id": "00000F15955ED6F4",
+          "type": "kill",
+          "entity": "occultism:marid_unbound",
+          "value": 1
+        },
+        {
+          "id": "00007D88A8383031",
+          "type": "item",
+          "item": {
+            "id": "occultism:marid_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CF575C12059",
+          "type": "item",
+          "item": {
+            "id": "occultism:book_of_binding_marid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B1DB7C8A4BC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000737084A9861C",
+          "type": "item",
+          "item": {
+            "id": "occultism:chalk_white_impure",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_powah",
   "title": "powah — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 74,
+  "order_index": 80,
   "icon": {
     "id": "powah:dielectric_paste",
     "count": 1
@@ -50,14 +50,92 @@
           "id": "00007E50AB06F1FD",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "000063A36C980225",
+      "title": "Теплова станція має середовище",
+      "description": [
+        "Підготуйте кероване джерело тепла й запас води для термогенератора. Сумісність конкретного нагрівального блока звірте з JEI; цей набір не оголошує довільну температуру або гарантоване виробництво FE.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "powah:thermoelectric_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "000074698D9E8145",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000782E9AEA3EB6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:thermo_generator_basic",
+          "timer": 40
+        },
+        {
+          "id": "000008D52204DD60",
+          "type": "item",
+          "item": {
+            "id": "powah:thermoelectric_plate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000148C9D190E0C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CDC82A4F344B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:magma_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000055CDB87F473E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000074C119F91EC1",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
     },
     {
       "id": "00005BA4BC081D80",
@@ -110,14 +188,81 @@
           "id": "000093D50DD0A295",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "00009CBB894D5B76",
+      "title": "Куля заряджання приймає одну партію",
+      "description": [
+        "Залиште визначений розмір партії перед енергетичною сферою та окремий шлях для готового матеріалу. Кілька стрижнів працюють із тією самою операцією; сторонній предмет у сфері може завадити розпізнаванню потрібного рецепта.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "powah:energizing_rod_hardened",
+        "count": 1
+      },
+      "dependencies": [
+        "000063A36C980225",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000079DB363CF5F2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "000073ABE3B68D6A",
+          "type": "item",
+          "item": {
+            "id": "powah:energizing_rod_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AC1DD6B29997",
+          "type": "item",
+          "item": {
+            "id": "powah:steel_energized",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000CAD1D99F0FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000319CABAC9BA3",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic_tiny",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.0
     },
     {
       "id": "0000C1054789C429",
@@ -159,14 +304,14 @@
           "id": "00008295DB4FC7D7",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00006F553519F2D7",
@@ -208,14 +353,14 @@
           "id": "0000E8717B77AFA3",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000A8AEA0A1E438",
@@ -257,14 +402,14 @@
           "id": "0000787E30BCDA06",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "000077AE2BA06DC6",
@@ -303,14 +448,14 @@
           "id": "00003A14EC598AC7",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000902ED232E712",
@@ -349,14 +494,14 @@
           "id": "000029645658A5EE",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000CCF35036FB08",
@@ -398,7 +543,7 @@
           "id": "0000D6845BEBB0AA",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:capacitor_basic_tiny",
             "count": 1
           },
           "count": 4
@@ -447,7 +592,7 @@
           "id": "0000E0328D8A585B",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
@@ -496,14 +641,14 @@
           "id": "0000DDE899EF07F1",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000EB6B9546EE4E",
@@ -542,14 +687,14 @@
           "id": "0000E77F82DE83A8",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:capacitor_basic_tiny",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 16.0,
-      "y": 2.0
+      "y": 1.0
     },
     {
       "id": "000050588ACA6598",
@@ -588,14 +733,14 @@
           "id": "000076F0C4F727CE",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 18.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000A7177390E152",
@@ -637,14 +782,14 @@
           "id": "00009BAAAD5FFDE3",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 20.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000C42F50992CCB",
@@ -710,14 +855,14 @@
           "id": "0000FDADF04B47E6",
           "type": "item",
           "item": {
-            "id": "minecraft:torch",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 22.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000310B427F5634",
@@ -766,14 +911,14 @@
           "id": "00008B27D636933F",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 11.0
     },
     {
       "id": "00004EAD0F9F5FC6",
@@ -826,14 +971,14 @@
           "id": "000030EA4294C1BA",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 11.0
     },
     {
       "id": "00009B68EBD78D84",
@@ -886,14 +1031,92 @@
           "id": "00006878AECDD312",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 4.0,
-      "y": 2.0
+      "y": 11.0
+    },
+    {
+      "id": "0000E0183FC299B3",
+      "title": "Реактор потребує витратних ресурсів",
+      "description": [
+        "Підготуйте паливний і охолоджувальний запас для перевірки реакторної установки. Порівняйте прийнятні витратні матеріали в довіднику Powah та не плутайте кристал рівня машини з паливом, яке вона споживає під час роботи.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "powah:uraninite",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CBB894D5B76",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000033F93D496EFE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:reactor_niotic",
+          "timer": 40
+        },
+        {
+          "id": "000066EFDB3D6019",
+          "type": "item",
+          "item": {
+            "id": "powah:uraninite",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000390786F4F0C1",
+          "type": "item",
+          "item": {
+            "id": "powah:dry_ice",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000678D5AC9D1E9",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_niotic",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA5030ED9D7D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000016ABB24F3E78",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
     },
     {
       "id": "000021BF891A22F0",
@@ -946,14 +1169,14 @@
           "id": "000002AF3DDA0206",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 6.0,
-      "y": 2.0
+      "y": 11.0
     },
     {
       "id": "00005A0E533B7033",
@@ -1003,7 +1226,7 @@
       "optional": false,
       "rewards": [],
       "x": 8.0,
-      "y": 2.0
+      "y": 11.0
     },
     {
       "id": "000099B1D43F3A35",
@@ -1055,7 +1278,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 2.0
+      "y": 9.0
     },
     {
       "id": "00009E658107BB35",
@@ -1107,7 +1330,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 4.0
+      "y": 11.0
     },
     {
       "id": "0000EE91DAC9AE77",
@@ -1155,7 +1378,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 6.0
+      "y": 13.0
     },
     {
       "id": "000017B4C721E2A8",
@@ -1207,7 +1430,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 4.0
+      "y": 16.0
     },
     {
       "id": "000005FCFB73FA33",
@@ -1256,8 +1479,8 @@
       ],
       "optional": false,
       "rewards": [],
-      "x": 0.0,
-      "y": 6.0
+      "x": 12.0,
+      "y": 19.0
     },
     {
       "id": "0000A0D9F45E8B42",
@@ -1312,14 +1535,14 @@
           "id": "000092FFF6F2E90D",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "powah:dielectric_paste",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 8.0
+      "x": 9.0,
+      "y": 19.0
     },
     {
       "id": "0000C017571C64A7",
@@ -1372,14 +1595,14 @@
           "id": "000004A81CEB69AC",
           "type": "item",
           "item": {
-            "id": "minecraft:copper_ingot",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 0.0,
-      "y": 10.0
+      "y": 19.0
     },
     {
       "id": "0000D0A2459B59DE",
@@ -1432,14 +1655,14 @@
           "id": "000033B9EAA016A8",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "powah:capacitor_basic_tiny",
             "count": 1
           },
           "count": 4
         }
       ],
       "x": 2.0,
-      "y": 4.0
+      "y": 19.0
     },
     {
       "id": "0000595054AFB088",
@@ -1485,7 +1708,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 4.0
+      "y": 19.0
     },
     {
       "id": "000010696AAD1ABB",
@@ -1531,7 +1754,85 @@
       "optional": true,
       "rewards": [],
       "x": 6.0,
-      "y": 4.0
+      "y": 19.0
+    },
+    {
+      "id": "0000DB766C2B2762",
+      "title": "Енергія для пізньої кристалізації",
+      "description": [
+        "Підготуйте високий рівень енергетичної обробки як ресурс для наступного драконячого розвитку. Перевірте доступну енергію перед дорогою операцією; потужний стрижень не створює FE, а споживає запас мережі.",
+        "Автоперевірка засвідчує огляд указаного блока та наявність зазначеної продукції. Параметри інтерфейсу, стан мультиблока й безперервність лінії перевіряються під час пробного запуску; квест не приписує їм вигаданої телеметрії."
+      ],
+      "icon": {
+        "id": "powah:crystal_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E0183FC299B3",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000890439AFAB52",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_rod_nitro",
+          "timer": 40
+        },
+        {
+          "id": "00005FAC59615E4C",
+          "type": "item",
+          "item": {
+            "id": "powah:crystal_nitro",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D2E4E68E700B",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_cell_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AADFC6D7F6B8",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096B7D6F18415",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BAFDD504CCD0",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 6.0
     },
     {
       "id": "0000D8A365709809",
@@ -1596,14 +1897,14 @@
           "id": "0000B1FC94BBA405",
           "type": "item",
           "item": {
-            "id": "minecraft:redstone",
+            "id": "powah:dielectric_rod",
             "count": 1
           },
-          "count": 8
+          "count": 4
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 22.0
     }
   ]
 }

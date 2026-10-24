@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_mysticalagriculture",
   "title": "mysticalagriculture — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 37,
+  "order_index": 42,
   "icon": {
     "id": "mysticalagriculture:soulstone",
     "count": 1
@@ -11,6 +11,73 @@
   "hide_quest_details_until_startable": true,
   "hide_quest_until_deps_complete": true,
   "quests": [
+    {
+      "id": "000044BDF1A078F4",
+      "title": "Основа інфузійного поля",
+      "description": [
+        "Побудуйте Infusion Altar та підготуйте вісім педесталів за книжковою схемою. Вони утворюють виробничий комплект насіння, а не просто колекцію блоків.",
+        "Облік перевіряє нове виготовлення позначеного предмета через підтримувану подію крафту FTB; решта комплекту залишається в інвентарі.",
+        "Перевірений виробничий тип цього етапу: minecraft:crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:infusion_altar",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000428399678435",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:infusion_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000F2F550B88A96",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_altar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000F5C9E7500C5B",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:infusion_pedestal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D39D31351B3C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007D58C09437FD",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
     {
       "id": "00008463D48FEB12",
       "title": "Манасталь біля інфузії",
@@ -62,10 +129,10 @@
           "id": "000049E9B9125FAB",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "mysticalagriculture:inferium_essence",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
@@ -122,14 +189,14 @@
           "id": "0000CDDA5B0884AE",
           "type": "item",
           "item": {
-            "id": "minecraft:coal",
+            "id": "mysticalagriculture:prosperity_shard",
             "count": 1
           },
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 2.0
+      "x": 8.0,
+      "y": 0.0
     },
     {
       "id": "0000DE2B1C4EA389",
@@ -178,8 +245,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 0.0,
-      "y": 4.0
+      "x": 3.0,
+      "y": 0.0
     },
     {
       "id": "000061DD9513955C",
@@ -228,7 +295,7 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 2.0,
+      "x": 5.0,
       "y": 0.0
     },
     {
@@ -278,8 +345,280 @@
       ],
       "optional": true,
       "rewards": [],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000ACB2F6FD10D9",
+      "title": "Проспериті до ресурсного насіння",
+      "description": [
+        "Prosperity Seed Base є початковим входом багатьох інфузій. Зберіть її перед вибором ресурсної культури, щоб не пропустити базову ціну насіння.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:prosperity_seed_base",
+        "count": 1
+      },
+      "dependencies": [
+        "000044BDF1A078F4",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EF5FF9D63BDF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:infusion_altar",
+          "timer": 40
+        },
+        {
+          "id": "0000B3FB57CDC565",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_seed_base",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E779F12E2B7E",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000082163755B11E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B785CF3827F5",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
       "x": 2.0,
-      "y": 2.0
+      "y": 3.0
+    },
+    {
+      "id": "00000EEE149FEFF8",
+      "title": "Інферіум і ґрунт відповідного тиру",
+      "description": [
+        "Висадіть Inferium Seeds на Essence Farmland за книгою. Звичайне кісткове борошно не є універсальним прискорювачем ресурсних культур; поліпшення ґрунту має власну роль.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: productivemetalworks:item_casting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:inferium_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ACB2F6FD10D9",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000073209338399A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:inferium_farmland",
+          "timer": 40
+        },
+        {
+          "id": "00009E2FDC3CBB53",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000021680F4BC885",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008EB5979161F0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A3FF8CE6AAD8",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "000061820C125450",
+      "title": "Перша матеріальна інфузія",
+      "description": [
+        "Виконайте інфузію Coal Seeds із дозволених матеріалів. Після рецепта виростіть культуру та збережіть Coal Essence окремо від звичайного палива.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: mysticalagriculture:infusion. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:coal_seeds",
+        "count": 1
+      },
+      "dependencies": [
+        "00000EEE149FEFF8",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B322E4C3A79",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:infusion_altar",
+          "timer": 40
+        },
+        {
+          "id": "00000E07EDD09402",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:coal_seeds",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C07808E15337",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:coal_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005606D51A7B70",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000576B8F6A31CD",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000129F7ADCFC81",
+      "title": "Душі мають окремий ланцюг",
+      "description": [
+        "Soul Jar заповнюється відповідною дією Soulium Dagger або через Soul Extractor із мобових ресурсів. Порожня банка не доводить накопичення душ; налаштуйте окрему ділянку, не вигадуючи крафт босових трофеїв.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: crafting_shaped. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:soul_jar",
+        "count": 1
+      },
+      "dependencies": [
+        "000061820C125450",
+        "0000C2106823AAB8"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F7129FEB9416",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:soul_extractor",
+          "timer": 40
+        },
+        {
+          "id": "000004D539981A19",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soul_jar",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C1A505BE7A2A",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:soulium_dagger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006B817C304F81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e26"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D8B64A4173CC",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 3.0
     },
     {
       "id": "000007A033757CF3",
@@ -332,10 +671,10 @@
           "id": "00009DE29F3C3933",
           "type": "item",
           "item": {
-            "id": "minecraft:glowstone_dust",
+            "id": "mysticalagriculture:inferium_essence",
             "count": 1
           },
-          "count": 4
+          "count": 2
         }
       ],
       "x": 0.0,
@@ -389,7 +728,143 @@
       "optional": false,
       "rewards": [],
       "x": 2.0,
-      "y": 4.0
+      "y": 6.0
+    },
+    {
+      "id": "000044057B053583",
+      "title": "Кристал і вищі есенції",
+      "description": [
+        "Підготуйте послідовне підвищення есенцій із кристалом. Підвищення тиру зберігає матеріальну ціну попереднього рівня, а не видає всі культури автоматично.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: productivemetalworks:item_casting. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:supremium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "0000129F7ADCFC81",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E68529CF9F25",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:infusion_altar",
+          "timer": 40
+        },
+        {
+          "id": "000070650D1494BD",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:supremium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BEDFF58C88C7",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:master_infusion_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009D6B73D5E129",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000032FA5E3B6E13",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:inferium_essence",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 10.0,
+      "y": 3.0
+    },
+    {
+      "id": "00003D4D7E0119CB",
+      "title": "Пробудження після Supremium",
+      "description": [
+        "Використайте окрему Awakening-структуру та стихійні есенції за рецептом. Infusion Altar і Awakening Altar мають різні ролі й не замінюють один одного.",
+        "Перевіряються огляд установленої станції та наявність указаного результату й комплекту. Це навчальний контроль, а не доказ кількості циклів, заповнення резервуара чи причинного виконання ритуалу.",
+        "Перевірений виробничий тип цього етапу: crafting_shapeless. Точні витрати беріть із поточного JEI, оскільки AIA2 змінює частину рецептів."
+      ],
+      "icon": {
+        "id": "mysticalagriculture:awakened_supremium_essence",
+        "count": 1
+      },
+      "dependencies": [
+        "000044057B053583",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B0019520A403",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "mysticalagriculture:awakening_altar",
+          "timer": 40
+        },
+        {
+          "id": "000073CFB367474D",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:awakened_supremium_essence",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000078FE1287A2F6",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:awakening_pedestal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B99DD476DF17",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ED9D3BFE7CE1",
+          "type": "item",
+          "item": {
+            "id": "mysticalagriculture:prosperity_shard",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 3.0
     },
     {
       "id": "000079D6115EDA77",
@@ -439,7 +914,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 8.0
+      "y": 9.0
     }
   ]
 }

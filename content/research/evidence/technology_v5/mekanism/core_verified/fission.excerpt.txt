@@ -1,0 +1,110 @@
+Source: https://github.com/mekanism/Mekanism/blob/a00109e4856fd38b9c5b3dd7f22ce4a59cd65a80/src/generators/java/mekanism/generators/common/content/fission/FissionReactorMultiblockData.java
+Original SHA256: 15f2aa5ff368b37eae406e9cbc9ef329f3009a0111b53c8fe7740b5d9d58f391
+Lines 152-256 (exact original lines; contextual excerpt)
+License: see LICENSE in this evidence directory.
+
+        coolantTank = MergedTank.create(
+              VariableCapacityFluidTank.input(this, () -> cooledCoolantCapacity, fluid -> fluid.is(FluidTags.WATER), this),
+              VariableCapacityChemicalTank.input(this, () -> cooledCoolantCapacity, BoilerMultiblockData.IS_COOLED_COOLANT, this)
+        );
+        fluidTanks.add(coolantTank.getFluidTank());
+        fuelTank = VariableCapacityChemicalTank.input(this, fuelCapacitySupplier, chemical -> chemical.is(MekanismChemicals.FISSILE_FUEL),
+              ChemicalAttributeValidator.ALWAYS_ALLOW, createSaveAndComparator());
+        heatedCoolantTank = VariableCapacityChemicalTank.output(this, () -> heatedCoolantCapacity,
+              chemical -> chemical.is(MekanismChemicals.STEAM) || BoilerMultiblockData.IS_HEATED_COOLANT.test(chemical), this);
+        wasteTank = VariableCapacityChemicalTank.output(this, fuelCapacitySupplier, chemical -> chemical.is(MekanismChemicals.NUCLEAR_WASTE),
+              ChemicalAttributeValidator.ALWAYS_ALLOW, this);
+        inputTanks = List.of(fuelTank, coolantTank.getChemicalTank());
+        outputWasteTanks = List.of(wasteTank);
+        outputCoolantTanks = List.of(heatedCoolantTank);
+        Collections.addAll(chemicalTanks, fuelTank, heatedCoolantTank, wasteTank, coolantTank.getChemicalTank());
+        heatCapacitor = VariableHeatCapacitor.create(MekanismGeneratorsConfig.generators.fissionCasingHeatCapacity.get(),
+              () -> INVERSE_CONDUCTION_COEFFICIENT, () -> INVERSE_INSULATION_COEFFICIENT, () -> biomeAmbientTemp, this);
+        heatCapacitors.add(heatCapacitor);
+    }
+
+    @Override
+    public void onCreated(Level world) {
+        super.onCreated(world);
+        biomeAmbientTemp = calculateAverageAmbientTemperature(world);
+        // update the heat capacity now that we've read
+        heatCapacitor.setHeatCapacity(MekanismGeneratorsConfig.generators.fissionCasingHeatCapacity.get() * locations.size(), true);
+        hotZone = AABB.encapsulatingFullBlocks(getMinPos().offset(1, 1, 1), getMaxPos().offset(-1, -1, -1));
+    }
+
+    @Override
+    public boolean tick(Level world) {
+        boolean needsPacket = super.tick(world);
+        // burn reactor fuel, create energy
+        if (isActive()) {
+            burnFuel(world);
+        } else {
+            lastBurnRate = 0;
+        }
+        if (isBurning() != clientBurning) {
+            needsPacket = true;
+            clientBurning = isBurning();
+        }
+        // handle coolant heating (water -> steam)
+        handleCoolant();
+        if (!chemicalOutputTargets.isEmpty()) {
+            if (!heatedCoolantTank.isEmpty()) {
+                ChemicalUtil.emit(getActiveOutputs(chemicalOutputTargets, FissionPortMode.OUTPUT_COOLANT), heatedCoolantTank);
+            }
+            if (!wasteTank.isEmpty()) {
+                ChemicalUtil.emit(getActiveOutputs(chemicalOutputTargets, FissionPortMode.OUTPUT_WASTE), wasteTank);
+            }
+        }
+        // external heat dissipation
+        lastEnvironmentLoss = simulateEnvironment();
+        // update temperature
+        updateHeatCapacitors(null);
+        handleDamage(world);
+        radiateEntities(world);
+
+        // update scales
+        float coolantScale;
+        if (coolantTank.getCurrentType() == CurrentType.CHEMICAL) {
+            coolantScale = MekanismUtils.getScale(prevCoolantScale, coolantTank.getChemicalTank());
+        } else {
+            coolantScale = MekanismUtils.getScale(prevCoolantScale, coolantTank.getFluidTank());
+        }
+        float fuelScale = MekanismUtils.getScale(prevFuelScale, fuelTank);
+        float steamScale = MekanismUtils.getScale(prevHeatedCoolantScale, heatedCoolantTank), wasteScale = MekanismUtils.getScale(prevWasteScale, wasteTank);
+        if (MekanismUtils.scaleChanged(coolantScale, prevCoolantScale) || MekanismUtils.scaleChanged(fuelScale, prevFuelScale) ||
+            MekanismUtils.scaleChanged(steamScale, prevHeatedCoolantScale) || MekanismUtils.scaleChanged(wasteScale, prevWasteScale)) {
+            needsPacket = true;
+            prevCoolantScale = coolantScale;
+            prevFuelScale = fuelScale;
+            prevHeatedCoolantScale = steamScale;
+            prevWasteScale = wasteScale;
+        }
+        return needsPacket;
+    }
+
+    @Override
+    protected void updateEjectors(Level world) {
+        chemicalOutputTargets.clear();
+        for (ValveData valve : valves) {
+            TileEntityFissionReactorPort tile = WorldUtils.getTileEntity(TileEntityFissionReactorPort.class, world, valve.location);
+            if (tile != null) {
+                tile.addChemicalTargetCapability(chemicalOutputTargets, valve.side);
+            }
+        }
+    }
+
+    public List<IChemicalTank> getChemicalTanks(FissionPortMode mode) {
+        return switch (mode) {
+            case INPUT -> inputTanks;
+            case OUTPUT_WASTE -> outputWasteTanks;
+            case OUTPUT_COOLANT -> outputCoolantTanks;
+        };
+    }
+
+    @Override
+    public double simulateEnvironment() {
+        double invConduction = HeatAPI.AIR_INVERSE_COEFFICIENT + (INVERSE_INSULATION_COEFFICIENT + INVERSE_CONDUCTION_COEFFICIENT);
+        double tempToTransfer = (heatCapacitor.getTemperature() - biomeAmbientTemp) / invConduction;
+        heatCapacitor.handleHeat(-tempToTransfer * heatCapacitor.getHeatCapacity());
+        return Math.max(tempToTransfer, 0);
+    }
