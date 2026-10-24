@@ -205,7 +205,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
     return frozenset(allowed)
 
 
-def validate_catalog(records, rules, registries, compiled=None, old_records=(), mechanic_advancements=()):
+def validate_catalog(records, rules, registries, compiled=None, old_records=(), mechanic_advancements=(), native_action_advancements=()):
     ids = set()
     objectives = {objective_signature(q['tasks']): q['id'] for q in old_records}
     keys = {e['key'] for e in rules['epochs']} | {k['output'] for k in rules.get('dualKeys', [])}
@@ -255,7 +255,7 @@ def validate_catalog(records, rules, registries, compiled=None, old_records=(), 
                     mechanic_id = task['advancement'].split('/')[-1]
                     require(MECHANIC_CONTRACT[mechanic_id][0] <= gate_limit,
                             'Future native mechanic proof', qid, task['advancement'])
-                meaningful |= task['advancement'] in mechanic_advancements or not task['advancement'].startswith('aia2:')
+                meaningful |= task['advancement'] in mechanic_advancements or task['advancement'] in native_action_advancements or not task['advancement'].startswith('aia2:')
             else:
                 require(False, 'Unsupported or manual-only new task', qid, kind)
             for number in ('count', 'ticks'):
@@ -415,6 +415,10 @@ def validate(root=ROOT, include_layout=True):
     migration_file = root/'content/audit/v5-migrations.json'
     migrations = read(migration_file).get('quests', []) if migration_file.is_file() else []
     preservation = validate_preservation(snapshot, chapters, [r['id'] for r in bundle['add']], migrations)
+    checkpoint_preservation = []
+    for path in sorted((root/'content/audit').glob('v5-checkpoint-*-ids.json')):
+        checkpoint_preservation.append({'snapshot': path.name,
+            **validate_preservation(read(path), chapters, [r['id'] for r in bundle['add']], migrations)})
     records, old = [], []
     normalize = import_tool('item_normalization').normalize
     for path in paths:
@@ -427,8 +431,13 @@ def validate(root=ROOT, include_layout=True):
         if path not in paths:
             data = normalize(read(path))
             old += data if isinstance(data,list) else data.get('quests', [])
+    migrate = import_tool('quest_content_migrations').apply
+    migrated = migrate(old + records, root)
+    old, records = migrated[:len(old)], migrated[len(old):]
     mechanic_advancements = verified_mechanic_advancements(root, rules, bundle)
-    catalog = validate_catalog(records, rules, registries, compiled, old, mechanic_advancements)
+    native_actions = import_tool('validate_native_advancements_v5').validate(root, records, rules, installed_versions(root))
+    catalog = validate_catalog(records, rules, registries, compiled, old, mechanic_advancements,
+                               native_actions['approved_advancements'])
     research = validate_research(root, [read(p) for p in maps], installed_versions(root), rules,
                                  registries, {q['id']:q for q in old+records}, compiled)
     layout = {'status': 'not_requested'}
@@ -444,6 +453,8 @@ def validate(root=ROOT, include_layout=True):
             'compiled_quests': len(compiled), **preservation, **catalog, **research,
             'layout': layout, 'reward_validation': rewards,
             'native_mechanic_proofs': sorted(mechanic_advancements),
+            'native_action_proofs': native_actions,
+            'checkpoint_preservation': checkpoint_preservation,
             'full_pack_run': False, 'tps_benchmark': 'not run'}
 
 

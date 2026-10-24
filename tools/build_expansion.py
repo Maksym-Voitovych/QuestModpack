@@ -186,6 +186,11 @@ def compile_quests(root=ROOT):
     if v4.exists(): records.extend(read(v4)['quests'])
     for path in sorted((root/'content/quests').glob('v5_*.json')):
         records.extend(read(path)['quests'])
+    try:
+        from quest_content_migrations import apply as migrate_quest_content
+    except ImportError:
+        from tools.quest_content_migrations import apply as migrate_quest_content
+    records = migrate_quest_content(records, root)
     epochs = read(root/'design/progression.json')['epochs']
     runtime = read(root/'kubejs/config/aia2_runtime.json')
     components = read(root/'content/components/catalog.json')['items']
@@ -286,8 +291,9 @@ def compile_quests(root=ROOT):
     # of one-node chapters. Every quest keeps its own stable ID and stage proof.
     grouped = defaultdict(list)
     old_locations = {}
-    snapshot_path = root/'content/audit/v4-ids.json'
-    if snapshot_path.exists():
+    snapshots = [root/'content/audit/v4-ids.json', *sorted((root/'content/audit').glob('v5-checkpoint-*-ids.json'))]
+    for snapshot_path in snapshots:
+        if not snapshot_path.exists(): continue
         for filename, old in read(snapshot_path)['chapters'].items():
             if filename.startswith('aia2_branch_'):
                 for quest in old['quests']: old_locations[quest['id']] = filename

@@ -23,7 +23,7 @@ def outputs(recipe):
         elif isinstance(stack, dict):
             ident = stack.get('id', stack.get('item'))
             if isinstance(ident, str) and ':' in ident: yield ident
-            for nested in ['item', 'resource']:
+            for nested in ['item', 'resource', 'stack']:
                 if isinstance(stack.get(nested), dict): yield from stack_items(stack[nested])
     for field in OUTPUT_FIELDS:
         value = recipe.get(field, [])
@@ -31,6 +31,13 @@ def outputs(recipe):
             yield from stack_items(stack)
     for field in ['recipe', 'base', 'gog', 'baseRecipe']:
         if isinstance(recipe.get(field), dict): yield from outputs(recipe[field])
+    # IE Petroleum wraps a byproduct's item in output; Roots' native ritual
+    # result lives in effectConfig. These are output contexts, never a scan of
+    # arbitrary ingredient dictionaries.
+    for byproduct in recipe.get('byproducts', []):
+        if isinstance(byproduct, dict): yield from outputs(byproduct)
+    if isinstance(recipe.get('effectConfig'), dict):
+        yield from outputs(recipe['effectConfig'])
 
 
 def loot_items(value):
@@ -95,11 +102,17 @@ def audit(export, root=ROOT):
             loot_scanned += 1
             for item in loot_items(read(path)):
                 if item in registry: loot[item].add(path.relative_to(loot_root).with_suffix('').as_posix())
+    authored = []
     for path in (root/'content/quests').glob('*.json'):
         data = normalize(read(path))
-        for quest in data if isinstance(data, list) else data.get('quests', []):
-            for task in quest['tasks']:
-                if task['type'] == 'item': uses[task['item']].append(quest['id'])
+        authored.extend(data if isinstance(data, list) else data.get('quests', []))
+    try:
+        from quest_content_migrations import apply as migrate_quest_content
+    except ImportError:
+        from tools.quest_content_migrations import apply as migrate_quest_content
+    for quest in migrate_quest_content(authored, root):
+        for task in quest['tasks']:
+            if task['type'] == 'item': uses[task['item']].append(quest['id'])
     for entry in bundle['add']:
         if entry.get('target'): uses[entry['target']].append('recipe:'+entry['id'])
     findings = {row['item']: row for row in read(root/'content/audit/quest-obtainability.json')['findings']}

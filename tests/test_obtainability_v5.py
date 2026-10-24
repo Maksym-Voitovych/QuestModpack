@@ -42,6 +42,10 @@ class ObtainabilityEvidenceTest(unittest.TestCase):
         self.assertEqual(set(outputs(recipe)), {'pneumaticcraft:pcb_blueprint'})
         self.assertEqual(set(outputs({'outputs':[{'item':{'id':'create:powdered_obsidian'}}]})), {'create:powdered_obsidian'})
         self.assertEqual(set(outputs({'baseRecipe':{'result':{'id':'immersiveengineering:survey_tools'}}})), {'immersiveengineering:survey_tools'})
+        self.assertEqual(set(outputs({'byproducts':[{'output':{'id':'immersivepetroleum:bitumen'}}],
+                                      'ingredients':[{'item':'example:input'}]})), {'immersivepetroleum:bitumen'})
+        self.assertEqual(set(outputs({'outputs':[{'stack':{'id':'apotheosis:arcane_sands'}}]})), {'apotheosis:arcane_sands'})
+        self.assertEqual(set(outputs({'effectConfig':{'result':{'id':'rootsclassic:living_pickaxe'}}})), {'rootsclassic:living_pickaxe'})
 
     def test_native_classification_requires_matching_version_and_unchanged_evidence(self):
         with tempfile.TemporaryDirectory() as tmp:
