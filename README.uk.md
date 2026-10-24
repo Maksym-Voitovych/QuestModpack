@@ -1,6 +1,8 @@
 # All in One Adventure 2.0 — 48 епох
 
-Версія **0.4.1-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests 2101.1.36, KubeJS 2101.7.2 і Rhino 2101.2.7 build.85.
+Версія **0.4.2-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests 2101.1.36, KubeJS 2101.7.2 і Rhino 2101.2.7 build.85.
+Проміжна версія додає чотири серверні виробничі докази Create/Mekanism. Вони зберігаються окремо від ключів і не зараховуються через /give. Повне оновлення 0.5 ще розробляється; поточний стан дивіться у PROGRESS.
+
 
 Hotfix виправляє неоднозначний FTB `getOrCreateTeamData`: типізований Java-міст явно обирає Entity overload і поточну команду гравця. UUID overload очікує UUID команди; `player.uuid` тут не є заміною. Встановіть новий JAR разом зі скриптами й повністю перезапустіть гру/сервер. Розробка 0.5 ще триває: [план](docs/AIA2_0.5.0_PLAN.md), [прогрес](docs/AIA2_0.5.0_PROGRESS.md).
 

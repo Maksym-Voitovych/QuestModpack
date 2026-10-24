@@ -1,0 +1,205 @@
+{
+  "schema": 1,
+  "proof_semantics": "Successful native post-input-consumption completion, current machine owner FTB team; possession/crafting GUI/simulation do not count.",
+  "rules": [
+    {
+      "id": "andesite_mixing",
+      "epoch": 4,
+      "output": "create:andesite_alloy",
+      "serializer": "create:mixing",
+      "recipeIds": [
+        "create:mixing/andesite_alloy",
+        "create:mixing/andesite_alloy_from_zinc"
+      ],
+      "advancement": "aia2:mechanics/andesite_mixing",
+      "evidence": [
+        {
+          "recipeId": "create:mixing/andesite_alloy",
+          "export_path": "recipes/create/mixing/andesite_alloy.json",
+          "source_sha256": "d08d9ec0e519ac41ce9a842a702b171080e4d321449bf7551fbb6d915bb3f727",
+          "json": {
+            "type": "create:mixing",
+            "ingredients": [
+              {
+                "item": "minecraft:andesite"
+              },
+              {
+                "tag": "c:nuggets/iron"
+              }
+            ],
+            "results": [
+              {
+                "id": "create:andesite_alloy"
+              }
+            ]
+          },
+          "canonical_sha256": "520a26cdd4538311275c80657bce35ba4f95545c2487a57f2384be66126b74bf"
+        },
+        {
+          "recipeId": "create:mixing/andesite_alloy_from_zinc",
+          "export_path": "recipes/create/mixing/andesite_alloy_from_zinc.json",
+          "source_sha256": "c88396bb715128007d6a859dc21552df3e1c77d4ffcc9dae656b3bed4a30c166",
+          "json": {
+            "type": "create:mixing",
+            "ingredients": [
+              {
+                "item": "minecraft:andesite"
+              },
+              {
+                "tag": "c:nuggets/zinc"
+              }
+            ],
+            "results": [
+              {
+                "id": "create:andesite_alloy"
+              }
+            ]
+          },
+          "canonical_sha256": "62b4a573083051b802803a390b9cffb8426f3b7f087cc14f1fa861a015a20807"
+        }
+      ]
+    },
+    {
+      "id": "brass_mixing",
+      "epoch": 10,
+      "output": "create:brass_ingot",
+      "serializer": "create:mixing",
+      "recipeIds": [
+        "create:mixing/brass_ingot",
+        "aia2:bootstrap/epoch_10_1"
+      ],
+      "advancement": "aia2:mechanics/brass_mixing",
+      "evidence": [
+        {
+          "recipeId": "create:mixing/brass_ingot",
+          "export_path": "recipes/create/mixing/brass_ingot.json",
+          "source_sha256": "741e315ea4327b25946fb11b24f248c644b1882cd3b1d891348a9cc28aa146fa",
+          "json": {
+            "type": "create:mixing",
+            "heat_requirement": "heated",
+            "ingredients": [
+              {
+                "tag": "c:ingots/copper"
+              },
+              {
+                "tag": "c:ingots/zinc"
+              }
+            ],
+            "results": [
+              {
+                "count": 2,
+                "id": "create:brass_ingot"
+              }
+            ]
+          },
+          "canonical_sha256": "26c9d5de681b81030055202e8bbc1ddba82c56dd47aa4c7678148fa3c3af4869"
+        },
+        {
+          "recipeId": "aia2:bootstrap/epoch_10_1",
+          "source_kind": "aia2_runtime",
+          "runtime_recipe_path": "kubejs/config/aia2_recipes.json",
+          "source_sha256": "ffd8c1762fe9db25623ef5369ed21fed68862b3ed1e2919ab65017dfa9fdc58d",
+          "json": {
+            "type": "create:mixing",
+            "ingredients": [
+              {
+                "item": "minecraft:copper_ingot"
+              },
+              {
+                "item": "minecraft:copper_ingot"
+              },
+              {
+                "item": "minecraft:copper_ingot"
+              },
+              {
+                "item": "create:zinc_ingot"
+              },
+              {
+                "item": "botania:mana_powder"
+              },
+              {
+                "item": "botania:mana_powder"
+              }
+            ],
+            "results": [
+              {
+                "id": "create:brass_ingot",
+                "count": 4
+              }
+            ]
+          },
+          "canonical_sha256": "ffd8c1762fe9db25623ef5369ed21fed68862b3ed1e2919ab65017dfa9fdc58d",
+          "reason_uk": "Нативний незагрітий bootstrap-рецепт AIA2 доступний у епосі10 до Blaze Burner епохи15; пізніший загрітий рецепт також підтримується."
+        }
+      ]
+    },
+    {
+      "id": "infused_alloy",
+      "epoch": 16,
+      "output": "mekanism:alloy_infused",
+      "serializer": "mekanism:metallurgic_infusing",
+      "recipeIds": [
+        "mekanism:metallurgic_infusing/alloy/infused"
+      ],
+      "advancement": "aia2:mechanics/infused_alloy",
+      "evidence": [
+        {
+          "recipeId": "mekanism:metallurgic_infusing/alloy/infused",
+          "export_path": "recipes/mekanism/metallurgic_infusing/alloy/infused.json",
+          "source_sha256": "c966c28616ce5a781dca95fe45b501efd66c6d29653506e8f48133be9ac1da4b",
+          "json": {
+            "type": "mekanism:metallurgic_infusing",
+            "chemical_input": {
+              "amount": 10,
+              "tag": "mekanism:redstone"
+            },
+            "item_input": {
+              "count": 1,
+              "item": "create:andesite_alloy"
+            },
+            "output": {
+              "count": 1,
+              "id": "mekanism:alloy_infused"
+            },
+            "per_tick_usage": false
+          },
+          "canonical_sha256": "9c3e6a1794a838c96d388bdabef16d8348b63a7b84c7bb8b13f841453f681dc4"
+        }
+      ]
+    },
+    {
+      "id": "reinforced_alloy",
+      "epoch": 23,
+      "output": "mekanism:alloy_reinforced",
+      "serializer": "mekanism:metallurgic_infusing",
+      "recipeIds": [
+        "mekanism:metallurgic_infusing/alloy/reinforced"
+      ],
+      "advancement": "aia2:mechanics/reinforced_alloy",
+      "evidence": [
+        {
+          "recipeId": "mekanism:metallurgic_infusing/alloy/reinforced",
+          "export_path": "recipes/mekanism/metallurgic_infusing/alloy/reinforced.json",
+          "source_sha256": "fcb658c28ebc957d6c7480e057b2e8a8c31d8ea97eb2c62ae5c3e8bc1ed78775",
+          "json": {
+            "type": "mekanism:metallurgic_infusing",
+            "chemical_input": {
+              "amount": 20,
+              "tag": "mekanism:diamond"
+            },
+            "item_input": {
+              "count": 1,
+              "tag": "mekanism:alloys/infused"
+            },
+            "output": {
+              "count": 1,
+              "id": "mekanism:alloy_reinforced"
+            },
+            "per_tick_usage": false
+          },
+          "canonical_sha256": "e3652d630713ad3e39ccc3b6cb7e6a8339318e5c98c4404c0eb6c6e2969162f2"
+        }
+      ]
+    }
+  ]
+}

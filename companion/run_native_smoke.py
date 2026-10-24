@@ -3,6 +3,7 @@
 import json
 import os
 from pathlib import Path
+import re
 import signal
 import subprocess
 
@@ -37,6 +38,7 @@ def main():
         if not evidence.is_file():
             raise SystemExit('Native smoke evidence not created; exit=' + str(code) + '; see ' + str(log))
         report = json.loads(evidence.read_text())
+        report['version_tested'] = re.search(r"version = '([^']+)'", (ROOT/'build.gradle').read_text()).group(1)
         report['runner_exit_code'] = code
         report['console_log'] = 'run/' + logfile + ' (ignored, not shipped)'
         return report

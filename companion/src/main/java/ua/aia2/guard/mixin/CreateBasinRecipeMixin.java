@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ua.aia2.guard.Aia2MachineGuard;
 import ua.aia2.guard.KeyProductionBridge;
+import ua.aia2.guard.ProductionMilestoneBridge;
 
 /** Create 6.0.10 mixing/compacting: reject before simulated or actual input extraction. */
 @Pseudo
@@ -28,6 +29,7 @@ abstract class CreateBasinRecipeMixin {
                                                 CallbackInfoReturnable<Boolean> callback) {
         if (!test && Boolean.TRUE.equals(callback.getReturnValue())) {
             KeyProductionBridge.finishedMachine((BlockEntity) basin, recipe);
+            ProductionMilestoneBridge.finishedMachine((BlockEntity) basin, recipe);
         }
     }
 }

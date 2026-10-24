@@ -79,6 +79,7 @@ public final class Aia2MachineGuard {
         TICK_CONTEXT.remove();
         RobitRecipeAccess.clear();
         KeyProductionBridge.clearRuntime();
+        ProductionMilestoneBridge.clearRuntime();
         PLAYER_TEAMS.clear();
         LIVE_TEAMS.clear();
         DENIED_TICKS.set(0);
@@ -258,7 +259,10 @@ public final class Aia2MachineGuard {
         if (context == null) return;
         try {
             Object recipe = CACHED_RECIPE_ACCESSOR.get(cachedRecipe.getClass()).invoke(cachedRecipe);
-            if (recipe instanceof Recipe<?> nativeRecipe) KeyProductionBridge.finishedMachine(context, nativeRecipe);
+            if (recipe instanceof Recipe<?> nativeRecipe) {
+                KeyProductionBridge.finishedMachine(context, nativeRecipe);
+                ProductionMilestoneBridge.finishedMachine(context, nativeRecipe);
+            }
         } catch (ReflectiveOperationException failure) {
             LOGGER.error("Could not record a completed key process", failure);
         }
@@ -281,6 +285,10 @@ public final class Aia2MachineGuard {
 
     public static boolean mayUseItemByTeam(String itemId, String team) {
         return isReady() && ITEM_POLICY.mayTick(itemId, team);
+    }
+
+    public static boolean mayObserveStage(String team, int epoch) {
+        return isReady() && team != null && !team.isBlank() && RECIPE_POLICY.mayUseStage(epoch, team);
     }
 
     public static boolean mayProcessOwnedRecipe(ServerLevel level, String team, Recipe<?> recipe) {

@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.1-alpha'
+VERSION = '0.4.2-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -26,6 +26,8 @@ def main():
             if config.get('progressionVersion', 0) >= 4:
                 for name in ['KeyProductionBridge', 'RhinoLongMapBridge', 'FtbQuestBridge']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                if (ROOT / 'kubejs/config/aia2_mechanics.json').is_file():
+                    assert 'ua/aia2/guard/ProductionMilestoneBridge.class' in jar.namelist()
                 assert 'ua/aia2/guard/mixin/KeyResultProductionMixin.class' in jar.namelist()
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',
                          'CraftingQuickMoveMixin', 'ResultPickupMixin', 'RecipeManagerContextMixin',

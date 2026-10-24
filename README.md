@@ -2,7 +2,9 @@
 
 [Українська інструкція](README.uk.md).
 
-Version **0.4.1-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
+Version **0.4.2-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests **2101.1.36**, KubeJS **2101.7.2** and Rhino **2101.2.7 build.85**.
+This interim version adds four native team-bound production observations. Their persistence is separate from epoch keys. The complete 0.5 update remains in progress; see PROGRESS.
+
 
 The FTB team lookup hotfix selects the Entity overload in a typed Java bridge; the UUID overload expects a team UUID. Install its matching companion JAR and scripts together. Ongoing 0.5 work is tracked in [PLAN](docs/AIA2_0.5.0_PLAN.md) and [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md).
 

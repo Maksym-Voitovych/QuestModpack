@@ -108,8 +108,12 @@ public final class NativeSmokeTests {
         check(team.startsWith("native-test-a-"), "restart verification is restricted to this runner's generated test team");
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "a fresh Minecraft server reloads the actual production receipt from the world SavedData file");
         check(!Aia2MachineGuard.hasProductionProof(server, team, 8, "arcane"), "restart does not fabricate the independent missing arcane proof");
+        check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
+                "a fresh server reloads the separate native process observation from SavedData");
         Aia2MachineGuard.clearRuntime();
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "runtime bridge initialization never resets a receipt loaded after restart");
+        check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
+                "runtime reset never clears a reloaded generic process observation");
         finish(null);
     }
 
@@ -130,6 +134,7 @@ public final class NativeSmokeTests {
         Aia2MachineGuard.setItemRulesJson("{\"minecraft:iron_ingot\":8,\"minecraft:iron_nugget\":0,\"minecraft:coal\":0,\"minecraft:raw_iron\":0}");
         Aia2MachineGuard.setRecipeRulesJson("{\"minecraft:iron_ingot_from_smelting_raw_iron\":7,\"minecraft:iron_ingot_from_nuggets\":8}");
         Aia2MachineGuard.configureKeyRulesJson("[{\"recipeId\":\"minecraft:iron_ingot_from_nuggets\",\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"branch\":\"tech\",\"serializer\":\"minecraft:crafting_shaped\"}]");
+        ProductionMilestoneBridge.configureJson("[{\"id\":\"native_crafter_fixture\",\"recipeIds\":[\"minecraft:iron_ingot_from_nuggets\"],\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"serializer\":\"minecraft:crafting_shaped\"}]");
         Aia2MachineGuard.setTeamProgress(TEAM_A, 3);
         Aia2MachineGuard.setTeamProgress(TEAM_B, 7);
         Aia2MachineGuard.setReady();
@@ -148,6 +153,8 @@ public final class NativeSmokeTests {
         testPersistenceAndOwnership();
         testFakePlayerCrafting();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
+        check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
+                "constructing or inserting an observed output does not create a generic process observation");
     }
 
     private static FurnaceBlockEntity furnace(BlockPos pos, String owner) {
@@ -218,6 +225,8 @@ public final class NativeSmokeTests {
             if (ticks == 410) {
                 check(crafterNuggets() == 9, "unfinished key branch blocks a real crafter despite sufficient machine/output epochs");
                 check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "no successful recipe means no production receipt");
+                check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
+                        "a rejected native crafter never records a generic process observation");
                 Aia2MachineGuard.setTeamKeyReady(TEAM_A, 8, "tech", true);
                 level.setBlockAndUpdate(POWER, Blocks.AIR.defaultBlockState());
                 level.setBlockAndUpdate(POWER, Blocks.REDSTONE_BLOCK.defaultBlockState());
@@ -230,12 +239,22 @@ public final class NativeSmokeTests {
                 check(Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "real crafter records a production receipt only after ingredients were consumed");
                 check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "arcane"), "technology production cannot substitute for the independent arcane branch");
                 check(!Aia2MachineGuard.hasProductionProof(server, TEAM_B, 8, "tech"), "production receipt is bound to the actual machine owner team");
+                check(ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
+                        "actual ingredient-consuming crafter completion records an independent generic process observation");
+                check(!ProductionMilestoneBridge.hasProof(server, TEAM_B, "native_crafter_fixture"),
+                        "generic process observation belongs only to the native machine owner team");
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");
+                var mechanicData = server.overworld().getDataStorage().get(ProductionMilestoneBridge.ReceiptData.FACTORY, "aia2_mechanics_v1");
+                var mechanicReloaded = ProductionMilestoneBridge.ReceiptData.load(mechanicData.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
+                check(mechanicReloaded.proofs.getOrDefault(TEAM_A, Set.of()).contains("native_crafter_fixture"),
+                        "generic process observation has its own persistent NBT data and survives serialization");
                 check(Aia2MachineGuard.getDeniedTicks() > 0, "native tick/recipe guards recorded actual denied operations");
                 Aia2MachineGuard.clearRuntime();
                 check(!Aia2MachineGuard.isReady() && Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "server-script runtime reset closes guard but never clears durable production receipts");
+                check(!ProductionMilestoneBridge.isConfigured() && ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
+                        "runtime reset closes generic observation rules but preserves durable process proofs");
                 finish(null);
             }
         } catch (Throwable failure) {
@@ -324,6 +343,10 @@ public final class NativeSmokeTests {
                 // The restart phase removes precisely that test record afterwards.
                 if (data != null && (restart || failure != null)) {
                     data.proofs.remove(receiptTeam); data.proofs.remove(TEAM_B); data.setDirty();
+                }
+                var mechanics = server.overworld().getDataStorage().get(ProductionMilestoneBridge.ReceiptData.FACTORY, "aia2_mechanics_v1");
+                if (mechanics != null && (restart || failure != null)) {
+                    mechanics.proofs.remove(receiptTeam); mechanics.proofs.remove(TEAM_B); mechanics.setDirty();
                 }
             }
             report.put("test_blocks_restored", true);

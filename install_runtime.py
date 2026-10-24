@@ -355,6 +355,8 @@ def plan_install(source, instance):
                                 'ua/aia2/guard/KeyProductionBridge.class',
                                 'ua/aia2/guard/FtbQuestBridge.class',
                                 'ua/aia2/guard/RhinoLongMapBridge.class'}
+                    if (source / 'kubejs/config/aia2_mechanics.json').is_file():
+                        required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
                     if not required <= set(jar.namelist()) or jar.testzip() is not None:
                         raise InstallError('Progression v4 needs the matching API4 companion with manufacturing receipts and Rhino bridge')
             except zipfile.BadZipFile as error:

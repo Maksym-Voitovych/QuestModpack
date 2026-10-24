@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.4.1-alpha",
+  "version": "0.4.2-alpha",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "java": 21,
@@ -40,9 +40,9 @@
     "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> companion/gradlew -p companion --offline build --no-daemon --console=plain",
     "gradle": "9.2.1",
     "jar_created": true,
-    "jar_path": "mods/aia2-machine-guard-0.4.1-alpha.jar",
-    "jar_bytes": 74436,
-    "jar_sha256": "008f43d5ee0c1930c6cc8e5a32d69ec0344063fd1e6dc05934c1eb737846040d",
+    "jar_path": "mods/aia2-machine-guard-0.4.2-alpha.jar",
+    "jar_bytes": 85052,
+    "jar_sha256": "45333bc40277169fbdd10c1cfd8d9e4e33ce0671a343e87b1c7279a535c9392c",
     "zip_crc_verified": true,
     "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
     "guard_policy_assertions": 119,
@@ -207,7 +207,7 @@
     "live_ftb_and_modded_production_paths_still_require_full_pack_testing": true
   },
   "ftb_overload_hotfix": {
-    "status": "compiled_against_real_minecraft_neoforge",
+    "status": "preserved_compiled_and_covered_by_existing_regression",
     "helper": "ua.aia2.guard.FtbQuestBridge.getTeamData(Object, ServerPlayer)",
     "api_version": 4,
     "selected_api": "dev.ftb.mods.ftbquests.api.QuestFile.getOrCreateTeamData(net.minecraft.world.entity.Entity)",
@@ -217,5 +217,35 @@
     "rhino_regression": "Run separately by tests/test_ftb_interop.py; see its checked-in evidence report.",
     "full_ftb_runtime_tested": false,
     "native_smoke_note": "41 real Minecraft assertions were run on 0.4.0-alpha. Native hooks are unchanged in 0.4.1; this hotfix adds the separately tested FTB reflection bridge, not a new full-pack launch."
+  },
+  "native_smoke_0_4_2": {
+    "status": "passed",
+    "assertions": 49,
+    "server_jvm_boots": 2,
+    "actual_server_ticks": 650,
+    "report": "companion/native-smoke-report.json",
+    "key_and_generic_receipts": "Separate SavedData persisted/reloaded by a second real Minecraft JVM",
+    "scope": "Actual vanilla machine fixture only; real Create/Mekanism/FTB/KubeJS mods absent",
+    "tps_benchmark": "not run"
+  },
+  "production_observations": {
+    "rules": 4,
+    "recipe_routes": 6,
+    "helper": "ua.aia2.guard.ProductionMilestoneBridge",
+    "storage": "<world>/data/aia2_mechanics_v1.dat",
+    "api_version": 4,
+    "grant_paths": [
+      "Create BasinRecipe.apply RETURN only successful true and !test",
+      "Mekanism CachedRecipe.process after finishProcessing",
+      "Configured vanilla Crafter fixture TAIL only with input units decreased"
+    ],
+    "give_or_possession_grants_proof": false,
+    "clear_runtime_clears_receipts": false,
+    "bootstrap_brass": "aia2:bootstrap/epoch_10_1 allowed at10, heated native alternative follows BlazeBurner availability",
+    "projection_tests": {
+      "node": 9,
+      "scope": "actual script40 in modeled Java/Minecraft host",
+      "team_change_error": "All own projections revoked before surfacing failed native receipt lookup"
+    }
   }
 }
