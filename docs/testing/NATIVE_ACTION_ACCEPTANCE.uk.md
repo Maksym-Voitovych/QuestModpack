@@ -112,3 +112,17 @@
 - Збережіть показники TPS/MSPT до й після на однаковому світі; жодного виміру TPS у хмарному checkpoint не проведено.
 
 Повні контрактні джерела: `content/audit/v5-native-advancement-contracts.json`.
+
+## Доповнення0.4.5: Roots та просунуті спавнери
+
+Статус fullpack-перевірок цього доповнення: **NOT RUN**.
+
+- Living Pickaxe: отримання через команду не видає `aia2:mechanics/roots_living_pickaxe`. На епосі4 проведіть правильний ритуал із фактичним очищенням вівтаря; перевірте FTB, зміну команди й restart завершеного доказу.
+- Charged Focus: аналогічний proof `roots_charged_focus` належить штатному маршруту15. Ранній предмет через rareOverworldNetherWart не є доказом15; старі optional цілі4 не скидаються.
+- Перервана/помилкова операція, неочищені входи, зміна owner/policy та simulation не повинні видавати новий запис. Перевірте tagged gold nugget у living_pickaxe. Incense уже витрачено при старті, refund не очікується.
+- Не плутайте restart завершеного SavedData-доказу з native відновленням незакінченого ритуалу: Roots не зберігає actual recipe holder для його поновлення.
+- Перевірте інфузії Hell/Sea/Deep Shelf та Ender Library на Apothic Enchanting1.6.4. Видача готового предмета не замінює серверну enchant/infusion подію. Перенесення бібліотечного NBT тестуйте на копії світу.
+- Spawners: JEI має показувати руни Apotheosis, а не застосування Sugar/Comparator напряму. Ascent:range32, Summit:count13, Pinnacle:delay20/20. Перевірте recipefloors31/41 та native stat advancements.
+- До31/41 імпортовані просунуті руни в mainhand/offhand, зокрема inverse із кварцом, не повинні змінювати спавнер або витрачати предмети. Перевірте fake player, stale membership, відсутність готовності API та дозволене застосування після відкриття епохи.
+- No AI/Ignore Conditions/Ignore Players перевіряють свої прапорці після успішної модифікації. Shipped поле `modifier`, яке codec не читає, не слід вважати доказом конкретного RecipeID.
+- AA: нові Canola Press/Barrel/Oil Generator рецепти мають бути доступні16, не вимагати олії для bootstrap. Reset-рецепти потребують уже наявної машини. Кидайте одне насіння у source-рідину; перевірте реальні FE/burn цикли окремо.

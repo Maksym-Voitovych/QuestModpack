@@ -1,0 +1,599 @@
+{
+  "schema": 1,
+  "quest_count": 12,
+  "scope": "Roots Classic1.5.10 core depth. Twelve authored goals; two require new native ritual observers. Setup/inventory limits explicit.",
+  "requires_native_mechanic_rules": [
+    "roots_living_pickaxe",
+    "roots_charged_focus"
+  ],
+  "quests": [
+    {
+      "id": "V5_DEPTH_ROOTS_RING_ONE",
+      "epoch": 4,
+      "title_uk": "Перше кільце з восьми каменів",
+      "description_uk": [
+        "Підготуйте вісім Mundane Standing Stones для ритуалів рівня1. Від вівтаря потрібні позиції(±3,0,±3),(±3,0,0),(0,0,±3), на тій самій висоті. Ритуали рівня0 цього кільця не вимагають. Пахощі кладуться в окремі жаровні у квадраті радіуса4 навколо вівтаря.",
+        "Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються."
+      ],
+      "icon": "rootsclassic:mundane_standing_stone",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "rootsclassic:mundane_standing_stone",
+          "count": 8,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "rootsclassic:altar",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_ROOTSCLASSIC_05"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:oak_bark",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_ring_one"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_POWDER_KIT",
+      "epoch": 4,
+      "title_uk": "Від інгредієнтів до параметрів закляття",
+      "description_uk": [
+        "Спершу знайдіть у Runic Tablet конкретний компонентний рецепт і розітріть його у ступці пестиком. Old Root відкриває основу суміші без підсилювачів; Verdant Sprig допускає один модифікатор, Infernal Bulb — два, Dragon’s Eye — три. Glowstone додає potency, Redstone — efficiency, Gunpowder — size. Цей комплект дає змогу порівняти варіанти; він не є універсальним рецептом будь-якого ефекту.",
+        "Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються."
+      ],
+      "icon": "rootsclassic:spell_powder",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rootsclassic:mortar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:spell_powder",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:verdant_sprig",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:glowstone_dust",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:redstone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:gunpowder",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_ROOTSCLASSIC_06"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:redcurrant",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_powder_kit"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_IMBUER",
+      "epoch": 4,
+      "title_uk": "Одна паличка — одне обране закляття",
+      "description_uk": [
+        "Виготовте Imbuer. Покладіть у нього дерев’яну паличку та Spell Powder з дійсним компонентом rootsclassic:spell; приблизно після41серверного тика він створює Staff, переносить effect/potency/efficiency/size й очищає обидва входи. Порожній порошок без даних не утворює працездатного закляття. Підніміть отриманий Staff і перевірте tooltip перед застосуванням.",
+        "Крафт Imbuer та наявність Staff перевіряються автоматично. Компоненти Staff, фактичне завершення Imbuer і застосування закляття ще не мають окремого надійного production-доказу в цій цілі."
+      ],
+      "icon": "rootsclassic:imbuer",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "rootsclassic:imbuer",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "rootsclassic:imbuer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_POWDER_KIT"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:birch_bark",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_imbuer"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_LIVING_TOOLS",
+      "epoch": 4,
+      "title_uk": "Живі інструменти для всієї майстерні",
+      "description_uk": [
+        "Розширте ритуальний комплект після живої кирки: живі сокира, лопата й мотика використовують відповідну дерев’яну основу, Verdant Sprig і золотий самородок; два пахощі дубової кори підтримують цей клас ритуалів рівня0. Не плутайте повторювану схему з можливістю замінити будь-який інструмент будь-яким предметом.",
+        "Перевіряються три готові інструменти й вівтар; сам спосіб їх отримання тут не доводиться. Окремий попередній нативний доказ живої кирки засвідчує реальне завершення її ритуалу."
+      ],
+      "icon": "rootsclassic:living_axe",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rootsclassic:altar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:living_axe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:living_shovel",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:living_hoe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_NATIVE_LIVING"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:growth_powder",
+          "count": 2
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_living_tools"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_RING_TWO",
+      "epoch": 15,
+      "title_uk": "Зовнішнє кільце після відкриття Незеру",
+      "description_uk": [
+        "Для рівня2 збережіть вісім Mundane Stones першого кільця й додайте чотири Attuned Stones у позиціях(±5,+1,0)та(0,+1,±5) від вівтаря. Attuned-рецепт потребує nether_brick і алмазів, тому ця лінія розміщена після відкриття Незеру, хоча базовий Item ID має ранній gate. Перевірте обидва кільця перед дорогим ритуалом.",
+        "Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються."
+      ],
+      "icon": "rootsclassic:attuned_standing_stone",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "rootsclassic:attuned_standing_stone",
+          "count": 4,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:mundane_standing_stone",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "rootsclassic:altar",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_RING_ONE",
+        "V5_DEPTH_ROOTS_NATIVE_CHARGED"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:oak_bark",
+          "count": 4
+        },
+        {
+          "item": "rootsclassic:birch_bark",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_ring_two"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_CRYSTAL_STAFF",
+      "epoch": 15,
+      "title_uk": "Кристалічний посох починається з рівня2",
+      "description_uk": [
+        "Виконайте ритуал Crystal Staff у двокільцевому колі. На вівтарі потрібні алмазний блок, паличка й Blaze Powder; пахощі — Coal Block, Acacia Bark, Verdant Sprig та Birch Bark. Сам крафт Imbuer не створює цей багатослотовий посох: він належить окремій ритуальній гілці.",
+        "Ціль підтверджує наявність кристалічного посоха та зазначений комплект. Вона не підтверджує recipe-ID його походження, заповнення слотів або успішне накладання закляття."
+      ],
+      "icon": "rootsclassic:crystal_staff",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rootsclassic:altar",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:crystal_staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:acacia_bark",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:birch_bark",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_RING_TWO"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:healing_poultice",
+          "count": 2
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_crystal_staff"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_CRYSTAL_SPELLS_KIT",
+      "epoch": 15,
+      "title_uk": "Підготувати перенесення заклять у Crystal Staff",
+      "description_uk": [
+        "Ритуал rootsclassic:imbuer використовує Crystal Staff і Verdant Sprig на вівтарі рівня1 та Spell Powder у жаровнях. Потрібен хоча б один дійсний порошок; до чотирьох порошків переносять свої дані у слоти нового посоха. Звичайний блок Imbuer робить однозакляттєвий Staff, а не цей ритуал. Shift-use перемикає вибраний слот1–4; перевірте потрібний ефект і запас мани перед застосуванням.",
+        "Це автоматично перевірений комплект для ритуалу, не доказ його завершення: базовий ID порожнього та заповненого посоха однаковий. Перевірка конкретних rootsclassic:spells і selected_spell у цій цілі ще не реалізована."
+      ],
+      "icon": "rootsclassic:crystal_staff",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rootsclassic:brazier",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:crystal_staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:spell_powder",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:verdant_sprig",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_CRYSTAL_STAFF",
+        "V5_DEPTH_ROOTS_IMBUER"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:redcurrant",
+          "count": 4
+        },
+        {
+          "item": "rootsclassic:elderberry",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_crystal_spells_kit"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_FARM_STONES",
+      "epoch": 15,
+      "title_uk": "Ріст і збирання мають різні ролі",
+      "description_uk": [
+        "Встановіть Grower Standing Stone над ділянкою культур: його native-код періодично обирає позиції в горизонтальному радіусі4 на один-два блоки нижче, а прискорення має шанс. Додайте Vacuum Stone і звичайний hopper для приймання врожаю. Vacuum притягує ItemEntity приблизно в радіусі6, проте сам не є інвентарем і не вкладає предмети у скриню.",
+        "Огляд трьох установлених блоків перевіряється автоматично. Фактичний потік урожаю, правильна висота культур і успішне перенесення в hopper цим кроком не вимірюються."
+      ],
+      "icon": "rootsclassic:grower_standing_stone",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "rootsclassic:grower_standing_stone",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "rootsclassic:vacuum_standing_stone",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "minecraft:hopper",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_RING_TWO",
+        "V5_DEPTH_ROOTS_LIVING_TOOLS"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:growth_powder",
+          "count": 2
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_farm_stones"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_WILDWOOD_CAMP",
+      "epoch": 15,
+      "title_uk": "Живий обладунок і лікувальний осередок",
+      "description_uk": [
+        "Підготуйте повний Wildwood-комплект та встановіть Healer Standing Stone. Native full-set логіка Wildwood може зцілювати пораненого гравця, а обладунок має власний випадковий ремонт під час носіння. Healer раз на20тіків дає RegenerationII живим істотам у зоні приблизно±10, тому плануйте його місце з урахуванням ворожих істот; це не вибіркове лікування тільки команди.",
+        "Перевіряються комплект в інвентарі та встановлений Healer. Одночасне носіння, спрацьовування лікування/ремонту та походження кожної частини не доводяться цим inventory/observation завданням."
+      ],
+      "icon": "rootsclassic:wildwood_mask",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "rootsclassic:wildwood_mask",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:wildwood_plate",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:wildwood_leggings",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:wildwood_boots",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "rootsclassic:healer_standing_stone",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_RING_TWO"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:healing_poultice",
+          "count": 2
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_wildwood_camp"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_SYLVAN_SET",
+      "epoch": 15,
+      "title_uk": "Повний Sylvan-комплект для складного закляття",
+      "description_uk": [
+        "Ритуально отримайте Sylvan Hood, Robe, Tunic і Boots та підготуйте Crystal Staff. Код посоха додає ще+1potency тільки коли всі чотири відповідні частини Sylvan фактично вдягнені. Окремі предмети в скрині цього бонусу не дають. Порівняйте витрату мани й дію вибраного закляття на безпечній мішені; інші підсилювачі порошку не замінюють вимогу повного набору.",
+        "Наявність усього комплекту й посоха перевіряється автоматично. Застосування повного set-bonus та компоненти закляття потребують окремого native/equipment observer; цей квест не стверджує, що вони вже перевірені."
+      ],
+      "icon": "rootsclassic:sylvan_hood",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "rootsclassic:sylvan_hood",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:sylvan_robe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:sylvan_tunic",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:sylvan_boots",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "rootsclassic:crystal_staff",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ROOTS_CRYSTAL_SPELLS_KIT",
+        "V5_DEPTH_ROOTS_WILDWOOD_CAMP"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:elderberry",
+          "count": 4
+        },
+        {
+          "item": "rootsclassic:blackcurrant",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_sylvan_set"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_NATIVE_LIVING",
+      "epoch": 4,
+      "title_uk": "Ритуал живої кирки — завершена операція",
+      "description_uk": [
+        "Виконайте точний rootsclassic:ritual/crafting/living_pickaxe: дерев’яна кирка, Verdant Sprig, золотий самородок і два пахощі дубової кори. Це ритуал рівня0, тому зовнішні кам’яні кільця не потрібні. Дочекайтеся завершення native-ефекту; передача готової кирки не замінює цю дію.",
+        "Командний нативний запис AIA2 засвідчує завершення саме цього ритуального рецепта після виконання ефекту й очищення вівтаря. /give, підбирання предмета або лише запуск200-тікового процесу цього запису не створюють. Це не доказ підбирання чи збереження створеного ItemEntity."
+      ],
+      "icon": "rootsclassic:living_pickaxe",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/roots_living_pickaxe"
+        }
+      ],
+      "after": [
+        "V5_MAG_ROOTSCLASSIC_05"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:oak_bark",
+          "count": 4
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_native_living"
+    },
+    {
+      "id": "V5_DEPTH_ROOTS_NATIVE_CHARGED",
+      "epoch": 15,
+      "title_uk": "Заряджений фокус через завершений ритуал",
+      "description_uk": [
+        "На звичайному маршруті після відкриття Незеру виростіть Nether Wart, отримайте Infernal Bulb і використайте її разом із пшеницею як пахощі. На вівтарі поєднайте Runic Focus, Redstone та Glowstone Dust у точному rootsclassic:ritual/crafting/charged_runic_focus. Дочекайтеся завершення, зберігши запас фокусів для інших інструментів.",
+        "Запис AIA2 засвідчує завершення точного ритуального рецепта командою після ефекту й очищення вівтаря; наявність готового фокуса його не замінює. Рідкісний ранній шлях до Nether Wart через overworld-структури не заборонено: стару optional-ціль епохи4 не перенесено і не скинуто."
+      ],
+      "icon": "rootsclassic:charged_runic_focus",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/roots_charged_focus"
+        }
+      ],
+      "after": [
+        "V5_MAG_ROOTSCLASSIC_06",
+        "V5_DEPTH_ROOTS_IMBUER"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "rootsclassic:healing_poultice",
+          "count": 2
+        }
+      ],
+      "mod": "rootsclassic",
+      "research_map": "rootsclassic",
+      "mechanic_stage": "rootsclassic:depth_native_charged"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": 1,
+  "scope": "Three new course items with native source paths; no fabricated crafting recipes.",
+  "items": [
+    {
+      "item": "rootsclassic:acacia_bark",
+      "installed_version": "1.21.1-1.5.10",
+      "source_kind": "native_interaction_or_imbuement",
+      "status": "source_verified_native_path",
+      "description_uk": "Ножем Roots використайте Acacia Log/Wood: BLOCK_BARK_MAP повертає ACACIA_BARK, а useOn створює barkDrop через spawnAtLocation. Рецепт предмета не потрібний; деревина може бути знята з кори за шансом конфігурації.",
+      "recipe_ids": [],
+      "sources": [
+        {
+          "path": "content/research/evidence/roots_core_next_v5/official/gradle.properties",
+          "sha256": "4502f873707c78c468a6002f6e24ffb85af4298f14e14b6c3aa183089179a677",
+          "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties",
+          "version_match": true,
+          "evidence_uk": "ExactMC1.21.1/Roots1.5.10 metadata."
+        },
+        {
+          "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/item/DruidKnifeItem.java",
+          "sha256": "e1258d9870621ad779203ec0d8bff5ab3f3f24f80664fef3db66e438d580aa45",
+          "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/DruidKnifeItem.java",
+          "version_match": true,
+          "evidence_uk": "Exact native creation/consumption path, not inventory presence proof."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Source підтверджує отримування; повний optional інстанс/інтеграції не запускалися."
+    },
+    {
+      "item": "rootsclassic:staff",
+      "installed_version": "1.21.1-1.5.10",
+      "source_kind": "native_interaction_or_imbuement",
+      "status": "source_verified_native_path",
+      "description_uk": "Покладіть wooden rod та Spell Powder із component RootsComponents.SPELL в Imbuer. Серверний цикл після progress>40 створює RootsRegistry.STAFF, переносить параметри закляття й очищає обидва входи. Порожній порошок без потрібного компонента посоха не створює.",
+      "recipe_ids": [],
+      "sources": [
+        {
+          "path": "content/research/evidence/roots_core_next_v5/official/gradle.properties",
+          "sha256": "4502f873707c78c468a6002f6e24ffb85af4298f14e14b6c3aa183089179a677",
+          "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties",
+          "version_match": true,
+          "evidence_uk": "ExactMC1.21.1/Roots1.5.10 metadata."
+        },
+        {
+          "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/block/imbuer/ImbuerBlockEntity.java",
+          "sha256": "2ae90feb37a63d69b737a3a44bfcdf1d3030408e7927dbdef32fd0603cf5dfca",
+          "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/imbuer/ImbuerBlockEntity.java",
+          "version_match": true,
+          "evidence_uk": "Exact native creation/consumption path, not inventory presence proof."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Source підтверджує отримування; повний optional інстанс/інтеграції не запускалися."
+    },
+    {
+      "item": "actuallyadditions:crystallized_oil_bucket",
+      "installed_version": "1.3.26",
+      "source_kind": "native_world_fluid_conversion_and_bucket",
+      "status": "source_verified_native_path",
+      "description_uk": "Киньте один Crystallized Canola Seed у source-блок refined_canola_oil. CanolaSeed міняє блок на CRYSTALLIZED_OIL; InitFluids реєструє його як crystallized_oil, а FluidAA зв’язує crystallized_oil_bucket. Наповніть відро рідиною. Кидайте насіння по одному: native kill видаляє весь стек-сутність.",
+      "recipe_ids": [],
+      "sources": [
+        {
+          "path": "content/research/evidence/actually_additions_core_finish_v5/official/gradle.properties",
+          "sha256": "904e1a8936a8a648fa7f46b8b81cfc18921cc8c2470cca449ec98efbf75874f6",
+          "url": "https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852",
+          "version_match": true,
+          "evidence_uk": "Exact1.3.26 fluid registration, source-only seed conversion and native BucketItem binding."
+        },
+        {
+          "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/items/CanolaSeed.java",
+          "sha256": "16f418b5f11d9adfec783abd939683ff6b07e4ad90958c23cad3a3097a24e62a",
+          "url": "https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852",
+          "version_match": true,
+          "evidence_uk": "Exact1.3.26 fluid registration, source-only seed conversion and native BucketItem binding."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/actuallyadditions/src/main/java/de/ellpeck/actuallyadditions/mod/fluids/InitFluids.java",
+          "sha256": "f779c840306eb8251b68afaf99a3c60f3e85d9fdd952359e8ade57f49225120d",
+          "url": "https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852",
+          "version_match": true,
+          "evidence_uk": "Exact1.3.26 fluid registration, source-only seed conversion and native BucketItem binding."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/actuallyadditions/src/main/java/de/ellpeck/actuallyadditions/mod/fluids/FluidAA.java",
+          "sha256": "6ea09b0fa99e63bff14f37fe50d6db485b2bf3f3c4fb8762fd35594b5f0efd5c",
+          "url": "https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852",
+          "version_match": true,
+          "evidence_uk": "Exact1.3.26 fluid registration, source-only seed conversion and native BucketItem binding."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Не вигадано окремий item-output recipe. Реальна конверсія в повному інстансі ще не запускалася."
+    }
+  ]
+}

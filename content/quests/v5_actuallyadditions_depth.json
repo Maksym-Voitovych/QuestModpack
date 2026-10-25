@@ -1,0 +1,510 @@
+{
+  "schema": 1,
+  "quest_count": 11,
+  "scope": "Exact1.3.26 authored core route: craft/setup and native-product checkpoints; no fabricated action proof.",
+  "quests": [
+    {
+      "id": "V5_DEPTH_AA_CHARGE_PORTS",
+      "epoch": 16,
+      "title_uk": "Два напрямки енергопредмета",
+      "description_uk": [
+        "Виготовте Energizer та Enervator до підключення переносного резерву. Energizer приймає енергію й заряджає предмет, Enervator розряджає предмет у власний буфер; однакова форма корпусу не означає однаковий напрям роботи.",
+        "Покладіть сумісну батарею у вхідний слот і перевірте напрям енергії у GUI. FTB тут доводить крафт двох станцій, а не кількість переданої енергії або заряд батареї."
+      ],
+      "icon": "actuallyadditions:energizer",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:energizer",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:enervator",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E16_aa_operations_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.charge_ports"
+    },
+    {
+      "id": "V5_DEPTH_AA_BATTERY_BUFFER",
+      "epoch": 16,
+      "title_uk": "Battery Box потребує самої батареї",
+      "description_uk": [
+        "Виготовте Single Battery та Battery Box. Установіть коробку й вставте в неї батарею правим кліком: коробка використовує місткість вставленого енергопредмета, а не створює власний нескінченний запас.",
+        "Shift+правий клік перемикає батарею в discharge mode; той самий режим можна перемикати імпульсом на Battery Box. Завдання перевіряє крафт і огляд коробки, не стан компонента заряду й не розподіл енергії між коробками."
+      ],
+      "icon": "actuallyadditions:battery_box",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:single_battery",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:battery_box",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "actuallyadditions:battery_box",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_CHARGE_PORTS"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.battery_buffer"
+    },
+    {
+      "id": "V5_DEPTH_AA_PRESS_FARM",
+      "epoch": 16,
+      "title_uk": "Від поля ріпаку до першого масла",
+      "description_uk": [
+        "Відведіть відновлювану ділянку під Canola та подайте врожай у Canola Press. Прес дає80mB сирого масла з одного Canola; буфер рідини відокремте від запасу насіння для повторного засіву.",
+        "Візьміть відро Canola Oil і огляньте прес. Продукт та встановлена станція є контрольними точками цього кроку; FTB не доводить безперервного автозбирання врожаю або походження кожного відра саме з цього преса."
+      ],
+      "icon": "actuallyadditions:canola_press",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:canola_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:canola",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:canola_seeds",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:canola_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E16_aa_operations_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:canola_seeds",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.press_farm"
+    },
+    {
+      "id": "V5_DEPTH_AA_BARREL_CONTROL",
+      "epoch": 16,
+      "title_uk": "Вихід бочки керує наступним кроком",
+      "description_uk": [
+        "Поставте Fermenting Barrel між пресом та паливною ділянкою. Рецепт refined_canola перетворює80mB сирої олії на80mB очищеної за100тіків; це ферментація, а не згоряння.",
+        "Виготовте компаратор для контролю вихідного бака: його сигнал у цій версії відповідає заповненню виходу. FTB перевіряє компаратор, встановлену бочку та зразок очищеної олії; коректність автоматичного redstone-вимкнення перевіряється на вашій установці."
+      ],
+      "icon": "actuallyadditions:fermenting_barrel",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:fermenting_barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:refined_canola_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_PRESS_FARM"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.barrel_control"
+    },
+    {
+      "id": "V5_DEPTH_AA_CRYSTALLIZED_OIL",
+      "epoch": 16,
+      "title_uk": "Одна кристалічна насінина на source-блок",
+      "description_uk": [
+        "Отримайте Crystallized Canola Seed реконструкцією звичайного насіння, поставте SOURCE-блок Refined Canola Oil і киньте в нього одну насінину. Насінина перетворює саме source-блок на Crystallized Oil; потік рідини не підходить.",
+        "Кидайте поодиноку насінину: код видаляє цілу сутність предмета, отже весь кинутий стек буде витрачений. Перевірка вимагає зразок насіння та обох олій, але не замінює спостереження самої світової реакції."
+      ],
+      "icon": "actuallyadditions:crystallized_canola_seed",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:crystallized_canola_seed",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:refined_canola_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:crystallized_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_BARREL_CONTROL"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:canola_seeds",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.crystallized_oil"
+    },
+    {
+      "id": "V5_DEPTH_AA_GENERATOR_CONTROL",
+      "epoch": 16,
+      "title_uk": "Порівняти паливо й керування генератором",
+      "description_uk": [
+        "Виготовте Oil Generator та підготуйте вимикач із компаратором. Сире, очищене та кристалічне масло мають різні паливні рецепти. Оцінюйте загальний вихід разом із часом згоряння та кількістю витраченої рідини; більший загальний вихід не означає той самий CF за тік.",
+        "Oil Generator зупиняє початок нового спалювання під redstone, а компаратор читає запас енергії. Уже запущений burn-cycle має власний лічильник. FTB перевіряє крафт станції та комплект керування, не енергетичний баланс або факт згоряння."
+      ],
+      "icon": "actuallyadditions:oil_generator",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:oil_generator",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lever",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_CRYSTALLIZED_OIL",
+        "V5_DEPTH_AA_BATTERY_BUFFER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.generator_control"
+    },
+    {
+      "id": "V5_DEPTH_AA_ENERGY_NETWORK",
+      "epoch": 16,
+      "title_uk": "Пропускна здатність визначається парою реле",
+      "description_uk": [
+        "Виготовте енергетичні Laser Relays і Advanced Relay та зв’яжіть їх Laser Wrench. Мережі передають енергію між сумісними сусідніми блоками; різні типи energy/item/fluid не об’єднуються в одну типову мережу.",
+        "Енергетичні ступені цієї версії мають межі передачі1000/10000/100000CF за тік. Для передачі між двома кінцевими реле враховуються нижча місткість передачі та вищі втрати; втрати задає конфіг. FTB тут перевіряє крафт і наявність ключа, а не успішний зв’язок або CF/t."
+      ],
+      "icon": "actuallyadditions:laser_relay_advanced",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:laser_relay",
+          "count": 2,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:laser_relay_advanced",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:laser_wrench",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_BATTERY_BUFFER"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.energy_network"
+    },
+    {
+      "id": "V5_DEPTH_AA_EMPOWERED_REAGENT",
+      "epoch": 23,
+      "title_uk": "Чотири окремо живлені стійки",
+      "description_uk": [
+        "Підготуйте Empowerer та чотири Display Stands. У цій версії центри стійок мають стояти на відстані3блоки від центра Empowerer у чотирьох горизонтальних напрямках, тобто з двома проміжними блоками. Кожна стійка окремо потребує живлення.",
+        "Для Empowered Canola Seed покладіть Crystallized Canola Seed у центр і по Canola Seed на кожну стійку. Продукт є контрольною точкою, крафт стійок — підготовкою; FTB не телеметризує енергію чи просторову валідність усієї установки."
+      ],
+      "icon": "actuallyadditions:empowered_canola_seed",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "actuallyadditions:empowerer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:display_stand",
+          "count": 4,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:empowered_canola_seed",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E23_aa_operations_03",
+        "V5_DEPTH_AA_CRYSTALLIZED_OIL"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.empowered_reagent"
+    },
+    {
+      "id": "V5_DEPTH_AA_EMPOWERED_FUEL",
+      "epoch": 23,
+      "title_uk": "Посилене масло завершує паливний цикл",
+      "description_uk": [
+        "Після Empowerer киньте ОДНУ Empowered Canola Seed у SOURCE-блок Crystallized Oil. Ця друга світова реакція дає Empowered Oil; ні сире, ні Refined Canola Oil для посиленої насінини не підходять.",
+        "Паливний рецепт цієї версії витрачає50mB за400тіків і дає48000CF загалом. Порівняйте його зі своїми попередніми буферами й уникайте змішування масел. FTB перевіряє комплект контрольних продуктів, не походження рідини чи факт роботи генератора."
+      ],
+      "icon": "actuallyadditions:empowered_oil_bucket",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:empowered_canola_seed",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:crystallized_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:empowered_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_EMPOWERED_REAGENT",
+        "V5_DEPTH_AA_GENERATOR_CONTROL"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:canola_seeds",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.empowered_fuel"
+    },
+    {
+      "id": "V5_DEPTH_AA_SORTED_ITEMS",
+      "epoch": 23,
+      "title_uk": "Розділити вхідний і вихідний фільтри",
+      "description_uk": [
+        "Виготовте Advanced Item Laser Relay, Filter та Item Interface. Інтерфейс відкриває інвентар для предметної мережі, а Advanced Relay має окремі ліві й праві фільтри для входу та виходу.",
+        "Advanced Relay має дві групи по12фільтр-слотів і на10вищий пріоритет за базове предметне реле. Підготуйте окремі правила для реагентів стійок і готового кристала, а потім проведіть пробне перенесення. FTB перевіряє крафт обладнання, не вміст фільтрів і не доставлений обсяг."
+      ],
+      "icon": "actuallyadditions:laser_relay_item_advanced",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:laser_relay_item_advanced",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:filter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:item_interface",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_DEPTH_AA_EMPOWERED_REAGENT",
+        "V5_DEPTH_AA_ENERGY_NETWORK"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.sorted_items"
+    },
+    {
+      "id": "V5_DEPTH_AA_PHANTOM_PORTS",
+      "epoch": 28,
+      "title_uk": "Окремі фантомні грані для рідин та енергії",
+      "description_uk": [
+        "Розширте вже освоєну Phantom Itemface двома типізованими портами: Liquiface і Energyface. Phantom Connector спершу зберігає цільовий блок, потім прив’язує відповідну грань. Базова дальність Phantomface у цій версії16блоків; booster змінює її за правилами мода.",
+        "Фантомна грань надає доступ до capability цілі, а не сама перекачує ресурс. Подайте рідину чи енергію окремою сумісною логістикою. FTB підтверджує крафт обох граней та конектора; справжню прив’язку, діапазон і transfer потрібно перевірити на установці."
+      ],
+      "icon": "actuallyadditions:phantom_liquiface",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "actuallyadditions:phantom_liquiface",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:phantom_energyface",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "actuallyadditions:phantom_connector",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E28_aa_operations_04",
+        "V5_DEPTH_AA_SORTED_ITEMS"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "actuallyadditions:black_quartz",
+          "count": 2
+        }
+      ],
+      "mod": "actuallyadditions",
+      "research_stage": "actuallyadditions.depth.phantom_ports"
+    }
+  ]
+}

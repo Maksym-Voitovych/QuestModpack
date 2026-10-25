@@ -22,12 +22,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/** Four curated process proofs; only native post-consumption hooks may record. */
+/** Curated process proofs; only native post-consumption hooks may record. */
 public final class ProductionMilestoneBridge {
     private record Rule(String id, int epoch, String output, String serializer) {}
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
-            "mekanism:metallurgic_infusing", "minecraft:crafting_shaped");
+            "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual");
     private static Map<String, Rule> byRecipe = Map.of();
     private static final Map<Recipe<?>, Rule> identity = new IdentityHashMap<>();
     private static final Map<CrafterBlockEntity, CrafterAttempt> crafterAttempts = new WeakHashMap<>();
@@ -103,7 +103,7 @@ public final class ProductionMilestoneBridge {
         return identity.get(recipe);
     }
 
-    /** Called only after successful, non-simulation Basin/Mekanism completion. */
+    /** Called only after native input consumption (Basin, Mekanism, Roots). */
     public static void finishedMachine(BlockEntity machine, Recipe<?> recipe) {
         if (!(machine.getLevel() instanceof ServerLevel level)) return;
         Rule rule = rule(level, recipe);

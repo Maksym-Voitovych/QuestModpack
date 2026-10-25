@@ -67,7 +67,7 @@ test('mechanics config waits for native guard and installs through the startup-c
   b.sync();
   assert.equal(b.calls.includes('configure'), false);
   assert.equal(grants(b).length, 0);
-  assert.equal(revokes(b).length, 4);
+  assert.equal(revokes(b).length, config.rules.length);
   b.ready(); b.sync();
   assert.equal(b.calls.filter(call => call === 'configure').length, 1);
   assert.equal(grants(b).length, 0, 'Configuration itself is not evidence of production');
@@ -81,22 +81,23 @@ test('native receipts are scoped by team and current epoch; item possession neve
   assert.equal(grants(b).length, 0);
   for (const rule of config.rules) b.proofs.add('team-a:' + rule.id);
   b.sync();
-  assert.deepEqual(grants(b), ['advancement grant Alice only aia2:mechanics/andesite_mixing']);
+  assert.deepEqual(grants(b), ['advancement grant Alice only aia2:mechanics/andesite_mixing',
+    'advancement grant Alice only aia2:mechanics/roots_living_pickaxe']);
   b.player.completed = 9; b.sync();
-  assert.equal(grants(b).length, 2);
-  assert.equal(grants(b)[1], 'advancement grant Alice only aia2:mechanics/brass_mixing');
+  assert.equal(grants(b).length, 3);
+  assert.equal(grants(b)[2], 'advancement grant Alice only aia2:mechanics/brass_mixing');
   assert.equal(b.calls.some(call => call.includes('infused_alloy')), false, 'Future proof queries remain bounded by the current epoch');
 });
 
 test('an immediate core team sync revokes old-team manufacturing projections', () => {
   const b = fixture(); b.ready();
   for (const rule of config.rules) b.proofs.add('team-a:' + rule.id);
-  b.sync(); assert.equal(grants(b).length, 4);
+  b.sync(); assert.equal(grants(b).length, config.rules.length);
   b.commands.length = 0; b.player.team = 'team-b'; b.sync();
   assert.equal(grants(b).length, 0);
-  assert.equal(revokes(b).length, 4);
+  assert.equal(revokes(b).length, config.rules.length);
   b.player.team = 'team-a'; b.sync();
-  assert.equal(grants(b).length, 4, 'Returning to the original team restores its original durable evidence');
+  assert.equal(grants(b).length, config.rules.length, 'Returning to the original team restores its original durable evidence');
 });
 
 test('unchanged receipt polling caches advancement commands and avoids repeated configuration', () => {
@@ -116,7 +117,7 @@ test('malformed schema or native configuration failure stays closed and reports 
     if (failure === 'native') b.failConfigure(new Error('native fixture configuration failed'));
     b.sync(); b.sync();
     assert.equal(grants(b).length, 0);
-    assert.equal(revokes(b).length, 4);
+    assert.equal(revokes(b).length, config.rules.length);
     assert.equal(b.errors.length, 1);
     assert.match(b.errors[0], /закрито/);
   }
@@ -128,10 +129,10 @@ test('failed FTB lookup revokes all own projections and does not reset native te
   b.sync(); b.commands.length = 0;
   b.failLookup(new Error('FTB fixture not ready'));
   assert.throws(() => b.sync(), /FTB fixture not ready/);
-  assert.equal(revokes(b).length, 4);
-  assert.equal(b.proofs.size, 4);
+  assert.equal(revokes(b).length, config.rules.length);
+  assert.equal(b.proofs.size, config.rules.length);
   b.failLookup(null); b.sync();
-  assert.equal(grants(b).length, 4);
+  assert.equal(grants(b).length, config.rules.length);
 });
 
 test('runtime reset and script reload restore durable receipts through fresh native configuration', () => {
@@ -161,6 +162,6 @@ test('native receipt errors during a team change revoke old-team projections bef
   b.sync(); b.commands.length = 0;
   b.player.team = 'team-b'; b.failProof(new Error('native fixture receipt storage failed'));
   assert.throws(() => b.sync(), /native fixture receipt storage failed/);
-  assert.equal(revokes(b).length, 4, 'An unavailable native ledger must never retain another team’s projected proof');
+  assert.equal(revokes(b).length, config.rules.length, 'An unavailable native ledger must never retain another team’s projected proof');
   assert.equal(grants(b).length, 0);
 });

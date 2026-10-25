@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_apothic_enchanting",
   "title": "apothic_enchanting — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 31,
+  "order_index": 32,
   "icon": {
     "id": "apothic_enchanting:apothic_enchanting_table",
     "count": 1
@@ -54,7 +54,7 @@
         }
       ],
       "x": 0.0,
-      "y": 1.0
+      "y": 4.545
     },
     {
       "id": "000045851BCE32DA",
@@ -103,7 +103,50 @@
         }
       ],
       "x": 2.0,
-      "y": 2.0
+      "y": 2.545
+    },
+    {
+      "id": "00006BF4F6487F62",
+      "title": "Перший результат зі справжнім рівнем30",
+      "description": [
+        "Почніть із доступного столу та basic_bookshelf. У цій1.6.4 версії звичайна полиця дає2Eterna, базовий cap30. Перевіряйте вікно столу й залишайте проміжок, який передає enchanting power. Виконайте реальне зачарування з native вартістю не нижче30.",
+        "Native enchanted trigger спрацював після успішної операції з levels>=30; піднята зачарована книга не доводить цього кроку."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:basic_bookshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA17D8E086C0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E68C104CC073",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:30ench"
+        },
+        {
+          "id": "0000B7D7BDCAF191",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002E387AC509B7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 6.545
     },
     {
       "id": "0000E4798A4A014B",
@@ -152,7 +195,74 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 4.545
+    },
+    {
+      "id": "00001B71D3773091",
+      "title": "Бібліотека для повторного використання чарів",
+      "description": [
+        "Виготовте Library і підготуйте книги для її архіву. EnchLibrary зберігає знання зачарувань через книги; перевіряйте власні рівні й доступні записи перед поверненням потрібних чарів. Томи для типів інструментів та інфузія є окремими системами.",
+        "FTB перевіряє крафт Library, огляд блока та комплект порожніх книг; саму передачу чарів або вміст архіву тут не вимірюємо."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:library",
+        "count": 1
+      },
+      "dependencies": [
+        "00006BF4F6487F62",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000302778A8ACAD",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:library",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00009397C6AB7C5D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000084766E49251A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apothic_enchanting:library",
+          "timer": 40
+        },
+        {
+          "id": "000025866996C2AE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BBFEB4D7B236",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.426
     },
     {
       "id": "000032111219730C",
@@ -201,7 +311,7 @@
         }
       ],
       "x": 4.0,
-      "y": 4.0
+      "y": 6.426
     },
     {
       "id": "0000E04CBE0D29CA",
@@ -307,6 +417,477 @@
       ],
       "x": 4.0,
       "y": 0.0
+    },
+    {
+      "id": "0000FE1B0588371E",
+      "title": "Eterna, Quanta й Arcana мають різні ролі",
+      "description": [
+        "Eterna визначає доступну силу, Quanta змінює розкид, Arcana впливає на добір зачарувань. Налаштуйте полиці й зробіть операцію, для якої всі три native параметри не нижче10. Відрізняйте cap внеску полиці від особистого MAX_ETERNA.",
+        "Фактичне enchanted виконується при eterna>=10,quanta>=10,arcana>=10; огляд полиць не є цим доказом."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:seashelf",
+        "count": 1
+      },
+      "dependencies": [
+        "00006BF4F6487F62",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F999042C5E30",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:enchanting_stats"
+        },
+        {
+          "id": "0000DA181B43ED1E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007862F649B252",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 8.426
+    },
+    {
+      "id": "0000967C85E74F49",
+      "title": "Морська інфузія керує Arcana",
+      "description": [
+        "Перетворіть Seashelf через інфузію при45Eterna,15Quanta та10Arcana. Infused Seashelf піднімає cap до60 і додає5Arcana без додаткової Quanta; це інша роль, ніж у пекельної гілки.",
+        "Серверна enchanting-операція видала саме infused_seashelf. Одна наявність предмета не завершує цей custom action."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:infused_seashelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE1B0588371E",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B342907871FC",
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_seashelf"
+        },
+        {
+          "id": "000059CBD9A10E71",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000086FA15CE6993",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 5.963
+    },
+    {
+      "id": "0000DE89494C9359",
+      "title": "Інфузія HellShelf через enchanting",
+      "description": [
+        "Поставте саму Hellshelf у стіл як вхід інфузії. Точний рецепт infused_hellshelf вимагає щонайменше45Eterna та30Quanta. Підберіть залу до натискання: випадкова книга в інвентарі чи крафт звичайної полиці не підходить.",
+        "Перевіряється реальний post-infusion вихід infused_hellshelf через native enchanted item predicate; передача готової полиці не видає доказ."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:infused_hellshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FE1B0588371E",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000550835BB70AD",
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_hellshelf"
+        },
+        {
+          "id": "00006CFDB75A5183",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F99AEF05D841",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 7.963
+    },
+    {
+      "id": "00003C9C0519D329",
+      "title": "Керований результат без розкиду Quanta",
+      "description": [
+        "Скористайтеся негативною Quanta Melonshelf або підтриманими іншими стат-блоками, щоб зробити справжню операцію при Quanta0. Перераховуйте Eterna: Melonshelf також віднімає2Eterna. Досягнення вимагає операції, а не лише нульового індикатора.",
+        "Під час успішного native enchanted значення quanta дорівнює0; цей доказ не вимірює конкретний набір накладених чарів."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:melonshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE89494C9359",
+        "0000967C85E74F49",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000913ADAE8E86D",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:quanta0"
+        },
+        {
+          "id": "0000C439FD966811",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008921BE0EEF47",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 8.963
+    },
+    {
+      "id": "0000CC6446EB1BC6",
+      "title": "Знімати чари з правильним типом тому",
+      "description": [
+        "Підготуйте Scrapping, Improved Scrapping та Extraction Tome для роботи з ковадлом. Improved Tome отримують інфузією при45/25/35(Eterna/Quanta/Arcana), Extraction — при60/25/45 із Quanta не вище75. Простий Scrapping може втрачати частину чарів; Extraction повертає основу без чарів при успішному anvil repair.",
+        "Перевіряється підготовка інструментів, не зміна компонентів основи на ковадлі. Інфузійні предмети не позначені only_from_crafting, бо це не звичайний crafting event."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:extraction_tome",
+        "count": 1
+      },
+      "dependencies": [
+        "00001B71D3773091",
+        "0000DE89494C9359",
+        "0000967C85E74F49",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009A252F9EEA56",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:scrap_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003D753FC9A47C",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:improved_scrap_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDBCCD4E9CCC",
+          "type": "item",
+          "item": {
+            "id": "apothic_enchanting:extraction_tome",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000022A1F98CAAC6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:anvil",
+          "timer": 40
+        },
+        {
+          "id": "0000A4AFB049F0D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A958F461D972",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.963
+    },
+    {
+      "id": "0000609194A22C15",
+      "title": "Пробудити Dormant Deepshelf",
+      "description": [
+        "Після початкових інфузій підготуйте Dormant Deepshelf і залу з60Eterna,40Quanta,40Arcana. Інфузія дає Deepshelf із cap70; далі обирайте soul-touched або echoing спеціалізацію й досліджуйте ресурси глибин.",
+        "Реальна post-infusion операція видала deepshelf; це не перевірка добування sculk чи результатів убивства Warden."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:deepshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DE89494C9359",
+        "0000967C85E74F49",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E468140F1E4A",
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_deepshelf"
+        },
+        {
+          "id": "0000D9710AC34B59",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000250B80FDA070",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 6.963
+    },
+    {
+      "id": "0000CE9AA0649DAB",
+      "title": "Перенести знання в Ender Library",
+      "description": [
+        "Після відкриття End розвивайте EndShelves, зокрема draconic із cap100. Для keep_nbt інфузії звичайної Library потрібні точно100Eterna,100Arcana та45–50Quanta. Перевірте на копії вміст збереженого архіву: рецепт має зберегти компоненти вхідної бібліотеки.",
+        "Native enchanted підтверджує отримання ender_library через операцію; цей item predicate сам не порівнює повний вміст NBT до/після."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:ender_library",
+        "count": 1
+      },
+      "dependencies": [
+        "00001B71D3773091",
+        "0000609194A22C15",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000085613156BD98",
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_ender_library"
+        },
+        {
+          "id": "0000298C0299C210",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000133C6D125BC9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 7.667
+    },
+    {
+      "id": "0000BBE3BA055ED4",
+      "title": "Зала для справжнього рівня100",
+      "description": [
+        "Збалансуйте cap і внески End/Deep/Sculk полиць, потім виконайте операцію з native levels>=100. У цій версії Eterna шкалюється до100, тому старі поради з cap50 не є точним описом1.6.4.",
+        "Native criterion перевіряє levels>=100 під час enchanting; не максимальний рівень окремого enchantment і не запас XP у кишені."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:draconic_endshelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CE9AA0649DAB",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CECF715DD1A9",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:100ench"
+        },
+        {
+          "id": "0000A64D69CF720C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000048D924792EC5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 7.667
+    },
+    {
+      "id": "0000D908CA5C36AF",
+      "title": "Максимум сили без випадкового розкиду",
+      "description": [
+        "Зберіть конфігурацію з100Eterna,100Arcana та0Quanta й виконайте зачарування. Порівняйте її з попередньою залою: полиці з від’ємними статами коригують не лише один індикатор.",
+        "Native max_stable вимагає Eterna>=100,Arcana>=100,Quanta0 в одній операції. Назва upstream не означає додаткового stable=true предиката."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:heart_seashelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BBE3BA055ED4",
+        "00003C9C0519D329",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000042753979D153",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:max_stable"
+        },
+        {
+          "id": "0000E638BAE84792",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007B8B2169E20C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 7.667
+    },
+    {
+      "id": "0000B3B8F1BDD3E9",
+      "title": "Висока Quanta з нативною стабілізацією",
+      "description": [
+        "Побудуйте альтернативну залу з не менш50Eterna,100Quanta та100Arcana і джерелом native stability. Ця конфігурація відрізняється від Quanta0: перевіряйте властивість providesStability, а не тільки число на панелі.",
+        "Native max_rectified вимагає зазначені три stats і stable=true під час однієї операції; не будь-який предмет із максимальними чарами."
+      ],
+      "icon": {
+        "id": "apothic_enchanting:geode_shelf",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D908CA5C36AF",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D7B9435092C4",
+          "type": "advancement",
+          "advancement": "apothic_enchanting:max_rectified"
+        },
+        {
+          "id": "00000B9E7CA44ED3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006656F8EB5301",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 7.667
     }
   ]
 }

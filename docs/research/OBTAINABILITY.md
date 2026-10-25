@@ -424,6 +424,37 @@ Eternal Stella створюється реальним Hephaestus ritual eternal
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java — SHA перевірено
 - https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModItems.java — SHA перевірено
 
+[Структуровані докази](../../content/audit/v5-source-gaps-roots-aa.json).
+
+## `rootsclassic:acacia_bark`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.5.10.
+
+Ножем Roots використайте Acacia Log/Wood: BLOCK_BARK_MAP повертає ACACIA_BARK, а useOn створює barkDrop через spawnAtLocation. Рецепт предмета не потрібний; деревина може бути знята з кори за шансом конфігурації.
+
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/DruidKnifeItem.java — SHA перевірено
+
+## `rootsclassic:staff`
+
+Статус: `source_verified_native_path`; версія: 1.21.1-1.5.10.
+
+Покладіть wooden rod та Spell Powder із component RootsComponents.SPELL в Imbuer. Серверний цикл після progress>40 створює RootsRegistry.STAFF, переносить параметри закляття й очищає обидва входи. Порожній порошок без потрібного компонента посоха не створює.
+
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties — SHA перевірено
+- https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/imbuer/ImbuerBlockEntity.java — SHA перевірено
+
+## `actuallyadditions:crystallized_oil_bucket`
+
+Статус: `source_verified_native_path`; версія: 1.3.26.
+
+Киньте один Crystallized Canola Seed у source-блок refined_canola_oil. CanolaSeed міняє блок на CRYSTALLIZED_OIL; InitFluids реєструє його як crystallized_oil, а FluidAA зв’язує crystallized_oil_bucket. Наповніть відро рідиною. Кидайте насіння по одному: native kill видаляє весь стек-сутність.
+
+- https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852 — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852 — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852 — SHA перевірено
+- https://github.com/Ellpeck/ActuallyAdditions/tree/cd9d9c63254f471f966ee51b078afdf47af5f852 — SHA перевірено
+
 [Структуровані докази](../../content/audit/v5-source-gaps-technology.json).
 
 ## `avaritia:eternal_singularity`

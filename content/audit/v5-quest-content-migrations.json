@@ -46,6 +46,58 @@
         }
       ],
       "description_note_uk": "Ціль звірено з точним експортом: продукт описаного процесу — diesel_sulfur. Для чистого дизеля потрібен окремий Hydrotreater; для naphtha — дистиляційна колона."
+    },
+    {
+      "id": "E04_X_orchid_sample",
+      "reason_uk": "Flare Orchid потребує мутації в Nether(відкривається15), а Radiant Daisy має native перевірку абсолютного getDayTime між5000і7000 без modulo24000. Ранній optional гербарій переводиться на відновлювані підготовчі ванільні зразки, без зміни ID чи залежностей. Це не рецепт мутованих квітів.",
+      "source_audit": "content/audit/v5-roots-flower-repair.json",
+      "item_targets": [
+        {
+          "task_index": 0,
+          "from": "rootsclassic:flare_orchid",
+          "to": "minecraft:blue_orchid"
+        },
+        {
+          "task_index": 1,
+          "from": "rootsclassic:radiant_daisy",
+          "to": "minecraft:oxeye_daisy"
+        }
+      ],
+      "presentation_changes": {
+        "title_uk": {
+          "from": "Тепла квітка для журналу",
+          "to": "Зразки для ритуального гербарію"
+        },
+        "icon": {
+          "from": "rootsclassic:flare_orchid",
+          "to": "minecraft:blue_orchid"
+        },
+        "description_uk": {
+          "from": [
+            "Розширте гербарій двома ритуальними рослинами Roots.",
+            "Не витрачайте останній екземпляр на експеримент, доки не перевірено спосіб його відновлення."
+          ],
+          "to": [
+            "Зберіть синю орхідею та королицю як відновлювані зразки для ритуального гербарію. Збережіть їх біля майстерні для подальших рослинних експериментів.",
+            "Це підготовчий комплект ванільних квітів. Він не підтверджує мутацію Flare Orchid чи Radiant Daisy; пізні й ненадійні умови цих рослин не є вимогою раннього завдання."
+          ]
+        }
+      },
+      "description_note_uk": "Первинну ранню вимогу мутованих квітів виправлено за точними джерелами1.5.10; предметні taskIDs і прогрес не скидаються."
+    },
+    {
+      "id": "V5_MAG_ROOTSCLASSIC_07",
+      "reason_uk": "Точний source пов’язує infernal_bulb з matureNetherWart; наданий Overworld structureloot міститьNetherWart, тому ранній optional шлях збережено, але пояснено як рідкісний альтернативний маршрут.",
+      "source_audit": "content/research/magic_adventure_v5.json",
+      "item_targets": [],
+      "description_note_uk": "Ранній Charged Focus можливий через рідкісний Nether Wart зі скринь наземних структур і вирощування зрілих рослин; це не гарантований стартовий ресурс. Штатний маршрут із власним Незером та новим виробничим доказом відкривається в епосі15."
+    },
+    {
+      "id": "V5_MAG_ROOTSCLASSIC_08",
+      "reason_uk": "Точний source пов’язує infernal_bulb з matureNetherWart; наданий Overworld structureloot міститьNetherWart, тому ранній optional шлях збережено, але пояснено як рідкісний альтернативний маршрут.",
+      "source_audit": "content/research/magic_adventure_v5.json",
+      "item_targets": [],
+      "description_note_uk": "Ранній Charged Focus можливий через рідкісний Nether Wart зі скринь наземних структур і вирощування зрілих рослин; це не гарантований стартовий ресурс. Штатний маршрут із власним Незером та новим виробничим доказом відкривається в епосі15."
     }
   ]
 }

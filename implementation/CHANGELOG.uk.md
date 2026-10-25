@@ -1,3 +1,12 @@
+# 0.4.5-alpha — Roots/AA та split Apothic core
+
+-45новихквестів(12Roots,11AA,12Enchanting,10Spawners),4основнікарти;3212квестів/138глав. Попередні3167ID/deps/rewards збережено.
+-2нові team-bound Roots proofs після фактичного emptyAltar;6загалом,старийSavedData schema1 збережено. Нативне незавершене restart-відновлення не заявляється.
+-3точкові міжмодові AAрецепти:Manasteel,NatureAuraInfusedIron,Mekcircuit.603старіcustomJSONнезмінні;3nativeproducers замінено,3reset routesзбережено.
+-Чинні руни Apotheosis замість standalone vanilla Spawner modifiers;6item/15recipefloors іnativeuse guard перед застосуванням уmain/offhand.
+-Ранній optional гербарій виправлено на відновлювані підготовчі квіти; ранній rare-loot Charged Focus маршрут збережено.3нові native-source шляхи підтверджено без штучних рецептів.
+-126Python/50JS/5237Java PASS;Roots49/Spawner15model;49мінімальнихMCперевірок у2JVM на0.4.5. Fullpack/JEI/Survival/TPS NOT RUN.
+
 # 0.4.4-alpha — проміжне виправлення Roots, робота над0.5 триває
 
 - Закрито підтверджений шлях виконання компонентного рецепта ступки Roots поза машинним тиком. Недоступний рецепт зупиняється до витрати інгредієнтів.

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.4-alpha (Roots guard, Apotheosis/Petroleum depth); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.5-alpha (Roots/AA та split Apothic core); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 58модів/60записів,928SHA-файлів у картах;43часткові карти й невивчений контент лишаються |
-| 3 | Карти прогресії | IN_PROGRESS | 15core-карт DONE;43часткові карти; наступні Roots/AA/split Apothic modules |
-| 4 | Перебудова координат | DONE | 137глав,0накладань/зворотних/вертикальних; стара2784когорта1679→1129перетинів; UI окремо |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 383нові квести відv4,22у поточному блоці;66nativeactionцілей; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 2899item-нагород перевірено;22нові тематичні,всі3145старі payload незмінні;48команд збережено |
-| 7 | Розширення рецептів | IN_PROGRESS | 603рецепти;34v5формули(33+1variant),602попередніJSON збережено; подальший баланс у плані |
-| 8 | Предмети без джерел | IN_PROGRESS | 2293важливихпредметів;32native-source докази;6IFfluid gaps+49nativecontext+1implicitcodec |
+| 2 | Дослідження механік | IN_PROGRESS | 60модів/62записи,1342SHA-файли;41часткова карта й невивчений контент |
+| 3 | Карти прогресії | IN_PROGRESS | 19core-карт DONE;41partial; наступні MI/Oritech |
+| 4 | Перебудова координат | DONE | 138глав без накладань/зворотних/вертикальних; стара2784когорта1679→1129;UIокремо |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 428новихквестів відv4;45у цьому блоці,86nativeaction+6teamproofs;старіобов’язкові IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 2947item-нагород перевірено;48нових entries;3167старих payloadнезмінні;48командзбережено |
+| 7 | Розширення рецептів | IN_PROGRESS | 606рецептів;37v5формул;603попередніcustomJSONнезмінні;3AAproducer замінено,resetзбережено |
+| 8 | Предмети без джерел | IN_PROGRESS | 2320предметів;35native-source доказів;6IFgaps+49nativecontext+1implicitcodec |
 | 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool і3creativeTablet producers закрито; guard player/pool exchange додано; прямі сторонні capability-виклики ще потребують аудиту |
-| 10 | Інтеграційні тести | IN_PROGRESS | 117Python/50JS/5237Java PASS;49actualMC@0.4.4у2JVM;Roots18model/Bota22/DE16;fullpack NOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.4—проміжний перевірений блок,0.5ще не готовий;коміти/пакет нижче |
+| 10 | Інтеграційні тести | IN_PROGRESS | 126Python/50JS/5237Java PASS;49actualMC@0.4.5у2JVM;Roots49model/Spawner15model;fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.5—проміжний блок,0.5ще не готовий;commit/packageнижче |
 
 ## Окремий стан 48 епох
 
@@ -31,34 +31,34 @@
 | 01 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 02 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 03 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 04 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
+| 04 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 05 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 06 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 07 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (7) | 117Python/50JS/5237Java PASS;49actualMC@0.4.4у2JVM;Roots18model/Bota22/DE16;fullpack NOT RUN |
-| 11 | IN_PROGRESS | IN_PROGRESS (4) | 0.4.4—проміжний перевірений блок,0.5ще не готовий;коміти/пакет нижче |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 11 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 16 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
+| 16 | IN_PROGRESS | IN_PROGRESS (12) | TODO | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
-| 20 | IN_PROGRESS | IN_PROGRESS (30) | TODO | DONE (static) |
+| 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 23 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 23 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 25 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 26 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 27 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
-| 28 | IN_PROGRESS | IN_PROGRESS (37) | TODO | DONE (static) |
+| 28 | IN_PROGRESS | IN_PROGRESS (38) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS | DONE (static) |
-| 31 | IN_PROGRESS | IN_PROGRESS (26) | TODO | DONE (static) |
+| 31 | IN_PROGRESS | IN_PROGRESS (33) | TODO | DONE (static) |
 | 32 | IN_PROGRESS | IN_PROGRESS (24) | TODO | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 34 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
@@ -68,7 +68,7 @@
 | 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 41 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
+| 41 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 42 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 43 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 44 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
@@ -76,6 +76,7 @@
 | 46 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 47 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 48 | IN_PROGRESS | IN_PROGRESS (9) | IN_PROGRESS | DONE (static) |
+
 
 ## Сесії та контрольні точки
 
@@ -294,3 +295,25 @@ Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split
 - Наступна конкретна дія: основна карта Roots Classic (вівтар/Imbuer/standing stones/реальні ритуальні результати), потім AAcore. Split Apothic1.6.4/1.4.0 джерела й SHA в pending-research. Після них решта43часткових карт і старі обов’язкові лінії48епох.
 - Пакет `/workspace/shared/downloads/AIA2-runtime-0.4.4-alpha.zip` пройшов CRC/повний SHA-маніфест. Розпакований інсталятор: dry-run0записів; справжній тимчасовий upgrade резервує0.4.3JAR, ставить0.4.4 і зберігаєworld-marker. User Windows інстанс не змінювався.
 - Проміжне пакування відхилено через зміну report-файла під час обчислення маніфесту. Повторний пакет на стабільному дереві пройшов перевірку; надалі завершувати метадані ПЕРЕД пакуванням і не змінювати включені файли до його завершення.
+
+### 2026-10-25 — Roots/AA/split Apothic: інтеграція в роботі
+
+- Почато з чистого1145f1b; backup before-roots-aa-20261025T090419Z/checkpoint-1145f1b.tar.gz. Інкрементний snapshot1145f1b захищає22додатковіID поверх попередніх3145 та137глав/603recipeID.
+- IN_PROGRESS перевірки нового блоку:45нових квестів(12Roots,11AA,22split Apothic),4основні карти,3AAміжмодові рецепти; перша генерація3212quests/606recipes пройшла static.
+- НовийRootsnative observer ловить не тимчасовий doEffect.clear, а фактичний emptyAltar після оплати.2нові team-bound SavedData proofs; існуючі4збережено.49modelумов actual-helper/handler та JDK21build PASS; fullpack NOT RUN.
+- Native spawner hook перевіряє обидві руки до findMatch/apply/списання;6rune itemfloors і15recipefloors, live team/fake/unready.15actual-handler/real-policy модельованих умов PASS. Ефективні Apotheosis-rune recipes мають пріоритет над standaloneSpawners defaults.
+- СтарийE04_X_orchid_sample виправлено точковим overlay на vanilla підготовчі квіти. ChargedFocus07/08 залишено на4: підтверджено rareOverworldNetherWartloot; новий штатнийnativeproof15не заперечує ранній альтернативний шлях.
+- FullPython/native2JVM/audit запущено, результат ще перевіряється. Наступна конкретна дія: завершити ці перевірки, ідемпотентний rebuild, звіти/README/manualacceptance; зафіксувати весь цілісний0.4.5блок і push.
+
+### 2026-10-25 — перевірений checkpoint0.4.5
+
+- DONE цього підблоку:45 нових квестів (Roots12, AA11, Enchanting12, Spawners10),4 основні карти,20 контрактів нативних дій і2 командні докази Roots. Runtime:3212 квестів,138 глав,606 рецептів,390 предметів/PNG,96 виробничих ключів. Нових предметів/текстур0.
+- Збережено всі3167 попередні quest/task/reward ID, залежності та нагороди, а також603 попередні custom recipe JSON. Ранній optional гербарій має точкове виправлення цілей і пояснення; два старі Charged Focus квести лишилися в епосі4 з поясненням рідкісного Overworld-луту.
+- Реалізовано3 міжмодові формули AA; замінено3 native producer IDs, збережено3 reset-рецепти. Bootstrap не потребує олій. Native Spawner hook перевіряє обидві руки до застосування/списання;6 item floors і15 recipe floors. Чинний експорт із рунами має пріоритет над standalone-припущеннями про Comparator/Sugar/Clock.
+- Виробничих правил6 (старі4 плюсRoots2), перевірених recipe IDs8. Roots proof записується після фактичного emptyAltar, із перевіркою входів/owner/policy. Гарантію прийняття output entity світом не заявлено: native код ігнорує addFreshEntity boolean. Незакінчений native ритуал після restart цей hook не відновлює.
+- PASS:126 Python tests,50 Node tests,5237 Java assertions і JDK21 build. Нові модельовані перевірки справжніх helper/handlers із GuardPolicy:Roots49, Spawner15. Справжній мінімальний Minecraft0.4.5:49 assertions у2JVM,650 ticks і restart SavedData. Fullpack optional/JEI/UI/Survival/TPS:NOT RUN.
+- SNBT/DAG/ID/96key/gates/rewards/recipes/resources/source checks:PASS.138 глав без накладань, зворотних, вертикальних і надто довгих локальних ліній;1141 перетин проти1133 до45нових цілей. Стара порівнянна2784-когорта лишилася1679→1129.
+- Rebuild виявив випадковий set-порядок трьох нових recipe gates. Виправлено sorted IDs; регресія в окремих Python-процесах із PYTHONHASHSEED11/29 пройшла. Повторна повна генерація1157 runtime-файлів byte-identical. Аудит2320 предметів має35 native-source доказів і6 IF-прогалин; штучних рецептів для них не додано.
+- PLAN і таблицю48епох оновлено. Виправлено формат рядків10/11 після попереднього надто широкого regex; надалі оновлювати таблиці лише в межах окремих секцій. README/CHANGELOG/докладний checkpoint0.4.5 та manual acceptance збережено.
+- Наступна конкретна дія:основні карти Modern Industrialization2.5.10/Oritech1.2.13, потім решта41 часткової карти й невивчені моди, старі обов’язкові лінії48епох та глобальний баланс. Native Roots dayTime/subset-mutation/unfinished-restart залишаються TODO; точні IF-артефакти BLOCKED. Повний0.5 не оголошено готовим.
+- Пакет0.4.5 пройшов CRC/повний SHA-маніфест. Розпакований інсталятор:dry-run без записів; тимчасове справжнє оновлення резервує0.4.4JAR, ставить0.4.5 і зберігає маркер світу. Фінальний metadata-repack має зберегти всі1158 перевірені runtime+installer хеші. Windows-інстанс користувача не змінювався.

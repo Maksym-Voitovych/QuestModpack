@@ -227,9 +227,14 @@ class V5ContentValidationTests(unittest.TestCase):
         config.write_bytes((ROOT/'kubejs/config/aia2_mechanics.json').read_bytes())
         shutil.copytree(ROOT/'kubejs/data/aia2/advancement/mechanics',
                         root/'kubejs/data/aia2/advancement/mechanics')
+        for rule in V.read(config)['rules']:
+            for source in rule['evidence']:
+                if source.get('frozen_path'):
+                    dest = root/source['frozen_path'];dest.parent.mkdir(parents=True,exist_ok=True)
+                    dest.write_bytes((ROOT/source['frozen_path']).read_bytes())
         return root, config
 
-    def test_only_four_source_backed_native_process_contracts_are_approved(self):
+    def test_only_six_source_backed_native_process_contracts_are_approved(self):
         rules = V.read(ROOT/'kubejs/config/aia2_runtime.json')
         bundle = V.read(ROOT/'kubejs/config/aia2_recipes.json')
         allowed = V.verified_mechanic_advancements(ROOT, rules, bundle)

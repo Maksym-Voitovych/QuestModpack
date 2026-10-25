@@ -1,0 +1,714 @@
+{
+  "schema": 1,
+  "quest_count": 22,
+  "quests": [
+    {
+      "id": "V5_DEPTH_ENCH_LEVEL30",
+      "epoch": 20,
+      "title_uk": "Перший результат зі справжнім рівнем30",
+      "description_uk": [
+        "Почніть із доступного столу та basic_bookshelf. У цій1.6.4 версії звичайна полиця дає2Eterna, базовий cap30. Перевіряйте вікно столу й залишайте проміжок, який передає enchanting power. Виконайте реальне зачарування з native вартістю не нижче30.",
+        "Native enchanted trigger спрацював після успішної операції з levels>=30; піднята зачарована книга не доводить цього кроку."
+      ],
+      "icon": "apothic_enchanting:basic_bookshelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:30ench"
+        }
+      ],
+      "after": [
+        "E20_X_enchanting"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_level30"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_STATS",
+      "epoch": 20,
+      "title_uk": "Eterna, Quanta й Arcana мають різні ролі",
+      "description_uk": [
+        "Eterna визначає доступну силу, Quanta змінює розкид, Arcana впливає на добір зачарувань. Налаштуйте полиці й зробіть операцію, для якої всі три native параметри не нижче10. Відрізняйте cap внеску полиці від особистого MAX_ETERNA.",
+        "Фактичне enchanted виконується при eterna>=10,quanta>=10,arcana>=10; огляд полиць не є цим доказом."
+      ],
+      "icon": "apothic_enchanting:seashelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:enchanting_stats"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_LEVEL30"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_stats"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_INFUSE_HELL",
+      "epoch": 20,
+      "title_uk": "Інфузія HellShelf через enchanting",
+      "description_uk": [
+        "Поставте саму Hellshelf у стіл як вхід інфузії. Точний рецепт infused_hellshelf вимагає щонайменше45Eterna та30Quanta. Підберіть залу до натискання: випадкова книга в інвентарі чи крафт звичайної полиці не підходить.",
+        "Перевіряється реальний post-infusion вихід infused_hellshelf через native enchanted item predicate; передача готової полиці не видає доказ."
+      ],
+      "icon": "apothic_enchanting:infused_hellshelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_hellshelf"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_STATS"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_infuse_hell"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_INFUSE_SEA",
+      "epoch": 20,
+      "title_uk": "Морська інфузія керує Arcana",
+      "description_uk": [
+        "Перетворіть Seashelf через інфузію при45Eterna,15Quanta та10Arcana. Infused Seashelf піднімає cap до60 і додає5Arcana без додаткової Quanta; це інша роль, ніж у пекельної гілки.",
+        "Серверна enchanting-операція видала саме infused_seashelf. Одна наявність предмета не завершує цей custom action."
+      ],
+      "icon": "apothic_enchanting:infused_seashelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_seashelf"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_STATS"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_infuse_sea"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_ZERO_QUANTA",
+      "epoch": 20,
+      "title_uk": "Керований результат без розкиду Quanta",
+      "description_uk": [
+        "Скористайтеся негативною Quanta Melonshelf або підтриманими іншими стат-блоками, щоб зробити справжню операцію при Quanta0. Перераховуйте Eterna: Melonshelf також віднімає2Eterna. Досягнення вимагає операції, а не лише нульового індикатора.",
+        "Під час успішного native enchanted значення quanta дорівнює0; цей доказ не вимірює конкретний набір накладених чарів."
+      ],
+      "icon": "apothic_enchanting:melonshelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:quanta0"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_INFUSE_HELL",
+        "V5_DEPTH_ENCH_INFUSE_SEA"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_zero_quanta"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_LIBRARY_WORKSHOP",
+      "epoch": 20,
+      "title_uk": "Бібліотека для повторного використання чарів",
+      "description_uk": [
+        "Виготовте Library і підготуйте книги для її архіву. EnchLibrary зберігає знання зачарувань через книги; перевіряйте власні рівні й доступні записи перед поверненням потрібних чарів. Томи для типів інструментів та інфузія є окремими системами.",
+        "FTB перевіряє крафт Library, огляд блока та комплект порожніх книг; саму передачу чарів або вміст архіву тут не вимірюємо."
+      ],
+      "icon": "apothic_enchanting:library",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apothic_enchanting:library",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:book",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "apothic_enchanting:library",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_LEVEL30"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_library_workshop"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_TOME_WORKSHOP",
+      "epoch": 20,
+      "title_uk": "Знімати чари з правильним типом тому",
+      "description_uk": [
+        "Підготуйте Scrapping, Improved Scrapping та Extraction Tome для роботи з ковадлом. Improved Tome отримують інфузією при45/25/35(Eterna/Quanta/Arcana), Extraction — при60/25/45 із Quanta не вище75. Простий Scrapping може втрачати частину чарів; Extraction повертає основу без чарів при успішному anvil repair.",
+        "Перевіряється підготовка інструментів, не зміна компонентів основи на ковадлі. Інфузійні предмети не позначені only_from_crafting, бо це не звичайний crafting event."
+      ],
+      "icon": "apothic_enchanting:extraction_tome",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apothic_enchanting:scrap_tome",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "apothic_enchanting:improved_scrap_tome",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "apothic_enchanting:extraction_tome",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "minecraft:anvil",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_LIBRARY_WORKSHOP",
+        "V5_DEPTH_ENCH_INFUSE_HELL",
+        "V5_DEPTH_ENCH_INFUSE_SEA"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_tome_workshop"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_INFUSE_DEEP",
+      "epoch": 31,
+      "title_uk": "Пробудити Dormant Deepshelf",
+      "description_uk": [
+        "Після початкових інфузій підготуйте Dormant Deepshelf і залу з60Eterna,40Quanta,40Arcana. Інфузія дає Deepshelf із cap70; далі обирайте soul-touched або echoing спеціалізацію й досліджуйте ресурси глибин.",
+        "Реальна post-infusion операція видала deepshelf; це не перевірка добування sculk чи результатів убивства Warden."
+      ],
+      "icon": "apothic_enchanting:deepshelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_deepshelf"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_INFUSE_HELL",
+        "V5_DEPTH_ENCH_INFUSE_SEA"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_infuse_deep"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_ENDER_LIBRARY",
+      "epoch": 31,
+      "title_uk": "Перенести знання в Ender Library",
+      "description_uk": [
+        "Після відкриття End розвивайте EndShelves, зокрема draconic із cap100. Для keep_nbt інфузії звичайної Library потрібні точно100Eterna,100Arcana та45–50Quanta. Перевірте на копії вміст збереженого архіву: рецепт має зберегти компоненти вхідної бібліотеки.",
+        "Native enchanted підтверджує отримання ender_library через операцію; цей item predicate сам не порівнює повний вміст NBT до/після."
+      ],
+      "icon": "apothic_enchanting:ender_library",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apothic_enchanting/infuse_ender_library"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_LIBRARY_WORKSHOP",
+        "V5_DEPTH_ENCH_INFUSE_DEEP"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_ender_library"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_LEVEL100",
+      "epoch": 41,
+      "title_uk": "Зала для справжнього рівня100",
+      "description_uk": [
+        "Збалансуйте cap і внески End/Deep/Sculk полиць, потім виконайте операцію з native levels>=100. У цій версії Eterna шкалюється до100, тому старі поради з cap50 не є точним описом1.6.4.",
+        "Native criterion перевіряє levels>=100 під час enchanting; не максимальний рівень окремого enchantment і не запас XP у кишені."
+      ],
+      "icon": "apothic_enchanting:draconic_endshelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:100ench"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_ENDER_LIBRARY"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_level100"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_STABLE_MAX",
+      "epoch": 41,
+      "title_uk": "Максимум сили без випадкового розкиду",
+      "description_uk": [
+        "Зберіть конфігурацію з100Eterna,100Arcana та0Quanta й виконайте зачарування. Порівняйте її з попередньою залою: полиці з від’ємними статами коригують не лише один індикатор.",
+        "Native max_stable вимагає Eterna>=100,Arcana>=100,Quanta0 в одній операції. Назва upstream не означає додаткового stable=true предиката."
+      ],
+      "icon": "apothic_enchanting:heart_seashelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:max_stable"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_LEVEL100",
+        "V5_DEPTH_ENCH_ZERO_QUANTA"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_stable_max"
+    },
+    {
+      "id": "V5_DEPTH_ENCH_RECTIFIED",
+      "epoch": 41,
+      "title_uk": "Висока Quanta з нативною стабілізацією",
+      "description_uk": [
+        "Побудуйте альтернативну залу з не менш50Eterna,100Quanta та100Arcana і джерелом native stability. Ця конфігурація відрізняється від Quanta0: перевіряйте властивість providesStability, а не тільки число на панелі.",
+        "Native max_rectified вимагає зазначені три stats і stable=true під час однієї операції; не будь-який предмет із максимальними чарами."
+      ],
+      "icon": "apothic_enchanting:geode_shelf",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_enchanting:max_rectified"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_ENCH_STABLE_MAX"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:lapis_lazuli",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_enchanting",
+      "research_map": "apothic_enchanting",
+      "mechanic_stage": "apothic_enchanting:ench_rectified"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_FIRST",
+      "epoch": 20,
+      "title_uk": "Від знайденого спавнера до керованої машини",
+      "description_uk": [
+        "Знайдіть спавнер і збережіть його Silk Touch за чинною конфігурацією сервера. Default1.4.0 потребує Silk Touch I та завдає100durability damage; значення можуть змінюватися конфігом. Встановіть спавнер у контрольованій камері й успішно застосуйте перший дозволений модифікатор.",
+        "Підтверджується native spawner_modifier після успішного match.apply. Проста передача предмета-спавнера цього не доводить."
+      ],
+      "icon": "minecraft:spawner",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:modifier"
+        }
+      ],
+      "after": [
+        "E20_X_enchanting"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_first"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_REDSTONE",
+      "epoch": 20,
+      "title_uk": "Зупинка ферми через Redstone Control",
+      "description_uk": [
+        "Застосуйте Redstone Control Spawner Rune до спавнера. У встановленій AIA2 інтеграція Apotheosis замінює пряме використання Comparator руною; звірте її виготовлення та inverse з кварцом у JEI.",
+        "Стан redstone_control=true перевірено при успішній модифікації. Criterion не вимірює кількість народжених мобів або поточний рівень сигналу."
+      ],
+      "icon": "apotheosis:redstone_control_spawner_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:redstone"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_FIRST"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_redstone"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_LIGHT",
+      "epoch": 20,
+      "title_uk": "Відокремити вимогу світла від інших умов",
+      "description_uk": [
+        "Застосуйте Ignore Light Spawner Rune. Прямий Soul Lantern тут не є чинним модифікатором: його роль перенесено в рунічний рецепт. Ignore Light і Ignore Conditions залишаються незалежними властивостями.",
+        "Успішний native modifier зафіксував ignore_light=true; це не підтвердження ігнорування всіх spawn-умов."
+      ],
+      "icon": "apotheosis:ignore_light_spawner_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:light"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_REDSTONE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_light"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_PLAYER_RANGE",
+      "epoch": 31,
+      "title_uk": "Ascent: радіус активації32",
+      "description_uk": [
+        "Застосуйте Ascent Spawner Upgrade Rune: вона встановлює min/max delay100/400, spawn_count10 та required_player_range32. Це відстань активації гравцем, не spawn_range. Native ціль підтверджує range не нижче32 після успішної модифікації, а не конкретний ID руни.",
+        "Після успішної модифікації required_player_range>=32. Спосіб виготовлення руни та chunk-loading цим критерієм не перевіряються."
+      ],
+      "icon": "apotheosis:ascent_spawner_upgrade_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:spawners/ascent_range"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_LIGHT",
+        "V5_DEPTH_APOTH_ASCENT"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_player_range"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_MIN_DELAY",
+      "epoch": 41,
+      "title_uk": "Pinnacle: обидві затримки20тіків",
+      "description_uk": [
+        "Pinnacle Spawner Upgrade Rune встановлює обидві затримки20. Для неї потрібні Godforged Pearl, Perfect Endersurge Gem, Infused Breath і Nether Star; це фінальна інтеграція Apotheosis та Apothic Enchanting. Sugar/Clock напряму не модифікують цей параметр у чинному експорті.",
+        "Перевіряється min_delay у межах0..20 після успішної модифікації. Постійне виробництво або max_delay цим не доводяться."
+      ],
+      "icon": "apotheosis:pinnacle_spawner_upgrade_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:mindelay"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_IGNORE_PLAYERS",
+        "V5_DEPTH_APOTH_CUT_PERFECT"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_min_delay"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_SPAWN_COUNT",
+      "epoch": 31,
+      "title_uk": "Summit: тринадцять спроб появи",
+      "description_uk": [
+        "Summit Spawner Upgrade Rune встановлює spawn_count13, min/max delay50/200, max_nearby24 та required_player_range40. Потрібні Arcane Sands, Sigil of Malice й Warden Tendril. Передбачте виведення мобів і порівняйте ліміт сусідніх сутностей із кількістю за цикл.",
+        "Native trigger після успішної модифікації має spawn_count>=13; це налаштована кількість спроб за цикл, без доказу фактичної появи13мобів."
+      ],
+      "icon": "apotheosis:summit_spawner_upgrade_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:spawners/summit_count"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_PLAYER_RANGE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_spawn_count"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_NO_AI",
+      "epoch": 31,
+      "title_uk": "No AI змінює логіку виведення мобів",
+      "description_uk": [
+        "Застосуйте No AI Spawner Rune. Її чинний рецепт включає Chorus Fruit, Infused Spawner Rune та зілля Fatigue з точними компонентами. Сам Chorus Fruit не застосовує модифікацію; без AI мобам потрібне зовнішнє транспортування.",
+        "Успішний modifier перевірив no_ai=true на спавнері; транспортування та робота мобів після народження — окремий ручний тест."
+      ],
+      "icon": "apotheosis:no_ai_spawner_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:noai"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_LIGHT"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_no_ai"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_CONDITIONS",
+      "epoch": 31,
+      "title_uk": "Ignore Conditions — окремий допуск",
+      "description_uk": [
+        "Застосуйте Ignore Conditions Spawner Rune, виготовлену за чинним рецептом Apotheosis. Прямий Conduit не замінює її. Порівняйте Ignore Conditions з Ignore Light; вид моба визначається spawn data, а не цим прапорцем.",
+        "Після успішної модифікації ignore_conditions=true. Criterion не перевіряє тип моба, Capturing-drop або фактичне народження."
+      ],
+      "icon": "apotheosis:ignore_conditions_spawner_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:conditions"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_LIGHT",
+        "V5_DEPTH_SPAWNER_NO_AI"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_conditions"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_IGNORE_PLAYERS",
+      "epoch": 31,
+      "title_uk": "Робота без близького гравця",
+      "description_uk": [
+        "Застосуйте Ignore Players Spawner Rune: її рецепт поєднує Nether Star, Infused Spawner Rune, Ender Eye та Phantom Membrane. Прямий Nether Star тут не є модифікатором. Ігнорування близького гравця не завантажує chunk та не вимикає spawn caps.",
+        "Успішна native модифікація має ignore_players=true. Chunk-loading і робота offline-команди не сертифіковані цим прапорцем."
+      ],
+      "icon": "apotheosis:ignore_players_spawner_rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:players"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_CONDITIONS"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_ignore_players"
+    },
+    {
+      "id": "V5_DEPTH_SPAWNER_ULTIMATE",
+      "epoch": 41,
+      "title_uk": "Єдина узгоджена конфігурація спавнера",
+      "description_uk": [
+        "На одному спавнері поєднайте min_delay і max_delay не більше20, Ignore Players, Ignore Conditions, No AI та Redstone Control. Native ultimate_spawner перевіряє весь цей стан однією успішною модифікацією. Кількість мобів і spawn_range не входять до цього criterion.",
+        "Native ultimate criterion перевіряє повний перелічений стан одного tile; прості окремі історичні досягнення на різних спавнерах його не замінюють."
+      ],
+      "icon": "minecraft:spawner",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apothic_spawners:ultimate_spawner"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_SPAWNER_IGNORE_PLAYERS",
+        "V5_DEPTH_SPAWNER_NO_AI",
+        "V5_DEPTH_SPAWNER_MIN_DELAY"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 3
+        }
+      ],
+      "mod": "apothic_spawners",
+      "research_map": "apothic_spawners",
+      "mechanic_stage": "apothic_spawners:spawner_ultimate"
+    }
+  ]
+}

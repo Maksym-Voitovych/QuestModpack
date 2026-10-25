@@ -376,6 +376,8 @@ def apply(root=ROOT):
         recipe_apply(root)
     for module_name, source in [('build_balance_v5', 'content/recipes/v5_balance.json'),
                                 ('build_variant_balance_v5', 'content/recipes/v5_component_variants.json'),
+                                ('build_core_balance_v5', 'content/recipes/v5_aa_core.json'),
+                                ('build_spawner_gates_v5', 'content/audit/v5-spawner-rune-gates.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
         if (root/source).exists():
             import importlib

@@ -367,6 +367,12 @@ def plan_install(source, instance):
                         raise InstallError('This package needs the matching component-aware creative mana guard')
                     if 'ua/aia2/guard/mixin/RootsMortarMixin.class' not in jar.namelist():
                         raise InstallError('This package needs the matching Roots mortar interaction guard')
+                    ritual_guard = {'ua/aia2/guard/RootsAltarAccess.class', 'ua/aia2/guard/RootsRitualProof.class',
+                                    'ua/aia2/guard/mixin/RootsAltarMixin.class'}
+                    if not ritual_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching Roots ritual completion observer')
+                    if 'ua/aia2/guard/mixin/ApothicSpawnerMixin.class' not in jar.namelist():
+                        raise InstallError('This package needs the matching native spawner rune guard')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

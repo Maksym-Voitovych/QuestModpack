@@ -7,7 +7,7 @@
 
 | Мод | Категорія | Статус карти |
 |---|---|---|
-| Actually Additions | technology_core | IN_PROGRESS — часткова карта |
+| Actually Additions | technology_core | DONE — основна карта |
 | Ad Astra | technology_core | IN_PROGRESS — часткова карта |
 | Additional Enchanted Miner | technology_core | IN_PROGRESS — часткова карта |
 | Cyclic | technology_core | TODO — карта не досліджена |
@@ -105,12 +105,12 @@
 | Iron's Spells 'n Spellbooks | magic_core | IN_PROGRESS — часткова карта |
 | Nature's Aura | magic_core | DONE — основна карта |
 | Occultism | magic_core | DONE — основна карта |
-| Roots Classic | magic_core | IN_PROGRESS — часткова карта |
+| Roots Classic | magic_core | DONE — основна карта |
 | Totemic | magic_core | DONE — основна карта |
 | All the Arcanist Gear | magic_addon | TODO — карта не досліджена |
 | All the Wizard Gear | magic_addon | TODO — карта не досліджена |
-| Apothic Enchanting | magic_core | TODO — карта не досліджена |
-| Apothic Spawners | magic_core | TODO — карта не досліджена |
+| Apothic Enchanting | magic_core | DONE — основна карта |
+| Apothic Spawners | magic_core | DONE — основна карта |
 | Ars Creo | magic_addon | IN_PROGRESS — часткова карта |
 | Ars Elemental | magic_addon | IN_PROGRESS — часткова карта |
 | Ars Ocultas | magic_core | TODO — карта не досліджена |

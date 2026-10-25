@@ -6,6 +6,19 @@ from tools.quest_content_migrations import apply, MIGRATIONS
 
 
 class QuestContentMigrationTest(unittest.TestCase):
+    def test_presentation_repair_requires_exact_previous_values(self):
+        record={'id':'EXISTING','title_uk':'Стара назва','description_uk':['Старе пояснення'],'icon':'minecraft:stone',
+                'tasks':[{'type':'item','item':'minecraft:stone'}],'after':[],'reward':[]}
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);p=root/MIGRATIONS;p.parent.mkdir(parents=True)
+            repair={'id':'EXISTING','reason_uk':'Виправлено конкретну ранню ціль на основі точних джерел установленого мода.',
+                    'item_targets':[],'presentation_changes':{'title_uk':{'from':'Стара назва','to':'Уточнена назва'}}}
+            p.write_text(json.dumps({'schema':1,'quests':[repair]}))
+            self.assertEqual(apply([record],root)[0]['title_uk'],'Уточнена назва')
+            self.assertEqual(record['title_uk'],'Стара назва')
+            repair['presentation_changes']['title_uk']['from']='Інша назва';p.write_text(json.dumps({'schema':1,'quests':[repair]}))
+            with self.assertRaisesRegex(AssertionError,'presentation no longer matches'):apply([record],root)
+
     def test_item_repair_keeps_identity_order_and_authored_source(self):
         records = [{'id':'V5_EXISTING','epoch':15,'description_uk':['Потрібна example:unused_book.'],
                     'tasks':[{'type':'item','item':'example:unused_book','count':1,'craft':False}],

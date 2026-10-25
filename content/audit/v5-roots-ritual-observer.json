@@ -1,0 +1,230 @@
+{
+  "schema": 1,
+  "mod_id": "rootsclassic",
+  "installed_version": "1.21.1-1.5.10",
+  "official_version": "1.5.10",
+  "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+  "status": "implemented_source_compilation_modeled_tests_passed_fullpack_not_run",
+  "sources": [
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/gradle.properties",
+      "sha256": "4502f873707c78c468a6002f6e24ffb85af4298f14e14b6c3aa183089179a677",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "installed_version_pin",
+      "version_match": true,
+      "required_source_tokens": [
+        "mod_version=1.5.10"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/block/altar/AltarBlockEntity.java",
+      "sha256": "b364e9e243ddc9c7298364beb962a85bc98c4b64b151c4dc578779f8673c0e8e",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/altar/AltarBlockEntity.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "native_activation_tick_completion_and_real_input_clear",
+      "version_match": true,
+      "required_source_tokens": [
+        "public static void serverTick(Level level, BlockPos pos, BlockState state, AltarBlockEntity tile)",
+        "tile.getCurrentRitual().value().doEffect(level, pos, InventoryUtil.createIInventory(tile.inventory), tile.getIncenses());",
+        "tile.setCurrentRitual(null);",
+        "tile.emptyAltar();",
+        "brazier.setHeldItem(ItemStack.EMPTY);"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java",
+      "sha256": "3cb44d57257cd175c17b5984c00ac6aee42971a1593bbf1b71f70413a9bd88f9",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "recipe_get_result_and_do_effect",
+      "version_match": true,
+      "required_source_tokens": [
+        "return RootsRecipes.RITUAL_SERIALIZER.get();",
+        "return effect.getResult(effectConfig, provider).copy();"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/registry/RootsRecipes.java",
+      "sha256": "94537c98dfd9e9e15a58dc1ebfb7dd30332bae1ffc5f3e7fbfbee9f1fb70935d",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/registry/RootsRecipes.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "serializer_registration",
+      "version_match": true,
+      "required_source_tokens": [
+        "RECIPE_SERIALIZERS.register(\"ritual\", SerializeRitualRecipe::new)"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java",
+      "sha256": "58f0854ef5a56e1b69ef157ca72e23d5d19d4eeebc962b45217ad983d7afa917",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "crafting_effect_completion_not_entity_insertion_receipt",
+      "version_match": true,
+      "required_source_tokens": [
+        "ItemStack.parseOptional(levelAccessor.registryAccess(), config.getCompound(\"result\"))",
+        "levelAccessor.addFreshEntity(item);",
+        "inventory.clearContent();"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/util/InventoryUtil.java",
+      "sha256": "7cb300c107016b61ff764601a2a952a09397213ee5a33be6cd1c74f1e2dbe2e1",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/InventoryUtil.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "native_temporary_container_adapter",
+      "version_match": true,
+      "required_source_tokens": [
+        "CustomInventory inventory = new CustomInventory(itemHandler.getSlots());",
+        "inventory.setItem(i, itemHandler.getStackInSlot(i));"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/util/CustomInventory.java",
+      "sha256": "b1df94a61fdb3761bfd5e73b62fc1e66e64abb9215cd91ccacec74626fbd15ba",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/CustomInventory.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "temporary_container_clear_not_actual_altar_handler_clear",
+      "version_match": true,
+      "required_source_tokens": [
+        "private final NonNullList<ItemStack> itemStacks;",
+        "public void clearContent()",
+        "this.itemStacks.clear();"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/util/RootsUtil.java",
+      "sha256": "8f8215567c92746719f4e9f8bfc25ad4b8faa490ce5924c1b63f4a815c15a766",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/RootsUtil.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "native_one_to_one_ingredient_matching",
+      "version_match": true,
+      "required_source_tokens": [
+        "if (inv.size() != ingredients.size()) return false;",
+        "var available = new ArrayList<>(inv);",
+        "available.stream().filter(ingredient).findFirst()"
+      ]
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/installed_recipes/ritual/crafting/charged_runic_focus.json",
+      "sha256": "da7ed4b5026331e8bbab6531fd3a25ef27ae73e451f6ff1e62b7b51d259f048b",
+      "url": "user-supplied:export/recipes/rootsclassic/ritual/crafting/charged_runic_focus.json",
+      "role": "installed_export_recipe_after_unification",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/installed_recipes/ritual/crafting/living_pickaxe.json",
+      "sha256": "201d1ab871e5b4e0888ec8bea2eeafd6997e775645668a89ae34613faee41a07",
+      "url": "user-supplied:export/recipes/rootsclassic/ritual/crafting/living_pickaxe.json",
+      "role": "installed_export_recipe_after_unification",
+      "version_match": true
+    }
+  ],
+  "recipes": [
+    {
+      "recipe_id": "rootsclassic:ritual/crafting/charged_runic_focus",
+      "serializer": "rootsclassic:ritual",
+      "effect": "rootsclassic:crafting",
+      "output": "rootsclassic:charged_runic_focus",
+      "output_count": 1,
+      "epoch": 15,
+      "epoch_reason_uk": "Incense Infernal Bulb має підтверджене джерело з Nether Wart. Самі gate≤4 не доводять ранню Survival-доступність; proof зарезервовано для епохи15.",
+      "recipe_evidence_path": "content/research/evidence/roots_core_next_v5/installed_recipes/ritual/crafting/charged_runic_focus.json",
+      "ingredients": [
+        {
+          "item": "rootsclassic:runic_focus"
+        },
+        {
+          "item": "minecraft:redstone"
+        },
+        {
+          "item": "minecraft:glowstone_dust"
+        }
+      ],
+      "incenses": [
+        {
+          "item": "rootsclassic:infernal_bulb"
+        },
+        {
+          "item": "minecraft:wheat"
+        }
+      ]
+    },
+    {
+      "recipe_id": "rootsclassic:ritual/crafting/living_pickaxe",
+      "serializer": "rootsclassic:ritual",
+      "effect": "rootsclassic:crafting",
+      "output": "rootsclassic:living_pickaxe",
+      "output_count": 1,
+      "epoch": 4,
+      "epoch_reason_uk": "Вівтар відкривається на епосі4. Три звичайні входи й Oak Bark доступні раніше; точний експорт використовує tag c:nuggets/gold.",
+      "recipe_evidence_path": "content/research/evidence/roots_core_next_v5/installed_recipes/ritual/crafting/living_pickaxe.json",
+      "ingredients": [
+        {
+          "item": "minecraft:wooden_pickaxe"
+        },
+        {
+          "item": "rootsclassic:verdant_sprig"
+        },
+        {
+          "tag": "c:nuggets/gold"
+        }
+      ],
+      "incenses": [
+        {
+          "item": "rootsclassic:oak_bark"
+        },
+        {
+          "item": "rootsclassic:oak_bark"
+        }
+      ]
+    }
+  ],
+  "native_completion_order": [
+    "serverTick sees progress>0 and currentRitual!=null",
+    "serverTick decrements progress and only executes effect at0",
+    "RitualRecipe.doEffect delegates to native effect implementation",
+    "RitualCrafting parses result ItemStack and calls addFreshEntity; return boolean ignored",
+    "RitualCrafting clears a temporary CustomInventory, not the actual altar ItemStackHandler",
+    "serverTick sets currentRitual=null",
+    "serverTick.emptyAltar sets all actual ItemStackHandler slots toEMPTY",
+    "serverTick marks dirty and sends block update"
+  ],
+  "required_observation_protocol_uk": [
+    "Перед doEffect зчитати чинний holder, owner та всі три слотовані входи; перевірити one-to-one Ingredient.test із рівністю кількості непорожніх слотів. Recipe.matches не використовувати: RitualRecipe.matches завждиfalse.",
+    "Після фактичного emptyAltar перевірити зменшення кількості входів/порожній actual ItemStackHandler, незмінного owner і повторну авторитетну політику, тоді записати proof.",
+    "Спробу зберігати лише у runtime полі конкретного вівтаря; скидати на початку tick та після завершення, щоб виняток не залишав stale proof.",
+    "Client preview, nullholder, сторонній/невідомий recipeID, неправильні інгредієнти, відсутній owner, policy-not-ready та зміна owner не видають proof.",
+    "Rule identity має звіряти реальні recipeID, serializer і getResultItem; /give, inventory pickup або advancement з інвентарним тригером не використовувати."
+  ],
+  "proof_scope_uk": "Завершення двох конкретних native Roots crafting rituals після перевіреного очищення фактичних входів вівтаря, зараховане команді-власнику. Це не гарантія успішного додавання ItemEntity у світ і не доказ особистого авторства кожної дії.",
+  "limitations_uk": [
+    "RitualCrafting ігнорує boolean результат addFreshEntity. Навіть законно виконана операція може втратити спавн через сторонню подію; proof означає завершену оплачену native операцію.",
+    "Incense споживається при запуску ритуалу заздалегідь. Скасування на фінальному tick не повертає вже спалених предметів.",
+    "Native altar не перевіряє повторно входи/стовпи/incense протягом200тіків. Нативного pipe capability для altar не підтверджено; додаткова перевірка входів є hardening, а не заявою про доведений трубний exploit.",
+    "NBT зберігає progress/incenses/візуальні кольори, але не відновлює currentRitual. Не заявляти native ritual restart recovery; власні SavedData proofs мають переживати restart незалежно.",
+    "getResultItem придатний для двох crafting effects. Не розширювати протокол автоматично на всіх effectId або спеціальні ритуали без окремого дослідження.",
+    "Fullpack optional Roots Mixin dispatch, фактична Survival отримуваність, JEI та TPS потребують окремого запуску."
+  ],
+  "recommended_regressions": [
+    "valid selected recipe +3inputs -> after actualempty recordonce",
+    "afterdoEffect but beforeempty no proof",
+    "give/pickup alone has no attempt and no proof",
+    "wrong ingredient/tag mismatch, zero/removed inputs and unknownrecipe no proof",
+    "nullholder/client/unready/earlyteam/unowned no proof",
+    "owner change between begin/finish no proof",
+    "effect exception/stale attempt cleared nexttick",
+    "addFreshEntity cancellation documented as operation proof, not guaranteedspawn",
+    "restart SavedData proof retained; native altar cache restart notclaimed"
+  ],
+  "verification": {
+    "model_assertions": 49,
+    "actual_helper_and_handlers": true,
+    "real_GuardPolicy": true,
+    "bridge_fixture": true,
+    "optional_roots_dispatch": false,
+    "saved_data_minimal_server_test": "companion/native-smoke-report.json"
+  },
+  "charged_focus_early_path_note_uk": "Рідкісний ранній NetherWart зі скринь Overworld дозволяє старі optional цілі4; новий доказ15 належить штатному Nether-маршруту."
+}

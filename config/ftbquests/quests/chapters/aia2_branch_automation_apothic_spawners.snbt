@@ -1,0 +1,450 @@
+{
+  "id": "0000E01D4EAEAFE8",
+  "filename": "aia2_branch_automation_apothic_spawners",
+  "title": "apothic_spawners — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 9,
+  "icon": {
+    "id": "minecraft:spawner",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000193C210D96EC",
+      "title": "Від знайденого спавнера до керованої машини",
+      "description": [
+        "Знайдіть спавнер і збережіть його Silk Touch за чинною конфігурацією сервера. Default1.4.0 потребує Silk Touch I та завдає100durability damage; значення можуть змінюватися конфігом. Встановіть спавнер у контрольованій камері й успішно застосуйте перший дозволений модифікатор.",
+        "Підтверджується native spawner_modifier після успішного match.apply. Проста передача предмета-спавнера цього не доводить."
+      ],
+      "icon": {
+        "id": "minecraft:spawner",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FA17D8E086C0",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E2EA2486E403",
+          "type": "advancement",
+          "advancement": "apothic_spawners:modifier"
+        },
+        {
+          "id": "0000B9957DAEA1EF",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000324271235BDF",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.694
+    },
+    {
+      "id": "000059E1D1A201D6",
+      "title": "Зупинка ферми через Redstone Control",
+      "description": [
+        "Застосуйте Redstone Control Spawner Rune до спавнера. У встановленій AIA2 інтеграція Apotheosis замінює пряме використання Comparator руною; звірте її виготовлення та inverse з кварцом у JEI.",
+        "Стан redstone_control=true перевірено при успішній модифікації. Criterion не вимірює кількість народжених мобів або поточний рівень сигналу."
+      ],
+      "icon": {
+        "id": "apotheosis:redstone_control_spawner_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "0000193C210D96EC",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004BC45560FD09",
+          "type": "advancement",
+          "advancement": "apothic_spawners:redstone"
+        },
+        {
+          "id": "0000C6FAFF9AAAE1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ECE0C9D2BB86",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.694
+    },
+    {
+      "id": "000026C368B378C7",
+      "title": "Відокремити вимогу світла від інших умов",
+      "description": [
+        "Застосуйте Ignore Light Spawner Rune. Прямий Soul Lantern тут не є чинним модифікатором: його роль перенесено в рунічний рецепт. Ignore Light і Ignore Conditions залишаються незалежними властивостями.",
+        "Успішний native modifier зафіксував ignore_light=true; це не підтвердження ігнорування всіх spawn-умов."
+      ],
+      "icon": {
+        "id": "apotheosis:ignore_light_spawner_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000059E1D1A201D6",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ECFE08E15E71",
+          "type": "advancement",
+          "advancement": "apothic_spawners:light"
+        },
+        {
+          "id": "000073D4E7B7FCE1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FEAD75C39B54",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.694
+    },
+    {
+      "id": "000091FA673111AE",
+      "title": "Ascent: радіус активації32",
+      "description": [
+        "Застосуйте Ascent Spawner Upgrade Rune: вона встановлює min/max delay100/400, spawn_count10 та required_player_range32. Це відстань активації гравцем, не spawn_range. Native ціль підтверджує range не нижче32 після успішної модифікації, а не конкретний ID руни.",
+        "Після успішної модифікації required_player_range>=32. Спосіб виготовлення руни та chunk-loading цим критерієм не перевіряються."
+      ],
+      "icon": {
+        "id": "apotheosis:ascent_spawner_upgrade_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000026C368B378C7",
+        "00009F6FCA114D37",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AEB85AF4551F",
+          "type": "advancement",
+          "advancement": "aia2:spawners/ascent_range"
+        },
+        {
+          "id": "0000831869959353",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E673FAFD1461",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.083
+    },
+    {
+      "id": "0000A8EA7EBB9089",
+      "title": "No AI змінює логіку виведення мобів",
+      "description": [
+        "Застосуйте No AI Spawner Rune. Її чинний рецепт включає Chorus Fruit, Infused Spawner Rune та зілля Fatigue з точними компонентами. Сам Chorus Fruit не застосовує модифікацію; без AI мобам потрібне зовнішнє транспортування.",
+        "Успішний modifier перевірив no_ai=true на спавнері; транспортування та робота мобів після народження — окремий ручний тест."
+      ],
+      "icon": {
+        "id": "apotheosis:no_ai_spawner_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000026C368B378C7",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D8C3EE3B7538",
+          "type": "advancement",
+          "advancement": "apothic_spawners:noai"
+        },
+        {
+          "id": "0000251396330D99",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009911F9F77F9D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000224C65D49BFE",
+      "title": "Summit: тринадцять спроб появи",
+      "description": [
+        "Summit Spawner Upgrade Rune встановлює spawn_count13, min/max delay50/200, max_nearby24 та required_player_range40. Потрібні Arcane Sands, Sigil of Malice й Warden Tendril. Передбачте виведення мобів і порівняйте ліміт сусідніх сутностей із кількістю за цикл.",
+        "Native trigger після успішної модифікації має spawn_count>=13; це налаштована кількість спроб за цикл, без доказу фактичної появи13мобів."
+      ],
+      "icon": {
+        "id": "apotheosis:summit_spawner_upgrade_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000091FA673111AE",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000014A4573E8608",
+          "type": "advancement",
+          "advancement": "aia2:spawners/summit_count"
+        },
+        {
+          "id": "0000B91CEAB76D75",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000459D51CCA36B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.083
+    },
+    {
+      "id": "0000CE8932000C30",
+      "title": "Ignore Conditions — окремий допуск",
+      "description": [
+        "Застосуйте Ignore Conditions Spawner Rune, виготовлену за чинним рецептом Apotheosis. Прямий Conduit не замінює її. Порівняйте Ignore Conditions з Ignore Light; вид моба визначається spawn data, а не цим прапорцем.",
+        "Після успішної модифікації ignore_conditions=true. Criterion не перевіряє тип моба, Capturing-drop або фактичне народження."
+      ],
+      "icon": {
+        "id": "apotheosis:ignore_conditions_spawner_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000026C368B378C7",
+        "0000A8EA7EBB9089",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F8DB1CD4F299",
+          "type": "advancement",
+          "advancement": "apothic_spawners:conditions"
+        },
+        {
+          "id": "00002367A34B6AC9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000086AFA168E505",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "000030FAF2304063",
+      "title": "Робота без близького гравця",
+      "description": [
+        "Застосуйте Ignore Players Spawner Rune: її рецепт поєднує Nether Star, Infused Spawner Rune, Ender Eye та Phantom Membrane. Прямий Nether Star тут не є модифікатором. Ігнорування близького гравця не завантажує chunk та не вимикає spawn caps.",
+        "Успішна native модифікація має ignore_players=true. Chunk-loading і робота offline-команди не сертифіковані цим прапорцем."
+      ],
+      "icon": {
+        "id": "apotheosis:ignore_players_spawner_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CE8932000C30",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D7248A49E3AE",
+          "type": "advancement",
+          "advancement": "apothic_spawners:players"
+        },
+        {
+          "id": "0000BA557B998009",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AA723A0CF6D8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004AE50F1982D7",
+      "title": "Pinnacle: обидві затримки20тіків",
+      "description": [
+        "Pinnacle Spawner Upgrade Rune встановлює обидві затримки20. Для неї потрібні Godforged Pearl, Perfect Endersurge Gem, Infused Breath і Nether Star; це фінальна інтеграція Apotheosis та Apothic Enchanting. Sugar/Clock напряму не модифікують цей параметр у чинному експорті.",
+        "Перевіряється min_delay у межах0..20 після успішної модифікації. Постійне виробництво або max_delay цим не доводяться."
+      ],
+      "icon": {
+        "id": "apotheosis:pinnacle_spawner_upgrade_rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000030FAF2304063",
+        "0000DE44CB1A9076",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DE4D6CEEC31E",
+          "type": "advancement",
+          "advancement": "apothic_spawners:mindelay"
+        },
+        {
+          "id": "0000519F199C1853",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000059FA1CDF80D9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000277E19B54B1C",
+      "title": "Єдина узгоджена конфігурація спавнера",
+      "description": [
+        "На одному спавнері поєднайте min_delay і max_delay не більше20, Ignore Players, Ignore Conditions, No AI та Redstone Control. Native ultimate_spawner перевіряє весь цей стан однією успішною модифікацією. Кількість мобів і spawn_range не входять до цього criterion.",
+        "Native ultimate criterion перевіряє повний перелічений стан одного tile; прості окремі історичні досягнення на різних спавнерах його не замінюють."
+      ],
+      "icon": {
+        "id": "minecraft:spawner",
+        "count": 1
+      },
+      "dependencies": [
+        "000030FAF2304063",
+        "0000A8EA7EBB9089",
+        "00004AE50F1982D7",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000347969CF9CEE",
+          "type": "advancement",
+          "advancement": "apothic_spawners:ultimate_spawner"
+        },
+        {
+          "id": "00005AAF773691EE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DD2F458B6F64",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bread",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 0.0
+    }
+  ]
+}

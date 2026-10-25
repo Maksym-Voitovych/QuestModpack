@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "mod": "rootsclassic",
+  "installed_version": "1.21.1-1.5.10",
+  "source_pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+  "status": "confirmed_optional_target_repair",
+  "quest_source": "content/quests/epochs_01_12.json",
+  "quest_id": "E04_X_orchid_sample",
+  "required": false,
+  "original_tasks": [
+    {
+      "type": "item",
+      "item": "rootsclassic:flare_orchid",
+      "count": 2,
+      "consume": false,
+      "craft": false
+    },
+    {
+      "type": "item",
+      "item": "rootsclassic:radiant_daisy",
+      "count": 2,
+      "consume": false,
+      "craft": false
+    }
+  ],
+  "reason_uk": "Ранній optional гербарій вимагав двох мутованих рослин: Flare Orchid потребує Незеру, а Radiant Daisy має native absolute-daytime помилку, яка робить повторне виготовлення після першого дня ненадійним. Підготовчі базові квіти зберігають ранню ботанічну мету без фіктивного джерела та без зміни task-ID.",
+  "item_targets": [
+    {
+      "task_index": 0,
+      "from": "rootsclassic:flare_orchid",
+      "to": "minecraft:blue_orchid"
+    },
+    {
+      "task_index": 1,
+      "from": "rootsclassic:radiant_daisy",
+      "to": "minecraft:oxeye_daisy"
+    }
+  ],
+  "suggested_title_uk": "Польові квіти для майбутніх мутацій",
+  "description_note_uk": "Це підготовчий гербарій: Blue Orchid і Oxeye Daisy — базові польові зразки, а не готові мутовані квіти Roots. Flare Orchid має окрему Nether-умову; native Radiant Daisy перевіряє абсолютне денне вікно5000–7000 без повторення щодоби, тому ці продукти не вимагаються від раннього гербарію.",
+  "sources": [
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/gradle.properties",
+      "sha256": "4502f873707c78c468a6002f6e24ffb85af4298f14e14b6c3aa183089179a677",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "ExactRoots1.5.10/Minecraft1.21.1."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "sha256": "ba587e7025140a07bc486dbdc9f732fa5b6144715520077f1619ba71ee59448c",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "Flare Orchid native mutation explicitlyrequiresLevel.NETHER, effectandlocalblocks."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "sha256": "b938427ef27de21f631f54e86eb86f8e979b8f8d1f3bdaf678553e57d65641e0",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "AbsolutegetDayTime()>5000&&<7000 without%24000; repeatsnotguaranteed."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "sha256": "70ba39d2756e2245320a58b292f2edd83a1f8c7b8353368877b8d479d45dc07f",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "Matchingimplementationacceptspartialnonemptyinputsets; no strictmutationvalidationclaim."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/item/MutatingPowderItem.java",
+      "sha256": "d2599a5e28b6be5ae85d15296c7b0631bdaecd0ae6b07407cd3f85404cbae1e8",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/MutatingPowderItem.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "Nativeuse collectsnonemptynearbyItemEntitylist thenmatches/discards onsuccess."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/lootmodifiers/DropModifier.java",
+      "sha256": "beb6ac4167b8a9d2df73295907f7fc1d33b0fb86d729a0217bd52f9b192044a3",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/lootmodifiers/DropModifier.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true,
+      "evidence_uk": "MatureNetherWartAGE3rollmayyieldInfernalBulb, supportingrarepreNetherwartlootroute."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/exported_loot/goety/chests/shack_attic.json",
+      "sha256": "337e8ecdb1cc06fbbae26cef8ed570ff518aced0f4138a63d773e2121dce60c8",
+      "url": "user-supplied:export/minecraft/loot_table/goety/chests/shack_attic.json",
+      "evidence_uk": "Nativeexport containsNetherWart; potentialsource, notguaranteedstructureappearanceorloot."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/exported_loot/goety/entities/warlock.json",
+      "sha256": "e84a07bbe5c1d0e73290c9a9a7cadb79a96e06c590fbe8d408066f0f8e5bb240",
+      "url": "user-supplied:export/minecraft/loot_table/goety/entities/warlock.json",
+      "evidence_uk": "Nativeexport containsNetherWart; potentialsource, notguaranteedstructureappearanceorloot."
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/exported_loot/irons_spellbooks/chests/mangrove_hut.json",
+      "sha256": "b7ebf5c54011404191fdef782ac75f12789771062657b5785e5a7ef38c51428f",
+      "url": "user-supplied:export/minecraft/loot_table/irons_spellbooks/chests/mangrove_hut.json",
+      "evidence_uk": "Nativeexport containsNetherWart; potentialsource, notguaranteedstructureappearanceorloot."
+    }
+  ],
+  "non_changes_uk": [
+    "Не змінювати старі07/08epoch/dependencies лише через припущення, щоNetherWartобов’язковотребаізНезеру: експортпідтверджуєпотенційнийoverworldloot.",
+    "Старізавершеніquest/taskIDsтапоступкомандне скидати.",
+    "Нестворювативигаданихcrafting-рецептівдляспеціальнихмутованихквітів."
+  ]
+}

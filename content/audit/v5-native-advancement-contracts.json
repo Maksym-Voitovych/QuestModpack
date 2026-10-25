@@ -6752,6 +6752,1543 @@
         "Перевірено shipped JSON і точний серверний шлях видачі за джерелами. Повний optional IP/IE/FTB runtime ще не запускався.",
         "Нативний advancement може бути збережений після законної минулої дії. Це не вимір поточної безперервної роботи або FE/t."
       ]
+    },
+    {
+      "id": "apothic_enchanting:30ench",
+      "epoch": 20,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/30ench.json",
+      "json_sha256": "10bc943200f8d84f9e1b325ffa6ebcd1600897c3f3a0406755e427f9a2d69462",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "levels": {
+            "min": 30,
+            "max": 2000
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native enchanted trigger спрацював після успішної операції з levels>=30; піднята зачарована книга не доводить цього кроку.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_enchanting:enchanting_stats",
+      "epoch": 20,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/enchanting_stats.json",
+      "json_sha256": "9b4743814d163b05636238e7aba6bdf3d10f3853951c4475b5842dd3fd4e70a8",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "eterna": {
+            "min": 10,
+            "max": 2000
+          },
+          "quanta": {
+            "min": 10,
+            "max": 2000
+          },
+          "arcana": {
+            "min": 10,
+            "max": 2000
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Фактичне enchanted виконується при eterna>=10,quanta>=10,arcana>=10; огляд полиць не є цим доказом.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "aia2:apothic_enchanting/infuse_hellshelf",
+      "epoch": 20,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "kubejs/data/aia2/advancement/apothic_enchanting/infuse_hellshelf.json",
+      "json_sha256": "de43030032da95928edcf00b94b53a6c49ef104ed93f747da2cfc32fcd5202f4",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "item": {
+            "items": "apothic_enchanting:infused_hellshelf"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Перевіряється реальний post-infusion вихід infused_hellshelf через native enchanted item predicate; передача готової полиці не видає доказ.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "aia2:apothic_enchanting/infuse_seashelf",
+      "epoch": 20,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "kubejs/data/aia2/advancement/apothic_enchanting/infuse_seashelf.json",
+      "json_sha256": "cfdff747faba7d6155ad758fd47597b7c49143dc2e92c20f031409709b066a4e",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "item": {
+            "items": "apothic_enchanting:infused_seashelf"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Серверна enchanting-операція видала саме infused_seashelf. Одна наявність предмета не завершує цей custom action.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_enchanting:quanta0",
+      "epoch": 20,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/quanta0.json",
+      "json_sha256": "4c6e990ec21f2d0afbe770f1fd4ec80c21b7cf41342c2c9e03c82410ce6d3ea0",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "quanta": {
+            "min": 0,
+            "max": 0
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Під час успішного native enchanted значення quanta дорівнює0; цей доказ не вимірює конкретний набір накладених чарів.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "aia2:apothic_enchanting/infuse_deepshelf",
+      "epoch": 31,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "kubejs/data/aia2/advancement/apothic_enchanting/infuse_deepshelf.json",
+      "json_sha256": "a992287b75a2676644a78af947c95edce1566d10f7bac05fdfee9db256bf0b10",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "item": {
+            "items": "apothic_enchanting:deepshelf"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Реальна post-infusion операція видала deepshelf; це не перевірка добування sculk чи результатів убивства Warden.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "aia2:apothic_enchanting/infuse_ender_library",
+      "epoch": 31,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "kubejs/data/aia2/advancement/apothic_enchanting/infuse_ender_library.json",
+      "json_sha256": "8c67b47714104dc400cfafb7d6b238009a4f7cbfdde68554ffddaae46295a9f6",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "item": {
+            "items": "apothic_enchanting:ender_library"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native enchanted підтверджує отримання ender_library через операцію; цей item predicate сам не порівнює повний вміст NBT до/після.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_enchanting:100ench",
+      "epoch": 41,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/100ench.json",
+      "json_sha256": "9250be5c3b35d0175ae23688bdfd4fadd9b230cc48ed70c97bf88f5b9d1d3b02",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "levels": {
+            "min": 100,
+            "max": 2000
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native criterion перевіряє levels>=100 під час enchanting; не максимальний рівень окремого enchantment і не запас XP у кишені.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_enchanting:max_stable",
+      "epoch": 41,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/max_stable.json",
+      "json_sha256": "17995e8948bdccbbd04c2e5d0a648e3e2fec1f83b379ea2cc176f0e3a23638ca",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "eterna": {
+            "min": 100,
+            "max": 1000
+          },
+          "arcana": {
+            "min": 100,
+            "max": 1000
+          },
+          "quanta": {
+            "min": 0,
+            "max": 0
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native max_stable вимагає Eterna>=100,Arcana>=100,Quanta0 в одній операції. Назва upstream не означає додаткового stable=true предиката.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_enchanting:max_rectified",
+      "epoch": 41,
+      "mod_id": "apothic_enchanting",
+      "installed_version": "1.6.4",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/resources/data/apothic_enchanting/advancement/max_rectified.json",
+      "json_sha256": "0eeda8d301681999c95895f567e7104b8564f99f667ee671dc002346041e3c37",
+      "required_action_triggers": [
+        "apothic_enchanting:enchanted"
+      ],
+      "expected_conditions": {
+        "apothic_enchanting:enchanted": {
+          "eterna": {
+            "min": 50,
+            "max": 1000
+          },
+          "arcana": {
+            "min": 100,
+            "max": 1000
+          },
+          "quanta": {
+            "min": 100,
+            "max": 1000
+          },
+          "stable": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/gradle.properties",
+          "sha256": "a145b4e78bdee5425b30bad7666d444a7153fa9905965bd87660059ae0bfab4b",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "sha256": "4c7616a5f2f244957e5d48754c6fa5e682e7f20dbcb06ec4acea57868e529bc0",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "sha256": "e44461c53d9020905180a9e28f6f9433e5a831a0f78f1a50c4ba4ae139a1e69c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "sha256": "fcb0db27d85a584eef7ec315ede3ee4b837610216964652dbdeaa5ab9ff381a8",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_consumption_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_enchanting/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "sha256": "623aeac2062991c43bd9414966bece76e73daec57888ac66cfe1fb290af1b85c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java",
+          "pin": "4d167fd44222058819fa70bf99fbc3ab38220e34",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "actual_stat_computation",
+          "scope_uk": "Точний source pin із gradle version1.6.4 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native max_rectified вимагає зазначені три stats і stable=true під час однієї операції; не будь-який предмет із максимальними чарами.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів."
+      ]
+    },
+    {
+      "id": "apothic_spawners:modifier",
+      "epoch": 20,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/modifier.json",
+      "json_sha256": "1e6588ef1ed6f0ba9b773e591988ad9009885fc941cc70f8e8e9329e744715c2",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {}
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Підтверджується native spawner_modifier після успішного match.apply. Проста передача предмета-спавнера цього не доводить.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:redstone",
+      "epoch": 20,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/redstone.json",
+      "json_sha256": "924f3b773df3d80a8e9dacfbda8fd3b3509aff6feb261bf344e73cecfaf6bd90",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "redstone_control": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Стан redstone_control=true перевірено при успішній модифікації. Criterion не вимірює кількість народжених мобів або поточний рівень сигналу.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:light",
+      "epoch": 20,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/light.json",
+      "json_sha256": "f21a62c5524dbe6d894504746b1a2956a7096e4d5f39f98ea0b273bbeb0b5887",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "ignore_light": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Успішний native modifier зафіксував ignore_light=true; це не підтвердження ігнорування всіх spawn-умов.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "aia2:spawners/ascent_range",
+      "epoch": 31,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "kubejs/data/aia2/advancement/spawners/ascent_range.json",
+      "json_sha256": "5322b4bab7e58c8a73c5b62911d5e54e716c4e0b15276c6c4ec7a0c2560b1c4f",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "req_player_range": {
+            "min": 32
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Після успішної модифікації required_player_range>=32. Спосіб виготовлення руни та chunk-loading цим критерієм не перевіряються.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:mindelay",
+      "epoch": 41,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/mindelay.json",
+      "json_sha256": "aaef2f5e23f1ab6d34fe82cec4f99e716c633946a2e81ef01cd352eed6ee06b3",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "min_delay": {
+            "max": 20,
+            "min": 0
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Перевіряється min_delay у межах0..20 після успішної модифікації. Постійне виробництво або max_delay цим не доводяться.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "aia2:spawners/summit_count",
+      "epoch": 31,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "kubejs/data/aia2/advancement/spawners/summit_count.json",
+      "json_sha256": "2469b3adc89eabb0100be66bcf1b6b38b7e553ebac521384b0b3dfa1998a390f",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "spawn_count": {
+            "min": 13
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native trigger після успішної модифікації має spawn_count>=13; це налаштована кількість спроб за цикл, без доказу фактичної появи13мобів.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:noai",
+      "epoch": 31,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/noai.json",
+      "json_sha256": "82b2af75fd7cbe669c9ad30682f33c6b8e328ac50f6d6c0250512ae60d02daea",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "no_ai": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Успішний modifier перевірив no_ai=true на спавнері; транспортування та робота мобів після народження — окремий ручний тест.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:conditions",
+      "epoch": 31,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/conditions.json",
+      "json_sha256": "42550fd13e7488b4f4d92c9bc9358811eb6e6e61d2fc40182491cca2ba512348",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "ignore_conditions": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Після успішної модифікації ignore_conditions=true. Criterion не перевіряє тип моба, Capturing-drop або фактичне народження.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:players",
+      "epoch": 31,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/players.json",
+      "json_sha256": "1c9b690a00f1c535e29a5bccb33a435ab8fb3154676fb29041801b557f3239b1",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "ignore_players": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Успішна native модифікація має ignore_players=true. Chunk-loading і робота offline-команди не сертифіковані цим прапорцем.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
+    },
+    {
+      "id": "apothic_spawners:ultimate_spawner",
+      "epoch": 41,
+      "mod_id": "apothic_spawners",
+      "installed_version": "1.4.0",
+      "json_path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/resources/data/apothic_spawners/advancement/ultimate_spawner.json",
+      "json_sha256": "1be7a1ddebbc4e9c745c7ea82b39740739a791fb93e12d6439aafe96174cee2d",
+      "required_action_triggers": [
+        "apothic_spawners:spawner_modifier"
+      ],
+      "expected_conditions": {
+        "apothic_spawners:spawner_modifier": {
+          "min_delay": {
+            "max": 20,
+            "min": 0
+          },
+          "max_delay": {
+            "max": 20,
+            "min": 0
+          },
+          "ignore_players": true,
+          "ignore_conditions": true,
+          "no_ai": true,
+          "redstone_control": true
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/gradle.properties",
+          "sha256": "a4d580989dee0d3e3491cbbf2370302ce18777dee1e052e57fdb224f5376741c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_evidence",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "sha256": "bdf708f031b752d6be806478c246fa0c2845cd874c2f067d620ab4c20783de7c",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_registration",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "sha256": "278639c464d028bc447802853bdb11c0d6556e3198747d70187d63703ee36231",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "trigger_codec",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "sha256": "8029cc8c07b00ff0bf577d75d7f11fdd063462ef594df4cc3f3b0a4ebc505b4a",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_post_application_dispatch",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        },
+        {
+          "path": "content/research/evidence/apotheosis_split_modules_next_v5/apothic_spawners/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "sha256": "b2b1cd37f4a893324320cdc08dd56523b901c0930602ea8523be7335f43a49f9",
+          "url": "https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java",
+          "pin": "a5401df4a80b833b297c398f88a5718bdd47c02a",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_modifier_matching_and_apply",
+          "scope_uk": "Точний source pin із gradle version1.4.0 для MC1.21.1; не запуск повного модпаку."
+        }
+      ],
+      "proof_scope_uk": "Native ultimate criterion перевіряє повний перелічений стан одного tile; прості окремі історичні досягнення на різних спавнерах його не замінюють.",
+      "limitations_uk": [
+        "SHA перевіряє джерела й заявлені умови, а не реальний dispatch у всій збірці.",
+        "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
+        "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
+      ]
     }
   ]
 }

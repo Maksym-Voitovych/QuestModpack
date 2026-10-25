@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "quest": "E04_X_orchid_sample",
+  "status": "source_reviewed_target_repair",
+  "reason_uk": "Flare Orchid потребує мутації в Nether(відкривається15), а Radiant Daisy має native перевірку абсолютного getDayTime між5000і7000 без modulo24000. Ранній optional гербарій переводиться на відновлювані підготовчі ванільні зразки, без зміни ID чи залежностей. Це не рецепт мутованих квітів.",
+  "sources": [
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "sha256": "ba587e7025140a07bc486dbdc9f732fa5b6144715520077f1619ba71ee59448c",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "sha256": "b938427ef27de21f631f54e86eb86f8e979b8f8d1f3bdaf678553e57d65641e0",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "sha256": "70ba39d2756e2245320a58b292f2edd83a1f8c7b8353368877b8d479d45dc07f",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "version_match": true
+    }
+  ],
+  "native_bugs_not_fixed": [
+    "Radiant Daisy first-world-day absolute time window",
+    "MutagenRecipe permissive subset matching"
+  ],
+  "preserves": [
+    "questID",
+    "taskID/order",
+    "rewardID/payload",
+    "dependencies",
+    "requiredfalse",
+    "epoch4"
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "schema": 1,
+  "mod": "actuallyadditions",
+  "installed_version": "1.3.26",
+  "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+  "status": "source_verified_no_current_future_recipe_gap",
+  "machine_and_recipe_gates": {
+    "fermenting_barrel": {
+      "machine": 16,
+      "recipes": {
+        "actuallyadditions:fermenting/refined_canola": 16
+      }
+    },
+    "oil_generator": {
+      "machine": 16,
+      "recipes": {
+        "actuallyadditions:liquid_fuel/empowered_canola_oil": 16,
+        "actuallyadditions:liquid_fuel/crystallized_canola_oil": 16,
+        "actuallyadditions:liquid_fuel/canola_oil": 16,
+        "actuallyadditions:liquid_fuel/refined_canola_oil": 16
+      }
+    },
+    "empowerer": {
+      "machine": 23,
+      "recipes": {
+        "actuallyadditions:empowering/palis_block": 16,
+        "actuallyadditions:empowering/emeradic_block": 16,
+        "actuallyadditions:empowering/enori_block": 16,
+        "actuallyadditions:empowering/emeradic": 16,
+        "actuallyadditions:empowering/enori": 16,
+        "actuallyadditions:empowering/diamatine_block": 16,
+        "actuallyadditions:empowering/restonia_block": 16,
+        "actuallyadditions:empowering/void": 16,
+        "actuallyadditions:empowering/diamatine": 16,
+        "actuallyadditions:empowering/restonia": 23,
+        "actuallyadditions:empowering/empowered_canola": 16,
+        "actuallyadditions:empowering/palis": 16,
+        "actuallyadditions:empowering/void_block": 16
+      }
+    }
+  },
+  "findings_uk": [
+    "Barrel та OilGenerator використовують API recipe lists та кеші, але нинішні recipe gates не вищі за gate16машин; чинного обходу майбутньої епохи не підтверджено.",
+    "Empowerer.serverTick щоразу шукає matching recipe у RecipeManager.getAllRecipesFor; статичний EMPOWERER_RECIPES лише client SYNC. Усі нинішні рецепти<=machine23.",
+    "CanolaSeed реагує зі source-блоком refined/crystallized oil у onEntityItemUpdate та видаляє цілий ItemEntity, тому інструкція вимагає поодинокого насіння. Нативного production-proof не оголошено."
+  ],
+  "sources": [
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/LICENSE",
+      "sha256": "82ea451b20be461c2bbf279262d4a28c34bed3edc3197b90ae902b77fb22c560",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/LICENSE",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/gradle.properties",
+      "sha256": "904e1a8936a8a648fa7f46b8b81cfc18921cc8c2470cca449ec98efbf75874f6",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/gradle.properties",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/blocks/BlockCanolaPress.java",
+      "sha256": "27d2b4c112323d6541dec0291f86b7292219b09392924bc5d1c4f5a453d7fb85",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/blocks/BlockCanolaPress.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/booklet/InitBooklet.java",
+      "sha256": "94d81e01a90f4eec3e093a8b46daf9fb12320b21811268cf23663a4ae342386f",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/booklet/InitBooklet.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/ContainerCanolaPress.java",
+      "sha256": "202ed6874f783ec8c9ce86f5f0e8c43c79011f5785a20353963c7c094b77ba07",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/ContainerCanolaPress.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/gui/GuiCanolaPress.java",
+      "sha256": "8a6d66937fac8cead30d0e30ece5272b2532eba0282339aedd55dbf840ec8169",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/gui/GuiCanolaPress.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/items/CanolaSeed.java",
+      "sha256": "16f418b5f11d9adfec783abd939683ff6b07e4ad90958c23cad3a3097a24e62a",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/CanolaSeed.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemBattery.java",
+      "sha256": "ed0d88ef449dfa029b4812eba6391998b9036f8ceb511f1dbcd29cca6d676863",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemBattery.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemLaserWrench.java",
+      "sha256": "56044c83068a4d7429839f797314b85be04ff87733411474cd07ee5346e47cb3",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemLaserWrench.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityCanolaPress.java",
+      "sha256": "74a14f1e808ef30677c8a7ec7fdb45c1a88c73ee0d2e6456becfddc231a7c285",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityCanolaPress.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEmpowerer.java",
+      "sha256": "cf5f6ecfae7d8c898d6ecced7c9735cc10e2e2a418d2feff56c45a7c4527b8e5",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEmpowerer.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnergizer.java",
+      "sha256": "149bf04e1e28c881737b92928fa87d66fcb607e8883b94454bc9c7c78540a015",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnergizer.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnervator.java",
+      "sha256": "f3c6cfa87b62f29e290462b93bb76784de15ae8da5c9881b7ec0910d433f2002",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnervator.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityFermentingBarrel.java",
+      "sha256": "d5f5c6bca0c4dc18ed5100a5d5c689a7eafa8bdcd844a85081a4b7e0eb4fd345",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityFermentingBarrel.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergy.java",
+      "sha256": "e9cb801999ff7c14bfaab3339d4b51d47181eb3da8a58399002ece2157621749",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergy.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyAdvanced.java",
+      "sha256": "652d42ec9514ead665bf1ffc37a02c4e77977ad4247cf3bdfaeb6e6c4758c90f",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyAdvanced.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyExtreme.java",
+      "sha256": "5f2badd405bf27ff94964b04a1797cc5b3a09813b6ff4ac9abaf602c6b1be41f",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyExtreme.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayFluids.java",
+      "sha256": "085b8b1c877c2de4cb29ffba702f464e98706b5ae0620d1710db9e52e9d22918",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayFluids.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItem.java",
+      "sha256": "142e84ec5cea7ba3f8046691ab638c5f6de008ef9cadeccf0fd78d9eb5c2d50a",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItem.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItemAdvanced.java",
+      "sha256": "9c3825043b4f17eeee7bf63d0f1ed37a62c94ceb1264241719178ccfed35a75e",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItemAdvanced.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityOilGenerator.java",
+      "sha256": "220341d2c9305b2b0ab58e172eb29af160eecb1cb8f104635e8046536c42967e",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityOilGenerator.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityPhantomface.java",
+      "sha256": "d681b5b58ecf0dde542da7183cf0b48c3ffc1d366ca050c25e4ab225ae11119e",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityPhantomface.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/resources/assets/actuallyadditions/lang/en_us.json",
+      "sha256": "22b90355488af58c6791fad49b1ed0c5f3970c8256542c7b216d427634d3a473",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/resources/assets/actuallyadditions/lang/en_us.json",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_book_or_source",
+      "scope_uk": "Точний1.3.26 sourcepin для Minecraft1.21.1; portable raw bytes. Це source-доказ, не повний запуск мода."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/battery_box.json",
+      "sha256": "e160b99476291e37eebab073d6da17f25d445a52729bc7d94d168075112e8d8a",
+      "url": "user-supplied:export/recipes/actuallyadditions/battery_box.json",
+      "recipe_id": "actuallyadditions:battery_box",
+      "serializer": "minecraft:crafting_shapeless",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/canola_press.json",
+      "sha256": "01ebb438ede3694e46b169bef5e9c59da28b1e431442c4935f3484b05545f380",
+      "url": "user-supplied:export/recipes/actuallyadditions/canola_press.json",
+      "recipe_id": "actuallyadditions:canola_press",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/empowering/empowered_canola.json",
+      "sha256": "247d7f41cd1f2d7c7555bbe1d105a4f6459edfced3752c678a702ba4546ee24a",
+      "url": "user-supplied:export/recipes/actuallyadditions/empowering/empowered_canola.json",
+      "recipe_id": "actuallyadditions:empowering/empowered_canola",
+      "serializer": "actuallyadditions:empowering",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/energizer.json",
+      "sha256": "32a82fe044e1dca67e6fef5cfcda8d0c663589bc70b01c2b074943c24c47218e",
+      "url": "user-supplied:export/recipes/actuallyadditions/energizer.json",
+      "recipe_id": "actuallyadditions:energizer",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/enervator.json",
+      "sha256": "6f4e44d583c2257c6f6a27185ed2fa0d7d27cef04489fe8d2dad3b586f4d56c0",
+      "url": "user-supplied:export/recipes/actuallyadditions/enervator.json",
+      "recipe_id": "actuallyadditions:enervator",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/fermenting/refined_canola.json",
+      "sha256": "030afe974eea8775b5f93b1a64b86013fccccbc3aea5a964a37ebee119fe4a79",
+      "url": "user-supplied:export/recipes/actuallyadditions/fermenting/refined_canola.json",
+      "recipe_id": "actuallyadditions:fermenting/refined_canola",
+      "serializer": "actuallyadditions:fermenting",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/filter.json",
+      "sha256": "60c6a7365bed280356b27bdfbd82234402d7e655b0236811516f74700bf71d5d",
+      "url": "user-supplied:export/recipes/actuallyadditions/filter.json",
+      "recipe_id": "actuallyadditions:filter",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/item_interface.json",
+      "sha256": "628ea4efa259ff0190eaef6784d9e83491bc97a9483f9b33e155ec255365c17a",
+      "url": "user-supplied:export/recipes/actuallyadditions/item_interface.json",
+      "recipe_id": "actuallyadditions:item_interface",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/laser/crystallized_canola_seed.json",
+      "sha256": "8f17f79cbb68547e133b5f12296cf5d3337447414e060b2cf8ae3f4a8a2b0b0c",
+      "url": "user-supplied:export/recipes/actuallyadditions/laser/crystallized_canola_seed.json",
+      "recipe_id": "actuallyadditions:laser/crystallized_canola_seed",
+      "serializer": "actuallyadditions:laser",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/laser_relay_item_advanced.json",
+      "sha256": "bc44e1cb7402baf286931b994bf0bb1a70d19978494c1c3a8d71c032ee329ae2",
+      "url": "user-supplied:export/recipes/actuallyadditions/laser_relay_item_advanced.json",
+      "recipe_id": "actuallyadditions:laser_relay_item_advanced",
+      "serializer": "minecraft:crafting_shapeless",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/canola_oil.json",
+      "sha256": "59fbdc04de2354a2067a14b231d0b81d192e00e03a1efe4e7a1835cf126201c5",
+      "url": "user-supplied:export/recipes/actuallyadditions/liquid_fuel/canola_oil.json",
+      "recipe_id": "actuallyadditions:liquid_fuel/canola_oil",
+      "serializer": "actuallyadditions:liquid_fuel",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/crystallized_canola_oil.json",
+      "sha256": "e99c555a37a7d2c8c44b1ec5e9e9e3d54cb71ac07559f32b96bf5c0384fc9886",
+      "url": "user-supplied:export/recipes/actuallyadditions/liquid_fuel/crystallized_canola_oil.json",
+      "recipe_id": "actuallyadditions:liquid_fuel/crystallized_canola_oil",
+      "serializer": "actuallyadditions:liquid_fuel",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/empowered_canola_oil.json",
+      "sha256": "bf23afcea039e36a022d04eb197c14d38227eef1d4e10c73ed9c40b1b7f4e3dd",
+      "url": "user-supplied:export/recipes/actuallyadditions/liquid_fuel/empowered_canola_oil.json",
+      "recipe_id": "actuallyadditions:liquid_fuel/empowered_canola_oil",
+      "serializer": "actuallyadditions:liquid_fuel",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/refined_canola_oil.json",
+      "sha256": "f4747afb0398b4b78686d02ce093dbb8e71e1bf9cbd3e8eb96c3a604be19f40d",
+      "url": "user-supplied:export/recipes/actuallyadditions/liquid_fuel/refined_canola_oil.json",
+      "recipe_id": "actuallyadditions:liquid_fuel/refined_canola_oil",
+      "serializer": "actuallyadditions:liquid_fuel",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/oil_generator.json",
+      "sha256": "cac85c559f053f1f288065589001e248058b1deb8b03d25038780d9bf1b33450",
+      "url": "user-supplied:export/recipes/actuallyadditions/oil_generator.json",
+      "recipe_id": "actuallyadditions:oil_generator",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_connector.json",
+      "sha256": "cfbd09ac8a202952584ca06cbcee0712299023f8cb5b56d35a0904053ac010e6",
+      "url": "user-supplied:export/recipes/actuallyadditions/phantom_connector.json",
+      "recipe_id": "actuallyadditions:phantom_connector",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_energyface.json",
+      "sha256": "3e2dde62234d1f602bf3c0f69e82059623b70b36df141d08ad9a6ce71c2d9766",
+      "url": "user-supplied:export/recipes/actuallyadditions/phantom_energyface.json",
+      "recipe_id": "actuallyadditions:phantom_energyface",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_liquiface.json",
+      "sha256": "7cd7d2c54c6698e4a90410edaf12c1410c96773e53853c8b19589760e3626052",
+      "url": "user-supplied:export/recipes/actuallyadditions/phantom_liquiface.json",
+      "recipe_id": "actuallyadditions:phantom_liquiface",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/pressing/canola.json",
+      "sha256": "39333bb1cbae1e17f15dbe5375f10c1fa608cbc1f9377951a7df0c674626b4ea",
+      "url": "user-supplied:export/recipes/actuallyadditions/pressing/canola.json",
+      "recipe_id": "actuallyadditions:pressing/canola",
+      "serializer": "actuallyadditions:pressing",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/exported_recipes/single_battery.json",
+      "sha256": "0722e6d206f39ea048ed916091cc5774205c1e9ce5969df96aa24e50c38ccad6",
+      "url": "user-supplied:export/recipes/actuallyadditions/single_battery.json",
+      "recipe_id": "actuallyadditions:single_battery",
+      "serializer": "minecraft:crafting_shaped",
+      "verified": true,
+      "source_kind": "exact_installed_export_recipe"
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityBatteryBox.java",
+      "sha256": "e02ef2cce13c05c0e290c86d635de6bf7d4acb9838e9b3e8954aa694800d4368",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityBatteryBox.java",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_source_or_advancement",
+      "scope_uk": "Точний1.3.26 код/JSON; наявність предмета не приймається як виробничий доказ."
+    },
+    {
+      "path": "content/research/evidence/actually_additions_core_finish_v5/official/src/generated/resources/data/actuallyadditions/advancement/make_first_crystal.json",
+      "sha256": "67ffb9358ef6dc50228482a229cde1613c90b9673799fd4cbdba53c4e8cda3b7",
+      "url": "https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/generated/resources/data/actuallyadditions/advancement/make_first_crystal.json",
+      "pin": "cd9d9c63254f471f966ee51b078afdf47af5f852",
+      "verified": true,
+      "version_match": true,
+      "source_kind": "exact_version_official_source_or_advancement",
+      "scope_uk": "Точний1.3.26 код/JSON; наявність предмета не приймається як виробничий доказ."
+    }
+  ],
+  "full_pack_run": false
+}

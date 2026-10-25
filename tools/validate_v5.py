@@ -28,6 +28,10 @@ MECHANIC_CONTRACT = {
                       {'mekanism:metallurgic_infusing/alloy/infused'}),
     'reinforced_alloy': (23, 'mekanism:metallurgic_infusing', 'mekanism:alloy_reinforced',
                          {'mekanism:metallurgic_infusing/alloy/reinforced'}),
+    'roots_living_pickaxe': (4, 'rootsclassic:ritual', 'rootsclassic:living_pickaxe',
+                             {'rootsclassic:ritual/crafting/living_pickaxe'}),
+    'roots_charged_focus': (15, 'rootsclassic:ritual', 'rootsclassic:charged_runic_focus',
+                            {'rootsclassic:ritual/crafting/charged_runic_focus'}),
 }
 
 
@@ -141,7 +145,7 @@ def validate_compiled_tasks(record, compiled):
 
 
 def verified_mechanic_advancements(root, rules, bundle=None):
-    """Only the four audited native production contracts can count as actions.
+    """Only the six audited native production contracts can count as actions.
 
     This checks the checked-in recipe/advancement protocol. Successful native
     dispatch still needs its separate Java/runtime tests; inventory triggers
@@ -157,7 +161,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
     specs = document['rules']
     by_id = {rule.get('id'): rule for rule in specs}
     require(len(specs) == len(by_id) and set(by_id) == set(MECHANIC_CONTRACT),
-            'Only four audited native mechanics are supported')
+            'Only six audited native mechanics are supported')
     removed = set((bundle or {}).get('remove', []))
     compiled_recipes = {entry['id']: entry['json'] for entry in (bundle or {}).get('add', [])}
     allowed = set()
@@ -194,7 +198,17 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Native mechanic lacks runtime recipe provenance', ident, recipe_id)
                 require(compiled_recipes.get(recipe_id) == recipe,
                         'Native mechanic runtime producer differs from frozen evidence', ident, recipe_id)
-            outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('output', {})]
+            if serializer == 'rootsclassic:ritual':
+                require(recipe.get('effect') == 'rootsclassic:crafting' and recipe.get('ingredients'),
+                        'Roots proof requires a crafting ritual with real ingredients', ident)
+                require(verify_evidence(root, {'path': source.get('frozen_path', ''),
+                                              'sha256': source['source_sha256']}, claimed=True),
+                        'Roots proof lacks exact exported recipe bytes', ident)
+                require(read(root/source['frozen_path']) == recipe,
+                        'Roots proof recipe differs from frozen export', ident)
+                outputs = [recipe.get('effectConfig', {}).get('result', {})]
+            else:
+                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('output', {})]
             require(any(result.get('id') == output and result.get('count', 1) > 0 for result in outputs),
                     'Native mechanic recipe does not produce its output', ident, recipe_id)
         path = root/'kubejs/data/aia2/advancement/mechanics'/(ident + '.json')
@@ -464,6 +478,11 @@ def validate(root=ROOT, include_layout=True):
             'native_action_proofs': native_actions,
             'checkpoint_preservation': checkpoint_preservation,
             'component_variant_validation': variants,
+            'core_balance_validation': import_tool('build_core_balance_v5').validate(
+                root, read(root/'content/recipes/v5_aa_core.json'), bundle, rules, compiled=True)
+                if (root/'content/recipes/v5_aa_core.json').exists() else {'enabled': False},
+            'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
+                if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}
 
 

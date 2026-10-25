@@ -5,6 +5,625 @@
 Відомі прогалини збережено явно. [Індекс джерел](SOURCE_INDEX.md) ·
 [Моди без завершених карт](REMAINING_COVERAGE.md).
 
+## Apothic Enchanting: зала, інфузія й архів
+
+Версія експорту: **1.6.4**. Статус: `complete`.
+[Структурована карта](../../content/research/apothic_core_v5.json).
+
+Почніть із доступного столу та basic_bookshelf. У цій1.6.4 версії звичайна полиця дає2Eterna, базовий cap30. Перевіряйте вікно столу й залишайте проміжок, який передає enchanting power. Виконайте реальне зачарування з native вартістю не нижче30.
+
+### 1. Перший результат зі справжнім рівнем30
+
+Епохи: 20.
+
+Почніть із доступного столу та basic_bookshelf. У цій1.6.4 версії звичайна полиця дає2Eterna, базовий cap30. Перевіряйте вікно столу й залишайте проміжок, який передає enchanting power. Виконайте реальне зачарування з native вартістю не нижче30.
+Ресурси й результати: `apothic_enchanting:basic_bookshelf`.
+Квести: `V5_DEPTH_ENCH_LEVEL30`.
+Native enchanted trigger спрацював після успішної операції з levels>=30; піднята зачарована книга не доводить цього кроку.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 2. Eterna, Quanta й Arcana мають різні ролі
+
+Епохи: 20.
+
+Eterna визначає доступну силу, Quanta змінює розкид, Arcana впливає на добір зачарувань. Налаштуйте полиці й зробіть операцію, для якої всі три native параметри не нижче10. Відрізняйте cap внеску полиці від особистого MAX_ETERNA.
+Попередні кроки: apothic_enchanting:ench_level30.
+Ресурси й результати: `apothic_enchanting:seashelf`.
+Квести: `V5_DEPTH_ENCH_STATS`.
+Фактичне enchanted виконується при eterna>=10,quanta>=10,arcana>=10; огляд полиць не є цим доказом.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 3. Інфузія HellShelf через enchanting
+
+Епохи: 20.
+
+Поставте саму Hellshelf у стіл як вхід інфузії. Точний рецепт infused_hellshelf вимагає щонайменше45Eterna та30Quanta. Підберіть залу до натискання: випадкова книга в інвентарі чи крафт звичайної полиці не підходить.
+Попередні кроки: apothic_enchanting:ench_stats.
+Ресурси й результати: `apothic_enchanting:infused_hellshelf`.
+Квести: `V5_DEPTH_ENCH_INFUSE_HELL`.
+Перевіряється реальний post-infusion вихід infused_hellshelf через native enchanted item predicate; передача готової полиці не видає доказ.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 4. Морська інфузія керує Arcana
+
+Епохи: 20.
+
+Перетворіть Seashelf через інфузію при45Eterna,15Quanta та10Arcana. Infused Seashelf піднімає cap до60 і додає5Arcana без додаткової Quanta; це інша роль, ніж у пекельної гілки.
+Попередні кроки: apothic_enchanting:ench_stats.
+Ресурси й результати: `apothic_enchanting:infused_seashelf`.
+Квести: `V5_DEPTH_ENCH_INFUSE_SEA`.
+Серверна enchanting-операція видала саме infused_seashelf. Одна наявність предмета не завершує цей custom action.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 5. Керований результат без розкиду Quanta
+
+Епохи: 20.
+
+Скористайтеся негативною Quanta Melonshelf або підтриманими іншими стат-блоками, щоб зробити справжню операцію при Quanta0. Перераховуйте Eterna: Melonshelf також віднімає2Eterna. Досягнення вимагає операції, а не лише нульового індикатора.
+Попередні кроки: apothic_enchanting:ench_infuse_hell, apothic_enchanting:ench_infuse_sea.
+Ресурси й результати: `apothic_enchanting:melonshelf`.
+Квести: `V5_DEPTH_ENCH_ZERO_QUANTA`.
+Під час успішного native enchanted значення quanta дорівнює0; цей доказ не вимірює конкретний набір накладених чарів.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 6. Бібліотека для повторного використання чарів
+
+Епохи: 20.
+
+Виготовте Library і підготуйте книги для її архіву. EnchLibrary зберігає знання зачарувань через книги; перевіряйте власні рівні й доступні записи перед поверненням потрібних чарів. Томи для типів інструментів та інфузія є окремими системами.
+Попередні кроки: apothic_enchanting:ench_level30.
+Ресурси й результати: `apothic_enchanting:library`.
+Квести: `V5_DEPTH_ENCH_LIBRARY_WORKSHOP`.
+FTB перевіряє крафт Library, огляд блока та комплект порожніх книг; саму передачу чарів або вміст архіву тут не вимірюємо.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 7. Знімати чари з правильним типом тому
+
+Епохи: 20.
+
+Підготуйте Scrapping, Improved Scrapping та Extraction Tome для роботи з ковадлом. Improved Tome отримують інфузією при45/25/35(Eterna/Quanta/Arcana), Extraction — при60/25/45 із Quanta не вище75. Простий Scrapping може втрачати частину чарів; Extraction повертає основу без чарів при успішному anvil repair.
+Попередні кроки: apothic_enchanting:ench_library_workshop, apothic_enchanting:ench_infuse_hell, apothic_enchanting:ench_infuse_sea.
+Ресурси й результати: `apothic_enchanting:extraction_tome`.
+Квести: `V5_DEPTH_ENCH_TOME_WORKSHOP`.
+Перевіряється підготовка інструментів, не зміна компонентів основи на ковадлі. Інфузійні предмети не позначені only_from_crafting, бо це не звичайний crafting event.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 8. Пробудити Dormant Deepshelf
+
+Епохи: 31.
+
+Після початкових інфузій підготуйте Dormant Deepshelf і залу з60Eterna,40Quanta,40Arcana. Інфузія дає Deepshelf із cap70; далі обирайте soul-touched або echoing спеціалізацію й досліджуйте ресурси глибин.
+Попередні кроки: apothic_enchanting:ench_infuse_hell, apothic_enchanting:ench_infuse_sea.
+Ресурси й результати: `apothic_enchanting:deepshelf`.
+Квести: `V5_DEPTH_ENCH_INFUSE_DEEP`.
+Реальна post-infusion операція видала deepshelf; це не перевірка добування sculk чи результатів убивства Warden.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 9. Перенести знання в Ender Library
+
+Епохи: 31.
+
+Після відкриття End розвивайте EndShelves, зокрема draconic із cap100. Для keep_nbt інфузії звичайної Library потрібні точно100Eterna,100Arcana та45–50Quanta. Перевірте на копії вміст збереженого архіву: рецепт має зберегти компоненти вхідної бібліотеки.
+Попередні кроки: apothic_enchanting:ench_library_workshop, apothic_enchanting:ench_infuse_deep.
+Ресурси й результати: `apothic_enchanting:ender_library`.
+Квести: `V5_DEPTH_ENCH_ENDER_LIBRARY`.
+Native enchanted підтверджує отримання ender_library через операцію; цей item predicate сам не порівнює повний вміст NBT до/після.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 10. Зала для справжнього рівня100
+
+Епохи: 41.
+
+Збалансуйте cap і внески End/Deep/Sculk полиць, потім виконайте операцію з native levels>=100. У цій версії Eterna шкалюється до100, тому старі поради з cap50 не є точним описом1.6.4.
+Попередні кроки: apothic_enchanting:ench_ender_library.
+Ресурси й результати: `apothic_enchanting:draconic_endshelf`.
+Квести: `V5_DEPTH_ENCH_LEVEL100`.
+Native criterion перевіряє levels>=100 під час enchanting; не максимальний рівень окремого enchantment і не запас XP у кишені.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 11. Максимум сили без випадкового розкиду
+
+Епохи: 41.
+
+Зберіть конфігурацію з100Eterna,100Arcana та0Quanta й виконайте зачарування. Порівняйте її з попередньою залою: полиці з від’ємними статами коригують не лише один індикатор.
+Попередні кроки: apothic_enchanting:ench_level100, apothic_enchanting:ench_zero_quanta.
+Ресурси й результати: `apothic_enchanting:heart_seashelf`.
+Квести: `V5_DEPTH_ENCH_STABLE_MAX`.
+Native max_stable вимагає Eterna>=100,Arcana>=100,Quanta0 в одній операції. Назва upstream не означає додаткового stable=true предиката.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+### 12. Висока Quanta з нативною стабілізацією
+
+Епохи: 41.
+
+Побудуйте альтернативну залу з не менш50Eterna,100Quanta та100Arcana і джерелом native stability. Ця конфігурація відрізняється від Quanta0: перевіряйте властивість providesStability, а не тільки число на панелі.
+Попередні кроки: apothic_enchanting:ench_stable_max.
+Ресурси й результати: `apothic_enchanting:geode_shelf`.
+Квести: `V5_DEPTH_ENCH_RECTIFIED`.
+Native max_rectified вимагає зазначені три stats і stable=true під час однієї операції; не будь-який предмет із максимальними чарами.
+Повний optional mod/FTB/JEI runtime ще не запускався.
+
+Фінальні цілі:
+- Висока Quanta з нативною стабілізацією
+
+Міжмодові зв’язки:
+- AIA2 epoch stage та дві основні гілки лишаються передумовою; native advancements не видають ключі або нові stages.
+- Спільне спорядження використовуєApotheosis; enchanting/spawner-механіки належать саме цьому окремому модулю.
+
+Прогалини та межі перевірки:
+- Optional Minecraft/FTB/JEI runtime та реальні компоненти/потоки мають пройти повний acceptance.
+- Кожна native ціль доводить свою конкретну серверну дію/стан. Ні recipe lookup, ні inventory setup не називаються прихованим виробництвом.
+- MAX_ETERNA у точній1.6.4 версії100; гравець/полиці можуть додатково обмежувати його. Старий cap50 не застосовано.
+- Library/Tome kit перевіряє підготовку, а item-predicate Ender Library не доводить збереження конкретних NBT-записів; потрібен ручний тест із наповненим архівом.
+
+Джерела:
+
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/LICENSE) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/LICENSE_ASSETS) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/README.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/BerserkingComponent.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/BlockStats.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/BoonComponent.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/EnchantmentEffects.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/ExponentialValue.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/InfusionRecipe.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/ReboundingEffect.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/ReflectiveComponent.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/schema/Stats.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/apothic_enchanting_table.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/basic_bookshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/beeshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/blazing_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/boots_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/bow_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/chestplate_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/cobweb.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/crystal_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/draconic_endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/fishing_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/flimsy_ender_lead.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/geode_shelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/glowing_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/heart_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/helmet_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/inert_trident.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/leggings_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/melonshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/other_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/pearl_endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/pickaxe_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/prismatic_web.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/pufferfish.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/scrap_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/sightshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/sightshelf_t2.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/treasure_shelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/generated/resources/data/apothic_enchanting/recipe/weapon_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/ApothEnchClient.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/ApothEnchConfig.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/ApothEnchEvents.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/ApothicEnchanting.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/Ench.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/EnchantmentInfo.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/PowerFunction.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/advancements/EnchantedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/api/EnchantableItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/api/EnchantmentStatBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/asm/EnchHooks.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/compat/CuriosCompat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/compat/EnchJEIPlugin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/compat/EnchJadePlugin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/compat/InfusionRecipeCategory.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/compat/RavenTransferHandler.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/ApothEnchantmentProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/EnchItemTagsProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/EnchRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/EnchTagsProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/LootProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/data/SongProvider.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/ChainsawTask.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/CrescendoHooks.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/ShearsEnchantments.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/components/BerserkingComponent.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/components/BoonComponent.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/components/ReflectiveComponent.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/entity_effects/ReboundingEffect.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/enchantments/values/ExponentialLevelBasedValue.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/library/EnchLibraryBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/library/EnchLibraryContainer.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/library/EnchLibraryScreen.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/library/EnchLibraryTile.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/AnvilMenuMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/BlockMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/BlocksMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/CandleBlockMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/CrossbowItemMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/EnchantingTableBlockEntityMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/EnchantmentMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/GoldToolsHaveFortuneModuleMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/IShearableMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/ItemMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/ItemStackMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/ShearsItemMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/SheepMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/SpellCrossbowMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/TemptGoalMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/ThrownTridentMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/TridentItemMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/client/AnvilScreenMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/client/EnchantTableRendererMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/mixin/client/EnchantmentScreenMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/EnderLeadItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/ExtractionTomeItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/FilteringShelfBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/GeodeShelfBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/GlowyBlockItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/ImprovedScrappingTomeItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/ScrappingTomeItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/TomeItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/TooltipBlockItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/TreasureShelfBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/TypedShelfBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/objects/WardenLootModifier.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/payloads/CluePayload.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/payloads/EnchantmentInfoPayload.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/payloads/SetRavenStatsPayload.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/payloads/StatsPayload.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantingTableBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentHelper.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentMenu.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothEnchantmentScreen.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/ApothicEnchantingTableBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/Arcana.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/BookTexturedTable.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantingInfoScreen.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantingStatRegistry.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableItemHandler.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/EnchantmentTableStats.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/LegacyRarity.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/RavenEnchantingTableBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/RavenEnchantmentMenu.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/RavenEnchantmentScreen.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/RavenTableStats.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/infusion/InfusionRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/table/infusion/KeepNBTInfusionRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/util/FakeLevelReader.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/util/MiscUtil.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/java/dev/shadowsoffire/apothic_enchanting/util/TooltipUtil.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/100ench.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/30ench.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/60ench.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/80ench.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/arcana100.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/arcana50.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/bookshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/enchanter.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/enchanting_stats.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/max_rectified.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/max_stable.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/max_stats.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/quanta0.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/quanta100.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/quanta50.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/sculkshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/upgrade_endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/upgrade_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/advancement/upgrade_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/amethyst_cluster.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/basic_bookshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/basic_skulls.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/beeshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/blazing_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/crystal_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/dormant_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/draconic_endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/echoing_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/echoing_sculkshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/glowing_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/heart_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/infused_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/infused_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/melonshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/pearl_endshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/sightshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/sightshelf_t2.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/soul_touched_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/soul_touched_sculkshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/stoneshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/enchanting_stats/wither_skull.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/dormant_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/echoing_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/echoing_sculkshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/filtering_shelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/budding_amethyst.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/carrot.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/echo_shard.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/ender_lead.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/ender_library.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/extraction_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/improved_scrap_tome.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/infused_breath.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/infused_hellshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/infused_seashelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/music_disc_arcana.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/music_disc_eterna.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/music_disc_quanta.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/occult_ender_lead.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/trident.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/xp_bottle.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/xp_bottle_2.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/infusion/xp_bottle_3.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/library.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/soul_touched_deepshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/soul_touched_sculkshelf.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicEnchanting/blob/4d167fd44222058819fa70bf99fbc3ab38220e34/src/main/resources/data/apothic_enchanting/recipe/stoneshelf.json) — SHA перевірено
+
+## Apothic Spawners: керована ферма
+
+Версія експорту: **1.4.0**. Статус: `complete`.
+[Структурована карта](../../content/research/apothic_core_v5.json).
+
+У AIA2Apotheosis8.9 замінює vanilla-модифікатори спавнерів рунами. Почніть із захищеної камери й першої руни; далі використовуйте властивості та Frontier/Ascent/Summit/Pinnacle tiers.
+
+### 1. Від знайденого спавнера до керованої машини
+
+Епохи: 20.
+
+Знайдіть спавнер і збережіть його Silk Touch за чинною конфігурацією сервера. Default1.4.0 потребує Silk Touch I та завдає100durability damage; значення можуть змінюватися конфігом. Встановіть спавнер у контрольованій камері й успішно застосуйте перший дозволений модифікатор.
+Ресурси й результати: `minecraft:spawner`.
+Квести: `V5_DEPTH_SPAWNER_FIRST`.
+Підтверджується native spawner_modifier після успішного match.apply. Проста передача предмета-спавнера цього не доводить.
+Fullpack optional dispatch ще не запускався.
+
+### 2. Зупинка ферми через Redstone Control
+
+Епохи: 20.
+
+Застосуйте Redstone Control Spawner Rune до спавнера. У встановленій AIA2 інтеграція Apotheosis замінює пряме використання Comparator руною; звірте її виготовлення та inverse з кварцом у JEI.
+Попередні кроки: apothic_spawners:spawner_first.
+Ресурси й результати: `apotheosis:redstone_control_spawner_rune`.
+Квести: `V5_DEPTH_SPAWNER_REDSTONE`.
+Стан redstone_control=true перевірено при успішній модифікації. Criterion не вимірює кількість народжених мобів або поточний рівень сигналу.
+Fullpack optional dispatch ще не запускався.
+
+### 3. Відокремити вимогу світла від інших умов
+
+Епохи: 20.
+
+Застосуйте Ignore Light Spawner Rune. Прямий Soul Lantern тут не є чинним модифікатором: його роль перенесено в рунічний рецепт. Ignore Light і Ignore Conditions залишаються незалежними властивостями.
+Попередні кроки: apothic_spawners:spawner_redstone.
+Ресурси й результати: `apotheosis:ignore_light_spawner_rune`.
+Квести: `V5_DEPTH_SPAWNER_LIGHT`.
+Успішний native modifier зафіксував ignore_light=true; це не підтвердження ігнорування всіх spawn-умов.
+Fullpack optional dispatch ще не запускався.
+
+### 4. Ascent: радіус активації32
+
+Епохи: 31.
+
+Застосуйте Ascent Spawner Upgrade Rune: вона встановлює min/max delay100/400, spawn_count10 та required_player_range32. Це відстань активації гравцем, не spawn_range. Native ціль підтверджує range не нижче32 після успішної модифікації, а не конкретний ID руни.
+Попередні кроки: apothic_spawners:spawner_light.
+Ресурси й результати: `apotheosis:ascent_spawner_upgrade_rune`.
+Квести: `V5_DEPTH_SPAWNER_PLAYER_RANGE`.
+Після успішної модифікації required_player_range>=32. Спосіб виготовлення руни та chunk-loading цим критерієм не перевіряються.
+Fullpack optional dispatch ще не запускався.
+
+### 5. Pinnacle: обидві затримки20тіків
+
+Епохи: 41.
+
+Pinnacle Spawner Upgrade Rune встановлює обидві затримки20. Для неї потрібні Godforged Pearl, Perfect Endersurge Gem, Infused Breath і Nether Star; це фінальна інтеграція Apotheosis та Apothic Enchanting. Sugar/Clock напряму не модифікують цей параметр у чинному експорті.
+Попередні кроки: apothic_spawners:spawner_ignore_players.
+Ресурси й результати: `apotheosis:pinnacle_spawner_upgrade_rune`.
+Квести: `V5_DEPTH_SPAWNER_MIN_DELAY`.
+Перевіряється min_delay у межах0..20 після успішної модифікації. Постійне виробництво або max_delay цим не доводяться.
+Fullpack optional dispatch ще не запускався.
+
+### 6. Summit: тринадцять спроб появи
+
+Епохи: 31.
+
+Summit Spawner Upgrade Rune встановлює spawn_count13, min/max delay50/200, max_nearby24 та required_player_range40. Потрібні Arcane Sands, Sigil of Malice й Warden Tendril. Передбачте виведення мобів і порівняйте ліміт сусідніх сутностей із кількістю за цикл.
+Попередні кроки: apothic_spawners:spawner_player_range.
+Ресурси й результати: `apotheosis:summit_spawner_upgrade_rune`.
+Квести: `V5_DEPTH_SPAWNER_SPAWN_COUNT`.
+Native trigger після успішної модифікації має spawn_count>=13; це налаштована кількість спроб за цикл, без доказу фактичної появи13мобів.
+Fullpack optional dispatch ще не запускався.
+
+### 7. No AI змінює логіку виведення мобів
+
+Епохи: 31.
+
+Застосуйте No AI Spawner Rune. Її чинний рецепт включає Chorus Fruit, Infused Spawner Rune та зілля Fatigue з точними компонентами. Сам Chorus Fruit не застосовує модифікацію; без AI мобам потрібне зовнішнє транспортування.
+Попередні кроки: apothic_spawners:spawner_light.
+Ресурси й результати: `apotheosis:no_ai_spawner_rune`.
+Квести: `V5_DEPTH_SPAWNER_NO_AI`.
+Успішний modifier перевірив no_ai=true на спавнері; транспортування та робота мобів після народження — окремий ручний тест.
+Fullpack optional dispatch ще не запускався.
+
+### 8. Ignore Conditions — окремий допуск
+
+Епохи: 31.
+
+Застосуйте Ignore Conditions Spawner Rune, виготовлену за чинним рецептом Apotheosis. Прямий Conduit не замінює її. Порівняйте Ignore Conditions з Ignore Light; вид моба визначається spawn data, а не цим прапорцем.
+Попередні кроки: apothic_spawners:spawner_light, apothic_spawners:spawner_no_ai.
+Ресурси й результати: `apotheosis:ignore_conditions_spawner_rune`.
+Квести: `V5_DEPTH_SPAWNER_CONDITIONS`.
+Після успішної модифікації ignore_conditions=true. Criterion не перевіряє тип моба, Capturing-drop або фактичне народження.
+Fullpack optional dispatch ще не запускався.
+
+### 9. Робота без близького гравця
+
+Епохи: 31.
+
+Застосуйте Ignore Players Spawner Rune: її рецепт поєднує Nether Star, Infused Spawner Rune, Ender Eye та Phantom Membrane. Прямий Nether Star тут не є модифікатором. Ігнорування близького гравця не завантажує chunk та не вимикає spawn caps.
+Попередні кроки: apothic_spawners:spawner_conditions.
+Ресурси й результати: `apotheosis:ignore_players_spawner_rune`.
+Квести: `V5_DEPTH_SPAWNER_IGNORE_PLAYERS`.
+Успішна native модифікація має ignore_players=true. Chunk-loading і робота offline-команди не сертифіковані цим прапорцем.
+Fullpack optional dispatch ще не запускався.
+
+### 10. Єдина узгоджена конфігурація спавнера
+
+Епохи: 41.
+
+На одному спавнері поєднайте min_delay і max_delay не більше20, Ignore Players, Ignore Conditions, No AI та Redstone Control. Native ultimate_spawner перевіряє весь цей стан однією успішною модифікацією. Кількість мобів і spawn_range не входять до цього criterion.
+Попередні кроки: apothic_spawners:spawner_ignore_players, apothic_spawners:spawner_no_ai, apothic_spawners:spawner_min_delay.
+Ресурси й результати: `minecraft:spawner`.
+Квести: `V5_DEPTH_SPAWNER_ULTIMATE`.
+Native ultimate criterion перевіряє повний перелічений стан одного tile; прості окремі історичні досягнення на різних спавнерах його не замінюють.
+Fullpack optional dispatch ще не запускався.
+
+Фінальні цілі:
+- Єдина узгоджена конфігурація спавнера
+
+Міжмодові зв’язки:
+- AIA2 epoch stage та дві основні гілки лишаються передумовою; native advancements не видають ключі або нові stages.
+- Спільне спорядження використовуєApotheosis; enchanting/spawner-механіки належать саме цьому окремому модулю.
+
+Прогалини та межі перевірки:
+- Optional Minecraft/FTB/JEI runtime та реальні компоненти/потоки мають пройти повний acceptance.
+- Кожна native ціль доводить свою конкретну серверну дію/стан. Ні recipe lookup, ні inventory setup не називаються прихованим виробництвом.
+- SpawnerModifier використовує getAllRecipesFor поза ticker. Ця карта не заявляє нового блокування native модифікацій або їхніх альтернативних шляхів.
+- Shipped ModifierTrigger JSON field modifier не декодується; тільки дійсні stat/boolean поля використані в контрактах.
+- Capturing базовийшанс0.005за рівень; джерела та blacklist описано, але окремого надійного native kill→egg proof не знайдено.
+- Конфігурації Silk Touch, spawn-data reset і Capturing шансів можуть відрізнятися від upstream defaults.
+- Standalone vanilla матеріали Spawners замінено чинними рецептами Apotheosis. Тригери перевіряють стан, а не конкретну руну; ignored field modifier не є доказом RecipeID.
+
+Джерела:
+
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/LICENSE) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/LICENSE_ASSETS) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/README.md) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASConfig.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASEvents.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ASObjects.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/ApothicSpawners.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/ModifierTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/advancements/SpawnEggItemPredicate.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerBlock.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerItem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/ApothSpawnerTile.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/block/LyingLevel.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/compat/SpawnerCategory.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/compat/SpawnerHwylaPlugin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/compat/SpawnerJEIPlugin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/mixin/BlocksMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/mixin/ItemsMixin.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/SpawnerModifier.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/modifiers/StatModifier.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/BooleanStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/CustomStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/LevelStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/PercentageStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/SpawnerStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/SpawnerStats.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/java/dev/shadowsoffire/apothic_spawners/stats/VanillaStat.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/capturing.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/conditions.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/light.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/maxdelay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/mindelay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/modifier.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/nearbyents.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/noai.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/playerrange.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/players.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/redstone.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/root.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/spawncount.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/spawnrange.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/advancement/ultimate_spawner.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/burning.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/echoing.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/ignore_conditions.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/ignore_light.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/ignore_players.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/initial_health.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/max_delay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/max_nearby.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/min_delay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/no_ai.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/player_range.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/redstone_control.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/silent.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/spawn_count.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/spawn_range.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/_inverse/youthful.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/burning.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/echoing.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/ignore_conditions.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/ignore_light.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/ignore_players.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/initial_health.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/max_delay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/max_nearby.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/min_delay.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/no_ai.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/player_range.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/redstone_control.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/silent.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/spawn_count.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/spawn_range.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/ApothicSpawners/blob/a5401df4a80b833b297c398f88a5718bdd47c02a/src/main/resources/data/apothic_spawners/recipe/spawner_modifiers/youthful.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/echoing.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/no_ai.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/redstone_control.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/silent.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/ignore_conditions.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/burning.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/youthful.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/initial_health.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/ignore_light.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/spawn_range.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/ignore_players.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/echoing.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/no_ai.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/redstone_control.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/silent.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/ignore_conditions.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/burning.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/youthful.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/initial_health.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/ignore_light.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/spawn_range.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/_inverse/ignore_players.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/tier/ascent.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/tier/frontier.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/tier/summit.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_modifiers/tier/pinnacle.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/frontier_spawner_upgrade_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/initial_health_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/youthful_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/burning_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/ignore_conditions_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/ascent_spawner_upgrade_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/ignore_light_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/infused_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/pinnacle_spawner_upgrade_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/echoing_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/no_ai_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/ignore_players_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/redstone_control_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/silent_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/summit_spawner_upgrade_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawn_range_spawner_rune.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apothic_split_modules_next_v5/effective_export/spawner_rune.json) — SHA перевірено
+
 ## Mystical Agradditions — післяігрова есенція AIA2
 
 Версія експорту: **8.0.15**. Статус: `focused_postgame_course_not_full_mod_map`.
@@ -879,12 +1498,12 @@
 - [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/sender_module_3.json) — SHA перевірено
 - [джерело](../../content/research/evidence/logistics_depth_v5/modularrouters/export/recipes/player_module.json) — SHA перевірено
 
-## Roots Classic
+## Roots Classic: ступка, ритуали, посохи й жива майстерня
 
-Версія експорту: **1.21.1-1.5.10**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **1.21.1-1.5.10**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
-Відкрийте Runic Tablet і знайдіть опис ступки: вона є робочою точкою для підготовки рослинних компонентів. Огляньте встановлену ступку перед першою сумішшю.
+Від Runic Tablet, кори та ступки до реального завершення двох ритуалів, двох кілець, Imbuer, багатослотового Crystal Staff і пасивної майстерні.
 
 ### 1. Польовий довідник травника
 
@@ -951,18 +1570,65 @@
 Квести: `E04_X_runic_focus`, `E04_X_field_platform`, `V5_MAG_ROOTSCLASSIC_06`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 7. Заряджений фокус
+### 7. Перше кільце з восьми каменів
 
 Епохи: 4.
 
-Ритуал заряджання витрачає попередній фокус, редстоун і світлопил. Завершіть його після базового фокуса та збережіть готовий заряд для наступних магічних інструментів.
+Підготуйте вісім Mundane Standing Stones для ритуалів рівня1. Від вівтаря потрібні позиції(±3,0,±3),(±3,0,0),(0,0,±3), на тій самій висоті. Ритуали рівня0 цього кільця не вимагають. Пахощі кладуться в окремі жаровні у квадраті радіуса4 навколо вівтаря.
+Попередні кроки: rootsclassic:05.
+Машини: `rootsclassic:altar`.
+Ресурси й результати: `rootsclassic:mundane_standing_stone`.
+Квести: `V5_DEPTH_ROOTS_RING_ONE`.
+Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 8. Ритуал живої кирки — завершена операція
+
+Епохи: 4.
+
+Виконайте точний rootsclassic:ritual/crafting/living_pickaxe: дерев’яна кирка, Verdant Sprig, золотий самородок і два пахощі дубової кори. Це ритуал рівня0, тому зовнішні кам’яні кільця не потрібні. Дочекайтеся завершення native-ефекту; передача готової кирки не замінює цю дію.
+Попередні кроки: rootsclassic:05.
+Квести: `V5_DEPTH_ROOTS_NATIVE_LIVING`.
+Командний нативний запис AIA2 засвідчує завершення саме цього ритуального рецепта після виконання ефекту й очищення вівтаря. /give, підбирання предмета або лише запуск200-тікового процесу цього запису не створюють. Це не доказ підбирання чи збереження створеного ItemEntity.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 9. Заряджений фокус
+
+Епохи: 4.
+
+Ритуал заряджання витрачає Runic Focus, Redstone й Glowstone Dust, а пахощі — Infernal Bulb та пшениця. До Незеру Nether Wart може рідко трапитися в overworld-структурах Goety/Iron; вирощене зріле Nether Wart дає шанс Infernal Bulb через native DropModifier. Це optional рання експедиційна мета, а не гарантований звичайний маршрут епохи4.
 Попередні кроки: rootsclassic:06.
 Машини: `rootsclassic:altar`.
 Ресурси й результати: `rootsclassic:charged_runic_focus`, `rootsclassic:runic_focus`.
 Квести: `V5_MAG_ROOTSCLASSIC_07`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
+Шанс раннього loot і поява структур у конкретному світі не перевірені. Стабільний маршрут через відкритий Незер має новий proof-квест епохи15.
 
-### 8. Ритуальна майстерня з резервом
+### 10. Від інгредієнтів до параметрів закляття
+
+Епохи: 4.
+
+Спершу знайдіть у Runic Tablet конкретний компонентний рецепт і розітріть його у ступці пестиком. Old Root відкриває основу суміші без підсилювачів; Verdant Sprig допускає один модифікатор, Infernal Bulb — два, Dragon’s Eye — три. Glowstone додає potency, Redstone — efficiency, Gunpowder — size. Цей комплект дає змогу порівняти варіанти; він не є універсальним рецептом будь-якого ефекту.
+Попередні кроки: rootsclassic:06.
+Машини: `rootsclassic:mortar`.
+Ресурси й результати: `rootsclassic:spell_powder`, `rootsclassic:verdant_sprig`, `minecraft:glowstone_dust`, `minecraft:redstone`, `minecraft:gunpowder`.
+Квести: `V5_DEPTH_ROOTS_POWDER_KIT`.
+Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 11. Живі інструменти для всієї майстерні
+
+Епохи: 4.
+
+Розширте ритуальний комплект після живої кирки: живі сокира, лопата й мотика використовують відповідну дерев’яну основу, Verdant Sprig і золотий самородок; два пахощі дубової кори підтримують цей клас ритуалів рівня0. Не плутайте повторювану схему з можливістю замінити будь-який інструмент будь-яким предметом.
+Попередні кроки: rootsclassic:depth_native_living.
+Машини: `rootsclassic:altar`.
+Ресурси й результати: `rootsclassic:living_axe`, `rootsclassic:living_shovel`, `rootsclassic:living_hoe`.
+Квести: `V5_DEPTH_ROOTS_LIVING_TOOLS`.
+Перевіряються три готові інструменти й вівтар; сам спосіб їх отримання тут не доводиться. Окремий попередній нативний доказ живої кирки засвідчує реальне завершення її ритуалу.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 12. Ритуальна майстерня з резервом
 
 Епохи: 4.
 
@@ -973,17 +1639,113 @@
 Квести: `E04_X_living_pick`, `V5_MAG_ROOTSCLASSIC_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 13. Одна паличка — одне обране закляття
+
+Епохи: 4.
+
+Виготовте Imbuer. Покладіть у нього дерев’яну паличку та Spell Powder з дійсним компонентом rootsclassic:spell; приблизно після41серверного тика він створює Staff, переносить effect/potency/efficiency/size й очищає обидва входи. Порожній порошок без даних не утворює працездатного закляття. Підніміть отриманий Staff і перевірте tooltip перед застосуванням.
+Попередні кроки: rootsclassic:depth_powder_kit.
+Машини: `rootsclassic:imbuer`.
+Ресурси й результати: `rootsclassic:imbuer`, `rootsclassic:staff`.
+Квести: `V5_DEPTH_ROOTS_IMBUER`.
+Крафт Imbuer та наявність Staff перевіряються автоматично. Компоненти Staff, фактичне завершення Imbuer і застосування закляття ще не мають окремого надійного production-доказу в цій цілі.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 14. Заряджений фокус через завершений ритуал
+
+Епохи: 15.
+
+На звичайному маршруті після відкриття Незеру виростіть Nether Wart, отримайте Infernal Bulb і використайте її разом із пшеницею як пахощі. На вівтарі поєднайте Runic Focus, Redstone та Glowstone Dust у точному rootsclassic:ritual/crafting/charged_runic_focus. Дочекайтеся завершення, зберігши запас фокусів для інших інструментів.
+Попередні кроки: rootsclassic:06, rootsclassic:depth_imbuer.
+Квести: `V5_DEPTH_ROOTS_NATIVE_CHARGED`.
+Запис AIA2 засвідчує завершення точного ритуального рецепта командою після ефекту й очищення вівтаря; наявність готового фокуса його не замінює. Рідкісний ранній шлях до Nether Wart через overworld-структури не заборонено: стару optional-ціль епохи4 не перенесено і не скинуто.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 15. Зовнішнє кільце після відкриття Незеру
+
+Епохи: 15.
+
+Для рівня2 збережіть вісім Mundane Stones першого кільця й додайте чотири Attuned Stones у позиціях(±5,+1,0)та(0,+1,±5) від вівтаря. Attuned-рецепт потребує nether_brick і алмазів, тому ця лінія розміщена після відкриття Незеру, хоча базовий Item ID має ранній gate. Перевірте обидва кільця перед дорогим ритуалом.
+Попередні кроки: rootsclassic:depth_ring_one, rootsclassic:depth_native_charged.
+Машини: `rootsclassic:altar`.
+Ресурси й результати: `rootsclassic:attuned_standing_stone`, `rootsclassic:mundane_standing_stone`.
+Квести: `V5_DEPTH_ROOTS_RING_TWO`.
+Підтверджується зазначений крафт, огляд блока чи комплект предметів. Геометрія, компоненти заклять, пасивні ефекти та кількість виробничих циклів цим кроком не вимірюються.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 16. Кристалічний посох починається з рівня2
+
+Епохи: 15.
+
+Виконайте ритуал Crystal Staff у двокільцевому колі. На вівтарі потрібні алмазний блок, паличка й Blaze Powder; пахощі — Coal Block, Acacia Bark, Verdant Sprig та Birch Bark. Сам крафт Imbuer не створює цей багатослотовий посох: він належить окремій ритуальній гілці.
+Попередні кроки: rootsclassic:depth_ring_two.
+Машини: `rootsclassic:altar`.
+Ресурси й результати: `rootsclassic:crystal_staff`, `rootsclassic:acacia_bark`, `rootsclassic:birch_bark`.
+Квести: `V5_DEPTH_ROOTS_CRYSTAL_STAFF`.
+Ціль підтверджує наявність кристалічного посоха та зазначений комплект. Вона не підтверджує recipe-ID його походження, заповнення слотів або успішне накладання закляття.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 17. Ріст і збирання мають різні ролі
+
+Епохи: 15.
+
+Встановіть Grower Standing Stone над ділянкою культур: його native-код періодично обирає позиції в горизонтальному радіусі4 на один-два блоки нижче, а прискорення має шанс. Додайте Vacuum Stone і звичайний hopper для приймання врожаю. Vacuum притягує ItemEntity приблизно в радіусі6, проте сам не є інвентарем і не вкладає предмети у скриню.
+Попередні кроки: rootsclassic:depth_ring_two, rootsclassic:depth_living_tools.
+Машини: `rootsclassic:grower_standing_stone`, `rootsclassic:vacuum_standing_stone`, `minecraft:hopper`.
+Квести: `V5_DEPTH_ROOTS_FARM_STONES`.
+Огляд трьох установлених блоків перевіряється автоматично. Фактичний потік урожаю, правильна висота культур і успішне перенесення в hopper цим кроком не вимірюються.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 18. Живий обладунок і лікувальний осередок
+
+Епохи: 15.
+
+Підготуйте повний Wildwood-комплект та встановіть Healer Standing Stone. Native full-set логіка Wildwood може зцілювати пораненого гравця, а обладунок має власний випадковий ремонт під час носіння. Healer раз на20тіків дає RegenerationII живим істотам у зоні приблизно±10, тому плануйте його місце з урахуванням ворожих істот; це не вибіркове лікування тільки команди.
+Попередні кроки: rootsclassic:depth_ring_two.
+Машини: `rootsclassic:healer_standing_stone`.
+Ресурси й результати: `rootsclassic:wildwood_mask`, `rootsclassic:wildwood_plate`, `rootsclassic:wildwood_leggings`, `rootsclassic:wildwood_boots`.
+Квести: `V5_DEPTH_ROOTS_WILDWOOD_CAMP`.
+Перевіряються комплект в інвентарі та встановлений Healer. Одночасне носіння, спрацьовування лікування/ремонту та походження кожної частини не доводяться цим inventory/observation завданням.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 19. Підготувати перенесення заклять у Crystal Staff
+
+Епохи: 15.
+
+Ритуал rootsclassic:imbuer використовує Crystal Staff і Verdant Sprig на вівтарі рівня1 та Spell Powder у жаровнях. Потрібен хоча б один дійсний порошок; до чотирьох порошків переносять свої дані у слоти нового посоха. Звичайний блок Imbuer робить однозакляттєвий Staff, а не цей ритуал. Shift-use перемикає вибраний слот1–4; перевірте потрібний ефект і запас мани перед застосуванням.
+Попередні кроки: rootsclassic:depth_crystal_staff, rootsclassic:depth_imbuer.
+Машини: `rootsclassic:brazier`.
+Ресурси й результати: `rootsclassic:crystal_staff`, `rootsclassic:spell_powder`, `rootsclassic:verdant_sprig`.
+Квести: `V5_DEPTH_ROOTS_CRYSTAL_SPELLS_KIT`.
+Це автоматично перевірений комплект для ритуалу, не доказ його завершення: базовий ID порожнього та заповненого посоха однаковий. Перевірка конкретних rootsclassic:spells і selected_spell у цій цілі ще не реалізована.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
+### 20. Повний Sylvan-комплект для складного закляття
+
+Епохи: 15.
+
+Ритуально отримайте Sylvan Hood, Robe, Tunic і Boots та підготуйте Crystal Staff. Код посоха додає ще+1potency тільки коли всі чотири відповідні частини Sylvan фактично вдягнені. Окремі предмети в скрині цього бонусу не дають. Порівняйте витрату мани й дію вибраного закляття на безпечній мішені; інші підсилювачі порошку не замінюють вимогу повного набору.
+Попередні кроки: rootsclassic:depth_crystal_spells_kit, rootsclassic:depth_wildwood_camp.
+Ресурси й результати: `rootsclassic:sylvan_hood`, `rootsclassic:sylvan_robe`, `rootsclassic:sylvan_tunic`, `rootsclassic:sylvan_boots`, `rootsclassic:crystal_staff`.
+Квести: `V5_DEPTH_ROOTS_SYLVAN_SET`.
+Наявність усього комплекту й посоха перевіряється автоматично. Застосування повного set-bonus та компоненти закляття потребують окремого native/equipment observer; цей квест не стверджує, що вони вже перевірені.
+Повний Roots/FTB/JEI/Survival dispatch ще не запускався; джерело й граф перевірені окремо.
+
 Фінальні цілі:
-- Порівняйте ритуальне виготовлення живого інструмента зі звичайним ремеслом. Майте запас порошку росту та припарок, щоб експлуатація майстерні підтримувала і видобуток, і природну гілку.
+- Завершити native Living Pickaxe та Charged Runic Focus з командними post-consumption доказами.
+- Підготувати обидва ритуальні кільця та відокремити простий Imbuer від ритуалу кристалічного посоха.
+- Зібрати природну майстерню й спорядження, розуміючи різницю між наявністю предмета та перевіреним спрацьовуванням.
 
 Міжмодові зв’язки:
 - {"recipe_id": "aia2:bootstrap/epoch_04_1", "target": "rootsclassic:runic_focus", "epoch": 4, "ingredient_ids": ["create:iron_sheet"], "direction": "incoming", "description_uk": "Рецепт AIA2 для rootsclassic:runic_focus споживає міжмодові матеріали create:iron_sheet. Це власна інтеграція збірки, а не правило оригінального мода."}
 - {"recipe_id": "aia2:integration/epoch_04", "target": "rootsclassic:altar", "epoch": 4, "ingredient_ids": ["create:copper_sheet"], "direction": "incoming", "description_uk": "Рецепт AIA2 для rootsclassic:altar споживає міжмодові матеріали create:copper_sheet. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Точні1.5.10 джерела тепер доступні й підтвердили взаємодію ступки поза тиком. Подальші лінії standing stones, Imbuer та інші ефекти ритуалів ще IN_PROGRESS.
-- Початкові предметні цілі не доводять конкретну активацію ритуалу; нативного observer для них ще немає.
-- Нинішні рецепти вівтаря мають gate не вище4, тому окремий обхід пізньої епохи вівтарем не заявлено.
+- Повний optional Roots/KubeJS/FTB/JEI/Survival/TPS runtime не запускався.
+- Точні spell-компоненти Staff/Crystal Staff, set-bonus, ростові цикли й перенесений урожай ще не мають окремих надійних production-доказів у цих цілях.
+- Native Radiant Daisy mutation перевіряє абсолютне getDayTime()>5000&&<7000 без%24000; шлях після першого дня ненадійний. Старий ранній гербарій потребує окремої цільової міграції на підготовчі vanilla flowers.
+- Native MutagenRecipe.matches не відхиляє всі випадки браку реагентів: приймається непорожня підмножина. Строге дотримання повного набору без окремого upstream-патча не заявлено.
+- Вівтарні поточні recipe gates не перевищують його gate4; новий observer не є заявою про усунення всіх можливих майбутніх cache/capability обходів.
 
 Джерела:
 
@@ -1038,6 +1800,45 @@
 - [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java) — SHA перевірено
 - [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualImbuer.java) — SHA перевірено
 - [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/resources/assets/rootsclassic/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/attachment/ManaAttachment.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/datacomponent/SpellDataList.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/event/ComponentSpellsEvent.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/MutatingPowderItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/powder/SpellPowderItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/lootmodifiers/DropModifier.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenMidnightBloomRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/CustomInventory.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/InventoryUtil.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/util/RootsUtil.java) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/attuned_standing_stone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/component/blue_orchid.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/component/poppy.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/imbuer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/mundane_standing_stone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/charged_runic_focus.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/crystal_staff.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/grower_standing_stone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/healer_standing_stone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/living_axe.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/living_hoe.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/living_pickaxe.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/living_shovel.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/sylvan_boots.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/sylvan_hood.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/sylvan_robe.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/sylvan_tunic.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/vacuum_standing_stone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/wildwood_boots.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/wildwood_leggings.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/wildwood_mask.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/crafting/wildwood_plate.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_recipes/ritual/imbuer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_loot/goety/chests/shack_attic.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_loot/goety/entities/warlock.json) — SHA перевірено
+- [джерело](../../content/research/evidence/roots_core_next_v5/exported_loot/irons_spellbooks/chests/mangrove_hut.json) — SHA перевірено
 
 ## Totemic
 
@@ -4119,10 +4920,10 @@ Lesser Focus є початковою матеріальною частиною �
 
 ## Actually Additions
 
-Версія експорту: **1.3.26**. Статус: `reviewed_partial`.
+Версія експорту: **1.3.26**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
-Підготуй природний матеріал Actually Additions до виготовлення технічних корпусів. Звичайний незерський кварц не підміняє його без явно відповідного рецепта.
+Чорний кварц і котушки відкривають Atomic Reconstructor; його кристали постачають батарейну, олійну та променеву інфраструктуру. Після освоєння Empowerer паливний цикл епохи16 розвивається до посиленого масла епохи23, а типізовані предметні/фантомні порти завершують логістику.
 
 ### 1. Чорний кварц майбутнього променя
 
@@ -4153,7 +4954,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: actuallyadditions.phase.02.
 Машини: `actuallyadditions:atomic_reconstructor`.
-Квести: `E16_X_reconstructor`.
+Квести: `E16_X_reconstructor`, `E16_X_reference`, `E16_X_restonia`, `E16_X_enori`, `E16_X_palis`, `E16_X_void_crystal`, `E16_X_diamatine`, `E16_X_emeradic`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
 ### 4. Реконструктор має визначену мішень
@@ -4180,19 +4981,74 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E16_aa_operations_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Емпауерер очікує чотири позиції
+### 6. Два напрямки енергопредмета
+
+Епохи: 16.
+
+Виготовте Energizer та Enervator до підключення переносного резерву. Energizer приймає енергію й заряджає предмет, Enervator розряджає предмет у власний буфер; однакова форма корпусу не означає однаковий напрям роботи.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.phase.04.
+Ресурси й результати: `actuallyadditions:energizer`, `actuallyadditions:enervator`.
+Квести: `V5_DEPTH_AA_CHARGE_PORTS`.
+Покладіть сумісну батарею у вхідний слот і перевірте напрям енергії у GUI. FTB тут доводить крафт двох станцій, а не кількість переданої енергії або заряд батареї.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 7. Від поля ріпаку до першого масла
+
+Епохи: 16.
+
+Відведіть відновлювану ділянку під Canola та подайте врожай у Canola Press. Прес дає80mB сирого масла з одного Canola; буфер рідини відокремте від запасу насіння для повторного засіву.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.phase.04.
+Машини: `actuallyadditions:canola_press`.
+Ресурси й результати: `actuallyadditions:canola`, `actuallyadditions:canola_seeds`, `actuallyadditions:canola_oil_bucket`.
+Квести: `V5_DEPTH_AA_PRESS_FARM`.
+Візьміть відро Canola Oil і огляньте прес. Продукт та встановлена станція є контрольними точками цього кроку; FTB не доводить безперервного автозбирання врожаю або походження кожного відра саме з цього преса.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 8. Емпауерер очікує чотири позиції
 
 Епохи: 23.
 
-Підготуйте центральний вузол і чотири стійки для посилення кристала. Звірте просторове розташування, склад реагентів і енергетичне живлення всіх позицій; набір предметів не означає, що структура вже виконує рецепт.
+Empowerer перевіряє чотири стійки на координатній відстані3 по горизонтальних напрямках і витрачає енергію кожної стійки. Точний serverTick бере recipe holder із getAllRecipesFor; статичний API список використовується лише для клієнтського SYNC currentRecipe.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: actuallyadditions.phase.05.
 Машини: `actuallyadditions:empowerer`.
 Ресурси й результати: `actuallyadditions:display_stand`, `actuallyadditions:empowered_restonia_crystal`, `actuallyadditions:advanced_coil`.
-Квести: `V5_E23_aa_operations_03`.
+Квести: `E23_X_empowerer`, `E23_X_emp_restonia`, `E23_X_emp_emeradic`, `V5_E23_aa_operations_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 7. Фантомний інтерфейс не є транспортером
+### 9. Battery Box потребує самої батареї
+
+Епохи: 16.
+
+Виготовте Single Battery та Battery Box. Установіть коробку й вставте в неї батарею правим кліком: коробка використовує місткість вставленого енергопредмета, а не створює власний нескінченний запас.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.charge_ports.
+Машини: `actuallyadditions:battery_box`.
+Ресурси й результати: `actuallyadditions:single_battery`, `actuallyadditions:battery_box`.
+Квести: `V5_DEPTH_AA_BATTERY_BUFFER`.
+Shift+правий клік перемикає батарею в discharge mode; той самий режим можна перемикати імпульсом на Battery Box. Завдання перевіряє крафт і огляд коробки, не стан компонента заряду й не розподіл енергії між коробками.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 10. Вихід бочки керує наступним кроком
+
+Епохи: 16.
+
+Поставте Fermenting Barrel між пресом та паливною ділянкою. Рецепт refined_canola перетворює80mB сирої олії на80mB очищеної за100тіків; це ферментація, а не згоряння.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.press_farm.
+Машини: `actuallyadditions:fermenting_barrel`.
+Ресурси й результати: `minecraft:comparator`, `actuallyadditions:refined_canola_oil_bucket`.
+Квести: `V5_DEPTH_AA_BARREL_CONTROL`.
+Виготовте компаратор для контролю вихідного бака: його сигнал у цій версії відповідає заповненню виходу. FTB перевіряє компаратор, встановлену бочку та зразок очищеної олії; коректність автоматичного redstone-вимкнення перевіряється на вашій установці.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 11. Фантомний інтерфейс не є транспортером
 
 Епохи: 28.
 
@@ -4204,19 +5060,116 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E28_aa_operations_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 12. Пропускна здатність визначається парою реле
+
+Епохи: 16.
+
+Виготовте енергетичні Laser Relays і Advanced Relay та зв’яжіть їх Laser Wrench. Мережі передають енергію між сумісними сусідніми блоками; різні типи energy/item/fluid не об’єднуються в одну типову мережу.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.battery_buffer.
+Ресурси й результати: `actuallyadditions:laser_relay`, `actuallyadditions:laser_relay_advanced`, `actuallyadditions:laser_wrench`.
+Квести: `V5_DEPTH_AA_ENERGY_NETWORK`.
+Енергетичні ступені цієї версії мають межі передачі1000/10000/100000CF за тік. Для передачі між двома кінцевими реле враховуються нижча місткість передачі та вищі втрати; втрати задає конфіг. FTB тут перевіряє крафт і наявність ключа, а не успішний зв’язок або CF/t.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 13. Одна кристалічна насінина на source-блок
+
+Епохи: 16.
+
+Отримайте Crystallized Canola Seed реконструкцією звичайного насіння, поставте SOURCE-блок Refined Canola Oil і киньте в нього одну насінину. Насінина перетворює саме source-блок на Crystallized Oil; потік рідини не підходить.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.barrel_control.
+Ресурси й результати: `actuallyadditions:crystallized_canola_seed`, `actuallyadditions:refined_canola_oil_bucket`, `actuallyadditions:crystallized_oil_bucket`.
+Квести: `V5_DEPTH_AA_CRYSTALLIZED_OIL`.
+Кидайте поодиноку насінину: код видаляє цілу сутність предмета, отже весь кинутий стек буде витрачений. Перевірка вимагає зразок насіння та обох олій, але не замінює спостереження самої світової реакції.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 14. Порівняти паливо й керування генератором
+
+Епохи: 16.
+
+Виготовте Oil Generator та підготуйте вимикач із компаратором. Сире, очищене та кристалічне масло мають різні паливні рецепти. Оцінюйте загальний вихід разом із часом згоряння та кількістю витраченої рідини; більший загальний вихід не означає той самий CF за тік.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.crystallized_oil, actuallyadditions.depth.battery_buffer.
+Ресурси й результати: `actuallyadditions:oil_generator`, `minecraft:comparator`, `minecraft:lever`.
+Квести: `V5_DEPTH_AA_GENERATOR_CONTROL`.
+Oil Generator зупиняє початок нового спалювання під redstone, а компаратор читає запас енергії. Уже запущений burn-cycle має власний лічильник. FTB перевіряє крафт станції та комплект керування, не енергетичний баланс або факт згоряння.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 15. Чотири окремо живлені стійки
+
+Епохи: 23.
+
+Підготуйте Empowerer та чотири Display Stands. У цій версії центри стійок мають стояти на відстані3блоки від центра Empowerer у чотирьох горизонтальних напрямках, тобто з двома проміжними блоками. Кожна стійка окремо потребує живлення.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.phase.06, actuallyadditions.depth.crystallized_oil.
+Машини: `actuallyadditions:empowerer`.
+Ресурси й результати: `actuallyadditions:display_stand`, `actuallyadditions:empowered_canola_seed`.
+Квести: `V5_DEPTH_AA_EMPOWERED_REAGENT`.
+Для Empowered Canola Seed покладіть Crystallized Canola Seed у центр і по Canola Seed на кожну стійку. Продукт є контрольною точкою, крафт стійок — підготовкою; FTB не телеметризує енергію чи просторову валідність усієї установки.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 16. Посилене масло завершує паливний цикл
+
+Епохи: 23.
+
+Після Empowerer киньте ОДНУ Empowered Canola Seed у SOURCE-блок Crystallized Oil. Ця друга світова реакція дає Empowered Oil; ні сире, ні Refined Canola Oil для посиленої насінини не підходять.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.empowered_reagent, actuallyadditions.depth.generator_control.
+Ресурси й результати: `actuallyadditions:empowered_canola_seed`, `actuallyadditions:crystallized_oil_bucket`, `actuallyadditions:empowered_oil_bucket`.
+Квести: `V5_DEPTH_AA_EMPOWERED_FUEL`.
+Паливний рецепт цієї версії витрачає50mB за400тіків і дає48000CF загалом. Порівняйте його зі своїми попередніми буферами й уникайте змішування масел. FTB перевіряє комплект контрольних продуктів, не походження рідини чи факт роботи генератора.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 17. Розділити вхідний і вихідний фільтри
+
+Епохи: 23.
+
+Виготовте Advanced Item Laser Relay, Filter та Item Interface. Інтерфейс відкриває інвентар для предметної мережі, а Advanced Relay має окремі ліві й праві фільтри для входу та виходу.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.depth.empowered_reagent, actuallyadditions.depth.energy_network.
+Ресурси й результати: `actuallyadditions:laser_relay_item_advanced`, `actuallyadditions:filter`, `actuallyadditions:item_interface`.
+Квести: `V5_DEPTH_AA_SORTED_ITEMS`.
+Advanced Relay має дві групи по12фільтр-слотів і на10вищий пріоритет за базове предметне реле. Підготуйте окремі правила для реагентів стійок і готового кристала, а потім проведіть пробне перенесення. FTB перевіряє крафт обладнання, не вміст фільтрів і не доставлений обсяг.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
+### 18. Окремі фантомні грані для рідин та енергії
+
+Епохи: 28.
+
+Розширте вже освоєну Phantom Itemface двома типізованими портами: Liquiface і Energyface. Phantom Connector спершу зберігає цільовий блок, потім прив’язує відповідну грань. Базова дальність Phantomface у цій версії16блоків; booster змінює її за правилами мода.
+Наступний крок використовує освоєний напрям енергії, продукт або контрольований порт, розширюючи саме цю виробничу гілку.
+Попередні кроки: actuallyadditions.phase.07, actuallyadditions.depth.sorted_items.
+Ресурси й результати: `actuallyadditions:phantom_liquiface`, `actuallyadditions:phantom_energyface`, `actuallyadditions:phantom_connector`.
+Квести: `V5_DEPTH_AA_PHANTOM_PORTS`.
+Фантомна грань надає доступ до capability цілі, а не сама перекачує ресурс. Подайте рідину чи енергію окремою сумісною логістикою. FTB підтверджує крафт обох граней та конектора; справжню прив’язку, діапазон і transfer потрібно перевірити на установці.
+Крафт фіксує стандартний FTB crafting task; продуктові та observation-задачі не приписуються доказу конкретної операції.
+Фактичні зв’язки, component-charge, CF/t та automation dispatch потребують повного інстансу.
+
 Фінальні цілі:
-- Емпауерер очікує чотири позиції
-- Фантомний інтерфейс не є транспортером
+- Відокремити заряджання/розряджання та зібрати керований резерв із батареєю.
+- Освоїти повний canola→refined→crystallized→empowered oil маршрут без витрати зайвих стеків насіння.
+- Підготувати4живлені стійки Empowerer і реагент посиленого палива.
+- Розрізняти energy/item/fluid мережі, окремі фільтри входу/виходу та фантомний доступ до capability.
 
 Міжмодові зв’язки:
 - {"mod_id": "ae2", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
 - {"recipe_id": "aia2:rebalance/actuallyadditions/atomic_reconstructor", "target": "actuallyadditions:atomic_reconstructor", "epoch": 16, "ingredient_ids": ["ars_nouveau:source_gem", "immersiveengineering:component_electronic"], "direction": "incoming", "description_uk": "Рецепт AIA2 для actuallyadditions:atomic_reconstructor споживає міжмодові матеріали ars_nouveau:source_gem, immersiveengineering:component_electronic. Це власна інтеграція збірки, а не правило оригінального мода."}
 - {"recipe_id": "aia2:v4/actuallyadditions/empowerer", "target": "actuallyadditions:empowerer", "epoch": 23, "ingredient_ids": ["kubejs:aia2_tech_matrix_15"], "direction": "incoming", "description_uk": "Рецепт AIA2 для actuallyadditions:empowerer споживає міжмодові матеріали kubejs:aia2_tech_matrix_15. Це власна інтеграція збірки, а не правило оригінального мода."}
 - {"recipe_id": "aia2:v4/actuallyadditions/display_stand", "target": "actuallyadditions:display_stand", "epoch": 16, "ingredient_ids": ["kubejs:aia2_tech_matrix_15"], "direction": "incoming", "description_uk": "Рецепт AIA2 для actuallyadditions:display_stand споживає міжмодові матеріали kubejs:aia2_tech_matrix_15. Це власна інтеграція збірки, а не правило оригінального мода."}
+- {"mod_id": "minecraft", "role_uk": "Стандартний компаратор читає вихідний бак бочки або енергобуфер генератора; lever керує стартом наступного burn-cycle. Ця інтеграція не є телеметричним proof-квестом."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний1.21.1 інстанс із AA/KubeJS/FTB/JEI не запускався; CF/t, геометрію й перенесення слід перевірити у грі.
+- Власний make_first_crystal advancement використовує inventory_changed; він не приймається за доказ променевої операції.
+- Barrel і OilGenerator використовують static API recipe lists/caches, однак усі їхні нинішні recipe gates16 не перевищують gate16машин. Поточного обходу майбутньої епохи тут не підтверджено.
+- ItemSeed world reactions не проходять RecipeManager; доступ через імпорт/інші API й повний баланс пасивних ефектів лишаються загальним предметом інтеграційного аудиту.
 
 Джерела:
 
@@ -4233,6 +5186,51 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/actuallyadditions/recipes/actuallyadditions/empowerer.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/actuallyadditions/recipes/actuallyadditions/phantom_itemface.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/LICENSE) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/blocks/BlockCanolaPress.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/booklet/InitBooklet.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/ContainerCanolaPress.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/inventory/gui/GuiCanolaPress.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/CanolaSeed.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemBattery.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/items/ItemLaserWrench.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityCanolaPress.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEmpowerer.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnergizer.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityEnervator.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityFermentingBarrel.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergy.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyAdvanced.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayEnergyExtreme.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayFluids.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItem.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityLaserRelayItemAdvanced.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityOilGenerator.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityPhantomface.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/resources/assets/actuallyadditions/lang/en_us.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/battery_box.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/canola_press.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/empowering/empowered_canola.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/energizer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/enervator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/fermenting/refined_canola.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/filter.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/item_interface.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/laser/crystallized_canola_seed.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/laser_relay_item_advanced.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/canola_oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/crystallized_canola_oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/empowered_canola_oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/liquid_fuel/refined_canola_oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/oil_generator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_connector.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_energyface.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/phantom_liquiface.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/pressing/canola.json) — SHA перевірено
+- [джерело](../../content/research/evidence/actually_additions_core_finish_v5/exported_recipes/single_battery.json) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/main/java/de/ellpeck/actuallyadditions/mod/tile/TileEntityBatteryBox.java) — SHA перевірено
+- [джерело](https://github.com/Ellpeck/ActuallyAdditions/blob/cd9d9c63254f471f966ee51b078afdf47af5f852/src/generated/resources/data/actuallyadditions/advancement/make_first_crystal.json) — SHA перевірено
 
 ## Ad Astra
 
