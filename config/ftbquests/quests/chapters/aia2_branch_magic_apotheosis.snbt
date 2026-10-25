@@ -5,7 +5,7 @@
   "group": "00002E830BCB69F5",
   "order_index": 30,
   "icon": {
-    "id": "apotheosis:salvaging_table",
+    "id": "apotheosis:sigil_of_rebirth",
     "count": 1
   },
   "hide_quest_details_until_startable": true,
@@ -76,7 +76,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.0
     },
     {
       "id": "00005B4F58ADB58C",
@@ -144,7 +144,64 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.0
+    },
+    {
+      "id": "00007D0BF8AEECF7",
+      "title": "Паливо перековки — Sigils of Rebirth",
+      "description": [
+        "Виготовте партію Sigils of Rebirth з Gem-Fused Slate та Gem Dust. У Simple Reforging Table нижній правий слот приймає саме ці сигіли; верхній лівий — матеріал потрібної рідкості, середній — спорядження.",
+        "Порівняйте три пропозиції перековки до витрати матеріалів. FTB підтверджує крафт сигілів і наявність столу, не результат вибору affix. Simple Table охоплює Common, Uncommon і Rare."
+      ],
+      "icon": {
+        "id": "apotheosis:sigil_of_rebirth",
+        "count": 1
+      },
+      "dependencies": [
+        "00005B4F58ADB58C",
+        "0000191B130D550C",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000047C201927C33",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:sigil_of_rebirth",
+            "count": 1
+          },
+          "count": 6,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000018F728B71490",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "apotheosis:simple_reforging_table",
+          "timer": 40
+        },
+        {
+          "id": "0000D3901B90D451",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CEA257149994",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 1.0
     },
     {
       "id": "0000CA6B72BD65BF",
@@ -212,7 +269,167 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.0
+    },
+    {
+      "id": "000041E3D063D578",
+      "title": "Підготувати гніздо без втрати самоцвіту",
+      "description": [
+        "Виготовте Sigil of Socketing та встановіть Smithing Table. Сигіл додає гніздо сумісному спорядженню до ліміту його рецепта; потім поєднайте річ із придатним самоцвітом у ковальському столі або скористайтеся підтриманим правим кліком в інвентарі.",
+        "Перевіряється крафт сигілу та встановлений стіл. Стан гнізд і socket-бонус тут не вимірюються: не слід вважати сам комплект доказом успішного вставлення. Unique-самоцвіти мають окреме обмеження дублювання."
+      ],
+      "icon": {
+        "id": "apotheosis:sigil_of_socketing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CA6B72BD65BF",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D7B6293E2C1",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:sigil_of_socketing",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003B484E92B285",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:smithing_table",
+          "timer": 40
+        },
+        {
+          "id": "00007DDF8358AB16",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000087C6C4E55FDD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E7EB50DC01DB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000FFEFCE520822",
+      "title": "Перше огранювання: Chipped",
+      "description": [
+        "На Gem Cutting Table підвищте Cracked-самоцвіт до Chipped. Рецепт використовує основний камінь, матеріали та допоміжний камінь; точну сумісність слотів і ціну дивіться у JEI.",
+        "Зарахування дає саме серверна операція Gem Cutting з вихідною purity Chipped після витрати інгредієнтів. Піднятий, придбаний або виданий Chipped-камінь цього не підтверджує."
+      ],
+      "icon": {
+        "id": "apotheosis:gem_cutting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "00007D0BF8AEECF7",
+        "0000CA6B72BD65BF",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005C6D0B9BC31D",
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_chipped"
+        },
+        {
+          "id": "0000A1F260EA21CB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000083411B0B2A96",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 1.0
+    },
+    {
+      "id": "00007D9B89F33666",
+      "title": "Самоцвіти за типом і чистотою",
+      "description": [
+        "Виготовте Gem Case для зберігання каменів, які мають різні типи й purity, але спільний Item ID. Підпишіть у майстерні окремі етапи огранювання та не змішуйте запас майбутніх входів із готовими каменями для спорядження.",
+        "Перевіряється виготовлення кейса. Кейс не є автоматичним Gem Cutting Table: його наявність не доводить сортування, безперервне виробництво або правильність усіх компонентів."
+      ],
+      "icon": {
+        "id": "apotheosis:gem_case",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FFEFCE520822",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000093F1256E7B56",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem_case",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DFC990B90519",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001AE30A18A230",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
     },
     {
       "id": "0000BE353E701C15",
@@ -280,7 +497,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 5.0
     },
     {
       "id": "0000BD09A419E156",
@@ -348,7 +565,119 @@
         }
       ],
       "x": 8.0,
+      "y": 4.5
+    },
+    {
+      "id": "0000DB1C65ADD2E5",
+      "title": "Огранювання до Normal",
+      "description": [
+        "Проведіть проміжний цикл Chipped → Flawed, потім виконайте огранювання Flawed → Normal. Матеріали підвищуються разом із purity; рідкість affix-речі не є заміною purity самоцвіту.",
+        "Ціль — реальна операція з виходом Normal. Серверний trigger читає UnsocketedGem та його purity; предмет із тим самим Item ID або просто запас матеріалів не закриває завдання."
+      ],
+      "icon": {
+        "id": "apotheosis:gem",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FFEFCE520822",
+        "00009F6FCA114D37",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D0D6E92DC7C5",
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_normal"
+        },
+        {
+          "id": "000085F59D04C263",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AC2F40455CD0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
       "y": 0.0
+    },
+    {
+      "id": "00002AD98E3FC490",
+      "title": "Повернення каменів у майстерню",
+      "description": [
+        "Після відкриття Sigil of Withdrawal підготуйте ковальський стіл і сумісний самоцвіт. Цей сигіл відокремлює вставлені камені та повертає спорядження з ними; перевіряйте результат перед підтвердженням smithing-операції.",
+        "Завдання перевіряє готовий набір для обслуговування. Native proof конкретного виймання тут відсутній, тому квест не заявляє, що компонент socketed_gems уже змінено."
+      ],
+      "icon": {
+        "id": "apotheosis:sigil_of_withdrawal",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD09A419E156",
+        "000041E3D063D578",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000AE9496751F45",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "minecraft:smithing_table",
+          "timer": 40
+        },
+        {
+          "id": "00004CE01A5E3FCC",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:sigil_of_withdrawal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007E2A34C500F2",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD7D577EE208",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001C59243992B9",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 3.5
     },
     {
       "id": "0000D08B918A4857",
@@ -427,7 +756,112 @@
         }
       ],
       "x": 10.0,
+      "y": 5.5
+    },
+    {
+      "id": "0000DE44CB1A9076",
+      "title": "Perfect — фінальний цикл огранювання",
+      "description": [
+        "Спершу поліпшіть Normal до Flawless, а потім виконайте рецепт Flawless → Perfect. Збережіть потрібний другий камінь і матеріали вищої рідкості: Perfect уже не має наступного рівня purity.",
+        "Зараховується тільки серверний Gem Cutting із точним виходом Perfect після decrementInputs. Не слід підмінювати це довільним самоцвітом у кишені, натисканням ручної галочки чи видом предмета."
+      ],
+      "icon": {
+        "id": "apotheosis:godforged_pearl",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DB1C65ADD2E5",
+        "0000721F070043E0",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ADF127A57741",
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_perfect"
+        },
+        {
+          "id": "00001BF929E5C20E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB9F5C8E342E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
       "y": 0.0
+    },
+    {
+      "id": "000032E6B1CF4F82",
+      "title": "Змінювати один affix замість усієї речі",
+      "description": [
+        "Виготовте Augmenting Table і Sigils of Enhancement. Ця станція змінює окремий вибраний affix, зберігаючи решту; це відрізняє augmenting від повної перековки. Перед дією оберіть властивість у меню та перевірте її допустимі зміни.",
+        "Точні рівні й кількість сигілів беріть із чинного GUI: вони дорогі, а не безкоштовний перерозподіл. Автоматично підтверджується крафт станції та палива; натискання upgrade/reroll і якість отриманого affix цей setup-квест не сертифікує."
+      ],
+      "icon": {
+        "id": "apotheosis:augmenting_table",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D08B918A4857",
+        "0000D1077E8F7FCE",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FE122077C827",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:augmenting_table",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DE5076B4A6AC",
+          "type": "item",
+          "item": {
+            "id": "apotheosis:sigil_of_enhancement",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E63573785CAC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F100A4EFEECA",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 5.5
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+    "parent": "apothic_enchanting:hellshelf",
+    "display": {
+        "icon": {
+            "id": "apothic_enchanting:blazing_hellshelf"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.upgrade_hellshelf"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.upgrade_hellshelf.desc"
+        },
+        "frame": "task"
+    },
+    "criteria": {
+        "blazing": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:blazing_hellshelf"]
+                }]
+            }
+        },
+        "glowing": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:glowing_hellshelf"]
+                }]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "blazing", "glowing"
+        ]
+    ]
+}

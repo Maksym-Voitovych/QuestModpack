@@ -1,0 +1,389 @@
+{
+  "schema": 1,
+  "scope": "Additional fluid bucket contexts; exact PNC8.2.23 verified, IF3.6.38/Titanium4.0.43 still blocked. No recipes invented.",
+  "items": [
+    {
+      "item": "pneumaticcraft:lpg_bucket",
+      "installed_version": "8.2.23",
+      "source_kind": "native_fluid_container_fill",
+      "status": "source_verified_native_path",
+      "description_uk": "Thermopneumatic Processing Plant перетворює100mB бензину(c:gasoline) на80mB LPG при мінімум573K і тиску2.0. Перемістіть LPG у Fluid Tank і наповніть порожнє відро через його контейнерний слот: нативний processFluidItem переносить рідину в контейнер і повертає pneumaticcraft:lpg_bucket. Точна версія8.2.23 явно зв’язує LPG↔LPG_BUCKET; окремий рецепт предмета-відра не потрібен.",
+      "recipe_ids": [
+        "pneumaticcraft:thermo_plant/lpg"
+      ],
+      "sources": [
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/installed_metadata.json",
+          "sha256": "2988beb94fce974bc6515d3754513b85084a675bda08aaba1d265526c7e1bd0a",
+          "url": "user-supplied:export/mods.json",
+          "evidence_uk": "Точні версії наданого запуску; Windows-інстанс не змонтований."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/pneumaticcraft/official/gradle.properties",
+          "sha256": "500d16c596804ab0674024c4cd8aa8bd6d5e98429955cd4c914ac7ea79eb9366",
+          "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/gradle.properties",
+          "pin": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "500d16c596804ab0674024c4cd8aa8bd6d5e98429955cd4c914ac7ea79eb9366",
+          "version_match": true,
+          "evidence_uk": "Офіційний тегv8.2.23 указує mod_version8.2.23 і minecraft_version1.21.1."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/pneumaticcraft/official/src/main/java/me/desht/pneumaticcraft/common/registry/ModItems.java",
+          "sha256": "c8b75689711ad71771c03fc17e2afa3a48442677bbf829cd1eab3f0f99483ae2",
+          "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/registry/ModItems.java",
+          "pin": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+          "source_path": "src/main/java/me/desht/pneumaticcraft/common/registry/ModItems.java",
+          "source_original_sha256": "c8b75689711ad71771c03fc17e2afa3a48442677bbf829cd1eab3f0f99483ae2",
+          "version_match": true,
+          "evidence_uk": "LPG_BUCKET реєструється як lpg_bucket з ModFluids.LPG; registerBucket створює PneumaticCraftBucketItem."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/pneumaticcraft/official/src/main/java/me/desht/pneumaticcraft/common/fluid/FluidLPG.java",
+          "sha256": "300fa9c5ff2b97cd04966c782cec15771aa62b3699f172e04d392d804c548beb",
+          "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/fluid/FluidLPG.java",
+          "pin": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+          "source_path": "src/main/java/me/desht/pneumaticcraft/common/fluid/FluidLPG.java",
+          "source_original_sha256": "300fa9c5ff2b97cd04966c782cec15771aa62b3699f172e04d392d804c548beb",
+          "version_match": true,
+          "evidence_uk": "BaseFlowingFluid.Properties пов’язує LPG із bucket(ModItems.LPG_BUCKET)."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/pneumaticcraft/official/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractFluidTankBlockEntity.java",
+          "sha256": "2c6d07eb8af869c3e603a4ba90f9a469f842af594dcf7bb7b7db25a4083e14bd",
+          "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractFluidTankBlockEntity.java",
+          "pin": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+          "source_path": "src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractFluidTankBlockEntity.java",
+          "source_original_sha256": "2c6d07eb8af869c3e603a4ba90f9a469f842af594dcf7bb7b7db25a4083e14bd",
+          "version_match": true,
+          "evidence_uk": "tickServer викликає processFluidItem(INPUT_SLOT, OUTPUT_SLOT); резервуар надає IFluidHandler."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/pneumaticcraft/official/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractPneumaticCraftBlockEntity.java",
+          "sha256": "cc535477a2b1df14e9eab2e70bf502fa34cb8cf46ede520f3734435651bc2c08",
+          "url": "https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractPneumaticCraftBlockEntity.java",
+          "pin": "98e656af1977a2c0587c563c90c7d06e0d30c091",
+          "source_path": "src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractPneumaticCraftBlockEntity.java",
+          "source_original_sha256": "cc535477a2b1df14e9eab2e70bf502fa34cb8cf46ede520f3734435651bc2c08",
+          "version_match": true,
+          "evidence_uk": "processFluidItem наповнює порожній контейнер через FluidUtil.tryFluidTransfer(workHandler,fluidHandler,...,true), споживає одну порожню тару й кладе наповнений контейнер у вихід."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/export/recipes/pneumaticcraft/thermo_plant/lpg.json",
+          "sha256": "e176fa94b260eba367382c57d99a5a244327efecf79ba0e5dd13ea746811c334",
+          "url": "user-supplied:export/recipes/pneumaticcraft/thermo_plant/lpg.json",
+          "version_match": true,
+          "evidence_uk": "Точний recipe:100mB c:gasoline→80mB pneumaticcraft:lpg; мінімум573K, pressure2.0. Повне відро є fluid-container шляхом, не окремим item-output JSON."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Перевірено точні збережені байти джерел, версії й export JSON. Повний інстанс, фактичне наповнення відра, сторонні overrides і TPS не запускались."
+    },
+    {
+      "item": "industrialforegoing:meat_bucket",
+      "installed_version": "1.21-3.6.38",
+      "source_kind": "native_context_pending_exact_release",
+      "status": "native_context_requires_exact_release_verification",
+      "description_uk": "Контекст офіційних джерел показує: SlaughterFactory.work наповнює MEAT після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.",
+      "recipe_ids": [],
+      "sources": [
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/installed_metadata.json",
+          "sha256": "2988beb94fce974bc6515d3754513b85084a675bda08aaba1d265526c7e1bd0a",
+          "url": "user-supplied:export/mods.json",
+          "evidence_uk": "Точні версії наданого запуску; Windows-інстанс не змонтований."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/gradle.properties",
+          "sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "version_match": false,
+          "evidence_uk": "mod_version3.6 + buildnumber із CI не прив’язує binary3.6.38 до точного commit."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/CHANGELOG.md.excerpts.json",
+          "sha256": "b8300af812b45d7f163562db4809a92e31321b58225ec4e64d2b1b460e28f547",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "CHANGELOG.md",
+          "source_original_sha256": "503506cc00c433e02f7a9d4271543e854b3d5a1abc5e1c3709330d52453fc888",
+          "version_match": false,
+          "evidence_uk": "Розділ3.6.38 зверху описує release-context, але CI BUILD_NUMBER38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/ModuleCore.java.excerpts.json",
+          "sha256": "71fd35dbe6695139cc40d9c5d469339656402aee93dbb21f108e6180b9d475b2",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "source_original_sha256": "705d122d7c81de8a50826eaa4afaa3081d13d5d501dfea6224dbd53ce90608be",
+          "version_match": false,
+          "evidence_uk": "Контекст: TitaniumFluidInstance реєструє BIOFUEL/SEWAGE/SLUDGE; точнийrelease artifact і Titanium bucketmapping потребують перевірки."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/industrialforegoing/official/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "sha256": "fc55d1696cdfa5ca87e8bdd1208c40e894f431735beb63db4a70f59cdbc3dd5f",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "source_original_sha256": "fc55d1696cdfa5ca87e8bdd1208c40e894f431735beb63db4a70f59cdbc3dd5f",
+          "version_match": false,
+          "evidence_uk": "Контекст release3.6.38: SlaughterFactory.work після вбивства Mob наповнює MEAT та PINK_SLIME через fillForced; кількості залежать від Animal. Exact artifact3.6.38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/gradle.properties",
+          "sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "version_match": false,
+          "evidence_uk": "api_version4.0 не встановлює exact CI build43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/build.gradle",
+          "sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "build.gradle",
+          "source_original_sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "version_match": false,
+          "evidence_uk": "Titanium додає BUILD_NUMBER до4.0; без artifact↔commit provenance цей sourcepin не можна назвати встановленим4.0.43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "source_original_sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "version_match": false,
+          "evidence_uk": "Контекст: реєструє fluid+_bucket як BucketItem(sourceFluid). Exact4.0.43 artifact не підтверджений."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "source_original_sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "version_match": false,
+          "evidence_uk": "Контекст: getBucket повертає TitaniumFluidInstance.getBucketFluid. Exact4.0.43 artifact не підтверджений."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Збережено контекст нативної генерації рідин і bucket mapping. Номер BUILD_NUMBER38/43 не прив’язаний до sourcepin; artifact/API завантаження заблоковані HTTP403 proxy. Не вважати контекст доказом exact установленої версії або Survival-тестом.",
+      "source_version_confirmed": false
+    },
+    {
+      "item": "industrialforegoing:pink_slime_bucket",
+      "installed_version": "1.21-3.6.38",
+      "source_kind": "native_context_pending_exact_release",
+      "status": "native_context_requires_exact_release_verification",
+      "description_uk": "Контекст офіційних джерел показує: SlaughterFactory.work наповнює PINK_SLIME після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.",
+      "recipe_ids": [],
+      "sources": [
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/installed_metadata.json",
+          "sha256": "2988beb94fce974bc6515d3754513b85084a675bda08aaba1d265526c7e1bd0a",
+          "url": "user-supplied:export/mods.json",
+          "evidence_uk": "Точні версії наданого запуску; Windows-інстанс не змонтований."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/gradle.properties",
+          "sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "version_match": false,
+          "evidence_uk": "mod_version3.6 + buildnumber із CI не прив’язує binary3.6.38 до точного commit."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/CHANGELOG.md.excerpts.json",
+          "sha256": "b8300af812b45d7f163562db4809a92e31321b58225ec4e64d2b1b460e28f547",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "CHANGELOG.md",
+          "source_original_sha256": "503506cc00c433e02f7a9d4271543e854b3d5a1abc5e1c3709330d52453fc888",
+          "version_match": false,
+          "evidence_uk": "Розділ3.6.38 зверху описує release-context, але CI BUILD_NUMBER38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/ModuleCore.java.excerpts.json",
+          "sha256": "71fd35dbe6695139cc40d9c5d469339656402aee93dbb21f108e6180b9d475b2",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "source_original_sha256": "705d122d7c81de8a50826eaa4afaa3081d13d5d501dfea6224dbd53ce90608be",
+          "version_match": false,
+          "evidence_uk": "Контекст: TitaniumFluidInstance реєструє BIOFUEL/SEWAGE/SLUDGE; точнийrelease artifact і Titanium bucketmapping потребують перевірки."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/industrialforegoing/official/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "sha256": "fc55d1696cdfa5ca87e8bdd1208c40e894f431735beb63db4a70f59cdbc3dd5f",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java",
+          "source_original_sha256": "fc55d1696cdfa5ca87e8bdd1208c40e894f431735beb63db4a70f59cdbc3dd5f",
+          "version_match": false,
+          "evidence_uk": "Контекст release3.6.38: SlaughterFactory.work після вбивства Mob наповнює MEAT та PINK_SLIME через fillForced; кількості залежать від Animal. Exact artifact3.6.38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/gradle.properties",
+          "sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "version_match": false,
+          "evidence_uk": "api_version4.0 не встановлює exact CI build43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/build.gradle",
+          "sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "build.gradle",
+          "source_original_sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "version_match": false,
+          "evidence_uk": "Titanium додає BUILD_NUMBER до4.0; без artifact↔commit provenance цей sourcepin не можна назвати встановленим4.0.43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "source_original_sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "version_match": false,
+          "evidence_uk": "Контекст: реєструє fluid+_bucket як BucketItem(sourceFluid). Exact4.0.43 artifact не підтверджений."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "source_original_sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "version_match": false,
+          "evidence_uk": "Контекст: getBucket повертає TitaniumFluidInstance.getBucketFluid. Exact4.0.43 artifact не підтверджений."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Збережено контекст нативної генерації рідин і bucket mapping. Номер BUILD_NUMBER38/43 не прив’язаний до sourcepin; artifact/API завантаження заблоковані HTTP403 proxy. Не вважати контекст доказом exact установленої версії або Survival-тестом.",
+      "source_version_confirmed": false
+    },
+    {
+      "item": "industrialforegoing:ether_gas_bucket",
+      "installed_version": "1.21-3.6.38",
+      "source_kind": "native_context_pending_exact_release",
+      "status": "native_context_requires_exact_release_verification",
+      "description_uk": "Контекст офіційних джерел показує: FluidLaserBase створює ETHER за нативним laser_drill_fluid/ether із вимогою відповідної сутності; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.",
+      "recipe_ids": [
+        "industrialforegoing:laser_drill_fluid/ether"
+      ],
+      "sources": [
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/installed_metadata.json",
+          "sha256": "2988beb94fce974bc6515d3754513b85084a675bda08aaba1d265526c7e1bd0a",
+          "url": "user-supplied:export/mods.json",
+          "evidence_uk": "Точні версії наданого запуску; Windows-інстанс не змонтований."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/gradle.properties",
+          "sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "84600d694d27c34bc6eb6e13365c8858f89bea0de40e71b8fe08a17964a542a0",
+          "version_match": false,
+          "evidence_uk": "mod_version3.6 + buildnumber із CI не прив’язує binary3.6.38 до точного commit."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/CHANGELOG.md.excerpts.json",
+          "sha256": "b8300af812b45d7f163562db4809a92e31321b58225ec4e64d2b1b460e28f547",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "CHANGELOG.md",
+          "source_original_sha256": "503506cc00c433e02f7a9d4271543e854b3d5a1abc5e1c3709330d52453fc888",
+          "version_match": false,
+          "evidence_uk": "Розділ3.6.38 зверху описує release-context, але CI BUILD_NUMBER38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/source_gap_followup_v5/industrialforegoing/ModuleCore.java.excerpts.json",
+          "sha256": "71fd35dbe6695139cc40d9c5d469339656402aee93dbb21f108e6180b9d475b2",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/module/ModuleCore.java",
+          "source_original_sha256": "705d122d7c81de8a50826eaa4afaa3081d13d5d501dfea6224dbd53ce90608be",
+          "version_match": false,
+          "evidence_uk": "Контекст: TitaniumFluidInstance реєструє BIOFUEL/SEWAGE/SLUDGE; точнийrelease artifact і Titanium bucketmapping потребують перевірки."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/industrialforegoing/official/src/main/java/com/buuz135/industrial/block/resourceproduction/tile/FluidLaserBaseTile.java",
+          "sha256": "2d249f610fb14a2aa9845993e081044716928df2a285763dccb622fca2cc85f5",
+          "url": "https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/resourceproduction/tile/FluidLaserBaseTile.java",
+          "pin": "1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9",
+          "source_path": "src/main/java/com/buuz135/industrial/block/resourceproduction/tile/FluidLaserBaseTile.java",
+          "source_original_sha256": "2d249f610fb14a2aa9845993e081044716928df2a285763dccb622fca2cc85f5",
+          "version_match": false,
+          "evidence_uk": "Контекст release3.6.38: FluidLaserBase застосовує laser_drill_fluid recipe, перевіряє entity/Y і наповнює tank. Exact artifact3.6.38 не доведено."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/export/recipes/industrialforegoing/laser_drill_fluid/ether.json",
+          "sha256": "a03d0a8fc0dc8c934e628b6676605f09f54dc9f4cbf3c04217ed7e4a32276879",
+          "url": "user-supplied:export/recipes/industrialforegoing/laser_drill_fluid/ether.json",
+          "version_match": true,
+          "evidence_uk": "Точний export містить ether_gas як fluid output нативного fluid-laser recipe, але не доводить Titanium4.0.43 bucket implementation."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/gradle.properties",
+          "sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "gradle.properties",
+          "source_original_sha256": "7f160191d3bacb3a886611785d5c5803eb0fc5aa53d483ac55f064f4d603f371",
+          "version_match": false,
+          "evidence_uk": "api_version4.0 не встановлює exact CI build43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/build.gradle",
+          "sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "build.gradle",
+          "source_original_sha256": "1894a9bb0dacd140d39834b76e9cfddc9a566d564ba552d390857fa763afb7b4",
+          "version_match": false,
+          "evidence_uk": "Titanium додає BUILD_NUMBER до4.0; без artifact↔commit provenance цей sourcepin не можна назвати встановленим4.0.43."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java",
+          "source_original_sha256": "1c602c3dfab9415c56b06ac4a7596971e25dd9b6690ac7a4fe946ff80dcc4dd6",
+          "version_match": false,
+          "evidence_uk": "Контекст: реєструє fluid+_bucket як BucketItem(sourceFluid). Exact4.0.43 artifact не підтверджений."
+        },
+        {
+          "path": "content/research/evidence/fluid_gaps_next_v5/titanium/official/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "url": "https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "pin": "f8f0461458a4a3a54aa0239c9243a7716b7be436",
+          "source_path": "src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java",
+          "source_original_sha256": "9bb6ef77e85f92ef76e5408d35e65ebab4363e9dcca84f542a63b1e3e18f6b17",
+          "version_match": false,
+          "evidence_uk": "Контекст: getBucket повертає TitaniumFluidInstance.getBucketFluid. Exact4.0.43 artifact не підтверджений."
+        }
+      ],
+      "survival_tested": false,
+      "limits_uk": "Збережено контекст нативної генерації рідин і bucket mapping. Номер BUILD_NUMBER38/43 не прив’язаний до sourcepin; artifact/API завантаження заблоковані HTTP403 proxy. Не вважати контекст доказом exact установленої версії або Survival-тестом.",
+      "source_version_confirmed": false
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "status": "compiled_reward_policy_verified_full_pack_economy_not_run",
-  "item_rewards_audited": 2877,
-  "item_rewards_changed": 2852,
+  "item_rewards_audited": 2899,
+  "item_rewards_changed": 2874,
   "command_rewards_preserved": 48,
-  "quest_count": 3145,
+  "quest_count": 3167,
   "namespace_count": 73,
   "quests_by_namespace": {
     "actuallyadditions": 44,
@@ -13,7 +13,7 @@
     "ae2": 81,
     "aether": 20,
     "allthemodium": 24,
-    "apotheosis": 6,
+    "apotheosis": 18,
     "apothic_enchanting": 7,
     "appliede": 8,
     "ars_elemental": 16,
@@ -42,7 +42,7 @@
     "goety": 21,
     "hostilenetworks": 23,
     "immersiveengineering": 69,
-    "immersivepetroleum": 6,
+    "immersivepetroleum": 16,
     "industrialforegoing": 50,
     "industrialization_overdrive": 3,
     "industrialupgrade": 37,
@@ -94,13 +94,13 @@
     "createdieselgenerators": 23,
     "draconicevolution": 178,
     "enchanted": 36,
-    "enchanting": 13,
+    "enchanting": 25,
     "enderio": 53,
     "evilcraft": 31,
     "forbidden_arcanus": 24,
     "goety": 21,
     "hostilenetworks": 23,
-    "immersiveengineering": 98,
+    "immersiveengineering": 108,
     "industrialforegoing": 50,
     "integrateddynamics": 26,
     "irons_spellbooks": 17,
@@ -128,7 +128,7 @@
     "xnet": 23
   },
   "selection_modes": {
-    "parent_profile": 302,
+    "parent_profile": 324,
     "profile": 2551,
     "unverified_food_fallback": 24
   },
@@ -142,13 +142,14 @@
   "policy_profiles": 45,
   "parent_profile_aliases": 42,
   "curated_entries": 132,
-  "source_catalog_rewards_audited": 2157,
+  "source_catalog_rewards_audited": 2179,
   "source_catalog_reward_counts": {
     "content/quests/epochs_01_12.json": 400,
     "content/quests/epochs_13_24.json": 432,
     "content/quests/epochs_25_36.json": 212,
     "content/quests/epochs_37_48.json": 576,
     "content/quests/v4_mod_depth.json": 176,
+    "content/quests/v5_apotheosis_depth.json": 12,
     "content/quests/v5_ars_botania_depth.json": 17,
     "content/quests/v5_core_repairs.json": 2,
     "content/quests/v5_endgame_balance.json": 9,
@@ -157,6 +158,7 @@
     "content/quests/v5_magic_adventure_mechanics.json": 150,
     "content/quests/v5_native_processes.json": 4,
     "content/quests/v5_natural_magic_depth.json": 22,
+    "content/quests/v5_petroleum_depth.json": 10,
     "content/quests/v5_technology_mechanics.json": 112
   },
   "source_catalog_sha256": {
@@ -165,6 +167,7 @@
     "content/quests/epochs_25_36.json": "dff13eee9f81f0857224f158ae5ffbdc49907cbd8fb25815c3b4b51e3152a3fc",
     "content/quests/epochs_37_48.json": "23943e24769367716c0c8cb073dac3cc6bee4ce00166fb9fc36149016612f92d",
     "content/quests/v4_mod_depth.json": "9d2e6d16e0c6ed50effb1cadc00d71dc2b514fa4353a3a67a971ba8d423d435c",
+    "content/quests/v5_apotheosis_depth.json": "fbf5a22cf2283d3e4a58c95c703c6805a238ce913ad3d8902eacdf3334b19953",
     "content/quests/v5_ars_botania_depth.json": "d9a30f553a587b972c34b6090c4e12172c48f9eb00f279938b314d98bcbded66",
     "content/quests/v5_core_repairs.json": "44b936f8e7f4b893e089c8ab1af3124d2ab9cae9775cf6ff5390c0d722c6a8ef",
     "content/quests/v5_endgame_balance.json": "b0ecd41b14d820bacc6752f3f86095b1087df9135f2d73d9d4a9504befd6679e",
@@ -173,6 +176,7 @@
     "content/quests/v5_magic_adventure_mechanics.json": "4c97ed1c2e10fc92b504c5d99a4b471eefc15327c0f92e0e304cae2cac11b637",
     "content/quests/v5_native_processes.json": "61896c97e821b3dc42340c9cae735425d724f71037351c91782acba8679b9e70",
     "content/quests/v5_natural_magic_depth.json": "ebe3d2ef30b495c63f1c1e68a51e24463396645c5fdef5280a14948bba9559a2",
+    "content/quests/v5_petroleum_depth.json": "305431452fbb95e374d4d07dcecd29fd28ad93e5469769c9d7c28f14456eb138",
     "content/quests/v5_technology_mechanics.json": "ed7ec85d341b0478a81c7e8b8f05e3bf13d12d116b46dde58f482da364280e95"
   },
   "all_reward_ids_preserved": true,
@@ -1388,6 +1392,17 @@
       "min_epoch": 15
     },
     {
+      "quest": "0000191B130D550C",
+      "reward": "0000CB1BEE08C312",
+      "epoch": 20,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:lapis_lazuli",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
       "quest": "00003727E9166E8E",
       "reward": "00004DB3A5EDEA22",
       "epoch": 20,
@@ -1553,6 +1568,28 @@
       "min_epoch": 1
     },
     {
+      "quest": "00009F6FCA114D37",
+      "reward": "0000DA884B35EDC6",
+      "epoch": 31,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:leather",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "0000D1077E8F7FCE",
+      "reward": "000007C4357EA6D6",
+      "epoch": 31,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:lapis_lazuli",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
       "quest": "00003B406889245F",
       "reward": "0000C0F577DB14DB",
       "epoch": 34,
@@ -1639,6 +1676,17 @@
       "item": "botania:white_petal",
       "count": 4,
       "min_epoch": 5
+    },
+    {
+      "quest": "0000721F070043E0",
+      "reward": "00004FC1FA6F112B",
+      "epoch": 41,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
     },
     {
       "quest": "0000382737A3AC92",
@@ -6250,6 +6298,17 @@
       "min_epoch": 20
     },
     {
+      "quest": "00007D0BF8AEECF7",
+      "reward": "0000CEA257149994",
+      "epoch": 20,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
       "quest": "0000CA6B72BD65BF",
       "reward": "00001D1A459F82C2",
       "epoch": 20,
@@ -6257,6 +6316,39 @@
       "profile": "enchanting",
       "source": "parent_profile",
       "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "000041E3D063D578",
+      "reward": "0000E7EB50DC01DB",
+      "epoch": 20,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "0000FFEFCE520822",
+      "reward": "000083411B0B2A96",
+      "epoch": 20,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:leather",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "00007D9B89F33666",
+      "reward": "00001AE30A18A230",
+      "epoch": 20,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:lapis_lazuli",
       "count": 4,
       "min_epoch": 20
     },
@@ -6283,6 +6375,28 @@
       "min_epoch": 20
     },
     {
+      "quest": "0000DB1C65ADD2E5",
+      "reward": "0000AC2F40455CD0",
+      "epoch": 31,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:lapis_lazuli",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "00002AD98E3FC490",
+      "reward": "00001C59243992B9",
+      "epoch": 31,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
       "quest": "0000D08B918A4857",
       "reward": "0000A6FD46A0780D",
       "epoch": 41,
@@ -6290,6 +6404,28 @@
       "profile": "enchanting",
       "source": "parent_profile",
       "item": "minecraft:leather",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "0000DE44CB1A9076",
+      "reward": "0000DB9F5C8E342E",
+      "epoch": 41,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:paper",
+      "count": 4,
+      "min_epoch": 20
+    },
+    {
+      "quest": "000032E6B1CF4F82",
+      "reward": "0000F100A4EFEECA",
+      "epoch": 41,
+      "mod": "apotheosis",
+      "profile": "enchanting",
+      "source": "parent_profile",
+      "item": "minecraft:lapis_lazuli",
       "count": 4,
       "min_epoch": 20
     },
@@ -18226,6 +18362,116 @@
       "source": "profile",
       "item": "immersiveengineering:ingot_steel",
       "count": 2,
+      "min_epoch": 8
+    },
+    {
+      "quest": "00004DFBA5580A9D",
+      "reward": "000081415738D460",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:hemp_fiber",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "0000E9B2ACB8223E",
+      "reward": "0000C3989861D827",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:hemp_fiber",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "0000397DE82D8F02",
+      "reward": "0000AA2E2AD10A92",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:stick_iron",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "0000291CB48D4B88",
+      "reward": "0000A512C460E331",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:hemp_fiber",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "00003484BBD36BF7",
+      "reward": "0000AE9C118F90AA",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:wire_copper",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "000082D99C06C26E",
+      "reward": "0000153B3BE235CC",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:stick_iron",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "000085BA2CDA38D6",
+      "reward": "000078905117320A",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:hemp_fiber",
+      "count": 4,
+      "min_epoch": 8
+    },
+    {
+      "quest": "0000D7DC50E2C19C",
+      "reward": "0000A80FDBDE8B4F",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:ingot_steel",
+      "count": 2,
+      "min_epoch": 8
+    },
+    {
+      "quest": "00003ADD9266AA87",
+      "reward": "000097540ACBAE72",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:ingot_steel",
+      "count": 2,
+      "min_epoch": 8
+    },
+    {
+      "quest": "00007AB04E6293D4",
+      "reward": "00003FC486F63CC7",
+      "epoch": 12,
+      "mod": "immersivepetroleum",
+      "profile": "immersiveengineering",
+      "source": "parent_profile",
+      "item": "immersiveengineering:wire_copper",
+      "count": 4,
       "min_epoch": 8
     },
     {

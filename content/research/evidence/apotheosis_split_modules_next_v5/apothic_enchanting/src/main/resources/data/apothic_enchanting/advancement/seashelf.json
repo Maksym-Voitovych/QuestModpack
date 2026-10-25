@@ -1,0 +1,30 @@
+{
+    "parent": "apothic_enchanting:bookshelf",
+    "display": {
+        "icon": {
+            "id": "apothic_enchanting:seashelf"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.seashelf"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.seashelf.desc"
+        },
+        "frame": "task"
+    },
+    "criteria": {
+        "seashelf": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:seashelf"]
+                }]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "seashelf"
+        ]
+    ]
+}

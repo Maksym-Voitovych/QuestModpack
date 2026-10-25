@@ -1,0 +1,447 @@
+{
+  "id": "0000EB9AF8F70AE7",
+  "filename": "aia2_branch_technology_immersivepetroleum",
+  "title": "immersivepetroleum — Технології",
+  "group": "0000A159EA8B0AE9",
+  "order_index": 67,
+  "icon": {
+    "id": "immersivepetroleum:derrick",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "00004DFBA5580A9D",
+      "title": "Підтвердити нафтовий резервуар",
+      "description": [
+        "Встановіть сейсмічний прилад і перевірте знайдений резервуар до витрат на вишку. Нативний код видає це досягнення лише коли ReservoirInfo визначив crude_oil; предмет у руці не є результатом розвідки.",
+        "Успішна сейсмічна ідентифікація нафтового резервуара; не видобуток і не створення свердловини."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:seismic_survey",
+        "count": 1
+      },
+      "dependencies": [
+        "000042B3D0338DA7",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007E31D64B1224",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/root"
+        },
+        {
+          "id": "0000330DA736A674",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000081415738D460",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hemp_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000E9B2ACB8223E",
+      "title": "Зібрати Derrick для свердловини",
+      "description": [
+        "Після сейсмічної розвідки зберіть Derrick за схемою Projector й завершіть конструкцію інженерним молотком. Дотримуйтеся позиції над підтвердженим нафтовим резервуаром; це підготовка свердловини до видобутку, а не перевірка обсягу нафти.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:derrick",
+        "count": 1
+      },
+      "dependencies": [
+        "00004DFBA5580A9D",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000062B5241026E7",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_derrick"
+        },
+        {
+          "id": "0000DAA43FCD6A38",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C3989861D827",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hemp_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000397DE82D8F02",
+      "title": "Від свердловини до Pumpjack",
+      "description": [
+        "Сформуйте Pumpjack молотком після підготовки Derrick. Звірте місце свердловини, енергопідведення та рідинний вихід із посібником; відведіть видобуту нафту в окремий резервуар.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:pumpjack",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E9B2ACB8223E",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000868B1A7C6650",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_pumpjack"
+        },
+        {
+          "id": "0000DA6C92FFEF2B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AA2E2AD10A92",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 3.0
+    },
+    {
+      "id": "0000291CB48D4B88",
+      "title": "Формування Distillation Tower",
+      "description": [
+        "Сформуйте колону після насосної станції й підготуйте виведення всіх фракцій та бітуму. Нативний експорт цієї збірки використовує60mB сирої нафти за операцію:15нафти(naphtha),20гасу,30сірчистого дизеля й10мастила; тверда побічна продукція має свій шанс.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:distillation_tower",
+        "count": 1
+      },
+      "dependencies": [
+        "0000397DE82D8F02",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B7F9B2FA7FDA",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_distillationtower"
+        },
+        {
+          "id": "00005666F875ABCB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A512C460E331",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hemp_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.0
+    },
+    {
+      "id": "00003484BBD36BF7",
+      "title": "Окремий буфер нафтових фракцій",
+      "description": [
+        "Сформуйте Oil Tank та сплануйте окремі сховища для сирої нафти, сірчистого дизеля і мастила. Не змішуйте фракції в спільній трубі; для перевірки цього кроку потрібне саме формування танка молотком.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:oiltank",
+        "count": 1
+      },
+      "dependencies": [
+        "0000397DE82D8F02",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D635CBC265AD",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_oiltank"
+        },
+        {
+          "id": "0000B8EDC1CE0EC8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AE9C118F90AA",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.0
+    },
+    {
+      "id": "000082D99C06C26E",
+      "title": "Гідроочищення перед чистим паливом",
+      "description": [
+        "Сформуйте Hydrotreater. Для sulfur_recovery подайте1000mB сірчистого дизеля й500mB води: рецепт дає1000mB чистого дизеля та5сірчаного пилу. Це окрема операція після дистиляції, тому колоні не слід приписувати чистий дизель.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:hydrotreater",
+        "count": 1
+      },
+      "dependencies": [
+        "0000291CB48D4B88",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D623E02C8523",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_hydrotreater"
+        },
+        {
+          "id": "000049AAC02CAF1A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000153B3BE235CC",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.0
+    },
+    {
+      "id": "000085BA2CDA38D6",
+      "title": "Обслуговувати сумісну машину мастилом",
+      "description": [
+        "Наповніть Oil Can дозволеним мастилом і застосуйте її до сумісного мультиблока. Реальний код перевіряє кількість та LubricatedHandler.lubricateTile; у Survival витрачає мастило на30секунд змащення. Сам крафт порожньої каністри не зараховується.",
+        "Успішне застосування мастила Oil Can до підтриманої машини; це не доказ обсягу випуску."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:oil_can",
+        "count": 1
+      },
+      "dependencies": [
+        "0000291CB48D4B88",
+        "00008E0CAF546D7E",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000099624221F534",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/oil_can"
+        },
+        {
+          "id": "00007D338CE8C8D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000078905117320A",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:hemp_fiber",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000D7DC50E2C19C",
+      "title": "Формування Coker Unit",
+      "description": [
+        "Збудуйте коксувальну установку, щоб переробляти бітум у petcoke та сірчистий дизель. Перед запуском передбачте твердий і рідкий виходи; naphtha не є продуктом цього рецепта.",
+        "Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:coker_unit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000291CB48D4B88",
+        "0000AD0926A9B603",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005955DE131B71",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/mb_cokerunit"
+        },
+        {
+          "id": "0000420A97AC251D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A80FDBDE8B4F",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 8.0,
+      "y": 0.0
+    },
+    {
+      "id": "00003ADD9266AA87",
+      "title": "Правильно зорієнтувати Auto Lubricator",
+      "description": [
+        "Розмістіть Auto Lubricator біля підтриманого мультиблока відповідно до посібника. Нативна перевірка placement звіряє напрямок і isPlacedCorrectly. Після цього забезпечте резерв мастила; саме це досягнення не перевіряє його безперервне споживання.",
+        "Коректне розміщення мастильника відносно сумісного мультиблока; не потік мастила і не прискорення."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:auto_lubricator",
+        "count": 1
+      },
+      "dependencies": [
+        "000085BA2CDA38D6",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000746BD373257E",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/auto_lubricator"
+        },
+        {
+          "id": "0000CCA284E209AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000097540ACBAE72",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_steel",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 10.0,
+      "y": 4.0
+    },
+    {
+      "id": "00007AB04E6293D4",
+      "title": "Заправний інтерфейс Portable Generator",
+      "description": [
+        "Під’єднайте підтриманий паливний контур до Portable Generator і взаємодійте наповненим контейнером із його баком. Нативне досягнення спрацьовує після успішного FluidUtil.interactWithFluidHandler: воно доводить обмін рідиною, а не генерацію FE або її кількість.",
+        "Успішний обмін рідиною між контейнером і баком генератора; не виробництво енергії."
+      ],
+      "icon": {
+        "id": "immersivepetroleum:gas_generator",
+        "count": 1
+      },
+      "dependencies": [
+        "000082D99C06C26E",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000066D29708CC8C",
+          "type": "advancement",
+          "advancement": "immersivepetroleum:main/gas_generator"
+        },
+        {
+          "id": "000099800B4A925A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003FC486F63CC7",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
+    }
+  ]
+}

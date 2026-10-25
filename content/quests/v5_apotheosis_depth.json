@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "quests": [
+    {
+      "id": "V5_DEPTH_APOTH_FRONTIER",
+      "epoch": 20,
+      "title_uk": "П’ять слотів зі справжніми affix",
+      "description_uk": [
+        "Знайдіть спорядження з affix у пригодницькій здобичі. Надягніть речі рідкості Common або вище на голову, груди, ноги та ступні, а зброю чи інший придатний предмет візьміть у руку. Звичайна залізна броня без компонента affix не підходить.",
+        "Native Frontier зараховує кожний слот окремо: це історія виконаних умов, а не вимір одночасного комплекту. Цей крок навчає відрізняти affix від ванільного зачарування."
+      ],
+      "icon": "apotheosis:gem_dust",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apotheosis:progression/frontier"
+        }
+      ],
+      "after": [
+        "V5_MAG_APOTHEOSIS_01"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_frontier"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_REBIRTH",
+      "epoch": 20,
+      "title_uk": "Паливо перековки — Sigils of Rebirth",
+      "description_uk": [
+        "Виготовте партію Sigils of Rebirth з Gem-Fused Slate та Gem Dust. У Simple Reforging Table нижній правий слот приймає саме ці сигіли; верхній лівий — матеріал потрібної рідкості, середній — спорядження.",
+        "Порівняйте три пропозиції перековки до витрати матеріалів. FTB підтверджує крафт сигілів і наявність столу, не результат вибору affix. Simple Table охоплює Common, Uncommon і Rare."
+      ],
+      "icon": "apotheosis:sigil_of_rebirth",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:sigil_of_rebirth",
+          "count": 6,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "apotheosis:simple_reforging_table",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_MAG_APOTHEOSIS_02",
+        "V5_DEPTH_APOTH_FRONTIER"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_rebirth"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_SOCKET_KIT",
+      "epoch": 20,
+      "title_uk": "Підготувати гніздо без втрати самоцвіту",
+      "description_uk": [
+        "Виготовте Sigil of Socketing та встановіть Smithing Table. Сигіл додає гніздо сумісному спорядженню до ліміту його рецепта; потім поєднайте річ із придатним самоцвітом у ковальському столі або скористайтеся підтриманим правим кліком в інвентарі.",
+        "Перевіряється крафт сигілу та встановлений стіл. Стан гнізд і socket-бонус тут не вимірюються: не слід вважати сам комплект доказом успішного вставлення. Unique-самоцвіти мають окреме обмеження дублювання."
+      ],
+      "icon": "apotheosis:sigil_of_socketing",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:sigil_of_socketing",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "minecraft:smithing_table",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "apotheosis:gem",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_APOTHEOSIS_03"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_socket_kit"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_CUT_CHIPPED",
+      "epoch": 20,
+      "title_uk": "Перше огранювання: Chipped",
+      "description_uk": [
+        "На Gem Cutting Table підвищте Cracked-самоцвіт до Chipped. Рецепт використовує основний камінь, матеріали та допоміжний камінь; точну сумісність слотів і ціну дивіться у JEI.",
+        "Зарахування дає саме серверна операція Gem Cutting з вихідною purity Chipped після витрати інгредієнтів. Піднятий, придбаний або виданий Chipped-камінь цього не підтверджує."
+      ],
+      "icon": "apotheosis:gem_cutting_table",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_chipped"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_REBIRTH",
+        "V5_MAG_APOTHEOSIS_03"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_cut_chipped"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_GEM_CASE",
+      "epoch": 20,
+      "title_uk": "Самоцвіти за типом і чистотою",
+      "description_uk": [
+        "Виготовте Gem Case для зберігання каменів, які мають різні типи й purity, але спільний Item ID. Підпишіть у майстерні окремі етапи огранювання та не змішуйте запас майбутніх входів із готовими каменями для спорядження.",
+        "Перевіряється виготовлення кейса. Кейс не є автоматичним Gem Cutting Table: його наявність не доводить сортування, безперервне виробництво або правильність усіх компонентів."
+      ],
+      "icon": "apotheosis:gem_case",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:gem_case",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_CUT_CHIPPED"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_gem_case"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_ASCENT",
+      "epoch": 31,
+      "title_uk": "Ascent: спорядження й загарбник",
+      "description_uk": [
+        "Підготуйте предмети Uncommon або вище для п’яти груп слотів Frontier. Потім переможіть справжнього Apothic Invader: звичайний моб із перейменованим предметом не задовольняє invader-predicate.",
+        "Досягнення Ascent поєднує всі equipment-criteria та native player-killed умову. Вони накопичуються в часі; квест не вимагає або не перевіряє одночасне носіння одного комплекту."
+      ],
+      "icon": "apotheosis:timeworn_fabric",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apotheosis:progression/ascent"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_FRONTIER",
+        "V5_DEPTH_APOTH_REBIRTH"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_ascent"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_CUT_NORMAL",
+      "epoch": 31,
+      "title_uk": "Огранювання до Normal",
+      "description_uk": [
+        "Проведіть проміжний цикл Chipped → Flawed, потім виконайте огранювання Flawed → Normal. Матеріали підвищуються разом із purity; рідкість affix-речі не є заміною purity самоцвіту.",
+        "Ціль — реальна операція з виходом Normal. Серверний trigger читає UnsocketedGem та його purity; предмет із тим самим Item ID або просто запас матеріалів не закриває завдання."
+      ],
+      "icon": "apotheosis:gem",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_normal"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_CUT_CHIPPED",
+        "V5_DEPTH_APOTH_ASCENT"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_cut_normal"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_SUMMIT",
+      "epoch": 31,
+      "title_uk": "Summit: Rare та перемога над Wither",
+      "description_uk": [
+        "Освойте перековку до Rare й замініть щонайменше раз кожну з п’яти груп спорядження на Rare або вище. Для другої частини досягнення особисто переможіть Wither.",
+        "Перевіряється штатний Summit: його equipment-предикати читають рідкість affix, а окремий criterion — справжнє вбивство minecraft:wither. Це не завдання з наявності Nether Star, і нагорода не видає наступну машину."
+      ],
+      "icon": "apotheosis:luminous_crystal_shard",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apotheosis:progression/summit"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_ASCENT",
+        "V5_MAG_APOTHEOSIS_04"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_summit"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_WITHDRAWAL_KIT",
+      "epoch": 31,
+      "title_uk": "Повернення каменів у майстерню",
+      "description_uk": [
+        "Після відкриття Sigil of Withdrawal підготуйте ковальський стіл і сумісний самоцвіт. Цей сигіл відокремлює вставлені камені та повертає спорядження з ними; перевіряйте результат перед підтвердженням smithing-операції.",
+        "Завдання перевіряє готовий набір для обслуговування. Native proof конкретного виймання тут відсутній, тому квест не заявляє, що компонент socketed_gems уже змінено."
+      ],
+      "icon": "apotheosis:sigil_of_withdrawal",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "minecraft:smithing_table",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "apotheosis:sigil_of_withdrawal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "apotheosis:gem",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_APOTHEOSIS_05",
+        "V5_DEPTH_APOTH_SOCKET_KIT"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_withdrawal_kit"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_AUGMENTING_KIT",
+      "epoch": 41,
+      "title_uk": "Змінювати один affix замість усієї речі",
+      "description_uk": [
+        "Виготовте Augmenting Table і Sigils of Enhancement. Ця станція змінює окремий вибраний affix, зберігаючи решту; це відрізняє augmenting від повної перековки. Перед дією оберіть властивість у меню та перевірте її допустимі зміни.",
+        "Точні рівні й кількість сигілів беріть із чинного GUI: вони дорогі, а не безкоштовний перерозподіл. Автоматично підтверджується крафт станції та палива; натискання upgrade/reroll і якість отриманого affix цей setup-квест не сертифікує."
+      ],
+      "icon": "apotheosis:augmenting_table",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "apotheosis:augmenting_table",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "apotheosis:sigil_of_enhancement",
+          "count": 4,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_MAG_APOTHEOSIS_06",
+        "V5_DEPTH_APOTH_SUMMIT"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_augmenting_kit"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_PINNACLE",
+      "epoch": 41,
+      "title_uk": "Pinnacle: Epic та дракон",
+      "description_uk": [
+        "Надягніть або візьміть у руку affix-спорядження Epic чи Mythic у всіх п’яти групах слотів і переможіть Ender Dragon. Вищий World Tier слід обирати свідомо після підготовки бойової стійкості й способу відступу.",
+        "Перевірка використовує штатний Pinnacle: компоненти рідкості й player-killed критерій дракона. Вона не міряє одночасний набір, не видає Mythic-спорядження та не обходить відкриття виміру AIA2."
+      ],
+      "icon": "apotheosis:arcane_sands",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "apotheosis:progression/pinnacle"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_SUMMIT",
+        "V5_DEPTH_APOTH_AUGMENTING_KIT"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_pinnacle"
+    },
+    {
+      "id": "V5_DEPTH_APOTH_CUT_PERFECT",
+      "epoch": 41,
+      "title_uk": "Perfect — фінальний цикл огранювання",
+      "description_uk": [
+        "Спершу поліпшіть Normal до Flawless, а потім виконайте рецепт Flawless → Perfect. Збережіть потрібний другий камінь і матеріали вищої рідкості: Perfect уже не має наступного рівня purity.",
+        "Зараховується тільки серверний Gem Cutting із точним виходом Perfect після decrementInputs. Не слід підмінювати це довільним самоцвітом у кишені, натисканням ручної галочки чи видом предмета."
+      ],
+      "icon": "apotheosis:godforged_pearl",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:apotheosis/cut_perfect"
+        }
+      ],
+      "after": [
+        "V5_DEPTH_APOTH_CUT_NORMAL",
+        "V5_DEPTH_APOTH_PINNACLE"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "apotheosis:gem_dust",
+          "count": 2
+        }
+      ],
+      "mod": "apotheosis",
+      "research_map": "apotheosis",
+      "mechanic_stage": "apotheosis:depth_cut_perfect"
+    }
+  ],
+  "quest_count": 12,
+  "scope": "Exact8.9.0 mechanical core depth; inventory kits explicitly not proof of socketing/reforging."
+}

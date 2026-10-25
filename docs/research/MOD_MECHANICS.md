@@ -981,16 +981,63 @@
 - {"recipe_id": "aia2:integration/epoch_04", "target": "rootsclassic:altar", "epoch": 4, "ingredient_ids": ["create:copper_sheet"], "direction": "incoming", "description_uk": "Рецепт AIA2 для rootsclassic:altar споживає міжмодові матеріали create:copper_sheet. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
-- Офіційний посібник точної встановленої версії для цієї карти недоступний; підтверджено лише зазначені registry/recipe факти.
+- Точні1.5.10 джерела тепер доступні й підтвердили взаємодію ступки поза тиком. Подальші лінії standing stones, Imbuer та інші ефекти ритуалів ще IN_PROGRESS.
+- Початкові предметні цілі не доводять конкретну активацію ритуалу; нативного observer для них ще немає.
+- Нинішні рецепти вівтаря мають gate не вище4, тому окремий обхід пізньої епохи вівтарем не заявлено.
 
 Джерела:
 
 - [джерело](../../content/research/evidence/magic_adventure_v5/installed_metadata.json) — SHA перевірено
 - [джерело](../../content/research/evidence/magic_adventure_v5/active_native_recipes.json) — SHA перевірено
-- [джерело](https://github.com/MysticMods/RootsClassic) — контекст, без заяви про перевірений вміст
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/attuned_standing_stone.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/component/blue_orchid.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/component/flare_orchid.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/component/midnight_bloom.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/component/poppy.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/imbuer.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/mundane_standing_stone.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/crystal_staff.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/grower_standing_stone.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/healer_standing_stone.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/sylvan_boots.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/sylvan_hood.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/sylvan_robe.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/sylvan_tunic.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/vacuum_standing_stone.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/wildwood_boots.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/wildwood_leggings.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/wildwood_mask.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/crafting/wildwood_plate.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/generated/resources/data/rootsclassic/recipe/ritual/imbuer.json) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/altar/AltarBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/brazier/BrazierBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/imbuer/ImbuerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/mortar/MortarBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/blockentity/GrowerStandingStoneTile.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/blockentity/HealerStandingStone.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/blockentity/VacuumStandingStoneTile.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/CrystalStaffItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/DruidKnifeItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/LivingPickaxeItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/PestleItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/StaffItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/SylvanArmorItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/WildwoodArmorItem.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/ComponentRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RitualRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/recipe/RootsReloadManager.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/registry/RootsComponents.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/registry/RootsRecipes.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/registry/RootsRegistry.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/research/ResearchManager.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/RitualPillars.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/RitualRegistry.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualCrafting.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/ritual/rituals/RitualImbuer.java) — SHA перевірено
+- [джерело](https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/resources/assets/rootsclassic/lang/en_us.json) — SHA перевірено
 
 ## Totemic
 
@@ -2752,12 +2799,12 @@ Soul Jar заповнюється відповідною дією Soulium Dagger
 - [джерело](https://github.com/BlakeBr0/MysticalAgriculture/blob/f38a092852538905de72a999f462936b71181554/src/main/resources/assets/mysticalagriculture/patchouli_books/guide/en_us/entries/basics/resource_crops.json) — SHA перевірено; upstream-версія відрізняється
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
 
-## Apotheosis
+## Apotheosis: спорядження, самоцвіти й рівні світу
 
-Версія експорту: **8.9.0**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **8.9.0**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
-Побудуйте Salvaging Table після отримання Gem Dust. Рецепти salvage відрізняють матеріал і рідкість спорядження; зберігайте результати в окремих комірках.
+Знайдіть affix-спорядження в пригодах, розберіть непотрібні речі на матеріали рідкості та відокремте рідкість спорядження від purity самоцвіту. Потім переходьте до перековки, гнізд, огранювання й керованого поліпшення одного affix.
 
 ### 1. Розбір спорядження за рідкістю
 
@@ -2773,36 +2820,105 @@ Soul Jar заповнюється відповідною дією Soulium Dagger
 
 Епохи: 20.
 
-Рецепти common/uncommon допускають Simple Reforging Table. Підготуйте матеріали розбору перед перековкою; висока рідкість має іншу ціну й допустимі столи.
+Simple Reforging Table працює з common, uncommon та rare. Ліворуч угорі — матеріал рідкості, у центрі — спорядження, праворуч унизу — Sigil of Rebirth. Три варіанти мають різні вимоги до рівня/ресурсів; жоден не гарантовано сильніший. Gem Dust входить у виготовлення сигілів, а не замінює це паливо у слоті.
 Попередні кроки: apotheosis:01.
 Машини: `apotheosis:simple_reforging_table`.
 Ресурси й результати: `apotheosis:simple_reforging_table`, `apotheosis:mysterious_scrap_metal`.
 Квести: `V5_MAG_APOTHEOSIS_02`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 3. Чистота самоцвітів
+### 3. П’ять слотів зі справжніми affix
 
 Епохи: 20.
 
-Gem Cutting Table використовує матеріали, що залежать від цільової purity. Відокремте це від рідкості affix-спорядження: це дві пов’язані, але різні шкали.
+Знайдіть спорядження з affix у пригодницькій здобичі. Надягніть речі рідкості Common або вище на голову, груди, ноги та ступні, а зброю чи інший придатний предмет візьміть у руку. Звичайна залізна броня без компонента affix не підходить. Native Frontier зараховує кожний слот окремо: це історія виконаних умов, а не вимір одночасного комплекту. Цей крок навчає відрізняти affix від ванільного зачарування.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:01.
+Ресурси й результати: `apotheosis:gem_dust`.
+Квести: `V5_DEPTH_APOTH_FRONTIER`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 4. Чистота самоцвітів
+
+Епохи: 20.
+
+Gem Cutting Table послідовно підвищує purity Cracked → Chipped → Flawed → Normal → Flawless → Perfect. Потрібні матеріали за рецептом і зазвичай другий самоцвіт тієї ж чистоти. Це окрема шкала від common…mythic рідкості affix-спорядження.
 Попередні кроки: apotheosis:02.
 Машини: `apotheosis:gem_cutting_table`.
 Ресурси й результати: `apotheosis:gem_cutting_table`, `apotheosis:timeworn_fabric`.
 Квести: `V5_MAG_APOTHEOSIS_03`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 4. Вища перековка з arcane sands
+### 5. Паливо перековки — Sigils of Rebirth
+
+Епохи: 20.
+
+Виготовте партію Sigils of Rebirth з Gem-Fused Slate та Gem Dust. У Simple Reforging Table нижній правий слот приймає саме ці сигіли; верхній лівий — матеріал потрібної рідкості, середній — спорядження. Порівняйте три пропозиції перековки до витрати матеріалів. FTB підтверджує крафт сигілів і наявність столу, не результат вибору affix. Simple Table охоплює Common, Uncommon і Rare.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:02, apotheosis:depth_frontier.
+Машини: `apotheosis:simple_reforging_table`.
+Ресурси й результати: `apotheosis:sigil_of_rebirth`.
+Квести: `V5_DEPTH_APOTH_REBIRTH`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 6. Перше огранювання: Chipped
+
+Епохи: 20.
+
+На Gem Cutting Table підвищте Cracked-самоцвіт до Chipped. Рецепт використовує основний камінь, матеріали та допоміжний камінь; точну сумісність слотів і ціну дивіться у JEI. Зарахування дає саме серверна операція Gem Cutting з вихідною purity Chipped після витрати інгредієнтів. Піднятий, придбаний або виданий Chipped-камінь цього не підтверджує.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_rebirth, apotheosis:03.
+Машини: `apotheosis:gem_cutting_table`.
+Ресурси й результати: `apotheosis:gem_cutting_table`.
+Квести: `V5_DEPTH_APOTH_CUT_CHIPPED`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 7. Підготувати гніздо без втрати самоцвіту
+
+Епохи: 20.
+
+Виготовте Sigil of Socketing та встановіть Smithing Table. Сигіл додає гніздо сумісному спорядженню до ліміту його рецепта; потім поєднайте річ із придатним самоцвітом у ковальському столі або скористайтеся підтриманим правим кліком в інвентарі. Перевіряється крафт сигілу та встановлений стіл. Стан гнізд і socket-бонус тут не вимірюються: не слід вважати сам комплект доказом успішного вставлення. Unique-самоцвіти мають окреме обмеження дублювання.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:03.
+Машини: `minecraft:smithing_table`.
+Ресурси й результати: `apotheosis:sigil_of_socketing`, `apotheosis:gem`.
+Квести: `V5_DEPTH_APOTH_SOCKET_KIT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 8. Вища перековка з arcane sands
 
 Епохи: 31.
 
-Просунутий Reforging Table створюється з попереднього столу. Epic і mythic recipes у перевіреному експорті вимагають саме цей стіл, більшу кількість матеріалів і рівні досвіду.
+Reforging Table є покращенням Simple Table й відкриває epic та mythic. Зберігайте запас відповідних rarity materials і Sigils of Rebirth; повторна перековка замінює набір affix, тому дорогоцінне спорядження спочатку порівнюють із доступними варіантами.
 Попередні кроки: apotheosis:03.
 Машини: `apotheosis:reforging_table`.
 Ресурси й результати: `apotheosis:reforging_table`, `apotheosis:arcane_sands`.
 Квести: `V5_MAG_APOTHEOSIS_04`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 5. Виведення каменя без втрати основи
+### 9. Ascent: спорядження й загарбник
+
+Епохи: 31.
+
+Підготуйте предмети Uncommon або вище для п’яти груп слотів Frontier. Потім переможіть справжнього Apothic Invader: звичайний моб із перейменованим предметом не задовольняє invader-predicate. Досягнення Ascent поєднує всі equipment-criteria та native player-killed умову. Вони накопичуються в часі; квест не вимагає або не перевіряє одночасне носіння одного комплекту.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_frontier, apotheosis:depth_rebirth.
+Ресурси й результати: `apotheosis:timeworn_fabric`.
+Квести: `V5_DEPTH_APOTH_ASCENT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 10. Самоцвіти за типом і чистотою
+
+Епохи: 20.
+
+Виготовте Gem Case для зберігання каменів, які мають різні типи й purity, але спільний Item ID. Підпишіть у майстерні окремі етапи огранювання та не змішуйте запас майбутніх входів із готовими каменями для спорядження. Перевіряється виготовлення кейса. Кейс не є автоматичним Gem Cutting Table: його наявність не доводить сортування, безперервне виробництво або правильність усіх компонентів.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_cut_chipped.
+Ресурси й результати: `apotheosis:gem_case`.
+Квести: `V5_DEPTH_APOTH_GEM_CASE`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 11. Виведення каменя без втрати основи
 
 Епохи: 31.
 
@@ -2813,7 +2929,42 @@ Gem Cutting Table використовує матеріали, що залежа
 Квести: `V5_MAG_APOTHEOSIS_05`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
-### 6. Пізня ціна чистого каменя
+### 12. Огранювання до Normal
+
+Епохи: 31.
+
+Проведіть проміжний цикл Chipped → Flawed, потім виконайте огранювання Flawed → Normal. Матеріали підвищуються разом із purity; рідкість affix-речі не є заміною purity самоцвіту. Ціль — реальна операція з виходом Normal. Серверний trigger читає UnsocketedGem та його purity; предмет із тим самим Item ID або просто запас матеріалів не закриває завдання.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_cut_chipped, apotheosis:depth_ascent.
+Машини: `apotheosis:gem_cutting_table`.
+Ресурси й результати: `apotheosis:gem`.
+Квести: `V5_DEPTH_APOTH_CUT_NORMAL`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 13. Summit: Rare та перемога над Wither
+
+Епохи: 31.
+
+Освойте перековку до Rare й замініть щонайменше раз кожну з п’яти груп спорядження на Rare або вище. Для другої частини досягнення особисто переможіть Wither. Перевіряється штатний Summit: його equipment-предикати читають рідкість affix, а окремий criterion — справжнє вбивство minecraft:wither. Це не завдання з наявності Nether Star, і нагорода не видає наступну машину.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_ascent, apotheosis:04.
+Ресурси й результати: `apotheosis:luminous_crystal_shard`.
+Квести: `V5_DEPTH_APOTH_SUMMIT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 14. Повернення каменів у майстерню
+
+Епохи: 31.
+
+Після відкриття Sigil of Withdrawal підготуйте ковальський стіл і сумісний самоцвіт. Цей сигіл відокремлює вставлені камені та повертає спорядження з ними; перевіряйте результат перед підтвердженням smithing-операції. Завдання перевіряє готовий набір для обслуговування. Native proof конкретного виймання тут відсутній, тому квест не заявляє, що компонент socketed_gems уже змінено.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:05, apotheosis:depth_socket_kit.
+Машини: `minecraft:smithing_table`.
+Ресурси й результати: `apotheosis:sigil_of_withdrawal`, `apotheosis:gem`.
+Квести: `V5_DEPTH_APOTH_WITHDRAWAL_KIT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 15. Пізня ціна чистого каменя
 
 Епохи: 41.
 
@@ -2824,20 +2975,108 @@ Gem Cutting Table використовує матеріали, що залежа
 Квести: `V5_MAG_APOTHEOSIS_06`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 16. Змінювати один affix замість усієї речі
+
+Епохи: 41.
+
+Виготовте Augmenting Table і Sigils of Enhancement. Ця станція змінює окремий вибраний affix, зберігаючи решту; це відрізняє augmenting від повної перековки. Перед дією оберіть властивість у меню та перевірте її допустимі зміни. Точні рівні й кількість сигілів беріть із чинного GUI: вони дорогі, а не безкоштовний перерозподіл. Автоматично підтверджується крафт станції та палива; натискання upgrade/reroll і якість отриманого affix цей setup-квест не сертифікує.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:06, apotheosis:depth_summit.
+Машини: `apotheosis:augmenting_table`.
+Ресурси й результати: `apotheosis:augmenting_table`, `apotheosis:sigil_of_enhancement`.
+Квести: `V5_DEPTH_APOTH_AUGMENTING_KIT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 17. Pinnacle: Epic та дракон
+
+Епохи: 41.
+
+Надягніть або візьміть у руку affix-спорядження Epic чи Mythic у всіх п’яти групах слотів і переможіть Ender Dragon. Вищий World Tier слід обирати свідомо після підготовки бойової стійкості й способу відступу. Перевірка використовує штатний Pinnacle: компоненти рідкості й player-killed критерій дракона. Вона не міряє одночасний набір, не видає Mythic-спорядження та не обходить відкриття виміру AIA2.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_summit, apotheosis:depth_augmenting_kit.
+Ресурси й результати: `apotheosis:arcane_sands`.
+Квести: `V5_DEPTH_APOTH_PINNACLE`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
+### 18. Perfect — фінальний цикл огранювання
+
+Епохи: 41.
+
+Спершу поліпшіть Normal до Flawless, а потім виконайте рецепт Flawless → Perfect. Збережіть потрібний другий камінь і матеріали вищої рідкості: Perfect уже не має наступного рівня purity. Зараховується тільки серверний Gem Cutting із точним виходом Perfect після decrementInputs. Не слід підмінювати це довільним самоцвітом у кишені, натисканням ручної галочки чи видом предмета.
+Результат готує наступний рівень якості або окремий керований крок ремонту спорядження.
+Попередні кроки: apotheosis:depth_cut_normal, apotheosis:depth_pinnacle.
+Машини: `apotheosis:gem_cutting_table`.
+Ресурси й результати: `apotheosis:godforged_pearl`.
+Квести: `V5_DEPTH_APOTH_CUT_PERFECT`.
+Точні FTB task умови наведено в каталозі. Нативні події підтверджують лише власні criteria; огляд станції та комплект не сертифікують приховані операції.
+
 Фінальні цілі:
-- Завершіть збір матеріалів пізньої якості та перевірте витрати flawless-рецепта. Цей вузол перевіряє підготовлену станцію й комплект, а не невидимі компоненти випадкового самоцвіту.
+- Виконати native умови Pinnacle для спорядження epic+ і перемоги над драконом.
+- Провести реальне огранювання до Perfect на Gem Cutting Table.
+- Підготувати Augmenting Table та Sigils of Enhancement для керованої зміни окремих affix без повної перековки.
 
 Прогалини та межі перевірки:
-- Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
-- Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
-- Офіційний посібник точної встановленої версії для цієї карти недоступний; підтверджено лише зазначені registry/recipe факти.
-- Окремий прямий міжмодовий рецепт у перевіреному AIA2-наборі не підтверджено; тематичне сусідство не видається за виробничу залежність.
+- Повний інстанс із FTB Quests, Apotheosis та всіма модами не запускався; UI, JEI та події в установленому JAR потребують ручного acceptance-тесту.
+- Нативні criteria екіпірування накопичуються в часі: вони не доводять одночасне носіння комплекту або спосіб виготовлення предметів.
+- Для socketing, salvage, reforging та augmenting не знайдено окремого надійного production-trigger: їхні квести явно перевіряють станцію/комплект або продукт, а не приховану дію.
+- Немає підтвердженого прямого міжмодового рецепта для affix-станцій у поточному AIA2-наборі; сусідні магічні/технологічні епохи не видаються за такий рецепт.
 
 Джерела:
 
 - [джерело](../../content/research/evidence/magic_adventure_v5/installed_metadata.json) — SHA перевірено
-- [джерело](../../content/research/evidence/magic_adventure_v5/active_native_recipes.json) — SHA перевірено
-- [джерело](https://github.com/Shadows-of-Fire/Apotheosis) — контекст, без заяви про перевірений вміст
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/LICENSE) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/LICENSE_ASSETS) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/Apoth.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/AdventureEvents.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/advancements/GemCutTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/advancements/EquippedItemTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/Purity.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/cutting/GemCuttingMenu.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/advancements/predicates/RarityItemPredicate.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/advancements/predicates/InvaderPredicate.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/tiers/WorldTier.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/tiers/UnlockedTiers.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/AddSocketsRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/SocketingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/reforging/ReforgingMenu.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/affix/augmenting/AugmentingMenu.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/affixes.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/rarities.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/salvaging.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/reforging.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/augmenting.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/affix_loot/wandering_trader.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/gems/gems.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/gems/gem_dust.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/gems/gem_cutting.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/gems/gem_case.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/world_tiers/world_tiers.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/world_tiers/select_screen.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/resources/assets/apotheosis/patchouli_books/apoth_chronicle/en_us/entries/adventure/world_tiers/unlocking_tiers.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/advancement/progression/frontier.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/advancement/progression/ascent.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/advancement/progression/summit.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/advancement/progression/pinnacle.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/gem_case.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/sigil_of_rebirth.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/sigil_of_socketing.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/sigil_add_sockets.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/sigil_of_enhancement.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/augmenting_table.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/gem_fused_slate.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/gem_cutting/cracked.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/gem_cutting/flawed.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/gem_cutting/flawless.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/reforging/rare.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/reforging/epic.json) — SHA перевірено
+- [джерело](../../content/research/evidence/apotheosis_core_next_v5/apotheosis/export/recipes/reforging/mythic.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/loot/modifiers/GemLootModifier.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/Gem.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/GemRegistry.java) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/loot_modifiers/gem_loot_injection.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/neoforge/loot_modifiers/global_loot_modifiers.json) — SHA перевірено
+- [джерело](https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/gems/core/solar.json) — SHA перевірено
 
 ## The Aether
 
@@ -5909,10 +6148,10 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## Immersive Petroleum
 
-Версія експорту: **4.5.0-39**. Статус: `reviewed_partial`.
+Версія експорту: **4.5.0-39**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
-Сейсмічна розвідка додає окремий нативний спосіб пошуку ресурсу Immersive Petroleum.
+Підготуйте Seismic Survey та Projector, підтвердьте нафтовий резервуар, сформуйте Derrick і Pumpjack. Потім розділяйте фракції та розвивайте гідроочищення, коксування й мастильний сервіс.
 
 ### 1. Польовий комплект Petroleum
 
@@ -5947,31 +6186,64 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E12_ip_refinery_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 4. Колона розділяє фракції
+### 4. Підтвердити нафтовий резервуар
 
 Епохи: 12.
 
-Порівняйте твердий побічний продукт із рідкою паливною фракцією. Виводьте їх окремо й перевірте запас місця для кожного, адже забитий побічний вихід може перетворити достатній запас сирої нафти на простій.
+Встановіть сейсмічний прилад і перевірте знайдений резервуар до витрат на вишку. Нативний код видає це досягнення лише коли ReservoirInfo визначив crude_oil; предмет у руці не є результатом розвідки.
+Попередні кроки: immersivepetroleum.phase.02.
+Ресурси й результати: `immersivepetroleum:seismic_survey`.
+Квести: `V5_DEPTH_IP_SURVEY`.
+Успішна сейсмічна ідентифікація нафтового резервуара; не видобуток і не створення свердловини.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 5. Колона розділяє фракції
+
+Епохи: 12.
+
+Колона видає сірчистий дизель(diesel_sulfur), naphtha, керосин, мастило та шанс бітуму. Чистий дизель потребує наступного Hydrotreater.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: immersivepetroleum.phase.03.
 Машини: `immersivepetroleum:distillation_tower`.
-Ресурси й результати: `immersivepetroleum:bitumen`, `immersivepetroleum:diesel_bucket`, `immersiveengineering:jerrycan`.
+Ресурси й результати: `immersivepetroleum:bitumen`, `immersivepetroleum:diesel_sulfur_bucket`, `immersiveengineering:jerrycan`.
 Квести: `V5_E12_ip_refinery_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 5. Коксування потребує нового маршруту
+### 6. Зібрати Derrick для свердловини
 
 Епохи: 12.
 
-Окремо позначте коксохімічну ділянку та її тверді й рідкі продукти. Не повертайте нафту й нафтові фракції у спільний непідписаний резервуар; для запуску звірте відповідний нативний рецепт із JEI.
+Після сейсмічної розвідки зберіть Derrick за схемою Projector й завершіть конструкцію інженерним молотком. Дотримуйтеся позиції над підтвердженим нафтовим резервуаром; це підготовка свердловини до видобутку, а не перевірка обсягу нафти.
+Попередні кроки: immersivepetroleum.depth.survey.
+Ресурси й результати: `immersivepetroleum:derrick`.
+Квести: `V5_DEPTH_IP_DERRICK`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 7. Коксування потребує нового маршруту
+
+Епохи: 12.
+
+Коксування бітуму дає petcoke і сірчистий дизель. Naphtha тут не є виходом.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: immersivepetroleum.phase.04.
 Машини: `immersivepetroleum:coker_unit`.
-Ресурси й результати: `immersivepetroleum:petcoke`, `immersivepetroleum:naphtha_bucket`, `immersivepetroleum:oil_can`.
+Ресурси й результати: `immersivepetroleum:petcoke`, `immersivepetroleum:diesel_sulfur_bucket`, `immersivepetroleum:oil_can`.
 Квести: `V5_E12_ip_refinery_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Сервіс мастила не є генерацією
+### 8. Від свердловини до Pumpjack
+
+Епохи: 12.
+
+Сформуйте Pumpjack молотком після підготовки Derrick. Звірте місце свердловини, енергопідведення та рідинний вихід із посібником; відведіть видобуту нафту в окремий резервуар.
+Попередні кроки: immersivepetroleum.depth.derrick.
+Ресурси й результати: `immersivepetroleum:pumpjack`.
+Квести: `V5_DEPTH_IP_PUMPJACK`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 9. Сервіс мастила не є генерацією
 
 Епохи: 12.
 
@@ -5983,18 +6255,95 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E12_ip_refinery_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 10. Окремий буфер нафтових фракцій
+
+Епохи: 12.
+
+Сформуйте Oil Tank та сплануйте окремі сховища для сирої нафти, сірчистого дизеля і мастила. Не змішуйте фракції в спільній трубі; для перевірки цього кроку потрібне саме формування танка молотком.
+Попередні кроки: immersivepetroleum.depth.pumpjack.
+Ресурси й результати: `immersivepetroleum:oiltank`.
+Квести: `V5_DEPTH_IP_OILTANK`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 11. Формування Distillation Tower
+
+Епохи: 12.
+
+Сформуйте колону після насосної станції й підготуйте виведення всіх фракцій та бітуму. Нативний експорт цієї збірки використовує60mB сирої нафти за операцію:15нафти(naphtha),20гасу,30сірчистого дизеля й10мастила; тверда побічна продукція має свій шанс.
+Попередні кроки: immersivepetroleum.depth.pumpjack.
+Ресурси й результати: `immersivepetroleum:distillation_tower`.
+Квести: `V5_DEPTH_IP_DISTILLATION`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 12. Формування Coker Unit
+
+Епохи: 12.
+
+Збудуйте коксувальну установку, щоб переробляти бітум у petcoke та сірчистий дизель. Перед запуском передбачте твердий і рідкий виходи; naphtha не є продуктом цього рецепта.
+Попередні кроки: immersivepetroleum.depth.distillation, immersivepetroleum.phase.05.
+Ресурси й результати: `immersivepetroleum:coker_unit`.
+Квести: `V5_DEPTH_IP_COKER`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 13. Гідроочищення перед чистим паливом
+
+Епохи: 12.
+
+Сформуйте Hydrotreater. Для sulfur_recovery подайте1000mB сірчистого дизеля й500mB води: рецепт дає1000mB чистого дизеля та5сірчаного пилу. Це окрема операція після дистиляції, тому колоні не слід приписувати чистий дизель.
+Попередні кроки: immersivepetroleum.depth.distillation.
+Ресурси й результати: `immersivepetroleum:hydrotreater`.
+Квести: `V5_DEPTH_IP_HYDROTREATER`.
+Доказом є native multiblock_formed після успішного createStructure молотком. Формування не підтверджує електроживлення, видобуток або виробничі цикли.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 14. Обслуговувати сумісну машину мастилом
+
+Епохи: 12.
+
+Наповніть Oil Can дозволеним мастилом і застосуйте її до сумісного мультиблока. Реальний код перевіряє кількість та LubricatedHandler.lubricateTile; у Survival витрачає мастило на30секунд змащення. Сам крафт порожньої каністри не зараховується.
+Попередні кроки: immersivepetroleum.depth.distillation, immersivepetroleum.phase.06.
+Ресурси й результати: `immersivepetroleum:oil_can`.
+Квести: `V5_DEPTH_IP_OIL_CAN`.
+Успішне застосування мастила Oil Can до підтриманої машини; це не доказ обсягу випуску.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 15. Заправний інтерфейс Portable Generator
+
+Епохи: 12.
+
+Під’єднайте підтриманий паливний контур до Portable Generator і взаємодійте наповненим контейнером із його баком. Нативне досягнення спрацьовує після успішного FluidUtil.interactWithFluidHandler: воно доводить обмін рідиною, а не генерацію FE або її кількість.
+Попередні кроки: immersivepetroleum.depth.hydrotreater.
+Ресурси й результати: `immersivepetroleum:gas_generator`.
+Квести: `V5_DEPTH_IP_GENERATOR`.
+Успішний обмін рідиною між контейнером і баком генератора; не виробництво енергії.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
+### 16. Правильно зорієнтувати Auto Lubricator
+
+Епохи: 12.
+
+Розмістіть Auto Lubricator біля підтриманого мультиблока відповідно до посібника. Нативна перевірка placement звіряє напрямок і isPlacedCorrectly. Після цього забезпечте резерв мастила; саме це досягнення не перевіряє його безперервне споживання.
+Попередні кроки: immersivepetroleum.depth.oil_can.
+Ресурси й результати: `immersivepetroleum:auto_lubricator`.
+Квести: `V5_DEPTH_IP_LUBRICATOR`.
+Коректне розміщення мастильника відносно сумісного мультиблока; не потік мастила і не прискорення.
+Повний optional IP/IE/FTB dispatch ще не запускався.
+
 Фінальні цілі:
-- Коксування потребує нового маршруту
-- Сервіс мастила не є генерацією
+- Сформувати шість перевірених мультиблоків після розвідки.
+- Розділити сірчистий дизель, clean diesel, petcoke та інші потоки без змішування.
+- Успішно змастити сумісну машину, правильно розмістити Auto Lubricator й перевірити паливний інтерфейс без приписування йому виміру FE/t.
 
 Міжмодові зв’язки:
 - {"mod_id": "immersiveengineering", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
 
 Прогалини та межі перевірки:
-- Офіційний pin є суміжною гілкою Minecraft1.21, а не підтвердженим тегом установленого JAR; версійні деталі обмежено експортом.
-- Етап immersivepetroleum.phase.02: окремий нативний рецепт не зафіксовано; джерело може бути кодом, loot або раніше наведеним рецептом.
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Точний офіційний release pin659c494e підтверджує4.5.0-39 і заявляє IE12.4.2-194. Повний optional IP/IE/FTB dispatch не запускався.
+- Кількості й наявність спеціальних інтеграцій визначаються експортом. Наприклад, oil.json використовує60mB, хоч посібник називає50; не вимагати непідтвердженого PNCplastic рецепта.
+- Це основна карта видобутку, переробки й обслуговування. Motorboat upgrades, декоративні виходи й безперервна продуктивність не оголошені окремо перевіреними механіками.
 
 Джерела:
 
@@ -6007,6 +6356,68 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/immersivepetroleum/recipes/immersiveengineering/crafting/jerrycan.json) — SHA перевірено
 - [immersivepetroleum:coker](../../content/research/evidence/technology_v5/immersivepetroleum/recipes/immersivepetroleum/coking/petcoke.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/immersivepetroleum/recipes/immersivepetroleum/auto_lubricator.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/removed_src/flaxbeard/immersivepetroleum/common/util/compat/computer/cctweaked/CCTUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/datagen/java/flaxbeard/immersivepetroleum/common/data/IPAdvancements.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/auto_lubricator.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/bitumen.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/cracking.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/duroplast.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/flarestack.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/gas_generator.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/gasoline.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/ice_breaker.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/kerosene.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_cokerunit.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_derrick.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_distillationtower.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_hydrotreater.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_oiltank.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/mb_pumpjack.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/motorboat.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/napalm.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/oil_can.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/paddles.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/petcoke.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/projector.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/reinforced_hull.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/root.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/rudders.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/generated/resources/data/immersivepetroleum/advancement/main/tank.json) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/client/render/RenderUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/IPContent.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/blocks/metal/GasGeneratorBlock.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/blocks/metal/SeismicSurveyBlock.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/blocks/tileentities/AutoLubricatorTileEntity.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/blocks/tileentities/GasGeneratorTileEntity.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/blocks/tileentities/SeismicSurveyTileEntity.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/cfg/ConfigUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/items/OilCanItem.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/util/AABBUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/util/RegistryUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/util/ResourceUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/util/Utils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/util/commands/CommandUtils.java) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/asphalt.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/cokerunit.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/derrick.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/distillationtower.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/flarestack.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/fluids.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/hydrotreater.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/lubricant.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/molotov.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/oiltank.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/plastics.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/portable_generator.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/projector.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/pumpjack.txt) — SHA перевірено
+- [джерело](https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/resources/assets/immersivepetroleum/manual/en_us/speedboat.txt) — SHA перевірено
+- [джерело](../../content/research/evidence/petroleum_core_next_v5/exported_recipes/distillationtower/oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/sulfur_recovery.json) — SHA перевірено
+- [джерело](../../content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/naphtha_cracking.json) — SHA перевірено
+- [джерело](../../content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/lubricant_cracking.json) — SHA перевірено
+- [джерело](../../content/research/evidence/petroleum_core_next_v5/exported_recipes/coking/petcoke.json) — SHA перевірено
 
 ## Industrial Foregoing
 

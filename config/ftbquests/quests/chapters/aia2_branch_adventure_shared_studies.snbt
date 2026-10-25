@@ -1301,6 +1301,49 @@
       "y": 26.0
     },
     {
+      "id": "0000191B130D550C",
+      "title": "П’ять слотів зі справжніми affix",
+      "description": [
+        "Знайдіть спорядження з affix у пригодницькій здобичі. Надягніть речі рідкості Common або вище на голову, груди, ноги та ступні, а зброю чи інший придатний предмет візьміть у руку. Звичайна залізна броня без компонента affix не підходить.",
+        "Native Frontier зараховує кожний слот окремо: це історія виконаних умов, а не вимір одночасного комплекту. Цей крок навчає відрізняти affix від ванільного зачарування."
+      ],
+      "icon": {
+        "id": "apotheosis:gem_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D70BEA08831D",
+        "0000A7F284447976"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000082FEAFB57377",
+          "type": "advancement",
+          "advancement": "apotheosis:progression/frontier"
+        },
+        {
+          "id": "00001261EB00CC23",
+          "type": "advancement",
+          "advancement": "aia2:stages/e20"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CB1BEE08C312",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 31.0
+    },
+    {
       "id": "00003727E9166E8E",
       "title": "Химера перед книгою архімага",
       "description": [
@@ -1349,7 +1392,7 @@
           "count": 4
         }
       ],
-      "x": 0.0,
+      "x": 9.0,
       "y": 31.0
     },
     {
@@ -2819,6 +2862,50 @@
       "y": 52.0
     },
     {
+      "id": "00009F6FCA114D37",
+      "title": "Ascent: спорядження й загарбник",
+      "description": [
+        "Підготуйте предмети Uncommon або вище для п’яти груп слотів Frontier. Потім переможіть справжнього Apothic Invader: звичайний моб із перейменованим предметом не задовольняє invader-predicate.",
+        "Досягнення Ascent поєднує всі equipment-criteria та native player-killed умову. Вони накопичуються в часі; квест не вимагає або не перевіряє одночасне носіння одного комплекту."
+      ],
+      "icon": {
+        "id": "apotheosis:timeworn_fabric",
+        "count": 1
+      },
+      "dependencies": [
+        "0000191B130D550C",
+        "00007D0BF8AEECF7",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006F421933BB05",
+          "type": "advancement",
+          "advancement": "apotheosis:progression/ascent"
+        },
+        {
+          "id": "0000AE77DB079216",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DA884B35EDC6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:leather",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 31.0
+    },
+    {
       "id": "0000B31CFB87406C",
       "title": "Випробування високої темної школи",
       "description": [
@@ -2862,6 +2949,50 @@
       "rewards": [],
       "x": 2.0,
       "y": 52.0
+    },
+    {
+      "id": "0000D1077E8F7FCE",
+      "title": "Summit: Rare та перемога над Wither",
+      "description": [
+        "Освойте перековку до Rare й замініть щонайменше раз кожну з п’яти груп спорядження на Rare або вище. Для другої частини досягнення особисто переможіть Wither.",
+        "Перевіряється штатний Summit: його equipment-предикати читають рідкість affix, а окремий criterion — справжнє вбивство minecraft:wither. Це не завдання з наявності Nether Star, і нагорода не видає наступну машину."
+      ],
+      "icon": {
+        "id": "apotheosis:luminous_crystal_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "00009F6FCA114D37",
+        "0000BE353E701C15",
+        "00003B2B3DC45B72"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A56915305E0",
+          "type": "advancement",
+          "advancement": "apotheosis:progression/summit"
+        },
+        {
+          "id": "0000E0651717FFC5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e31"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000007C4357EA6D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lapis_lazuli",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 31.0
     },
     {
       "id": "00003B406889245F",
@@ -3472,6 +3603,50 @@
       ],
       "x": 10.0,
       "y": 52.0
+    },
+    {
+      "id": "0000721F070043E0",
+      "title": "Pinnacle: Epic та дракон",
+      "description": [
+        "Надягніть або візьміть у руку affix-спорядження Epic чи Mythic у всіх п’яти групах слотів і переможіть Ender Dragon. Вищий World Tier слід обирати свідомо після підготовки бойової стійкості й способу відступу.",
+        "Перевірка використовує штатний Pinnacle: компоненти рідкості й player-killed критерій дракона. Вона не міряє одночасний набір, не видає Mythic-спорядження та не обходить відкриття виміру AIA2."
+      ],
+      "icon": {
+        "id": "apotheosis:arcane_sands",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D1077E8F7FCE",
+        "000032E6B1CF4F82",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CBD3EE9487B8",
+          "type": "advancement",
+          "advancement": "apotheosis:progression/pinnacle"
+        },
+        {
+          "id": "0000D0888CFC69DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004FC1FA6F112B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:paper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 31.0
     },
     {
       "id": "0000382737A3AC92",

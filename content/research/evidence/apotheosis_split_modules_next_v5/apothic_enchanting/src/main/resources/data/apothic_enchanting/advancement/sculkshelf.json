@@ -1,0 +1,39 @@
+{
+    "parent": "apothic_enchanting:deepshelf",
+    "display": {
+        "icon": {
+            "id": "apothic_enchanting:echoing_sculkshelf"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.sculkshelf"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.sculkshelf.desc"
+        },
+        "frame": "task"
+    },
+    "criteria": {
+        "echoing": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:echoing_sculkshelf"]
+                }]
+            }
+        },
+        "soul_touched": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:soul_touched_sculkshelf"]
+                }]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "echoing",
+            "soul_touched"
+        ]
+    ]
+}

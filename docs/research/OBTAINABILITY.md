@@ -4,6 +4,100 @@
 Наведені висновки перевірені за конкретними версіями й SHA файлів;
 повне Survival-проходження та сторонні overrides ще не тестувалися.
 
+[Структуровані докази](../../content/audit/v5-source-gaps-core-depth.json).
+
+## `apotheosis:gem`
+
+Статус: `source_verified_native_path`; версія: 8.9.0.
+
+Apotheosis8.9.0 додає компонентні самоцвіти через global GemLootModifier. Shipped gem_loot_injection має25% шанс для minecraft chests.* та20% для інших зазначених таблиць. Обраний Gem перетворюється на ItemStack(Items.GEM) із gem-ID та purity. Це навмисний динамічний loot, а не відсутній crafting-рецепт. Конфігурації й сторонні overrides можуть змінити шанс.
+
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/gradle.properties — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/loot/modifiers/GemLootModifier.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/Gem.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/main/java/dev/shadowsoffire/apotheosis/socket/gem/GemRegistry.java — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/loot_modifiers/gem_loot_injection.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/neoforge/loot_modifiers/global_loot_modifiers.json — SHA перевірено
+- https://github.com/Shadows-of-Fire/Apotheosis/blob/7dd7cec26830074f1745529eb8f1f533092733d0/src/generated/resources/data/apotheosis/gems/core/solar.json — SHA перевірено
+
+## `immersivepetroleum:diesel_sulfur_bucket`
+
+Статус: `source_verified_native_path`; версія: 4.5.0-39.
+
+Дистиляція сирої нафти і коксування бітуму дають immersivepetroleum:diesel_sulfur. Точний IPContent реєструє DIESEL_SULFUR через IPFluid.makeFluid("diesel_sulfur"); IPFluidEntry.make створює відповідне diesel_sulfur_bucket. Наповніть порожнє відро готовою рідиною; clean diesel належить наступному Hydrotreater.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties — SHA перевірено
+- https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/src/main/java/flaxbeard/immersivepetroleum/common/fluids/IPFluid.java — SHA перевірено
+- ../../content/research/evidence/petroleum_core_next_v5/official/src/main/java/flaxbeard/immersivepetroleum/common/IPContent.java — SHA перевірено
+- ../../content/research/evidence/petroleum_core_next_v5/exported_recipes/distillationtower/oil.json — SHA перевірено
+- ../../content/research/evidence/petroleum_core_next_v5/exported_recipes/coking/petcoke.json — SHA перевірено
+
+[Структуровані докази](../../content/audit/v5-source-gaps-fluids.json).
+
+## `pneumaticcraft:lpg_bucket`
+
+Статус: `source_verified_native_path`; версія: 8.2.23.
+
+Thermopneumatic Processing Plant перетворює100mB бензину(c:gasoline) на80mB LPG при мінімум573K і тиску2.0. Перемістіть LPG у Fluid Tank і наповніть порожнє відро через його контейнерний слот: нативний processFluidItem переносить рідину в контейнер і повертає pneumaticcraft:lpg_bucket. Точна версія8.2.23 явно зв’язує LPG↔LPG_BUCKET; окремий рецепт предмета-відра не потрібен.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/gradle.properties — SHA перевірено
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/registry/ModItems.java — SHA перевірено
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/fluid/FluidLPG.java — SHA перевірено
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractFluidTankBlockEntity.java — SHA перевірено
+- https://github.com/TeamPneumatic/pnc-repressurized/blob/98e656af1977a2c0587c563c90c7d06e0d30c091/src/main/java/me/desht/pneumaticcraft/common/block/entity/AbstractPneumaticCraftBlockEntity.java — SHA перевірено
+- ../../content/research/evidence/fluid_gaps_next_v5/export/recipes/pneumaticcraft/thermo_plant/lpg.json — SHA перевірено
+
+## `industrialforegoing:meat_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Контекст офіційних джерел показує: SlaughterFactory.work наповнює MEAT після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
+
+## `industrialforegoing:pink_slime_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Контекст офіційних джерел показує: SlaughterFactory.work наповнює PINK_SLIME після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SlaughterFactoryTile.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
+
+## `industrialforegoing:ether_gas_bucket`
+
+Статус: `native_context_requires_exact_release_verification`; версія: 1.21-3.6.38.
+
+Контекст офіційних джерел показує: FluidLaserBase створює ETHER за нативним laser_drill_fluid/ether із вимогою відповідної сутності; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається.
+
+- ../../content/research/evidence/source_gap_followup_v5/installed_metadata.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/resourceproduction/tile/FluidLaserBaseTile.java — SHA перевірено
+- ../../content/research/evidence/fluid_gaps_next_v5/export/recipes/industrialforegoing/laser_drill_fluid/ether.json — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
+
 [Структуровані докази](../../content/audit/v5-source-gaps-followup.json).
 
 ## `actuallyadditions:canola_oil_bucket`
@@ -225,6 +319,10 @@ Bark Knife (DruidKnifeItem) на spruce_log або spruce_wood створює Ro
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/generator/tile/BioReactorTile.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
 
 ## `industrialforegoing:sewage_bucket`
 
@@ -237,6 +335,10 @@ Bark Knife (DruidKnifeItem) на spruce_log або spruce_wood створює Ro
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/SewerTile.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
 
 ## `industrialforegoing:sludge_bucket`
 
@@ -249,6 +351,10 @@ Bark Knife (DruidKnifeItem) на spruce_log або spruce_wood створює Ro
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/CHANGELOG.md — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/module/ModuleCore.java — SHA перевірено
 - https://github.com/InnovativeOnlineIndustries/Industrial-Foregoing/blob/1f8a32527522a0b2a54cf1d7c88a6a2a1e5146e9/src/main/java/com/buuz135/industrial/block/agriculturehusbandry/tile/PlantGathererTile.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/gradle.properties — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/build.gradle — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluidInstance.java — SHA перевірено
+- https://github.com/InnovativeOnlineIndustries/Titanium/blob/f8f0461458a4a3a54aa0239c9243a7716b7be436/src/main/java/com/hrznstudio/titanium/fluid/TitaniumFluid.java — SHA перевірено
 
 ## `irons_spellbooks:wimpy_spell_book`
 

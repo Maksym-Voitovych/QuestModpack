@@ -1,0 +1,38 @@
+{
+    "parent": "apothic_enchanting:seashelf",
+    "display": {
+        "icon": {
+            "id": "apothic_enchanting:heart_seashelf"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.upgrade_seashelf"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.upgrade_seashelf.desc"
+        },
+        "frame": "task"
+    },
+    "criteria": {
+        "heart": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:heart_seashelf"]
+                }]
+            }
+        },
+        "crystal": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [{
+                    "items": ["apothic_enchanting:crystal_seashelf"]
+                }]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "heart", "crystal"
+        ]
+    ]
+}

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.3-alpha (native action goals та component-aware mana guard); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.4-alpha (Roots guard, Apotheosis/Petroleum depth); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 58 модів/60 записів,765 SHA-файлів у картах; 45 часткових карт і невивчений контент лишаються |
-| 3 | Карти прогресії | IN_PROGRESS | 13 core-карт DONE;45 часткових карт; повний перелік у REMAINING_COVERAGE |
-| 4 | Перебудова координат | DONE | Усі136глав,0накладань/зворотних/вертикальних; стара2784когорта1679→1129перетинів; UI окремо |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 361 новий квест від v4, з них84 у поточному блоці і49 native action цілей; решта старих ліній ще переглядається |
-| 6 | Перегляд нагород | DONE | 2877 item-нагород перевірено;84нові тематичні,2793старі з checkpoint не змінено;48команд збережено |
+| 2 | Дослідження механік | IN_PROGRESS | 58модів/60записів,928SHA-файлів у картах;43часткові карти й невивчений контент лишаються |
+| 3 | Карти прогресії | IN_PROGRESS | 15core-карт DONE;43часткові карти; наступні Roots/AA/split Apothic modules |
+| 4 | Перебудова координат | DONE | 137глав,0накладань/зворотних/вертикальних; стара2784когорта1679→1129перетинів; UI окремо |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 383нові квести відv4,22у поточному блоці;66nativeactionцілей; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 2899item-нагород перевірено;22нові тематичні,всі3145старі payload незмінні;48команд збережено |
 | 7 | Розширення рецептів | IN_PROGRESS | 603рецепти;34v5формули(33+1variant),602попередніJSON збережено; подальший баланс у плані |
-| 8 | Предмети без джерел | IN_PROGRESS | 2288важливихпредметів;29native-source доказів,одна Iron-книга виправлена;7fluid-bucket gap +49native-context +1implicit-codec |
+| 8 | Предмети без джерел | IN_PROGRESS | 2293важливихпредметів;32native-source докази;6IFfluid gaps+49nativecontext+1implicitcodec |
 | 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool і3creativeTablet producers закрито; guard player/pool exchange додано; прямі сторонні capability-виклики ще потребують аудиту |
-| 10 | Інтеграційні тести | IN_PROGRESS | 110Python/50JS/5237Java PASS;49actualMC@0.4.3 у2JVM,22mana-model і16DE-model; fullpack/JEI/TPS не запускалися |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.3—проміжний перевірений блок,0.5ще не готовий; коміти/пакет фіксуються нижче |
+| 10 | Інтеграційні тести | IN_PROGRESS | 117Python/50JS/5237Java PASS;49actualMC@0.4.4у2JVM;Roots18model/Bota22/DE16;fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.4—проміжний перевірений блок,0.5ще не готовий;коміти/пакет нижче |
 
 ## Окремий стан 48 епох
 
@@ -37,9 +37,9 @@
 | 07 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
-| 11 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 12 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | 117Python/50JS/5237Java PASS;49actualMC@0.4.4у2JVM;Roots18model/Bota22/DE16;fullpack NOT RUN |
+| 11 | IN_PROGRESS | IN_PROGRESS (4) | 0.4.4—проміжний перевірений блок,0.5ще не готовий;коміти/пакет нижче |
+| 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 15 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
@@ -47,7 +47,7 @@
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
-| 20 | IN_PROGRESS | IN_PROGRESS (25) | TODO | DONE (static) |
+| 20 | IN_PROGRESS | IN_PROGRESS (30) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
 | 23 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
@@ -58,7 +58,7 @@
 | 28 | IN_PROGRESS | IN_PROGRESS (37) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS | DONE (static) |
-| 31 | IN_PROGRESS | IN_PROGRESS (22) | TODO | DONE (static) |
+| 31 | IN_PROGRESS | IN_PROGRESS (26) | TODO | DONE (static) |
 | 32 | IN_PROGRESS | IN_PROGRESS (24) | TODO | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 34 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
@@ -68,7 +68,7 @@
 | 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 41 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 41 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 42 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 43 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 44 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
@@ -93,18 +93,15 @@
 - Повний Windows-інстанс недоступний у хмарі; ручні перевірки не заявляти
   виконаними. Нічого не встановлено у C:\CurseForge користувача.
 
-## Власники незавершених файлів у поточній сесії
+## Власники та відновлення незавершених файлів
 
-- root: docs/PLAN/PROGRESS, скрипт 20, інтеграція генераторів, нагороди, Git.
-- native_guard_v4: companion Java/JAR typed FTB bridge.
-- guard_fix_v4: справжній Rhino-регресійний тест FTB overload.
-- dual_textures_v4: layout генератор/метрики/тести.
-- quests_v4: technology research maps і механічні квести.
-- magic_research_v5: magic/adventure research maps і квести.
-- recipes_v4: Creative Essence/Pool, альтернативи та баланс рецептів.
+Поточну інтеграцію, тести й Git веде root. Допоміжні агенти цього блоку
+завершилися або вичерпали доступний ліміт; активних власників файлів немає.
+Не вважати старі імена агентів доказом незавершеної фонової роботи.
 
-У новій сесії перевірити активність цих агентів, фактичні файли та Git;
-імена агентів не гарантують, що попередні процеси досі працюють.
+Portable результати й SHA збережено в `content/audit/v5-pending-research.json`.
+Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split Apothic maps
+продовжити за чергою нижче. Не покладатися на /tmp або історію чату.
 
 ### 2026-10-23 — FTB hotfix 0.4.1-alpha
 
@@ -283,3 +280,17 @@
 - Перевірено: JDK21/NeoForge build і5237Java assertions;2Rootstests із18умовами actual-handler/real-policy у модельованому Minecraft host;18installer tests PASS. Реальний optional Roots dispatch ще НЕ запускався; нових proof-квестів цей hook не видає.
 - Runtime-контент на цьому кроці незмінний:3145квестів,603рецепти,390предметів/PNG,96виробничих ключів. Надалі завершити готову карту Apotheosis/12квестів, nativeконтракти, LPG source та точкові IP-предметні виправлення.
 - Перервані підзадачі Roots/AA/IP залишили portable source-evidence; незавершені карти/чернетки не вважаються інтегрованими. Коли допоміжні агенти вичерпали ліміт, інтеграцію й перевірки продовжує root.
+
+### 2026-10-25 — core-depth checkpoint0.4.4
+
+- Roots hotfix `396b539cb02e99c7cbef84d0106a204beab3ea51` збережено окремо та push у main підтверджено.
+- DONE поточного контентного підблоку:22нові квести(12Apotheosis/10Petroleum),17нативних контрактів і3purity advancementJSON. Runtime3167квестів/137глав/603рецепти/390предметів іPNG/96ключів. Нових рецептів/предметів/текстур0.
+- DONE двох основних карт:Apotheosis8.9.0 та Petroleum4.5.0-39. Усього15core/43partial/58mapped mods. Roots точні source отримано й збережено, але поглиблення карти лишається IN_PROGRESS.
+- Два збережені IP-таргети виправлено на diesel_sulfur за точним export. Усі3145старіID/task/reward/dependencies та старі нагороди збережено; повний603-entryrecipebundle незмінний. Результат у implementation/core-depth-next-preservation.json.
+- Source-аудит2293предметів:32native-source докази; LPG підтверджено exact8.2.23. Динамічний Gem loot та sulfurousdieselbucket підтверджено без crafting-заглушок. Залишилося6IFfluid gaps; точніIF3.6.38/Titanium4.0.43 артефакти BLOCKED, новіші source не підміняють їх.
+- PASS:117Python/50Node/5237Java та build;18Rootsactual-handler/real-policy модельованих умов. Реальний мінімальний MC0.4.4:49assertions у2JVM,650тіків і restart SavedData. Fullpack optional/JEI/UI/Survival/TPS NOT RUN.
+- Повторна генерація1148runtime-файлів byte-identical. SNBT/DAG/ID/key/source/reward/layout checks PASS; усі137глав без накладань/зворотних/вертикальних/довгих локальних ліній. Перетинів1133, як до22новихцілей. Однакова2784когорта1679→1129.
+- README/CHANGELOG/інсталятор/звіти й ручні сценарії оновлено; читабельний звіт docs/AIA2_0.4.4_CHECKPOINT.uk.md. Повний0.5не оголошено готовим.
+- Наступна конкретна дія: основна карта Roots Classic (вівтар/Imbuer/standing stones/реальні ритуальні результати), потім AAcore. Split Apothic1.6.4/1.4.0 джерела й SHA в pending-research. Після них решта43часткових карт і старі обов’язкові лінії48епох.
+- Пакет `/workspace/shared/downloads/AIA2-runtime-0.4.4-alpha.zip` пройшов CRC/повний SHA-маніфест. Розпакований інсталятор: dry-run0записів; справжній тимчасовий upgrade резервує0.4.3JAR, ставить0.4.4 і зберігаєworld-marker. User Windows інстанс не змінювався.
+- Проміжне пакування відхилено через зміну report-файла під час обчислення маніфесту. Повторний пакет на стабільному дереві пройшов перевірку; надалі завершувати метадані ПЕРЕД пакуванням і не змінювати включені файли до його завершення.

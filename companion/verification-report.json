@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "0.4.3-alpha",
+  "version": "0.4.4-alpha",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "java": 21,
@@ -40,9 +40,9 @@
     "command": "JAVA_HOME=<JDK21> GRADLE_USER_HOME=<cached-gradle-home> companion/gradlew -p companion --offline build --no-daemon --console=plain",
     "gradle": "9.2.1",
     "jar_created": true,
-    "jar_path": "mods/aia2-machine-guard-0.4.3-alpha.jar",
-    "jar_bytes": 90368,
-    "jar_sha256": "a03e518c2da0b63311426490b5c1a2721cb31006628ecb777d746ddd002aba17",
+    "jar_path": "mods/aia2-machine-guard-0.4.4-alpha.jar",
+    "jar_bytes": 91862,
+    "jar_sha256": "6af9757b36a623bbefe5b8d8066ffb8cde8979f77f5392d4c3b41a9787ea1fd1",
     "zip_crc_verified": true,
     "neoforge_dependency_resolved": "net.neoforged:neoforge:21.1.264",
     "guard_policy_assertions": 119,
@@ -60,7 +60,7 @@
     "piston-data.mojang.com",
     "libraries.minecraft.net"
   ],
-  "coverage": "Minimal native server0.4.3 passed49 assertions in2JVMs including SavedData restart and vanilla bindings. Botania player/pool component guards compiled and real helper/model policy22assertions passed, but optional Botania dispatch absent. DE/Create/Mek/AE2/FTB optional hooks remain untested in the fullpack.",
+  "coverage": "Minimal native Minecraft0.4.4 passed49 assertions in2JVMs with restart SavedData. Roots mortar actual handler18, Botania helper22 and DE handler16 assertions passed in modeled hosts; optional Roots/Botania/DE/Create/Mek/AE2/FTB dispatch absent.",
   "jdk_download": {
     "url": "https://download.oracle.com/java/21/archive/jdk-21.0.9_linux-x64_bin.tar.gz",
     "sha256": "0854421306468559813f1e5068e036213f9710e1e239d823c0d63552a1259e25",
@@ -266,12 +266,19 @@
     "version_scope": "Source pin confirms3.1.4 API; actual installed build633 optional Mixin binding still needs the pack launch."
   },
   "optional_botania_mixin_binding_verified_in_game": false,
-  "minecraft_version_tested": "0.4.3-alpha",
+  "minecraft_version_tested": "0.4.4-alpha",
   "creative_mana_guard": {
     "passed": 22,
     "host": "real CreativeManaGuard and GuardPolicy, modeled Minecraft host",
     "live_botania_dispatch": false
   },
   "native_smoke_report": "companion/native-smoke-report.json",
-  "mixin_binding_scope": "Actual vanilla ticker/crafting bindings only; optional Botania/DE/Create/Mek/AE2 mixins not dispatched in minimal server"
+  "mixin_binding_scope": "Actual vanilla ticker/crafting bindings only; optional Botania/DE/Create/Mek/AE2 mixins not dispatched in minimal server",
+  "roots_mortar_guard": {
+    "status": "passed_source_contract_compilation_and_modeled_handler",
+    "assertions": 18,
+    "audit": "content/audit/v5-roots-mortar-guard.json",
+    "optional_roots_dispatch": "not_run",
+    "new_tick_scan": false
+  }
 }

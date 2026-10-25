@@ -1,20 +1,20 @@
 {
-  "version": "0.4.3-alpha",
+  "version": "0.4.4-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3145,
-    "substantive_quests": 3049,
+    "quests_total": 3167,
+    "substantive_quests": 3071,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 361,
+    "quests_added_this_release": 383,
     "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 0,
-    "chapters": 136,
+    "chapters": 137,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1444,
+    "optional_quests": 1466,
     "native_recipes": 603,
     "native_recipes_added_this_release": 34,
     "dual_key_recipes": 96,
@@ -35,12 +35,12 @@
     "authored_quest_mod_namespaces_excluding_vanilla": 64,
     "all_task_mod_namespaces_excluding_vanilla": 66,
     "new_recipe_target_namespaces": 22,
-    "new_quest_primary_mods": 19,
-    "new_quest_item_namespaces": 23,
+    "new_quest_primary_mods": 48,
+    "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 84,
-    "native_action_quests": 49,
-    "complete_core_maps": 13,
+    "quests_added_since_last_checkpoint": 22,
+    "native_action_quests": 66,
+    "complete_core_maps": 15,
     "mapped_mods": 58
   },
   "confirmed_fixes": [
@@ -58,11 +58,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 110,
+      "passed": 117,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 17,
+      "includes_installer_tests": 18,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -73,7 +73,7 @@
       "passed": 49,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.3-alpha",
+      "version_tested": "0.4.4-alpha",
       "report": "companion/native-smoke-report.json",
       "scope": "Real vanilla Crafter/furnace/FakePlayer fixtures and SavedData; full Create/Mek/FTB runtime absent"
     },
@@ -86,11 +86,12 @@
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
       "status": "passed",
-      "runtime_files": 1144,
-      "changed": []
+      "runtime_files": 1148,
+      "changed": [],
+      "scope": "Complete generator run finished before dependent validators; checked all kubejs/config/mods file hashes."
     },
-    "jar_sha256": "a03e518c2da0b63311426490b5c1a2721cb31006628ecb777d746ddd002aba17",
-    "jar_path": "mods/aia2-machine-guard-0.4.3-alpha.jar",
+    "jar_sha256": "6af9757b36a623bbefe5b8d8066ffb8cde8979f77f5392d4c3b41a9787ea1fd1",
+    "jar_path": "mods/aia2-machine-guard-0.4.4-alpha.jar",
     "archive_verification_command": "python tools/package_runtime.py",
     "packaged_installer_dry_run": "passed after extracting the generated ZIP; no backup/runtime write or test-world change",
     "archive_crc_and_all_sha256_entries": "passed",
@@ -105,7 +106,12 @@
       "host": "real CreativeManaGuard and GuardPolicy, modeled Minecraft host",
       "live_botania_dispatch": false
     },
-    "full_pack_optional_mod_dispatch": "not_run"
+    "full_pack_optional_mod_dispatch": "not_run",
+    "roots_mortar_guard_assertions": {
+      "passed": 18,
+      "host": "actual redirect handler + real GuardPolicy, modeled Minecraft host",
+      "live_roots_dispatch": false
+    }
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -115,10 +121,10 @@
     "Long-term gameplay balance, economy and TPS under real automation load",
     "Additional native caches/passive armor/Curios/component variants beyond documented hooks",
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately",
-    "49newnativeactiongoals and component-aware creative tablet supply paths require fullpack dispatch; see docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md"
+    "66nativeactiongoals and exact Roots mortar interaction require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md"
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.3-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.4-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -134,5 +140,7 @@
   "draconic_cache_fix": "implementation/draconic-cache-v5-audit.json",
   "development_baseline_commit": "90ab63f",
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
-  "component_variant_balance": "implementation/component-variants-v5-audit.json"
+  "component_variant_balance": "implementation/component-variants-v5-audit.json",
+  "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
+  "checkpoint_preservation": "implementation/core-depth-next-preservation.json"
 }

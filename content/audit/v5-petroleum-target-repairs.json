@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "mod": "immersivepetroleum",
+  "installed_version": "4.5.0-39",
+  "reason_uk": "Дві збережені optional цілі вимагали рідин, які не виходять з описаного процесу. Виправляються лише їхні предметні цілі й пояснення.",
+  "sources": [
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/official/gradle.properties",
+      "sha256": "478f25be1a681f3fcaa60850f4bca509ca2725901827778ffa38df46f7cb25e5",
+      "url": "https://github.com/TwistedGate/ImmersivePetroleum/blob/659c494e044a87137547b5305bb267d2a73ab702/gradle.properties",
+      "pin": "659c494e044a87137547b5305bb267d2a73ab702",
+      "verified": true,
+      "version_match": true,
+      "scope_uk": "Exact4.5.0-39 source; code/manual semantics, not live fullpack dispatch."
+    },
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/exported_recipes/distillationtower/oil.json",
+      "sha256": "dfecb1ed2403339f76850e781595c54637fa948700086c3b3be82497929ae5e3",
+      "url": "user-supplied:export/recipes/immersivepetroleum/distillationtower/oil.json",
+      "verified": true,
+      "scope_uk": "Точний рецепт наданого експорту; джерело кількостей переважає текст посібника."
+    },
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/sulfur_recovery.json",
+      "sha256": "afbcb3b577f19ce750842e4300137f7c8065a23ccccef7264bb5c2e054628a77",
+      "url": "user-supplied:export/recipes/immersivepetroleum/hydrotreater/sulfur_recovery.json",
+      "verified": true,
+      "scope_uk": "Точний рецепт наданого експорту; джерело кількостей переважає текст посібника."
+    },
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/naphtha_cracking.json",
+      "sha256": "5b2aa4231d32caedeff590ed3467b9aab913eb2c1389db50de6096cfffc11280",
+      "url": "user-supplied:export/recipes/immersivepetroleum/hydrotreater/naphtha_cracking.json",
+      "verified": true,
+      "scope_uk": "Точний рецепт наданого експорту; джерело кількостей переважає текст посібника."
+    },
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/exported_recipes/hydrotreater/lubricant_cracking.json",
+      "sha256": "827f9f6b75873110e98649478f2455ace9a169d099d5c4c9044e680685afa843",
+      "url": "user-supplied:export/recipes/immersivepetroleum/hydrotreater/lubricant_cracking.json",
+      "verified": true,
+      "scope_uk": "Точний рецепт наданого експорту; джерело кількостей переважає текст посібника."
+    },
+    {
+      "path": "content/research/evidence/petroleum_core_next_v5/exported_recipes/coking/petcoke.json",
+      "sha256": "088aaaf9b55ed9fb6b214e1194c3d51dcfd50be172902f86d1127db8fc7e83c6",
+      "url": "user-supplied:export/recipes/immersivepetroleum/coking/petcoke.json",
+      "verified": true,
+      "scope_uk": "Точний рецепт наданого експорту; джерело кількостей переважає текст посібника."
+    }
+  ],
+  "changes": [
+    {
+      "quest": "V5_E12_ip_refinery_02",
+      "task_index": 2,
+      "from": "immersivepetroleum:diesel_bucket",
+      "to": "immersivepetroleum:diesel_sulfur_bucket"
+    },
+    {
+      "quest": "V5_E12_ip_refinery_03",
+      "task_index": 2,
+      "from": "immersivepetroleum:naphtha_bucket",
+      "to": "immersivepetroleum:diesel_sulfur_bucket"
+    }
+  ]
+}

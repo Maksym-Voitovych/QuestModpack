@@ -249,6 +249,9 @@ allthemodium:vibranium_plate,34,explicit_recipe_source,2,0,allthemodium:vibraniu
 allthemodium:vibranium_rod,34,explicit_recipe_source,2,0,allthemodium:vibranium_rod | productivemetalworks:casting/atm/vibranium_rod,,,1,
 allthemodium:vibranium_upgrade_smithing_template,34,explicit_recipe_source,1,1,allthemodium:smithing/vibranium_upgrade_smithing_template,allthemodium/arch2,,2,
 apotheosis:arcane_sands,20,explicit_recipe_source,1,0,apotheosis:salvaging/affix_item/epic,,,2,"Матеріал отримується у Salvaging Table зі спорядження епічного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/epic містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно."
+apotheosis:augmenting_table,20,explicit_recipe_source,1,1,apotheosis:augmenting_table,apotheosis/blocks/augmenting_table,,1,
+apotheosis:gem,20,verified_native_source_not_a_recipe_gap,0,0,,,,2,"Apotheosis8.9.0 додає компонентні самоцвіти через global GemLootModifier. Shipped gem_loot_injection має25% шанс для minecraft chests.* та20% для інших зазначених таблиць. Обраний Gem перетворюється на ItemStack(Items.GEM) із gem-ID та purity. Це навмисний динамічний loot, а не відсутній crafting-рецепт. Конфігурації й сторонні overrides можуть змінити шанс."
+apotheosis:gem_case,20,explicit_recipe_source,1,1,apotheosis:gem_case,apotheosis/blocks/gem_case,,1,
 apotheosis:gem_cutting_table,20,explicit_recipe_source,1,1,apotheosis:gem_cutting_table,apotheosis/blocks/gem_cutting_table,,1,
 apotheosis:gem_dust,20,explicit_recipe_source,6,0,apotheosis:salvaging/gem/chipped | apotheosis:salvaging/gem/cracked | apotheosis:salvaging/gem/flawed | apotheosis:salvaging/gem/flawless | apotheosis:salvaging/gem/normal,,,2,Обробник AdventureEvents.gemSmashing(AnvilLandEvent) замінює предметні сутності apotheosis:gem у клітині приземлення ковадла на gem_dust у тій самій кількості. Це навмисна світова дія; відсутність crafting JSON не означає прогалину.
 apotheosis:godforged_pearl,20,explicit_recipe_source,1,0,apotheosis:salvaging/affix_item/mythic,,,1,"Матеріал отримується у Salvaging Table зі спорядження міфічного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/mythic містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно."
@@ -256,7 +259,10 @@ apotheosis:luminous_crystal_shard,20,explicit_recipe_source,1,0,apotheosis:salva
 apotheosis:mysterious_scrap_metal,20,explicit_recipe_source,1,0,apotheosis:salvaging/affix_item/common,,,1,"Матеріал отримується у Salvaging Table зі спорядження звичайного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/common містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно."
 apotheosis:reforging_table,20,explicit_recipe_source,1,1,apotheosis:reforging_table,apotheosis/blocks/reforging_table,,1,
 apotheosis:salvaging_table,20,explicit_recipe_source,1,1,apotheosis:salvaging_table,apotheosis/blocks/salvaging_table,,1,
-apotheosis:sigil_of_withdrawal,20,explicit_recipe_source,1,0,apotheosis:sigil_of_withdrawal,,,1,
+apotheosis:sigil_of_enhancement,20,explicit_recipe_source,1,0,apotheosis:sigil_of_enhancement,,,1,
+apotheosis:sigil_of_rebirth,20,explicit_recipe_source,1,0,apotheosis:sigil_of_rebirth,,,1,
+apotheosis:sigil_of_socketing,20,explicit_recipe_source,1,0,apotheosis:sigil_of_socketing,,,1,
+apotheosis:sigil_of_withdrawal,20,explicit_recipe_source,1,0,apotheosis:sigil_of_withdrawal,,,2,
 apotheosis:simple_reforging_table,20,explicit_recipe_source,1,1,apotheosis:simple_reforging_table,apotheosis/blocks/simple_reforging_table,,1,
 apotheosis:timeworn_fabric,20,explicit_recipe_source,1,0,apotheosis:salvaging/affix_item/uncommon,,,1,"Матеріал отримується у Salvaging Table зі спорядження незвичайного рівня affix-rarity. Нативний рецепт apotheosis:salvaging/affix_item/uncommon містить вихід у outputs[].stack. Це пропуск парсера джерел, не відсутній рецепт; звичайний верстак додавати не потрібно."
 apothic_enchanting:basic_bookshelf,20,explicit_recipe_source,1,1,apothic_enchanting:basic_bookshelf,apothic_enchanting/blocks/basic_bookshelf,,1,
@@ -957,9 +963,8 @@ immersiveengineering:wirecoil_electrum_ins,8,explicit_recipe_source,1,0,immersiv
 immersiveengineering:wirecutter,8,explicit_recipe_source,1,0,immersiveengineering:crafting/wirecutter,,,2,
 immersivepetroleum:bitumen,12,explicit_recipe_source,1,0,immersivepetroleum:distillationtower/oil,,,1,"Точний installed рецепт immersivepetroleum:distillationtower/oil має byproducts[0].output.id=immersivepetroleum:bitumen із chance0.07. Це реальний побічний продукт дистиляції, який старий парсер не читав; додатковий crafting-рецепт зруйнував би логіку нафтохімії."
 immersivepetroleum:crudeoil_bucket,12,previous_native_context_requires_runtime,0,0,,,,1,Native fluid-filled bucket; no ordinary item-output recipe is expected. Native fluid production and compatible filling remain runtime checks.
-immersivepetroleum:diesel_bucket,12,verified_native_source_not_a_recipe_gap,0,0,,,,1,Нативний Hydrotreater за sulfur_recovery перетворює diesel_sulfur у immersivepetroleum:diesel. IPFluidEntry.make зв’язує рідину diesel із diesel_bucket; відро наповнюється готовим десульфурованим паливом. Не плутати з окремим diesel_sulfur_bucket.
+immersivepetroleum:diesel_sulfur_bucket,12,verified_native_source_not_a_recipe_gap,0,0,,,,2,"Дистиляція сирої нафти і коксування бітуму дають immersivepetroleum:diesel_sulfur. Точний IPContent реєструє DIESEL_SULFUR через IPFluid.makeFluid(""diesel_sulfur""); IPFluidEntry.make створює відповідне diesel_sulfur_bucket. Наповніть порожнє відро готовою рідиною; clean diesel належить наступному Hydrotreater."
 immersivepetroleum:lubricant_bucket,12,verified_native_source_not_a_recipe_gap,0,0,,,,1,"Distillation Tower виробляє мастило як рідинний result у рецепті oil. IPContent реєструє цю рідину, а IPFluidEntry.make створює відповідне lubricant_bucket. Повне відро є результатом наповнення рідиною, не пропущеним рецептом верстака."
-immersivepetroleum:naphtha_bucket,12,verified_native_source_not_a_recipe_gap,0,0,,,,1,"Distillation Tower виробляє нафта-фракція як рідинний result у рецепті oil. IPContent реєструє цю рідину, а IPFluidEntry.make створює відповідне naphtha_bucket. Повне відро є результатом наповнення рідиною, не пропущеним рецептом верстака."
 immersivepetroleum:oil_can,12,explicit_recipe_source,1,0,immersivepetroleum:oil_can,,,1,
 immersivepetroleum:petcoke,12,explicit_recipe_source,2,0,immersivepetroleum:coking/petcoke | immersivepetroleum:petcoke_block_to_items,,,1,
 immersivepetroleum:projector,12,explicit_recipe_source,1,0,immersivepetroleum:projector,,,1,
@@ -975,7 +980,7 @@ industrialforegoing:conveyor_insertion_upgrade,18,explicit_recipe_source,1,0,ind
 industrialforegoing:conveyor_splitting_upgrade,18,explicit_recipe_source,1,0,industrialforegoing:conveyor_splitting_upgrade,,,1,
 industrialforegoing:dryrubber,18,previous_native_context_requires_runtime,0,0,,,,3,"LatexProcessingUnitTile.onFinish inserts ModuleCore.DRY_RUBBER after consuming latex+water. Reviewed1.21branch, not exact installed binary."
 industrialforegoing:essence_bucket,18,previous_native_context_requires_runtime,0,0,,,,2,Native fluid-filled bucket; no ordinary item-output recipe is expected. Native fluid production and compatible filling remain runtime checks.
-industrialforegoing:ether_gas_bucket,18,unresolved_no_explicit_static_source,0,0,,,,2,
+industrialforegoing:ether_gas_bucket,18,unresolved_no_explicit_static_source,0,0,,,,2,"Контекст офіційних джерел показує: FluidLaserBase створює ETHER за нативним laser_drill_fluid/ether із вимогою відповідної сутності; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається."
 industrialforegoing:fertilizer,18,previous_native_context_requires_runtime,0,0,,,,4,"SewageComposterTile.onFinish inserts ModuleCore.FERTILIZER after consuming sewage. Reviewed1.21branch, not exact installed binary."
 industrialforegoing:infinity_backpack,18,explicit_recipe_source,1,0,aia2:v5/industrialforegoing/infinity_backpack,,,1,
 industrialforegoing:infinity_charger,18,explicit_recipe_source,1,1,aia2:v5/industrialforegoing/infinity_charger,industrialforegoing/blocks/infinity_charger,,1,
@@ -993,10 +998,10 @@ industrialforegoing:machine_frame_simple,18,explicit_recipe_source,1,1,aia2:v4/i
 industrialforegoing:machine_frame_supreme,18,explicit_recipe_source,1,1,aia2:v4/industrialforegoing/dissolution_chamber/supreme_machine_frame,industrialforegoing/blocks/machine_frame_supreme,,2,
 industrialforegoing:machine_settings_copier,18,explicit_recipe_source,1,0,industrialforegoing:machine_settings_copier,,,2,
 industrialforegoing:material_stonework_factory,18,explicit_recipe_source,1,1,aia2:v4/industrialforegoing/material_stonework_factory,industrialforegoing/blocks/material_stonework_factory,,1,
-industrialforegoing:meat_bucket,18,unresolved_no_explicit_static_source,0,0,,,,1,
+industrialforegoing:meat_bucket,18,unresolved_no_explicit_static_source,0,0,,,,1,"Контекст офіційних джерел показує: SlaughterFactory.work наповнює MEAT після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається."
 industrialforegoing:mob_imprisonment_tool,18,explicit_recipe_source,1,0,industrialforegoing:mob_imprisonment_tool,,,3,
 industrialforegoing:ore_laser_base,34,explicit_recipe_source,1,1,aia2:rebalance/industrialforegoing/ore_laser_base,industrialforegoing/blocks/ore_laser_base,,1,
-industrialforegoing:pink_slime_bucket,18,unresolved_no_explicit_static_source,0,0,,,,2,
+industrialforegoing:pink_slime_bucket,18,unresolved_no_explicit_static_source,0,0,,,,2,"Контекст офіційних джерел показує: SlaughterFactory.work наповнює PINK_SLIME після вбивства моба; TitaniumFluidInstance реєструє відповідне відро, а TitaniumFluid.getBucket зв’язує його з рідиною. Однак exact artifact IndustrialForegoing3.6.38 і Titanium4.0.43 не зіставлено з sourcepin, тому native шлях НЕ оголошено перевіреним. Випадковий рецепт відра не додається."
 industrialforegoing:plant_fertilizer,18,explicit_recipe_source,1,1,industrialforegoing:plant_fertilizer,industrialforegoing/blocks/plant_fertilizer,,1,
 industrialforegoing:plant_gatherer,18,explicit_recipe_source,1,1,aia2:v4/industrialforegoing/plant_gatherer,industrialforegoing/blocks/plant_gatherer,,2,
 industrialforegoing:plant_sower,18,explicit_recipe_source,1,1,aia2:v4/industrialforegoing/plant_sower,industrialforegoing/blocks/plant_sower,,1,
@@ -1992,7 +1997,7 @@ pneumaticcraft:logistics_frame_active_provider,14,explicit_recipe_source,2,0,pne
 pneumaticcraft:logistics_frame_passive_provider,14,explicit_recipe_source,2,0,pneumaticcraft:logistics_frame_passive_provider | pneumaticcraft:logistics_frame_passive_provider_self,,,2,
 pneumaticcraft:logistics_frame_requester,14,explicit_recipe_source,2,0,pneumaticcraft:logistics_frame_requester | pneumaticcraft:logistics_frame_requester_self,,,2,
 pneumaticcraft:logistics_frame_storage,14,explicit_recipe_source,2,0,pneumaticcraft:logistics_frame_storage | pneumaticcraft:logistics_frame_storage_self,,,1,
-pneumaticcraft:lpg_bucket,14,unresolved_no_explicit_static_source,0,0,,,,2,
+pneumaticcraft:lpg_bucket,14,verified_native_source_not_a_recipe_gap,0,0,,,,2,Thermopneumatic Processing Plant перетворює100mB бензину(c:gasoline) на80mB LPG при мінімум573K і тиску2.0. Перемістіть LPG у Fluid Tank і наповніть порожнє відро через його контейнерний слот: нативний processFluidItem переносить рідину в контейнер і повертає pneumaticcraft:lpg_bucket. Точна версія8.2.23 явно зв’язує LPG↔LPG_BUCKET; окремий рецепт предмета-відра не потрібен.
 pneumaticcraft:manometer,14,explicit_recipe_source,1,0,pneumaticcraft:manometer,,,3,
 pneumaticcraft:memory_stick,14,explicit_recipe_source,1,0,pneumaticcraft:memory_stick,,,2,
 pneumaticcraft:pcb_blueprint,14,explicit_recipe_source,1,0,pneumaticcraft:amadron/pcb_blueprint,,,1,"Наявна статична пропозиція Amadron обмінює 8 смарагдів на один предмет. Вихід збережено у output.resource.id; простий обхід output.id його пропускав. Офіційна книга пояснює отримання торгівлею, а не звичайним крафтом. Mechanic Villager також продає креслення на першому рівні, якщо конфіг whichTrades це дозволяє; це умовний запасний шлях."

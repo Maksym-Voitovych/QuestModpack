@@ -1,0 +1,39 @@
+{
+    "parent": "apothic_enchanting:enchanter",
+    "display": {
+        "icon": {
+            "id": "minecraft:experience_bottle"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.enchanting_stats"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.enchanting_stats.desc"
+        },
+        "frame": "task"
+    },
+    "criteria": {
+        "enchanted_item": {
+            "trigger": "apothic_enchanting:enchanted",
+            "conditions": {
+                "eterna": {
+                    "min": 10,
+                    "max": 2000
+                },
+                "quanta": {
+                    "min": 10,
+                    "max": 2000
+                },
+                "arcana": {
+                    "min": 10,
+                    "max": 2000
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enchanted_item"
+        ]
+    ]
+}

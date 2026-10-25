@@ -1,0 +1,39 @@
+{
+    "parent": "apothic_enchanting:quanta100",
+    "display": {
+        "icon": {
+            "id": "minecraft:experience_bottle"
+        },
+        "title": {
+            "translate": "advancements.apothic_enchanting.max_stats"
+        },
+        "description": {
+            "translate": "advancements.apothic_enchanting.max_stats.desc"
+        },
+        "frame": "goal"
+    },
+    "criteria": {
+        "enchanted_item": {
+            "trigger": "apothic_enchanting:enchanted",
+            "conditions": {
+                "eterna": {
+                    "min": 100,
+                    "max": 1000
+                },
+                "arcana": {
+                    "min": 100,
+                    "max": 1000
+                },
+                "quanta": {
+                    "min": 100,
+                    "max": 1000
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "enchanted_item"
+        ]
+    ]
+}

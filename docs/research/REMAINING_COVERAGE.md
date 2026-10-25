@@ -17,7 +17,7 @@
 | Extreme Reactors | technology_core | IN_PROGRESS — часткова карта |
 | Hostile Neural Networks | technology_core | IN_PROGRESS — часткова карта |
 | Immersive Engineering | technology_core | DONE — основна карта |
-| Immersive Petroleum | technology_core | IN_PROGRESS — часткова карта |
+| Immersive Petroleum | technology_core | DONE — основна карта |
 | Industrial Foregoing | technology_core | IN_PROGRESS — часткова карта |
 | Industrialization Overdrive | technology_addon | IN_PROGRESS — часткова карта |
 | Industrial Upgrade | technology_core | IN_PROGRESS — часткова карта |
@@ -95,7 +95,7 @@
 | Tom's Simple Storage | storage_logistics | TODO — карта не досліджена |
 | Trash Cans | storage_logistics | TODO — карта не досліджена |
 | XNet | storage_logistics | TODO — карта не досліджена |
-| Apotheosis | magic_core | IN_PROGRESS — часткова карта |
+| Apotheosis | magic_core | DONE — основна карта |
 | Ars Nouveau | magic_core | DONE — основна карта |
 | Botania Revived | magic_core | DONE — основна карта |
 | Enchanted | magic_core | IN_PROGRESS — часткова карта |
