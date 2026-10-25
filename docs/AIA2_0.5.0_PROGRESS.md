@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-25 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.5-alpha (Roots/AA та split Apothic core); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-26 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.6-alpha (MI/Oritech core та native process guards); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 60модів/62записи,1342SHA-файли;41часткова карта й невивчений контент |
-| 3 | Карти прогресії | IN_PROGRESS | 19core-карт DONE;41partial; наступні MI/Oritech |
-| 4 | Перебудова координат | DONE | 138глав без накладань/зворотних/вертикальних; стара2784когорта1679→1129;UIокремо |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 428новихквестів відv4;45у цьому блоці,86nativeaction+6teamproofs;старіобов’язкові IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 2947item-нагород перевірено;48нових entries;3167старих payloadнезмінні;48командзбережено |
-| 7 | Розширення рецептів | IN_PROGRESS | 606рецептів;37v5формул;603попередніcustomJSONнезмінні;3AAproducer замінено,resetзбережено |
-| 8 | Предмети без джерел | IN_PROGRESS | 2320предметів;35native-source доказів;6IFgaps+49nativecontext+1implicitcodec |
-| 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool і3creativeTablet producers закрито; guard player/pool exchange додано; прямі сторонні capability-виклики ще потребують аудиту |
-| 10 | Інтеграційні тести | IN_PROGRESS | 126Python/50JS/5237Java PASS;49actualMC@0.4.5у2JVM;Roots49model/Spawner15model;fullpack NOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.5—проміжний блок,0.5ще не готовий;commit/packageнижче |
+| 2 | Дослідження механік | IN_PROGRESS | 60 модів/62 записи,1528 SHA-файлів карт;39 часткових карт і невивчений контент |
+| 3 | Карти прогресії | IN_PROGRESS | 21 core-карта DONE;39 partial; MI/Oritech завершено в межах core scope |
+| 4 | Перебудова координат | DONE | 138 глав без накладань/зворотних/вертикальних; стара2784 когорта1679→1129; поточний граф1142 перетини |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 458 нових квестів відv4;30 у цьому блоці,97 native action+6 team proofs; старі обов’язкові IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 2977 item-нагород перевірено;30 нових; усі3212 попередні quest/reward payloads незмінні;48 команд збережено |
+| 7 | Розширення рецептів | IN_PROGRESS | 610 рецептів;41 v5-формула;606 попередніх custom entries незмінні;6 нових native producers замінено |
+| 8 | Предмети без джерел | IN_PROGRESS | 2349 предметів;35 native-source доказів;6 IF gaps+49 native context+1 implicit codec |
+| 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool/Tablet, MI replication keys/output і30 controller floors; інші сторонні capability paths ще потребують аудиту |
+| 10 | Інтеграційні тести | IN_PROGRESS | 143 Python/50JS/5237Java PASS;61 actualMC@0.4.6 у2JVM; MI53/Ori16/Roots48 нових model assertions; fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.6 — перевірений проміжний блок; package/installer PASS; фінальний commit/push нижче |
 
 ## Окремий стан 48 епох
 
@@ -33,49 +33,49 @@
 | 03 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 04 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 05 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
-| 06 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
+| 06 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
 | 07 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
-| 13 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 13 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 15 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
-| 16 | IN_PROGRESS | IN_PROGRESS (12) | TODO | DONE (static) |
+| 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS | DONE (static) |
+| 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
-| 22 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
+| 22 | IN_PROGRESS | IN_PROGRESS (7) | IN_PROGRESS (1 формул) | DONE (static) |
 | 23 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 25 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
+| 25 | IN_PROGRESS | IN_PROGRESS (10) | IN_PROGRESS (1 формул) | DONE (static) |
 | 26 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 27 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 28 | IN_PROGRESS | IN_PROGRESS (38) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
-| 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS | DONE (static) |
+| 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS (1 формул) | DONE (static) |
 | 31 | IN_PROGRESS | IN_PROGRESS (33) | TODO | DONE (static) |
-| 32 | IN_PROGRESS | IN_PROGRESS (24) | TODO | DONE (static) |
+| 32 | IN_PROGRESS | IN_PROGRESS (30) | IN_PROGRESS (2 формул) | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 34 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
-| 35 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
+| 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 37 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
 | 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 39 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
 | 41 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 42 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 43 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 44 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
+| 44 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 45 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 46 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 47 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 48 | IN_PROGRESS | IN_PROGRESS (9) | IN_PROGRESS | DONE (static) |
+| 48 | IN_PROGRESS | IN_PROGRESS (10) | IN_PROGRESS (26 формул) | DONE (static) |
 
 
 ## Сесії та контрольні точки
@@ -317,3 +317,25 @@ Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split
 - PLAN і таблицю48епох оновлено. Виправлено формат рядків10/11 після попереднього надто широкого regex; надалі оновлювати таблиці лише в межах окремих секцій. README/CHANGELOG/докладний checkpoint0.4.5 та manual acceptance збережено.
 - Наступна конкретна дія:основні карти Modern Industrialization2.5.10/Oritech1.2.13, потім решта41 часткової карти й невивчені моди, старі обов’язкові лінії48епох та глобальний баланс. Native Roots dayTime/subset-mutation/unfinished-restart залишаються TODO; точні IF-артефакти BLOCKED. Повний0.5 не оголошено готовим.
 - Пакет0.4.5 пройшов CRC/повний SHA-маніфест. Розпакований інсталятор:dry-run без записів; тимчасове справжнє оновлення резервує0.4.4JAR, ставить0.4.5 і зберігає маркер світу. Фінальний metadata-repack має зберегти всі1158 перевірені runtime+installer хеші. Windows-інстанс користувача не змінювався.
+
+### 2026-10-25 — MI/Oritech та мутації Roots: інтеграція в роботі
+
+- Відновлено8c699fa; backup: `/workspace/aia2-backups/before-industrial-core-20261025T121559Z/checkpoint-8c699fa.tar.gz`. Snapshot захищає всі3212квестів/138глав/606recipeIDs.
+- IN_PROGRESS: Modern Industrialization2.5.10 — власний direct-list crafter, оплачений кеш, нативні smelting/cutting/compost proxies і Replicator поза Recipe API. Oritech1.2.13 — cached value identity, Centrifuge/Refinery/Cooler/Tainted direct-list/commit та dust compaction.
+- DONE реалізації, ще не фінальної інтеграції: Roots full-input mutation match і щоденний noon.4релевантні Pythonтести PASS:48Roots actual-handler/native-predicate і14Oritech actual-handler/real-policy умов у модельованому host. Optional mod dispatch не запускався.
+- Наступна дія: завершити MI reload/cache регресії, точні controller floors і карти/квести; потім стабільна генерація, повний прогін, JAR0.4.6 і package. Старий0.4.5 не замінювати без перевіреного0.4.6.
+
+### 2026-10-26 — перевірений MI/Oritech підблок0.4.6
+
+- DONE коду й контенту:30 нових optional-квестів(15MI/15Oritech),2core-карти,11nativeactionконтрактів та1customadvancement. Усього3242квести/138глав/610рецептів/390предметів іPNG/96ключів. Новихпредметів/текстур0.
+- 4 міжмодові машинні формули зберігають native матеріальні витрати;6cheapproducers замінено. 30item/block floors,41native+5custom gates узгоджено. Replicator99, keycopy завжди denied. Ранній Oritech wafer25 лишається fluid-centrifuge шляхом; laser32/deepdrill44 не перетворено на вигадану particle-exclusive вимогу.
+- MI direct-list/cached/proxy/replication та Oritech cached/direct-list/fluid/dust маршрути отримали server checks. Unpaid MI cache відновлюється, paid live-rebind тільки при тотожному full codec; слабкі кеші без world scanner.
+- Roots mutation вимагає повного складу; Radiant noon працює щодня. Інші native predicates/powder cost збережено. Незавершений altar restart recovery щеTODO.
+- PASS:143Python/50Node/5237Java build;53MI+16Oritech+48Roots нових actual-helper/handler model assertions. Справжній мінімальний MC0.4.6:61assertions,2JVM,650ticks,restart SavedData. Optional mod dispatch/JEI/UI/Survival/TPS NOT RUN.
+- Усі3212 попередні non-coordinate quest payloads, dependencies та606 custom recipe entries незмінні; старих reward payload changes0. Layout усіх138глав PASS; координати змінилися у3главах, перетини1141→1142 при30новихцілях. Стара2784когорта1679→1129.
+- Явні межі:paid generated MI conversion після source reload paused; cache timers~20s+, native NBT не доводить старий codec післяrestart. Oritech Atomic fresh denied lookup може штатно скинутиRF; універсального refund немає.
+- IN_PROGRESS доставки:ідемпотентний rebuild, installer/package, commit/push. Не оголошувати0.5релізом. Точні підсумки у docs/AIA2_0.4.6_CHECKPOINT.uk.md та implementation/release-report.json.
+- Наступна конкретна дія після доставки:core-карти EnderIO8.2.12-beta/Powah6.2.10 за exact джерелами; решта39partial, невивчені моди, старі обов’язкові лінії48епох і fullpack acceptance.6IFfluid gaps залишаютьсяBLOCKED.
+
+- DONE доставки до коміту:1158 runtime-файлів byte-identical після окремої генерації з PYTHONHASHSEED43. ZIP CRC/повний SHA-маніфест PASS. Extracted installer dry-run0writes; справжнє тестове оновлення0.4.5→0.4.6 резервує старийJAR, зберігає synthetic world-progress marker та чужий квест усередині власної глави. Фінальний metadata-repack повторює маніфест і перевіряє ті самі1159 runtime+installer hashes.
+- Усі зміни цього цілісного підблоку підготовлені для main commit/push. Точний hash/status визначати через git log/origin та delivery-report поруч із ZIP; не вигадувати self-referential hash у цьому файлі. Наступну сесію починати з першої незавершеної дії вище.

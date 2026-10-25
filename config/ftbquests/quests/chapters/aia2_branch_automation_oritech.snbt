@@ -12,6 +12,73 @@
   "hide_quest_until_deps_complete": true,
   "quests": [
     {
+      "id": "000031DEB842F601",
+      "title": "Три висоти — три виходи дистиляції",
+      "description": [
+        "Виготовте два Refinery Module й установіть їх над основою Refinery; кожен модуль потребує власних машинних ядер. У цієї установки немає звичайних слотів аддонів. Другий і третій рідинні продукти забирають безпосередньо з відповідних верхніх модулів.",
+        "Рецепт oilalt використовує рідину c:oil та clay_catalyst_beads і має окремі виходи diesel, naphtha й sulfuric_acid. Залиште незалежне місце для кожного. Квест підтверджує виготовлення модулів, каталізатор і огляд основи; правильну побудову вежі, рідинні залишки та роботу видобування він автоматично не вимірює."
+      ],
+      "icon": {
+        "id": "oritech:refinery_module_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D23948A1BD83",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E1897CDE3659",
+          "type": "item",
+          "item": {
+            "id": "oritech:refinery_module_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000029BB9F9883E1",
+          "type": "item",
+          "item": {
+            "id": "oritech:clay_catalyst_beads",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D79DB2A032CB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:refinery_block",
+          "timer": 40
+        },
+        {
+          "id": "00000EB7E7211717",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000047F0CC1D7711",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 17.0,
+      "y": 0.0
+    },
+    {
       "id": "00004609B50C2A62",
       "title": "Основа модульної виробничої комірки",
       "description": [
@@ -76,7 +143,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00007253FD4CE79D",
@@ -154,7 +221,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 5.0
     },
     {
       "id": "0000631EC4C85869",
@@ -221,7 +288,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "000092F1015B6822",
@@ -299,7 +366,7 @@
         }
       ],
       "x": 2.0,
-      "y": 3.0
+      "y": 5.0
     },
     {
       "id": "0000E53DD73D7388",
@@ -366,7 +433,7 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00002CC0111C169B",
@@ -433,7 +500,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000CC630E5E4317",
@@ -500,7 +567,7 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000E2CB6E50CAC3",
@@ -567,7 +634,7 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "00004D64F2A68EC5",
@@ -635,6 +702,153 @@
       ],
       "x": 12.0,
       "y": 0.0
+    },
+    {
+      "id": "0000F407340EF897",
+      "title": "Шаблон збирача має адресні слоти",
+      "description": [
+        "Assembler має чотири вхідні позиції; порядок інгредієнтів рецепта не важливий, а повторюваний інгредієнт може надходити одним стеком. Режими Fill Evenly та Sided визначають розподіл подачі. Inventory Proxy Addon відкриває конкретний слот, що важливо для точного машинного шаблона.",
+        "Виготовте проксі й підготуйте motor та processing_unit. Рецепт мотора використовує нікель, сталь і дві котушки; процесор додає пластик, волокно, електрум і редстоун. Огляд та матеріали не доводять правильний шаблон AE2 або відсутність блокування слотів — перевірте один повний пакет вручну."
+      ],
+      "icon": {
+        "id": "oritech:machine_inventory_proxy_addon",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2CB6E50CAC3",
+        "0000D23948A1BD83",
+        "0000CCF209014105",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000535DBD3A5606",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_inventory_proxy_addon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002151751AEB84",
+          "type": "item",
+          "item": {
+            "id": "oritech:motor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000479B47A1FBDD",
+          "type": "item",
+          "item": {
+            "id": "oritech:processing_unit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4A5CBF2A6BB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:assembler_block",
+          "timer": 40
+        },
+        {
+          "id": "0000F63B6A91008F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000031FF29260F27",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000D77229B14C23",
+      "title": "Yield Addon змінює побічний потік",
+      "description": [
+        "Fragment Forge використовує тип рецепта oritech:grinder: raw iron дає один iron_clump, три small_iron_clump і три small_nickel_clump. Тримайте побічний нікелевий потік окремо від основного залізного, щоб не заблокувати вихід.",
+        "Виготовте Yield Addon і огляньте Fragment Forge. Для цієї машини підтримується лише один такий аддон, який подвоює побічні продукти; це не універсальний множник усіх результатів будь-якої машини. Квест фіксує крафт аддона, наявність побічного продукту й огляд, але не підтверджує фактичне подвоєння."
+      ],
+      "icon": {
+        "id": "oritech:machine_yield_addon",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F407340EF897",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005A06009F82E1",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_yield_addon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008C295A7AB6B5",
+          "type": "item",
+          "item": {
+            "id": "oritech:small_nickel_clump",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE73AC37FD7A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:fragment_forge_block",
+          "timer": 40
+        },
+        {
+          "id": "000017BDFBAB711C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A98AE00BB8A8",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.0
     },
     {
       "id": "0000E743643C4ED9",
@@ -790,7 +1004,7 @@
         }
       ],
       "x": 4.0,
-      "y": 3.0
+      "y": 5.0
     },
     {
       "id": "000020E5BF728981",
@@ -868,7 +1082,68 @@
         }
       ],
       "x": 6.0,
-      "y": 3.0
+      "y": 5.0
+    },
+    {
+      "id": "0000F3EACEA9A1F2",
+      "title": "Дрону потрібна друга гавань",
+      "description": [
+        "Виготовте дві Drone Port та Target Designator. Відправлення потребує окремого порту призначення на відстані щонайменше 50 блоків; обидва чанки мають залишатися завантаженими. Порт надсилає до однієї цілі, але може приймати від кількох джерел.",
+        "Рідинне перевезення потребує Fluid Addon на обох портах; витрати енергії залежать від відстані. Не вважайте один порт завершеною транспортною мережею. Квест підтверджує крафт двох станцій та інструмента, але не доводить відстань, прив’язку, доставку або завантаження чанків."
+      ],
+      "icon": {
+        "id": "oritech:drone_port_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000020E5BF728981",
+        "00001C075558025F",
+        "000059447DF977AA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000956805F2401",
+          "type": "item",
+          "item": {
+            "id": "oritech:drone_port_block",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00000816DCDD4AF5",
+          "type": "item",
+          "item": {
+            "id": "oritech:target_designator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008DBB5ACB688C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e39"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001AF59FC6543E",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 5.0
     }
   ]
 }

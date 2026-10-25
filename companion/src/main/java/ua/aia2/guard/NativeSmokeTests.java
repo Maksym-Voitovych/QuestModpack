@@ -131,7 +131,7 @@ public final class NativeSmokeTests {
         }
         Aia2MachineGuard.clearRuntime();
         Aia2MachineGuard.setRulesJson("{\"minecraft:furnace\":5,\"minecraft:crafter\":2,\"minecraft:hopper\":0}");
-        Aia2MachineGuard.setItemRulesJson("{\"minecraft:iron_ingot\":8,\"minecraft:iron_nugget\":0,\"minecraft:coal\":0,\"minecraft:raw_iron\":0}");
+        Aia2MachineGuard.setItemRulesJson("{\"minecraft:iron_ingot\":8,\"minecraft:iron_nugget\":0,\"minecraft:coal\":0,\"minecraft:raw_iron\":0,\"minecraft:diamond\":99}");
         Aia2MachineGuard.setRecipeRulesJson("{\"minecraft:iron_ingot_from_smelting_raw_iron\":7,\"minecraft:iron_ingot_from_nuggets\":8}");
         Aia2MachineGuard.configureKeyRulesJson("[{\"recipeId\":\"minecraft:iron_ingot_from_nuggets\",\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"branch\":\"tech\",\"serializer\":\"minecraft:crafting_shaped\"}]");
         ProductionMilestoneBridge.configureJson("[{\"id\":\"native_crafter_fixture\",\"recipeIds\":[\"minecraft:iron_ingot_from_nuggets\"],\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"serializer\":\"minecraft:crafting_shaped\"}]");
@@ -152,9 +152,35 @@ public final class NativeSmokeTests {
         level.setBlockAndUpdate(BENCH, Blocks.CRAFTING_TABLE.defaultBlockState());
         testPersistenceAndOwnership();
         testFakePlayerCrafting();
+        testStrictMachineContext();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    private static void testStrictMachineContext() {
+        var recipe = level.getRecipeManager().byKey(net.minecraft.resources.ResourceLocation.parse(
+                "minecraft:iron_ingot_from_smelting_raw_iron")).orElseThrow().value();
+        check(!Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe), "strict component processing rejects absent ticker context");
+        check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.RAW_IRON)), "replication rejects absent ticker context");
+        var parent = Aia2MachineGuard.enterTick(level.getBlockEntity(B));
+        try {
+            check(Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe), "strict component accepts an authorized real owner and canonical recipe");
+            check(Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.RAW_IRON)), "ordinary authorized copy output remains available");
+            check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.DIAMOND)), "imported future output is denied independently of machine availability");
+            check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.IRON_INGOT)), "configured manufacture-receipt outputs cannot be replicated");
+            check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(ItemStack.EMPTY), "empty copy output is denied");
+            Aia2MachineGuard.setTeamProgress(TEAM_B, 48);
+            check(Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.DIAMOND)), "postgame output becomes available only at completed48");
+            check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.IRON_INGOT)), "postgame never manufactures a receipt by copying its output");
+            Aia2MachineGuard.setTeamProgress(TEAM_B, 7);
+            var nested = Aia2MachineGuard.enterTick(level.getBlockEntity(A));
+            try {
+                check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.RAW_IRON)), "locked owner cannot borrow parent ticker authorization");
+            } finally { Aia2MachineGuard.exitTick(nested); }
+            check(Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe), "nested ticker restores its authorized parent context");
+        } finally { Aia2MachineGuard.exitTick(parent); }
+        check(!Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe), "strict context is removed after ticker exit");
     }
 
     private static FurnaceBlockEntity furnace(BlockPos pos, String owner) {

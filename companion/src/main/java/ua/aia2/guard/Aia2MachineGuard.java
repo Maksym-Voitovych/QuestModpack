@@ -254,6 +254,12 @@ public final class Aia2MachineGuard {
         if (parent == null) TICK_CONTEXT.remove(); else TICK_CONTEXT.set(parent);
     }
 
+    /** Typed access for optional machine components; never guesses a world or owner. */
+    public static ServerLevel currentTickServerLevel() {
+        BlockEntity owner = TICK_CONTEXT.get();
+        return owner != null && owner.getLevel() instanceof ServerLevel level ? level : null;
+    }
+
     public static boolean mayProcessCachedRecipe(Object cachedRecipe) {
         BlockEntity context = TICK_CONTEXT.get();
         try {
@@ -284,6 +290,21 @@ public final class Aia2MachineGuard {
     public static boolean mayLookupRecipeInCurrentTick(Recipe<?> recipe) {
         BlockEntity context = TICK_CONTEXT.get();
         return context == null || mayProcessRecipe(context, recipe);
+    }
+
+    /** Native machine components require a real owning ticker context. */
+    public static boolean mayProcessRecipeInCurrentTick(Recipe<?> recipe) {
+        BlockEntity owner = TICK_CONTEXT.get();
+        return owner != null && mayProcessRecipe(owner, recipe);
+    }
+
+    /** MI replication copies components directly, without a Recipe or manufacture receipt. */
+    public static boolean mayReplicateOutputInCurrentTick(ItemStack output) {
+        BlockEntity owner = TICK_CONTEXT.get();
+        if (owner == null || output == null || output.isEmpty()) return false;
+        String id = BuiltInRegistries.ITEM.getKey(output.getItem()).toString();
+        if (id.matches("kubejs:aia2_(tech|arcane|epoch)_key_[0-9]{2}") || KeyProductionBridge.isKeyOutput(id)) return false;
+        return mayProduce(owner, output);
     }
 
     public static boolean mayProcessRecipe(BlockEntity owner, Recipe<?> recipe) {
@@ -318,6 +339,7 @@ public final class Aia2MachineGuard {
         }
         int stage = RECIPES.stage(recipe);
         if (stage == 100) stage = CreatePotionRecipeAccess.requiredStage(recipe, ITEM_POLICY::getRequiredStage);
+        if (stage == 100) stage = ModernRecipeProxyAccess.requiredStage(recipe, level, RECIPES::stage, ITEM_POLICY::getRequiredStage);
         boolean allowed = RECIPE_POLICY.mayUseStage(stage, team) && KeyProductionBridge.mayProcess(level, team, recipe);
         if (!allowed) DENIED_TICKS.incrementAndGet();
         return allowed;

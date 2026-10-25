@@ -8107,12 +8107,12 @@ SPS приймає polonium chemical і великі порції енергії
 - [джерело](../../content/research/evidence/technology_v5/mekanism/core_verified/active-producers.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
 
-## Modern Industrialization
+## Modern Industrialization: від пари до плазми
 
-Версія експорту: **2.5.10**. Статус: `reviewed_partial`.
+Версія експорту: **2.5.10**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
-Залізний молоток потрібен раннім ручним операціям із металом.
+Почніть з бронзових парових машин і підготовки сталі; потім відділіть LV-мережу, корпусні tiers, електричну металургію, нафтові фракції, ядерне тепло та термоядерну генерацію.
 
 ### 1. Ручний металургійний інструмент
 
@@ -8242,9 +8242,193 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E44_mi_specialization_08`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 12. Рецепт суміші перед випалом сталі
+
+Епохи: 6.
+
+Відведіть пару до Bronze Mixer та розділіть його входи й виходи. Чинний рецепт змішує 2 Brick Dust із 2 Clay Ball у 4 Fire Clay Dust при 2 EU/t. Це корисніше за ручне приготування й підводить до вогнетривкої конструкції. Переконайтеся, що вихід не забитий, перш ніж збільшувати запас сировини.
+Попередні кроки: modern_industrialization.phase.04.
+Машини: `modern_industrialization:bronze_mixer`.
+Ресурси й результати: `modern_industrialization:brick_dust`, `modern_industrialization:bronze_mixer`, `modern_industrialization:fire_clay_dust`.
+Квести: `V5_DEPTH_MI_MIXER`.
+Перевіряється встановлена машина та зазначений запас матеріалів. Така ціль не доводить конкретний машинний цикл: Fire Clay Dust має також ручний шлях.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 13. Зібрати Steam Blast Furnace
+
+Епохи: 6.
+
+Зберіть Steam Blast Furnace за проєкцією ключа. Вогнетривкі блоки й хетчі мають утворювати правильну конструкцію; заплануйте окреме подавання Uncooked Steel Dust та пари. Сталь із цього процесу потрібна сталевим паровим машинам та початковим корпусам електричної лінії.
+Попередні кроки: modern_industrialization:depth_mixer.
+Ресурси й результати: `modern_industrialization:steam_blast_furnace`.
+Квести: `V5_DEPTH_MI_STEAM_BLAST`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 14. Сталевий корпус без втрати вмісту
+
+Епохи: 13.
+
+Застосуйте Steel Upgrade безпосередньо до відповідної бронзової машини. Перед покращенням перевірте налаштування слотів та запас пари, після нього — збережений вміст. Сталеві машини мають іншу межу обробки, тому додатковий потік пари не замінює правильного tier.
+Попередні кроки: modern_industrialization:depth_steam_blast.
+Ресурси й результати: `modern_industrialization:steel_upgrade`.
+Квести: `V5_DEPTH_MI_STEEL_UPGRADE`.
+Успішний native Steel Upgrade уже замінив бронзовий блок сталевим і переніс його дані; критерій спрацьовує до фінального shrink предмета. Це доказ застосування, не гарантія певної швидкості чи оплати в Creative.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 15. Розвести вихід турбіни та LV-мережу
+
+Епохи: 13.
+
+З’єднайте вихід LV Steam Turbine з кабелем поточного tier. Вихідна грань джерела важлива: суміжність із будь-якою стінкою не дорівнює з’єднанню. На початку звичайні електричні машини приймають LV; зміна tier потребує відповідного Machine Hull. Для вузлів між мережами розрізняйте 5 входів / 1 вихід підвищувального та 1 вхід / 5 виходів понижувального трансформатора.
+Попередні кроки: modern_industrialization:depth_steel_upgrade, modern_industrialization.phase.05.
+Машини: `modern_industrialization:lv_steam_turbine`.
+Ресурси й результати: `modern_industrialization:lv_mv_transformer`, `modern_industrialization:lv_steam_turbine`, `modern_industrialization:tin_cable`.
+Квести: `V5_DEPTH_MI_LV_SIDES`.
+Це перевірка комплекту й установленого джерела; FTB не вимірює напругу, правильність граней чи енергію у мережі.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 16. Ефективність має постійну ціну
+
+Епохи: 22.
+
+Підготуйте Overdrive Module і запас живлення для повторюваної лінії. Модуль стримує спад ефективності під час простою, але продовжує витрачати енергію, ніби рецепт іде далі. Коли енергії бракує, ефективність падає звичайним способом; це не безкоштовний прискорювач.
+Попередні кроки: modern_industrialization:depth_lv_sides, modern_industrialization.phase.07.
+Машини: `modern_industrialization:electric_furnace`.
+Ресурси й результати: `modern_industrialization:advanced_machine_hull`, `modern_industrialization:overdrive_module`.
+Квести: `V5_DEPTH_MI_OVERDRIVE`.
+Перевіряється комплект і машина. Вставлення модуля, фактична ефективність та витрата EU потребують перевірки на установці.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 17. Електрична домна — перевірена конструкція
+
+Епохи: 22.
+
+Зберіть EBF із Heatproof Casings, порожнистими шарами Cupronickel Coils та енергетичним входом. Controller і хетчі ставляться за вбудованою проєкцією. У AIA2 сам controller перебалансовано: використовуйте чинний JEI-рецепт, а не копію старого списку посібника.
+Попередні кроки: modern_industrialization:depth_overdrive.
+Ресурси й результати: `modern_industrialization:electric_blast_furnace`.
+Квести: `V5_DEPTH_MI_EBF`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 18. Kanthal — нова форма тієї самої домни
+
+Епохи: 22.
+
+Перебудуйте EBF під форму з Kanthal Coils. Це не просто зберігання котушок у скрині: нова форма відкриває власні допустимі процеси. Подавання сильнішого струму саме по собі не замінює потрібного типу котушки.
+Попередні кроки: modern_industrialization:depth_ebf.
+Ресурси й результати: `modern_industrialization:kanthal_coil`.
+Квести: `V5_DEPTH_MI_KANTHAL`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 19. Відкритий нафтовий контур MI
+
+Епохи: 22.
+
+Зберіть Oil Drilling Rig із корпусами, pipe-casings, ланцюгами та відповідними хетчами. Їй потрібні бурові витратні матеріали, енергетичний вхід і окремий fluid output. Не змішуйте видобуток MI з іншим нафтовим модом лише через схожу назву рідини.
+Попередні кроки: modern_industrialization:depth_ebf.
+Ресурси й результати: `modern_industrialization:oil_drilling_rig`.
+Квести: `V5_DEPTH_MI_OIL_RIG`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 20. Гарячий злиток має маршрут охолодження
+
+Епохи: 22.
+
+Сформуйте Vacuum Freezer поряд з EBF. Гарячі злитки нержавіючої сталі потребують окремого охолоджувального процесу; звичайний холодний злиток зі складу не описує цей виробничий маршрут. Переконайтеся, що випуск EBF відведено до потрібного входу.
+Попередні кроки: modern_industrialization:depth_kanthal.
+Ресурси й результати: `modern_industrialization:vacuum_freezer`.
+Квести: `V5_DEPTH_MI_FREEZER`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 21. Висота колони визначає число фракцій
+
+Епохи: 32.
+
+Після цифрових схем сформуйте Distillation Tower. Distillery і Tower мають різні можливості: колона отримує додаткові фракції з додатковими шарами. Мінімальна форма віддає першу фракцію, більша — більше виходів; відведіть кожний потік окремо за проєкцією та чинним рецептом.
+Попередні кроки: modern_industrialization:depth_oil_rig, modern_industrialization.phase.09.
+Ресурси й результати: `modern_industrialization:distillation_tower`.
+Квести: `V5_DEPTH_MI_DISTILLATION`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 22. Реактор MI: тепло, хетчі й паливо
+
+Епохи: 35.
+
+Сформуйте Nuclear Reactor та відокремте item- і fluid-хетчі. У цій версії MI реактор перетворює ядерну енергію на тепло й пару; це інша модель, ніж радіація Mekanism. Перегрів може пошкодити вміст хетчів, тому спершу сплануйте воду, тепловідведення й переробку відпрацьованих компонентів.
+Попередні кроки: modern_industrialization:depth_freezer, modern_industrialization:depth_distillation, modern_industrialization.phase.10.
+Ресурси й результати: `modern_industrialization:nuclear_reactor`.
+Квести: `V5_DEPTH_MI_NUCLEAR`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 23. Контур високого тиску перед турбіною
+
+Епохи: 35.
+
+Сформуйте Heat Exchanger та звірте підтримані потоки пари у JEI. Теплообмінник розділяє контури; він не є універсальним перетворювачем довільної рідини в енергію. Плануйте безперервне відведення пари й повернення води перед тривалим запуском реактора.
+Попередні кроки: modern_industrialization:depth_nuclear.
+Ресурси й результати: `modern_industrialization:heat_exchanger`.
+Квести: `V5_DEPTH_MI_HEAT_EXCHANGER`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 24. Завод із запуском термоядерної реакції
+
+Епохи: 44.
+
+Сформуйте Fusion Reactor і відокремте його пускову енергію від майбутнього виходу. Рецепти поєднують визначені ізотопи, зокрема Deuterium, Tritium та Helium-3, у Helium Plasma; точну суміш і пускову ціну беріть із чинного JEI-рецепта. Наявність великих накопичувачів сама не запускає реакцію.
+Попередні кроки: modern_industrialization:depth_heat_exchanger, modern_industrialization.phase.11.
+Ресурси й результати: `modern_industrialization:fusion_reactor`.
+Квести: `V5_DEPTH_MI_FUSION`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 25. Плазма стає окремою електростанцією
+
+Епохи: 44.
+
+Сформуйте Plasma Turbine та підготуйте окремий маршрут Helium Plasma з Fusion Reactor. Це генератор для визначеного плазмового палива, не звичайний паровий вузол. Пусковий запас термоядерної лінії має переживати її власний запуск, а надлишок енергії — мати приймач.
+Попередні кроки: modern_industrialization:depth_fusion.
+Ресурси й результати: `modern_industrialization:plasma_turbine`.
+Квести: `V5_DEPTH_MI_PLASMA`.
+Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
+### 26. Після кампанії — контрольована реплікація
+
+Епохи: 48 — після завершення всіх 48 епох.
+
+Після завершення всіх 48 епох підготуйте Replicator і Singularity як основу UU Matter-ланцюга. Штатна механіка копіює шаблон за витрату UU Matter; це не дозвіл дублювати ключі, виробничі докази або творчі компоненти. Поважайте серверний blacklist та перевіряйте звичайний дозволений матеріал у тестовій лінії.
+Попередні кроки: modern_industrialization:depth_plasma.
+Машини: `modern_industrialization:replicator`.
+Ресурси й результати: `modern_industrialization:replicator`, `modern_industrialization:singularity`.
+Квести: `V5_DEPTH_MI_REPLICATOR`.
+Це чесний setup-крок після completed48: перевіряються станція й матеріал. Копіювання, whitelist/blacklist і точну витрату UU тут не названо автоматично доведеними.
+Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.
+Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва.
+
 Фінальні цілі:
-- Надпровідний матеріал досягнуто
-- Промислова карта запасних частин
+- Успішно сформувати термоядерний і плазмовий вузли після ядерного/хімічного розвитку.
+- Після кампанії підготувати дозволений UU Matter контур без копіювання ключів і творчих предметів.
 
 Міжмодові зв’язки:
 - {"mod_id": "ae2", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -8254,8 +8438,11 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:integration/epoch_22", "target": "modern_industrialization:advanced_machine_hull", "epoch": 22, "ingredient_ids": ["botania:elementium_ingot"], "direction": "incoming", "description_uk": "Рецепт AIA2 для modern_industrialization:advanced_machine_hull споживає міжмодові матеріали botania:elementium_ingot. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний інстанс із точними MI/FTB/AE2 та іншими модами не запускався; UI, мережі, TPS та реальне виробництво потребують приймального тесту.
+- BuiltMultiblockTrigger засвідчує форму та optional shape, не паливо/EU/t. PlacedBy-гравець має бути онлайн в момент rematch.
+- Звичайні електричні машини починають з LV; Machine Hull upgrade змінює tier. Overdrive витрачає енергію навіть під час простою.
+- Cleanroom не додано за загальними очікуваннями зі старих техномодів: у цій карті використовуються лише підтверджені механіки MI 2.5.10.
+- Replicator — небезпечний динамічний copier. Ціль лише після 48; native guard/blacklists та заборона key duplication інтегруються окремо root.
 
 Джерела:
 
@@ -8276,13 +8463,72 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [modern_industrialization:assembler](../../content/research/evidence/technology_v5/modern_industrialization/recipes/modern_industrialization/assembler_generated/electric_age/machine/vacuum_freezer.json) — SHA перевірено
 - [modern_industrialization:assembler](../../content/research/evidence/technology_v5/modern_industrialization/recipes/modern_industrialization/assembler_generated/electric_age/component/craft/advanced_motor.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/LICENSE) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/README.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockContext.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/items/SteelUpgradeItem.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/blockentities/ReplicatorMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/datagen/advancement/MIAdvancementsProvider.java) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/steam_machines.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/coke_oven.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/steel.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/steel_machines.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/bronze_boiler.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/pipes.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/steam_age/water_pump.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/electricity.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/basic_machines.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/advanced_machines.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/ebf.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/oil_processing.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/electric_age/large_steam_boiler.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame/upgrades.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame/stainless_steel.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame/nuclear_reactor.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame/high_pressure.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/midgame/fluid_transfer.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/endgame.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/lategame/fusion_reactor.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/lategame/quantum_tier.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/resources/assets/modern_industrialization/mi_guidebook/lategame/replicator.md) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/used_steel_upgrade.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/electric_blast_furnace.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/kanthal_coil.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/oil_drilling_rig.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/distillation_tower.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/nuclear_reactor.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/heat_exchanger.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/fusion_reactor.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/plasma_turbine.json) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10) — SHA перевірено
+- [джерело](https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/generated/resources/data/modern_industrialization/advancement/vacuum_freezer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/materials/mixer/fire_clay_dust.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/electric_blast_furnace.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/vacuum_freezer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/oil/oil_drilling_rig.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/distillation_tower.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/nuclear_reactor.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/heat_exchanger.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/fusion_reactor.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/plasma_turbine.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/electric_age/machine/assembler/replicator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/mi_core_next_v5/effective_export/assembler_generated/electric_age/machine/large_diesel_generator.json) — SHA перевірено
 
 ## Oritech
 
-Версія експорту: **1.2.13**. Статус: `reviewed_partial`.
+Версія експорту: **1.2.13**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
-Відокремте каркас Oritech від старої ручної металургії. Тримайте запас машинних рам для ремонту комірки без демонтажу робочої ливарні.
+Від каркаса й живлення перейдіть до волокна, рідинних полімерів, уніфікованих сплавів та адресних входів Assembler. Подальші епохи розділяють нафтохімію, лазерне атомне виробництво, теплові системи й екзотичні частинки.
 
 ### 1. Місце для роботизованої ливарні
 
@@ -8309,7 +8555,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 Епохи: 25.
 
-Виділіть Foundry окремий вхід для вихідної сировини. Запас оболонки й мотора дозволяє перенести вузол, не розбираючи електромережу.
+Огляньте Foundry і звірте ефективний рецепт: raw_biopolymer та c:ingots/iron дають уніфікований immersiveengineering:ingot_steel. Upstream-назва біосталі не змінює фактичний вихід у збірці.
 Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.
 Попередні кроки: oritech.phase.02.
 Машини: `oritech:foundry_block`.
@@ -8365,9 +8611,189 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E39_oritech_process_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Від вугілля до вуглецевого волокна
+
+Епохи: 25.
+
+Подайте вугілля до Pulverizer: ефективний рецепт oritech:pulverizer/coal дає coal_dust. Центрифуга перетворює цей пил на carbon_fibre_strands — це інший процес, ніж дроблення руди, і він постачає матеріал аддонів та електроніки. Підготуйте живлення й ядро центрифуги, відведіть вихід окремо від подачі пилу. Завдання перевіряє продукти та огляд двох машин; воно не підтверджує автоматичну подачу, швидкість або походження волокна з конкретного рецепта.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.phase.04.
+Машини: `oritech:pulverizer_block`, `oritech:centrifuge_block`.
+Ресурси й результати: `oritech:coal_dust`, `oritech:carbon_fibre_strands`.
+Квести: `V5_DEPTH_ORITECH_CARBON_FIBRE`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 9. Рослинні відходи живлять виробництво
+
+Епохи: 25.
+
+Pulverizer приймає матеріали тегу oritech:biomatter і дає biomass. В Assembler три одиниці матеріалу c:fuels/bio та дошка стають solid_biofuel. Цей запас поєднує рослинну ферму з виробничою коміркою замість спалювання випадкових цінних матеріалів. Виготовте Bio Generator і підготуйте обидва види палива; перевірте прийняті палива в JEI. Рідкий біопаливний шлях окремий: центрифуга з Fluid Addon бере біопаливо й воду. Квест підтверджує крафт генератора, продукти та огляд; витрати палива й позитивний енергобаланс тут не вимірюються.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.carbon_fibre.
+Машини: `oritech:bio_generator_block`.
+Ресурси й результати: `oritech:bio_generator_block`, `oritech:biomass`, `oritech:solid_biofuel`.
+Квести: `V5_DEPTH_ORITECH_BIOENERGY`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 10. Вода відкриває полімерну центрифугу
+
+Епохи: 25.
+
+Виготовте Machine Fluid Addon і приєднайте до центрифуги або її з’єднаного Machine Extender. Вхід і вихід рідини залишаються на самій машині: аддон відкриває можливість процесу, а не є точкою підключення труби. Рецепт packed_wheat з 250 mB води дає raw_biopolymer; альтернативний solid_biofuel також використовує 250 mB. Організуйте окремий запас води. FTB перевіряє крафт аддона, полімер і огляд центрифуги; фактичне прикріплення аддона та заповнення резервуара потребують перевірки у GUI.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.carbon_fibre.
+Машини: `oritech:centrifuge_block`.
+Ресурси й результати: `oritech:machine_fluid_addon`, `oritech:raw_biopolymer`.
+Квести: `V5_DEPTH_ORITECH_BIOPOLYMER`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 11. Дві сировини для пластикової пластини
+
+Епохи: 25.
+
+Рідинна центрифуга перетворює raw_biopolymer та 500 mB води на одну plastic_sheet. Нафтохімічна альтернатива починається із піску та 100 mB рідини тегу c:naphtha: виходять дві polymer_resin, а смола з водою дає пластикові пластини. Підготуйте пластину, сирий полімер і смолу, щоб порівняти обидва маршрути. Не подавайте naphtha в рецепт, який очікує biodiesel: це різні теги. Квест перевіряє наявність матеріалів і огляд центрифуги, а не доводить виконання обох рідинних процесів.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.biopolymer.
+Машини: `oritech:centrifuge_block`.
+Ресурси й результати: `oritech:plastic_sheet`, `oritech:raw_biopolymer`, `oritech:polymer_resin`.
+Квести: `V5_DEPTH_ORITECH_PLASTIC_BRANCHES`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 12. Три висоти — три виходи дистиляції
+
+Епохи: 25.
+
+Виготовте два Refinery Module й установіть їх над основою Refinery; кожен модуль потребує власних машинних ядер. У цієї установки немає звичайних слотів аддонів. Другий і третій рідинні продукти забирають безпосередньо з відповідних верхніх модулів. Рецепт oilalt використовує рідину c:oil та clay_catalyst_beads і має окремі виходи diesel, naphtha й sulfuric_acid. Залиште незалежне місце для кожного. Квест підтверджує виготовлення модулів, каталізатор і огляд основи; правильну побудову вежі, рідинні залишки та роботу видобування він автоматично не вимірює.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.plastic_branches.
+Машини: `oritech:refinery_block`.
+Ресурси й результати: `oritech:refinery_module_block`, `oritech:clay_catalyst_beads`.
+Квести: `V5_DEPTH_ORITECH_REFINERY_OUTPUTS`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 13. Шаблон збирача має адресні слоти
+
+Епохи: 25.
+
+Assembler має чотири вхідні позиції; порядок інгредієнтів рецепта не важливий, а повторюваний інгредієнт може надходити одним стеком. Режими Fill Evenly та Sided визначають розподіл подачі. Inventory Proxy Addon відкриває конкретний слот, що важливо для точного машинного шаблона. Виготовте проксі й підготуйте motor та processing_unit. Рецепт мотора використовує нікель, сталь і дві котушки; процесор додає пластик, волокно, електрум і редстоун. Огляд та матеріали не доводять правильний шаблон AE2 або відсутність блокування слотів — перевірте один повний пакет вручну.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.phase.03, oritech.depth.plastic_branches.
+Машини: `oritech:assembler_block`.
+Ресурси й результати: `oritech:machine_inventory_proxy_addon`, `oritech:motor`, `oritech:processing_unit`.
+Квести: `V5_DEPTH_ORITECH_ASSEMBLER_PORTS`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 14. Нафта підсилює вуглецевий лист
+
+Епохи: 32.
+
+Рецепт refinery/carbonsheet використовує carbon_fibre_strands і 500 mB рідини тегу c:naphtha для reinforced_carbon_sheet. Це реальний міст від центрифуги до нафтохімічної обробки, а не звичайне стискання волокна. Відокремте запас naphtha від пального генераторів і підготуйте волокно та готовий лист. FTB перевіряє матеріали й огляд Refinery; рівень рідини, тривалість рецепта та походження листа не вважаються автоматично доведеними.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.refinery_outputs, oritech.phase.06.
+Машини: `oritech:refinery_block`.
+Ресурси й результати: `oritech:carbon_fibre_strands`, `oritech:reinforced_carbon_sheet`.
+Квести: `V5_DEPTH_ORITECH_REINFORCED_SHEET`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 15. Атомна кузня потребує променя
+
+Епохи: 32.
+
+Виготовте Target Designator та огляньте Enderic Laser і Atomic Forge. Designator задає напрям променя. Atomic Forge не приймає живлення звичайним кабелем: її потрібно заряджати лазером. Такий самий принцип пізніше застосовується до Bedrock Extractor. Залиште безпечну пряму лінію, не спрямовуйте промінь крізь цінні блоки та безперервно відводьте здобич: переповнення лазерного інвентаря знищує випадіння. Квест підтверджує крафт інструмента та огляд машин, а не правильне наведення, передані FE або виконання атомного рецепта.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.assembler_ports, oritech.depth.reinforced_sheet.
+Машини: `oritech:laser_arm_block`, `oritech:atomic_forge_block`.
+Ресурси й результати: `oritech:target_designator`.
+Квести: `V5_DEPTH_ORITECH_LASER_POWER`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 16. Лазерне живлення для обчислювача
+
+Епохи: 32.
+
+Atomic Forge приймає вуглецеве волокно та дві одиниці кремнію для silicon_wafer. Потім processing_unit і дві пластини стають advanced_computing_engine. Рідинна центрифуга має інший шлях пластин через silicon wash — не змішуйте рецептурні входи двох машин. Підготуйте кремнієві пластини та обчислювач після налаштування лазерної подачі. Автоматично перевіряються матеріали й огляд Atomic Forge; жоден із цих двох item tasks не видається за перевірку машинного крафту або мінімальної потужності лазера.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.laser_power.
+Машини: `oritech:atomic_forge_block`.
+Ресурси й результати: `oritech:silicon_wafer`, `oritech:advanced_computing_engine`.
+Квести: `V5_DEPTH_ORITECH_ADVANCED_COMPUTING`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 17. Штучний інтелект керує екзотичним матеріалом
+
+Епохи: 32.
+
+У Atomic Forge два advanced_computing_engine та duratium_ingot дають super_ai_chip. Наступний рецепт додає до цього чипа два adamant_ingot й отримує heisenberg_compensator. Це послідовні атомні процеси, а не взаємозамінні прикраси для корпусу. Зберіть чип і компенсатор, забезпечивши окремі входи та лазерну енергію. Компенсатор знадобиться для пізніх продуктів і видобування. Завдання фіксує наявність компонентів та огляд кузні; крафт-походження цих продуктів і стабільність живлення автоматично не засвідчуються.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.advanced_computing.
+Машини: `oritech:atomic_forge_block`.
+Ресурси й результати: `oritech:super_ai_chip`, `oritech:heisenberg_compensator`.
+Квести: `V5_DEPTH_ORITECH_HEISENBERG`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 18. Тепловідвід перед ядерним запуском
+
+Епохи: 32.
+
+Підготуйте Reactor Controller, fuel rod, теплову трубу й вентиль охолодження. Труба розподіляє тепло між сусідніми компонентами, вентиль відводить його від найгарячішого сусіда; це різні ролі. Контролер збирає конструкцію при взаємодії, а його GUI показує лише перший шар внутрішнього простору. Уранові гранули базового Assembler-рецепта потребують двох uranium_gem, пластику й нікелю. Не запускайте реактор до перевірки теплової схеми: перегрів викликає руйнування. FTB перевіряє крафт охолоджувальних деталей, паливо та огляд контролера; сформований мультиблок, безпечну температуру й генерацію FE квест не підтверджує.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.assembler_ports, oritech.depth.advanced_computing.
+Машини: `oritech:reactor_controller`.
+Ресурси й результати: `oritech:reactor_heat_pipe`, `oritech:reactor_vent`, `oritech:reactor_rod`, `oritech:uranium_pellet`.
+Квести: `V5_DEPTH_ORITECH_REACTOR_COOLING`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 19. Дрону потрібна друга гавань
+
+Епохи: 39.
+
+Виготовте дві Drone Port та Target Designator. Відправлення потребує окремого порту призначення на відстані щонайменше 50 блоків; обидва чанки мають залишатися завантаженими. Порт надсилає до однієї цілі, але може приймати від кількох джерел. Рідинне перевезення потребує Fluid Addon на обох портах; витрати енергії залежать від відстані. Не вважайте один порт завершеною транспортною мережею. Квест підтверджує крафт двох станцій та інструмента, але не доводить відстань, прив’язку, доставку або завантаження чанків.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.phase.07, oritech.depth.heisenberg.
+Ресурси й результати: `oritech:drone_port_block`, `oritech:target_designator`.
+Квести: `V5_DEPTH_ORITECH_DRONE_PAIR`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 20. Кільце задає шлях частинки
+
+Епохи: 44.
+
+Підготуйте Accelerator Controller, Guide Ring і Tachyon Collector. Пряме кільце позаду контролера починає маршрут; взаємодія з кільцем додає поворот на 45 градусів. Увімкнений редстоун на вигнутому кільці спрямовує частинку прямо, вимкнений повертає її за початковою кривою. Колектори ловлять тахіони навколо зіткнення; вони не замінюють кільця й не формують маршрут. Установіть їх з урахуванням різних напрямів вильоту. Завдання підтверджує крафт контролера та кілець і огляд колектора; зіткнення, швидкість частинок і енергетичну окупність воно автоматично не вимірює.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.heisenberg.
+Машини: `oritech:particle_collector_block`.
+Ресурси й результати: `oritech:accelerator_controller`, `oritech:accelerator_ring`.
+Квести: `V5_DEPTH_ORITECH_PARTICLE_ROUTE`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 21. Кристал розгалужує фінальне виробництво
+
+Епохи: 44.
+
+Overcharged Crystal має два підтверджені шляхи цього експорту: зіткнення fluxite з energite_dust у прискорювачі та рецепт верстака з advanced_battery, amethyst_block і superconductor. Не вважайте кристал доказом запуску колайдера. Atomic Forge поєднує два кристали з heisenberg_compensator для prometheum_ingot. Інший споживач цих компонентів — Bedrock Extractor. Його ставлять над ресурсним вузлом у зоні 3×3 та в межах трьох блоків униз; живлення надходить тільки Enderic Laser. Підготуйте обидва фінальні напрями. FTB підтверджує матеріали, крафт видобувача й огляд; розташування вузла, лазерне заряджання та нескінченний видобуток не зараховуються автоматично.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.particle_route, oritech.depth.heisenberg.
+Машини: `oritech:deep_drill_block`.
+Ресурси й результати: `oritech:overcharged_crystal`, `oritech:prometheum_ingot`, `oritech:deep_drill_block`.
+Квести: `V5_DEPTH_ORITECH_EXOTIC_OUTPUTS`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
+### 22. Yield Addon змінює побічний потік
+
+Епохи: 25.
+
+Fragment Forge використовує тип рецепта oritech:grinder: raw iron дає один iron_clump, три small_iron_clump і три small_nickel_clump. Тримайте побічний нікелевий потік окремо від основного залізного, щоб не заблокувати вихід. Виготовте Yield Addon і огляньте Fragment Forge. Для цієї машини підтримується лише один такий аддон, який подвоює побічні продукти; це не універсальний множник усіх результатів будь-якої машини. Квест фіксує крафт аддона, наявність побічного продукту й огляд, але не підтверджує фактичне подвоєння.
+Крок спирається на конкретний попередній матеріал або інтерфейс. Він навчає наступного рецепта чи способу живлення, а не повторює більшу кількість попереднього предмета.
+Попередні кроки: oritech.depth.assembler_ports.
+Машини: `oritech:fragment_forge_block`.
+Ресурси й результати: `oritech:machine_yield_addon`, `oritech:small_nickel_clump`.
+Квести: `V5_DEPTH_ORITECH_FRAGMENT_BYPRODUCTS`.
+FTB автоматично перевіряє вказані крафти, наявність продуктів і огляд блоків. Наявність продукту або огляд не доводять виконання машинного рецепта, кількість FE, охолодження, маршрут дронів чи працездатність мультиблока; це явно зазначено у квесті.
+
 Фінальні цілі:
-- Вуглецевий компонент до електроніки
-- Просторовий сервіс має локальний запас
+- Лазерна Atomic Forge випускає компонентну послідовність wafer → advanced_computing_engine → super_ai_chip → heisenberg_compensator.
+- Реактор отримує продуману теплову схему до першого запуску.
+- Пізня гілка частинок і ресурсних вузлів має окремі маршрути живлення, виходів та обмеження автоматичного підтвердження.
 
 Міжмодові зв’язки:
 - {"mod_id": "ae2", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -8377,8 +8803,11 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/oritech/crafting/pulverizer", "target": "oritech:pulverizer_block", "epoch": 25, "ingredient_ids": ["kubejs:aia2_tech_matrix_24"], "direction": "incoming", "description_uk": "Рецепт AIA2 для oritech:pulverizer_block споживає міжмодові матеріали kubejs:aia2_tech_matrix_24. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний модпак, фактичні змінені конфіги Windows, мережеві режими й довготривалий TPS не запускалися.
+- Більшість shipped advancements Oritech використовують inventory_changed: вони не підтверджують виробництво. Нові production-proof advancements не вигадані; у цьому курсі лише craft/setup/product checkpoints.
+- Офіційний pinned wiki є частиною exact1.2.13 source tree, але суперечить ефективному експорту для Foundry biosteel: у збірці raw_biopolymer + iron → immersiveengineering:ingot_steel; курс застосовує експорт.
+- Усі нові квести необов’язкові: змінені controller floors32/39/44 не повинні зробити старі ключові гілки недосяжними. Рекомендації floors потребують окремої інтеграції root і аудиту старих quest refs.
+- Overcharged Crystal має альтернативний верстаковий рецепт motor/overchargedcrystal: його наявність не доводить particle collision. Рекомендація DeepDrill44 є балансним рішенням, а не upstream-вимогою колайдера.
 
 Джерела:
 
@@ -8395,6 +8824,133 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/oritech/recipes/oritech/crafting/assembler.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/oritech/recipes/oritech/crafting/laserarm.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/LICENSE.md) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/README.md) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/foundry_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/pulverizer_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/centrifuge_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/assembler_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/refinery_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/refinery_module_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/atomic_forge_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/cooler_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/processing/fragment_forge_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/powergen/bio_generator_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/powergen/fuel_generator_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/powergen/steam_engine_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_extender.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_speed_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_efficiency_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_processing_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_yield_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_fluid_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/addons/machine_inventory_proxy_addon.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/utility/deep_drill_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/utility/laser_arm_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/machines/utility/drone_port_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/resources/biosteel_ingot.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/resources/biomass.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/resources/plastic_sheet.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/processing_unit.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/carbon_fibre_strands.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/reinforced_carbon_sheet.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/silicon_wafer.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/enderic_compound.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/flux_gate.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/components/super_ai_chip.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/reactor_controller.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/reactor_heat_pipe.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/reactor_vent.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/uranium_pellet.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/reactor_condenser.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/nuclear/reactor_energy_port.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/particle/accelerator_controller.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/particle/accelerator_ring.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/wiki/content/particle/particle_collector_block.mdx) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/FoundryBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/AssemblerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/CentrifugeBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/RefineryBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/PulverizerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/AtomicForgeBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/interaction/LaserArmBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/block/entity/processing/FragmentForgeBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/init/recipes/OritechRecipeType.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/init/recipes/RecipeContent.java) — SHA перевірено
+- [джерело](https://github.com/Rearth/Oritech/blob/4069b6dd14b05dfe0c80126618739b64054630ea/common/src/main/java/rearth/oritech/util/FluidIngredient.java) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/registries/recipe_serializer.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/minecraft/coals.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/dusts/coal.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/oritech/biomatter.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/fuels/bio.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/minecraft/planks.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/steel.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/oritech/plating.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/carbon_fibre.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/electrum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/silicon.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/iron.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/fluid/c/naphtha.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/minecraft/sand.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/fluid/c/oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/copper.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/nickel.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/dusts/redstone.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/plates/plastic.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/chests.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/gold.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/raw_materials/iron.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/gems/amethyst.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/gems/diamond.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/netherite.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/export/tags/minecraft/item/c/ingots/platinum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/oritech_core_next_v5/recipe-availability.json) — SHA перевірено
+- [oritech:pulverizer](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/pulverizer/coal.json) — SHA перевірено
+- [oritech:centrifuge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/carbon.json) — SHA перевірено
+- [oritech:pulverizer](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/pulverizer/biobasic.json) — SHA перевірено
+- [oritech:assembler](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/assembler/solidbiofuel.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/biogen.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/fuelgen.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/biofuel.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/biopolymer.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/biopolymer_biomass.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/addon/fluid.json) — SHA перевірено
+- [oritech:foundry](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/foundry/alloy/biosteel.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/plasticoil.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/naptharesin.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/plasticbio.json) — SHA перевірено
+- [oritech:refinery](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/refinery/oilalt.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/refinerymodule.json) — SHA перевірено
+- [oritech:assembler](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/assembler/motor.json) — SHA перевірено
+- [oritech:assembler](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/assembler/processingunit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/addon/invproxy.json) — SHA перевірено
+- [oritech:refinery](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/refinery/carbonsheet.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/designator.json) — SHA перевірено
+- [oritech:laser](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/laser/fluxite.json) — SHA перевірено
+- [oritech:atomic_forge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/atomicforge/wafer.json) — SHA перевірено
+- [oritech:atomic_forge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/atomicforge/advcomputer.json) — SHA перевірено
+- [oritech:atomic_forge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/atomicforge/aicomputer.json) — SHA перевірено
+- [oritech:atomic_forge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/atomicforge/compensator.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/controller.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/reactorheatpipe.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/reactorvent.json) — SHA перевірено
+- [oritech:assembler](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/assembler/uranpelletbasic.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/droneport.json) — SHA перевірено
+- [oritech:centrifuge_fluid](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/centrifuge/fluid/unholyai.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/particlecontroller.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/acceleratorring.json) — SHA перевірено
+- [oritech:particle_collision](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/particle/overcharged_crystal.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/motor/overchargedcrystal.json) — SHA перевірено
+- [oritech:atomic_forge](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/atomicforge/prometheum.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/deepdrill.json) — SHA перевірено
+- [oritech:grinder](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/grinder/raw/iron.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/crafting/addon/yield.json) — SHA перевірено
+- [ae2:charger](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/compat/ae2/charger/fluxite.json) — SHA перевірено
+- [powah:energizing](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/compat/powah/energizing/fluxite.json) — SHA перевірено
+- [oritech:foundry](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/foundry/alloy/adamant.json) — SHA перевірено
+- [oritech:foundry](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/foundry/alloy/duratium.json) — SHA перевірено
+- [oritech:assembler](../../content/research/evidence/oritech_core_next_v5/export/recipes/oritech/assembler/enderlens.json) — SHA перевірено
 
 ## PneumaticCraft: Repressurized
 

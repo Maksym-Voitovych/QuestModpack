@@ -481,6 +481,11 @@ def validate(root=ROOT, include_layout=True):
             'core_balance_validation': import_tool('build_core_balance_v5').validate(
                 root, read(root/'content/recipes/v5_aa_core.json'), bundle, rules, compiled=True)
                 if (root/'content/recipes/v5_aa_core.json').exists() else {'enabled': False},
+            'industrial_core_balance_validation': import_tool('build_industrial_core_balance_v5').validate(
+                root, read(root/'content/recipes/v5_mi_oritech_core.json'), bundle, rules, compiled=True)
+                if (root/'content/recipes/v5_mi_oritech_core.json').exists() else {'enabled': False},
+            'industrial_controller_gates': import_tool('build_industrial_controller_gates_v5').validate(root, rules)
+                if (root/'content/audit/v5-industrial-controller-floors.json').exists() else {'enabled': False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

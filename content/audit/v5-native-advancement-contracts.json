@@ -8289,6 +8289,960 @@
         "Нативні досягнення зберігають історичні особисті дії; вони не замінюють командні виробничі записи96ключів.",
         "Поле modifier у shipped JSON не декодується цією версією; перевіряються лише фактичні stats/boolean стану після успішної модифікації."
       ]
+    },
+    {
+      "id": "aia2:mi/steam_blast_furnace",
+      "epoch": 6,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "kubejs/data/aia2/advancement/mi/steam_blast_furnace.json",
+      "json_sha256": "c0d002bc9ad60383cd6f35b7f1d63217f5c4ac5b8f91c4ed4d0a2de8836949e4",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:steam_blast_furnace"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:used_steel_upgrade",
+      "epoch": 13,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/used_steel_upgrade.json",
+      "json_sha256": "6cc39f0cb0cff0097077b07b0040e2149eedd6a27ecf71b08d9309fbc06371b5",
+      "required_action_triggers": [
+        "modern_industrialization:used_steel_upgrade"
+      ],
+      "expected_conditions": {},
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/items/SteelUpgradeItem.java",
+          "sha256": "b8568fe6d58492385e2a1dc3056fabe5521ddf4032c508cda7aa5b49bd3a67c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/items/SteelUpgradeItem.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_successful_upgrade_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Успішний native Steel Upgrade уже замінив бронзовий блок сталевим і переніс його дані; критерій спрацьовує до фінального shrink предмета. Це доказ застосування, не гарантія певної швидкості чи оплати в Creative.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:electric_blast_furnace",
+      "epoch": 22,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/electric_blast_furnace.json",
+      "json_sha256": "f7ec00644d4825e20b5ece9ac0d0a7f099c9b5f8da9ce6d226d33b3f26e0c464",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:electric_blast_furnace"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:kanthal_coil",
+      "epoch": 22,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/kanthal_coil.json",
+      "json_sha256": "7015fda957d9dfcbabe8390178399c821a4e5c6193c74212e5dca1dc6dbb95c9",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:electric_blast_furnace",
+            "shape": "kanthal_coil"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:oil_drilling_rig",
+      "epoch": 22,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/oil_drilling_rig.json",
+      "json_sha256": "4feaef3324e614d1c743d6e4b712c6d920508da70752ff20910d0eb03397e91a",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:oil_drilling_rig"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:vacuum_freezer",
+      "epoch": 22,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/vacuum_freezer.json",
+      "json_sha256": "2c720485bcabaa9150b9e99265acd5c722690dc6ff8d9a5218ef9b18c6660763",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:vacuum_freezer"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:distillation_tower",
+      "epoch": 32,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/distillation_tower.json",
+      "json_sha256": "d0af3e582a73e708498f51afaca0733410e1bb728a32968f89f85e24440e8283",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:distillation_tower"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:nuclear_reactor",
+      "epoch": 35,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/nuclear_reactor.json",
+      "json_sha256": "7ee298fd7d1357b415c0e70b8103856cf5ae0c63a08c03491c89d38cd622a80e",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:nuclear_reactor"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:heat_exchanger",
+      "epoch": 35,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/heat_exchanger.json",
+      "json_sha256": "e4cf31e170b9156efc2c4ac058dd174b25e9c9fc54282f60c60d7ccd2d9ab71a",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:heat_exchanger"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:fusion_reactor",
+      "epoch": 44,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/fusion_reactor.json",
+      "json_sha256": "5af8f348307598e9772843e60075f69068d2e27f4fd34fa4c4cef65f7a56e3a4",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:fusion_reactor"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
+    },
+    {
+      "id": "modern_industrialization:plasma_turbine",
+      "epoch": 44,
+      "mod_id": "modern_industrialization",
+      "installed_version": "2.5.10",
+      "json_path": "content/research/evidence/mi_core_next_v5/official/src/generated/resources/data/modern_industrialization/advancement/plasma_turbine.json",
+      "json_sha256": "abf553dff24dd584b394009956f35c25ed6c0900abd86d7cd3ea9fefdc0298fb",
+      "required_action_triggers": [
+        "modern_industrialization:built_multiblock"
+      ],
+      "expected_conditions": {
+        "modern_industrialization:built_multiblock": {
+          "multiblock": {
+            "id": "modern_industrialization:plasma_turbine"
+          }
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/gradle.properties",
+          "sha256": "dcf8a3d66299545a238ac0756da827358010dd30bdf86d485324a85ee2e814c5",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/gradle.properties",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "minecraft_version_evidence"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/build.gradle",
+          "sha256": "7c967a1c0beb26cb3de88301dc9615f21cb886dfe11a89fd484a10fb48289c92",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/build.gradle",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "version_from_release_env"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/.github/workflows/release.yml",
+          "sha256": "a9c2ef40cc8a4457690b8ecc74e7bccd5d8e94b5218515a51e138e537a9fc0a6",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/.github/workflows/release.yml",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "release_version_from_tag"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/release_pin.json",
+          "sha256": "11e20f3b4c2edb60899ef9d777315d33fa15fea98dfc089900795e3f0598a33e",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/tree/2.5.10",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "verified_release_tag_resolution"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "sha256": "abea492fa459cda31cdf8826725be427aa61a17719c0723aad5b20f1780d9a60",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/advancement/multiblock/BuiltMultiblockTrigger.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_codec"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "sha256": "b54e5ed8f537836277fdb98d8f805f65a83a199ed4103e8a3d5b8b2d92bfc111",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/MIAdvancementTriggers.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_registration"
+        },
+        {
+          "path": "content/research/evidence/mi_core_next_v5/official/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "sha256": "9551bbb2e4cafa4bbb992b40d61c4d49b6da3f82d24838448c11354b46b0c792",
+          "url": "https://github.com/AztechMC/Modern-Industrialization/blob/2d2b25dc45043375de1126e703b96ace950d8324/src/main/java/aztech/modern_industrialization/machines/multiblocks/MultiblockMachineBlockEntity.java",
+          "pin": "2d2b25dc45043375de1126e703b96ace950d8324",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "native_server_dispatch"
+        }
+      ],
+      "proof_scope_uk": "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу.",
+      "limitations_uk": [
+        "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
+        "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
+      ]
     }
   ]
 }

@@ -110,3 +110,10 @@ Crafter/піч і restart SavedData, не всі модові обробники
 Додаткові source-докази й канонізація матеріалів: docs/research/OBTAINABILITY.md та content/audit/v5-item-normalization-migrations.json. Початкові22sourcegapвипадки досліджено:18джерел,1виправлення книги,3незавершені IF-випадки; з новими fluid-цілями відкритими лишаються7.
 
 49нових nativeaction критеріїв перевірено за JSON/codec/dispatch джерелами; реальний fullpack trigger dispatch не запускався. Новий component-aware guard закриває творчі планшетки у нативних player handler і pool exchange, але не кожен прямий сторонній ManaItem-виклик. Докладні сценарії: docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md.
+
+0.4.6 MI/Oritech: paid MI generated conversion після source reload може
+лишитися paused; cache timers~20s+. Native MI NBT не зберігає старий codec
+fingerprint, відновлення вилучених recipe IDs/оплачених входів не гарантовано.
+Перед upgrade завершіть активні виробничі цикли на тестовій копії. Oritech
+Atomic Forge native fresh denied lookup може скинутиRF. Fullpack dispatch,
+JEI/Survival/TPS не запускалися. Подробиці: docs/AIA2_0.4.6_CHECKPOINT.uk.md.

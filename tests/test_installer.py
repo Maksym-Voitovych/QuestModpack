@@ -343,6 +343,27 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_missing_industrial_guard_is_rejected_before_instance_changes(self):
+        source = Path(__file__).resolve().parents[1]
+        bundled = list((source/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled), 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True);(instance/'saves/world').mkdir(parents=True)
+            (instance/'mods').mkdir()
+            marker=instance/'saves/world/level.dat';marker.write_bytes(b'world-preserved')
+            with zipfile.ZipFile(bundled[0]) as original, zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                for name in original.namelist():
+                    if name != 'ua/aia2/guard/mixin/OritechFluidMachineMixin.class':
+                        altered.writestr(name,original.read(name))
+            (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+            with self.assertRaisesRegex(installer.InstallError,'MI/Oritech native process'):
+                installer.install(package,instance)
+            self.assertEqual(marker.read_bytes(),b'world-preserved')
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())
+
     def test_missing_ritual_observer_fails_before_backups(self):
         with tempfile.TemporaryDirectory() as tmp:
             package=Path(tmp)/'package';instance=Path(tmp)/'instance'

@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "mod_id": "rootsclassic",
+  "installed_version": "1.21.1-1.5.10",
+  "official_version": "1.5.10",
+  "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+  "status": "implemented_model_tests_passed_pending_fullpack",
+  "sources": [
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/gradle.properties",
+      "sha256": "4502f873707c78c468a6002f6e24ffb85af4298f14e14b6c3aa183089179a677",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/gradle.properties",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "exact_installed_version",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "sha256": "70ba39d2756e2245320a58b292f2edd83a1f8c7b8353368877b8d479d45dc07f",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/MutagenRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "native_same_item_multiset_matcher",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "sha256": "b938427ef27de21f631f54e86eb86f8e979b8f8d1f3bdaf678553e57d65641e0",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenRadiantDaisyRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "native_noon_dimension_and_effect_predicates",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "sha256": "ba587e7025140a07bc486dbdc9f732fa5b6144715520077f1619ba71ee59448c",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenFlareOrchidRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "preserved_nether_fire_resistance_constraints",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenMidnightBloomRecipe.java",
+      "sha256": "d201b7233511581885ffd53582cdd9fc981c3cc318917f118c295733bbf7a382",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/mutations/MutagenMidnightBloomRecipe.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "preserved_end_movement_slowness_constraints",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/mutation/MutagenManager.java",
+      "sha256": "772f05ec42dd106457efa1dc3d0e33948eba2735b11882fbe79b55d0c9d4b7ba",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/mutation/MutagenManager.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "registered_mutation_recipe_list",
+      "version_match": true
+    },
+    {
+      "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/item/MutatingPowderItem.java",
+      "sha256": "d2599a5e28b6be5ae85d15296c7b0631bdaecd0ae6b07407cd3f85404cbae1e8",
+      "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/item/MutatingPowderItem.java",
+      "pin": "db9aa883b7a54a1558dbc710546be1f42544be72",
+      "role": "dropped_entity_consumption_and_native_failed_powder_cost",
+      "version_match": true
+    }
+  ],
+  "fixes": [
+    {
+      "id": "complete_mutation_ingredients",
+      "mixin": "RootsMutationIngredientsMixin",
+      "target": "elucent.rootsclassic.mutation.MutagenRecipe.matches(List<ItemStack>,Level,BlockPos,Player):boolean",
+      "cause_uk": "Штатний matcher видаляє знайдені елементи з копії наданих предметів, але не відмовляє при відсутньому обов’язковому вході. Через це порожня або неповна підмножина приймається базовим matcher.",
+      "change_uk": "Перевірка рівності кількості ingredient entries та dropped ItemStack entries перед штатним алгоритмом. Взаємно однозначне same-item зіставлення й поведінка дублікатів збережені."
+    },
+    {
+      "id": "radiant_daily_noon",
+      "mixin": "RootsMutationRadiantMixin",
+      "target": "MutagenRadiantDaisyRecipe.matches: exactly two Level.getDayTime()J calls",
+      "cause_uk": "Перевірка5000<absolute dayTime<7000 допускає лише перший день світу.",
+      "change_uk": "Обидва значення часу нормалізовано Math.floorMod(time,24000L). Суворі межі5000/7000, Overworld, Night Vision і вихідний блок залишаються штатними."
+    }
+  ],
+  "native_semantics_preserved_uk": [
+    "Штатний isSameItem ігнорує count/components: це не новий NBT/компонентний рецепт.",
+    "Кожен required entry відповідає окремому ItemEntity stack; один стек з count2 не замінює дві повторювані позиції.",
+    "Успішний native use відкидає цілі matched ItemEntities, тож кидати інгредієнти слід окремими мінімальними стеками.",
+    "При невдалому match рослина й dropped ingredients не споживаються, але одна одиниця Mutating Powder штатно витрачається навіть без рецепта. Цю вартість не змінено.",
+    "Патч не надає stage, epoch key або виробничий SavedData proof.",
+    "Незакінчений altar ritual restart recovery цим патчем не змінено."
+  ],
+  "tests": {
+    "source_contract": "passed",
+    "actual_handlers_and_pinned_native_predicates": "passed_48_assertions",
+    "host": "modeled Minecraft classes; original exact Roots predicates compiled unchanged",
+    "full_pack_dispatch": false,
+    "python_tests": 2
+  },
+  "parent_integration_required": [
+    "Fullpack mutation acceptance on a copy of the user instance; optional Roots absent from minimal server"
+  ]
+}

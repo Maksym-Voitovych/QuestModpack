@@ -26,8 +26,8 @@
 | Mekanism | technology_core | DONE — основна карта |
 | Mekanism Generators | technology_core | TODO — карта не досліджена |
 | Mekanism Tools | technology_core | TODO — карта не досліджена |
-| Modern Industrialization | technology_core | IN_PROGRESS — часткова карта |
-| Oritech | technology_core | IN_PROGRESS — часткова карта |
+| Modern Industrialization | technology_core | DONE — основна карта |
+| Oritech | technology_core | DONE — основна карта |
 | PneumaticCraft: Repressurized | technology_core | DONE — основна карта |
 | Powah! | technology_core | IN_PROGRESS — часткова карта |
 | ProjectE | technology_core | TODO — карта не досліджена |

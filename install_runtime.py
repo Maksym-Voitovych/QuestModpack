@@ -373,6 +373,13 @@ def plan_install(source, instance):
                         raise InstallError('This package needs the matching Roots ritual completion observer')
                     if 'ua/aia2/guard/mixin/ApothicSpawnerMixin.class' not in jar.namelist():
                         raise InstallError('This package needs the matching native spawner rune guard')
+                    industrial_guard = {'ua/aia2/guard/ModernRecipeProxyAccess.class'}
+                    industrial_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in [
+                        'ModernCrafterMixin', 'ModernRecipeConversionsMixin', 'ModernReplicatorMixin',
+                        'OritechMachineMixin', 'OritechFluidMachineMixin', 'OritechDustMixin', 'OritechRecipeLookupMixin', 'OritechBaseTickMixin',
+                        'RootsMutationIngredientsMixin', 'RootsMutationRadiantMixin'])
+                    if not industrial_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching MI/Oritech native process and Roots mutation guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

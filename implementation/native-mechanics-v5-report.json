@@ -1,21 +1,21 @@
 {
-  "version": "0.4.2-alpha",
+  "version": "0.4.6-alpha",
   "status": "passed_native_fixture_build_and_script_tests",
-  "native_assertions": 49,
+  "native_assertions": 61,
   "server_jvm_boots": 2,
   "java_policy_assertions": 5237,
   "node_mechanics_tests": 9,
-  "rules": 4,
-  "recipe_routes": 6,
+  "rules": 6,
+  "recipe_routes": 8,
   "storage": "<world>/data/aia2_mechanics_v1.dat",
   "native_report": "companion/native-smoke-report.json",
-  "jar_sha256": "45333bc40277169fbdd10c1cfd8d9e4e33ce0671a343e87b1c7279a535c9392c",
+  "jar_sha256": "a0338f549b20eada54b5685ab1fdf164d8ac23deb271f92af18ffd483ba77cb5",
   "confirmed_fixes": [
     "Native proof read failures revoke all own previous-team advancements before surfacing error",
     "Epoch10 brass proof includes real unheated AIA2 bootstrap native route; heated native alternative kept",
     "Rejected config clears old runtime observation rules without touching SavedData"
   ],
-  "test_scope": "Real vanilla Crafter/furnace/hopper/FakePlayer fixture, actual SavedData second-JVM persistence. Real script40 in Node modeled host. Create/Mekanism completion hooks source-checked and compiled but optional mod JARs absent.",
+  "test_scope": "Real vanilla Crafter/furnace/hopper/FakePlayer and strict process/replication core fixture; SavedData verified in a second JVM. Optional mod handlers are source-checked/compiled/modeled, not dispatched in this server.",
   "full_pack_run": false,
   "tps_benchmark": "not run"
 }

@@ -68,8 +68,8 @@
           "count": 4
         }
       ],
-      "x": 12.0,
-      "y": 0.0
+      "x": 0.0,
+      "y": 1.0
     },
     {
       "id": "000020769D10D3D4",
@@ -118,8 +118,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 8.0,
-      "y": 3.0
+      "x": 3.0,
+      "y": 7.333
     },
     {
       "id": "00002B9564E23091",
@@ -178,8 +178,8 @@
           "count": 4
         }
       ],
-      "x": 5.0,
-      "y": 3.0
+      "x": 0.0,
+      "y": 7.333
     },
     {
       "id": "00004452326A8371",
@@ -238,8 +238,8 @@
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 3.0
+      "x": 14.0,
+      "y": 0.0
     },
     {
       "id": "0000512936A4F85E",
@@ -310,7 +310,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 4.0
     },
     {
       "id": "000083E749137457",
@@ -365,8 +365,8 @@
           "count": 4
         }
       ],
-      "x": 0.0,
-      "y": 12.0
+      "x": 15.0,
+      "y": 7.333
     },
     {
       "id": "000096EF504DDF90",
@@ -421,7 +421,7 @@
           "count": 2
         }
       ],
-      "x": 7.0,
+      "x": 9.0,
       "y": 0.0
     },
     {
@@ -481,8 +481,8 @@
           "count": 2
         }
       ],
-      "x": 13.0,
-      "y": 6.0
+      "x": 8.0,
+      "y": 10.333
     },
     {
       "id": "00002616C125EACC",
@@ -533,8 +533,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 15.0,
-      "y": 5.0
+      "x": 10.0,
+      "y": 9.333
     },
     {
       "id": "00004C97E3262FBC",
@@ -606,8 +606,8 @@
           "count": 4
         }
       ],
-      "x": 15.0,
-      "y": 9.0
+      "x": 10.0,
+      "y": 13.333
     },
     {
       "id": "000057EB74F64175",
@@ -656,7 +656,7 @@
       ],
       "optional": false,
       "rewards": [],
-      "x": 9.0,
+      "x": 11.0,
       "y": 0.0
     },
     {
@@ -706,7 +706,7 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 14.0,
+      "x": 2.0,
       "y": 0.0
     },
     {
@@ -758,8 +758,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 15.0,
-      "y": 3.0
+      "x": 10.0,
+      "y": 7.333
     },
     {
       "id": "0000A78BD56DE552",
@@ -809,8 +809,82 @@
       ],
       "optional": true,
       "rewards": [],
+      "x": 17.0,
+      "y": 7.333
+    },
+    {
+      "id": "0000AAE925CE5430",
+      "title": "Від вугілля до вуглецевого волокна",
+      "description": [
+        "Подайте вугілля до Pulverizer: ефективний рецепт oritech:pulverizer/coal дає coal_dust. Центрифуга перетворює цей пил на carbon_fibre_strands — це інший процес, ніж дроблення руди, і він постачає матеріал аддонів та електроніки.",
+        "Підготуйте живлення й ядро центрифуги, відведіть вихід окремо від подачі пилу. Завдання перевіряє продукти та огляд двох машин; воно не підтверджує автоматичну подачу, швидкість або походження волокна з конкретного рецепта."
+      ],
+      "icon": {
+        "id": "oritech:carbon_fibre_strands",
+        "count": 1
+      },
+      "dependencies": [
+        "00000344CA2A9CB3",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A66A743CC06",
+          "type": "item",
+          "item": {
+            "id": "oritech:coal_dust",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000DF012D75869",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_fibre_strands",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D6D6098D3F4C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:pulverizer_block",
+          "timer": 40
+        },
+        {
+          "id": "000015BBC97974AD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:centrifuge_block",
+          "timer": 40
+        },
+        {
+          "id": "00008072EE15EE80",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004D1CDDF114DA",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
       "x": 2.0,
-      "y": 12.0
+      "y": 2.0
     },
     {
       "id": "0000C8ED5B7D3835",
@@ -869,8 +943,8 @@
           "count": 4
         }
       ],
-      "x": 2.0,
-      "y": 3.0
+      "x": 16.0,
+      "y": 0.0
     },
     {
       "id": "0000CD7B41B75246",
@@ -953,8 +1027,8 @@
           "count": 4
         }
       ],
-      "x": 15.0,
-      "y": 7.0
+      "x": 10.0,
+      "y": 11.333
     },
     {
       "id": "0000D086F36691EF",
@@ -1014,7 +1088,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 4.0
     },
     {
       "id": "0000D91F1C2E7945",
@@ -1063,8 +1137,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 10.0,
-      "y": 3.0
+      "x": 5.0,
+      "y": 7.333
     },
     {
       "id": "00001170A961B847",
@@ -1121,8 +1195,8 @@
           "count": 4
         }
       ],
-      "x": 17.0,
-      "y": 5.0
+      "x": 12.0,
+      "y": 9.333
     },
     {
       "id": "000028E71F95376F",
@@ -1169,8 +1243,8 @@
       ],
       "optional": true,
       "rewards": [],
-      "x": 17.0,
-      "y": 7.0
+      "x": 12.0,
+      "y": 11.333
     },
     {
       "id": "0000CCF209014105",
@@ -1237,7 +1311,231 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 2.333
+    },
+    {
+      "id": "0000D1325BBF98A9",
+      "title": "Вода відкриває полімерну центрифугу",
+      "description": [
+        "Виготовте Machine Fluid Addon і приєднайте до центрифуги або її з’єднаного Machine Extender. Вхід і вихід рідини залишаються на самій машині: аддон відкриває можливість процесу, а не є точкою підключення труби.",
+        "Рецепт packed_wheat з 250 mB води дає raw_biopolymer; альтернативний solid_biofuel також використовує 250 mB. Організуйте окремий запас води. FTB перевіряє крафт аддона, полімер і огляд центрифуги; фактичне прикріплення аддона та заповнення резервуара потребують перевірки у GUI."
+      ],
+      "icon": {
+        "id": "oritech:machine_fluid_addon",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AAE925CE5430",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0154F71B030",
+          "type": "item",
+          "item": {
+            "id": "oritech:machine_fluid_addon",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000AA73F1C0AEBC",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008BF2E636B464",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:centrifuge_block",
+          "timer": 40
+        },
+        {
+          "id": "0000E067C31F5095",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006CEDFEC3C336",
+          "type": "item",
+          "item": {
+            "id": "oritech:small_copper_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.333
+    },
+    {
+      "id": "0000349ED89248C3",
+      "title": "Рослинні відходи живлять виробництво",
+      "description": [
+        "Pulverizer приймає матеріали тегу oritech:biomatter і дає biomass. В Assembler три одиниці матеріалу c:fuels/bio та дошка стають solid_biofuel. Цей запас поєднує рослинну ферму з виробничою коміркою замість спалювання випадкових цінних матеріалів.",
+        "Виготовте Bio Generator і підготуйте обидва види палива; перевірте прийняті палива в JEI. Рідкий біопаливний шлях окремий: центрифуга з Fluid Addon бере біопаливо й воду. Квест підтверджує крафт генератора, продукти та огляд; витрати палива й позитивний енергобаланс тут не вимірюються."
+      ],
+      "icon": {
+        "id": "oritech:bio_generator_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CCF209014105",
+        "0000AAE925CE5430",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000035AB7D9E2220",
+          "type": "item",
+          "item": {
+            "id": "oritech:bio_generator_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000064DD1A576105",
+          "type": "item",
+          "item": {
+            "id": "oritech:biomass",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009522FFBB737D",
+          "type": "item",
+          "item": {
+            "id": "oritech:solid_biofuel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7DAE2994A9A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:bio_generator_block",
+          "timer": 40
+        },
+        {
+          "id": "00000FF46069C516",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A5E661AEE7F9",
+          "type": "item",
+          "item": {
+            "id": "oritech:plastic_sheet",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 2.333
+    },
+    {
+      "id": "0000D23948A1BD83",
+      "title": "Дві сировини для пластикової пластини",
+      "description": [
+        "Рідинна центрифуга перетворює raw_biopolymer та 500 mB води на одну plastic_sheet. Нафтохімічна альтернатива починається із піску та 100 mB рідини тегу c:naphtha: виходять дві polymer_resin, а смола з водою дає пластикові пластини.",
+        "Підготуйте пластину, сирий полімер і смолу, щоб порівняти обидва маршрути. Не подавайте naphtha в рецепт, який очікує biodiesel: це різні теги. Квест перевіряє наявність матеріалів і огляд центрифуги, а не доводить виконання обох рідинних процесів."
+      ],
+      "icon": {
+        "id": "oritech:plastic_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D1325BBF98A9",
+        "0000C724E5541D48"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000776A24081C71",
+          "type": "item",
+          "item": {
+            "id": "oritech:plastic_sheet",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000012089F7E01FF",
+          "type": "item",
+          "item": {
+            "id": "oritech:raw_biopolymer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000037F636A1022F",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AE612D35CE81",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:centrifuge_block",
+          "timer": 40
+        },
+        {
+          "id": "00008E88B3071930",
+          "type": "advancement",
+          "advancement": "aia2:stages/e25"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000839E98447FA3",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 4.333
     },
     {
       "id": "0000E12472F1EEF9",
@@ -1310,7 +1608,363 @@
         }
       ],
       "x": 0.0,
-      "y": 15.0
+      "y": 16.333
+    },
+    {
+      "id": "0000ACB88A1BE69C",
+      "title": "Нафта підсилює вуглецевий лист",
+      "description": [
+        "Рецепт refinery/carbonsheet використовує carbon_fibre_strands і 500 mB рідини тегу c:naphtha для reinforced_carbon_sheet. Це реальний міст від центрифуги до нафтохімічної обробки, а не звичайне стискання волокна.",
+        "Відокремте запас naphtha від пального генераторів і підготуйте волокно та готовий лист. FTB перевіряє матеріали й огляд Refinery; рівень рідини, тривалість рецепта та походження листа не вважаються автоматично доведеними."
+      ],
+      "icon": {
+        "id": "oritech:reinforced_carbon_sheet",
+        "count": 1
+      },
+      "dependencies": [
+        "000031DEB842F601",
+        "000094265C633402",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B3F26E7438EF",
+          "type": "item",
+          "item": {
+            "id": "oritech:carbon_fibre_strands",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000FB26B86FF02",
+          "type": "item",
+          "item": {
+            "id": "oritech:reinforced_carbon_sheet",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007184996E82AC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:refinery_block",
+          "timer": 40
+        },
+        {
+          "id": "0000E21BC045AD46",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000061EFC42D89AD",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 22.606
+    },
+    {
+      "id": "00000CB44CC4697D",
+      "title": "Атомна кузня потребує променя",
+      "description": [
+        "Виготовте Target Designator та огляньте Enderic Laser і Atomic Forge. Designator задає напрям променя. Atomic Forge не приймає живлення звичайним кабелем: її потрібно заряджати лазером. Такий самий принцип пізніше застосовується до Bedrock Extractor.",
+        "Залиште безпечну пряму лінію, не спрямовуйте промінь крізь цінні блоки та безперервно відводьте здобич: переповнення лазерного інвентаря знищує випадіння. Квест підтверджує крафт інструмента та огляд машин, а не правильне наведення, передані FE або виконання атомного рецепта."
+      ],
+      "icon": {
+        "id": "oritech:laser_arm_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F407340EF897",
+        "0000ACB88A1BE69C",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F6527FEA1054",
+          "type": "item",
+          "item": {
+            "id": "oritech:target_designator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000689F7E96D529",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:laser_arm_block",
+          "timer": 40
+        },
+        {
+          "id": "00005FC9BD0F0836",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:atomic_forge_block",
+          "timer": 40
+        },
+        {
+          "id": "000085FFAFCB7267",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008A47F0B4739C",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 22.606
+    },
+    {
+      "id": "00002DAF62B50EBD",
+      "title": "Лазерне живлення для обчислювача",
+      "description": [
+        "Atomic Forge приймає вуглецеве волокно та дві одиниці кремнію для silicon_wafer. Потім processing_unit і дві пластини стають advanced_computing_engine. Рідинна центрифуга має інший шлях пластин через silicon wash — не змішуйте рецептурні входи двох машин.",
+        "Підготуйте кремнієві пластини та обчислювач після налаштування лазерної подачі. Автоматично перевіряються матеріали й огляд Atomic Forge; жоден із цих двох item tasks не видається за перевірку машинного крафту або мінімальної потужності лазера."
+      ],
+      "icon": {
+        "id": "oritech:advanced_computing_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "00000CB44CC4697D",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001E76CBE61846",
+          "type": "item",
+          "item": {
+            "id": "oritech:silicon_wafer",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E6EAB953A0D6",
+          "type": "item",
+          "item": {
+            "id": "oritech:advanced_computing_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB4AAE5E8BD0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:atomic_forge_block",
+          "timer": 40
+        },
+        {
+          "id": "00001BC94BF228BE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BED0F7ACA2EC",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 22.606
+    },
+    {
+      "id": "0000024042906DA4",
+      "title": "Тепловідвід перед ядерним запуском",
+      "description": [
+        "Підготуйте Reactor Controller, fuel rod, теплову трубу й вентиль охолодження. Труба розподіляє тепло між сусідніми компонентами, вентиль відводить його від найгарячішого сусіда; це різні ролі. Контролер збирає конструкцію при взаємодії, а його GUI показує лише перший шар внутрішнього простору.",
+        "Уранові гранули базового Assembler-рецепта потребують двох uranium_gem, пластику й нікелю. Не запускайте реактор до перевірки теплової схеми: перегрів викликає руйнування. FTB перевіряє крафт охолоджувальних деталей, паливо та огляд контролера; сформований мультиблок, безпечну температуру й генерацію FE квест не підтверджує."
+      ],
+      "icon": {
+        "id": "oritech:reactor_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F407340EF897",
+        "00002DAF62B50EBD",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005D6226D95E0C",
+          "type": "item",
+          "item": {
+            "id": "oritech:reactor_heat_pipe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DA83EF5EF233",
+          "type": "item",
+          "item": {
+            "id": "oritech:reactor_vent",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000052AF828FF5C7",
+          "type": "item",
+          "item": {
+            "id": "oritech:reactor_rod",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000463421801E32",
+          "type": "item",
+          "item": {
+            "id": "oritech:uranium_pellet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F19B185E37E8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:reactor_controller",
+          "timer": 40
+        },
+        {
+          "id": "0000E7B240F999AB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B2E7FD9C030F",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 23.697
+    },
+    {
+      "id": "00001C075558025F",
+      "title": "Штучний інтелект керує екзотичним матеріалом",
+      "description": [
+        "У Atomic Forge два advanced_computing_engine та duratium_ingot дають super_ai_chip. Наступний рецепт додає до цього чипа два adamant_ingot й отримує heisenberg_compensator. Це послідовні атомні процеси, а не взаємозамінні прикраси для корпусу.",
+        "Зберіть чип і компенсатор, забезпечивши окремі входи та лазерну енергію. Компенсатор знадобиться для пізніх продуктів і видобування. Завдання фіксує наявність компонентів та огляд кузні; крафт-походження цих продуктів і стабільність живлення автоматично не засвідчуються."
+      ],
+      "icon": {
+        "id": "oritech:heisenberg_compensator",
+        "count": 1
+      },
+      "dependencies": [
+        "00002DAF62B50EBD",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000ABF50CB0B993",
+          "type": "item",
+          "item": {
+            "id": "oritech:super_ai_chip",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000007A176502558",
+          "type": "item",
+          "item": {
+            "id": "oritech:heisenberg_compensator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004D73D31E9015",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:atomic_forge_block",
+          "timer": 40
+        },
+        {
+          "id": "0000216E9C40D5E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00001586DE210FDF",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 21.515
     },
     {
       "id": "00007F6A8676AC0C",
@@ -1356,7 +2010,7 @@
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 20.424
     },
     {
       "id": "0000E44F0568C78A",
@@ -1406,7 +2060,7 @@
         }
       ],
       "x": 2.0,
-      "y": 18.0
+      "y": 20.424
     },
     {
       "id": "00004678762205CE",
@@ -1452,7 +2106,7 @@
         }
       ],
       "x": 4.0,
-      "y": 18.0
+      "y": 20.424
     },
     {
       "id": "0000109A032487E3",
@@ -1498,7 +2152,75 @@
         }
       ],
       "x": 6.0,
-      "y": 18.0
+      "y": 19.333
+    },
+    {
+      "id": "0000A031066D53D4",
+      "title": "Кільце задає шлях частинки",
+      "description": [
+        "Підготуйте Accelerator Controller, Guide Ring і Tachyon Collector. Пряме кільце позаду контролера починає маршрут; взаємодія з кільцем додає поворот на 45 градусів. Увімкнений редстоун на вигнутому кільці спрямовує частинку прямо, вимкнений повертає її за початковою кривою.",
+        "Колектори ловлять тахіони навколо зіткнення; вони не замінюють кільця й не формують маршрут. Установіть їх з урахуванням різних напрямів вильоту. Завдання підтверджує крафт контролера та кілець і огляд колектора; зіткнення, швидкість частинок і енергетичну окупність воно автоматично не вимірює."
+      ],
+      "icon": {
+        "id": "oritech:accelerator_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "00004678762205CE",
+        "00001C075558025F",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BBC65A56345A",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000178B4443B0CC",
+          "type": "item",
+          "item": {
+            "id": "oritech:accelerator_ring",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000000FB7C1C836E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:particle_collector_block",
+          "timer": 40
+        },
+        {
+          "id": "00000C0CE00BAD62",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B35256ADCF05",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 21.515
     },
     {
       "id": "0000B78E8F2FD744",
@@ -1544,7 +2266,7 @@
         }
       ],
       "x": 8.0,
-      "y": 18.0
+      "y": 19.333
     },
     {
       "id": "000077F7CA80450E",
@@ -1605,7 +2327,86 @@
         }
       ],
       "x": 10.0,
-      "y": 18.0
+      "y": 19.333
+    },
+    {
+      "id": "00009D8465499B6F",
+      "title": "Кристал розгалужує фінальне виробництво",
+      "description": [
+        "Overcharged Crystal має два підтверджені шляхи цього експорту: зіткнення fluxite з energite_dust у прискорювачі та рецепт верстака з advanced_battery, amethyst_block і superconductor. Не вважайте кристал доказом запуску колайдера. Atomic Forge поєднує два кристали з heisenberg_compensator для prometheum_ingot.",
+        "Інший споживач цих компонентів — Bedrock Extractor. Його ставлять над ресурсним вузлом у зоні 3×3 та в межах трьох блоків униз; живлення надходить тільки Enderic Laser. Підготуйте обидва фінальні напрями. FTB підтверджує матеріали, крафт видобувача й огляд; розташування вузла, лазерне заряджання та нескінченний видобуток не зараховуються автоматично."
+      ],
+      "icon": {
+        "id": "oritech:deep_drill_block",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A031066D53D4",
+        "00001C075558025F",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000979F2012AAE2",
+          "type": "item",
+          "item": {
+            "id": "oritech:overcharged_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D2CFB381DB5",
+          "type": "item",
+          "item": {
+            "id": "oritech:prometheum_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC006D5F6E20",
+          "type": "item",
+          "item": {
+            "id": "oritech:deep_drill_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000050D20F466F9E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "oritech:deep_drill_block",
+          "timer": 40
+        },
+        {
+          "id": "000097888FF916DA",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000004C9041269B4",
+          "type": "item",
+          "item": {
+            "id": "oritech:polymer_resin",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 21.515
     },
     {
       "id": "0000846E34701D3B",
@@ -1666,7 +2467,7 @@
         }
       ],
       "x": 12.0,
-      "y": 18.0
+      "y": 19.333
     },
     {
       "id": "00009D4CC34D2393",
@@ -1749,7 +2550,7 @@
         }
       ],
       "x": 14.0,
-      "y": 18.0
+      "y": 19.333
     },
     {
       "id": "0000D10325F921DB",
@@ -1821,7 +2622,7 @@
         }
       ],
       "x": 0.0,
-      "y": 21.0
+      "y": 26.697
     }
   ]
 }

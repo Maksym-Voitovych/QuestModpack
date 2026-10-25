@@ -1,3 +1,14 @@
+# 0.4.6-alpha — MI/Oritech та серверні виробничі маршрути
+
+- 30 нових змістовних optional-квестів:15 MI та15 Oritech;3242 квести/138 глав. Усі3212 попередні payloads/dependencies, крім координат, збережено.
+- Дві основні карти за exact MI2.5.10/Oritech1.2.13 source/wiki/export.11 нових native action контрактів,97 загалом; форма мультиблока не видається за доказ виробництва.
+- Чотири машинні міжмодові формули:3 MI Assembler і1 Oritech Assembler. Шість дешевих native producers замінено;606 попередніх custom entries незмінні. Початкові матеріальні витрати збережено.
+- MI direct-list/cached crafter, native conversion provenance та Replicator отримали перевірки власника/рецепта/виходу. Реплікація ключів заборонена навіть після completed48.
+- Oritech canonical recipe identity перевіряється до нормального процесу; окремі fluid commits і nine-small-dust conversion захищені. Atomic native fresh-lookup RF reset залишається явним обмеженням.
+- Roots mutation виправлено: повний склад і щоденний noon; інші native block/dimension/effect умови та powder cost збережено.
+- API4,96 ключів,390 предметів/PNG, командний SavedData і попередній FTB-прогрес збережено. Доступні перевірки й межі у docs/AIA2_0.4.6_CHECKPOINT.uk.md; fullpack/JEI/Survival/TPS ще не запускалися.
+- Це перевірюваний проміжний блок роботи над0.5, не завершений реліз0.5.
+
 # 0.4.5-alpha — Roots/AA та split Apothic core
 
 -45новихквестів(12Roots,11AA,12Enchanting,10Spawners),4основнікарти;3212квестів/138глав. Попередні3167ID/deps/rewards збережено.

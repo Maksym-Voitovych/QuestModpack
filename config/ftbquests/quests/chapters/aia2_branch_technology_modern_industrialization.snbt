@@ -61,6 +61,73 @@
       "y": 3.158
     },
     {
+      "id": "00006F43065F35E6",
+      "title": "Рецепт суміші перед випалом сталі",
+      "description": [
+        "Відведіть пару до Bronze Mixer та розділіть його входи й виходи. Чинний рецепт змішує 2 Brick Dust із 2 Clay Ball у 4 Fire Clay Dust при 2 EU/t. Це корисніше за ручне приготування й підводить до вогнетривкої конструкції. Переконайтеся, що вихід не забитий, перш ніж збільшувати запас сировини.",
+        "Перевіряється встановлена машина та зазначений запас матеріалів. Така ціль не доводить конкретний машинний цикл: Fire Clay Dust має також ручний шлях."
+      ],
+      "icon": {
+        "id": "modern_industrialization:bronze_mixer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AE93690394F1",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001CDB0CF7FD35",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:bronze_mixer",
+          "timer": 40
+        },
+        {
+          "id": "0000A91E7C06EBF5",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:fire_clay_dust",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006B501183D64",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:brick_dust",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E4D064796F1D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000049431C84CF6B",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 0.0,
+      "y": 12.802
+    },
+    {
       "id": "000017F515C0AFA9",
       "title": "Жаростійка основа",
       "description": [
@@ -207,6 +274,49 @@
       ],
       "x": 2.0,
       "y": 3.093
+    },
+    {
+      "id": "0000EDF682CCF9B0",
+      "title": "Зібрати Steam Blast Furnace",
+      "description": [
+        "Зберіть Steam Blast Furnace за проєкцією ключа. Вогнетривкі блоки й хетчі мають утворювати правильну конструкцію; заплануйте окреме подавання Uncooked Steel Dust та пари. Сталь із цього процесу потрібна сталевим паровим машинам та початковим корпусам електричної лінії.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:steam_blast_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F43065F35E6",
+        "000092097EA103EC"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C23DF47EF7A1",
+          "type": "advancement",
+          "advancement": "aia2:mi/steam_blast_furnace"
+        },
+        {
+          "id": "000087CA4552836D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e06"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EC69EE95A6A2",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 12.802
     },
     {
       "id": "00001C4B19A60F6F",
@@ -1507,7 +1617,7 @@
         }
       ],
       "x": 0.0,
-      "y": 15.802
+      "y": 20.802
     },
     {
       "id": "00004DFD4398328A",
@@ -1556,7 +1666,7 @@
         }
       ],
       "x": 2.0,
-      "y": 16.802
+      "y": 21.802
     },
     {
       "id": "0000D926016D416C",
@@ -1616,7 +1726,7 @@
         }
       ],
       "x": 2.0,
-      "y": 14.802
+      "y": 19.802
     },
     {
       "id": "000011B890662BC0",
@@ -1661,7 +1771,7 @@
         }
       ],
       "x": 4.0,
-      "y": 15.802
+      "y": 20.802
     },
     {
       "id": "000054B0294B2E94",
@@ -1710,7 +1820,7 @@
         }
       ],
       "x": 4.0,
-      "y": 13.802
+      "y": 18.802
     },
     {
       "id": "00007C8277EF1437",
@@ -1759,7 +1869,7 @@
         }
       ],
       "x": 4.0,
-      "y": 11.802
+      "y": 16.802
     },
     {
       "id": "0000880A2DF959C3",
@@ -1808,7 +1918,118 @@
         }
       ],
       "x": 4.0,
-      "y": 17.802
+      "y": 22.802
+    },
+    {
+      "id": "0000D8530A6D9C58",
+      "title": "Сталевий корпус без втрати вмісту",
+      "description": [
+        "Застосуйте Steel Upgrade безпосередньо до відповідної бронзової машини. Перед покращенням перевірте налаштування слотів та запас пари, після нього — збережений вміст. Сталеві машини мають іншу межу обробки, тому додатковий потік пари не замінює правильного tier.",
+        "Успішний native Steel Upgrade уже замінив бронзовий блок сталевим і переніс його дані; критерій спрацьовує до фінального shrink предмета. Це доказ застосування, не гарантія певної швидкості чи оплати в Creative."
+      ],
+      "icon": {
+        "id": "modern_industrialization:steel_upgrade",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EDF682CCF9B0",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B59BA607338B",
+          "type": "advancement",
+          "advancement": "modern_industrialization:used_steel_upgrade"
+        },
+        {
+          "id": "00004A559A35A0C1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BB0D8EF484F7",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 12.802
+    },
+    {
+      "id": "00001A3C8E954D84",
+      "title": "Розвести вихід турбіни та LV-мережу",
+      "description": [
+        "З’єднайте вихід LV Steam Turbine з кабелем поточного tier. Вихідна грань джерела важлива: суміжність із будь-якою стінкою не дорівнює з’єднанню. На початку звичайні електричні машини приймають LV; зміна tier потребує відповідного Machine Hull. Для вузлів між мережами розрізняйте 5 входів / 1 вихід підвищувального та 1 вхід / 5 виходів понижувального трансформатора.",
+        "Це перевірка комплекту й установленого джерела; FTB не вимірює напругу, правильність граней чи енергію у мережі."
+      ],
+      "icon": {
+        "id": "modern_industrialization:lv_steam_turbine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D8530A6D9C58",
+        "000023E51735BEBF",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000065E181C5BFE6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:lv_steam_turbine",
+          "timer": 40
+        },
+        {
+          "id": "0000AB47A64C3CA0",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_cable",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000016EA3CB547DD",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:lv_mv_transformer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C737F00F7F70",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000094CFB8F9EA57",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 6.0,
+      "y": 12.802
     },
     {
       "id": "00007D2E4F4AA80D",
@@ -1857,7 +2078,7 @@
         }
       ],
       "x": 6.0,
-      "y": 16.802
+      "y": 21.802
     },
     {
       "id": "0000C011415447F9",
@@ -1902,7 +2123,7 @@
         }
       ],
       "x": 6.0,
-      "y": 14.802
+      "y": 19.802
     },
     {
       "id": "0000112683AF47DA",
@@ -1947,7 +2168,7 @@
         }
       ],
       "x": 8.0,
-      "y": 15.802
+      "y": 20.802
     },
     {
       "id": "00004CA5C61AE6C1",
@@ -2009,7 +2230,7 @@
         }
       ],
       "x": 8.0,
-      "y": 11.802
+      "y": 16.802
     },
     {
       "id": "000086C9D00487D4",
@@ -2054,7 +2275,7 @@
         }
       ],
       "x": 8.0,
-      "y": 17.802
+      "y": 22.802
     },
     {
       "id": "0000ACFA84D8546D",
@@ -2103,7 +2324,7 @@
         }
       ],
       "x": 8.0,
-      "y": 13.802
+      "y": 18.802
     },
     {
       "id": "0000E92CD6F76EB2",
@@ -2159,7 +2380,7 @@
         }
       ],
       "x": 10.0,
-      "y": 11.802
+      "y": 16.802
     },
     {
       "id": "00003742520045B7",
@@ -2219,7 +2440,7 @@
         }
       ],
       "x": 0.0,
-      "y": 20.802
+      "y": 25.802
     },
     {
       "id": "000029EACBF7C245",
@@ -2267,7 +2488,7 @@
         }
       ],
       "x": 0.0,
-      "y": 27.802
+      "y": 32.802
     },
     {
       "id": "0000748BA96641B9",
@@ -2315,7 +2536,7 @@
         }
       ],
       "x": 0.0,
-      "y": 32.802
+      "y": 37.802
     },
     {
       "id": "00009B44471CC145",
@@ -2360,7 +2581,7 @@
         }
       ],
       "x": 15.0,
-      "y": 23.802
+      "y": 28.802
     },
     {
       "id": "0000449F9AD59992",
@@ -2409,7 +2630,7 @@
         }
       ],
       "x": 2.0,
-      "y": 26.802
+      "y": 31.802
     },
     {
       "id": "0000ADF5F89B527A",
@@ -2469,7 +2690,7 @@
         }
       ],
       "x": 2.0,
-      "y": 28.802
+      "y": 33.802
     },
     {
       "id": "0000BAA09F19FDA7",
@@ -2529,7 +2750,7 @@
         }
       ],
       "x": 2.0,
-      "y": 32.802
+      "y": 37.802
     },
     {
       "id": "0000109763062371",
@@ -2574,7 +2795,7 @@
         }
       ],
       "x": 4.0,
-      "y": 27.802
+      "y": 32.802
     },
     {
       "id": "0000238A77278526",
@@ -2619,7 +2840,7 @@
         }
       ],
       "x": 4.0,
-      "y": 29.802
+      "y": 34.802
     },
     {
       "id": "000048399C3C9559",
@@ -2668,7 +2889,7 @@
         }
       ],
       "x": 4.0,
-      "y": 23.802
+      "y": 28.802
     },
     {
       "id": "0000CB1977658343",
@@ -2717,7 +2938,7 @@
         }
       ],
       "x": 4.0,
-      "y": 25.802
+      "y": 30.802
     },
     {
       "id": "0000132DD3E87F98",
@@ -2777,7 +2998,7 @@
         }
       ],
       "x": 6.0,
-      "y": 28.802
+      "y": 33.802
     },
     {
       "id": "00005AE952C79230",
@@ -2822,7 +3043,7 @@
         }
       ],
       "x": 6.0,
-      "y": 26.802
+      "y": 31.802
     },
     {
       "id": "00000777A83F11B9",
@@ -2884,7 +3105,7 @@
         }
       ],
       "x": 8.0,
-      "y": 28.802
+      "y": 33.802
     },
     {
       "id": "000036EF73AB1C44",
@@ -2929,7 +3150,75 @@
         }
       ],
       "x": 8.0,
-      "y": 24.802
+      "y": 29.802
+    },
+    {
+      "id": "0000C8C4566788DB",
+      "title": "Ефективність має постійну ціну",
+      "description": [
+        "Підготуйте Overdrive Module і запас живлення для повторюваної лінії. Модуль стримує спад ефективності під час простою, але продовжує витрачати енергію, ніби рецепт іде далі. Коли енергії бракує, ефективність падає звичайним способом; це не безкоштовний прискорювач.",
+        "Перевіряється комплект і машина. Вставлення модуля, фактична ефективність та витрата EU потребують перевірки на установці."
+      ],
+      "icon": {
+        "id": "modern_industrialization:overdrive_module",
+        "count": 1
+      },
+      "dependencies": [
+        "00001A3C8E954D84",
+        "000076F86DFE475E",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006D343BC997C2",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:overdrive_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A7DAD531EDE3",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:advanced_machine_hull",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D9779CD29ABA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:electric_furnace",
+          "timer": 40
+        },
+        {
+          "id": "000070F2704A6F2E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005737EFEC7AEB",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:coke",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 12.802
     },
     {
       "id": "0000CE8A581BC2C0",
@@ -2978,7 +3267,7 @@
         }
       ],
       "x": 8.0,
-      "y": 26.802
+      "y": 31.802
     },
     {
       "id": "0000189544945229",
@@ -3038,7 +3327,50 @@
         }
       ],
       "x": 10.0,
-      "y": 27.802
+      "y": 32.802
+    },
+    {
+      "id": "00004B8820A7993E",
+      "title": "Електрична домна — перевірена конструкція",
+      "description": [
+        "Зберіть EBF із Heatproof Casings, порожнистими шарами Cupronickel Coils та енергетичним входом. Controller і хетчі ставляться за вбудованою проєкцією. У AIA2 сам controller перебалансовано: використовуйте чинний JEI-рецепт, а не копію старого списку посібника.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:electric_blast_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C8C4566788DB",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005523CD3D6FAB",
+          "type": "advancement",
+          "advancement": "modern_industrialization:electric_blast_furnace"
+        },
+        {
+          "id": "0000645EC0CFEA1C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007A0017B413BB",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 10.0,
+      "y": 12.802
     },
     {
       "id": "00007C5F04262099",
@@ -3098,7 +3430,50 @@
         }
       ],
       "x": 10.0,
-      "y": 29.802
+      "y": 34.802
+    },
+    {
+      "id": "00003BA8526B4105",
+      "title": "Відкритий нафтовий контур MI",
+      "description": [
+        "Зберіть Oil Drilling Rig із корпусами, pipe-casings, ланцюгами та відповідними хетчами. Їй потрібні бурові витратні матеріали, енергетичний вхід і окремий fluid output. Не змішуйте видобуток MI з іншим нафтовим модом лише через схожу назву рідини.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:oil_drilling_rig",
+        "count": 1
+      },
+      "dependencies": [
+        "00004B8820A7993E",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C57BF738BB16",
+          "type": "advancement",
+          "advancement": "modern_industrialization:oil_drilling_rig"
+        },
+        {
+          "id": "0000517A46644667",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000702454877179",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 13.802
     },
     {
       "id": "0000A982456EDAD7",
@@ -3169,7 +3544,7 @@
         }
       ],
       "x": 12.0,
-      "y": 28.802
+      "y": 33.802
     },
     {
       "id": "0000B8E303D24298",
@@ -3214,7 +3589,93 @@
         }
       ],
       "x": 12.0,
-      "y": 26.802
+      "y": 31.802
+    },
+    {
+      "id": "0000C35D0189FD30",
+      "title": "Kanthal — нова форма тієї самої домни",
+      "description": [
+        "Перебудуйте EBF під форму з Kanthal Coils. Це не просто зберігання котушок у скрині: нова форма відкриває власні допустимі процеси. Подавання сильнішого струму саме по собі не замінює потрібного типу котушки.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:kanthal_coil",
+        "count": 1
+      },
+      "dependencies": [
+        "00004B8820A7993E",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000036E23589E627",
+          "type": "advancement",
+          "advancement": "modern_industrialization:kanthal_coil"
+        },
+        {
+          "id": "00007F7F471157D5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CE0DFB73F24F",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 11.802
+    },
+    {
+      "id": "0000102681230D25",
+      "title": "Гарячий злиток має маршрут охолодження",
+      "description": [
+        "Сформуйте Vacuum Freezer поряд з EBF. Гарячі злитки нержавіючої сталі потребують окремого охолоджувального процесу; звичайний холодний злиток зі складу не описує цей виробничий маршрут. Переконайтеся, що випуск EBF відведено до потрібного входу.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:vacuum_freezer",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C35D0189FD30",
+        "00004DA9BB20B560"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004EFF8E348246",
+          "type": "advancement",
+          "advancement": "modern_industrialization:vacuum_freezer"
+        },
+        {
+          "id": "00009BDF61D783DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e22"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000081670DF4F0C0",
+          "type": "item",
+          "item": {
+            "id": "mekanism:ingot_bronze",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 14.0,
+      "y": 11.802
     },
     {
       "id": "0000233FDDF7B0F6",
@@ -3274,7 +3735,7 @@
         }
       ],
       "x": 0.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "00007740AE96834F",
@@ -3347,7 +3808,7 @@
         }
       ],
       "x": 15.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "00008D79984381F8",
@@ -3403,7 +3864,7 @@
         }
       ],
       "x": 5.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "00008E4AF80B06EB",
@@ -3483,7 +3944,7 @@
         }
       ],
       "x": 12.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "0000379BB1D4D32C",
@@ -3543,7 +4004,7 @@
         }
       ],
       "x": 2.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "0000D115C7BFB63E",
@@ -3593,7 +4054,7 @@
       "optional": true,
       "rewards": [],
       "x": 7.0,
-      "y": 35.802
+      "y": 40.802
     },
     {
       "id": "0000AD565B229F29",
@@ -3643,7 +4104,51 @@
       "optional": true,
       "rewards": [],
       "x": 9.0,
-      "y": 35.802
+      "y": 40.802
+    },
+    {
+      "id": "000070C6FB298BFD",
+      "title": "Висота колони визначає число фракцій",
+      "description": [
+        "Після цифрових схем сформуйте Distillation Tower. Distillery і Tower мають різні можливості: колона отримує додаткові фракції з додатковими шарами. Мінімальна форма віддає першу фракцію, більша — більше виходів; відведіть кожний потік окремо за проєкцією та чинним рецептом.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:distillation_tower",
+        "count": 1
+      },
+      "dependencies": [
+        "00003BA8526B4105",
+        "0000EE53E3197212",
+        "0000AE14C79E7DF9"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B526194245BC",
+          "type": "advancement",
+          "advancement": "modern_industrialization:distillation_tower"
+        },
+        {
+          "id": "00007B0594981C1D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e32"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000058ED4C29E21E",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:coke",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 13.802
     },
     {
       "id": "00009C7EC69FBDFD",
@@ -3705,7 +4210,7 @@
         }
       ],
       "x": 0.0,
-      "y": 38.802
+      "y": 43.802
     },
     {
       "id": "0000058A3968D2DC",
@@ -3761,7 +4266,7 @@
         }
       ],
       "x": 7.0,
-      "y": 41.802
+      "y": 46.802
     },
     {
       "id": "00000F7B5F2BCE8C",
@@ -3821,7 +4326,7 @@
         }
       ],
       "x": 0.0,
-      "y": 51.802
+      "y": 56.802
     },
     {
       "id": "0000399BE522530A",
@@ -3871,7 +4376,7 @@
       "optional": true,
       "rewards": [],
       "x": 7.0,
-      "y": 51.802
+      "y": 56.802
     },
     {
       "id": "00003EBC9447E9D9",
@@ -3931,7 +4436,7 @@
         }
       ],
       "x": 14.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "00008B07CC2F30C6",
@@ -3981,7 +4486,7 @@
       "optional": true,
       "rewards": [],
       "x": 9.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "0000EC88F2503178",
@@ -4041,7 +4546,7 @@
         }
       ],
       "x": 0.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "0000EE82B98A2932",
@@ -4091,7 +4596,7 @@
       "optional": false,
       "rewards": [],
       "x": 0.0,
-      "y": 43.802
+      "y": 48.802
     },
     {
       "id": "000045BC2E720E5D",
@@ -4141,7 +4646,7 @@
       "optional": true,
       "rewards": [],
       "x": 11.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "00004715C0B9B916",
@@ -4201,7 +4706,7 @@
         }
       ],
       "x": 16.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "000061D58976A5DC",
@@ -4261,7 +4766,7 @@
         }
       ],
       "x": 2.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "000066BE3B05514D",
@@ -4321,7 +4826,7 @@
         }
       ],
       "x": 9.0,
-      "y": 41.802
+      "y": 46.802
     },
     {
       "id": "000068350347604B",
@@ -4384,7 +4889,7 @@
       "optional": true,
       "rewards": [],
       "x": 2.0,
-      "y": 41.802
+      "y": 46.802
     },
     {
       "id": "00006D194B4E5928",
@@ -4468,7 +4973,7 @@
         }
       ],
       "x": 2.0,
-      "y": 45.802
+      "y": 50.802
     },
     {
       "id": "00007E2D07F709ED",
@@ -4518,7 +5023,7 @@
       "optional": false,
       "rewards": [],
       "x": 2.0,
-      "y": 51.802
+      "y": 56.802
     },
     {
       "id": "0000F6ABAD4961FF",
@@ -4580,7 +5085,7 @@
         }
       ],
       "x": 2.0,
-      "y": 43.802
+      "y": 48.802
     },
     {
       "id": "00006414F7118CA8",
@@ -4630,7 +5135,7 @@
       "optional": true,
       "rewards": [],
       "x": 11.0,
-      "y": 41.802
+      "y": 46.802
     },
     {
       "id": "000064DF8448198E",
@@ -4690,7 +5195,7 @@
         }
       ],
       "x": 4.0,
-      "y": 48.802
+      "y": 53.802
     },
     {
       "id": "000099D12DC81358",
@@ -4750,7 +5255,7 @@
         }
       ],
       "x": 4.0,
-      "y": 51.802
+      "y": 56.802
     },
     {
       "id": "0000E7E8702B9BD9",
@@ -4802,7 +5307,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 43.802
+      "y": 48.802
     },
     {
       "id": "0000B44174E3D980",
@@ -4862,7 +5367,95 @@
         }
       ],
       "x": 6.0,
-      "y": 48.802
+      "y": 53.802
+    },
+    {
+      "id": "0000294F0612534D",
+      "title": "Реактор MI: тепло, хетчі й паливо",
+      "description": [
+        "Сформуйте Nuclear Reactor та відокремте item- і fluid-хетчі. У цій версії MI реактор перетворює ядерну енергію на тепло й пару; це інша модель, ніж радіація Mekanism. Перегрів може пошкодити вміст хетчів, тому спершу сплануйте воду, тепловідведення й переробку відпрацьованих компонентів.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:nuclear_reactor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000102681230D25",
+        "000070C6FB298BFD",
+        "00006083A53C55F8",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000976AC430B71",
+          "type": "advancement",
+          "advancement": "modern_industrialization:nuclear_reactor"
+        },
+        {
+          "id": "0000DAF911C7E758",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C97A8D2D82BA",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:coke",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 12.802
+    },
+    {
+      "id": "0000E6693004FEEE",
+      "title": "Контур високого тиску перед турбіною",
+      "description": [
+        "Сформуйте Heat Exchanger та звірте підтримані потоки пари у JEI. Теплообмінник розділяє контури; він не є універсальним перетворювачем довільної рідини в енергію. Плануйте безперервне відведення пари й повернення води перед тривалим запуском реактора.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:heat_exchanger",
+        "count": 1
+      },
+      "dependencies": [
+        "0000294F0612534D",
+        "00001D39B4D76842"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001C93D7E7C033",
+          "type": "advancement",
+          "advancement": "modern_industrialization:heat_exchanger"
+        },
+        {
+          "id": "00000364FC80D642",
+          "type": "advancement",
+          "advancement": "aia2:stages/e35"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005B9BE54713E9",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 12.802
     },
     {
       "id": "0000C17384BB4BE2",
@@ -4914,7 +5507,94 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 54.802
+      "y": 59.802
+    },
+    {
+      "id": "00003E27789CC7ED",
+      "title": "Завод із запуском термоядерної реакції",
+      "description": [
+        "Сформуйте Fusion Reactor і відокремте його пускову енергію від майбутнього виходу. Рецепти поєднують визначені ізотопи, зокрема Deuterium, Tritium та Helium-3, у Helium Plasma; точну суміш і пускову ціну беріть із чинного JEI-рецепта. Наявність великих накопичувачів сама не запускає реакцію.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:fusion_reactor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E6693004FEEE",
+        "0000A8A1400E704E",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00009CA079C7D429",
+          "type": "advancement",
+          "advancement": "modern_industrialization:fusion_reactor"
+        },
+        {
+          "id": "00000E7D6B1A74E9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000C5C9640C746",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 20.0,
+      "y": 12.802
+    },
+    {
+      "id": "000008E27EC62501",
+      "title": "Плазма стає окремою електростанцією",
+      "description": [
+        "Сформуйте Plasma Turbine та підготуйте окремий маршрут Helium Plasma з Fusion Reactor. Це генератор для визначеного плазмового палива, не звичайний паровий вузол. Пусковий запас термоядерної лінії має переживати її власний запуск, а надлишок енергії — мати приймач.",
+        "Критерій зараховується після успішної перевірки форми мультиблока гравцеві, який розмістив controller і зараз онлайн. Це підтверджує конструкцію, а не живлення, перероблений обсяг чи безперервну роботу."
+      ],
+      "icon": {
+        "id": "modern_industrialization:plasma_turbine",
+        "count": 1
+      },
+      "dependencies": [
+        "00003E27789CC7ED",
+        "00008DA6AB35B13F"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007ADBAE77BE90",
+          "type": "advancement",
+          "advancement": "modern_industrialization:plasma_turbine"
+        },
+        {
+          "id": "00001AE34EBB5C5D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e44"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000EE441CEAC44",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 22.0,
+      "y": 12.802
     },
     {
       "id": "00009B61AC018ED8",
@@ -4986,7 +5666,64 @@
         }
       ],
       "x": 0.0,
-      "y": 57.802
+      "y": 62.802
+    },
+    {
+      "id": "0000D78FBACDA1D6",
+      "title": "Після кампанії — контрольована реплікація",
+      "description": [
+        "Після завершення всіх 48 епох підготуйте Replicator і Singularity як основу UU Matter-ланцюга. Штатна механіка копіює шаблон за витрату UU Matter; це не дозвіл дублювати ключі, виробничі докази або творчі компоненти. Поважайте серверний blacklist та перевіряйте звичайний дозволений матеріал у тестовій лінії.",
+        "Це чесний setup-крок після completed48: перевіряються станція й матеріал. Копіювання, whitelist/blacklist і точну витрату UU тут не названо автоматично доведеними."
+      ],
+      "icon": {
+        "id": "modern_industrialization:replicator",
+        "count": 1
+      },
+      "dependencies": [
+        "000008E27EC62501",
+        "000073CC29E6976C",
+        "0000905467D7E918"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000011FC46F927CE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "modern_industrialization:replicator",
+          "timer": 40
+        },
+        {
+          "id": "000032FB5743639F",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:singularity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E2E9AD0A3843",
+          "type": "advancement",
+          "advancement": "aia2:keys/e48"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E48413783B3A",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:tin_plate",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 24.0,
+      "y": 12.802
     }
   ]
 }

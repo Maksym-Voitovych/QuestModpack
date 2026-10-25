@@ -1,0 +1,804 @@
+{
+  "schema": 1,
+  "recipe_count": 45,
+  "status": "PASS",
+  "scope_uk": "Статичний аудит ефективних експортованих рецептів: registered serializer, item inputs та по одному реальному member witness для кожного вхідного тегу. Це не доказ повного проходження Survival чи Java Codec roundtrip.",
+  "recipes": [
+    {
+      "recipe_id": "oritech:pulverizer/coal",
+      "type": "oritech:pulverizer",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "minecraft:coals",
+          "member": "immersiveengineering:coal_coke",
+          "chain": [
+            "tags/minecraft/item/minecraft/coals.json"
+          ],
+          "epoch": 8
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/carbon",
+      "type": "oritech:centrifuge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:dusts/coal",
+          "member": "enderio:powdered_coal",
+          "chain": [
+            "tags/minecraft/item/c/dusts/coal.json"
+          ],
+          "epoch": 19
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:pulverizer/biobasic",
+      "type": "oritech:pulverizer",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "oritech:biomatter",
+          "member": "enderio:plant_matter_brown",
+          "chain": [
+            "tags/minecraft/item/oritech/biomatter.json"
+          ],
+          "epoch": 19
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:assembler/solidbiofuel",
+      "type": "oritech:assembler",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:fuels/bio",
+          "member": "createaddition:biomass",
+          "chain": [
+            "tags/minecraft/item/c/fuels/bio.json"
+          ],
+          "epoch": 11
+        },
+        {
+          "kind": "item",
+          "tag": "minecraft:planks",
+          "member": "ad_astra:aeronos_planks",
+          "chain": [
+            "tags/minecraft/item/minecraft/planks.json"
+          ],
+          "epoch": 37
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/biogen",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/steel",
+          "member": "ad_astra:steel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/steel.json"
+          ],
+          "epoch": 37
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/fuelgen",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/steel",
+          "member": "ad_astra:steel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/steel.json"
+          ],
+          "epoch": 37
+        },
+        {
+          "kind": "item",
+          "tag": "oritech:plating",
+          "member": "oritech:carbon_plating_block",
+          "chain": [
+            "tags/minecraft/item/oritech/plating.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/biofuel",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:fuels/bio",
+          "member": "createaddition:biomass",
+          "chain": [
+            "tags/minecraft/item/c/fuels/bio.json"
+          ],
+          "epoch": 11
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/biopolymer",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/biopolymer_biomass",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/addon/fluid",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/electrum",
+          "member": "alltheores:electrum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/electrum.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:silicon",
+          "member": "ae2:silicon",
+          "chain": [
+            "tags/minecraft/item/c/silicon.json"
+          ],
+          "epoch": 17
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:foundry/alloy/biosteel",
+      "type": "oritech:foundry",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/iron",
+          "member": "minecraft:iron_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/iron.json"
+          ],
+          "epoch": 0
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/plasticoil",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/naptharesin",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "fluid",
+          "tag": "c:naphtha",
+          "member": "immersivepetroleum:naphtha",
+          "chain": [
+            "tags/minecraft/fluid/c/naphtha.json"
+          ],
+          "epoch": null
+        },
+        {
+          "kind": "item",
+          "tag": "minecraft:sand",
+          "member": "ad_astra:mars_sand",
+          "chain": [
+            "tags/minecraft/item/minecraft/sand.json"
+          ],
+          "epoch": 37
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/plasticbio",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:refinery/oilalt",
+      "type": "oritech:refinery",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "fluid",
+          "tag": "c:oil",
+          "member": "ad_astra:oil",
+          "chain": [
+            "tags/minecraft/fluid/c/oil.json"
+          ],
+          "epoch": null
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/refinerymodule",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/copper",
+          "member": "minecraft:copper_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/copper.json"
+          ],
+          "epoch": 2
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:assembler/motor",
+      "type": "oritech:assembler",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/nickel",
+          "member": "alltheores:nickel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/nickel.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/steel",
+          "member": "ad_astra:steel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/steel.json"
+          ],
+          "epoch": 37
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:assembler/processingunit",
+      "type": "oritech:assembler",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        },
+        {
+          "kind": "item",
+          "tag": "c:dusts/redstone",
+          "member": "minecraft:redstone",
+          "chain": [
+            "tags/minecraft/item/c/dusts/redstone.json"
+          ],
+          "epoch": 0
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/electrum",
+          "member": "alltheores:electrum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/electrum.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:plates/plastic",
+          "member": "immersiveengineering:plate_duroplast",
+          "chain": [
+            "tags/minecraft/item/c/plates/plastic.json"
+          ],
+          "epoch": 8
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/addon/invproxy",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        },
+        {
+          "kind": "item",
+          "tag": "c:chests",
+          "member": "ae2:sky_stone_chest",
+          "chain": [
+            "tags/minecraft/item/c/chests.json"
+          ],
+          "epoch": 17
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:refinery/carbonsheet",
+      "type": "oritech:refinery",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "fluid",
+          "tag": "c:naphtha",
+          "member": "immersivepetroleum:naphtha",
+          "chain": [
+            "tags/minecraft/fluid/c/naphtha.json"
+          ],
+          "epoch": null
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/designator",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/electrum",
+          "member": "alltheores:electrum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/electrum.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/steel",
+          "member": "ad_astra:steel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/steel.json"
+          ],
+          "epoch": 37
+        },
+        {
+          "kind": "item",
+          "tag": "c:plates/plastic",
+          "member": "immersiveengineering:plate_duroplast",
+          "chain": [
+            "tags/minecraft/item/c/plates/plastic.json"
+          ],
+          "epoch": 8
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:laser/fluxite",
+      "type": "oritech:laser",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:atomicforge/wafer",
+      "type": "oritech:atomic_forge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        },
+        {
+          "kind": "item",
+          "tag": "c:silicon",
+          "member": "ae2:silicon",
+          "chain": [
+            "tags/minecraft/item/c/silicon.json"
+          ],
+          "epoch": 17
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:atomicforge/advcomputer",
+      "type": "oritech:atomic_forge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:atomicforge/aicomputer",
+      "type": "oritech:atomic_forge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:atomicforge/compensator",
+      "type": "oritech:atomic_forge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/controller",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/reactorheatpipe",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/electrum",
+          "member": "alltheores:electrum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/electrum.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/gold",
+          "member": "minecraft:gold_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/gold.json"
+          ],
+          "epoch": 0
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/reactorvent",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:assembler/uranpelletbasic",
+      "type": "oritech:assembler",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/nickel",
+          "member": "alltheores:nickel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/nickel.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:plates/plastic",
+          "member": "immersiveengineering:plate_duroplast",
+          "chain": [
+            "tags/minecraft/item/c/plates/plastic.json"
+          ],
+          "epoch": 8
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/droneport",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "oritech:plating",
+          "member": "oritech:carbon_plating_block",
+          "chain": [
+            "tags/minecraft/item/oritech/plating.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:centrifuge/fluid/unholyai",
+      "type": "oritech:centrifuge_fluid",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/particlecontroller",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/acceleratorring",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/steel",
+          "member": "ad_astra:steel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/steel.json"
+          ],
+          "epoch": 37
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:particle/overcharged_crystal",
+      "type": "oritech:particle_collision",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:motor/overchargedcrystal",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:atomicforge/prometheum",
+      "type": "oritech:atomic_forge",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": []
+    },
+    {
+      "recipe_id": "oritech:crafting/deepdrill",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "oritech:plating",
+          "member": "oritech:carbon_plating_block",
+          "chain": [
+            "tags/minecraft/item/oritech/plating.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:grinder/raw/iron",
+      "type": "oritech:grinder",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:raw_materials/iron",
+          "member": "minecraft:raw_iron",
+          "chain": [
+            "tags/minecraft/item/c/raw_materials/iron.json"
+          ],
+          "epoch": 0
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:crafting/addon/yield",
+      "type": "minecraft:crafting_shaped",
+      "registered_serializer": "net.minecraft.world.item.crafting.ShapedRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/electrum",
+          "member": "alltheores:electrum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/electrum.json"
+          ],
+          "epoch": 1
+        },
+        {
+          "kind": "item",
+          "tag": "c:plates/plastic",
+          "member": "immersiveengineering:plate_duroplast",
+          "chain": [
+            "tags/minecraft/item/c/plates/plastic.json"
+          ],
+          "epoch": 8
+        },
+        {
+          "kind": "item",
+          "tag": "oritech:plating",
+          "member": "oritech:carbon_plating_block",
+          "chain": [
+            "tags/minecraft/item/oritech/plating.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:compat/ae2/charger/fluxite",
+      "type": "ae2:charger",
+      "registered_serializer": "appeng.recipes.handlers.ChargerRecipeSerializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:gems/amethyst",
+          "member": "minecraft:amethyst_shard",
+          "chain": [
+            "tags/minecraft/item/c/gems/amethyst.json"
+          ],
+          "epoch": 0
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:compat/powah/energizing/fluxite",
+      "type": "powah:energizing",
+      "registered_serializer": "owmii.powah.block.energizing.EnergizingRecipe$Serializer",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:gems/amethyst",
+          "member": "minecraft:amethyst_shard",
+          "chain": [
+            "tags/minecraft/item/c/gems/amethyst.json"
+          ],
+          "epoch": 0
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:foundry/alloy/adamant",
+      "type": "oritech:foundry",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:gems/diamond",
+          "member": "minecraft:diamond",
+          "chain": [
+            "tags/minecraft/item/c/gems/diamond.json"
+          ],
+          "epoch": 0
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/nickel",
+          "member": "alltheores:nickel_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/nickel.json"
+          ],
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:foundry/alloy/duratium",
+      "type": "oritech:foundry",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:ingots/netherite",
+          "member": "minecraft:netherite_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/netherite.json"
+          ],
+          "epoch": 0
+        },
+        {
+          "kind": "item",
+          "tag": "c:ingots/platinum",
+          "member": "alltheores:platinum_ingot",
+          "chain": [
+            "tags/minecraft/item/c/ingots/platinum.json"
+          ],
+          "epoch": 1
+        }
+      ]
+    },
+    {
+      "recipe_id": "oritech:assembler/enderlens",
+      "type": "oritech:assembler",
+      "registered_serializer": "rearth.oritech.init.recipes.OritechRecipeType",
+      "direct_item_inputs_valid": true,
+      "input_tag_witnesses": [
+        {
+          "kind": "item",
+          "tag": "c:carbon_fibre",
+          "member": "oritech:carbon_fibre_strands",
+          "chain": [
+            "tags/minecraft/item/c/carbon_fibre.json"
+          ],
+          "epoch": 25
+        }
+      ]
+    }
+  ]
+}

@@ -106,6 +106,10 @@ def render(root=ROOT):
                                     ('content/audit/v5-creative-mana-guard.json', 'botania', 'sources')]:
         if (root/relative).is_file():
             extra_sources += [(owner, source) for source in read(root/relative).get(field, [])]
+    for relative in ['content/audit/v5-industrial-native-guard.json', 'content/audit/v5-roots-mutation-fix.json']:
+        if (root/relative).is_file():
+            audit = read(root/relative)
+            extra_sources += [(source.get('mod_id', audit.get('mod_id')), source) for source in audit.get('sources', [])]
     for owner, source in extra_sources:
         local = source.get('path', source.get('local_path'))
         url = source.get('url', '')
