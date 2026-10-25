@@ -365,6 +365,8 @@ def plan_install(source, instance):
                                       'ua/aia2/guard/mixin/BotaniaManaTabletPoolMixin.class'}
                     if not creative_guard <= set(jar.namelist()):
                         raise InstallError('This package needs the matching component-aware creative mana guard')
+                    if 'ua/aia2/guard/mixin/RootsMortarMixin.class' not in jar.namelist():
+                        raise InstallError('This package needs the matching Roots mortar interaction guard')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

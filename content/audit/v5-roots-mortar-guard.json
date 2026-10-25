@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "mod": "rootsclassic",
+  "installed_version": "1.5.10",
+  "commit": "db9aa883b7a54a1558dbc710546be1f42544be72",
+  "source": {
+    "path": "content/research/evidence/roots_core_next_v5/official/src/main/java/elucent/rootsclassic/block/mortar/MortarBlockEntity.java",
+    "sha256": "b8c30aab4409870f4c10791b38a2074b97a90c3c71ee6fd9fc55d721ca425137",
+    "url": "https://github.com/Lothrazar/RootsClassic/blob/db9aa883b7a54a1558dbc710546be1f42544be72/src/main/java/elucent/rootsclassic/block/mortar/MortarBlockEntity.java"
+  },
+  "confirmed_recipe_gates": {
+    "rootsclassic:component/flare_orchid": 15,
+    "rootsclassic:component/midnight_bloom": 30
+  },
+  "cause_uk": "Пестик викликає RecipeManager поза контекстом BlockEntityTicker; звичайний контекстний hook не перевіряв рецепт ступки. Компонентні рецепти мають gate15/30 при gate1 ступки.",
+  "fix_uk": "Точковий redirect у tryActivateRecipe фільтрує native Optional через авторитетну політику власника перед assemble/spawn/очищенням входів.",
+  "limits_uk": [
+    "Фактичний optional Roots dispatch та змішування з іншими модами потребують повного інстансу.",
+    "Це не новий доказ виробництва для квестів.",
+    "Ритуальний вівтар досліджено: нинішні ritual gates не перевищують gate4 вівтаря; окремий обхід майбутньої епохи ним не заявлено."
+  ]
+}

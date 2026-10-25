@@ -274,3 +274,12 @@
 - Наступна конкретна дія: завершити core-карти Roots Classic, Apotheosis та Immersive Petroleum за новими exact-version джерелами з followup-аудиту; далі решту45часткових карт і старі обов'язкові лінії. Паралельно перевірити7fluid-bucket джерел (IF6,PNC1). Fullpack49action-proof/96key/JEI/Survival/TPS сценарії наведені в docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md.
 - Пакет0.4.3-alpha створено й перевірено за CRC та повним SHA-маніфестом. Dry-run з розпакованого пакета не змінює інстанс; справжнє встановлення у тимчасовий інстанс успішно резервує старий0.4.2.1JAR і зберігає world-marker. Windows-інстанс користувача не змінювався.
 - 0.5не оголошено завершеною. Код, ресурси, документація й інсталятор цього підблоку збережені разом; точний фінальний commit/push перевіряти через git log/origin і delivery-звіт поруч із ZIP.
+
+### 2026-10-25 — окреме виправлення взаємодії зі ступкою Roots
+
+- Відновлено `61cc7ab`, створено backup `/workspace/aia2-backups/before-core-next-20261025/checkpoint-61cc7ab.tar.gz` і snapshot усіх3145 quest/task/reward ID,136глав,603recipe ID. Старий0.4.3JAR також збережено поза Git.
+- DONE: точний Roots1.5.10 `MortarBlockEntity.tryActivateRecipe` запускається від пестика поза BlockEntityTicker. Тому контекстний RecipeManager hook не перевіряв gate15/30 компонентних рецептів при gate1 ступки. `RootsMortarMixin` перевіряє вибраний native holder через чинну політику власника до assemble/spawn/очищення входів. Вставлення/повернення інгредієнтів і клієнтський preview збережено.
+- Новий companion0.4.4-alpha, API4 збережено. Installer/package preflight відхиляє JAR без цього hook до backup/запису в інстанс. Це цілісний hotfix, а не завершений реліз0.5.
+- Перевірено: JDK21/NeoForge build і5237Java assertions;2Rootstests із18умовами actual-handler/real-policy у модельованому Minecraft host;18installer tests PASS. Реальний optional Roots dispatch ще НЕ запускався; нових proof-квестів цей hook не видає.
+- Runtime-контент на цьому кроці незмінний:3145квестів,603рецепти,390предметів/PNG,96виробничих ключів. Надалі завершити готову карту Apotheosis/12квестів, nativeконтракти, LPG source та точкові IP-предметні виправлення.
+- Перервані підзадачі Roots/AA/IP залишили portable source-evidence; незавершені карти/чернетки не вважаються інтегрованими. Коли допоміжні агенти вичерпали ліміт, інтеграцію й перевірки продовжує root.

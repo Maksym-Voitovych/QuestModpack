@@ -341,6 +341,27 @@ class V4PackagePairingTest(unittest.TestCase):
             self.assertFalse((instance/'aia2-backups').exists())
             self.assertFalse((instance/'kubejs').exists())
 
+
+class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_missing_interaction_guard_is_rejected_without_world_changes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+            (instance/'saves/world').mkdir(parents=True)
+            marker=instance/'saves/world/level.dat';marker.write_bytes(b'world-preserved')
+            with zipfile.ZipFile(package/'mods/aia2-machine-guard-0.4.3-alpha.jar','w') as jar:
+                for name in ['Aia2MachineGuard','KeyProductionBridge','FtbQuestBridge','RhinoLongMapBridge','ProductionMilestoneBridge','CreativeManaGuard']:
+                    jar.writestr('ua/aia2/guard/'+name+'.class',b'fixture')
+                for name in ['DraconicFusionCoreMixin','BotaniaManaItemHandlerMixin','BotaniaManaTabletPoolMixin']:
+                    jar.writestr('ua/aia2/guard/mixin/'+name+'.class',b'fixture')
+            (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+            with self.assertRaisesRegex(installer.InstallError,'Roots mortar'):
+                installer.install(package,instance)
+            self.assertEqual(marker.read_bytes(),b'world-preserved')
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())
+
     def test_missing_cached_fusion_guard_is_rejected_even_with_other_v4_bridges(self):
         with tempfile.TemporaryDirectory() as tmp:
             package=Path(tmp)/'package';instance=Path(tmp)/'instance'
