@@ -1,0 +1,761 @@
+{
+  "schema": 1,
+  "quest_count": 16,
+  "scope_uk": "Досліджений допоміжний прохід3.1.4 і точні exportedIDs; CI633→source pin BLOCKED. Предметні/observation цілі не є production proof.",
+  "quests": [
+    {
+      "id": "V5_E40_draconic_core_occupied_tier",
+      "epoch": 40,
+      "title_uk": "Рівень задають зайняті інжектори",
+      "description_uk": [
+        "Перед синтезом розділіть інжектори за призначенням і рівнем. Мінімальний tier обчислюється серед інжекторів із непорожнім стеком: порожній Basic поруч не знижує рівень, але залишений у ньому інгредієнт уже бере участь у перевірці.",
+        "Підготуйте окремі інгредієнтні позиції потрібного рівня, спрямовані до ядра, і звірте геометрію та підказки ядра. Кількість речовини в одному стеку не замінює декількох самостійних recipe ingredients. Це планування позицій, а не підтвердження успішного fusion.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:crafting_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:crafting_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_crafting_injector",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:basic_crafting_injector",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_wyvern_fusion_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.occupied_tier"
+    },
+    {
+      "id": "V5_E40_draconic_core_transfuser_modes",
+      "epoch": 40,
+      "title_uk": "Чотири слоти — різні напрямки заряджання",
+      "description_uk": [
+        "Energy Transfuser має чотири однопредметні слоти з режимами CHARGE, DISCHARGE, BUFFER і DISABLED. Розділіть предмет-джерело та предмет-споживач; режим BUFFER поєднує дозволені напрямки, але не означає, що будь-яка зброя віддаватиме енергію як звичайний буфер.",
+        "Порівняйте дві переносні батареї та balanced mode в інтерфейсі. Після від’єднання зовнішнього живлення перевірте напрямок потоку окремо; два предмети в інвентарі не доводять їхній заряд.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:energy_transfuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:energy_transfuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_capacitor",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E40_fusion_workshop_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.transfuser_modes"
+    },
+    {
+      "id": "V5_E40_draconic_core_generator_modes",
+      "epoch": 40,
+      "title_uk": "Паливний режим: потужність проти економності",
+      "description_uk": [
+        "Генератор Draconic Evolution змінює швидкість виробництва та ефективність палива відповідно до вибраного режиму. Швидший режим не створює додаткову енергію без витрат; тестуйте один і той самий запас твердого палива та окремий накопичувач.",
+        "У генератора є паливні слоти й окремий слот енергетичного предмета. Не подавайте батарею як паливо. Комплект нижче готує порівняння, а реальні витрати й вихід потрібно зчитати у грі.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:generator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:generator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_draconium_03"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.generator_modes"
+    },
+    {
+      "id": "V5_E40_draconic_core_chest_smelting",
+      "epoch": 40,
+      "title_uk": "Скриня як керований плавильний вузол",
+      "description_uk": [
+        "Draconium Chest поєднує основний інвентар, окремі плавильні входи й слот енергетичного предмета. Її smelting logic використовує внутрішній OP-запас; це не звичайна піч, куди паливо кладуть замість батареї.",
+        "Підготуйте одну контрольну партію сирого заліза й місце для зливків. Налаштування автоподачі та заповненого виходу перевірте окремо в інтерфейсі: наявність кінцевого матеріалу не доводить, у якій саме машині його отримано.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:draconium_chest",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:draconium_chest",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:raw_iron",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_capacitor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_draconium_08"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.chest_smelting"
+    },
+    {
+      "id": "V5_E40_draconic_core_grinder_xp",
+      "epoch": 40,
+      "title_uk": "Трофеї й досвід мають різні виходи",
+      "description_uk": [
+        "Grinder має окрему логіку удару зброєю, енергоживлення й збирання ExperienceOrb. Підготуйте зброю та місце для предметних трофеїв; накопичений XP перевіряйте окремо від скрині з предметами.",
+        "Контрольне полювання на зомбі перевіряє звичайний kill task гравця, а не вбивства машини. Огляд Grinder підтверджує лише наявність вузла; ці цілі не засвідчують продуктивність або внутрішній XP.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:grinder",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:grinder",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_sword",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "kill",
+          "entity": "minecraft:zombie",
+          "count": 4
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_wyvern_tools_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.grinder_xp"
+    },
+    {
+      "id": "V5_E40_draconic_core_detector_pulses",
+      "epoch": 40,
+      "title_uk": "Детектор: частота сканування й імпульс",
+      "description_uk": [
+        "Entity Detector виконує оплачуване енергією сканування за таймером. Його output strength та pulse mode — окремі параметри; постійний сигнал і короткий імпульс по-різному запускають зовнішню автоматику.",
+        "Під’єднайте тестову лампу та компаратор, відрегулюйте область і фільтр, потім перевірте інтервал повторного спрацювання. Огляд і матеріали не вимірюють pulse rate та не доводять налаштування фільтра.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:entity_detector",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:entity_detector",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:redstone_lamp",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_crystals_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.detector_pulses"
+    },
+    {
+      "id": "V5_E40_draconic_core_directed_crystals",
+      "epoch": 40,
+      "title_uk": "Порт не замінює ретранслятор",
+      "description_uk": [
+        "Розділіть кристалічну трасу на прямий ввід/вивід і Relay. Зв’язок Crystal Binder задає учасників мережі, а IO-режим визначає обмін із сусідньою машиною; сам зв’язок не гарантує правильний напрямок живлення.",
+        "Підготуйте малий стенд із двома типами кристалів і окремим обмеженням потоку. Перевірте правильну сторону та заряд буфера перед підключенням fusion-ядра.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:basic_io_crystal",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:basic_io_crystal",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "draconicevolution:wyvern_relay_crystal",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "draconicevolution:flux_gate",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E40_draconic_operations_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.directed_crystals"
+    },
+    {
+      "id": "V5_E40_draconic_core_core_structure",
+      "epoch": 40,
+      "title_uk": "Сховище потребує повної структури",
+      "description_uk": [
+        "Energy Core та Energy Core Stabilizer не є готовим накопичувачем лише через встановлення центрального блока. Перевірка структури й активація ядра відокремлені від його заряджання; пілон не працює з неактивним або невалідним ядром.",
+        "Зберіть запас стабілізаторів і будівельних матеріалів, відкрийте перевірку структури в GUI та звірте схему обраного рівня. Наведений комплект — підготовчий, а не обіцянка конкретного tier або місткості.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:energy_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:energy_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:energy_core_stabilizer",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:draconium_block",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:glass",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E40_fusion_workshop_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.core_structure"
+    },
+    {
+      "id": "V5_E40_draconic_core_junk_filter",
+      "epoch": 40,
+      "title_uk": "Фільтр сміття спершу тестують на камені",
+      "description_uk": [
+        "Junk Filter зберігає власний список фільтрів і перемикач увімкнення. Встановлення модуля без налаштування списку не тотожне контрольованій утилізації видобутку.",
+        "Візьміть тестовий запас cobblestone, перевірте правило на ньому й лише потім переходьте до цінних матеріалів. Предметне завдання не видаляє цей камінь і не підтверджує запис списку в модуль.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:item_wyvern_junk_filter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "draconicevolution:item_wyvern_junk_filter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:wyvern_pickaxe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 32,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_wyvern_modules_08"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:torch",
+          "count": 8
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.junk_filter"
+    },
+    {
+      "id": "V5_E40_draconic_core_paired_endpoints",
+      "epoch": 40,
+      "title_uk": "Парні точки — окремий тип телепортації",
+      "description_uk": [
+        "Bound Dislocator використовує прив’язані кінцеві точки. Пара пристроїв і Dislocator Receptacle відрізняється від довільного запису координат Advanced Dislocator: перед подорожжю перевірте, що обидві точки дійсно належать потрібному зв’язку.",
+        "Предметні стеки unbound не доводять UUID пари або робочий портал. Це комплект для створення та перевірки кінцевих точок; повернення й доступність місця перевірте в грі.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:p2p_dislocator_unbound",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "draconicevolution:p2p_dislocator_unbound",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "draconicevolution:dislocator_receptacle",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:dislocator_pedestal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E40_X_fusion_arcana_07"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:ender_pearl",
+          "count": 2
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.paired_endpoints"
+    },
+    {
+      "id": "V5_E40_draconic_core_dislocator_fuel",
+      "epoch": 40,
+      "title_uk": "Запас палива для списку призначень",
+      "description_uk": [
+        "Advanced Dislocator має список цілей і лічильник палива, який поповнюють Ender Pearls. Звичайний teleport і blink використовують пов’язані, але окремо налаштовувані витрати; не переносіть кількість blink із чужого конфіга у свою збірку.",
+        "Підготуйте перли й стаціонарну точку повернення. Отримання приладу та палива не підтверджує вибране місце, записаний запас або успішний teleport.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:advanced_dislocator",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "draconicevolution:advanced_dislocator",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:ender_pearl",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "draconicevolution:dislocator_pedestal",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E40_draconic_core_paired_endpoints"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:ender_pearl",
+          "count": 2
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.dislocator_fuel"
+    },
+    {
+      "id": "V5_E41_draconic_core_ender_collection",
+      "epoch": 41,
+      "title_uk": "Трофейний канал із фільтром і вартістю",
+      "description_uk": [
+        "Ender Collection перевіряє enabled, фільтр і енергію за кількість предметів. За встановленого EnderStorage може використовувати його частоту; за порожньої частоти повертається до особистої Ender Chest гравця.",
+        "Сумісна скриня не означає автоматично налаштовану частоту. Перевірте призначення та відмову при повному приймачі на дешевому трофеї, перш ніж увімкнути канал для рідкісних речей.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:item_draconic_ender_collection",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "draconicevolution:item_draconic_ender_collection",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:draconic_chestpiece",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "enderstorage:ender_chest",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "E41_X_draconic_precision_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:ender_pearl",
+          "count": 2
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.ender_collection"
+    },
+    {
+      "id": "V5_E41_draconic_core_shield_budget",
+      "epoch": 41,
+      "title_uk": "Регенерація щита має енергетичний бюджет",
+      "description_uk": [
+        "Shield Controller пов’язує запас захисту, відновлення й енергопостачання модульного спорядження. Велика місткість не замінює живлення для відновлення; відділіть робочий запас від енергії на додаткові можливості інструмента.",
+        "Підготуйте енергетичний, місткісний і відновлювальний модулі. Їхня наявність не доводить установку, сумісність сітки чи фактичне відновлення під час бою.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:item_draconic_energy",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "draconicevolution:item_draconic_energy",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:item_draconic_large_shield_capacity",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:item_draconic_shield_recovery",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:draconic_chestpiece",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E41_X_shield_modules_08"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:golden_carrot",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.shield_budget"
+    },
+    {
+      "id": "V5_E42_draconic_core_reactor_feedback",
+      "epoch": 42,
+      "title_uk": "Реакторний стенд: спочатку зворотний зв’язок",
+      "description_uk": [
+        "У реактора окремо відстежуються температура, shield charge, saturation та field drain. Підготовка аварійного живлення й вихідного обмеження має передувати запуску; реакторний інжектор і стабілізатори виконують різні ролі.",
+        "Підготуйте чотири стабілізатори та два Flow Gate для розділених контурів, звірте поточні показники GUI і доступні режими зворотного зв’язку. Цей квест не доводить зібрану геометрію, температуру чи безпечний робочий стан; тестуйте на копії світу.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:reactor_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:reactor_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:reactor_stabilizer",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:flux_gate",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:comparator",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E42_draconic_operations_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 8
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.reactor_feedback"
+    },
+    {
+      "id": "V5_E42_draconic_core_fusion_expanded_lanes",
+      "epoch": 42,
+      "title_uk": "Окремі позиції для складного синтезу",
+      "description_uk": [
+        "Розширені AIA2 fusion-рецепти можуть мати більше інгредієнтних позицій, ніж старі схеми майстерні. Одинадцять компонентів потребують одинадцяти доступних зайнятих інжекторів; великий стек у меншій кількості позицій не замінює окремі entries рецепта.",
+        "Підготуйте одинадцять інжекторів доступного вам хаотичного рівня, перевірте напрямок кожного та видаліть сторонні інгредієнти нижчого рівня. Звіряйте кількість із конкретним рецептом у JEI; цей комплект не зараховує жодного фактичного циклу fusion.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:crafting_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:crafting_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:chaotic_crafting_injector",
+          "count": 11,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:chaotic_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E42_X_chaotic_fusion_08",
+        "V5_E40_draconic_core_occupied_tier"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 8
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.fusion_expanded_lanes"
+    },
+    {
+      "id": "V5_E42_draconic_core_reactor_cold_service",
+      "epoch": 42,
+      "title_uk": "Обслуговування палива в холодному стані",
+      "description_uk": [
+        "Реактор розрізняє reactable fuel і converted fuel; параметри палива пов’язані з максимальною місткістю поля та saturation. Зміна паливного комплекту — окрема операція обслуговування, а не спосіб миттєво зупинити гарячий реактор.",
+        "Підготуйте резерв Awakened Draconium, прочитайте поточний стан і штатно перейдіть до COLD перед додаванням чи вилученням палива. Предметний резерв не підтверджує охолодження та не дозволяє пропускати перевірки безпеки.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": "draconicevolution:reactor_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "draconicevolution:reactor_core",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:awakened_draconium_ingot",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "draconicevolution:reactor_injector",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E42_draconic_core_reactor_feedback"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:golden_carrot",
+          "count": 4
+        }
+      ],
+      "mod": "draconicevolution",
+      "research_stage": "draconicevolution.core.reactor_cold_service"
+    }
+  ]
+}

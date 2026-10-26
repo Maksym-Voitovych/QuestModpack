@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-26 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.8-alpha (Fire Crafting worksites і Powah core); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.9-alpha (ProjectE guards і Draconic fusion); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,17 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 60 модів/62 записи;37 partial/невивчений контент. Exact Powah6.2.10 core додано |
-| 3 | Карти прогресії | IN_PROGRESS | 23 scoped core-карти DONE; Powah28етапів, усі8старі refs збережено |
-| 4 | Перебудова координат | DONE | 139 глав;0накладань/зворотних/вертикальних/довгих;1143перетини, без приросту від19новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 496нових відv4;19у цьому блоці;98native actions/8process proofs; старі обов’язкові IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3016item-нагород;20нових entries; усі3261попередні payloads незмінні |
-| 7 | Розширення рецептів | IN_PROGRESS | 618рецептів;49v5формул;615старих entries незмінні;3Nitroproducers замінено |
-| 8 | Предмети без джерел | IN_PROGRESS | 2397предметів;35native-source доказів;6IFfluid gaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | Fire Crafting worksite ownership іreload реалізовано; іншіnative/componentpathsщеаудитуються |
-| 10 | Інтеграційні тести | IN_PROGRESS | 166Python/50Node/5237Java PASS;90actualMC@0.4.8 у2JVM;46fire-model assertions;fullpackNOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.8 — проміжний блок; ZIP/installer PASS; ідентичність коміту черезgit log/origin/main;0.5не завершено |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1886 SHA-файлів карт; Draconic CI633 provenance BLOCKED |
+| 3 | Карти прогресії | IN_PROGRESS | 24 scoped core-карти DONE; ProjectE27етапів, Draconic partial23етапи |
+| 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1147перетинів після34новихцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 530нових відv4;34у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3050 item-нагород;34нові entries; усі3280попередні payloads незмінні |
+| 7 | Розширення рецептів | IN_PROGRESS | 621рецепт;52v5формули;618старих entries незмінні;3fusion routes замінено,2конверсіїзбережено |
+| 8 | Предмети без джерел | IN_PROGRESS | 2412предметів;35native-source доказів;6IFfluid gaps залишаються |
+| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE current-output/fuelcache/TimeWatch реалізовано; passive armor/Curios/world paths відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 178Python/52Node/5237Java PASS;90MC@0.4.9 у2JVM;66output+22watch models;fullpackNOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.9 — проміжний блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
+
 
 
 ## Окремий стан 48 епох
@@ -68,15 +69,16 @@
 | 37 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
 | 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 40 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 41 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
-| 42 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
+| 40 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
+| 41 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (2 формул) | DONE (static) |
+| 42 | IN_PROGRESS | IN_PROGRESS (4) | IN_PROGRESS (1 формул) | DONE (static) |
 | 43 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
 | 44 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
-| 45 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
+| 45 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 46 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 47 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 48 | IN_PROGRESS | IN_PROGRESS (10) | IN_PROGRESS (26 формул) | DONE (static) |
+| 47 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 48 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
+
 
 
 
@@ -375,3 +377,26 @@ Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split
 - DONE rebuild/пакування:1162runtimeфайли byte-identical PYTHONHASHSEED73; ZIPCRC/весьmanifest перевірено. ЗапакованийCLI dry-run0writes; тестове оновлення0.4.7→0.4.8 зберігає synthetic world/fireledger ічужийквест, резервуєстарийJAR. Звіт implementation/fire-powah-package-install-v5.json. Windows-інстанс не змінювався.
 - Git: цей цілісний блок зберігається окремим комітом уmain іpushбезforce; фінальнийhash/status визначати черезgit log/origin/main таexternaldeliveryreport. Повний0.5не реліз.
 - Наступна конкретна дія: exact core-карти ProjectE1.1.0/Draconic Evolution3.1.4; решта37partial/невивчених модів істаріобов’язковілінії48епох. RootsunfinishedritualrestartTODO;6IFfluidgapsBLOCKED. Повнийігровийacceptanceзалишаєтьсяокремим.
+
+### 2026-10-27 — ProjectE/Draconic0.4.9: інтеграція IN_PROGRESS
+
+- Відновлено1915b80; backupдо змін:/workspace/aia2-backups/before-projecte-draconic-20261026T193423Z/checkpoint-1915b80.tar.gz. Incremental snapshot зберігає19новихID поверх3261 і618recipeIDs.
+- DONE коду, ще не фінальної доставки: ProjectEAccess і3menu/output hooks; чинні team/stage/whitelist/EMC/component перевірки, нормальний/quickmove output іcurrentmenu association. Tablet47відрізняєтьсявідtable45. Знання й EMCгравця не очищуються.
+- FuelMapperоновлюється ПІСЛЯfilteredEMCmap; errorочищуєmap/fuelcache іpauseaccess. Whitelistконфігурація не скидається вgenericclearRuntime,боscript25викликаєйого післяEMCeventнаfirsttick. Окреміpauseнаscriptload/remap/error/serverstop збережено.
+- TimeWatchdirectbonus ticks перевіряють receiverowner передкожноюітерацією; targetcontext встановлено/відновлено черезfinally. ModelPASS:66output/22watch; Node52PASS, Java5237/buildPASS. МінімальнийMC0.4.9:90assertions/2JVM/650ticksPASS, optionalProjectEdispatchNOT RUN.
+- ProjectEcore:18новихoptionalквестів/27етапів карти/74SHAджерела.3Draconicfusionформули за exactexport зберігають усіnative costs/tier/energy/catalyst і2losslessconversions;7boundedtestsPASS. Повнийsuite/інсталятор ще перевірити.
+- Draconiccore IN_PROGRESS:джерело3.1.4prefix є; exactCIbuild633provenance BLOCKED черезнезавершенепідтвердження. Не називатиexact633перевіреним. Агентdraconic_core_next_v5записуєpartialmap/16questdraftбезподальшихмережевихочікувань.
+- Наступна конкретнадія:завершитиDEdraft, regenerate/validate,повнийtest/rebuild,package/installer,оновленнястатусів іcommit/push. Не повторювати реалізованікод/джерела; див.gitstatus.0.5не реліз.
+
+### 2026-10-27 — перевірений ProjectE / Draconic0.4.9
+
+- DONE: 34нові optional-квести (18ProjectE/16Draconic),3fusion-рецепти, ProjectE core27етапів. Draconic partial23етапи з реальними залежностями;7попередніх stage IDs/refs і порядок збережено. CI633→commit BLOCKED; source3.1.4prefix і точний експорт не видаються за binaryverification.
+- Runtime:3314квестів/140глав/621рецепт/390предметів іPNG/96ключів. Усі3280попередні non-coordinate payloads/dependencies/rewards та618recipe entries незмінні. Нових предметів/текстур0;34нові предметні нагороди,3050загалом.
+- ProjectE: current team/table45/tablet47, active menu/slot association, whitelist/currentpositiveEMC/rawcomponents/keypolicy до списання. FuelMapper після finalmap; error очищує map/fuel іpause. Додаткового prune/видаленнязнань/ЕМСнемає. GenericclearRuntime НЕ скидаєPЕ-конфігураціюпісляfirsttick.
+- TimeWatch: кожен bonus тик перевіряє targetowner, встановлюєtargetcontext івідновлюєparent черезfinally. Passive armor/Curios/rings/world tools залишаються IN_PROGRESS, не називати цей блок універсальним захистоммода.
+- PASS:178Python/52Node/5237Java іJDK21build;66output/22watch actual-helper/handler models. СправжнійRhino85 перевіривновий map→fuel→ready іerrorclosure; застарілуfixture оновлено, потім весьsuiteперезапущеноуспішно. МінімальнийMC0.4.9:90assertions/2JVM/650ticks/SavedDatarestart; optionalProjectE/Draconic dispatch NOT RUN.
+- Повний42064producer scan:3fusionprimaryroutes замінено,2lossless IO↔relay збережено; всіnativecosts/catalyst/tier/energy/output ігеометріядо11інжекторів перевірені статично. Emptylowertier не знижуєminimumtier, враховуютьсязайнятіinjectors.
+- Rebuild1163runtimeфайлів byte-identical PYTHONHASHSEED79. Layout140глав безstructuralwarnings;1143→1147перетини після34новихцілей. Fullpack/JEI/UI/Survival/TPS NOT RUN.
+- DONE пакування: ZIP CRC/повний manifest і1163runtime hashes перевірено. Запакований CLI dry-run0writes; тестове оновлення0.4.8→0.4.9 резервуєстарийJAR і зберігає synthetic world/fire/knowledge+EMC та стороннійквест. Звіт implementation/projecte-draconic-package-install-v5.json; реальнийWindows-інстанс не змінювався.
+- Git: цей блок зберігається окремим комітом уmain іpushбезforce; фінальнийhash/status через git log/origin/main та externaldeliveryreport. Повний0.5не реліз.
+- Наступна конкретна дія: ProjectE passive inventory/Curios/armor/world-tool аудит; підтвердження exactDraconicCI633заJAR/source (BLOCKED до доступногодоказу). Далі37partial/невивчені моди, старіобов’язковілінії48епох, Rootsunfinishedritualrestart і6IFfluidgaps. Не повторювати вже завершеніguard/карти/рецепти.

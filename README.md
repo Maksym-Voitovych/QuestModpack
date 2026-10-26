@@ -2,16 +2,18 @@
 
 [Українська інструкція](README.uk.md).
 
-Version **0.4.8-alpha** targets Minecraft **1.21.1 NeoForge**, FTB Quests2101.1.36, KubeJS2101.7.2 and Rhino2101.2.7 build85. The complete0.5 update remains in progress.
+Version **0.4.9-alpha** targets Minecraft1.21.1 NeoForge, FTB Quests2101.1.36, KubeJS2101.7.2 and Rhino build85. The complete0.5 update remains unfinished.
 
-The runtime contains **48 epochs, 96 manufactured keys, 3280 quests in139 chapters, 618 native recipes and390 custom item models/textures**. It retains96 legacy manual goals. All3261 previously published quest/task/reward payloads and dependencies are preserved, apart from layout coordinates; all615 existing custom recipe entries remain unchanged.
+**48 epochs,96 manufactured keys,3314 quests in140 chapters,621 native custom recipes and390 items/models/PNG.** All3280 previously published quest/task/reward payloads and dependencies, apart from coordinates, and all618 recipe entries are retained.96legacy manual goals remain.
 
-This block adds18 researched Powah core quests, one EnderIO worksite tutorial and three cross-mod Nitro generator upgrades using Create mechanical crafting. Fire Crafting and Fire Water share a guarded native spawn edge. Explicitly claim a valid base at epoch19 by sneak-right-clicking its TOP face with flint and steel, then ignite normally. The base owns the process; natural/unclaimed sites cannot produce. Existing sites need one claim after updating.
+This block adds18 researched ProjectE quests and16 Draconic quests. ProjectE menus check current team, table45/tablet47 access, current positive EMC, strict ordinary-material whitelist, raw components and active inventory association. FuelMapper is rebuilt after final EMC filtering; failure closes both caches. TimeWatch bonus ticks use the actual receiver's policy and restore context through finally. No additional player knowledge/EMC clearing is introduced.
 
-Install matching `kubejs/`, `config/` and `mods/` through `install_runtime.py` with `--dry-run` first, with the game stopped. The installer backs up originals, preserves saves/foreign quests and requires the matching0.4.8/API4 companion. Fully restart client and server.
+Three Draconic fusion upgrades retain native material/catalyst/tier/energy/output costs and add two magic/technology components each. Both IO↔relay conversions remain. Draconic's23-stage map stays PARTIAL: source3.1.4/export are reviewed, but CI build633 provenance is not confirmed.
 
-Verification results and limits are in the [checkpoint](docs/AIA2_0.4.8_CHECKPOINT.uk.md). Source/model tests are separate from the minimal native Minecraft server and full-pack acceptance. Optional EnderIO/Powah dispatch, JEI/UI, Survival andTPS remain untested. The new station ledger preserves corrupt originals and never replaces them with empty ownership.
+Install matching kubejs/config/mods using install_runtime.py --dry-run with the game stopped; then repeat without --dry-run. Originals are backed up; worlds, knowledge and foreign quests are preserved. Fully restart client/server with the matching0.4.9/API4JAR.
 
-[PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Mechanic maps](docs/research/MOD_MECHANICS.md) · [Sources](docs/research/SOURCE_INDEX.md) · [Remaining coverage](docs/research/REMAINING_COVERAGE.md) · [Fire/Powah acceptance](docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md).
+178Python tests,52Node tests,5237Java assertions and90minimalMinecraft assertions in2JVM passed. Optional ProjectE/Draconic dispatch, JEI/UI, Survival andTPS are NOT RUN. Passive ProjectE armor/Curios/world tools remain open; this is not a universal item-use guarantee.
 
-Core maps cover23 mods;37 maps are partial and further content remains unmapped. This is an interim development build, not the completed0.5 release.
+[Checkpoint](docs/AIA2_0.4.9_CHECKPOINT.uk.md) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Maps](docs/research/MOD_MECHANICS.md) · [Sources](docs/research/SOURCE_INDEX.md) · [Manual acceptance](docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md).
+
+24scoped core maps are complete;37partial maps and additional unmapped content remain. Full0.5 is not released.

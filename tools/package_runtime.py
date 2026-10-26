@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.8-alpha'
+VERSION = '0.4.9-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -31,6 +31,9 @@ def main():
                 for name in ['FireWorksiteAccess', 'FireWorksiteInteraction']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 for name in ['EnderFireCraftingMixin', 'FireWorksiteBaseMixin']:
+                    assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                assert 'ua/aia2/guard/ProjectEAccess.class' in jar.namelist()
+                for name in ['ProjectEHandMenuMixin', 'ProjectETransmutationMixin', 'ProjectEOutputSlotMixin', 'ProjectETimeWatchMixin']:
                     assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
                 assert 'ua/aia2/guard/mixin/KeyResultProductionMixin.class' in jar.namelist()
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',

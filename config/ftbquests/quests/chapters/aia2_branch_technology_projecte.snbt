@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_projecte",
   "title": "projecte — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 85,
+  "order_index": 86,
   "icon": {
     "id": "projecte:transmutation_table",
     "count": 1
@@ -55,7 +55,79 @@
         }
       ],
       "x": 0.0,
-      "y": 7.0
+      "y": 5.656
+    },
+    {
+      "id": "00007E6B8971270A",
+      "title": "Жезл оцінки: три глибини, а не універсальний рудошукач",
+      "description": [
+        "Divining Rod оцінює EMC першого дропа блоків, а за нульового значення перевіряє продукт звичайного переплавлення. Вищі жезли відкривають режими3/16/64глибини та додаткові максимуми; це не список усіх руд у світі.",
+        "В AIA2 EMC має лише короткий whitelist. Нульове значення невідомої руди не означає порожню породу; порівняйте оцінку звичайного каменю й залізної сировини, не очікуючи пошуку всіх модових матеріалів.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:divining_rod_1",
+        "count": 1
+      },
+      "dependencies": [
+        "0000ECB3A18A84C5",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003EB6301ACD6D",
+          "type": "item",
+          "item": {
+            "id": "projecte:divining_rod_1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008D6E4C435598",
+          "type": "item",
+          "item": {
+            "id": "projecte:divining_rod_2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002D677DB87183",
+          "type": "item",
+          "item": {
+            "id": "projecte:divining_rod_3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002046F84906D1",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000052D448F88E7B",
+          "type": "item",
+          "item": {
+            "id": "projecte:low_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 13.476
     },
     {
       "id": "000084B61B40C6BE",
@@ -127,7 +199,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 13.476
     },
     {
       "id": "0000BB843D1C1111",
@@ -199,7 +271,7 @@
         }
       ],
       "x": 5.0,
-      "y": 3.0
+      "y": 13.476
     },
     {
       "id": "0000E2E1E180AC69",
@@ -249,7 +321,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.246
     },
     {
       "id": "00000096CE8F98C0",
@@ -295,7 +367,7 @@
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 4.246
     },
     {
       "id": "0000772D553AD945",
@@ -384,7 +456,7 @@
         }
       ],
       "x": 2.0,
-      "y": 8.0
+      "y": 6.246
     },
     {
       "id": "0000A060F5D9F4A7",
@@ -434,7 +506,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 2.246
     },
     {
       "id": "0000E2C58FCC2665",
@@ -506,7 +578,7 @@
         }
       ],
       "x": 7.0,
-      "y": 3.0
+      "y": 13.476
     },
     {
       "id": "0000E881C7A46326",
@@ -567,7 +639,7 @@
         }
       ],
       "x": 2.0,
-      "y": 3.0
+      "y": 13.476
     },
     {
       "id": "00001B467070CB4B",
@@ -617,7 +689,65 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "0000770A454C60D5",
+      "title": "Перша зірка Кляйна: ємність і порожній заряд",
+      "description": [
+        "Klein Star Ein вміщує50000EMC, але новий предмет не є безкоштовною повною батареєю. Заряд зберігається в data component, а здатність приймати EMC не потребує EMC-ціни самого предмета.",
+        "Для фізичного крафту потрібне паливо Мебіуса. У таблиці трансмутації доданий EMC спочатку може піти в зірку у вхідних слотах, і лише залишок — в особистий баланс. Перевіряйте заряд у GUI, а не лише цифру балансу.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:klein_star_ein",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A060F5D9F4A7",
+        "0000179C164623E1",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004DD429A281F6",
+          "type": "item",
+          "item": {
+            "id": "projecte:klein_star_ein",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000AF961A1592CC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:transmutation_table",
+          "timer": 40
+        },
+        {
+          "id": "00007E566C242AC7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D2F4B3931295",
+          "type": "item",
+          "item": {
+            "id": "projecte:medium_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.476
     },
     {
       "id": "00007AFE60740A8D",
@@ -700,7 +830,7 @@
         }
       ],
       "x": 9.0,
-      "y": 3.0
+      "y": 13.476
     },
     {
       "id": "0000A39D2EB8BFB8",
@@ -750,7 +880,7 @@
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 3.5
     },
     {
       "id": "000021B1212A0082",
@@ -800,7 +930,57 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "000037CB609B2693",
+      "title": "Порожнє злиття чотирьох зірок",
+      "description": [
+        "Чотири Ein утворюють одну Zwei з ємністю200000EMC. У чинному експорті це minecraft:crafting_shapeless; саме цей рецепт, а не наявність невикористаного Java-класу спеціального serializer, визначає правила крафту.",
+        "Об’єднуйте порожні зірки. Збереження попереднього заряду при цій стандартній формулі не обіцяється. Новий рівень підвищує запас, але не генерує EMC і не змінює whitelist.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:klein_star_zwei",
+        "count": 1
+      },
+      "dependencies": [
+        "0000770A454C60D5",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A575A421EE0D",
+          "type": "item",
+          "item": {
+            "id": "projecte:klein_star_zwei",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000095BAF6B115BB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D75B20C5F2BC",
+          "type": "item",
+          "item": {
+            "id": "projecte:low_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 7.5
     },
     {
       "id": "0000DA556F005C8F",
@@ -846,7 +1026,7 @@
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 3.5
     },
     {
       "id": "00005FAC372D2209",
@@ -907,7 +1087,7 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000EA981C8B8FB9",
@@ -957,7 +1137,7 @@
         }
       ],
       "x": 8.0,
-      "y": 6.0
+      "y": 4.0
     },
     {
       "id": "00002BE93679E9FD",
@@ -1018,7 +1198,7 @@
         }
       ],
       "x": 10.0,
-      "y": 6.0
+      "y": 4.0
     },
     {
       "id": "000048421BE21C37",
@@ -1068,7 +1248,86 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "000068C65F6198EF",
+      "title": "Темна піч: паливо або EMC, а не FE",
+      "description": [
+        "Dark Matter Furnace використовує звичайні furnace-рецепти, паливний слот та окремий шлях живлення від EMC-накопичувача/мережі. FE-кабель не є її паливом. Реальний час обробки масштабується часом конкретного smelting-рецепта.",
+        "Почніть зі звичайного coal і raw iron; зіставте витрату палива та вихід у GUI. Наявність залізного зливка в завданні підтверджує матеріальну підготовку, а не машинне походження.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:dm_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "000048421BE21C37",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F263B45D06B7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:dm_furnace",
+          "timer": 40
+        },
+        {
+          "id": "000000AB593C7EE8",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000051DA4B3E560B",
+          "type": "item",
+          "item": {
+            "id": "minecraft:raw_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CE91BD4F7C8D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007AD0212D2A60",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000ACDD9B78C745",
+          "type": "item",
+          "item": {
+            "id": "projecte:alchemical_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.0
     },
     {
       "id": "0000885B06684874",
@@ -1201,7 +1460,7 @@
         }
       ],
       "x": 12.0,
-      "y": 6.0
+      "y": 4.0
     },
     {
       "id": "0000270894F331A9",
@@ -1356,7 +1615,7 @@
         }
       ],
       "x": 14.0,
-      "y": 6.0
+      "y": 4.0
     },
     {
       "id": "0000EB09EB46C8DA",
@@ -1428,7 +1687,7 @@
         }
       ],
       "x": 0.0,
-      "y": 11.0
+      "y": 16.476
     },
     {
       "id": "00006E02EE5D3D53",
@@ -1478,7 +1737,7 @@
         }
       ],
       "x": 0.0,
-      "y": 14.0
+      "y": 9.476
     },
     {
       "id": "0000AACF23012B33",
@@ -1528,7 +1787,76 @@
         }
       ],
       "x": 2.0,
-      "y": 14.0
+      "y": 9.476
+    },
+    {
+      "id": "00004B037FD4E3F5",
+      "title": "Червона піч: швидкість не замінює рецепти",
+      "description": [
+        "Red Matter Furnace успадковує input/output/fuel логіку темної печі, збільшує банки до13слотів і змінює базовий час та бонус руд. Raw ore й ore block мають різні ймовірності додаткового виходу; довільний модовий предмет не є рудою автоматично.",
+        "Виготовлення потребує справжньої red matter з епохи47, навіть якщо нижчий item namespace floor показує45. Перенесіть перевірене паливо й порти DM-лінії та порівняйте результат на легальному smelting-вході.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:rm_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "0000266192E845D6",
+        "0000AACF23012B33",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DDB9574124EF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:rm_furnace",
+          "timer": 40
+        },
+        {
+          "id": "000017F3856930D0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:raw_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004CD4E23F4943",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D90112564CA5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071C8EBD7DB76",
+          "type": "item",
+          "item": {
+            "id": "projecte:medium_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 10.476
     },
     {
       "id": "000090036A64700A",
@@ -1578,7 +1906,7 @@
         }
       ],
       "x": 4.0,
-      "y": 14.0
+      "y": 8.476
     },
     {
       "id": "0000AB568035CD47",
@@ -1624,7 +1952,76 @@
         }
       ],
       "x": 6.0,
-      "y": 14.0
+      "y": 9.5
+    },
+    {
+      "id": "0000C30B3993EBB0",
+      "title": "Переносний інтерфейс, особисті знання",
+      "description": [
+        "Transmutation Tablet відкриває інтерфейс до knowledge capability того самого гравця, що використовує стаціонарний стіл. Особисті знання й EMC не стають командними лише через спільний FTB Quest progress.",
+        "Підготуйте стаціонарну й переносну точки доступу; звірте whitelist та власний баланс. У команді кожен гравець перевіряє своє знання дозволених матеріалів; предмети з модифікованими компонентами не навчаються як звичайні whitelist-зразки.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:transmutation_tablet",
+        "count": 1
+      },
+      "dependencies": [
+        "000090036A64700A",
+        "0000772D553AD945",
+        "000061B27D7C50CE"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000018A15B5DF5B",
+          "type": "item",
+          "item": {
+            "id": "projecte:transmutation_tablet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000077600C27DC58",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "projecte:transmutation_table",
+          "timer": 40
+        },
+        {
+          "id": "00001BC233FDC829",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CC969D4020B5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e47"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000983D2FCD3AA4",
+          "type": "item",
+          "item": {
+            "id": "projecte:medium_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 5.5
     },
     {
       "id": "000025BD3644F57B",
@@ -1670,7 +2067,7 @@
         }
       ],
       "x": 8.0,
-      "y": 14.0
+      "y": 9.333
     },
     {
       "id": "00003D56E9E879C1",
@@ -1731,7 +2128,7 @@
         }
       ],
       "x": 10.0,
-      "y": 14.0
+      "y": 9.333
     },
     {
       "id": "0000D6B646758925",
@@ -1792,7 +2189,7 @@
         }
       ],
       "x": 12.0,
-      "y": 14.0
+      "y": 9.333
     },
     {
       "id": "0000C72C0E8775A5",
@@ -1875,7 +2272,7 @@
         }
       ],
       "x": 14.0,
-      "y": 14.0
+      "y": 9.333
     }
   ]
 }

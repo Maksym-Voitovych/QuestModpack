@@ -1,3 +1,13 @@
+# 0.4.9-alpha — ProjectE та Draconic
+
+- 34нові optional-квести:18ProjectE/16Draconic;3314квестів/140глав. Збережено3280старих payloads і618recipe entries.
+- ProjectE core27етапів; Draconic partial23етапи, усі7старих refs/ID збережені. CI633 provenance не підтверджено й не видається за DONE.
+- Current team/table45/tablet47, whitelist/EMC/components/current-inventory перевірки normal/quickmove output. CachedEMC0 не видається безкоштовно.
+- FuelMapper rebuild після фінальної EMC-мапи, fail-closed error cache, без додаткового очищення знань. TimeWatch перевіряє receiver на кожному bonus tick і відновлює контекст.
+- Три fusion-рецепти з незмінними native costs/tier/energy/catalyst/output, по2magitech inputs. Три primary routes замінені,2lossless IO↔relay routes збережено.
+- 178Python/52Node/5237Java,90minimalMC assertions/2JVM;66output+22watch modeled assertions. Fullpack optional dispatch/JEI/Survival/TPS:NOT RUN.
+- Matching0.4.9JAR, installer preflight і backup. Повний0.5 ще не реліз.
+
 # 0.4.8-alpha — вогняні майданчики та Powah core
 
 - 19 нових optional-квестів:18 Powah і одна підготовча EnderIO-ціль.3280квестів/139глав; старі3261payloads і615recipes збережено.

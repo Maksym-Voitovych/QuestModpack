@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_projecte",
   "title": "projecte — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 47,
+  "order_index": 48,
   "icon": {
     "id": "projecte:low_covalence_dust",
     "count": 1
@@ -93,6 +93,78 @@
       ],
       "x": 0.0,
       "y": 0.0
+    },
+    {
+      "id": "00009D06BE44FBD0",
+      "title": "Кільце вітру потребує резерву EMC",
+      "description": [
+        "Swiftwolf’s Rending Gale має окремі режими польоту й щита. Витрата EMC залежить від активних режимів; за відсутності придатного резерву кільце повертається у вимкнений стан. У звичайному інвентарі native tick перевіряє hotbar або offhand.",
+        "Підготуйте кільце та зірку, заряджену дозволеним ресурсом. Не вважайте предметне завдання доказом заряду або дозволом безкоштовного польоту: перевірте режим і спад резерву в безпечній зоні.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": {
+        "id": "projecte:swiftwolf_rending_gale",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F0A1AA4193EA",
+        "00001DE782FFA007"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006134D5434A5A",
+          "type": "item",
+          "item": {
+            "id": "projecte:swiftwolf_rending_gale",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A229E5F9D775",
+          "type": "item",
+          "item": {
+            "id": "projecte:klein_star_ein",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000096EFE366C12C",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D10EE0FFD125",
+          "type": "advancement",
+          "advancement": "aia2:stages/e45"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000670A6661D56F",
+          "type": "item",
+          "item": {
+            "id": "projecte:low_covalence_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
     },
     {
       "id": "0000BA035D053766",

@@ -9,6 +9,7 @@ import ua.aia2.guard.RhinoLongMapBridge;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
+import java.util.List;
 
 /** Real Rhino85 + fastutil + production bridge/scripts; Minecraft/FTB/ProjectE APIs modeled. */
 public final class GuardInteropHarness {
@@ -55,6 +56,31 @@ public final class GuardInteropHarness {
         static Object2LongMap<Object> last;
         public static int updateEmcValues(Object2LongMap<Object> map) { last = map; return map.size(); }
     }
+    public static final class AccessFixture {
+        static boolean ready;
+        public static void pause() { ready = false; }
+        public static void configureWhitelistJson(String json) {
+            check(com.google.gson.JsonParser.parseString(json).getAsJsonObject().size() == 14, "complete native output whitelist supplied");
+            check(FuelFixture.size == 2, "fuel cache refresh precedes Java output readiness");
+            ready = true;
+        }
+    }
+    public static final class HolderSetFixture {
+        public static List<Object> empty() { return List.of(); }
+    }
+    public static final class FuelFixture {
+        static int size;
+        static boolean fail;
+        public static void loadMap() {
+            if (fail) throw new IllegalStateException("synthetic fuel refresh failure");
+            check(EMCFixture.last != null && EMCFixture.last.size() == 14, "final EMC map precedes fuel rebuild");
+            size = (EMCFixture.last.containsKey(new ItemKey("minecraft:coal")) ? 1 : 0)
+                    + (EMCFixture.last.containsKey(new ItemKey("minecraft:charcoal")) ? 1 : 0);
+        }
+        public static void setFuelMap(List<Object> empty) {
+            check(empty.isEmpty(), "failed remap uses an empty fuel map"); size = 0;
+        }
+    }
     static Object eval(Context cx, ScriptableObject scope, String source) {
         return cx.evaluateString(scope, source, "guard-interop", 1, null);
     }
@@ -76,6 +102,9 @@ public final class GuardInteropHarness {
         bindClass(cx, scope, "__LongBridge", RhinoLongMapBridge.class);
         bindClass(cx, scope, "__ItemInfo", ItemInfoFixture.class);
         bindClass(cx, scope, "__EMC", EMCFixture.class);
+        bindClass(cx, scope, "__Access", AccessFixture.class);
+        bindClass(cx, scope, "__Fuel", FuelFixture.class);
+        bindClass(cx, scope, "__HolderSet", HolderSetFixture.class);
         bindClass(cx, scope, "__ItemFactory", ItemFactory.class);
         cx.addToScope(scope, "__player", new PlayerFixture());
         cx.addToScope(scope, "__rulesJSON", Files.readString(root.resolve("kubejs/config/aia2_runtime.json")));
@@ -92,6 +121,9 @@ public final class GuardInteropHarness {
             "if(n==='dev.ftb.mods.ftbquests.quest.ServerQuestFile')return __Quest;" +
             "if(n==='it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap')return __Map;" +
             "if(n==='ua.aia2.guard.RhinoLongMapBridge')return __LongBridge;" +
+            "if(n==='ua.aia2.guard.ProjectEAccess')return __Access;" +
+            "if(n==='moze_intel.projecte.emc.FuelMapper')return __Fuel;" +
+            "if(n==='net.minecraft.core.HolderSet')return __HolderSet;" +
             "if(n==='moze_intel.projecte.api.ItemInfo')return __ItemInfo;" +
             "if(n==='moze_intel.projecte.emc.EMCMappingHandler')return __EMC;return n;}};" +
             "var ServerEvents={loaded:function(cb){events.loaded=cb;},tick:function(cb){events.tick=cb;},unloaded:function(cb){events.unloaded=cb;}};" +
@@ -118,8 +150,13 @@ public final class GuardInteropHarness {
         eval(cx, scope, "nativeEvents['moze_intel.projecte.api.event.EMCRemapEvent']();");
         check(EMCFixture.last != null && EMCFixture.last.size() == 14, "all ordinary EMC whitelist entries installed");
         check(EMCFixture.last.getLong(new ItemKey("minecraft:gold_ingot")) == 2048, "primitive long value survives real Rhino bridge");
+        check(AccessFixture.ready && FuelFixture.size == 2, "actual Rhino invokes unique native lifecycle methods without overload ambiguity");
         eval(cx, scope, "AIA2EMCAllowed['minecraft:gold_ingot']=0;var failed=false;try{nativeEvents['moze_intel.projecte.api.event.EMCRemapEvent']();}catch(e){failed=true;}check(failed,'invalid whitelist remains visible error');");
         check(EMCFixture.last.isEmpty(), "bad whitelist clears inherited EMC instead of leaving a bypass");
+        check(!AccessFixture.ready && FuelFixture.size == 0, "bad whitelist closes extraction and clears fuel cache");
+        FuelFixture.fail = true;
+        eval(cx, scope, "AIA2EMCAllowed['minecraft:gold_ingot']=2048;var failed=false;try{nativeEvents['moze_intel.projecte.api.event.EMCRemapEvent']();}catch(e){failed=true;}check(failed,'fuel refresh failure remains visible');");
+        check(EMCFixture.last.isEmpty() && !AccessFixture.ready && FuelFixture.size == 0, "failed rebuild cannot retain inherited values or stale fuels");
         System.out.println("GuardInteropHarness: actual Rhino85 remapping, typed UUID sync, deferred initialization, native reset, fatal ledger and real fastutil primitive bridge passed");
         System.out.println("Scope: real scripts/engine/fastutil/production RhinoLongMapBridge; Minecraft/FTB/ProjectE API fixtures only");
     }

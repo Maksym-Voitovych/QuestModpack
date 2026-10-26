@@ -3,7 +3,7 @@
   "filename": "aia2_branch_magic_draconicevolution",
   "title": "Draconic Evolution — Магія",
   "group": "00002E830BCB69F5",
-  "order_index": 37,
+  "order_index": 38,
   "icon": {
     "id": "draconicevolution:magnet",
     "count": 1
@@ -193,6 +193,89 @@
       ],
       "x": 2.0,
       "y": 0.0
+    },
+    {
+      "id": "00004205C2DCEECE",
+      "title": "Регенерація щита має енергетичний бюджет",
+      "description": [
+        "Shield Controller пов’язує запас захисту, відновлення й енергопостачання модульного спорядження. Велика місткість не замінює живлення для відновлення; відділіть робочий запас від енергії на додаткові можливості інструмента.",
+        "Підготуйте енергетичний, місткісний і відновлювальний модулі. Їхня наявність не доводить установку, сумісність сітки чи фактичне відновлення під час бою.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:item_draconic_energy",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FB2DF0A7D0F7",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008DE1B5B842D7",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:item_draconic_energy",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B19AFA6A73A9",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:item_draconic_large_shield_capacity",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000045B77FAED316",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:item_draconic_shield_recovery",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000952CD4976A75",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconic_chestpiece",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B37120134865",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B3D6B34CF52E",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconium_nugget",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 9.0,
+      "y": 3.0
     },
     {
       "id": "00007146E77C5E04",

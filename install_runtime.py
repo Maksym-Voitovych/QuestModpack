@@ -388,6 +388,10 @@ def plan_install(source, instance):
                     fire_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in ['EnderFireCraftingMixin', 'FireWorksiteBaseMixin'])
                     if not fire_guard <= set(jar.namelist()):
                         raise InstallError('This package needs the matching EnderIO fire worksite guards')
+                    projecte_guard = {'ua/aia2/guard/ProjectEAccess.class'}
+                    projecte_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in ['ProjectEHandMenuMixin', 'ProjectETransmutationMixin', 'ProjectEOutputSlotMixin', 'ProjectETimeWatchMixin'])
+                    if not projecte_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching ProjectE current-output and bonus-tick guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

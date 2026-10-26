@@ -249,6 +249,9 @@ test('ProjectE remap hook replaces all inherited EMC with the finite whitelist',
     NativeEvents: {onEvent(type, cb) { callbacks.set(type, cb); }},
     Java: {loadClass(name) {
       if (name.endsWith('EMCMappingHandler')) return {updateEmcValues(map) { actual = map; }};
+      if (name.endsWith('ProjectEAccess')) return {pause() {}, configureWhitelistJson() {}};
+      if (name.endsWith('FuelMapper')) return {loadMap() {}, setFuelMap() {}};
+      if (name.endsWith('HolderSet')) return {empty() { return []; }};
       if (name.endsWith('ItemInfo')) return {fromStack(item) { return item.id; }};
       if (name.endsWith('Object2LongOpenHashMap')) return LongMap;
       if (name.endsWith('RhinoLongMapBridge')) return {putValue(map, key, value) { map.put(key, value); }};

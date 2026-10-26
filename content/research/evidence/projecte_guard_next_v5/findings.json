@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "status": "implemented_by_0.4.9_optional_dispatch_pending",
+  "confirmed": [
+    {
+      "id": "stale_output_no_positive_emc",
+      "source": "SlotOutput.remove(int)",
+      "detail": "Cached output withnew EMC0 is returned because onlygreater-thanavailable comparisons exist; currentvalue+whitelist mustbecheckedbeforeextraction."
+    },
+    {
+      "id": "stale_transmutation_access",
+      "source": "PEHandContainer.stillValid / TransmutationContainer.quickMoveStack / SlotOutput.remove",
+      "detail": "Placed table handnull staysvalid; no currentteam/stageguard atdirectoutput mutation. Player learning/setlockeventsdo notcoverextraction."
+    },
+    {
+      "id": "fuelmap_pre_filter_cache",
+      "source": "EMCMappingHandler.fireEmcRemapEvent / CollectorMK1BlockEntity.updateEmc",
+      "detail": "FuelMapper rebuilt beforeEMCRemapEvent. Filteredoutfuelsremaininthestalechain atEMC0; zero-valueimportedfuelscan upgrade atzero cost. Currentexporttag hasonlynative vanilla+ProjectEfuels, notconfirmedfuturemoddedfuel."
+    },
+    {
+      "id": "bonus_tick_raw_receiver",
+      "source": "TimeWatch.provideBonusTicks",
+      "detail": "Direct BlockEntityTicker.tick bypasses BoundTickingBlockEntity wrapper; receiverowner/mayTick andtry/finallycontext required."
+    },
+    {
+      "id": "raw_modified_output_variant",
+      "source": "SearchUpdatePKT/TransmutationInventory.writeIntoOutputSlot/DataComponentManager.getEmcValue",
+      "detail": "Server outputaccepts positivevaluefromitemOnlybasepluscomponentprocessors; strictordinarywhitelistmustalso rejectrawmodifiedoutputcomponents. Treatasnativeoutputvalidationgap; arbitraryvariantavailabilitythroughnetworkrequiresseparatefullpacksecuritytest."
+    }
+  ],
+  "current_whitelist_semantics": {
+    "entries": 14,
+    "item_namespaces": [
+      "minecraft"
+    ],
+    "highest_known_item_epoch": 2,
+    "modded_or_key_outputs": 0,
+    "ordinary_materials_only": true
+  },
+  "safe_postmap_refresh": {
+    "fuel_mapper": "FuelMapper.loadMap() public static noarguments",
+    "client_gui": "PECore.packetHandler().updateTransmutationTargets(ServerPlayer) sends client redraw, no knowledge mutation",
+    "avoid": "Do not call KnowledgeImpl.pruneStaleKnowledge again; itdeleteslearnedentries. Keepstoredknowledge anddenycurrentunavailableoutput."
+  },
+  "remaining_open": [
+    "Imported passive ProjectE armor/rings can execute inventoryTicks/Curios/event protection paths beforeitemstage; notcoveredbyrightclickevents. Needsbroaderpassiveuseaudit, donotclaimuniversalgearprotection.",
+    "Direct IAlchBagItem/IAlchChestItem passive capability processing remains separatefromordinaryguardedticker.",
+    "Worldtransmutation/packettools/armorattributes requireindividualsource/runtimeaudit."
+  ],
+  "fullpack_run": false,
+  "resolution_audit": "content/audit/v5-projecte-native-guard.json"
+}

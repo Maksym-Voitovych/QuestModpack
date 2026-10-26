@@ -4918,6 +4918,407 @@ Lesser Focus є початковою матеріальною частиною �
 
 - [audited native production contract with frozen source recipes](../../kubejs/config/aia2_mechanics.json) — SHA перевірено
 
+## ProjectE — контрольована еквівалентність
+
+Версія експорту: **1.1.0**. Статус: `complete`.
+[Структурована карта](../../content/research/projecte_core_v5.json).
+
+Епоха45 починає фізичну алхімію та обмежений обмін14звичайних матеріалів. Native ProjectE персональні знання/EMC відрізняються від FTB-командної прогресії.
+
+### 1. Контрольований старт трансмутації
+
+Епохи: 45.
+
+Ковалентні порошки та Philosopher’s Stone виготовляються фізично. Stone зберігається як інструмент у відповідних формулах; глобальне EMC не відкриває стартові технології.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Квести: `E45_X_covalence_01`, `E45_X_covalence_02`, `E45_X_covalence_03`, `E45_X_covalence_04`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 2. Звичайні ресурси замість універсального EMC
+
+Епохи: 45.
+
+AIA2 після remap залишає14звичайних матеріалів. Руни, ключі, трофеї, матерія та компоненти прогресії не мають EMC; modified components відхиляються при навчанні/цілі.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.entry.
+Квести: `V5_PROJECTE_FINITE_EXCHANGE`, `E45_X_covalence_07`, `E45_X_covalence_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 3. Жезл оцінки: три глибини, а не універсальний рудошукач
+
+Епохи: 45.
+
+Divining Rod оцінює EMC першого дропа блоків, а за нульового значення перевіряє продукт звичайного переплавлення. Вищі жезли відкривають режими3/16/64глибини та додаткові максимуми; це не список усіх руд у світі.
+В AIA2 EMC має лише короткий whitelist. Нульове значення невідомої руди не означає порожню породу; порівняйте оцінку звичайного каменю й залізної сировини, не очікуючи пошуку всіх модових матеріалів.
+Попередні кроки: projecte.foundation.entry.
+Ресурси й результати: `projecte:divining_rod_1`, `projecte:divining_rod_2`, `projecte:divining_rod_3`.
+Квести: `V5_E45_projecte_core_survey_modes`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 4. Особистий і блоковий склад
+
+Епохи: 45.
+
+Knowledge та bag data належать гравцеві; Alchemical Chest є блоковим сховищем. FTB-командний ledger не змінює ці native ownership правила.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.whitelist.
+Квести: `E45_X_transmutation_01`, `E45_X_transmutation_02`, `E45_X_transmutation_03`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 5. Колір сумки — особисте сховище гравця
+
+Епохи: 45.
+
+Кожен колір Alchemical Bag відкриває104слоти в даних КОНКРЕТНОГО гравця. Дві сумки одного кольору в одного гравця посилаються на одне сховище; різні кольори розділяють запаси.
+Створіть червону й синю сумки для окремих матеріальних потоків. Членство у FTB-команді саме по собі не перетворює їх на спільний склад і не копіює вміст іншого гравця.
+Попередні кроки: projecte.foundation.storage.
+Ресурси й результати: `projecte:blue_alchemical_bag`, `projecte:red_alchemical_bag`.
+Квести: `V5_E45_projecte_core_bag_identity`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 6. Алхімічний ремонт у сховищі
+
+Епохи: 45.
+
+Repair Talisman працює через спеціальні capability алхімічної скрині/сумки й ремонтує придатні пошкоджені речі по1міцності за цикл. Предмети з MODE_CHANGER та неремонтопридатні речі відсікаються.
+Підготуйте скриню, талісман і звичайний інструмент; пошкодіть його в роботі й перевірте зміну міцності в інтерфейсі. Це інший механізм, ніж крафтовий ремонт ковалентним пилом: EMC пилу в AIA2 відсутній, тому останній шлях не обіцяється.
+Попередні кроки: projecte.foundation.storage, projecte.core.bag_identity.
+Машини: `projecte:alchemical_chest`.
+Ресурси й результати: `minecraft:iron_pickaxe`, `projecte:repair_talisman`.
+Квести: `V5_E45_projecte_core_repair_chest`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 7. Матеріальний конденсатор
+
+Епохи: 45.
+
+Condenser обмінює лише предмети з дозволеним EMC. Шаблон без значення залишається неактивним; це не спосіб скопіювати ключ або машину.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.storage.
+Квести: `E45_X_transmutation_04`, `E45_X_logistics_04`, `E45_X_transmutation_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 8. Конденсатор: шаблон відокремлено від сировини
+
+Епохи: 45.
+
+CondenserMK1 має спільний робочий інвентар: item capability приймає лише предмети з EMC, які не дорівнюють цілі, а видає лише предмети, що дорівнюють цілі. Нульовий EMC шаблона зупиняє виробництво.
+Виберіть iron ingot як дозволений шаблон і подавайте звичайний coal окремим каналом. Руни, ключі, матерія та спеціальні компоненти не стають доступними шаблонами лише тому, що їх поклали поруч із конденсатором.
+Попередні кроки: projecte.foundation.condenser.
+Машини: `projecte:condenser_mk1`.
+Ресурси й результати: `minecraft:coal`, `minecraft:iron_ingot`, `pipez:item_pipe`.
+Квести: `V5_E45_projecte_core_condenser_routes`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 9. Фізична паливна драбина
+
+Епохи: 45.
+
+Alchemical Coal→Mobius→Aeternalis тут отримують фізичними рецептами, бо модові палива виключені з whitelist. Vanilla вугілля залишається окремим EMC/паливним ресурсом.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.condenser.
+Квести: `E45_X_darkmatter_01`, `E45_X_darkmatter_02`, `E45_X_darkmatter_03`, `E45_X_darkmatter_05`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 10. Темна матерія як фізичний компонент
+
+Епохи: 45.
+
+Dark Matter виготовляють із фізичного Aeternalis і діаманта за чинним рецептом; її не можна вивчити чи конденсувати через звичайний whitelist.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.fuel.
+Квести: `E45_X_darkmatter_04`, `E45_X_darkmatter_06`, `E45_X_darkmatter_07`, `E45_X_darkmatter_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 11. Перша зірка Кляйна: ємність і порожній заряд
+
+Епохи: 45.
+
+Klein Star Ein вміщує50000EMC, але новий предмет не є безкоштовною повною батареєю. Заряд зберігається в data component, а здатність приймати EMC не потребує EMC-ціни самого предмета.
+Для фізичного крафту потрібне паливо Мебіуса. У таблиці трансмутації доданий EMC спочатку може піти в зірку у вхідних слотах, і лише залишок — в особистий баланс. Перевіряйте заряд у GUI, а не лише цифру балансу.
+Попередні кроки: projecte.foundation.fuel.
+Машини: `projecte:transmutation_table`.
+Ресурси й результати: `projecte:klein_star_ein`.
+Квести: `V5_E45_projecte_core_klein_capacity`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 12. Порожнє злиття чотирьох зірок
+
+Епохи: 45.
+
+Чотири Ein утворюють одну Zwei з ємністю200000EMC. У чинному експорті це minecraft:crafting_shapeless; саме цей рецепт, а не наявність невикористаного Java-класу спеціального serializer, визначає правила крафту.
+Об’єднуйте порожні зірки. Збереження попереднього заряду при цій стандартній формулі не обіцяється. Новий рівень підвищує запас, але не генерує EMC і не змінює whitelist.
+Попередні кроки: projecte.foundation.fuel, projecte.core.klein_capacity.
+Ресурси й результати: `projecte:klein_star_zwei`.
+Квести: `V5_E45_projecte_core_klein_merge`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 13. Реле: спалити дозволений ресурс і зарядити зірку
+
+Епохи: 45.
+
+Relay спалює предмет із додатним EMC або приймає EMC із накопичувача у вхідному слоті. Вихідний слот приймає EMC_HOLDER. Автоматичне вилучення незаповненої заряджуваної речі з виходу блокується, доки їй бракує EMC.
+Розділіть горизонтальний вхід звичайного coal і вертикальний доступ до зарядного слота. Реле передає EMC суміжним приймачам; це не Flux-мережа, не FE-провід і не конденсатор предметів.
+Попередні кроки: projecte.foundation.matter, projecte.core.klein_capacity.
+Машини: `projecte:relay_mk1`.
+Ресурси й результати: `minecraft:coal`, `projecte:klein_star_ein`.
+Квести: `V5_E45_projecte_core_relay_charging`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 14. Темна піч: паливо або EMC, а не FE
+
+Епохи: 45.
+
+Dark Matter Furnace використовує звичайні furnace-рецепти, паливний слот та окремий шлях живлення від EMC-накопичувача/мережі. FE-кабель не є її паливом. Реальний час обробки масштабується часом конкретного smelting-рецепта.
+Почніть зі звичайного coal і raw iron; зіставте витрату палива та вихід у GUI. Наявність залізного зливка в завданні підтверджує матеріальну підготовку, а не машинне походження.
+Попередні кроки: projecte.foundation.matter.
+Машини: `projecte:dm_furnace`.
+Ресурси й результати: `minecraft:coal`, `minecraft:iron_ingot`, `minecraft:raw_iron`.
+Квести: `V5_E45_projecte_core_furnace_fuel`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 15. Порти печі: верх, низ і бічне паливо
+
+Епохи: 45.
+
+У зовнішньому item capability верх Dark Matter Furnace приймає сировину, низ видає вихід, боки поєднують паливний вхід і вихід. Власне підтягування зі складу зверху та виштовхування вниз працюють через item handlers; сусідні Hopper пропускаються цим самостійним переносом.
+Підготуйте дві скрині та воронку для порівняння. Для прямої верхньої/нижньої скрині працює власний механізм печі; воронка переносить предмети своїм штатним циклом. Не дублюйте один потік двома несумісними фільтрами.
+Попередні кроки: projecte.foundation.matter, projecte.core.furnace_fuel.
+Машини: `projecte:dm_furnace`.
+Ресурси й результати: `minecraft:chest`, `minecraft:hopper`.
+Квести: `V5_E45_projecte_core_furnace_ports`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 16. Ущільнення лише в дозволені метали
+
+Епохи: 45.
+
+Gem of Eternal Density має режими iron/gold/diamond/dark matter/red matter. Перемикач може показувати всі режими, але фактичне ущільнення не працює для цілі з нульовим EMC.
+В AIA2 з цього списку EMC мають лише звичайні iron ingot і gold ingot. Підготуйте дозволений режим та залиште фізичні канали для решти матеріалів; перемикання на назву Dark Matter не є обходом її рецепта.
+Попередні кроки: projecte.foundation.condenser.
+Ресурси й результати: `minecraft:gold_ingot`, `minecraft:iron_ingot`, `projecte:gem_of_eternal_density`.
+Квести: `V5_E45_projecte_core_density_whitelist`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 17. Підбирання в особисту сумку
+
+Епохи: 45.
+
+Активний Black Hole Band або Void Ring усередині Alchemical Bag робить цю сумку кандидатом для підбирання. Сам предмет сумки в інвентарі не активує кільце й не робить її складом усієї FTB-команди.
+Використайте кольорову сумку окремо від виробничих слотів. Перевірте активний стан кільця та вільний простір у правильному особистому кольорі; цей квест перевіряє лише комплект, а не фактичне всмоктування ItemEntity.
+Попередні кроки: projecte.foundation.storage, projecte.core.bag_identity.
+Ресурси й результати: `minecraft:cobblestone`, `projecte:black_hole_band`, `projecte:red_alchemical_bag`.
+Квести: `V5_E45_projecte_core_bag_suction`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 18. Режими інструментів і реальний ремонт
+
+Епохи: 45.
+
+Matter tools мають власні режими/charge і спеціальну поведінку. RepairTalisman не є універсальним ремонтом кожної модової capability; ковaлентний native repair спирається на EMC і не обіцяється в цій whitelist-конфігурації.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.matter.
+Квести: `E45_X_tools_01`, `E45_X_tools_02`, `E45_X_tools_03`, `E45_X_tools_04`, `E45_X_tools_05`, `E45_X_tools_06`, `E45_X_tools_07`, `E45_X_tools_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 19. Сервісний п’єдестал із контрольованим ефектом
+
+Епохи: 45.
+
+Dark Matter Pedestal має один слот, активний стан та окремий cooldown ефекту. Repair Talisman на ньому обслуговує придатні предмети гравців у межах ефекту; діапазон і доступність залежать від серверного конфігу.
+Почніть із ремонтного ефекту: встановлений п’єдестал без сумісного предмета й активації не є готовою автоматизацією. Не підміняйте ремонт прискоренням Watch of Flowing Time; часові ефекти мають окремий аудит захисту.
+Попередні кроки: projecte.foundation.tools, projecte.core.repair_chest.
+Машини: `projecte:dm_pedestal`.
+Ресурси й результати: `projecte:repair_talisman`.
+Квести: `V5_E45_projecte_core_pedestal_service`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 20. Кільце вітру потребує резерву EMC
+
+Епохи: 45.
+
+Swiftwolf’s Rending Gale має окремі режими польоту й щита. Витрата EMC залежить від активних режимів; за відсутності придатного резерву кільце повертається у вимкнений стан. У звичайному інвентарі native tick перевіряє hotbar або offhand.
+Підготуйте кільце та зірку, заряджену дозволеним ресурсом. Не вважайте предметне завдання доказом заряду або дозволом безкоштовного польоту: перевірте режим і спад резерву в безпечній зоні.
+Попередні кроки: projecte.foundation.tools, projecte.core.relay_charging.
+Ресурси й результати: `minecraft:coal`, `projecte:klein_star_ein`, `projecte:swiftwolf_rending_gale`.
+Квести: `V5_E45_projecte_core_flight_reserve`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 21. Червона матерія та старші системи
+
+Епохи: 47.
+
+Red Matter відкривається на47. Рецепти, що споживають її, і CollectorMK2, який споживає пізній MK1, слід оцінювати за справжніми входами, а не лише мінімальним namespace floor.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.tools.
+Квести: `E47_X_redmatter_01`, `E47_X_redmatter_02`, `E47_X_redmatter_03`, `E47_X_redmatter_04`, `E47_X_redmatter_05`, `E47_X_redmatter_06`, `E47_X_redmatter_07`, `E47_X_redmatter_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+### 22. Колектор: яскравість над блоком, не лише небо
+
+Епохи: 47.
+
+Collector обчислює яскравість блока НАД собою; в ultraWarm-вимірі native код бере16. Генерація накопичується дробово, залежить від світла та максимального внутрішнього запасу. Це EMC, не FE.
+Порівняйте освітлену й затемнену ділянки та перевірте GUI. Не обіцяйте автоматичне поліпшення всього ProjectE-палива: AIA2 прибирає EMC модових палив, а FuelMapper має окремий аудит синхронізації після whitelist remap.
+Попередні кроки: projecte.foundation.red, projecte.core.relay_charging.
+Машини: `projecte:collector_mk1`.
+Ресурси й результати: `minecraft:glowstone`, `projecte:klein_star_ein`.
+Квести: `V5_E47_projecte_core_collector_light`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 23. Пріоритет: зарядний слот чи зовнішній приймач
+
+Епохи: 47.
+
+Collector спочатку заряджає EMC_HOLDER у робочому слоті або обробляє відомий паливний перехід. Лише коли не заряджає й не поліпшує паливо, він надсилає EMC суміжним приймачам та relay bonus.
+Підготуйте CollectorMK2 і реле, змініть стан зарядного слота та порівняйте маршрути в GUI. Більший колектор не усуває пріоритетів: зайнятий слот може змінити потік без поломки мережі.
+Попередні кроки: projecte.foundation.red, projecte.core.collector_light, projecte.core.klein_merge.
+Машини: `projecte:collector_mk2`, `projecte:relay_mk2`.
+Ресурси й результати: `projecte:klein_star_zwei`.
+Квести: `V5_E47_projecte_core_collector_priority`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 24. MK2: окремі вхідний і вихідний банки
+
+Епохи: 47.
+
+CondenserMK2 має окремі банки по42слоти. Під час циклу він може створити кілька предметів, доки вистачає EMC і місця, та спалити один вхідний стек; це відрізняється від повільного спільного інвентаря MK1.
+Залиште вироблені whitelist-метали у вихідному каналі та не поверніть їх у сировину. Швидкість самої машини не робить не-EMC компоненти придатними цілями. Огляд блоків не вимірює фактичну пропускну здатність.
+Попередні кроки: projecte.foundation.red, projecte.core.condenser_routes.
+Машини: `projecte:condenser_mk2`.
+Ресурси й результати: `minecraft:iron_ingot`, `pipez:item_pipe`.
+Квести: `V5_E47_projecte_core_mk2_separation`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 25. Переносний інтерфейс, особисті знання
+
+Епохи: 47.
+
+Transmutation Tablet відкриває інтерфейс до knowledge capability того самого гравця, що використовує стаціонарний стіл. Особисті знання й EMC не стають командними лише через спільний FTB Quest progress.
+Підготуйте стаціонарну й переносну точки доступу; звірте whitelist та власний баланс. У команді кожен гравець перевіряє своє знання дозволених матеріалів; предмети з модифікованими компонентами не навчаються як звичайні whitelist-зразки.
+Попередні кроки: projecte.foundation.red.
+Машини: `projecte:transmutation_table`.
+Ресурси й результати: `minecraft:coal`, `projecte:transmutation_tablet`.
+Квести: `V5_E47_projecte_core_tablet_personal`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 26. Червона піч: швидкість не замінює рецепти
+
+Епохи: 47.
+
+Red Matter Furnace успадковує input/output/fuel логіку темної печі, збільшує банки до13слотів і змінює базовий час та бонус руд. Raw ore й ore block мають різні ймовірності додаткового виходу; довільний модовий предмет не є рудою автоматично.
+Виготовлення потребує справжньої red matter з епохи47, навіть якщо нижчий item namespace floor показує45. Перенесіть перевірене паливо й порти DM-лінії та порівняйте результат на легальному smelting-вході.
+Попередні кроки: projecte.foundation.red, projecte.core.furnace_ports.
+Машини: `projecte:rm_furnace`.
+Ресурси й результати: `minecraft:coal`, `minecraft:raw_iron`.
+Квести: `V5_E47_projecte_core_rm_furnace`.
+Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу.
+
+### 27. Алхімія в остаточній конвергенції
+
+Епохи: 48.
+
+Фінальні магічні компоненти залишаються фізичними. Особисте EMC накопичення не замінює виробничі квитанції двох ключів і фінальні FTB-випробування.
+Кожен наступний рівень змінює спосіб збереження, перетворення або використання EMC й матеріалів; він не скасовує фізичні витрати попереднього рівня.
+Попередні кроки: projecte.foundation.red.
+Квести: `E48_X_arcane_final_06`, `E48_X_arcane_final_08`.
+Існуючі task IDs збережено; наявність предмета та огляд не доводять native режим або робочу мережу.
+
+Фінальні цілі:
+- Стале перетворення whitelist-сировини без відмивання прогресійних компонентів.
+- Фізичне отримання Red Matter та використання її в пізніх міжмодових компонентах.
+- Розрізнення командної прогресії AIA2 та персональних knowledge/bag/EMC ProjectE.
+
+Міжмодові зв’язки:
+- Стартові AIA2 рецепти Philosopher’s Stone/стола використовують фізичні компоненти магії й промисловості; whitelist не додає їм EMC.
+- AE2/Pipez транспортують фізичні ресурси, а не передають native ProjectE knowledge або EMC.
+- Два ключі й фінальні компоненти Botania/Occultism/Ars/Mekanism/MI не вивчаються і не конденсуються.
+
+Прогалини та межі перевірки:
+- Optional live ProjectE dispatch, actual EMC bookkeeping/IO/collector light and claim interactions не запускалися у повному інстансі.
+- FuelMapper кеш і персональні/pedestal tick paths потребують окремого серверного аудиту; цей catalog не обіцяє вільне прискорення машин або працездатність модових fuel upgrades.
+- Ефективний KleinStar upgrade — звичайний shapeless: заряди при об’єднанні не обіцяються; зливайте порожні зірки.
+- Native advancement projecte:collector фактично містить inventory criterion для condenser_mk1; його не використано як доказ колектора.
+- Covalence repair залежить від EMC пилу й інструмента; без цих значень у whitelist це не гарантований ігровий маршрут.
+- Stage floors деяких collector/RM item IDs нижчі за доступність їхніх інгредієнтів; нові цілі розміщено на47, старі не змінено.
+
+Джерела:
+
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/LICENSE) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/gradle.properties) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/DiviningRod.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/capability/AlchBagImpl.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/RepairTalisman.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMFurnaceBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RMFurnaceBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/KleinStar.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipeShapelessKleinStar.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/recipe/klein_star_zwei.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RelayMK1BlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumRelayTier.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserMK2BlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CollectorMK1BlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumCollectorTier.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/emc/FuelMapper.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/BlackHoleBand.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/SWRG.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/container/inventory/TransmutationInventory.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/TransmutationProxyImpl.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/PhilosophersStone.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/world_transmutation/WorldTransmutationManager.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipesCovalenceRepair.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/utils/EMCHelper.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/registries/PEItems.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ProjectEConfig.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ServerConfig.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/advancement/collector.json) — SHA перевірено
+- [джерело](https://github.com/Maksym-Voitovych/QuestModpack/blob/1915b802bec636e961b45afb212788c71c63ec5a/kubejs/config/aia2_emc_whitelist.json) — SHA перевірено
+- [джерело](https://github.com/Maksym-Voitovych/QuestModpack/blob/1915b802bec636e961b45afb212788c71c63ec5a/kubejs/server_scripts/aia2/35_projecte.js) — SHA перевірено
+- [джерело](../../content/research/evidence/projecte_core_next_v5/export/mods.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/divining_rod_1.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/divining_rod_2.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/divining_rod_3.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/red_alchemical_bag.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/blue_alchemical_bag.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/repair_talisman.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/dm_pedestal.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/dm_furnace.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/rm_furnace.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/klein_star_ein.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/klein_star_zwei.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/relay_mk1.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/relay_mk2.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/relay_mk3.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/condenser_mk1.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/condenser_mk2.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/collector_mk1.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/collector_mk2.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/collector_mk3.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/gem_of_eternal_density.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/black_hole_band.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/swiftwolf_rending_gale.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/transmutation_table.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/transmutation_tablet.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/philosophers_stone.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/dark_matter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/red_matter.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/alchemical_coal.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/mobius_fuel.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/aeternalis_fuel.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/low_covalence_dust.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/medium_covalence_dust.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/high_covalence_dust.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/iron_band.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/alchemical_chest.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/GemEternalDensity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/blocks/Pedestal.java) — SHA перевірено
+
 ## Actually Additions
 
 Версія експорту: **1.3.26**. Статус: `complete`.
@@ -6250,7 +6651,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## Draconic Evolution
 
-Версія експорту: **3.1.4.633**. Статус: `reviewed_partial`.
+Версія експорту: **3.1.4.633**. Статус: `reviewed_partial_ci_build633_unverified`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Драконій стає базою власної fusion-майстерні, а не тільки матеріалом броні.
@@ -6299,7 +6700,148 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E40_draconic_operations_01`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 5. Пробуджений синтез має повний комплект
+### 5. Рівень задають зайняті інжектори
+
+Епохи: 40.
+
+Перед синтезом розділіть інжектори за призначенням і рівнем. Мінімальний tier обчислюється серед інжекторів із непорожнім стеком: порожній Basic поруч не знижує рівень, але залишений у ньому інгредієнт уже бере участь у перевірці.
+Підготуйте окремі інгредієнтні позиції потрібного рівня, спрямовані до ядра, і звірте геометрію та підказки ядра. Кількість речовини в одному стеку не замінює декількох самостійних recipe ingredients. Це планування позицій, а не підтвердження успішного fusion.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:crafting_core`.
+Ресурси й результати: `draconicevolution:wyvern_crafting_injector`, `draconicevolution:basic_crafting_injector`, `draconicevolution:wyvern_core`.
+Квести: `V5_E40_draconic_core_occupied_tier`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 6. Чотири слоти — різні напрямки заряджання
+
+Епохи: 40.
+
+Energy Transfuser має чотири однопредметні слоти з режимами CHARGE, DISCHARGE, BUFFER і DISABLED. Розділіть предмет-джерело та предмет-споживач; режим BUFFER поєднує дозволені напрямки, але не означає, що будь-яка зброя віддаватиме енергію як звичайний буфер.
+Порівняйте дві переносні батареї та balanced mode в інтерфейсі. Після від’єднання зовнішнього живлення перевірте напрямок потоку окремо; два предмети в інвентарі не доводять їхній заряд.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:energy_transfuser`.
+Ресурси й результати: `draconicevolution:wyvern_capacitor`.
+Квести: `V5_E40_draconic_core_transfuser_modes`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 7. Паливний режим: потужність проти економності
+
+Епохи: 40.
+
+Генератор Draconic Evolution змінює швидкість виробництва та ефективність палива відповідно до вибраного режиму. Швидший режим не створює додаткову енергію без витрат; тестуйте один і той самий запас твердого палива та окремий накопичувач.
+У генератора є паливні слоти й окремий слот енергетичного предмета. Не подавайте батарею як паливо. Комплект нижче готує порівняння, а реальні витрати й вихід потрібно зчитати у грі.
+Попередні кроки: draconicevolution.phase.02.
+Машини: `draconicevolution:generator`.
+Ресурси й результати: `minecraft:coal`, `draconicevolution:wyvern_capacitor`.
+Квести: `V5_E40_draconic_core_generator_modes`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 8. Скриня як керований плавильний вузол
+
+Епохи: 40.
+
+Draconium Chest поєднує основний інвентар, окремі плавильні входи й слот енергетичного предмета. Її smelting logic використовує внутрішній OP-запас; це не звичайна піч, куди паливо кладуть замість батареї.
+Підготуйте одну контрольну партію сирого заліза й місце для зливків. Налаштування автоподачі та заповненого виходу перевірте окремо в інтерфейсі: наявність кінцевого матеріалу не доводить, у якій саме машині його отримано.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:draconium_chest`.
+Ресурси й результати: `minecraft:raw_iron`, `minecraft:iron_ingot`, `draconicevolution:wyvern_capacitor`.
+Квести: `V5_E40_draconic_core_chest_smelting`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 9. Трофеї й досвід мають різні виходи
+
+Епохи: 40.
+
+Grinder має окрему логіку удару зброєю, енергоживлення й збирання ExperienceOrb. Підготуйте зброю та місце для предметних трофеїв; накопичений XP перевіряйте окремо від скрині з предметами.
+Контрольне полювання на зомбі перевіряє звичайний kill task гравця, а не вбивства машини. Огляд Grinder підтверджує лише наявність вузла; ці цілі не засвідчують продуктивність або внутрішній XP.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:grinder`.
+Ресурси й результати: `minecraft:iron_sword`, `minecraft:chest`.
+Квести: `V5_E40_draconic_core_grinder_xp`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 10. Детектор: частота сканування й імпульс
+
+Епохи: 40.
+
+Entity Detector виконує оплачуване енергією сканування за таймером. Його output strength та pulse mode — окремі параметри; постійний сигнал і короткий імпульс по-різному запускають зовнішню автоматику.
+Під’єднайте тестову лампу та компаратор, відрегулюйте область і фільтр, потім перевірте інтервал повторного спрацювання. Огляд і матеріали не вимірюють pulse rate та не доводять налаштування фільтра.
+Попередні кроки: draconicevolution.phase.04.
+Машини: `draconicevolution:entity_detector`.
+Ресурси й результати: `minecraft:redstone_lamp`, `minecraft:comparator`.
+Квести: `V5_E40_draconic_core_detector_pulses`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 11. Порт не замінює ретранслятор
+
+Епохи: 40.
+
+Розділіть кристалічну трасу на прямий ввід/вивід і Relay. Зв’язок Crystal Binder задає учасників мережі, а IO-режим визначає обмін із сусідньою машиною; сам зв’язок не гарантує правильний напрямок живлення.
+Підготуйте малий стенд із двома типами кристалів і окремим обмеженням потоку. Перевірте правильну сторону та заряд буфера перед підключенням fusion-ядра.
+Попередні кроки: draconicevolution.phase.04.
+Машини: `draconicevolution:basic_io_crystal`, `draconicevolution:wyvern_relay_crystal`, `draconicevolution:flux_gate`.
+Квести: `V5_E40_draconic_core_directed_crystals`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 12. Сховище потребує повної структури
+
+Епохи: 40.
+
+Energy Core та Energy Core Stabilizer не є готовим накопичувачем лише через встановлення центрального блока. Перевірка структури й активація ядра відокремлені від його заряджання; пілон не працює з неактивним або невалідним ядром.
+Зберіть запас стабілізаторів і будівельних матеріалів, відкрийте перевірку структури в GUI та звірте схему обраного рівня. Наведений комплект — підготовчий, а не обіцянка конкретного tier або місткості.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:energy_core`.
+Ресурси й результати: `draconicevolution:energy_core_stabilizer`, `draconicevolution:draconium_block`, `minecraft:glass`.
+Квести: `V5_E40_draconic_core_core_structure`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 13. Фільтр сміття спершу тестують на камені
+
+Епохи: 40.
+
+Junk Filter зберігає власний список фільтрів і перемикач увімкнення. Встановлення модуля без налаштування списку не тотожне контрольованій утилізації видобутку.
+Візьміть тестовий запас cobblestone, перевірте правило на ньому й лише потім переходьте до цінних матеріалів. Предметне завдання не видаляє цей камінь і не підтверджує запис списку в модуль.
+Попередні кроки: draconicevolution.phase.03.
+Ресурси й результати: `draconicevolution:item_wyvern_junk_filter`, `draconicevolution:wyvern_pickaxe`, `minecraft:cobblestone`.
+Квести: `V5_E40_draconic_core_junk_filter`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 14. Парні точки — окремий тип телепортації
+
+Епохи: 40.
+
+Bound Dislocator використовує прив’язані кінцеві точки. Пара пристроїв і Dislocator Receptacle відрізняється від довільного запису координат Advanced Dislocator: перед подорожжю перевірте, що обидві точки дійсно належать потрібному зв’язку.
+Предметні стеки unbound не доводять UUID пари або робочий портал. Це комплект для створення та перевірки кінцевих точок; повернення й доступність місця перевірте в грі.
+Попередні кроки: draconicevolution.phase.03.
+Машини: `draconicevolution:dislocator_receptacle`.
+Ресурси й результати: `draconicevolution:p2p_dislocator_unbound`, `draconicevolution:dislocator_pedestal`.
+Квести: `V5_E40_draconic_core_paired_endpoints`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 15. Запас палива для списку призначень
+
+Епохи: 40.
+
+Advanced Dislocator має список цілей і лічильник палива, який поповнюють Ender Pearls. Звичайний teleport і blink використовують пов’язані, але окремо налаштовувані витрати; не переносіть кількість blink із чужого конфіга у свою збірку.
+Підготуйте перли й стаціонарну точку повернення. Отримання приладу та палива не підтверджує вибране місце, записаний запас або успішний teleport.
+Попередні кроки: draconicevolution.core.paired_endpoints.
+Машини: `draconicevolution:dislocator_pedestal`.
+Ресурси й результати: `draconicevolution:advanced_dislocator`, `minecraft:ender_pearl`.
+Квести: `V5_E40_draconic_core_dislocator_fuel`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 16. Пробуджений синтез має повний комплект
 
 Епохи: 41.
 
@@ -6311,7 +6853,31 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E41_draconic_operations_02`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 6. Реактор має окрему керувальну енергію
+### 17. Трофейний канал із фільтром і вартістю
+
+Епохи: 41.
+
+Ender Collection перевіряє enabled, фільтр і енергію за кількість предметів. За встановленого EnderStorage може використовувати його частоту; за порожньої частоти повертається до особистої Ender Chest гравця.
+Сумісна скриня не означає автоматично налаштовану частоту. Перевірте призначення та відмову при повному приймачі на дешевому трофеї, перш ніж увімкнути канал для рідкісних речей.
+Попередні кроки: draconicevolution.phase.05.
+Ресурси й результати: `draconicevolution:item_draconic_ender_collection`, `draconicevolution:draconic_chestpiece`.
+Квести: `V5_E41_draconic_core_ender_collection`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 18. Регенерація щита має енергетичний бюджет
+
+Епохи: 41.
+
+Shield Controller пов’язує запас захисту, відновлення й енергопостачання модульного спорядження. Велика місткість не замінює живлення для відновлення; відділіть робочий запас від енергії на додаткові можливості інструмента.
+Підготуйте енергетичний, місткісний і відновлювальний модулі. Їхня наявність не доводить установку, сумісність сітки чи фактичне відновлення під час бою.
+Попередні кроки: draconicevolution.phase.05.
+Ресурси й результати: `draconicevolution:item_draconic_energy`, `draconicevolution:item_draconic_large_shield_capacity`, `draconicevolution:item_draconic_shield_recovery`, `draconicevolution:draconic_chestpiece`.
+Квести: `V5_E41_draconic_core_shield_budget`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 19. Реактор має окрему керувальну енергію
 
 Епохи: 42.
 
@@ -6323,7 +6889,46 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E42_draconic_operations_03`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
-### 7. Фінальний інструмент має сервісний запас
+### 20. Реакторний стенд: спочатку зворотний зв’язок
+
+Епохи: 42.
+
+У реактора окремо відстежуються температура, shield charge, saturation та field drain. Підготовка аварійного живлення й вихідного обмеження має передувати запуску; реакторний інжектор і стабілізатори виконують різні ролі.
+Підготуйте чотири стабілізатори та два Flow Gate для розділених контурів, звірте поточні показники GUI і доступні режими зворотного зв’язку. Цей квест не доводить зібрану геометрію, температуру чи безпечний робочий стан; тестуйте на копії світу.
+Попередні кроки: draconicevolution.phase.06.
+Машини: `draconicevolution:reactor_core`.
+Ресурси й результати: `draconicevolution:reactor_stabilizer`, `draconicevolution:flux_gate`, `minecraft:comparator`.
+Квести: `V5_E42_draconic_core_reactor_feedback`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 21. Окремі позиції для складного синтезу
+
+Епохи: 42.
+
+Розширені AIA2 fusion-рецепти можуть мати більше інгредієнтних позицій, ніж старі схеми майстерні. Одинадцять компонентів потребують одинадцяти доступних зайнятих інжекторів; великий стек у меншій кількості позицій не замінює окремі entries рецепта.
+Підготуйте одинадцять інжекторів доступного вам хаотичного рівня, перевірте напрямок кожного та видаліть сторонні інгредієнти нижчого рівня. Звіряйте кількість із конкретним рецептом у JEI; цей комплект не зараховує жодного фактичного циклу fusion.
+Попередні кроки: draconicevolution.phase.05, draconicevolution.core.occupied_tier.
+Машини: `draconicevolution:crafting_core`.
+Ресурси й результати: `draconicevolution:chaotic_crafting_injector`, `draconicevolution:chaotic_core`.
+Квести: `V5_E42_draconic_core_fusion_expanded_lanes`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 22. Обслуговування палива в холодному стані
+
+Епохи: 42.
+
+Реактор розрізняє reactable fuel і converted fuel; параметри палива пов’язані з максимальною місткістю поля та saturation. Зміна паливного комплекту — окрема операція обслуговування, а не спосіб миттєво зупинити гарячий реактор.
+Підготуйте резерв Awakened Draconium, прочитайте поточний стан і штатно перейдіть до COLD перед додаванням чи вилученням палива. Предметний резерв не підтверджує охолодження та не дозволяє пропускати перевірки безпеки.
+Попередні кроки: draconicevolution.core.reactor_feedback.
+Машини: `draconicevolution:reactor_core`.
+Ресурси й результати: `draconicevolution:awakened_draconium_ingot`, `draconicevolution:reactor_injector`.
+Квести: `V5_E42_draconic_core_reactor_cold_service`.
+Конкретні item/observation/kill цілі автоматичні; GUI, OP/FE, структура, установка модулів і machine-origin не засвідчуються.
+Source3.1.4prefix перевірено; точний CI633 pin іoptional runtime ще не підтверджено.
+
+### 23. Фінальний інструмент має сервісний запас
 
 Епохи: 47.
 
@@ -6350,6 +6955,8 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - Етап draconicevolution.phase.01: окремий нативний рецепт не зафіксовано; джерело може бути кодом, loot або раніше наведеним рецептом.
 - Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
 - Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- BLOCKED: відповідність upstream pin6251e32 саме release CI633 не підтверджено. Нові пояснення є researched source3.1.4 context плюс exact installed recipes; карту не позначено complete.
+- Нові квести є матеріальною/спостережною підготовкою механік. Фактичний OP, NBT модулів, налаштування endpoint/frequency і запуск реактора не мають нового спеціального proof.
 
 Джерела:
 
@@ -6365,6 +6972,61 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [draconicevolution:fusion_crafting](../../content/research/evidence/technology_v5/draconicevolution/recipes/draconicevolution/machines/reactor_core.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/draconicevolution/recipes/draconicevolution/machines/energy_transfuser.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/LICENSE.md) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/README.md) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/build.gradle) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/gradle.properties) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/modules/entities/EnderCollectionEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/modules/entities/JunkFilterEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/modules/entities/ShieldControlEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/modules/lib/ModuleGrid.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/api/modules/lib/ModuleHostImpl.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/energynet/tileentity/TileCrystalBase.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/energynet/tileentity/TileCrystalDirectIO.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/energynet/tileentity/TileCrystalRelay.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/energynet/tileentity/TileCrystalWirelessIO.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/reactor/tileentity/TileReactorCore.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/reactor/tileentity/TileReactorInjector.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/reactor/tileentity/TileReactorStabilizer.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileEnergyCore.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileEnergyCoreStabilizer.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileEnergyPylon.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileEnergyTransfuser.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileEntityDetector.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileFusionCraftingCore.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileFusionCraftingInjector.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileGenerator.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/TileGrinder.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/chest/TileDraconiumChest.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/flowgate/TileFlowGate.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/blocks/tileentity/flowgate/TileFluxGate.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/items/tools/BoundDislocator.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/items/tools/CrystalBinder.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/brandon3055/Draconic-Evolution/blob/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/java/com/brandon3055/draconicevolution/items/tools/DislocatorAdvanced.java) — SHA перевірено; upstream-версія відрізняється
+- [minecraft:smelting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/components/awakened_draconium_ingot_from_dust.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/components/chaotic_core.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/components/wyvern_core.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/compress/awakened_draconium_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/compress/draconium_block.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/decompress/awakened_draconium_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/dislocator_pedestal.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/flux_gate.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/basic_crafting_injector.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/chaotic_crafting_injector.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/energy_core_stabilizer.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/reactor_injector.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/reactor_stabilizer.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/machines/wyvern_crafting_injector.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/modules/item_draconic_ender_collection.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/modules/item_draconic_energy.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/modules/item_draconic_large_shield_capacity.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/modules/item_draconic_shield_recovery.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/modules/item_wyvern_junk_filter.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/tools/advanced_dislocator.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/tools/draconic_chestpiece.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/tools/p2p_dislocator_unbound.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/tools/wyvern_capacitor.json) — SHA перевірено
+- [draconicevolution:fusion_crafting](../../content/research/evidence/draconic_core_next_v5/recipes/draconicevolution/tools/wyvern_pickaxe.json) — SHA перевірено
 
 ## Ender IO
 

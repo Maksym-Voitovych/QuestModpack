@@ -6,8 +6,15 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const source = fs.readFileSync(path.join(root, 'kubejs/server_scripts/aia2/35_projecte.js'), 'utf8');
 const whitelist = fs.readFileSync(path.join(root, 'kubejs/config/aia2_emc_whitelist.json'), 'utf8');
-function setup({missingBridge = false, config = whitelist} = {}) {
-  const callbacks = new Map(), logs = [], mapped = [];
+function setup({missingBridge = false, config = whitelist, failFuel = false} = {}) {
+  const callbacks = new Map(), logs = [], mapped = [], calls = [];
+  const access = {active: false, pause() { this.active = false; calls.push('pause'); },
+    configureWhitelistJson(json) { this.active = true; calls.push('configure:' + Object.keys(JSON.parse(json)).length); }};
+  const fuel = {values: ['projecte:alchemical_coal'], loadMap() {
+    if (failFuel) throw new Error('fuel-rebuild-failed');
+    this.values = ['minecraft:coal', 'minecraft:charcoal'].filter(id => mapped.at(-1).has(id));
+    calls.push('fuel:' + this.values.length);
+  }, setFuelMap(values) { this.values = values; calls.push('fuel:0'); }};
   class LongMap extends Map {}
   const context = vm.createContext({global: {AIA2: {canAccess() { return true; }}},
     JsonIO: {readString() { return config; }},
@@ -15,7 +22,10 @@ function setup({missingBridge = false, config = whitelist} = {}) {
     NativeEvents: {onEvent(name, cb) { callbacks.set(name, cb); }},
     console: {info: m => logs.push(m), error: m => logs.push(m)},
     Java: {loadClass(name) {
-      if (name.endsWith('EMCMappingHandler')) return {updateEmcValues(map) { mapped.push(map); }};
+      if (name.endsWith('EMCMappingHandler')) return {updateEmcValues(map) { mapped.push(map); calls.push('map:' + map.size); }};
+      if (name.endsWith('ProjectEAccess')) return access;
+      if (name.endsWith('FuelMapper')) return fuel;
+      if (name.endsWith('HolderSet')) return {empty() { return []; }};
       if (name.endsWith('ItemInfo')) return {fromStack(stack) { return stack.id; }};
       if (name.endsWith('Object2LongOpenHashMap')) return LongMap;
       if (name.endsWith('RhinoLongMapBridge')) {
@@ -25,7 +35,7 @@ function setup({missingBridge = false, config = whitelist} = {}) {
       return name;
     }}});
   vm.runInContext(source, context);
-  return {callbacks, mapped, logs, context,
+  return {callbacks, mapped, logs, context, calls, access, fuel,
     remap() { return callbacks.get('moze_intel.projecte.api.event.EMCRemapEvent')(); },
     request(id = 'minecraft:gold_ingot') {
       let canceled = false;
@@ -44,6 +54,23 @@ test('ProjectE rejects learning until a complete primitive-long whitelist is ins
   assert.equal(b.mapped.at(-1).get('minecraft:gold_ingot'), 2048);
   assert.equal(b.request(), false);
   assert.equal(b.request('kubejs:aia2_epoch_key_48'), true);
+});
+
+test('filtered EMC map precedes fuel cache rebuild and native extraction readiness', () => {
+  const b = setup();
+  b.remap();
+  assert.deepEqual(b.calls.slice(-3), ['map:14', 'fuel:2', 'configure:14']);
+  assert.deepEqual(b.fuel.values, ['minecraft:coal', 'minecraft:charcoal']);
+  assert.equal(b.access.active, true);
+});
+
+test('failed native fuel refresh clears EMC, fuel cache and extraction readiness', () => {
+  const b = setup({failFuel: true});
+  assert.throws(() => b.remap(), /fuel-rebuild-failed/);
+  assert.equal(b.mapped.at(-1).size, 0);
+  assert.deepEqual(b.fuel.values, []);
+  assert.equal(b.access.active, false);
+  assert.equal(b.request(), true);
 });
 
 test('missing native bridge still registers protections and replaces inherited EMC with an empty map', () => {

@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "status": "compiled_reward_policy_verified_full_pack_economy_not_run",
-  "item_rewards_audited": 3016,
-  "item_rewards_changed": 2989,
+  "item_rewards_audited": 3050,
+  "item_rewards_changed": 3023,
   "command_rewards_preserved": 48,
-  "quest_count": 3280,
+  "quest_count": 3314,
   "namespace_count": 74,
   "quests_by_namespace": {
     "actuallyadditions": 55,
@@ -30,7 +30,7 @@
     "createdieselgenerators": 23,
     "cyclic": 5,
     "draconicadditions": 7,
-    "draconicevolution": 171,
+    "draconicevolution": 187,
     "enchanted": 36,
     "enderio": 72,
     "enderstorage": 1,
@@ -66,7 +66,7 @@
     "pneumaticcraft": 82,
     "powah": 60,
     "productivemetalworks": 16,
-    "projecte": 67,
+    "projecte": 85,
     "quantumgenerators": 7,
     "quarryplus": 4,
     "reliquary": 6,
@@ -93,7 +93,7 @@
     "create": 145,
     "createaddition": 22,
     "createdieselgenerators": 23,
-    "draconicevolution": 178,
+    "draconicevolution": 194,
     "enchanted": 36,
     "enchanting": 37,
     "enderio": 72,
@@ -120,7 +120,7 @@
     "pneumaticcraft": 82,
     "powah": 60,
     "productivemetalworks": 16,
-    "projecte": 67,
+    "projecte": 85,
     "rootsclassic": 61,
     "silentgear": 29,
     "tfmg": 41,
@@ -130,7 +130,7 @@
   },
   "selection_modes": {
     "parent_profile": 336,
-    "profile": 2646,
+    "profile": 2680,
     "unverified_food_fallback": 34
   },
   "fallback_namespaces": {
@@ -144,7 +144,7 @@
   "policy_profiles": 45,
   "parent_profile_aliases": 42,
   "curated_entries": 132,
-  "source_catalog_rewards_audited": 2296,
+  "source_catalog_rewards_audited": 2330,
   "source_catalog_reward_counts": {
     "content/quests/epochs_01_12.json": 400,
     "content/quests/epochs_13_24.json": 432,
@@ -156,6 +156,7 @@
     "content/quests/v5_apothic_depth.json": 22,
     "content/quests/v5_ars_botania_depth.json": 17,
     "content/quests/v5_core_repairs.json": 2,
+    "content/quests/v5_draconic_core_depth.json": 16,
     "content/quests/v5_endgame_balance.json": 9,
     "content/quests/v5_energy_core_depth.json": 19,
     "content/quests/v5_fire_worksite.json": 1,
@@ -167,6 +168,7 @@
     "content/quests/v5_natural_magic_depth.json": 22,
     "content/quests/v5_petroleum_depth.json": 10,
     "content/quests/v5_powah_core_depth.json": 19,
+    "content/quests/v5_projecte_core_depth.json": 18,
     "content/quests/v5_roots_depth.json": 15,
     "content/quests/v5_technology_mechanics.json": 112
   },
@@ -181,6 +183,7 @@
     "content/quests/v5_apothic_depth.json": "5aaf6774cd881ab69fb1bdfdcf5ec4d92727bbca450e38092846fbbabb5b482a",
     "content/quests/v5_ars_botania_depth.json": "d9a30f553a587b972c34b6090c4e12172c48f9eb00f279938b314d98bcbded66",
     "content/quests/v5_core_repairs.json": "44b936f8e7f4b893e089c8ab1af3124d2ab9cae9775cf6ff5390c0d722c6a8ef",
+    "content/quests/v5_draconic_core_depth.json": "b9e4ed5c1b0a5d2efc6ba6677f4ddb4538bcec5ce00a00f65ac0ccd2c320f6e2",
     "content/quests/v5_endgame_balance.json": "b0ecd41b14d820bacc6752f3f86095b1087df9135f2d73d9d4a9504befd6679e",
     "content/quests/v5_energy_core_depth.json": "139e330b4fccbce49bf50bb38c4976d7457130bf8a416804f59220aa1363d2e8",
     "content/quests/v5_fire_worksite.json": "4822781b8d7099dc2f42a627070341c9628609b0849f4637c0442cb48595fd88",
@@ -192,6 +195,7 @@
     "content/quests/v5_natural_magic_depth.json": "ebe3d2ef30b495c63f1c1e68a51e24463396645c5fdef5280a14948bba9559a2",
     "content/quests/v5_petroleum_depth.json": "305431452fbb95e374d4d07dcecd29fd28ad93e5469769c9d7c28f14456eb138",
     "content/quests/v5_powah_core_depth.json": "6fbfa3c3d5bba6c9a87f62ea8099f6c5e45f3d41620026102dfc8d0d3626befe",
+    "content/quests/v5_projecte_core_depth.json": "48b371adba71d481c98ffa685352e6560b85a222d85032d6ff83e09da19a716e",
     "content/quests/v5_roots_depth.json": "16ef2a551400948df1cd9ccc001e535d05762c553268dd6c8e8de11f9341aed0",
     "content/quests/v5_technology_mechanics.json": "ed7ec85d341b0478a81c7e8b8f05e3bf13d12d116b46dde58f482da364280e95"
   },
@@ -1694,6 +1698,28 @@
       "min_epoch": 40
     },
     {
+      "quest": "00007745F9DEACC2",
+      "reward": "00005178133406DD",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "0000C425D1425506",
+      "reward": "00003AB0A35D018F",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
       "quest": "00000822E16997EF",
       "reward": "0000CF4A78900F57",
       "epoch": 41,
@@ -3113,8 +3139,63 @@
       "min_epoch": 12
     },
     {
+      "quest": "000001AA31233AE7",
+      "reward": "0000A6EC9504D77F",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "draconicevolution:draconium_nugget",
+      "count": 2,
+      "min_epoch": 40
+    },
+    {
+      "quest": "00000D783FA3A6C8",
+      "reward": "00009376E8491A14",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "00006B2CF153C04A",
+      "reward": "00009EDC6F98037F",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "00006D8AC4636854",
+      "reward": "00006306058B2F7D",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
       "quest": "0000833D6EB37385",
       "reward": "00006ABEB082B39A",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "0000C9E55423A74A",
+      "reward": "000091DE11D9C965",
       "epoch": 40,
       "mod": "draconicevolution",
       "profile": "draconicevolution",
@@ -3168,6 +3249,17 @@
       "min_epoch": 40
     },
     {
+      "quest": "0000B20306BD149A",
+      "reward": "0000045C649BAA70",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
       "quest": "0000D1F863DE3B69",
       "reward": "0000F6ADCC5EDF37",
       "epoch": 40,
@@ -3198,6 +3290,50 @@
       "source": "profile",
       "item": "draconicevolution:draconium_nugget",
       "count": 2,
+      "min_epoch": 40
+    },
+    {
+      "quest": "00007F31AA3FB11A",
+      "reward": "0000F0F6971175DE",
+      "epoch": 41,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "0000400EF9588AD5",
+      "reward": "0000EB92E838B809",
+      "epoch": 42,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "00008449DFA87428",
+      "reward": "0000A0216A5F5FA0",
+      "epoch": 42,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "0000B48947B5C956",
+      "reward": "00000318D08DD389",
+      "epoch": 42,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
       "min_epoch": 40
     },
     {
@@ -4959,6 +5095,127 @@
       "item": "powah:dielectric_paste",
       "count": 4,
       "min_epoch": 11
+    },
+    {
+      "quest": "0000266192E845D6",
+      "reward": "00000062FBE8BB32",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "000059E35E99FDF6",
+      "reward": "0000DDD821E9540F",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:low_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "00008C98BA1EE28B",
+      "reward": "0000E88224EABD38",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "0000E04E2EE13983",
+      "reward": "0000D2C9B070A308",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "0000F0A1AA4193EA",
+      "reward": "00001C6ECB4D3614",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "00002ABD2B7F7885",
+      "reward": "0000C7ECCA391A37",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "00005CF91A8C9655",
+      "reward": "00009690514742FE",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:low_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "0000152083DFEFF1",
+      "reward": "00007972683CAB07",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "000015BCDE655797",
+      "reward": "000076A31F5EA6CC",
+      "epoch": 47,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "00005E6636E3D91B",
+      "reward": "000013383DD2F868",
+      "epoch": 47,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "0000F9CD5A87A32E",
+      "reward": "0000F5448ECCD2F3",
+      "epoch": 47,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:alchemical_coal",
+      "count": 4,
+      "min_epoch": 45
     },
     {
       "quest": "00000A10F36334D2",
@@ -9229,6 +9486,17 @@
       "min_epoch": 40
     },
     {
+      "quest": "00004205C2DCEECE",
+      "reward": "0000B3D6B34CF52E",
+      "epoch": 41,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "draconicevolution:draconium_nugget",
+      "count": 2,
+      "min_epoch": 40
+    },
+    {
       "quest": "00007146E77C5E04",
       "reward": "0000346FF66392FE",
       "epoch": 41,
@@ -11816,6 +12084,17 @@
     {
       "quest": "00008C7AD0409712",
       "reward": "0000CF15D2FE5D5E",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:low_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "00009D06BE44FBD0",
+      "reward": "0000670A6661D56F",
       "epoch": 45,
       "mod": "projecte",
       "profile": "projecte",
@@ -16632,6 +16911,17 @@
       "min_epoch": 40
     },
     {
+      "quest": "0000E0667F10FC3A",
+      "reward": "0000C832538A0963",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
       "quest": "000068F6C793C138",
       "reward": "0000F14E916C4825",
       "epoch": 40,
@@ -16777,6 +17067,28 @@
     {
       "quest": "00006FF4A1E021EB",
       "reward": "0000AD32486CE1A2",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "000078990C801A50",
+      "reward": "0000530914BB28C5",
+      "epoch": 40,
+      "mod": "draconicevolution",
+      "profile": "draconicevolution",
+      "source": "profile",
+      "item": "minecraft:quartz",
+      "count": 4,
+      "min_epoch": 40
+    },
+    {
+      "quest": "0000AA6D3898EB44",
+      "reward": "0000A5E6DB9586B3",
       "epoch": 40,
       "mod": "draconicevolution",
       "profile": "draconicevolution",
@@ -24189,6 +24501,17 @@
       "min_epoch": 45
     },
     {
+      "quest": "00007E6B8971270A",
+      "reward": "000052D448F88E7B",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:low_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
       "quest": "000084B61B40C6BE",
       "reward": "00003AF671882E06",
       "epoch": 45,
@@ -24288,6 +24611,17 @@
       "min_epoch": 45
     },
     {
+      "quest": "0000770A454C60D5",
+      "reward": "0000D2F4B3931295",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
       "quest": "00007AFE60740A8D",
       "reward": "00007F11C7F79ACE",
       "epoch": 45,
@@ -24317,6 +24651,17 @@
       "profile": "projecte",
       "source": "profile",
       "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "000037CB609B2693",
+      "reward": "0000D75B20C5F2BC",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:low_covalence_dust",
       "count": 4,
       "min_epoch": 45
     },
@@ -24372,6 +24717,17 @@
       "profile": "projecte",
       "source": "profile",
       "item": "projecte:low_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "000068C65F6198EF",
+      "reward": "0000ACDD9B78C745",
+      "epoch": 45,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:alchemical_coal",
       "count": 4,
       "min_epoch": 45
     },
@@ -24453,6 +24809,17 @@
       "min_epoch": 45
     },
     {
+      "quest": "00004B037FD4E3F5",
+      "reward": "000071C8EBD7DB76",
+      "epoch": 47,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
       "quest": "000090036A64700A",
       "reward": "0000C0DA5309DB73",
       "epoch": 47,
@@ -24471,6 +24838,17 @@
       "profile": "projecte",
       "source": "profile",
       "item": "projecte:alchemical_coal",
+      "count": 4,
+      "min_epoch": 45
+    },
+    {
+      "quest": "0000C30B3993EBB0",
+      "reward": "0000983D2FCD3AA4",
+      "epoch": 47,
+      "mod": "projecte",
+      "profile": "projecte",
+      "source": "profile",
+      "item": "projecte:medium_covalence_dust",
       "count": 4,
       "min_epoch": 45
     },

@@ -1,0 +1,815 @@
+{
+  "schema": 1,
+  "quest_count": 18,
+  "scope_uk": "Досліджені optional цілі ProjectE1.1.0. Конкретні крафти та підготовчі item/observation перевірки не видаються за machine/EMC/owner proof.",
+  "quests": [
+    {
+      "id": "V5_E45_projecte_core_survey_modes",
+      "epoch": 45,
+      "title_uk": "Жезл оцінки: три глибини, а не універсальний рудошукач",
+      "description_uk": [
+        "Divining Rod оцінює EMC першого дропа блоків, а за нульового значення перевіряє продукт звичайного переплавлення. Вищі жезли відкривають режими3/16/64глибини та додаткові максимуми; це не список усіх руд у світі.",
+        "В AIA2 EMC має лише короткий whitelist. Нульове значення невідомої руди не означає порожню породу; порівняйте оцінку звичайного каменю й залізної сировини, не очікуючи пошуку всіх модових матеріалів.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:divining_rod_1",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:divining_rod_1",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "projecte:divining_rod_2",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "projecte:divining_rod_3",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "E45_X_covalence_06"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "projecte:low_covalence_dust",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.survey_modes"
+    },
+    {
+      "id": "V5_E45_projecte_core_bag_identity",
+      "epoch": 45,
+      "title_uk": "Колір сумки — особисте сховище гравця",
+      "description_uk": [
+        "Кожен колір Alchemical Bag відкриває104слоти в даних КОНКРЕТНОГО гравця. Дві сумки одного кольору в одного гравця посилаються на одне сховище; різні кольори розділяють запаси.",
+        "Створіть червону й синю сумки для окремих матеріальних потоків. Членство у FTB-команді саме по собі не перетворює їх на спільний склад і не копіює вміст іншого гравця.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:red_alchemical_bag",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:red_alchemical_bag",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "projecte:blue_alchemical_bag",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "E45_X_transmutation_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:string",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.bag_identity"
+    },
+    {
+      "id": "V5_E45_projecte_core_repair_chest",
+      "epoch": 45,
+      "title_uk": "Алхімічний ремонт у сховищі",
+      "description_uk": [
+        "Repair Talisman працює через спеціальні capability алхімічної скрині/сумки й ремонтує придатні пошкоджені речі по1міцності за цикл. Предмети з MODE_CHANGER та неремонтопридатні речі відсікаються.",
+        "Підготуйте скриню, талісман і звичайний інструмент; пошкодіть його в роботі й перевірте зміну міцності в інтерфейсі. Це інший механізм, ніж крафтовий ремонт ковалентним пилом: EMC пилу в AIA2 відсутній, тому останній шлях не обіцяється.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:alchemical_chest",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:alchemical_chest",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "projecte:repair_talisman",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_pickaxe",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E45_X_tools_08",
+        "V5_E45_projecte_core_bag_identity"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.repair_chest"
+    },
+    {
+      "id": "V5_E45_projecte_core_pedestal_service",
+      "epoch": 45,
+      "title_uk": "Сервісний п’єдестал із контрольованим ефектом",
+      "description_uk": [
+        "Dark Matter Pedestal має один слот, активний стан та окремий cooldown ефекту. Repair Talisman на ньому обслуговує придатні предмети гравців у межах ефекту; діапазон і доступність залежать від серверного конфігу.",
+        "Почніть із ремонтного ефекту: встановлений п’єдестал без сумісного предмета й активації не є готовою автоматизацією. Не підміняйте ремонт прискоренням Watch of Flowing Time; часові ефекти мають окремий аудит захисту.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:dm_pedestal",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:dm_pedestal",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "projecte:repair_talisman",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_repair_chest"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.pedestal_service"
+    },
+    {
+      "id": "V5_E45_projecte_core_furnace_fuel",
+      "epoch": 45,
+      "title_uk": "Темна піч: паливо або EMC, а не FE",
+      "description_uk": [
+        "Dark Matter Furnace використовує звичайні furnace-рецепти, паливний слот та окремий шлях живлення від EMC-накопичувача/мережі. FE-кабель не є її паливом. Реальний час обробки масштабується часом конкретного smelting-рецепта.",
+        "Почніть зі звичайного coal і raw iron; зіставте витрату палива та вихід у GUI. Наявність залізного зливка в завданні підтверджує матеріальну підготовку, а не машинне походження.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:dm_furnace",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:dm_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:raw_iron",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E45_X_darkmatter_06"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.furnace_fuel"
+    },
+    {
+      "id": "V5_E45_projecte_core_furnace_ports",
+      "epoch": 45,
+      "title_uk": "Порти печі: верх, низ і бічне паливо",
+      "description_uk": [
+        "У зовнішньому item capability верх Dark Matter Furnace приймає сировину, низ видає вихід, боки поєднують паливний вхід і вихід. Власне підтягування зі складу зверху та виштовхування вниз працюють через item handlers; сусідні Hopper пропускаються цим самостійним переносом.",
+        "Підготуйте дві скрині та воронку для порівняння. Для прямої верхньої/нижньої скрині працює власний механізм печі; воронка переносить предмети своїм штатним циклом. Не дублюйте один потік двома несумісними фільтрами.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:dm_furnace",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:dm_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 2,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:hopper",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_furnace_fuel"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.furnace_ports"
+    },
+    {
+      "id": "V5_E45_projecte_core_klein_capacity",
+      "epoch": 45,
+      "title_uk": "Перша зірка Кляйна: ємність і порожній заряд",
+      "description_uk": [
+        "Klein Star Ein вміщує50000EMC, але новий предмет не є безкоштовною повною батареєю. Заряд зберігається в data component, а здатність приймати EMC не потребує EMC-ціни самого предмета.",
+        "Для фізичного крафту потрібне паливо Мебіуса. У таблиці трансмутації доданий EMC спочатку може піти в зірку у вхідних слотах, і лише залишок — в особистий баланс. Перевіряйте заряд у GUI, а не лише цифру балансу.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:klein_star_ein",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:klein_star_ein",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "projecte:transmutation_table",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "E45_X_darkmatter_02",
+        "E45_X_transmutation_01"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.klein_capacity"
+    },
+    {
+      "id": "V5_E45_projecte_core_klein_merge",
+      "epoch": 45,
+      "title_uk": "Порожнє злиття чотирьох зірок",
+      "description_uk": [
+        "Чотири Ein утворюють одну Zwei з ємністю200000EMC. У чинному експорті це minecraft:crafting_shapeless; саме цей рецепт, а не наявність невикористаного Java-класу спеціального serializer, визначає правила крафту.",
+        "Об’єднуйте порожні зірки. Збереження попереднього заряду при цій стандартній формулі не обіцяється. Новий рівень підвищує запас, але не генерує EMC і не змінює whitelist.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:klein_star_zwei",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:klein_star_zwei",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_klein_capacity"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.klein_merge"
+    },
+    {
+      "id": "V5_E45_projecte_core_relay_charging",
+      "epoch": 45,
+      "title_uk": "Реле: спалити дозволений ресурс і зарядити зірку",
+      "description_uk": [
+        "Relay спалює предмет із додатним EMC або приймає EMC із накопичувача у вхідному слоті. Вихідний слот приймає EMC_HOLDER. Автоматичне вилучення незаповненої заряджуваної речі з виходу блокується, доки їй бракує EMC.",
+        "Розділіть горизонтальний вхід звичайного coal і вертикальний доступ до зарядного слота. Реле передає EMC суміжним приймачам; це не Flux-мережа, не FE-провід і не конденсатор предметів.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:relay_mk1",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:relay_mk1",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "projecte:klein_star_ein",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_klein_capacity"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.relay_charging"
+    },
+    {
+      "id": "V5_E45_projecte_core_condenser_routes",
+      "epoch": 45,
+      "title_uk": "Конденсатор: шаблон відокремлено від сировини",
+      "description_uk": [
+        "CondenserMK1 має спільний робочий інвентар: item capability приймає лише предмети з EMC, які не дорівнюють цілі, а видає лише предмети, що дорівнюють цілі. Нульовий EMC шаблона зупиняє виробництво.",
+        "Виберіть iron ingot як дозволений шаблон і подавайте звичайний coal окремим каналом. Руни, ключі, матерія та спеціальні компоненти не стають доступними шаблонами лише тому, що їх поклали поруч із конденсатором.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:condenser_mk1",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:condenser_mk1",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "pipez:item_pipe",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E45_X_transmutation_04",
+        "V5_PROJECTE_FINITE_EXCHANGE"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.condenser_routes"
+    },
+    {
+      "id": "V5_E45_projecte_core_density_whitelist",
+      "epoch": 45,
+      "title_uk": "Ущільнення лише в дозволені метали",
+      "description_uk": [
+        "Gem of Eternal Density має режими iron/gold/diamond/dark matter/red matter. Перемикач може показувати всі режими, але фактичне ущільнення не працює для цілі з нульовим EMC.",
+        "В AIA2 з цього списку EMC мають лише звичайні iron ingot і gold ingot. Підготуйте дозволений режим та залиште фізичні канали для решти матеріалів; перемикання на назву Dark Matter не є обходом її рецепта.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:gem_of_eternal_density",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:gem_of_eternal_density",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:gold_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E45_X_transmutation_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "projecte:low_covalence_dust",
+          "count": 2
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.density_whitelist"
+    },
+    {
+      "id": "V5_E45_projecte_core_bag_suction",
+      "epoch": 45,
+      "title_uk": "Підбирання в особисту сумку",
+      "description_uk": [
+        "Активний Black Hole Band або Void Ring усередині Alchemical Bag робить цю сумку кандидатом для підбирання. Сам предмет сумки в інвентарі не активує кільце й не робить її складом усієї FTB-команди.",
+        "Використайте кольорову сумку окремо від виробничих слотів. Перевірте активний стан кільця та вільний простір у правильному особистому кольорі; цей квест перевіряє лише комплект, а не фактичне всмоктування ItemEntity.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:red_alchemical_bag",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:red_alchemical_bag",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "projecte:black_hole_band",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:cobblestone",
+          "count": 16,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_bag_identity",
+        "E45_X_transmutation_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:string",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.bag_suction"
+    },
+    {
+      "id": "V5_E45_projecte_core_flight_reserve",
+      "epoch": 45,
+      "title_uk": "Кільце вітру потребує резерву EMC",
+      "description_uk": [
+        "Swiftwolf’s Rending Gale має окремі режими польоту й щита. Витрата EMC залежить від активних режимів; за відсутності придатного резерву кільце повертається у вимкнений стан. У звичайному інвентарі native tick перевіряє hotbar або offhand.",
+        "Підготуйте кільце та зірку, заряджену дозволеним ресурсом. Не вважайте предметне завдання доказом заряду або дозволом безкоштовного польоту: перевірте режим і спад резерву в безпечній зоні.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:swiftwolf_rending_gale",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:swiftwolf_rending_gale",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "projecte:klein_star_ein",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_relay_charging"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:feather",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.flight_reserve"
+    },
+    {
+      "id": "V5_E47_projecte_core_collector_light",
+      "epoch": 47,
+      "title_uk": "Колектор: яскравість над блоком, не лише небо",
+      "description_uk": [
+        "Collector обчислює яскравість блока НАД собою; в ultraWarm-вимірі native код бере16. Генерація накопичується дробово, залежить від світла та максимального внутрішнього запасу. Це EMC, не FE.",
+        "Порівняйте освітлену й затемнену ділянки та перевірте GUI. Не обіцяйте автоматичне поліпшення всього ProjectE-палива: AIA2 прибирає EMC модових палив, а FuelMapper має окремий аудит синхронізації після whitelist remap.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:collector_mk1",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:collector_mk1",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:glowstone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "projecte:klein_star_ein",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E47_X_redmatter_01",
+        "V5_E45_projecte_core_relay_charging"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glowstone_dust",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.collector_light"
+    },
+    {
+      "id": "V5_E47_projecte_core_collector_priority",
+      "epoch": 47,
+      "title_uk": "Пріоритет: зарядний слот чи зовнішній приймач",
+      "description_uk": [
+        "Collector спочатку заряджає EMC_HOLDER у робочому слоті або обробляє відомий паливний перехід. Лише коли не заряджає й не поліпшує паливо, він надсилає EMC суміжним приймачам та relay bonus.",
+        "Підготуйте CollectorMK2 і реле, змініть стан зарядного слота та порівняйте маршрути в GUI. Більший колектор не усуває пріоритетів: зайнятий слот може змінити потік без поломки мережі.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:collector_mk2",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:collector_mk2",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "projecte:relay_mk2",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "projecte:klein_star_zwei",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E47_projecte_core_collector_light",
+        "V5_E45_projecte_core_klein_merge"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.collector_priority"
+    },
+    {
+      "id": "V5_E47_projecte_core_mk2_separation",
+      "epoch": 47,
+      "title_uk": "MK2: окремі вхідний і вихідний банки",
+      "description_uk": [
+        "CondenserMK2 має окремі банки по42слоти. Під час циклу він може створити кілька предметів, доки вистачає EMC і місця, та спалити один вхідний стек; це відрізняється від повільного спільного інвентаря MK1.",
+        "Залиште вироблені whitelist-метали у вихідному каналі та не поверніть їх у сировину. Швидкість самої машини не робить не-EMC компоненти придатними цілями. Огляд блоків не вимірює фактичну пропускну здатність.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:condenser_mk2",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:condenser_mk2",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "pipez:item_pipe",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_condenser_routes",
+        "E47_X_redmatter_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.mk2_separation"
+    },
+    {
+      "id": "V5_E47_projecte_core_tablet_personal",
+      "epoch": 47,
+      "title_uk": "Переносний інтерфейс, особисті знання",
+      "description_uk": [
+        "Transmutation Tablet відкриває інтерфейс до knowledge capability того самого гравця, що використовує стаціонарний стіл. Особисті знання й EMC не стають командними лише через спільний FTB Quest progress.",
+        "Підготуйте стаціонарну й переносну точки доступу; звірте whitelist та власний баланс. У команді кожен гравець перевіряє своє знання дозволених матеріалів; предмети з модифікованими компонентами не навчаються як звичайні whitelist-зразки.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:transmutation_tablet",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "projecte:transmutation_tablet",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "projecte:transmutation_table",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E47_X_redmatter_03",
+        "V5_PROJECTE_FINITE_EXCHANGE"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.tablet_personal"
+    },
+    {
+      "id": "V5_E47_projecte_core_rm_furnace",
+      "epoch": 47,
+      "title_uk": "Червона піч: швидкість не замінює рецепти",
+      "description_uk": [
+        "Red Matter Furnace успадковує input/output/fuel логіку темної печі, збільшує банки до13слотів і змінює базовий час та бонус руд. Raw ore й ore block мають різні ймовірності додаткового виходу; довільний модовий предмет не є рудою автоматично.",
+        "Виготовлення потребує справжньої red matter з епохи47, навіть якщо нижчий item namespace floor показує45. Перенесіть перевірене паливо й порти DM-лінії та порівняйте результат на легальному smelting-вході.",
+        "Крафт, наявність предметів та огляд перевіряються лише відповідними FTB-завданнями. Ця підготовка не вимірює EMC/t, заряд, успішну передачу, активний режим чи завершення машинного процесу."
+      ],
+      "icon": "projecte:rm_furnace",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "projecte:rm_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:raw_iron",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E45_projecte_core_furnace_ports",
+        "E47_X_redmatter_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "projecte",
+      "research_stage": "projecte.core.rm_furnace"
+    }
+  ]
+}

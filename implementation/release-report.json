@@ -1,22 +1,22 @@
 {
-  "version": "0.4.8-alpha",
+  "version": "0.4.9-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3280,
-    "substantive_quests": 3184,
+    "quests_total": 3314,
+    "substantive_quests": 3218,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 496,
+    "quests_added_this_release": 530,
     "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 0,
-    "chapters": 139,
+    "chapters": 140,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1579,
-    "native_recipes": 618,
-    "native_recipes_added_this_release": 49,
+    "optional_quests": 1613,
+    "native_recipes": 621,
+    "native_recipes_added_this_release": 52,
     "dual_key_recipes": 96,
     "reviewed_machine_recipe_patches": 190,
     "machine_recipe_targets": 170,
@@ -31,17 +31,17 @@
     "unique_dual_key_silhouettes": 96,
     "item_rules": 28354,
     "block_rules": 16003,
-    "native_recipe_rules": 42576,
+    "native_recipe_rules": 42579,
     "authored_quest_mod_namespaces_excluding_vanilla": 64,
     "all_task_mod_namespaces_excluding_vanilla": 66,
     "new_recipe_target_namespaces": 22,
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 19,
+    "quests_added_since_last_checkpoint": 34,
     "native_action_quests": 98,
-    "complete_core_maps": 23,
-    "mapped_mods": 60,
+    "complete_core_maps": 24,
+    "mapped_mods": 61,
     "controller_floor_items": 30,
     "controller_native_recipe_floors": 41,
     "controller_custom_recipe_floors": 5
@@ -56,16 +56,16 @@
   ],
   "checks": {
     "node_tests": {
-      "passed": 50,
+      "passed": 52,
       "failed": 0,
       "skipped": 0
     },
     "python_tests": {
-      "passed": 166,
+      "passed": 178,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 22,
+      "includes_installer_tests": 23,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -76,9 +76,9 @@
       "passed": 90,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.8-alpha",
+      "version_tested": "0.4.9-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Real vanilla furnace/crafter/FakePlayer, actual fire worksite persistence/invalidation/corruption and SavedData2JVM; optional exact EnderIO/Powah absent"
+      "scope": "Real vanilla/guard/SavedData fixtures in2JVM; optional ProjectE/Draconic not installed"
     },
     "javascript_syntax_files": 12,
     "snbt_graph_ids": "passed",
@@ -89,15 +89,15 @@
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
       "status": "passed",
-      "runtime_files": 1162,
+      "runtime_files": 1163,
       "changed": [],
-      "scope": "Complete sequential generation in separate Python process PYTHONHASHSEED73; matching tested0.4.8JAR included"
+      "scope": "Complete sequential generation in separate Python process PYTHONHASHSEED79; matching tested0.4.9JAR included"
     },
-    "jar_sha256": "be0bd113d473577db8e12073426e63ac83ba9e0e1dcc55eca6b48bd479108e14",
-    "jar_path": "mods/aia2-machine-guard-0.4.8-alpha.jar",
+    "jar_sha256": "61b3470775e023dc0a6a1b4fa7369ea3a3e91257a9dcccd8d542d791cf95921c",
+    "jar_path": "mods/aia2-machine-guard-0.4.9-alpha.jar",
     "archive_verification_command": "python tools/package_runtime.py",
     "packaged_installer_dry_run": "passed; zero writes using packaged CLI",
-    "archive_crc_and_all_sha256_entries": "passed; full manifest and1162runtime hashes plus installer",
+    "archive_crc_and_all_sha256_entries": "passed; full manifest and1163runtime hashes plus installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -140,7 +140,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed0.4.7→0.4.8; old JAR backup, synthetic world/fire ledger and foreign quest preserved",
+    "packaged_installer_upgrade": "passed0.4.8→0.4.9; old JAR backup, synthetic world/fire/knowledge+EMC markers and foreign quest preserved",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -153,7 +153,16 @@
       "passed": 46,
       "optional_dispatch": false,
       "scope": "actual helper/handlers/real GuardPolicy, modeled Minecraft/storage/optional recipe host"
-    }
+    },
+    "projecte_output_modeled": {
+      "passed": 66,
+      "optional_dispatch": false
+    },
+    "projecte_watch_modeled": {
+      "passed": 22,
+      "optional_dispatch": false
+    },
+    "real_rhino_emc_lifecycle": "passed realRhino85/fastutil/production script35 andRhinoLongMapBridge; EMC/menu API host modeled; map→fuel→ready anderrorclosure checked"
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -176,10 +185,12 @@
     "Official binary/API downloads returned Tunnel403; even escalation did not remove the network restriction. Source descriptors are checked; binary bytecode/live optional dispatch unverified.",
     "Fire worksite gesture/client sync, actual optional shared spawn dispatch, FireWater, postburn and ordinary-fire cycles require fullpack acceptance. Station ownership is explicit, not flame provenance.",
     "18Powah optional preparation quests do not measure FE, working reactor volume, player UUID/channel configuration or real networking.",
-    "Fire ledger corruption fixtures deliberately log one expected ERROR during opt-in native tests; ordinary production tests remain gated."
+    "Fire ledger corruption fixtures deliberately log one expected ERROR during opt-in native tests; ordinary production tests remain gated.",
+    "Current-menu/EMC/fuel/TimeWatch hooks have source and modeled tests; optional ProjectE dispatch, client packets/UI and passive armor/Curios/world paths require separate acceptance.",
+    "Draconic3.1.4prefix source/export verified, CI633→commit not confirmed; map remainsPARTIAL and exactbinary dispatch unverified."
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.8-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.9-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -197,10 +208,10 @@
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
-  "checkpoint_preservation": "implementation/fire-powah-preservation-v5.json",
-  "checkpoint_base_commit": "d756a9ace9fedae667cd92d46e02654d6fe53a95",
-  "checkpoint_backup": "/workspace/aia2-backups/before-fire-powah-20261026T102902Z/checkpoint-d756a9a.tar.gz",
-  "checkpoint_report": "docs/AIA2_0.4.8_CHECKPOINT.uk.md",
+  "checkpoint_preservation": "implementation/projecte-draconic-preservation-v5.json",
+  "checkpoint_base_commit": "1915b802bec636e961b45afb212788c71c63ec5a",
+  "checkpoint_backup": "/workspace/aia2-backups/before-projecte-draconic-20261026T193423Z/checkpoint-1915b80.tar.gz",
+  "checkpoint_report": "docs/AIA2_0.4.9_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
     "new_recipes": 4,
@@ -252,6 +263,29 @@
     "partial_mods": 37,
     "native_guard_audit": "content/audit/v5-fire-worksites.json",
     "manual_plan": "docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md",
-    "package_report": "implementation/fire-powah-package-install-v5.json"
+    "package_report": "implementation/fire-powah-package-install-v5.json",
+    "scope": "Historical0.4.8checkpoint; currentblock isprojecte_draconic"
+  },
+  "projecte_draconic": {
+    "new_quests": 34,
+    "projecte_quests": 18,
+    "draconic_quests": 16,
+    "new_recipes": 3,
+    "old_quest_payloads_preserved": 3280,
+    "old_recipe_entries_preserved": 618,
+    "old_reward_changes": 0,
+    "new_item_reward_entries": 34,
+    "new_items": 0,
+    "new_textures": 0,
+    "native_producers_replaced": 3,
+    "lossless_io_relay_routes_preserved": 2,
+    "core_maps": 24,
+    "partial_mods": 37,
+    "projecte_core_stages": 27,
+    "draconic_partial_stages": 23,
+    "draconic_ci633_provenance": "BLOCKED_not_claimed_verified",
+    "audit": "content/audit/v5-projecte-native-guard.json",
+    "manual_plan": "docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md",
+    "package_report": "implementation/projecte-draconic-package-install-v5.json"
   }
 }

@@ -12,6 +12,299 @@
   "hide_quest_until_deps_complete": true,
   "quests": [
     {
+      "id": "000001AA31233AE7",
+      "title": "Фільтр сміття спершу тестують на камені",
+      "description": [
+        "Junk Filter зберігає власний список фільтрів і перемикач увімкнення. Встановлення модуля без налаштування списку не тотожне контрольованій утилізації видобутку.",
+        "Візьміть тестовий запас cobblestone, перевірте правило на ньому й лише потім переходьте до цінних матеріалів. Предметне завдання не видаляє цей камінь і не підтверджує запис списку в модуль.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:item_wyvern_junk_filter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000730A1270548D",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000793DE3DA14F8",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:item_wyvern_junk_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0A241326C2F",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_pickaxe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000982E28D29345",
+          "type": "item",
+          "item": {
+            "id": "minecraft:cobblestone",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008CF1B8AE1550",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A6EC9504D77F",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconium_nugget",
+            "count": 1
+          },
+          "count": 2
+        }
+      ],
+      "x": 9.0,
+      "y": 5.0
+    },
+    {
+      "id": "00000D783FA3A6C8",
+      "title": "Детектор: частота сканування й імпульс",
+      "description": [
+        "Entity Detector виконує оплачуване енергією сканування за таймером. Його output strength та pulse mode — окремі параметри; постійний сигнал і короткий імпульс по-різному запускають зовнішню автоматику.",
+        "Під’єднайте тестову лампу та компаратор, відрегулюйте область і фільтр, потім перевірте інтервал повторного спрацювання. Огляд і матеріали не вимірюють pulse rate та не доводять налаштування фільтра.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:entity_detector",
+        "count": 1
+      },
+      "dependencies": [
+        "00002FF232278B82",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000021ADB5B5F668",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:entity_detector",
+          "timer": 40
+        },
+        {
+          "id": "0000CABFB6EE46C2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone_lamp",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007B22C11EFECB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AB76FBAA4FB0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009376E8491A14",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 5.0
+    },
+    {
+      "id": "00006B2CF153C04A",
+      "title": "Трофеї й досвід мають різні виходи",
+      "description": [
+        "Grinder має окрему логіку удару зброєю, енергоживлення й збирання ExperienceOrb. Підготуйте зброю та місце для предметних трофеїв; накопичений XP перевіряйте окремо від скрині з предметами.",
+        "Контрольне полювання на зомбі перевіряє звичайний kill task гравця, а не вбивства машини. Огляд Grinder підтверджує лише наявність вузла; ці цілі не засвідчують продуктивність або внутрішній XP.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:grinder",
+        "count": 1
+      },
+      "dependencies": [
+        "00000F1110A0EFF1",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003577BD117E95",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:grinder",
+          "timer": 40
+        },
+        {
+          "id": "0000D655B9AD5CD7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_sword",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000435A85585E26",
+          "type": "kill",
+          "entity": "minecraft:zombie",
+          "value": 4
+        },
+        {
+          "id": "00000C42AC7BB960",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB95D8A00417",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009EDC6F98037F",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 5.0
+    },
+    {
+      "id": "00006D8AC4636854",
+      "title": "Скриня як керований плавильний вузол",
+      "description": [
+        "Draconium Chest поєднує основний інвентар, окремі плавильні входи й слот енергетичного предмета. Її smelting logic використовує внутрішній OP-запас; це не звичайна піч, куди паливо кладуть замість батареї.",
+        "Підготуйте одну контрольну партію сирого заліза й місце для зливків. Налаштування автоподачі та заповненого виходу перевірте окремо в інтерфейсі: наявність кінцевого матеріалу не доводить, у якій саме машині його отримано.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:draconium_chest",
+        "count": 1
+      },
+      "dependencies": [
+        "0000180736744D43",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CE759405EE74",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:draconium_chest",
+          "timer": 40
+        },
+        {
+          "id": "000024D9BDC28CA7",
+          "type": "item",
+          "item": {
+            "id": "minecraft:raw_iron",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA82D00597B3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_ingot",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005FD750E79CF2",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:wyvern_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A526FC3B1AE9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006306058B2F7D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 17.0,
+      "y": 0.0
+    },
+    {
       "id": "0000833D6EB37385",
       "title": "Осередок синтезу має робочу зону",
       "description": [
@@ -76,7 +369,67 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "0000C9E55423A74A",
+      "title": "Порт не замінює ретранслятор",
+      "description": [
+        "Розділіть кристалічну трасу на прямий ввід/вивід і Relay. Зв’язок Crystal Binder задає учасників мережі, а IO-режим визначає обмін із сусідньою машиною; сам зв’язок не гарантує правильний напрямок живлення.",
+        "Підготуйте малий стенд із двома типами кристалів і окремим обмеженням потоку. Перевірте правильну сторону та заряд буфера перед підключенням fusion-ядра.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:basic_io_crystal",
+        "count": 1
+      },
+      "dependencies": [
+        "00007E5B416A861B",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007288D43B6C81",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:basic_io_crystal",
+          "timer": 40
+        },
+        {
+          "id": "000063EA054EEAA5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:wyvern_relay_crystal",
+          "timer": 40
+        },
+        {
+          "id": "0000DF84D6622BDF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:flux_gate",
+          "timer": 40
+        },
+        {
+          "id": "0000AA9B0E8C7D12",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000091DE11D9C965",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 5.0
     },
     {
       "id": "0000E3F3111ACA45",
@@ -143,7 +496,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000C35B75F6D291",
@@ -210,7 +563,7 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "000018F68FC5356A",
@@ -277,7 +630,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 1.0
     },
     {
       "id": "0000FC1BD3EE37AD",
@@ -344,7 +697,86 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 1.0
+    },
+    {
+      "id": "0000B20306BD149A",
+      "title": "Сховище потребує повної структури",
+      "description": [
+        "Energy Core та Energy Core Stabilizer не є готовим накопичувачем лише через встановлення центрального блока. Перевірка структури й активація ядра відокремлені від його заряджання; пілон не працює з неактивним або невалідним ядром.",
+        "Зберіть запас стабілізаторів і будівельних матеріалів, відкрийте перевірку структури в GUI та звірте схему обраного рівня. Наведений комплект — підготовчий, а не обіцянка конкретного tier або місткості.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:energy_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FC1BD3EE37AD",
+        "00006E7027253AE0"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BDD9B2454CB4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:energy_core",
+          "timer": 40
+        },
+        {
+          "id": "00005ECCD2ABCEE7",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:energy_core_stabilizer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EE7462B9B573",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconium_block",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BCC2D3BAC413",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005ABB42032965",
+          "type": "advancement",
+          "advancement": "aia2:stages/e40"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000045C649BAA70",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.0
     },
     {
       "id": "0000D1F863DE3B69",
@@ -570,6 +1002,290 @@
       "y": 0.0
     },
     {
+      "id": "00007F31AA3FB11A",
+      "title": "Трофейний канал із фільтром і вартістю",
+      "description": [
+        "Ender Collection перевіряє enabled, фільтр і енергію за кількість предметів. За встановленого EnderStorage може використовувати його частоту; за порожньої частоти повертається до особистої Ender Chest гравця.",
+        "Сумісна скриня не означає автоматично налаштовану частоту. Перевірте призначення та відмову при повному приймачі на дешевому трофеї, перш ніж увімкнути канал для рідкісних речей.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:item_draconic_ender_collection",
+        "count": 1
+      },
+      "dependencies": [
+        "00006FFE6E5917C0",
+        "000081F5F0B4E5D3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B7D8A83B605C",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:item_draconic_ender_collection",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000086C9654F0373",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:draconic_chestpiece",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000010AC7EC6B575",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderstorage:ender_chest",
+          "timer": 40
+        },
+        {
+          "id": "0000EAF27F57656C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e41"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F0F6971175DE",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 8.0
+    },
+    {
+      "id": "0000400EF9588AD5",
+      "title": "Реакторний стенд: спочатку зворотний зв’язок",
+      "description": [
+        "У реактора окремо відстежуються температура, shield charge, saturation та field drain. Підготовка аварійного живлення й вихідного обмеження має передувати запуску; реакторний інжектор і стабілізатори виконують різні ролі.",
+        "Підготуйте чотири стабілізатори та два Flow Gate для розділених контурів, звірте поточні показники GUI і доступні режими зворотного зв’язку. Цей квест не доводить зібрану геометрію, температуру чи безпечний робочий стан; тестуйте на копії світу.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:reactor_core",
+        "count": 1
+      },
+      "dependencies": [
+        "000038136DCBEF73",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000697DAAA2D574",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:reactor_core",
+          "timer": 40
+        },
+        {
+          "id": "000082238421F1DA",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:reactor_stabilizer",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006DD96B4A9551",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:flux_gate",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F8853284B888",
+          "type": "item",
+          "item": {
+            "id": "minecraft:comparator",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B31C73477DCC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EB92E838B809",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 11.0
+    },
+    {
+      "id": "00008449DFA87428",
+      "title": "Окремі позиції для складного синтезу",
+      "description": [
+        "Розширені AIA2 fusion-рецепти можуть мати більше інгредієнтних позицій, ніж старі схеми майстерні. Одинадцять компонентів потребують одинадцяти доступних зайнятих інжекторів; великий стек у меншій кількості позицій не замінює окремі entries рецепта.",
+        "Підготуйте одинадцять інжекторів доступного вам хаотичного рівня, перевірте напрямок кожного та видаліть сторонні інгредієнти нижчого рівня. Звіряйте кількість із конкретним рецептом у JEI; цей комплект не зараховує жодного фактичного циклу fusion.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:crafting_core",
+        "count": 1
+      },
+      "dependencies": [
+        "00008A02B725DBC4",
+        "000078990C801A50",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000038121D51BC6A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:crafting_core",
+          "timer": 40
+        },
+        {
+          "id": "0000E12461C14AFD",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_crafting_injector",
+            "count": 1
+          },
+          "count": 11,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000150638FB2E30",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:chaotic_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E9AA22A1EA30",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A0216A5F5FA0",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 11.0
+    },
+    {
+      "id": "0000B48947B5C956",
+      "title": "Обслуговування палива в холодному стані",
+      "description": [
+        "Реактор розрізняє reactable fuel і converted fuel; параметри палива пов’язані з максимальною місткістю поля та saturation. Зміна паливного комплекту — окрема операція обслуговування, а не спосіб миттєво зупинити гарячий реактор.",
+        "Підготуйте резерв Awakened Draconium, прочитайте поточний стан і штатно перейдіть до COLD перед додаванням чи вилученням палива. Предметний резерв не підтверджує охолодження та не дозволяє пропускати перевірки безпеки.",
+        "Завдання автоматично перевіряють лише зазначені предмети, огляд і за потреби окремі перемоги гравця. Вони не підтверджують режим GUI, передану OP/FE, модулі в сітці або роботу автоматичної установки."
+      ],
+      "icon": {
+        "id": "draconicevolution:reactor_core",
+        "count": 1
+      },
+      "dependencies": [
+        "0000400EF9588AD5",
+        "000059837DC5B970"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C79FBC59303F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "draconicevolution:reactor_core",
+          "timer": 40
+        },
+        {
+          "id": "0000271D8C708CAF",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:awakened_draconium_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001514CEB89A32",
+          "type": "item",
+          "item": {
+            "id": "draconicevolution:reactor_injector",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005AE57A729576",
+          "type": "advancement",
+          "advancement": "aia2:stages/e42"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00000318D08DD389",
+          "type": "item",
+          "item": {
+            "id": "minecraft:quartz",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 11.0
+    },
+    {
       "id": "00005F0861E855A1",
       "title": "Есенція за межею сорока восьми епох",
       "description": [
@@ -623,7 +1339,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 14.0
     }
   ]
 }

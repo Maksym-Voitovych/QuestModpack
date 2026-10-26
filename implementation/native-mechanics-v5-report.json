@@ -1,5 +1,5 @@
 {
-  "version": "0.4.8-alpha",
+  "version": "0.4.9-alpha",
   "status": "passed_native_fixture_build_and_script_tests",
   "native_assertions": 90,
   "server_jvm_boots": 2,
@@ -9,13 +9,13 @@
   "recipe_routes": 11,
   "storage": "<world>/data/aia2_mechanics_v1.dat",
   "native_report": "companion/native-smoke-report.json",
-  "jar_sha256": "be0bd113d473577db8e12073426e63ac83ba9e0e1dcc55eca6b48bd479108e14",
+  "jar_sha256": "61b3470775e023dc0a6a1b4fa7369ea3a3e91257a9dcccd8d542d791cf95921c",
   "confirmed_fixes": [
     "Native proof read failures revoke all own previous-team advancements before surfacing error",
     "Epoch10 brass proof includes real unheated AIA2 bootstrap native route; heated native alternative kept",
     "Rejected config clears old runtime observation rules without touching SavedData"
   ],
-  "test_scope": "Real vanilla Crafter/furnace/hopper/FakePlayer; actual-output/count/components bridge and pure lookup with locked execution; SavedData in2JVM. Optional energy handlers/proxies are compiled/source-checked/modeled, not dispatched in this server. Fire worksite SavedData, no-op/invalidation/replacement and corruption preservation are actual native fixtures; no EnderIO dispatch.",
+  "test_scope": "Real vanillaCrafter/furnace/FakePlayer, fireworksite/otherSavedData fixtures in2JVM. ProjectE/Draconic optional hooks source/model only; nofullpack.",
   "full_pack_run": false,
   "tps_benchmark": "not run"
 }

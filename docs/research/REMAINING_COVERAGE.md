@@ -30,7 +30,7 @@
 | Oritech | technology_core | DONE — основна карта |
 | PneumaticCraft: Repressurized | technology_core | DONE — основна карта |
 | Powah! | technology_core | DONE — основна карта |
-| ProjectE | technology_core | TODO — карта не досліджена |
+| ProjectE | technology_core | DONE — основна карта |
 | Create: The Factory Must Grow | technology_core | IN_PROGRESS — часткова карта |
 | Applied Flux | storage_logistics | TODO — карта не досліджена |
 | Allthemodium Backpack Upgrade | storage_logistics | TODO — карта не досліджена |

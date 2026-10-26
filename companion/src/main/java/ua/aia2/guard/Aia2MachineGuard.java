@@ -415,5 +415,6 @@ public final class Aia2MachineGuard {
 
     private static void serverStopped(ServerStoppedEvent event) {
         clearRuntime();
+        ProjectEAccess.pause();
     }
 }
