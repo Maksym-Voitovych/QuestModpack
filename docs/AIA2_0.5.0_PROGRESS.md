@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-26 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.6-alpha (MI/Oritech core та native process guards); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-26 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.7-alpha (EnderIO/Powah cached production guards); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,17 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 60 модів/62 записи,1528 SHA-файлів карт;39 часткових карт і невивчений контент |
-| 3 | Карти прогресії | IN_PROGRESS | 21 core-карта DONE;39 partial; MI/Oritech завершено в межах core scope |
-| 4 | Перебудова координат | DONE | 138 глав без накладань/зворотних/вертикальних; стара2784 когорта1679→1129; поточний граф1142 перетини |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 458 нових квестів відv4;30 у цьому блоці,97 native action+6 team proofs; старі обов’язкові IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 2977 item-нагород перевірено;30 нових; усі3212 попередні quest/reward payloads незмінні;48 команд збережено |
-| 7 | Розширення рецептів | IN_PROGRESS | 610 рецептів;41 v5-формула;606 попередніх custom entries незмінні;6 нових native producers замінено |
-| 8 | Предмети без джерел | IN_PROGRESS | 2349 предметів;35 native-source доказів;6 IF gaps+49 native context+1 implicit codec |
-| 9 | Creative/альтернативи | IN_PROGRESS | Essence/Pool/Tablet, MI replication keys/output і30 controller floors; інші сторонні capability paths ще потребують аудиту |
-| 10 | Інтеграційні тести | IN_PROGRESS | 143 Python/50JS/5237Java PASS;61 actualMC@0.4.6 у2JVM; MI53/Ori16/Roots48 нових model assertions; fullpack NOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.6 — перевірений проміжний блок; package/installer PASS; фінальний commit/push нижче |
+| 2 | Дослідження механік | IN_PROGRESS | 60 модів/62 записи,1684 SHA-файли карт;38 partial і невивчений контент; Powah6.2.10 підтверджено release/build provenance |
+| 3 | Карти прогресії | IN_PROGRESS | 22 core-карти DONE; EnderIO додано; Powah partial із16збереженими концептами |
+| 4 | Перебудова координат | DONE | 139 глав;0накладань/зворотних/вертикальних/довгих; повний граф1143перетини; стара2784когорта1679→1129 |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 477 нових відv4;19у цьому блоці;98native action+8team proofs; старіобов’язкові IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 2996 item-нагород;19нових; усі3242 попередні payloads незмінні;48командзбережено |
+| 7 | Розширення рецептів | IN_PROGRESS | 615 рецептів;46v5формул;610старих entries незмінні;13cheapnativeproducers замінено,86conversions+4MAзбережено |
+| 8 | Предмети без джерел | IN_PROGRESS | 2374предмети;35native-source доказів;6IFfluidgaps залишаються; безштучнихрецептів |
+| 9 | Creative/альтернативи | IN_PROGRESS | Ender/Powahcachedguards/proxies реалізовано; FireCraftingworldownershipTODO; іншіnative/componentpathsщеаудитуються |
+| 10 | Інтеграційні тести | IN_PROGRESS | 157Python/50Node/5237Java PASS;70actualMC@0.4.7у2JVM;43energy+206proxy model assertions;fullpackNOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.7 — проміжний блок; ZIP/installer PASS, ідентичність коміту — git log/origin/main; повний0.5 не завершено |
+
 
 ## Окремий стан 48 епох
 
@@ -38,7 +39,7 @@
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
-| 11 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
+| 11 | IN_PROGRESS | IN_PROGRESS (4) | IN_PROGRESS (2 формул) | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
@@ -46,7 +47,7 @@
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
-| 19 | IN_PROGRESS | IN_PROGRESS (10) | TODO | DONE (static) |
+| 19 | IN_PROGRESS | IN_PROGRESS (26) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (7) | IN_PROGRESS (1 формул) | DONE (static) |
@@ -54,10 +55,10 @@
 | 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 25 | IN_PROGRESS | IN_PROGRESS (10) | IN_PROGRESS (1 формул) | DONE (static) |
 | 26 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
-| 27 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
+| 27 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 28 | IN_PROGRESS | IN_PROGRESS (38) | TODO | DONE (static) |
-| 29 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
-| 30 | IN_PROGRESS | IN_PROGRESS (15) | IN_PROGRESS (1 формул) | DONE (static) |
+| 29 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
+| 30 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (1 формул) | DONE (static) |
 | 31 | IN_PROGRESS | IN_PROGRESS (33) | TODO | DONE (static) |
 | 32 | IN_PROGRESS | IN_PROGRESS (30) | IN_PROGRESS (2 формул) | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
@@ -339,3 +340,23 @@ Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split
 
 - DONE доставки до коміту:1158 runtime-файлів byte-identical після окремої генерації з PYTHONHASHSEED43. ZIP CRC/повний SHA-маніфест PASS. Extracted installer dry-run0writes; справжнє тестове оновлення0.4.5→0.4.6 резервує старийJAR, зберігає synthetic world-progress marker та чужий квест усередині власної глави. Фінальний metadata-repack повторює маніфест і перевіряє ті самі1159 runtime+installer hashes.
 - Усі зміни цього цілісного підблоку підготовлені для main commit/push. Точний hash/status визначати через git log/origin та delivery-report поруч із ZIP; не вигадувати self-referential hash у цьому файлі. Наступну сесію починати з першої незавершеної дії вище.
+
+### 2026-10-26 — EnderIO/Powah: продовження
+
+- Відновлено чистий1a3ee22, main/origin перевірено. Резервна копія: `/workspace/aia2-backups/before-energy-core-20261025T232905Z/checkpoint-1a3ee22.tar.gz`. Snapshot захищає30новихID поверх3212, усі138глав і610рецептів.
+- IN_PROGRESS: exact EnderIO8.2.12-beta core та аудит його машинних кешів; Powah6.2.10 source потрібно спочатку підтвердити, бо старий cachedsource5.1.0-alpha не відповідає встановленійверсії.
+- Незавершена робота не позначенаDONE. Наступна дія:отримати exact source, перевірити native selection/consumption, інтегрувати обґрунтовані квести й рецепти, потім тести/коміт/push.
+
+### 2026-10-26 — EnderIO/Powah 0.4.7: перевірений код і контент
+
+- DONE: 19 optional-квестів (18 EnderIO / 1 Powah), одна основна карта EnderIO, 5 машинних формул, один native Painting контракт і 2 командні виробничі докази. Runtime: 3261 квест, 139 глав, 615 рецептів, 390 предметів/PNG і 96 виробничих ключів. Нових предметів і текстур: 0.
+- Усі 3242 попередні quest/task/reward payloads і залежності, крім координат, та 610 custom recipe entries збережено. Перевірено 48 предметів storage-family і 103 native producers: замінено 13 дешевих шляхів (зокрема 5 compressed steel), збережено 86 lossless conversions і 4 пізні MA26 маршрути.
+- EnderIO: перевірки task/cache, фактичного виходу, Crafter, Tank і native smelting proxies. Powah перевіряє власника Orb, а не Rod. Додано виробничі докази Blazing (епоха29) і Energetic Alloy (епоха19); загалом 8 правил / 11 recipe IDs, SavedData schema1 збережено. Фінальне списання FE у Rod окремо не виміряне.
+- Callback-вибір рецепта ізольований від контексту виклику, щоб одноразовий кеш не залишався порожнім після запуску або відкриття стадії. Фактичне виконання завжди перевіряє recipe/item/owner policy. Незмінний codec дозволяє переприв’язку кешу зі збереженням прогресу; змінений task зупиняється.
+- PASS: 157 Python tests, 50 Node tests, 5237 Java assertions і JDK21 build; 206 proxy та 43 energy actual-helper/handler/real-policy модельованих умов. Мінімальний Minecraft0.4.7: 70 assertions у 2 JVM, 650 ticks і SavedData restart. Optional EnderIO/Powah dispatch, JEI/UI, Survival і TPS: NOT RUN.
+- DONE: перевірка джерела Powah — офіційний v6.2.10 tag і POWAH_VERSION release environment задають версію. Невикористаний mod_version5.1.0-alpha не доводить іншої версії source. Powah core: PARTIAL; 16 концептів збережено в content/audit/v5-powah-core-pending.json, це ще не реалізовані квести.
+- Відкритий підтверджений шлях: Fire Crafting від світового вогню може створити grain до епохи19; item/use gate залишається19. Сліпа заборона зламала б обов’язкову прогресію. Потрібна явна атрибуція вогню й автоматизації, без припущення про найближчого гравця. Binary/API download повернув Tunnel403 навіть після escalation; source/model тести не доводять optional dispatch.
+- DONE: 1162 runtime-файли byte-identical після окремої генерації PYTHONHASHSEED67. Layout усіх139 глав PASS: 1142→1143 перетини при19 нових цілях; стара2784-когорта лишається1679→1129. Додано19 тематичних нагород; старі нагороди не змінено.
+- DONE: ZIP CRC і весь SHA256 manifest, 1162 runtime hash та hash інсталятора. Запакований CLI dry-run: 0 записів. Тестове оновлення0.4.6→0.4.7 зберегло синтетичний прогрес світу та сторонній квест і зарезервувало старий JAR. Звіт: implementation/energy-package-install-v5.json. Реальний Windows-інстанс не змінювався.
+- Git: цей блок призначений для окремого коміту в main та push без force. Остаточний hash/status перевіряються через git log/origin/main і зовнішній delivery report, щоб не вбудовувати самопосилальний hash у пакет. Повний0.5 не реліз.
+- Наступна конкретна дія: атрибуція EnderIO Fire Crafting без deadlock, потім повний Powah core за16 збереженими концептами, решта38 partial/невивчених модів і старі обов’язкові лінії48 епох. Шість IF fluid gaps залишаються BLOCKED.

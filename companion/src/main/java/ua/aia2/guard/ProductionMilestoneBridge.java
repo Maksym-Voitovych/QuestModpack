@@ -27,7 +27,8 @@ public final class ProductionMilestoneBridge {
     private record Rule(String id, int epoch, String output, String serializer) {}
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
-            "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual");
+            "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual",
+            "enderio:alloy_smelting", "powah:energizing");
     private static Map<String, Rule> byRecipe = Map.of();
     private static final Map<Recipe<?>, Rule> identity = new IdentityHashMap<>();
     private static final Map<CrafterBlockEntity, CrafterAttempt> crafterAttempts = new WeakHashMap<>();
@@ -91,7 +92,7 @@ public final class ProductionMilestoneBridge {
                 Rule candidate = byRecipe.get(holder.id().toString());
                 if (candidate != null) {
                     String serializer = BuiltInRegistries.RECIPE_SERIALIZER.getKey(holder.value().getSerializer()).toString();
-                    ItemStack output = holder.value().getResultItem(level.registryAccess());
+                    ItemStack output = EnderTaskAccess.template(holder.value(),level);
                     if (candidate.serializer().equals(serializer) && !output.isEmpty()
                             && candidate.output().equals(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())) {
                         identity.put(holder.value(), candidate);
@@ -111,6 +112,21 @@ public final class ProductionMilestoneBridge {
         if (rule == null || team.isBlank() || !Aia2MachineGuard.mayObserveStage(team, rule.epoch())
                 || !Aia2MachineGuard.mayProcessRecipe(machine, recipe)) return;
         record(level.getServer(), team, rule);
+    }
+
+    /** Post-input/output edge with actual cached outputs, not just a reloaded template. */
+    public static void finishedObservedMachine(BlockEntity machine,Recipe<?> recipe,java.util.List<ItemStack> outputs) {
+        if (!(machine.getLevel() instanceof ServerLevel level) || outputs==null) return;
+        Rule rule=rule(level,recipe);
+        if (rule==null || !EnderTaskAccess.mayOutput(machine,outputs)) return;
+        ItemStack template=EnderTaskAccess.template(recipe,level);
+        boolean observed=outputs.stream().anyMatch(stack -> !stack.isEmpty()
+                && stack.getCount()==template.getCount() && ItemStack.isSameItemSameComponents(stack,template));
+        if (!observed) return;
+        String team=Aia2MachineGuard.getOwner(machine);
+        if (team.isBlank() || !Aia2MachineGuard.mayObserveStage(team,rule.epoch())
+                || !Aia2MachineGuard.mayProcessRecipe(machine,recipe)) return;
+        record(level.getServer(),team,rule);
     }
 
     public static synchronized void cancelCrafter(CrafterBlockEntity machine) { crafterAttempts.remove(machine); }

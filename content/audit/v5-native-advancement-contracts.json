@@ -9243,6 +9243,121 @@
         "Повний Minecraft/FTB інстанс із MI не запускався. Перевірено точні джерела, codec та серверний виклик; це не UI/JEI/TPS сертифікація.",
         "Після законної попередньої дії досягнення може вже бути збережене. Це не вимір поточної роботи або обсягу виробництва."
       ]
+    },
+    {
+      "id": "aia2:enderio/paint_cobblestone",
+      "epoch": 19,
+      "mod_id": "enderio",
+      "installed_version": "8.2.12-beta",
+      "json_path": "content/research/evidence/enderio_core_next_v5/native_audit/advancement/paint_cobblestone.json",
+      "json_sha256": "9e83c080352df55778454026e61b14e68887bd6e27705ed796803a553393f1fb",
+      "required_action_triggers": [
+        "enderio:painting"
+      ],
+      "expected_conditions": {
+        "enderio:painting": {
+          "paint": "minecraft:cobblestone"
+        }
+      },
+      "sources": [
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/version-pin.json",
+          "sha256": "6e959fc5b8233a5a7eb69820bda7c61ae47dfa466a87c4d26204ff6df6427235",
+          "url": "https://github.com/Team-EnderIO/EnderIO/releases/tag/v8.2.12-beta",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "official_release_tag_resolution",
+          "scope_uk": "Локальний partial clone: git tag --points-at та git rev-parse v8.2.12-beta^{commit} підтвердили точний release tag → commit; gradle.properties містить лише series."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/gradle.properties",
+          "sha256": "2d5321cb5f3957b2edae78bd7596b7c683773e3adff63372ce63f8594965c9f5",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/gradle.properties",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/EnderIO.java",
+          "sha256": "ee149a3f66ed6551b299541b7e56e3583e88292642fa51070270f0b2ef9f88cc",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/EnderIO.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/init/EIOCriterions.java",
+          "sha256": "d611bf16295de403378bd5ec000e4f073d1dbc6adce473c361ef3f76be25e1ec",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/init/EIOCriterions.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/content/paint/PaintingTrigger.java",
+          "sha256": "f21b54759f87140606731ae9bc6e92595b423a55cf897412b331db5cc644809d",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/paint/PaintingTrigger.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingMachineBlockEntity.java",
+          "sha256": "eb96b3166593ee5a0681155953b1183b55f2fc70875b8b634f8cfc668191b1f2",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingMachineBlockEntity.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingRecipe.java",
+          "sha256": "631d5a54b0b35905105521f823d1f460a2ff0177c5242d6de8cbc6bdb73dec14",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingRecipe.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/foundation/task/CraftingMachineTask.java",
+          "sha256": "7907919ab541b7f80b803a37f71c379864369f9e9277acbf7ba3daf498710ce6",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/task/CraftingMachineTask.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        },
+        {
+          "path": "content/research/evidence/enderio_core_next_v5/native_audit/enderio/src/main/java/com/enderio/enderio/foundation/task/PoweredCraftingMachineTask.java",
+          "sha256": "e1b53f7d5db4f614c9a7ccf13b6b21005a84ad57a7f16882f5e96fe4b98e25ee",
+          "url": "https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/task/PoweredCraftingMachineTask.java",
+          "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+          "verified": true,
+          "version_match": true,
+          "source_kind": "exact_version_official_source",
+          "scope_uk": "Оригінальні bytes офіційного файлу з тега v8.2.12-beta, без нормалізації."
+        }
+      ],
+      "proof_scope_uk": "Серверна Painting Machine завершила потрібний енергетичний прогрес рецепта і дійшла до спроби видати результат із paint minecraft:cobblestone. Критерій видається гравцям у кубі 10×10×10 навколо центра машини; він доводить цю подію поблизу гравця, а не отримання виробу чи особисте керування машиною.",
+      "limitations_uk": [
+        "PaintingMachineBlockEntity викликає trigger перед super.placeOutputs; зайнятий вихід і повторні спроби можуть зарахувати подію без вставлення результату та без споживання входу. Це не доказ завершеного виробництва або доставки виробу.",
+        "Критерій перевіряє лише блок-зразок paint; він не відрізняє тип пофарбованого виробу. Наявність facade у суміжному item task підтверджує лише наявність предмета.",
+        "Після попередньої законної події advancement може вже бути виконаним; це не доказ безперервної поточної роботи.",
+        "Повний Minecraft/FTB runtime не запускався; перевірено exact-version source, codec, реєстрацію та серверну точку виклику."
+      ]
     }
   ]
 }

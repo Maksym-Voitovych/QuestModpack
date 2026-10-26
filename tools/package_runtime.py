@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.6-alpha'
+VERSION = '0.4.7-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -24,7 +24,7 @@ def main():
             assert 'ua/aia2/guard/Aia2MachineGuard.class' in jar.namelist()
             assert jar.testzip() is None, 'Compiled companion JAR CRC failed'
             if config.get('progressionVersion', 0) >= 4:
-                for name in ['KeyProductionBridge', 'RhinoLongMapBridge', 'FtbQuestBridge', 'CreativeManaGuard', 'RootsAltarAccess', 'RootsRitualProof', 'ModernRecipeProxyAccess']:
+                for name in ['KeyProductionBridge', 'RhinoLongMapBridge', 'FtbQuestBridge', 'CreativeManaGuard', 'RootsAltarAccess', 'RootsRitualProof', 'ModernRecipeProxyAccess', 'EnderTaskAccess', 'EnderSmeltingProxyAccess', 'PowahOrbAccess']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 if (ROOT / 'kubejs/config/aia2_mechanics.json').is_file():
                     assert 'ua/aia2/guard/ProductionMilestoneBridge.class' in jar.namelist()
@@ -36,7 +36,7 @@ def main():
                          'DraconicFusionCoreMixin', 'BotaniaManaItemHandlerMixin', 'BotaniaManaTabletPoolMixin', 'RootsMortarMixin', 'RootsAltarMixin', 'ApothicSpawnerMixin',
                          'ModernCrafterMixin', 'ModernRecipeConversionsMixin', 'ModernReplicatorMixin',
                          'OritechMachineMixin', 'OritechFluidMachineMixin', 'OritechDustMixin', 'OritechRecipeLookupMixin', 'OritechBaseTickMixin',
-                         'RootsMutationIngredientsMixin', 'RootsMutationRadiantMixin']:
+                         'RootsMutationIngredientsMixin', 'RootsMutationRadiantMixin', 'EnderCraftingTaskMixin', 'EnderCrafterMixin', 'EnderTankMixin', 'PowahEnergizingOrbMixin']:
                 assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
     selected = []
     for folder in ['kubejs', 'config', 'mods', 'implementation', 'tools', 'tests', 'design', 'docs', 'content', 'companion']:

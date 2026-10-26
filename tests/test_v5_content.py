@@ -234,7 +234,7 @@ class V5ContentValidationTests(unittest.TestCase):
                     dest.write_bytes((ROOT/source['frozen_path']).read_bytes())
         return root, config
 
-    def test_only_six_source_backed_native_process_contracts_are_approved(self):
+    def test_only_eight_source_backed_native_process_contracts_are_approved(self):
         rules = V.read(ROOT/'kubejs/config/aia2_runtime.json')
         bundle = V.read(ROOT/'kubejs/config/aia2_recipes.json')
         allowed = V.verified_mechanic_advancements(ROOT, rules, bundle)

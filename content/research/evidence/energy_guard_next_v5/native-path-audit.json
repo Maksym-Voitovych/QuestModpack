@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "baseline_commit": "1a3ee22",
+  "audit_kind": "static_exact_upstream_native_paths",
+  "runtime_execution_performed": false,
+  "enderio": {
+    "version": "8.2.12-beta",
+    "commit": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+    "source_manifest": "content/research/evidence/energy_guard_next_v5/enderio/manifest.json",
+    "covered_by_existing_hook": [
+      {
+        "path": "CraftingMachineTaskHost.findRecipe() -> RecipeManager.getRecipeFor canonical overload",
+        "scope": "Fresh holder selected inside block entity tick; no extra hook needed at host or global recipe list."
+      }
+    ],
+    "paths": [
+      {
+        "class": "com.enderio.enderio.foundation.task.CraftingMachineTask",
+        "entry": "tick()V",
+        "holder_accessor": "getRecipeHolder()Lnet/minecraft/world/item/crafting/RecipeHolder;",
+        "recipe_accessor": "getRecipe()Lcom/enderio/enderio/foundation/MachineRecipe;",
+        "bypass": "Cached task retains holder across ticks; NBT deserializeNBT loads byKey, outside canonical getRecipeFor. NBT restores cached Outputs independently of current recipe ID.",
+        "order": [
+          "if needed: recipe.craft determines and stores exact outputs once",
+          "recipe.matches",
+          "makeProgress spends FE (Vat progresses time only)",
+          "placeOutputs(outputs,false) commits item/fluid outputs",
+          "consumeInputs(recipe) consumes ingredients",
+          "isComplete = true"
+        ],
+        "consume_invoke_descriptor": "Lcom/enderio/enderio/foundation/task/CraftingMachineTask;consumeInputs(Lcom/enderio/enderio/foundation/MachineRecipe;)V",
+        "minimal_hook": "Cancel tick before work when cached holder is no longer permitted; after outputs are determined and before matches/progress, validate each actual OutputStack.getItem(). Never call craft again for cached outputs; preserve paid progress while blocked. Record curated proof only immediately AFTER consumeInputs call.",
+        "reload": "Stale recipe object loses identity-index membership after reload and should pause. Do not cancel task/restart paid FE. Rebind only if full registered codec unchanged and cached outputs remain actual-output gated."
+      },
+      {
+        "class": "com.enderio.enderio.content.storage.crafter.CrafterBlockEntity",
+        "entry": "craftItem()V",
+        "other_methods": [
+          "updateRecipe()V",
+          "getRecipeResult()Ljava/util/Optional;",
+          "processOutputBuffer()V"
+        ],
+        "bypass": "Ghost edits/onLoad can cache RecipeHolder outside tick context; craftItem uses direct cached holder and assemble.",
+        "order": [
+          "matches preflight in getRecipeResult",
+          "verify 9 input item IDs against ghost template",
+          "capture CraftingInput",
+          "clearInput",
+          "assemble and enqueue output",
+          "enqueue remaining items",
+          "consume FE",
+          "only then check cached holder against current byKey identity"
+        ],
+        "minimal_hook": "Guard cached holder and exact assemble result at craftItem HEAD, before clearInput. Also reject stale holder before work rather than native post-output reload check. Do not blindly authorize via ghost preview.",
+        "future_output_example": {
+          "controller": "enderio:crafter",
+          "controller_floor": 19,
+          "recipe": "powah:crafting/energy_cell_nitro",
+          "recipe_floor": 36,
+          "item": "powah:energy_cell_nitro",
+          "item_floor": 36
+        },
+        "queue_limit": "outputBuffer is in-memory only, not NBT serialized in this source. A processOutputBuffer gate is optional to cover policy changes after a previously valid craft; do not claim it fixes saved queues."
+      },
+      {
+        "class": "com.enderio.enderio.content.storage.fluid_tank.FluidTankBlockEntity",
+        "entry": "tryTankRecipe()V",
+        "bypass": "currentRecipe is updated by inventory/tank callbacks which may occur outside ticker; method uses cached holder without fresh getRecipeFor. getAllRecipesFor in acceptItemFill/Drain is insertion eligibility only.",
+        "order": [
+          "matches current input/fluid",
+          "copy recipe.output",
+          "simulate full fluid transfer",
+          "execute fluid fill/drain",
+          "shrink input by1",
+          "insert/grow output item"
+        ],
+        "minimal_hook": "At method HEAD validate currentRecipe and recipe.output() against owning BE before any fluid/input mutation; currentRecipe absence must not suppress unrelated fillInternal/drainInternal/mending."
+      },
+      {
+        "class": "com.enderio.enderio.mixin.RecipeManagerMixin",
+        "entry": "enderio$convertSmeltingRecipe(Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/world/item/crafting/SmeltingRecipe;)Ljava/util/Optional;",
+        "bypass": false,
+        "current_behavior": "Proxy holders inserted in both byType and byName; IDs enderio:smelting/{source_namespace}/{source_path} are absent runtime recipeGates and default to100, so existing canonical hook fails closed, including fresh proxy recipes.",
+        "minimal_hook": "No additional RecipeManager lookup hook needed. If preserving proxy functionality, resolve only exact native generated registered AlloySmeltingRecipe with isSmelting true and current original SmeltingRecipe holder; use max(original recipe floor, actual result item floor), compare components/ingredient provenance, preserve unknown100.",
+        "limits": [
+          "Never permit all AlloySmeltingRecipe/isSmelting/prefix matches.",
+          "A stale original holder must not revive after reload.",
+          "Do not reroute proxy through global recipe-list filtering or JEI."
+        ]
+      },
+      {
+        "class": "com.enderio.enderio.content.fire_crafting.FireCraftingManager",
+        "entry": "spawnInfinityDrops(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lcom/enderio/enderio/content/fire_crafting/FireCraftingRecipe;)V",
+        "bypass": "World neighbor/tick callbacks scan cached getAllRecipesFor FIRE_CRAFTING then create ItemEntity; no owning BE or attributable player. Existing ticker context does not cover it.",
+        "decision": "Retain as explicit owner attribution gap; do not blindly block mandatory epoch19 Grain of Infinity path or invent nearby-player ownership.",
+        "gates_at_baseline": {
+          "itemGates": {
+            "enderio:grains_of_infinity": 19,
+            "enderio:cold_fire_igniter": 19,
+            "enderio:fire_water_bucket": 19
+          },
+          "blockGates": {
+            "enderio:cold_fire": 19,
+            "enderio:fire_water": 19
+          },
+          "recipeGates": {
+            "enderio:fire_crafting/bedrock_infinity": 19,
+            "enderio:fire_crafting/deepslate_infinity": 19
+          }
+        },
+        "direct_use_protection": "kubejs/server_scripts/aia2/30_access.js protects direct block placement/rightclick/break and held-item use from itemGates/blockGates. Vanilla fire over deepslate/bedrock remains an unattributed route; possession is not native manufacture proof."
+      }
+    ],
+    "production_proof": {
+      "suitable": "Exact curated enderio:alloy_smelting/energetic_alloy_ingot with serializer enderio:alloy_smelting and actual output enderio:energetic_alloy_ingot, epoch19, owning block enderio:alloy_smelter.",
+      "existing_bridge_limit": "MachineRecipe.getResultItem returns EMPTY by default. Alloy/SAG/Slicer/SoulBinder do not override it, so existing ProductionMilestoneBridge.rule rejects them. Painting overrides but dynamic components and its advancement fires before output insertion success.",
+      "safe_extension": "For narrow alloy static verification, inspect exact AlloySmeltingRecipe.output() (getResultStacks also static), require current registered identity+serializer+configured recipe ID; additionally verify actual cached task output list contains configured item after insertion and input consumption. Capture output copies before placement if native inventory API may mutate stack references. Record only at consumeInputs AFTER invoke, never tick RETURN/placeOutputs/craft/advancement.",
+      "dynamic_limits": [
+        "SAG craft rolls random/chance/multiplication outputs once and caches them; getResultStacks only lists guaranteed output subset.",
+        "SoulBindingRecipe may copy full input components and soul binding to result.",
+        "PaintingRecipe adds BlockPaintData from the paint input.",
+        "Task NBT may carry prior cached output components even when current recipe ID resolves anew."
+      ]
+    }
+  },
+  "powah": {
+    "version": "6.2.10",
+    "exact_source_status": "pending from Powah agent; old5.1.0alpha source not accepted as exact evidence."
+  }
+}

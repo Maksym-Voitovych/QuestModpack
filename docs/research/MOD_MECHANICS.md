@@ -6368,7 +6368,7 @@ FTB перевіряє саме вказаний тип task; огляд та н
 
 ## Ender IO
 
-Версія експорту: **8.2.12-beta**. Статус: `reviewed_partial`.
+Версія експорту: **8.2.12-beta**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Підготуй Void Chassis для базових машин Ender IO. Збережи різницю між порожнім каркасом і корпусом, уже пов'язаним із душею.
@@ -6453,9 +6453,238 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E32_enderio_process_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Темна сталь переходить у кінцеву
+
+Епохи: 30.
+
+Темна сталь має маршрут із заліза, вугілля та обсидіану; End Steel додає камінь Краю до темної сталі й обсидіану. Для прямого походу по End Stone спочатку відкрийте Край в епосі 30.
+Розділення двох сталей відкриває матеріали для витратних куль і міцних конструкцій, не підміняючи End Steel самим сплавом душ.
+Попередні кроки: enderio.phase.03.
+Машини: `enderio:alloy_smelter`.
+Ресурси й результати: `enderio:dark_steel_ingot`, `enderio:end_steel_ingot`.
+Квести: `V5_E30_enderio_core_steel_branches`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта.
+
+### 9. Два базових конденсатори стають одним
+
+Епохи: 19.
+
+Виготовте Double-Layer із двох Basic, двох Energetic Alloy та вугільного пилу. Для Octadic потрібні два Double-Layer, два Vibrant Alloy та блок світлокаменю. Базові значення конденсаторів дорівнюють 1, 2 і 3; конкретна машина масштабує свої параметри окремо.
+Оновлення слота конденсатора зв’язує попередній ланцюг сплавів із можливостями машин; це не універсальна обіцянка однакових FE/t для всіх блоків.
+Попередні кроки: enderio.phase.02, enderio.phase.05.
+Ресурси й результати: `enderio:double_layer_capacitor`, `enderio:octadic_capacitor`.
+Квести: `V5_E19_enderio_core_capacitor_ladder`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують.
+
+### 10. Вихід, побічний шанс і ціна помелу
+
+Епохи: 19.
+
+Порівняйте Redstone Alloy Ball із Soularium Ball на рецепті SAG Mill для сирого заліза; у наданому export виходить залізний пил Immersive Engineering після уніфікації. Таблиця версії задає їм різні множники виходу, бонусного шансу, енергії та ресурсу; куля зменшує свій ресурс на витрачену енергію. Рецепти з вимкненим bonus не застосовують кулі.
+Після першої темної кулі вибір витратника стає вибором між енергією та побічною продукцією, а не простим пошуком найдорожчого сплаву.
+Попередні кроки: enderio.phase.04.
+Машини: `enderio:sag_mill`.
+Ресурси й результати: `enderio:redstone_alloy_grinding_ball`, `enderio:soularium_grinding_ball`, `immersiveengineering:dust_iron`.
+Квести: `V5_E19_enderio_core_grinding_tradeoffs`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують.
+
+### 11. Ліміт запасу на кінці предметної траси
+
+Епохи: 19.
+
+Зберіть предметну трасу між двома скринями. На кінцях узгодьте insert/extract та кольори каналу; Limited Item Filter обмежує запас у приймачі або залишок у джерелі відповідно до боку. Перевірте окремо round-robin і self-feed перед підключенням фабрики.
+Підготовлений фільтр стає правилом конкретного порту. Поділ кінців траси запобігає безкінечному поверненню матеріалів у ту саму скриню.
+Попередні кроки: enderio.phase.05.
+Машини: `enderio:conduit`.
+Ресурси й результати: `enderio:conduit`, `enderio:limited_item_filter`, `minecraft:chest`.
+Квести: `V5_E19_enderio_core_item_channels`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді.
+
+### 12. Рідинна траса має окремий приймач
+
+Епохи: 19.
+
+Підготуйте Fluid Conduit і Pressurized Fluid Tank, налаштуйте відбір та приймання води окремо від предметного каналу. Рецепти підвищення до pressurized та ender fluid використовують попередню трасу, інші сплави та відповідне скло; сам бак не визначає різновид труби.
+Окрема рідинна гілка забезпечує чан і душовий двигун, зберігаючи контроль над змішуванням та напрямком передавання.
+Попередні кроки: enderio.phase.03.
+Машини: `enderio:pressurized_fluid_tank`.
+Ресурси й результати: `enderio:conduit`, `enderio:basic_fluid_filter`, `minecraft:water_bucket`.
+Квести: `V5_E19_enderio_core_fluid_channels`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді.
+
+### 13. Датчик читає блок, таймер подає імпульс
+
+Епохи: 19.
+
+Зберіть redstone-трасу з Sensor Filter та Timer Filter. Sensor читає аналоговий вихід приєднаного блока, а таймер формує сигнал за власним інтервалом. Узгодьте колір redstone-каналу з керуванням вилученням предметної траси.
+Сигнал стану сховища та періодичний імпульс розв’язують різні задачі. Вибір фільтра дає фабриці умову запуску без ручного перемикання кожної машини.
+Попередні кроки: enderio.phase.03.
+Машини: `enderio:conduit`.
+Ресурси й результати: `enderio:redstone_sensor_filter`, `enderio:redstone_timer_filter`, `enderio:conduit_probe`.
+Квести: `V5_E19_enderio_core_redstone_ports`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді.
+
+### 14. Кристал запам’ятовує потрібну істоту
+
+Епохи: 19.
+
+У Soul Binder смарагд із душею жителя дає Enticing Crystal, а Vibrant Crystal із душею ендермена — Ender Crystal. Машині потрібні енергія, конденсатор і досвід; ці рецепти потребують відповідно 4 та 6 рівнів досвіду за її обчисленням. Filled Soul Vial є вхідним витратником.
+Тип істоти є частиною рецепта. Ці два кристали ведуть до різних обелісків і не замінюються порожньою посудиною або довільною душею.
+Попередні кроки: enderio.phase.03, enderio.phase.26.
+Машини: `enderio:soul_binder`.
+Ресурси й результати: `enderio:enticing_crystal`, `enderio:ender_crystal`, `enderio:soul_vial`.
+Квести: `E19_X_soularium`, `E19_X_soul_vial`, `E19_X_soul_binder`, `E19_X_ensouled`, `V5_E19_enderio_core_bound_crystals`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Наявність Soul Vial не підтверджує, що вона заповнена чи містить потрібну істоту.
+
+### 15. Контролер потребує голови та інструментів
+
+Епохи: 19.
+
+У Slice and Splice розкладіть голову зомбі, два Soularium, два Silicon і Redstone за позиціями рецепта Z-Logic Controller. Окремі слоти приймають сокиру вище дерев’яної та ножиці; це інструменти машини, а не заміна шести позицій реагентів.
+Компонент із шести входів поєднує металургію з обробкою мобових матеріалів і відкриває вузли автоматизації душ.
+Попередні кроки: enderio.phase.04.
+Машини: `enderio:slice_and_splice`.
+Ресурси й результати: `enderio:z_logic_controller`, `minecraft:iron_axe`, `minecraft:shears`.
+Квести: `V5_E19_enderio_core_slicing_controller`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта.
+
+### 16. Генерація мобів і захоплення душ — різні режими
+
+Епохи: 27.
+
+Powered Spawner успадковує душу Broken Spawner у спеціальному shaped_entity_storage-рецепті. Soul Binder може змінити прив’язку за 288000 енергії та 8 рівнів досвіду. Перевірте окремо режими SPAWN і CAPTURE; у CAPTURE потрібні придатні посудини та місце для результату.
+Z-Logic Controller переходить у керований вузол мобофабрики. Тип душі, режим і вільний вихід важливіші за сам факт установленого блока.
+Попередні кроки: enderio.phase.15, enderio.phase.14.
+Машини: `enderio:powered_spawner`.
+Ресурси й результати: `enderio:broken_spawner`, `enderio:soul_vial`, `enderio:z_logic_controller`.
+Квести: `V5_E27_enderio_core_spawner_binding`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Ціль на блок є setup-перевіркою; успішний spawn або capture вона не відстежує.
+
+### 17. Чан бродить без конденсатора
+
+Епохи: 19.
+
+Vat не споживає FE і не має слота конденсатора. На 1000 mB води рецепт Hootch бере насіння та врожай, а Nutrient Distillation — м’ясо та врожай; базовий вихід кожного становить 250 mB. Реагенти та їхні множники звірте з JEI, а різні виходи зберігайте окремо.
+Перший рідинний процес готує дві різні гілки: Hootch для подальшого палива, Nutrient Distillation для сумісної душі двигуна.
+Попередні кроки: enderio.phase.12.
+Машини: `enderio:vat`.
+Ресурси й результати: `enderio:hootch_bucket`, `enderio:nutrient_distillation_bucket`.
+Квести: `V5_E19_enderio_core_vat_feedstocks`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Відра доводять наявність рідин, але не їх виготовлення саме в цьому чані.
+
+### 18. Hootch стає двома різними паливами
+
+Епохи: 19.
+
+Для Rocket Fuel використайте Hootch, вибуховий реагент і Redstone; для Fire Water потрібні Hootch, Blaze Powder та Redstone. Це два рецепти Vat з різними групами реагентів, а не два імені одного відра. Уникайте змішування готової рідини з залишком попередньої партії.
+Друга стадія бродіння відкриває спеціалізовані рідини й показує, чому перед серійною роботою потрібні окремі вихідні буфери.
+Попередні кроки: enderio.phase.17.
+Машини: `enderio:vat`.
+Ресурси й результати: `enderio:rocket_fuel_bucket`, `enderio:fire_water_bucket`, `enderio:pressurized_fluid_tank`.
+Квести: `V5_E19_enderio_core_vat_fuels`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта.
+
+### 19. Паливо двигуна визначає прив’язана душа
+
+Епохи: 19.
+
+Для гілки Zombie прив’яжіть душу зомбі до Soul Engine в Soul Binder: рецепт потребує 188000 енергії та 5 рівнів досвіду. У цій версії така душа працює на Nutrient Distillation; Blaze має лаву, а Creeper — Rocket Fuel. Порожній двигун і повний бак без сумісної душі не утворюють робочої пари.
+Двигун використовує вже освоєні бродіння, досвід і прив’язування душ. Його паливо є властивістю конкретної душі, а не довільною горючою рідиною.
+Попередні кроки: enderio.phase.17, enderio.phase.14, enderio.phase.15.
+Машини: `enderio:soul_engine`.
+Ресурси й результати: `enderio:nutrient_distillation_bucket`, `enderio:zombie_electrode`, `enderio:double_layer_capacitor`.
+Квести: `V5_E19_enderio_core_engine_soul_fuel`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Значення душі та фактичну генерацію енергії цей setup-квест не вимірює.
+
+### 20. Паливний генератор і панель мають різні умови
+
+Епохи: 19.
+
+Порівняйте Stirling Generator з Energetic Photovoltaic Module. Stirling приймає придатне пічне паливо без контейнерного залишку й потребує конденсатора. Панель зазвичай працює вдень за доступу до неба; прив’язування Phantom у Soul Binder змінює її на нічну гілку, а не додає універсальний бонус до будь-якого генератора.
+Незалежна денна гілка доповнює паливну й душову енергетику. Перевірте цикли доби до того, як покладатися на панель як єдине живлення лабораторії.
+Попередні кроки: enderio.phase.09.
+Машини: `enderio:stirling_generator`, `enderio:energetic_photovoltaic_module`.
+Ресурси й результати: `enderio:photovoltaic_plate`, `enderio:energetic_photovoltaic_module`, `enderio:basic_capacitor`.
+Квести: `V5_E19_enderio_core_generation_modes`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. Огляд не доводить FE/t або душу Phantom у панелі.
+
+### 21. Фасад бере вигляд зразка
+
+Епохи: 19.
+
+Виготовте Conduit Facade, покладіть його у вхід Painting Machine та використайте Cobblestone як зразок вигляду. Установіть конденсатор, подайте енергію й залиште вільним вихід. Під час роботи стійте поруч із машиною: нативний тригер адресовано гравцям у кубі 10×10×10 навколо неї.
+Фасад приховує траси, зберігаючи їхню транспортну роль. Нативний критерій дозволяє перевірити реальне досягнення стадії фарбування з конкретним зразком.
+Попередні кроки: enderio.phase.11.
+Машини: `enderio:painting_machine`.
+Ресурси й результати: `enderio:conduit_facade`.
+Квести: `V5_E19_enderio_core_painting_action`.
+Нативний advancement без інвентарної альтернативи засвідчує: оплачений енергією цикл дійшов до спроби видачі пофарбованого результату зі зразком Cobblestone. У 8.2.12-beta тригер стоїть перед перевіркою вставлення; заблокований вихід може зарахувати його без видачі предмета чи списання входу. Огляньте результат окремо.
+
+### 22. Енергетичний сплав підтверджено виробничою подією
+
+Епохи: 19.
+
+Проведіть рецепт Energetic Alloy у власній Alloy Smelter: Redstone, Conductive Alloy та Gold дають два зливки за машинний цикл. Виберіть режим, що допускає сплави, установіть конденсатор, подайте енергію та звільніть вихід. Наявність зливка сама по собі не відкриває виробничий критерій.
+Ця перевірка завершує вступну металургію реальною подією процесу. Далі готовий Energetic Alloy входить у Vibrant Alloy, конденсатори й транспортні вузли.
+Попередні кроки: enderio.phase.03.
+Машини: `enderio:alloy_smelter`.
+Ресурси й результати: `enderio:energetic_alloy_ingot`.
+Квести: `V5_E19_enderio_core_energetic_production`.
+Командний серверний production proof зараховує конкретний рецепт enderio:alloy_smelting/energetic_alloy_ingot лише після перевірки фактичного кешованого виходу й списання входів. Advancement не має альтернативи через інвентар. Окрема предметна ціль перевіряє тільки наявність зливків; повний ігровий запуск цим статичним дослідженням не заявляється.
+
+### 23. Приваблення і заборона природного спавну
+
+Епохи: 19.
+
+Attractor Obelisk приваблює істот, що проходять Soul Filter, у визначеній зоні. Aversion Obelisk скасовує природний спавн істот із відповідного фільтра. Обом потрібні живлення й конденсатор; Aversion не є загальним вимикачем усіх джерел створення мобів.
+Два обеліски застосовують фільтр до різних подій: уже наявного моба та спроби природного спавну. Це основа керованої зони навколо фабрики.
+Попередні кроки: enderio.phase.14.
+Машини: `enderio:attractor_obelisk`, `enderio:aversion_obelisk`.
+Ресурси й результати: `enderio:basic_soul_filter`, `enderio:enticing_crystal`.
+Квести: `V5_E19_enderio_core_mob_areas`.
+Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. Наявність фільтра не підтверджує його вміст; поведінка мобів є ручною перевіркою стенда.
+
+### 24. Заборона телепортації та перенесення спавну
+
+Епохи: 19.
+
+Inhibitor Obelisk скасовує підтримані події телепортації, якщо їхня початкова або кінцева точка в активній зоні; серверні teleport/spreadplayers-команди виключено. Relocator Obelisk переносить придатний природний спавн із зони до околиці обеліска за Soul Filter. Дві дії можуть впливати одна на одну.
+Розділення телепортації та природного спавну дозволяє проектувати зони навколо Enderman-лінії без припущення, що всі обеліски просто відштовхують мобів.
+Попередні кроки: enderio.phase.23.
+Машини: `enderio:inhibitor_obelisk`, `enderio:relocator_obelisk`.
+Ресурси й результати: `enderio:ender_crystal`, `enderio:basic_soul_filter`.
+Квести: `V5_E19_enderio_core_teleport_areas`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Квест перевіряє підготовлені блоки, а не успішне скасування події телепортації.
+
+### 25. Погодні рідини потребують ракети та неба
+
+Епохи: 19.
+
+Liquid Sunshine, Cloud Seed і Concentrated Cloud Seed ведуть відповідно до ясної погоди, дощу та грози. У Weather Obelisk потрібні 1000 mB потрібної рідини, Firework Rocket та доступ до неба; цикл триває 600 тіків і рухається лише коли бажана погода відрізняється від поточної. FE та конденсатор тут не потрібні.
+Погодні рецепти завершують рідинну гілку обелісків і пояснюють, чому готове відро без ракети або відкрите небо без іншої погоди ще не запускають цикл.
+Попередні кроки: enderio.phase.14, enderio.phase.17.
+Машини: `enderio:weather_obelisk`.
+Ресурси й результати: `enderio:liquid_sunshine_bucket`, `enderio:cloud_seed_bucket`, `enderio:cloud_seed_concentrated_bucket`, `minecraft:firework_rocket`.
+Квести: `V5_E19_enderio_core_weather_fluids`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Фактичну зміну погоди цей setup-квест не відстежує.
+
+### 26. Досвід як запас рідини для прив’язування
+
+Епохи: 19.
+
+XP Vacuum збирає досвід, а XP Obelisk обмінює рідину досвіду з гравцем. Soul Binder приймає сумісний досвід як окрему витрату рецепта; рівні гравця не можна прирівнювати до лінійної кількості XP.
+Готовий буфер досвіду живить гілку кристалів і прив’язування машин незалежно від випадкового рівня гравця.
+Попередні кроки: enderio.phase.03.
+Машини: `enderio:xp_vacuum`, `enderio:xp_obelisk`, `enderio:soul_binder`.
+Ресурси й результати: `enderio:experience_rod`, `enderio:xp_juice_bucket`.
+Квести: `E19_X_xp_vacuum`, `E19_X_xp_obelisk`.
+Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Старі квести перевіряють огляд XP-блоків, а не фактичний обмін досвіду або заповнення бака.
+
 Фінальні цілі:
-- Предметний фільтр має обмеження
-- Конденсаторний банк обслуговує майстерню
+- Зв’язати сплави, конденсатори, дроблення та транспорт у відтворюваний цех із розділеними матеріальними потоками.
+- Побудувати ланцюг XP → Soul Binder → кристали/душові машини та Vat → потрібне паливо Soul Engine.
+- Підготувати керовані зони обелісків, рідинний погодний цикл й пофарбовані фасади з чітко обмеженими автоперевірками.
+- Після доступу до Краю в епосі 30 завершити пряму End Steel-гілку; наявний майстерневий конденсаторний банк епохи 32 збережено.
 
 Міжмодові зв’язки:
 - {"mod_id": "powah", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -6464,8 +6693,13 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/enderio/sag_mill", "target": "enderio:sag_mill", "epoch": 19, "ingredient_ids": ["kubejs:aia2_arcane_catalyst_17"], "direction": "incoming", "description_uk": "Рецепт AIA2 для enderio:sag_mill споживає міжмодові матеріали kubejs:aia2_arcane_catalyst_17. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Повний Minecraft-інстанс, реальне проходження, баланс FE/t, мережеві режими та довготривалий TPS не запускалися й не заявляються перевіреними.
+- Exact tag v8.2.12-beta розв’язано в commit 9d35cace6895f451b4478a8608ff0fa0506530a5; gradle.properties містить лише versionSeries=8.2, тому сам по собі не доводить patch-версію.
+- Вбудований Patchouli book цього тега містить test_category/test_entry; він не є навчальним посібником. Механіки встановлено за exact Java та наданим export рецептів, а не за документацією іншої версії.
+- Item-task без data components не розрізняє заповнення Soul Vial, прив’язку душі машини, тип траси, настройки фільтрів або фарбу фасаду.
+- Painting trigger викликається до перевірки вставлення результату: можливе зарахування біля заблокованого виходу без доставки й списання входів. Contract не називає це завершеною продукцією.
+- Захоплення Soul Vial і подорож Staff of Travelling не мають придатного нативного action-тригера в перевіреній версії; інструменти подорожі, броня, farming та всі варіації скла залишаються поза основним обсягом карти.
+- End Steel-гілка стоїть в епосі 30 через прямий маршрут до End Stone у Краї, хоча загальні itemGates матеріалів Ender IO відкрито раніше.
 
 Джерела:
 
@@ -6482,6 +6716,148 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shapeless](../../content/research/evidence/technology_v5/enderio/recipes/enderio/erase_impulse_hopper.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/enderio/recipes/enderio/advanced_capacitor_bank.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/releases/tag/v8.2.12-beta) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/EnderIO.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/init/EIOCriterions.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/paint/PaintingTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/task/CraftingMachineTask.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/task/PoweredCraftingMachineTask.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/tools/vials/SoulVialItem.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/travel/TravelStaffItem.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/tools/hang_glider/UseGliderTrigger.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/tools/hang_glider/PlayerMovementHandler.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/advancement/EIOAdvancementGenerator.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/generated/resources/data/enderio/advancement/adventure/rich.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/generated/resources/data/enderio/advancement/adventure/richer.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/generated/resources/data/enderio/advancement/place_capacitor_bank.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/generated/resources/data/enderio/recipe/painting/conduit_facade.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/AlloyRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/alloy/AlloySmelterBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/MaterialRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/init/EIOItems.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/api/capacitor/CapacitorData.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/block/entity/PoweredMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/data_maps/GrindingBallDataMapProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/sag_mill/SagMillBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/sag_mill/SagMillingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/ConduitRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/conduits/type/item/ItemConduit.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/conduits/type/item/ItemConduitTicker.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/filters/item/limited/LimitedItemFilter.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/TankRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/conduits/type/fluid/FluidConduit.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/conduits/type/fluid/FluidConduitTicker.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/filters/redstone/RedstoneSensorFilter.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/filters/redstone/RedstoneTimerFilter.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/conduits/type/redstone/RedstoneConduit.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/SoulBindingRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/soul_binder/SoulBinderBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/soul_binder/SoulBindingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/tools/vials/SoulVialItem.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/SlicingRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/slicer/SlicerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/slicer/SlicingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/powered_spawner/PoweredSpawnerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/powered_spawner/MobCaptureTask.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/powered_spawner/MobSpawnTask.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/souldata/SoulDataProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/FermentingRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/vat/VatBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/vat/FermentingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/soul_engine/SoulEngineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/stirling_generator/StirlingGeneratorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/solar_panel/SolarPanelBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/painting/PaintingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/attractor/AttractorObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/aversion/AversionObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/aversion/AversionObeliskManager.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/inhibitor/InhibitorObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/inhibitor/InhibitorObeliskManager.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/relocator/RelocatorObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/relocator/RelocatorObeliskManager.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/datagen/java/com/enderio/enderio/datagen/common/recipes/WeatherChangeRecipeProvider.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/weather/WeatherObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/machines/obelisks/xp/XPObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/foundation/util/ExperienceUtil.java) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/LICENSE.txt) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/resources/data/enderio/patchouli_books/guide/book.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/resources/assets/enderio/patchouli_books/guide/en_us/categories/test_category.json) — SHA перевірено
+- [джерело](https://github.com/Team-EnderIO/EnderIO/blob/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/resources/assets/enderio/patchouli_books/guide/en_us/entries/test_entry.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/dark_steel_ingot.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/dark_steel_ingot_with_coal.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/end_steel_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/basic_capacitor.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/double_layer_capacitor.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/octadic_capacitor.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/redstone_alloy_grinding_ball.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soularium_grinding_ball.json) — SHA перевірено
+- [enderio:sag_milling](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/sag_milling/raw_iron.json) — SHA перевірено
+- [enderio:sag_milling](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/sag_milling/iron.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/item_conduit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/energetic_item_conduit_upgrade.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/vibrant_item_conduit_upgrade.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/limited_item_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fluid_conduit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/pressurized_fluid_conduit_upgrade.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/ender_fluid_conduit_upgrade.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/pressurized_fluid_tank.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/basic_fluid_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/redstone_conduit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/redstone_sensor_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/redstone_timer_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/conduit_probe.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soul_vial.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/vibrant_crystal.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/enticing_crystal.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/ender_crystal.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/slice_and_splice.json) — SHA перевірено
+- [enderio:slicing](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/slicing/z_logic_controller.json) — SHA перевірено
+- [enderio:slicing](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/slicing/zombie_electrode.json) — SHA перевірено
+- [enderio:shaped_entity_storage](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/powered_spawner.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/broken_spawner.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/powered_spawner.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/vat.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_hootch_still.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_nutrient_distillation_still.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_rocket_fuel_still.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_fire_water_still.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soul_engine.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/soul_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/stirling_generator.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/photovoltaic_plate.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/energetic_photovoltaic_module.json) — SHA перевірено
+- [enderio:soul_binding](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/soulbinding/energetic_photovoltaic_module.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/pulsating_photovoltaic_module.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/vibrant_photovoltaic_module.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/painting_machine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/conduit_facade.json) — SHA перевірено
+- [enderio:painting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/painting/conduit_facade.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/conductive_alloy_ingot.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/energetic_alloy_ingot.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/vibrant_alloy_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/attractor_obelisk.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/aversion_obelisk.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/basic_soul_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/inhibitor_obelisk.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/relocator_obelisk.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/weather_crystal.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/weather_obelisk.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_liquid_sunshine_still.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_cloud_seed_still.json) — SHA перевірено
+- [enderio:vat_fermenting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/fermenting/fluid_cloud_seed_concentrated_still.json) — SHA перевірено
+- [enderio:weather_change](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/clear.json) — SHA перевірено
+- [enderio:weather_change](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/rain.json) — SHA перевірено
+- [enderio:weather_change](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/lightning.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/xp_vacuum.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/xp_obelisk.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/experience_rod.json) — SHA перевірено
+- [enderio:alloy_smelting](../../content/research/evidence/enderio_core_next_v5/recipes/enderio/alloy_smelting/soularium_ingot.json) — SHA перевірено
 
 ## Evolved Mekanism
 
@@ -9270,6 +9646,18 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E40_powah_behaviour_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Справжня партія Blazing Crystal
+
+Епохи: 29.
+
+Orb має власний рецепт, енергетичний буфер і команду-власника. Rod передає енергію, а не власну стадію доступу.
+Після раннього energized steel ця партія перевіряє наступний матеріальний рівень через чинні міжмодові рецепти AIA2.
+Попередні кроки: powah.phase.05.
+Машини: `powah:energizing_orb`.
+Ресурси й результати: `powah:crystal_blazing`.
+Квести: `V5_E29_powah_native_blazing`.
+Team-bound native proof після очищення реальних входів і вставлення результату; окремий фінальний FE debit Rod після повернення fillEnergy цим доказом не вимірюється.
+
 Фінальні цілі:
 - Реактор потребує витратних ресурсів
 - Енергія для пізньої кристалізації
@@ -9283,15 +9671,15 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Прогалини та межі перевірки:
 - Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
 - Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
-- Виявлено хибний release-tag збіг cached Powah: source gradle.properties5.1.0-alpha ≠ export6.2.10; точний source6.2.10 не підтверджено.
+- Повна core-карта й16 концептів наступних цілей залишаються TODO; точний source6.2.10 підтверджено release/build provenance, а не самим застарілим gradle property.
 
 Джерела:
 
 - [джерело](../../content/research/evidence/technology_v5/installed-metadata.json) — SHA перевірено
-- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/gradle.properties) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/generators/magmator.md) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/materials/dry_ice.md) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/materials/uraninite.md) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/generators/magmator.md) — SHA перевірено
+- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/materials/dry_ice.md) — SHA перевірено
+- [джерело](https://github.com/Technici4n/Powah/blob/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/guidebook/materials/uraninite.md) — SHA перевірено
 - [minecraft:crafting_shapeless](../../content/research/evidence/technology_v5/powah/recipes/powah/crafting/dielectric_paste.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/powah/recipes/powah/crafting/dielectric_rod.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/powah/recipes/powah/crafting/dielectric_casing.json) — SHA перевірено
@@ -9300,6 +9688,20 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/powah/recipes/powah/crafting/reactor_niotic.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/powah/recipes/powah/crafting/energizing_rod_nitro.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/LICENSE) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/gradle.properties) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/build.gradle) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/.github/workflows/release.yml) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/resources/META-INF/neoforge.mods.toml) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/block/energizing/EnergizingOrbTile.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/block/energizing/EnergizingRodTile.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/block/energizing/EnergizingRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/block/energizing/EnergizingOrbBlock.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/lib/logistics/inventory/Inventory.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/lib/logistics/energy/Energy.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/lib/block/AbstractTileEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/lib/block/AbstractTickableTile.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/Technici4n/Powah/a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11/src/main/java/owmii/powah/util/Ticker.java) — SHA перевірено
 
 ## QuarryPlus
 

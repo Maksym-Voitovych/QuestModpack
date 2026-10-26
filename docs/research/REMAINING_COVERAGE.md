@@ -145,7 +145,7 @@
 | Alex's Mobs | exploration_worldgen | TODO — карта не досліджена |
 | Bosses of Mass Destruction | exploration_worldgen | TODO — карта не досліджена |
 | Born in Chaos | exploration_worldgen | TODO — карта не досліджена |
-| Ender IO | technology_core | IN_PROGRESS — часткова карта |
+| Ender IO | technology_core | DONE — основна карта |
 | L_Ender's Cataclysm | exploration_worldgen | IN_PROGRESS — часткова карта |
 | Mowzie's Mobs | exploration_worldgen | TODO — карта не досліджена |
 | Naturalist | exploration_worldgen | TODO — карта не досліджена |

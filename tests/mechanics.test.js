@@ -28,7 +28,7 @@ function fixture(customConfig = config) {
     clearRuntime() { calls.push('clear'); configured = false; }
   };
   const server = {runCommandSilent(command) { commands.push(command); return 0; }};
-  const player = {username: 'Alice', team: 'team-a', completed: 23, tickCount: 40, server,
+  const player = {username: 'Alice', team: 'team-a', completed: 48, tickCount: 40, server,
     inventory: [], isServerPlayer() { return true; }, isFake() { return false; }};
   const aliases = {AIA2: {
     teamId(p) { if (lookupError) throw lookupError; return p.team; },

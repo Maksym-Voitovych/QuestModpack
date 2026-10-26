@@ -1,0 +1,265 @@
+{
+  "schema": 1,
+  "mod_id": "powah",
+  "installed_version": "6.2.10",
+  "status": "handoff_only_not_authored_core",
+  "complete": false,
+  "map_draft_written": false,
+  "quest_draft_written": false,
+  "reason_uk": "Повну core-карту й нові authored quests не написано. Попередній мережевий exec завис на approval та повернувся aborted; root наказав зберегти checkpoint без додаткового fetch. Не оголошувати DONE.",
+  "exact_source_resolution": {
+    "pin": "a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11",
+    "official_tag": "v6.2.10",
+    "evidence_manifest": "content/research/evidence/energy_guard_next_v5/powah/manifest.json",
+    "finding_uk": "За повідомленням root/energy_guard_audit_v5, build.gradle бере версію із POWAH_VERSION, release.yml передає release tag; stale mod_version=5.1.0-alpha не використовують. Отже попередній висновок про false source match лише з gradle.properties хибний. Цей handoff сам не виконував новий source audit."
+  },
+  "preserve_stages": [
+    {
+      "id": "powah.phase.01",
+      "quest_ids": [
+        "E11_X_dielectric"
+      ]
+    },
+    {
+      "id": "powah.phase.02",
+      "quest_ids": [
+        "E11_X_dielectric_rod"
+      ]
+    },
+    {
+      "id": "powah.phase.03",
+      "quest_ids": [
+        "E11_X_powah_casing"
+      ]
+    },
+    {
+      "id": "powah.phase.04",
+      "quest_ids": [
+        "V5_E11_powah_behaviour_01"
+      ]
+    },
+    {
+      "id": "powah.phase.05",
+      "quest_ids": [
+        "V5_E11_powah_behaviour_02"
+      ]
+    },
+    {
+      "id": "powah.phase.06",
+      "quest_ids": [
+        "V5_E29_powah_behaviour_03"
+      ]
+    },
+    {
+      "id": "powah.phase.07",
+      "quest_ids": [
+        "V5_E40_powah_behaviour_04"
+      ]
+    }
+  ],
+  "audit": {
+    "performed_by": "/root/powah_core_v5/quest_audit",
+    "read_only": true,
+    "duplicate_coverage_uk": "Існуючі квести вже покривають starter furnator/cell/cable/battery/wrench/orb/rod/steel; V4_E29_energizing_orders_01–08 покривають batch, parallel rods, blazing buffer, niotic/spirited crystals, spirited rod, blazing furnator, discharger+battery, spirited cell. Новий thermo quest дублюватиме V5_E11_powah_behaviour_01 — уточнити старий текст замість дубля.",
+    "item_target_migrations": "Powah-specific item-target migrations absent at audit time.",
+    "runtime_tier_gates": {
+      "starter": 11,
+      "basic": 11,
+      "hardened": 11,
+      "blazing": 29,
+      "niotic": 29,
+      "spirited": 29,
+      "nitro": 36,
+      "creative": 99
+    }
+  },
+  "candidate_optional_concepts_require_exact_source_audit": [
+    {
+      "concept_uk": "Лавовий генератор",
+      "item_ids": [
+        "powah:magmator_starter",
+        "minecraft:lava_bucket"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Сонячна ділянка",
+      "item_ids": [
+        "powah:solar_panel_starter",
+        "powah:photoelectric_pane"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Вихід уранініту: піч проти сфери",
+      "item_ids": [
+        "powah:uraninite_raw",
+        "powah:uraninite"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Сухий лід через energizing",
+      "item_ids": [
+        "minecraft:blue_ice",
+        "powah:dry_ice"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Заряджений сніжок",
+      "item_ids": [
+        "powah:charged_snowball"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Комплект конструкції реактора",
+      "item_ids": [
+        "powah:reactor_starter"
+      ],
+      "epoch": 11,
+      "condition_uk": "36 blocks only if exact source confirms geometry; vanilla recipe outputs4."
+    },
+    {
+      "concept_uk": "Окремі витратні ресурси реактора",
+      "item_ids": [
+        "powah:reactor_basic",
+        "minecraft:redstone",
+        "minecraft:coal"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Режими портативної батареї",
+      "item_ids": [
+        "powah:battery_hardened"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Автоматичне заряджання предметів",
+      "item_ids": [
+        "powah:energy_hopper_starter"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Створення Ender Core",
+      "item_ids": [
+        "powah:ender_core"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Канал і місткість Ender Cell",
+      "item_ids": [
+        "powah:ender_cell_starter"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Віддалений енергетичний вихід",
+      "item_ids": [
+        "powah:ender_gate_starter"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Переприв’язування мережевого вузла",
+      "item_ids": [
+        "powah:ender_cell_basic",
+        "powah:ender_gate_basic"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Прив’язування гравця",
+      "item_ids": [
+        "powah:binding_card",
+        "powah:aerial_pearl",
+        "powah:player_aerial_pearl"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Player Transmitter",
+      "item_ids": [
+        "powah:player_transmitter_starter"
+      ],
+      "epoch": 11
+    },
+    {
+      "concept_uk": "Міжвимірна картка",
+      "item_ids": [
+        "powah:binding_card_dim"
+      ],
+      "epoch": 11
+    }
+  ],
+  "export_facts": [
+    {
+      "recipe_id": "powah:energizing/ender_core",
+      "energy": 50000,
+      "inputs": [
+        "minecraft:ender_eye",
+        "powah:dielectric_casing",
+        "powah:capacitor_basic_tiny"
+      ],
+      "output": "powah:ender_core",
+      "count": 1
+    },
+    {
+      "recipe_id": "powah:energizing/charged_snowball",
+      "energy": 500000,
+      "inputs": [
+        "minecraft:snowball"
+      ],
+      "output": "powah:charged_snowball",
+      "count": 1
+    },
+    {
+      "recipe_id": "powah:energizing/dry_ice",
+      "energy": 10000,
+      "inputs": [
+        "#c:ices/blue",
+        "#c:ices/blue"
+      ],
+      "output": "powah:dry_ice",
+      "count": 1
+    },
+    {
+      "recipe_id": "powah:energizing/uraninite_from_raw",
+      "energy": 2000,
+      "inputs": [
+        "powah:uraninite_raw"
+      ],
+      "output": "powah:uraninite",
+      "count": 2
+    },
+    {
+      "recipe_id": "powah:energizing/nitro_crystal",
+      "energy": 20000000,
+      "inputs": [
+        "minecraft:nether_star",
+        "minecraft:redstone_block",
+        "minecraft:redstone_block",
+        "powah:blazing_crystal_block"
+      ],
+      "output": "powah:crystal_nitro",
+      "count": 16
+    },
+    {
+      "fact_uk": "Vanilla reactor tier crafting yields4 blocks; crafting recipe IDs for transmitters spell player_tranmitter_* while output IDs correctly use player_transmitter_*."
+    },
+    {
+      "fact_uk": "binding_card_dim/player_aerial_pearl/lens_of_ender have real IDs and gate11 but no exported producer recipes. Use craft:false; interaction claims need exact-source evidence."
+    }
+  ],
+  "verification_policy_uk": "Inventory/observation checks are setup or sample checkpoints only: do not claim actual FE/t, channel/owner/card state, working reactor or energizing completion. craft:true only for verified vanilla crafting producer. No future materials/machines as rewards.",
+  "root_native_proof_note": {
+    "advancement": "aia2:mechanics/powah_blazing_crystal",
+    "epoch": 29,
+    "scope_uk": "Root planned native proof at actual Orb owner: recipe route AIA2:v4 blazing2, preclear inputs match + completion output edge; does not independently measure FE."
+  }
+}

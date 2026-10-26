@@ -3,7 +3,7 @@
   "filename": "aia2_branch_technology_powah",
   "title": "powah — Технології",
   "group": "0000A159EA8B0AE9",
-  "order_index": 82,
+  "order_index": 83,
   "icon": {
     "id": "powah:dielectric_paste",
     "count": 1
@@ -918,7 +918,7 @@
         }
       ],
       "x": 0.0,
-      "y": 11.0
+      "y": 12.0
     },
     {
       "id": "00004EAD0F9F5FC6",
@@ -979,6 +979,49 @@
       ],
       "x": 2.0,
       "y": 11.0
+    },
+    {
+      "id": "0000546765427C2D",
+      "title": "Кристал, виготовлений енергетичною сферою",
+      "description": [
+        "Виготовте Blazing Crystal у власній Orb за одним із чинних рецептів AIA2. Стрижні передають FE у сферу; саме її команда та рецепт визначають доступ, навіть якщо енергію подає інша команда.",
+        "Квест перевіряє нативний командний запис після витрати вхідної партії й вставлення фактичного результату. Отримання кристала з інвентарю, Creative або команди не дає цього запису. Підсумковий FE debit стрижня після повернення fillEnergy окремо не вимірюється."
+      ],
+      "icon": {
+        "id": "powah:crystal_blazing",
+        "count": 1
+      },
+      "dependencies": [
+        "0000310B427F5634",
+        "0000570227EFB779"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008ABA61ED8542",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/powah_blazing_crystal"
+        },
+        {
+          "id": "0000AD0848FBFC67",
+          "type": "advancement",
+          "advancement": "aia2:stages/e29"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D807A972AA23",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 13.0
     },
     {
       "id": "00009B68EBD78D84",

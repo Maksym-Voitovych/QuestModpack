@@ -110,6 +110,8 @@ public final class NativeSmokeTests {
         check(!Aia2MachineGuard.hasProductionProof(server, team, 8, "arcane"), "restart does not fabricate the independent missing arcane proof");
         check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
                 "a fresh server reloads the separate native process observation from SavedData");
+        check(ProductionMilestoneBridge.hasProof(server,team,"native_observed_fixture"),
+                "actual-output verified observation also reloads in a second JVM");
         Aia2MachineGuard.clearRuntime();
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "runtime bridge initialization never resets a receipt loaded after restart");
         check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
@@ -166,6 +168,12 @@ public final class NativeSmokeTests {
         var parent = Aia2MachineGuard.enterTick(level.getBlockEntity(B));
         try {
             check(Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe), "strict component accepts an authorized real owner and canonical recipe");
+            var selected=EnderTaskAccess.lookup(level.getBlockEntity(A),level.getRecipeManager(),
+                    net.minecraft.world.item.crafting.RecipeType.SMELTING,
+                    new net.minecraft.world.item.crafting.SingleRecipeInput(new ItemStack(Items.RAW_IRON)),level);
+            check(selected.isPresent() && !Aia2MachineGuard.mayProcessRecipe(level.getBlockEntity(A),selected.get().value()),
+                    "pure protected callback selects a real recipe while locked receiver execution remains denied");
+            check(Aia2MachineGuard.mayProcessRecipeInCurrentTick(recipe),"pure callback restores the actual caller ticker context");
             check(Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.RAW_IRON)), "ordinary authorized copy output remains available");
             check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.DIAMOND)), "imported future output is denied independently of machine availability");
             check(!Aia2MachineGuard.mayReplicateOutputInCurrentTick(new ItemStack(Items.IRON_INGOT)), "configured manufacture-receipt outputs cannot be replicated");
@@ -269,6 +277,7 @@ public final class NativeSmokeTests {
                         "actual ingredient-consuming crafter completion records an independent generic process observation");
                 check(!ProductionMilestoneBridge.hasProof(server, TEAM_B, "native_crafter_fixture"),
                         "generic process observation belongs only to the native machine owner team");
+                testObservedCompletionBridge();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");
@@ -286,6 +295,25 @@ public final class NativeSmokeTests {
         } catch (Throwable failure) {
             finish(failure);
         }
+    }
+
+    private static void testObservedCompletionBridge() {
+        ProductionMilestoneBridge.configureJson("[{\"id\":\"native_observed_fixture\",\"recipeIds\":[\"minecraft:iron_ingot_from_nuggets\"],\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"serializer\":\"minecraft:crafting_shaped\"}]");
+        var recipe=level.getRecipeManager().byKey(net.minecraft.resources.ResourceLocation.parse("minecraft:iron_ingot_from_nuggets")).orElseThrow().value();
+        check(!ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_observed_fixture"),"configuring actual-output observation never fabricates one");
+        ProductionMilestoneBridge.finishedObservedMachine(crafter(),recipe,List.of(new ItemStack(Items.IRON_NUGGET)));
+        check(!ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_observed_fixture"),"wrong actual output is rejected by production helper");
+        var wrongCount=new ItemStack(Items.IRON_INGOT,2);
+        ProductionMilestoneBridge.finishedObservedMachine(crafter(),recipe,List.of(wrongCount));
+        check(!ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_observed_fixture"),"stale actual output count cannot be credited against a new template");
+        var wrongVariant=new ItemStack(Items.IRON_INGOT);
+        wrongVariant.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME,net.minecraft.network.chat.Component.literal("synthetic different variant"));
+        ProductionMilestoneBridge.finishedObservedMachine(crafter(),recipe,List.of(wrongVariant));
+        check(!ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_observed_fixture"),"different actual output components are rejected");
+        ItemStack actual=emittedItems.getFirst().getItem().copy();
+        ProductionMilestoneBridge.finishedObservedMachine(crafter(),recipe,List.of(actual));
+        check(ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_observed_fixture"),"trusted helper accepts the already verified native crafter's actual produced stack");
+        check(ProductionMilestoneBridge.hasProof(server,TEAM_A,"native_crafter_fixture"),"reconfiguration never resets an older durable process proof");
     }
 
     private static void assertCold(BlockPos pos, String label) {

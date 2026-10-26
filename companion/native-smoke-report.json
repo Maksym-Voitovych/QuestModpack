@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "started_at_utc": "2026-10-25T16:53:07.380007606Z",
-  "finished_at_utc": "2026-10-25T16:53:39.946239439Z",
+  "started_at_utc": "2026-10-26T09:57:03.301003269Z",
+  "finished_at_utc": "2026-10-26T09:57:35.859017288Z",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "real_minecraft_server": true,
@@ -81,6 +81,14 @@
     },
     {
       "description": "strict component accepts an authorized real owner and canonical recipe",
+      "passed": true
+    },
+    {
+      "description": "pure protected callback selects a real recipe while locked receiver execution remains denied",
+      "passed": true
+    },
+    {
+      "description": "pure callback restores the actual caller ticker context",
       "passed": true
     },
     {
@@ -208,6 +216,30 @@
       "passed": true
     },
     {
+      "description": "configuring actual-output observation never fabricates one",
+      "passed": true
+    },
+    {
+      "description": "wrong actual output is rejected by production helper",
+      "passed": true
+    },
+    {
+      "description": "stale actual output count cannot be credited against a new template",
+      "passed": true
+    },
+    {
+      "description": "different actual output components are rejected",
+      "passed": true
+    },
+    {
+      "description": "trusted helper accepts the already verified native crafter's actual produced stack",
+      "passed": true
+    },
+    {
+      "description": "reconfiguration never resets an older durable process proof",
+      "passed": true
+    },
+    {
       "description": "native SavedData NBT serialization retains the key receipt",
       "passed": true
     },
@@ -228,20 +260,20 @@
       "passed": true
     }
   ],
-  "assertions": 55,
-  "receipt_team": "native-test-a-3dc47e2f-9a3b-4298-b730-6f0009643124",
+  "assertions": 63,
+  "receipt_team": "native-test-a-e27dacb9-edf2-4f37-9f0d-b695347851c7",
   "receipt_restart_verification": false,
   "modded_machines_tested": false,
   "ftb_kubejs_runtime_present": false,
   "tps_benchmark": "not performed; this is a small native correctness suite",
   "test_blocks_restored": true,
-  "version_tested": "0.4.6-alpha",
+  "version_tested": "0.4.7-alpha",
   "runner_exit_code": 0,
   "console_log": "run/aia2-native-smoke-console.log (ignored, not shipped)",
   "restart_verification": {
     "status": "passed",
-    "started_at_utc": "2026-10-25T16:54:01.294683511Z",
-    "finished_at_utc": "2026-10-25T16:54:01.299327457Z",
+    "started_at_utc": "2026-10-26T09:58:00.653623322Z",
+    "finished_at_utc": "2026-10-26T09:58:00.671133330Z",
     "minecraft": "1.21.1",
     "neoforge": "21.1.264",
     "real_minecraft_server": true,
@@ -265,6 +297,10 @@
       },
       {
         "passed": true,
+        "description": "actual-output verified observation also reloads in a second JVM"
+      },
+      {
+        "passed": true,
         "description": "runtime bridge initialization never resets a receipt loaded after restart"
       },
       {
@@ -272,17 +308,17 @@
         "description": "runtime reset never clears a reloaded generic process observation"
       }
     ],
-    "assertions": 6,
-    "receipt_team": "native-test-a-3dc47e2f-9a3b-4298-b730-6f0009643124",
+    "assertions": 7,
+    "receipt_team": "native-test-a-e27dacb9-edf2-4f37-9f0d-b695347851c7",
     "receipt_restart_verification": true,
     "modded_machines_tested": false,
     "ftb_kubejs_runtime_present": false,
     "tps_benchmark": "not performed; this is a small native correctness suite",
     "test_blocks_restored": true,
-    "version_tested": "0.4.6-alpha",
+    "version_tested": "0.4.7-alpha",
     "runner_exit_code": 0,
     "console_log": "run/aia2-native-smoke-restart-console.log (ignored, not shipped)"
   },
-  "assertions_total": 61,
+  "assertions_total": 70,
   "runner_command": "./gradlew --offline runServer -x downloadAssets --no-daemon --console=plain; second JVM verifies SavedData persistence"
 }

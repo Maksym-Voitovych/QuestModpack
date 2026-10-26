@@ -1,0 +1,1385 @@
+{
+  "id": "0000C0B93DDF672F",
+  "filename": "aia2_branch_automation_enderio",
+  "title": "enderio — Автоматизація",
+  "group": "0000278E41F3DC5E",
+  "order_index": 14,
+  "icon": {
+    "id": "enderio:alloy_smelter",
+    "count": 1
+  },
+  "hide_quest_details_until_startable": true,
+  "hide_quest_until_deps_complete": true,
+  "quests": [
+    {
+      "id": "0000429B57C2D11C",
+      "title": "Датчик читає блок, таймер подає імпульс",
+      "description": [
+        "Зберіть redstone-трасу з Sensor Filter та Timer Filter. Sensor читає аналоговий вихід приєднаного блока, а таймер формує сигнал за власним інтервалом. Узгодьте колір redstone-каналу з керуванням вилученням предметної траси.",
+        "Сигнал стану сховища та періодичний імпульс розв’язують різні задачі. Вибір фільтра дає фабриці умову запуску без ручного перемикання кожної машини.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді."
+      ],
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000686C1C82DDA3",
+        "0000FC3E352FA5EC",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C408FBD6EBB4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:conduit",
+          "timer": 40
+        },
+        {
+          "id": "00007C8E26329AF3",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_sensor_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003E6CB7F46AA3",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_timer_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E3959FB57C67",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_probe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7345231C12F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E316EEEF32E3",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 9.16
+    },
+    {
+      "id": "000094DB1E100AEF",
+      "title": "Два базових конденсатори стають одним",
+      "description": [
+        "Виготовте Double-Layer із двох Basic, двох Energetic Alloy та вугільного пилу. Для Octadic потрібні два Double-Layer, два Vibrant Alloy та блок світлокаменю. Базові значення конденсаторів дорівнюють 1, 2 і 3; конкретна машина масштабує свої параметри окремо.",
+        "Оновлення слота конденсатора зв’язує попередній ланцюг сплавів із можливостями машин; це не універсальна обіцянка однакових FE/t для всіх блоків.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують."
+      ],
+      "icon": {
+        "id": "enderio:double_layer_capacitor",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E8AEEC37B21",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005ACBA4D719F0",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000020E473542B6A",
+          "type": "item",
+          "item": {
+            "id": "enderio:octadic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003270D630263A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000003AF62F13E96",
+          "type": "item",
+          "item": {
+            "id": "enderio:grains_of_infinity",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A5F1929B5928",
+      "title": "Рідинна траса має окремий приймач",
+      "description": [
+        "Підготуйте Fluid Conduit і Pressurized Fluid Tank, налаштуйте відбір та приймання води окремо від предметного каналу. Рецепти підвищення до pressurized та ender fluid використовують попередню трасу, інші сплави та відповідне скло; сам бак не визначає різновид труби.",
+        "Окрема рідинна гілка забезпечує чан і душовий двигун, зберігаючи контроль над змішуванням та напрямком передавання.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді."
+      ],
+      "icon": {
+        "id": "enderio:pressurized_fluid_tank",
+        "count": 1
+      },
+      "dependencies": [
+        "000055027A1DC28F",
+        "000054863C416C7B",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E3738629A6F4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:pressurized_fluid_tank",
+          "timer": 40
+        },
+        {
+          "id": "0000F3660B710A2F",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000AD7D93D9882B",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_fluid_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008B293CF98365",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000823CC997AD09",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000BF18ED6487BA",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 4.16
+    },
+    {
+      "id": "0000A7C4FEF4ACD8",
+      "title": "Контролер потребує голови та інструментів",
+      "description": [
+        "У Slice and Splice розкладіть голову зомбі, два Soularium, два Silicon і Redstone за позиціями рецепта Z-Logic Controller. Окремі слоти приймають сокиру вище дерев’яної та ножиці; це інструменти машини, а не заміна шести позицій реагентів.",
+        "Компонент із шести входів поєднує металургію з обробкою мобових матеріалів і відкриває вузли автоматизації душ.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта."
+      ],
+      "icon": {
+        "id": "enderio:slice_and_splice",
+        "count": 1
+      },
+      "dependencies": [
+        "000052369624400A",
+        "0000C71385C0B049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000046269921AF26",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:slice_and_splice",
+          "timer": 40
+        },
+        {
+          "id": "0000A9324366314C",
+          "type": "item",
+          "item": {
+            "id": "enderio:z_logic_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008812F4A66408",
+          "type": "item",
+          "item": {
+            "id": "minecraft:iron_axe",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000889C4352DB18",
+          "type": "item",
+          "item": {
+            "id": "minecraft:shears",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFBD7B5AB8DC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071C2B6A62364",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.16
+    },
+    {
+      "id": "0000BF8C7FD156D2",
+      "title": "Ліміт запасу на кінці предметної траси",
+      "description": [
+        "Зберіть предметну трасу між двома скринями. На кінцях узгодьте insert/extract та кольори каналу; Limited Item Filter обмежує запас у приймачі або залишок у джерелі відповідно до боку. Перевірте окремо round-robin і self-feed перед підключенням фабрики.",
+        "Підготовлений фільтр стає правилом конкретного порту. Поділ кінців траси запобігає безкінечному поверненню матеріалів у ту саму скриню.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. У цій версії всі види трас мають item ID enderio:conduit, а різновид зберігається в компоненті enderio:conduit. Ціль без компонентного фільтра засвідчує лише загальну трасу; вид, кольори каналів та рух потоку перевірте на стенді."
+      ],
+      "icon": {
+        "id": "enderio:conduit",
+        "count": 1
+      },
+      "dependencies": [
+        "00007CF650BC19C2",
+        "000054863C416C7B",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007F899AB16D6E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:conduit",
+          "timer": 40
+        },
+        {
+          "id": "000083FF69C87F4A",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005A4B747F8B35",
+          "type": "item",
+          "item": {
+            "id": "enderio:limited_item_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E78B7E168C8D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FB466ED03C3B",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000012A6DD4A2289",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 9.16
+    },
+    {
+      "id": "0000C6E4FDFD572E",
+      "title": "Вихід, побічний шанс і ціна помелу",
+      "description": [
+        "Порівняйте Redstone Alloy Ball із Soularium Ball на рецепті SAG Mill для сирого заліза; у наданому export виходить залізний пил Immersive Engineering після уніфікації. Таблиця версії задає їм різні множники виходу, бонусного шансу, енергії та ресурсу; куля зменшує свій ресурс на витрачену енергію. Рецепти з вимкненим bonus не застосовують кулі.",
+        "Після першої темної кулі вибір витратника стає вибором між енергією та побічною продукцією, а не простим пошуком найдорожчого сплаву.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують."
+      ],
+      "icon": {
+        "id": "enderio:sag_mill",
+        "count": 1
+      },
+      "dependencies": [
+        "00004001BF5A4F16",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C9E964B229A4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:sag_mill",
+          "timer": 40
+        },
+        {
+          "id": "00007FAFFC4E014E",
+          "type": "item",
+          "item": {
+            "id": "enderio:redstone_alloy_grinding_ball",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C17D8837D406",
+          "type": "item",
+          "item": {
+            "id": "enderio:soularium_grinding_ball",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000005662250BC5",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:dust_iron",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FF0F7D8B3AAD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B29D428206DD",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 15.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000DF04F6417151",
+      "title": "Енергетичний сплав підтверджено виробничою подією",
+      "description": [
+        "Проведіть рецепт Energetic Alloy у власній Alloy Smelter: Redstone, Conductive Alloy та Gold дають два зливки за машинний цикл. Виберіть режим, що допускає сплави, установіть конденсатор, подайте енергію та звільніть вихід. Наявність зливка сама по собі не відкриває виробничий критерій.",
+        "Ця перевірка завершує вступну металургію реальною подією процесу. Далі готовий Energetic Alloy входить у Vibrant Alloy, конденсатори й транспортні вузли.",
+        "Командний серверний production proof зараховує конкретний рецепт enderio:alloy_smelting/energetic_alloy_ingot лише після перевірки фактичного кешованого виходу й списання входів. Advancement не має альтернативи через інвентар. Окрема предметна ціль перевіряє тільки наявність зливків; повний ігровий запуск цим статичним дослідженням не заявляється."
+      ],
+      "icon": {
+        "id": "enderio:alloy_smelter",
+        "count": 1
+      },
+      "dependencies": [
+        "000061CC6C226049",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D36DC5103891",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:alloy_smelter",
+          "timer": 40
+        },
+        {
+          "id": "000063FDBDB6E68F",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_alloy_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000DD5838A3A43",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/enderio_energetic_alloy"
+        },
+        {
+          "id": "0000A34AC0120F32",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005EC5BABD69D9",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000E87679435790",
+      "title": "Кристал запам’ятовує потрібну істоту",
+      "description": [
+        "У Soul Binder смарагд із душею жителя дає Enticing Crystal, а Vibrant Crystal із душею ендермена — Ender Crystal. Машині потрібні енергія, конденсатор і досвід; ці рецепти потребують відповідно 4 та 6 рівнів досвіду за її обчисленням. Filled Soul Vial є вхідним витратником.",
+        "Тип істоти є частиною рецепта. Ці два кристали ведуть до різних обелісків і не замінюються порожньою посудиною або довільною душею.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Наявність Soul Vial не підтверджує, що вона заповнена чи містить потрібну істоту."
+      ],
+      "icon": {
+        "id": "enderio:soul_binder",
+        "count": 1
+      },
+      "dependencies": [
+        "00009128ADE5433F",
+        "000034B80D4E8EBB",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001D4EA777CB4F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:soul_binder",
+          "timer": 40
+        },
+        {
+          "id": "0000C438C70B8848",
+          "type": "item",
+          "item": {
+            "id": "enderio:enticing_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B766150106D",
+          "type": "item",
+          "item": {
+            "id": "enderio:ender_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000879EA3072023",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA4FA8A55FCC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000042818C5AB0AC",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 2.16
+    },
+    {
+      "id": "0000207231953D80",
+      "title": "Приваблення і заборона природного спавну",
+      "description": [
+        "Attractor Obelisk приваблює істот, що проходять Soul Filter, у визначеній зоні. Aversion Obelisk скасовує природний спавн істот із відповідного фільтра. Обом потрібні живлення й конденсатор; Aversion не є загальним вимикачем усіх джерел створення мобів.",
+        "Два обеліски застосовують фільтр до різних подій: уже наявного моба та спроби природного спавну. Це основа керованої зони навколо фабрики.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. Наявність фільтра не підтверджує його вміст; поведінка мобів є ручною перевіркою стенда."
+      ],
+      "icon": {
+        "id": "enderio:attractor_obelisk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E87679435790",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007E4FD977B33A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:attractor_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "0000F9AC35416E4B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:aversion_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "0000FFC14B0DA192",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_soul_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000149EB454C86D",
+          "type": "item",
+          "item": {
+            "id": "enderio:enticing_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0B1DE6743DE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004B058F0692A8",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 0.0
+    },
+    {
+      "id": "00004B52660F0CE4",
+      "title": "Паливний генератор і панель мають різні умови",
+      "description": [
+        "Порівняйте Stirling Generator з Energetic Photovoltaic Module. Stirling приймає придатне пічне паливо без контейнерного залишку й потребує конденсатора. Панель зазвичай працює вдень за доступу до неба; прив’язування Phantom у Soul Binder змінює її на нічну гілку, а не додає універсальний бонус до будь-якого генератора.",
+        "Незалежна денна гілка доповнює паливну й душову енергетику. Перевірте цикли доби до того, як покладатися на панель як єдине живлення лабораторії.",
+        "Позначка виготовлення рахує подію звичайного крафту для предмета з наявним vanilla crafting-рецептом. Інші предметні цілі перевіряють наявність; роботу машини й значення компонентів вони не засвідчують. Огляд не доводить FE/t або душу Phantom у панелі."
+      ],
+      "icon": {
+        "id": "enderio:stirling_generator",
+        "count": 1
+      },
+      "dependencies": [
+        "00004456E063D7C6",
+        "000094DB1E100AEF",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B92113E190DB",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:stirling_generator",
+          "timer": 40
+        },
+        {
+          "id": "00006ADC416BA0E4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:energetic_photovoltaic_module",
+          "timer": 40
+        },
+        {
+          "id": "000087669B09970F",
+          "type": "item",
+          "item": {
+            "id": "enderio:photovoltaic_plate",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002CB08C64B748",
+          "type": "item",
+          "item": {
+            "id": "enderio:energetic_photovoltaic_module",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000FD05404888FB",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005B47A35CEE8C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D28DA077D796",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 9.0,
+      "y": 0.0
+    },
+    {
+      "id": "00007634BA66A67C",
+      "title": "Чан бродить без конденсатора",
+      "description": [
+        "Vat не споживає FE і не має слота конденсатора. На 1000 mB води рецепт Hootch бере насіння та врожай, а Nutrient Distillation — м’ясо та врожай; базовий вихід кожного становить 250 mB. Реагенти та їхні множники звірте з JEI, а різні виходи зберігайте окремо.",
+        "Перший рідинний процес готує дві різні гілки: Hootch для подальшого палива, Nutrient Distillation для сумісної душі двигуна.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Відра доводять наявність рідин, але не їх виготовлення саме в цьому чані."
+      ],
+      "icon": {
+        "id": "enderio:vat",
+        "count": 1
+      },
+      "dependencies": [
+        "00006175CC4A7182",
+        "0000A5F1929B5928",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C4E82CA6CF16",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:vat",
+          "timer": 40
+        },
+        {
+          "id": "00006F748F64CDB7",
+          "type": "item",
+          "item": {
+            "id": "enderio:hootch_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A94886D788A1",
+          "type": "item",
+          "item": {
+            "id": "enderio:nutrient_distillation_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DCDB603EA033",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008506E26528B6",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 3.875
+    },
+    {
+      "id": "0000D96166BEB7EE",
+      "title": "Фасад бере вигляд зразка",
+      "description": [
+        "Виготовте Conduit Facade, покладіть його у вхід Painting Machine та використайте Cobblestone як зразок вигляду. Установіть конденсатор, подайте енергію й залиште вільним вихід. Під час роботи стійте поруч із машиною: нативний тригер адресовано гравцям у кубі 10×10×10 навколо неї.",
+        "Фасад приховує траси, зберігаючи їхню транспортну роль. Нативний критерій дозволяє перевірити реальне досягнення стадії фарбування з конкретним зразком.",
+        "Нативний advancement без інвентарної альтернативи засвідчує: оплачений енергією цикл дійшов до спроби видачі пофарбованого результату зі зразком Cobblestone. У 8.2.12-beta тригер стоїть перед перевіркою вставлення; заблокований вихід може зарахувати його без видачі предмета чи списання входу. Огляньте результат окремо."
+      ],
+      "icon": {
+        "id": "enderio:painting_machine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BF8C7FD156D2",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CD908FF3378E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:painting_machine",
+          "timer": 40
+        },
+        {
+          "id": "00005366FF26AB73",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_facade",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B299E2AD78FD",
+          "type": "advancement",
+          "advancement": "aia2:enderio/paint_cobblestone"
+        },
+        {
+          "id": "00003E8A53F3A96E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000068C718BF4662",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 9.16
+    },
+    {
+      "id": "00002A2D279F2160",
+      "title": "Паливо двигуна визначає прив’язана душа",
+      "description": [
+        "Для гілки Zombie прив’яжіть душу зомбі до Soul Engine в Soul Binder: рецепт потребує 188000 енергії та 5 рівнів досвіду. У цій версії така душа працює на Nutrient Distillation; Blaze має лаву, а Creeper — Rocket Fuel. Порожній двигун і повний бак без сумісної душі не утворюють робочої пари.",
+        "Двигун використовує вже освоєні бродіння, досвід і прив’язування душ. Його паливо є властивістю конкретної душі, а не довільною горючою рідиною.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Значення душі та фактичну генерацію енергії цей setup-квест не вимірює."
+      ],
+      "icon": {
+        "id": "enderio:soul_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "00007634BA66A67C",
+        "0000E87679435790",
+        "0000A7C4FEF4ACD8",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003B76A3CF9CB6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:soul_engine",
+          "timer": 40
+        },
+        {
+          "id": "00000546E723D221",
+          "type": "item",
+          "item": {
+            "id": "enderio:nutrient_distillation_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044C91D891547",
+          "type": "item",
+          "item": {
+            "id": "enderio:zombie_electrode",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018EBE55702FD",
+          "type": "item",
+          "item": {
+            "id": "enderio:double_layer_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000769BD947DA95",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FAB15C9C1F93",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000930D06266702",
+      "title": "Hootch стає двома різними паливами",
+      "description": [
+        "Для Rocket Fuel використайте Hootch, вибуховий реагент і Redstone; для Fire Water потрібні Hootch, Blaze Powder та Redstone. Це два рецепти Vat з різними групами реагентів, а не два імені одного відра. Уникайте змішування готової рідини з залишком попередньої партії.",
+        "Друга стадія бродіння відкриває спеціалізовані рідини й показує, чому перед серійною роботою потрібні окремі вихідні буфери.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта."
+      ],
+      "icon": {
+        "id": "enderio:vat",
+        "count": 1
+      },
+      "dependencies": [
+        "00007634BA66A67C",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005CABC29AB2B0",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:vat",
+          "timer": 40
+        },
+        {
+          "id": "0000ABCF8C50AFC8",
+          "type": "item",
+          "item": {
+            "id": "enderio:rocket_fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DEF858266AB2",
+          "type": "item",
+          "item": {
+            "id": "enderio:fire_water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000098E6DD093F94",
+          "type": "item",
+          "item": {
+            "id": "enderio:pressurized_fluid_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D725E352B4CD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A32263B0411D",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder_composite",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.0
+    },
+    {
+      "id": "0000DEF5696418B3",
+      "title": "Заборона телепортації та перенесення спавну",
+      "description": [
+        "Inhibitor Obelisk скасовує підтримані події телепортації, якщо їхня початкова або кінцева точка в активній зоні; серверні teleport/spreadplayers-команди виключено. Relocator Obelisk переносить придатний природний спавн із зони до околиці обеліска за Soul Filter. Дві дії можуть впливати одна на одну.",
+        "Розділення телепортації та природного спавну дозволяє проектувати зони навколо Enderman-лінії без припущення, що всі обеліски просто відштовхують мобів.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Квест перевіряє підготовлені блоки, а не успішне скасування події телепортації."
+      ],
+      "icon": {
+        "id": "enderio:inhibitor_obelisk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000207231953D80",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000063EF726BCB25",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:inhibitor_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "000033EA6AAF3A0F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:relocator_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "000015DEF4E1EF13",
+          "type": "item",
+          "item": {
+            "id": "enderio:ender_crystal",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000010F0CCDAEE8E",
+          "type": "item",
+          "item": {
+            "id": "enderio:basic_soul_filter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000921E3B705C81",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009B0EA0ED6964",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000EB6BD7C4F0B1",
+      "title": "Погодні рідини потребують ракети та неба",
+      "description": [
+        "Liquid Sunshine, Cloud Seed і Concentrated Cloud Seed ведуть відповідно до ясної погоди, дощу та грози. У Weather Obelisk потрібні 1000 mB потрібної рідини, Firework Rocket та доступ до неба; цикл триває 600 тіків і рухається лише коли бажана погода відрізняється від поточної. FE та конденсатор тут не потрібні.",
+        "Погодні рецепти завершують рідинну гілку обелісків і пояснюють, чому готове відро без ракети або відкрите небо без іншої погоди ще не запускають цикл.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Фактичну зміну погоди цей setup-квест не відстежує."
+      ],
+      "icon": {
+        "id": "enderio:weather_obelisk",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E87679435790",
+        "00007634BA66A67C",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FF3CBD9D76F7",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:weather_obelisk",
+          "timer": 40
+        },
+        {
+          "id": "0000CDC87B48DD12",
+          "type": "item",
+          "item": {
+            "id": "enderio:liquid_sunshine_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000067D25A180B29",
+          "type": "item",
+          "item": {
+            "id": "enderio:cloud_seed_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B83AA0BCBA58",
+          "type": "item",
+          "item": {
+            "id": "enderio:cloud_seed_concentrated_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E7781025FE45",
+          "type": "item",
+          "item": {
+            "id": "minecraft:firework_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004E7836F04A23",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B055BD4DDC08",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000418BDED646BE",
+      "title": "Генерація мобів і захоплення душ — різні режими",
+      "description": [
+        "Powered Spawner успадковує душу Broken Spawner у спеціальному shaped_entity_storage-рецепті. Soul Binder може змінити прив’язку за 288000 енергії та 8 рівнів досвіду. Перевірте окремо режими SPAWN і CAPTURE; у CAPTURE потрібні придатні посудини та місце для результату.",
+        "Z-Logic Controller переходить у керований вузол мобофабрики. Тип душі, режим і вільний вихід важливіші за сам факт установленого блока.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта. Ціль на блок є setup-перевіркою; успішний spawn або capture вона не відстежує."
+      ],
+      "icon": {
+        "id": "enderio:powered_spawner",
+        "count": 1
+      },
+      "dependencies": [
+        "0000A7C4FEF4ACD8",
+        "00001393CA361DB5",
+        "0000915C1EDD2D69"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C720467B216D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:powered_spawner",
+          "timer": 40
+        },
+        {
+          "id": "000094F41251456B",
+          "type": "item",
+          "item": {
+            "id": "enderio:broken_spawner",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009E0A5A3EAE29",
+          "type": "item",
+          "item": {
+            "id": "enderio:soul_vial",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000821887B7C814",
+          "type": "item",
+          "item": {
+            "id": "enderio:z_logic_controller",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004081237DCCFB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e27"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D75AA4B1F81B",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 5.875
+    },
+    {
+      "id": "0000D0C23BE418DF",
+      "title": "Темна сталь переходить у кінцеву",
+      "description": [
+        "Темна сталь має маршрут із заліза, вугілля та обсидіану; End Steel додає камінь Краю до темної сталі й обсидіану. Для прямого походу по End Stone спочатку відкрийте Край в епосі 30.",
+        "Розділення двох сталей відкриває матеріали для витратних куль і міцних конструкцій, не підміняючи End Steel самим сплавом душ.",
+        "Огляд перевіряє вказаний блок, інвентарні цілі — наявність предметів. Вони не доводять завантаження конденсатора, склад душі, маршрут потоку або завершення машинного рецепта."
+      ],
+      "icon": {
+        "id": "enderio:alloy_smelter",
+        "count": 1
+      },
+      "dependencies": [
+        "00009E7EF4E93E65",
+        "00002515CCE447EC",
+        "0000A30803BAD4FB"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000074B8AAC3002C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "enderio:alloy_smelter",
+          "timer": 40
+        },
+        {
+          "id": "000078088BA45B6F",
+          "type": "item",
+          "item": {
+            "id": "enderio:dark_steel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000015ED92645117",
+          "type": "item",
+          "item": {
+            "id": "enderio:end_steel_ingot",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000074FB9AC9F0FC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e30"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009E76E21B533A",
+          "type": "item",
+          "item": {
+            "id": "enderio:conduit_binder",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 12.16
+    }
+  ]
+}

@@ -22002,6 +22002,154 @@
         ],
         "time": 192
       }
+    },
+    {
+      "id": "aia2:v5/energy_core/redstone_alloy",
+      "epoch": 19,
+      "target": "enderio:redstone_alloy_ingot",
+      "category": "v5_energy_native_rebalance",
+      "json": {
+        "type": "enderio:alloy_smelting",
+        "energy": 4800,
+        "experience": 0.3,
+        "inputs": [
+          {
+            "count": 1,
+            "tag": "c:dusts/redstone"
+          },
+          {
+            "count": 1,
+            "tag": "c:ingots/copper"
+          },
+          {
+            "item": "botania:mana_powder",
+            "count": 1
+          }
+        ],
+        "output": {
+          "count": 1,
+          "id": "enderio:redstone_alloy_ingot"
+        }
+      }
+    },
+    {
+      "id": "aia2:v5/energy_core/pulsating_alloy",
+      "epoch": 19,
+      "target": "enderio:pulsating_alloy_ingot",
+      "category": "v5_energy_native_rebalance",
+      "json": {
+        "type": "enderio:alloy_smelting",
+        "energy": 7200,
+        "experience": 0.3,
+        "inputs": [
+          {
+            "count": 1,
+            "tag": "c:ingots/iron"
+          },
+          {
+            "count": 1,
+            "tag": "c:ender_pearls"
+          },
+          {
+            "item": "botania:mana_pearl",
+            "count": 1
+          }
+        ],
+        "output": {
+          "count": 2,
+          "id": "enderio:pulsating_alloy_ingot"
+        }
+      }
+    },
+    {
+      "id": "aia2:v5/energy_core/soularium",
+      "epoch": 19,
+      "target": "enderio:soularium_ingot",
+      "category": "v5_energy_native_rebalance",
+      "json": {
+        "type": "enderio:alloy_smelting",
+        "energy": 8400,
+        "experience": 0.3,
+        "inputs": [
+          {
+            "type": "neoforge:compound",
+            "children": [
+              {
+                "item": "minecraft:soul_sand"
+              },
+              {
+                "item": "minecraft:soul_soil"
+              }
+            ],
+            "count": 1
+          },
+          {
+            "count": 1,
+            "tag": "c:ingots/gold"
+          },
+          {
+            "item": "occultism:otherworld_ashes",
+            "count": 1
+          }
+        ],
+        "output": {
+          "count": 1,
+          "id": "enderio:soularium_ingot"
+        }
+      }
+    },
+    {
+      "id": "aia2:v5/energy_core/energized_steel",
+      "epoch": 11,
+      "target": "powah:steel_energized",
+      "category": "v5_energy_native_rebalance",
+      "json": {
+        "type": "powah:energizing",
+        "energy": 15000,
+        "ingredients": [
+          {
+            "tag": "c:ingots/iron"
+          },
+          {
+            "tag": "c:ingots/gold"
+          },
+          {
+            "item": "botania:mana_powder"
+          }
+        ],
+        "result": {
+          "count": 2,
+          "id": "powah:steel_energized"
+        }
+      }
+    },
+    {
+      "id": "aia2:v5/energy_core/ender_core",
+      "epoch": 11,
+      "target": "powah:ender_core",
+      "category": "v5_energy_native_rebalance",
+      "json": {
+        "type": "powah:energizing",
+        "energy": 75000,
+        "ingredients": [
+          {
+            "item": "minecraft:ender_eye"
+          },
+          {
+            "item": "powah:dielectric_casing"
+          },
+          {
+            "item": "powah:capacitor_basic_tiny"
+          },
+          {
+            "item": "botania:mana_pearl"
+          }
+        ],
+        "result": {
+          "count": 1,
+          "id": "powah:ender_core"
+        }
+      }
     }
   ],
   "remove": [
@@ -22044,6 +22192,11 @@
     "ae2:network/parts/terminals_crafting",
     "aeinfinitybooster:dimension_card",
     "aeinfinitybooster:infinity_card",
+    "allthecompressed:energizing/energized_steel_block/x0",
+    "allthecompressed:energizing/energized_steel_block/x1",
+    "allthecompressed:energizing/energized_steel_block/x2",
+    "allthecompressed:energizing/energized_steel_block/x3",
+    "allthecompressed:energizing/energized_steel_block/x4",
     "appliede:emc_interface",
     "appliede:emc_interface_block",
     "ars_nouveau:agronomic_sourcelink",
@@ -22133,6 +22286,9 @@
     "draconicevolution:machines/wyvern_crafting_injector",
     "enchanted:witch_oven",
     "enderio:alloy_smelter",
+    "enderio:alloy_smelting/pulsating_alloy_ingot",
+    "enderio:alloy_smelting/redstone_alloy_ingot",
+    "enderio:alloy_smelting/soularium_ingot",
     "enderio:ensouled_chassis",
     "enderio:powered_spawner",
     "enderio:sag_mill",
@@ -22287,6 +22443,9 @@
     "oritech:crafting/pulverizer",
     "oritech:crafting/pulverizeralt",
     "oritech:crafting/refinery",
+    "oritech:foundry/alloy/compat/enderio/pulsatingalloy",
+    "oritech:foundry/alloy/compat/enderio/redstonealloy",
+    "oritech:foundry/alloy/compat/enderio/soularium",
     "pneumaticcraft:air_compressor",
     "pneumaticcraft:assembly_controller",
     "pneumaticcraft:assembly_drill",
@@ -22316,6 +22475,8 @@
     "powah:crafting/solar_panel_spirited",
     "powah:energizing/blazing_crystal",
     "powah:energizing/blazing_crystal_2",
+    "powah:energizing/ender_core",
+    "powah:energizing/energized_steel",
     "powah:energizing/niotic_crystal",
     "powah:energizing/nitro_crystal",
     "powah:energizing/spirited_crystal",
@@ -22572,5 +22733,20 @@
     "modern_industrialization:electric_age/machine/mv_diesel_generator_asbl",
     "oritech:crafting/controller",
     "oritech:crafting/fuelgen"
+  ],
+  "aia2_v5_energy_core_source_removals": [
+    "allthecompressed:energizing/energized_steel_block/x0",
+    "allthecompressed:energizing/energized_steel_block/x1",
+    "allthecompressed:energizing/energized_steel_block/x2",
+    "allthecompressed:energizing/energized_steel_block/x3",
+    "allthecompressed:energizing/energized_steel_block/x4",
+    "enderio:alloy_smelting/pulsating_alloy_ingot",
+    "enderio:alloy_smelting/redstone_alloy_ingot",
+    "enderio:alloy_smelting/soularium_ingot",
+    "oritech:foundry/alloy/compat/enderio/pulsatingalloy",
+    "oritech:foundry/alloy/compat/enderio/redstonealloy",
+    "oritech:foundry/alloy/compat/enderio/soularium",
+    "powah:energizing/ender_core",
+    "powah:energizing/energized_steel"
   ]
 }

@@ -1,3 +1,12 @@
+# 0.4.7-alpha — EnderIO/Powah, робота над0.5 триває
+
+- 19 нових optional-квестів:18 EnderIO та1 Powah native batch.3261 квест/139 глав; усі3242 попередні quest/task/reward payloads та dependencies збережено.
+- EnderIO core-карта за точним8.2.12-beta source/export;22 core-карти загалом. Powah залишається partial: його6.2.10 tag/build provenance підтверджено, невикористаний mod_version5.1.0-alpha виправлено як хибний критерій невідповідності.
+- П’ять міжмодових машинних формул:3 Alloy Smelter і2 Energizing Orb;610 попередніх entries незмінні. Виявлено13 дешевих primary producers, включно з5 compressed energized-steel шляхами;86 lossless conversions і4 пізні MA routes збережено.
+- Server guards EnderIO task/cache/actual outputs/Crafter/Tank та Powah Orb receiver. Чистий вибір callback-рецепта ізольований від Rod/hopper/startup context; виконання обов’язково перевіряється. Native smelting proxies звіряються з canonical original recipe.
+- Два нові team-bound production proofs після реальної витрати входів і вставлення виходу;8 правил/11 recipe IDs, старий SavedData schema1 збережено. Powah фінальний Rod FE debit після повернення fillEnergy окремо не вимірюється.
+- Відкритий ownerless EnderIO Fire Crafting описано явно; його сліпе вимкнення зламало б grain progression. Повний optional-mod dispatch/JEI/Survival/TPS не тестувалися.
+
 # 0.4.6-alpha — MI/Oritech та серверні виробничі маршрути
 
 - 30 нових змістовних optional-квестів:15 MI та15 Oritech;3242 квести/138 глав. Усі3212 попередні payloads/dependencies, крім координат, збережено.

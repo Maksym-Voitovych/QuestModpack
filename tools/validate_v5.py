@@ -32,6 +32,8 @@ MECHANIC_CONTRACT = {
                              {'rootsclassic:ritual/crafting/living_pickaxe'}),
     'roots_charged_focus': (15, 'rootsclassic:ritual', 'rootsclassic:charged_runic_focus',
                             {'rootsclassic:ritual/crafting/charged_runic_focus'}),
+    'enderio_energetic_alloy': (19, 'enderio:alloy_smelting', 'enderio:energetic_alloy_ingot', {'enderio:alloy_smelting/energetic_alloy_ingot'}),
+    'powah_blazing_crystal': (29, 'powah:energizing', 'powah:crystal_blazing', {'aia2:v4/powah/energizing/blazing_crystal','aia2:v4/powah/energizing/blazing_crystal_2'}),
 }
 
 
@@ -161,7 +163,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
     specs = document['rules']
     by_id = {rule.get('id'): rule for rule in specs}
     require(len(specs) == len(by_id) and set(by_id) == set(MECHANIC_CONTRACT),
-            'Only six audited native mechanics are supported')
+            'Only eight audited native mechanics are supported')
     removed = set((bundle or {}).get('remove', []))
     compiled_recipes = {entry['id']: entry['json'] for entry in (bundle or {}).get('add', [])}
     allowed = set()
@@ -198,6 +200,9 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Native mechanic lacks runtime recipe provenance', ident, recipe_id)
                 require(compiled_recipes.get(recipe_id) == recipe,
                         'Native mechanic runtime producer differs from frozen evidence', ident, recipe_id)
+            if serializer == 'enderio:alloy_smelting':
+                require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'EnderIO proof lacks frozen native recipe', ident)
+                require(read(root/source['frozen_path']) == recipe, 'EnderIO proof export differs', ident)
             if serializer == 'rootsclassic:ritual':
                 require(recipe.get('effect') == 'rootsclassic:crafting' and recipe.get('ingredients'),
                         'Roots proof requires a crafting ritual with real ingredients', ident)
@@ -208,7 +213,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Roots proof recipe differs from frozen export', ident)
                 outputs = [recipe.get('effectConfig', {}).get('result', {})]
             else:
-                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('output', {})]
+                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer == 'powah:energizing' else 'output', {})]
             require(any(result.get('id') == output and result.get('count', 1) > 0 for result in outputs),
                     'Native mechanic recipe does not produce its output', ident, recipe_id)
         path = root/'kubejs/data/aia2/advancement/mechanics'/(ident + '.json')
@@ -486,6 +491,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/recipes/v5_mi_oritech_core.json').exists() else {'enabled': False},
             'industrial_controller_gates': import_tool('build_industrial_controller_gates_v5').validate(root, rules)
                 if (root/'content/audit/v5-industrial-controller-floors.json').exists() else {'enabled': False},
+            'energy_core_balance': import_tool('build_energy_core_balance_v5').validate(root,read(root/'content/recipes/v5_enderio_powah_core.json'),bundle,rules,compiled=True)
+                if (root/'content/recipes/v5_enderio_powah_core.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

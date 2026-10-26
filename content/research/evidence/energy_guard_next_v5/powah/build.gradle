@@ -1,0 +1,279 @@
+import com.diffplug.spotless.FormatterFunc
+import com.diffplug.spotless.FormatterStep
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+
+plugins {
+    id "java-library"
+    id "net.neoforged.moddev"
+    id "me.shedaniel.unified-publishing"
+    id "com.diffplug.spotless"
+    id "maven-publish"
+}
+
+repositories {
+    maven {
+        url = "https://maven.theillusivec4.top"
+        content {
+            includeGroup "top.theillusivec4.curios"
+        }
+    }
+    maven {
+        name = "blamejared"
+        url = "https://maven.blamejared.com/"
+        content {
+            includeGroup "mezz.jei"
+        }
+    }
+    maven {
+        name 'modmaven'
+        url "https://modmaven.dev/"
+        content {
+            includeGroup "mezz.jei"
+        }
+    }
+    maven {
+        url "https://maven.shedaniel.me"
+        content {
+            includeGroup "me.shedaniel"
+            includeGroup "me.shedaniel.cloth"
+            includeGroup "dev.architectury"
+        }
+    }
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/releases/"
+        content {
+            includeGroup "dev.emi"
+        }
+    }
+    mavenCentral()
+}
+
+apply plugin: "me.shedaniel.unified-publishing"
+
+dependencies {
+    implementation "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
+
+    compileOnly "org.appliedenergistics:guideme:${project.guideme_version}:api"
+    runtimeOnly "org.appliedenergistics:guideme:${project.guideme_version}"
+
+    // compile against provided APIs
+    compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+    compileOnly "mezz.jei:jei-${project.jei_minecraft_version}-neoforge-api:${project.jei_version}"
+    if (project.runtime_itemlist_mod != "rei") {
+        compileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${project.rei_version}"
+    }
+
+    if (project.runtime_itemlist_mod == "emi") {
+        runtimeOnly "dev.emi:emi-neoforge:${emi_version}"
+    } else if (project.runtime_itemlist_mod == "rei") {
+        implementation "me.shedaniel:RoughlyEnoughItems-neoforge:${project.rei_version}"
+    } else if (project.runtime_itemlist_mod == "jei") {
+        runtimeOnly "mezz.jei:jei-${project.jei_minecraft_version}-neoforge:${project.jei_version}"
+    } else if (project.runtime_itemlist_mod == "none") {
+        // none
+    } else {
+        throw new GradleException("Unknown setting for project.runtime_itemlist_mod=${project.runtime_itemlist_mod}. Supported: emi, rei, jei and none")
+    }
+
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${project.curios_version}:api"
+}
+
+base {
+    archivesName = project.archives_base_name
+}
+
+version = (System.getenv("POWAH_VERSION") ?: "v0.0.0").substring(1)
+group = project.maven_group
+
+java {
+    withSourcesJar()
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}" }
+    }
+    from('guidebook') {
+        into 'assets/powah/guides/powah/book'
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir "src/generated/resources"
+        }
+    }
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    filesMatching("META-INF/neoforge.mods.toml") {
+        filter { line ->
+            line.replace 'version="0.0.0"', "version=\"$version\""
+        }
+    }
+}
+
+neoForge {
+    version = project.neoforge_version
+    mods {
+        powah {
+            modSourceSets = [sourceSets.main]
+        }
+    }
+    runs {
+        client {
+            client()
+            systemProperty('guideme.powah.book.sources', file('guidebook').absolutePath)
+        }
+        server {
+            server()
+        }
+        data {
+            data()
+            programArguments = ['--mod', 'powah',
+                                '--all',
+                                '--output', file('src/generated/resources/').absolutePath,
+                                '--existing', file('src/main/resources').absolutePath]
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = rootProject.archives_base_name
+            from components.java
+        }
+    }
+
+    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+    repositories {
+        // Add repositories to publish to here.
+    }
+}
+
+if (project.version != "0.0.0") {
+    def loader = "neoforge"
+    unifiedPublishing {
+        project {
+            gameVersions = [project.minecraft_version]
+            gameLoaders = [loader]
+            version = project.version + "-" + loader
+
+            def releaseChannel = "release"
+            def changes = System.getenv("CHANGELOG") ?: "No changelog provided?"
+            if (project.version.toLowerCase().contains("alpha")) {
+                releaseChannel = "alpha"
+                changes = "THIS IS AN ALPHA RELEASE, MAKE A BACKUP BEFORE INSTALLING AND FREQUENTLY WHILE PLAYING, AND PLEASE REPORT ANY ISSUE YOU MAY FIND ON THE ISSUE TRACKER.\n\n" + changes
+            } else if (project.version.toLowerCase().contains("beta")) {
+                releaseChannel = "beta"
+                changes = "This is a beta release. It is expected to be mostly stable, but in any case please report any issue you may find.\n\n" + changes
+            }
+
+            releaseType = releaseChannel
+            changelog = changes
+            displayName = String.format("[%s %s] v%s", loader.toUpperCase(), project.minecraft_version, project.version)
+
+            mainPublication jar // Declares the publicated jar
+
+            relations {
+                depends {
+                    curseforge = "cloth-config"
+                    modrinth = "cloth-config"
+                }
+                depends {
+                    curseforge = "guideme"
+                    modrinth = "guideme"
+                }
+            }
+
+            var cfToken = System.getenv("CF_TOKEN")
+            if (cfToken != null) {
+                curseforge {
+                    token = cfToken
+                    id = "633483" // Required, must be a string, ID of CurseForge project
+
+                    if (project.name == "fabric" && releaseChannel == "release") {
+                        // Use beta channel for Fabric releases on CurseForge, to separate from Forge builds
+                        releaseType = "beta"
+                    }
+                }
+            }
+
+            var mrToken = System.getenv("MODRINTH_TOKEN")
+            if (mrToken != null) {
+                modrinth {
+                    token = mrToken
+                    id = "KZO4S4DO" // Required, must be a string, ID of Modrinth project
+                }
+            }
+        }
+    }
+}
+
+spotless {
+    format 'misc', {
+        target '*.gradle', '*.md', '.gitignore'
+
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+    java {
+        target '**/*.java'
+        importOrder()
+
+        removeUnusedImports()
+
+        eclipse().configFile('eclipse-format.xml')
+
+        indentWithSpaces()
+        endWithNewline()
+        // TODO: Enforce license header one day
+        //licenseHeaderFile 'license_header.java'
+    }
+    format 'json', {
+        target '**/lang/*.json'
+        addStep(JsonOrderStep.create())
+    }
+}
+
+final class JsonOrderStep {
+    private JsonOrderStep() {}
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().setLenient().setPrettyPrinting().create();
+
+    static FormatterStep create() {
+        return FormatterStep.create(
+                'jsonOrderStep',
+                new State(),
+                {
+                    new FormatterFunc() {
+                        String apply(String input) {
+                            TreeMap<String, Object> jsonMap = GSON.fromJson(input, TreeMap.class);
+                            String sortedJson = GSON.toJson(jsonMap);
+                            String prettyPrinted = sortedJson.replace('  "', '    "').replace('\\u0027', '\'');
+                            return prettyPrinted;
+                        }
+                    }
+                },
+        );
+    }
+
+    private static final class State implements Serializable {
+        private static final long serialVersionUID = 1L;
+
+        private final int formatVersion = 1;
+    }
+}

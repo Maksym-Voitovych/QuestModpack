@@ -78,6 +78,7 @@ public final class Aia2MachineGuard {
         RECIPES.reset();
         TICK_CONTEXT.remove();
         RobitRecipeAccess.clear();
+        EnderTaskAccess.clearRuntime();
         KeyProductionBridge.clearRuntime();
         ProductionMilestoneBridge.clearRuntime();
         PLAYER_TEAMS.clear();
@@ -260,6 +261,13 @@ public final class Aia2MachineGuard {
         return owner != null && owner.getLevel() instanceof ServerLevel level ? level : null;
     }
 
+    public static BlockEntity currentTickOwner() { return TICK_CONTEXT.get(); }
+
+    public static boolean mayProduceInCurrentTick(ItemStack output) {
+        BlockEntity owner = TICK_CONTEXT.get();
+        return owner != null && mayProduce(owner, output);
+    }
+
     public static boolean mayProcessCachedRecipe(Object cachedRecipe) {
         BlockEntity context = TICK_CONTEXT.get();
         try {
@@ -333,7 +341,10 @@ public final class Aia2MachineGuard {
         if (!RECIPES.isGeneration(snapshot)) {
             var index = new IdentityHashMap<Object, Integer>();
             for (var holder : snapshot) {
-                index.put(holder.value(), RECIPE_POLICY.getRequiredStage(holder.id().toString()));
+                int required = RECIPE_POLICY.getRequiredStage(holder.id().toString());
+                if (required == 100) required = EnderSmeltingProxyAccess.requiredStage(
+                        holder, level, RECIPE_POLICY::getRequiredStage, ITEM_POLICY::getRequiredStage);
+                index.put(holder.value(), required);
             }
             RECIPES.replace(snapshot, index);
         }

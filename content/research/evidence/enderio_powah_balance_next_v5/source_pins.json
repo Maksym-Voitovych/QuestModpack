@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "enderio": {
+    "installed_version": "8.2.12-beta",
+    "tag": "v8.2.12-beta",
+    "commit": "9d35cace6895f451b4478a8608ff0fa0506530a5",
+    "tag_points_to_commit": [
+      "v8.2.12-beta"
+    ],
+    "repository": "https://github.com/Team-EnderIO/EnderIO"
+  },
+  "powah": {
+    "installed_version": "6.2.10",
+    "version_match": true,
+    "tag": "v6.2.10",
+    "commit": "a5a8f25b5bafb58b694dc44ef0e4c0f14d9e4c11",
+    "status": "exact_release_source_verified",
+    "version_provenance": "build.gradle uses (System.getenv(\"POWAH_VERSION\") ?: \"v0.0.0\").substring(1); release.yml sets POWAH_VERSION to github.event.release.tag_name on build and publication. The stale mod_version property does not determine released mod version.",
+    "contracts": {
+      "input_capacity": 6,
+      "unit_ingredients": true,
+      "output_capacity": 1,
+      "serializer": "powah:energizing",
+      "source_tokens": [
+        {
+          "file": "EnergizingRecipe.java",
+          "token": "ItemStack.CODEC.fieldOf(\"result\")"
+        },
+        {
+          "file": "EnergizingRecipe.java",
+          "token": "Codec.LONG.fieldOf(\"energy\")"
+        },
+        {
+          "file": "EnergizingRecipe.java",
+          "token": "for (int i = 1; i < inv.size(); i++)"
+        },
+        {
+          "file": "EnergizingOrbTile.java",
+          "token": "this.inv.set(7)"
+        },
+        {
+          "file": "build.gradle",
+          "token": "POWAH_VERSION"
+        }
+      ]
+    }
+  }
+}

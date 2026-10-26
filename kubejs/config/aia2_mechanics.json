@@ -304,6 +304,116 @@
           "dispatch_source_audit": "content/audit/v5-roots-ritual-observer.json"
         }
       ]
+    },
+    {
+      "id": "enderio_energetic_alloy",
+      "epoch": 19,
+      "output": "enderio:energetic_alloy_ingot",
+      "serializer": "enderio:alloy_smelting",
+      "recipeIds": [
+        "enderio:alloy_smelting/energetic_alloy_ingot"
+      ],
+      "advancement": "aia2:mechanics/enderio_energetic_alloy",
+      "evidence": [
+        {
+          "recipeId": "enderio:alloy_smelting/energetic_alloy_ingot",
+          "json": {
+            "type": "enderio:alloy_smelting",
+            "energy": 4800,
+            "experience": 0.3,
+            "inputs": [
+              {
+                "count": 1,
+                "tag": "c:dusts/redstone"
+              },
+              {
+                "count": 1,
+                "tag": "c:ingots/conductive_alloy"
+              },
+              {
+                "count": 1,
+                "tag": "c:ingots/gold"
+              }
+            ],
+            "output": {
+              "count": 2,
+              "id": "enderio:energetic_alloy_ingot"
+            }
+          },
+          "source_sha256": "5b7d69dbd135bf8de40f403b2a6d34494d9f88e2b338f8104a021f5b7f885cfd",
+          "canonical_sha256": "0c43bae352410d15c5f1a1e2c50c046eb45a250a2111d2dc4bce58c4899e4f55",
+          "export_path": "recipes/enderio/alloy_smelting/energetic_alloy_ingot.json",
+          "frozen_path": "content/research/evidence/energy_guard_next_v5/effective_export/recipes/enderio/alloy_smelting/energetic_alloy_ingot.json"
+        }
+      ]
+    },
+    {
+      "id": "powah_blazing_crystal",
+      "epoch": 29,
+      "output": "powah:crystal_blazing",
+      "serializer": "powah:energizing",
+      "recipeIds": [
+        "aia2:v4/powah/energizing/blazing_crystal",
+        "aia2:v4/powah/energizing/blazing_crystal_2"
+      ],
+      "advancement": "aia2:mechanics/powah_blazing_crystal",
+      "evidence": [
+        {
+          "recipeId": "aia2:v4/powah/energizing/blazing_crystal",
+          "json": {
+            "type": "powah:energizing",
+            "energy": 120000,
+            "ingredients": [
+              {
+                "item": "minecraft:blaze_powder"
+              },
+              {
+                "item": "minecraft:blaze_powder"
+              },
+              {
+                "item": "minecraft:blaze_powder"
+              },
+              {
+                "item": "minecraft:blaze_powder"
+              },
+              {
+                "item": "kubejs:aia2_arcane_catalyst_27"
+              }
+            ],
+            "result": {
+              "count": 1,
+              "id": "powah:crystal_blazing"
+            }
+          },
+          "source_sha256": "249c9ea9bcbaae881ef17748cb30c7abbd743da0e4b37e41fa62144ad8118a02",
+          "canonical_sha256": "249c9ea9bcbaae881ef17748cb30c7abbd743da0e4b37e41fa62144ad8118a02",
+          "source_kind": "aia2_runtime",
+          "runtime_recipe_path": "kubejs/config/aia2_recipes.json"
+        },
+        {
+          "recipeId": "aia2:v4/powah/energizing/blazing_crystal_2",
+          "json": {
+            "type": "powah:energizing",
+            "energy": 120000,
+            "ingredients": [
+              {
+                "tag": "c:rods/blaze"
+              },
+              {
+                "item": "kubejs:aia2_arcane_catalyst_27"
+              }
+            ],
+            "result": {
+              "count": 1,
+              "id": "powah:crystal_blazing"
+            }
+          },
+          "source_sha256": "24694b570663249a3f18547a62b264a571795b8f562a60edeaef21d8d7bdf07d",
+          "canonical_sha256": "24694b570663249a3f18547a62b264a571795b8f562a60edeaef21d8d7bdf07d",
+          "source_kind": "aia2_runtime",
+          "runtime_recipe_path": "kubejs/config/aia2_recipes.json"
+        }
+      ]
     }
   ]
 }
