@@ -1,0 +1,784 @@
+{
+  "schema": 1,
+  "quest_count": 18,
+  "scope_uk": "Powah6.2.10:18 змістовних optional-квестів розширюють реальні паливні, реакторні, мережеві й персональні системи. Inventory/observation — лише матеріальні/підготовчі перевірки; фактичну партію Blazing засвідчує окремий наявний native proof.",
+  "quests": [
+    {
+      "id": "V5_E11_powah_core_lava_budget",
+      "epoch": 11,
+      "title_uk": "Лавова станція: швидкість і запас палива",
+      "description_uk": [
+        "Magmator перетворює гарячу рідину на FE. Під’єднайте подачу лави та окремий вихід енергії: старший рівень споживає паливо швидше, а не створює безкоштовну енергію з того самого запасу.",
+        "Це рідинна альтернатива вже освоєному Furnator: лава потребує транспортування й поповнення замість предметного паливного слота. Звірте конкретні FE/t із конфігурацією та довідником вашого запуску.",
+        "Виготовлення рахує звичайний крафт Magmator; огляд блока й відро лави підтверджують підготовку. Витрату рідини та генерацію FE ці завдання не вимірюють."
+      ],
+      "icon": "powah:magmator_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:magmator_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:magmator_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lava_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E11_X_furnator"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.lava_budget"
+    },
+    {
+      "id": "V5_E11_powah_core_solar_site",
+      "epoch": 11,
+      "title_uk": "Сонячна ділянка без затінення",
+      "description_uk": [
+        "Solar Panel використовує сонячне світло; світлонепроникний блок над панеллю зупиняє цей шлях генерації. Підготуйте відкриту ділянку, запас енергії на ніч і фотоелектричний матеріал для розширення.",
+        "На відміну від лавової станції, тут немає паливного конвеєра. Надійність забезпечує буфер, а не обіцянка цілодобової генерації.",
+        "Крафт панелі та огляд її блока перевіряються автоматично. Освітлення, погоду, робочий буфер і фактичний вихід FE потрібно перевірити в інтерфейсі машини."
+      ],
+      "icon": "powah:solar_panel_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:solar_panel_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:solar_panel_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:photoelectric_pane",
+          "count": 2,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "E11_X_cell"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.solar_site"
+    },
+    {
+      "id": "V5_E11_powah_core_uraninite_yield",
+      "epoch": 11,
+      "title_uk": "Уранініт: піч чи енергетична сфера",
+      "description_uk": [
+        "Сирий Uraninite Raw має два підтверджені шляхи обробки: переплавлення та Energizing. У наданому реєстрі енергетична обробка однієї сирої одиниці за 2000 FE дає дві готові.",
+        "Після базового Energized Steel ви вже можете обрати між простим випалом і більшим виходом за рахунок FE. Цей матеріал стає основним паливом реактора, а не кристалом рівня корпусу.",
+        "Зберіть сирий і готовий зразки та огляньте сферу. Наявність зразків не доводить, яким із двох процесів вони отримані; зарахування конкретної партії тут не заявляється."
+      ],
+      "icon": "powah:uraninite_raw",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:uraninite_raw",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:uraninite",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:energizing_orb",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.uraninite_yield"
+    },
+    {
+      "id": "V5_E11_powah_core_dry_ice",
+      "epoch": 11,
+      "title_uk": "Охолоджувач із двох синіх льодів",
+      "description_uk": [
+        "Сухий лід — окремий охолоджувальний матеріал реактора. Підтверджений Energizing-рецепт споживає дві одиниці синього льоду за 10000 FE; він не потребує вигаданого крафту на верстаку.",
+        "Охолодження готується окремо від уранінітового палива. Збережіть запас для реакторної лінії й перевірте коефіцієнти охолоджувачів у чинному конфігу Powah.",
+        "Завдання перевіряє сировину, зразок Dry Ice та огляд Orb. Воно не підтверджує витрату 10000 FE або заповнений охолоджувальний слот."
+      ],
+      "icon": "minecraft:blue_ice",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "minecraft:blue_ice",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:dry_ice",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:energizing_orb",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:snowball",
+          "count": 8
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.dry_ice"
+    },
+    {
+      "id": "V5_E11_powah_core_reactor_volume",
+      "epoch": 11,
+      "title_uk": "Комплект реактора: 36 блоків одного рівня",
+      "description_uk": [
+        "Для Reactor потрібні 36 блоків одного рівня. Нативний будівельник формує об’єм 3×3×4; звільніть його від перешкод і живих істот перед встановленням комплекту з руки гравця.",
+        "Підготовка конструкції відділена від заправлення: звичайний рецепт дає чотири блоки, тому це дев’ять крафтів, а не 36 окремих машин. Нативне встановлення не підтримує фальшивого гравця.",
+        "Автоматична умова рахує виготовлені блоки й наявність комплекту. Вона не доводить, що мультиблок зібраний, заправлений або виробляє енергію."
+      ],
+      "icon": "powah:reactor_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:reactor_starter",
+          "count": 36,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "powah:reactor_starter",
+          "count": 36,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_uraninite_yield"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.reactor_volume"
+    },
+    {
+      "id": "V5_E11_powah_core_reactor_inputs",
+      "epoch": 11,
+      "title_uk": "Реактор має паливо, підсилювачі й охолодження",
+      "description_uk": [
+        "Уранініт є основним паливом. Окремі слоти приймають тверде горюче паливо, redstone та охолоджувач; вода має власний бак. Carbon/redstone підвищують виробництво, але додають тепла.",
+        "Після комплекту конструкції підготуйте всі витратні лінії. Не замінюйте Uraninite кристалом Niotic і не плутайте охолоджувальний предмет із водою в баку; ці ролі розділені в реалізації ReactorTile.",
+        "Предметні цілі й огляд Reactor перевіряють матеріальний комплект та блок. Заповнення слотів, температуру, витрату палива та роботу реактора вони не засвідчують."
+      ],
+      "icon": "powah:reactor_starter",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "powah:reactor_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:uraninite",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:coal",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:redstone",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "powah:dry_ice",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:water_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_reactor_volume",
+        "V5_E11_powah_core_dry_ice"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:bucket",
+          "count": 1
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.reactor_inputs"
+    },
+    {
+      "id": "V5_E11_powah_core_charged_snowball",
+      "epoch": 11,
+      "title_uk": "Сніжок із власним запасом енергії",
+      "description_uk": [
+        "Energizing перетворює звичайний сніжок на Charged Snowball за 500000 FE. Його зіткнення викликає блискавку; це витратний інструмент, який застосовують подалі від дерев’яної бази й незахищених мобів.",
+        "Дорога побічна операція навчає накопичувати енергію до запуску, не змінюючи основний матеріальний шлях реактора. Заряджений сніжок не є батареєю для машин.",
+        "Мета перевіряє отриманий Charged Snowball. Спосіб його отримання, виклик блискавки та витрачені FE цим інвентарним завданням не підтверджуються."
+      ],
+      "icon": "powah:charged_snowball",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:charged_snowball",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:snowball",
+          "count": 8
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.charged_snowball"
+    },
+    {
+      "id": "V5_E11_powah_core_battery_mode",
+      "epoch": 11,
+      "title_uk": "Портативна батарея: заряджання вмикається окремо",
+      "description_uk": [
+        "Батарея за замовчуванням не роздає заряд іншим предметам. Shift + правий клік перемикає CHARGING; увімкнений стан заряджає енергетичні предмети в інвентарі гравця, але пропускає інші батареї.",
+        "Hardened-рівень продовжує вже освоєний Energized Steel. Розрізняйте запас усередині батареї, її максимальну швидкість видачі та дозвіл автоматичного заряджання.",
+        "Квест рахує звичайний крафт Hardened Battery. Наявність батареї не підтверджує значення CHARGING, її заряд чи отримання енергії іншим предметом."
+      ],
+      "icon": "powah:battery_hardened",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:battery_hardened",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "powah:dielectric_paste",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.battery_mode"
+    },
+    {
+      "id": "V5_E11_powah_core_charging_station",
+      "epoch": 11,
+      "title_uk": "Зарядна станція для предметів у скрині",
+      "description_uk": [
+        "Energy Hopper заряджає енергетичні предмети в сусідньому інвентарі. У перевіреній реалізації пошук використовує Minecraft Container; сумісність із довільним інвентарем лише через IItemHandler не гарантується.",
+        "Після переносної батареї винесіть заряджання в стаціонарну станцію: подайте FE, поставте поруч звичайну скриню й перевірте напрямок заряджання на тестовому предметі.",
+        "Виготовлення та огляд Hopper і підготовка скрині перевіряються автоматично. Реальна передача FE предмету та робота довільного модового інвентарю потребують окремої перевірки."
+      ],
+      "icon": "powah:energy_hopper_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:energy_hopper_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:energy_hopper_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_battery_mode"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.charging_station"
+    },
+    {
+      "id": "V5_E11_powah_core_ender_core",
+      "epoch": 11,
+      "title_uk": "Ender Core поєднує корпус і магічний каталізатор",
+      "description_uk": [
+        "Активний рецепт AIA2 створює Ender Core в Energizing Orb із ока Краю, Dielectric Casing, Tiny Basic Capacitor та Mana Pearl за 75000 FE. Це власний міжмодовий рецепт збірки, а не ванільний крафт Powah.",
+        "Корпус і конденсатор із ранньої енергетики зустрічаються з мановим каталізатором Botania. Готове ядро відкриває мережеві блоки Ender Cell і Ender Gate.",
+        "Мета перевіряє отриманий Ender Core та огляд Orb. Наявність предмета не доводить витрати FE або застосування конкретного рецепта."
+      ],
+      "icon": "powah:ender_core",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:ender_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:energizing_orb",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E11_powah_behaviour_02"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "powah:dielectric_paste",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.ender_core"
+    },
+    {
+      "id": "V5_E11_powah_core_ender_capacity",
+      "epoch": 11,
+      "title_uk": "Ender Cell: канал спочатку порожній",
+      "description_uk": [
+        "Ender Cell працює з каналом Ender Network конкретного нативного власника UUID. Нові канали починаються з нульової місткості; батарея в спеціальному слоті Cell споживається як розширення, додаючи місткість і свій наявний заряд.",
+        "Після Ender Core спочатку підготуйте сховище та батарею для його розширення. Команда FTB й нативний власник мережі Powah — різні поняття: спільна команда сама не створює спільного UUID-каналу.",
+        "Крафт і огляд Ender Cell та наявність батареї перевіряються. Квест не списує батарею й не засвідчує номер каналу, його власника або фактичну місткість."
+      ],
+      "icon": "powah:ender_cell_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:ender_cell_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:ender_cell_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:battery_starter",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_ender_core"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.ender_capacity"
+    },
+    {
+      "id": "V5_E11_powah_core_ender_endpoint",
+      "epoch": 11,
+      "title_uk": "Ender Gate: точка видачі без розширення місткості",
+      "description_uk": [
+        "Ender Gate передає енергію між обраним каналом мережі та сусіднім блоком через свою спрямовану сторону. На відміну від Cell, Gate не розширює місткість каналу.",
+        "Коли канал уже має власника й місткість, Gate переносить його енергію до споживача. Погодьте канал і власника з вихідною Cell, а не додавайте батарею в Gate.",
+        "Квест перевіряє виготовлення Gate та огляд блока. Спільність каналу й власника, правильний напрямок і фактичний потік FE не визначаються лише оглядом."
+      ],
+      "icon": "powah:ender_gate_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:ender_gate_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:ender_gate_starter",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_ender_capacity"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.ender_endpoint"
+    },
+    {
+      "id": "V5_E11_powah_core_network_relocation",
+      "epoch": 11,
+      "title_uk": "Перенесення вузлів: перевірте власника знову",
+      "description_uk": [
+        "Cell і Gate зберігають нативного власника; вищий рівень змінює пропускну здатність, а не автоматично об’єднує приватні мережі. Після перенесення чи встановлення іншим гравцем перевірте власника й обраний канал.",
+        "Пара Basic-вузлів продовжує стартовий канал без нового способу генерації. Використайте її для контрольованого перенесення енергетичного виходу й порівняйте обмеження I/O в інтерфейсі.",
+        "Два звичайні крафти перевіряють готовність нових вузлів. Переприв’язування, стан приватної мережі та віддалене живлення цими предметними цілями не доводяться."
+      ],
+      "icon": "powah:ender_cell_basic",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:ender_cell_basic",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "powah:ender_gate_basic",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_ender_endpoint"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "powah:dielectric_paste",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.network_relocation"
+    },
+    {
+      "id": "V5_E11_powah_core_binding_card",
+      "epoch": 11,
+      "title_uk": "Особиста картка для майбутнього передавача",
+      "description_uk": [
+        "Правий клік Binding Card у руці записує UUID та ім’я гравця в BOUND_PLAYER. Картка іншого власника не переприв’язується цим самим кліком: перевіряйте ім’я в підказці перед установленням у передавач.",
+        "Це окремий персональний зв’язок, а не номер каналу Ender Cell. Підготуйте картку до створення Player Transmitter, щоб не плутати живлення мережевого блока із заряджанням інвентарю гравця.",
+        "Мета рахує звичайне виготовлення Binding Card. Стан BOUND_PLAYER і правильність UUID цим завданням не перевіряються; звірте власника в підказці."
+      ],
+      "icon": "powah:binding_card",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:binding_card",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_ender_core"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.binding_card"
+    },
+    {
+      "id": "V5_E11_powah_core_player_pearl",
+      "epoch": 11,
+      "title_uk": "Перлина гравця має шлях через взаємодію",
+      "description_uk": [
+        "Player Aerial Pearl не потребує вигаданого рецепта верстака: за ввімкненого general.player_aerial_pearl використайте Aerial Pearl на звичайному Zombie, Zombie Villager або Husk. Реалізація перевіряє точний клас цих істот, споживає перлину поза Creative і прибирає ціль.",
+        "Цей пригодницький матеріал потрібний Player Transmitter. Спочатку виготовте звичайну Aerial Pearl, потім отримайте перетворений варіант через підтверджену взаємодію.",
+        "Звичайна перлина має ціль крафту; перлина гравця — ціль наявності. Квест не доводить конкретну взаємодію чи режим гри. Якщо відповідну механіку вимкнено в конфігу інстансу, цю optional-гілку слід пропустити."
+      ],
+      "icon": "powah:aerial_pearl",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:aerial_pearl",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "powah:player_aerial_pearl",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_binding_card"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.player_pearl"
+    },
+    {
+      "id": "V5_E11_powah_core_player_transmitter",
+      "epoch": 11,
+      "title_uk": "Передавач заряджає спорядження гравця",
+      "description_uk": [
+        "Player Transmitter використовує прив’язану картку й власний запас FE для заряджання інвентарю гравця, зокрема броні та другої руки. Картка задає одержувача; саме встановлення блока не створює енергію.",
+        "Після персональної картки й Player Aerial Pearl виготовте передавач, подайте енергію та вставте свою картку. Звичайний режим у перевіреному source порівнює типи вимірів, а не їхні ключі; не покладайтеся на це як на сувору ізоляцію вимірів.",
+        "Крафт передавача, огляд і наявність картки засвідчують підготовку. Власник картки, фактичний заряд спорядження й мережевий режим тут не перевіряються."
+      ],
+      "icon": "powah:player_transmitter_starter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:player_transmitter_starter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "powah:player_transmitter_starter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:binding_card",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_player_pearl"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.player_transmitter"
+    },
+    {
+      "id": "V5_E11_powah_core_dimensional_card",
+      "epoch": 11,
+      "title_uk": "Міжвимірна картка: перетворення через ендермоба",
+      "description_uk": [
+        "За ввімкненого general.dimensional_binding_card звичайна Binding Card перетворюється на Dimensional Binding Card при взаємодії з точним класом Enderman або Endermite. Нативний код зберігає BOUND_PLAYER, замінює картку в руці й прибирає істоту.",
+        "Це завершення персональної зарядної лінії: новий варіант картки дозволяє Player Transmitter обійти звичайну перевірку типу виміру. Відсутність рецепта крафту тут є частиною механіки, а не прогалиною, яку треба заповнювати.",
+        "Ціль перевіряє наявність міжвимірної картки. Правильність прив’язки та реальне заряджання в іншому вимірі потрібно перевірити в грі. Якщо перетворення вимкнено конфігом, optional-квест не є обов’язковим для епохи."
+      ],
+      "icon": "powah:binding_card_dim",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:binding_card_dim",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E11_powah_core_player_transmitter"
+      ],
+      "category": "adventure",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:gold_ingot",
+          "count": 1
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.dimensional_card"
+    },
+    {
+      "id": "V5_E36_powah_core_nitro_generation",
+      "epoch": 36,
+      "title_uk": "Три джерела Nitro: підготуйте порівняльний стенд",
+      "description_uk": [
+        "Порівняйте три генератори Nitro на одній підготовленій мережі: Furnator має предметне паливо, Thermo Generator — рідинне охолодження й джерело тепла під блоком, Solar Panel — сонячне світло. Вищий рівень не прибирає їхніх різних умов роботи.",
+        "В AIA2 ці три фінальні генератори проходять міжмодове механічне складання Create. Початкові матеріальні витрати Powah збережено й доповнено техномагічними компонентами; це розвиток дорогого виробничого ланцюга, а не безкоштовна заміна Energizing Rod або енергобуфера.",
+        "Спочатку завершіть Nitro-матеріал, потім підготуйте по одному джерелу кожного типу, однаковий споживач і контрольний запас FE. Порівнюйте поведінку в інтерфейсах при зникненні палива, теплових умов або сонячного освітлення; числові FE/t звіряйте з чинним конфігом.",
+        "Автоматичні умови перевіряють наявність трьох генераторів та огляд їхніх блоків. Виготовлення в Mechanical Crafter не видається за подію крафту гравця; робочі умови, реальне навантаження, стабільність мережі та вироблені FE цими завданнями не доводяться."
+      ],
+      "icon": "powah:furnator_nitro",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "powah:furnator_nitro",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:furnator_nitro",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:thermo_generator_nitro",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:thermo_generator_nitro",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "powah:solar_panel_nitro",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "powah:solar_panel_nitro",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "E36_X_nitro_crystals"
+      ],
+      "category": "technology",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 8
+        },
+        {
+          "item": "minecraft:glass",
+          "count": 4
+        }
+      ],
+      "mod": "powah",
+      "research_stage": "powah.core.nitro_generation"
+    }
+  ]
+}

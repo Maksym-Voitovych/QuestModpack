@@ -22150,6 +22150,132 @@
           "id": "powah:ender_core"
         }
       }
+    },
+    {
+      "id": "aia2:v5/powah_generators/furnator_nitro",
+      "epoch": 36,
+      "target": "powah:furnator_nitro",
+      "category": "integration",
+      "json": {
+        "type": "create:mechanical_crafting",
+        "category": "misc",
+        "key": {
+          "c": {
+            "item": "powah:capacitor_nitro"
+          },
+          "d": {
+            "item": "powah:dielectric_casing"
+          },
+          "f": {
+            "item": "powah:furnator_spirited"
+          },
+          "g": {
+            "item": "powah:crystal_nitro"
+          },
+          "M": {
+            "item": "botania:life_essence"
+          },
+          "T": {
+            "item": "mekanism:ultimate_control_circuit"
+          }
+        },
+        "pattern": [
+          "MgggT",
+          "c d c",
+          "g f g"
+        ],
+        "result": {
+          "count": 1,
+          "id": "powah:furnator_nitro"
+        },
+        "accept_mirrored": false
+      }
+    },
+    {
+      "id": "aia2:v5/powah_generators/thermo_generator_nitro",
+      "epoch": 36,
+      "target": "powah:thermo_generator_nitro",
+      "category": "integration",
+      "json": {
+        "type": "create:mechanical_crafting",
+        "category": "misc",
+        "key": {
+          "c": {
+            "item": "powah:capacitor_nitro"
+          },
+          "d": {
+            "item": "powah:dielectric_casing"
+          },
+          "g": {
+            "item": "powah:crystal_nitro"
+          },
+          "i": {
+            "item": "powah:dielectric_paste"
+          },
+          "p": {
+            "item": "powah:thermoelectric_plate"
+          },
+          "t": {
+            "item": "powah:thermo_generator_spirited"
+          },
+          "M": {
+            "item": "botania:gaia_ingot"
+          },
+          "T": {
+            "item": "ae2:engineering_processor"
+          }
+        },
+        "pattern": [
+          "MigiT",
+          "c d c",
+          "p t p"
+        ],
+        "result": {
+          "count": 1,
+          "id": "powah:thermo_generator_nitro"
+        },
+        "accept_mirrored": false
+      }
+    },
+    {
+      "id": "aia2:v5/powah_generators/solar_panel_nitro",
+      "epoch": 36,
+      "target": "powah:solar_panel_nitro",
+      "category": "integration",
+      "json": {
+        "type": "create:mechanical_crafting",
+        "category": "misc",
+        "key": {
+          "c": {
+            "item": "powah:capacitor_nitro"
+          },
+          "d": {
+            "item": "powah:dielectric_casing"
+          },
+          "e": {
+            "item": "powah:crystal_nitro"
+          },
+          "p": {
+            "item": "powah:solar_panel_spirited"
+          },
+          "M": {
+            "item": "botania:gaia_ingot"
+          },
+          "T": {
+            "item": "actuallyadditions:empowered_diamatine_crystal"
+          }
+        },
+        "pattern": [
+          "MpppT",
+          "c d c",
+          "e e e"
+        ],
+        "result": {
+          "count": 1,
+          "id": "powah:solar_panel_nitro"
+        },
+        "accept_mirrored": false
+      }
     }
   ],
   "remove": [
@@ -22469,10 +22595,13 @@
     "powah:crafting/energy_cell_nitro",
     "powah:crafting/energy_cell_spirited",
     "powah:crafting/furnator_basic",
+    "powah:crafting/furnator_nitro",
     "powah:crafting/reactor_niotic",
     "powah:crafting/reactor_nitro",
     "powah:crafting/reactor_spirited",
+    "powah:crafting/solar_panel_nitro",
     "powah:crafting/solar_panel_spirited",
+    "powah:crafting/thermo_generator_nitro",
     "powah:energizing/blazing_crystal",
     "powah:energizing/blazing_crystal_2",
     "powah:energizing/ender_core",
@@ -22748,5 +22877,10 @@
     "oritech:foundry/alloy/compat/enderio/soularium",
     "powah:energizing/ender_core",
     "powah:energizing/energized_steel"
+  ],
+  "aia2_v5_powah_generator_source_removals": [
+    "powah:crafting/furnator_nitro",
+    "powah:crafting/solar_panel_nitro",
+    "powah:crafting/thermo_generator_nitro"
   ]
 }

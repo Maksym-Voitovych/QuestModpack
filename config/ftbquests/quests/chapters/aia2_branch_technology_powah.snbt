@@ -57,7 +57,7 @@
         }
       ],
       "x": 0.0,
-      "y": 1.0
+      "y": 3.0
     },
     {
       "id": "000063A36C980225",
@@ -135,7 +135,7 @@
         }
       ],
       "x": 0.0,
-      "y": 6.0
+      "y": 11.0
     },
     {
       "id": "00005BA4BC081D80",
@@ -195,7 +195,7 @@
         }
       ],
       "x": 2.0,
-      "y": 1.0
+      "y": 3.0
     },
     {
       "id": "00009CBB894D5B76",
@@ -262,7 +262,143 @@
         }
       ],
       "x": 2.0,
-      "y": 6.0
+      "y": 11.0
+    },
+    {
+      "id": "00006F22C760BCF3",
+      "title": "Уранініт: піч чи енергетична сфера",
+      "description": [
+        "Сирий Uraninite Raw має два підтверджені шляхи обробки: переплавлення та Energizing. У наданому реєстрі енергетична обробка однієї сирої одиниці за 2000 FE дає дві готові.",
+        "Після базового Energized Steel ви вже можете обрати між простим випалом і більшим виходом за рахунок FE. Цей матеріал стає основним паливом реактора, а не кристалом рівня корпусу.",
+        "Зберіть сирий і готовий зразки та огляньте сферу. Наявність зразків не доводить, яким із двох процесів вони отримані; зарахування конкретної партії тут не заявляється."
+      ],
+      "icon": {
+        "id": "powah:uraninite_raw",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CBB894D5B76",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004874D48355EE",
+          "type": "item",
+          "item": {
+            "id": "powah:uraninite_raw",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000047DCBC353DB7",
+          "type": "item",
+          "item": {
+            "id": "powah:uraninite",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D4AA8A6E052D",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "00005E10AE411443",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006A641F2E25DC",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 13.0
+    },
+    {
+      "id": "0000927010B47FEB",
+      "title": "Охолоджувач із двох синіх льодів",
+      "description": [
+        "Сухий лід — окремий охолоджувальний матеріал реактора. Підтверджений Energizing-рецепт споживає дві одиниці синього льоду за 10000 FE; він не потребує вигаданого крафту на верстаку.",
+        "Охолодження готується окремо від уранінітового палива. Збережіть запас для реакторної лінії й перевірте коефіцієнти охолоджувачів у чинному конфігу Powah.",
+        "Завдання перевіряє сировину, зразок Dry Ice та огляд Orb. Воно не підтверджує витрату 10000 FE або заповнений охолоджувальний слот."
+      ],
+      "icon": {
+        "id": "minecraft:blue_ice",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CBB894D5B76",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00008609C6B427C2",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blue_ice",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EA99CF267B67",
+          "type": "item",
+          "item": {
+            "id": "powah:dry_ice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C49672E3178F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "00006EBE2D29CDE8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EF5AC1C9AFEC",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 11.0
     },
     {
       "id": "0000C1054789C429",
@@ -311,7 +447,164 @@
         }
       ],
       "x": 4.0,
-      "y": 1.0
+      "y": 3.0
+    },
+    {
+      "id": "0000C84D43298FB1",
+      "title": "Портативна батарея: заряджання вмикається окремо",
+      "description": [
+        "Батарея за замовчуванням не роздає заряд іншим предметам. Shift + правий клік перемикає CHARGING; увімкнений стан заряджає енергетичні предмети в інвентарі гравця, але пропускає інші батареї.",
+        "Hardened-рівень продовжує вже освоєний Energized Steel. Розрізняйте запас усередині батареї, її максимальну швидкість видачі та дозвіл автоматичного заряджання.",
+        "Квест рахує звичайний крафт Hardened Battery. Наявність батареї не підтверджує значення CHARGING, її заряд чи отримання енергії іншим предметом."
+      ],
+      "icon": {
+        "id": "powah:battery_hardened",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CBB894D5B76",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00003EAC8B5F95C9",
+          "type": "item",
+          "item": {
+            "id": "powah:battery_hardened",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000034677A908568",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000024F12F18160D",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 7.0
+    },
+    {
+      "id": "0000F9DE44A47402",
+      "title": "Ender Core поєднує корпус і магічний каталізатор",
+      "description": [
+        "Активний рецепт AIA2 створює Ender Core в Energizing Orb із ока Краю, Dielectric Casing, Tiny Basic Capacitor та Mana Pearl за 75000 FE. Це власний міжмодовий рецепт збірки, а не ванільний крафт Powah.",
+        "Корпус і конденсатор із ранньої енергетики зустрічаються з мановим каталізатором Botania. Готове ядро відкриває мережеві блоки Ender Cell і Ender Gate.",
+        "Мета перевіряє отриманий Ender Core та огляд Orb. Наявність предмета не доводить витрати FE або застосування конкретного рецепта."
+      ],
+      "icon": {
+        "id": "powah:ender_core",
+        "count": 1
+      },
+      "dependencies": [
+        "00009CBB894D5B76",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D29F6CAEEF2",
+          "type": "item",
+          "item": {
+            "id": "powah:ender_core",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000932ACF1750F1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energizing_orb",
+          "timer": 40
+        },
+        {
+          "id": "000029F098975FB8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000373844E4F11D",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic_tiny",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
+    },
+    {
+      "id": "00006DDD37E25FC2",
+      "title": "Особиста картка для майбутнього передавача",
+      "description": [
+        "Правий клік Binding Card у руці записує UUID та ім’я гравця в BOUND_PLAYER. Картка іншого власника не переприв’язується цим самим кліком: перевіряйте ім’я в підказці перед установленням у передавач.",
+        "Це окремий персональний зв’язок, а не номер каналу Ender Cell. Підготуйте картку до створення Player Transmitter, щоб не плутати живлення мережевого блока із заряджанням інвентарю гравця.",
+        "Мета рахує звичайне виготовлення Binding Card. Стан BOUND_PLAYER і правильність UUID цим завданням не перевіряються; звірте власника в підказці."
+      ],
+      "icon": {
+        "id": "powah:binding_card",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9DE44A47402",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002A0B032AD7B7",
+          "type": "item",
+          "item": {
+            "id": "powah:binding_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000E3BBECAE9272",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00008E41D82137BA",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 9.0
     },
     {
       "id": "00006F553519F2D7",
@@ -360,7 +653,170 @@
         }
       ],
       "x": 6.0,
-      "y": 1.0
+      "y": 3.0
+    },
+    {
+      "id": "0000AB90590D24D2",
+      "title": "Комплект реактора: 36 блоків одного рівня",
+      "description": [
+        "Для Reactor потрібні 36 блоків одного рівня. Нативний будівельник формує об’єм 3×3×4; звільніть його від перешкод і живих істот перед встановленням комплекту з руки гравця.",
+        "Підготовка конструкції відділена від заправлення: звичайний рецепт дає чотири блоки, тому це дев’ять крафтів, а не 36 окремих машин. Нативне встановлення не підтримує фальшивого гравця.",
+        "Автоматична умова рахує виготовлені блоки й наявність комплекту. Вона не доводить, що мультиблок зібраний, заправлений або виробляє енергію."
+      ],
+      "icon": {
+        "id": "powah:reactor_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "00006F22C760BCF3",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000D891DA2DD21",
+          "type": "item",
+          "item": {
+            "id": "powah:reactor_starter",
+            "count": 1
+          },
+          "count": 36,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000579312642ED5",
+          "type": "item",
+          "item": {
+            "id": "powah:reactor_starter",
+            "count": 1
+          },
+          "count": 36,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B5AD500B98E0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D627CF75F4D1",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 12.0
+    },
+    {
+      "id": "00005030BA666C47",
+      "title": "Реактор має паливо, підсилювачі й охолодження",
+      "description": [
+        "Уранініт є основним паливом. Окремі слоти приймають тверде горюче паливо, redstone та охолоджувач; вода має власний бак. Carbon/redstone підвищують виробництво, але додають тепла.",
+        "Після комплекту конструкції підготуйте всі витратні лінії. Не замінюйте Uraninite кристалом Niotic і не плутайте охолоджувальний предмет із водою в баку; ці ролі розділені в реалізації ReactorTile.",
+        "Предметні цілі й огляд Reactor перевіряють матеріальний комплект та блок. Заповнення слотів, температуру, витрату палива та роботу реактора вони не засвідчують."
+      ],
+      "icon": {
+        "id": "powah:reactor_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AB90590D24D2",
+        "0000927010B47FEB",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000A19888B6F3BC",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:reactor_starter",
+          "timer": 40
+        },
+        {
+          "id": "00001ED85303C1BF",
+          "type": "item",
+          "item": {
+            "id": "powah:uraninite",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D87DA108E77",
+          "type": "item",
+          "item": {
+            "id": "minecraft:coal",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C4956B86CC83",
+          "type": "item",
+          "item": {
+            "id": "minecraft:redstone",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFC7BF49E413",
+          "type": "item",
+          "item": {
+            "id": "powah:dry_ice",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002EF940F6DAB3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C0DD226FA38A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002D9EAB689E97",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 12.0
     },
     {
       "id": "0000A8AEA0A1E438",
@@ -409,7 +865,7 @@
         }
       ],
       "x": 8.0,
-      "y": 1.0
+      "y": 3.0
     },
     {
       "id": "000077AE2BA06DC6",
@@ -455,7 +911,75 @@
         }
       ],
       "x": 10.0,
-      "y": 1.0
+      "y": 3.0
+    },
+    {
+      "id": "000008FDEBDD41F0",
+      "title": "Лавова станція: швидкість і запас палива",
+      "description": [
+        "Magmator перетворює гарячу рідину на FE. Під’єднайте подачу лави та окремий вихід енергії: старший рівень споживає паливо швидше, а не створює безкоштовну енергію з того самого запасу.",
+        "Це рідинна альтернатива вже освоєному Furnator: лава потребує транспортування й поповнення замість предметного паливного слота. Звірте конкретні FE/t із конфігурацією та довідником вашого запуску.",
+        "Виготовлення рахує звичайний крафт Magmator; огляд блока й відро лави підтверджують підготовку. Витрату рідини та генерацію FE ці завдання не вимірюють."
+      ],
+      "icon": {
+        "id": "powah:magmator_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "000077AE2BA06DC6",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000060992802E71C",
+          "type": "item",
+          "item": {
+            "id": "powah:magmator_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000A164302E0C04",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:magmator_starter",
+          "timer": 40
+        },
+        {
+          "id": "00004A79501073F5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lava_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000696500B97AA5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000CE3393EEDE91",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 4.0
     },
     {
       "id": "0000902ED232E712",
@@ -501,7 +1025,75 @@
         }
       ],
       "x": 12.0,
-      "y": 1.0
+      "y": 2.0
+    },
+    {
+      "id": "0000A84662EF221A",
+      "title": "Сонячна ділянка без затінення",
+      "description": [
+        "Solar Panel використовує сонячне світло; світлонепроникний блок над панеллю зупиняє цей шлях генерації. Підготуйте відкриту ділянку, запас енергії на ніч і фотоелектричний матеріал для розширення.",
+        "На відміну від лавової станції, тут немає паливного конвеєра. Надійність забезпечує буфер, а не обіцянка цілодобової генерації.",
+        "Крафт панелі та огляд її блока перевіряються автоматично. Освітлення, погоду, робочий буфер і фактичний вихід FE потрібно перевірити в інтерфейсі машини."
+      ],
+      "icon": {
+        "id": "powah:solar_panel_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000902ED232E712",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00000C9E10691090",
+          "type": "item",
+          "item": {
+            "id": "powah:solar_panel_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000A0B3EC080CC1",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:solar_panel_starter",
+          "timer": 40
+        },
+        {
+          "id": "0000DE5E629283AC",
+          "type": "item",
+          "item": {
+            "id": "powah:photoelectric_pane",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000072782E41E468",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003848A3AB6FAC",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 4.0
     },
     {
       "id": "0000CCF35036FB08",
@@ -918,7 +1510,7 @@
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 21.0
     },
     {
       "id": "00004EAD0F9F5FC6",
@@ -978,7 +1570,7 @@
         }
       ],
       "x": 2.0,
-      "y": 11.0
+      "y": 20.0
     },
     {
       "id": "0000546765427C2D",
@@ -1021,7 +1613,7 @@
         }
       ],
       "x": 2.0,
-      "y": 13.0
+      "y": 22.0
     },
     {
       "id": "00009B68EBD78D84",
@@ -1081,7 +1673,7 @@
         }
       ],
       "x": 4.0,
-      "y": 11.0
+      "y": 20.0
     },
     {
       "id": "0000E0183FC299B3",
@@ -1159,7 +1751,7 @@
         }
       ],
       "x": 4.0,
-      "y": 6.0
+      "y": 15.0
     },
     {
       "id": "000021BF891A22F0",
@@ -1219,7 +1811,7 @@
         }
       ],
       "x": 6.0,
-      "y": 11.0
+      "y": 20.0
     },
     {
       "id": "00005A0E533B7033",
@@ -1269,7 +1861,7 @@
       "optional": false,
       "rewards": [],
       "x": 8.0,
-      "y": 11.0
+      "y": 20.0
     },
     {
       "id": "000099B1D43F3A35",
@@ -1321,7 +1913,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 9.0
+      "y": 18.0
     },
     {
       "id": "00009E658107BB35",
@@ -1373,7 +1965,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 11.0
+      "y": 20.0
     },
     {
       "id": "0000EE91DAC9AE77",
@@ -1421,7 +2013,7 @@
       "optional": true,
       "rewards": [],
       "x": 10.0,
-      "y": 13.0
+      "y": 22.0
     },
     {
       "id": "000017B4C721E2A8",
@@ -1473,7 +2065,7 @@
       "optional": true,
       "rewards": [],
       "x": 0.0,
-      "y": 16.0
+      "y": 25.0
     },
     {
       "id": "000005FCFB73FA33",
@@ -1523,7 +2115,7 @@
       "optional": false,
       "rewards": [],
       "x": 12.0,
-      "y": 19.0
+      "y": 28.0
     },
     {
       "id": "0000A0D9F45E8B42",
@@ -1585,7 +2177,7 @@
         }
       ],
       "x": 9.0,
-      "y": 19.0
+      "y": 28.0
     },
     {
       "id": "0000C017571C64A7",
@@ -1645,7 +2237,110 @@
         }
       ],
       "x": 0.0,
-      "y": 19.0
+      "y": 29.0
+    },
+    {
+      "id": "0000A67F693B0C14",
+      "title": "Три джерела Nitro: підготуйте порівняльний стенд",
+      "description": [
+        "Порівняйте три генератори Nitro на одній підготовленій мережі: Furnator має предметне паливо, Thermo Generator — рідинне охолодження й джерело тепла під блоком, Solar Panel — сонячне світло. Вищий рівень не прибирає їхніх різних умов роботи.",
+        "В AIA2 ці три фінальні генератори проходять міжмодове механічне складання Create. Початкові матеріальні витрати Powah збережено й доповнено техномагічними компонентами; це розвиток дорогого виробничого ланцюга, а не безкоштовна заміна Energizing Rod або енергобуфера.",
+        "Спочатку завершіть Nitro-матеріал, потім підготуйте по одному джерелу кожного типу, однаковий споживач і контрольний запас FE. Порівнюйте поведінку в інтерфейсах при зникненні палива, теплових умов або сонячного освітлення; числові FE/t звіряйте з чинним конфігом.",
+        "Автоматичні умови перевіряють наявність трьох генераторів та огляд їхніх блоків. Виготовлення в Mechanical Crafter не видається за подію крафту гравця; робочі умови, реальне навантаження, стабільність мережі та вироблені FE цими завданнями не доводяться."
+      ],
+      "icon": {
+        "id": "powah:furnator_nitro",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C017571C64A7",
+        "0000C902BC4BF099"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B2E987D04E6F",
+          "type": "item",
+          "item": {
+            "id": "powah:furnator_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F9EF39159CFD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:furnator_nitro",
+          "timer": 40
+        },
+        {
+          "id": "00009E40124F9969",
+          "type": "item",
+          "item": {
+            "id": "powah:thermo_generator_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E58B79AE0A9E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:thermo_generator_nitro",
+          "timer": 40
+        },
+        {
+          "id": "000038B6C517B08C",
+          "type": "item",
+          "item": {
+            "id": "powah:solar_panel_nitro",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005F249326C3DE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:solar_panel_nitro",
+          "timer": 40
+        },
+        {
+          "id": "00006E0C7D8D1C06",
+          "type": "advancement",
+          "advancement": "aia2:stages/e36"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000013739153ABD9",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        },
+        {
+          "id": "00004D077DA6C405",
+          "type": "item",
+          "item": {
+            "id": "powah:capacitor_basic_tiny",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 30.0
     },
     {
       "id": "0000D0A2459B59DE",
@@ -1705,7 +2400,7 @@
         }
       ],
       "x": 2.0,
-      "y": 19.0
+      "y": 28.0
     },
     {
       "id": "0000595054AFB088",
@@ -1751,7 +2446,7 @@
       "optional": true,
       "rewards": [],
       "x": 4.0,
-      "y": 19.0
+      "y": 28.0
     },
     {
       "id": "000010696AAD1ABB",
@@ -1797,7 +2492,7 @@
       "optional": true,
       "rewards": [],
       "x": 6.0,
-      "y": 19.0
+      "y": 28.0
     },
     {
       "id": "0000DB766C2B2762",
@@ -1875,7 +2570,7 @@
         }
       ],
       "x": 6.0,
-      "y": 6.0
+      "y": 15.0
     },
     {
       "id": "0000D8A365709809",
@@ -1947,7 +2642,7 @@
         }
       ],
       "x": 0.0,
-      "y": 22.0
+      "y": 33.0
     }
   ]
 }

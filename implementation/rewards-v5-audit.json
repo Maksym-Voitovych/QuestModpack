@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "status": "compiled_reward_policy_verified_full_pack_economy_not_run",
-  "item_rewards_audited": 2996,
-  "item_rewards_changed": 2971,
+  "item_rewards_audited": 3016,
+  "item_rewards_changed": 2989,
   "command_rewards_preserved": 48,
-  "quest_count": 3261,
+  "quest_count": 3280,
   "namespace_count": 74,
   "quests_by_namespace": {
     "actuallyadditions": 55,
@@ -32,7 +32,7 @@
     "draconicadditions": 7,
     "draconicevolution": 171,
     "enchanted": 36,
-    "enderio": 71,
+    "enderio": 72,
     "enderstorage": 1,
     "evilcraft": 31,
     "evolvedmekanism": 61,
@@ -64,7 +64,7 @@
     "occultism": 99,
     "oritech": 59,
     "pneumaticcraft": 82,
-    "powah": 41,
+    "powah": 60,
     "productivemetalworks": 16,
     "projecte": 67,
     "quantumgenerators": 7,
@@ -96,7 +96,7 @@
     "draconicevolution": 178,
     "enchanted": 36,
     "enchanting": 37,
-    "enderio": 71,
+    "enderio": 72,
     "evilcraft": 31,
     "forbidden_arcanus": 24,
     "goety": 21,
@@ -118,7 +118,7 @@
     "occultism": 99,
     "oritech": 59,
     "pneumaticcraft": 82,
-    "powah": 41,
+    "powah": 60,
     "productivemetalworks": 16,
     "projecte": 67,
     "rootsclassic": 61,
@@ -130,7 +130,7 @@
   },
   "selection_modes": {
     "parent_profile": 336,
-    "profile": 2626,
+    "profile": 2646,
     "unverified_food_fallback": 34
   },
   "fallback_namespaces": {
@@ -144,7 +144,7 @@
   "policy_profiles": 45,
   "parent_profile_aliases": 42,
   "curated_entries": 132,
-  "source_catalog_rewards_audited": 2276,
+  "source_catalog_rewards_audited": 2296,
   "source_catalog_reward_counts": {
     "content/quests/epochs_01_12.json": 400,
     "content/quests/epochs_13_24.json": 432,
@@ -158,6 +158,7 @@
     "content/quests/v5_core_repairs.json": 2,
     "content/quests/v5_endgame_balance.json": 9,
     "content/quests/v5_energy_core_depth.json": 19,
+    "content/quests/v5_fire_worksite.json": 1,
     "content/quests/v5_industrial_core_depth.json": 30,
     "content/quests/v5_industrial_depth.json": 23,
     "content/quests/v5_logistics_depth.json": 22,
@@ -165,6 +166,7 @@
     "content/quests/v5_native_processes.json": 4,
     "content/quests/v5_natural_magic_depth.json": 22,
     "content/quests/v5_petroleum_depth.json": 10,
+    "content/quests/v5_powah_core_depth.json": 19,
     "content/quests/v5_roots_depth.json": 15,
     "content/quests/v5_technology_mechanics.json": 112
   },
@@ -181,6 +183,7 @@
     "content/quests/v5_core_repairs.json": "44b936f8e7f4b893e089c8ab1af3124d2ab9cae9775cf6ff5390c0d722c6a8ef",
     "content/quests/v5_endgame_balance.json": "b0ecd41b14d820bacc6752f3f86095b1087df9135f2d73d9d4a9504befd6679e",
     "content/quests/v5_energy_core_depth.json": "139e330b4fccbce49bf50bb38c4976d7457130bf8a416804f59220aa1363d2e8",
+    "content/quests/v5_fire_worksite.json": "4822781b8d7099dc2f42a627070341c9628609b0849f4637c0442cb48595fd88",
     "content/quests/v5_industrial_core_depth.json": "502391ab34f1616a8e4634cca7844b5575ae66aa9a39b0b3cddc92b4aa923a23",
     "content/quests/v5_industrial_depth.json": "c0045208867121ed917a8bdda3cac6447d2d5b4a4a3195f6c21608bd079f976b",
     "content/quests/v5_logistics_depth.json": "48cd279227d448cd7d18f267d0e27de0977022460afa999004f08760f5e22df0",
@@ -188,6 +191,7 @@
     "content/quests/v5_native_processes.json": "61896c97e821b3dc42340c9cae735425d724f71037351c91782acba8679b9e70",
     "content/quests/v5_natural_magic_depth.json": "ebe3d2ef30b495c63f1c1e68a51e24463396645c5fdef5280a14948bba9559a2",
     "content/quests/v5_petroleum_depth.json": "305431452fbb95e374d4d07dcecd29fd28ad93e5469769c9d7c28f14456eb138",
+    "content/quests/v5_powah_core_depth.json": "6fbfa3c3d5bba6c9a87f62ea8099f6c5e45f3d41620026102dfc8d0d3626befe",
     "content/quests/v5_roots_depth.json": "16ef2a551400948df1cd9ccc001e535d05762c553268dd6c8e8de11f9341aed0",
     "content/quests/v5_technology_mechanics.json": "ed7ec85d341b0478a81c7e8b8f05e3bf13d12d116b46dde58f482da364280e95"
   },
@@ -1237,6 +1241,39 @@
       "item": "ars_nouveau:magebloom_fiber",
       "count": 4,
       "min_epoch": 10
+    },
+    {
+      "quest": "00000A48238E51C0",
+      "reward": "00002D4DEC2D5FB5",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000510F79FCD18D",
+      "reward": "0000386B3D8A1B50",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000935D594EC85D",
+      "reward": "000083E7B6CE2E3B",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
     },
     {
       "quest": "000000E62F355933",
@@ -3186,6 +3223,17 @@
       "min_epoch": 19
     },
     {
+      "quest": "0000676D6BC974A8",
+      "reward": "00000BB422F70EA3",
+      "epoch": 19,
+      "mod": "enderio",
+      "profile": "enderio",
+      "source": "profile",
+      "item": "enderio:conduit_binder",
+      "count": 4,
+      "min_epoch": 19
+    },
+    {
       "quest": "000094DB1E100AEF",
       "reward": "000003AF62F13E96",
       "epoch": 19,
@@ -4757,6 +4805,61 @@
       "item": "pneumaticcraft:plastic",
       "count": 2,
       "min_epoch": 14
+    },
+    {
+      "quest": "000005AE117F4F13",
+      "reward": "0000FC8B241B9BA8",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000A76D11033221",
+      "reward": "0000F547142F3ED2",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000CD57053D42F7",
+      "reward": "0000059C9821726A",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000FACE7384B0EE",
+      "reward": "0000FBA6192D6979",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "00001F870F22B0DA",
+      "reward": "000071B12E995578",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
     },
     {
       "quest": "00003DEB7C9517F9",
@@ -23536,6 +23639,28 @@
       "min_epoch": 11
     },
     {
+      "quest": "00006F22C760BCF3",
+      "reward": "00006A641F2E25DC",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000927010B47FEB",
+      "reward": "0000EF5AC1C9AFEC",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
       "quest": "0000C1054789C429",
       "reward": "00008295DB4FC7D7",
       "epoch": 11,
@@ -23547,6 +23672,39 @@
       "min_epoch": 11
     },
     {
+      "quest": "0000C84D43298FB1",
+      "reward": "000024F12F18160D",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000F9DE44A47402",
+      "reward": "0000373844E4F11D",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:capacitor_basic_tiny",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "00006DDD37E25FC2",
+      "reward": "00008E41D82137BA",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
       "quest": "00006F553519F2D7",
       "reward": "0000E8717B77AFA3",
       "epoch": 11,
@@ -23554,6 +23712,28 @@
       "profile": "powah",
       "source": "profile",
       "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000AB90590D24D2",
+      "reward": "0000D627CF75F4D1",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "00005030BA666C47",
+      "reward": "00002D9EAB689E97",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
       "count": 4,
       "min_epoch": 11
     },
@@ -23580,6 +23760,17 @@
       "min_epoch": 11
     },
     {
+      "quest": "000008FDEBDD41F0",
+      "reward": "0000CE3393EEDE91",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
       "quest": "0000902ED232E712",
       "reward": "000029645658A5EE",
       "epoch": 11,
@@ -23587,6 +23778,17 @@
       "profile": "powah",
       "source": "profile",
       "item": "powah:dielectric_paste",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000A84662EF221A",
+      "reward": "00003848A3AB6FAC",
+      "epoch": 11,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
       "count": 4,
       "min_epoch": 11
     },
@@ -23752,6 +23954,28 @@
       "profile": "powah",
       "source": "profile",
       "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000A67F693B0C14",
+      "reward": "000013739153ABD9",
+      "epoch": 36,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:dielectric_rod",
+      "count": 4,
+      "min_epoch": 11
+    },
+    {
+      "quest": "0000A67F693B0C14",
+      "reward": "00004D077DA6C405",
+      "epoch": 36,
+      "mod": "powah",
+      "profile": "powah",
+      "source": "profile",
+      "item": "powah:capacitor_basic_tiny",
       "count": 4,
       "min_epoch": 11
     },

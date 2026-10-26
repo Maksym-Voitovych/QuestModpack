@@ -1,22 +1,22 @@
 {
-  "version": "0.4.7-alpha",
+  "version": "0.4.8-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3261,
-    "substantive_quests": 3165,
+    "quests_total": 3280,
+    "substantive_quests": 3184,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 477,
+    "quests_added_this_release": 496,
     "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 0,
     "chapters": 139,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1560,
-    "native_recipes": 615,
-    "native_recipes_added_this_release": 46,
+    "optional_quests": 1579,
+    "native_recipes": 618,
+    "native_recipes_added_this_release": 49,
     "dual_key_recipes": 96,
     "reviewed_machine_recipe_patches": 190,
     "machine_recipe_targets": 170,
@@ -31,7 +31,7 @@
     "unique_dual_key_silhouettes": 96,
     "item_rules": 28354,
     "block_rules": 16003,
-    "native_recipe_rules": 42573,
+    "native_recipe_rules": 42576,
     "authored_quest_mod_namespaces_excluding_vanilla": 64,
     "all_task_mod_namespaces_excluding_vanilla": 66,
     "new_recipe_target_namespaces": 22,
@@ -40,7 +40,7 @@
     "material_normalizations": 31,
     "quests_added_since_last_checkpoint": 19,
     "native_action_quests": 98,
-    "complete_core_maps": 22,
+    "complete_core_maps": 23,
     "mapped_mods": 60,
     "controller_floor_items": 30,
     "controller_native_recipe_floors": 41,
@@ -61,11 +61,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 157,
+      "passed": 166,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 21,
+      "includes_installer_tests": 22,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -73,12 +73,12 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 70,
+      "passed": 90,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.7-alpha",
+      "version_tested": "0.4.8-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Real vanilla Crafter/furnace/FakePlayer fixtures and SavedData; full Create/Mek/FTB runtime absent"
+      "scope": "Real vanilla furnace/crafter/FakePlayer, actual fire worksite persistence/invalidation/corruption and SavedData2JVM; optional exact EnderIO/Powah absent"
     },
     "javascript_syntax_files": 12,
     "snbt_graph_ids": "passed",
@@ -91,13 +91,13 @@
       "status": "passed",
       "runtime_files": 1162,
       "changed": [],
-      "scope": "Complete sequential rebuild in separate Python process with PYTHONHASHSEED67; tested final companion JAR included"
+      "scope": "Complete sequential generation in separate Python process PYTHONHASHSEED73; matching tested0.4.8JAR included"
     },
-    "jar_sha256": "e986cb6fbb862b6a2f96e69d766dfdce4089527289261b3c61cdbb54b567c577",
-    "jar_path": "mods/aia2-machine-guard-0.4.7-alpha.jar",
+    "jar_sha256": "be0bd113d473577db8e12073426e63ac83ba9e0e1dcc55eca6b48bd479108e14",
+    "jar_path": "mods/aia2-machine-guard-0.4.8-alpha.jar",
     "archive_verification_command": "python tools/package_runtime.py",
-    "packaged_installer_dry_run": "passed; zero writes, packaged CLI",
-    "archive_crc_and_all_sha256_entries": "passed; full manifest plus1162 runtime file hashes and installer hash",
+    "packaged_installer_dry_run": "passed; zero writes using packaged CLI",
+    "archive_crc_and_all_sha256_entries": "passed; full manifest and1162runtime hashes plus installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -140,7 +140,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed0.4.6→0.4.7; old JAR backed up; synthetic world progress and foreign quest preserved",
+    "packaged_installer_upgrade": "passed0.4.7→0.4.8; old JAR backup, synthetic world/fire ledger and foreign quest preserved",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -148,6 +148,11 @@
     "ender_smelting_proxy_modeled": {
       "passed": 206,
       "optional_dispatch": false
+    },
+    "fire_helpers_modeled": {
+      "passed": 46,
+      "optional_dispatch": false,
+      "scope": "actual helper/handlers/real GuardPolicy, modeled Minecraft/storage/optional recipe host"
     }
   },
   "remaining_acceptance": [
@@ -164,15 +169,17 @@
     "Oritech Atomic Forge native fresh lookup may reset its RF buffer when existing contextual RecipeManager filtering yields empty. Cached selector filtering happens after polymorphic capacity adjustment to avoid introducing the same loss there.",
     "Oritech normal selection is guarded before energy use; defensive commit cancellation does not refund native RF/progress already spent. No universal energy preservation claim.",
     "No fullpack optional Mixin dispatch, Survival, JEI or TPS acceptance has been run.",
-    "Unattributed EnderIO FireCraftingManager world/fire event can produce infinity grains before19; item/use remains19, but world recipe ownership is not enforced. Blindly denying world output would break legitimate mandatory grain progression. Explicit fire-placement/automation ownership remains TODO.",
     "Optional exact-mod mixin dispatch, client JEI/UI, full Survival and TPS have not been run.",
     "EnderIO denied or changed task pauses without refund; unchanged full codec can rebind. Native task NBT stores current RecipeId and old cached Outputs; prior recipe semantics across restart are not proven.",
     "Native preparation before actual-output validation may already update consumable grinding-ball state; no universal refund claim.",
     "Fluid outputs use their recipe policy; this block adds component-aware checks for item outputs, not a general fluid-variant ownership system.",
-    "Official binary/API downloads returned Tunnel403; even escalation did not remove the network restriction. Source descriptors are checked; binary bytecode/live optional dispatch unverified."
+    "Official binary/API downloads returned Tunnel403; even escalation did not remove the network restriction. Source descriptors are checked; binary bytecode/live optional dispatch unverified.",
+    "Fire worksite gesture/client sync, actual optional shared spawn dispatch, FireWater, postburn and ordinary-fire cycles require fullpack acceptance. Station ownership is explicit, not flame provenance.",
+    "18Powah optional preparation quests do not measure FE, working reactor volume, player UUID/channel configuration or real networking.",
+    "Fire ledger corruption fixtures deliberately log one expected ERROR during opt-in native tests; ordinary production tests remain gated."
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.7-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.8-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -190,10 +197,10 @@
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
-  "checkpoint_preservation": "implementation/energy-core-preservation-v5.json",
-  "checkpoint_base_commit": "1a3ee228065263558ccf9b10fd7ff9ba0b7e4443",
-  "checkpoint_backup": "/workspace/aia2-backups/before-energy-core-20261025T232905Z/checkpoint-1a3ee22.tar.gz",
-  "checkpoint_report": "docs/AIA2_0.4.7_CHECKPOINT.uk.md",
+  "checkpoint_preservation": "implementation/fire-powah-preservation-v5.json",
+  "checkpoint_base_commit": "d756a9ace9fedae667cd92d46e02654d6fe53a95",
+  "checkpoint_backup": "/workspace/aia2-backups/before-fire-powah-20261026T102902Z/checkpoint-d756a9a.tar.gz",
+  "checkpoint_report": "docs/AIA2_0.4.8_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
     "new_recipes": 4,
@@ -222,9 +229,29 @@
     "core_maps_added": 1,
     "powah_core": "partial_16_concepts_not_quests",
     "native_audit": "content/audit/v5-energy-native-guard.json",
-    "manual_plan": "docs/testing/ENERGY_NATIVE_ACCEPTANCE.uk.md"
+    "manual_plan": "docs/testing/ENERGY_NATIVE_ACCEPTANCE.uk.md",
+    "scope": "Historical0.4.7 checkpoint; Powah partial resolved by0.4.8 fire_powah record"
   },
   "previous_checkpoint_preservation": "implementation/roots-aa-preservation.json",
   "energy_package_installer_report": "implementation/energy-package-install-v5.json",
-  "delivery_verification": "Final commit/push identity is recorded by git log, origin/main and an external downloads delivery report; no self-referential commit hash embedded in archive."
+  "delivery_verification": "Final commit/push identity is recorded by git log, origin/main and an external downloads delivery report; no self-referential commit hash embedded in archive.",
+  "fire_powah": {
+    "new_quests": 19,
+    "powah_quests": 18,
+    "enderio_preparation_quests": 1,
+    "new_recipes": 3,
+    "old_quest_payloads_preserved": 3261,
+    "old_recipe_entries_preserved": 615,
+    "old_rewards_changed": 0,
+    "new_item_reward_entries": 20,
+    "new_items": 0,
+    "new_textures": 0,
+    "native_producers_replaced": 3,
+    "powah_core_stages": 28,
+    "core_maps": 23,
+    "partial_mods": 37,
+    "native_guard_audit": "content/audit/v5-fire-worksites.json",
+    "manual_plan": "docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md",
+    "package_report": "implementation/fire-powah-package-install-v5.json"
+  }
 }

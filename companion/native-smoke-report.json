@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "started_at_utc": "2026-10-26T09:57:03.301003269Z",
-  "finished_at_utc": "2026-10-26T09:57:35.859017288Z",
+  "started_at_utc": "2026-10-26T10:40:43.949981010Z",
+  "finished_at_utc": "2026-10-26T10:41:16.559792733Z",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "real_minecraft_server": true,
@@ -125,6 +125,74 @@
     },
     {
       "description": "strict context is removed after ticker exit",
+      "passed": true
+    },
+    {
+      "description": "early team cannot register a fire worksite",
+      "passed": true
+    },
+    {
+      "description": "trusted server operation registers an epoch19 team's exact base",
+      "passed": true
+    },
+    {
+      "description": "same-owner claim is idempotent",
+      "passed": true
+    },
+    {
+      "description": "another authorized team cannot take an existing worksite",
+      "passed": true
+    },
+    {
+      "description": "owned worksite permits current native recipe and available outputs without an online player",
+      "passed": true
+    },
+    {
+      "description": "nearby ownership never authorizes an unclaimed position",
+      "passed": true
+    },
+    {
+      "description": "all possible outputs are checked against current item policy",
+      "passed": true
+    },
+    {
+      "description": "even an eligible manufactured key output is forbidden in fire crafting",
+      "passed": true
+    },
+    {
+      "description": "post-burn base block requires its own stage",
+      "passed": true
+    },
+    {
+      "description": "empty possible output definitions cannot authorize fire production",
+      "passed": true
+    },
+    {
+      "description": "actual optional entry rejects non-EnderIO recipes even at a valid owned site",
+      "passed": true
+    },
+    {
+      "description": "team downgrade immediately stops fire worksite production",
+      "passed": true
+    },
+    {
+      "description": "no-op native block update preserves a worksite",
+      "passed": true
+    },
+    {
+      "description": "break and same-type replacement cannot inherit ownership",
+      "passed": true
+    },
+    {
+      "description": "real FakePlayer cannot claim through a synchronized team",
+      "passed": true
+    },
+    {
+      "description": "unknown fire schema remains blocked/clean and cannot overwrite its old ledger",
+      "passed": true
+    },
+    {
+      "description": "actual bedrock worksite retained only for second-JVM persistence verification",
       "passed": true
     },
     {
@@ -260,20 +328,20 @@
       "passed": true
     }
   ],
-  "assertions": 63,
-  "receipt_team": "native-test-a-e27dacb9-edf2-4f37-9f0d-b695347851c7",
+  "assertions": 80,
+  "receipt_team": "native-test-a-fc400b8c-e8bb-4d54-afee-a474519caa0b",
   "receipt_restart_verification": false,
   "modded_machines_tested": false,
   "ftb_kubejs_runtime_present": false,
   "tps_benchmark": "not performed; this is a small native correctness suite",
   "test_blocks_restored": true,
-  "version_tested": "0.4.7-alpha",
+  "version_tested": "0.4.8-alpha",
   "runner_exit_code": 0,
   "console_log": "run/aia2-native-smoke-console.log (ignored, not shipped)",
   "restart_verification": {
     "status": "passed",
-    "started_at_utc": "2026-10-26T09:58:00.653623322Z",
-    "finished_at_utc": "2026-10-26T09:58:00.671133330Z",
+    "started_at_utc": "2026-10-26T10:41:44.461029162Z",
+    "finished_at_utc": "2026-10-26T10:41:44.473667401Z",
     "minecraft": "1.21.1",
     "neoforge": "21.1.264",
     "real_minecraft_server": true,
@@ -301,6 +369,18 @@
       },
       {
         "passed": true,
+        "description": "a fresh JVM reloads actual fire worksite ownership from SavedData"
+      },
+      {
+        "passed": true,
+        "description": "runtime reset does not erase a persistent fire worksite"
+      },
+      {
+        "passed": true,
+        "description": "actual base mutation hook revokes persistent ownership after restart"
+      },
+      {
+        "passed": true,
         "description": "runtime bridge initialization never resets a receipt loaded after restart"
       },
       {
@@ -308,17 +388,17 @@
         "description": "runtime reset never clears a reloaded generic process observation"
       }
     ],
-    "assertions": 7,
-    "receipt_team": "native-test-a-e27dacb9-edf2-4f37-9f0d-b695347851c7",
+    "assertions": 10,
+    "receipt_team": "native-test-a-fc400b8c-e8bb-4d54-afee-a474519caa0b",
     "receipt_restart_verification": true,
     "modded_machines_tested": false,
     "ftb_kubejs_runtime_present": false,
     "tps_benchmark": "not performed; this is a small native correctness suite",
     "test_blocks_restored": true,
-    "version_tested": "0.4.7-alpha",
+    "version_tested": "0.4.8-alpha",
     "runner_exit_code": 0,
     "console_log": "run/aia2-native-smoke-restart-console.log (ignored, not shipped)"
   },
-  "assertions_total": 70,
+  "assertions_total": 90,
   "runner_command": "./gradlew --offline runServer -x downloadAssets --no-daemon --console=plain; second JVM verifies SavedData persistence"
 }

@@ -147,7 +147,7 @@ def validate_compiled_tasks(record, compiled):
 
 
 def verified_mechanic_advancements(root, rules, bundle=None):
-    """Only the six audited native production contracts can count as actions.
+    """Only the eight audited native production contracts can count as actions.
 
     This checks the checked-in recipe/advancement protocol. Successful native
     dispatch still needs its separate Java/runtime tests; inventory triggers
@@ -493,6 +493,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/audit/v5-industrial-controller-floors.json').exists() else {'enabled': False},
             'energy_core_balance': import_tool('build_energy_core_balance_v5').validate(root,read(root/'content/recipes/v5_enderio_powah_core.json'),bundle,rules,compiled=True)
                 if (root/'content/recipes/v5_enderio_powah_core.json').exists() else {'enabled':False},
+            'powah_generators_balance': import_tool('build_powah_generators_balance_v5').validate(root,read(root/'content/recipes/v5_powah_generators.json'),bundle,rules,compiled=True)
+                if (root/'content/recipes/v5_powah_generators.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

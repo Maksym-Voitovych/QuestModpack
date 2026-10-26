@@ -29,7 +29,7 @@
 | Modern Industrialization | technology_core | DONE — основна карта |
 | Oritech | technology_core | DONE — основна карта |
 | PneumaticCraft: Repressurized | technology_core | DONE — основна карта |
-| Powah! | technology_core | IN_PROGRESS — часткова карта |
+| Powah! | technology_core | DONE — основна карта |
 | ProjectE | technology_core | TODO — карта не досліджена |
 | Create: The Factory Must Grow | technology_core | IN_PROGRESS — часткова карта |
 | Applied Flux | storage_logistics | TODO — карта не досліджена |

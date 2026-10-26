@@ -384,6 +384,10 @@ def plan_install(source, instance):
                     energy_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in ['EnderCraftingTaskMixin','EnderCrafterMixin','EnderTankMixin','PowahEnergizingOrbMixin'])
                     if not energy_guard <= set(jar.namelist()):
                         raise InstallError('This package needs the matching EnderIO/Powah cached production guards')
+                    fire_guard = {'ua/aia2/guard/' + name + '.class' for name in ['FireWorksiteAccess', 'FireWorksiteInteraction']}
+                    fire_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in ['EnderFireCraftingMixin', 'FireWorksiteBaseMixin'])
+                    if not fire_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching EnderIO fire worksite guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

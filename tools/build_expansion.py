@@ -381,6 +381,7 @@ def apply(root=ROOT):
                                 ('build_industrial_core_balance_v5', 'content/recipes/v5_mi_oritech_core.json'),
                                 ('build_industrial_controller_gates_v5', 'content/audit/v5-industrial-controller-floors.json'),
                                 ('build_energy_core_balance_v5', 'content/recipes/v5_enderio_powah_core.json'),
+                                ('build_powah_generators_balance_v5', 'content/recipes/v5_powah_generators.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
         if (root/source).exists():
             import importlib

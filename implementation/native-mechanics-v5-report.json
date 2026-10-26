@@ -1,7 +1,7 @@
 {
-  "version": "0.4.7-alpha",
+  "version": "0.4.8-alpha",
   "status": "passed_native_fixture_build_and_script_tests",
-  "native_assertions": 70,
+  "native_assertions": 90,
   "server_jvm_boots": 2,
   "java_policy_assertions": 5237,
   "node_mechanics_tests": 9,
@@ -9,13 +9,13 @@
   "recipe_routes": 11,
   "storage": "<world>/data/aia2_mechanics_v1.dat",
   "native_report": "companion/native-smoke-report.json",
-  "jar_sha256": "e986cb6fbb862b6a2f96e69d766dfdce4089527289261b3c61cdbb54b567c577",
+  "jar_sha256": "be0bd113d473577db8e12073426e63ac83ba9e0e1dcc55eca6b48bd479108e14",
   "confirmed_fixes": [
     "Native proof read failures revoke all own previous-team advancements before surfacing error",
     "Epoch10 brass proof includes real unheated AIA2 bootstrap native route; heated native alternative kept",
     "Rejected config clears old runtime observation rules without touching SavedData"
   ],
-  "test_scope": "Real vanilla Crafter/furnace/hopper/FakePlayer; actual-output/count/components bridge and pure lookup with locked execution; SavedData in2JVM. Optional energy handlers/proxies are compiled/source-checked/modeled, not dispatched in this server.",
+  "test_scope": "Real vanilla Crafter/furnace/hopper/FakePlayer; actual-output/count/components bridge and pure lookup with locked execution; SavedData in2JVM. Optional energy handlers/proxies are compiled/source-checked/modeled, not dispatched in this server. Fire worksite SavedData, no-op/invalidation/replacement and corruption preservation are actual native fixtures; no EnderIO dispatch.",
   "full_pack_run": false,
   "tps_benchmark": "not run"
 }

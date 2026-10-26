@@ -57,6 +57,8 @@ public final class NativeSmokeTests {
     private static final BlockPos FEEDER = CRAFTER.above();
     private static final BlockPos POWER = CRAFTER.relative(Direction.NORTH);
     private static final BlockPos BENCH = new BlockPos(8, 252, 13);
+    // Reserved only in this runner's explicitly owned development world.
+    private static final BlockPos FIRE_PERSIST = new BlockPos(14, 252, 14);
     private static final List<BlockPos> POSITIONS = List.of(A, B, UNOWNED, CRAFTER, FEEDER, POWER, BENCH);
     private static final AABB AREA = new AABB(4, 250, 4, 16, 257, 16);
     private record Original(BlockState state, CompoundTag data) {}
@@ -112,7 +114,14 @@ public final class NativeSmokeTests {
                 "a fresh server reloads the separate native process observation from SavedData");
         check(ProductionMilestoneBridge.hasProof(server,team,"native_observed_fixture"),
                 "actual-output verified observation also reloads in a second JVM");
+        check(FireWorksiteAccess.owner(level, FIRE_PERSIST).equals(team),
+                "a fresh JVM reloads actual fire worksite ownership from SavedData");
         Aia2MachineGuard.clearRuntime();
+        check(FireWorksiteAccess.owner(level, FIRE_PERSIST).equals(team),
+                "runtime reset does not erase a persistent fire worksite");
+        level.setBlockAndUpdate(FIRE_PERSIST, Blocks.AIR.defaultBlockState());
+        check(FireWorksiteAccess.owner(level, FIRE_PERSIST).isBlank(),
+                "actual base mutation hook revokes persistent ownership after restart");
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "runtime bridge initialization never resets a receipt loaded after restart");
         check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
                 "runtime reset never clears a reloaded generic process observation");
@@ -132,7 +141,7 @@ public final class NativeSmokeTests {
                     old == null ? null : old.saveWithFullMetadata(level.registryAccess())));
         }
         Aia2MachineGuard.clearRuntime();
-        Aia2MachineGuard.setRulesJson("{\"minecraft:furnace\":5,\"minecraft:crafter\":2,\"minecraft:hopper\":0}");
+        Aia2MachineGuard.setRulesJson("{\"minecraft:furnace\":5,\"minecraft:crafter\":2,\"minecraft:hopper\":0,\"minecraft:diamond_block\":32}");
         Aia2MachineGuard.setItemRulesJson("{\"minecraft:iron_ingot\":8,\"minecraft:iron_nugget\":0,\"minecraft:coal\":0,\"minecraft:raw_iron\":0,\"minecraft:diamond\":99}");
         Aia2MachineGuard.setRecipeRulesJson("{\"minecraft:iron_ingot_from_smelting_raw_iron\":7,\"minecraft:iron_ingot_from_nuggets\":8}");
         Aia2MachineGuard.configureKeyRulesJson("[{\"recipeId\":\"minecraft:iron_ingot_from_nuggets\",\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"branch\":\"tech\",\"serializer\":\"minecraft:crafting_shaped\"}]");
@@ -155,9 +164,60 @@ public final class NativeSmokeTests {
         testPersistenceAndOwnership();
         testFakePlayerCrafting();
         testStrictMachineContext();
+        testFireWorksites();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    private static void testFireWorksites() {
+        var recipe = level.getRecipeManager().byKey(net.minecraft.resources.ResourceLocation.parse(
+                "minecraft:iron_ingot_from_smelting_raw_iron")).orElseThrow().value();
+        var outputs = List.of(new ItemStack(Items.RAW_IRON));
+        check(!FireWorksiteAccess.register(level, BENCH, TEAM_A), "early team cannot register a fire worksite");
+        Aia2MachineGuard.setTeamProgress(TEAM_A, 18);
+        check(FireWorksiteAccess.register(level, BENCH, TEAM_A), "trusted server operation registers an epoch19 team's exact base");
+        check(FireWorksiteAccess.register(level, BENCH, TEAM_A), "same-owner claim is idempotent");
+        Aia2MachineGuard.setTeamProgress(TEAM_B, 18);
+        check(!FireWorksiteAccess.register(level, BENCH, TEAM_B), "another authorized team cannot take an existing worksite");
+        check(FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, outputs, null),
+                "owned worksite permits current native recipe and available outputs without an online player");
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above().east(), recipe, outputs, null),
+                "nearby ownership never authorizes an unclaimed position");
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, List.of(new ItemStack(Items.DIAMOND)), null),
+                "all possible outputs are checked against current item policy");
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, List.of(new ItemStack(Items.IRON_INGOT)), null),
+                "even an eligible manufactured key output is forbidden in fire crafting");
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, outputs, Blocks.DIAMOND_BLOCK),
+                "post-burn base block requires its own stage");
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, List.of(), null),
+                "empty possible output definitions cannot authorize fire production");
+        check(!FireWorksiteAccess.maySpawn(level, BENCH.above(), recipe),
+                "actual optional entry rejects non-EnderIO recipes even at a valid owned site");
+        Aia2MachineGuard.setTeamProgress(TEAM_A, 17);
+        check(!FireWorksiteAccess.mayRunAtWorksite(level, BENCH.above(), recipe, outputs, null),
+                "team downgrade immediately stops fire worksite production");
+        Aia2MachineGuard.setTeamProgress(TEAM_A, 18);
+        level.setBlockAndUpdate(BENCH, Blocks.CRAFTING_TABLE.defaultBlockState());
+        check(FireWorksiteAccess.owner(level, BENCH).equals(TEAM_A), "no-op native block update preserves a worksite");
+        level.setBlockAndUpdate(BENCH, Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(BENCH, Blocks.CRAFTING_TABLE.defaultBlockState());
+        check(FireWorksiteAccess.owner(level, BENCH).isBlank(), "break and same-type replacement cannot inherit ownership");
+        var fake = FakePlayerFactory.get(level, new GameProfile(UUID.randomUUID(), "AIA2FireTest"));
+        check(Aia2MachineGuard.synchronizedPlayerTeam(fake).isBlank(), "real FakePlayer cannot claim through a synchronized team");
+        var saved = level.getDataStorage().get(FireWorksiteAccess.SiteData.FACTORY, FireWorksiteAccess.DATA_NAME);
+        CompoundTag invalid = saved.save(new CompoundTag(), level.registryAccess());
+        invalid.putInt("schema", 99);
+        var blocked = FireWorksiteAccess.SiteData.load(invalid, level.registryAccess());
+        boolean rejected = false;
+        try { blocked.save(new CompoundTag(), level.registryAccess()); }
+        catch (IllegalStateException expected) { rejected = true; }
+        check(blocked.blocked && rejected && !blocked.isDirty(), "unknown fire schema remains blocked/clean and cannot overwrite its old ledger");
+        level.setBlockAndUpdate(FIRE_PERSIST, Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(FIRE_PERSIST, Blocks.BEDROCK.defaultBlockState());
+        check(FireWorksiteAccess.register(level, FIRE_PERSIST, TEAM_A), "actual bedrock worksite retained only for second-JVM persistence verification");
+        Aia2MachineGuard.setTeamProgress(TEAM_A, 3);
+        Aia2MachineGuard.setTeamProgress(TEAM_B, 7);
     }
 
     private static void testStrictMachineContext() {

@@ -1,3 +1,13 @@
+# 0.4.8-alpha — вогняні майданчики та Powah core
+
+- 19 нових optional-квестів:18 Powah і одна підготовча EnderIO-ціль.3280квестів/139глав; старі3261payloads і615recipes збережено.
+- Powah:28етапів core-карти за exact6.2.10 source/guide/export; усі8попередні stage IDs/refs незмінні.23core-карти загалом.
+- Три Nitro upgrades через Create mechanical5×3; усі native9material units і попередні Spirited generators збережено, по2міжмодових компоненти додано.3дешевіnativeproducers замінено;618recipes.
+- Fire Crafting/Fire Water: явно закріплені за командою основи, спільна перевірка до RNG/output/base mutation, current recipe/base/dimension/alloutputs/components/keys/postburnblock.
+- Окремий dimension SavedData, mutation invalidation, корумпований ledger не перезаписується. EnderIO getRecipes /reload cache виправлено.
+- 166Python/50Node/5237Java;90minimalMC assertions у2JVM;46actual-helper/handler модельованих умов. Optional EnderIO/Powah dispatch/JEI/Survival/TPS:NOT RUN.
+- Matching0.4.8JAR/інсталятор і резервні копії. Повний0.5ще не реліз.
+
 # 0.4.7-alpha — EnderIO/Powah, робота над0.5 триває
 
 - 19 нових optional-квестів:18 EnderIO та1 Powah native batch.3261 квест/139 глав; усі3242 попередні quest/task/reward payloads та dependencies збережено.

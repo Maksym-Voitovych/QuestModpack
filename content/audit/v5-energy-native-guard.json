@@ -380,5 +380,10 @@
     "energy_helpers_handlers_real_policy_modeled": 43,
     "fullpack_optional_dispatch": false
   },
-  "selection_semantics": "Only receivers with explicit execution hooks isolate callback lookup from ticker context, including unready startup. Otherwise one-shot caches could remain empty after stage unlock/startup. Actual recipe/item/owner checks always run before production; no global recipe list or other machine guard disabled."
+  "selection_semantics": "Only receivers with explicit execution hooks isolate callback lookup from ticker context, including unready startup. Otherwise one-shot caches could remain empty after stage unlock/startup. Actual recipe/item/owner checks always run before production; no global recipe list or other machine guard disabled.",
+  "open_path_resolution": {
+    "version": "0.4.8-alpha",
+    "audit": "content/audit/v5-fire-worksites.json",
+    "status": "worksite_protocol_implemented_optional_dispatch_pending"
+  }
 }

@@ -79,6 +79,7 @@ public final class Aia2MachineGuard {
         TICK_CONTEXT.remove();
         RobitRecipeAccess.clear();
         EnderTaskAccess.clearRuntime();
+        FireWorksiteAccess.clearRuntime();
         KeyProductionBridge.clearRuntime();
         ProductionMilestoneBridge.clearRuntime();
         PLAYER_TEAMS.clear();
@@ -323,6 +324,14 @@ public final class Aia2MachineGuard {
 
     public static String resolveCurrentTeam(UUID playerId) {
         return LIVE_TEAMS.resolve(playerId);
+    }
+
+    /** Uniquely named typed boundary; no Rhino UUID overload or fake-player identity. */
+    public static String synchronizedPlayerTeam(ServerPlayer player) {
+        if (player == null || player instanceof FakePlayer || !isReady()) return "";
+        String synced = PLAYER_TEAMS.get(player.getUUID());
+        String live = LIVE_TEAMS.resolve(player.getUUID());
+        return synced != null && synced.equals(live) ? synced : "";
     }
 
     public static boolean mayUseItemByTeam(String itemId, String team) {

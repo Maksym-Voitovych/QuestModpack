@@ -12,6 +12,328 @@
   "hide_quest_until_deps_complete": true,
   "quests": [
     {
+      "id": "000005AE117F4F13",
+      "title": "Зарядна станція для предметів у скрині",
+      "description": [
+        "Energy Hopper заряджає енергетичні предмети в сусідньому інвентарі. У перевіреній реалізації пошук використовує Minecraft Container; сумісність із довільним інвентарем лише через IItemHandler не гарантується.",
+        "Після переносної батареї винесіть заряджання в стаціонарну станцію: подайте FE, поставте поруч звичайну скриню й перевірте напрямок заряджання на тестовому предметі.",
+        "Виготовлення та огляд Hopper і підготовка скрині перевіряються автоматично. Реальна передача FE предмету та робота довільного модового інвентарю потребують окремої перевірки."
+      ],
+      "icon": {
+        "id": "powah:energy_hopper_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C84D43298FB1",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CED68C64AD6C",
+          "type": "item",
+          "item": {
+            "id": "powah:energy_hopper_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000047B158ADE975",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:energy_hopper_starter",
+          "timer": 40
+        },
+        {
+          "id": "000072734A79AFE5",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000276AFC1F7C3D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FC8B241B9BA8",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000A76D11033221",
+      "title": "Передавач заряджає спорядження гравця",
+      "description": [
+        "Player Transmitter використовує прив’язану картку й власний запас FE для заряджання інвентарю гравця, зокрема броні та другої руки. Картка задає одержувача; саме встановлення блока не створює енергію.",
+        "Після персональної картки й Player Aerial Pearl виготовте передавач, подайте енергію та вставте свою картку. Звичайний режим у перевіреному source порівнює типи вимірів, а не їхні ключі; не покладайтеся на це як на сувору ізоляцію вимірів.",
+        "Крафт передавача, огляд і наявність картки засвідчують підготовку. Власник картки, фактичний заряд спорядження й мережевий режим тут не перевіряються."
+      ],
+      "icon": {
+        "id": "powah:player_transmitter_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000510F79FCD18D",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000036E5E51717F",
+          "type": "item",
+          "item": {
+            "id": "powah:player_transmitter_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00006749136BE325",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:player_transmitter_starter",
+          "timer": 40
+        },
+        {
+          "id": "00007439F19305BF",
+          "type": "item",
+          "item": {
+            "id": "powah:binding_card",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A8A239B9663D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F547142F3ED2",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000CD57053D42F7",
+      "title": "Ender Cell: канал спочатку порожній",
+      "description": [
+        "Ender Cell працює з каналом Ender Network конкретного нативного власника UUID. Нові канали починаються з нульової місткості; батарея в спеціальному слоті Cell споживається як розширення, додаючи місткість і свій наявний заряд.",
+        "Після Ender Core спочатку підготуйте сховище та батарею для його розширення. Команда FTB й нативний власник мережі Powah — різні поняття: спільна команда сама не створює спільного UUID-каналу.",
+        "Крафт і огляд Ender Cell та наявність батареї перевіряються. Квест не списує батарею й не засвідчує номер каналу, його власника або фактичну місткість."
+      ],
+      "icon": {
+        "id": "powah:ender_cell_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000F9DE44A47402",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F8A94340DE32",
+          "type": "item",
+          "item": {
+            "id": "powah:ender_cell_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00006A69316980E6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:ender_cell_starter",
+          "timer": 40
+        },
+        {
+          "id": "00008F70EF76E28B",
+          "type": "item",
+          "item": {
+            "id": "powah:battery_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000ED3257FCB1C3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000059C9821726A",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_rod",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 0.0
+    },
+    {
+      "id": "0000FACE7384B0EE",
+      "title": "Ender Gate: точка видачі без розширення місткості",
+      "description": [
+        "Ender Gate передає енергію між обраним каналом мережі та сусіднім блоком через свою спрямовану сторону. На відміну від Cell, Gate не розширює місткість каналу.",
+        "Коли канал уже має власника й місткість, Gate переносить його енергію до споживача. Погодьте канал і власника з вихідною Cell, а не додавайте батарею в Gate.",
+        "Квест перевіряє виготовлення Gate та огляд блока. Спільність каналу й власника, правильний напрямок і фактичний потік FE не визначаються лише оглядом."
+      ],
+      "icon": {
+        "id": "powah:ender_gate_starter",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CD57053D42F7",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D726AD4DD83",
+          "type": "item",
+          "item": {
+            "id": "powah:ender_gate_starter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000A6C3864C1849",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "powah:ender_gate_starter",
+          "timer": 40
+        },
+        {
+          "id": "0000A6DEC391AD94",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FBA6192D6979",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 5.0,
+      "y": 0.0
+    },
+    {
+      "id": "00001F870F22B0DA",
+      "title": "Перенесення вузлів: перевірте власника знову",
+      "description": [
+        "Cell і Gate зберігають нативного власника; вищий рівень змінює пропускну здатність, а не автоматично об’єднує приватні мережі. Після перенесення чи встановлення іншим гравцем перевірте власника й обраний канал.",
+        "Пара Basic-вузлів продовжує стартовий канал без нового способу генерації. Використайте її для контрольованого перенесення енергетичного виходу й порівняйте обмеження I/O в інтерфейсі.",
+        "Два звичайні крафти перевіряють готовність нових вузлів. Переприв’язування, стан приватної мережі та віддалене живлення цими предметними цілями не доводяться."
+      ],
+      "icon": {
+        "id": "powah:ender_cell_basic",
+        "count": 1
+      },
+      "dependencies": [
+        "0000FACE7384B0EE",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006C18B5872826",
+          "type": "item",
+          "item": {
+            "id": "powah:ender_cell_basic",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000F02ACF789939",
+          "type": "item",
+          "item": {
+            "id": "powah:ender_gate_basic",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00009021CD8107D9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000071B12E995578",
+          "type": "item",
+          "item": {
+            "id": "powah:dielectric_paste",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 7.0,
+      "y": 0.0
+    },
+    {
       "id": "00003DEB7C9517F9",
       "title": "Замовлення навколо енергетичної сфери",
       "description": [
@@ -76,7 +398,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00000EB759AA716F",
@@ -143,7 +465,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00009CD6DD64337D",
@@ -210,7 +532,7 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000DAA2AA221C18",
@@ -277,7 +599,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00002E5D7538F3F2",
@@ -344,7 +666,7 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "000056F4C58EBA7D",
@@ -411,7 +733,7 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "000093979CB09DAE",
@@ -478,7 +800,7 @@
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "00009781941E153C",
@@ -556,7 +878,7 @@
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 3.0
     },
     {
       "id": "0000EB3F53D84CE0",
@@ -613,7 +935,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 6.0
     }
   ]
 }

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "version": "0.4.8-alpha",
+  "status": "implemented_native_storage_and_modeled_handlers_verified_optional_dispatch_pending",
+  "protocol": "Explicit owned base, not inferred flame provenance or nearest player",
+  "claim_uk": "Епоха19: sneak+правий клік кресалом по верхній грані чинної основи. Claim не запалює/не витрачає інструмент. Наступний звичайний клік запалює.",
+  "sources": [
+    {
+      "mod_id": "enderio",
+      "path": "content/research/evidence/energy_guard_next_v5/enderio/enderio/src/main/java/com/enderio/enderio/content/fire_crafting/FireCraftingManager.java",
+      "sha256": "86879f0c972bd4e25fbe7ee57526f65a6254c5fcd005a0aaf621e5c27897b77f",
+      "url": "https://raw.githubusercontent.com/Team-EnderIO/EnderIO/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/fire_crafting/FireCraftingManager.java",
+      "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5"
+    },
+    {
+      "mod_id": "enderio",
+      "path": "content/research/evidence/energy_guard_next_v5/enderio/enderio/src/main/java/com/enderio/enderio/content/fire_crafting/FireCraftingRecipe.java",
+      "sha256": "5143599514b20adc0707801c20428128b189c0bc00bf6c70882cae3e9b348ff1",
+      "url": "https://raw.githubusercontent.com/Team-EnderIO/EnderIO/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/fire_crafting/FireCraftingRecipe.java",
+      "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5"
+    },
+    {
+      "mod_id": "enderio",
+      "path": "content/research/evidence/energy_guard_next_v5/enderio/enderio/src/main/java/com/enderio/enderio/content/misc_blocks/FireWaterFluid.java",
+      "sha256": "b4e8b4038be2d94e4f2d61dd84cde3e4348147f4b28ba69bb4c2c3fb4605cef9",
+      "url": "https://raw.githubusercontent.com/Team-EnderIO/EnderIO/9d35cace6895f451b4478a8608ff0fa0506530a5/enderio/src/main/java/com/enderio/enderio/content/misc_blocks/FireWaterFluid.java",
+      "pin": "9d35cace6895f451b4478a8608ff0fa0506530a5"
+    }
+  ],
+  "common_guard": "FireCraftingManager.spawnInfinityDrops HEAD before RNG/entities/base mutation; covers ordinary fire and FireWater",
+  "reload_fix": "getRecipes returns raw current RecipeManager fire list keyed by immutable generation snapshot; canonical recipe identity rechecked",
+  "checks": [
+    "real synchronized/live team; fake players rejected for claim",
+    "all possible item outputs including rare secondary outputs, key blacklist and Creative Tablet components",
+    "recipe/base/dimension and post-burn block stage",
+    "team downgrade and unready state fail closed",
+    "base BlockState mutation revokes exact position; fire extinguishing does not",
+    "dimension-specific SavedData; no empty disk ledger before first registration",
+    "semantic corruption returns blocked clean sentinel; unreadable existing binary path cannot be recreated"
+  ],
+  "storage": "<dimension>/data/aia2_fire_worksites_v1.dat",
+  "limits": [
+    "Actual optional EnderIO Mixin dispatch, FireWater loop and claim UX still require fullpack acceptance",
+    "All future fire/FireWater at claimed base uses the base team, whoever ignites it; this is station ownership, not flame attribution",
+    "Native spawn ignores addFreshEntity return; no new production receipt/delivery proof claimed",
+    "Any base property change also revokes registration; bedrock/deepslate default routes unaffected",
+    "Finite65536 registered sites per dimension; no whole-world scanner or per-tick ledger scan",
+    "TPS/load benchmark not run"
+  ],
+  "tests": {
+    "modeled_helper_handlers_real_policy_assertions": 46,
+    "minimal_minecraft_assertions": 90,
+    "server_boots": 2,
+    "fullpack_optional_dispatch": false
+  }
+}
