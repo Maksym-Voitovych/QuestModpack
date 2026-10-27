@@ -4628,7 +4628,7 @@ Reforging Table є покращенням Simple Table й відкриває epi
 
 ## Forbidden Arcanus
 
-Версія експорту: **2.6.1**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **2.6.1**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Підготуйте Mundabitur Dust і звичайний Smithing Table. У версії2.6.1 перша Hephaestus Forge створюється взаємодією з правильною конструкцією; її не слід шукати як звичайний результат верстака.
@@ -4720,6 +4720,168 @@ Reforging Table є покращенням Simple Table й відкриває epi
 Квести: `V5_MAG_FORBIDDEN_ARCANUS_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 9. Основа кузні за кресленням
+
+Епохи: 15.
+
+Відкрийте Ponder для Hephaestus Forge. Підготуйте 9 Gilded Chiseled Polished Darkstone, 4 Chiseled Arcane Polished Darkstone і 45 Polished Darkstone; Smithing Table займає центр. Викладіть нижній шар за схемою й звільніть потрібний простір над ним. Присядьте та застосуйте Mundabitur Dust до Smithing Table: правильна конструкція перетвориться на Forge першого рівня.
+Попередні кроки: forbidden_arcanus:01.
+Ресурси й результати: `forbidden_arcanus:gilded_chiseled_polished_darkstone`, `forbidden_arcanus:chiseled_arcane_polished_darkstone`, `forbidden_arcanus:polished_darkstone`, `minecraft:smithing_table`, `forbidden_arcanus:mundabitur_dust`.
+Квести: `V5_E15_forbidden_core_foundation`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 10. П’єдестали навколо центрального реагенту
+
+Епохи: 15.
+
+Поставте Darkstone Pedestals у позначені Ponder позиції. Головний реагент іде в центральний слот Forge, інші — на п’єдестали навколо. Кількість інгредієнта в ритуалі означає кількість зайнятих п’єдесталів; стос на одному не замінює кілька позицій. Приберіть зайві реагенти й підготуйте Blacksmith Gavel для запуску.
+Попередні кроки: forbidden_arcanus.core.foundation.
+Машини: `forbidden_arcanus:hephaestus_forge_tier_1`.
+Ресурси й результати: `forbidden_arcanus:darkstone_pedestal`, `forbidden_arcanus:iron_blacksmith_gavel`.
+Квести: `V5_E15_forbidden_core_pedestals`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 11. Пасивне живлення Aureal
+
+Епохи: 15.
+
+Складіть Arcane Crystal Obelisk із двох Arcane Crystal Blocks над Arcane Polished Darkstone та застосуйте Mundabitur Dust. Поставте його у відповідну позицію біля Forge й стежте за шкалою Aureal. Обеліск може займати місце п’єдесталу. Перед ритуалом із повним набором реагентів накопичте Aureal і звільніть потрібні позиції.
+Попередні кроки: forbidden_arcanus.core.pedestals.
+Машини: `forbidden_arcanus:arcane_crystal_obelisk`.
+Ресурси й результати: `forbidden_arcanus:arcane_crystal_block`, `forbidden_arcanus:arcane_polished_darkstone`.
+Квести: `V5_E15_forbidden_core_aureal`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 12. Душа з піску душ
+
+Епохи: 15.
+
+Використайте Soul Extractor на Soul Sand і тримайте застосування до завершення, не присідаючи. Блок стане Soulless Sand, а витягнута Soul з’явиться окремим предметом. Передайте душі у відповідний вхід Forge. Souls і Blood зберігаються окремо: наповнення однієї шкали не замінює іншу.
+Попередні кроки: forbidden_arcanus.core.pedestals.
+Ресурси й результати: `forbidden_arcanus:soul_extractor`, `forbidden_arcanus:soul`, `forbidden_arcanus:soulless_sand`.
+Квести: `V5_E15_forbidden_core_souls`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 13. Кров і досвід мають різні носії
+
+Епохи: 15.
+
+Тримайте Test Tube у другій руці під час атак дозволених істот: вона стає Blood Test Tube й накопичує кров від завданої шкоди. Перевірте її запас перед передачею у Forge. XPetrified Orb живить Experience, а Blood Test Tube — Blood. Це ресурси Forbidden Arcanus; рідина Blood з іншого мода не наповнює ці шкали автоматично.
+Попередні кроки: forbidden_arcanus.core.aureal, forbidden_arcanus.core.souls.
+Машини: `forbidden_arcanus:hephaestus_forge_tier_1`.
+Ресурси й результати: `forbidden_arcanus:blood_test_tube`, `forbidden_arcanus:xpetrified_orb`, `forbidden_arcanus:test_tube`.
+Квести: `V5_E15_forbidden_core_blood_experience`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 14. Перший ритуал феромагнітної суміші
+
+Епохи: 15.
+
+Покладіть Lodestone у центр. Розкладіть навколо 2 Clay Balls, 2 Wax, 2 Slime Balls і 1 Iron Ingot: потрібні 7 зайнятих п’єдесталів, решту залиште порожньою. Підготуйте Aureal, Souls і Blood за вимогами JEI та інтерфейсу Forge. Запустіть ритуал молотом Blacksmith Gavel і дочекайтеся успішного завершення.
+Попередні кроки: forbidden_arcanus.core.blood_experience.
+Квести: `V5_E15_forbidden_core_ferrognetic_mixture`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
+### 15. Успішний перехід Forge на рівень2
+
+Епохи: 21.
+
+Для переходу потрібна Forge саме першого рівня. Центральний матеріал — Edelwood Planks, навколо розкладіть 4 Arcane Crystals і 4 Spawner Scraps. До запуску заповніть шкали ресурсів за вимогами ритуалу: підвищення витрачає значний запас Souls і Blood. Після успіху перевірте новий рівень та доступні слоти.
+Попередні кроки: forbidden_arcanus.core.ferrognetic_mixture.
+Квести: `V5_E21_forbidden_core_tier_2`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
+### 16. Деорум для третього рівня
+
+Епохи: 21.
+
+Підвищте Forge другого рівня до третього: використайте Chiseled Polished Darkstone як центральний реагент, а 4 Arcane Crystals і 4 Deorum Ingots — навколо. Ритуал перевіряє точний попередній рівень. Спочатку поповніть ресурси й переконайтеся, що основа кузні залишилася правильною.
+Попередні кроки: forbidden_arcanus.core.tier_2.
+Квести: `V5_E21_forbidden_core_tier_3`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
+### 17. Реліквія відкриває елементальні ритуали
+
+Епохи: 21.
+
+Elementarium відкриває елементальні ритуали, зокрема Smelter Prism. Шукайте реліквію серед скарбів пустельних і джунглевих храмів та підводних руїн. Порівняйте вимоги JEI до звичайного ритуалу та ритуалу з enhancer. Установіть потрібну реліквію у Forge й підготуйте Smelter Prism.
+Попередні кроки: forbidden_arcanus.core.tier_3.
+Машини: `forbidden_arcanus:hephaestus_forge_tier_3`.
+Ресурси й результати: `forbidden_arcanus:elementarium`, `forbidden_arcanus:smelter_prism`.
+Квести: `V5_E21_forbidden_core_enhancer_prism`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 18. Сталларит для четвертого рівня
+
+Епохи: 21.
+
+Після третього рівня підготуйте Chiseled Polished Darkstone в центрі та 4 Stellarite Pieces із 4 Runes на п’єдесталах. Перед запуском звірте місткість шкал і витрати з установленими реліквіями. Успішний ритуал має підвищити рівень кузні; установлення внутрішнього tier-блока його не замінює.
+Попередні кроки: forbidden_arcanus.core.tier_3.
+Квести: `V5_E21_forbidden_core_tier_4`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
+### 19. Корпус печі Clibano
+
+Епохи: 15.
+
+Clibano створюється перетворенням конструкції 3×3×3 з порожнім центром. Поставте Clibano Core у потрібній передній позиції, викладіть Darkstone за схемою й застосуйте Mundabitur Dust. Після перетворення огляньте зовнішню центральну панель Clibano. Внутрішній контролер не потрібно отримувати предметом; підготуйте окремий буфер сировини та виходу.
+Попередні кроки: forbidden_arcanus.core.foundation.
+Машини: `forbidden_arcanus:clibano_center`.
+Ресурси й результати: `forbidden_arcanus:clibano_core`, `minecraft:chest`.
+Квести: `V5_E15_forbidden_core_clibano_shell`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 20. Режими полум’я та реліквія майстра
+
+Епохи: 21.
+
+Clibano має звичайне, soul та enchanted полум’я. Порівняйте потрібний тип у JEI з ресурсом окремого soul-слота: звичайне паливо не замінює душу. Artisan Relic відкриває спеціальні сплави печі. Серед її джерел є пропозиція мандрівного торговця за 18 Emeralds. Порівняйте вимоги сплаву зі звичайною плавкою.
+Попередні кроки: forbidden_arcanus.core.tier_3, forbidden_arcanus.core.clibano_shell.
+Машини: `forbidden_arcanus:clibano_center`.
+Ресурси й результати: `forbidden_arcanus:soul`, `forbidden_arcanus:artisan_relic`.
+Квести: `V5_E21_forbidden_core_clibano_fire`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 21. Підготовка до безпечного перенесення істот
+
+Епохи: 21.
+
+Quantum Catcher виготовляється ритуалом із Quantum Core та 4 Spawner Scraps. Для нього потрібна Experience, тому перевірте цю шкалу окремо від Souls. Перед захопленням перевірте обмеження предмета на звичайній дозволеній істоті та підготуйте безпечний майданчик повернення.
+Попередні кроки: forbidden_arcanus.core.ferrognetic_mixture, forbidden_arcanus.core.tier_3.
+Машини: `forbidden_arcanus:hephaestus_forge_tier_3`.
+Ресурси й результати: `forbidden_arcanus:quantum_catcher`, `forbidden_arcanus:quantum_core`.
+Квести: `V5_E21_forbidden_core_quantum_catcher`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 22. Фінальне підвищення Hephaestus Forge
+
+Епохи: 31.
+
+Після четвертого рівня поставте Stellarite Block у центр. Навколо потрібні 4 Sculk Catalysts, 2 Dark Nether Stars і 2 Dragon Scales. Пізні матеріали збирайте після відкриття відповідних подорожей. Відкладіть реагенти й запас есенцій окремо від поточного виробництва. Запустіть ритуал і перевірте успішний перехід на п’ятий рівень.
+Попередні кроки: forbidden_arcanus.core.tier_4.
+Квести: `V5_E31_forbidden_core_tier_5`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
+### 23. Запасне спорядження для арканного перекування
+
+Епохи: 31.
+
+Ритуали Draco Arcanus починаються з відповідного Netherite обладунку та використовують Dragon Scales і Obsidiansteel. Для першої перевірки візьміть запасний нагрудник, а точні матеріали звірте в JEI. Не плутайте центральний обладунок із реагентами на п’єдесталах. Перед заміною основного спорядження порівняйте властивості результату й відкладіть повний комплект матеріалів.
+Попередні кроки: forbidden_arcanus.core.clibano_fire, forbidden_arcanus.core.tier_5.
+Машини: `forbidden_arcanus:hephaestus_forge_tier_5`.
+Ресурси й результати: `minecraft:netherite_chestplate`, `forbidden_arcanus:dragon_scale`.
+Квести: `V5_E31_forbidden_core_draco_preparation`.
+Предмети й огляд перевіряють підготовку, не активний режим/есенції/роботу повної конструкції.
+
+### 24. Eternal Stella після опанування ритуалів
+
+Епохи: 34.
+
+Eternal Stella використовує Diamond у центрі, 3 XPetrified Orbs і 1 Stellarite Piece навколо. У JEI звірте потрібні есенції та мінімальний рівень кузні; в AIA2 цей потужний результат належить епосі 34. Дочекайтеся успішного завершення ритуалу онлайн у вимірі кузні. Після отримання перевірте правила застосування артефакта на запасному спорядженні.
+Попередні кроки: forbidden_arcanus.core.enhancer_prism, forbidden_arcanus.core.quantum_catcher, forbidden_arcanus.core.draco_preparation.
+Квести: `V5_E34_forbidden_core_eternal_stella`.
+Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
+
 Фінальні цілі:
 - Виготовте Eternal Stella за ritual-даними, використавши вивчену кузню та реальні вимоги есенцій. Ритуал має власний мінімальний tier; вищий робочий рівень тут є фінальним оглядом освоєної інфраструктури.
 
@@ -4731,6 +4893,9 @@ Reforging Table є покращенням Simple Table й відкриває epi
 Прогалини та межі перевірки:
 - Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
 - Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Ритуали належать datapack registry, не RecipeSerializer; активний paid-state guard перевіряє root окремо.
+- Clibano main є внутрішнім контролером; курс використовує видимі clibano_center observation, але не заявляє full production/owner forwarding.
+- Повний optional dispatch, live ritual advancement, world effect/ItemEntity acceptance, Survival іTPS не запускалися.
 
 Джерела:
 
@@ -4741,6 +4906,55 @@ Reforging Table є покращенням Simple Table й відкриває epi
 - [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/CreateForgeInteraction.java) — SHA перевірено
 - [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/gradle.properties) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/README.md) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/advancements/critereon/RitualCompletedTrigger.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/advancements/critereon/FACriteriaTriggers.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/ritual/RitualManager.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/ritual/Ritual.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/essence/EssencesDefinition.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/essence/EssenceManager.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/input/EssenceDataInput.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/input/EssenceStorageInput.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/HephaestusForgeLevel.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/forge/ForgeDataCache.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/SoulExtractorItem.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/BloodTestTubeItem.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/MundabiturInteractions.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/CreateForgeInteraction.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/CreateClibanoInteraction.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/ArcaneCrystalObeliskBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoMainBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/hephaestus_forge/rituals/ModRituals.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/enhancer/ModEnhancerDefinitions.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/assets/forbidden_arcanus/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/ferrognetic_mixture.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/upgrade_tier_2.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/upgrade_tier_3.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/upgrade_tier_4.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/upgrade_tier_5.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/eternal_stella.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/hephaestus_forge/ritual/smelter_prism.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModItems.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/event/EntityEvents.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/event/TradeEvents.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/entity/villager/FAVillagerTrades.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/ModBlockPatterns.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/integration/ponder/ForgeScenes.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoFrameBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/clibano/AbstractClibanoFrameBlock.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoFireType.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/QuantumCatcherItem.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/loot_modifiers/elementarium_addition.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/loot_table/chests/additions/elementarium_addition.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/tags/item/clibano/creates_enchanted_fire.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/recipe/clibano_combustion/obsidiansteel_ingot_from_clibano_combustion.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/mundabitur_dust.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/clibano_core.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/soul_extractor.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/test_tube.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/deorum_ingot.json) — SHA перевірено
+- [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/dark_nether_star.json) — SHA перевірено
 
 ## Goety
 

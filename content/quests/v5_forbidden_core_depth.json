@@ -1,0 +1,672 @@
+{
+  "schema": 1,
+  "scope_uk": "Scoped Forge/essence/ritual completion course plus Clibano preparation; full0.5 not complete.",
+  "readiness_requirements": [
+    "Root ritualguard integration before release. Clibano goals intentionally require preparation/visible panel, not a manufactured alloy output; mainowner bridge remains separate."
+  ],
+  "quests": [
+    {
+      "id": "V5_E15_forbidden_core_foundation",
+      "epoch": 15,
+      "title_uk": "Основа кузні за кресленням",
+      "description_uk": [
+        "Відкрийте Ponder для Hephaestus Forge. Підготуйте 9 Gilded Chiseled Polished Darkstone, 4 Chiseled Arcane Polished Darkstone і 45 Polished Darkstone; Smithing Table займає центр.",
+        "Викладіть нижній шар за схемою й звільніть потрібний простір над ним. Присядьте та застосуйте Mundabitur Dust до Smithing Table: правильна конструкція перетвориться на Forge першого рівня.",
+        "Цей квест зараховує підготовлені матеріали. Побудована кузня знадобиться в наступному завданні."
+      ],
+      "icon": "forbidden_arcanus:mundabitur_dust",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:gilded_chiseled_polished_darkstone",
+          "count": 9,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:chiseled_arcane_polished_darkstone",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:polished_darkstone",
+          "count": 45,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:smithing_table",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:mundabitur_dust",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_MAG_FORBIDDEN_ARCANUS_01"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal_dust",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.foundation"
+    },
+    {
+      "id": "V5_E15_forbidden_core_pedestals",
+      "epoch": 15,
+      "title_uk": "П’єдестали навколо центрального реагенту",
+      "description_uk": [
+        "Поставте Darkstone Pedestals у позначені Ponder позиції. Головний реагент іде в центральний слот Forge, інші — на п’єдестали навколо.",
+        "Кількість інгредієнта в ритуалі означає кількість зайнятих п’єдесталів; стос на одному не замінює кілька позицій. Приберіть зайві реагенти й підготуйте Blacksmith Gavel для запуску.",
+        "Для зарахування огляньте Forge першого рівня та підготуйте показані предмети. Заповнення есенцій і запуск ритуалу перевірятимуться окремо."
+      ],
+      "icon": "forbidden_arcanus:darkstone_pedestal",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:hephaestus_forge_tier_1",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:darkstone_pedestal",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:iron_blacksmith_gavel",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_foundation",
+        "E15_X_forge"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:wax",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.pedestals"
+    },
+    {
+      "id": "V5_E15_forbidden_core_aureal",
+      "epoch": 15,
+      "title_uk": "Пасивне живлення Aureal",
+      "description_uk": [
+        "Складіть Arcane Crystal Obelisk із двох Arcane Crystal Blocks над Arcane Polished Darkstone та застосуйте Mundabitur Dust. Поставте його у відповідну позицію біля Forge й стежте за шкалою Aureal.",
+        "Обеліск може займати місце п’єдесталу. Перед ритуалом із повним набором реагентів накопичте Aureal і звільніть потрібні позиції.",
+        "Для зарахування підготуйте матеріали й огляньте обеліск. Фактичний запас Aureal перевірте в інтерфейсі кузні."
+      ],
+      "icon": "forbidden_arcanus:arcane_crystal_obelisk",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:arcane_crystal_obelisk",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:arcane_crystal_block",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:arcane_polished_darkstone",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_pedestals"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:mundabitur_dust",
+          "count": 1
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.aureal"
+    },
+    {
+      "id": "V5_E15_forbidden_core_souls",
+      "epoch": 15,
+      "title_uk": "Душа з піску душ",
+      "description_uk": [
+        "Використайте Soul Extractor на Soul Sand і тримайте застосування до завершення, не присідаючи. Блок стане Soulless Sand, а витягнута Soul з’явиться окремим предметом.",
+        "Передайте душі у відповідний вхід Forge. Souls і Blood зберігаються окремо: наповнення однієї шкали не замінює іншу.",
+        "Квест зараховує підготовлений інструмент і отримані матеріали. Перед наступним ритуалом перевірте запас Souls у кузні."
+      ],
+      "icon": "forbidden_arcanus:soul_extractor",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:soul_extractor",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:soul",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:soulless_sand",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_pedestals"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:wax",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.souls"
+    },
+    {
+      "id": "V5_E15_forbidden_core_blood_experience",
+      "epoch": 15,
+      "title_uk": "Кров і досвід мають різні носії",
+      "description_uk": [
+        "Тримайте Test Tube у другій руці під час атак дозволених істот: вона стає Blood Test Tube й накопичує кров від завданої шкоди. Перевірте її запас перед передачею у Forge.",
+        "XPetrified Orb живить Experience, а Blood Test Tube — Blood. Це ресурси Forbidden Arcanus; рідина Blood з іншого мода не наповнює ці шкали автоматично.",
+        "Для зарахування підготуйте порожню Test Tube, наповнену Blood Test Tube та XPetrified Orb і огляньте кузню. Фактичну кількість есенцій перевірте в її інтерфейсі."
+      ],
+      "icon": "forbidden_arcanus:blood_test_tube",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:hephaestus_forge_tier_1",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:blood_test_tube",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:xpetrified_orb",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:test_tube",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_aureal",
+        "V5_E15_forbidden_core_souls"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal_dust",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.blood_experience"
+    },
+    {
+      "id": "V5_E15_forbidden_core_ferrognetic_mixture",
+      "epoch": 15,
+      "title_uk": "Перший ритуал феромагнітної суміші",
+      "description_uk": [
+        "Покладіть Lodestone у центр. Розкладіть навколо 2 Clay Balls, 2 Wax, 2 Slime Balls і 1 Iron Ingot: потрібні 7 зайнятих п’єдесталів, решту залиште порожньою.",
+        "Підготуйте Aureal, Souls і Blood за вимогами JEI та інтерфейсу Forge. Запустіть ритуал молотом Blacksmith Gavel і дочекайтеся успішного завершення.",
+        "Залишайтеся онлайн у вимірі кузні до фіналу: квест використовує особисте досягнення успішного ритуалу."
+      ],
+      "icon": "forbidden_arcanus:ferrognetic_mixture",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/ferrognetic_mixture"
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_blood_experience"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:edelwood_log",
+          "count": 4
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.ferrognetic_mixture"
+    },
+    {
+      "id": "V5_E21_forbidden_core_tier_2",
+      "epoch": 21,
+      "title_uk": "Успішний перехід Forge на рівень 2",
+      "description_uk": [
+        "Для переходу потрібна Forge саме першого рівня. Центральний матеріал — Edelwood Planks, навколо розкладіть 4 Arcane Crystals і 4 Spawner Scraps.",
+        "До запуску заповніть шкали ресурсів за вимогами ритуалу: підвищення витрачає значний запас Souls і Blood. Після успіху перевірте новий рівень та доступні слоти.",
+        "Залишайтеся онлайн у вимірі кузні до завершення ритуалу, щоб зарахувати особисте досягнення."
+      ],
+      "icon": "forbidden_arcanus:arcane_crystal",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/upgrade_tier_2"
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_ferrognetic_mixture",
+        "E21_X_forge_support"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.tier_2"
+    },
+    {
+      "id": "V5_E21_forbidden_core_tier_3",
+      "epoch": 21,
+      "title_uk": "Деорум для третього рівня",
+      "description_uk": [
+        "Підвищте Forge другого рівня до третього: використайте Chiseled Polished Darkstone як центральний реагент, а 4 Arcane Crystals і 4 Deorum Ingots — навколо.",
+        "Ритуал перевіряє точний попередній рівень. Спочатку поповніть ресурси й переконайтеся, що основа кузні залишилася правильною.",
+        "Зарахування потребує успішного фіналу ритуалу; залишайтеся онлайн у вимірі кузні."
+      ],
+      "icon": "forbidden_arcanus:deorum_ingot",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/upgrade_tier_3"
+        }
+      ],
+      "after": [
+        "V5_E21_forbidden_core_tier_2"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:rune",
+          "count": 1
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.tier_3"
+    },
+    {
+      "id": "V5_E21_forbidden_core_enhancer_prism",
+      "epoch": 21,
+      "title_uk": "Реліквія відкриває елементальні ритуали",
+      "description_uk": [
+        "Elementarium відкриває елементальні ритуали, зокрема Smelter Prism. Шукайте реліквію серед скарбів пустельних і джунглевих храмів та підводних руїн.",
+        "Порівняйте вимоги JEI до звичайного ритуалу та ритуалу з enhancer. Установіть потрібну реліквію у Forge й підготуйте Smelter Prism.",
+        "Квест перевіряє комплект і огляд кузні третього рівня. Установлення реліквії та запас есенцій перевірте в інтерфейсі."
+      ],
+      "icon": "forbidden_arcanus:elementarium",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:hephaestus_forge_tier_3",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:elementarium",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:smelter_prism",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E21_forbidden_core_tier_3"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:wax",
+          "count": 3
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.enhancer_prism"
+    },
+    {
+      "id": "V5_E21_forbidden_core_tier_4",
+      "epoch": 21,
+      "title_uk": "Сталларит для четвертого рівня",
+      "description_uk": [
+        "Після третього рівня підготуйте Chiseled Polished Darkstone в центрі та 4 Stellarite Pieces із 4 Runes на п’єдесталах.",
+        "Перед запуском звірте місткість шкал і витрати з установленими реліквіями. Успішний ритуал має підвищити рівень кузні; установлення внутрішнього tier-блока його не замінює.",
+        "Для особистого досягнення залишайтеся онлайн у вимірі Forge до завершення."
+      ],
+      "icon": "forbidden_arcanus:stellarite_piece",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/upgrade_tier_4"
+        }
+      ],
+      "after": [
+        "V5_E21_forbidden_core_tier_3"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal_dust",
+          "count": 4
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.tier_4"
+    },
+    {
+      "id": "V5_E15_forbidden_core_clibano_shell",
+      "epoch": 15,
+      "title_uk": "Корпус печі Clibano",
+      "description_uk": [
+        "Clibano створюється перетворенням конструкції 3×3×3 з порожнім центром. Поставте Clibano Core у потрібній передній позиції, викладіть Darkstone за схемою й застосуйте Mundabitur Dust.",
+        "Після перетворення огляньте зовнішню центральну панель Clibano. Внутрішній контролер не потрібно отримувати предметом; підготуйте окремий буфер сировини та виходу.",
+        "Для зарахування потрібні показані предмети й огляд зовнішньої панелі. Робочий цикл печі цим завданням не вимірюється."
+      ],
+      "icon": "forbidden_arcanus:clibano_core",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:clibano_center",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:clibano_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_foundation"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:edelwood_log",
+          "count": 4
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.clibano_shell"
+    },
+    {
+      "id": "V5_E21_forbidden_core_clibano_fire",
+      "epoch": 21,
+      "title_uk": "Режими полум’я та реліквія майстра",
+      "description_uk": [
+        "Clibano має звичайне, soul та enchanted полум’я. Порівняйте потрібний тип у JEI з ресурсом окремого soul-слота: звичайне паливо не замінює душу.",
+        "Artisan Relic відкриває спеціальні сплави печі. Серед її джерел є пропозиція мандрівного торговця за 18 Emeralds. Порівняйте вимоги сплаву зі звичайною плавкою.",
+        "Квест зараховує підготовлений комплект і огляд панелі Clibano; виробничий цикл та режим полум’я перевірте в інтерфейсі."
+      ],
+      "icon": "forbidden_arcanus:artisan_relic",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:clibano_center",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:soul",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:artisan_relic",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_clibano_shell",
+        "V5_E21_forbidden_core_tier_3"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:soul",
+          "count": 1
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.clibano_fire"
+    },
+    {
+      "id": "V5_E21_forbidden_core_quantum_catcher",
+      "epoch": 21,
+      "title_uk": "Підготовка до безпечного перенесення істот",
+      "description_uk": [
+        "Quantum Catcher виготовляється ритуалом із Quantum Core та 4 Spawner Scraps. Для нього потрібна Experience, тому перевірте цю шкалу окремо від Souls.",
+        "Перед захопленням перевірте обмеження предмета на звичайній дозволеній істоті та підготуйте безпечний майданчик повернення.",
+        "Для зарахування потрібні показані предмети й огляд кузні третього рівня. Сам факт захоплення істоти цим завданням не вимірюється."
+      ],
+      "icon": "forbidden_arcanus:quantum_catcher",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:hephaestus_forge_tier_3",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:quantum_catcher",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:quantum_core",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E21_forbidden_core_tier_3",
+        "V5_E15_forbidden_core_ferrognetic_mixture"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.quantum_catcher"
+    },
+    {
+      "id": "V5_E31_forbidden_core_tier_5",
+      "epoch": 31,
+      "title_uk": "Фінальне підвищення Hephaestus Forge",
+      "description_uk": [
+        "Після четвертого рівня поставте Stellarite Block у центр. Навколо потрібні 4 Sculk Catalysts, 2 Dark Nether Stars і 2 Dragon Scales. Пізні матеріали збирайте після відкриття відповідних подорожей.",
+        "Відкладіть реагенти й запас есенцій окремо від поточного виробництва. Запустіть ритуал і перевірте успішний перехід на п’ятий рівень.",
+        "Залишайтеся онлайн у вимірі кузні до фіналу, щоб отримати особисте досягнення."
+      ],
+      "icon": "forbidden_arcanus:dark_nether_star",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/upgrade_tier_5"
+        }
+      ],
+      "after": [
+        "V5_E21_forbidden_core_tier_4"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:xpetrified_orb",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.tier_5"
+    },
+    {
+      "id": "V5_E31_forbidden_core_draco_preparation",
+      "epoch": 31,
+      "title_uk": "Запасне спорядження для арканного перекування",
+      "description_uk": [
+        "Ритуали Draco Arcanus починаються з відповідного Netherite обладунку та використовують Dragon Scales і Obsidiansteel. Для першої перевірки візьміть запасний нагрудник, а точні матеріали звірте в JEI.",
+        "Не плутайте центральний обладунок із реагентами на п’єдесталах. Перед заміною основного спорядження порівняйте властивості результату й відкладіть повний комплект матеріалів.",
+        "Квест зараховує підготовку нагрудника й луски та огляд Forge п’ятого рівня. Саме перекування перевірте в кузні."
+      ],
+      "icon": "minecraft:netherite_chestplate",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:hephaestus_forge_tier_5",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:netherite_chestplate",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:dragon_scale",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E31_forbidden_core_tier_5",
+        "V5_E21_forbidden_core_clibano_fire"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:rune",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.draco_preparation"
+    },
+    {
+      "id": "V5_E34_forbidden_core_eternal_stella",
+      "epoch": 34,
+      "title_uk": "Eternal Stella після опанування ритуалів",
+      "description_uk": [
+        "Eternal Stella використовує Diamond у центрі, 3 XPetrified Orbs і 1 Stellarite Piece навколо. У JEI звірте потрібні есенції та мінімальний рівень кузні; в AIA2 цей потужний результат належить епосі 34.",
+        "Дочекайтеся успішного завершення ритуалу онлайн у вимірі кузні. Після отримання перевірте правила застосування артефакта на запасному спорядженні.",
+        "Eternal Stella не замінює обов’язкові гілки епохи та виготовлення обох ключів."
+      ],
+      "icon": "forbidden_arcanus:eternal_stella",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:forbidden/eternal_stella"
+        }
+      ],
+      "after": [
+        "V5_E31_forbidden_core_draco_preparation",
+        "V5_E21_forbidden_core_quantum_catcher",
+        "V5_E21_forbidden_core_enhancer_prism"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:mundabitur_dust",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.core.eternal_stella"
+    }
+  ]
+}

@@ -166,9 +166,77 @@ public final class NativeSmokeTests {
         testStrictMachineContext();
         testPassiveBoundaryFixtures();
         testFireWorksites();
+        testForbiddenPaidNbt();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    /** Actual Minecraft NBT primitives only; Forbidden Arcanus is absent from this minimal server. */
+    private static void testForbiddenPaidNbt() {
+        Object manager = new Object();
+        UUID starter = UUID.randomUUID();
+        String id = "forbidden_arcanus:arcane_crystal_obelisk";
+        var receipt = new ForbiddenPaidState.Receipt(id, "a".repeat(64), "b".repeat(64), TEAM_A, starter);
+        CompoundTag active = new CompoundTag();
+        active.putString("ritual", id); active.putInt("counter", 37); active.putInt("lightning_counter", 4);
+        active.putUUID("started_by", starter); active.putString("foreign_native_field", "retain");
+        UUID attempt = ForbiddenPaidState.begin(manager);
+        check(ForbiddenPaidState.status(manager) == ForbiddenPaidState.Status.PENDING
+                        && ForbiddenPaidState.receipt(manager).isEmpty(),
+                "actual NBT receipt remains unverified before payment");
+        ForbiddenPaidState.markPaid(manager, attempt, receipt, active);
+        check(ForbiddenPaidState.status(manager) == ForbiddenPaidState.Status.VERIFIED
+                        && ForbiddenPaidState.receipt(manager).orElseThrow().starter().equals(starter),
+                "actual Minecraft UUID int-array binds the exact payment receipt");
+        CompoundTag stored = new CompoundTag(); ForbiddenPaidState.save(manager, stored, false);
+        CompoundTag decoded;
+        try {
+            var bytes = new java.io.ByteArrayOutputStream();
+            net.minecraft.nbt.NbtIo.writeCompressed(stored, bytes);
+            decoded = net.minecraft.nbt.NbtIo.readCompressed(new java.io.ByteArrayInputStream(bytes.toByteArray()),
+                    net.minecraft.nbt.NbtAccounter.unlimitedHeap());
+        } catch (java.io.IOException failure) { throw new IllegalStateException("Actual Forbidden receipt NBT roundtrip failed", failure); }
+        check(decoded.equals(stored), "real compressed NBT binary encode/decode retains the full ritual receipt and native tag");
+        Object reloaded = new Object(); ForbiddenPaidState.load(reloaded, decoded);
+        check(ForbiddenPaidState.status(reloaded) == ForbiddenPaidState.Status.VERIFIED
+                        && ForbiddenPaidState.receipt(reloaded).orElseThrow().equals(receipt),
+                "new manager restores the exact receipt from real decoded Minecraft NBT");
+        CompoundTag omitted = new CompoundTag(); ForbiddenPaidState.save(reloaded, omitted, true);
+        check(omitted.getCompound(ForbiddenPaidState.ACTIVE_TAG).getInt("counter") == 37
+                        && omitted.getCompound(ForbiddenPaidState.ACTIVE_TAG).getString("foreign_native_field").equals("retain"),
+                "omitted native registry codec cannot erase retained paid counters or opaque fields");
+        CompoundTag wrong = active.copy(); wrong.putString("ritual", "forbidden_arcanus:other");
+        CompoundTag rejectedRefresh = new CompoundTag(); rejectedRefresh.put(ForbiddenPaidState.ACTIVE_TAG, wrong);
+        ForbiddenPaidState.save(reloaded, rejectedRefresh, false);
+        check(rejectedRefresh.getCompound(ForbiddenPaidState.ACTIVE_TAG).getString("ritual").equals(id),
+                "mismatched native refresh cannot replace original paid operation in actual NBT");
+        CompoundTag unknown = decoded.copy(); unknown.getCompound(ForbiddenPaidState.RECEIPT_TAG).putInt("schema", 999);
+        Object unsupported = new Object(); ForbiddenPaidState.load(unsupported, unknown);
+        check(ForbiddenPaidState.status(unsupported) == ForbiddenPaidState.Status.CORRUPT
+                        && ForbiddenPaidState.receipt(unsupported).isEmpty(),
+                "unknown receipt schema remains blocked in actual Minecraft NBT");
+        CompoundTag unknownSaved = new CompoundTag(); ForbiddenPaidState.save(unsupported, unknownSaved, true);
+        check(unknownSaved.equals(unknown), "unknown native NBT and receipt are preserved verbatim");
+        CompoundTag badUuid = decoded.copy();
+        badUuid.getCompound(ForbiddenPaidState.ACTIVE_TAG).putIntArray("started_by", new int[]{1, 2, 3});
+        Object invalidUuid = new Object(); ForbiddenPaidState.load(invalidUuid, badUuid);
+        check(ForbiddenPaidState.status(invalidUuid) == ForbiddenPaidState.Status.CORRUPT,
+                "actual Minecraft rejects malformed UUID int-array length instead of inventing a starter");
+        CompoundTag legacy = new CompoundTag(); legacy.put(ForbiddenPaidState.ACTIVE_TAG, active.copy());
+        Object old = new Object(); ForbiddenPaidState.load(old, legacy);
+        check(ForbiddenPaidState.status(old) == ForbiddenPaidState.Status.LEGACY
+                        && ForbiddenPaidState.receipt(old).isEmpty() && !ForbiddenPaidState.captureActive(old, active),
+                "legacy native state cannot acquire payment permission from a normal codec save");
+        active.putInt("counter", 900);
+        check(((CompoundTag) ForbiddenPaidState.rawActive(old)).getInt("counter") == 37,
+                "actual Minecraft CompoundTag copying isolates retained native progress from caller mutation");
+        ForbiddenPaidState.clear(reloaded); CompoundTag completed = new CompoundTag();
+        completed.put(ForbiddenPaidState.RECEIPT_TAG, decoded.get(ForbiddenPaidState.RECEIPT_TAG).copy());
+        completed.putString("foreign", "keep"); ForbiddenPaidState.save(reloaded, completed, false);
+        check(!completed.contains(ForbiddenPaidState.RECEIPT_TAG) && !completed.contains(ForbiddenPaidState.ACTIVE_TAG)
+                        && completed.getString("foreign").equals("keep"),
+                "trusted completion tombstone removes only own receipt and never restores old native progress");
     }
 
     private static void testPassiveBoundaryFixtures() {

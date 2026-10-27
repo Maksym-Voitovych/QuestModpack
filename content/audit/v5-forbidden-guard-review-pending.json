@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "read_only_design_review_no_runtime_claim",
+  "version": "forbidden_arcanus2.6.1",
+  "pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+  "source_manifest": "content/research/evidence/dark_magic_native_v5/manifest.json",
+  "critical_findings": [
+    {
+      "id": "payment_inside_synthetic_lambda",
+      "source": "RitualManager.startRitual",
+      "native_order": [
+        "Optional.map lambda",
+        "setActiveRitual",
+        "createMagicCircle",
+        "storage.reduce",
+        "raise pedestal height",
+        "return true"
+      ],
+      "risk": "An INVOKE injection in startRitual cannot target reduce because reduce is in a synthetic lambda. HEAD receipt authorizes unpaid active state on prepayment failure; RETURN receipt loses paid proof if later pedestal callback throws.",
+      "proposal": "Scoped Optional.map mapper wrapper with try/finally, exact storage identity captured; EssencesStorage.reduce RETURN marks paid only inside this attempt."
+    },
+    {
+      "id": "destructive_load_validation_before_tick",
+      "source": "HephaestusForgeBlockEntity.loadAdditional -> RitualManager.onDataChanged -> failRitual",
+      "risk": "Restart resolves holder under current registry; changed ingredients can trigger reset/pedestal clearing before guarded tick.",
+      "proposal": "Read own proof/raw active NBT before native load. Preserve mismatched/unverified active state at fail/reset boundaries even before setup/level is available. Keep dataCache assignment; do not cancel entire onDataChanged blindly."
+    },
+    {
+      "id": "stale_receipt_reuse_after_new_start_exception",
+      "risk": "A previous valid proof with same ritual ID/team/starter may match a new active instance that failed before reduce.",
+      "proposal": "Invalidate old proof before new attempt; bind receipt to exact attempt/active instance; cleanup only after verified completion/failure."
+    },
+    {
+      "id": "failure_permission_not_equal_run_permission",
+      "risk": "Native failRitual occurs after manual input changes. Requiring checkIngredients for failure makes normal failure permanently freeze. Conversely unrestricted failure can spawn arbitrary current main stack during onDataChanged while main slot still contains it; potential duplicate/alias is source-observed, not game reproduced.",
+      "proposal": "For bounded safe implementation, preserve/freeze invalid-input paid states and require restoring original inputs/manual recovery. If permitting native failure, check actual current main payload and proof independently; reject keys/future components. Document limitations."
+    },
+    {
+      "id": "fingerprint_direct_value_not_holder",
+      "source": "Ritual.DIRECT_CODEC vs Ritual.CODEC",
+      "risk": "Ritual.CODEC is RegistryFileCodec and usually encodes only registry ID, insufficient to detect changed definitions.",
+      "proposal": "Encode value through Ritual.DIRECT_CODEC and current registry serialization context; canonicalize JSON/tag ordering before SHA. Current canonical registry lookup must resolve same key and reviewed current value. Holder-set references may remain transitive references; do not claim entire registry graph fingerprint."
+    }
+  ],
+  "checked_api": {
+    "ritual_direct_codec": "public static Codec<Ritual> Ritual.DIRECT_CODEC",
+    "registry_context": "RegistryOps.create(NbtOps.INSTANCE, HolderLookup.Provider) or provider.createSerializationContext(JsonOps.INSTANCE)",
+    "actual_storage": "HephaestusForgeBlockEntity.getEssenceManager().getStorage() returns exact private essences instance",
+    "current_amounts": "EssencesStorage.immutable() -> EssencesDefinition; getCurrentEssences() delegates it",
+    "native_payment": "EssencesStorage.reduce(EssencesDefinition) forEach subtracts and put clamps >=0; start pays raw requirements but canStart checks modifier-adjusted requirements",
+    "native_payment_caution": "Native reduce returning proves execution, not mathematical full raw amount paid. Do not assume modified affordability equals actual deduction without explicit separate fix.",
+    "known_results": [
+      "CreateItemResult:copy configured stack",
+      "TransmuteInputResult:mainInput.transmuteCopy(result), retaining count/components",
+      "UpgradeTierResult:empty result item; world block tier1..5 and visual lightning"
+    ],
+    "tier_owner": "HephaestusForgeBlock.onRemove skips removal for replacement HephaestusForgeBlock; onPlace updates existing BE tier. Owner retention source-confirmed, fullpack not tested."
+  },
+  "recommended_tests": [
+    "denial before payment leaves storage/active/pedestals untouched",
+    "exception before reduce: no paid authorization; wrapper context restored",
+    "exception after reduce: paid proof retained, no caller-context leak",
+    "new attempt cannot reuse old same-ID/starter proof",
+    "load under removed/changed registry preserves raw active/proof/counters and does not clear pedestals",
+    "matching definition restored after restart can resume through current identity",
+    "legacy active with missing proof pauses and saves without auto-adopting current definition",
+    "current actual main/pedestal components and canonical receiver are checked; no cached-view spoof",
+    "unknown result class denied before calling it; known upgrade checks block floor despite empty ItemStack",
+    "manual input changes and native fail/reset semantics remain explicitly tested or frozen/documented"
+  ],
+  "performed": "Exact pinned source read; no code mutation or Minecraft execution",
+  "full_pack": "NOT_RUN"
+}

@@ -1,3 +1,11 @@
+# 0.4.12-alpha — Forbidden Forge і ритуальний курс
+
+- 16нових optional-квестів,6native ritual_completed критеріїв і24етапи scopedcore.3346квестів/140глав;96виробничихключів збережено. Новихрецептів/предметів/PNG0;623recipes незмінні.
+- ActualForgeowner/currentregistry/inputs/enhancers/output/tier, точний native payment scope та durable paidNBT. Changed/removed/legacy ритуали pause без автоматичного стирання. Essenceinput guard передсписанням. Explicit /aia2forge status/cancel з boundedbackup ібезrefund/output.
+- Усі3330старіtask/reward/dependency payloads збережено; одна виправлена block-only іконка.16нових тематичних нагород. Layout1152перетини/0structuralwarnings.
+- PASS212Python/55Node/5237Java,297новихmodeledassertions і111мінімальнихMinecraftchecks у2JVM. OptionalForbiddenweaving/JEI/Survival/TPS NOT RUN. Clibano actualmain/Obelisk/transitivegraph щеTODO.
+- Matching0.4.12JAR/scripts/installer; повний0.5ще IN_PROGRESS. Докладнийcheckpoint і ручнийacceptance збережено.
+
 # 0.4.11-alpha — EvilCraft core та spirit guards
 
 - 16новихoptional-квестів епох13/19/28:3330квестів/140глав. Усі3314старіnon-coordinatepayloads/dependencies/rewards і621recipe entries збережено.

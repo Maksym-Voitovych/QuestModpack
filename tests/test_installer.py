@@ -343,6 +343,64 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_missing_forbidden_guard_rejected_before_world_or_receipt_changes(self):
+        bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled),1)
+        classes=['ua/aia2/guard/'+name+'.class' for name in [
+            'ForbiddenRitualAccess','ForbiddenPaidState','ForbiddenForgeCommands']]
+        classes += ['ua/aia2/guard/mixin/'+name+'.class' for name in [
+            'ForbiddenRitualMixin','ForbiddenEssencePaymentMixin','ForbiddenForgeInputMixin']]
+        with zipfile.ZipFile(bundled[0]) as original:
+            self.assertTrue(set(classes) <= set(original.namelist()), 'Build and bundle the matching Forbidden guard first')
+        for missing in classes:
+            with self.subTest(missing=missing),tempfile.TemporaryDirectory() as tmp:
+                package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+                (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+                (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+                markers={
+                    'saves/world/level.dat':b'world-progress',
+                    'saves/world/data/forbidden-paid-ritual.dat':b'paid-ritual-progress',
+                    'mods/'+bundled[0].name:b'player-installed-guard'}
+                for name,data in markers.items():
+                    marker=instance/name;marker.parent.mkdir(parents=True,exist_ok=True);marker.write_bytes(data)
+                with zipfile.ZipFile(bundled[0]) as original,zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                    for name in original.namelist():
+                        if name!=missing:altered.writestr(name,original.read(name))
+                (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+                before={p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()}
+                with self.assertRaisesRegex(installer.InstallError,'Forbidden Arcanus paid ritual and essence guards'):
+                    installer.install(package,instance)
+                after={p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()}
+                self.assertEqual(before,after)
+                self.assertFalse((instance/'aia2-backups').exists())
+                self.assertFalse((instance/'kubejs').exists())
+
+    def test_unregistered_forbidden_hook_rejected_before_any_writes(self):
+        bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled),1)
+        for missing in ['ForbiddenRitualMixin','ForbiddenEssencePaymentMixin','ForbiddenForgeInputMixin']:
+            with self.subTest(missing=missing),tempfile.TemporaryDirectory() as tmp:
+                package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+                (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+                (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+                marker=instance/'saves/world/level.dat';marker.parent.mkdir(parents=True);marker.write_bytes(b'world-progress')
+                with zipfile.ZipFile(bundled[0]) as original,zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                    for name in original.namelist():
+                        data=original.read(name)
+                        if name=='aia2_machine_guard.mixins.json':
+                            value=json.loads(data)
+                            self.assertIn(missing,value['mixins'], 'Build and bundle the matching Forbidden guard first')
+                            value['mixins'].remove(missing);data=json.dumps(value).encode()
+                        altered.writestr(name,data)
+                (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+                before={p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()}
+                with self.assertRaisesRegex(installer.InstallError,'Forbidden Arcanus paid ritual and essence guards'):
+                    installer.install(package,instance)
+                after={p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()}
+                self.assertEqual(before,after)
+                self.assertFalse((instance/'aia2-backups').exists())
+                self.assertFalse((instance/'kubejs').exists())
+
     def test_missing_evilcraft_guard_rejected_before_world_changes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
         self.assertEqual(len(bundled),1)

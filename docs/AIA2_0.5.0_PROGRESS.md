@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.11-alpha (EvilCraft core/native guards); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.12-alpha (Forbidden Forge/core); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1914 SHA-файлів карт; Draconic CI633 provenance BLOCKED |
-| 3 | Карти прогресії | IN_PROGRESS | 25 scoped core-карт DONE; EvilCraft24етапи, Draconic/Forbiddenpartial |
-| 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1147перетинів після34новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 546нових відv4;16у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3066 item-нагород;16нових; усі3314старіpayloads незмінні |
-| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули;621старийentry незмінний;2Evilproducers замінено |
-| 8 | Предмети без джерел | IN_PROGRESS | 2412предметів;35native-source доказів;6IFfluid gaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE reviewed paths і3Evilnative entries реалізовано; FAritual/Env/Purifier відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 198Python/55Node/5237Java PASS;99MC@0.4.11 у2JVM;49новихEvilmodels;fullpackNOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.11 — проміжний блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1963 SHA-файли карт; exact Forbidden2.6.1; Draconic CI633 BLOCKED |
+| 3 | Карти прогресії | IN_PROGRESS | 26 scoped core-карт DONE; Forbidden24етапи;35partial і невивчені моди |
+| 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1152перетини після16новихцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 562нових відv4;16Forbidden у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3082 item-нагороди;16нових; усі3330старіrewardpayloads незмінні |
+| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніentries незмінні у0.4.12 |
+| 8 | Предмети без джерел | IN_PROGRESS | 2445предметів;35native-source доказів;6IFfluid gaps залишаються |
+| 9 | Creative/альтернативи | IN_PROGRESS | Forbidden ritual/payment/input hooks реалізовано; Clibano/Obelisk/transitive й EvilEnv/Purifier відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 212Python/55Node/5237Java PASS;111MC@0.4.12 у2JVM;297новихmodels;fullpackNOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.12 — проміжний блок; ZIP/installer PASS; commit/push перевірити черезGit;0.5не завершено |
 
 
 
@@ -44,13 +44,13 @@
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (27) | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (35) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
-| 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
+| 21 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (7) | IN_PROGRESS (1 формул) | DONE (static) |
 | 23 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
@@ -60,10 +60,10 @@
 | 28 | IN_PROGRESS | IN_PROGRESS (41) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 30 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (1 формул) | DONE (static) |
-| 31 | IN_PROGRESS | IN_PROGRESS (33) | TODO | DONE (static) |
+| 31 | IN_PROGRESS | IN_PROGRESS (35) | TODO | DONE (static) |
 | 32 | IN_PROGRESS | IN_PROGRESS (30) | IN_PROGRESS (2 формул) | DONE (static) |
 | 33 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
-| 34 | IN_PROGRESS | IN_PROGRESS (6) | TODO | DONE (static) |
+| 34 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (2) | IN_PROGRESS (3 формул) | DONE (static) |
 | 37 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
@@ -452,3 +452,27 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - Після основного5f52395 окремо уточнено тексти16новихEvil goals: прибрано dev-only зауваги з ігрового UI, залишено практичні інструкції й чесні умови зарахування. Усі3330IDs/tasks/rewards/dependencies/coordinates незмінні; proof implementation/evilcraft-ui-preservation-v5.json. Повторити static/rebuild/package перевірки; Java-код і JAR не змінювалися.
 
 - DONE UI-followup:7targetedEviltests/static SNBT/IDs/graph/resources PASS, повнийrebuild поточних1163runtimefiles byte-identical зPYTHONHASHSEED89. Backup: `/workspace/aia2-backups/before-evil-ui-20261027T174445Z/checkpoint-5f52395.tar.gz`. Змінилися лише описи16новихцілей і дослідницькі пояснення/звіти; код/JAR незмінні. Подальша конкретна дія — Forbidden ritual guard, як вище.
+
+
+### 2026-10-27 — Forbidden Arcanus: IN_PROGRESS
+
+- Відновлено чистий80051c0, main/origin звірено. Backup:/workspace/aia2-backups/before-forbidden-ritual-20261027T185709Z/checkpoint-80051c0.tar.gz.
+- Root: native ritual permission/persistence/diagnostics; forbidden_paid_state_v6: окремий NBT statehelper/tests; forbidden_course_v6: scopedcorecatalog/evidence/pendingmap; readonlyreviewзавершено. Критичні verified findings: payment всерединіlambda, failRitualпідчасload, RegistryDirectCodecпотрібендляfingerprint.
+- Наступна дія: реалізувати scopeпередоплатою/післяreduce, tick/fail/load/save захист без втратиpaidstate; source-backed course інтегрувати післятестів. База3330квестів/623рецепти/390предметівіPNG.0.5не реліз.
+
+
+### 2026-10-28 — Forbidden Forge0.4.12: перевірений код і контент
+
+- DONE цілісного підблоку:16новихoptional-квестів (15→7,21→6,31→2,34→1),24етапи scopedcore,6native ritual_completed критеріїв.3346квестів/140глав/623рецепти/390предметів іPNG/96ключів. Новихрецептів/предметів/текстур0;16новихitemrewards,3082загалом.
+- Snapshot80051c0 і fullpayload audit зберігають усі3330старіtasks/dependencies/rewards та623recipeentries. Єдина non-coordinate зміна — icon-only виправлення старого Forgegoal на real MundabiturDust. Координати змінилися лише в Forbiddenглаві:1147→1152перетини,0structuralwarnings.
+- DONE Java:3optional hooks (RitualManager/EssencesStorage/Forgeinput), actualowner/liveplayer/currentregistry/physicalmain+pedestals+enhancers/results+tiers. Scoped Optional.map доnative lambda; receipt тількипісля exactstorage+cost reduceRETURN. Keys/copyoutputs/essenceinputkeys denied. Paid rawNBT іreceipt читаютьсядоnativeparse, codec omission не стирає операцію; exactdefinition можеresume/rebind безновоїоплати.
+- Legacy/pending/corrupt іchanged/removeddefinition pause зі збереженням. Load/onDataChanged fail не чиститьп'єдестали. /aia2forge status; explicitnearbyoperator cancel у своїйкоманді змаксимум8persistentbackups, безphysicalinputwrites/refund/output. Інсталятор нічого не скасовує.
+- PASS212Python/55Node/5237Java іJDK21build.297новихmodelassertions(85state+212actualhelper/3handlers/realpolicy), включноnested scopes/exceptions/payment/reload/removeddefinition/latecommit/cancel. МінімальнийMinecraft0.4.12:111assertions/2JVM/650ticks;12новихactualNBT/UUID/compressedbinary checks. OptionalForbiddenweaving/JEI/UI/Survival/TPS NOT RUN.
+- Rebuild1169runtimeфайлів byte-identical PYTHONHASHSEED97. JAR157classes;140попередніхclasses byte-identical, NativeSmokeTests навмиснооновлений. SHA6f6246d6013e20655aa1cd5903c0982ced3598f4f30667dc7c434292c50e92e3.26scopedcore/35partial;695researchstages/1068questlinks/1963SHA-файли карт.
+- Limits: fingerprint фіксуєDIRECT_CODECритуал, неувесьtransitivegraph; nativeRNG/midpoint/worldeffects неrollback; native modifier/rawcost semantics збережено. Nativecriterion потребуєonlineініціатора увимірікузні йпередуєfinaloutput. Clibano internalmain ownership/production,Obelisk/passives/genericcomponents щеTODO.
+- IN_PROGRESS доставки:ZIP/actualinstallerupgrade0.4.11→0.4.12, finalreview/commit/push. Точнийhash/status черезgitlog/origin/main таexternaldeliveryreport, безself-referentialhash.
+- Наступна конкретна дія:Forgetransitive-definitionreview іClibano actualmain-controller owner/production guard заexact2.6.1source; далі35partial/невивченімоди істаріrequiredлінії48епох. RootsunfinishedritualrestartTODO,DraconicCI633BLOCKED,6IFfluidgapsBLOCKED. Повний0.5не реліз.
+
+- DONE пакування0.4.12:4159manifestentries/1169runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file+directorywrites; syntheticupgrade0.4.11→0.4.12 резервуєстарийJAR і зберігає world/FTB/fire/knowledge+EMC/paidchunkmarkers, сторонніquest/mod/script. Repeatinstallідемпотентний. Це opaqueсинтетичніmarkers, неfullpackритуальнийrestartтест. Звіт:implementation/forbidden-ritual-package-install-v5.json. Windowsінстанс не змінювався.
+- Всі власники цього підблоку завершили роботу. Source-review знайшов і root виправив physicalenhancerbinding таexactnativecostidentity; новий6fileSHAmanifest/sourcecontract регресія збережені. Післядоданоїsourcecontractперевірки остаточнийPythonнабір212;297modeledassertions незмінні. JavaScript syntax13filesPASS.
+- Стан зберігається окремим main-комітом іpushбезforce. Фінальнийhash/status визначати черезgitlog/origin/main таexternaldeliveryreport біляZIP; self-referentialhash уsourceархів не вбудовувати. Наступнийстарт — перша незавершенаClibano/transitiveдія вище, не повторювати16цілей або3готовіhooks.

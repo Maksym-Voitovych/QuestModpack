@@ -6,7 +6,7 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний проміжний блок: **0.4.11-alpha**, EvilCraft scoped core/16квестів,2механічні формули й3native guards; ForbiddenArcanus — наступний source-confirmed блок.
+Поточний проміжний блок: **0.4.12-alpha**, Forbidden scopedcore/16квестів,6nativeкритеріїв і3Forgehooks із paidNBT; наступний блок — transitive definitions/Clibano actualcontroller.
 Стан завершення й наступна дія — у PROGRESS; повний0.5 ще не готовий.
 
 ## Правило відновлення

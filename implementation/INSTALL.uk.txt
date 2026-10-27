@@ -1,9 +1,9 @@
-AIA2 0.4.11-alpha — встановлення та перевірка оновлення
+AIA2 0.4.12-alpha — встановлення та перевірка оновлення
 
 1. Закрийте Minecraft і сервер. Збережіть окрему копію свого інстансу та
    світу: інсталятор резервує змінювані файли, а не весь світ.
 2. Оновіть локальний Git checkout зі збереженням власних правок або
-   розпакуйте AIA2-runtime-0.4.11-alpha.zip в окрему папку. Не накладайте
+   розпакуйте AIA2-runtime-0.4.12-alpha.zip в окрему папку. Не накладайте
    старі ручні виправлення uuid()/getUUID() на нові скрипти.
 3. У папці пакета/репозиторію виконайте:
    python -m pip install nbtlib==2.0.4
@@ -15,7 +15,7 @@ AIA2 0.4.11-alpha — встановлення та перевірка онов�
 5. Інсталятор резервує всі змінювані оригінали ДО першої заміни, зливає
    групи та невідомі квести, зберігає data.snbt/світи/командний прогрес.
    Старий власний aia2-machine-guard-*.jar переноситься в backup перед
-   заміною на 0.4.11-alpha; сторонні моди не видаляються. Збережіть шлях
+   заміною на 0.4.12-alpha; сторонні моди не видаляються. Збережіть шлях
    backup і journal.json, які виводяться після встановлення.
 6. Для клієнта й окремого сервера встановіть однакові runtime-файли.
    Оновіть JAR і скрипти разом. Повністю перезапустіть обидва:
@@ -56,19 +56,27 @@ Create/Mekanism/AE2 перехоплення, клієнт і TPS потребу
 Порядок резервування/відкату: INSTALLER-SAFETY.uk.md.
 Інструкція та команди тестування: README.uk.md у корені репозиторію.
 
-Поточний пакет — проміжна розробка0.5 на runtime0.4.11, а не завершена0.5.
+Поточний пакет — проміжна розробка0.5 на runtime0.4.12, а не завершена0.5.
 Після оновлення перевірте чотири нативні виробничі докази (Create4/10, Mek16/23),
 /give не зараховується. До ранньої латуні застосовується незагрітий рецепт AIA2.
 
 Додаткові сценарії MI/Oritech/Roots: docs/testing/INDUSTRIAL_NATIVE_ACCEPTANCE.uk.md.
-Нові native guards потребують саме matching0.4.11JAR; старийAPI4JAR не достатній.
+Нові native guards потребують саме matching0.4.12JAR; старийAPI4JAR не достатній.
 
 EnderIO/Powah acceptance: docs/testing/ENERGY_NATIVE_ACCEPTANCE.uk.md.
 
-0.4.11 Fire Crafting: епоха19, sneak+правий клік кресалом по ВЕРХНІЙ грані основи; потім звичайне запалення. Старі основи потрібно зареєструвати один раз. Згасання bedrock-вогню не скидає власника; заміна основи скидає. Worksite SavedData ніколи не видаляється інсталятором. Див. docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md.
+0.4.12 Fire Crafting: епоха19, sneak+правий клік кресалом по ВЕРХНІЙ грані основи; потім звичайне запалення. Старі основи потрібно зареєструвати один раз. Згасання bedrock-вогню не скидає власника; заміна основи скидає. Worksite SavedData ніколи не видаляється інсталятором. Див. docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md.
 
-ProjectE0.4.11: matchingJAR обов’язковий для current-output/TimeWatch guards. Whitelist має14звичайних матеріалів; палива/матерія не синтезуються з EMC. Наше оновлення не очищує знання/EMC гравців. Приймальна перевірка:docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md. Draconic CI633 provenance залишається BLOCKED; точний binary не тестувався.
+ProjectE0.4.12: matchingJAR обов’язковий для current-output/TimeWatch guards. Whitelist має14звичайних матеріалів; палива/матерія не синтезуються з EMC. Наше оновлення не очищує знання/EMC гравців. Приймальна перевірка:docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md. Draconic CI633 provenance залишається BLOCKED; точний binary не тестувався.
 
-0.4.11: passive inventory/armor/Curios/bag/chest/pedestal/packet guards і таблетка Curios47. Перевірка matching JAR містить класи та реєстрацію mixins. Приймальні сценарії: docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md. Предмети, знання/EMC та збереження додатково не очищуються. Клієнтський Gem-рух і повний optional dispatch потребують гри.
+0.4.12: passive inventory/armor/Curios/bag/chest/pedestal/packet guards і таблетка Curios47. Перевірка matching JAR містить класи та реєстрацію mixins. Приймальні сценарії: docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md. Предмети, знання/EMC та збереження додатково не очищуються. Клієнтський Gem-рух і повний optional dispatch потребують гри.
 
-EvilCraft0.4.11: matching JAR обов’язковий для infusion/spirit output guards. Spirit Reanimator і Sanguinary Accumulator складаються в Create5×3; JEI/головні матеріали збережено.16нових optional goals, native Closure capture. Manual acceptance:docs/testing/EVILCRAFT_CORE_ACCEPTANCE.uk.md. Forbidden ritual guard ще не реалізовано; див.source-audit.
+EvilCraft0.4.12: matching JAR обов’язковий для infusion/spirit output guards. Spirit Reanimator і Sanguinary Accumulator складаються в Create5×3; JEI/головні матеріали збережено.16нових optional goals, native Closure capture. Manual acceptance:docs/testing/EVILCRAFT_CORE_ACCEPTANCE.uk.md. Forbidden ritual guard ще не реалізовано; див.source-audit.
+
+0.4.12 — Forbidden Forge:
+За можливості завершіть старі активні ритуали до оновлення. Без нового
+receipt вони зберігаються paused; інсталятор не видаляє їх і не приписує
+оплату. /aia2forge status x y z показує стан своєї кузні поруч. Оператор
+може явно виконати cancel на тестовій копії: максимум8NBTbackup, фізичні
+входи збережено, есенції не повертаються й результат не видається.
+План повного тестування: docs/testing/FORBIDDEN_RITUAL_ACCEPTANCE.uk.md.

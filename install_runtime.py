@@ -417,6 +417,12 @@ def plan_install(source, instance):
                         'ua/aia2/guard/mixin/' + name + '.class' for name in evilcraft_mixins}
                     if not evilcraft_classes <= set(jar.namelist()) or not evilcraft_mixins <= registered:
                         raise InstallError('This package needs the matching EvilCraft infusion and spirit guards')
+                    forbidden_mixins = {'ForbiddenRitualMixin', 'ForbiddenEssencePaymentMixin', 'ForbiddenForgeInputMixin'}
+                    forbidden_classes = {'ua/aia2/guard/' + name + '.class' for name in [
+                        'ForbiddenRitualAccess', 'ForbiddenPaidState', 'ForbiddenForgeCommands']}
+                    forbidden_classes.update('ua/aia2/guard/mixin/' + name + '.class' for name in forbidden_mixins)
+                    if not forbidden_classes <= set(jar.namelist()) or not forbidden_mixins <= registered:
+                        raise InstallError('This package needs the matching Forbidden Arcanus paid ritual and essence guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

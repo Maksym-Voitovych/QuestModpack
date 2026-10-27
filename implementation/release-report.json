@@ -1,20 +1,20 @@
 {
-  "version": "0.4.11-alpha",
+  "version": "0.4.12-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3330,
-    "substantive_quests": 3234,
+    "quests_total": 3346,
+    "substantive_quests": 3250,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 546,
+    "quests_added_this_release": 562,
     "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 0,
     "chapters": 140,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1629,
+    "optional_quests": 1645,
     "native_recipes": 623,
     "native_recipes_added_this_release": 54,
     "dual_key_recipes": 96,
@@ -39,8 +39,8 @@
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
     "quests_added_since_last_checkpoint": 16,
-    "native_action_quests": 99,
-    "complete_core_maps": 25,
+    "native_action_quests": 105,
+    "complete_core_maps": 26,
     "mapped_mods": 61,
     "controller_floor_items": 30,
     "controller_native_recipe_floors": 41,
@@ -61,11 +61,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 198,
+      "passed": 212,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 26,
+      "includes_installer_tests": 28,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -73,14 +73,14 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 99,
+      "passed": 111,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.11-alpha",
+      "version_tested": "0.4.12-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Real vanilla/guard/SavedData fixtures in2JVM; EvilCraft/Forbidden not installed"
+      "scope": "Actual minimal vanilla/guard/NBT binary/SavedData fixtures in2JVM; Forbidden not installed"
     },
-    "javascript_syntax_files": 12,
+    "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
     "registry_and_native_recipe_shapes": "passed",
     "preserved_v3_quests": 2512,
@@ -89,14 +89,14 @@
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
       "status": "passed",
-      "runtime_files": 1163,
-      "hash_seed": 89,
+      "runtime_files": 1169,
+      "hash_seed": 97,
       "byte_identical": true
     },
-    "jar_sha256": "61b3470775e023dc0a6a1b4fa7369ea3a3e91257a9dcccd8d542d791cf95921c",
-    "jar_path": "mods/aia2-machine-guard-0.4.9-alpha.jar",
-    "archive_verification_command": "python tools/package_runtime.py",
-    "packaged_installer_dry_run": "passed; zero writes using packaged CLI",
+    "jar_sha256": "6f6246d6013e20655aa1cd5903c0982ced3598f4f30667dc7c434292c50e92e3",
+    "jar_path": "mods/aia2-machine-guard-0.4.12-alpha.jar",
+    "archive_verification_command": "python tools/verify_forbidden_package_v6.py --check-only",
+    "packaged_installer_dry_run": "passed: extracted actual CLI, zero file and directory writes",
     "archive_crc_and_all_sha256_entries": "passed; full manifest and1163runtime hashes plus installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
@@ -140,7 +140,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed0.4.8→0.4.9; old JAR backup, synthetic world/fire/knowledge+EMC markers and foreign quest preserved",
+    "packaged_installer_upgrade": "passed: actual extracted CLI0.4.11→0.4.12, oldJARbackup, opaque synthetic world/FTB/fire/knowledge+EMC/paidchunk and foreigncontent preserved; repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -162,7 +162,10 @@
       "passed": 22,
       "optional_dispatch": false
     },
-    "real_rhino_emc_lifecycle": "passed realRhino85/fastutil/production script35 andRhinoLongMapBridge; EMC/menu API host modeled; map→fuel→ready anderrorclosure checked"
+    "real_rhino_emc_lifecycle": "passed realRhino85/fastutil/production script35 andRhinoLongMapBridge; EMC/menu API host modeled; map→fuel→ready anderrorclosure checked",
+    "forbidden_paid_state_modeled": 85,
+    "forbidden_ritual_helpers_modeled": 212,
+    "forbidden_real_nbt_checks": 12
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -172,7 +175,7 @@
     "Long-term gameplay balance, economy and TPS under real automation load",
     "Additional native caches/passive armor/Curios/component variants beyond documented hooks",
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately",
-    "98 native action goals,8 team process proofs, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
+    "105 native action goals,8 team process proofs, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
     "MI paid generated conversions with replaced original remain paused; unpaid lookup waits for native recipe caches (~20s or longer with nested cache timers).",
     "MI changed or removed paid recipe pauses in current runtime. Native MI NBT stores ID/EU without the original codec fingerprint, so semantics across restart are not proven.",
     "Oritech Atomic Forge native fresh lookup may reset its RF buffer when existing contextual RecipeManager filtering yields empty. Cached selector filtering happens after polymorphic capacity adjustment to avoid introducing the same loss there.",
@@ -190,11 +193,11 @@
     "Draconic3.1.4prefix source/export verified, CI633→commit not confirmed; map remainsPARTIAL and exactbinary dispatch unverified.",
     "ProjectE passive guarded native entrypoints still require optional Mixin weaving and acceptance; client Gem motion, spawned effects/addon calls, unchanged-armor enchantment location activation remain open. See PROJECTE_PASSIVE_ACCEPTANCE.uk.md.",
     "EvilCraft optional native dispatch, BloodInfuser reload cache wait, spirit outputs and outer timer semantics require fullpack acceptance; see EVILCRAFT_CORE_ACCEPTANCE.uk.md.",
-    "Forbidden Arcanus registry rituals still need prepayment/active paid-state adapters and a complete core course; source-only findings are preserved.",
-    "EvilCraft Environmental/Sanguinary caches, Purifier actions, world gem transform and passives remain open; targeted3paths are not universal mod protection."
+    "EvilCraft Environmental/Sanguinary caches, Purifier actions, world gem transform and passives remain open; targeted3paths are not universal mod protection.",
+    "Forbidden optional weaving/JEI/Survival/TPS, transitive definitions, Clibano internal main ownership/production, Obelisk and passive abilities remain open. See FORBIDDEN_RITUAL_ACCEPTANCE.uk.md."
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.11-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.12-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -212,10 +215,10 @@
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
-  "checkpoint_preservation": "implementation/evilcraft-core-preservation-v5.json",
-  "checkpoint_base_commit": "1f3ce768d924e0098525094d05128a7a783b6e7c",
-  "checkpoint_backup": "/workspace/aia2-backups/before-dark-magic-core-20261027T095531Z/checkpoint-1f3ce76.tar.gz",
-  "checkpoint_report": "docs/AIA2_0.4.11_CHECKPOINT.uk.md",
+  "checkpoint_preservation": "implementation/forbidden-core-preservation-v5.json",
+  "checkpoint_base_commit": "80051c098189a3859cc898cd371510d4d41c46c3",
+  "checkpoint_backup": "/workspace/aia2-backups/before-forbidden-ritual-20261027T185709Z/checkpoint-80051c0.tar.gz",
+  "checkpoint_report": "docs/AIA2_0.4.12_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
     "new_recipes": 4,
@@ -335,6 +338,51 @@
     "package_report": "implementation/evilcraft-core-package-install-v5.json",
     "jar_sha256": "3ca7dacd187767bfeaf3a58113ffd8f7e7cea4c3f6ee749966fa5111413517ea",
     "package_manifest_and_upgrade": "passed",
-    "previous_compiled_classes_byte_identical": 136
+    "previous_compiled_classes_byte_identical": 136,
+    "historical_checkpoint": "0.4.11-alpha"
+  },
+  "forbidden_core": {
+    "new_quests": 16,
+    "epochs": {
+      "15": 7,
+      "21": 6,
+      "31": 2,
+      "34": 1
+    },
+    "core_stages": 24,
+    "prior_stage_ids_refs_preserved": 8,
+    "new_native_ritual_goals": 6,
+    "new_item_reward_entries": 16,
+    "old_reward_task_dependency_changes": 0,
+    "old_quest_ids_preserved": 3330,
+    "justified_icon_only_changes": 1,
+    "old_recipe_entries_preserved": 623,
+    "new_recipes": 0,
+    "new_items": 0,
+    "new_textures": 0,
+    "complete_core_maps": 26,
+    "partial_mods": 35,
+    "new_guard_mixins": 3,
+    "paid_state_schema": 1,
+    "native_guard_audit": "content/audit/v5-forbidden-native-guard.json",
+    "manual_plan": "docs/testing/FORBIDDEN_RITUAL_ACCEPTANCE.uk.md",
+    "package_report": "implementation/forbidden-ritual-package-install-v5.json",
+    "previous_compiled_classes_byte_identical": 140,
+    "intentionally_changed_old_classes": [
+      "NativeSmokeTests"
+    ],
+    "compiled_classes": 157,
+    "registered_mixins": 64,
+    "jar_sha256": "6f6246d6013e20655aa1cd5903c0982ced3598f4f30667dc7c434292c50e92e3",
+    "old_jar_backed_up": true,
+    "full_pack_run": false,
+    "maps_source_files": 1963,
+    "research_stages": 695,
+    "research_quest_links": 1068,
+    "layout_crossings_before": 1147,
+    "layout_crossings_after": 1152,
+    "layout_structural_warnings": 0,
+    "delivery": "actual_package_manifest_and_installer_upgrade_passed",
+    "package_manifest_entries": 4159
   }
 }

@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "status": "implemented_and_available_checks_passed_optional_dispatch_not_run",
+  "version": "0.4.12-alpha",
+  "mod": "forbidden_arcanus",
+  "installed_version": "2.6.1",
+  "source_pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+  "evidence_manifests": [
+    "content/research/evidence/dark_magic_native_v5/manifest.json",
+    "content/research/evidence/forbidden_core_next_v5/manifest.json",
+    "content/research/evidence/forbidden_ritual_guard_v6/manifest.json"
+  ],
+  "confirmed_causes": [
+    "Native payment lives in startRitual Optional.map synthetic lambda; start RETURN misses payment if a later callback throws.",
+    "Native onDataChanged can call destructive failRitual during load before tick; current-registry decode can omit removed active state.",
+    "Holder-reference codec only records ritual ID; DIRECT_CODEC value is needed to detect changed definitions.",
+    "Native commit increments counter before finish; the final check must allow duration+1."
+  ],
+  "hooks": {
+    "ForbiddenRitualMixin": [
+      "startRitual Optional.map Redirect with try/finally",
+      "tick reentry scope",
+      "finishRitual/failRitual guarded before reset/effects",
+      "load HEAD retains raw NBT",
+      "save HEAD/RETURN retains raw active/counters/receipt"
+    ],
+    "ForbiddenEssencePaymentMixin": [
+      "reduce RETURN bound to actual scoped storage and exact requirements essence object"
+    ],
+    "ForbiddenForgeInputMixin": [
+      "getInput HEAD before slots5..8 fillWith consumption"
+    ]
+  },
+  "policy": [
+    "Canonical loaded server forge/manager, owner, synchronized real starter, no FakePlayer/nearest-player attribution",
+    "Current data-registry ritual value and known exact native result types; recipe serializers are not used for rituals",
+    "Main, physical pedestal positions/stacks/components/count fingerprint, exact physical enhancer holder list and current identity",
+    "No keys as ritual or essence inputs/outputs; stage and component-aware output policy; empty upgrade result still checks next block floor",
+    "Persistent receipt binds actual ritual ID/starter/team, original full definition hash, original input hash; legacy/pending/corrupt never auto-certify",
+    "Matching current definition can rebind holder after reload/restart without payment; changed/missing state pauses and saves",
+    "Native finish/failure only within paid verified tick; blocked Optional.of(EMPTY) cannot clear main slot",
+    "Receipt invalidated before trusted native reset/effects to prevent replay after exceptions",
+    "Explicit nearby same-team operator cancel backs up raw active/receipt max8, leaves physical inputs, no essence refund/output"
+  ],
+  "state_tag": "aia2_paid_ritual_v1",
+  "cancel_backup_tag": "aia2_fa_cancel_backups_v1",
+  "new_modeled_assertions": {
+    "receipt_state": 85,
+    "actual_helpers_handlers_real_policy": 212
+  },
+  "new_actual_minecraft_nbt_assertions": 12,
+  "full_pack_optional_dispatch": "not_run",
+  "limits": [
+    "DIRECT_CODEC hash does not fingerprint entire transitive tag/registry graph.",
+    "Native midpoint lightning/RNG/pedestal changes and prior effects cannot be universally rolled back.",
+    "Native discounted-affordability/raw-reduce semantics preserved; reduce RETURN is invocation proof, not mathematical raw-cost equivalence.",
+    "Native ritual advancement is online starter in same dimension and precedes world effect/output acceptance.",
+    "Legacy active operations preserve data and pause until explicit operator recovery; no automatic old-payment adoption.",
+    "Clibano internal main/controller ownership and cached production, Obelisk, passives, addon/direct calls and generic copied components remain open.",
+    "Essence input hook does not freeze collection from nearby world entities.",
+    "Exact optional JAR unavailable; full weaving/JEI/UI/Survival/TPS not run."
+  ],
+  "manual_acceptance": "docs/testing/FORBIDDEN_RITUAL_ACCEPTANCE.uk.md"
+}
