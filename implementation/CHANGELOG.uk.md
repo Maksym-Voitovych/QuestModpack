@@ -1,3 +1,12 @@
+# 0.4.10-alpha — passive guards ProjectE
+
+- Серверні inventory/world-use/packet, armor/Curios і bag/chest/pedestal перевірки фактичного носія або канонічного receiver. Без зміни stacks/ACTIVE/cooldown/knowledge/EMC.
+- Незмінне спорядження звіряє атрибути після stage/team/reload. Чужі різні values і дозволені спільні contributors захищені; штатне видалення старих modifiers не фільтрується.
+- Окремий suction шлях перевіряє сумку та її кільце. Curios-tablet47 зберігає floor на відкритому меню; table45 не підвищено.
+- Block break перевіряє фактичний mainhand tool перед native mineBlock/AOE.
+- 190Python/55Node/5237Java PASS;208нових modeled умов;99minimalMC assertions/2JVM/650ticks. Optional ProjectE/Curios weaving, клієнт, Survival/TPS NOT RUN.
+- 3314квестів/140глав/621рецепт/390предметів іPNG без зміни payloads чи координат. Нового контенту0. Matching0.4.10JAR/preflight класів і реєстрації, backup installer. Повний0.5 не реліз.
+
 # 0.4.9-alpha — ProjectE та Draconic
 
 - 34нові optional-квести:18ProjectE/16Draconic;3314квестів/140глав. Збережено3280старих payloads і618recipe entries.

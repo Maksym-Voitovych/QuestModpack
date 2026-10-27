@@ -163,6 +163,8 @@ public final class Aia2MachineGuard {
         return POLICY.getRequiredStage(blockId);
     }
 
+    public static int getRequiredItemStage(String itemId) { return ITEM_POLICY.getRequiredStage(itemId); }
+
     public static String getOwner(BlockEntity blockEntity) {
         return blockEntity.getPersistentData().getString(OWNER_TAG);
     }
@@ -416,5 +418,6 @@ public final class Aia2MachineGuard {
     private static void serverStopped(ServerStoppedEvent event) {
         clearRuntime();
         ProjectEAccess.pause();
+        ProjectEAccess.clearMenuSources();
     }
 }

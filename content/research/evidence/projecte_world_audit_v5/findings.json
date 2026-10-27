@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "read_only_audit_root_implementation_separate",
+  "confirmed": [
+    {
+      "id": "packet_capability_stage",
+      "method": "KeyPressPKT.tryPerformCapability",
+      "descriptor": "(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/neoforged/neoforge/capabilities/ItemCapability;Lmoze_intel/projecte/network/packets/to_server/KeyPressPKT$CapabilityProcessor;)Z",
+      "detail": "CHARGE/EXTRA_FUNCTION/FIRE_PROJECTILE/MODE directly dispatch capability actions without stage. Check actual stack before capability resolution/processor. Returning false still allows armor fallback: armor entry hooks separately required."
+    },
+    {
+      "id": "curio_tablet_handnull",
+      "method": "TransmutationTablet.openContainer(Player)",
+      "descriptor": "(Lnet/minecraft/world/entity/player/Player;)V",
+      "detail": "Curios keybind opens ContainerProvider(null), yielding same handnull menu as physical table45. Check actual Curios tablet47 before opening and retain its required tier for current menu after opening/removal/downgrade."
+    },
+    {
+      "id": "archangel_instanced_packet",
+      "method": "ArchangelSmite.fireVolley",
+      "descriptor": "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V",
+      "detail": "PacketHandler activate_archangel lambda calls static fireVolley directly, outside capability helper and ordinary use/attack hooks."
+    },
+    {
+      "id": "gem_mode_packet_mutation",
+      "method": "UpdateGemModePKT.handle",
+      "descriptor": "(Lnet/neoforged/neoforge/network/handling/IPayloadContext;)V",
+      "detail": "Mutates held Density/VoidRing GEM_DATA without stage. Actual hand/stack is supplied by context.player(); deny mutation without clearing stored components."
+    },
+    {
+      "id": "curio_active_tick",
+      "method": "CurioItemCapability.curioTick",
+      "descriptor": "(Ltop/theillusivec4/curios/api/SlotContext;)V",
+      "detail": "Delegates ItemStack.inventoryTick, covered by generic inventory wrapper; attributes have a separate path."
+    },
+    {
+      "id": "curio_attributes",
+      "method": "CurioItemCapability.getAttributeModifiers",
+      "descriptor": "(Ltop/theillusivec4/curios/api/SlotContext;Lnet/minecraft/resources/ResourceLocation;)Lcom/google/common/collect/Multimap;",
+      "detail": "Independently calls IExposesCurioAttributes. Arcana supplies projecte:arcana_flight CREATIVE_FLIGHT. Filter newly returned modifiers and reconcile already-applied modifiers after team/stage changes."
+    },
+    {
+      "id": "world_before_block_hook",
+      "method": "PhilosophersStone.onItemUseFirst",
+      "descriptor": "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;",
+      "detail": "Overrides onItemUseFirst, not useOn, and permits nullable-player direct mutation. Patched1.21.1 ItemStack declares both wrappers. Ordinary RightClickBlock already protects player path; direct/fake/unattributed callbacks need native guards."
+    },
+    {
+      "id": "hotbar_curios_predicates",
+      "method": "PlayerHelper.checkHotbar/checkHotbarCurios",
+      "descriptor": "(Lnet/minecraft/world/entity/player/Player;Ljava/util/function/BiPredicate;)Z",
+      "detail": "InternalAbilities/fire/protection predicates can act before inventoryTick. Filter each actual candidate by actual player policy, while allowing native updateAttribute cleanup to continue."
+    },
+    {
+      "id": "armor_direct_internal_abilities",
+      "method": "InternalAbilities.canWalkOnWater/canWalkOnLava",
+      "descriptor": "(Lnet/minecraft/world/entity/player/Player;)Lmoze_intel/projecte/handlers/InternalAbilities$WalkOnType;",
+      "detail": "Direct HEAD/CHEST views bypass hotbar predicates. Armor agent owns those hooks. Cancelling the whole tick would leave stale modifiers."
+    }
+  ],
+  "limits": [
+    "Generic inventoryTick does not remove already-applied equipment/Curios attributes on team/stage changes; reconcile ProjectE-derived modifiers without unequipping or changing stack data.",
+    "Already spawned projectile/entity/world effects remain separate from initial guarded dispatch; do not claim universal protection.",
+    "Direct capability API calls outside reviewed vanilla/packet/passive dispatch remain addon-specific.",
+    "No fullpack optional dispatch, client UI, Survival or TPS benchmark was run."
+  ]
+}

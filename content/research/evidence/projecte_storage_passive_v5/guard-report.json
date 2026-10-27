@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "status": "implemented_modeled_verified_optional_dispatch_pending",
+  "native_dispatchers": [
+    "TickEvents.playerTick:IAlchBagItem.updateInAlchBag",
+    "AlchBlockEntityChest.tickServer:IAlchChestItem.updateInAlchChest",
+    "DMPedestalBlockEntity.tickServer:IPedestalItem.updateInPedestal"
+  ],
+  "bag_feature_epoch": 45,
+  "bag_feature_floor_contract": "All16installedcoloritemgates45; validatedinregression",
+  "receiver_binding": "Original static tick tile captured and compared with callback arguments/current worldidentity; no replacement-owner borrowing",
+  "context": "Chest/pedestal actualreceiver TickContext; bag explicitly clears foreignBEcontext; all finally-restored",
+  "capability_invocation": "Public source-reviewed API method signatures, supports private addon implementations; actual native errors propagate",
+  "denial_semantics": "Returnfalse before capability call; stored items, active flag, cooldown and EMC untouched",
+  "modeled_assertions": 43,
+  "python_tests": 2,
+  "source_files": 12,
+  "new_quests": 0,
+  "new_recipes": 0,
+  "new_items": 0,
+  "new_textures": 0,
+  "remaining_acceptance": [
+    "OptionalProjectE mixin weaving and actualgameplaynotrun",
+    "Client chest/pedestalvisualtickmethods areunchanged; bagclientcallbacks retainnativebehavior",
+    "Otheraddons invokinginterfaces directly outside reviewednative dispatchers needseparateaudit",
+    "Root ProjectEPassiveAccess policy API is modeled here; parent integrates and separatelytests itsproductionimplementation"
+  ]
+}

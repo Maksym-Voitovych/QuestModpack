@@ -392,6 +392,26 @@ def plan_install(source, instance):
                     projecte_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in ['ProjectEHandMenuMixin', 'ProjectETransmutationMixin', 'ProjectEOutputSlotMixin', 'ProjectETimeWatchMixin'])
                     if not projecte_guard <= set(jar.namelist()):
                         raise InstallError('This package needs the matching ProjectE current-output and bonus-tick guards')
+                    passive_guard = {'ua/aia2/guard/' + name + '.class' for name in [
+                        'ProjectEPassiveAccess', 'ProjectEStorageAccess', 'ProjectEArmorAccess', 'ProjectEArmorAttributes', 'ProjectECurioAttributes']}
+                    passive_guard.update('ua/aia2/guard/mixin/' + name + '.class' for name in [
+                        'ProjectEItemStackUseMixin', 'ProjectEHotbarPredicateMixin', 'ProjectEKeyCapabilityMixin',
+                        'ProjectEArchangelMixin', 'ProjectEGemModeMixin', 'ProjectETabletSourceMixin',
+                        'ProjectEBagPassiveMixin', 'ProjectEChestPassiveMixin', 'ProjectEPedestalPassiveMixin',
+                        'ProjectEArmorEventsMixin', 'ProjectEArmorFireMixin', 'ProjectEGemArmorMixin',
+                        'ProjectEGemChestMixin', 'ProjectEGemHelmetMixin', 'ProjectEGemFeetMixin',
+                        'ProjectEArmorAbilitiesMixin', 'ProjectEEquipmentAttributesMixin', 'ProjectEBagSuctionMixin',
+                        'ProjectECurioAttributesMixin', 'ProjectECurioReconcileMixin'])
+                    if not passive_guard <= set(jar.namelist()):
+                        raise InstallError('This package needs the matching ProjectE passive wearer/receiver guards')
+                    try:
+                        registered = set(json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins'])
+                    except (KeyError, ValueError, TypeError) as invalid:
+                        raise InstallError('The companion passive mixin registration is missing or damaged') from invalid
+                    passive_mixins = {name.rsplit('/', 1)[-1].removesuffix('.class')
+                                      for name in passive_guard if '/mixin/' in name}
+                    if not passive_mixins <= registered:
+                        raise InstallError('The companion ProjectE passive mixin registration is incomplete')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)

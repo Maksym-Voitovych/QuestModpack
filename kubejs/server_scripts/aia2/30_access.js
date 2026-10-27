@@ -30,7 +30,10 @@ BlockEvents.rightClicked(function (event) {
   if (aia2Deny(event, event.player, required)) return;
   if (global.AIA2Machines) global.AIA2Machines.claim(event.player, event.block);
 });
-BlockEvents.broken(function (event) { aia2Deny(event, event.player, aia2BlockStage(event.block.id)); });
+BlockEvents.broken(function (event) {
+  var required = Math.max(aia2BlockStage(event.block.id), aia2ItemStage(event.player.getMainHandItem().id));
+  aia2Deny(event, event.player, required);
+});
 ItemEvents.rightClicked(function (event) { aia2Deny(event, event.player, aia2ItemStage(event.item.id)); });
 ItemEvents.entityInteracted(function (event) { aia2Deny(event, event.player, aia2ItemStage(event.item.id)); });
 NativeEvents.onEvent(Java.loadClass('net.neoforged.neoforge.event.entity.player.AttackEntityEvent'), function (event) {

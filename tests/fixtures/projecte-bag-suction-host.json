@@ -1,0 +1,10 @@
+{
+  "net/minecraft/core/NonNullList.java": "package net.minecraft.core;public class NonNullList<T> extends java.util.ArrayList<T>{}",
+  "net/minecraft/world/entity/player/Player.java": "package net.minecraft.world.entity.player;public class Player{public String team,live;public boolean client,synced=true,fake;public Player(String team){this.team=live=team;}}",
+  "net/minecraft/world/item/ItemStack.java": "package net.minecraft.world.item;import java.util.List;public class ItemStack{public static final ItemStack EMPTY=new ItemStack(\"minecraft:air\");public final String id;public int count=1;public boolean active,bag;public List<ItemStack> contents=List.of();public ItemStack(String id){this.id=id;}public boolean isEmpty(){return this==EMPTY||count<=0;}}",
+  "ua/aia2/guard/ProjectEPassiveAccess.java": "package ua.aia2.guard;import net.minecraft.world.entity.player.Player;import net.minecraft.world.item.ItemStack;public final class ProjectEPassiveAccess{public static final GuardPolicy policy=new GuardPolicy();public static boolean mayUse(Player player,ItemStack stack){if(player==null||stack==null||stack.isEmpty())return false;if(player.client)return true;return policy.isReady()&&player.synced&&!player.fake&&player.team.equals(player.live)&&(!stack.id.startsWith(\"projecte:\")||policy.mayUseStage(45,player.team))&&policy.mayTick(stack.id,player.team);}}",
+  "org/spongepowered/asm/mixin/Mixin.java": "package org.spongepowered.asm.mixin;public @interface Mixin{String[] targets();boolean remap();}",
+  "org/spongepowered/asm/mixin/Pseudo.java": "package org.spongepowered.asm.mixin;public @interface Pseudo{}",
+  "org/spongepowered/asm/mixin/injection/At.java": "package org.spongepowered.asm.mixin.injection;public @interface At{String value();String target();}",
+  "org/spongepowered/asm/mixin/injection/Redirect.java": "package org.spongepowered.asm.mixin.injection;public @interface Redirect{String[] method();At at();boolean remap();int require();int allow();}"
+}

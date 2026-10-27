@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "status": "implemented_modeled_verified_optional_dispatch_pending",
+  "native_dispatchers": [
+    "CurioItemCapability.getAttributeModifiers(SlotContext,ResourceLocation)",
+    "Player.tick server tail reconciliation"
+  ],
+  "receiver_binding": "Actual SlotContext wearer and active IItemHandler from public ProjectE IntegrationHelper.CURIO_ITEM_HANDLER; no nearest-player fallback",
+  "attribute_contract": "Public IExposesCurioAttributes.addAttributes(Multimap), invoked through interface to support private implementations; exact source currently exposes Arcana arcana_flight",
+  "reconciliation": "Weak player frames retain only advertised modifier definitions, remove matching denied/stale values and restore missing usable values; no inventory/world/persistent-data writes",
+  "shared_ids": "Usable vanilla equipment keys and usable active Curios keys protected; different-value foreign modifiers never removed or overwritten",
+  "cost": "Bounded active Curios inventory scan, no world scan; stable attributes do no writes; no equipment scan without current or previous exposed attributes",
+  "modeled_assertions": 32,
+  "python_tests": 2,
+  "source_files": 7,
+  "new_quests": 0,
+  "new_recipes": 0,
+  "new_items": 0,
+  "new_textures": 0,
+  "remaining_acceptance": [
+    "Optional ProjectE/Curios Mixin weaving and actual native capability/equipment lifecycle not run",
+    "Client motion and prediction remain native and need fullpack acceptance",
+    "An unrelated mod using the identical attribute ID and exact native modifier value is not distinguishable unless its usable vanilla/ProjectE-exposed equipment contribution is visible",
+    "Unsupported API reflection failures are logged; future API variants are not claimed supported",
+    "Root ProjectEPassiveAccess is modeled here; its production implementation is covered by separate integration tests"
+  ]
+}

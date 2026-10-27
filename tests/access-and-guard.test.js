@@ -28,7 +28,7 @@ test('transformed blocks without item forms retain independent stage checks', ()
   });
   readonlyGlobal(c);
   load(c, '30_access.js');
-  const p = {isServerPlayer() { return true; }, tickCount: 1};
+  const p = {isServerPlayer() { return true; }, getMainHandItem() { return {id: 'minecraft:stick'}; }, tickCount: 1};
   for (const id of ['bigreactors:energizerpowerportfe', 'tfmg:encased_steel_pipe']) {
     assert.equal(rules.itemGates[id], undefined, 'Regression must exercise a non-item block');
     assert.ok(rules.blockGates[id] > 1);

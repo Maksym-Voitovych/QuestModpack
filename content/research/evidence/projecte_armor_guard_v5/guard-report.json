@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "status": "PASS_MODELED",
+  "installed_version": "PE1.1.0 / Minecraft 1.21.1",
+  "pin": "f432b0c66837759fb0731c9144dc53176b949c5d",
+  "tests": {
+    "python_cases": 2,
+    "actual_helper_handler_real_policy_assertions": 49,
+    "command": "python -m unittest discover -s tests -p test_projecte_armor_guard_v5.py -v"
+  },
+  "tested_production": [
+    "ProjectEArmorAccess",
+    "ProjectEArmorAttributes",
+    "ProjectEArmorEventsMixin",
+    "ProjectEArmorFireMixin",
+    "ProjectEGemArmorMixin",
+    "ProjectEGemChestMixin",
+    "ProjectEGemHelmetMixin",
+    "ProjectEGemFeetMixin",
+    "ProjectEArmorAbilitiesMixin",
+    "ProjectEEquipmentAttributesMixin"
+  ],
+  "host_model": [
+    "Minecraft equipment slots/item copies/attributes",
+    "ProjectEPassiveAccess boundary backed by actual GuardPolicy",
+    "callback cancellation; direct private handler invocation; no Mixin weaving",
+    "ProjectECurioAttributes shared-provider query stub (actual Curios helper separately tested)"
+  ],
+  "verified": [
+    "Locked armor excluded from actual damage/fire/direct-slot views without item mutation",
+    "Native non-player/client views preserved",
+    "Actual Gem piece and current team/stage required for packet actions",
+    "Vanilla new application PE-only; unrelated gear still applies",
+    "Unchanged armor/offhand stage downgrade removes only matching native modifier",
+    "Unlock restores suppressed native attributes once; stable frames do zero modifier writes",
+    "Foreign same-ID different-value modifier and allowed other equipment provider preserved",
+    "No later restore after unequipping",
+    "Unready/fake/stale team fail closed",
+    "Blocked armor never removes or restores over an allowed current Curio modifier provider"
+  ],
+  "vanilla_contract": {
+    "minecraft": "1.21.1",
+    "neoforge_build": "21.1.264",
+    "member": "net/minecraft/world/entity/LivingEntity.java",
+    "source_member_sha256": "1bbe1b37d6f73eadefdcdfe6f5822106e410fbc80d20c163a4eb5feefb317731",
+    "method": "collectEquipmentChanges()Ljava/util/Map;",
+    "ordinal_0": "Old equipment removal remains native",
+    "ordinal_1": "New equipment forEachModifier application guarded",
+    "return": "Current unchanged-stack stage policy reconciliation"
+  },
+  "not_run": [
+    "Optional ProjectE Mixin dispatch in full modpack",
+    "Full client GemFeet/GemLegs movement and stage sync",
+    "Curios unchanged-stack attributes integration (separate helper owned by root)",
+    "Vanilla enchantment location-effect activation after unlocking an unchanged previously blocked item; native equip change still refreshes it"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "version": "0.4.10-alpha",
+  "installed_mod": "projecte:1.1.0",
+  "source_pin": "f432b0c66837759fb0731c9144dc53176b949c5d",
+  "source_url": "https://github.com/sinkillerj/ProjectE/tree/f432b0c66837759fb0731c9144dc53176b949c5d",
+  "status": "implemented_source_model_build_and_minimal_server_verified_optional_dispatch_pending",
+  "new_helpers": 5,
+  "new_mixins": 20,
+  "total_registered_mixins": 58,
+  "new_modeled_assertions": {
+    "world_packets_tablet": 63,
+    "storage": 43,
+    "armor": 49,
+    "curios": 32,
+    "bag_suction": 21
+  },
+  "new_modeled_assertions_total": 208,
+  "checks": {
+    "python": 190,
+    "node": 55,
+    "pure_java": 5237,
+    "native_minecraft": 99,
+    "server_jvm_boots": 2,
+    "server_ticks": 650,
+    "full_pack": "NOT_RUN"
+  },
+  "jar": {
+    "path": "mods/aia2-machine-guard-0.4.10-alpha.jar",
+    "sha256": "cb45780e7b95c99f30158c8adcf76ba63cc576f185e949f568bc9248b7ecbe65",
+    "classes": 136
+  },
+  "new_quests": 0,
+  "new_recipes": 0,
+  "new_rewards": 0,
+  "new_items": 0,
+  "new_textures": 0,
+  "preservation": "implementation/projecte-passive-preservation-v5.json",
+  "source_manifests": [
+    "content/research/evidence/projecte_world_audit_v5/manifest.json",
+    "content/research/evidence/projecte_storage_passive_v5/manifest.json",
+    "content/research/evidence/projecte_armor_guard_v5/manifest.json",
+    "content/research/evidence/projecte_curios_guard_v5/manifest.json",
+    "content/research/evidence/projecte_bag_suction_v5/manifest.json"
+  ],
+  "behavior": [
+    "Actual synchronized wearer/live team and item floor; explicit base ProjectE feature45; no nearest-player authorization",
+    "Server ItemStack inventoryTick/useOn/onItemUseFirst plus direct key capability/GemMode/Archangel entries",
+    "Native armor views and attributes: new application filtered, old native removal unfiltered; unchanged equipment reconciled",
+    "Active native Curios capability attributes reconciled after stage/team/reload changes without stack writes",
+    "Bag/chest/pedestal callbacks scoped to actual player or canonical original receiver with finally cleanup",
+    "Suction chooses only usable actual bag and inner ring, preserving native order/type/ACTIVE semantics",
+    "Curios tablet47 origin bound to actual opened menu and survives pause/remap; physical table45 remains available",
+    "KubeJS broken event checks max(blockfloor,actual mainhand itemfloor) before native tool mineBlock/AOE"
+  ],
+  "limits": [
+    "Optional ProjectE/Curios Mixin weaving, native packets, client UI, Survival and TPS benchmark NOT_RUN",
+    "Client GemFeet/GemLegs movement prediction remains native; server attributes alone are not complete movement protection",
+    "Already spawned projectiles/world effects and direct third-party capability calls remain separate paths",
+    "On unlock of unchanged armor, attributes restored but native enchantment location effects wait for native equipment change",
+    "Foreign identical-ID identical-value attribute provenance cannot be distinguished unless its allowed equipment contribution is visible",
+    "Native ProjectE knowledge reload pruning remains its own behavior; this patch adds no knowledge/EMC pruning"
+  ],
+  "manual_plan": "docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md"
+}

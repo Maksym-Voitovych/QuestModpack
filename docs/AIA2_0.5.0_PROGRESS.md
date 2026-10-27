@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.9-alpha (ProjectE guards і Draconic fusion); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.10-alpha (ProjectE passive guards); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -13,13 +13,13 @@
 | 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1886 SHA-файлів карт; Draconic CI633 provenance BLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 24 scoped core-карти DONE; ProjectE27етапів, Draconic partial23етапи |
 | 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1147перетинів після34новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 530нових відv4;34у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3050 item-нагород;34нові entries; усі3280попередні payloads незмінні |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 530нових відv4;0у цьому guard-блоці; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3050 item-нагород;0змін уцьомублоці; усі3314payloads незмінні |
 | 7 | Розширення рецептів | IN_PROGRESS | 621рецепт;52v5формули;618старих entries незмінні;3fusion routes замінено,2конверсіїзбережено |
 | 8 | Предмети без джерел | IN_PROGRESS | 2412предметів;35native-source доказів;6IFfluid gaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE current-output/fuelcache/TimeWatch реалізовано; passive armor/Curios/world paths відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 178Python/52Node/5237Java PASS;90MC@0.4.9 у2JVM;66output+22watch models;fullpackNOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.9 — проміжний блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
+| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE output/TimeWatch та passive server paths реалізовано; optional dispatch/clientmotion відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 190Python/55Node/5237Java PASS;99MC@0.4.10 у2JVM;208новихpassive models;fullpackNOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.10 — проміжний guard-блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
 
 
 
@@ -84,6 +84,13 @@
 
 ## Сесії та контрольні точки
 
+### 2026-10-27 — ProjectE passive guards: відновлення IN_PROGRESS
+
+- Відновлено checkpoint `7539c6b`; main/origin перевірено. Backup до змін: `/workspace/aia2-backups/before-projecte-passive-20261026T224959Z/checkpoint-7539c6b.tar.gz`.
+- IN_PROGRESS: actual wearer/receiver checks для інвентарних ефектів, броні, Curios, bag/chest/pedestal, клавіш і world-use. Tablet Curios shortcut потребує окремого source floor47, який зберігається на відкритому меню після reload.
+- Нові квести/рецепти/предмети/текстури цього guard-блоку:0; baseline3314/621/390/390 не змінюється. Проміжна версія0.4.10 готується лише після перевірок;0.5 не реліз.
+- Наступна дія: завершити orphaned armor tests, Curios reconciliation, перевірити точні mixin selectors, JDK/native smoke і пакет; потім оновити результати, commit/push. Повний Windows-інстанс недоступний.
+
 ### 2026-10-23 — початок v5
 
 - Git: перевірено чистий базовий HEAD `90ab63f`; створено резервний Git-архів
@@ -105,8 +112,9 @@
 Не вважати старі імена агентів доказом незавершеної фонової роботи.
 
 Portable результати й SHA збережено в `content/audit/v5-pending-research.json`.
-Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split Apothic maps
-продовжити за чергою нижче. Не покладатися на /tmp або історію чату.
+Попередні Apotheosis/IP/Roots/AA/split Apothic та поточні ProjectE passive
+файли інтегровані; наступну дію брати з останньої контрольної точки нижче.
+Не покладатися на /tmp або історію чату.
 
 ### 2026-10-23 — FTB hotfix 0.4.1-alpha
 
@@ -400,3 +408,17 @@ Apotheosis/IP catalogs і карти інтегровано; Roots/AA та split
 - DONE пакування: ZIP CRC/повний manifest і1163runtime hashes перевірено. Запакований CLI dry-run0writes; тестове оновлення0.4.8→0.4.9 резервуєстарийJAR і зберігає synthetic world/fire/knowledge+EMC та стороннійквест. Звіт implementation/projecte-draconic-package-install-v5.json; реальнийWindows-інстанс не змінювався.
 - Git: цей блок зберігається окремим комітом уmain іpushбезforce; фінальнийhash/status через git log/origin/main та externaldeliveryreport. Повний0.5не реліз.
 - Наступна конкретна дія: ProjectE passive inventory/Curios/armor/world-tool аудит; підтвердження exactDraconicCI633заJAR/source (BLOCKED до доступногодоказу). Далі37partial/невивчені моди, старіобов’язковілінії48епох, Rootsunfinishedritualrestart і6IFfluidgaps. Не повторювати вже завершеніguard/карти/рецепти.
+
+
+### 2026-10-27 — ProjectE passive0.4.10: перевірений код
+
+- DONE реалізації:5helpers/20mixins, actual wearer/live team/item floors; inventory/useOn/onItemUseFirst, key/Archangel/GemMode, armor/Curios views і attributes, bag/chest/pedestal callbacks та pickup suction. Canonicalreceiver/finally, без stack/ACTIVE/cooldown/knowledge/EMC writes.
+- Curios-tablet47 source floor прив’язано до фактично відкритого меню і збережено через pause/remap; physicaltable45 доступний. Mainhand tool floor перевіряється до native mineBlock/AOE. Shared vanilla/Curios attribute contributors захищені, native old-modifier removal не фільтрується.
+- Новихквестів/рецептів/нагород/предметів/PNG0. Усі3314quest payloads із координатами/dependencies/rewards та621recipe entries збережені.140глав/48епох/96ключів/390предметів; incremental snapshot7539c6b захищає34новіID поверх3280 і621recipeIDs.
+- PASS:190Python/55Node/5237Java іJDK21build;208новихactual-helper/handler/real-policy modeled умов (world63/storage43/armor49/Curios32/suction21). МінімальнийMC0.4.10:99assertions/2JVM/650ticks/SavedDatarestart;9нових receiver/FakePlayer/vanillaequipment checks. OptionalProjectE/Curiosdispatch NOT RUN.
+- Rebuild1163runtimeфайлів byte-identical PYTHONHASHSEED83. SNBT/ID/DAG/keys/recipes/resources/layout PASS; координати без змін,1147перетинів/0structuralwarnings. JAR136classes/SHA cb45780e7b95c99f30158c8adcf76ba63cc576f185e949f568bc9248b7ecbe65.
+- Межі:client GemFeet/GemLegsmotion, directaddonAPI/spawnedeffects, unchangedarmorenchantmentlocationeffects та identical-ID+valueforeign provenance. ПовнийJEI/UI/Survival/TPS NOT RUN. Див.docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md і content/audit/v5-projecte-passive-guard.json.
+- IN_PROGRESS доставки:ZIP/actualpackagedinstaller, finalreview/commit/push. Після цього наступна конкретна дія:core-аудит EvilCraft1.2.99/ForbiddenArcanus2.6.1 за exact source/book/export;37partial/невивченімоди, старіобов’язковілінії48епох. DraconicCI633 BLOCKED, Roots ritualrestart TODO,6IFfluidgaps BLOCKED. Повний0.5не реліз.
+
+- DONE пакування0.4.10:CRC/повнийSHAmanifest та1163runtime hashes PASS. Extracted installer dry-run0writes; справжній тестовий upgrade0.4.9→0.4.10 резервуєстарийJAR, зберігає synthetic world-progress/fireledger/knowledge+EMC markers і стороннійквест у власнійглаві. Звіт implementation/projecte-passive-package-install-v5.json. Windows-інстанс не змінювався.
+- Стан цього guard-підблоку зберігається окремим комітом уmain іpushбезforce. Точнийhash/status — через gitlog/origin/main та externaldeliveryreport біляZIP; self-referentialhash не вигадується. Наступна сесія:перша незавершена core-дія EvilCraft/ForbiddenArcanus вище; повний0.5не завершено.

@@ -1,17 +1,13 @@
-# AIA2 Quest & Progression System
+# All in One Adventure 2.0 — AIA2
 
-**0.4.9-alpha** для Minecraft1.21.1 NeoForge, FTB Quests2101.1.36, KubeJS2101.7.2/Rhino build85. Повний0.5 ще розробляється.
+**0.4.10-alpha** для Minecraft1.21.1 NeoForge, FTB Quests2101.1.36, KubeJS2101.7.2/Rhino build85. Повний0.5 ще розробляється.
 
-**48 епох,96 виробничих ключів,3314 квестів у140 главах,621 нативний custom-рецепт і390 предметів/моделей/PNG.** Усі3280 попередні quest/task/reward payloads і залежності, крім координат, та618 recipe entries збережено.96legacy ручних цілей залишаються.
+**48 епох,96 виробничих ключів,3314 квестів у140 главах,621 нативний custom-рецепт і390 предметів/моделей/PNG.** Нових квестів/рецептів/предметів/текстур у цьому guard-блоці0. Усі3314 quest payloads, координати, залежності й нагороди та621 recipe entries збережено.
 
-Додано18 квестів ProjectE та16 Draconic. У вже відкритому меню перевіряються поточна команда, доступ до table45/tablet47, whitelist, позитивна поточна EMC-вартість, компоненти й поточний inventory. FuelMapper оновлюється після EMC-фільтрації; помилка закриває обидва кеші. TimeWatch перевіряє власника фактичної машини й відновлює контекст через finally. Додаткового очищення знань або EMC немає.
+ProjectE перевіряє фактичного носія або сховище. Атрибути броні/Curios звіряються після зміни стадії, команди й reload без зміни предметів. Захищено bag suction, окремі клавіші, world-use й імпортовані інструменти. Меню Curios-tablet зберігає вимогу47 після remap; фізичний table45 доступний. API4, виробництво двох ключів і попередні output/EMC/TimeWatch guards збережено.
 
-Три fusion-upgrades Draconic зберігають усі native costs, catalyst, tier, energy та output і додають по2магічно-технічні компоненти. IO↔relay конверсії збережено. Draconic-карта23етапів залишається PARTIAL: джерело3.1.4/експорт перевірено, зв’язок із CI build633 не підтверджено.
+190 Python-тестів,55 Node-тестів,5237 Java assertions і99перевірок мінімального Minecraft у2JVM:PASS.208нових helper/handler умов використовують модельовані optional hosts. Повний ProjectE/Curios weaving, JEI/UI, Survival іTPS:NOT RUN. Клієнтський Gem-рух, уже створені effects і прямі сторонні API лишаються окремими межами.
 
-Із закритою грою виконайте install_runtime.py з --dry-run, потім без прапорця. Інсталятор резервує оригінали, зберігає світи, знання та сторонні квести й вимагає matching0.4.9/API4JAR. Повністю перезапустіть клієнт і сервер.
+Із закритою грою встановіть nbtlib==2.0.4 і виконайте `python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`, потім без прапорця. Інсталятор резервує оригінали й старий власний JAR, зберігає світи, знання та сторонні квести. Установіть matching0.4.10 JAR/скрипти на обидві сторони та повністю перезапустіть їх.
 
-178 Python tests,52 Node tests,5237 Java assertions і90перевірок мінімального Minecraft у2JVM:PASS. Optional ProjectE/Draconic dispatch, JEI/UI, Survival іTPS:NOT RUN. Пасивні armor/Curios/world-tool шляхи ProjectE ще потребують окремого аудиту.
-
-[Checkpoint](docs/AIA2_0.4.9_CHECKPOINT.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Карти](docs/research/MOD_MECHANICS.md) · [Джерела](docs/research/SOURCE_INDEX.md) · [Приймальна перевірка](docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md).
-
-24основні карти завершені у визначеному обсязі;37partial і невивчені моди залишаються. Старі обов’язкові лінії48епох і повний ігровий приймальний тест ще не завершені.
+[Checkpoint](docs/AIA2_0.4.10_CHECKPOINT.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Карти](docs/research/MOD_MECHANICS.md) · [Джерела](docs/research/SOURCE_INDEX.md) · [Приймальна перевірка](docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md).

@@ -1,5 +1,5 @@
 {
-  "version": "0.4.9-alpha",
+  "version": "0.4.10-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
@@ -38,7 +38,7 @@
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 34,
+    "quests_added_since_last_checkpoint": 0,
     "native_action_quests": 98,
     "complete_core_maps": 24,
     "mapped_mods": 61,
@@ -56,16 +56,16 @@
   ],
   "checks": {
     "node_tests": {
-      "passed": 52,
+      "passed": 55,
       "failed": 0,
       "skipped": 0
     },
     "python_tests": {
-      "passed": 178,
+      "passed": 190,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 23,
+      "includes_installer_tests": 25,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -73,12 +73,12 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 90,
+      "passed": 99,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.9-alpha",
+      "version_tested": "0.4.10-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Real vanilla/guard/SavedData fixtures in2JVM; optional ProjectE/Draconic not installed"
+      "scope": "Real generic ItemStack/equipment/receiver and vanilla/guard/SavedData fixtures in2JVM; optional ProjectE/Curios not installed"
     },
     "javascript_syntax_files": 12,
     "snbt_graph_ids": "passed",
@@ -90,8 +90,8 @@
     "runtime_rebuild": {
       "status": "passed",
       "runtime_files": 1163,
-      "changed": [],
-      "scope": "Complete sequential generation in separate Python process PYTHONHASHSEED79; matching tested0.4.9JAR included"
+      "hash_seed": 83,
+      "byte_identical": true
     },
     "jar_sha256": "61b3470775e023dc0a6a1b4fa7369ea3a3e91257a9dcccd8d542d791cf95921c",
     "jar_path": "mods/aia2-machine-guard-0.4.9-alpha.jar",
@@ -187,10 +187,11 @@
     "18Powah optional preparation quests do not measure FE, working reactor volume, player UUID/channel configuration or real networking.",
     "Fire ledger corruption fixtures deliberately log one expected ERROR during opt-in native tests; ordinary production tests remain gated.",
     "Current-menu/EMC/fuel/TimeWatch hooks have source and modeled tests; optional ProjectE dispatch, client packets/UI and passive armor/Curios/world paths require separate acceptance.",
-    "Draconic3.1.4prefix source/export verified, CI633→commit not confirmed; map remainsPARTIAL and exactbinary dispatch unverified."
+    "Draconic3.1.4prefix source/export verified, CI633→commit not confirmed; map remainsPARTIAL and exactbinary dispatch unverified.",
+    "ProjectE passive guarded native entrypoints still require optional Mixin weaving and acceptance; client Gem motion, spawned effects/addon calls, unchanged-armor enchantment location activation remain open. See PROJECTE_PASSIVE_ACCEPTANCE.uk.md."
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.9-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.10-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -208,10 +209,10 @@
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
-  "checkpoint_preservation": "implementation/projecte-draconic-preservation-v5.json",
-  "checkpoint_base_commit": "1915b802bec636e961b45afb212788c71c63ec5a",
-  "checkpoint_backup": "/workspace/aia2-backups/before-projecte-draconic-20261026T193423Z/checkpoint-1915b80.tar.gz",
-  "checkpoint_report": "docs/AIA2_0.4.9_CHECKPOINT.uk.md",
+  "checkpoint_preservation": "implementation/projecte-passive-preservation-v5.json",
+  "checkpoint_base_commit": "7539c6b25fc7822bdb2d86df0a9fd7099391fe94",
+  "checkpoint_backup": "/workspace/aia2-backups/before-projecte-passive-20261026T224959Z/checkpoint-7539c6b.tar.gz",
+  "checkpoint_report": "docs/AIA2_0.4.10_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
     "new_recipes": 4,
@@ -286,6 +287,21 @@
     "draconic_ci633_provenance": "BLOCKED_not_claimed_verified",
     "audit": "content/audit/v5-projecte-native-guard.json",
     "manual_plan": "docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md",
-    "package_report": "implementation/projecte-draconic-package-install-v5.json"
+    "package_report": "implementation/projecte-draconic-package-install-v5.json",
+    "scope": "Historical0.4.9 checkpoint; current block is projecte_passive"
+  },
+  "projecte_passive": {
+    "audit": "content/audit/v5-projecte-passive-guard.json",
+    "new_quests": 0,
+    "new_recipes": 0,
+    "new_rewards": 0,
+    "new_items": 0,
+    "new_textures": 0,
+    "new_modeled_assertions": 208,
+    "minimal_native_assertions_added": 9,
+    "package_report": "implementation/projecte-passive-package-install-v5.json",
+    "jar_sha256": "cb45780e7b95c99f30158c8adcf76ba63cc576f185e949f568bc9248b7ecbe65",
+    "full_pack_run": false,
+    "package_manifest_and_upgrade": "passed"
   }
 }

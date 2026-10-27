@@ -164,10 +164,48 @@ public final class NativeSmokeTests {
         testPersistenceAndOwnership();
         testFakePlayerCrafting();
         testStrictMachineContext();
+        testPassiveBoundaryFixtures();
         testFireWorksites();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    private static void testPassiveBoundaryFixtures() {
+        var receiver = level.getBlockEntity(B);
+        check(ProjectEPassiveAccess.mayUseStored(receiver, new ItemStack(Items.RAW_IRON)),
+                "passive boundary accepts canonical owned server receiver and available item");
+        check(!ProjectEPassiveAccess.mayUseStored(receiver, new ItemStack(Items.DIAMOND)),
+                "passive boundary checks actual stored item's future floor");
+        check(!ProjectEPassiveAccess.mayUseStored(level.getBlockEntity(UNOWNED), new ItemStack(Items.RAW_IRON)),
+                "passive boundary denies unowned actual receiver");
+        var impostor = BlockEntity.loadStatic(B, receiver.getBlockState(), receiver.saveWithFullMetadata(level.registryAccess()), level.registryAccess());
+        check(!ProjectEPassiveAccess.mayUseStored(impostor, new ItemStack(Items.RAW_IRON)),
+                "same-position detached receiver cannot borrow real world's ownership");
+        var fake = FakePlayerFactory.get(level, new GameProfile(UUID.randomUUID(), "AIA2PassiveTest"));
+        check(!ProjectEPassiveAccess.mayUse(fake, new ItemStack(Items.RAW_IRON)),
+                "passive personal callback rejects actual FakePlayer even for basic item");
+        check(!ProjectEPassiveAccess.isProjectE(new ItemStack(Items.IRON_CHESTPLATE)),
+                "generic equipment hook leaves vanilla namespace outside PE policy");
+        try {
+            // Execute the real native collectEquipmentChanges redirect and RETURN hook.
+            var update = net.minecraft.world.entity.LivingEntity.class.getDeclaredMethod("detectEquipmentUpdates");
+            update.setAccessible(true);
+            var armor = fake.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR);
+            double before = armor.getValue();
+            ItemStack chest = new ItemStack(Items.IRON_CHESTPLATE);
+            fake.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, chest);
+            update.invoke(fake);
+            check(armor.getValue() == before + 6, "real equipment application retains vanilla iron chestplate's armor");
+            update.invoke(fake);
+            check(armor.getValue() == before + 6 && fake.getItemBySlot(net.minecraft.world.entity.EquipmentSlot.CHEST) == chest,
+                    "unchanged vanilla equipment neither accumulates attributes nor changes item identity");
+            fake.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, ItemStack.EMPTY);
+            update.invoke(fake);
+            check(armor.getValue() == before, "unfiltered native removal clears old vanilla equipment modifier");
+        } catch (ReflectiveOperationException failure) {
+            throw new IllegalStateException("Native equipment dispatch fixture failed", failure);
+        }
     }
 
     private static void testFireWorksites() {

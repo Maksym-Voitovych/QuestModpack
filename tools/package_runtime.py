@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.9-alpha'
+VERSION = '0.4.10-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -35,6 +35,17 @@ def main():
                 assert 'ua/aia2/guard/ProjectEAccess.class' in jar.namelist()
                 for name in ['ProjectEHandMenuMixin', 'ProjectETransmutationMixin', 'ProjectEOutputSlotMixin', 'ProjectETimeWatchMixin']:
                     assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                for name in ['ProjectEPassiveAccess', 'ProjectEStorageAccess', 'ProjectEArmorAccess', 'ProjectEArmorAttributes', 'ProjectECurioAttributes']:
+                    assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                for name in ['ProjectEItemStackUseMixin', 'ProjectEHotbarPredicateMixin', 'ProjectEKeyCapabilityMixin',
+                             'ProjectEArchangelMixin', 'ProjectEGemModeMixin', 'ProjectETabletSourceMixin',
+                             'ProjectEBagPassiveMixin', 'ProjectEChestPassiveMixin', 'ProjectEPedestalPassiveMixin',
+                             'ProjectEArmorEventsMixin', 'ProjectEArmorFireMixin', 'ProjectEGemArmorMixin',
+                             'ProjectEGemChestMixin', 'ProjectEGemHelmetMixin', 'ProjectEGemFeetMixin',
+                             'ProjectEArmorAbilitiesMixin', 'ProjectEEquipmentAttributesMixin', 'ProjectEBagSuctionMixin',
+                        'ProjectECurioAttributesMixin', 'ProjectECurioReconcileMixin']:
+                    assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                    assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
                 assert 'ua/aia2/guard/mixin/KeyResultProductionMixin.class' in jar.namelist()
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',
                          'CraftingQuickMoveMixin', 'ResultPickupMixin', 'RecipeManagerContextMixin',

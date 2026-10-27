@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.WeakHashMap;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -16,6 +17,7 @@ public final class ProjectEAccess {
     private static volatile Map<String, Long> allowed = Map.of();
     private record EmcApi(Object proxy, Method value) {}
     private static volatile EmcApi api;
+    private static final Map<Object, Integer> ORIGINS = new WeakHashMap<>();
     private record MenuFields(Field hand, Field stack, Field inventory) {}
     private static final ClassValue<MenuFields> MENUS = new ClassValue<>() {
         @Override protected MenuFields computeValue(Class<?> type) {
@@ -44,6 +46,12 @@ public final class ProjectEAccess {
 
     /** Called before rebuilding EMC; old cached output slots must fail closed immediately. */
     public static void pause() { allowed = Map.of(); }
+
+    /** A Curios tablet creates a hand-null menu; retain its actual source floor. */
+    public static void markMenuSource(Object menu, int required) {
+        if (isTransmutation(menu) && required >= 1 && required <= 100) ORIGINS.merge(menu, required, Math::max);
+    }
+    public static void clearMenuSources() { ORIGINS.clear(); }
 
     /** Unique signature, supplied only after the final EMC map and fuel cache succeed. */
     public static void configureWhitelistJson(String json) {
@@ -104,6 +112,10 @@ public final class ProjectEAccess {
     /** Recheck the actual held-tablet tier as well as the common table stage. */
     public static boolean mayUseContainer(Player player, Object menu) {
         if (!isTransmutation(menu) || !mayUseMenu(player)) return false;
+        if (player instanceof ServerPlayer server) {
+            Integer floor = ORIGINS.get(menu);
+            if (floor != null && !Aia2MachineGuard.mayObserveStage(Aia2MachineGuard.synchronizedPlayerTeam(server), floor)) return false;
+        }
         try {
             var fields = MENUS.get(menu.getClass());
             if (fields.hand().get(menu) == null) return true;
