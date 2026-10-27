@@ -448,3 +448,7 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 
 - DONE пакування0.4.11: CRC/повнийSHAmanifest та1163runtime hashes PASS. Запакований CLI dry-run0writes; справжній тестовий upgrade0.4.10→0.4.11 резервуєстарийJAR, зберігає synthetic world-progress/fireledger/knowledge+EMC markers і стороннійквест у власнійглаві. Звіт implementation/evilcraft-core-package-install-v5.json. Реальний Windows-інстанс не змінювався.
 - Цей цілісний EvilCraft-блок зберігається окремим комітом уmain іpushбезforce; finalhash/status черезgitlog/origin/main та externaldeliveryreport біляZIP. Наступну сесію починати з Forbidden prepayment/active ritual задачі вище; не повторювати16квестів,2рецепти й3готовіEvil adapters. Повний0.5не завершено.
+
+- Після основного5f52395 окремо уточнено тексти16новихEvil goals: прибрано dev-only зауваги з ігрового UI, залишено практичні інструкції й чесні умови зарахування. Усі3330IDs/tasks/rewards/dependencies/coordinates незмінні; proof implementation/evilcraft-ui-preservation-v5.json. Повторити static/rebuild/package перевірки; Java-код і JAR не змінювалися.
+
+- DONE UI-followup:7targetedEviltests/static SNBT/IDs/graph/resources PASS, повнийrebuild поточних1163runtimefiles byte-identical зPYTHONHASHSEED89. Backup: `/workspace/aia2-backups/before-evil-ui-20261027T174445Z/checkpoint-5f52395.tar.gz`. Змінилися лише описи16новихцілей і дослідницькі пояснення/звіти; код/JAR незмінні. Подальша конкретна дія — Forbidden ritual guard, як вище.
