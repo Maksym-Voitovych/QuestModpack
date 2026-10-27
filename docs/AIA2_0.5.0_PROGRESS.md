@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.10-alpha (ProjectE passive guards); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-27 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.11-alpha (EvilCraft core/native guards); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1886 SHA-файлів карт; Draconic CI633 provenance BLOCKED |
-| 3 | Карти прогресії | IN_PROGRESS | 24 scoped core-карти DONE; ProjectE27етапів, Draconic partial23етапи |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1914 SHA-файлів карт; Draconic CI633 provenance BLOCKED |
+| 3 | Карти прогресії | IN_PROGRESS | 25 scoped core-карт DONE; EvilCraft24етапи, Draconic/Forbiddenpartial |
 | 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1147перетинів після34новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 530нових відv4;0у цьому guard-блоці; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3050 item-нагород;0змін уцьомублоці; усі3314payloads незмінні |
-| 7 | Розширення рецептів | IN_PROGRESS | 621рецепт;52v5формули;618старих entries незмінні;3fusion routes замінено,2конверсіїзбережено |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 546нових відv4;16у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3066 item-нагород;16нових; усі3314старіpayloads незмінні |
+| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули;621старийentry незмінний;2Evilproducers замінено |
 | 8 | Предмети без джерел | IN_PROGRESS | 2412предметів;35native-source доказів;6IFfluid gaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE output/TimeWatch та passive server paths реалізовано; optional dispatch/clientmotion відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 190Python/55Node/5237Java PASS;99MC@0.4.10 у2JVM;208новихpassive models;fullpackNOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.10 — проміжний guard-блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
+| 9 | Creative/альтернативи | IN_PROGRESS | ProjectE reviewed paths і3Evilnative entries реалізовано; FAritual/Env/Purifier відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 198Python/55Node/5237Java PASS;99MC@0.4.11 у2JVM;49новихEvilmodels;fullpackNOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.11 — проміжний блок; ZIP/installer PASS; ідентичність коміту через git log/origin/main;0.5не завершено |
 
 
 
@@ -42,13 +42,13 @@
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (21) | IN_PROGRESS (2 формул) | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
-| 13 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
+| 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 15 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
-| 19 | IN_PROGRESS | IN_PROGRESS (27) | IN_PROGRESS (3 формул) | DONE (static) |
+| 19 | IN_PROGRESS | IN_PROGRESS (35) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (14) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (7) | IN_PROGRESS (1 формул) | DONE (static) |
@@ -57,7 +57,7 @@
 | 25 | IN_PROGRESS | IN_PROGRESS (10) | IN_PROGRESS (1 формул) | DONE (static) |
 | 26 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 27 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 28 | IN_PROGRESS | IN_PROGRESS (38) | TODO | DONE (static) |
+| 28 | IN_PROGRESS | IN_PROGRESS (41) | TODO | DONE (static) |
 | 29 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 30 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (1 формул) | DONE (static) |
 | 31 | IN_PROGRESS | IN_PROGRESS (33) | TODO | DONE (static) |
@@ -422,3 +422,29 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 
 - DONE пакування0.4.10:CRC/повнийSHAmanifest та1163runtime hashes PASS. Extracted installer dry-run0writes; справжній тестовий upgrade0.4.9→0.4.10 резервуєстарийJAR, зберігає synthetic world-progress/fireledger/knowledge+EMC markers і стороннійквест у власнійглаві. Звіт implementation/projecte-passive-package-install-v5.json. Windows-інстанс не змінювався.
 - Стан цього guard-підблоку зберігається окремим комітом уmain іpushбезforce. Точнийhash/status — через gitlog/origin/main та externaldeliveryreport біляZIP; self-referentialhash не вигадується. Наступна сесія:перша незавершена core-дія EvilCraft/ForbiddenArcanus вище; повний0.5не завершено.
+
+
+### 2026-10-27 — EvilCraft / Forbidden Arcanus: IN_PROGRESS
+
+- Відновлено чистий `1f3ce76`; main/origin синхронні. Backup перед змінами: `/workspace/aia2-backups/before-dark-magic-core-20261027T095531Z/checkpoint-1f3ce76.tar.gz`.
+- Наступний підблок: exact EvilCraft1.2.99 і ForbiddenArcanus2.6.1 — джерела/книги, scoped core-карти, змістовні optional квести й аудит native machine/ritual обходів. Поточні3314квести/621рецепт/390предметів/PNG — база, нові кількості ще не підтверджено.
+- Власники: evilcraft_core_v5 — новий EvilCraftcatalog/evidence/replacemententry; forbidden_core_v5 — Forbiddencatalog/evidence/replacemententry; dark_magic_native_audit — readonly native findings. Root інтегрує sharedmap, рецепти/генератори, перевірки й Git. СтаріID/прогрес зберігати.
+- Наступна конкретна дія: перевірити джерела й effective recipes, підтверджені guard findings; інтегрувати тільки перевірені зміни, запустити тести, зберегти окремий checkpoint/commit/push. Повний0.5 ще не реліз.
+
+
+### 2026-10-27 — EvilCraft0.4.11: перевірений код і контент
+
+- DONE цього scoped підблоку:16новихoptional-квестів (13→5,19→8,28→3),1основна карта EvilCraft24етапи,2CreateMechanical5×3формули,1nativecapturegoal.3330квестів/140глав/623рецепти/390предметів іPNG/96виробничихключів. Новихпредметів/текстур0;16новихitemrewards,3066загалом.
+- Усі3314попередні non-coordinate quest/task/reward payloads і dependencies та621recipe entries незмінні. Координати змінилися лише в EvilCraftглаві;1147перетинів,0structuralwarnings.8старих researchstageIDs/refs/order збережено; помилкове decompression-evidence DarkPowerGem замінено actualinfusion.
+- Native closure criterion доводить actualcapture дляentanglingplayers; інвентарне /give не є подією. Не додано фіктивного виробничогодоказу для інших підготовчих/observation цілей. Nativeactiongoals99; teamprocessproofs8/11recipeIDs незмінні.
+- SpiritReanimator/SanguinaryController: по9native material units і2Source/mana/aura inputs; CreateMechanicalCrafter доступний10≤13.42064exportscan підтвердив2primaryproducers; замінено2, старі custom formulas не видалено. Craft:true пасток для машинних виходів немає.
+- DONE3targetednative entries: BloodInfusergetRecipeRETURN перевіряє currentidentity/receiverowner/output; rawSingleCache не фільтрується. SpiritFurnaceactualoutput gated передinsertion; Reanimator gated передdrain/egg/boxclear. Keys/copyoutputs denied; жодного nearestplayer fallback.
+- PASS198Python/55Node/5237Java іJDK21build;49actualhelper/handler/realpolicy modeledassertions у2hosts. МінімальнийMC0.4.11:99assertions/2JVM/650ticks/SavedDatarestart. Він не містить EvilCraft/Forbidden; optionalweaving/JEI/UI/Survival/TPS NOT RUN.
+- Rebuild1163runtimeфайлів byte-identical PYTHONHASHSEED89.25scopedcoremaps/36partial;61мод/63records/679researchstages/1052questlinks/1914SHA-файлів карт. Exactguard31sources і дескриптори збережено окремо вdark_magic_native_v5.
+- Limits: післяrecipeReloadstaleInfusercache denied доnativeinput/fluidamount/tierchange, безавтоматичногоrebind. SpiritFurnaceblood/RNG/loot effects можутьпередуватиoutputguard; refund/rollback не заявлено. Nativeoutertimers, Env/Sanguinarypaidcaches, Purifier/worldgem/brooms/passives іgenericcopiedcomponents залишаютьсяокремимиадаптерами.
+- Допоміжні агенти цього блоку завершилися злімітом; root відновив наявні файли, завершив sourcefreeze/контент/код/тести. Активних власників файлів немає. Неперевіреного Forbidden Java-коду в runtime немає.
+- IN_PROGRESS доставки:пакет/actualinstaller upgrade0.4.10→0.4.11, finalreview/commit/push. Точнийcommit черезgitlog/origin/main та externaldeliveryreport, безself-referentialhash.
+- Наступна конкретна дія: ForbiddenArcanus2.6.1 current-registry/prepayment/active-ritual guard із збереженнямpaidоперації приreload/restart; source31filesіточнідескриптори вжеportable. Потім core-карта/квести зnative ritual_completed. Не називати ritual registry RecipeSerializer. Докладнийhandoff:content/audit/v5-dark-magic-native-findings.json. Roots ritualrestartTODO/DraconicCI633BLOCKED/6IFfluidgapsBLOCKED, решта36partial істаріrequiredлінії48епох ще відкриті. Повний0.5не реліз.
+
+- DONE пакування0.4.11: CRC/повнийSHAmanifest та1163runtime hashes PASS. Запакований CLI dry-run0writes; справжній тестовий upgrade0.4.10→0.4.11 резервуєстарийJAR, зберігає synthetic world-progress/fireledger/knowledge+EMC markers і стороннійквест у власнійглаві. Звіт implementation/evilcraft-core-package-install-v5.json. Реальний Windows-інстанс не змінювався.
+- Цей цілісний EvilCraft-блок зберігається окремим комітом уmain іpushбезforce; finalhash/status черезgitlog/origin/main та externaldeliveryreport біляZIP. Наступну сесію починати з Forbidden prepayment/active ritual задачі вище; не повторювати16квестів,2рецепти й3готовіEvil adapters. Повний0.5не завершено.

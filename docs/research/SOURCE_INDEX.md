@@ -196,6 +196,21 @@ SHA означає перевірку збереженого файла. Від�
 - ../../content/research/evidence/enderio_core_next_v5/recipes/enderio/weather_obelisk.json — enderio; є перевірений файл
 - ../../content/research/evidence/enderio_core_next_v5/recipes/enderio/xp_obelisk.json — enderio; є перевірений файл
 - ../../content/research/evidence/enderio_core_next_v5/recipes/enderio/xp_vacuum.json — enderio; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/base/dark_power_gem.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/base/undead_sapling.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier0.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier1.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier2.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier3.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_diamond.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_gold.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_iron.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/promise_efficiency_0.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/promise_speed_0.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/purifier.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/sanguinary_environmental_accumulator.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/spirit_furnace.json — evilcraft; є перевірений файл
+- ../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/spirit_reanimator.json — evilcraft; є перевірений файл
 - ../../content/research/evidence/fluid_gaps_next_v5/export/recipes/industrialforegoing/laser_drill_fluid/ether.json — industrialforegoing; є перевірений файл
 - ../../content/research/evidence/fluid_gaps_next_v5/export/recipes/pneumaticcraft/thermo_plant/lpg.json — pneumaticcraft; є перевірений файл
 - ../../content/research/evidence/industrial_depth_v5/immersiveengineering/export/recipes/immersiveengineering/refinery/biodiesel.json — immersiveengineering; є перевірений файл
@@ -793,7 +808,18 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTrigger.java — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл
 - https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-common/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerConfig.java — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл
 - https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/loader-neoforge/src/main/java/org/cyclops/cyclopscore/advancement/criterion/GuiContainerOpenTriggerEventHooksNeoForge.java — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/README.md — evilcraft; є перевірений файл
 - https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/gradle.properties — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/advancement/criterion/BoxOfEternalClosureCaptureTrigger.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/advancement/criterion/BoxOfEternalClosureCaptureTriggerConfig.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntityBloodInfuser.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntityBoxOfEternalClosure.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySanguinaryEnvironmentalAccumulator.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySpiritFurnace.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySpiritReanimator.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/item/ItemDarkGem.java — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/assets/evilcraft/lang/en_us.json — evilcraft; є перевірений файл
+- https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/data/evilcraft/advancement/closure.json — evilcraft; є перевірений файл
 - https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/data/evilcraft/info/book.xml — evilcraft; є перевірений файл
 - https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/LICENSE.txt — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл
 - https://github.com/CyclopsMC/IntegratedDynamics/blob/5e2bd8ece388a3fd572581ef8fe71f367d81f958/gradle.properties — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл

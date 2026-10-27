@@ -99,7 +99,7 @@
 | Ars Nouveau | magic_core | DONE — основна карта |
 | Botania Revived | magic_core | DONE — основна карта |
 | Enchanted | magic_core | IN_PROGRESS — часткова карта |
-| EvilCraft | magic_core | IN_PROGRESS — часткова карта |
+| EvilCraft | magic_core | DONE — основна карта |
 | Forbidden & Arcanus | magic_core | IN_PROGRESS — часткова карта |
 | Goety | magic_core | IN_PROGRESS — часткова карта |
 | Iron's Spells 'n Spellbooks | magic_core | IN_PROGRESS — часткова карта |

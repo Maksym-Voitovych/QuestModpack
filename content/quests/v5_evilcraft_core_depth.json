@@ -1,0 +1,672 @@
+{
+  "schema": 1,
+  "scope_uk": "Основний курс крові, tier upgrades, undead ресурсів, захоплення/переробки/відтворення духів і домашньої алхімії. Нові цілі optional;0.5 не завершено.",
+  "quests": [
+    {
+      "id": "V5_E13_evilcraft_core_blood_pool",
+      "epoch": 13,
+      "title_uk": "Перший темний кристал без циклу",
+      "description_uk": [
+        "До першого інфузора Dark Gem можна перетворити у Dark Power Gem, кинувши його до п’яти сусідніх блоків-джерел крові. Нативний код витрачає один gem і ці джерела; звичайний потік крові не підходить.",
+        "Після запуску Blood Infuser використовуйте дешевшу повторювану інфузію. Відкрийте JEI: пакетний шлях декомпресії з блока не є способом отримати перший gem.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:dark_gem",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "evilcraft:dark_gem",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:dark_power_gem",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E13_X_reference"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.blood_pool"
+    },
+    {
+      "id": "V5_E13_evilcraft_core_infuser_control",
+      "epoch": 13,
+      "title_uk": "Кров, предмет і стоп-сигнал",
+      "description_uk": [
+        "Підведіть кров окремо від предметів до Blood Infuser. У доступних рецептах переможе найбільший сумісний tier; підвищення tier не замінює матеріали й необхідний об’єм крові.",
+        "Подайте redstone-сигнал, щоб штатно призупинити процес, і заберіть сигнал для продовження. Власник машини має бути вашою командою; AIA2 перевіряє вихід до списання предмета й крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:lever",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:dark_tank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_evilcraft_core_blood_pool",
+        "E13_X_infuser"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.infuser_control"
+    },
+    {
+      "id": "V5_E13_evilcraft_core_undead_farm",
+      "epoch": 13,
+      "title_uk": "Мертва гілка стає живою",
+      "description_uk": [
+        "Dead Bush з кров’ю перетворюється на Undead Sapling. Дерево за природного росту створює кров, але його саджанці знову потребують обробки; цикл не є безкоштовним дублюванням живого саджанця.",
+        "Відведіть окрему ділянку від основної бази, зберіть деревину та сплануйте повторне постачання саджанців. Для стабільної кров’яної лінії зберігайте резерв у Dark Tank.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:undead_sapling",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:undead_log",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_evilcraft_core_infuser_control"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.undead_farm"
+    },
+    {
+      "id": "V5_E13_evilcraft_core_bowl_0",
+      "epoch": 13,
+      "title_uk": "Чаша обіцянок — рівень 0",
+      "description_uk": [
+        "Bowl of Promises tier0 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:bowl_of_promises_tier0",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_evilcraft_core_infuser_control"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.bowl_0"
+    },
+    {
+      "id": "V5_E13_evilcraft_core_bowl_1",
+      "epoch": 13,
+      "title_uk": "Чаша обіцянок — рівень 1",
+      "description_uk": [
+        "Bowl of Promises tier1 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:bowl_of_promises_tier1",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:promise_acceptor_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_evilcraft_core_bowl_0"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.bowl_1"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_bowl_2",
+      "epoch": 19,
+      "title_uk": "Чаша обіцянок — рівень 2",
+      "description_uk": [
+        "Bowl of Promises tier2 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:bowl_of_promises_tier2",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:promise_acceptor_gold",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E13_evilcraft_core_bowl_1"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.bowl_2"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_bowl_3",
+      "epoch": 19,
+      "title_uk": "Чаша обіцянок — рівень 3",
+      "description_uk": [
+        "Bowl of Promises tier3 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:bowl_of_promises_tier3",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:promise_acceptor_diamond",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_bowl_2"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.bowl_3"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_promise_tradeoffs",
+      "epoch": 19,
+      "title_uk": "Швидкість і витрата крові — різні цілі",
+      "description_uk": [
+        "Promises змінюють параметри через upgrade events: швидкість скорочує час, а efficiency впливає на споживання крові. Порівнюйте одну й ту саму формулу до й після зміни апгрейдів.",
+        "Не компенсуйте погану подачу лише прискоренням: залиште запас крові та окремий вихід продукції. Чаші не витрачаються при крафті promises; це не нагорода готовою машиною.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:blood_infuser",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:promise_speed_0",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:promise_efficiency_0",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_bowl_3"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.promise_tradeoffs"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_purifier_station",
+      "epoch": 19,
+      "title_uk": "Лабораторія очищення зачарувань",
+      "description_uk": [
+        "Purifier виконує спеціальні дії, а не звичайний рецепт Blood Infuser. Розберіть розділ Origins of Darkness про зняття чар і перевірте умови конкретної дії на запасному предметі.",
+        "Підготуйте книги для збереження результату там, де це вимагає native дія; спершу перевіряйте дешеве спорядження. AIA2 не заявляє універсальний component-aware захист усіх Purifier actions у цьому оновленні.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:purifier",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:purifier",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:book",
+          "count": 3,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_promise_tradeoffs"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.purifier_station"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_capture_spirit",
+      "epoch": 19,
+      "title_uk": "Справжнє захоплення духа помсти",
+      "description_uk": [
+        "Знайдіть Vengeance Spirit і заморозьте його променем Vengeance Focus (ПКМ); Piercing Vengeance Focus призначений для знищення духів. Виконайте захоплення Box of Eternal Closure за посібником, тримаючи замороженого духа в радіусі коробки.",
+        "Зарахування використовує нативне досягнення Closure, яке викликається після реального захоплення для entangling-гравців. Порожня коробка або предмет через /give самі по собі не є цим доказом."
+      ],
+      "icon": "evilcraft:box_of_eternal_closure",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "evilcraft:closure"
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_promise_tradeoffs",
+        "E13_X_reference"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.capture_spirit"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_furnace_shell",
+      "epoch": 19,
+      "title_uk": "Камера під розміри духа",
+      "description_uk": [
+        "Spirit Furnace — порожниста конструкція з Dark Blood Bricks і одним контролером. Внутрішній простір має вміщувати істоту; для зомбі книга наводить зовнішній розмір3×4×3 з порожниною1×2×1.",
+        "Розмістіть коробку з духом і перевірте діагностику native інтерфейсу; червоне світіння показує сформовану конструкцію. Недостатня висота або вихідні слоти можуть зупинити роботу незалежно від запасу крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:spirit_furnace",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:spirit_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:dark_blood_brick",
+          "count": 32,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_capture_spirit"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.furnace_shell"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_furnace_routing",
+      "epoch": 19,
+      "title_uk": "Лут виходить із камери",
+      "description_uk": [
+        "Spirit Furnace отримує лут нативного моба, витрачаючи кров; це не RecipeManager-формула. Для цього шляху AIA2 перевіряє кожен фактичний предмет перед вставленням у вихід.",
+        "Зробіть окремий буфер та hopper для дозволеного луту. Спершу перевірте доступного простого моба; сторонні loot tables і їхні побічні ефекти цим тестом не сертифіковано.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:spirit_furnace",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:spirit_furnace",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:hopper",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_furnace_shell"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.furnace_routing"
+    },
+    {
+      "id": "V5_E28_evilcraft_core_reanimator",
+      "epoch": 28,
+      "title_uk": "Повернення духа в яйце",
+      "description_uk": [
+        "Spirit Reanimator потребує захопленого духа, звичайного яйця й крові. Підтримуються лише типи істот із нативним Spawn Egg; режим clearBoxContents може витратити вміст коробки.",
+        "AIA2 блокує недоступний вихід до drain/egg/box mutations. Контролер складіть у Create Mechanical Crafters: усі native матеріали лишилися, додані Infused Iron та Source Gem для стабілізації.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:spirit_reanimator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:spirit_reanimator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:egg",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:box_of_eternal_closure",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_furnace_routing"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.reanimator"
+    },
+    {
+      "id": "V5_E19_evilcraft_core_temple_weather",
+      "epoch": 19,
+      "title_uk": "Польовий акумулятор храму",
+      "description_uk": [
+        "Environmental Accumulator знаходиться в Dark Temple та працює із зовнішнім середовищем. Це відрізняється від домашнього Sanguinary варіанта; книга попереджає про небезпечні ефекти біля храму.",
+        "Знайдіть і огляньте блок, підготуйте Weather Container, а правила зміни погоди перевірте в Origins of Darkness. Огляд не означає, що світову операцію вже виконано чи що її paid-state guard реалізований.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:environmental_accumulator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:environmental_accumulator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:weather_container",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_promise_tradeoffs"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.temple_weather"
+    },
+    {
+      "id": "V5_E28_evilcraft_core_sanguinary_tanks",
+      "epoch": 28,
+      "title_uk": "Вісім джерел крові навколо акумулятора",
+      "description_uk": [
+        "Sanguinary Environmental Accumulator замінює похід до храму великою витратою крові. Потрібні8зовнішніх tanks у визначених позиціях, а не один довільний резервуар поруч.",
+        "Підготуйте8Dark Tanks, розставте їх за схемою книги й перевірте smoke-підказки пропущених позицій. Create-складання контролера зберігає native cores, garmonbozia та обидва залізні блоки, додаючи Mana Diamond і Source Gem.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:sanguinary_environmental_accumulator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "evilcraft:sanguinary_environmental_accumulator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "evilcraft:dark_tank",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_temple_weather",
+        "V5_E28_evilcraft_core_reanimator"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.sanguinary_tanks"
+    },
+    {
+      "id": "V5_E28_evilcraft_core_chalice_network",
+      "epoch": 28,
+      "title_uk": "Окремі контури крові та відновлення",
+      "description_uk": [
+        "Entangled Chalice пов’язує рідинні сховища за своїми native компонентами. Створіть зв’язану пару за JEI; два незалежно виготовлені келихи не слід автоматично вважати одним каналом.",
+        "Розділіть виробництво, ремонт і великі витрати SanguinaryAccumulator. Залиште локальний резерв перед кожним споживачем. Квест перевіряє комплект і огляд, а не безперервний потік між компонентно пов’язаними келихами.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": "evilcraft:entangled_chalice",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "evilcraft:entangled_chalice",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "observation",
+          "block": "evilcraft:blood_infuser",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "evilcraft:spirit_reanimator",
+          "ticks": 40
+        }
+      ],
+      "after": [
+        "V5_E19_evilcraft_core_purifier_station",
+        "V5_E28_evilcraft_core_sanguinary_tanks"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 2
+        }
+      ],
+      "mod": "evilcraft",
+      "research_stage": "evilcraft.core.chalice_network"
+    }
+  ]
+}

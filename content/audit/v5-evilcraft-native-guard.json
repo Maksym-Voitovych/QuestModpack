@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "version": "0.4.11-alpha",
+  "mod": "evilcraft",
+  "installed_version": "1.2.99",
+  "source_pin": "de23efdb83ea1b84addad6e3b1dc51a37147dc1a",
+  "status": "implemented_source_model_build_minimal_server_verified_optional_weaving_pending",
+  "entries": [
+    "BlockEntityBloodInfuser.getRecipe(ItemStack) RETURN",
+    "BlockEntitySpiritFurnace.onItemDrop(ItemStack) HEAD",
+    "ReanimateTickAction.onTick(BlockEntitySpiritReanimator,ItemStack,int,int) HEAD"
+  ],
+  "semantics": [
+    "Canonical same-position actual server receiver, readiness, current owner and live recipe identity",
+    "BloodInfuser native raw SingleCache remains unchanged; permission views cannot cache an early denied Optional",
+    "Infusion output uses same getOutputItemFirst copy as native result; checked before item/fluid/xp commit",
+    "Actual SpiritFurnace output gated before insertion; prior native blood/RNG/loot effects not rolled back",
+    "Actual entity type resolves native SpawnEgg before reanimation drain/egg/box changes",
+    "Manufactured and legacy epoch key copy outputs always denied; existing component-aware mayProduce policy retained"
+  ],
+  "checks": {
+    "python_full_suite": 198,
+    "node": 55,
+    "pure_java_assertions": 5237,
+    "new_modeled_assertions": 49,
+    "modeled_host_variants": 2,
+    "native_minecraft": 99,
+    "server_jvm_boots": 2,
+    "ticks": 650,
+    "full_pack_run": false
+  },
+  "jar": {
+    "path": "mods/aia2-machine-guard-0.4.11-alpha.jar",
+    "sha256": "3ca7dacd187767bfeaf3a58113ffd8f7e7cea4c3f6ee749966fa5111413517ea",
+    "classes": 141,
+    "registered_mixins": 61,
+    "previous_0_4_10_classes_byte_identical": 136
+  },
+  "manual_plan": "docs/testing/EVILCRAFT_CORE_ACCEPTANCE.uk.md",
+  "sources": "content/research/evidence/dark_magic_native_v5/manifest.json",
+  "limits": [
+    "Live reload replaces recipe identities; stale raw BloodInfuser cache stays blocked until native input/fluid-amount/tier key changes; no automatic refresh or forced timer/resource reset",
+    "SpiritFurnace blood may already be paid and RNG/loot effects precede output guard; no refund/rollback",
+    "Outer native tick timer semantics and full optional Mixin/capability lifecycle need actual EvilCraft runtime",
+    "Environmental/Sanguinary paid caches, Purifier action registry, world ItemDarkGem transformations and brooms/passives remain separate unfinished adapters",
+    "Generic copied components beyond existing reviewed CreativeMana/key policies are not universally certified",
+    "Fullpack/JEI/UI/Survival/TPS NOT_RUN"
+  ],
+  "new_quests": 16,
+  "new_recipes": 2,
+  "new_items": 0,
+  "new_textures": 0,
+  "forbidden_guard_implemented": false
+}

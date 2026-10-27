@@ -3141,7 +3141,7 @@ Bottle and Cork збирає різні форми аури залежно ві�
 
 ## EvilCraft
 
-Версія експорту: **1.2.99**. Статус: `reviewed_mechanic_course_with_explicit_runtime_gaps`.
+Версія експорту: **1.2.99**. Статус: `complete`.
 [Структурована карта](../../content/research/magic_adventure_v5.json).
 
 Відкрийте Origins of Darkness і встановіть Blood Infuser. Перевірте його сторінку до підключення рідини: основним ресурсом процесів є кров, а не звичайна вода.
@@ -3233,6 +3233,179 @@ Bottle and Cork збирає різні форми аури залежно ві�
 Квести: `V5_MAG_EVILCRAFT_08`.
 Огляд станції та комплект предметів не вимірюють виконання конкретного ритуалу, компоненти предмета, FE/t або кількість циклів.
 
+### 9. Перший темний кристал без циклу
+
+Епохи: 13.
+
+До першого інфузора Dark Gem можна перетворити у Dark Power Gem, кинувши його до п’яти сусідніх блоків-джерел крові. Нативний код витрачає один gem і ці джерела; звичайний потік крові не підходить. Після запуску Blood Infuser використовуйте дешевшу повторювану інфузію. Відкрийте JEI: пакетний шлях декомпресії з блока не є способом отримати перший gem.
+Попередні кроки: evilcraft:01.
+Ресурси й результати: `evilcraft:dark_gem`, `evilcraft:dark_power_gem`.
+Квести: `V5_E13_evilcraft_core_blood_pool`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 10. Кров, предмет і стоп-сигнал
+
+Епохи: 13.
+
+Підведіть кров окремо від предметів до Blood Infuser. У доступних рецептах переможе найбільший сумісний tier; підвищення tier не замінює матеріали й необхідний об’єм крові. Подайте redstone-сигнал, щоб штатно призупинити процес, і заберіть сигнал для продовження. Власник машини має бути вашою командою; AIA2 перевіряє вихід до списання предмета й крові.
+Попередні кроки: evilcraft.core.blood_pool.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `minecraft:lever`, `evilcraft:dark_tank`.
+Квести: `V5_E13_evilcraft_core_infuser_control`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 11. Мертва гілка стає живою
+
+Епохи: 13.
+
+Dead Bush з кров’ю перетворюється на Undead Sapling. Дерево за природного росту створює кров, але його саджанці знову потребують обробки; цикл не є безкоштовним дублюванням живого саджанця. Відведіть окрему ділянку від основної бази, зберіть деревину та сплануйте повторне постачання саджанців. Для стабільної кров’яної лінії зберігайте резерв у Dark Tank.
+Попередні кроки: evilcraft.core.infuser_control.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:undead_sapling`, `evilcraft:undead_log`.
+Квести: `V5_E13_evilcraft_core_undead_farm`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 12. Чаша обіцянок — рівень 0
+
+Епохи: 13.
+
+Bowl of Promises tier0 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини. Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.
+Попередні кроки: evilcraft.core.infuser_control.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:bowl_of_promises_tier0`.
+Квести: `V5_E13_evilcraft_core_bowl_0`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 13. Чаша обіцянок — рівень 1
+
+Епохи: 13.
+
+Bowl of Promises tier1 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини. Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.
+Попередні кроки: evilcraft.core.bowl_0.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:bowl_of_promises_tier1`, `evilcraft:promise_acceptor_iron`.
+Квести: `V5_E13_evilcraft_core_bowl_1`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 14. Чаша обіцянок — рівень 2
+
+Епохи: 19.
+
+Bowl of Promises tier2 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини. Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.
+Попередні кроки: evilcraft.core.bowl_1.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:bowl_of_promises_tier2`, `evilcraft:promise_acceptor_gold`.
+Квести: `V5_E19_evilcraft_core_bowl_2`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 15. Чаша обіцянок — рівень 3
+
+Епохи: 19.
+
+Bowl of Promises tier3 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини. Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.
+Попередні кроки: evilcraft.core.bowl_2.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:bowl_of_promises_tier3`, `evilcraft:promise_acceptor_diamond`.
+Квести: `V5_E19_evilcraft_core_bowl_3`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 16. Швидкість і витрата крові — різні цілі
+
+Епохи: 19.
+
+Promises змінюють параметри через upgrade events: швидкість скорочує час, а efficiency впливає на споживання крові. Порівнюйте одну й ту саму формулу до й після зміни апгрейдів. Не компенсуйте погану подачу лише прискоренням: залиште запас крові та окремий вихід продукції. Чаші не витрачаються при крафті promises; це не нагорода готовою машиною.
+Попередні кроки: evilcraft.core.bowl_3.
+Машини: `evilcraft:blood_infuser`.
+Ресурси й результати: `evilcraft:promise_speed_0`, `evilcraft:promise_efficiency_0`.
+Квести: `V5_E19_evilcraft_core_promise_tradeoffs`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 17. Лабораторія очищення зачарувань
+
+Епохи: 19.
+
+Purifier виконує спеціальні дії, а не звичайний рецепт Blood Infuser. Розберіть розділ Origins of Darkness про зняття чар і перевірте умови конкретної дії на запасному предметі. Підготуйте книги для збереження результату там, де це вимагає native дія; спершу перевіряйте дешеве спорядження. AIA2 не заявляє універсальний component-aware захист усіх Purifier actions у цьому оновленні.
+Попередні кроки: evilcraft.core.promise_tradeoffs.
+Машини: `evilcraft:purifier`.
+Ресурси й результати: `minecraft:book`.
+Квести: `V5_E19_evilcraft_core_purifier_station`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 18. Справжнє захоплення духа помсти
+
+Епохи: 19.
+
+Знайдіть Vengeance Spirit і заморозьте його променем Vengeance Focus (ПКМ); Piercing Vengeance Focus призначений для знищення духів. Виконайте захоплення Box of Eternal Closure за посібником, тримаючи замороженого духа в радіусі коробки. Зарахування використовує нативне досягнення Closure, яке викликається після реального захоплення для entangling-гравців. Порожня коробка або предмет через /give самі по собі не є цим доказом.
+Попередні кроки: evilcraft.core.promise_tradeoffs.
+Квести: `V5_E19_evilcraft_core_capture_spirit`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 19. Камера під розміри духа
+
+Епохи: 19.
+
+Spirit Furnace — порожниста конструкція з Dark Blood Bricks і одним контролером. Внутрішній простір має вміщувати істоту; для зомбі книга наводить зовнішній розмір3×4×3 з порожниною1×2×1. Розмістіть коробку з духом і перевірте діагностику native інтерфейсу; червоне світіння показує сформовану конструкцію. Недостатня висота або вихідні слоти можуть зупинити роботу незалежно від запасу крові.
+Попередні кроки: evilcraft.core.capture_spirit.
+Машини: `evilcraft:spirit_furnace`.
+Ресурси й результати: `evilcraft:dark_blood_brick`.
+Квести: `V5_E19_evilcraft_core_furnace_shell`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 20. Лут виходить із камери
+
+Епохи: 19.
+
+Spirit Furnace отримує лут нативного моба, витрачаючи кров; це не RecipeManager-формула. Для цього шляху AIA2 перевіряє кожен фактичний предмет перед вставленням у вихід. Зробіть окремий буфер та hopper для дозволеного луту. Спершу перевірте доступного простого моба; сторонні loot tables і їхні побічні ефекти цим тестом не сертифіковано.
+Попередні кроки: evilcraft.core.furnace_shell.
+Машини: `evilcraft:spirit_furnace`.
+Ресурси й результати: `minecraft:hopper`, `minecraft:chest`.
+Квести: `V5_E19_evilcraft_core_furnace_routing`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 21. Повернення духа в яйце
+
+Епохи: 28.
+
+Spirit Reanimator потребує захопленого духа, звичайного яйця й крові. Підтримуються лише типи істот із нативним Spawn Egg; режим clearBoxContents може витратити вміст коробки. AIA2 блокує недоступний вихід до drain/egg/box mutations. Контролер складіть у Create Mechanical Crafters: усі native матеріали лишилися, додані Infused Iron та Source Gem для стабілізації.
+Попередні кроки: evilcraft.core.furnace_routing.
+Машини: `evilcraft:spirit_reanimator`.
+Ресурси й результати: `minecraft:egg`, `evilcraft:box_of_eternal_closure`.
+Квести: `V5_E28_evilcraft_core_reanimator`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 22. Польовий акумулятор храму
+
+Епохи: 19.
+
+Environmental Accumulator знаходиться в Dark Temple та працює із зовнішнім середовищем. Це відрізняється від домашнього Sanguinary варіанта; книга попереджає про небезпечні ефекти біля храму. Знайдіть і огляньте блок, підготуйте Weather Container, а правила зміни погоди перевірте в Origins of Darkness. Огляд не означає, що світову операцію вже виконано чи що її paid-state guard реалізований.
+Попередні кроки: evilcraft.core.promise_tradeoffs.
+Машини: `evilcraft:environmental_accumulator`.
+Ресурси й результати: `evilcraft:weather_container`.
+Квести: `V5_E19_evilcraft_core_temple_weather`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 23. Вісім джерел крові навколо акумулятора
+
+Епохи: 28.
+
+Sanguinary Environmental Accumulator замінює похід до храму великою витратою крові. Потрібні8зовнішніх tanks у визначених позиціях, а не один довільний резервуар поруч. Підготуйте8Dark Tanks, розставте їх за схемою книги й перевірте smoke-підказки пропущених позицій. Create-складання контролера зберігає native cores, garmonbozia та обидва залізні блоки, додаючи Mana Diamond і Source Gem.
+Попередні кроки: evilcraft.core.reanimator, evilcraft.core.temple_weather.
+Машини: `evilcraft:sanguinary_environmental_accumulator`.
+Ресурси й результати: `evilcraft:dark_tank`.
+Квести: `V5_E28_evilcraft_core_sanguinary_tanks`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
+### 24. Окремі контури крові та відновлення
+
+Епохи: 28.
+
+Entangled Chalice пов’язує рідинні сховища за своїми native компонентами. Створіть зв’язану пару за JEI; два незалежно виготовлені келихи не слід автоматично вважати одним каналом. Розділіть виробництво, ремонт і великі витрати SanguinaryAccumulator. Залиште локальний резерв перед кожним споживачем. Квест перевіряє комплект і огляд, а не безперервний потік між компонентно пов’язаними келихами.
+Попередні кроки: evilcraft.core.purifier_station, evilcraft.core.sanguinary_tanks.
+Машини: `evilcraft:blood_infuser`, `evilcraft:spirit_reanimator`.
+Ресурси й результати: `evilcraft:entangled_chalice`.
+Квести: `V5_E28_evilcraft_core_chalice_network`.
+Source/recipe/static validation only; повний optional dispatch/Survival/TPS не перевірено.
+
 Фінальні цілі:
 - Підготуйте Entangled Chalice для дозволеної логістики рідин. Збережіть окремий резервуар та перевірте пов’язування за Origins of Darkness; команда-власник машин залишається частиною захисту AIA2.
 
@@ -3244,6 +3417,9 @@ Bottle and Cork збирає різні форми аури залежно ві�
 Прогалини та межі перевірки:
 - Повний клієнт і сервер із усіма модами не запускалися для цієї лінії.
 - Факт конкретної машинної або ритуальної операції не підмінено твердженням на підставі інвентарю.
+- Environmental/Sanguinary cached paid recipes, Purifier actions, world ItemDarkGem transform, brooms/passives лишаються окремими guard-аудитами.
+- BloodInfuser stale raw cache після recipe reload закритий до зміни native ключа input/fluidamount/tier; elapsed timer і ресурси примусово не скидаються.
+- SpiritFurnace RNG/loot side effects перед output insertion не відмотуються; native blood може вже бути сплачено.
 
 Джерела:
 
@@ -3252,6 +3428,34 @@ Bottle and Cork збирає різні форми аури залежно ві�
 - [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/data/evilcraft/info/book.xml) — SHA перевірено
 - [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/gradle.properties) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/README.md) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/data/evilcraft/info/book.xml) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/assets/evilcraft/lang/en_us.json) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/item/ItemDarkGem.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntityBloodInfuser.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySpiritFurnace.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySpiritReanimator.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntitySanguinaryEnvironmentalAccumulator.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/blockentity/BlockEntityBoxOfEternalClosure.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/advancement/criterion/BoxOfEternalClosureCaptureTrigger.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/java/org/cyclops/evilcraft/advancement/criterion/BoxOfEternalClosureCaptureTriggerConfig.java) — SHA перевірено
+- [джерело](https://github.com/CyclopsMC/EvilCraft/blob/de23efdb83ea1b84addad6e3b1dc51a37147dc1a/src/main/resources/data/evilcraft/advancement/closure.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/base/dark_power_gem.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/base/undead_sapling.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier0.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier1.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier2.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/bowl_of_promises_tier3.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_iron.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_gold.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/blood_infuser/core/promise_acceptor_diamond.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/promise_speed_0.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/promise_efficiency_0.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/purifier.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/spirit_furnace.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/spirit_reanimator.json) — SHA перевірено
+- [джерело](../../content/research/evidence/evilcraft_core_next_v5/recipes/crafting/sanguinary_environmental_accumulator.json) — SHA перевірено
 
 ## Enchanted
 

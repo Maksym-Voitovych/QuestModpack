@@ -343,6 +343,24 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_missing_evilcraft_guard_rejected_before_world_changes(self):
+        bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled),1)
+        with tempfile.TemporaryDirectory() as tmp:
+            package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True);(package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+            marker=instance/'saves/world/level.dat';marker.parent.mkdir(parents=True);marker.write_bytes(b'world-progress')
+            with zipfile.ZipFile(bundled[0]) as original,zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                for name in original.namelist():
+                    if name!='ua/aia2/guard/EvilCraftAccess.class':altered.writestr(name,original.read(name))
+            (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+            with self.assertRaisesRegex(installer.InstallError,'EvilCraft infusion and spirit guards'):
+                installer.install(package,instance)
+            self.assertEqual(marker.read_bytes(),b'world-progress')
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())
+
     def test_unregistered_projecte_passive_hook_rejected_before_writes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
         self.assertEqual(len(bundled),1)

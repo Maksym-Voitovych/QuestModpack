@@ -1,3 +1,12 @@
+# 0.4.11-alpha — EvilCraft core та spirit guards
+
+- 16новихoptional-квестів епох13/19/28:3330квестів/140глав. Усі3314старіnon-coordinatepayloads/dependencies/rewards і621recipe entries збережено.
+- EvilCraft scopedcore24етапи; старі8IDs/refs/order збережено. NativeClosure trigger перевіряє справжнє захоплення духа; preparation/observation не оголошуються виробничими доказами.
+- 2CreateMechanical5×3формули для SpiritReanimator/SanguinaryAccumulator з усіма9nativeunits і2міжмодовими компонентами.2nativeproducers замінено;623recipes. Новихпредметів/текстур0.
+- BloodInfuser rawcache/currentidentity/owner/output; SpiritFurnaceactualoutput; Reanimatorpre-drain/egg/box guard. Keycopies denied. Післяreloadstalecacheчекаєnativekeychange; nativeRNG/paidcostrefund не заявляється.
+- 198Python/55Node/5237Java PASS,49Evilmodeled умов;99minimalMC assertions/2JVM/650ticks. OptionalEvil/Forbiddenweaving/JEI/Survival/TPS NOTRUN.
+- ForbiddenArcanus exactsource-аудит збережено; ritualguard/corequests щеTODO. Matching0.4.11JAR/installerpreflight/backup;0.5залишаєтьсянезавершеним.
+
 # 0.4.10-alpha — passive guards ProjectE
 
 - Серверні inventory/world-use/packet, armor/Curios і bag/chest/pedestal перевірки фактичного носія або канонічного receiver. Без зміни stacks/ACTIVE/cooldown/knowledge/EMC.

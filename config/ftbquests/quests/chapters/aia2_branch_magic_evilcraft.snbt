@@ -68,7 +68,7 @@
         }
       ],
       "x": 0.0,
-      "y": 2.0
+      "y": 2.038
     },
     {
       "id": "000038E7E352F065",
@@ -135,7 +135,7 @@
         }
       ],
       "x": 0.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "000018ADC8F2DF1F",
@@ -184,7 +184,7 @@
         }
       ],
       "x": 2.0,
-      "y": 1.0
+      "y": 1.038
     },
     {
       "id": "0000A575EA1962E6",
@@ -252,7 +252,7 @@
         }
       ],
       "x": 2.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "0000D7609D51AD34",
@@ -301,7 +301,7 @@
         }
       ],
       "x": 2.0,
-      "y": 3.0
+      "y": 3.038
     },
     {
       "id": "0000205B399ECB62",
@@ -369,7 +369,7 @@
         }
       ],
       "x": 4.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "0000309E92E19C44",
@@ -606,7 +606,7 @@
         }
       ],
       "x": 6.0,
-      "y": 1.0
+      "y": 0.982
     },
     {
       "id": "0000D6C92189901E",
@@ -655,7 +655,7 @@
         }
       ],
       "x": 6.0,
-      "y": 3.0
+      "y": 2.982
     },
     {
       "id": "0000E659F14B7B3C",
@@ -723,7 +723,7 @@
         }
       ],
       "x": 6.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "00002B2C19DAFE8A",
@@ -772,7 +772,7 @@
         }
       ],
       "x": 8.0,
-      "y": 5.0
+      "y": 4.888
     },
     {
       "id": "000040162C488545",
@@ -832,7 +832,7 @@
         }
       ],
       "x": 8.0,
-      "y": 3.0
+      "y": 2.888
     },
     {
       "id": "00005F1A0D764276",
@@ -900,7 +900,7 @@
         }
       ],
       "x": 8.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "0000BDD5B4433267",
@@ -949,7 +949,330 @@
         }
       ],
       "x": 8.0,
-      "y": 1.0
+      "y": 0.888
+    },
+    {
+      "id": "0000E2D908A9B22B",
+      "title": "Перший темний кристал без циклу",
+      "description": [
+        "До першого інфузора Dark Gem можна перетворити у Dark Power Gem, кинувши його до п’яти сусідніх блоків-джерел крові. Нативний код витрачає один gem і ці джерела; звичайний потік крові не підходить.",
+        "Після запуску Blood Infuser використовуйте дешевшу повторювану інфузію. Відкрийте JEI: пакетний шлях декомпресії з блока не є способом отримати перший gem.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:dark_gem",
+        "count": 1
+      },
+      "dependencies": [
+        "00002B2C19DAFE8A",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001AB6F5D02207",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00000ABFBCBE366B",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_power_gem",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068F0E9AE757A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000164E687C739D",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dull_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 5.867
+    },
+    {
+      "id": "000044032B5111BA",
+      "title": "Кров, предмет і стоп-сигнал",
+      "description": [
+        "Підведіть кров окремо від предметів до Blood Infuser. У доступних рецептах переможе найбільший сумісний tier; підвищення tier не замінює матеріали й необхідний об’єм крові.",
+        "Подайте redstone-сигнал, щоб штатно призупинити процес, і заберіть сигнал для продовження. Власник машини має бути вашою командою; AIA2 перевіряє вихід до списання предмета й крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E2D908A9B22B",
+        "0000309E92E19C44",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001129C91C5F87",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "000052A4E176969D",
+          "type": "item",
+          "item": {
+            "id": "minecraft:lever",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D90D2C38A48F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_tank",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007836C2853006",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AE0D51DD057C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 5.867
+    },
+    {
+      "id": "0000637BDD8E6E8B",
+      "title": "Чаша обіцянок — рівень 0",
+      "description": [
+        "Bowl of Promises tier0 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "000044032B5111BA",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000031B2631FAECA",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000F89CB9CD0955",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:bowl_of_promises_tier0",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EDFB64903D34",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F81ECFE02D98",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 4.867
+    },
+    {
+      "id": "0000D4C8B53203EB",
+      "title": "Мертва гілка стає живою",
+      "description": [
+        "Dead Bush з кров’ю перетворюється на Undead Sapling. Дерево за природного росту створює кров, але його саджанці знову потребують обробки; цикл не є безкоштовним дублюванням живого саджанця.",
+        "Відведіть окрему ділянку від основної бази, зберіть деревину та сплануйте повторне постачання саджанців. Для стабільної кров’яної лінії зберігайте резерв у Dark Tank.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "000044032B5111BA",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007D333D988930",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "000067DBD16BE5DA",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:undead_sapling",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000018C03ACA744A",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:undead_log",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A1F90AEB3F9F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000044738589A0A0",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 6.867
+    },
+    {
+      "id": "000023BF290F7076",
+      "title": "Чаша обіцянок — рівень 1",
+      "description": [
+        "Bowl of Promises tier1 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "0000637BDD8E6E8B",
+        "0000154E6D88EAD3"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006ED769C35192",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "000082D8403319B3",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:bowl_of_promises_tier1",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7F191F1FB40",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_acceptor_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BC81BF620B9C",
+          "type": "advancement",
+          "advancement": "aia2:stages/e13"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000464C05295E6C",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 5.159
     },
     {
       "id": "00006C2F12E650BE",
@@ -1017,7 +1340,7 @@
         }
       ],
       "x": 10.0,
-      "y": 9.0
+      "y": 10.159
     },
     {
       "id": "0000C41D93DED695",
@@ -1085,7 +1408,685 @@
         }
       ],
       "x": 12.0,
-      "y": 9.0
+      "y": 10.159
+    },
+    {
+      "id": "0000BD67795E1ECF",
+      "title": "Чаша обіцянок — рівень 2",
+      "description": [
+        "Bowl of Promises tier2 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "000023BF290F7076",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B23A60D2FF15",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "00003CFB2297CDC2",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:bowl_of_promises_tier2",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007EBD7B7F3D5D",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_acceptor_gold",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000057A4B759ABF5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000011563DF31DB8",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 5.159
+    },
+    {
+      "id": "00000719D95FD043",
+      "title": "Чаша обіцянок — рівень 3",
+      "description": [
+        "Bowl of Promises tier3 створюється інфузією відповідного bowl. Чаша — багаторазовий інструмент у рецептах promises, а не витратний апгрейд машини.",
+        "Розділяйте чашу, acceptor і готовий promise: саме promise встановлюється як покращення. Перевірте поточний tier інфузора перед наступною інфузією; рецепт з вищим tier не запускається лише від наявності крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BD67795E1ECF",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004B9E195BEF94",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000CCCEB9F4AD31",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:bowl_of_promises_tier3",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D9FA533F13D7",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_acceptor_diamond",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00002595D3E8782D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C573939C5B81",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 20.0,
+      "y": 5.159
+    },
+    {
+      "id": "000044CA8E57318D",
+      "title": "Швидкість і витрата крові — різні цілі",
+      "description": [
+        "Promises змінюють параметри через upgrade events: швидкість скорочує час, а efficiency впливає на споживання крові. Порівнюйте одну й ту саму формулу до й після зміни апгрейдів.",
+        "Не компенсуйте погану подачу лише прискоренням: залиште запас крові та окремий вихід продукції. Чаші не витрачаються при крафті promises; це не нагорода готовою машиною.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:blood_infuser",
+        "count": 1
+      },
+      "dependencies": [
+        "00000719D95FD043",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004C6204B23399",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000BC24C3920F46",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_speed_0",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007A57BB572588",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:promise_efficiency_0",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003958670DA3CE",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000055468732165",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 22.0,
+      "y": 5.159
+    },
+    {
+      "id": "00003D2C2783BCD7",
+      "title": "Польовий акумулятор храму",
+      "description": [
+        "Environmental Accumulator знаходиться в Dark Temple та працює із зовнішнім середовищем. Це відрізняється від домашнього Sanguinary варіанта; книга попереджає про небезпечні ефекти біля храму.",
+        "Знайдіть і огляньте блок, підготуйте Weather Container, а правила зміни погоди перевірте в Origins of Darkness. Огляд не означає, що світову операцію вже виконано чи що її paid-state guard реалізований.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:environmental_accumulator",
+        "count": 1
+      },
+      "dependencies": [
+        "000044CA8E57318D",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007DE459672098",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:environmental_accumulator",
+          "timer": 40
+        },
+        {
+          "id": "000042EDC4FA760F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:weather_container",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000044FA3583807A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F2C51425FB6E",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 24.0,
+      "y": 5.159
+    },
+    {
+      "id": "00006CF7FAD2E4B1",
+      "title": "Лабораторія очищення зачарувань",
+      "description": [
+        "Purifier виконує спеціальні дії, а не звичайний рецепт Blood Infuser. Розберіть розділ Origins of Darkness про зняття чар і перевірте умови конкретної дії на запасному предметі.",
+        "Підготуйте книги для збереження результату там, де це вимагає native дія; спершу перевіряйте дешеве спорядження. AIA2 не заявляє універсальний component-aware захист усіх Purifier actions у цьому оновленні.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:purifier",
+        "count": 1
+      },
+      "dependencies": [
+        "000044CA8E57318D",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000037A03420E481",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:purifier",
+          "timer": 40
+        },
+        {
+          "id": "0000D408FF9BF11A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:book",
+            "count": 1
+          },
+          "count": 3,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000EB06790FEE2F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000083BF3B27ACF",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 24.0,
+      "y": 7.159
+    },
+    {
+      "id": "00008006E1E6DF88",
+      "title": "Справжнє захоплення духа помсти",
+      "description": [
+        "Знайдіть Vengeance Spirit і заморозьте його променем Vengeance Focus (ПКМ); Piercing Vengeance Focus призначений для знищення духів. Виконайте захоплення Box of Eternal Closure за посібником, тримаючи замороженого духа в радіусі коробки.",
+        "Зарахування використовує нативне досягнення Closure, яке викликається після реального захоплення для entangling-гравців. Порожня коробка або предмет через /give самі по собі не є цим доказом."
+      ],
+      "icon": {
+        "id": "evilcraft:box_of_eternal_closure",
+        "count": 1
+      },
+      "dependencies": [
+        "000044CA8E57318D",
+        "00002B2C19DAFE8A",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B9FF27660D10",
+          "type": "advancement",
+          "advancement": "evilcraft:closure"
+        },
+        {
+          "id": "00000D0794E29F57",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009F8537F35448",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dull_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 24.0,
+      "y": 3.159
+    },
+    {
+      "id": "000043C13DF6AF38",
+      "title": "Камера під розміри духа",
+      "description": [
+        "Spirit Furnace — порожниста конструкція з Dark Blood Bricks і одним контролером. Внутрішній простір має вміщувати істоту; для зомбі книга наводить зовнішній розмір3×4×3 з порожниною1×2×1.",
+        "Розмістіть коробку з духом і перевірте діагностику native інтерфейсу; червоне світіння показує сформовану конструкцію. Недостатня висота або вихідні слоти можуть зупинити роботу незалежно від запасу крові.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:spirit_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "00008006E1E6DF88",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000986A07EB8FA8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:spirit_furnace",
+          "timer": 40
+        },
+        {
+          "id": "00009E1DD0058497",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_blood_brick",
+            "count": 1
+          },
+          "count": 32,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D07085D0FC8",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003271BB4ADD83",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 26.0,
+      "y": 5.159
+    },
+    {
+      "id": "000089D0214FBC2D",
+      "title": "Лут виходить із камери",
+      "description": [
+        "Spirit Furnace отримує лут нативного моба, витрачаючи кров; це не RecipeManager-формула. Для цього шляху AIA2 перевіряє кожен фактичний предмет перед вставленням у вихід.",
+        "Зробіть окремий буфер та hopper для дозволеного луту. Спершу перевірте доступного простого моба; сторонні loot tables і їхні побічні ефекти цим тестом не сертифіковано.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:spirit_furnace",
+        "count": 1
+      },
+      "dependencies": [
+        "000043C13DF6AF38",
+        "000079102E7B00EA"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002F708B6ECDA3",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:spirit_furnace",
+          "timer": 40
+        },
+        {
+          "id": "00008B88E6A87C30",
+          "type": "item",
+          "item": {
+            "id": "minecraft:hopper",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F7DC45621F3E",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007833528DC4D2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e19"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EDEBBE8EFF6D",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:golden_string",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 28.0,
+      "y": 5.159
+    },
+    {
+      "id": "0000B6B757AE5CE8",
+      "title": "Повернення духа в яйце",
+      "description": [
+        "Spirit Reanimator потребує захопленого духа, звичайного яйця й крові. Підтримуються лише типи істот із нативним Spawn Egg; режим clearBoxContents може витратити вміст коробки.",
+        "AIA2 блокує недоступний вихід до drain/egg/box mutations. Контролер складіть у Create Mechanical Crafters: усі native матеріали лишилися, додані Infused Iron та Source Gem для стабілізації.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:spirit_reanimator",
+        "count": 1
+      },
+      "dependencies": [
+        "000089D0214FBC2D",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000993A6414F717",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:spirit_reanimator",
+          "timer": 40
+        },
+        {
+          "id": "0000F3B807355BDB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:egg",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000D909AF259C1F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:box_of_eternal_closure",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000452D72F17AF5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005EB33318D76F",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 30.0,
+      "y": 5.159
+    },
+    {
+      "id": "0000229B0C058CC0",
+      "title": "Вісім джерел крові навколо акумулятора",
+      "description": [
+        "Sanguinary Environmental Accumulator замінює похід до храму великою витратою крові. Потрібні8зовнішніх tanks у визначених позиціях, а не один довільний резервуар поруч.",
+        "Підготуйте8Dark Tanks, розставте їх за схемою книги й перевірте smoke-підказки пропущених позицій. Create-складання контролера зберігає native cores, garmonbozia та обидва залізні блоки, додаючи Mana Diamond і Source Gem.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:sanguinary_environmental_accumulator",
+        "count": 1
+      },
+      "dependencies": [
+        "00003D2C2783BCD7",
+        "0000B6B757AE5CE8",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000020B371AC0167",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:sanguinary_environmental_accumulator",
+          "timer": 40
+        },
+        {
+          "id": "0000205574FF0AE6",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:dark_tank",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B6189262C554",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C40532B9CB37",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 32.0,
+      "y": 5.159
+    },
+    {
+      "id": "0000A3138F3A8D05",
+      "title": "Окремі контури крові та відновлення",
+      "description": [
+        "Entangled Chalice пов’язує рідинні сховища за своїми native компонентами. Створіть зв’язану пару за JEI; два незалежно виготовлені келихи не слід автоматично вважати одним каналом.",
+        "Розділіть виробництво, ремонт і великі витрати SanguinaryAccumulator. Залиште локальний резерв перед кожним споживачем. Квест перевіряє комплект і огляд, а не безперервний потік між компонентно пов’язаними келихами.",
+        "Завдання перевіряє підготовку, предмети й огляд. Воно не вимірює повний цикл машини, рівень крові чи правильність усіх позицій конструкції."
+      ],
+      "icon": {
+        "id": "evilcraft:entangled_chalice",
+        "count": 1
+      },
+      "dependencies": [
+        "00006CF7FAD2E4B1",
+        "0000229B0C058CC0",
+        "0000742C9D8A1AA7"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007E46C5079632",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:entangled_chalice",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004141BD6C3D33",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:blood_infuser",
+          "timer": 40
+        },
+        {
+          "id": "0000EECEF4A70FFE",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "evilcraft:spirit_reanimator",
+          "timer": 40
+        },
+        {
+          "id": "00000E6F21148FC6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e28"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000061B816D392A5",
+          "type": "item",
+          "item": {
+            "id": "evilcraft:blood_waxed_coal",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 34.0,
+      "y": 5.159
     }
   ]
 }

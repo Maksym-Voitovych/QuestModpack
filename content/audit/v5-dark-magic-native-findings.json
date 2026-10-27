@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "status": "source_confirmed_findings_implementation_and_model_tests_owned_by_separate_guard_reports",
+  "source_manifest": "content/research/evidence/dark_magic_native_v5/manifest.json",
+  "source_files": 31,
+  "minecraft": "1.21.1",
+  "mods": {
+    "evilcraft": {
+      "version": "1.2.99",
+      "pin": "de23efdb83ea1b84addad6e3b1dc51a37147dc1a",
+      "version_proof": "gradle.properties mod_version=1.2.99/minecraft_version=1.21.1"
+    },
+    "forbidden_arcanus": {
+      "version": "2.6.1",
+      "pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+      "version_proof": "gradle.properties mod_version=2.6.1/minecraft_version=1.21.1"
+    }
+  },
+  "existing_guard_scope": "Bound blockentity ticks check owning team/block floor. RecipeManagerContextMixin filters only the exact getRecipeFor(...,RecipeHolder) RETURN. It does not filter getRecipesFor/global registries/custom action registries or independently retained results.",
+  "confirmed_findings": [
+    {
+      "id": "evilcraft_blood_infuser_direct_list_cache",
+      "entry": "org.cyclops.evilcraft.blockentity.BlockEntityBloodInfuser.getRecipe",
+      "descriptor": "(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;",
+      "selection": "SingleCache updater calls RecipeManager.getRecipesFor(...).stream().map(RecipeHolder::value).max(tier)",
+      "commit": "InfuseItemTickAction.onTick calls addToProduceSlot(copy output) then removeItem/input fluid drain/xp; same getRecipe entry serves canTick/duration/output preview",
+      "needed": "Validate actual canonical recipe identity/current owner/current output before entry result is used; preserve unfiltered raw cache lookup so readiness/stage changes do not poison cache. Denied result alone must not reset elapsed paid state."
+    },
+    {
+      "id": "evilcraft_sanguinary_cached_recipe",
+      "entry": "org.cyclops.evilcraft.blockentity.BlockEntitySanguinaryEnvironmentalAccumulator.getRecipe",
+      "descriptor": "(Lnet/minecraft/world/item/ItemStack;)Ljava/util/Optional;",
+      "selection": "SingleCache updater calls CraftingHelpers.findServerRecipe; contextual denial can be retained as Optional.empty until key changes",
+      "commit": "AccumulateItemTickAction.onTick assembles actual output, inserts it, then removes input/drains virtual tank",
+      "needed": "Current identity/output/owner check for cached hit and pure native lookup; contextual assembled output is relevant, not only static result template."
+    },
+    {
+      "id": "evilcraft_environmental_world_direct_list",
+      "entry": "org.cyclops.evilcraft.blockentity.BlockEntityEnvironmentalAccumulator.updateEnvironmentalAccumulatorIdle",
+      "descriptor": "()V",
+      "selection": "CraftingHelpers.findRecipes iterates recipe list and scans matching world ItemEntity; stores input copy/RecipeHolder and removes one real input immediately",
+      "commit": "dropItemStack() assembles output and performs native weather deactivate/activate; retained recipe saved by ID and byKey reloaded on first ticker",
+      "needed": "Separate before-capture and before-output/weather checks plus paid-state/reload policy; late drop-only cancellation risks native state transition/input loss. Not claimed fixed by BloodInfuser adapter."
+    },
+    {
+      "id": "forbidden_registry_ritual_prepaid_cache",
+      "entry": "com.stal111.forbidden_arcanus.common.block.entity.forge.ritual.RitualManager.startRitual",
+      "descriptor": "(Lnet/minecraft/server/level/ServerPlayer;Lcom/stal111/forbidden_arcanus/common/block/entity/forge/essence/EssencesStorage;)Z",
+      "selection": "updateValidRitual iterates HolderLookup FARegistries.RITUAL listElements; no RecipeManager or RecipeSerializer. validRitual is cached independently of player/owner stage.",
+      "payment": "startRitual sets ActiveRitualData and magic circle then storage.reduce before returning success; caller damages ritual starter only on true",
+      "needed": "Gate before payment using actual player/live team, canonical owning forge and ritual holder from current registry. Recheck independently retained active ritual before every tick/progress/output after downgrade/reload/restart."
+    },
+    {
+      "id": "forbidden_ritual_result_shapes",
+      "entry": "com.stal111.forbidden_arcanus.common.block.entity.forge.ritual.RitualManager.tick",
+      "descriptor": "()Ljava/util/Optional;",
+      "commit": "tick mutates counter/lightning and possible pedestal side effects; finishRitual resets/clears pedestals before native advancement/result execution. Late finish/result-only check is unsafe for costs.",
+      "result_types": {
+        "CreateItemResult": "getResultItem copies configured ItemStack",
+        "TransmuteInputResult": "getResultItem calls mainInput.transmuteCopy(result Item), preserving actual components",
+        "UpgradeTierResult": "getResultItem empty; executeLevelEffect changes forge block to tier1..5 and spawns visual bolt"
+      },
+      "needed": "Validate known pure previews and both item/block floors; reject unknown effectful result types without calling them. Keep paid ritual unchanged when denied; explicit current registry/key identity. No assumed generic recipe.stage or manufactured-key proof."
+    }
+  ],
+  "remaining_native_paths": [
+    {
+      "id": "evilcraft_purifier_actions",
+      "entry": "BlockEntityPurifier.Ticker.update -> getActions().canWork/work(actionId,tile)",
+      "scope": "Direct custom IPurifierAction registry; tool/bad enchant/disenchant/potion/head conversion mutate slots and drain blood without RecipeManager. Blockowner floor applies but no general input/component/result policy adapter is proven."
+    },
+    {
+      "id": "evilcraft_spirit_furnace_loot",
+      "entry": "BoxCookTickAction.doNextDrop -> BlockEntitySpiritFurnace.onItemDrop(ItemStack)",
+      "scope": "Direct native entity loot table/weighted overrides and FakePlayer killer; native blood drains before doNextDrop. Recipe guard does not validate every possible random result or copied entity content. No item recipe/proof invented."
+    },
+    {
+      "id": "evilcraft_reanimator_spawn_egg",
+      "entry": "ReanimateTickAction.onTick/addToProduceSlot",
+      "scope": "Derives SpawnEggItem.byId(actual entity type), drains blood, inserts actual egg/removes source egg and optionally clears captured box components. Separate component-aware policy and paid state needed; block floor alone is not proof of output gate."
+    },
+    {
+      "id": "forbidden_obelisk_cross_target_aureal",
+      "entry": "ArcaneCrystalObeliskBlockEntity.serverTick",
+      "scope": "Every100ticks picks nearest Forge POI within4 and directly increases AUREAL by1 without target owner/stage check. Filling cannot itself authorize a ritual if prepayment/tick guard is active; not claimed universally resource-gated."
+    },
+    {
+      "id": "forbidden_ritual_registry_reload",
+      "scope": "ActiveRitualData CODEC persists ritual holder/counter/lightning counter/startedBy; no separate original canonical codec hash. Registry identity/restart semantics require actual fullpack acceptance."
+    },
+    {
+      "id": "forbidden_tier_native_owner_retention",
+      "scope": "HephaestusForgeBlock.onRemove returns early for replacement HephaestusForgeBlock, onPlace updates forge level on existing BE; native behavior should retain owner NBT, but no fullpack migration assertion made."
+    }
+  ],
+  "testing": {
+    "performed": "Pinned source read and SHA manifest only; root/helper agents own executable tests and final release audit",
+    "optional_mod_dispatch": "NOT_RUN",
+    "full_pack": "NOT_RUN",
+    "survival": "NOT_RUN",
+    "tps": "NOT_RUN"
+  },
+  "cautions": [
+    "Do not cancel an entire native cleanup tick without accounting for stale active modifiers/state.",
+    "Do not call an unknown ritual result method merely to preview it.",
+    "Do not mark all custom rituals as RecipeSerializers or assume getRecipeFor intercepts datapack registries.",
+    "Do not claim blood/essence refund for native work already paid without explicit tested reconciliation."
+  ],
+  "current_checkpoint": "0.4.11-alpha",
+  "implemented_bounded_paths": {
+    "evilcraft_blood_infuser_direct_list_cache": "getRecipe RETURN: current identity/owner/output; raw cache unchanged",
+    "evilcraft_spirit_furnace_loot": "actual output insertion only; prior costs/RNG remain native",
+    "evilcraft_reanimator_spawn_egg": "onTick HEAD before drain/egg/box mutations"
+  },
+  "implementation_report": "content/audit/v5-evilcraft-native-guard.json",
+  "forbidden_runtime_guard_status": "TODO_source_audit_only"
+}

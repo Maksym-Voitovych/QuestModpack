@@ -412,6 +412,11 @@ def plan_install(source, instance):
                                       for name in passive_guard if '/mixin/' in name}
                     if not passive_mixins <= registered:
                         raise InstallError('The companion ProjectE passive mixin registration is incomplete')
+                    evilcraft_mixins = {'EvilCraftInfuserMixin', 'EvilCraftSpiritOutputMixin', 'EvilCraftReanimatorMixin'}
+                    evilcraft_classes = {'ua/aia2/guard/EvilCraftAccess.class'} | {
+                        'ua/aia2/guard/mixin/' + name + '.class' for name in evilcraft_mixins}
+                    if not evilcraft_classes <= set(jar.namelist()) or not evilcraft_mixins <= registered:
+                        raise InstallError('This package needs the matching EvilCraft infusion and spirit guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)
