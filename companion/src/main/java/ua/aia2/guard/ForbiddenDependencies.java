@@ -50,8 +50,17 @@ public final class ForbiddenDependencies {
             require(members <= MAX_MEMBERS, "завеликі залежності ритуалу");
         }
     }
-    private record Rule(Set<Item> items, int amount) {
+    record Rule(Set<Item> items, int amount) {
         boolean test(ItemStack stack) { return !stack.isEmpty() && items.contains(stack.getItem()); }
+    }
+    record IngredientView(List<Rule> rules, JsonObject tags) {}
+    static IngredientView currentIngredients(List<Ingredient> ingredients) {
+        require(!ingredients.isEmpty() && ingredients.size() <= 8, "непідтримуваний список інгредієнтів");
+        Budget budget = new Budget(); Map<String, JsonElement> tags = new TreeMap<>();
+        List<Rule> rules = new ArrayList<>();
+        for (Ingredient ingredient : ingredients) rules.add(ingredient(ingredient, 1, tags, budget));
+        JsonObject encoded = new JsonObject(); tags.forEach(encoded::add);
+        return new IngredientView(List.copyOf(rules), encoded);
     }
     private ForbiddenDependencies() {}
     private static void require(boolean condition, String message) {
@@ -100,7 +109,7 @@ public final class ForbiddenDependencies {
         budget.take(list.size()); return new ArrayList<>(list);
     }
     @SuppressWarnings("unchecked")
-    private static JsonElement enhancer(Holder<?> holder, Registry<Object> registry, HolderLookup.Provider provider) {
+    static JsonElement enhancer(Holder<?> holder, Registry<Object> registry, HolderLookup.Provider provider) {
         Object value = holder.value();
         require(registry.get(ResourceLocation.parse(id(holder))) == value, "застаріле визначення підсилювача");
         require(value.getClass().getName().equals(BASE + "item.enhancer.EnhancerDefinition"), "невідомий тип підсилювача");
@@ -150,7 +159,7 @@ public final class ForbiddenDependencies {
         }
         return data;
     }
-    private static String hash(JsonElement data) {
+    static String hash(JsonElement data) {
         bounded(data, 0, new JsonBudget());
         try { return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(ordered(data).toString().getBytes(StandardCharsets.UTF_8))); }
         catch (java.security.NoSuchAlgorithmException impossible) { throw new AssertionError(impossible); }

@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "status": "implemented_forge_scope_clibano_TODO",
+  "status": "implemented_scoped_forge_and_clibano_fullpack_pending",
   "scope": "Forbidden Arcanus2.6.1 paid ritual and Clibano transitive definitions",
   "implemented": true,
-  "current_limit": "Forge supports exact vanilla ingredients and three native enhancer effect classes with TimeCondition; Clibano transitive/historical residue definitions and fullpack acceptance remain open.",
+  "current_limit": "Fullpack weaving/reload/Survival/TPS NOT_RUN; Component CODEC cost, generic copied components and universal rollback not proven.",
   "proposed_compatibility": [
     "Keep existing schema1 ritual and input hashes; do not silently reinterpret old proof.",
     "Store a versioned gameplay-dependency fingerprint in retained native active NBT extension; PaidState preserves unknown fields.",
@@ -12,12 +12,12 @@
     "Exclude texture-only magic-circle data from gameplay claims; unsupported ingredient serializers remain unapproved."
   ],
   "requires_verification": [
-    "Exact fullpack optional weaving, actual datapack reload and Survival acceptance",
-    "Full Component CODEC CPU/TPS profiling with parallel Forge operations",
-    "Separate Clibano transitive/residue implementation and historical migration proof"
+    "Exact fullpack optional weaving, actual datapack reload and Survival/world-upgrade acceptance",
+    "Full Component CODEC CPU/TPS profiling with parallel Forge/Clibano operations",
+    "External pipe IO forwarding and arbitrary addon callbacks outside documented hooks"
   ],
-  "next_action": "Apply a separately tested compatible dependency snapshot to Clibano paid lanes/residues; never change schema1 lane hashes or adopt current data as old proof. Then continue35partial maps and required48epoch lines.",
-  "implemented_scope": "Forbidden Forge2.6.1 paid rituals only; Clibano transitive definitions remain TODO",
+  "next_action": "Content: exact Ad Astra1.16.26 source/version/mechanics map and meaningful quest depth; then35partial maps and old required48epoch lines.",
+  "implemented_scope": "Forge paid ritual snapshots plus Clibano lane/residue historical snapshots; exact supported native types only",
   "implementation": {
     "helper": "companion/src/main/java/ua/aia2/guard/ForbiddenDependencies.java",
     "extension": "active_ritual.aia2_gameplay_dependencies_v1",
@@ -46,5 +46,16 @@
     "Schema1 paid receipt plus dependency extension actual Minecraft compressed NBT roundtrip and primitive projection preservation",
     "Modeled old receipt no-adoption, changing/removed/reordered tags, enhancer definitions, late commit and payment race",
     "Installer preflight rejects missing dependency helper before any instance writes"
-  ]
+  ],
+  "clibano": {
+    "helper": "companion/src/main/java/ua/aia2/guard/ClibanoDependencies.java",
+    "state": "companion/src/main/java/ua/aia2/guard/ClibanoDependencyState.java",
+    "tag": "aia2_clibano_dependencies_v1",
+    "paid_schema_and_hashes_unchanged": true,
+    "positive_residue_history": "id→definitionSHA+amount, bound to accepted native production credit and observed conversion",
+    "legacy": "dependent paid lanes/positive balances without historical witness pause without adoption",
+    "explicit_recovery": "cancel preserves residues; nearby own-team operator quarantine-residues backs up raw stock/history up to8 then clears active balance without output/refund",
+    "manual_plan": "docs/testing/CLIBANO_DEPENDENCIES_ACCEPTANCE.uk.md",
+    "source_audit": "content/audit/v6-clibano-dependencies-source.json"
+  }
 }

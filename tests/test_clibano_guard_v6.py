@@ -31,7 +31,7 @@ class ClibanoGuardTests(unittest.TestCase):
                 sources.append(str(target))
             sources.append(str(ROOT / 'tests/fixtures/ClibanoGuardHarness.java'))
             sources.extend(str(ROOT / f'companion/src/main/java/ua/aia2/guard/{name}.java')
-                           for name in ['GuardPolicy', 'ClibanoPaidState', 'ClibanoAccess'])
+                           for name in ['GuardPolicy', 'ClibanoPaidState', 'ClibanoAccess', 'ClibanoDependencyState', 'ClibanoDependencies', 'ForbiddenDependencies'])
             sources.extend(str(ROOT / f'companion/src/main/java/ua/aia2/guard/mixin/{name}.java')
                            for name in ['ClibanoMachineMixin', 'ClibanoResidueMixin'])
             run = subprocess.run([str(jdk / 'bin/javac'), '-encoding', 'UTF-8', '-cp', str(gson[-1]), '-d', tmp, *sources], capture_output=True, text=True)

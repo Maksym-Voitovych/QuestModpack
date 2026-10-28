@@ -169,6 +169,7 @@ public final class NativeSmokeTests {
         testForbiddenPaidNbt();
         testForbiddenDependencyNbt();
         testClibanoPaidNbt();
+        testClibanoDependencyNbt();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
@@ -269,6 +270,54 @@ public final class NativeSmokeTests {
         check(!legacySaved.getCompound(ForbiddenPaidState.ACTIVE_TAG).contains(ForbiddenDependencies.ACTIVE_TAG)
                         && !ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(old), dependent),
                 "restoring and updating an old paid receipt never invents a missing dependency snapshot");
+    }
+
+    /** Actual Minecraft NBT only; optional Clibano is absent from this server. */
+    private static void testClibanoDependencyNbt() {
+        Object machine = new Object();
+        var lane = new ClibanoPaidState.Lane("forbidden_arcanus:test", "a".repeat(64), "b".repeat(64));
+        ClibanoPaidState.setLane(machine, 0, lane);
+        ClibanoDependencyState.setLane(machine, 0, "c".repeat(64));
+        ClibanoDependencyState.setLane(machine, 1, "d".repeat(64));
+        var residue = new ClibanoDependencyState.Residue("e".repeat(64), 9);
+        ClibanoDependencyState.setResidues(machine, Map.of("forbidden_arcanus:iron", residue));
+        CompoundTag stored = new CompoundTag(); ClibanoPaidState.save(machine, stored); ClibanoDependencyState.save(machine, stored);
+        check(stored.contains(ClibanoPaidState.TAG) && stored.contains(ClibanoDependencyState.TAG),
+                "existing lane schema1 and independent dependency history coexist in actual Minecraft NBT");
+        CompoundTag decoded;
+        try {
+            var bytes = new java.io.ByteArrayOutputStream(); net.minecraft.nbt.NbtIo.writeCompressed(stored, bytes);
+            decoded = net.minecraft.nbt.NbtIo.readCompressed(new java.io.ByteArrayInputStream(bytes.toByteArray()), net.minecraft.nbt.NbtAccounter.unlimitedHeap());
+        } catch (java.io.IOException failure) { throw new IllegalStateException("Clibano dependency NBT roundtrip failed", failure); }
+        check(decoded.equals(stored), "actual compressed NBT preserves lane and amount-bound residue dependency receipts");
+        Object restored = new Object(); ClibanoPaidState.load(restored, decoded); ClibanoDependencyState.load(restored, decoded);
+        check(ClibanoPaidState.lane(restored, 0).orElseThrow().equals(lane), "old paid lane ID and both historical hashes remain unchanged");
+        check(ClibanoDependencyState.lane(restored, 0).orElseThrow().equals("c".repeat(64))
+                        && ClibanoDependencyState.residues(restored).get("forbidden_arcanus:iron").equals(residue),
+                "new controller restores exact lane snapshot and positive residue amount history");
+        ClibanoDependencyState.setLane(restored, 0, null);
+        check(ClibanoDependencyState.lane(restored, 1).isPresent() && ClibanoDependencyState.residues(restored).size() == 1,
+                "actual first-lane completion preserves independent lane and accumulated residue history");
+        ClibanoDependencyState.clearLanes(restored);
+        check(ClibanoDependencyState.lane(restored, 1).isEmpty() && ClibanoDependencyState.residues(restored).get("forbidden_arcanus:iron").amount() == 9,
+                "explicit cooking cancellation keeps the historical residue stock");
+        decoded.getCompound(ClibanoDependencyState.TAG).getCompound("residues").getCompound("forbidden_arcanus:iron").putInt("amount", 1);
+        check(ClibanoDependencyState.residues(restored).get("forbidden_arcanus:iron").amount() == 9, "caller NBT mutation cannot rewrite retained residue amount");
+        Object legacy = new Object(); ClibanoDependencyState.load(legacy, new CompoundTag());
+        check(ClibanoDependencyState.lane(legacy, 0).isEmpty() && ClibanoDependencyState.residues(legacy).isEmpty(), "missing old extension never becomes a dependency proof");
+        CompoundTag old = new CompoundTag(); ClibanoDependencyState.save(legacy, old);
+        check(!old.contains(ClibanoDependencyState.TAG), "saving legacy state does not adopt current registry definitions");
+        CompoundTag corrupt = stored.copy(); corrupt.getCompound(ClibanoDependencyState.TAG).putInt("schema", 999);
+        Object unsupported = new Object(); ClibanoDependencyState.load(unsupported, corrupt);
+        check(ClibanoDependencyState.status(unsupported) == ClibanoDependencyState.Status.CORRUPT && ClibanoDependencyState.residues(unsupported).isEmpty(), "unknown actual-NBT dependency schema authorizes no stock");
+        CompoundTag saved = stored.copy(); ClibanoDependencyState.save(unsupported, saved);
+        check(saved.equals(corrupt), "unknown dependency NBT remains verbatim alongside original paid receipt");
+        boolean denied = false; try { ClibanoDependencyState.clearLanes(unsupported); } catch (IllegalStateException expected) { denied = true; }
+        check(denied, "cooking cancellation cannot erase unknown residue metadata");
+        ClibanoDependencyState.setResidues(restored, Map.of()); CompoundTag emptied = stored.copy(); ClibanoDependencyState.save(restored, emptied);
+        check(!emptied.contains(ClibanoDependencyState.TAG) && emptied.contains(ClibanoPaidState.TAG), "last trusted residue removal tombstones only dependency ledger");
+        ClibanoDependencyState.clear(unsupported); ClibanoDependencyState.save(unsupported, saved);
+        check(!saved.contains(ClibanoDependencyState.TAG) && saved.contains(ClibanoPaidState.TAG), "explicit backed-up recovery can clear owned corrupt metadata without deleting old lane receipt");
     }
 
     private static void testClibanoPaidNbt() {

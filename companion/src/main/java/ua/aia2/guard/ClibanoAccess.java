@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.HexFormat;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.WeakHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -54,20 +55,29 @@ public final class ClibanoAccess {
         protected Map<String, Method> computeValue(Class<?> type) { return new HashMap<>(); }
     };
     private record Plan(RecipeHolder<?> first, RecipeHolder<?> second, boolean alloy,
-                        Holder<?> enhancer, ClibanoPaidState.Lane firstBinding, ClibanoPaidState.Lane secondBinding) {
+                        Holder<?> enhancer, ClibanoPaidState.Lane firstBinding, ClibanoPaidState.Lane secondBinding,
+                        ClibanoDependencies.Snapshot firstDependencies, ClibanoDependencies.Snapshot secondDependencies) {
         RecipeHolder<?> holder(int lane) { return lane == 0 ? first : second; }
         ClibanoPaidState.Lane binding(int lane) { return lane == 0 ? firstBinding : secondBinding; }
+        ClibanoDependencies.Snapshot dependencies(int lane) { return lane == 0 ? firstDependencies : secondDependencies; }
     }
     private record Finish(RecipeHolder<?> holder, int[] lanes, ItemStack[] inputs, ItemStack[] outputs,
-                          ItemStack result, String team) {}
+                          ItemStack result, String team, ItemStack enhancerItem) {}
     private static final class Run {
         final BlockEntity machine;
         final Plan plan;
         final boolean[] commits = new boolean[2];
         final boolean[] blocked = new boolean[2];
         final ArrayDeque<Finish> finishes = new ArrayDeque<>();
-        Run(BlockEntity machine, Plan plan) { this.machine = machine; this.plan = plan; }
+        final java.util.Set<Finish> residueCredits = java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());
+        final int[] initialProgress;
+        boolean rejected;
+        Map<String, ClibanoDependencyState.Residue> conversionBefore;
+        Addition addition;
+        Run(BlockEntity machine, Plan plan) { this.machine = machine; this.plan = plan; initialProgress = progress(machine).clone(); }
     }
+    private record Addition(Object storage, Holder<?> type, String id, String definition, int amount,
+                            Map<String, ClibanoDependencyState.Residue> before) {}
     private ClibanoAccess() {}
 
     private static Field field(Class<?> type, String name) {
@@ -166,6 +176,7 @@ public final class ClibanoAccess {
     }
     @SuppressWarnings({"unchecked", "rawtypes"})
     private static boolean matches(BlockEntity machine, RecipeHolder<?> holder, Holder<?> enhancer, int[] lanes) {
+        if (!ClibanoDependencies.inputsMatch(machine, holder.value(), lanes)) return false;
         Object input = input(machine, lanes.length == 2 || lanes[0] == 0 ? stack(machine, 3) : ItemStack.EMPTY,
                 lanes.length == 2 || lanes[0] == 1 ? stack(machine, 4) : ItemStack.EMPTY);
         HolderSet<?> set = enhancer == null ? HolderSet.empty() : HolderSet.direct((Holder)enhancer);
@@ -251,14 +262,18 @@ public final class ClibanoAccess {
         require(canonical(machine), "контролер/структура або власник не підтверджені");
         require(canOpen(machine), "пошкоджені масиви прогресу; потрібне явне відновлення");
         require(ClibanoPaidState.status(machine) != ClibanoPaidState.Status.CORRUPT, "пошкоджений запис операції");
+        require(ClibanoDependencyState.status(machine) != ClibanoDependencyState.Status.CORRUPT, "пошкоджений журнал залежностей Clibano");
         require(!UNREAD_RESIDUES.containsKey(machine), "непрочитані залишки збережено; відновіть їх registry-визначення");
         for (int i = 0; i <= 6; i++) require(item(machine, stack(machine, i)), "заблокований предмет у слоті " + i);
+        try { checkedResidues(call(machine, "getResiduesStorage"), machine); }
+        catch (ReflectiveOperationException failure) { throw new IllegalArgumentException("не вдалося перевірити історію залишків", failure); }
         ServerLevel level = (ServerLevel)machine.getLevel();
         Holder<?> enhancer = physicalEnhancer(machine);
         RecipeType<?> recipeType;
         try { recipeType = (RecipeType<?>)machine.getClass().getField("RECIPE_TYPE").get(null); }
         catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
         List<RecipeHolder<?>> all = (List)level.getRecipeManager().getAllRecipesFor((RecipeType)recipeType);
+        require(all.size() <= 1024, "завеликий список рецептів Clibano");
         RecipeHolder<?> alloy = null, first = null, second = null;
         for (RecipeHolder<?> holder : all) {
             require(current(machine, holder) != null, "невідоме або застаріле визначення рецепта");
@@ -273,7 +288,9 @@ public final class ClibanoAccess {
         if (doubleRecipe) { first = alloy; second = alloy; }
         ClibanoPaidState.Lane a = binding(machine, first, enhancer, doubleRecipe ? new int[] {0,1} : new int[] {0});
         ClibanoPaidState.Lane b = doubleRecipe ? a : binding(machine, second, enhancer, new int[] {1});
-        Plan plan = new Plan(first, second, doubleRecipe, enhancer, a, b);
+        var da = first == null ? null : ClibanoDependencies.capture(machine, first.value(), enhancer, doubleRecipe ? new int[]{0,1} : new int[]{0});
+        var db = doubleRecipe ? da : second == null ? null : ClibanoDependencies.capture(machine, second.value(), enhancer, new int[]{1});
+        Plan plan = new Plan(first, second, doubleRecipe, enhancer, a, b, da, db);
         int[] progress = progress(machine), duration = duration(machine);
         for (int lane = 0; lane < 2; lane++) {
             RecipeHolder<?> selected = plan.holder(lane);
@@ -286,6 +303,9 @@ public final class ClibanoAccess {
                 require(duration[lane] > 0 && progress[lane] < duration[lane], "лічильник незавершеної операції поза межами");
                 require(selected != null && ClibanoPaidState.lane(machine, lane).orElse(null) != null
                         && ClibanoPaidState.lane(machine, lane).get().equals(plan.binding(lane)), "незавершена операція без тотожного запису рецепта/входів");
+                var witness = ClibanoDependencyState.lane(machine, lane);
+                require(witness.isPresent() ? witness.get().equals(plan.dependencies(lane).fingerprint())
+                        : !plan.dependencies(lane).hasDependencies(), "залежності незавершеної операції змінено або відсутній історичний доказ");
             }
         }
         if (doubleRecipe) require(progress[0] == progress[1] && duration[0] == duration[1], "неузгоджені лічильники сплаву");
@@ -329,13 +349,20 @@ public final class ClibanoAccess {
             try { machine.getClass().getMethod("serverTick", Level.class, BlockPos.class, BlockState.class, machine.getClass()).invoke(null, level, pos, state, machine); }
             catch (InvocationTargetException failure) { throw nativeFailure(failure); }
             catch (ReflectiveOperationException failure) { throw new IllegalStateException(failure); }
-            REASONS.remove(machine);
+            if (!run.rejected && !run.blocked[0] && !run.blocked[1]) REASONS.remove(machine);
         } finally {
             try {
                 int[] after = progress(machine);
                 for (int lane = 0; lane < 2; lane++) {
-                    if (run.commits[lane]) ClibanoPaidState.setLane(machine, lane, null);
-                    else ClibanoPaidState.setLane(machine, lane, after[lane] > 0 ? plan.binding(lane) : null);
+                    if (run.commits[lane]) {
+                        ClibanoPaidState.setLane(machine, lane, null); ClibanoDependencyState.setLane(machine, lane, null);
+                    } else {
+                        ClibanoPaidState.setLane(machine, lane, after[lane] > 0 ? plan.binding(lane) : null);
+                        // Old dependency-free work remains old: never upgrade it from today's data.
+                        if (after[lane] == 0) ClibanoDependencyState.setLane(machine, lane, null);
+                        else if (run.initialProgress[lane] == 0 && plan.dependencies(lane) != null)
+                            ClibanoDependencyState.setLane(machine, lane, plan.dependencies(lane).fingerprint());
+                    }
                 }
                 machine.setChanged();
             } finally { if (previous == null) RUN.remove(); else RUN.set(previous); }
@@ -353,7 +380,7 @@ public final class ClibanoAccess {
     }
     public static void cook(Object logic, boolean lit) {
         Run run = RUN.get();
-        if (run == null || get(logic, "clibano") != run.machine || !lit) return;
+        if (run == null || run.rejected || get(logic, "clibano") != run.machine || !lit) return;
         // A residue conversion can fill the destination earlier in this same native tick.
         for (int lane = 0; lane < 2; lane++) {
             var holder = run.plan.holder(lane);
@@ -408,6 +435,14 @@ public final class ClibanoAccess {
         if (!maySmelt(machine, holder, slot) || !actualFire(machine, holder)) {
             for (int lane : lanes) run.blocked[lane] = true; return false;
         }
+        try {
+            var currentDependencies = ClibanoDependencies.capture(machine, holder.value(), physicalEnhancer(machine), lanes);
+            for (int lane : lanes) require(currentDependencies.equals(run.plan.dependencies(lane)), "залежності Clibano змінилися перед завершенням");
+        } catch (RuntimeException denied) {
+            for (int lane : lanes) run.blocked[lane] = true;
+            run.rejected = true;
+            pause(machine, message(denied)); return false;
+        }
         for (int lane : lanes) if (run.commits[lane] || run.plan.holder(lane) == null
                 || run.plan.holder(lane).value() != holder.value() || progress(machine)[lane] != duration(machine)[lane]
                 || duration(machine)[lane] <= 0 || duration(machine)[lane] != ((Number)call(machine, "getCookingTime", holder)).intValue()) {
@@ -416,8 +451,8 @@ public final class ClibanoAccess {
         ItemStack[] inputs = {stack(machine, 3).copy(), stack(machine, 4).copy()};
         ItemStack[] outputs = {stack(machine, 5).copy(), stack(machine, 6).copy()};
         ItemStack result = holder.value().getResultItem(((ServerLevel)machine.getLevel()).registryAccess()).copy();
-        run.finishes.push(new Finish(holder, lanes.clone(), inputs, outputs, result, Aia2MachineGuard.getOwner(machine)));
-        for (int lane : lanes) { run.commits[lane] = true; ClibanoPaidState.setLane(machine, lane, null); }
+        run.finishes.push(new Finish(holder, lanes.clone(), inputs, outputs, result, Aia2MachineGuard.getOwner(machine), stack(machine, 0).copy()));
+        for (int lane : lanes) { run.commits[lane] = true; ClibanoPaidState.setLane(machine, lane, null); ClibanoDependencyState.setLane(machine, lane, null); }
         return true;
     }
     private static boolean consumed(ItemStack before, ItemStack after) {
@@ -453,14 +488,25 @@ public final class ClibanoAccess {
         Registry<Object> registry = level.registryAccess().registryOrThrow((ResourceKey<Registry<Object>>)key);
         Map<?, ?> map = (Map<?, ?>)call(storage, "getResidueTypeAmountMap");
         require(map.size() <= 64, "пошкоджене сховище залишків");
+        require(ClibanoDependencyState.status(machine) != ClibanoDependencyState.Status.CORRUPT, "пошкоджена історія залишків");
+        Map<String, ClibanoDependencyState.Residue> history = ClibanoDependencyState.residues(machine);
+        int witnessed = 0;
         int total = 0;
         for (var entry : map.entrySet()) {
             Holder<?> type = (Holder<?>)entry.getKey();
             require(entry.getValue() instanceof Integer, "неправильна кількість залишків");
             int amount = (Integer)entry.getValue(); total += amount;
             require(amount >= 0 && amount <= 64 && registry.get(type.unwrapKey().orElseThrow().location()) == type.value(), "застаріле визначення або кількість залишків");
+            if (amount > 0) {
+                var receipt = history.get(type.unwrapKey().orElseThrow().location().toString());
+                require(receipt != null && receipt.amount() == amount
+                        && receipt.definition().equals(ClibanoDependencies.residueDefinition(machine, type)),
+                        "залишки не мають тотожного історичного визначення/кількості; див. /aia2clibano status");
+                witnessed++;
+            }
         }
         require(total <= 64 && total == ((Number)call(storage, "getTotalAmount")).intValue(), "неузгоджена сумарна кількість залишків");
+        require(witnessed == history.size(), "історія залишків не відповідає фізичному сховищу");
         return map;
     }
     /** The native menu stream encodes holders; stale/removed holders cannot be sent safely. */
@@ -470,6 +516,7 @@ public final class ClibanoAccess {
     }
     public static boolean mayConvertResidues(Object storage, BlockEntity machine) {
         try {
+            Run run = RUN.get(); require(run != null && run.machine == machine && run.conversionBefore == null, "об'єднання залишків поза перевіреним циклом");
             Map<?, ?> map = checkedResidues(storage, machine);
             for (var entry : map.entrySet()) {
                 Holder<?> type = (Holder<?>)entry.getKey(); int amount = ((Number)entry.getValue()).intValue();
@@ -478,11 +525,92 @@ public final class ClibanoAccess {
                 require(required > 0 && required <= 64, "неправильна ціна об'єднання залишків");
                 if (amount >= required) require(fits(machine, (ItemStack)call(combine, "result")), "вихід залишків заблоковано");
             }
+            run.conversionBefore = ClibanoDependencyState.residues(machine);
             return true;
-        } catch (ReflectiveOperationException | RuntimeException denied) { pause(machine, message(denied)); return false; }
+        } catch (ReflectiveOperationException | RuntimeException denied) {
+            Run run = RUN.get(); if (run != null && run.machine == machine) run.rejected = true;
+            pause(machine, message(denied)); return false;
+        }
+    }
+    /** Validate observed native count deltas. No current definition is adopted for an old balance. */
+    public static void convertedResidues(Object storage, BlockEntity machine) {
+        Run run = RUN.get();
+        if (run == null || run.machine != machine || run.conversionBefore == null) return;
+        Map<String, ClibanoDependencyState.Residue> before = run.conversionBefore; run.conversionBefore = null;
+        try {
+            require(call(machine, "getResiduesStorage") == storage && canonical(machine), "підмінене сховище залишків");
+            Map<?, ?> map = (Map<?, ?>)call(storage, "getResidueTypeAmountMap");
+            require(map.size() <= 64, "завелике сховище залишків");
+            Map<String, ClibanoDependencyState.Residue> after = new HashMap<>(); int total = 0;
+            for (var entry : map.entrySet()) {
+                Holder<?> holder = (Holder<?>)entry.getKey(); int amount = (Integer)entry.getValue();
+                require(amount >= 0 && amount <= 64, "неправильна кількість залишків після об'єднання");
+                String id = holder.unwrapKey().orElseThrow().location().toString();
+                var old = before.get(id);
+                require(amount == 0 || old != null && amount <= old.amount()
+                        && old.definition().equals(ClibanoDependencies.residueDefinition(machine, holder)), "непідтверджена зміна залишків під час об'єднання");
+                if (amount > 0) after.put(id, new ClibanoDependencyState.Residue(old.definition(), amount));
+                total += amount;
+            }
+            require(total <= 64 && total == ((Number)call(storage, "getTotalAmount")).intValue(), "неузгоджена кількість залишків після об'єднання");
+            ClibanoDependencyState.setResidues(machine, after); machine.setChanged();
+        } catch (RuntimeException denied) { run.rejected = true; run.blocked[0] = run.blocked[1] = true; pause(machine, message(denied)); }
+    }
+    /** Only the exact currently verified native finish may credit a newly produced residue. */
+    public static boolean mayIncreaseResidue(Object storage, Holder<?> type, int amount) {
+        Run run = RUN.get();
+        if (run == null || run.finishes.isEmpty() || run.addition != null) return false;
+        Finish finish = run.finishes.peek();
+        if (run.residueCredits.contains(finish)) return false;
+        try {
+            BlockEntity machine = run.machine;
+            require(amount == 1 && canonical(machine) && call(machine, "getResiduesStorage") == storage, "залишки поза перевіреним завершенням");
+            Optional<?> chance = (Optional<?>)call(finish.holder.value(), "residueChance");
+            require(chance.isPresent() && call(chance.get(), "type") == type, "тип залишків не відповідає рецепту");
+            require(current(machine, finish.holder) != null && ItemStack.matches(finish.enhancerItem, stack(machine, 0)), "рецепт або фізичний підсилювач змінився під час завершення");
+            var dependencies = ClibanoDependencies.definitionSnapshot(machine, finish.holder.value(), physicalEnhancer(machine));
+            // Native finish has consumed inputs; retain the verified pre-consumption lane evidence.
+            for (int lane : finish.lanes) require(dependencies.equals(run.plan.dependencies(lane)), "залежності залишків змінено");
+            checkedResidues(storage, machine);
+            String id = type.unwrapKey().orElseThrow().location().toString();
+            run.addition = new Addition(storage, type, id, ClibanoDependencies.residueDefinition(machine, type), amount, ClibanoDependencyState.residues(machine));
+            run.residueCredits.add(finish); // Native addResidue can attempt at most one unit per finish.
+            return true;
+        } catch (ReflectiveOperationException | RuntimeException denied) { run.rejected = true; pause(run.machine, message(denied)); return false; }
+    }
+    public static void increasedResidue(Object storage, Holder<?> type, int amount) {
+        Run run = RUN.get();
+        if (run == null || run.addition == null) return;
+        Addition addition = run.addition; run.addition = null;
+        if (addition.storage != storage || addition.type != type || addition.amount != amount) return;
+        try {
+            Map<?, ?> map = (Map<?, ?>)call(storage, "getResidueTypeAmountMap");
+            require(map.size() <= 64, "завелике сховище залишків");
+            Map<String, ClibanoDependencyState.Residue> updated = new HashMap<>(addition.before); int total = 0;
+            int previous = addition.before.containsKey(addition.id) ? addition.before.get(addition.id).amount() : 0;
+            int expected = previous + Math.min(amount, 64 - addition.before.values().stream().mapToInt(ClibanoDependencyState.Residue::amount).sum());
+            require(addition.definition.equals(ClibanoDependencies.residueDefinition(run.machine, type)), "визначення залишків змінилося під час додавання");
+            int seen = 0;
+            for (var entry : map.entrySet()) {
+                Holder<?> holder = (Holder<?>)entry.getKey(); String id = holder.unwrapKey().orElseThrow().location().toString();
+                int actual = (Integer)entry.getValue(); require(actual >= 0 && actual <= 64, "неправильна кількість доданих залишків");
+                var old = addition.before.get(id);
+                require(actual == (id.equals(addition.id) ? expected : old == null ? 0 : old.amount()), "непідтверджена зміна балансу залишків");
+                if (actual > 0) {
+                    String definition = id.equals(addition.id) ? addition.definition : old.definition();
+                    require(definition.equals(ClibanoDependencies.residueDefinition(run.machine, holder)), "змінилося визначення наявних залишків");
+                    updated.put(id, new ClibanoDependencyState.Residue(definition, actual)); seen++;
+                }
+                total += actual;
+            }
+            require(seen == updated.size() && total <= 64 && total == ((Number)call(storage, "getTotalAmount")).intValue(), "неузгоджений баланс доданих залишків");
+            require(expected == 0 || updated.containsKey(addition.id), "залишок не прийнятий сховищем");
+            ClibanoDependencyState.setResidues(run.machine, updated); run.machine.setChanged();
+        } catch (RuntimeException denied) { run.rejected = true; pause(run.machine, message(denied)); }
     }
     public static void load(BlockEntity machine, CompoundTag tag) {
         ClibanoPaidState.load(machine, tag);
+        ClibanoDependencyState.load(machine, tag);
         Tag residues = tag.get("residues");
         if (residues == null) UNREAD_RESIDUES.remove(machine); else UNREAD_RESIDUES.put(machine, residues.copy());
     }
@@ -501,10 +629,26 @@ public final class ClibanoAccess {
     }
     public static void save(BlockEntity machine, CompoundTag tag) {
         ClibanoPaidState.save(machine, tag);
-        Tag residues = UNREAD_RESIDUES.get(machine); if (residues != null) tag.put("residues", residues.copy());
+        ClibanoDependencyState.save(machine, tag);
+        Tag residues = UNREAD_RESIDUES.get(machine);
+        if (residues != null) tag.put("residues", residues.copy());
+        else if (!tag.contains("residues")) {
+            // Native save skips residues when level==null and may omit a codec failure.
+            // Retain actual ID/count data without certifying it against today's registry.
+            Map<?, ?> map = (Map<?, ?>)call(call(machine, "getResiduesStorage"), "getResidueTypeAmountMap");
+            if (map.size() <= 64 && map.values().stream().anyMatch(v -> v instanceof Integer amount && amount != 0)) {
+                CompoundTag raw = new CompoundTag();
+                for (var entry : map.entrySet()) {
+                    require(entry.getKey() instanceof Holder<?> && entry.getValue() instanceof Integer, "непідтримуваний raw баланс залишків");
+                    raw.putInt(((Holder<?>)entry.getKey()).unwrapKey().orElseThrow().location().toString(), (Integer)entry.getValue());
+                }
+                tag.put("residues", raw);
+            }
+        }
     }
     public static String status(BlockEntity machine) {
-        return "Clibano: " + ClibanoPaidState.status(machine) + "; " + REASONS.getOrDefault(machine, "причин призупинення не зареєстровано");
+        return "Clibano: " + ClibanoPaidState.status(machine) + "; залежності: " + ClibanoDependencyState.status(machine)
+                + "; " + REASONS.getOrDefault(machine, "причин призупинення не зареєстровано");
     }
     public static String cancelProgress(ServerPlayer player, BlockEntity machine) {
         try {
@@ -512,17 +656,55 @@ public final class ClibanoAccess {
             require(canonical(machine) && player.serverLevel() == machine.getLevel()
                     && player.blockPosition().distSqr(machine.getBlockPos()) <= 64
                     && Aia2MachineGuard.getOwner(machine).equals(Aia2MachineGuard.synchronizedPlayerTeam(player)), "підійдіть до Clibano своєї команди");
+            require(ClibanoDependencyState.status(machine) != ClibanoDependencyState.Status.CORRUPT,
+                    "пошкоджений журнал залежностей: спочатку явно збережіть його через quarantine-residues");
             CompoundTag persistent = machine.getPersistentData(); String key = "aia2_clibano_cancel_backups_v1";
             require(!persistent.contains(key) || persistent.contains(key, Tag.TAG_LIST), "пошкоджений список резервних копій");
             ListTag backups = persistent.getList(key, Tag.TAG_COMPOUND);
             require(backups.size() < 8 && (!persistent.contains(key) || backups.size() == ((ListTag)persistent.get(key)).size()), "резервне сховище заповнене або пошкоджене");
             CompoundTag snapshot = new CompoundTag(); ClibanoPaidState.save(machine, snapshot);
+            ClibanoDependencyState.save(machine, snapshot);
             snapshot.putIntArray("cooking_times", progress(machine).clone()); snapshot.putIntArray("cooking_durations", duration(machine).clone());
             snapshot.putLong("cancelled_at", player.serverLevel().getGameTime()); backups.add(snapshot); persistent.put(key, backups);
             set(get(machine, "logic"), "cookingProgress", new int[2]); set(get(machine, "logic"), "cookingDuration", new int[2]);
-            ClibanoPaidState.clear(machine); REASONS.remove(machine); machine.setChanged();
+            ClibanoPaidState.clear(machine); ClibanoDependencyState.clearLanes(machine); REASONS.remove(machine); machine.setChanged();
             return "Прогрес Clibano скасовано; фізичні предмети й залишки збережено, паливо/душі не повертаються. Backup " + backups.size() + "/8.";
         } catch (RuntimeException denied) { return "Скасування не завершено: " + message(denied); }
+    }
+    /** Explicit operator quarantine only. Never convert unproven old residues into today's resources. */
+    public static String quarantineResidues(ServerPlayer player, BlockEntity machine) {
+        try {
+            require(player != null && player.hasPermissions(2) && !player.isSpectator(), "потрібні права оператора");
+            require(canonical(machine) && player.serverLevel() == machine.getLevel()
+                    && player.blockPosition().distSqr(machine.getBlockPos()) <= 64
+                    && Aia2MachineGuard.getOwner(machine).equals(Aia2MachineGuard.synchronizedPlayerTeam(player)), "підійдіть до Clibano своєї команди");
+            CompoundTag persistent = machine.getPersistentData(); String key = "aia2_clibano_residue_backups_v1";
+            require(!persistent.contains(key) || persistent.contains(key, Tag.TAG_LIST), "пошкоджений список карантинних копій");
+            ListTag backups = persistent.getList(key, Tag.TAG_COMPOUND);
+            require(backups.size() < 8 && (!persistent.contains(key) || backups.size() == ((ListTag)persistent.get(key)).size()), "карантинне сховище заповнене або пошкоджене");
+            Object storage = call(machine, "getResiduesStorage");
+            Map<?, ?> map = (Map<?, ?>)call(storage, "getResidueTypeAmountMap");
+            require(map.size() <= 64, "завелике сховище залишків для карантину");
+            // Resolve the exact setter before any backup or native mutation.
+            method(storage.getClass(), "setTotalAmount", 1);
+            CompoundTag snapshot = new CompoundTag(), rawMap = new CompoundTag();
+            for (var entry : map.entrySet()) {
+                require(entry.getKey() instanceof Holder<?> && entry.getValue() instanceof Integer, "непідтримуване сховище залишків");
+                rawMap.putInt(((Holder<?>)entry.getKey()).unwrapKey().orElseThrow().location().toString(), (Integer)entry.getValue());
+            }
+            Tag unread = UNREAD_RESIDUES.get(machine);
+            require(unread != null || !map.isEmpty() || ClibanoDependencyState.rawState(machine) != null, "немає залишків або журналу для карантину");
+            snapshot.put("residues", unread == null ? rawMap : unread.copy());
+            snapshot.putInt("native_total", ((Number)call(storage, "getTotalAmount")).intValue());
+            ClibanoDependencyState.save(machine, snapshot); ClibanoPaidState.save(machine, snapshot);
+            snapshot.putIntArray("cooking_times", progress(machine).clone()); snapshot.putIntArray("cooking_durations", duration(machine).clone());
+            snapshot.putLong("quarantined_at", player.serverLevel().getGameTime()); backups.add(snapshot); persistent.put(key, backups);
+            map.clear(); call(storage, "setTotalAmount", 0); UNREAD_RESIDUES.remove(machine);
+            if (ClibanoDependencyState.status(machine) == ClibanoDependencyState.Status.CORRUPT) ClibanoDependencyState.clear(machine);
+            else ClibanoDependencyState.setResidues(machine, Map.of());
+            REASONS.remove(machine); machine.setChanged();
+            return "Залишки переміщено до NBT-карантину " + backups.size() + "/8; результат не видається. Предмети, паливо й прогрес плавки збережено.";
+        } catch (RuntimeException denied) { return "Карантин не завершено: " + message(denied); }
     }
     private static String message(Throwable error) { return error.getMessage() == null ? error.getClass().getSimpleName() : error.getMessage(); }
 }

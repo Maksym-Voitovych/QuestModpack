@@ -425,7 +425,7 @@ def plan_install(source, instance):
                         raise InstallError('This package needs the matching Forbidden Arcanus paid ritual and essence guards')
                     clibano_mixins = {'ClibanoFrameMenuMixin', 'ClibanoMenuValidityMixin', 'ClibanoMachineMixin', 'ClibanoResidueMixin'}
                     clibano_classes = {'ua/aia2/guard/' + name + '.class' for name in [
-                        'ClibanoOwnership', 'ClibanoAccess', 'ClibanoPaidState', 'ClibanoCommands']}
+                        'ClibanoOwnership', 'ClibanoAccess', 'ClibanoPaidState', 'ClibanoCommands', 'ClibanoDependencies', 'ClibanoDependencyState']}
                     clibano_classes.update('ua/aia2/guard/mixin/' + name + '.class' for name in clibano_mixins)
                     if not clibano_classes <= set(jar.namelist()) or not clibano_mixins <= registered:
                         raise InstallError('This package needs the matching Clibano controller ownership and paid production guards')

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.14-alpha (Forge dependency snapshots); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.15-alpha (Clibano dependency/residue history); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -15,11 +15,11 @@
 | 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини після5новихцілей |
 | 5 | Поглиблення 48 епох | IN_PROGRESS | 567нових відv4; цього guard-блоку0нових; старі обов’язкові лінії IN_PROGRESS |
 | 6 | Перегляд нагород | DONE | 3087item-нагород;0нових; усі3351попередніх quest/rewardpayloads збережено |
-| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніх entries незмінні у0.4.14 |
+| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніх entries незмінні у0.4.15 |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | Forge tag/enhancer snapshot реалізовано; Clibano transitive/historicalresidue/IOforwarding відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 230Python/57Node/5237Java;137MC@0.4.14/2JVM;157новихmodels+18NBT;fullpack NOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.14 проміжний блок; package/installer PASS; commit/push черезGit;0.5не завершено |
+| 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 233Python/57Node/5237Java;151MC@0.4.15/2JVM;285новихmodels+14NBT;fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.15 проміжний блок; package/installer PASS; commit/push черезGit;0.5не завершено |
 
 
 
@@ -529,3 +529,32 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - DONE доставки до коміту: ZIP4258manifestentries/1172runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI --dry-run:0file/directorywrites; upgradea1b6189(0.4.13)→0.4.14 резервуєстарийJAR, зберігаєopaque world/FTB/fire/knowledge+EMC/paidchunk markers історонніquest/mod/script; повторіідемпотентний. Неfullworldmigration; Windowsінстанснечіпали.
 - Звіт:implementation/forbidden-transitive-package-install-v6.json. JARSHA77dd673976ae228c82cfc8f18c3af95da0c8303c504c4f947162e47609395d09. Code/source/docs/installer зберігаютьсяціліснимmain-комітоміpushбезforce. Точнийhash/status — gitlog/origin/main та externaldeliveryreport біляZIP, безself-reference.
 - Наступнастартовадія — Clibano transitive/historicalresidue вище; цейForgeблок і3351старийквест негенеруватиповторно. Повний0.5ще IN_PROGRESS.
+
+
+### 2026-10-28 — Clibano dependency/residue history: IN_PROGRESS
+
+- Відновлено чистий d5c225c/main (0.4.14); origin/main звірено. Backup: /workspace/aia2-backups/before-clibano-dependencies-20261028T185501Z/checkpoint-d5c225c.tar.gz.
+- Root реалізує current ingredient/enhancer/residue snapshots, native add/convert witnesses, quarantine та інтеграцію. Source-review залишив35SHA-файлів і v6-clibano-dependencies-source.json. State-helper збережено; його агент вичерпав ліміт до тестів, root завершує. Native test host/harness оновлює clibano_dependencies_review.
+- Наявні3351quests/623recipes/390items+PNG/96keys не змінюються; нового контенту цього guard-блоку0.
+- Наступна дія: завершити targeted state/native regressions, actualNBT, full suites/build/package/installer; лише потім коміт/push. Runtime ще не вважається перевіреним.0.5 не реліз.
+
+
+### 2026-10-28 — Clibano dependencies0.4.15: реалізований підблок
+
+- DONE: current tag/required+installed enhancer/residue snapshots та незалежний ClibanoDependencyState. Paid schema1 і старі definition/input hashes незмінні. Нативне shapeless1/2input matching підтримує обидві перестановки, stale Ingredient arrays не доводять current membership.
+- Accepted native finish credit і observed conversion підтримують ID→definition+quantity history. Один finish може спробувати лише1одиницю; повторнийsame-scopecallback і unscoped credits denied. Legacy positive stock і dependent paid lanes без witness pause/preserve, без adoption з поточного datapack. Zero entries не є stock.
+- Explicit quarantine-residues: оператор своєї команди поруч, bounded8persistentbackups, raw stock/history збережено; активний balance очищується без output/refund/proof. Slots/fuel/cooking counters збережено. Cancel cooking зберігає residue history; corrupt metadata спочатку потребує явного quarantine. Installer не виконує recovery-команд.
+- Наявні3351quests/140chapters/623recipes/3087itemrewards/390items+PNG/96keys і1171non-JARruntimefiles byte-identical. Новихquests/recipes/rewards/items/textures0. Layout1154/0warnings.
+- PASS233Python/57Node/5237Java/JDK21build. Native Clibano harness368(118нових), новийstateharness167:285новихmodeledassertions. ActualminimalMC151/2JVM/650ticks;14новихactualNBT/binarychecks.13JSsyntaxPASS. Повний Forbidden/Clibano weaving/JEI/Survival/TPS NOT RUN.
+- Rebuild1172runtimefiles byte-identical PYTHONHASHSEED109.35новихSHAджерел(8classes/15recipes/11residue definitions/RecipeMatcher);26scopedcore/35partial/700stages/1073questlinks незмінні. NewJAR194classes/68mixins;174старихclasses byte-identical.
+- Source/stateагенти вичерпали ліміт; root відновив збережені35джерел/ledger, завершив host/harness/commands/NBT та перевірки. Активних власників файлів немає. Під час review додано окрему one-credit-per-finish регресію; після зміни повторні build/full233/targeted368/native151 PASS.
+- Limits: fullComponentCODEC передJSONbudget, CPU/TPS щенепрофільовано; fullcodec includes visual descriptions/name, що можеpause. Native fire/RNG/enhancer condition semantics збережено. ExternalframeIO/genericcomponents/universalrollback/довільніaddoncallbacks не оголошуються реалізованими.
+- IN_PROGRESSдоставки:ZIP/actualCLIupgrade0.4.14→0.4.15, метадані/коміт/push. Checkpointdocs і manualacceptance додано.
+- Наступна конкретна дія: exact Ad Astra1.16.26 source/version audit, поглиблення partial-карти й змістовної квестової лінії космосу. Далі35partial/невивченімоди та старіrequired48лінії. Rootsunfinishedrestart/DraconicCI633/6IFfluidgaps відкриті. Повний0.5 IN_PROGRESS.
+
+- Додатковий source-review: native save може пропускати residues при level-null/codec omission. Root додав read-only ID/count fallback без historical adoption; targeted368 PASS. Фінальний JAR/повні suites/native smoke повторено після цього виправлення; результати нижче після завершення.
+
+- DONE фінальних перевірок після save-omission fix:233Python/57Node/5237Java/151actualminimalMC і targeted368 PASS. Фінальна generation1172runtimefiles byte-identical; JARSHA830237f6289791abb733fb5d0dfc0902156b548e46290a1e745a500b59d06082.
+- Проміжний ZIP після lateJARfix очікувано відхилено runtimeSHA-порівнянням; його перепаковано після завершення тестів. Фінальний пакет4306entries/1172runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites, upgrade0.4.14→0.4.15 backupoldJAR/opaque world+FTB+fire+knowledge/EMC+paidchunk/foreignquest+mod+script збережені; repeatідемпотентний. Це неfullMinecraftworldmigration; Windowsінстанс не змінювався.
+- Звіт:implementation/clibano-dependencies-package-install-v6.json. Code/source/docs/installer фіксуються ціліснимmain-комітом і pushбезforce. Точнийcommit/status — gitlog/origin/main та externaldeliveryreport біляZIP, безself-reference.
+- Наступний старт:Ad Astra1.16.26 exact source/version/mechanics audit іpartial→core questcourse, як вище. Clibano dependency/history блок не повторювати. Решта35partial істаріrequired48лінії лишаютьсяIN_PROGRESS; повний0.5не реліз.

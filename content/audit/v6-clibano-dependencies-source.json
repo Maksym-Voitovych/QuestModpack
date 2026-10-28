@@ -1,0 +1,338 @@
+{
+  "schema": 1,
+  "status": "exact_source_review_only_not_runtime_acceptance",
+  "mod_id": "forbidden_arcanus",
+  "installed_version": "2.6.1",
+  "pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+  "evidence_manifest": "content/research/evidence/clibano_dependencies_v6/manifest.json",
+  "source_files": 35,
+  "verified_contracts": [
+    "ClibanoRecipe record has one or two vanilla Ingredient entries exposed by getIngredients(); recipe matches uses NeoForge RecipeMatcher.findMatches, a shapeless bipartite matching process, not Forge ritual greedy pedestal order.",
+    "ClibanoRecipe.requiredEnhancer is Optional<Holder<EnhancerDefinition>>, not a HolderSet/tag. EnhancerDefinition.REFERENCE_CODEC only serializes holder ID while full EnhancerDefinition.CODEC serializes description/display_item/effects. Installed physical enhancer definition is already included in legacy inputFingerprint; preserve that hash shape.",
+    "ClibanoRecipe.residueChance Optional carries ResidueChance(type:Holder<ResidueType>,chance:double). ResidueChance.CODEC encodes ResidueType.CODEC, a RegistryFileCodec holder reference. Full ResidueType.DIRECT_CODEC embeds name Component and CombineInfo(required_amount:int,result:ItemStack). Recipe codec fingerprint alone does not pin referenced residue semantics.",
+    "Native finishRecipe consumes each selected physical input and resets cooking progress, then inserts/grows result, then calls private addResidue, then setRecipeUsed. addResidue first returns for ordinary FIRE; otherwise RNG nextDouble<chance calls residuesStorage.increaseType(type,1) and immediately sends SetClibanoResiduesPayload.",
+    "ResiduesStorage.increaseType(Holder<ResidueType>,int) has no owner/machine parameter; total>=64 returns, else min(64-total,amount) is merged. New credit should be tied to canonical storage/owner and verified native finish scope, never attributed to a nearby player.",
+    "ResiduesStorage.tick loops current holder map; if amount>=required it merges exact native firstsameitem/secondsameitem/empty output priority and subtracts required. Native same-item merge ignores components; existing guard must remain. Conversion does not remove zero-value entries.",
+    "ResiduesStorage.save uses MAP_CODEC unboundedMap(ResidueType.CODEC,Codec.INT) and writes native residues compound ID-to-count only. load clears map/total, then codec parses current registry holders and resultOrPartial may retain partial successes. There is no historical definition snapshot in native NBT.",
+    "ClibanoMainBlockEntity.saveAdditional only calls residuesStorage.save when totalAmount!=0 and level!=null. Thus an all-zero map is omitted from native NBT even if zero holder entries remain in memory; historical metadata must not treat zero amounts as unpaid stock.",
+    "Main loadAdditional invokes residuesStorage.load after inventory, soul_time,burn_time,cooking arrays, fire type and recipes_used. Existing AIA2 load HEAD preserves raw unread native residues before partial decode; save RETURN retains unread raw state. Keep this preservation path.",
+    "Native serverTick performs logic update/canSmelt, then residue conversion, then soul/fire logic, then cooking logic and fuel. Transitive/persistence preflight must precede any side effect; finish must recheck dependencies against historical paid lane snapshot.",
+    "Native consumeSoul reads enhancer.getEffects(CLIBANO), applies only MultiplySoulDurationEffect and does not call ConditionalEnhancerEffect.checkConditions. Preserve native behavior; dependency validation may whitelist supported condition classes but must not invent conditional semantics."
+  ],
+  "recommended_compatibility": [
+    "Keep existing aia2_clibano_paid_v1 schema1 Lane(recipe,definition,input) and their hash algorithms unchanged. Store dependency proof in a separate strict versioned NBT extension indexed by lane, bound to same receipt and recipe.",
+    "Expand current BuiltInRegistries.ITEM.getTag membership; never use memoized Ingredient#getItems or Named identity as reload proof. Reject custom Ingredient/unknown Value before invoking native matching.",
+    "Revalidate native shapeless 1/2 input matching using fresh current tag memberships. Two-slot overlap must allow swapped pair matching; Forge greedy input validation cannot be reused unchanged.",
+    "Snapshot required/installed enhancer definitions and referenced ResidueType direct gameplay definition with codec/native field bounds. Resolve every referenced holder against current registry. Document conservative pause for description/name/display edits if full codecs are hashed.",
+    "Old lane receipt without dependency proof may continue only if current supported recipe genuinely has no transitive dependencies; all15native defaults reference residues and13use item tags. Never infer paid historical dependency proof from current datapack.",
+    "Positive legacy residue counts without a historical witness must remain preserved but non-converting; current type ID cannot certify old combine price/output. Zero count carries no stock and can start a fresh native-proven batch.",
+    "Record/validate witness before native residue credit (and before immediate stream packet). Bind expected amount and old definition so unknown credit cannot be merged into certified stock. Clear/update witness only after actual accepted native conversion/credit; retain exact raw unknown schemas and partial-native decode data.",
+    "Any explicit recovery/discard of residue stock needs nearby same-team operator permission, bounded persistent backup, no result/refund, and must not be triggered by installer or generic reset. Existing cancelProgress deliberately preserves residues and should keep that behavior."
+  ],
+  "known_risks": [
+    "RNG/output/input side effects can already have happened before addResidue; deny unsupported residue definitions in mayFinish/preflight rather than relying only on increaseType interception. No universal rollback claim.",
+    "Native residues STREAM_CODEC encodes holder registry references; stale/removed holders cannot be sent safely. New witness logic must not remove existing menuPayloadSafe checks.",
+    "New residue guard should define direct addon increaseType policy. Storage has no caller owner in signature; weak owner association/canonical access or scoped native finish is required before credit authorization.",
+    "Full Component/ItemStack codec cost is not globally bounded by after-serialization JSON limits. Structural budgets and TPS profiling remain distinct guarantees.",
+    "No exact optional Mixin weaving, actual datapack reload, JEI/UI, Survival or TPS run performed in this audit."
+  ],
+  "optional_hook_descriptors": {
+    "increaseType": "increaseType(Lnet/minecraft/core/Holder;I)V",
+    "residue_tick": "tick(Lcom/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoMainBlockEntity;)V",
+    "finishRecipe": "finishRecipe(Lnet/minecraft/world/item/crafting/RecipeHolder;Lcom/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoInputSlot;)V",
+    "main_load": "loadAdditional(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V",
+    "main_save": "saveAdditional(Lnet/minecraft/nbt/CompoundTag;Lnet/minecraft/core/HolderLookup$Provider;)V"
+  },
+  "defaults": {
+    "native_recipes": 15,
+    "recipes_with_item_tag_references": 13,
+    "recipes_with_required_enhancer": 1,
+    "recipes_with_residue_reference": 15,
+    "residue_definitions": 11,
+    "recipes": [
+      {
+        "id": "forbidden_arcanus:clibano_combustion/arcane_crystal_dust_from_clibano_combustion",
+        "item_tags": [],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:arcane_crystal",
+          "chance": 0.1
+        },
+        "sha256": "ffa8982c6882398891507da3b8b774fc11ad2656fa26a9979515b9ee190693e9"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/arcane_crystal_from_clibano_combustion",
+        "item_tags": [
+          "forbidden_arcanus:arcane_crystal_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:arcane_crystal",
+          "chance": 0.33
+        },
+        "sha256": "d222a131bdffc1a6bdbe5de24b3b1515cc5c5c888a50b0e4c28227d5857f0fca"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/coal_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:coal_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:coal",
+          "chance": 0.33
+        },
+        "sha256": "d49360a1b02bc7ac0e9fdc17b4d185c3b763b037bcbc5c56b5ff7a72c5dd993c"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/copper_ingot_from_clibano_combusting_raw_copper",
+        "item_tags": [
+          "c:raw_materials/copper"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:copper",
+          "chance": 0.33
+        },
+        "sha256": "3ab97a38311490890f6836bf21cbe4035a41be55785a4385df054e68be04e9ab"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/copper_ingot_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:copper_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:copper",
+          "chance": 0.33
+        },
+        "sha256": "5891123db2ded53c2836644f32841b6f386f48f0103c04e65c5bd6eeb43fa558"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/diamond_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:diamond_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:diamond",
+          "chance": 0.1
+        },
+        "sha256": "eb660eaf75d45bcce0e0c97a8596321f4624910a369e4a6c1a6e70629ab8196b"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/emerald_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:emerald_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:emerald",
+          "chance": 0.1
+        },
+        "sha256": "2563e7781e20f3f81ed903fc6d7e55cab48e6a000f3c88246ceb6759a4d9135b"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/gold_ingot_from_clibano_combusting_raw_gold",
+        "item_tags": [
+          "c:raw_materials/gold"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:gold",
+          "chance": 0.2
+        },
+        "sha256": "2a28fba621821089dafd4866d9e06e52916e49cf67b12237188a4e901ac0d107"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/gold_ingot_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:gold_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:gold",
+          "chance": 0.2
+        },
+        "sha256": "614824ac744a83ad99faac22a865da49065f95ec6b5cdfafcc6f4535990d69aa"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/iron_ingot_from_clibano_combusting_raw_iron",
+        "item_tags": [
+          "c:raw_materials/iron"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:iron",
+          "chance": 0.33
+        },
+        "sha256": "5e2c53261e3aacb7e7df239ca40d579c9e7dbf275f974d42935ff760b1592d31"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/iron_ingot_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:iron_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:iron",
+          "chance": 0.33
+        },
+        "sha256": "3e0a42f8e680476d3e9652dedea7337e24f2db1ec3d1f4fadba84a21c0db0084"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/lapis_lazuli_from_clibano_combustion",
+        "item_tags": [
+          "minecraft:lapis_ores"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:lapis_lazuli",
+          "chance": 0.2
+        },
+        "sha256": "fede025f077d6493220871aec7ba4d8c5a8e1b393000f7cce7e35b505ac80c77"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/netherite_scrap_from_clibano_combustion",
+        "item_tags": [],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:netherite",
+          "chance": 0.05
+        },
+        "sha256": "eb40762a6a4817e30f8de1b1f402b3dc093ad1c65cbe152185f995a2bd8a5adf"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/obsidiansteel_ingot_from_clibano_combustion",
+        "item_tags": [
+          "c:raw_materials/iron"
+        ],
+        "required_enhancer": "forbidden_arcanus:artisan_relic",
+        "residue": {
+          "type": "forbidden_arcanus:copper",
+          "chance": 0.33
+        },
+        "sha256": "4504c2a79e2d3d86edec779f6289bd3bf9563af9e848e735120af86027021b0f"
+      },
+      {
+        "id": "forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion",
+        "item_tags": [
+          "forbidden_arcanus:runic_stones"
+        ],
+        "required_enhancer": null,
+        "residue": {
+          "type": "forbidden_arcanus:rune",
+          "chance": 0.1
+        },
+        "sha256": "516c34e8c49355f37f4146e3597ac60554ec448c0120daa576984222f76cf47a"
+      }
+    ],
+    "residues": [
+      {
+        "id": "forbidden_arcanus:arcane_crystal",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "forbidden_arcanus:arcane_crystal_block"
+        },
+        "sha256": "2b16f1af7ce4bec0616b0c793d8f840b91cf38ecae1c4b0aaa1ecfa59b347c29"
+      },
+      {
+        "id": "forbidden_arcanus:coal",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:coal_block"
+        },
+        "sha256": "e2be24fa5f1e30d03aee867e9fdb38da4b7ef574987c36560ebc126f6244ae1b"
+      },
+      {
+        "id": "forbidden_arcanus:copper",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:copper_block"
+        },
+        "sha256": "d1f21753a3283e91206126fedd03fabb8d2eb1d430fd4075a47e6351a7e732cb"
+      },
+      {
+        "id": "forbidden_arcanus:deorum",
+        "required_amount": 1,
+        "result": {
+          "count": 2,
+          "id": "forbidden_arcanus:deorum_nugget"
+        },
+        "sha256": "0ba4b70aa1e276c7b381f4c48070e445946f280191cd7f3d1b6b00c213f0b2dc"
+      },
+      {
+        "id": "forbidden_arcanus:diamond",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:diamond_block"
+        },
+        "sha256": "ac3456897eeed28154d744103182ca92ce17a70f8bda19e771e810007c63e336"
+      },
+      {
+        "id": "forbidden_arcanus:emerald",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:emerald_block"
+        },
+        "sha256": "060373dc2563554e778f5a2cefe858730cb42017d8435a1b1e7123e4b074110c"
+      },
+      {
+        "id": "forbidden_arcanus:gold",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:gold_block"
+        },
+        "sha256": "872a52f7e652c8109b7adff09eadd6ca9228050cbd499dd089145eda7f1027b0"
+      },
+      {
+        "id": "forbidden_arcanus:iron",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:iron_block"
+        },
+        "sha256": "4a07e8cbdc3d5e39c4f7ff54d904104855459016a96ffba82b3b0d7ec94ffd10"
+      },
+      {
+        "id": "forbidden_arcanus:lapis_lazuli",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:lapis_block"
+        },
+        "sha256": "9726ee82d418d6a1175223f383dfd039c3043f172b64eea21580ffb047f92af2"
+      },
+      {
+        "id": "forbidden_arcanus:netherite",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "minecraft:netherite_block"
+        },
+        "sha256": "70ec7290b588a3a720973dea1521442ba2165f801f49eff6851d09bd8b699484"
+      },
+      {
+        "id": "forbidden_arcanus:rune",
+        "required_amount": 9,
+        "result": {
+          "count": 1,
+          "id": "forbidden_arcanus:rune_block"
+        },
+        "sha256": "ffe863ae48703e80e918302a41c1a459641043b670eb08fa98b86f46fc94df86"
+      }
+    ],
+    "note": "Generated native source defaults, not claim of effective current datapack registry."
+  },
+  "reused_prior_evidence": [
+    "content/research/evidence/forbidden_transitive_v6/manifest.json",
+    "content/research/evidence/clibano_core_v6/manifest.json"
+  ],
+  "fullpack_run": false
+}

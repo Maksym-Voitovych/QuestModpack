@@ -1,3 +1,11 @@
+# 0.4.15-alpha — Clibano dependency/residue history
+
+- Current tag/enhancer/residue snapshots і незалежний durable NBT-журнал; старий schema1 paid ledger та його hashes незмінні. Native shapeless1/2input matching, stale Ingredient cache не дозволяє обхід.
+- Accepted native residue credit і conversion підтримують definition+quantity history. Прямі/повторні credits denied; один finish може спробувати лише одну одиницю. Legacy/corrupt/changed work зберігається paused без adoption.
+- Explicit operator quarantine-residues резервує stock/journal у bounded8NBTbackups; без output/refund/proof, зі збереженням slots/fuel/cooking counters. Cancel progress зберігає residue history. Інсталятор не виконує recovery-команд.
+- 233Python/57Node/5237Java/151minimalMC PASS;285нові modeled assertions і14actualNBT.35новихSHAджерел. Fullpack/JEI/Survival/TPS NOT RUN.
+- 3351квест/623рецепти/3087itemrewards/390items+PNG/96keys unchanged; нового контенту0. Matching0.4.15JAR/preflight/installer; повний0.5 IN_PROGRESS.
+
 # 0.4.14-alpha — історичні залежності оплачених Forge-ритуалів
 
 - Окремий versioned snapshot поточних item-tag memberships і required/installed enhancer definitions при справжній оплаті. Теги читаються з актуального реєстру; застарілий Ingredient#getItems не є доказом.

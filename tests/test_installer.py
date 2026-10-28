@@ -346,7 +346,7 @@ class RootsGuardPackagePairingTest(unittest.TestCase):
     def test_clibano_pairing_rejects_missing_classes_and_hooks_before_world_writes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
         mixins=['ClibanoFrameMenuMixin','ClibanoMenuValidityMixin','ClibanoMachineMixin','ClibanoResidueMixin']
-        classes=['ua/aia2/guard/'+name+'.class' for name in ['ClibanoOwnership','ClibanoAccess','ClibanoPaidState','ClibanoCommands']]
+        classes=['ua/aia2/guard/'+name+'.class' for name in ['ClibanoOwnership','ClibanoAccess','ClibanoPaidState','ClibanoCommands','ClibanoDependencies','ClibanoDependencyState']]
         classes += ['ua/aia2/guard/mixin/'+name+'.class' for name in mixins]
         for kind,missing in [('class',name) for name in classes]+[('registration',name) for name in mixins]:
             with self.subTest(kind=kind,missing=missing),tempfile.TemporaryDirectory() as tmp:

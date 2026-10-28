@@ -185,26 +185,31 @@ public final class ClibanoGuardHarness {
         check(thrown && !ClibanoAccess.inTick(exception.machine), "native tick exception propagates and restores scope");
         check(ClibanoPaidState.lane(exception.machine, 0).isPresent(), "exception does not silently delete paid receipt");
     }
+    private static void seedResidueHistory(Scene scene) {
+        Map<String,ClibanoDependencyState.Residue> history=new HashMap<>();
+        scene.machine.residues.getResidueTypeAmountMap().forEach((type,amount)->{if(amount>0)history.put(type.unwrapKey().orElseThrow().location().toString(),new ClibanoDependencyState.Residue(ClibanoDependencies.residueDefinition(scene.machine,type),amount));});
+        ClibanoDependencyState.setResidues(scene.machine,history);
+    }
     private static void residueConversions() {
         Scene safe = new Scene(); safe.machine.slots[3] = ItemStack.EMPTY;
         ResidueType type = new ResidueType(new ResidueType.CombineInfo(2, item("forbidden_arcanus:arcane_crystal_dust")));
         @SuppressWarnings("unchecked") Holder<ResidueType> holder = (Holder<ResidueType>)(Holder<?>)safe.residueTypes.put("forbidden_arcanus:test", type);
-        safe.machine.residues.add(holder, 2); safe.tick();
+        safe.machine.residues.add(holder, 2); seedResidueHistory(safe); safe.tick();
         check(safe.machine.residues.totalAmount == 0 && safe.machine.slots[5].getCount() == 1, "current allowed residue definition converts actual residue amount");
         Scene future = new Scene(); future.machine.slots[3] = ItemStack.EMPTY; ResidueType later = new ResidueType(new ResidueType.CombineInfo(2, item("fixture:future")));
         @SuppressWarnings("unchecked") Holder<ResidueType> laterHolder = (Holder<ResidueType>)(Holder<?>)future.residueTypes.put("forbidden_arcanus:test", later);
-        future.machine.residues.add(laterHolder, 2); future.tick(); check(future.machine.residues.totalAmount == 2 && future.machine.slots[5].isEmpty(), "future residue output does not spend residue or create item");
+        future.machine.residues.add(laterHolder, 2); seedResidueHistory(future); future.tick(); check(future.machine.residues.totalAmount == 2 && future.machine.slots[5].isEmpty(), "future residue output does not spend residue or create item");
         Scene stale = new Scene(); stale.machine.slots[3] = ItemStack.EMPTY;
         @SuppressWarnings("unchecked") Holder<ResidueType> staleHolder = (Holder<ResidueType>)(Holder<?>)stale.residueTypes.put("forbidden_arcanus:test", type);
         stale.machine.residues.add(staleHolder, 2); stale.residueTypes.put("forbidden_arcanus:test", new ResidueType(new ResidueType.CombineInfo(2, item("minecraft:emerald")))); stale.tick();
         check(stale.machine.residues.totalAmount == 2 && stale.machine.slots[5].isEmpty(), "stale residue holder cannot bypass current registry identity");
         Scene merge = new Scene(); merge.machine.slots[3] = ItemStack.EMPTY; merge.machine.slots[5] = item("forbidden_arcanus:arcane_crystal_dust"); merge.machine.slots[5].components.put("foreign", "variant");
         @SuppressWarnings("unchecked") Holder<ResidueType> merging = (Holder<ResidueType>)(Holder<?>)merge.residueTypes.put("forbidden_arcanus:test", type);
-        merge.machine.residues.add(merging, 2); merge.tick(); check(merge.machine.residues.totalAmount == 2 && merge.machine.slots[5].getCount() == 1, "residue native same-item component merge denied before spending");
+        merge.machine.residues.add(merging, 2); seedResidueHistory(merge); merge.tick(); check(merge.machine.residues.totalAmount == 2 && merge.machine.slots[5].getCount() == 1, "residue native same-item component merge denied before spending");
         Scene filled = new Scene(); filled.paid();
         @SuppressWarnings("unchecked") Holder<ResidueType> gold = (Holder<ResidueType>)(Holder<?>)filled.residueTypes.put("forbidden_arcanus:gold", new ResidueType(new ResidueType.CombineInfo(1, item("minecraft:gold_ingot", 64))));
         @SuppressWarnings("unchecked") Holder<ResidueType> copper = (Holder<ResidueType>)(Holder<?>)filled.residueTypes.put("forbidden_arcanus:copper", new ResidueType(new ResidueType.CombineInfo(1, item("minecraft:copper_ingot", 64))));
-        filled.machine.residues.add(gold, 1); filled.machine.residues.add(copper, 1); filled.tick();
+        filled.machine.residues.add(gold, 1); filled.machine.residues.add(copper, 1); seedResidueHistory(filled); filled.tick();
         check(filled.machine.slots[5].getCount() == 64 && filled.machine.slots[6].getCount() == 64, "native residue pass fills both destinations before cooking");
         check(filled.machine.logic.cookingProgress[0] == 1 && ClibanoPaidState.lane(filled.machine, 0).isPresent(), "newly blocked output cannot make native lane reset paid progress");
         check(filled.machine.nativeFinishes == 0 && ProductionMilestoneBridge.PROOFS.isEmpty(), "full destinations produce neither recipe result nor proof");
@@ -241,8 +246,77 @@ public final class ClibanoGuardHarness {
         check(!ClibanoAccess.inTick(outer.machine) && !ClibanoAccess.inTick(inner.machine), "nested static ticker restores both contexts");
         check(outer.machine.burnTime > 0 && inner.machine.burnTime > 0 && outer.machine.logic.cookingProgress[0] == 0 && inner.machine.logic.cookingProgress[0] == 0, "nested cold ticks pay their own actual fuel without cross-owner cooking");
     }
+
+    private static final net.minecraft.tags.TagKey<Item> TAG=net.minecraft.tags.TagKey.create(net.minecraft.core.registries.Registries.ITEM,ResourceLocation.parse("test:clibano_input"));
+    private static void tag(String...ids){net.minecraft.core.registries.BuiltInRegistries.ITEM.bind(TAG,Arrays.stream(ids).map(id->net.minecraft.core.registries.BuiltInRegistries.ITEM.wrapAsHolder(net.minecraft.core.registries.BuiltInRegistries.item(id))).toList());}
+    private static Scene tagged(){Scene s=new Scene();tag("minecraft:diamond");s.first.value().firstIngredient=Ingredient.of(TAG);return s;}
+    @SuppressWarnings("unchecked") private static Holder<ResidueType> residue(Scene s,int required,String output){return (Holder<ResidueType>)(Holder<?>)s.residueTypes.put("test:batch",new ResidueType(new ResidueType.CombineInfo(required,item(output))));}
+    private static Scene producingResidue(){Scene s=new Scene();var type=residue(s,2,"minecraft:gold_ingot");s.first.value().residue=new ResidueChance(type,1);s.machine.fireType=ClibanoFireType.SOUL_FIRE;s.machine.soulTime=100;return s;}
+    private static void dependencyAndResidueHistory(){
+        Scene tagged=tagged();tagged.paid();String witness=ClibanoDependencyState.lane(tagged.machine,0).orElseThrow();
+        CompoundTag before=tagged.machine.saved();tag("minecraft:diamond","minecraft:emerald");tagged.paused("same tagID with expanded membership cannot change paid work");
+        check(ClibanoDependencyState.lane(tagged.machine,0).orElseThrow().equals(witness),"paid historical tag snapshot remains original");
+        tag("minecraft:diamond");tagged.steps(2);tagged.oneResult("forbidden_arcanus:arcane_crystal_dust");
+        Scene reordered=tagged();tag("minecraft:diamond","minecraft:emerald");reordered.paid();tag("minecraft:emerald","minecraft:diamond");reordered.steps(2);reordered.oneResult("forbidden_arcanus:arcane_crystal_dust");
+        Scene stale=tagged();stale.first.value().firstIngredient.getItems();tag("minecraft:gold_ingot");stale.tick();check(stale.machine.burnTime==0&&stale.machine.logic.cookingProgress[0]==0&&stale.machine.nativeFinishes==0&&stale.machine.slots[3].getCount()==1,"memoized native Ingredient cannot authorize removed current input or spend fuel");
+        Scene oldTagged=tagged();oldTagged.paid();CompoundTag old=oldTagged.machine.saved();old.remove(ClibanoDependencyState.TAG);oldTagged.machine.loadRaw(old);oldTagged.paused("old paid tagged lane has no historical tag proof");
+        check(!oldTagged.machine.saved().contains(ClibanoDependencyState.TAG),"save never adopts current tag definition for old payment");
+        Scene plain=new Scene();plain.paid();CompoundTag legacyPlain=plain.machine.saved();legacyPlain.remove(ClibanoDependencyState.TAG);plain.machine.loadRaw(legacyPlain);plain.tick();
+        check(plain.machine.logic.cookingProgress[0]==2&&!plain.machine.saved().contains(ClibanoDependencyState.TAG),"dependency-free legacy lane resumes without adding proof");plain.tick();plain.oneResult("forbidden_arcanus:arcane_crystal_dust");
+        Scene pair=new Scene();var alloy=pair.recipe(ALLOY,"minecraft:iron_ingot","minecraft:diamond","forbidden_arcanus:obsidiansteel_ingot");
+        tag("minecraft:diamond","minecraft:iron_ingot");alloy.value().firstIngredient=Ingredient.of(TAG);pair.machine.slots[4]=item("minecraft:iron_ingot");pair.level.recipes.replace(alloy);pair.paid();pair.steps(2);pair.oneResult("forbidden_arcanus:obsidiansteel_ingot");
+        check(pair.machine.slots[4].isEmpty(),"shapeless overlap allows swapped pair rather than Forge greedy failure");
+        Scene unsupported=new Scene();unsupported.first.value().firstIngredient=new Ingredient(true);unsupported.paused("unknown custom ingredient denied before fuel");
+        Scene late=tagged();late.first.value().duration=1;late.tick();late.machine.midTick=()->tag("minecraft:diamond","minecraft:emerald");late.tick();
+        check(late.machine.nativeFinishes==0&&late.machine.slots[3].getCount()==1&&ProductionMilestoneBridge.PROOFS.isEmpty(),"duration1 late dependency mutation denies consumption/output/proof");
+        check(late.machine.logic.cookingProgress[0]==0&&!ClibanoDependencyState.lane(late.machine,0).isPresent(),"late denied fresh attempt never adopts changed definition");
+        Scene batch=producingResidue();batch.paid();batch.steps(2);batch.oneResult("forbidden_arcanus:arcane_crystal_dust");
+        check(batch.machine.residues.totalAmount==1,"scoped native finish produces a real residue unit");
+        var historical=ClibanoDependencyState.residues(batch.machine).get("test:batch");
+        check(historical!=null&&historical.amount()==1,"observed native increase records definition and accepted amount before packet");
+        CompoundTag paidBatch=batch.machine.saved();check(paidBatch.getCompound("residues").getInt("test:batch")==1,"native save includes accumulated residue unit");
+        CompoundTag omittedNative=new CompoundTag();var loadedLevel=batch.machine.level;batch.machine.level=null;ClibanoAccess.save(batch.machine,omittedNative);batch.machine.level=loadedLevel;
+        check(omittedNative.getCompound("residues").getInt("test:batch")==1&&omittedNative.contains(ClibanoDependencyState.TAG),"level-null or omitted native codec save retains actual positive balance alongside history without adopting registry data");
+        Scene duplicateCredit=producingResidue();var duplicateType=duplicateCredit.first.value().residue.type();duplicateCredit.machine.afterFinish=()->duplicateCredit.machine.residues.increaseType(duplicateType,1);duplicateCredit.paid();duplicateCredit.steps(2);
+        check(duplicateCredit.machine.residues.totalAmount==1&&ClibanoDependencyState.residues(duplicateCredit.machine).get("test:batch").amount()==1,"second same-scope addon credit cannot mint another residue from one native finish");
+        Scene resumed=producingResidue();resumed.machine.slots[3]=ItemStack.EMPTY;resumed.machine.loadRaw(paidBatch);resumed.tick();
+        check(resumed.machine.residues.totalAmount==1&&ClibanoDependencyState.residues(resumed.machine).get("test:batch").equals(historical),"same definitions restore exact residue history in fresh controller");
+        Scene changed=producingResidue();residue(changed,1,"minecraft:emerald");changed.machine.loadRaw(paidBatch);changed.paused("same residue ID changed price/result across restart");
+        check(changed.machine.residues.totalAmount==1&&changed.machine.saved().getCompound("residues").getInt("test:batch")==1,"changed historical balance retained without conversion");
+        Scene legacyResidue=producingResidue();CompoundTag legacyBatch=paidBatch.copy();legacyBatch.remove(ClibanoDependencyState.TAG);legacyResidue.machine.loadRaw(legacyBatch);legacyResidue.paused("positive imported residues without historical witness");
+        check(!legacyResidue.machine.saved().contains(ClibanoDependencyState.TAG),"imported balance never creates a current-definition proof");
+        var holder=batch.machine.residues.residueTypeAmountMap.keySet().iterator().next();batch.machine.residues.increaseType(holder,1);
+        check(batch.machine.residues.totalAmount==1,"unscoped addon increase cannot mix uncertified stock into historical balance");
+        batch.machine.slots[3]=item("minecraft:diamond");batch.steps(3);
+        check(batch.machine.residues.totalAmount==2&&ClibanoDependencyState.residues(batch.machine).get("test:batch").amount()==2,"second native production merges only identical definition stock");
+        batch.tick();check(batch.machine.residues.totalAmount==0&&ClibanoDependencyState.residues(batch.machine).isEmpty(),"accepted native combine decrements actual and historical amounts together");
+        check(batch.machine.slots[6].item.id.equals("minecraft:gold_ingot"),"historical residues produce reviewed native combine output");
+        check(!batch.machine.saved().contains("residues"),"zero native bookkeeping entries are omitted without phantom stock history");
+        Scene midway=producingResidue();midway.paid();CompoundTag midwayPaid=midway.machine.saved();residue(midway,2,"minecraft:emerald");midway.first.value().residue=new ResidueChance((Holder<ResidueType>)(Holder<?>)midway.residueTypes.getHolder(ResourceLocation.parse("test:batch")).orElseThrow(),1);midway.paused("residue definition changes while cooking paid lane");
+        check(midway.machine.saved().get(ClibanoDependencyState.TAG).equals(midwayPaid.get(ClibanoDependencyState.TAG)),"changed residue definition cannot replace lane snapshot");
+        Scene corrupt=new Scene();CompoundTag damaged=before.copy();damaged.getCompound(ClibanoDependencyState.TAG).putInt("schema",999);corrupt.machine.loadRaw(damaged);corrupt.paused("unknown dependency schema preserved");
+        check(corrupt.machine.saved().get(ClibanoDependencyState.TAG).equals(damaged.get(ClibanoDependencyState.TAG)),"unknown dependency raw NBT stays unchanged");
+        List<String> slots=Arrays.stream(legacyResidue.machine.slots).map(ItemStack::toString).toList();int fuel=legacyResidue.machine.burnTime;int[] progress=legacyResidue.machine.logic.cookingProgress.clone();
+        check(ClibanoAccess.quarantineResidues(legacyResidue.player,legacyResidue.machine).contains("1/8"),"nearby own-team operator explicitly quarantines old unproven residues");
+        check(legacyResidue.machine.residues.totalAmount==0&&ClibanoDependencyState.residues(legacyResidue.machine).isEmpty(),"quarantine removes stock from active conversion without output");
+        check(Arrays.stream(legacyResidue.machine.slots).map(ItemStack::toString).toList().equals(slots)&&legacyResidue.machine.burnTime==fuel&&Arrays.equals(progress,legacyResidue.machine.logic.cookingProgress),"quarantine preserves every physical slot/fuel/cooking counter");
+        CompoundTag backup=(CompoundTag)legacyResidue.machine.persistent.getList("aia2_clibano_residue_backups_v1",Tag.TAG_COMPOUND).get(0);
+        check(backup.getCompound("residues").getInt("test:batch")==1,"quarantine persists original residue balance in bounded backup");
+        Scene noOp=producingResidue();noOp.machine.residues.add(noOp.first.value().residue.type(),1);noOp.player.permissions=0;CompoundTag noOpBefore=noOp.machine.persistent.copy();
+        check(ClibanoAccess.quarantineResidues(noOp.player,noOp.machine).contains("не завершено")&&noOp.machine.residues.totalAmount==1&&noOp.machine.persistent.equals(noOpBefore),"nonoperator quarantine denied before writes");
+        noOp.player.permissions=2;noOp.player.team="b";check(ClibanoAccess.quarantineResidues(noOp.player,noOp.machine).contains("не завершено")&&noOp.machine.residues.totalAmount==1,"other team cannot quarantine stock");
+        Scene farQuarantine=producingResidue();farQuarantine.machine.residues.add(farQuarantine.first.value().residue.type(),1);farQuarantine.player.pos=new BlockPos(20,0,0);check(ClibanoAccess.quarantineResidues(farQuarantine.player,farQuarantine.machine).contains("не завершено")&&farQuarantine.machine.persistent.getAllKeys().isEmpty()&&farQuarantine.machine.residues.totalAmount==1,"distant quarantine denied before writes");
+        Scene badBackup=producingResidue();badBackup.machine.residues.add(badBackup.first.value().residue.type(),1);badBackup.machine.persistent.putString("aia2_clibano_residue_backups_v1","opaque");CompoundTag badBackupBefore=badBackup.machine.persistent.copy();check(ClibanoAccess.quarantineResidues(badBackup.player,badBackup.machine).contains("не завершено")&&badBackup.machine.persistent.equals(badBackupBefore)&&badBackup.machine.residues.totalAmount==1,"wrong-type quarantine backup cannot be overwritten");
+        Scene preserveHistory=producingResidue();preserveHistory.paid();preserveHistory.steps(2);preserveHistory.machine.slots[3]=item("minecraft:diamond");preserveHistory.tick();var keepHistory=ClibanoDependencyState.residues(preserveHistory.machine);check(ClibanoAccess.cancelProgress(preserveHistory.player,preserveHistory.machine).contains("1/8")&&ClibanoDependencyState.residues(preserveHistory.machine).equals(keepHistory)&&preserveHistory.machine.residues.totalAmount==1,"cooking cancellation keeps accumulated native stock and independent historical receipt");
+        CompoundTag corruptBefore=corrupt.machine.saved();check(ClibanoAccess.cancelProgress(corrupt.player,corrupt.machine).contains("не завершено")&&corrupt.machine.saved().equals(corruptBefore),"cooking cancel cannot erase corrupt dependency journal");
+        check(ClibanoAccess.quarantineResidues(corrupt.player,corrupt.machine).contains("1/8")&&ClibanoDependencyState.status(corrupt.machine)==ClibanoDependencyState.Status.EMPTY,"explicit quarantine can resolve corrupt journal without fabricating a witness");
+        var corruptSaved=(CompoundTag)corrupt.machine.persistent.getList("aia2_clibano_residue_backups_v1",Tag.TAG_COMPOUND).get(0);check(corruptSaved.get(ClibanoDependencyState.TAG).equals(corruptBefore.get(ClibanoDependencyState.TAG)),"explicit corrupt recovery preserves exact opaque journal in backup");
+        Scene bounded=producingResidue();for(int i=1;i<=8;i++){bounded.machine.residues.add(bounded.first.value().residue.type(),1);check(ClibanoAccess.quarantineResidues(bounded.player,bounded.machine).contains(i+"/8"),"bounded residue quarantine "+i);}bounded.machine.residues.add(bounded.first.value().residue.type(),1);CompoundTag allBackups=bounded.machine.persistent.copy();
+        check(ClibanoAccess.quarantineResidues(bounded.player,bounded.machine).contains("не завершено")&&bounded.machine.persistent.equals(allBackups)&&bounded.machine.residues.totalAmount==1,"ninth quarantine cannot overwrite prior backups or active balance");
+    }
+
     public static void main(String[] args) {
-        normalProductionAndEnergy(); prepaymentDenials(); lanesAndCurrentIdentities(); alloyEnhancersAndLaneIndependence(); restartLegacyAndProofIntegrity(); residueConversions(); explicitRecoveryAndScopes();
+        dependencyAndResidueHistory(); normalProductionAndEnergy(); prepaymentDenials(); lanesAndCurrentIdentities(); alloyEnhancersAndLaneIndependence(); restartLegacyAndProofIntegrity(); residueConversions(); explicitRecoveryAndScopes();
         Scene overlapping = new Scene(); overlapping.machine.slots[4] = item("minecraft:diamond");
         var alternative = overlapping.recipe(RUNE, "minecraft:diamond", null, "forbidden_arcanus:rune");
         overlapping.level.recipes.replace(overlapping.first, alternative); overlapping.paid();

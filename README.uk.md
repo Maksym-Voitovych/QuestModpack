@@ -1,13 +1,15 @@
 # All in One Adventure 2.0 — AIA2
 
-**0.4.14-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests 2101.1.36, KubeJS 2101.7.2 і Rhino build85. Повний план 0.5 залишається в роботі.
+**0.4.15-alpha** для Minecraft 1.21.1 NeoForge, FTB Quests2101.1.36, KubeJS2101.7.2 і Rhino build85. Повний0.5 ще в роботі.
 
-**48 епох, 96 виробничих ключів, 3351 квест у 140 главах, 623 рецепти, 390 предметів/моделей/PNG.** Цей проміжний блок змінює захист оплачених ритуалів Forge. Квести, рецепти, нагороди, координати й старі ID збережено без змін; нового контенту цього блоку — 0.
+**48епох,96виробничих ключів,3351квест у140главах,623рецепти,390предметів/моделей/PNG.** Цей блок додає історію залежностей Clibano. Усі старі квести, рецепти, нагороди, ID та координати незмінні; нового контенту тут0.
 
-Оплата тепер зберігає окремий відбиток поточних тегів предметів, вимог і визначень підсилювачів. Зміна залежностей після reload призупиняє ритуал, зберігаючи його стан. Старі schema1 receipts збережено: за відсутності історичного відбитка залежний ритуал чекає явного відновлення, а простий ритуал без цих залежностей може продовжитися. Нові дані не приписуються старій оплаті.
+Плавка перевіряє поточні ingredient tags, enhancer та residue definitions. Окремий NBT-журнал фіксує historical lane snapshots і definition+кількість накопичених залишків. Зміна правил після reload/restart призупиняє операцію зі збереженням даних. Застарілий Ingredient cache й самий holder ID не підтверджують стару оплату. Один finish не може зарахувати залишок двічі.
 
-Перевірки: 230 Python, 57 Node, 5237 Java, 137 перевірок мінімального Minecraft у 2 JVM; 157 нових модельованих умов і 18 actual-NBT перевірок. Повний Forbidden weaving, JEI/UI, Survival і TPS — NOT RUN. Залежності Clibano та історичні residues залишаються окремим незавершеним завданням.
+Старі залежні paid lanes і positive residues без witness зберігаються paused. За можливості завершіть старі операції до оновлення. `/aia2clibano status x y z` дає діагностику; операторський `cancel` резервує й очищує лише cooking progress. Окремий явний `quarantine-residues` переносить stock/history до bounded8NBTbackup без результату/refund/proof, зберігаючи slots/fuel/cooking counters. Інсталятор не виконує цих команд.
 
-Із закритою грою встановіть `nbtlib==2.0.4`, виконайте `python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`, потім без прапорця. Потрібні matching 0.4.14 JAR/скрипти на обох сторонах та повний перезапуск. Інсталятор резервує оригінали й старий власний JAR, зберігаючи світи/прогрес/сторонні квести. За можливості завершіть старі активні Forge-ритуали до оновлення. `/aia2forge status x y z` пояснює стан; операторське `cancel` явно зберігає backup і скасовує процес без повернення есенцій або результату.
+233Python/57Node/5237Java/151minimal-Minecraft перевірок PASS;285нові modeled assertions і14actual-NBT checks. Повний Clibano weaving/JEI/UI/Survival/TPS — NOT RUN. Frame IO, generic copied components і universal rollback залишаються поза цим блоком.
 
-[Звіт](docs/AIA2_0.4.14_CHECKPOINT.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Карти](docs/research/MOD_MECHANICS.md) · [Джерела](docs/research/SOURCE_INDEX.md) · [Приймальна перевірка](docs/testing/FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md).
+Закрийте гру/сервер, встановіть `nbtlib==2.0.4`, виконайте `python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`, потім без прапорця. Matching0.4.15JAR/скрипти потрібні на обох сторонах; повний перезапуск обов'язковий. Оригінали й старий власний JAR резервуються; світи/прогрес/сторонні квести зберігаються.
+
+[Звіт](docs/AIA2_0.4.15_CHECKPOINT.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Карти](docs/research/MOD_MECHANICS.md) · [Джерела](docs/research/SOURCE_INDEX.md) · [Приймальна перевірка](docs/testing/CLIBANO_DEPENDENCIES_ACCEPTANCE.uk.md).
