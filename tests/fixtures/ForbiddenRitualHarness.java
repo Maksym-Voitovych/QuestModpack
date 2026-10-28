@@ -1,6 +1,17 @@
 package ua.aia2.guard;
 
 import java.util.Map;
+import java.util.List;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+import com.stal111.forbidden_arcanus.common.block.entity.forge.ritual.RitualInput;
+import com.stal111.forbidden_arcanus.common.item.enhancer.EnhancerDefinition;
+import com.stal111.forbidden_arcanus.common.item.enhancer.effect.ConditionalEnhancerEffect;
+import com.stal111.forbidden_arcanus.common.item.enhancer.effect.ModifyRequiredEssenceEffect;
 import java.util.Optional;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -39,6 +50,10 @@ public final class ForbiddenRitualHarness {
         try { call.run(); throw new AssertionError("Expected native exception: " + expected); }
         catch (IllegalStateException error) { check(error.getMessage().equals(expected), "native exception propagated: " + expected); }
     }
+    private static void rejectsDependency(Runnable action,String message) {
+        boolean denied=false;try{action.run();}catch(IllegalArgumentException|IllegalStateException expected){denied=true;}
+        check(denied,message);
+    }
     private static void progress(int completed) {
         Aia2MachineGuard.BLOCKS.setTeamProgress("a", completed);
         Aia2MachineGuard.ITEMS.setTeamProgress("a", completed);
@@ -69,7 +84,7 @@ public final class ForbiddenRitualHarness {
             manager = new RitualManager(forge); forge.rituals = manager;
             manager.dataCache.entries.add(new ForgeDataCache.Entry(pedestal.pos,pedestal.stack.copy()));
             holder = rituals.put(ID,ritual); manager.validRitual = holder;
-            EnhancerHelper.ITEMS.clear(); KeyProductionBridge.KEYS.clear();
+            EnhancerHelper.ITEMS.clear(); KeyProductionBridge.KEYS.clear(); BuiltInRegistries.ITEM.tags.clear();
         }
         Optional<?> start() { return manager.start(player,forge.essences.storage,holder); }
         void paid() { check(start().equals(Optional.of(true)),"valid native start succeeds"); }
@@ -94,6 +109,152 @@ public final class ForbiddenRitualHarness {
     public static final class UnknownResult {
         int calls;
         public ItemStack getResultItem(ItemStack ignored) { calls++; return new ItemStack("minecraft:emerald"); }
+    }
+    private static ForbiddenDependencies.Snapshot snapshot(Scene s) {
+        return ForbiddenDependencies.capture(s.ritual,s.enhancers,s.manager.dataCache.boosts,
+                s.level.registryAccess(),List.of(s.pedestal.stack),s.forge.slots[4]);
+    }
+    private static final TagKey<Item> MAIN_TAG=TagKey.create(Registries.ITEM,ResourceLocation.parse("test:main"));
+    private static HolderSet.Named<Item> bindMain(String... ids) {
+        List<Holder<Item>> holders=java.util.Arrays.stream(ids)
+                .map(id->BuiltInRegistries.ITEM.wrapAsHolder(BuiltInRegistries.item(id))).toList();
+        return BuiltInRegistries.ITEM.bind(MAIN_TAG,holders);
+    }
+    private static void tagMain(Scene s,String... ids) {bindMain(ids);s.ritual.main=Ingredient.of(MAIN_TAG);}
+    private static CompoundTag oldPaidWithoutDependencies(Scene s) {
+        CompoundTag root=s.manager.saveRaw(true);root.getCompound(ForbiddenPaidState.ACTIVE_TAG).remove(ForbiddenDependencies.ACTIVE_TAG);
+        return root;
+    }
+    private static void loadSameManager(Scene s,CompoundTag root) {s.manager.loadRaw(root);}
+    private static Holder<Object> install(Scene s,EnhancerDefinition definition) {
+        Holder<Object> holder=s.enhancers.put("test:boost",definition);
+        s.manager.dataCache.boosts.clear();s.manager.dataCache.boosts.add(holder);
+        EnhancerHelper.ITEMS.put("test:enhancer",holder);s.forge.slots[0]=new ItemStack("test:enhancer");return holder;
+    }
+    private static void transitiveDependencies() {
+        Scene s=new Scene();var plain=snapshot(s);
+        check(!plain.hasDependencies(),"plain item-only ritual has no transitive gameplay dependency");
+        check(plain.equals(snapshot(s)),"dependency capture deterministic");
+        s.paid();CompoundTag exact=s.manager.saveRaw(true);
+        check(exact.getCompound(ForbiddenPaidState.RECEIPT_TAG).getAllKeys().size()==6,"existing receipt schema1 six keys unchanged");
+        check(exact.getCompound(ForbiddenPaidState.ACTIVE_TAG).contains(ForbiddenDependencies.ACTIVE_TAG),"new payment records dependency extension in native active tag");
+        check(ForbiddenDependencies.matches(exact.getCompound(ForbiddenPaidState.ACTIVE_TAG),plain),"new paid extension verifies current dependencies");
+        CompoundTag old=oldPaidWithoutDependencies(s);loadSameManager(s,old);
+        check(s.manager.tick().isEmpty()&&s.manager.activeRitualData.counter==1,"old plain item-only payment may resume without inventing proof");
+        check(!s.manager.saveRaw(true).getCompound(ForbiddenPaidState.ACTIVE_TAG).contains(ForbiddenDependencies.ACTIVE_TAG),"legacy plain resume/save never adopts current snapshot as old payment evidence");
+
+        s=new Scene();tagMain(s,"minecraft:diamond","minecraft:emerald");var tagged=snapshot(s);
+        check(tagged.hasDependencies(),"tagged main is a gameplay dependency");
+        s.ritual.main.getItems();var named=BuiltInRegistries.ITEM.getTag(MAIN_TAG).orElseThrow();
+        bindMain("minecraft:emerald","minecraft:diamond");
+        check(BuiltInRegistries.ITEM.getTag(MAIN_TAG).orElseThrow()==named,"modeled current tag binding retains Named identity on bind");
+        check(tagged.equals(snapshot(s)),"tag member iteration reorder preserves canonical dependency hash");
+        bindMain("minecraft:diamond","minecraft:emerald","minecraft:gold_ingot");
+        check(!tagged.fingerprint().equals(snapshot(s).fingerprint()),"same Ingredient with memoized getItems sees current registry membership change");
+        var unrelated=TagKey.create(Registries.ITEM,ResourceLocation.parse("test:unrelated"));
+        var beforeUnrelated=snapshot(s);BuiltInRegistries.ITEM.bind(unrelated,List.of(BuiltInRegistries.ITEM.wrapAsHolder(BuiltInRegistries.item("minecraft:coal"))));
+        check(beforeUnrelated.equals(snapshot(s)),"unrelated tag binding does not invalidate paid gameplay dependencies");
+        s.paid();var saved=s.manager.saveRaw(true);int paidCounter=s.manager.activeRitualData.counter;
+        bindMain("minecraft:diamond","minecraft:emerald","minecraft:gold_ingot","minecraft:redstone");s.paused("new unrelated accepted tag member changes paid dependency snapshot");
+        check(s.manager.activeRitualData.counter==paidCounter,"tag expansion cannot advance paid counter");
+        bindMain("minecraft:gold_ingot","minecraft:emerald","minecraft:diamond");
+        check(s.manager.tick().isEmpty()&&s.manager.activeRitualData.counter==1,"restored exact tag membership resumes paid progress");
+        check(s.manager.saveRaw(true).getCompound(ForbiddenPaidState.ACTIVE_TAG).getCompound(ForbiddenDependencies.ACTIVE_TAG)
+                .equals(saved.getCompound(ForbiddenPaidState.ACTIVE_TAG).getCompound(ForbiddenDependencies.ACTIVE_TAG)),"native counter refresh preserves exact dependency snapshot extension");
+        loadSameManager(s,s.manager.saveRaw(true));check(s.manager.tick().isEmpty()&&s.manager.activeRitualData.counter==2,"dependency snapshot survives modeled restart/native codec omission");
+
+        s=new Scene();s.ritual.main=new Ingredient(new Ingredient.ItemValue(new ItemStack("minecraft:diamond")),new Ingredient.TagValue(MAIN_TAG));var absentAlternative=snapshot(s);
+        check(absentAlternative.hasDependencies(),"empty or absent tag alternative still records a transitive dependency");
+        BuiltInRegistries.ITEM.bind(MAIN_TAG,List.of());check(!absentAlternative.fingerprint().equals(snapshot(s).fingerprint()),"absent versus bound-empty item tag remains distinguishable");
+        var emptyEnhancerTag=TagKey.create(FARegistries.ENHANCER_DEFINITION,ResourceLocation.parse("test:empty_required"));s.ritual.requirements().enhancers=s.enhancers.bind(emptyEnhancerTag,List.of());
+        check(snapshot(s).hasDependencies(),"bound-empty required enhancer tag remains a historical gameplay dependency");
+
+        s=new Scene();tagMain(s,"minecraft:diamond");s.paid();var oldTagged=oldPaidWithoutDependencies(s);loadSameManager(s,oldTagged);
+        s.paused("old schema1 payment with tag dependency but no historical snapshot");
+        check(s.manager.saveRaw(true).equals(oldTagged),"paused old tagged payment remains byte-structurally unchanged without snapshot adoption");
+
+        for(int mode=0;mode<4;mode++) {
+            s=new Scene();s.paid();var broken=s.manager.saveRaw(true);var active=broken.getCompound(ForbiddenPaidState.ACTIVE_TAG);
+            if(mode==0)active.putString(ForbiddenDependencies.ACTIVE_TAG,"opaque-corrupt");
+            else if(mode==1)active.getCompound(ForbiddenDependencies.ACTIVE_TAG).putInt("schema",99);
+            else if(mode==2)active.getCompound(ForbiddenDependencies.ACTIVE_TAG).putString("extra_semantics","retain");
+            else active.getCompound(ForbiddenDependencies.ACTIVE_TAG).remove("schema");
+            loadSameManager(s,broken);s.paused("malformed dependency snapshot variant "+mode);
+            check(s.manager.saveRaw(true).equals(broken),"malformed dependency extension preserved variant "+mode);
+        }
+
+        s=new Scene();s.ritual.main=new Ingredient(true,new Ingredient.ItemValue(new ItemStack("minecraft:diamond")));s.denied("custom ingredient without reviewed transitive adapter");
+        s=new Scene();s.ritual.inputs=List.of(new RitualInput(new Ingredient(true,new Ingredient.ItemValue(new ItemStack("minecraft:iron_ingot"))),1));s.denied("custom pedestal ingredient without reviewed transitive adapter");
+        s=new Scene();tagMain(s,"minecraft:diamond");s.ritual.main.getItems();BuiltInRegistries.ITEM.tags.remove(MAIN_TAG);s.denied("removed current tag despite stale Ingredient items");
+        s=new Scene();tagMain(s,"minecraft:diamond");s.ritual.main.getItems();bindMain("minecraft:emerald");s.denied("stale Ingredient match cannot authorize item absent from current tag");
+        s=new Scene();s.ritual.inputs=List.of(new RitualInput(Ingredient.of("minecraft:iron_ingot"),2));s.denied("native per-pedestal amount cannot count one stack as two inputs");
+
+        s=new Scene();var enhancer=new EnhancerDefinition();install(s,enhancer);check(snapshot(s).hasDependencies(),"installed enhancer definition is a gameplay dependency");
+        s.paid();var changed=new EnhancerDefinition();changed.definition="changed";install(s,changed);s.paused("same-ID refreshed enhancer definition changed despite physical and cached holders matching");
+        install(s,enhancer);check(s.manager.tick().isEmpty()&&s.manager.activeRitualData.counter==1,"restored exact current enhancer definition resumes");
+        s=new Scene();install(s,new EnhancerDefinition());s.paid();var oldEnhanced=oldPaidWithoutDependencies(s);loadSameManager(s,oldEnhanced);
+        s.paused("old paid installed enhancer without historical dependency snapshot");check(s.manager.saveRaw(true).equals(oldEnhanced),"legacy enhancer payment cannot adopt current registry as history");
+
+        s=new Scene();var first=install(s,new EnhancerDefinition());var enhancerTag=TagKey.create(FARegistries.ENHANCER_DEFINITION,ResourceLocation.parse("test:required"));
+        s.ritual.requirements().enhancers=s.enhancers.bind(enhancerTag,List.of(first));var required=snapshot(s);
+        var second=s.enhancers.put("test:other",new EnhancerDefinition());s.enhancers.bind(enhancerTag,List.of(first,second));
+        check(!required.fingerprint().equals(snapshot(s).fingerprint()),"required enhancer tag membership is resolved from current binding");
+        s.enhancers.bind(enhancerTag,List.of(first));check(required.equals(snapshot(s)),"restored enhancer tag returns same fingerprint");
+        s.ritual.requirements().enhancers=HolderSet.direct(first);var direct=snapshot(s);
+        check(direct.hasDependencies(),"direct required enhancer definitions remain dependencies");
+        s.enhancers.entries.remove(ResourceLocation.parse("test:boost"));s.denied("removed required/current enhancer cannot be used");
+
+        s=new Scene();var unknownEffect=new EnhancerDefinition();unknownEffect.effects=List.of(new ConditionalEnhancerEffect<>(new Object(),Optional.empty()));install(s,unknownEffect);s.denied("unreviewed enhancer effect implementation");
+        s=new Scene();var unknownCondition=new EnhancerDefinition();unknownCondition.effects=List.of(new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(2),Optional.of(List.of(new Object()))));install(s,unknownCondition);s.denied("unreviewed conditional enhancer dependency");
+
+        s=new Scene();var supported=new EnhancerDefinition();supported.effects=List.of(new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(2),Optional.of(List.of(new com.stal111.forbidden_arcanus.common.item.enhancer.condition.TimeCondition(0,100)))));
+        install(s,supported);var supportedFingerprint=snapshot(s);s.paid();
+        var differentEffect=new EnhancerDefinition();differentEffect.effects=List.of(new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(3),Optional.of(List.of(new com.stal111.forbidden_arcanus.common.item.enhancer.condition.TimeCondition(0,100)))));
+        install(s,differentEffect);s.paused("supported enhancer effect value changed under same registered ID");
+        install(s,supported);check(s.manager.tick().isEmpty()&&s.manager.activeRitualData.counter==1,"restored exact supported enhancer effect resumes");
+        var differentCondition=new EnhancerDefinition();differentCondition.effects=List.of(new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(2),Optional.of(List.of(new com.stal111.forbidden_arcanus.common.item.enhancer.condition.TimeCondition(1,100)))));
+        install(s,differentCondition);check(!supportedFingerprint.fingerprint().equals(snapshot(s).fingerprint()),"supported condition range participates in full enhancer definition fingerprint");s.paused("supported time condition definition changed");
+
+        Scene late=new Scene();tagMain(late,"minecraft:diamond");late.paid();late.manager.tick();late.manager.tick();
+        late.manager.midTick=()->bindMain("minecraft:diamond","minecraft:emerald");
+        check(late.manager.tick().isEmpty()&&late.manager.nativeFinish==0,"late commit rechecks transitive membership before result");
+        check(late.manager.activeRitualData.counter==2&&ForbiddenPaidState.status(late.manager)==ForbiddenPaidState.Status.VERIFIED,"late dependency denial retains paid receipt and precommit counter");
+        bindMain("minecraft:diamond");late.manager.midTick=()->{};check(late.manager.tick().isPresent()&&late.manager.nativeFinish==1,"restored late dependency commits exactly once");
+
+        Scene greedy=new Scene();
+        greedy.ritual.inputs=List.of(new RitualInput(new Ingredient(new Ingredient.ItemValue(new ItemStack("minecraft:iron_ingot")),new Ingredient.ItemValue(new ItemStack("minecraft:gold_ingot"))),1),new RitualInput(Ingredient.of("minecraft:gold_ingot"),1));
+        rejectsDependency(()->ForbiddenDependencies.capture(greedy.ritual,greedy.enhancers,List.of(),greedy.level.access,
+                List.of(new ItemStack("minecraft:gold_ingot"),new ItemStack("minecraft:iron_ingot")),greedy.forge.slots[4]),"current ingredients replay native greedy order instead of inventing a reordered recipe match");
+        check(ForbiddenDependencies.capture(greedy.ritual,greedy.enhancers,List.of(),greedy.level.access,
+                List.of(new ItemStack("minecraft:iron_ingot"),new ItemStack("minecraft:gold_ingot")),greedy.forge.slots[4])!=null,"native greedy-compatible ordered pedestals pass");
+        Scene tooManyInputs=new Scene();tooManyInputs.ritual.inputs=java.util.Collections.nCopies(9,new RitualInput(Ingredient.of("minecraft:iron_ingot"),1));tooManyInputs.denied("bounded ritual input count");
+        Scene unknownValue=new Scene();unknownValue.ritual.main=new Ingredient(()->List.of(new ItemStack("minecraft:diamond")));unknownValue.denied("unknown vanilla ingredient Value implementation");
+        Scene excessiveAmount=new Scene();excessiveAmount.ritual.inputs=List.of(new RitualInput(Ingredient.of("minecraft:iron_ingot"),129));excessiveAmount.denied("bounded native pedestal amount");
+        Scene manyValues=new Scene();manyValues.ritual.main=new Ingredient(java.util.Collections.nCopies(65,new Ingredient.ItemValue(new ItemStack("minecraft:diamond"))).toArray(Ingredient.Value[]::new));manyValues.denied("bounded ingredient value count");
+        Scene manyMembers=new Scene();tagMain(manyMembers,"minecraft:diamond");var hugeTag=new java.util.ArrayList<Holder<Item>>();
+        for(int i=0;i<16385;i++)hugeTag.add(new Holder<Item>("test:mass/"+i,new Item("test:mass/"+i)));
+        BuiltInRegistries.ITEM.bind(MAIN_TAG,hugeTag);manyMembers.denied("bounded current tag expansion before hashing unbounded data");
+        Scene manyEffects=new Scene();var largeEffectDefinition=new EnhancerDefinition();largeEffectDefinition.effects=java.util.Collections.nCopies(65,new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(2),Optional.empty()));install(manyEffects,largeEffectDefinition);manyEffects.denied("bounded installed enhancer effect list");
+        Scene manyConditions=new Scene();var largeConditionalDefinition=new EnhancerDefinition();largeConditionalDefinition.effects=List.of(new ConditionalEnhancerEffect<>(new ModifyRequiredEssenceEffect(2),Optional.of(java.util.Collections.nCopies(33,new com.stal111.forbidden_arcanus.common.item.enhancer.condition.TimeCondition(0,100)))));install(manyConditions,largeConditionalDefinition);manyConditions.denied("bounded enhancer condition list");
+        Scene manyEnhancers=new Scene();var requiredEnhancers=new java.util.ArrayList<Holder<Object>>();for(int i=0;i<65;i++)requiredEnhancers.add(manyEnhancers.enhancers.put("test:required/"+i,new EnhancerDefinition()));manyEnhancers.ritual.requirements().enhancers=HolderSet.direct(requiredEnhancers);manyEnhancers.denied("bounded required enhancer set");
+        Scene manyTags=new Scene();var tagValues=new java.util.ArrayList<Ingredient.Value>();for(int i=0;i<64;i++){var key=TagKey.create(Registries.ITEM,ResourceLocation.parse("test:many/"+i));BuiltInRegistries.ITEM.bind(key,List.of(BuiltInRegistries.ITEM.wrapAsHolder(BuiltInRegistries.item("minecraft:diamond"))));tagValues.add(new Ingredient.TagValue(key));}manyTags.ritual.main=new Ingredient(tagValues.toArray(Ingredient.Value[]::new));
+        var lastKey=TagKey.create(Registries.ITEM,ResourceLocation.parse("test:many/last"));BuiltInRegistries.ITEM.bind(lastKey,List.of(BuiltInRegistries.ITEM.wrapAsHolder(BuiltInRegistries.item("minecraft:iron_ingot"))));manyTags.ritual.inputs=List.of(new RitualInput(Ingredient.of(lastKey),1));manyTags.denied("bounded distinct ingredient tag count");
+        rejectsDependency(()->new ForbiddenDependencies.Snapshot("short",false),"invalid dependency snapshot fingerprint rejected");
+        CompoundTag duplicate=new CompoundTag();ForbiddenDependencies.attach(duplicate,plain);
+        rejectsDependency(()->ForbiddenDependencies.attach(duplicate,plain),"dependency payment extension cannot be attached twice");
+        check(!ForbiddenDependencies.matches(null,plain),"missing retained native state cannot validate even item-only dependencies");
+        CompoundTag malformedHash=new CompoundTag();ForbiddenDependencies.attach(malformedHash,plain);malformedHash.getCompound(ForbiddenDependencies.ACTIVE_TAG).putString("fingerprint","short");
+        check(!ForbiddenDependencies.matches(malformedHash,plain),"short dependency fingerprint never matches");
+        malformedHash.getCompound(ForbiddenDependencies.ACTIVE_TAG).putInt("fingerprint",1);check(!ForbiddenDependencies.matches(malformedHash,plain),"wrong-typed dependency fingerprint never matches");
+
+        Scene hugeDescription=new Scene();var hugeDefinition=new EnhancerDefinition();hugeDefinition.definition="x".repeat(4097);install(hugeDescription,hugeDefinition);hugeDescription.denied("bounded encoded enhancer text before canonical hash");
+        Scene deepDescription=new Scene();var deepDefinition=new EnhancerDefinition();com.google.gson.JsonArray nested=new com.google.gson.JsonArray(),current=nested;for(int i=0;i<33;i++){var next=new com.google.gson.JsonArray();current.add(next);current=next;}deepDefinition.description=nested;install(deepDescription,deepDefinition);deepDescription.denied("bounded encoded enhancer nesting before recursive canonical hash");
+        Scene once=new Scene();var onceDefinition=new EnhancerDefinition();var onceHolder=install(once,onceDefinition);once.ritual.requirements().enhancers=HolderSet.direct(java.util.List.of(onceHolder));snapshot(once);check(onceDefinition.encodings==1,"required and installed same enhancer serialized once within a dependency capture");
+
+        Scene paymentRace=new Scene();tagMain(paymentRace,"minecraft:diamond");paymentRace.manager.beforePayment=()->bindMain("minecraft:diamond","minecraft:emerald");
+        check(paymentRace.start().isPresent()&&paymentRace.forge.essences.storage.payments==1,"dependency mutation after native payment preserves operation without throwing into server event");
+        check(ForbiddenPaidState.status(paymentRace.manager)==ForbiddenPaidState.Status.PENDING&&ForbiddenPaidState.hasRetainedActive(paymentRace.manager),"paid but mismatched payment remains pending/preserved without fabricated refund");
+        paymentRace.paused("mixed prepayment dependency snapshots cannot run");
     }
     public static void main(String[] ignored) {
         Scene s=new Scene(); s.paid();
@@ -190,9 +351,9 @@ public final class ForbiddenRitualHarness {
         s=new Scene();CompoundTag legacy=new CompoundTag();s.manager.activeRitualData=new ActiveRitualData(s.holder,1,0,s.player.uuid);legacy.put(ForbiddenPaidState.ACTIVE_TAG,ForbiddenRitualAccess.activeTag(s.manager));s.manager.loadRaw(legacy);s.manager.fail();s.paused("legacy operation without proof");check(s.manager.saveRaw(true).equals(legacy),"legacy native tag remains byte-structurally unchanged");
         check(ForbiddenRitualAccess.status(s.player,0,0,0).contains("LEGACY"),"status reports unverified legacy state");
 
-        s=new Scene();Object enhancer=new Object();Holder<Object> boost=s.enhancers.put("test:boost",enhancer);s.manager.dataCache.boosts.add(boost);s.denied("cached enhancer absent from physical slots");
-        s=new Scene();boost=s.enhancers.put("test:boost",new Object());EnhancerHelper.ITEMS.put("test:enhancer",boost);s.forge.slots[0]=new ItemStack("test:enhancer");s.manager.dataCache.boosts.add(boost);s.paid();
-        s.enhancers.put("test:boost",new Object());s.paused("stale native enhancer holder after reload");
+        s=new Scene();Object enhancer=new EnhancerDefinition();Holder<Object> boost=s.enhancers.put("test:boost",enhancer);s.manager.dataCache.boosts.add(boost);s.denied("cached enhancer absent from physical slots");
+        s=new Scene();boost=s.enhancers.put("test:boost",new EnhancerDefinition());EnhancerHelper.ITEMS.put("test:enhancer",boost);s.forge.slots[0]=new ItemStack("test:enhancer");s.manager.dataCache.boosts.add(boost);s.paid();
+        s.enhancers.put("test:boost",new EnhancerDefinition());s.paused("stale native enhancer holder after reload");
 
         s=new Scene();check(ForbiddenRitualAccess.mayConsumeEssence(s.forge,new ItemStack("minecraft:iron_ingot")),"current ordinary essence input permitted");
         check(!ForbiddenRitualAccess.mayConsumeEssence(s.forge,new ItemStack("kubejs:aia2_arcane_key_15")),"keys cannot be laundered into essence");
@@ -237,6 +398,7 @@ public final class ForbiddenRitualHarness {
         Scene legacyCancel=new Scene();CompoundTag oldNative=new CompoundTag();legacyCancel.manager.activeRitualData=new ActiveRitualData(legacyCancel.holder,1,0,legacyCancel.player.uuid);oldNative.put(ForbiddenPaidState.ACTIVE_TAG,ForbiddenRitualAccess.activeTag(legacyCancel.manager));legacyCancel.manager.loadRaw(oldNative);
         check(ForbiddenRitualAccess.cancel(legacyCancel.player,0,0,0).contains("Ритуал скасовано"),"unparsed legacy native state has explicit recovery path");
         check(((CompoundTag)legacyCancel.forge.persistent.getList("aia2_fa_cancel_backups_v1",Tag.TAG_COMPOUND).get(0)).getCompound(ForbiddenPaidState.ACTIVE_TAG).getInt("counter")==1,"legacy recovery retains original native progress in backup without certifying payment");
+        transitiveDependencies();
         System.out.println("ForbiddenRitualHarness: "+checks+" actual-helper/handler/real-policy modeled assertions PASS");
     }
 }

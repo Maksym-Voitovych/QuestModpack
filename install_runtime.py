@@ -419,7 +419,7 @@ def plan_install(source, instance):
                         raise InstallError('This package needs the matching EvilCraft infusion and spirit guards')
                     forbidden_mixins = {'ForbiddenRitualMixin', 'ForbiddenEssencePaymentMixin', 'ForbiddenForgeInputMixin'}
                     forbidden_classes = {'ua/aia2/guard/' + name + '.class' for name in [
-                        'ForbiddenRitualAccess', 'ForbiddenPaidState', 'ForbiddenForgeCommands']}
+                        'ForbiddenRitualAccess', 'ForbiddenPaidState', 'ForbiddenForgeCommands', 'ForbiddenDependencies']}
                     forbidden_classes.update('ua/aia2/guard/mixin/' + name + '.class' for name in forbidden_mixins)
                     if not forbidden_classes <= set(jar.namelist()) or not forbidden_mixins <= registered:
                         raise InstallError('This package needs the matching Forbidden Arcanus paid ritual and essence guards')

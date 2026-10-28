@@ -1,0 +1,228 @@
+{
+  "schema": 1,
+  "scope": "Forbidden Forge paid ritual transitive definition source audit",
+  "status": "source_review_only_no_runtime_claim",
+  "evidence_manifest": "content/research/evidence/forbidden_transitive_v6/manifest.json",
+  "verified": [
+    "Ritual.DIRECT_CODEC contains main_ingredient, inputs[].ingredient, result, essences/tier/enhancers, magic_circle holder ID and duration; referenced item-tag members/enhancer values are not recursively encoded.",
+    "Ingredient is final; NeoForge public isCustom/getValues expose exact vanilla ItemValue/TagValue. getItems caches resolved ItemStack[]; never use as current tag snapshot.",
+    "Ingredient.TagValue resolves BuiltInRegistries.ITEM.getTagOrEmpty at first cache build; absent/empty tag synthesizes BARRIER. Current fingerprint must read actual registry tag members, not synthetic fallback.",
+    "HolderSet.Named survives tag reload. bind replaces private contents with List.copyOf and calls invalidation listeners. List.copyOf may return same immutable List; Named identity alone never proves unchanged membership.",
+    "MappedRegistry.bindTags uses existing Named objects via computeIfAbsent; resetTags binds empty lists. Current registry.getTag(key) and membership iteration is correct bounded no-cache strategy.",
+    "RitualRequirements.enhancers is HolderSet<EnhancerDefinition>; named set must be resolved via current enhancer registry and expanded. Direct holder references must be checked against current registry object values.",
+    "Installed physical enhancer ItemStack component points ResourceKey resolved through current holder lookup. Full EnhancerDefinition.CODEC contains description, display_item and effects.",
+    "Known native effect classes carry only scalar numbers and EssenceType enum; known TimeCondition carries only int start/end. Unknown addon effect/condition classes cannot be approved solely by successful serialization.",
+    "MagicCircleType contains only inner_texture and outer_texture ResourceLocations. Its transitive texture changes are visual and intentionally excluded from gameplay dependency snapshot.",
+    "Existing direct ritual hash may still include magic-circle holder ID; keep unchanged for schema1 receipt compatibility."
+  ],
+  "known_effects": [
+    {
+      "class": "com.stal111.forbidden_arcanus.common.item.enhancer.effect.ModifyRequiredEssenceEffect",
+      "type": "forbidden_arcanus:modify_required_essence",
+      "fields": [
+        "essence_type:EssenceType enum",
+        "value:int"
+      ],
+      "target": "HEPHAESTUS_FORGE"
+    },
+    {
+      "class": "com.stal111.forbidden_arcanus.common.item.enhancer.effect.MultiplyRequiredEssenceEffect",
+      "type": "forbidden_arcanus:multiply_required_essence",
+      "fields": [
+        "essence_type:EssenceType enum",
+        "multiplier:double"
+      ],
+      "target": "HEPHAESTUS_FORGE"
+    },
+    {
+      "class": "com.stal111.forbidden_arcanus.common.item.enhancer.effect.MultiplySoulDurationEffect",
+      "type": "forbidden_arcanus:multiply_soul_duration",
+      "fields": [
+        "multiplier:double0..10"
+      ],
+      "target": "CLIBANO"
+    }
+  ],
+  "known_conditions": [
+    {
+      "class": "com.stal111.forbidden_arcanus.common.item.enhancer.condition.TimeCondition",
+      "type": "forbidden_arcanus:time",
+      "fields": [
+        "start:int",
+        "end:int"
+      ],
+      "constraint": "start<end"
+    }
+  ],
+  "defaults": {
+    "native_rituals": 22,
+    "maximum_input_records": 5,
+    "maximum_item_tag_references": 0,
+    "enhancer_tag_references": 0,
+    "rituals_with_required_enhancer": 5,
+    "note": "Generated source defaults, not proof of current runtime registry after datapacks/KubeJS; installed enhancers create dependencies even when recipe requires none.",
+    "rituals": [
+      {
+        "id": "forbidden_arcanus:boss_catcher",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "0cace91ae12cf1a7bd5c7e9d431be6111e13f359bf2634acbebae680b6063d6b"
+      },
+      {
+        "id": "forbidden_arcanus:draco_arcanus_boots",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "238c6da57b2e47bf8613445cb7b1a7fd4b30783a78a613463678658f36a367bc"
+      },
+      {
+        "id": "forbidden_arcanus:draco_arcanus_chestplate",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "4556e26054e4268c6e31318bfb87b6e743839d5e798d2607e95035db8e00217e"
+      },
+      {
+        "id": "forbidden_arcanus:draco_arcanus_helmet",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "01e24fb7588f711864a56de2a7e683e19fc13df22c6f573dfdbc233eda98acee"
+      },
+      {
+        "id": "forbidden_arcanus:draco_arcanus_leggings",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "73886575aa9c009703d5f36081ca6cde1b16b27cff555cdb49775f626387df63"
+      },
+      {
+        "id": "forbidden_arcanus:eternal_stella",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "51d260d924979c63cc06afadfd91df98bd105298e4b2aa17fb266d91f1945afa"
+      },
+      {
+        "id": "forbidden_arcanus:ferrognetic_mixture",
+        "input_records": 4,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "9712fb88e66dd604d332eba64f951b9584b9dd0dd49eeba30ca566001f597727"
+      },
+      {
+        "id": "forbidden_arcanus:quantum_catcher",
+        "input_records": 1,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "76d39a47cc8a8cb2ab044359074ad61e495f2e66f1be172201fadae393435c3e"
+      },
+      {
+        "id": "forbidden_arcanus:quantum_injector",
+        "input_records": 1,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "b4c641ba1518d6e7dd5cc8382f2ee2554e063ffa8de457e72e7f69f5ad6a69a6"
+      },
+      {
+        "id": "forbidden_arcanus:sea_prism",
+        "input_records": 3,
+        "tags": [],
+        "enhancers": "forbidden_arcanus:elementarium",
+        "sha256": "178b97609fdc72837fbd95aaf8af9cd82b4a89e71133507f31c3ee970989047a"
+      },
+      {
+        "id": "forbidden_arcanus:smelter_prism",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": "forbidden_arcanus:elementarium",
+        "sha256": "57df229449faa3953b99ba91ef336b6121a810ac12a2dbcec91d8a06ff6acd58"
+      },
+      {
+        "id": "forbidden_arcanus:soul_binding_crystal",
+        "input_records": 5,
+        "tags": [],
+        "enhancers": "forbidden_arcanus:divine_pact",
+        "sha256": "083554cd4cfd45b4ac9ed455673765c359ca23185ff00cb6b06bf0bffdfd129a"
+      },
+      {
+        "id": "forbidden_arcanus:terrastomp_prism",
+        "input_records": 3,
+        "tags": [],
+        "enhancers": "forbidden_arcanus:elementarium",
+        "sha256": "dad966cfd6ec1c6b4f37fb41dd56508bde190c703556988d3e9696b6ade09a88"
+      },
+      {
+        "id": "forbidden_arcanus:tyr_boots",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "4844867d1eb30263e3ba1e03113bfc3c285573d57ef03aff31078779e3ede416"
+      },
+      {
+        "id": "forbidden_arcanus:tyr_chestplate",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "e831f24a6d41a9054cbfd0b0e3f9403cc5087911242845d67e92bbafc3dd8d17"
+      },
+      {
+        "id": "forbidden_arcanus:tyr_helmet",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "d962df03ae8038bf63fc67a89274238f628b6c7312de84994107633cfa225c37"
+      },
+      {
+        "id": "forbidden_arcanus:tyr_leggings",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "5bb3006d4f22267404b1515a14afa51687dbaa1d32fc2519b84ba91abebee446"
+      },
+      {
+        "id": "forbidden_arcanus:upgrade_tier_2",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "815fa0ccab244b3c6cba02c647cdd1296169a837b1b77a7d571b2e76c47c0923"
+      },
+      {
+        "id": "forbidden_arcanus:upgrade_tier_3",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "d715ee5654fb27641b47dc1cb32d84de3b90441688ad1282e7c8692f206aa70b"
+      },
+      {
+        "id": "forbidden_arcanus:upgrade_tier_4",
+        "input_records": 2,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "8993d308544fda4f79f46424470c2fef3aa7ca1e5ffed7ff975daa7fb2d39576"
+      },
+      {
+        "id": "forbidden_arcanus:upgrade_tier_5",
+        "input_records": 3,
+        "tags": [],
+        "enhancers": [],
+        "sha256": "e18c94581595d62c09737f0df0058d42809cbfe3c44342d234bef80ec4ee3c69"
+      },
+      {
+        "id": "forbidden_arcanus:whirlwind_prism",
+        "input_records": 3,
+        "tags": [],
+        "enhancers": "forbidden_arcanus:elementarium",
+        "sha256": "0bd6df4836d898d36f32fcfa7d09ece00dcf51eba3e6937082fff9fcd998ac7a"
+      }
+    ]
+  },
+  "implementation_recommendation": {
+    "cache": "Initially no tag-membership cache; bounded current registry membership each validation. Do not add registry invalidation listener retaining a manager/server strongly.",
+    "unsupported": "Fail closed on custom Ingredient, unknown Ingredient.Value or unknown enhancer effect/condition; preserve paid state and allow explicit backed-up operator cancel.",
+    "migration": "Old paid receipt without dependency fingerprint may continue only if current supported definition has no item-tag/required or installed enhancer dependencies. Never infer historical dependency snapshot from current datapack.",
+    "bounds": "Bound input/value/tag/member/effect/condition expansion and encoded bytes before SHA; budget must reject before unbounded collect/codec work. Native main+8inputs and4installed slots bound structural fanout but external tags may be arbitrarily large.",
+    "fullpack": "Optional weaving, actual datapack reload, survival progression and TPS profiling still need exact installed modpack."
+  }
+}

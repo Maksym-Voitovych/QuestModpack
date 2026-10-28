@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "status": "TODO_design_only_not_runtime",
+  "status": "implemented_forge_scope_clibano_TODO",
   "scope": "Forbidden Arcanus2.6.1 paid ritual and Clibano transitive definitions",
-  "implemented": false,
-  "current_limit": "DIRECT_CODEC recipe/ritual hash does not cover every referenced tag or registry definition.",
+  "implemented": true,
+  "current_limit": "Forge supports exact vanilla ingredients and three native enhancer effect classes with TimeCondition; Clibano transitive/historical residue definitions and fullpack acceptance remain open.",
   "proposed_compatibility": [
     "Keep existing schema1 ritual and input hashes; do not silently reinterpret old proof.",
     "Store a versioned gameplay-dependency fingerprint in retained native active NBT extension; PaidState preserves unknown fields.",
@@ -12,10 +12,39 @@
     "Exclude texture-only magic-circle data from gameplay claims; unsupported ingredient serializers remain unapproved."
   ],
   "requires_verification": [
-    "Exact tag reload generation/identity behavior before caching membership hashes",
-    "Migration and binary NBT replay tests without progress deletion",
-    "No unknown dependency adopted from current datapack as historical payment evidence",
-    "Fullpack optional dispatch and TPS benchmark"
+    "Exact fullpack optional weaving, actual datapack reload and Survival acceptance",
+    "Full Component CODEC CPU/TPS profiling with parallel Forge operations",
+    "Separate Clibano transitive/residue implementation and historical migration proof"
   ],
-  "next_action": "Implement bounded dependency snapshot helper and regressions before modifying Forge receipt resume policy."
+  "next_action": "Apply a separately tested compatible dependency snapshot to Clibano paid lanes/residues; never change schema1 lane hashes or adopt current data as old proof. Then continue35partial maps and required48epoch lines.",
+  "implemented_scope": "Forbidden Forge2.6.1 paid rituals only; Clibano transitive definitions remain TODO",
+  "implementation": {
+    "helper": "companion/src/main/java/ua/aia2/guard/ForbiddenDependencies.java",
+    "extension": "active_ritual.aia2_gameplay_dependencies_v1",
+    "receipt_schema": 1,
+    "no_historical_adoption": true,
+    "tag_cache": "none: current registry binding enumerated each validation",
+    "bounds": {
+      "inputs": 8,
+      "values_per_ingredient": 64,
+      "distinct_item_tags": 64,
+      "expanded_members_total": 16384,
+      "required_enhancers": 64,
+      "installed_enhancers": 4,
+      "effects_per_enhancer": 64,
+      "conditions_per_effect": 32,
+      "canonical_json_depth": 32,
+      "canonical_json_nodes": 65536,
+      "canonical_json_text_characters": 262144,
+      "primitive_characters": 4096
+    },
+    "serialization_limit": "Structural bounds precede enhancer CODEC. JSON depth/node/text checks follow CODEC and precede sorting/SHA; arbitrary Component serialization cost is not globally bounded by this adapter. No TPS claim.",
+    "visual_changes": "Magic-circle texture definitions excluded; full enhancer CODEC deliberately includes descriptions/display item, so visual-only enhancer changes can conservatively pause."
+  },
+  "verified_automatically": [
+    "Exact Named.bind/getValues source contracts, current registry enumeration without cache",
+    "Schema1 paid receipt plus dependency extension actual Minecraft compressed NBT roundtrip and primitive projection preservation",
+    "Modeled old receipt no-adoption, changing/removed/reordered tags, enhancer definitions, late commit and payment race",
+    "Installer preflight rejects missing dependency helper before any instance writes"
+  ]
 }

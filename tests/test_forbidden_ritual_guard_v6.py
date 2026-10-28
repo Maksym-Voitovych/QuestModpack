@@ -52,7 +52,7 @@ class ForbiddenRitualGuardTests(unittest.TestCase):
                 path.write_text(text)
                 files.append(str(path))
             files.append(str(ROOT / 'tests/fixtures/ForbiddenRitualHarness.java'))
-            files.extend(str(ROOT / f'companion/src/main/java/ua/aia2/guard/{name}.java') for name in ['GuardPolicy', 'ForbiddenPaidState', 'ForbiddenRitualAccess'])
+            files.extend(str(ROOT / f'companion/src/main/java/ua/aia2/guard/{name}.java') for name in ['GuardPolicy', 'ForbiddenPaidState', 'ForbiddenDependencies', 'ForbiddenRitualAccess'])
             files.extend(str(ROOT / f'companion/src/main/java/ua/aia2/guard/mixin/{name}.java') for name in ['ForbiddenRitualMixin', 'ForbiddenEssencePaymentMixin', 'ForbiddenForgeInputMixin'])
             run = subprocess.run([str(jdk / 'bin/javac'), '-encoding', 'UTF-8', '-cp', str(gson[-1]), '-d', tmp, *files], capture_output=True, text=True)
             self.assertEqual(run.returncode, 0, run.stdout + run.stderr)

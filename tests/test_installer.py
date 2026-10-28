@@ -372,7 +372,7 @@ class RootsGuardPackagePairingTest(unittest.TestCase):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
         self.assertEqual(len(bundled),1)
         classes=['ua/aia2/guard/'+name+'.class' for name in [
-            'ForbiddenRitualAccess','ForbiddenPaidState','ForbiddenForgeCommands']]
+            'ForbiddenRitualAccess','ForbiddenPaidState','ForbiddenForgeCommands','ForbiddenDependencies']]
         classes += ['ua/aia2/guard/mixin/'+name+'.class' for name in [
             'ForbiddenRitualMixin','ForbiddenEssencePaymentMixin','ForbiddenForgeInputMixin']]
         with zipfile.ZipFile(bundled[0]) as original:

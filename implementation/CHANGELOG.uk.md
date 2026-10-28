@@ -1,3 +1,11 @@
+# 0.4.14-alpha — історичні залежності оплачених Forge-ритуалів
+
+- Окремий versioned snapshot поточних item-tag memberships і required/installed enhancer definitions при справжній оплаті. Теги читаються з актуального реєстру; застарілий Ingredient#getItems не є доказом.
+- Зміна залежностей, невідомі custom ingredients/effects/conditions або пошкоджений snapshot призупиняють процес зі збереженням NBT. Старі schema1 receipts і hashes збережені; історичні залежності не вигадуються з поточного datapack.
+- Перевірка перед запуском, після списання й перед завершенням; зміна під час оплати залишає pending-state з діагностикою. Жодної повторної оплати, автоматичного скасування чи вигаданого refund.
+- 18 точних SHA-джерел; 157 нових модельованих умов і 18 actual-NBT перевірок. 230 Python/57 Node/5237 Java/137 minimal-Minecraft assertions PASS; fullpack/JEI/Survival/TPS NOT RUN.
+- Усі 3351 квест, 623 рецепти, 3087 item-нагород, координати, 390 предметів/PNG і 96 ключів незмінні. Нових квестів/рецептів/нагород/предметів/текстур 0. Matching JAR та preflight інсталятора оновлено. Повний 0.5 ще IN_PROGRESS.
+
 # 0.4.13-alpha — Clibano controller і виробничі лінії
 
 - 5optional-квестів,3справжні командні process proofs,29етапів карти Forbidden.3351квест/140глав;96ключів,623рецепти,390предметів/PNG збережено. Нових рецептів/предметів/текстур0.

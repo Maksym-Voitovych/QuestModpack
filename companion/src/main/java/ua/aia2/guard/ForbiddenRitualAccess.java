@@ -64,7 +64,8 @@ public final class ForbiddenRitualAccess {
     }
     private record View(BlockEntity forge, ServerLevel level, Object cache, String team,
                         List<ItemStack> stacks, List<BlockPos> positions) {}
-    private record Checked(View view, Holder<?> holder, String id, String definition, String inputs) {}
+    private record Checked(View view, Holder<?> holder, String id, String definition, String inputs,
+                           ForbiddenDependencies.Snapshot dependencies) {}
     private record Attempt(Object manager, Object storage, UUID token, Checked checked, UUID starter) {}
     private static final class Run {
         final Object manager;
@@ -247,6 +248,9 @@ public final class ForbiddenRitualAccess {
         int duration = ((Number)call(ritual, "duration")).intValue();
         require(duration > 0 && duration <= 1200000, "непідтримувана тривалість ритуалу");
         List<ItemStack> pedestalStacks = view.stacks.subList(1, view.stacks.size() - 4);
+        // Current tag bindings and enhancer definitions are checked before any native callbacks.
+        var dependencies = ForbiddenDependencies.capture(ritual, registry(manager, view.level, "ENHANCER_DEFINITION"),
+                (List<?>)call(view.cache, "enhancers"), view.level.registryAccess(), pedestalStacks, view.stacks.getFirst());
         require(Boolean.TRUE.equals(call(ritual, "checkIngredients", pedestalStacks, view.stacks.getFirst())), "склад ритуалу не відповідає визначенню");
         require(Boolean.TRUE.equals(call(ritual, "canStart", view.cache, get(manager, "forgeTier"))), "не виконано вимоги ритуалу");
         if (starting) {
@@ -265,7 +269,7 @@ public final class ForbiddenRitualAccess {
             ItemStack preview = (ItemStack)call(result, "getResultItem", view.stacks.getFirst().copy());
             require(!preview.isEmpty() && item(view.forge, preview), "результат ритуалу заблоковано");
         }
-        return new Checked(view, holder, id.toString(), definition(manager, ritual, view.level), inputs(manager, view));
+        return new Checked(view, holder, id.toString(), definition(manager, ritual, view.level), inputs(manager, view), dependencies);
     }
 
     /** Redirects only startRitual's Optional.map; native lambda and material costs remain native. */
@@ -302,11 +306,22 @@ public final class ForbiddenRitualAccess {
         Attempt attempt = START.get();
         if (attempt == null || attempt.storage != storage) return;
         if (cost != call(call(attempt.checked.holder.value(), "requirements"), "essences")) return;
-        Tag raw = activeTag(attempt.manager);
-        ForbiddenPaidState.markPaid(attempt.manager, attempt.token,
-                new ForbiddenPaidState.Receipt(attempt.checked.id, attempt.checked.definition,
-                        attempt.checked.inputs, attempt.checked.view.team, attempt.starter), raw);
-        REASONS.remove(attempt.manager);
+        try {
+            Checked now = checked(attempt.manager, view(attempt.manager), ResourceLocation.parse(attempt.checked.id), false);
+            require(now.definition.equals(attempt.checked.definition) && now.inputs.equals(attempt.checked.inputs)
+                    && now.dependencies.equals(attempt.checked.dependencies) && now.view.team.equals(attempt.checked.view.team),
+                    "залежності ритуалу змінилися під час оплати; операцію збережено без підтвердження");
+            CompoundTag raw = activeTag(attempt.manager);
+            ForbiddenDependencies.attach(raw, attempt.checked.dependencies);
+            ForbiddenPaidState.markPaid(attempt.manager, attempt.token,
+                    new ForbiddenPaidState.Receipt(attempt.checked.id, attempt.checked.definition,
+                            attempt.checked.inputs, attempt.checked.view.team, attempt.starter), raw);
+            REASONS.remove(attempt.manager);
+        } catch (RuntimeException denied) {
+            // The native cost has already been paid. Retain pending state instead of throwing
+            // into the server event, inventing a refund or adopting a different definition.
+            pause(attempt.manager, denied.getMessage() == null ? denied.getClass().getSimpleName() : denied.getMessage());
+        }
         attempt.checked.view.forge.setChanged();
     }
     /** Encode only the verified native primitive fields; missing registry entries cannot erase them. */
@@ -334,6 +349,8 @@ public final class ForbiddenRitualAccess {
         Checked checked = checked(manager, view, ResourceLocation.parse(receipt.ritualId()), false);
         require(checked.definition.equals(receipt.definitionFingerprint()), "визначення оплаченого ритуалу змінено");
         require(checked.inputs.equals(receipt.inputFingerprint()), "входи оплаченого ритуалу змінено");
+        require(ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(manager), checked.dependencies),
+                "залежності оплаченого ритуалу змінено або відсутній їхній історичний доказ; див. /aia2forge status");
         ServerPlayer starter = view.level.getServer().getPlayerList().getPlayer(receipt.starter());
         require(starter == null || view.team.equals(Aia2MachineGuard.synchronizedPlayerTeam(starter)), "команда ініціатора змінилася");
         CompoundTag raw = activeTag(manager);

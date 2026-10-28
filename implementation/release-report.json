@@ -1,5 +1,5 @@
 {
-  "version": "0.4.13-alpha",
+  "version": "0.4.14-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
@@ -38,7 +38,7 @@
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 5,
+    "quests_added_since_last_checkpoint": 0,
     "native_action_quests": 105,
     "complete_core_maps": 26,
     "mapped_mods": 61,
@@ -61,7 +61,7 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 228,
+      "passed": 230,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
@@ -73,12 +73,12 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 119,
+      "passed": 137,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.13-alpha",
+      "version_tested": "0.4.14-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Actual minimal vanilla/guard/NBT binary/SavedData fixtures in2JVM; Clibano not installed"
+      "scope": "Actual minimal Minecraft/guard/NBT binary/SavedData fixtures in2JVM; Forbidden Arcanus and Clibano not installed"
     },
     "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
@@ -90,14 +90,15 @@
     "runtime_rebuild": {
       "status": "passed",
       "runtime_files": 1172,
-      "hash_seed": 103,
-      "byte_identical": true
+      "byte_identical": true,
+      "hash_seed": 107,
+      "command": "PYTHONHASHSEED=107 python tools/generate_game_pack.py"
     },
-    "jar_sha256": "a15c1a6a258b98f9a155f63b0e92d5dbded9c7c3b9f8afdacb725f6501b0efe9",
-    "jar_path": "mods/aia2-machine-guard-0.4.13-alpha.jar",
-    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.13-alpha --baseline 129ca0e --check-only",
+    "jar_sha256": "77dd673976ae228c82cfc8f18c3af95da0c8303c504c4f947162e47609395d09",
+    "jar_path": "mods/aia2-machine-guard-0.4.14-alpha.jar",
+    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.14-alpha --baseline a1b6189 --check-only",
     "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed; full manifest and1163runtime hashes plus installer",
+    "archive_crc_and_all_sha256_entries": "passed:4258 manifestentries/1172runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -140,7 +141,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed: extracted actualCLI0.4.12→0.4.13; oldJARbackup, opaque world/progress/foreignmarkers preserved; repeat idempotent",
+    "packaged_installer_upgrade": "passed: extracted actualCLI0.4.13→0.4.14; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -164,10 +165,12 @@
     },
     "real_rhino_emc_lifecycle": "passed realRhino85/fastutil/production script35 andRhinoLongMapBridge; EMC/menu API host modeled; map→fuel→ready anderrorclosure checked",
     "forbidden_paid_state_modeled": 85,
-    "forbidden_ritual_helpers_modeled": 212,
+    "forbidden_ritual_helpers_modeled": 369,
     "forbidden_real_nbt_checks": 12,
     "clibano_model_assertions": 776,
-    "clibano_actual_nbt_assertions": 8
+    "clibano_actual_nbt_assertions": 8,
+    "forbidden_dependency_assertions_added": 157,
+    "forbidden_dependency_actual_nbt_assertions_added": 18
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -177,7 +180,7 @@
     "Long-term gameplay balance, economy and TPS under real automation load",
     "Additional native caches/passive armor/Curios/component variants beyond documented hooks",
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately",
-    "105 native action goals,8 team process proofs, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
+    "105 native action goals,11 team process proof rules, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
     "MI paid generated conversions with replaced original remain paused; unpaid lookup waits for native recipe caches (~20s or longer with nested cache timers).",
     "MI changed or removed paid recipe pauses in current runtime. Native MI NBT stores ID/EU without the original codec fingerprint, so semantics across restart are not proven.",
     "Oritech Atomic Forge native fresh lookup may reset its RF buffer when existing contextual RecipeManager filtering yields empty. Cached selector filtering happens after polymorphic capacity adjustment to avoid introducing the same loss there.",
@@ -196,10 +199,11 @@
     "ProjectE passive guarded native entrypoints still require optional Mixin weaving and acceptance; client Gem motion, spawned effects/addon calls, unchanged-armor enchantment location activation remain open. See PROJECTE_PASSIVE_ACCEPTANCE.uk.md.",
     "EvilCraft optional native dispatch, BloodInfuser reload cache wait, spirit outputs and outer timer semantics require fullpack acceptance; see EVILCRAFT_CORE_ACCEPTANCE.uk.md.",
     "EvilCraft Environmental/Sanguinary caches, Purifier actions, world gem transform and passives remain open; targeted3paths are not universal mod protection.",
-    "Clibano controller/recipe/menu guards have source/model coverage; exact optional weaving/JEI/Survival/TPS remain NOT_RUN. Frame IO, transitive definitions and historical residues remain open; see CLIBANO_ACCEPTANCE.uk.md."
+    "Clibano controller/recipe/menu guards have source/model coverage; exact optional weaving/JEI/Survival/TPS remain NOT_RUN. Frame IO, transitive definitions and historical residues remain open; see CLIBANO_ACCEPTANCE.uk.md.",
+    "Forge transitive snapshots have modeled and actual-NBT checks; exact optional runtime/tag reload/Survival/TPS remain NOT_RUN. Full enhancer Component serialization precedes bounded JSON validation; visual description changes conservatively pause. See FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md."
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
-  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.13-alpha.zip",
+  "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.14-alpha.zip",
   "ftb_hotfix": {
     "selected_api": "QuestFile.getOrCreateTeamData(Entity)",
     "uuid_overload": "TEAM UUID, not player UUID",
@@ -208,8 +212,8 @@
     "progression": "48 epochs,96 production keys,569 recipes,2784 quests unchanged"
   },
   "v5_progress": "docs/AIA2_0.5.0_PROGRESS.md",
-  "native_mechanic_observations": 8,
-  "native_mechanic_recipes": 11,
+  "native_mechanic_observations": 11,
+  "native_mechanic_recipes": 14,
   "target_version": "0.5.0-alpha",
   "v5_milestone_report": "implementation/v5-milestone-report.json",
   "draconic_cache_fix": "implementation/draconic-cache-v5-audit.json",
@@ -217,10 +221,10 @@
   "native_action_contracts": "content/audit/v5-native-advancement-contracts.json",
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
-  "checkpoint_preservation": "implementation/clibano-preservation-v6.json",
-  "checkpoint_base_commit": "129ca0e3f572a6d9e7ff11fd22b492c455470968",
-  "checkpoint_backup": "/workspace/aia2-backups/resume-clibano-20261028T093345Z/checkpoint-129ca0e.tar.gz",
-  "checkpoint_report": "docs/AIA2_0.4.13_CHECKPOINT.uk.md",
+  "checkpoint_preservation": "implementation/forbidden-transitive-preservation-v6.json",
+  "checkpoint_base_commit": "a1b6189a1e9107cf5f20d26b385a1b00b19f35d2",
+  "checkpoint_backup": "/workspace/aia2-backups/before-forbidden-transitive-20261028T183341Z/checkpoint-a1b6189.tar.gz",
+  "checkpoint_report": "docs/AIA2_0.4.14_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
     "new_recipes": 4,
@@ -424,5 +428,29 @@
     "layout_structural_warnings": 0,
     "delivery": "actual_package_manifest_and_cli_upgrade_passed",
     "package_manifest_entries": 4230
+  },
+  "forbidden_transitive": {
+    "version": "0.4.14-alpha",
+    "new_quests": 0,
+    "new_recipes": 0,
+    "new_rewards": 0,
+    "new_items": 0,
+    "new_textures": 0,
+    "old_quest_payloads_preserved": 3351,
+    "old_recipe_entries_preserved": 623,
+    "all_non_jar_runtime_files_byte_identical": 1171,
+    "new_sha_source_files": 18,
+    "source_review": "content/audit/v6-forbidden-transitive-source-review.json",
+    "design_and_limits": "content/audit/v6-forbidden-transitive-design.json",
+    "package_report": "implementation/forbidden-transitive-package-install-v6.json",
+    "manual_plan": "docs/testing/FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md",
+    "paid_schema": 1,
+    "extension": "active_ritual.aia2_gameplay_dependencies_v1",
+    "new_modeled_assertions": 157,
+    "new_actual_nbt_assertions": 18,
+    "previous_classes_byte_identical": 176,
+    "fullpack_run": false,
+    "clibano_transitive_implemented": false,
+    "package_manifest_and_upgrade": "passed"
   }
 }

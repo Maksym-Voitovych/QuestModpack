@@ -167,10 +167,108 @@ public final class NativeSmokeTests {
         testPassiveBoundaryFixtures();
         testFireWorksites();
         testForbiddenPaidNbt();
+        testForbiddenDependencyNbt();
         testClibanoPaidNbt();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
+    private static void testForbiddenDependencyNbt() {
+        var dependent = new ForbiddenDependencies.Snapshot("c".repeat(64), true);
+        var independent = new ForbiddenDependencies.Snapshot("d".repeat(64), false);
+        CompoundTag active = new CompoundTag();
+        String id = "forbidden_arcanus:eternal_stella";
+        UUID starter = UUID.randomUUID();
+        active.putString("ritual", id); active.putInt("counter", 37);
+        active.putInt("lightning_counter", 4); active.putUUID("started_by", starter);
+        CompoundTag legacyBefore = active.copy();
+        check(!ForbiddenDependencies.matches(active, dependent)
+                        && ForbiddenDependencies.matches(active, independent),
+                "actual legacy NBT without a snapshot denies dependencies but permits a proven dependency-free definition");
+        check(active.equals(legacyBefore) && !active.contains(ForbiddenDependencies.ACTIVE_TAG),
+                "checking legacy NBT never adopts today's dependencies as historical evidence");
+        check(!ForbiddenDependencies.matches(null, independent),
+                "missing active operation cannot be authorized even by a dependency-free snapshot");
+        ForbiddenDependencies.attach(active, dependent);
+        check(ForbiddenDependencies.matches(active, dependent)
+                        && active.getCompound(ForbiddenDependencies.ACTIVE_TAG).getInt("schema") == 1,
+                "actual CompoundTag stores and matches the payment-time dependency extension");
+        check(!ForbiddenDependencies.matches(active, new ForbiddenDependencies.Snapshot("e".repeat(64), true)),
+                "changed current dependency hash never matches the original payment snapshot");
+        CompoundTag attached = active.copy();
+        boolean overwriteRejected = false;
+        try { ForbiddenDependencies.attach(active, independent); }
+        catch (IllegalArgumentException expected) { overwriteRejected = true; }
+        check(overwriteRejected && active.equals(attached),
+                "an existing dependency snapshot cannot be silently overwritten with a new definition");
+
+        Object manager = new Object();
+        var receipt = new ForbiddenPaidState.Receipt(id, "a".repeat(64), "b".repeat(64), TEAM_A, starter);
+        ForbiddenPaidState.markPaid(manager, ForbiddenPaidState.begin(manager), receipt, active);
+        CompoundTag stored = new CompoundTag(); ForbiddenPaidState.save(manager, stored, true);
+        CompoundTag decoded;
+        try {
+            var bytes = new java.io.ByteArrayOutputStream();
+            net.minecraft.nbt.NbtIo.writeCompressed(stored, bytes);
+            decoded = net.minecraft.nbt.NbtIo.readCompressed(new java.io.ByteArrayInputStream(bytes.toByteArray()),
+                    net.minecraft.nbt.NbtAccounter.unlimitedHeap());
+        } catch (java.io.IOException failure) { throw new IllegalStateException("Forbidden dependency NBT roundtrip failed", failure); }
+        check(decoded.equals(stored)
+                        && ForbiddenDependencies.matches(decoded.get(ForbiddenPaidState.ACTIVE_TAG), dependent),
+                "compressed Minecraft NBT preserves the exact paid dependency snapshot and schema1 receipt");
+        Object restored = new Object(); ForbiddenPaidState.load(restored, decoded);
+        check(ForbiddenPaidState.receipt(restored).orElseThrow().equals(receipt)
+                        && ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(restored), dependent),
+                "a fresh manager restores the dependency extension without changing the historical receipt");
+        CompoundTag projection = legacyBefore.copy(); projection.putInt("counter", 38);
+        check(ForbiddenPaidState.captureActive(restored, projection),
+                "native primitive-only projection can advance the paid ritual's counters");
+        CompoundTag refreshed = new CompoundTag();
+        refreshed.put(ForbiddenPaidState.ACTIVE_TAG, projection.copy());
+        ForbiddenPaidState.save(restored, refreshed, false);
+        check(refreshed.getCompound(ForbiddenPaidState.ACTIVE_TAG).getInt("counter") == 38
+                        && ForbiddenDependencies.matches(refreshed.get(ForbiddenPaidState.ACTIVE_TAG), dependent),
+                "native save omitting unknown fields retains the payment-time dependency extension");
+        decoded.getCompound(ForbiddenPaidState.ACTIVE_TAG).getCompound(ForbiddenDependencies.ACTIVE_TAG)
+                .putString("fingerprint", "f".repeat(64));
+        check(ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(restored), dependent),
+                "mutating a decoded caller tag cannot rewrite the retained dependency proof");
+
+        CompoundTag unknown = attached.copy();
+        unknown.getCompound(ForbiddenDependencies.ACTIVE_TAG).putInt("schema", 999);
+        check(!ForbiddenDependencies.matches(unknown, dependent) && !ForbiddenDependencies.matches(unknown, independent),
+                "unknown dependency schema denies both dependent and dependency-free resume");
+        Object unsupported = new Object();
+        CompoundTag unknownRoot = stored.copy(); unknownRoot.put(ForbiddenPaidState.ACTIVE_TAG, unknown);
+        ForbiddenPaidState.load(unsupported, unknownRoot);
+        CompoundTag unknownSaved = new CompoundTag(); ForbiddenPaidState.save(unsupported, unknownSaved, true);
+        check(unknownSaved.equals(unknownRoot)
+                        && !ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(unsupported), dependent),
+                "unknown dependency schema remains preserved and denied after an actual paid-state save/load");
+        CompoundTag wrongType = attached.copy(); wrongType.putString(ForbiddenDependencies.ACTIVE_TAG, "untrusted");
+        check(!ForbiddenDependencies.matches(wrongType, dependent) && !ForbiddenDependencies.matches(wrongType, independent),
+                "a wrongly typed dependency extension cannot fall back to legacy permission");
+        CompoundTag wrongSchemaType = attached.copy();
+        wrongSchemaType.getCompound(ForbiddenDependencies.ACTIVE_TAG).putByte("schema", (byte) 1);
+        check(!ForbiddenDependencies.matches(wrongSchemaType, dependent),
+                "numeric schema coercion cannot accept an incorrectly typed dependency version");
+        CompoundTag extra = attached.copy(); extra.getCompound(ForbiddenDependencies.ACTIVE_TAG).putString("future", "retain");
+        check(!ForbiddenDependencies.matches(extra, dependent),
+                "unrecognized dependency fields require review instead of silently broadening a proof");
+        CompoundTag wrongHashType = attached.copy();
+        wrongHashType.getCompound(ForbiddenDependencies.ACTIVE_TAG).putInt("fingerprint", 1);
+        check(!ForbiddenDependencies.matches(wrongHashType, dependent),
+                "a non-string dependency hash never authorizes paid progress");
+        Object old = new Object();
+        CompoundTag legacyRoot = stored.copy(); legacyRoot.put(ForbiddenPaidState.ACTIVE_TAG, legacyBefore.copy());
+        ForbiddenPaidState.load(old, legacyRoot);
+        ForbiddenPaidState.captureActive(old, projection);
+        CompoundTag legacySaved = new CompoundTag(); ForbiddenPaidState.save(old, legacySaved, true);
+        check(!legacySaved.getCompound(ForbiddenPaidState.ACTIVE_TAG).contains(ForbiddenDependencies.ACTIVE_TAG)
+                        && !ForbiddenDependencies.matches(ForbiddenPaidState.rawActive(old), dependent),
+                "restoring and updating an old paid receipt never invents a missing dependency snapshot");
     }
 
     private static void testClibanoPaidNbt() {
