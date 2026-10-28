@@ -152,6 +152,51 @@ test('machine claim requires authorization, real player and unowned block entity
   assert.equal(unknown.owner, undefined, 'Unclassified modded controllers remain quarantined');
 });
 
+test('Clibano frame claim uses the typed linked-controller bridge after player synchronization', () => {
+  const b = machines(); b.activate();
+  const api = b.c.global.AIA2Machines;
+  const p = guardedPlayer({completed: 14});
+  const frame = {}, main = {};
+  let linked = 0;
+  b.guard.claimClibano = (actualPlayer, actualFrame) => {
+    assert.equal(actualPlayer, p);
+    assert.equal(actualFrame, frame);
+    assert.equal(b.playerTeams.get(p.uuid), p.team, 'The typed bridge receives an already synchronized real player');
+    main.owner = p.team; linked++; return true;
+  };
+  const block = {id: 'forbidden_arcanus:clibano_center', getEntity: () => frame};
+  api.claim({...p, completed: 13}, block);
+  api.claim({...p, isFake() { return true; }}, block);
+  api.claim({...p, isServerPlayer() { return false; }}, block);
+  assert.equal(linked, 0, 'Stage/fake/non-server filtering precedes the Java claim');
+  api.claim(p, block);
+  assert.equal(linked, 1);
+  assert.equal(main.owner, p.team);
+  assert.equal(frame.owner, undefined, 'JS must not write only the visible frame owner');
+  assert.equal(b.calls.filter(x => x === 'claim').length, 0, 'Linked ownership stays entirely in the typed structure helper');
+  assert.equal(api.isReady(), true);
+});
+
+test('rejected or failing Clibano association cannot fall back to claiming the visible frame', () => {
+  const b = machines(); b.activate();
+  const api = b.c.global.AIA2Machines;
+  const frame = {}, p = guardedPlayer({completed: 14});
+  const block = {id: 'forbidden_arcanus:clibano_center', getEntity: () => frame};
+  let linked = 0;
+  b.guard.claimClibano = () => { linked++; return false; };
+  api.claim(p, block);
+  assert.equal(linked, 1);
+  assert.equal(frame.owner, undefined);
+  assert.equal(b.calls.filter(x => x === 'claim').length, 0);
+  assert.equal(api.isReady(), true, 'An ordinary denied association leaves the guard active');
+  b.guard.claimClibano = () => { throw new Error('Unsupported optional frame association'); };
+  api.claim(p, block);
+  assert.equal(frame.owner, undefined);
+  assert.equal(api.isReady(), false, 'An unexpected Java API error closes the guard with a visible diagnostic');
+  assert.equal(api.diagnostics().phase, 'machine_claim');
+  assert.match(api.status(), /Unsupported optional frame association/);
+});
+
 test('corrupt ledger stays closed, explains the phase and never resets progress or retries automatically', () => {
   const b = machines(); b.setLedger(new Error('corrupt journal')); b.activate();
   assert.equal(b.guard.isReady(), false);

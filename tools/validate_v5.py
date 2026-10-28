@@ -34,6 +34,12 @@ MECHANIC_CONTRACT = {
                             {'rootsclassic:ritual/crafting/charged_runic_focus'}),
     'enderio_energetic_alloy': (19, 'enderio:alloy_smelting', 'enderio:energetic_alloy_ingot', {'enderio:alloy_smelting/energetic_alloy_ingot'}),
     'powah_blazing_crystal': (29, 'powah:energizing', 'powah:crystal_blazing', {'aia2:v4/powah/energizing/blazing_crystal','aia2:v4/powah/energizing/blazing_crystal_2'}),
+    'clibano_arcane_dust': (15, 'forbidden_arcanus:clibano_combustion', 'forbidden_arcanus:arcane_crystal_dust',
+                            {'forbidden_arcanus:clibano_combustion/arcane_crystal_dust_from_clibano_combustion'}),
+    'clibano_rune': (15, 'forbidden_arcanus:clibano_combustion', 'forbidden_arcanus:rune',
+                     {'forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion'}),
+    'clibano_obsidiansteel': (21, 'forbidden_arcanus:clibano_combustion', 'forbidden_arcanus:obsidiansteel_ingot',
+                              {'forbidden_arcanus:clibano_combustion/obsidiansteel_ingot_from_clibano_combustion'}),
 }
 
 
@@ -163,7 +169,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
     specs = document['rules']
     by_id = {rule.get('id'): rule for rule in specs}
     require(len(specs) == len(by_id) and set(by_id) == set(MECHANIC_CONTRACT),
-            'Only eight audited native mechanics are supported')
+            'Only the reviewed native mechanics are supported')
     removed = set((bundle or {}).get('remove', []))
     compiled_recipes = {entry['id']: entry['json'] for entry in (bundle or {}).get('add', [])}
     allowed = set()
@@ -200,7 +206,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Native mechanic lacks runtime recipe provenance', ident, recipe_id)
                 require(compiled_recipes.get(recipe_id) == recipe,
                         'Native mechanic runtime producer differs from frozen evidence', ident, recipe_id)
-            if serializer == 'enderio:alloy_smelting':
+            if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion'}:
                 require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'EnderIO proof lacks frozen native recipe', ident)
                 require(read(root/source['frozen_path']) == recipe, 'EnderIO proof export differs', ident)
             if serializer == 'rootsclassic:ritual':
@@ -213,7 +219,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Roots proof recipe differs from frozen export', ident)
                 outputs = [recipe.get('effectConfig', {}).get('result', {})]
             else:
-                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer == 'powah:energizing' else 'output', {})]
+                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer in {'powah:energizing', 'forbidden_arcanus:clibano_combustion'} else 'output', {})]
             require(any(result.get('id') == output and result.get('count', 1) > 0 for result in outputs),
                     'Native mechanic recipe does not produce its output', ident, recipe_id)
         path = root/'kubejs/data/aia2/advancement/mechanics'/(ident + '.json')

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.12-alpha (Forbidden Forge/core); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.13-alpha (Clibano controller/production); 0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1963 SHA-файли карт; exact Forbidden2.6.1; Draconic CI633 BLOCKED |
-| 3 | Карти прогресії | IN_PROGRESS | 26 scoped core-карт DONE; Forbidden24етапи;35partial і невивчені моди |
-| 4 | Перебудова координат | DONE | 140 глав;0накладань/зворотних/вертикальних/довгих;1152перетини після16новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 562нових відv4;16Forbidden у цьому блоці; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3082 item-нагороди;16нових; усі3330старіrewardpayloads незмінні |
-| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніentries незмінні у0.4.12 |
-| 8 | Предмети без джерел | IN_PROGRESS | 2445предметів;35native-source доказів;6IFfluid gaps залишаються |
-| 9 | Creative/альтернативи | IN_PROGRESS | Forbidden ritual/payment/input hooks реалізовано; Clibano/Obelisk/transitive й EvilEnv/Purifier відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 212Python/55Node/5237Java PASS;111MC@0.4.12 у2JVM;297новихmodels;fullpackNOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.12 — проміжний блок; ZIP/installer PASS; commit/push перевірити черезGit;0.5не завершено |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1997 SHA-файлів карт; exact Forbidden2.6.1 і bytecode Valhelsia1.1.5; DraconicCI633 BLOCKED |
+| 3 | Карти прогресії | IN_PROGRESS | 26 scoped core-карт DONE; Forbidden29етапів;35partial та невивчені моди |
+| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини після5новихцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 567нових відv4;5Clibano цього блоку; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3087item-нагород;5нових; усі3346попередніх rewardpayloads збережено |
+| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніх entries незмінні у0.4.13 |
+| 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
+| 9 | Creative/альтернативи | IN_PROGRESS | Clibano controller/menu/currentrecipe/paidstate/residues реалізовано; transitive/historicalresidue/IOforwarding відкриті |
+| 10 | Інтеграційні тести | IN_PROGRESS | 228Python/57Node/5237Java;119MC@0.4.13/2JVM;776новихmodels;fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.13 проміжний блок; package/installer PASS; commit/push перевірити черезGit;0.5не завершено |
 
 
 
@@ -44,13 +44,13 @@
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (27) | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (29) | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
 | 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (35) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
-| 21 | IN_PROGRESS | IN_PROGRESS (20) | TODO | DONE (static) |
+| 21 | IN_PROGRESS | IN_PROGRESS (23) | TODO | DONE (static) |
 | 22 | IN_PROGRESS | IN_PROGRESS (7) | IN_PROGRESS (1 формул) | DONE (static) |
 | 23 | IN_PROGRESS | IN_PROGRESS (9) | TODO | DONE (static) |
 | 24 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
@@ -476,3 +476,30 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - DONE пакування0.4.12:4159manifestentries/1169runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file+directorywrites; syntheticupgrade0.4.11→0.4.12 резервуєстарийJAR і зберігає world/FTB/fire/knowledge+EMC/paidchunkmarkers, сторонніquest/mod/script. Repeatinstallідемпотентний. Це opaqueсинтетичніmarkers, неfullpackритуальнийrestartтест. Звіт:implementation/forbidden-ritual-package-install-v5.json. Windowsінстанс не змінювався.
 - Всі власники цього підблоку завершили роботу. Source-review знайшов і root виправив physicalenhancerbinding таexactnativecostidentity; новий6fileSHAmanifest/sourcecontract регресія збережені. Післядоданоїsourcecontractперевірки остаточнийPythonнабір212;297modeledassertions незмінні. JavaScript syntax13filesPASS.
 - Стан зберігається окремим main-комітом іpushбезforce. Фінальнийhash/status визначати черезgitlog/origin/main таexternaldeliveryreport біляZIP; self-referentialhash уsourceархів не вбудовувати. Наступнийстарт — перша незавершенаClibano/transitiveдія вище, не повторювати16цілей або3готовіhooks.
+
+
+### 2026-10-28 — Clibano: IN_PROGRESS
+
+- Відновлено129ca0e/main; backup чинних файлів і незавершених чернеток: /workspace/aia2-backups/resume-clibano-20261028T093345Z. Попередній baselinebackup:/workspace/aia2-backups/before-clibano-20261027T233641Z/checkpoint-129ca0e.tar.gz.
+- Root: canonical frame→main ownership/GUI, sharedintegration/version/Git. clibano_native_finish: production/cache/paidstate; clibano_native_tests: модельовані handler regressions; clibano_owner_tests: власник і точний GUI target; clibano_content_finish:5source-backedoptionalgoals/pendingmap/rules.
+- База3346квестів/623рецепти/390предметів/PNG/96ключів збережена. Незавершений Forge transitivehash-дизайн ще не змінюєruntime; не вважати його реалізованим. Наступна дія: завершити coherentClibanoowner/nativeguard, перевірити й зафіксувати. Повний0.5не реліз.
+
+
+### 2026-10-28 — Clibano0.4.13: реалізований підблок
+
+- DONE коду й контенту:5нових optional-квестів (15→2,21→3),3командні process proofs,29етапів Forbidden-карти.3351квест/140глав/623рецепти/390предметів іPNG/96ключів. Нових рецептів/предметів/текстур0;5нових матеріальних нагород,3087загалом.
+- Усіх3346попередніх non-coordinate quest/task/reward/dependency payloads і623recipeentries збережено. Snapshot129ca0e захищає16попередніх ForbiddenIDs поверх3330. Координати лише Forbiddenглави:1152→1154перетини,0structuralwarnings.
+- Root canonicalframe→actualmain і26частин shell, усі права/floors/owners перевірені до ownerwrites. TypedclaimClibano прибирає JS UUID/overload проблеми. GUI не використовує nearestPOI; live stillValid перевіряє команду/стадію/власника. Constructor binding утримує початкову BEidentity: Valhelsia getBlockEntity динамічно resolve за позицією і без цього може підмінити старий inventory після replacement. Corruptarrays/staleresidueholders до GUI не допускаються.
+- Native main tick/cache/finish/residue guard: поточний recipe/physicalenhancer/inputs/outputcomponents. Lane receipts schema1 збережені черезrestart; legacy/corrupt/changed операції pause. Cold/unlit прогрес заборонений; duration1 не дає output до fuelpayment. Native polling queue не підміняє другий рецепт; outputfill не стирає іншу лінію. Proof лише після exactinputdecrement і acceptedoutputdelta. Rules11/recipeIDs14; попереднє SavedData не скидається.
+- /aia2clibano status/cancel: тільки своя цілісна піч поруч; cancel operator-only, максимум8persistentbackups. Скидає лише cookingprogress/receipt; slots/residues/burn/soul збережено, refund/output/proof0. Автоматичного installercancel немає.
+- Доступні suites:228Python/57Node/5237Java іJDK21build;776новихmodelassertions (175state/351owner+menu/250native). МінімальнийMC119assertions/2JVM/650ticks,8новихactualNBT/binary cases. Exact4native logic files у модельованому host byte-identical. Повний Clibano optionalweaving/JEI/UI/Survival/TPS NOT RUN.
+- Source34SHA + Valhelsia1.1.5bytecode artifact;700researchstages/1073questlinks/1997SHA-файлів карт,26scopedcore/35partial. Джерельний аудит і manualacceptance збережені в docs/AIA2_0.4.13_CHECKPOINT.uk.md і docs/testing/CLIBANO_ACCEPTANCE.uk.md.
+- Під час інтеграції виправлено staleSHA mutable mechanicsconfig у processes-карті та hardcoded8→11 у40_mechanics.js. Це реальні regression checks; невдалий перший installernegativefixture без mods/ виправлено і перевірено повторно.
+- Limits: automaticframeIO upstream закоментовано; original residue definition черезrestart не доведене; generic copiedcomponents/directaddon callbacks і fullrollback не заявлено. Поточна перевірка bounded26parts/2lanes/15native recipes; TPS benchmark TODO. Forge/Clibano transitive tag/registry fingerprint щеTODO; дизайн у content/audit/v6-forbidden-transitive-design.json, runtime ним не змінений.
+- IN_PROGRESS доставки: остаточний пакет/actualCLI upgrade0.4.12→0.4.13, metadata і commit/push безforce. Після цього наступна конкретна дія — transitive залежності оплачених Forgeритуалів зі збереженням старих schema1 receipts, потім35partial/невивчені моди та старі requiredлінії48епох. Rootsunfinishedrestart/DraconicCI633/6IFfluidgaps залишаються відкритими. Повний0.5не реліз.
+- Допоміжні агенти завершилися з лімітом; root відновив файли, довів source/handler/model перевірки. Активних власників немає; продовжувати за останнім checkpoint, а не старими іменами агентів.
+
+- DONE доставки до коміту:1172runtimeфайли byte-identical після повної генерації PYTHONHASHSEED103;13JS syntaxfiles PASS. Фінальний JAR181classes/68mixins,154попередніclasses byte-identical; змінені лише Aia2MachineGuard/ProductionMilestoneBridge/NativeSmokeTests. SHA:a15c1a6a258b98f9a155f63b0e92d5dbded9c7c3b9f8afdacb725f6501b0efe9.
+- Actual ZIP4230entries/CRC/весьSHAmanifest PASS. Запакований CLI --dry-run:0змін файлів/директорій. Upgrade129ca0e(0.4.12)→0.4.13 резервує старийJAR і зберігає opaque world/FTB/fire/knowledge+EMC/paidchunk markers та сторонніquest/mod/script; повторне встановлення ідемпотентне. Звіт:implementation/clibano-package-install-v6.json. Реального Windows-інстансу не торкалися.
+- Останній додатковий source/bytecode review знайшов dynamic Valhelsia MenuCreationContext: root додав constructor-binding початкової BEidentity. Host відтворює динамічне resolve; same-owner replacement і повторнийbind не можуть оживити старий handler. Після цього повторні228Python і119minimalMC PASS;351owner/menu assertions входять у776нових.
+- Цей цілісний checkpoint зберігається в main-коміт і push безforce. Точнийhash/status — gitlog/origin/main та externaldeliveryreport біляZIP; self-referentialhash уsource не вбудовувати. Наступна сесія починає transitive залежності вище; цейClibanoблок і5новихцілей не генерувати повторно. Повний0.5ще IN_PROGRESS.

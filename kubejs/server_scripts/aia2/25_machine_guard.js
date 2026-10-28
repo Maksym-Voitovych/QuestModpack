@@ -147,6 +147,10 @@ var aia2MachineAPI = {
     try {
       var team = global.AIA2.teamId(player);
       aia2MirrorMachinePlayer(player);
+      if (id.indexOf('forbidden_arcanus:clibano_') === 0) {
+        AIA2MachineGuard.claimClibano(player, entity);
+        return;
+      }
       var owner = String(AIA2MachineGuard.getOwner(entity));
       if (!owner) AIA2MachineGuard.setOwner(entity, team);
     } catch (error) { aia2MachineFailure(error, 'machine_claim'); }

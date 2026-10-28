@@ -76,7 +76,7 @@
         }
       ],
       "x": 0.0,
-      "y": 8.089
+      "y": 8.373
     },
     {
       "id": "0000DFC70207D216",
@@ -124,7 +124,7 @@
         }
       ],
       "x": 0.0,
-      "y": 2.475
+      "y": 2.58
     },
     {
       "id": "0000016B45BFEFF2",
@@ -218,7 +218,7 @@
         }
       ],
       "x": 2.0,
-      "y": 8.045
+      "y": 7.688
     },
     {
       "id": "00003C4C5BEF5782",
@@ -286,7 +286,7 @@
         }
       ],
       "x": 2.0,
-      "y": 11.869
+      "y": 12.377
     },
     {
       "id": "0000BC05C7D057F4",
@@ -331,7 +331,7 @@
         }
       ],
       "x": 2.0,
-      "y": 3.761
+      "y": 3.844
     },
     {
       "id": "0000FBF9796C0EC7",
@@ -380,7 +380,7 @@
         }
       ],
       "x": 2.0,
-      "y": 1.189
+      "y": 1.317
     },
     {
       "id": "0000149B37CBB08A",
@@ -449,7 +449,7 @@
         }
       ],
       "x": 4.0,
-      "y": 9.045
+      "y": 9.377
     },
     {
       "id": "000032AD87A4C673",
@@ -517,7 +517,7 @@
         }
       ],
       "x": 4.0,
-      "y": 7.045
+      "y": 6.0
     },
     {
       "id": "00005A8F10B92797",
@@ -634,7 +634,7 @@
         }
       ],
       "x": 4.0,
-      "y": 11.869
+      "y": 12.377
     },
     {
       "id": "0000B87014C653F5",
@@ -735,6 +735,50 @@
       "y": 2.0
     },
     {
+      "id": "000007FB5A821CA9",
+      "title": "Кристал проходить крізь Clibano",
+      "description": [
+        "Після формування Clibano відкрийте її видиму центральну панель. Покладіть Arcane Crystal в один із двох вхідних слотів, додайте звичайне паливо й залиште вільне місце для виходу.",
+        "Дочекайтеся, поки саме піч перетворить кристал на Arcane Crystal Dust. Для цього рецепта достатньо звичайного полум’я: душа та реліквія не потрібні.",
+        "Зараховується завершене виробництво вашої команди у Clibano. Готовий пил з іншого способу отримання не замінює цей цикл."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal_dust",
+        "count": 1
+      },
+      "dependencies": [
+        "000032AD87A4C673",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C4CD00314A5C",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_arcane_dust"
+        },
+        {
+          "id": "0000592477053085",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000156CE37E5B19",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 5.04
+    },
+    {
       "id": "000087F601F9DB6D",
       "title": "Душа з піску душ",
       "description": [
@@ -804,7 +848,7 @@
         }
       ],
       "x": 6.0,
-      "y": 9.869
+      "y": 10.377
     },
     {
       "id": "00009B6315AFF4A0",
@@ -872,7 +916,51 @@
         }
       ],
       "x": 6.0,
-      "y": 7.869
+      "y": 8.377
+    },
+    {
+      "id": "0000073C6E06A4F6",
+      "title": "Дві вхідні лінії — різні продукти",
+      "description": [
+        "Плавка Runic Stone, Runic Deepslate або Runic Darkstone дає Rune. Помістіть один із цих блоків у вільну вхідну лінію Clibano; у другій можна окремо переробляти кристали.",
+        "Обидві звичайні лінії мають власний прогрес. Стежте за двома вихідними слотами: заповнений вихід затримує подальшу роботу, тому спочатку розвантажте результат.",
+        "Дочекайтеся виготовлення Rune вашою піччю. Це завдання зараховує саме цей виробничий цикл, а не просто наявність руни."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:rune",
+        "count": 1
+      },
+      "dependencies": [
+        "000007FB5A821CA9",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00001155FE0F50C8",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_rune"
+        },
+        {
+          "id": "00003FB3D6A060DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000C247F4293AFE",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 5.04
     },
     {
       "id": "000049C52FD4B9A4",
@@ -952,7 +1040,7 @@
         }
       ],
       "x": 8.0,
-      "y": 9.203
+      "y": 9.71
     },
     {
       "id": "00007563FBB31128",
@@ -996,7 +1084,7 @@
         }
       ],
       "x": 10.0,
-      "y": 9.203
+      "y": 9.71
     },
     {
       "id": "000025B639435090",
@@ -1056,7 +1144,7 @@
         }
       ],
       "x": 0.0,
-      "y": 10.089
+      "y": 10.373
     },
     {
       "id": "0000B13426DA020B",
@@ -1116,7 +1204,7 @@
         }
       ],
       "x": 0.0,
-      "y": 14.869
+      "y": 15.377
     },
     {
       "id": "0000E93A0A8BC7AB",
@@ -1184,7 +1272,7 @@
         }
       ],
       "x": 6.0,
-      "y": 11.869
+      "y": 12.377
     },
     {
       "id": "00006642B62B4640",
@@ -1252,7 +1340,7 @@
         }
       ],
       "x": 8.0,
-      "y": 11.203
+      "y": 11.71
     },
     {
       "id": "0000E5C0397CC1EF",
@@ -1320,7 +1408,7 @@
         }
       ],
       "x": 10.0,
-      "y": 11.203
+      "y": 11.71
     },
     {
       "id": "00001D18649B646C",
@@ -1365,7 +1453,7 @@
         }
       ],
       "x": 12.0,
-      "y": 8.221
+      "y": 8.713
     },
     {
       "id": "0000A478691FD072",
@@ -1409,7 +1497,7 @@
         }
       ],
       "x": 14.0,
-      "y": 8.221
+      "y": 8.713
     },
     {
       "id": "0000117A87ED57E8",
@@ -1478,7 +1566,7 @@
         }
       ],
       "x": 16.0,
-      "y": 7.221
+      "y": 5.713
     },
     {
       "id": "00004DBA0F771AAB",
@@ -1546,7 +1634,7 @@
         }
       ],
       "x": 16.0,
-      "y": 5.221
+      "y": 9.713
     },
     {
       "id": "00009462F33D3EE1",
@@ -1590,7 +1678,7 @@
         }
       ],
       "x": 16.0,
-      "y": 9.221
+      "y": 7.713
     },
     {
       "id": "00009CDFF8C8828A",
@@ -1659,7 +1747,201 @@
         }
       ],
       "x": 16.0,
-      "y": 11.221
+      "y": 11.713
+    },
+    {
+      "id": "0000059CA82AE57A",
+      "title": "Сплав використовує обидва входи",
+      "description": [
+        "Установіть Artisan Relic у слот підсилювача Clibano. Вона відкриває рецепт Obsidiansteel: потрібні Raw Iron та Obsidian, по одному предмету в різних вхідних слотах. Залізний зливок не замінює сиру залізну руду.",
+        "Дочекайтеся одного зливка Obsidiansteel й перевірте, що обидва реагенти витрачено. Цей сплав використовує спільний цикл двох входів; для нього достатньо звичайного полум’я.",
+        "Зараховується завершений цикл вашої команди в Clibano. Використайте сплав для наступних арканних матеріалів і збережіть окремий запас для перекування спорядження."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:obsidiansteel_ingot",
+        "count": 1
+      },
+      "dependencies": [
+        "0000073C6E06A4F6",
+        "0000117A87ED57E8",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000FCECFF4B26C0",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_obsidiansteel"
+        },
+        {
+          "id": "00001A11CEB1F8F5",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000059BE33A95218",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 6.04
+    },
+    {
+      "id": "000080B066D374F0",
+      "title": "Душа змінює режим полум’я",
+      "description": [
+        "Підготуйте Enchanted Soul і огляньте панель Clibano. Звичайне паливо залишається в паливному слоті, а Enchanted Soul призначена для окремого soul-слота.",
+        "Звичайна або Corrupt Soul дає soul-полум’я; Enchanted Soul — enchanted-полум’я. Порівняйте швидкість і доступний залишок часу в інтерфейсі, не змішуючи цей ресурс із паливом.",
+        "Квест зараховує підготовлену Enchanted Soul та огляд печі. Фактично вибраний режим і залишок його часу перевірте в інтерфейсі; наступний сплав не вимагає enchanted-полум’я."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:enchanted_soul",
+        "count": 1
+      },
+      "dependencies": [
+        "0000073C6E06A4F6",
+        "0000117A87ED57E8",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CF36C64665B5",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:clibano_center",
+          "timer": 40
+        },
+        {
+          "id": "0000FE8DAE1CA3DC",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:enchanted_soul",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000088AD026115E3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00009D99BE9E6247",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 18.0,
+      "y": 4.04
+    },
+    {
+      "id": "00004BD78A839A61",
+      "title": "Серія плавок без переповнення залишків",
+      "description": [
+        "Підготуйте невелику серію кристалів і Runic Darkstone, Enchanted Soul та окрему скриню для готових матеріалів. Перед роботою звільніть обидва виходи Clibano.",
+        "Soul- та enchanted-полум’я дають шанс отримати залишки під час плавки; звичайне полум’я їх не додає. Запас має загальну межу 64, а 9 залишків Arcane Crystal або Rune одного типу поєднуються в відповідний блок, якщо є місце у виході.",
+        "Квест перевіряє комплект для серії та огляд печі. Імовірність випадіння й лічильники залишків перевірте в інтерфейсі; інвентарний комплект не доводить їх накопичення. Переносьте результати вручну, доки не перевірите сумісність конкретного способу транспортування з піччю."
+      ],
+      "icon": {
+        "id": "forbidden_arcanus:arcane_crystal_block",
+        "count": 1
+      },
+      "dependencies": [
+        "000080B066D374F0",
+        "0000059CA82AE57A",
+        "0000258F585EC73D"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CC659428377A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "forbidden_arcanus:clibano_center",
+          "timer": 40
+        },
+        {
+          "id": "00005FEDD1908643",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:arcane_crystal",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CFB9D15C4D87",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:runic_darkstone",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000220D4FA7BB33",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:enchanted_soul",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FA34F7FA7096",
+          "type": "item",
+          "item": {
+            "id": "minecraft:chest",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000027E6F79FB12F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e21"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00007DB9B5150F8E",
+          "type": "item",
+          "item": {
+            "id": "forbidden_arcanus:mundabitur_dust",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 20.0,
+      "y": 5.04
     },
     {
       "id": "00005C05501CCA8B",
@@ -1727,7 +2009,7 @@
         }
       ],
       "x": 12.0,
-      "y": 10.684
+      "y": 11.208
     },
     {
       "id": "00004634F52EE2C1",
@@ -1771,7 +2053,7 @@
         }
       ],
       "x": 18.0,
-      "y": 8.221
+      "y": 9.447
     },
     {
       "id": "0000B94B96089126",
@@ -1840,7 +2122,7 @@
         }
       ],
       "x": 20.0,
-      "y": 8.221
+      "y": 9.447
     },
     {
       "id": "00001BBA48567AE4",
@@ -1908,7 +2190,7 @@
         }
       ],
       "x": 14.0,
-      "y": 10.684
+      "y": 11.208
     },
     {
       "id": "0000722E28FD77A1",
@@ -1954,7 +2236,7 @@
         }
       ],
       "x": 22.0,
-      "y": 8.221
+      "y": 9.447
     }
   ]
 }

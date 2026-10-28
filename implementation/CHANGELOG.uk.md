@@ -1,3 +1,11 @@
+# 0.4.13-alpha — Clibano controller і виробничі лінії
+
+- 5optional-квестів,3справжні командні process proofs,29етапів карти Forbidden.3351квест/140глав;96ключів,623рецепти,390предметів/PNG збережено. Нових рецептів/предметів/текстур0.
+- Canonicalframe→main/26shell ownership і точний GUI target замість nearestPOI; live-menu team/stage guard і захист malformedarrays/staleresidue payload.
+- Currentrecipe/physicalenhancer/inputs/results; lane receipts збережені післяrestart. Cold/fuelless progress заборонено; cache підміна другої лінії та component-mismatch merge заблоковані. Actualacceptedoutput+consumption required beforeproof.
+- Explicit /aia2clibano status/cancel з bounded8backup; жодного автоматичного скидання світу/прогресу. NativeIOforwarding черезрамку щеTODO.
+- 228Python/57Node/5237Java/119minimalMC;776новихmodeledassertions. Fullpack/JEI/Survival/TPS NOT RUN.0.5ще IN_PROGRESS.
+
 # 0.4.12-alpha — Forbidden Forge і ритуальний курс
 
 - 16нових optional-квестів,6native ritual_completed критеріїв і24етапи scopedcore.3346квестів/140глав;96виробничихключів збережено. Новихрецептів/предметів/PNG0;623recipes незмінні.

@@ -1,0 +1,200 @@
+{
+  "schema": 1,
+  "scope_uk": "П’ять цілей Clibano: три справжні виробничі цикли й дві чесно позначені підготовчі цілі.",
+  "readiness_requirements": [
+    "Три production goals потребують nativeaccepted-output guards і mechanic contracts root-інтеграції.",
+    "Capability forwarding через раму у source вимкнений; автоматичний транспорт не заявляється."
+  ],
+  "quests": [
+    {
+      "id": "V5_E15_clibano_arcane_dust",
+      "epoch": 15,
+      "title_uk": "Кристал проходить крізь Clibano",
+      "description_uk": [
+        "Після формування Clibano відкрийте її видиму центральну панель. Покладіть Arcane Crystal в один із двох вхідних слотів, додайте звичайне паливо й залиште вільне місце для виходу.",
+        "Дочекайтеся, поки саме піч перетворить кристал на Arcane Crystal Dust. Для цього рецепта достатньо звичайного полум’я: душа та реліквія не потрібні.",
+        "Зараховується завершене виробництво вашої команди у Clibano. Готовий пил з іншого способу отримання не замінює цей цикл."
+      ],
+      "icon": "forbidden_arcanus:arcane_crystal_dust",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_arcane_dust"
+        }
+      ],
+      "after": [
+        "V5_E15_forbidden_core_clibano_shell"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.clibano.arcane_dust"
+    },
+    {
+      "id": "V5_E15_clibano_rune",
+      "epoch": 15,
+      "title_uk": "Дві вхідні лінії — різні продукти",
+      "description_uk": [
+        "Плавка Runic Stone, Runic Deepslate або Runic Darkstone дає Rune. Помістіть один із цих блоків у вільну вхідну лінію Clibano; у другій можна окремо переробляти кристали.",
+        "Обидві звичайні лінії мають власний прогрес. Стежте за двома вихідними слотами: заповнений вихід затримує подальшу роботу, тому спочатку розвантажте результат.",
+        "Дочекайтеся виготовлення Rune вашою піччю. Це завдання зараховує саме цей виробничий цикл, а не просто наявність руни."
+      ],
+      "icon": "forbidden_arcanus:rune",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_rune"
+        }
+      ],
+      "after": [
+        "V5_E15_clibano_arcane_dust"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:wax",
+          "count": 3
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.clibano.rune"
+    },
+    {
+      "id": "V5_E21_clibano_enchanted_fire",
+      "epoch": 21,
+      "title_uk": "Душа змінює режим полум’я",
+      "description_uk": [
+        "Підготуйте Enchanted Soul і огляньте панель Clibano. Звичайне паливо залишається в паливному слоті, а Enchanted Soul призначена для окремого soul-слота.",
+        "Звичайна або Corrupt Soul дає soul-полум’я; Enchanted Soul — enchanted-полум’я. Порівняйте швидкість і доступний залишок часу в інтерфейсі, не змішуючи цей ресурс із паливом.",
+        "Квест зараховує підготовлену Enchanted Soul та огляд печі. Фактично вибраний режим і залишок його часу перевірте в інтерфейсі; наступний сплав не вимагає enchanted-полум’я."
+      ],
+      "icon": "forbidden_arcanus:enchanted_soul",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:clibano_center",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:enchanted_soul",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E15_clibano_rune",
+        "V5_E21_forbidden_core_clibano_fire"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:edelwood_log",
+          "count": 4
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.clibano.enchanted_fire"
+    },
+    {
+      "id": "V5_E21_clibano_obsidiansteel",
+      "epoch": 21,
+      "title_uk": "Сплав використовує обидва входи",
+      "description_uk": [
+        "Установіть Artisan Relic у слот підсилювача Clibano. Вона відкриває рецепт Obsidiansteel: потрібні Raw Iron та Obsidian, по одному предмету в різних вхідних слотах. Залізний зливок не замінює сиру залізну руду.",
+        "Дочекайтеся одного зливка Obsidiansteel й перевірте, що обидва реагенти витрачено. Цей сплав використовує спільний цикл двох входів; для нього достатньо звичайного полум’я.",
+        "Зараховується завершений цикл вашої команди в Clibano. Використайте сплав для наступних арканних матеріалів і збережіть окремий запас для перекування спорядження."
+      ],
+      "icon": "forbidden_arcanus:obsidiansteel_ingot",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/clibano_obsidiansteel"
+        }
+      ],
+      "after": [
+        "V5_E15_clibano_rune",
+        "V5_E21_forbidden_core_clibano_fire"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:rune",
+          "count": 2
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.clibano.obsidiansteel"
+    },
+    {
+      "id": "V5_E21_clibano_residue_batch",
+      "epoch": 21,
+      "title_uk": "Серія плавок без переповнення залишків",
+      "description_uk": [
+        "Підготуйте невелику серію кристалів і Runic Darkstone, Enchanted Soul та окрему скриню для готових матеріалів. Перед роботою звільніть обидва виходи Clibano.",
+        "Soul- та enchanted-полум’я дають шанс отримати залишки під час плавки; звичайне полум’я їх не додає. Запас має загальну межу 64, а 9 залишків Arcane Crystal або Rune одного типу поєднуються в відповідний блок, якщо є місце у виході.",
+        "Квест перевіряє комплект для серії та огляд печі. Імовірність випадіння й лічильники залишків перевірте в інтерфейсі; інвентарний комплект не доводить їх накопичення. Переносьте результати вручну, доки не перевірите сумісність конкретного способу транспортування з піччю."
+      ],
+      "icon": "forbidden_arcanus:arcane_crystal_block",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "forbidden_arcanus:clibano_center",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:arcane_crystal",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:runic_darkstone",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "forbidden_arcanus:enchanted_soul",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chest",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V5_E21_clibano_enchanted_fire",
+        "V5_E21_clibano_obsidiansteel"
+      ],
+      "category": "magic",
+      "required": false,
+      "reward": [
+        {
+          "item": "forbidden_arcanus:arcane_crystal_dust",
+          "count": 4
+        }
+      ],
+      "mod": "forbidden_arcanus",
+      "research_stage": "forbidden_arcanus.clibano.residue_batch"
+    }
+  ]
+}

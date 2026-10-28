@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "TODO_design_only_not_runtime",
+  "scope": "Forbidden Arcanus2.6.1 paid ritual and Clibano transitive definitions",
+  "implemented": false,
+  "current_limit": "DIRECT_CODEC recipe/ritual hash does not cover every referenced tag or registry definition.",
+  "proposed_compatibility": [
+    "Keep existing schema1 ritual and input hashes; do not silently reinterpret old proof.",
+    "Store a versioned gameplay-dependency fingerprint in retained native active NBT extension; PaidState preserves unknown fields.",
+    "Expand actual Ingredient item-tag membership using current registry bindings, plus required/installed enhancer definitions and tag memberships.",
+    "Older paid state lacking dependency snapshot can resume only when no relevant transitive gameplay dependencies exist; otherwise preserve and pause.",
+    "Exclude texture-only magic-circle data from gameplay claims; unsupported ingredient serializers remain unapproved."
+  ],
+  "requires_verification": [
+    "Exact tag reload generation/identity behavior before caching membership hashes",
+    "Migration and binary NBT replay tests without progress deletion",
+    "No unknown dependency adopted from current datapack as historical payment evidence",
+    "Fullpack optional dispatch and TPS benchmark"
+  ],
+  "next_action": "Implement bounded dependency snapshot helper and regressions before modifying Forge receipt resume policy."
+}

@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "version": "0.4.13-alpha",
+  "status": "implemented_available_static_model_build_minimal_server_checks_passed_fullpack_not_run",
+  "installed_mod": "forbidden_arcanus2.6.1",
+  "source_pin": "34f83feb76204fd773e1d2e1d69ecc5b2f2bb933",
+  "sources": [
+    "content/research/evidence/clibano_core_v6/manifest.json",
+    "content/research/evidence/clibano_menu_context_v6/manifest.json"
+  ],
+  "confirmed_causes": [
+    "Visible frame claim did not reach actual internal controller.",
+    "Native GUI used nearest POI instead of FrameData.mainPos.",
+    "Live menu checked distance/block but not current team/stage; dynamic context re-resolves current BE and must not replace original inventory identity.",
+    "Native Default/Double logic advances while unlit and duration1 could complete before fuel cost.",
+    "Native selector queue could choose another overlapping second-lane recipe and reset paid work.",
+    "Native same-item merge ignores components; second lane reset on full destination can erase paid work.",
+    "Native cooking NBT has no historical recipe fingerprint; legacy progress cannot be automatically adopted."
+  ],
+  "helpers": [
+    "ClibanoOwnership",
+    "ClibanoAccess",
+    "ClibanoPaidState",
+    "ClibanoCommands"
+  ],
+  "mixins": [
+    "ClibanoFrameMenuMixin",
+    "ClibanoMenuValidityMixin",
+    "ClibanoMachineMixin",
+    "ClibanoResidueMixin"
+  ],
+  "new_process_proofs": 3,
+  "process_rules_total": 11,
+  "recipe_ids_total": 14,
+  "state_tag": "aia2_clibano_paid_v1",
+  "state_schema": 1,
+  "backup_tag": "aia2_clibano_cancel_backups_v1",
+  "new_model_assertions": {
+    "state": 175,
+    "owner_and_menu": 351,
+    "producer_and_pinned_logic": 250
+  },
+  "new_real_minecraft_nbt_assertions": 8,
+  "jar": {
+    "classes": 181,
+    "registered_mixins": 68,
+    "preserved_previous_classes": 154,
+    "intentionally_changed_classes": [
+      "ua/aia2/guard/Aia2MachineGuard.class",
+      "ua/aia2/guard/NativeSmokeTests.class",
+      "ua/aia2/guard/ProductionMilestoneBridge.class"
+    ],
+    "sha256": "a15c1a6a258b98f9a155f63b0e92d5dbded9c7c3b9f8afdacb725f6501b0efe9"
+  },
+  "fullpack_optional_dispatch": "not_run",
+  "manual_acceptance": "docs/testing/CLIBANO_ACCEPTANCE.uk.md",
+  "limits": [
+    "Capability forwarding through frame is commented out upstream; no automatic external IO claim.",
+    "Recipe codec hashes are not a complete transitive tag/registry fingerprint.",
+    "Historical residue definitions across restart are not established.",
+    "Changed/corrupt/legacy work is paused and preserved; explicit operator cancellation is not a refund.",
+    "No universal rollback after native/addon exceptions; a blocked lane can pause the whole checked cycle.",
+    "Global hot-path TPS was not benchmarked; selector is bounded to current native recipes/two lanes/26structure blocks."
+  ]
+}

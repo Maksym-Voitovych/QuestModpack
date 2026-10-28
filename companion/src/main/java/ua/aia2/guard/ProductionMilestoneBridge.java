@@ -28,7 +28,7 @@ public final class ProductionMilestoneBridge {
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
             "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual",
-            "enderio:alloy_smelting", "powah:energizing");
+            "enderio:alloy_smelting", "powah:energizing", "forbidden_arcanus:clibano_combustion");
     private static Map<String, Rule> byRecipe = Map.of();
     private static final Map<Recipe<?>, Rule> identity = new IdentityHashMap<>();
     private static final Map<CrafterBlockEntity, CrafterAttempt> crafterAttempts = new WeakHashMap<>();

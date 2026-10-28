@@ -414,6 +414,126 @@
           "runtime_recipe_path": "kubejs/config/aia2_recipes.json"
         }
       ]
+    },
+    {
+      "id": "clibano_arcane_dust",
+      "epoch": 15,
+      "output": "forbidden_arcanus:arcane_crystal_dust",
+      "serializer": "forbidden_arcanus:clibano_combustion",
+      "recipeIds": [
+        "forbidden_arcanus:clibano_combustion/arcane_crystal_dust_from_clibano_combustion"
+      ],
+      "advancement": "aia2:mechanics/clibano_arcane_dust",
+      "evidence": [
+        {
+          "recipeId": "forbidden_arcanus:clibano_combustion/arcane_crystal_dust_from_clibano_combustion",
+          "export_path": "recipes/forbidden_arcanus/clibano_combustion/arcane_crystal_dust_from_clibano_combustion.json",
+          "frozen_path": "content/research/evidence/clibano_core_v6/recipes/arcane_crystal_dust_from_clibano_combustion.json",
+          "source_sha256": "796035f6f7210af55ae9deebd04bb216b5888d32848417d11797b024b782b9fd",
+          "source_kind": "installed_export_recipe",
+          "json": {
+            "type": "forbidden_arcanus:clibano_combustion",
+            "category": "misc",
+            "cooking_time": 80,
+            "experience": 0.4,
+            "fire_type": "fire",
+            "ingredients": {
+              "item": "forbidden_arcanus:arcane_crystal"
+            },
+            "residue": {
+              "type": "forbidden_arcanus:arcane_crystal",
+              "chance": 0.1
+            },
+            "result": {
+              "count": 1,
+              "id": "forbidden_arcanus:arcane_crystal_dust"
+            }
+          },
+          "canonical_sha256": "fb427ba955cb625f94090aafc9dbc9fa9ecb0029eab91363b7788d1efdbe4a84"
+        }
+      ]
+    },
+    {
+      "id": "clibano_rune",
+      "epoch": 15,
+      "output": "forbidden_arcanus:rune",
+      "serializer": "forbidden_arcanus:clibano_combustion",
+      "recipeIds": [
+        "forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion"
+      ],
+      "advancement": "aia2:mechanics/clibano_rune",
+      "evidence": [
+        {
+          "recipeId": "forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion",
+          "export_path": "recipes/forbidden_arcanus/clibano_combustion/rune_from_clibano_combustion.json",
+          "frozen_path": "content/research/evidence/clibano_core_v6/recipes/rune_from_clibano_combustion.json",
+          "source_sha256": "a86a5714b0c7d0014e044d1c72304bce669d335cd30474240a7ffaba09a68e77",
+          "source_kind": "installed_export_recipe",
+          "json": {
+            "type": "forbidden_arcanus:clibano_combustion",
+            "category": "misc",
+            "cooking_time": 100,
+            "experience": 0.5,
+            "fire_type": "fire",
+            "ingredients": {
+              "tag": "forbidden_arcanus:runic_stones"
+            },
+            "residue": {
+              "type": "forbidden_arcanus:rune",
+              "chance": 0.1
+            },
+            "result": {
+              "count": 1,
+              "id": "forbidden_arcanus:rune"
+            }
+          },
+          "canonical_sha256": "ea2d5b0d66f22bcc670d6d6bd7b0dd6baa2bcb349e857702bc191bbef082fd7a"
+        }
+      ]
+    },
+    {
+      "id": "clibano_obsidiansteel",
+      "epoch": 21,
+      "output": "forbidden_arcanus:obsidiansteel_ingot",
+      "serializer": "forbidden_arcanus:clibano_combustion",
+      "recipeIds": [
+        "forbidden_arcanus:clibano_combustion/obsidiansteel_ingot_from_clibano_combustion"
+      ],
+      "advancement": "aia2:mechanics/clibano_obsidiansteel",
+      "evidence": [
+        {
+          "recipeId": "forbidden_arcanus:clibano_combustion/obsidiansteel_ingot_from_clibano_combustion",
+          "export_path": "recipes/forbidden_arcanus/clibano_combustion/obsidiansteel_ingot_from_clibano_combustion.json",
+          "frozen_path": "content/research/evidence/clibano_core_v6/recipes/obsidiansteel_ingot_from_clibano_combustion.json",
+          "source_sha256": "0cd1f68a8aedda598ddb71450563f227b0bb57a51cccda8b373c0f349cfce619",
+          "source_kind": "installed_export_recipe",
+          "json": {
+            "type": "forbidden_arcanus:clibano_combustion",
+            "category": "misc",
+            "cooking_time": 100,
+            "enhancer": "forbidden_arcanus:artisan_relic",
+            "experience": 0.5,
+            "fire_type": "fire",
+            "ingredients": {
+              "first": {
+                "tag": "c:raw_materials/iron"
+              },
+              "second": {
+                "item": "minecraft:obsidian"
+              }
+            },
+            "residue": {
+              "type": "forbidden_arcanus:copper",
+              "chance": 0.33
+            },
+            "result": {
+              "count": 1,
+              "id": "forbidden_arcanus:obsidiansteel_ingot"
+            }
+          },
+          "canonical_sha256": "cd324f7489933d06aadb85142315297ad6762bc5e738755a336d4c915ef2e213"
+        }
+      ]
     }
   ]
 }

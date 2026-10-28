@@ -4882,8 +4882,61 @@ Eternal Stella використовує Diamond у центрі, 3 XPetrified Or
 Квести: `V5_E34_forbidden_core_eternal_stella`.
 Native ritual criterion доводить успішну гілку для online starter, не прийняття ItemEntity/світового ефекту.
 
+### 25. Кристал проходить крізь Clibano
+
+Епохи: 15.
+
+Після формування Clibano відкрийте її видиму центральну панель. Покладіть Arcane Crystal в один із двох вхідних слотів, додайте звичайне паливо й залиште вільне місце для виходу. Дочекайтеся, поки саме піч перетворить кристал на Arcane Crystal Dust. Для цього рецепта достатньо звичайного полум’я: душа та реліквія не потрібні.
+Попередні кроки: forbidden_arcanus.core.clibano_shell.
+Машини: `forbidden_arcanus:clibano_center`.
+Квести: `V5_E15_clibano_arcane_dust`.
+Native proof потребує guard post-input-consumption і перевірки фактично прийнятого виходу; повний optional dispatch ще не виконувався.
+
+### 26. Дві вхідні лінії — різні продукти
+
+Епохи: 15.
+
+Плавка Runic Stone, Runic Deepslate або Runic Darkstone дає Rune. Помістіть один із цих блоків у вільну вхідну лінію Clibano; у другій можна окремо переробляти кристали. Обидві звичайні лінії мають власний прогрес. Стежте за двома вихідними слотами: заповнений вихід затримує подальшу роботу, тому спочатку розвантажте результат.
+Попередні кроки: forbidden_arcanus.clibano.arcane_dust.
+Машини: `forbidden_arcanus:clibano_center`.
+Квести: `V5_E15_clibano_rune`.
+Native proof потребує guard post-input-consumption і перевірки фактично прийнятого виходу; повний optional dispatch ще не виконувався.
+
+### 27. Душа змінює режим полум’я
+
+Епохи: 21.
+
+Підготуйте Enchanted Soul і огляньте панель Clibano. Звичайне паливо залишається в паливному слоті, а Enchanted Soul призначена для окремого soul-слота. Звичайна або Corrupt Soul дає soul-полум’я; Enchanted Soul — enchanted-полум’я. Порівняйте швидкість і доступний залишок часу в інтерфейсі, не змішуючи цей ресурс із паливом.
+Попередні кроки: forbidden_arcanus.clibano.rune, forbidden_arcanus.core.clibano_fire.
+Машини: `forbidden_arcanus:clibano_center`.
+Ресурси й результати: `forbidden_arcanus:enchanted_soul`.
+Квести: `V5_E21_clibano_enchanted_fire`.
+Підготовчий комплект і огляд не доводять активний fire mode, накопичення residues або capability IO.
+
+### 28. Сплав використовує обидва входи
+
+Епохи: 21.
+
+Установіть Artisan Relic у слот підсилювача Clibano. Вона відкриває рецепт Obsidiansteel: потрібні Raw Iron та Obsidian, по одному предмету в різних вхідних слотах. Залізний зливок не замінює сиру залізну руду. Дочекайтеся одного зливка Obsidiansteel й перевірте, що обидва реагенти витрачено. Цей сплав використовує спільний цикл двох входів; для нього достатньо звичайного полум’я.
+Попередні кроки: forbidden_arcanus.clibano.rune, forbidden_arcanus.core.clibano_fire.
+Машини: `forbidden_arcanus:clibano_center`.
+Квести: `V5_E21_clibano_obsidiansteel`.
+Native proof потребує guard post-input-consumption і перевірки фактично прийнятого виходу; повний optional dispatch ще не виконувався.
+
+### 29. Серія плавок без переповнення залишків
+
+Епохи: 21.
+
+Підготуйте невелику серію кристалів і Runic Darkstone, Enchanted Soul та окрему скриню для готових матеріалів. Перед роботою звільніть обидва виходи Clibano. Soul- та enchanted-полум’я дають шанс отримати залишки під час плавки; звичайне полум’я їх не додає. Запас має загальну межу 64, а 9 залишків Arcane Crystal або Rune одного типу поєднуються в відповідний блок, якщо є місце у виході.
+Попередні кроки: forbidden_arcanus.clibano.enchanted_fire, forbidden_arcanus.clibano.obsidiansteel.
+Машини: `forbidden_arcanus:clibano_center`.
+Ресурси й результати: `forbidden_arcanus:arcane_crystal`, `forbidden_arcanus:runic_darkstone`, `forbidden_arcanus:enchanted_soul`, `minecraft:chest`.
+Квести: `V5_E21_clibano_residue_batch`.
+Підготовчий комплект і огляд не доводять активний fire mode, накопичення residues або capability IO.
+
 Фінальні цілі:
 - Виготовте Eternal Stella за ritual-даними, використавши вивчену кузню та реальні вимоги есенцій. Ритуал має власний мінімальний tier; вищий робочий рівень тут є фінальним оглядом освоєної інфраструктури.
+- У Clibano реально виготовити Arcane Crystal Dust, Rune та Obsidiansteel у відповідних native рецептах.
 
 Міжмодові зв’язки:
 - {"recipe_id": "aia2:rebalance/draconicevolution/crafting_core", "target": "draconicevolution:crafting_core", "epoch": 40, "ingredient_ids": ["forbidden_arcanus:deorum_ingot"], "direction": "outgoing", "description_uk": "Матеріали forbidden_arcanus:deorum_ingot витрачаються в AIA2 для draconicevolution:crafting_core; це перевірений вихідний зв’язок із суміжним виробництвом."}
@@ -4896,6 +4949,8 @@ Native ritual criterion доводить успішну гілку для online
 - Ритуали належать datapack registry, не RecipeSerializer; активний paid-state guard перевіряє root окремо.
 - Clibano main є внутрішнім контролером; курс використовує видимі clibano_center observation, але не заявляє full production/owner forwarding.
 - Повний optional dispatch, live ritual advancement, world effect/ItemEntity acceptance, Survival іTPS не запускалися.
+- Зовнішнє capability IO через ClibanoFrameBlockEntity: forwarding закоментовано у2.6.1; native ItemHandler не доводить доступного pipe API.
+- Повний optional Mixin dispatch, JEI/UI та Survival цикл нових Clibano production goals потребують запуску інстансу.
 
 Джерела:
 
@@ -4955,6 +5010,40 @@ Native ritual criterion доводить успішну гілку для online
 - [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/test_tube.json) — SHA перевірено
 - [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/deorum_ingot.json) — SHA перевірено
 - [джерело](../../content/research/evidence/forbidden_core_next_v5/recipes/dark_nether_star.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModRecipeSerializers.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/core/init/ModRecipeTypes.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/crafting/ClibanoRecipe.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/crafting/ClibanoRecipeInput.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoMainBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoFrameBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/clibano/AbstractClibanoFrameBlock.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/item/mundabitur/CreateClibanoInteraction.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/logic/DefaultSmeltLogic.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/logic/DoubleSmeltLogic.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/logic/ClibanoSmeltLogic.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoFireType.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ClibanoCookingTimes.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/inventory/clibano/ClibanoMenu.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/ResiduesStorage.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/common/block/entity/clibano/residue/ResidueType.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/residue/ModResidueTypes.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/main/java/com/stal111/forbidden_arcanus/data/enhancer/ModEnhancerDefinitions.java) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/tags/item/clibano/creates_soul_fire.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/tags/item/clibano/creates_enchanted_fire.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/tags/item/runic_stones.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/residue_type/arcane_crystal.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/residue_type/rune.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/forbidden_arcanus/residue_type/copper.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/recipe/clibano_combustion/arcane_crystal_dust_from_clibano_combustion.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/recipe/clibano_combustion/rune_from_clibano_combustion.json) — SHA перевірено
+- [джерело](https://github.com/stal111/Forbidden-Arcanus/blob/34f83feb76204fd773e1d2e1d69ecc5b2f2bb933/neoforge/src/generated/resources/data/forbidden_arcanus/recipe/clibano_combustion/obsidiansteel_ingot_from_clibano_combustion.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/recipes/arcane_crystal_dust_from_clibano_combustion.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/recipes/rune_from_clibano_combustion.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/recipes/obsidiansteel_ingot_from_clibano_combustion.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/effective_tags/clibano/creates_enchanted_fire.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/effective_tags/clibano/creates_soul_fire.json) — SHA перевірено
+- [джерело](../../content/research/evidence/clibano_core_v6/effective_tags/runic_stones.json) — SHA перевірено
 
 ## Goety
 

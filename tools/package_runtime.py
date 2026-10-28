@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.12-alpha'
+VERSION = '0.4.13-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -20,6 +20,8 @@ def main():
         jars = list((ROOT / 'mods').glob('aia2-machine-guard-*.jar'))
         if len(jars) != 1:
             parser.error('Required mode needs exactly one compiled AIA2 Machine Guard JAR in mods/')
+        if jars[0].name != 'aia2-machine-guard-' + VERSION + '.jar':
+            parser.error('The compiled companion JAR must match the package version')
         with zipfile.ZipFile(jars[0]) as jar:
             assert 'ua/aia2/guard/Aia2MachineGuard.class' in jar.namelist()
             assert jar.testzip() is None, 'Compiled companion JAR CRC failed'
@@ -54,6 +56,11 @@ def main():
                 for name in ['ForbiddenRitualAccess', 'ForbiddenPaidState', 'ForbiddenForgeCommands']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 for name in ['ForbiddenRitualMixin', 'ForbiddenEssencePaymentMixin', 'ForbiddenForgeInputMixin']:
+                    assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                    assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
+                for name in ['ClibanoOwnership', 'ClibanoAccess', 'ClibanoPaidState', 'ClibanoCommands']:
+                    assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                for name in ['ClibanoFrameMenuMixin', 'ClibanoMenuValidityMixin', 'ClibanoMachineMixin', 'ClibanoResidueMixin']:
                     assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
                     assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',

@@ -182,6 +182,11 @@ public final class Aia2MachineGuard {
         blockEntity.setChanged();
     }
 
+    /** Unique typed bridge: a visible Clibano frame owns its actual internal controller. */
+    public static boolean claimClibano(ServerPlayer player, BlockEntity frame) {
+        return ClibanoOwnership.claim(player, frame);
+    }
+
     public static long getDeniedTicks() {
         return DENIED_TICKS.get();
     }

@@ -167,9 +167,40 @@ public final class NativeSmokeTests {
         testPassiveBoundaryFixtures();
         testFireWorksites();
         testForbiddenPaidNbt();
+        testClibanoPaidNbt();
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    private static void testClibanoPaidNbt() {
+        Object machine = new Object();
+        var first = new ClibanoPaidState.Lane("forbidden_arcanus:clibano_combustion/arcane_crystal_dust_from_clibano_combustion", "a".repeat(64), "b".repeat(64));
+        var second = new ClibanoPaidState.Lane("forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion", "c".repeat(64), "d".repeat(64));
+        ClibanoPaidState.setLanes(machine, first, second);
+        CompoundTag stored = new CompoundTag(); ClibanoPaidState.save(machine, stored);
+        CompoundTag decoded;
+        try {
+            var bytes = new java.io.ByteArrayOutputStream(); net.minecraft.nbt.NbtIo.writeCompressed(stored, bytes);
+            decoded = net.minecraft.nbt.NbtIo.readCompressed(new java.io.ByteArrayInputStream(bytes.toByteArray()), net.minecraft.nbt.NbtAccounter.unlimitedHeap());
+        } catch (java.io.IOException failure) { throw new IllegalStateException("Clibano binary NBT roundtrip failed", failure); }
+        check(decoded.equals(stored), "actual binary Minecraft NBT preserves both independent Clibano lane receipts");
+        Object restored = new Object(); ClibanoPaidState.load(restored, decoded);
+        check(ClibanoPaidState.lane(restored, 0).orElseThrow().equals(first) && ClibanoPaidState.lane(restored, 1).orElseThrow().equals(second), "actual NBT reload restores exact recipe/definition/input hashes");
+        ClibanoPaidState.setLane(restored, 0, null);
+        check(ClibanoPaidState.lane(restored, 0).isEmpty() && ClibanoPaidState.lane(restored, 1).orElseThrow().equals(second), "actual NBT first-lane completion preserves second lane");
+        CompoundTag corrupt = stored.copy(); corrupt.getCompound(ClibanoPaidState.TAG).putInt("schema", 999);
+        Object unknown = new Object(); ClibanoPaidState.load(unknown, corrupt);
+        check(ClibanoPaidState.status(unknown) == ClibanoPaidState.Status.CORRUPT && ClibanoPaidState.lane(unknown, 0).isEmpty(), "unknown Clibano NBT schema never authorizes an operation");
+        CompoundTag saved = new CompoundTag(); ClibanoPaidState.save(unknown, saved);
+        check(saved.equals(corrupt), "actual corrupt Clibano NBT retained verbatim");
+        boolean rejected = false;
+        try { ClibanoPaidState.setLane(unknown, 1, second); } catch (IllegalStateException expected) { rejected = true; }
+        check(rejected, "actual corrupt receipt cannot be silently replaced by new progress");
+        ClibanoPaidState.clear(restored); ClibanoPaidState.save(restored, stored);
+        check(!stored.contains(ClibanoPaidState.TAG), "trusted Clibano clear writes a durable receipt tombstone");
+        Object legacy = new Object(); ClibanoPaidState.load(legacy, new CompoundTag());
+        check(ClibanoPaidState.status(legacy) == ClibanoPaidState.Status.EMPTY && !ClibanoPaidState.hasState(legacy), "legacy native NBT without a receipt is not invented evidence");
     }
 
     /** Actual Minecraft NBT primitives only; Forbidden Arcanus is absent from this minimal server. */
