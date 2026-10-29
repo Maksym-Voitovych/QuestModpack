@@ -1,3 +1,13 @@
+# 0.4.16-alpha — Ad Astra: наземний старт, двигуни й NASA cache/menu
+
+- 20нових optional-квестів епох37/38:3371квест/140глав,96виробничих ключів.
+- Чотири двигуни перенесено до Create mechanical crafting5×3 зі збереженням усіх7native units та4міжмодовими компонентами. Старі4простих producer-рецепти замінено; усі623попередні custom entries незмінні,627разом.
+- 14функціональних предметів перевірено для38(12піднято),4block floors,28native producer floors і2custom floors. Декоративна калоритова група незмінна.
+- Current recipe/output/preview NASA перевіряються до drop і shrink, live-menu guard перевіряє власника/команду/стадію/BEidentity. Нового manufacturing proof тут немає.
+- Exact official source1.16.26/MC1.21.1,99SHA-файлів і Astrodux;27scoped core maps/34partial. Binary→commit provenance та fullpack dispatch/JEI/Survival/TPS не заявлені.
+- 3351старий non-coordinate payload і623recipe entries збережено;20нових тематичних матеріальних нагород.36старих вузлів переміщено у3главах;1154перетини/0warnings. Нових предметів/текстур0.
+- Station split-stack underpayment/ignored placement result і accepted-output NASA proof документовано як наступні окремі задачі; повний0.5 не реліз.
+
 # 0.4.15-alpha — Clibano dependency/residue history
 
 - Current tag/enhancer/residue snapshots і незалежний durable NBT-журнал; старий schema1 paid ledger та його hashes незмінні. Native shapeless1/2input matching, stale Ingredient cache не дозволяє обхід.

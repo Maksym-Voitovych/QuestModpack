@@ -66,8 +66,8 @@
 | 34 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (2) | IN_PROGRESS (3 формул) | DONE (static) |
-| 37 | IN_PROGRESS | IN_PROGRESS (2) | TODO | DONE (static) |
-| 38 | IN_PROGRESS | IN_PROGRESS (1) | TODO | DONE (static) |
+| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra) | IN_PROGRESS (+3 двигуни) | DONE (static) |
+| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 41 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (2 формул) | DONE (static) |
@@ -558,3 +558,29 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - Проміжний ZIP після lateJARfix очікувано відхилено runtimeSHA-порівнянням; його перепаковано після завершення тестів. Фінальний пакет4306entries/1172runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites, upgrade0.4.14→0.4.15 backupoldJAR/opaque world+FTB+fire+knowledge/EMC+paidchunk/foreignquest+mod+script збережені; repeatідемпотентний. Це неfullMinecraftworldmigration; Windowsінстанс не змінювався.
 - Звіт:implementation/clibano-dependencies-package-install-v6.json. Code/source/docs/installer фіксуються ціліснимmain-комітом і pushбезforce. Точнийcommit/status — gitlog/origin/main та externaldeliveryreport біляZIP, безself-reference.
 - Наступний старт:Ad Astra1.16.26 exact source/version/mechanics audit іpartial→core questcourse, як вище. Clibano dependency/history блок не повторювати. Решта35partial істаріrequired48лінії лишаютьсяIN_PROGRESS; повний0.5не реліз.
+
+
+### 2026-10-29 — Ad Astra: IN_PROGRESS
+
+- Відновлено чистий15380e8/main(0.4.15); origin/main звірено. Backup:/workspace/aia2-backups/before-ad-astra-20261029T004732Z/checkpoint-15380e8.tar.gz. Новий incremental snapshot15380e8 захищає5Clibano IDs поверх3346.
+- Root: nativeactioncontracts/інтеграція/перевірки/Git. ad_astra_exact_source_v6: exactversion/source evidence; ad_astra_content_audit_v6: аудит іdraftcourse/pendingmap; ad_astra_balance_v6:4engineassemblies+functional38floors уновихфайлах.
+- База3351quests/623recipes/390items+PNG/96keys збережена. Старі source props уже мають1.16.26/MC1.21.1, staleversion_matchfalse треба перевірити заpinnedraw, не припускати. До перевірок drafts не є готовимрелізом.
+- Наступна дія: exactsources/реальніactions, інтегрувати course/balance/map, generator+preservation+targeted/fulltests, matchingpackage/installer/commit/push. Повний0.5 IN_PROGRESS.
+
+
+### 2026-10-29 — Ad Astra0.4.16: реалізований підблок
+
+- DONE коду й контенту:20optional цілей (12у37/8у38),59tasks/15player-crafting tasks і20нових матеріальних нагород.3371квест/140глав/6груп,627рецептів,3107itemrewards,390items/models/PNG і96ключів. Нових предметів/текстур0; старих змінених нагород0.
+- Усі3351старі non-coordinate quest/task/reward/dependency payloads і623custom recipe entries збережено. Переміщено36старих координат у3главах Ad Astra;1154перетини(якbaseline),0overlaps/backwards/vertical/longwarnings. Snapshot15380e8 додано поверх3346ID.
+-4Create mechanical engine recipes5×3 зберігають7native units і додають4магічно-технічні компоненти. Матриця36/каталізатор36 доступні до першого польоту, безAdAstra ancestry. Full42064producer scan; замінено лише4підтверджені прості двигуни.14functional floors38(12піднято),4blockfloors(3піднято),28native/2custom producer floors; декоративна група незмінна.
+- SOURCE_VERSION_VERIFIED: pin45abf0ec декларує1.16.26/MC1.21.1;99SHA official files/Astrodux,33course recipe sources і32balance sources. Виправлено staleversion_matchfalse. Binary→commit не доведений.533source/518export,517спільних,461equal/56different; bill of materials ізinstalled export.27scopedcore/34partial,720researchstages/1093questlinks/2129SHA mapfiles.
+- Підтверджено NASA cached recipe/menu bypass: newAdAstraNasaAccess+3mixins звіряють canonical/liveBE/owner/team/currentrecipe/stage/14inputs/output/preview доdrop/payment, GUI+auto/directcraft. DirectquickMovepreview14 denied. Native BaseContainerMenu.stillValid=true більше не достатній дляNASA. Старі194classes byte-identical,202classes/71mixins уmatching0.4.16JAR.
+- PASS255Python/57Node/5237Java/JDK21build і151actualminimalMC/2JVM/650ticks.22нові Pythontests проти233baseline; NASAactualhelper/handlers/realpolicy244modeledassertions. Післяlatepreviewquickmovefix повторніtargeted2/build/minimalMC; остаточнийfullsuite255 післяpreviewfix PASS.13JSsyntaxPASS. Rebuild1172runtimefiles byte-identical PYTHONHASHSEED113.
+- Full Ad Astra optionalweaving/JEI/UI/Survival/TPS NOT RUN. NASA inventory/observation tasks не єmanufactureproof; upstream4rocketcriteria inventory_changed. NASA drop precedes shrink, acceptedoutput witness не реалізований. Station aggregatecheck/firststackdebit mismatch і ignoredplacementboolean знайдено; adapter щеTODO. Старіrequiredpostfact37/38умови не переписані.
+- Усі допоміжні власники завершили файли; root інтегрував course/balance/map/guard/preflight. IN_PROGRESS доставки:ZIP/actualCLIupgrade0.4.15→0.4.16, фінальніmetadata/commit/pushбезforce. Підсумковийhash/status — gitlog/origin/main таexternaldeliveryreport, безself-reference.
+- Наступна конкретна дія: NASA acceptedoutput+exactpayment witness; потім station splitstack payment+acceptedplacement adapter. Після цього явна compatibilitymigration старихrequired37/38 і34partial/невивченімоди та іншіrequired48лінії. RootsunfinishedritualrestartTODO;DraconicCI633/6IFfluidgapsBLOCKED. Повний0.5 IN_PROGRESS.
+
+
+- DONE остаточних перевірок:255Python/57Node/5237Java/151minimalMC PASS на фінальному коді післяpreviewquickmovefix; NASA244modeledassertions. JARSHA d106d29eada470c033cf186311c109c5fb9a526ff7b2a4438846637abada2665. Старі194classes byte-identical; API4/ключі/збереження не переписувалися.
+- DONE доставки до коміту: ZIP4498manifestentries/1172runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites; upgrade15380e8(0.4.15)→0.4.16 резервуєстарийJAR і зберігає opaque world/FTB/fire/knowledge+EMC/paidchunkmarkers, foreignquest/mod/script. Repeatinstallідемпотентний. Це неfullworldmigration; Windowsінстанснечіпали. Звіт:implementation/ad-astra-package-install-v6.json.
+- Пакет перепаковується післяfinalmetadata; фінальнийSHA іGitHubdelivery фіксуютьсяпоруч ізZIP позаGit дляуникненняself-reference. Цейцілісний AdAstraблок зберігаєтьсяmain-комітом іpushбезforce. Наступнийстарт — NASA witness/stationadapter, яквище;20цілей і4двигуни не генерувати повторно. Повний0.5ще IN_PROGRESS.

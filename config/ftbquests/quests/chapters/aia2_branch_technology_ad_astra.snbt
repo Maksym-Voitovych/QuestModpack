@@ -12,6 +12,72 @@
   "hide_quest_until_deps_complete": true,
   "quests": [
     {
+      "id": "000008A7DBBBBEB1",
+      "title": "Ракетне бюро до першого польоту",
+      "description": [
+        "Облаштуйте наземний NASA Workbench і виготовте Wrench. Ракетний складальний стіл обслуговує корпуси апаратів, а гібридні двигуни AIA2 складаються окремо в механічній мережі Create.",
+        "Залиште поряд дві порожні каністри-відра для розділених запасів палива й кисню. Починайте наземну підготовку до відльоту: місячний деше для цих перших кроків не потрібний."
+      ],
+      "icon": {
+        "id": "ad_astra:nasa_workbench",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000007C6FD960257",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000C8C175111E2E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:wrench",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000826DB10C2F59",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bucket",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000799B1B5CAB65",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000005B9538145B8",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 11.0
+    },
+    {
       "id": "00006A51E03F2EDD",
       "title": "Помпа для кисневої лінії",
       "description": [
@@ -265,6 +331,84 @@
       "y": 3.0
     },
     {
+      "id": "0000B3CC327D465B",
+      "title": "Окремі каркас і вентилятор",
+      "description": [
+        "Поставте Compressor для листового металу. Сталь у цій збірці уніфікована з Immersive Engineering; залізну обшивку представляє Iron Sheet із Create.",
+        "Виготовте Engine Frame та Fan за їхніми рецептами. Каркас використовує вісім сталевих стрижнів і лист, вентилятор — чотири листи та стрижень: це різні деталі, які зустрінуться в двигуні."
+      ],
+      "icon": {
+        "id": "ad_astra:engine_frame",
+        "count": 1
+      },
+      "dependencies": [
+        "000008A7DBBBBEB1",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000E5DBBC513F2B",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000414C2A041033",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:engine_frame",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C60A7900EFE2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fan",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000C8BC5EAD2D33",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_steel",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000588ED9DBCFED",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000A8C200E578DE",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 11.0
+    },
+    {
       "id": "0000E5D49655B915",
       "title": "Перший кисневий завантажувач",
       "description": [
@@ -370,6 +514,73 @@
       ],
       "x": 4.0,
       "y": 6.0
+    },
+    {
+      "id": "00003DBA62559BC9",
+      "title": "Ракетне паливо має власну переробку",
+      "description": [
+        "Підготуйте Fuel Refinery, окремий вхід для Oil і резерв вихідного Fuel. Рідину потрібно звіряти за рецептом: дизель іншого мода не замінює ракетне паливо через подібну назву.",
+        "Покажіть вихідну нафту й готове паливо у відрах, залишивши сховище кисню окремим. Резерв на повернення відкладіть до заправлення першого апарата."
+      ],
+      "icon": {
+        "id": "ad_astra:fuel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B3CC327D465B",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007980E20309C8",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:fuel_refinery",
+          "timer": 40
+        },
+        {
+          "id": "00004F378AA508D9",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E4A10661DC6A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000068CE50511805",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00002E839312FC43",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 9.0
     },
     {
       "id": "000070BA76AEDC69",
@@ -483,6 +694,130 @@
       "y": 0.0
     },
     {
+      "id": "0000AC5DD884E2E2",
+      "title": "Перший кисень без місячної помпи",
+      "description": [
+        "Поставте Oxygen Loader і спочатку подайте воду вручну. Water Pump потребує деше: її автоматизація стане доречною після Місяця, а не перед першим стартом.",
+        "Зіставте воду на вході з Oxygen на виході та підготуйте кисневе відро. Далі заправте спорядження через штатний інтерфейс завантажувача; сама порожня тара не є запасом для польоту."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_loader",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B3CC327D465B",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000D320B03BC5CD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:oxygen_loader",
+          "timer": 40
+        },
+        {
+          "id": "00002A83016A6D52",
+          "type": "item",
+          "item": {
+            "id": "minecraft:water_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000CAD8AF63D323",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000F84A503F844D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000016EE762CAF99",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 11.0
+    },
+    {
+      "id": "0000EB5E0C0078D6",
+      "title": "Гібридний двигун першого ступеня",
+      "description": [
+        "З’єднайте Mechanical Crafters у площину 5×3 і відкрийте рецепт Steel Engine у JEI. П’ять сталевих листів, Engine Frame та Fan залишаються основою силового агрегату.",
+        "Додайте технологічну матрицю й магічний каталізатор епохи 36, Air Essence з Ars Nouveau та Advanced Control Circuit із Mekanism. Ці компоненти доступні до першої місячної експедиції; деше чи острам не повинні блокувати наземний запуск.",
+        "Після складання візьміть готовий Steel Engine у транспортний комплект. Один агрегат знадобиться першій ракеті, а його наступники — двигунам вищих рівнів."
+      ],
+      "icon": {
+        "id": "ad_astra:steel_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B3CC327D465B",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B29CE456E87A",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_crafter",
+          "timer": 40
+        },
+        {
+          "id": "00005BBD5A2923EB",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:steel_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000586C0CEBD2FD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006B946B93338F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 13.0
+    },
+    {
       "id": "000009BCDC9FF816",
       "title": "Рідинний бак першого ступеня",
       "description": [
@@ -542,6 +877,88 @@
       ],
       "x": 6.0,
       "y": 3.0
+    },
+    {
+      "id": "00000E0B8A0C9475",
+      "title": "Повний базовий скафандр",
+      "description": [
+        "Виготовте всі чотири частини базового космічного комплекту: Helmet, Suit, Pants і Boots. Киснева гарнітура та баки входять до рецепта нагрудного спорядження, але не замінюють решту захисту.",
+        "Перед посадкою зарядіть спорядження й перевірте фактичний запас у його інтерфейсі. Винесіть із майстерні окремий аварійний запас і харчі; відро кисню у скрині не заправляє скафандр автоматично."
+      ],
+      "icon": {
+        "id": "ad_astra:space_suit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000AC5DD884E2E2",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007BC20C8716C7",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D535E4797872",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_suit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003CC79701CD63",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_pants",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00005CFE17BEF4B4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:space_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000035B214AD4F9E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004D91C3B5E820",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 11.0
     },
     {
       "id": "0000726CDA0EF863",
@@ -788,6 +1205,64 @@
       "y": 0.0
     },
     {
+      "id": "000089612A096178",
+      "title": "Корпус T1 із двома баками",
+      "description": [
+        "Для першої ракети NASA Workbench поєднує носовий конус, шість сталевих блоків, чотири Rocket Fins, два Steel Tanks і Steel Engine. Два баки — окремі вузли корпусу; одне паливне відро їх не замінює.",
+        "Розташуйте деталі за рецептом і заберіть готовий Tier 1 Rocket. Перед стартом поверніться до запасів кисню, палива й базового скафандра; це перший транспорт до місячного ресурсу."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_1_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000EB5E0C0078D6",
+        "00003DBA62559BC9",
+        "00000E0B8A0C9475",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000381B20B48C72",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "000036BC5EC13AD4",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_1_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008FB0BE3AF54D",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F95507F87C02",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 11.0
+    },
+    {
       "id": "000090D7F20E4C3A",
       "title": "Аеродинамічний комплект",
       "description": [
@@ -847,6 +1322,74 @@
       ],
       "x": 8.0,
       "y": 3.0
+    },
+    {
+      "id": "000005421CEB1AB3",
+      "title": "Місячний метал і листова партія",
+      "description": [
+        "Після відвідування Місяця розділіть зливки Desh між ракетним корпусом і листовою майстернею. Не перетворюйте весь видобуток на одну форму: другій ракеті потрібні блоки, а обладнанню — листи.",
+        "Підготуйте Desh Block і партію з дев’яти Desh Plates поруч із Compressor. Рецепт переробки блоку дає дев’ять листів за один довгий цикл; порівняйте його з одиночним рецептом у JEI."
+      ],
+      "icon": {
+        "id": "ad_astra:desh_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "000089612A096178",
+        "0000FFA0FA3FEFA0",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0A729C498A4",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:compressor",
+          "timer": 40
+        },
+        {
+          "id": "00008D6EE1FEB27D",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_block",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006D97B1E41275",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_plate",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000062278063E7E",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000037350F706964",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 11.0
     },
     {
       "id": "0000644B615B0E04",
@@ -1141,6 +1684,63 @@
       ],
       "x": 12.0,
       "y": 0.0
+    },
+    {
+      "id": "0000C97E811CF039",
+      "title": "Другий корпус із місячного матеріалу",
+      "description": [
+        "Виготовте Desh Engine на механічній площині 5×3: він продовжує сталевий двигун, додаючи деше, матрицю й каталізатор епохи 36, Rune of Earth та Processing Unit із Oritech.",
+        "На NASA Workbench другий корпус використовує шість Desh Blocks, два Desh Tanks, двигун, носовий конус і чотири крила. Заберіть Tier 2 Rocket і підготуйте експедицію до Марса; місячна база повинна зберегти резерв повернення."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_2_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "000005421CEB1AB3",
+        "0000D12E6CEEF4F6",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000097343DE9E58F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000BA43721687A1",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_2_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008AFC12C99668",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006A2D3BE4D59E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 11.0
     },
     {
       "id": "0000EDD874A4D1E6",
@@ -1500,7 +2100,7 @@
         }
       ],
       "x": 11.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "000015670B73215D",
@@ -1550,7 +2150,7 @@
         }
       ],
       "x": 0.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "000048647465DD35",
@@ -1622,7 +2222,7 @@
         }
       ],
       "x": 0.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "00004C6DB4605C07",
@@ -1672,7 +2272,7 @@
         }
       ],
       "x": 0.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "0000AEAED5690A55",
@@ -1732,7 +2332,89 @@
         }
       ],
       "x": 0.0,
-      "y": 15.0
+      "y": 22.0
+    },
+    {
+      "id": "0000B56853B5412A",
+      "title": "Посилений комплект гарячої експедиції",
+      "description": [
+        "Перед подальшими посадками виготовте чотири частини Netherite Space Suit за рецептами з острамом. Цей комплект використовує освоєний марсіанський метал, а не калорит, який ви ще тільки плануєте привезти.",
+        "Перевірте кисневий резерв після заміни спорядження та перенесіть аварійне постачання окремо від вантажу. Дорогий нагрудник не робить неповний комплект придатним для будь-якого середовища."
+      ],
+      "icon": {
+        "id": "ad_astra:netherite_space_suit",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B6360BC8C2D3",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00002D2B020D8B7D",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:netherite_space_helmet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B942D9C7509F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:netherite_space_suit",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002C6AFC0951C5",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:netherite_space_pants",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000059880D410758",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:netherite_space_boots",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B9B63D380CAB",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D0E71BF75C0C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 28.0
     },
     {
       "id": "000017F963A065BF",
@@ -1782,7 +2464,63 @@
         }
       ],
       "x": 2.0,
-      "y": 9.0
+      "y": 16.0
+    },
+    {
+      "id": "000067BD500C339E",
+      "title": "Острамний ступінь розширення",
+      "description": [
+        "Підготуйте Ostrum Engine через попередній Desh Engine. Гібридна механічна збірка додає Rune of Fire та Printed Circuit Board із PneumaticCraft до матриці й каталізатора епохи 36.",
+        "На NASA Workbench зберіть Tier 3 Rocket із шести Ostrum Blocks, двох Ostrum Tanks, двигуна, конуса й чотирьох крил. Відокремте вантаж гарячої експедиції від резерву на повернення."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_3_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000B56853B5412A",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000C56BF3AF97A6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "0000B8125816DA8E",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_3_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000006C748EBB0DD",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000AB38A0376F2F",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 28.0
     },
     {
       "id": "0000A1CD00338E1F",
@@ -1875,7 +2613,7 @@
         }
       ],
       "x": 13.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "0000F6C0F18E5959",
@@ -1946,7 +2684,7 @@
         }
       ],
       "x": 2.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "0000F7B111FDE2A6",
@@ -1996,7 +2734,7 @@
         }
       ],
       "x": 2.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "0000F8BE648961E7",
@@ -2057,7 +2795,79 @@
         }
       ],
       "x": 2.0,
-      "y": 18.0
+      "y": 25.0
+    },
+    {
+      "id": "000001749F547C15",
+      "title": "Гарячий маршрут до калоритового листа",
+      "description": [
+        "Відвідайте Венеру в дозволеному транспорті й підготуйте Raw Calorite для подальшої металургії. Залиште частину результату в зливках, частину — в листах: четвертому ступеню потрібні різні форми одного металу.",
+        "Принесіть партію Calorite Plates до Compressor. Спочатку перевірте одиночний рецепт, а далі порівняйте його з обробкою блока; листи стануть обшивкою двигуна, баків і спорядження."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_plate",
+        "count": 1
+      },
+      "dependencies": [
+        "000067BD500C339E",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000DAC1D8FBE6AB",
+          "type": "dimension",
+          "dimension": "ad_astra:venus"
+        },
+        {
+          "id": "0000E2661D6432CF",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:compressor",
+          "timer": 40
+        },
+        {
+          "id": "0000720E73887442",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:raw_calorite",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001DB9AFEEAC7B",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_plate",
+            "count": 1
+          },
+          "count": 9,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000279537998714",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000E453D5FE2008",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 28.0
     },
     {
       "id": "000019794D7F0C0A",
@@ -2117,7 +2927,7 @@
         }
       ],
       "x": 4.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "00005AD943F14D4F",
@@ -2167,7 +2977,7 @@
         }
       ],
       "x": 4.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "00007646EFA95108",
@@ -2228,7 +3038,7 @@
         }
       ],
       "x": 4.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "0000F0D333CD82C4",
@@ -2278,7 +3088,7 @@
         }
       ],
       "x": 4.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "0000432499A885DB",
@@ -2339,7 +3149,7 @@
         }
       ],
       "x": 6.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "00004557D80820CF",
@@ -2389,7 +3199,63 @@
         }
       ],
       "x": 6.0,
-      "y": 9.0
+      "y": 16.0
+    },
+    {
+      "id": "000045C2FE376668",
+      "title": "Калоритовий двигун із повним спадком",
+      "description": [
+        "Поверніть на площину Mechanical Crafters попередній Ostrum Engine, п’ять Calorite Plates і Fan. Новий силовий агрегат успадковує весь ланцюг ранніх двигунів замість обходу попередніх рівнів.",
+        "Додайте матрицю й каталізатор епохи 36, Gaia Ingot із Botania та Ultimate Control Circuit із Mekanism. Заберіть готовий Calorite Engine; пара калоритових баків готується окремо за рецептом NASA Workbench."
+      ],
+      "icon": {
+        "id": "ad_astra:calorite_engine",
+        "count": 1
+      },
+      "dependencies": [
+        "000001749F547C15",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000045B92F4B74DD",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_crafter",
+          "timer": 40
+        },
+        {
+          "id": "00001EB9A28FA22C",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:calorite_engine",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006CBCD04E16B3",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B5448A1B5566",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 28.0
     },
     {
       "id": "00009BA7A63BD941",
@@ -2450,7 +3316,7 @@
         }
       ],
       "x": 6.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "0000DD939AD04CA8",
@@ -2499,7 +3365,7 @@
         }
       ],
       "x": 6.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "000039CEFA1F9FA3",
@@ -2560,7 +3426,7 @@
         }
       ],
       "x": 8.0,
-      "y": 12.0
+      "y": 19.0
     },
     {
       "id": "0000606E3C129F32",
@@ -2605,7 +3471,64 @@
         }
       ],
       "x": 8.0,
-      "y": 15.0
+      "y": 22.0
+    },
+    {
+      "id": "000093BB7C0DDCB1",
+      "title": "Четвертий корпус і контрольований резерв",
+      "description": [
+        "Зберіть на NASA Workbench останній стандартний ступінь: шість Calorite Blocks, два Calorite Tanks, Calorite Engine, носовий конус і чотири Rocket Fins.",
+        "Заберіть Tier 4 Rocket і перед далеким рейсом перевірте паливний маршрут, кисень та місце для вантажу. Міжпланетна експедиція не повинна витратити резерв своєї посадкової бази."
+      ],
+      "icon": {
+        "id": "ad_astra:tier_4_rocket",
+        "count": 1
+      },
+      "dependencies": [
+        "000045C2FE376668",
+        "00006610D3C6487E",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000080B0F97BD53E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:nasa_workbench",
+          "timer": 40
+        },
+        {
+          "id": "00007AC198813113",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:tier_4_rocket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000512569487149",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000EB292C8F0428",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 28.0
     },
     {
       "id": "0000BCAB10E29FE5",
@@ -2677,7 +3600,7 @@
         }
       ],
       "x": 8.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "0000D3E4156DD710",
@@ -2727,7 +3650,7 @@
         }
       ],
       "x": 8.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "000024078FF90E32",
@@ -2799,7 +3722,7 @@
         }
       ],
       "x": 10.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "000053A565343328",
@@ -2844,7 +3767,7 @@
         }
       ],
       "x": 10.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "0000A759D6FB52AC",
@@ -2916,7 +3839,7 @@
         }
       ],
       "x": 10.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "00006A47C1B9A8A6",
@@ -2976,7 +3899,7 @@
         }
       ],
       "x": 12.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "00006C365D318991",
@@ -3048,7 +3971,7 @@
         }
       ],
       "x": 12.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "0000B538EABF3D1B",
@@ -3120,7 +4043,7 @@
         }
       ],
       "x": 12.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "00002F18C1764EFB",
@@ -3192,7 +4115,7 @@
         }
       ],
       "x": 14.0,
-      "y": 9.0
+      "y": 16.0
     },
     {
       "id": "0000A47ECCA457F4",
@@ -3275,7 +4198,7 @@
         }
       ],
       "x": 14.0,
-      "y": 18.0
+      "y": 25.0
     },
     {
       "id": "0000C49CE3B18174",
@@ -3357,7 +4280,7 @@
         }
       ],
       "x": 14.0,
-      "y": 15.0
+      "y": 22.0
     },
     {
       "id": "00002292989C3DD2",
@@ -3430,7 +4353,7 @@
         }
       ],
       "x": 0.0,
-      "y": 21.0
+      "y": 31.0
     }
   ]
 }

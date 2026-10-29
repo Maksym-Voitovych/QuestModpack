@@ -1,0 +1,251 @@
+{
+  "schema": 1,
+  "status": "SOURCE_VERSION_VERIFIED_ACTION_LIMITS_DOCUMENTED_BINARY_AND_FULLPACK_UNVERIFIED",
+  "mod_id": "ad_astra",
+  "installed_version": "1.16.26",
+  "minecraft": "1.21.1",
+  "pin": "45abf0ec05ea837c3df457f42ae440b6675e9cf0",
+  "evidence_manifest": "content/research/evidence/ad_astra_core_v6/manifest.json",
+  "frozen_source_files": 99,
+  "verified": [
+    "Export namesad_astra1.16.26.",
+    "Pinned source gradle.properties declares version1.16.26/minecraftVersion1.21.1/neoforgeVersion21.1.249; old map version_matchfalse is stale conservative metadata for source version.",
+    "GitHub public archive downloaded by root; child examined local extracted exactpin. API403 does not imply public archive unavailable.",
+    "Sourceversion match is distinct from exact installed binary/build provenance."
+  ],
+  "native_mechanics": [
+    "NASA has14inputslots0..13, slot14outputpreview. serverTick previews recipe.result, auto craft every30ticks ifcanFunction&&canCraft.",
+    "NasaWorkbenchMenu slot14 CustomSlot.noPlaceOrTake; clicked calls super then slot14canCraft→craft for any ClickType.",
+    "NASA craft() onlychecks cachedrecipe!=null, drops outputentity FIRST via Containers.dropItemStack, clears14 then shrinks1each0..13 then setsrecipe=null. No player parameter; no native manufacturingcriterion.",
+    "Stationpacket validatesorbit/teleport/claims/recipe/notwithinexistingstation/materials, consumeIngredients beforestructure placement. placeInWorld boolean ignored. Then constructSpaceStation recordsownershipmarker thenlandsplayer.",
+    "SpaceStationRecipe.hasIngredients/consumeIngredients waive costs forCreative/Spectator. Direct publicconstructSpaceStation marker is not a material or successfulstructureproof.",
+    "Rocket.canLaunch checks launchstate/dimension/hasEnoughFuel/passengerSpace; initiateLaunchSequence sets countdownandflags, consumesfuel(false). launch onlysets HAS_LAUNCHED; no launchcriterion."
+  ],
+  "advancement_contracts": [
+    {
+      "id": "ad_astra:tier_1_rocket",
+      "criteria": {
+        "has_tier_1_rocket": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:tier_1_rocket"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:tier_2_rocket",
+      "criteria": {
+        "has_tier_2_rocket": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:tier_2_rocket"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:tier_3_rocket",
+      "criteria": {
+        "has_tier_3_rocket": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:tier_3_rocket"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:tier_4_rocket",
+      "criteria": {
+        "has_tier_4_rocket": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:tier_4_rocket"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:rocket_science",
+      "criteria": {
+        "has_nasa_workbench": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:nasa_workbench"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:astronaut",
+      "criteria": {
+        "has_astronaut": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:space_helmet"
+              },
+              {
+                "items": "ad_astra:space_suit"
+              },
+              {
+                "items": "ad_astra:space_pants"
+              },
+              {
+                "items": "ad_astra:space_boots"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:moon",
+      "criteria": {
+        "entered_moon": {
+          "conditions": {
+            "to": "ad_astra:moon"
+          },
+          "trigger": "minecraft:changed_dimension"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:mars",
+      "criteria": {
+        "entered_mars": {
+          "conditions": {
+            "to": "ad_astra:mars"
+          },
+          "trigger": "minecraft:changed_dimension"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:venus",
+      "criteria": {
+        "entered_venus": {
+          "conditions": {
+            "to": "ad_astra:venus"
+          },
+          "trigger": "minecraft:changed_dimension"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:mercury",
+      "criteria": {
+        "entered_mercury": {
+          "conditions": {
+            "to": "ad_astra:mercury"
+          },
+          "trigger": "minecraft:changed_dimension"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:interstellar",
+      "criteria": {
+        "entered_glacio": {
+          "conditions": {
+            "to": "ad_astra:glacio"
+          },
+          "trigger": "minecraft:changed_dimension"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    },
+    {
+      "id": "ad_astra:cryo_fuel",
+      "criteria": {
+        "has_cryo_fuel": {
+          "conditions": {
+            "items": [
+              {
+                "items": "ad_astra:cryo_fuel_bucket"
+              }
+            ]
+          },
+          "trigger": "minecraft:inventory_changed"
+        }
+      },
+      "manufacture_proof": false,
+      "reason": "Native criterion checks inventory or dimension, not exact producer/material payment."
+    }
+  ],
+  "native_manufacture_action_ids": [],
+  "network_history": {
+    "api_status": "Tunnel403",
+    "escalation": "Aborted byuser; no retry",
+    "public_archive": "Root obtained HTTP200+CRC; local source audited"
+  },
+  "not_verified": [
+    "Installedbinary→sourcecommitidentity/JARhash",
+    "Exact optionalmodweaving/client/JEI/Survival/TPS",
+    "Automatic successful NASA entity acceptance proof or station paid/placed action proof without own adapter"
+  ],
+  "content_guidance": "Vanilla nativeadvancement inventory/dimension checks may support honest acquisition/visit tasks. Manufacturing/launch/station construction claims require separately tested Java observer using exact source boundaries; do not promote inventory_changed as craft proof.",
+  "source_scope_complete_for_core_research": true,
+  "confirmed_source_issues": [
+    {
+      "id": "station_split_stack_underpayment",
+      "source": "SpaceStationRecipe.java",
+      "finding": "matches() sums matching ingredient count over all inventory slots. consumeIngredients() removes requested count from first matching stack only, then breaks. A split stack can satisfy aggregate check but remove less than required.",
+      "scope": "Exact pinned source; not tested in live modpack. A paid station proof requires correcting or independently verifying complete consumption."
+    },
+    {
+      "id": "station_placement_boolean_ignored",
+      "source": "ServerboundConstructSpaceStationPacket.java",
+      "finding": "structure.placeInWorld return value ignored; SavedData ownership marker recorded regardless of placement acceptance boolean.",
+      "scope": "Exact source; marker alone is not successful structure proof."
+    },
+    {
+      "id": "nasa_output_before_consumption",
+      "source": "NasaWorkbenchBlockEntity.java",
+      "finding": "craft() drops output before shrinking ingredients; direct craft checks only cachedrecipe!=null. Caller ordinarily checks canCraft but own guard must verify receiver/currentrecipe/physicalinputs and acceptedoutput."
+    }
+  ]
+}

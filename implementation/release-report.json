@@ -1,22 +1,22 @@
 {
-  "version": "0.4.15-alpha",
+  "version": "0.4.16-alpha",
   "status": "tested_development_milestone_not_complete_0_5_release",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3351,
-    "substantive_quests": 3255,
+    "quests_total": 3371,
+    "substantive_quests": 3275,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 567,
-    "authored_new_courses_this_release": 0,
+    "quests_added_this_release": 587,
+    "authored_new_courses_this_release": 1,
     "manufacturing_quests_added": 0,
     "chapters": 140,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1650,
-    "native_recipes": 623,
-    "native_recipes_added_this_release": 54,
+    "optional_quests": 1670,
+    "native_recipes": 627,
+    "native_recipes_added_this_release": 58,
     "dual_key_recipes": 96,
     "reviewed_machine_recipe_patches": 190,
     "machine_recipe_targets": 170,
@@ -31,20 +31,24 @@
     "unique_dual_key_silhouettes": 96,
     "item_rules": 28354,
     "block_rules": 16003,
-    "native_recipe_rules": 42581,
+    "native_recipe_rules": 42585,
     "authored_quest_mod_namespaces_excluding_vanilla": 64,
     "all_task_mod_namespaces_excluding_vanilla": 66,
     "new_recipe_target_namespaces": 22,
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 0,
+    "quests_added_since_last_checkpoint": 20,
     "native_action_quests": 105,
-    "complete_core_maps": 26,
+    "complete_core_maps": 27,
     "mapped_mods": 61,
     "controller_floor_items": 30,
     "controller_native_recipe_floors": 41,
-    "controller_custom_recipe_floors": 5
+    "controller_custom_recipe_floors": 5,
+    "new_recipes_since_last_checkpoint": 4,
+    "item_rewards": 3107,
+    "item_rewards_added_since_last_checkpoint": 20,
+    "existing_item_rewards_changed_since_last_checkpoint": 0
   },
   "confirmed_fixes": [
     "UUID remapping/property-as-function failure removed with typed Java syncPlayer",
@@ -52,7 +56,8 @@
     "ProjectE primitive/boxed fastutil ambiguity removed by uniquely named Java bridge",
     "RecipeManager cached RecipeHolder overload now uses exact descriptor; actual native furnace rejection tested",
     "Two post-consumption team-bound manufacturing receipts plus paid pending artifact and final FTB completion",
-    "Array-shaped corrupt ledgers rejected before JSON could lose UUID-keyed progress; normal completed progress retained"
+    "Array-shaped corrupt ledgers rejected before JSON could lose UUID-keyed progress; normal completed progress retained",
+    "Ad Astra NASA current cached recipe, output/preview and live owner/team menus checked before native drop/input writes; modeled helper/handler tests, optional weaving not run"
   ],
   "checks": {
     "node_tests": {
@@ -61,11 +66,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 233,
+      "passed": 255,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 29,
+      "includes_installer_tests": 30,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -76,9 +81,9 @@
       "passed": 151,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.15-alpha",
+      "version_tested": "0.4.16-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Actual minimal Minecraft/guard/NBT binary/SavedData fixtures in2JVM; Forbidden Arcanus and Clibano absent"
+      "scope": "Actual minimal Minecraft/guard/NBT binary/SavedData fixtures in2JVM; Ad Astra, Forbidden Arcanus and Clibano absent"
     },
     "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
@@ -91,14 +96,14 @@
       "status": "passed",
       "runtime_files": 1172,
       "byte_identical": true,
-      "hash_seed": 109,
-      "command": "PYTHONHASHSEED=109 python tools/generate_game_pack.py"
+      "hash_seed": 113,
+      "command": "PYTHONHASHSEED=113 python tools/generate_game_pack.py"
     },
-    "jar_sha256": "830237f6289791abb733fb5d0dfc0902156b548e46290a1e745a500b59d06082",
-    "jar_path": "mods/aia2-machine-guard-0.4.15-alpha.jar",
-    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.15-alpha --baseline d5c225c --check-only",
+    "jar_sha256": "d106d29eada470c033cf186311c109c5fb9a526ff7b2a4438846637abada2665",
+    "jar_path": "mods/aia2-machine-guard-0.4.16-alpha.jar",
+    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.16-alpha --baseline 15380e8 --check-only",
     "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed:4306 manifestentries/1172runtime hashes and installer",
+    "archive_crc_and_all_sha256_entries": "passed:4498 manifestentries/1172runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -141,7 +146,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed: extracted actualCLI0.4.14→0.4.15; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
+    "packaged_installer_upgrade": "passed: extracted actualCLI0.4.15→0.4.16; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -174,7 +179,31 @@
     "clibano_native_helpers_modeled": 368,
     "clibano_dependency_state_modeled": 167,
     "clibano_dependency_model_assertions_added": 285,
-    "clibano_dependency_actual_nbt_assertions_added": 14
+    "clibano_dependency_actual_nbt_assertions_added": 14,
+    "jar_class_preservation": {
+      "status": "passed",
+      "baseline": "15380e8",
+      "preserved_classes": 194,
+      "new_classes": 8,
+      "total_classes": 202,
+      "mixins": 71,
+      "jar_sha256": "d106d29eada470c033cf186311c109c5fb9a526ff7b2a4438846637abada2665",
+      "fullpack_optional_weaving": "NOT_RUN"
+    },
+    "ad_astra_nasa_helpers_modeled": {
+      "passed": 244,
+      "host": "actual helper and3handlers plus realGuardPolicy; modeled optional Minecraft/Ad Astra receiver, exact native craft body",
+      "optional_dispatch": false,
+      "manufacturing_proof_added": false
+    },
+    "ad_astra_source_contract_tests": 7,
+    "ad_astra_balance_and_course_tests": 12,
+    "final_python_suite_after_preview_guard": {
+      "passed": 255,
+      "failed": 0,
+      "skipped": 0,
+      "nasa_modeled_assertions": 244
+    }
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -205,7 +234,11 @@
     "EvilCraft Environmental/Sanguinary caches, Purifier actions, world gem transform and passives remain open; targeted3paths are not universal mod protection.",
     "Clibano controller/recipe/menu guards have source/model coverage; exact optional weaving/JEI/Survival/TPS remain NOT_RUN. Frame IO and fullpack dependency/residue acceptance remain open; see CLIBANO_ACCEPTANCE.uk.md.",
     "Forge transitive snapshots have modeled and actual-NBT checks; exact optional runtime/tag reload/Survival/TPS remain NOT_RUN. Full enhancer Component serialization precedes bounded JSON validation; visual description changes conservatively pause. See FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md.",
-    "Clibano transitive/history guards are implemented for exact reviewed types; fullpack weaving, actual tag reload, Survival/JEI/world-upgrade/TPS and frame IO remain NOT_RUN. Explicit quarantine backs up unproven stock without output; installer never invokes it."
+    "Clibano transitive/history guards are implemented for exact reviewed types; fullpack weaving, actual tag reload, Survival/JEI/world-upgrade/TPS and frame IO remain NOT_RUN. Explicit quarantine backs up unproven stock without output; installer never invokes it.",
+    "Ad Astra NASA accepted-output plus post-consumption manufacturing witness; inventory advancement is not a proof",
+    "Ad Astra station aggregate split-stack payment and accepted structure placement adapter",
+    "Explicit migration of old required epoch37/38 post-fact tasks without losing completed IDs",
+    "Ad Astra optional NASA Mixin weaving, menu/client JEI, real automation and Survival/TPS"
   ],
   "installation": "Stop game/server; python install_runtime.py \"C:\\CurseForge\\AllInOneAdventure2\" --dry-run; then omit --dry-run. Installer backs up originals, preserves saves/foreign quests and migrates own companion JAR; full restart required.",
   "archive": "/workspace/shared/downloads/AIA2-runtime-0.4.15-alpha.zip",
@@ -228,7 +261,7 @@
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
   "checkpoint_preservation": "implementation/clibano-dependencies-preservation-v6.json",
   "checkpoint_base_commit": "d5c225c7a3a10178504a437068b088f0c9f5e860",
-  "checkpoint_backup": "/workspace/aia2-backups/before-clibano-dependencies-20261028T185501Z/checkpoint-d5c225c.tar.gz",
+  "checkpoint_backup": "/workspace/aia2-backups/before-ad-astra-20261029T004732Z/checkpoint-15380e8.tar.gz",
   "checkpoint_report": "docs/AIA2_0.4.15_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
@@ -487,5 +520,33 @@
     "next_action": "Ad Astra1.16.26 exact source/mechanics/core quest map; then35partial maps and old required48epoch lines",
     "native_save_codec_or_level_null_omission_preserves_actual_counts": true,
     "package_manifest_and_upgrade": "passed"
+  },
+  "checkpoint_baseline": "15380e80ffc462418bf4e829f4ec2ed85911cdda",
+  "checkpoint_ad_astra": {
+    "status": "implemented_automatically_verified_fullpack_manual_acceptance_pending",
+    "quests_added": 20,
+    "recipes_added": 4,
+    "native_engine_recipes_replaced": 4,
+    "old_quests_preserved_non_coordinate": 3351,
+    "old_custom_recipes_preserved": 623,
+    "old_coordinate_updates": 36,
+    "chapters_reorganized": 3,
+    "old_item_rewards_changed": 0,
+    "new_item_rewards": 20,
+    "items_added": 0,
+    "textures_added": 0,
+    "scope": "source-backed selected core, not complete modpack acceptance",
+    "source_version": "1.16.26 / MC1.21.1",
+    "source_pin": "45abf0ec05ea837c3df457f42ae440b6675e9cf0",
+    "new_exact_source_files": 99,
+    "binary_to_commit_provenance": "NOT_PROVEN",
+    "map_stages": 27,
+    "core_maps": 27,
+    "partial_maps": 34,
+    "native_manufacture_proof": "NOT_IMPLEMENTED",
+    "station_payment_placement_fix": "TODO",
+    "balance_report": "implementation/ad-astra-core-balance-v6.json",
+    "preservation_report": "implementation/ad-astra-preservation-v6.json",
+    "source_comparison": "content/audit/v6-ad-astra-recipe-source-comparison.json"
   }
 }

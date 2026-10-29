@@ -505,6 +505,10 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/recipes/v5_draconic_power.json').exists() else {'enabled':False},
             'evilcraft_core_balance': import_tool('build_evilcraft_core_balance_v5').validate(root,read(root/'content/recipes/v5_evilcraft_core.json'),bundle,rules,compiled=True)
                 if (root/'content/recipes/v5_evilcraft_core.json').exists() else {'enabled':False},
+            'ad_astra_core_balance': import_tool('build_ad_astra_core_v6').validate(root,read(root/'content/recipes/v5_ad_astra_core.json'),bundle,rules,compiled=True)
+                if (root/'content/recipes/v5_ad_astra_core.json').exists() else {'enabled':False},
+            'ad_astra_course': import_tool('validate_ad_astra_course_v6').validate(root)
+                if (root/'content/quests/v5_ad_astra_depth.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

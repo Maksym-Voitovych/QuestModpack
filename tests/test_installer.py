@@ -343,6 +343,30 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_nasa_pairing_rejects_missing_classes_and_hooks_before_world_writes(self):
+        bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
+        mixins=['AdAstraNasaMixin','AdAstraNasaMenuMixin','AdAstraNasaBaseMenuMixin']
+        classes=['ua/aia2/guard/AdAstraNasaAccess.class'] + ['ua/aia2/guard/mixin/'+name+'.class' for name in mixins]
+        for kind,missing in [('class',name) for name in classes]+[('registration',name) for name in mixins]:
+            with self.subTest(kind=kind,missing=missing),tempfile.TemporaryDirectory() as tmp:
+                package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+                (package/'mods').mkdir(parents=True);(package/'config').mkdir();(package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+                marker=instance/'saves/world/level.dat';marker.parent.mkdir(parents=True);marker.write_bytes(b'world-and-space-progress')
+                with zipfile.ZipFile(bundled[0]) as original,zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                    if kind=='class':self.assertIn(missing,original.namelist())
+                    for name in original.namelist():
+                        if kind=='class' and name==missing:continue
+                        raw=original.read(name)
+                        if kind=='registration' and name=='aia2_machine_guard.mixins.json':
+                            value=json.loads(raw);self.assertIn(missing,value['mixins']);value['mixins'].remove(missing);raw=json.dumps(value).encode()
+                        altered.writestr(name,raw)
+                (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+                before={p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()}
+                with self.assertRaisesRegex(installer.InstallError,'Ad Astra NASA cached recipe and menu guards'):
+                    installer.install(package,instance)
+                self.assertEqual(before,{p.relative_to(instance).as_posix():p.read_bytes() for p in instance.rglob('*') if p.is_file()})
+                self.assertFalse((instance/'aia2-backups').exists());self.assertFalse((instance/'kubejs').exists())
+
     def test_clibano_pairing_rejects_missing_classes_and_hooks_before_world_writes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
         mixins=['ClibanoFrameMenuMixin','ClibanoMenuValidityMixin','ClibanoMachineMixin','ClibanoResidueMixin']

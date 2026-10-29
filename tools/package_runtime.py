@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.15-alpha'
+VERSION = '0.4.16-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -61,6 +61,10 @@ def main():
                 for name in ['ClibanoOwnership', 'ClibanoAccess', 'ClibanoPaidState', 'ClibanoCommands', 'ClibanoDependencies', 'ClibanoDependencyState']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 for name in ['ClibanoFrameMenuMixin', 'ClibanoMenuValidityMixin', 'ClibanoMachineMixin', 'ClibanoResidueMixin']:
+                    assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                    assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
+                assert 'ua/aia2/guard/AdAstraNasaAccess.class' in jar.namelist()
+                for name in ['AdAstraNasaMixin', 'AdAstraNasaMenuMixin', 'AdAstraNasaBaseMenuMixin']:
                     assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
                     assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
             for name in ['BoundTickingBlockEntityMixin', 'CrafterDispenseMixin',

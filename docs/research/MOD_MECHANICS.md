@@ -6142,10 +6142,10 @@ Advanced Relay має дві групи по12фільтр-слотів і на1
 
 ## Ad Astra
 
-Версія експорту: **1.16.26**. Статус: `reviewed_partial`.
+Версія експорту: **1.16.26**. Статус: `complete`.
 [Структурована карта](../../content/research/technology_v5.json).
 
-Перший міжпланетний маршрут починається з наземного складального майданчика Ad Astra.
+Наземна майстерня, ручне постачання води до Oxygen Loader і власний запас палива готуються до першого польоту; Desh-помпа та Ostrum-сенсор вводяться після відповідних експедицій.
 
 ### 1. Майстерня ракетобудування
 
@@ -6227,9 +6227,262 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E44_space_operations_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Ракетне бюро до першого польоту
+
+Епохи: 37.
+
+Облаштуйте наземний NASA Workbench і виготовте Wrench. Ракетний складальний стіл обслуговує корпуси апаратів, а гібридні двигуни AIA2 складаються окремо в механічній мережі Create.
+Залиште поряд дві порожні каністри-відра для розділених запасів палива й кисню. Починайте наземну підготовку до відльоту: місячний деше для цих перших кроків не потрібний.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:wrench`, `minecraft:bucket`.
+Квести: `V5_E37_ad_astra_core_ground_workshop`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 9. Окремі каркас і вентилятор
+
+Епохи: 37.
+
+Поставте Compressor для листового металу. Сталь у цій збірці уніфікована з Immersive Engineering; залізну обшивку представляє Iron Sheet із Create.
+Виготовте Engine Frame та Fan за їхніми рецептами. Каркас використовує вісім сталевих стрижнів і лист, вентилятор — чотири листи та стрижень: це різні деталі, які зустрінуться в двигуні.
+Попередні кроки: ad_astra.core.ground_workshop.
+Машини: `ad_astra:compressor`.
+Ресурси й результати: `ad_astra:engine_frame`, `ad_astra:fan`, `immersiveengineering:plate_steel`.
+Квести: `V5_E37_ad_astra_core_steel_workshop`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 10. Гібридний двигун першого ступеня
+
+Епохи: 37.
+
+З’єднайте Mechanical Crafters у площину 5×3 і відкрийте рецепт Steel Engine у JEI. П’ять сталевих листів, Engine Frame та Fan залишаються основою силового агрегату.
+Додайте технологічну матрицю й магічний каталізатор епохи 36, Air Essence з Ars Nouveau та Advanced Control Circuit із Mekanism. Ці компоненти доступні до першої місячної експедиції; деше чи острам не повинні блокувати наземний запуск.
+Попередні кроки: ad_astra.core.steel_workshop.
+Машини: `create:mechanical_crafter`.
+Ресурси й результати: `ad_astra:steel_engine`.
+Квести: `V5_E37_ad_astra_core_steel_engine`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 11. Ракетне паливо має власну переробку
+
+Епохи: 37.
+
+Підготуйте Fuel Refinery, окремий вхід для Oil і резерв вихідного Fuel. Рідину потрібно звіряти за рецептом: дизель іншого мода не замінює ракетне паливо через подібну назву.
+Покажіть вихідну нафту й готове паливо у відрах, залишивши сховище кисню окремим. Резерв на повернення відкладіть до заправлення першого апарата.
+Попередні кроки: ad_astra.core.steel_workshop.
+Машини: `ad_astra:fuel_refinery`.
+Ресурси й результати: `ad_astra:oil_bucket`, `ad_astra:fuel_bucket`.
+Квести: `V5_E37_ad_astra_core_fuel_bootstrap`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 12. Перший кисень без місячної помпи
+
+Епохи: 37.
+
+Поставте Oxygen Loader і спочатку подайте воду вручну. Water Pump потребує деше: її автоматизація стане доречною після Місяця, а не перед першим стартом.
+Зіставте воду на вході з Oxygen на виході та підготуйте кисневе відро. Далі заправте спорядження через штатний інтерфейс завантажувача; сама порожня тара не є запасом для польоту.
+Попередні кроки: ad_astra.core.steel_workshop.
+Машини: `ad_astra:oxygen_loader`.
+Ресурси й результати: `minecraft:water_bucket`, `ad_astra:oxygen_bucket`.
+Квести: `V5_E37_ad_astra_core_oxygen_bootstrap`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 13. Повний базовий скафандр
+
+Епохи: 37.
+
+Виготовте всі чотири частини базового космічного комплекту: Helmet, Suit, Pants і Boots. Киснева гарнітура та баки входять до рецепта нагрудного спорядження, але не замінюють решту захисту.
+Перед посадкою зарядіть спорядження й перевірте фактичний запас у його інтерфейсі. Винесіть із майстерні окремий аварійний запас і харчі; відро кисню у скрині не заправляє скафандр автоматично.
+Попередні кроки: ad_astra.core.oxygen_bootstrap.
+Ресурси й результати: `ad_astra:space_helmet`, `ad_astra:space_suit`, `ad_astra:space_pants`, `ad_astra:space_boots`.
+Квести: `V5_E37_ad_astra_core_flight_suit`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 14. Корпус T1 із двома баками
+
+Епохи: 37.
+
+Для першої ракети NASA Workbench поєднує носовий конус, шість сталевих блоків, чотири Rocket Fins, два Steel Tanks і Steel Engine. Два баки — окремі вузли корпусу; одне паливне відро їх не замінює.
+Розташуйте деталі за рецептом і заберіть готовий Tier 1 Rocket. Перед стартом поверніться до запасів кисню, палива й базового скафандра; це перший транспорт до місячного ресурсу.
+Попередні кроки: ad_astra.core.steel_engine, ad_astra.core.fuel_bootstrap, ad_astra.core.flight_suit.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_1_rocket`.
+Квести: `V5_E37_ad_astra_core_rocket_t1`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 15. Будівельний комплект земної орбіти
+
+Епохи: 37.
+
+Відвідайте Earth Orbit після підготовки першої ракети. Плануючи власну станцію, відокремте конструкційні матеріали й герметичні проходи від запасу на повернення.
+Підготуйте скло й Airlock для наступного будівництва. Наявність будівельного комплекту не забезпечує приміщення киснем: розподільник і перевірка атмосфери стануть окремою частиною колонії.
+Попередні кроки: ad_astra.core.rocket_t1.
+Ресурси й результати: `minecraft:glass`, `ad_astra:airlock`.
+Квести: `V5_E37_ad_astra_core_earth_orbit`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 16. Місячний метал і листова партія
+
+Епохи: 37.
+
+Після відвідування Місяця розділіть зливки Desh між ракетним корпусом і листовою майстернею. Не перетворюйте весь видобуток на одну форму: другій ракеті потрібні блоки, а обладнанню — листи.
+Підготуйте Desh Block і партію з дев’яти Desh Plates поруч із Compressor. Рецепт переробки блоку дає дев’ять листів за один довгий цикл; порівняйте його з одиночним рецептом у JEI.
+Попередні кроки: ad_astra.core.rocket_t1.
+Машини: `ad_astra:compressor`.
+Ресурси й результати: `ad_astra:desh_block`, `ad_astra:desh_plate`.
+Квести: `V5_E37_ad_astra_core_desh_batch`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 17. Помпа й атмосфера після деше
+
+Епохи: 37.
+
+Тепер деше дозволяє виготовити Water Pump і Oxygen Distributor. Помпа постачатиме воду наземній кисневій лінії, а розподільник обслуговуватиме приміщення; ці ролі не слід міняти місцями.
+Виготовте обидва пристрої та прокладіть окремі водяний і кисневий контури. Oxygen Sensor потребує остраму, тому його виробництво відкладіть до марсіанського матеріалу.
+Попередні кроки: ad_astra.core.desh_batch.
+Ресурси й результати: `ad_astra:water_pump`, `ad_astra:oxygen_distributor`.
+Квести: `V5_E37_ad_astra_core_moon_water`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 18. Другий корпус із місячного матеріалу
+
+Епохи: 37.
+
+Виготовте Desh Engine на механічній площині 5×3: він продовжує сталевий двигун, додаючи деше, матрицю й каталізатор епохи 36, Rune of Earth та Processing Unit із Oritech.
+На NASA Workbench другий корпус використовує шість Desh Blocks, два Desh Tanks, двигун, носовий конус і чотири крила. Заберіть Tier 2 Rocket і підготуйте експедицію до Марса; місячна база повинна зберегти резерв повернення.
+Попередні кроки: ad_astra.core.desh_batch, ad_astra.core.moon_water.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_2_rocket`.
+Квести: `V5_E37_ad_astra_core_rocket_t2`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 19. Марсіанський метал для контролю атмосфери
+
+Епохи: 37.
+
+Після марсіанської експедиції використайте Ostrum Plates для Oxygen Sensor. Це причина, з якої повний сенсорний контур не є передумовою першого польоту на Місяць.
+Виготовте Sensor та Etrionic Capacitor, залишивши запас остраму для наступних двигуна й баків. Поставте датчик у тестовій кисневій зоні та перевірте його покази при зміні стану проходу.
+Попередні кроки: ad_astra.core.rocket_t2.
+Ресурси й результати: `ad_astra:oxygen_sensor`, `ad_astra:etrionic_capacitor`.
+Квести: `V5_E37_ad_astra_core_mars_sensor`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 20. Посилений комплект гарячої експедиції
+
+Епохи: 38.
+
+Перед подальшими посадками виготовте чотири частини Netherite Space Suit за рецептами з острамом. Цей комплект використовує освоєний марсіанський метал, а не калорит, який ви ще тільки плануєте привезти.
+Перевірте кисневий резерв після заміни спорядження та перенесіть аварійне постачання окремо від вантажу. Дорогий нагрудник не робить неповний комплект придатним для будь-якого середовища.
+Попередні кроки: ad_astra.core.mars_sensor.
+Ресурси й результати: `ad_astra:netherite_space_helmet`, `ad_astra:netherite_space_suit`, `ad_astra:netherite_space_pants`, `ad_astra:netherite_space_boots`.
+Квести: `V5_E38_ad_astra_core_hostile_suit`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 21. Острамний ступінь розширення
+
+Епохи: 38.
+
+Підготуйте Ostrum Engine через попередній Desh Engine. Гібридна механічна збірка додає Rune of Fire та Printed Circuit Board із PneumaticCraft до матриці й каталізатора епохи 36.
+На NASA Workbench зберіть Tier 3 Rocket із шести Ostrum Blocks, двох Ostrum Tanks, двигуна, конуса й чотирьох крил. Відокремте вантаж гарячої експедиції від резерву на повернення.
+Попередні кроки: ad_astra.core.hostile_suit.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_3_rocket`.
+Квести: `V5_E38_ad_astra_core_rocket_t3`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 22. Гарячий маршрут до калоритового листа
+
+Епохи: 38.
+
+Відвідайте Венеру в дозволеному транспорті й підготуйте Raw Calorite для подальшої металургії. Залиште частину результату в зливках, частину — в листах: четвертому ступеню потрібні різні форми одного металу.
+Принесіть партію Calorite Plates до Compressor. Спочатку перевірте одиночний рецепт, а далі порівняйте його з обробкою блока; листи стануть обшивкою двигуна, баків і спорядження.
+Попередні кроки: ad_astra.core.rocket_t3.
+Машини: `ad_astra:compressor`.
+Ресурси й результати: `ad_astra:raw_calorite`, `ad_astra:calorite_plate`.
+Квести: `V5_E38_ad_astra_core_calorite_metallurgy`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 23. Калоритовий двигун із повним спадком
+
+Епохи: 38.
+
+Поверніть на площину Mechanical Crafters попередній Ostrum Engine, п’ять Calorite Plates і Fan. Новий силовий агрегат успадковує весь ланцюг ранніх двигунів замість обходу попередніх рівнів.
+Додайте матрицю й каталізатор епохи 36, Gaia Ingot із Botania та Ultimate Control Circuit із Mekanism. Заберіть готовий Calorite Engine; пара калоритових баків готується окремо за рецептом NASA Workbench.
+Попередні кроки: ad_astra.core.calorite_metallurgy.
+Машини: `create:mechanical_crafter`.
+Ресурси й результати: `ad_astra:calorite_engine`.
+Квести: `V5_E38_ad_astra_core_calorite_engine`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 24. Кріопаливо з наземного льоду
+
+Епохи: 38.
+
+Поставте Cryo Freezer і перевірте рецепт Blue Ice до залежності від далеких ресурсів. Так можна підготувати кріогенну лінію, не вимагаючи Ice Shard як обов’язкової умови першої експедиції до Ґласіо.
+Розділіть звичайне Fuel та Cryo Fuel у сховищах і приготуйте відро готової холодної рідини. Перед подаванням у споживача перевірте його сумісність у JEI; назва бака сама по собі не визначає пальне.
+Попередні кроки: ad_astra.core.calorite_metallurgy.
+Машини: `ad_astra:cryo_freezer`.
+Ресурси й результати: `minecraft:blue_ice`, `ad_astra:cryo_fuel_bucket`.
+Квести: `V5_E38_ad_astra_core_cryo_bootstrap`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 25. Четвертий корпус і контрольований резерв
+
+Епохи: 38.
+
+Зберіть на NASA Workbench останній стандартний ступінь: шість Calorite Blocks, два Calorite Tanks, Calorite Engine, носовий конус і чотири Rocket Fins.
+Заберіть Tier 4 Rocket і перед далеким рейсом перевірте паливний маршрут, кисень та місце для вантажу. Міжпланетна експедиція не повинна витратити резерв своєї посадкової бази.
+Попередні кроки: ad_astra.core.calorite_engine, ad_astra.core.cryo_bootstrap.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_4_rocket`.
+Квести: `V5_E38_ad_astra_core_rocket_t4`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 26. Крижаний маршрут далекої колонії
+
+Епохи: 38.
+
+Відвідайте Ґласіо й підготуйте Ice Shard для холодної виробничої лінії. Джерело матеріалу та запас на повернення плануйте окремо: віддалена база не повинна залежати від останнього балона чи останньої каністри.
+Порівняйте у Cryo Freezer переробку Ice Shard та Blue Ice. Концентрат дає більше Cryo Fuel за рецепт, тому його варто відокремити від звичайного льоду й підтримувати для спеціалізованої переробки.
+Попередні кроки: ad_astra.core.rocket_t4.
+Машини: `ad_astra:cryo_freezer`.
+Ресурси й результати: `ad_astra:ice_shard`, `ad_astra:cryo_fuel_bucket`.
+Квести: `V5_E38_ad_astra_core_glacio_fuel`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
+### 27. Орбітальний атлас зовнішніх маршрутів
+
+Епохи: 38.
+
+Відвідайте орбіти Місяця, Марса, Венери, Меркурія та Ґласіо. Планети й їхні орбіти є різними вимірами: зразок породи з поверхні не замінює орбітального маршруту.
+Для кожного переходу залишайте резерв і перевіряйте доступні пункти призначення у штатному космічному меню. Завершений атлас стане основою для розподілу сервісних баз, а не приводом тримати всю інфраструктуру в одному місці.
+Попередні кроки: ad_astra.core.glacio_fuel.
+Квести: `V5_E38_ad_astra_core_orbital_atlas`.
+FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
+Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
+
 Фінальні цілі:
-- Холодне паливо має власну лінію
-- Планетарна база обслуговує інструменти
+- Ланцюг чотирьох ракетних ступенів пов’язаний із реальними матеріалами Moon/Mars/Venus.
+- Окремий cold-fuel bootstrap доступний без обов’язкового IceShard передGlacio.
+- Орбітальний атлас перевіряє відвідування різних вимірів, не випадкові предмети.
 
 Міжмодові зв’язки:
 - {"mod_id": "ae2", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
@@ -6237,19 +6490,25 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/ad_astra/oxygen_loader", "target": "ad_astra:oxygen_loader", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_35"], "direction": "incoming", "description_uk": "Рецепт AIA2 для ad_astra:oxygen_loader споживає міжмодові матеріали kubejs:aia2_tech_matrix_35. Це власна інтеграція збірки, а не правило оригінального мода."}
 - {"recipe_id": "aia2:v4/ad_astra/oxygen_distributor", "target": "ad_astra:oxygen_distributor", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_35"], "direction": "incoming", "description_uk": "Рецепт AIA2 для ad_astra:oxygen_distributor споживає міжмодові матеріали kubejs:aia2_tech_matrix_35. Це власна інтеграція збірки, а не правило оригінального мода."}
 - {"recipe_id": "aia2:v4/ad_astra/oxygen_sensor", "target": "ad_astra:oxygen_sensor", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_35"], "direction": "incoming", "description_uk": "Рецепт AIA2 для ad_astra:oxygen_sensor споживає міжмодові матеріали kubejs:aia2_tech_matrix_35. Це власна інтеграція збірки, а не правило оригінального мода."}
+- {"recipe_id": "aia2:v5/ad_astra_core/steel_engine", "target": "ad_astra:steel_engine", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_36", "kubejs:aia2_arcane_catalyst_36", "ars_nouveau:air_essence", "mekanism:advanced_control_circuit"], "direction": "incoming", "description_uk": "Власна механічна збірка AIA2 зберігає всі сім одиниць native матеріалів і додає чотири компоненти магії та техніки. Компоненти епохи36 не залежать від першого польоту."}
+- {"recipe_id": "aia2:v5/ad_astra_core/desh_engine", "target": "ad_astra:desh_engine", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_36", "kubejs:aia2_arcane_catalyst_36", "botania:rune_earth", "oritech:processing_unit"], "direction": "incoming", "description_uk": "Власна механічна збірка AIA2 зберігає всі сім одиниць native матеріалів і додає чотири компоненти магії та техніки. Компоненти епохи36 не залежать від першого польоту."}
+- {"recipe_id": "aia2:v5/ad_astra_core/ostrum_engine", "target": "ad_astra:ostrum_engine", "epoch": 37, "ingredient_ids": ["kubejs:aia2_tech_matrix_36", "kubejs:aia2_arcane_catalyst_36", "botania:rune_fire", "pneumaticcraft:printed_circuit_board"], "direction": "incoming", "description_uk": "Власна механічна збірка AIA2 зберігає всі сім одиниць native матеріалів і додає чотири компоненти магії та техніки. Компоненти епохи36 не залежать від першого польоту."}
+- {"recipe_id": "aia2:v5/ad_astra_core/calorite_engine", "target": "ad_astra:calorite_engine", "epoch": 38, "ingredient_ids": ["kubejs:aia2_tech_matrix_36", "kubejs:aia2_arcane_catalyst_36", "botania:gaia_ingot", "mekanism:ultimate_control_circuit"], "direction": "incoming", "description_uk": "Власна механічна збірка AIA2 зберігає всі сім одиниць native матеріалів і додає чотири компоненти магії та техніки. Компоненти епохи36 не залежать від першого польоту."}
 
 Прогалини та межі перевірки:
-- Офіційний pin є суміжною гілкою Minecraft1.21, а не підтвердженим тегом установленого JAR; версійні деталі обмежено експортом.
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Офіційний pin декларує саме1.16.26/MC1.21.1; binary→commit зв’язок установленого JAR не доведений. Експорт рецептів має відмінності від generated source, тому bill of materials береться з установленого експорту.
+- Чотири rocket advancements upstream перевіряють inventory_changed. NASA craft не має події виготовлення: стандартні tasks тут не доводять оплату, прийняту world-entity або власну збірку ракети. Предмети й огляд позначені відповідно, native proof щеTODO.
+- SpaceStationRecipe оплачує лише перший matching stack, хоча hasIngredients рахує суму; прийняття placeInWorld і матеріальна оплата станції ще потребують окремого adapter. Орбітальний квест не є доказом будівництва станції.
+- Старі required IDs і task payloads збережені. Частина старих launch/oxygen/Mars задач залишається постфактум; це наступна явна міграція умов, не цикл нового optional курсу.
+- Повний Ad Astra/JEI/FTB/Survival, weaving і довготривалий TPS не запускалися. Застарілі або сторонні menu/inventory callbacks поза перевіреним адаптером не оголошуються захищеними.
 
 Джерела:
 
 - [джерело](../../content/research/evidence/technology_v5/installed-metadata.json) — SHA перевірено
-- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/gradle.properties) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CryoFreezerBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/EnergizerBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/FuelRefineryBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CryoFreezerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/EnergizerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/terrarium-earth/Ad-Astra/blob/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/FuelRefineryBlockEntity.java) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/ad_astra/recipes/ad_astra/nasa_workbench.json) — SHA перевірено
 - [ad_astra:alloying](../../content/research/evidence/technology_v5/ad_astra/recipes/ad_astra/alloying/steel_ingot_from_alloying_iron_ingot_and_barrier.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/ad_astra/recipes/ad_astra/engine_frame.json) — SHA перевірено
@@ -6258,6 +6517,138 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/ad_astra/recipes/ad_astra/cryo_freezer.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/ad_astra/recipes/ad_astra/energizer.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/steel_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/desh_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/ostrum_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/calorite_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/engine_frame.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/fan.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/nasa_workbench.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/oxygen_loader.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/oxygen_distributor.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/oxygen_sensor.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/water_pump.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/cryo_freezer.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_content_v6/export_recipes/jet_suit.json) — SHA перевірено
+- [ad_astra:refining](../../content/research/evidence/ad_astra_content_v6/export_recipes/refining/fuel_from_refining_oil.json) — SHA перевірено
+- [ad_astra:oxygen_loading](../../content/research/evidence/ad_astra_content_v6/export_recipes/oxygen_loading/oxygen_from_oxygen_loading_water.json) — SHA перевірено
+- [ad_astra:cryo_freezing](../../content/research/evidence/ad_astra_content_v6/export_recipes/cryo_freezing/cryo_fuel_from_cryo_freezing_blue_ice.json) — SHA перевірено
+- [ad_astra:cryo_freezing](../../content/research/evidence/ad_astra_content_v6/export_recipes/cryo_freezing/cryo_fuel_from_cryo_freezing_ice_shard.json) — SHA перевірено
+- [ad_astra:nasa_workbench](../../content/research/evidence/ad_astra_content_v6/export_recipes/nasa_workbench/tier_1_rocket_from_nasa_workbench.json) — SHA перевірено
+- [ad_astra:nasa_workbench](../../content/research/evidence/ad_astra_content_v6/export_recipes/nasa_workbench/tier_2_rocket_from_nasa_workbench.json) — SHA перевірено
+- [ad_astra:nasa_workbench](../../content/research/evidence/ad_astra_content_v6/export_recipes/nasa_workbench/tier_3_rocket_from_nasa_workbench.json) — SHA перевірено
+- [ad_astra:nasa_workbench](../../content/research/evidence/ad_astra_content_v6/export_recipes/nasa_workbench/tier_4_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/gradle.properties) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/ad_astra.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/astronaut.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/carbon_footprint.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/cryo_freezer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/cryo_fuel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/dj.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/doom_slayer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/energizer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/gravity_normalizer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/interstellar.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/mars.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/mercury.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/moon.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/moon_cheese.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/ocean_cleanup.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/oxygen_distributor.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/rocket_man.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/rocket_science.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/rover.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/smart_blasting.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/solar_panel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/ti_69.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/tier_1_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/tier_2_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/tier_3_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/tier_4_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/under_pressure.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/venus.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/generated/resources/data/ad_astra/advancement/zip_gun.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/base/RecipeMachineBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CoalGeneratorBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CompressorBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/CryoFreezerBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/DetectorBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/EnergizerBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/EtrionicBlastFurnaceBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/FuelRefineryBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/GravityNormalizerBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/NasaWorkbenchBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/OxygenDistributorBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/OxygenLoaderBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/SolarPanelBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/blockentities/machines/WaterPumpBlockEntity.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/container/InventoryRecipeInput.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/entities/vehicles/Rocket.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/handlers/SpaceStationHandler.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/handlers/base/SpaceStation.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/items/vehicles/RocketItem.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/menus/base/BaseContainerMenu.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/menus/machines/NasaWorkbenchMenu.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/menus/slots/CustomSlot.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/network/packets/ServerboundConstructSpaceStationPacket.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/network/packets/ServerboundLandOnSpaceStationPacket.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/SpaceStationRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/base/IngredientHolder.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/AlloyingRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/CompressingRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/CryoFreezingRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/NasaWorkbenchRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/OxygenLoadingRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/recipes/machines/RefiningRecipe.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/registry/ModRecipeSerializers.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/registry/ModRecipeTypes.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/java/earth/terrarium/adastra/common/utils/ModUtils.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/better_fuel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/detection.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/energizer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/flags.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/fluid_pipes.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/industrial_lamps.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/netherite_space_suit.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/sliding_doors.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/trophies.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/surviving_mars/venus_and_mercury.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/creating_plates.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/fuel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/generating_energy.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/making_steel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/oxygen.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/portable_resources.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/preparing_to_launch.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/radio.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/the_moon.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_first_launch/your_first_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_hot_planets/jet_suit.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_hot_planets/proxima_centauri.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/cables.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/gravity_normalizer.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/lunarians.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/mars.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/oxygen_distributor.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/rover.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/solar_panel.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/space_station.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/en_us/entries/the_moon/ti_69.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/uk_ua/entries/the_first_launch/your_first_rocket.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/main/resources/assets/ad_astra/patchouli_books/astrodux/uk_ua/entries/the_moon/space_station.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/terrarium-earth/Ad-Astra/45abf0ec05ea837c3df457f42ae440b6675e9cf0/src/neoforge/data/java/earth/terrarium/adastra/datagen/provider/server/ModAdvancementProvider.java) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/wrench.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/space_helmet.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/space_suit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/space_pants.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/space_boots.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/netherite_space_helmet.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/netherite_space_suit.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/netherite_space_pants.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/netherite_space_boots.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/etrionic_capacitor.json) — SHA перевірено
+- [ad_astra:compressing](../../content/research/evidence/ad_astra_course_review_v6/compressing/desh_plate_from_compressing_desh_blocks.json) — SHA перевірено
+- [ad_astra:compressing](../../content/research/evidence/ad_astra_course_review_v6/compressing/desh_plate_from_compressing_desh_ingots.json) — SHA перевірено
 
 ## Applied Energistics 2
 

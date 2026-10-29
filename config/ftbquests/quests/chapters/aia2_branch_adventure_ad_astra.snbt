@@ -12,6 +12,71 @@
   "hide_quest_until_deps_complete": true,
   "quests": [
     {
+      "id": "000044CCC2B56D5C",
+      "title": "Будівельний комплект земної орбіти",
+      "description": [
+        "Відвідайте Earth Orbit після підготовки першої ракети. Плануючи власну станцію, відокремте конструкційні матеріали й герметичні проходи від запасу на повернення.",
+        "Підготуйте скло й Airlock для наступного будівництва. Наявність будівельного комплекту не забезпечує приміщення киснем: розподільник і перевірка атмосфери стануть окремою частиною колонії."
+      ],
+      "icon": {
+        "id": "ad_astra:airlock",
+        "count": 1
+      },
+      "dependencies": [
+        "000089612A096178",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007FA406CE5EC8",
+          "type": "dimension",
+          "dimension": "ad_astra:earth_orbit"
+        },
+        {
+          "id": "0000A79DC3D1E846",
+          "type": "item",
+          "item": {
+            "id": "minecraft:glass",
+            "count": 1
+          },
+          "count": 16,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C0ACF3AB9CA3",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:airlock",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000046306BDA2C30",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000358EC254BB15",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 17.0,
+      "y": 3.0
+    },
+    {
       "id": "0000B8E17D485DE8",
       "title": "Корпус до Марса",
       "description": [
@@ -1104,6 +1169,69 @@
         }
       ],
       "x": 7.0,
+      "y": 6.0
+    },
+    {
+      "id": "0000FF641F3F5BD3",
+      "title": "Орбітальний атлас зовнішніх маршрутів",
+      "description": [
+        "Відвідайте орбіти Місяця, Марса, Венери, Меркурія та Ґласіо. Планети й їхні орбіти є різними вимірами: зразок породи з поверхні не замінює орбітального маршруту.",
+        "Для кожного переходу залишайте резерв і перевіряйте доступні пункти призначення у штатному космічному меню. Завершений атлас стане основою для розподілу сервісних баз, а не приводом тримати всю інфраструктуру в одному місці."
+      ],
+      "icon": {
+        "id": "ad_astra:launch_pad",
+        "count": 1
+      },
+      "dependencies": [
+        "000013F3E457C636",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000022868BF3D7F6",
+          "type": "dimension",
+          "dimension": "ad_astra:moon_orbit"
+        },
+        {
+          "id": "0000EECF5B028463",
+          "type": "dimension",
+          "dimension": "ad_astra:mars_orbit"
+        },
+        {
+          "id": "0000A71E0F1CD0D3",
+          "type": "dimension",
+          "dimension": "ad_astra:venus_orbit"
+        },
+        {
+          "id": "000003CA90D0B467",
+          "type": "dimension",
+          "dimension": "ad_astra:mercury_orbit"
+        },
+        {
+          "id": "0000C1F0260C65E7",
+          "type": "dimension",
+          "dimension": "ad_astra:glacio_orbit"
+        },
+        {
+          "id": "0000D83EBC0E9928",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000097E15C046C90",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
       "y": 6.0
     },
     {

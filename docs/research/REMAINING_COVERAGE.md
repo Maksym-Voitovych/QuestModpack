@@ -8,7 +8,7 @@
 | Мод | Категорія | Статус карти |
 |---|---|---|
 | Actually Additions | technology_core | DONE — основна карта |
-| Ad Astra | technology_core | IN_PROGRESS — часткова карта |
+| Ad Astra | technology_core | DONE — основна карта |
 | Additional Enchanted Miner | technology_core | IN_PROGRESS — часткова карта |
 | Cyclic | technology_core | TODO — карта не досліджена |
 | Draconic Evolution | technology_core | IN_PROGRESS — часткова карта |

@@ -86,8 +86,69 @@
           "count": 4
         }
       ],
-      "x": 0.0,
+      "x": 3.0,
       "y": 3.0
+    },
+    {
+      "id": "0000B6360BC8C2D3",
+      "title": "Марсіанський метал для контролю атмосфери",
+      "description": [
+        "Після марсіанської експедиції використайте Ostrum Plates для Oxygen Sensor. Це причина, з якої повний сенсорний контур не є передумовою першого польоту на Місяць.",
+        "Виготовте Sensor та Etrionic Capacitor, залишивши запас остраму для наступних двигуна й баків. Поставте датчик у тестовій кисневій зоні та перевірте його покази при зміні стану проходу."
+      ],
+      "icon": {
+        "id": "ad_astra:oxygen_sensor",
+        "count": 1
+      },
+      "dependencies": [
+        "0000C97E811CF039",
+        "000076449D2F4010",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000BED1ED0A40BD",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_sensor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000207BBA08BFC5",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:etrionic_capacitor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002F63183B7FCC",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F865447FED54",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 17.0,
+      "y": 0.0
     },
     {
       "id": "0000CF56262C1C7C",
@@ -155,6 +216,66 @@
       ],
       "x": 0.0,
       "y": 0.0
+    },
+    {
+      "id": "0000D12E6CEEF4F6",
+      "title": "Помпа й атмосфера після деше",
+      "description": [
+        "Тепер деше дозволяє виготовити Water Pump і Oxygen Distributor. Помпа постачатиме воду наземній кисневій лінії, а розподільник обслуговуватиме приміщення; ці ролі не слід міняти місцями.",
+        "Виготовте обидва пристрої та прокладіть окремі водяний і кисневий контури. Oxygen Sensor потребує остраму, тому його виробництво відкладіть до марсіанського матеріалу."
+      ],
+      "icon": {
+        "id": "ad_astra:water_pump",
+        "count": 1
+      },
+      "dependencies": [
+        "000005421CEB1AB3",
+        "0000EDCC4CD05238"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B53018E42E34",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:water_pump",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000B19A1DC88D22",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:oxygen_distributor",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000D242128DA4E6",
+          "type": "advancement",
+          "advancement": "aia2:stages/e37"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00006A763E39B69A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:desh_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 3.0
     },
     {
       "id": "0000A1E435C3FF9F",
@@ -298,7 +419,7 @@
           "count": 4
         }
       ],
-      "x": 2.0,
+      "x": 5.0,
       "y": 3.0
     },
     {
@@ -726,6 +847,145 @@
       "y": 0.0
     },
     {
+      "id": "000013F3E457C636",
+      "title": "Крижаний маршрут далекої колонії",
+      "description": [
+        "Відвідайте Ґласіо й підготуйте Ice Shard для холодної виробничої лінії. Джерело матеріалу та запас на повернення плануйте окремо: віддалена база не повинна залежати від останнього балона чи останньої каністри.",
+        "Порівняйте у Cryo Freezer переробку Ice Shard та Blue Ice. Концентрат дає більше Cryo Fuel за рецепт, тому його варто відокремити від звичайного льоду й підтримувати для спеціалізованої переробки."
+      ],
+      "icon": {
+        "id": "ad_astra:ice_shard",
+        "count": 1
+      },
+      "dependencies": [
+        "000093BB7C0DDCB1",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000743EAD814ED6",
+          "type": "dimension",
+          "dimension": "ad_astra:glacio"
+        },
+        {
+          "id": "00000B96857D9404",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:cryo_freezer",
+          "timer": 40
+        },
+        {
+          "id": "0000BF1779B730F3",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ice_shard",
+            "count": 1
+          },
+          "count": 8,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000004B4BD29631A",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cryo_fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000FD5826792100",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000FC7A8BCBBBB9",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cheese",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 3.0,
+      "y": 6.0
+    },
+    {
+      "id": "00006610D3C6487E",
+      "title": "Кріопаливо з наземного льоду",
+      "description": [
+        "Поставте Cryo Freezer і перевірте рецепт Blue Ice до залежності від далеких ресурсів. Так можна підготувати кріогенну лінію, не вимагаючи Ice Shard як обов’язкової умови першої експедиції до Ґласіо.",
+        "Розділіть звичайне Fuel та Cryo Fuel у сховищах і приготуйте відро готової холодної рідини. Перед подаванням у споживача перевірте його сумісність у JEI; назва бака сама по собі не визначає пальне."
+      ],
+      "icon": {
+        "id": "ad_astra:cryo_fuel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "000001749F547C15",
+        "0000BEAC001E25A4"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00007FD83145FD14",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "ad_astra:cryo_freezer",
+          "timer": 40
+        },
+        {
+          "id": "0000F67AB50148D6",
+          "type": "item",
+          "item": {
+            "id": "minecraft:blue_ice",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000B7B10FB30AD2",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:cryo_fuel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E24F693E5677",
+          "type": "advancement",
+          "advancement": "aia2:stages/e38"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004A5CE4BBF3AC",
+          "type": "item",
+          "item": {
+            "id": "ad_astra:ostrum_nugget",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 0.0,
+      "y": 6.0
+    },
+    {
       "id": "000076CDD45D92EB",
       "title": "Холодне паливо має власну лінію",
       "description": [
@@ -800,7 +1060,7 @@
           "count": 4
         }
       ],
-      "x": 4.0,
+      "x": 7.0,
       "y": 3.0
     },
     {
@@ -889,7 +1149,7 @@
           "count": 4
         }
       ],
-      "x": 6.0,
+      "x": 9.0,
       "y": 3.0
     }
   ]

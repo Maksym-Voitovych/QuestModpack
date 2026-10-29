@@ -429,6 +429,11 @@ def plan_install(source, instance):
                     clibano_classes.update('ua/aia2/guard/mixin/' + name + '.class' for name in clibano_mixins)
                     if not clibano_classes <= set(jar.namelist()) or not clibano_mixins <= registered:
                         raise InstallError('This package needs the matching Clibano controller ownership and paid production guards')
+                    nasa_mixins = {'AdAstraNasaMixin', 'AdAstraNasaMenuMixin', 'AdAstraNasaBaseMenuMixin'}
+                    nasa_classes = {'ua/aia2/guard/AdAstraNasaAccess.class'} | {
+                        'ua/aia2/guard/mixin/' + name + '.class' for name in nasa_mixins}
+                    if not nasa_classes <= set(jar.namelist()) or not nasa_mixins <= registered:
+                        raise InstallError('This package needs the matching Ad Astra NASA cached recipe and menu guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
     files.extend(bundled_jars)
