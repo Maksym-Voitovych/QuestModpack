@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/item/ItemStack.java",
+    "sha256": "b35770a757f0c62a88276a38c36763d26e204d1a6210ea3fcac71a53526bc389",
+    "line_count": 1099
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "name": "isEmpty",
+      "declaration_lines": [
+        300
+      ]
+    },
+    {
+      "name": "split",
+      "declaration_lines": [
+        308
+      ]
+    },
+    {
+      "name": "copy",
+      "declaration_lines": [
+        552
+      ]
+    },
+    {
+      "name": "copyWithCount",
+      "declaration_lines": [
+        562
+      ]
+    },
+    {
+      "name": "matches",
+      "declaration_lines": [
+        584
+      ]
+    },
+    {
+      "name": "isSameItemSameComponents",
+      "declaration_lines": [
+        611
+      ]
+    },
+    {
+      "name": "getCount",
+      "declaration_lines": [
+        1039
+      ]
+    },
+    {
+      "name": "setCount",
+      "declaration_lines": [
+        1043
+      ]
+    },
+    {
+      "name": "grow",
+      "declaration_lines": [
+        1053
+      ]
+    },
+    {
+      "name": "shrink",
+      "declaration_lines": [
+        1057
+      ]
+    }
+  ],
+  "facts": [
+    "split makes a copy with the selected count, shrinks the supplied stack and returns the copy.",
+    "copy preserves effective components through a copied component map; copyWithCount changes the count of that copy.",
+    "matches checks count and item/component equality; isSameItemSameComponents does not independently check count and treats two empty stacks as equivalent.",
+    "getCount returns 0 for depleted stacks, so negative raw count is not distinguishable through this accessor alone.",
+    "shrink delegates to grow with the negative amount, and grow delegates to setCount.",
+    "Exact native debit witnesses therefore need observed calls with amount 1, captured stack references and component snapshots, in addition to count checks."
+  ],
+  "scope": "API facts and original source locations only; full decompiled source remains in the local SDK artifact outside the repository."
+}

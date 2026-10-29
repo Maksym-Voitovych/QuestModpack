@@ -18,7 +18,7 @@
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 298Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN |
+| 10 | Інтеграційні тести | IN_PROGRESS | 302Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN |
 | 11 | Реліз і push | IN_PROGRESS | 0.4.18 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено |
 
 
@@ -39,7 +39,7 @@
 | 07 | IN_PROGRESS | IN_PROGRESS (13) | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (7) | 298Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN | DONE (static) |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | 302Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (21) | 0.4.18 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
@@ -632,3 +632,17 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 
 - DONE доставки до коміту: ZIP4628manifestentries/1176runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites; upgrade7a60178(0.4.17)→0.4.18 backupoldJAR, opaque world+FTB/fire/knowledge+EMC/paidchunkmarkers таforeignquest/mod/script збережені; repeatідемпотентний. Цеsyntheticinstallerfixture, неfullworldmigration; Windowsінстанснечіпали.
 - ФінальнийZIP перепаковуєтьсяпісляmetadata йзвіряєвсіsource/runtimeSHAзtree. Звіт:implementation/nasa-production-package-install-v7.json. Code/source/docs/installer фіксуютьсяціліснимmain-комітоміpushбезforce; hash/statusзgitlog/originтаexternaldeliveryreportбіляZIP, безself-reference. Наступнийстарт — stationadapterзокремогоsource-review;4NASAцілінестворюватиповторно. Повний0.5 IN_PROGRESS.
+
+### 2026-10-30 — комплектність Git-джерел: перевірки DONE
+
+- Код NASA checkpoint збережено й pushed у main: `36742b5`. Під час перевірки source delivery виявлено, що загальне правило `world/` виключило шість нових JSON API-фактів. Runtime ZIP містив їх, але чистому Git checkout бракувало джерел доказів.
+- Додано вузький .gitignore exception лише для заморожених API-фактів NASA. Правила ігнорування справжніх world/saves/logs збережені. Це не світ і не повні Minecraft sources.
+- Пакувальник тепер перевіряє весь перелік distributable-файлів за Git index і відхиляє unstaged/ignored sources; extracted package без .git дозволено перепаковувати з явним статусом NOT_A_GIT_CHECKOUT. Чотири окремі regression-тести PASS.
+- Усі42 evidence entries мають точні SHA й присутні в index. Три ручні probes підтвердили, що world/level.dat, saves і logs залишаються ignored; source fact дозволений. Світи користувача не додавалися й не змінювалися.
+- Наступна дія цього delivery-fix: завершити full302 та central validator на чистому checkout із Git index, оновити metadata, перепакувати ZIP/actual installer, окремий fix-коміт і push без force. NASA Java/JAR/runtime не змінюються; station adapter усе ще наступний механічний блок.
+
+- DONE clean-source перевірок: 302 Python-тести без skips та central validator (SNBT/ID/DAG/предмети/рецепти/ресурси/13JSsyntax) PASS на окремій копії з Git index, без untracked sources і .git. До попередніх298 додано4packagingregressions; Java/JAR/runtime не змінено. Звіт NASA оновлено. Зараз фінальні metadata/ZIP перепаковуються; actual CLI upgrade й SHA перевірки повторюються перед окремим delivery-fix commit/push.
+- Наступний механічний блок після delivery-fix — station split-stack/overlappingpayment+acceptedplacement з ранньою перевіркою орбіти. Не повторювати NASA-код/4цілі/42джерела. Binary original mods і повний client/JEI/Survival/TPS залишаються NOT_RUN; повний0.5 IN_PROGRESS.
+
+- DONE фінальної source-delivery перевірки: ZIP4629 manifest entries,1176 runtime SHA,installer SHA/CRC та actualextractedCLI0.4.17→0.4.18 PASS; dry-run0writes, backupoldJAR, opaqueprogress/foreigncontent і repeatidempotence збережені. Source index gate перевірив усі4629файлів; усі42evidence sources тепер уGit. MatchingJARSHA477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5 незмінний.
+- Після metadata виконується останній repack/all-sourceSHAcheck та окремий source-delivery fix commit/push. Exacthash/status — gitlog/origin/main і external delivery report біляZIP; не вбудовувати self-referential commitSHA. Подальший старт: stationadapter; NASA checkpoint завершено в межах code/source/model/commonMC перевірок. Повний клієнт усе ще NOT_RUN, повний0.5 не реліз.

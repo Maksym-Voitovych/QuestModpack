@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/Containers.java",
+    "sha256": "de58fbe6f43f021bcbbc44732b993484305d27bd689fab5ae94917cfde97b1a3",
+    "line_count": 59
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "name": "dropItemStack",
+      "declaration_lines": [
+        31
+      ]
+    }
+  ],
+  "facts": [
+    "dropItemStack consumes its supplied stack by splitting random batches of 10 through 30 into ItemEntity objects.",
+    "The native method invokes Level.addFreshEntity and discards the returned boolean. Normal return is not an acceptance witness.",
+    "Random position, random motion, splitting and item-entity construction precede entity insertion.",
+    "Compiled Containers bytecode is preserved separately; dropItemStack instruction183 invokes Level.addFreshEntity(Entity)boolean and instruction186 discards the result."
+  ],
+  "scope": "API facts and original source locations only; full decompiled source remains in the local SDK artifact outside the repository."
+}

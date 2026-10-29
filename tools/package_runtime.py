@@ -4,11 +4,33 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = '0.4.18-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
+
+
+def validate_source_tracking(root, selected):
+    """A Git checkpoint must contain every file selected for its distributable.
+
+    Extracted source packages can be repackaged without Git. In a checkout,
+    staging new files is required before packaging; ignored evidence must never
+    be silently present only on the build machine.
+    """
+    root = Path(root)
+    if not (root / '.git').exists():
+        return {'status': 'NOT_A_GIT_CHECKOUT', 'checked': 0}
+    result = subprocess.run(['git', 'ls-files', '--cached', '-z'], cwd=root,
+                            check=True, capture_output=True)
+    tracked = set(result.stdout.decode('utf-8').split('\0'))
+    paths = {Path(path).relative_to(root).as_posix() for path in selected}
+    missing = sorted(paths - tracked)
+    if missing:
+        raise ValueError('Package sources absent from the Git index; stage reviewed files before packaging: '
+                         + ', '.join(missing))
+    return {'status': 'passed', 'checked': len(paths)}
 
 
 def main():
@@ -90,6 +112,7 @@ def main():
                 continue  # Avoid recursively embedding an old archive checksum.
             selected.append(file)
     selected.extend([ROOT / name for name in ['install_runtime.py', 'README.uk.md', 'README.md', '.gitignore', '.gitattributes']])
+    tracking = validate_source_tracking(ROOT, selected)
     manifest = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                 for p in sorted(selected)}
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -108,6 +131,7 @@ def main():
               'bytes': args.output.stat().st_size, 'files': len(manifest),
               'sha256': hashlib.sha256(args.output.read_bytes()).hexdigest(),
               'crc_and_manifest': 'passed', 'companion_jars': guard_jars,
+              'source_tracking': tracking,
               'download_in_client': 'not_verifiable_from_execution_tools'}
     optional_report = ROOT / 'implementation/projecte-hotfix-binary-abi-v6.json'
     if optional_report.is_file():

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/level/entity/PersistentEntitySectionManager.java",
+    "sha256": "12122c6cd7e2645f9e8d1f3f495298e70e68b9631da5d5ea883199718c255395",
+    "line_count": 482
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "name": "addEntityUuid",
+      "declaration_lines": [
+        61
+      ]
+    },
+    {
+      "name": "addNewEntity",
+      "declaration_lines": [
+        70
+      ]
+    },
+    {
+      "name": "addEntity",
+      "declaration_lines": [
+        78
+      ]
+    },
+    {
+      "name": "addEntityWithoutEvent",
+      "declaration_lines": [
+        83
+      ]
+    }
+  ],
+  "facts": [
+    "addNewEntity delegates addEntity with the legacy-loading flag false.",
+    "addEntity posts the synchronous cancellable EntityJoinLevelEvent; cancellation returns false before insertion.",
+    "addEntityWithoutEvent rejects duplicate UUIDs; otherwise it inserts into entity sections, installs callbacks, performs visibility-related callbacks and returns true.",
+    "Join and lifecycle callbacks may mutate state or reenter machine code before the enclosing ServerLevel.addFreshEntity returns."
+  ],
+  "scope": "API facts and original source locations only; full decompiled source remains in the local SDK artifact outside the repository."
+}

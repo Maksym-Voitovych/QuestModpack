@@ -67,7 +67,7 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 298,
+      "passed": 302,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
@@ -102,7 +102,7 @@
     "jar_path": "mods/aia2-machine-guard-0.4.18-alpha.jar",
     "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.18-alpha --baseline 7a60178 --check-only",
     "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed:4628manifest entries/1176runtime hashes and installer",
+    "archive_crc_and_all_sha256_entries": "passed:4629manifest entries/1176runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -243,8 +243,8 @@
       "version": "0.4.18-alpha",
       "status": "automated_tests_passed_optional_binary_and_full_client_pending",
       "baseline": "7a60178",
-      "python_tests": 298,
-      "new_python_tests": 35,
+      "python_tests": 302,
+      "new_python_tests": 39,
       "node_tests": 57,
       "java_policy_assertions": 5237,
       "javascript_syntax_files": 13,
@@ -295,8 +295,31 @@
         "Exact NASA class/default component outputcount1 and reviewed14slot recipes only; unsupported initial definitions reject before effects",
         "Original optional binary provenance and fullpack dispatch still unproven",
         "Station split-stack/overlap payment and accepted placement remain TODO"
-      ]
-    }
+      ],
+      "post_wording_change_tests": {
+        "nasa_content_tests": 24,
+        "central_static_validator": "passed including13JSsyntaxfiles",
+        "full_runtime_rebuild": "1175files byte-identical seed131"
+      },
+      "source_delivery_regression": {
+        "cause": "world/ ignore omitted6 frozen API-fact JSONs from the Git checkpoint although the runtime ZIP included them",
+        "fixed_by": "narrow source-only ignore exception and pre-package complete Git-index closure gate",
+        "frozen_evidence_entries_tracked": 42,
+        "added_tracking_tests": 4,
+        "tracking_tests": "passed",
+        "real_world_save_log_exclusions": "preserved;3manual probes passed",
+        "fresh_checkout_full_suite": {
+          "status": "passed",
+          "python_tests": 302,
+          "central_validator": "passed including13JSsyntax",
+          "checkout": "Git index only, no untracked source or .git metadata",
+          "full_client": "NOT_RUN"
+        },
+        "native_code_or_jar_changes_in_delivery_fix": 0
+      },
+      "package_source_tracking_tests": 4
+    },
+    "source_delivery": "All42frozen sources tracked;302Python+centralvalidator passed in clean index checkout; pre-package Git-index closure gate"
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -666,8 +689,8 @@
     "version": "0.4.18-alpha",
     "status": "automated_tests_passed_optional_binary_and_full_client_pending",
     "baseline": "7a60178",
-    "python_tests": 298,
-    "new_python_tests": 35,
+    "python_tests": 302,
+    "new_python_tests": 39,
     "node_tests": 57,
     "java_policy_assertions": 5237,
     "javascript_syntax_files": 13,
@@ -718,6 +741,28 @@
       "Exact NASA class/default component outputcount1 and reviewed14slot recipes only; unsupported initial definitions reject before effects",
       "Original optional binary provenance and fullpack dispatch still unproven",
       "Station split-stack/overlap payment and accepted placement remain TODO"
-    ]
+    ],
+    "post_wording_change_tests": {
+      "nasa_content_tests": 24,
+      "central_static_validator": "passed including13JSsyntaxfiles",
+      "full_runtime_rebuild": "1175files byte-identical seed131"
+    },
+    "source_delivery_regression": {
+      "cause": "world/ ignore omitted6 frozen API-fact JSONs from the Git checkpoint although the runtime ZIP included them",
+      "fixed_by": "narrow source-only ignore exception and pre-package complete Git-index closure gate",
+      "frozen_evidence_entries_tracked": 42,
+      "added_tracking_tests": 4,
+      "tracking_tests": "passed",
+      "real_world_save_log_exclusions": "preserved;3manual probes passed",
+      "fresh_checkout_full_suite": {
+        "status": "passed",
+        "python_tests": 302,
+        "central_validator": "passed including13JSsyntax",
+        "checkout": "Git index only, no untracked source or .git metadata",
+        "full_client": "NOT_RUN"
+      },
+      "native_code_or_jar_changes_in_delivery_fix": 0
+    },
+    "package_source_tracking_tests": 4
   }
 }

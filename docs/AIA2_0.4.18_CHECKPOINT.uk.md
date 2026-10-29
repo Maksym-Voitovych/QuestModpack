@@ -56,6 +56,14 @@ Mixins із наявним Ad Astra JAR. Відсутність мода не є
 Ця перевірка не замінює повний Mixin pipeline з усіма сторонніми трансформерами.
 Критичний ProjectE Tablet preflight і hotfix 0.4.17 збережені.
 
+Додатковий source-delivery gate перевіряє, що кожний distributable-файл є
+в Git index перед пакуванням. Вузький ignore exception включає шість JSON
+API-фактів із шляхом `net/minecraft/world`; справжні світи й журнали лишаються
+ignored. Це усуває розбіжність між локальним ZIP і чистим Git checkout.
+
+Пройдено302 Python-тести на чистій копії з Git index,57 Node-тестів,
+5237 Java policy assertions і154 actual minimal-Minecraft checks у2JVM.
+
 Автоматичні результати фіксуються в `implementation/nasa-production-verification-v7.json`
 і `companion/native-smoke-report.json`. Модельні тести actual helper/handlers/bridge
 не є запуском Ad Astra. Справжній Sponge застосовує три optional Mixins до

@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/item/crafting/Ingredient.java",
+    "sha256": "34827b2e8819c80d705b5e147659ef43bd4dc233f5b8c0813b43804744fbf942",
+    "line_count": 321
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "name": "getItems",
+      "declaration_lines": [
+        94,
+        271,
+        289
+      ]
+    },
+    {
+      "name": "test",
+      "declaration_lines": [
+        107
+      ]
+    },
+    {
+      "name": "isEmpty",
+      "declaration_lines": [
+        143
+      ]
+    },
+    {
+      "name": "getValues",
+      "declaration_lines": [
+        181
+      ]
+    },
+    {
+      "name": "isCustom",
+      "declaration_lines": [
+        197
+      ]
+    }
+  ],
+  "facts": [
+    "getItems caches the resolved ItemStack array.",
+    "Vanilla test uses the cached array while custom ingredients invoke their custom test implementation.",
+    "Native matches alone does not prove current tag membership or a supported custom-ingredient implementation.",
+    "getValues and isCustom expose a bounded route for reviewing vanilla item and tag values without adopting cached tag membership."
+  ],
+  "scope": "API facts and original source locations only; full decompiled source remains in the local SDK artifact outside the repository."
+}
