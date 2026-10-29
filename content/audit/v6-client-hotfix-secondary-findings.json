@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "status": "SECONDARY_FAILURES_EXPLAINED_NO_INDEPENDENT_ROOT_CAUSE_PROVEN",
+  "observed_versions": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.264",
+    "aia2_machine_guard": "0.4.16-alpha",
+    "projecte": "1.1.0",
+    "ftbquests": "2101.1.36",
+    "aether": "1.5.10"
+  },
+  "log_evidence": [
+    {
+      "name": "latest.log",
+      "sha256": "4ec12c2889fe037caa97f07b497c274380242b3cfdf0ce7066b4bed78e52fc6d"
+    },
+    {
+      "name": "crash-report.txt",
+      "sha256": "825b7996353ef30ba9c1706e0b38a6fbd47a943efc02af0e0b569b3173b26738"
+    }
+  ],
+  "raw_logs_committed": false,
+  "line_number_convention": "1-based raw LF split; control characters must not add synthetic line numbers",
+  "timeline": [
+    {
+      "source": "latest.log",
+      "line": 1122,
+      "time": "14:41:16.947",
+      "event": "ProjectETabletSourceMixin fails during TransmutationTablet class transformation: target openContainer descriptors missing."
+    },
+    {
+      "source": "latest.log",
+      "line": 1171,
+      "time": "14:41:16.977",
+      "event": "FMLModContainer records failure to apply AIA2 ProjectE mixin."
+    },
+    {
+      "source": "latest.log",
+      "line": 1460,
+      "time": "14:41:25.040",
+      "event": "ModLoader cannot complete Mod Construction; 1 error found."
+    },
+    {
+      "source": "latest.log",
+      "line": 1462,
+      "time": "14:41:25.290",
+      "event": "NeoForge refuses client lifecycle events because mod state is broken."
+    },
+    {
+      "source": "latest.log",
+      "line": 1528,
+      "time": "14:41:27.425",
+      "event": "FTB ThemeLoader reports missing theme resources."
+    },
+    {
+      "source": "latest.log",
+      "line": 1531,
+      "time": "14:41:27.486",
+      "event": "Minecraft reports Rendering overlay exception; cause QuestShape.reload on empty shapes."
+    },
+    {
+      "source": "latest.log",
+      "line": 1568,
+      "time": "14:41:28.703",
+      "event": "Emergency shutdown fires player logout; Aether ToolHooks initialization throws."
+    },
+    {
+      "source": "latest.log",
+      "line": 1636,
+      "time": "during emergency logout",
+      "event": "DeferredHolder cannot resolve unbound aether:skyroot_log."
+    }
+  ],
+  "ftbquests": {
+    "classification": "downstream_resource_initialization_failure_with_upstream_empty_list_fragility",
+    "evidence_source_manifest": "content/research/evidence/client_hotfix_secondary_v6/manifest.json",
+    "theme_loader_semantics": "ThemeLoader.loadTheme logs missing map but still invokes QuestShape.reload(findShapes(resourceManager)). findShapes scans textures/shapes/*/background.png.",
+    "quest_shape_semantics": "QuestShape.reload clears MAP, fills from list, then unconditionally uses MAP.values().iterator().next(); an empty list throws NoSuchElementException exactly at source line46.",
+    "crash_lines": {
+      "exception": 7,
+      "quest_shape": 10,
+      "theme_loader": 11,
+      "initial_reload_status": 93,
+      "initial_reload_packs": 96
+    },
+    "initial_reload_finished": false,
+    "packs_have_mod_ftbquests": false,
+    "packs_summary": [
+      "vanilla",
+      "KubeJS virtual/file packs",
+      "generated fragmentum layer"
+    ],
+    "builtin_resources_present_in_matching_source": {
+      "theme": true,
+      "shape_backgrounds": 10
+    },
+    "not_proven": [
+      "An independently missing or malformed custom theme.",
+      "An invalid AIA2 quest SNBT file.",
+      "A need to reset quest/player progress or inject substitute theme assets."
+    ],
+    "action": "Fix ProjectE construction failure first. Verify mod/ftbquests resources and non-empty shapes on a real client. Only investigate an independent theme/resource-pack issue if it survives that retest."
+  },
+  "aether": {
+    "classification": "secondary_emergency_cleanup_initializer_failure",
+    "root_exception": "java.lang.NullPointerException: Trying to access unbound value: ResourceKey[minecraft:block / aether:skyroot_log]",
+    "stack": [
+      "Minecraft.emergencySaveAndCrash",
+      "Minecraft.emergencySave",
+      "Minecraft.disconnect",
+      "ClientHooks.firePlayerLogout",
+      "AetherClient.lambda$eventSetup$12(AetherClient.java:114)",
+      "AbilityHooks$ToolHooks.<clinit>(AbilityHooks.java:221)",
+      "DeferredHolder.get/value"
+    ],
+    "scope": "The access happens during emergency logout after mod construction and client resource reload already failed. An unbound deferred block is consistent with aborted registry lifecycle. Exact Aether source/binary was not inspected in this audit.",
+    "not_proven": [
+      "An independent aether:skyroot_log registration bug during successful startup.",
+      "An AIA2 script removing the block from the registry.",
+      "A need to remove The Aether or add a fake skyroot_log block."
+    ],
+    "action": "Retest exact Aether1.5.10 after the ProjectE mixin is fixed. Preserve the mod and all saved data; do not suppress the cleanup exception as a progression fix."
+  },
+  "recommended_scope": {
+    "active_ftb_or_aether_code_changes": 0,
+    "reset_progress": false,
+    "delete_mods_or_resources": false,
+    "mask_broken_mod_state": false
+  },
+  "verification_limits": [
+    "This is an evidence/source audit, not a successful fullpack/client reproduction.",
+    "No client resource manager was executed here.",
+    "No Windows instance or personal world was accessed or modified."
+  ]
+}

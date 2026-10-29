@@ -1,0 +1,722 @@
+{
+  "schema": 1,
+  "status": "SOURCE_AUDIT_COMPLETE_BINARY_INJECTION_CHECK_REQUIRED",
+  "guard_commit_audited": "b428e08b5e98c2ecfe37a19ced75f52e6fb3677f",
+  "release_pin": "6aea247f7056eea1521db3f0c73d656857b75423",
+  "incorrect_later_same_version_pin": "f432b0c66837759fb0731c9144dc53176b949c5d",
+  "installed_version": "1.1.0",
+  "minecraft": "1.21.1",
+  "mixin_files": 24,
+  "projecte_mixins": 21,
+  "unique_projecte_target_classes": 20,
+  "minecraft_mixins": 3,
+  "missing_method_mixins": [
+    "ProjectETabletSourceMixin"
+  ],
+  "changed_projecte_source_files_between_pins": [
+    "src/main/java/moze_intel/projecte/client/PEClient.java",
+    "src/main/java/moze_intel/projecte/gameObjs/PETags.java",
+    "src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java",
+    "src/main/java/moze_intel/projecte/integration/curios/TransmutationTableCurios.java",
+    "src/main/java/moze_intel/projecte/network/packets/to_server/KeyPressPKT.java",
+    "src/main/java/moze_intel/projecte/utils/ClientKeyHelper.java",
+    "src/main/java/moze_intel/projecte/utils/PEKeybind.java",
+    "src/main/java/moze_intel/projecte/utils/text/PELang.java"
+  ],
+  "changed_target_source_classes": [
+    "moze_intel.projecte.network.packets.to_server.KeyPressPKT",
+    "moze_intel.projecte.gameObjs.items.TransmutationTablet"
+  ],
+  "critical_findings": [
+    "Only ProjectETabletSourceMixin targets absent ProjectE release methods: both openContainer overloads were introduced later. Root owns its hotfix.",
+    "KeyPressPKT changed later, but tryPerformCapability retains its exact source signature in the release.",
+    "CurioItemCapability and getAttributeModifiers(SlotContext, ResourceLocation) ARE PRESENT in the release; do not remove their guard based on assumed absence."
+  ],
+  "limits": [
+    "This source audit does not certify bytecode invocation owner/descriptors, Mixin application or client startup.",
+    "All records refer to baselineb428e08, before root hotfix edits.",
+    "No ProjectE mixin/helper/source map modified by this audit."
+  ],
+  "hooks": [
+    {
+      "mixin": "ProjectEArchangelMixin",
+      "target": "moze_intel.projecte.gameObjs.items.rings.ArchangelSmite",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/rings/ArchangelSmite.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/rings/ArchangelSmite.java",
+      "release_source_sha256": "f4b5a952c9c75d0e8b69d83179f64e3bbc62a6ba0f7853acd35af61161e25361",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "fireVolley(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 43,
+          "declaration": "public static void fireVolley(ItemStack stack, Player player)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEArmorAbilitiesMixin",
+      "target": "moze_intel.projecte.handlers.InternalAbilities",
+      "source_path": "src/main/java/moze_intel/projecte/handlers/InternalAbilities.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/handlers/InternalAbilities.java",
+      "release_source_sha256": "40a0778548da6c6064748a5b9c5f537a1a1cb37374d548663060a9b6f73f947a",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "canWalkOnWater(Lnet/minecraft/world/entity/player/Player;)Lmoze_intel/projecte/handlers/InternalAbilities$WalkOnType;",
+          "declaration_found": true,
+          "line": 86,
+          "declaration": "private static WalkOnType canWalkOnWater(Player player)"
+        },
+        {
+          "descriptor": "canWalkOnLava(Lnet/minecraft/world/entity/player/Player;)Lmoze_intel/projecte/handlers/InternalAbilities$WalkOnType;",
+          "declaration_found": true,
+          "line": 94,
+          "declaration": "private static WalkOnType canWalkOnLava(Player player)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "canWalkOnWater(Lnet/minecraft/world/entity/player/Player;)Lmoze_intel/projecte/handlers/InternalAbilities$WalkOnType;",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 90,
+              "source": "ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        },
+        {
+          "caller_descriptor": "canWalkOnLava(Lnet/minecraft/world/entity/player/Player;)Lmoze_intel/projecte/handlers/InternalAbilities$WalkOnType;",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 98,
+              "source": "ItemStack chestplate = player.getItemBySlot(EquipmentSlot.CHEST);"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEArmorEventsMixin",
+      "target": "moze_intel.projecte.events.PlayerEvents",
+      "source_path": "src/main/java/moze_intel/projecte/events/PlayerEvents.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/events/PlayerEvents.java",
+      "release_source_sha256": "b6e52b6af4f4bcc957241a531dff9240eb16b3e792999ce2630a7c954d6902c4",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "onLivingDamaged(Lnet/neoforged/neoforge/event/entity/living/LivingIncomingDamageEvent;)V",
+          "declaration_found": true,
+          "line": 149,
+          "declaration": "public static void onLivingDamaged(LivingIncomingDamageEvent event)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "onLivingDamaged(Lnet/neoforged/neoforge/event/entity/living/LivingIncomingDamageEvent;)V",
+          "callee_descriptor": "Lnet/minecraft/world/entity/LivingEntity;getArmorSlots()Ljava/lang/Iterable;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 153,
+              "source": "for (ItemStack armorStack : event.getEntity().getArmorSlots()) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEArmorFireMixin",
+      "target": "moze_intel.projecte.events.TickEvents",
+      "source_path": "src/main/java/moze_intel/projecte/events/TickEvents.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/events/TickEvents.java",
+      "release_source_sha256": "ae564a279df16f4e6084a28a2d7951196879b1bf011e459ab4e00b5ec524b758",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "shouldPlayerResistFire(Lnet/minecraft/world/entity/player/Player;)Z",
+          "declaration_found": true,
+          "line": 61,
+          "declaration": "public static boolean shouldPlayerResistFire(Player player)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "shouldPlayerResistFire(Lnet/minecraft/world/entity/player/Player;)Z",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;getArmorSlots()Ljava/lang/Iterable;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 62,
+              "source": "for (ItemStack stack : player.getArmorSlots()) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEBagPassiveMixin",
+      "target": "moze_intel.projecte.events.TickEvents",
+      "source_path": "src/main/java/moze_intel/projecte/events/TickEvents.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/events/TickEvents.java",
+      "release_source_sha256": "ae564a279df16f4e6084a28a2d7951196879b1bf011e459ab4e00b5ec524b758",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "playerTick(Lnet/neoforged/neoforge/event/tick/PlayerTickEvent$Post;)V",
+          "declaration_found": true,
+          "line": 28,
+          "declaration": "public static void playerTick(PlayerTickEvent.Post event)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "playerTick(Lnet/neoforged/neoforge/event/tick/PlayerTickEvent$Post;)V",
+          "callee_descriptor": "Lmoze_intel/projecte/api/capabilities/item/IAlchBagItem;updateInAlchBag(Lnet/neoforged/neoforge/items/IItemHandler;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;)Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 38,
+              "source": "if (alchBagItem != null && alchBagItem.updateInAlchBag(inv, player, current)) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEBagSuctionMixin",
+      "target": "moze_intel.projecte.gameObjs.items.AlchemicalBag",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java",
+      "release_source_sha256": "f8bea9744a95fcfa703f8fd457e9782554e793e9ba4ee881c7b4eb74b2600711",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "getFirstBagWithSuctionItem(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/NonNullList;)Lnet/minecraft/world/item/ItemStack;",
+          "declaration_found": true,
+          "line": 46,
+          "declaration": "public static ItemStack getFirstBagWithSuctionItem(Player player, NonNullList<ItemStack> inventory)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "getFirstBagWithSuctionItem(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/core/NonNullList;)Lnet/minecraft/world/item/ItemStack;",
+          "callee_descriptor": "Lnet/minecraft/world/item/ItemStack;isEmpty()Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 49,
+              "source": "if (!stack.isEmpty() && stack.getItem() instanceof AlchemicalBag bag) {"
+            },
+            {
+              "approx_line": 60,
+              "source": "if (!ring.isEmpty() && (ring.is(PEItems.BLACK_HOLE_BAND) || ring.is(PEItems.VOID_RING))) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEChestPassiveMixin",
+      "target": "moze_intel.projecte.gameObjs.block_entities.AlchBlockEntityChest",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java",
+      "release_source_sha256": "b6c5a5fbb2912438c22ed2985aae4c4c961d897445a4c103098f9d474b7c8468",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "tickServer(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lmoze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest;)V",
+          "declaration_found": true,
+          "line": 67,
+          "declaration": "public static void tickServer(Level level, BlockPos pos, BlockState state, AlchBlockEntityChest alchChest)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "tickServer(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lmoze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest;)V",
+          "callee_descriptor": "Lmoze_intel/projecte/api/capabilities/item/IAlchChestItem;updateInAlchChest(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/item/ItemStack;)Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 72,
+              "source": "if (alchChestItem != null && alchChestItem.updateInAlchChest(level, pos, stack)) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectECurioAttributesMixin",
+      "target": "moze_intel.projecte.integration.curios.CurioItemCapability",
+      "source_path": "src/main/java/moze_intel/projecte/integration/curios/CurioItemCapability.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/integration/curios/CurioItemCapability.java",
+      "release_source_sha256": "c4ba6ca07ae05a6b6d4fdfd2197645216005eb6bb7b40e4b615f1fdef13fb989",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "getAttributeModifiers(Ltop/theillusivec4/curios/api/SlotContext;Lnet/minecraft/resources/ResourceLocation;)Lcom/google/common/collect/Multimap;",
+          "declaration_found": true,
+          "line": 33,
+          "declaration": "public Multimap<Holder<Attribute>, AttributeModifier> getAttributeModifiers(SlotContext slotContext, ResourceLocation id)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectECurioReconcileMixin",
+      "target": "Player.class",
+      "status": "MINECRAFT_TARGET_OUTSIDE_PROJECTE_RELEASE_DRIFT",
+      "target_methods": [
+        "tick()V"
+      ],
+      "note": "Minecraft/NeoForge targets retained; exactbytecode checker and minimalserver test own this scope."
+    },
+    {
+      "mixin": "ProjectEEquipmentAttributesMixin",
+      "target": "LivingEntity.class",
+      "status": "MINECRAFT_TARGET_OUTSIDE_PROJECTE_RELEASE_DRIFT",
+      "target_methods": [
+        "collectEquipmentChanges()Ljava/util/Map;",
+        "collectEquipmentChanges()Ljava/util/Map;"
+      ],
+      "note": "Minecraft/NeoForge targets retained; exactbytecode checker and minimalserver test own this scope."
+    },
+    {
+      "mixin": "ProjectEGemArmorMixin",
+      "target": "moze_intel.projecte.gameObjs.items.armor.GemArmorBase",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/armor/GemArmorBase.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/armor/GemArmorBase.java",
+      "release_source_sha256": "6fc59eb5613b16e8a3d2d89c283ae7c2ebdd9e5501b13e70f578bbae60420e4b",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "hasAnyPiece(Lnet/minecraft/world/entity/player/Player;)Z",
+          "declaration_found": true,
+          "line": 41,
+          "declaration": "public static boolean hasAnyPiece(Player player)"
+        },
+        {
+          "descriptor": "hasFullSet(Lnet/minecraft/world/entity/player/Player;)Z",
+          "declaration_found": true,
+          "line": 48,
+          "declaration": "public static boolean hasFullSet(Player player)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "hasAnyPiece(Lnet/minecraft/world/entity/player/Player;)Z",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 42,
+              "source": "return player.getItemBySlot(EquipmentSlot.HEAD).is(PEItems.GEM_HELMET) ||"
+            },
+            {
+              "approx_line": 43,
+              "source": "player.getItemBySlot(EquipmentSlot.CHEST).is(PEItems.GEM_CHESTPLATE) ||"
+            },
+            {
+              "approx_line": 44,
+              "source": "player.getItemBySlot(EquipmentSlot.LEGS).is(PEItems.GEM_LEGGINGS) ||"
+            },
+            {
+              "approx_line": 45,
+              "source": "player.getItemBySlot(EquipmentSlot.FEET).is(PEItems.GEM_BOOTS);"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        },
+        {
+          "caller_descriptor": "hasFullSet(Lnet/minecraft/world/entity/player/Player;)Z",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;getItemBySlot(Lnet/minecraft/world/entity/EquipmentSlot;)Lnet/minecraft/world/item/ItemStack;",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 49,
+              "source": "return player.getItemBySlot(EquipmentSlot.HEAD).is(PEItems.GEM_HELMET) &&"
+            },
+            {
+              "approx_line": 50,
+              "source": "player.getItemBySlot(EquipmentSlot.CHEST).is(PEItems.GEM_CHESTPLATE) &&"
+            },
+            {
+              "approx_line": 51,
+              "source": "player.getItemBySlot(EquipmentSlot.LEGS).is(PEItems.GEM_LEGGINGS) &&"
+            },
+            {
+              "approx_line": 52,
+              "source": "player.getItemBySlot(EquipmentSlot.FEET).is(PEItems.GEM_BOOTS);"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEGemChestMixin",
+      "target": "moze_intel.projecte.gameObjs.items.armor.GemChest",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/armor/GemChest.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/armor/GemChest.java",
+      "release_source_sha256": "ef3aec0082ffc72df5f4743b84726d4e9d424956b03713480d3d23e635b2f51f",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "doExplode(Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 41,
+          "declaration": "public static void doExplode(Player player)"
+        },
+        {
+          "descriptor": "canProtectAgainstFire(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)Z",
+          "declaration_found": true,
+          "line": 49,
+          "declaration": "public boolean canProtectAgainstFire(ItemStack stack, Player player)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEGemFeetMixin",
+      "target": "moze_intel.projecte.gameObjs.items.armor.GemFeet",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/armor/GemFeet.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/armor/GemFeet.java",
+      "release_source_sha256": "6517977e7538bad01b5c99a90c3f827d9a207bce45afad7a7f690fef357f5b9f",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "toggleStepAssist(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 63,
+          "declaration": "public static void toggleStepAssist(ItemStack boots, Player player)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEGemHelmetMixin",
+      "target": "moze_intel.projecte.gameObjs.items.armor.GemHelmet",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/armor/GemHelmet.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/armor/GemHelmet.java",
+      "release_source_sha256": "ad5096dd86c24ce28e6fad18b83e5726c7b37bcfd69fd4afda8c73beb6249fe4",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "toggleNightVision(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 37,
+          "declaration": "public static void toggleNightVision(ItemStack helm, Player player)"
+        },
+        {
+          "descriptor": "doZap(Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 78,
+          "declaration": "public static void doZap(Player player)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEGemModeMixin",
+      "target": "moze_intel.projecte.network.packets.to_server.UpdateGemModePKT",
+      "source_path": "src/main/java/moze_intel/projecte/network/packets/to_server/UpdateGemModePKT.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/network/packets/to_server/UpdateGemModePKT.java",
+      "release_source_sha256": "4f81c8f79539c5cb8b013701e56484af1e693697d15fee9becf6e68c73833c8e",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "handle(Lnet/neoforged/neoforge/network/handling/IPayloadContext;)V",
+          "declaration_found": true,
+          "line": 34,
+          "declaration": "public void handle(IPayloadContext context)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEHandMenuMixin",
+      "target": "moze_intel.projecte.gameObjs.container.PEHandContainer",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/container/PEHandContainer.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/container/PEHandContainer.java",
+      "release_source_sha256": "3656d2f68fc4957649a981429b878e556c47570823565b0904f47242429b5ff8",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "stillValid(Lnet/minecraft/world/entity/player/Player;)Z",
+          "declaration_found": true,
+          "line": 66,
+          "declaration": "public boolean stillValid(@NotNull Player player)"
+        },
+        {
+          "descriptor": "clicked(IILnet/minecraft/world/inventory/ClickType;Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": true,
+          "line": 71,
+          "declaration": "public void clicked(int slotId, int dragType, @NotNull ClickType clickType, @NotNull Player player)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEHotbarPredicateMixin",
+      "target": "moze_intel.projecte.utils.PlayerHelper",
+      "source_path": "src/main/java/moze_intel/projecte/utils/PlayerHelper.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/utils/PlayerHelper.java",
+      "release_source_sha256": "3f1a4cf2e0e7b5adcdbc2672bb63bdce3b6e545fc2bcb870d72e2d4607e6b4c2",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "checkHotbar(Lnet/minecraft/world/entity/player/Player;Ljava/util/function/BiPredicate;)Z",
+          "declaration_found": true,
+          "line": 110,
+          "declaration": "public static boolean checkHotbar(Player player, BiPredicate<Player, ItemStack> checker)"
+        },
+        {
+          "descriptor": "checkHotbarCurios(Lnet/minecraft/world/entity/player/Player;Ljava/util/function/BiPredicate;)Z",
+          "declaration_found": true,
+          "line": 120,
+          "declaration": "public static boolean checkHotbarCurios(Player player, BiPredicate<Player, ItemStack> checker)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "checkHotbar(Lnet/minecraft/world/entity/player/Player;Ljava/util/function/BiPredicate;)Z",
+          "callee_descriptor": "Ljava/util/function/BiPredicate;test(Ljava/lang/Object;Ljava/lang/Object;)Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 113,
+              "source": "if (!stack.isEmpty() && checker.test(player, stack)) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        },
+        {
+          "caller_descriptor": "checkHotbarCurios(Lnet/minecraft/world/entity/player/Player;Ljava/util/function/BiPredicate;)Z",
+          "callee_descriptor": "Ljava/util/function/BiPredicate;test(Ljava/lang/Object;Ljava/lang/Object;)Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 125,
+              "source": "if (!offhand.isEmpty() && checker.test(player, offhand)) {"
+            },
+            {
+              "approx_line": 132,
+              "source": "if (!stack.isEmpty() && checker.test(player, stack)) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEItemStackUseMixin",
+      "target": "ItemStack.class",
+      "status": "MINECRAFT_TARGET_OUTSIDE_PROJECTE_RELEASE_DRIFT",
+      "target_methods": [
+        "inventoryTick(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/Entity;IZ)V",
+        "useOn(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;",
+        "onItemUseFirst(Lnet/minecraft/world/item/context/UseOnContext;)Lnet/minecraft/world/InteractionResult;"
+      ],
+      "note": "Minecraft/NeoForge targets retained; exactbytecode checker and minimalserver test own this scope."
+    },
+    {
+      "mixin": "ProjectEKeyCapabilityMixin",
+      "target": "moze_intel.projecte.network.packets.to_server.KeyPressPKT",
+      "source_path": "src/main/java/moze_intel/projecte/network/packets/to_server/KeyPressPKT.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/network/packets/to_server/KeyPressPKT.java",
+      "release_source_sha256": "c6284ee24da4058a099b8dd1d40f017da9600709b2fbb4efff4bc51ba9a6a596",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": false,
+      "methods": [
+        {
+          "descriptor": "tryPerformCapability(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/InteractionHand;Lnet/neoforged/neoforge/capabilities/ItemCapability;Lmoze_intel/projecte/network/packets/to_server/KeyPressPKT$CapabilityProcessor;)Z",
+          "declaration_found": true,
+          "line": 108,
+          "declaration": "private static <CAPABILITY> boolean tryPerformCapability(Player player, ItemStack stack, InteractionHand hand, ItemCapability<CAPABILITY, Void> capability, CapabilityProcessor<CAPABILITY> processor)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEOutputSlotMixin",
+      "target": "moze_intel.projecte.gameObjs.container.slots.transmutation.SlotOutput",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/container/slots/transmutation/SlotOutput.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/container/slots/transmutation/SlotOutput.java",
+      "release_source_sha256": "f10398797e1d2c4850eda257a616e29d0d05f3564a42e67d8107ce472e70886d",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "remove(I)Lnet/minecraft/world/item/ItemStack;",
+          "declaration_found": true,
+          "line": 28,
+          "declaration": "public ItemStack remove(int amount)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectEPedestalPassiveMixin",
+      "target": "moze_intel.projecte.gameObjs.block_entities.DMPedestalBlockEntity",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java",
+      "release_source_sha256": "b89517d0734a2136a3cfb5504db4e71aa067eb01004f5e7199fd3709014cf497",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "tickServer(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lmoze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity;)V",
+          "declaration_found": true,
+          "line": 69,
+          "declaration": "public static void tickServer(Level level, BlockPos pos, BlockState state, DMPedestalBlockEntity pedestal)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "tickServer(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lmoze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity;)V",
+          "callee_descriptor": "Lmoze_intel/projecte/api/capabilities/item/IPedestalItem;updateInPedestal(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/entity/BlockEntity;)Z",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 75,
+              "source": "} else if (pedestalItem.updateInPedestal(stack, level, pos, pedestal)) {"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectETabletSourceMixin",
+      "target": "moze_intel.projecte.gameObjs.items.TransmutationTablet",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java",
+      "release_source_sha256": "419c230c2cc20dba739de4fd0cf22e4e9a15bfd8339d6e413f0cc8df988da30a",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": false,
+      "methods": [
+        {
+          "descriptor": "openContainer(Lnet/minecraft/world/entity/player/Player;)V",
+          "declaration_found": false
+        },
+        {
+          "descriptor": "openContainer(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;I)V",
+          "declaration_found": false
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "openContainer(Lnet/minecraft/world/entity/player/Player;)V",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;openMenu(Lnet/minecraft/world/MenuProvider;Ljava/util/function/Consumer;)Ljava/util/OptionalInt;",
+          "callee_method_name_found_in_source_body": false,
+          "source_occurrences": [],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        },
+        {
+          "caller_descriptor": "openContainer(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;I)V",
+          "callee_descriptor": "Lnet/minecraft/world/entity/player/Player;openMenu(Lnet/minecraft/world/MenuProvider;Ljava/util/function/Consumer;)Ljava/util/OptionalInt;",
+          "callee_method_name_found_in_source_body": false,
+          "source_occurrences": [],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "CONFIRMED_MISSING_RELEASE_TARGETS"
+    },
+    {
+      "mixin": "ProjectETimeWatchMixin",
+      "target": "moze_intel.projecte.gameObjs.items.rings.TimeWatch",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java",
+      "release_source_sha256": "33a42d35167e12b8ae7d2a9423da4cdd6540e0489689f97fbd7f218fb3676976",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "provideBonusTicks(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/level/chunk/LevelChunk$BoundTickingBlockEntity;I)V",
+          "declaration_found": true,
+          "line": 167,
+          "declaration": "private <T extends BlockEntity> void provideBonusTicks(Level level, BlockPos pos, BlockState state, BlockEntity blockEntity, BoundTickingBlockEntity<T> tickingBE, int bonusTicks)"
+        }
+      ],
+      "invoke_sites": [
+        {
+          "caller_descriptor": "provideBonusTicks(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;Lnet/minecraft/world/level/chunk/LevelChunk$BoundTickingBlockEntity;I)V",
+          "callee_descriptor": "Lnet/minecraft/world/level/block/entity/BlockEntityTicker;tick(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/block/entity/BlockEntity;)V",
+          "callee_method_name_found_in_source_body": true,
+          "source_occurrences": [
+            {
+              "approx_line": 171,
+              "source": "tickingBE.ticker.tick(level, pos, state, be);"
+            }
+          ],
+          "scope": "Source method name occurrence only. JVMowner/erasure/instruction count must be checked against exact binary separately."
+        }
+      ],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    },
+    {
+      "mixin": "ProjectETransmutationMixin",
+      "target": "moze_intel.projecte.gameObjs.container.TransmutationContainer",
+      "source_path": "src/main/java/moze_intel/projecte/gameObjs/container/TransmutationContainer.java",
+      "release_source_url": "https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/container/TransmutationContainer.java",
+      "release_source_sha256": "f56df0dfdc486b39a226497a720392eceb4d4e7acc2ce42cb2f7fb6a7a70509e",
+      "source_in_release": true,
+      "source_identical_to_later_reviewed_pin": true,
+      "methods": [
+        {
+          "descriptor": "quickMoveStack(Lnet/minecraft/world/entity/player/Player;I)Lnet/minecraft/world/item/ItemStack;",
+          "declaration_found": true,
+          "line": 110,
+          "declaration": "public ItemStack quickMoveStack(@NotNull Player player, int slotIndex)"
+        }
+      ],
+      "invoke_sites": [],
+      "status": "SOURCE_TARGETS_PRESENT_IN_RELEASE"
+    }
+  ]
+}

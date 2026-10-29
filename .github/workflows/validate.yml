@@ -16,6 +16,10 @@ jobs:
           distribution: temurin
           java-version: '21'
       - run: python -m pip install -r tools/test-requirements.txt
+      # Populate real Sponge/ASM dependencies so the release-Mixin regression
+      # runs in CI instead of being skipped on a bare Java/Python runner.
+      - run: ./gradlew build --no-daemon --console=plain
+        working-directory: companion
       - run: node --test tests/*.test.js
       - run: python -m unittest discover -s tests -p 'test_*.py' -v
       - run: python tools/validate_game_pack.py

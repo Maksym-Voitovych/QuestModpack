@@ -5748,42 +5748,45 @@ Red Matter Furnace успадковує input/output/fuel логіку темн�
 - Native advancement projecte:collector фактично містить inventory criterion для condenser_mk1; його не використано як доказ колектора.
 - Covalence repair залежить від EMC пилу й інструмента; без цих значень у whitelist це не гарантований ігровий маршрут.
 - Stage floors деяких collector/RM item IDs нижчі за доступність їхніх інгредієнтів; нові цілі розміщено на47, старі не змінено.
+- Hotfix0.4.17: історичний f432b0c не є release1.1.0, попри однаковий version properties. Release6aea247f має direct Player.openMenu у use(), без openContainer API.35з36джерел еквівалентні; Tablet змінений.
+- Бінарний JAR Windows-інстансу не надано; офіційний download недоступний через HTTP403. Source compilation і isolated Mixin-transform не замінюють перевірку справжнього ProjectE binary чи client boot.
+- Curios-shortcut для таблетки з пізнішої гілки не оголошується доступною механікою PE1.1.0. Звичайна ручна Tablet і source-floor47 збережені; Curios passive/attributes guard не видалено.
 
 Джерела:
 
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/LICENSE) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/gradle.properties) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/DiviningRod.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/capability/AlchBagImpl.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/RepairTalisman.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMFurnaceBlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RMFurnaceBlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/KleinStar.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipeShapelessKleinStar.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/recipe/klein_star_zwei.json) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RelayMK1BlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumRelayTier.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserBlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserMK2BlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CollectorMK1BlockEntity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumCollectorTier.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/emc/FuelMapper.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/BlackHoleBand.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/SWRG.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/container/inventory/TransmutationInventory.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/TransmutationProxyImpl.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/PhilosophersStone.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/world_transmutation/WorldTransmutationManager.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipesCovalenceRepair.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/utils/EMCHelper.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/registries/PEItems.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ProjectEConfig.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ServerConfig.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/advancement/collector.json) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/LICENSE) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/gradle.properties) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/DiviningRod.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/capability/AlchBagImpl.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/RepairTalisman.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMFurnaceBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RMFurnaceBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/KleinStar.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipeShapelessKleinStar.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/recipe/klein_star_zwei.json) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/RelayMK1BlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumRelayTier.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserMK2BlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/block_entities/CollectorMK1BlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/EnumCollectorTier.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/emc/FuelMapper.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/BlackHoleBand.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/SWRG.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/container/inventory/TransmutationInventory.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/impl/TransmutationProxyImpl.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/PhilosophersStone.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/world_transmutation/WorldTransmutationManager.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipesCovalenceRepair.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/utils/EMCHelper.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/registries/PEItems.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ProjectEConfig.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/config/ServerConfig.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/datagen/generated/data/projecte/advancement/collector.json) — SHA перевірено; upstream-версія відрізняється
 - [джерело](https://github.com/Maksym-Voitovych/QuestModpack/blob/1915b802bec636e961b45afb212788c71c63ec5a/kubejs/config/aia2_emc_whitelist.json) — SHA перевірено
 - [джерело](https://github.com/Maksym-Voitovych/QuestModpack/blob/1915b802bec636e961b45afb212788c71c63ec5a/kubejs/server_scripts/aia2/35_projecte.js) — SHA перевірено
 - [джерело](../../content/research/evidence/projecte_core_next_v5/export/mods.json) — SHA перевірено
@@ -5822,9 +5825,45 @@ Red Matter Furnace успадковує input/output/fuel логіку темн�
 - [minecraft:crafting_shapeless](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/high_covalence_dust.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/iron_band.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/projecte_core_next_v5/recipes/projecte/alchemical_chest.json) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/GemEternalDensity.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java) — SHA перевірено
-- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/blocks/Pedestal.java) — SHA перевірено
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/GemEternalDensity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://raw.githubusercontent.com/sinkillerj/ProjectE/f432b0c66837759fb0731c9144dc53176b949c5d/src/main/java/moze_intel/projecte/gameObjs/blocks/Pedestal.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/LICENSE) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/DiviningRod.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/AlchemicalBag.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/impl/capability/AlchBagImpl.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/RepairTalisman.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/AlchBlockEntityChest.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMPedestalBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/DMFurnaceBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/RMFurnaceBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/KleinStar.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipeShapelessKleinStar.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/datagen/generated/data/projecte/recipe/klein_star_zwei.json) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/RelayMK1BlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/EnumRelayTier.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/CondenserMK2BlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/block_entities/CollectorMK1BlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/EnumCollectorTier.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/emc/FuelMapper.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/rings/BlackHoleBand.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/rings/SWRG.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/container/inventory/TransmutationInventory.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/impl/TransmutationProxyImpl.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/TransmutationTablet.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/PhilosophersStone.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/world_transmutation/WorldTransmutationManager.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/customRecipes/RecipesCovalenceRepair.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/utils/EMCHelper.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/registries/PEItems.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/config/ProjectEConfig.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/config/ServerConfig.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/datagen/generated/data/projecte/advancement/collector.json) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/GemEternalDensity.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/items/rings/TimeWatch.java) — SHA перевірено
+- [джерело](https://github.com/sinkillerj/ProjectE/blob/6aea247f7056eea1521db3f0c73d656857b75423/src/main/java/moze_intel/projecte/gameObjs/blocks/Pedestal.java) — SHA перевірено
 
 ## Actually Additions
 

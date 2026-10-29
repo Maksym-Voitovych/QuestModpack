@@ -7,7 +7,7 @@ from pathlib import Path
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.16-alpha'
+VERSION = '0.4.17-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -105,6 +105,13 @@ def main():
               'sha256': hashlib.sha256(args.output.read_bytes()).hexdigest(),
               'crc_and_manifest': 'passed', 'companion_jars': guard_jars,
               'download_in_client': 'not_verifiable_from_execution_tools'}
+    optional_report = ROOT / 'implementation/projecte-hotfix-binary-abi-v6.json'
+    if optional_report.is_file():
+        optional = json.loads(optional_report.read_text())
+        current_guard_sha = hashlib.sha256((ROOT/guard_jars[0]).read_bytes()).hexdigest()
+        report['optional_projecte_binary_contracts'] = (optional['status']
+            if optional.get('guard', {}).get('sha256') == current_guard_sha else 'STALE_GUARD_REPORT')
+        report['full_client_boot'] = 'NOT_RUN'
     (ROOT / 'implementation/package-report.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(report, indent=2))
 

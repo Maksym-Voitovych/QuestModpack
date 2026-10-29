@@ -1,4 +1,8 @@
-"""Actual ProjectE passive/packet/world entry guards, with explicit host-model limits."""
+"""Production guards on a historical modeled host; release ABI is tested separately.
+
+The f432b0c source fixture includes a later Curios refactor, despite retaining
+version1.1.0. It must never certify the installed release's method selectors.
+"""
 import hashlib
 import json
 import os
@@ -10,7 +14,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 
 class ProjectEPassiveWorldTests(unittest.TestCase):
-    def test_pinned_native_entrypoints_and_held_tool_contract(self):
+    def test_historical_source_preservation_and_current_release_selector(self):
         manifest=json.loads((ROOT/'content/research/evidence/projecte_world_audit_v5/manifest.json').read_text())
         self.assertEqual(manifest['pin'],'f432b0c66837759fb0731c9144dc53176b949c5d')
         sources={}
@@ -34,8 +38,8 @@ class ProjectEPassiveWorldTests(unittest.TestCase):
         self.assertIn('onItemUseFirst(Lnet/minecraft/world/item/context/UseOnContext;',item)
         self.assertIn('useOn(Lnet/minecraft/world/item/context/UseOnContext;',item)
         tablet=(ROOT/'companion/src/main/java/ua/aia2/guard/mixin/ProjectETabletSourceMixin.java').read_text()
-        self.assertIn('openContainer(Lnet/minecraft/world/entity/player/Player;)V',tablet)
-        self.assertIn('openContainer(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;I)V',tablet)
+        self.assertIn('use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;',tablet)
+        self.assertNotIn('"openContainer(',tablet)
         self.assertIn('ProjectEPassiveAccess.openTablet',tablet)
         script=(ROOT/'kubejs/server_scripts/aia2/30_access.js').read_text()
         broken=script[script.index('BlockEvents.broken'):script.index('BlockEvents.broken')+500]

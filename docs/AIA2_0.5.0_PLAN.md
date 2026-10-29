@@ -6,10 +6,11 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний проміжний блок: **0.4.16-alpha**, Ad Astra1.16.26: source-backed
-космічний курс, чотири міжмодові двигуни й NASA cache/menu guard. Повний0.5 ще
-не готовий. Наступна конкретна дія — перевірений native NASA output/payment
-witness та оплата/успішне розміщення орбітальних станцій; див. PROGRESS.
+Поточний пріоритет: **0.4.17-alpha hotfix** після реального client crash0.4.16.
+ProjectETabletSourceMixin має відповідати releasePE1.1.0, а не пізнішій гілці
+зі старим version properties. Стан перевірок і binary/client обмежень — у
+PROGRESS. Після стабілізації продовжити NASA accepted-output/payment witness
+та station payment/placement adapter. Повний0.5 ще не готовий.
 
 ## Правило відновлення
 

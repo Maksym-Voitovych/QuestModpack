@@ -1,6 +1,6 @@
 {
-  "version": "0.4.16-alpha",
-  "status": "tested_development_milestone_not_complete_0_5_release",
+  "version": "0.4.17-alpha",
+  "status": "tested_source_fixture_hotfix_actual_projecte_binary_and_full_client_pending",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
@@ -9,7 +9,7 @@
     "substantive_quests": 3275,
     "preserved_legacy_manual_goals": 96,
     "quests_added_this_release": 587,
-    "authored_new_courses_this_release": 1,
+    "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 0,
     "chapters": 140,
     "groups": 6,
@@ -38,16 +38,16 @@
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 20,
+    "quests_added_since_last_checkpoint": 0,
     "native_action_quests": 105,
     "complete_core_maps": 27,
     "mapped_mods": 61,
     "controller_floor_items": 30,
     "controller_native_recipe_floors": 41,
     "controller_custom_recipe_floors": 5,
-    "new_recipes_since_last_checkpoint": 4,
+    "new_recipes_since_last_checkpoint": 0,
     "item_rewards": 3107,
-    "item_rewards_added_since_last_checkpoint": 20,
+    "item_rewards_added_since_last_checkpoint": 0,
     "existing_item_rewards_changed_since_last_checkpoint": 0
   },
   "confirmed_fixes": [
@@ -66,11 +66,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 255,
+      "passed": 263,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 30,
+      "includes_installer_tests": 31,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -81,9 +81,9 @@
       "passed": 151,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.16-alpha",
+      "version_tested": "0.4.17-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Actual minimal Minecraft/guard/NBT binary/SavedData fixtures in2JVM; Ad Astra, Forbidden Arcanus and Clibano absent"
+      "scope": "Actual minimal MC/guard/NBT fixtures in2JVM; ProjectE and other optional content mods absent"
     },
     "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
@@ -93,17 +93,15 @@
     "custom_component_and_machine_graph": "acyclic 362 nodes/696 edges; explicit sources only",
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
-      "status": "passed",
-      "runtime_files": 1172,
-      "byte_identical": true,
-      "hash_seed": 113,
-      "command": "PYTHONHASHSEED=113 python tools/generate_game_pack.py"
+      "status": "1171non-JAR runtime files byte-identical to b428e08; only companion JAR replaced",
+      "generator": "NOT_RUN: no generated runtime changes required",
+      "report": "implementation/projecte-hotfix-preservation-v6.json"
     },
-    "jar_sha256": "d106d29eada470c033cf186311c109c5fb9a526ff7b2a4438846637abada2665",
-    "jar_path": "mods/aia2-machine-guard-0.4.16-alpha.jar",
-    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.16-alpha --baseline 15380e8 --check-only",
+    "jar_sha256": "7252ed44e0a37fa9cc68e86f2afa992b869e41160fec78d213d8990841fd1521",
+    "jar_path": "mods/aia2-machine-guard-0.4.17-alpha.jar",
+    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.17-alpha --baseline b428e08 --check-only",
     "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed:4498 manifestentries/1172runtime hashes and installer",
+    "archive_crc_and_all_sha256_entries": "passed:4560manifest entries/1172runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -146,7 +144,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed: extracted actualCLI0.4.15→0.4.16; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
+    "packaged_installer_upgrade": "passed: extractedCLI0.4.16→0.4.17; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -182,13 +180,16 @@
     "clibano_dependency_actual_nbt_assertions_added": 14,
     "jar_class_preservation": {
       "status": "passed",
-      "baseline": "15380e8",
-      "preserved_classes": 194,
-      "new_classes": 8,
-      "total_classes": 202,
+      "baseline": "b428e08",
+      "classes": 202,
+      "byte_identical_existing_classes": 201,
+      "changed_classes": [
+        "ua/aia2/guard/mixin/ProjectETabletSourceMixin.class"
+      ],
       "mixins": 71,
-      "jar_sha256": "d106d29eada470c033cf186311c109c5fb9a526ff7b2a4438846637abada2665",
-      "fullpack_optional_weaving": "NOT_RUN"
+      "jar_sha256": "7252ed44e0a37fa9cc68e86f2afa992b869e41160fec78d213d8990841fd1521",
+      "projecte_binary_test": "BLOCKED actualJAR not provided",
+      "full_client": "NOT_RUN"
     },
     "ad_astra_nasa_helpers_modeled": {
       "passed": 244,
@@ -198,11 +199,25 @@
     },
     "ad_astra_source_contract_tests": 7,
     "ad_astra_balance_and_course_tests": 12,
-    "final_python_suite_after_preview_guard": {
-      "passed": 255,
-      "failed": 0,
-      "skipped": 0,
-      "nasa_modeled_assertions": 244
+    "projecte_release_regression_tests": 8,
+    "real_sponge_release_fixture": {
+      "source_release_pin": "6aea247f7056eea1521db3f0c73d656857b75423",
+      "rejected_development_pin": "f432b0c66837759fb0731c9144dc53176b949c5d",
+      "cause": "Same version properties concealed unreleased openContainer API; release uses direct Player.openMenu in use",
+      "mandatory_injection_requirement": 1,
+      "mixins_preserved": 71,
+      "permissions_and_96_keys": "unchanged",
+      "real_sponge_version": "0.16.4+mixin.0.8.7",
+      "old_error_reproduced_in_real_transformer_on_release_source_fixture": true,
+      "fixed_redirect_applied_in_real_transformer_on_release_source_fixture": true,
+      "minecraft_projecte_dependencies_in_transform_host": "MODELED",
+      "actual_installed_projecte_binary": "BLOCKED_NOT_PROVIDED_DOWNLOAD_HTTP403",
+      "full_client": "NOT_RUN",
+      "other_projecte_mixins": "source declarations checked; full binary invocation audit still pending",
+      "installer_preflight": "critical Tablet compiled target/callee before backup/write if ProjectE*.jar present",
+      "secondary_ftb_aether": "follow initial broken mod state in supplied logs; no independent primary cause proven",
+      "new_content": 0,
+      "checkpoint_doc": "docs/AIA2_0.4.17_HOTFIX.uk.md"
     }
   },
   "remaining_acceptance": [
@@ -261,7 +276,7 @@
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
   "checkpoint_preservation": "implementation/clibano-dependencies-preservation-v6.json",
   "checkpoint_base_commit": "d5c225c7a3a10178504a437068b088f0c9f5e860",
-  "checkpoint_backup": "/workspace/aia2-backups/before-ad-astra-20261029T004732Z/checkpoint-15380e8.tar.gz",
+  "checkpoint_backup": "/workspace/aia2-backups/before-projecte-client-hotfix-20261029T125009Z/checkpoint-b428e08.tar.gz",
   "checkpoint_report": "docs/AIA2_0.4.15_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
@@ -521,7 +536,7 @@
     "native_save_codec_or_level_null_omission_preserves_actual_counts": true,
     "package_manifest_and_upgrade": "passed"
   },
-  "checkpoint_baseline": "15380e80ffc462418bf4e829f4ec2ed85911cdda",
+  "checkpoint_baseline": "b428e08b5e98c2ecfe37a19ced75f52e6fb3677f",
   "checkpoint_ad_astra": {
     "status": "implemented_automatically_verified_fullpack_manual_acceptance_pending",
     "quests_added": 20,
@@ -548,5 +563,24 @@
     "balance_report": "implementation/ad-astra-core-balance-v6.json",
     "preservation_report": "implementation/ad-astra-preservation-v6.json",
     "source_comparison": "content/audit/v6-ad-astra-recipe-source-comparison.json"
+  },
+  "checkpoint_projecte_hotfix": {
+    "source_release_pin": "6aea247f7056eea1521db3f0c73d656857b75423",
+    "rejected_development_pin": "f432b0c66837759fb0731c9144dc53176b949c5d",
+    "cause": "Same version properties concealed unreleased openContainer API; release uses direct Player.openMenu in use",
+    "mandatory_injection_requirement": 1,
+    "mixins_preserved": 71,
+    "permissions_and_96_keys": "unchanged",
+    "real_sponge_version": "0.16.4+mixin.0.8.7",
+    "old_error_reproduced_in_real_transformer_on_release_source_fixture": true,
+    "fixed_redirect_applied_in_real_transformer_on_release_source_fixture": true,
+    "minecraft_projecte_dependencies_in_transform_host": "MODELED",
+    "actual_installed_projecte_binary": "BLOCKED_NOT_PROVIDED_DOWNLOAD_HTTP403",
+    "full_client": "NOT_RUN",
+    "other_projecte_mixins": "source declarations checked; full binary invocation audit still pending",
+    "installer_preflight": "critical Tablet compiled target/callee before backup/write if ProjectE*.jar present",
+    "secondary_ftb_aether": "follow initial broken mod state in supplied logs; no independent primary cause proven",
+    "new_content": 0,
+    "checkpoint_doc": "docs/AIA2_0.4.17_HOTFIX.uk.md"
   }
 }

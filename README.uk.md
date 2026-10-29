@@ -1,31 +1,32 @@
 # All in One Adventure 2.0 — AIA2
 
-**0.4.16-alpha** для Minecraft1.21.1 NeoForge, FTB Quests2101.1.36,
-KubeJS2101.7.2 і Rhino85. Повний0.5 ще в роботі.
+**0.4.17-alpha — hotfix запуску ProjectE.** Minecraft 1.21.1 NeoForge,
+FTB Quests 2101.1.36, KubeJS 2101.7.2 / Rhino85. Повний 0.5 ще в роботі.
 
-**48епох,96виробничих ключів,3371квест у140главах,627власних рецептів,
-390предметів/моделей/PNG.** Додано20optional цілей Ad Astra й чотири
-механічні формули двигунів Create. Усі3351старі non-coordinate quest/task/
-reward/dependency payloads і623власні рецепти збережено. Переміщено36старих
-вузлів у трьох главах Ad Astra; загалом1154перетини,0структурних попереджень.
+Виправлено `ProjectETabletSourceMixin`: PE1.1.0 відкриває меню в `use(...)`,
+а `openContainer(...)` з'явився в пізнішій гілці з тим самим version properties.
+Redirect тепер відповідає релізному commit `6aea247f`; `require=1`,
+серверні перевірки доступу та рівень47 для таблетки збережено.
 
-Курс починається на Землі до старогоM1, який уже вимагає ракету, та послідовно
-веде через Moon/Desh, Mars/Ostrum, Venus/Calorite до Glacio/кріопалива.
-Двигуни зберігають native матеріали й додають магію та техніку. Матриця36
-та каталізатор36 не створюють залежності першого польоту від місячних ресурсів.
-Функціональне пізнє спорядження й відповідні producer-рецепти відкриваються
-на38; декоративні калоритові блоки не отримали масового нового блокування.
+Інсталятор перед зміною файлів перевіряє критичну сигнатуру таблетки у
+ProjectE JAR інстансу, якщо його встановлено. Старий несумісний redirect
+відхиляється до backup/write. Окремий інструмент перевіряє всі ProjectE
+method/invocation contracts за наданим JAR; це не повне Mixin weaving.
 
-NASA тепер перевіряє кешований рецепт, вихід і живе меню на сервері перед
-викиданням результату чи списанням матеріалів. Source-version1.16.26 перевірено;
-походження конкретного binary та повний optional Mixin dispatch ще не доведені.
-Наявність ракети не видається за manufacturing proof. Наступні задачі —
-accepted output/payment witness NASA й оплата/успішне розміщення станцій.
+**48 епох, 96 виробничих ключів, 3371 квест / 140 глав, 627 рецептів,
+390 предметів/моделей/PNG — без змін.** Змінений один Java-клас;
+решта201клас і всі1171non-JAR runtime-файли збережені byte-identical.
 
-Закрийте гру/сервер, встановіть `nbtlib==2.0.4`, виконайте
-`python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`, потім
-без прапорця. Matching0.4.16JAR/скрипти й повний restart потрібні на обох
-сторонах. Оригінали та старий власний JAR резервуються; світи й прогрес
-зберігаються. Раніше описані правила recovery Forge/Clibano залишаються чинними.
+Справжній Sponge0.8.7 відтворив старий InvalidInjectionException і застосував
+виправлений redirect до класу, скомпільованого з релізного джерела, з моделями
+залежностей. Це не прогін оригінального ProjectE JAR чи повного клієнта.
+Бінарне відтворення позначено BLOCKED: JAR не надано, download дає HTTP403.
+FTB theme/QuestShape і Aether skyroot_log у наданих логах — наступні збої
+після broken mod state; їхні конфіги й дані не змінювалися.
 
-[Звіт](docs/AIA2_0.4.16_CHECKPOINT.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Карти](docs/research/MOD_MECHANICS.md) · [Джерела](docs/research/SOURCE_INDEX.md) · [Приймальна перевірка](docs/testing/AD_ASTRA_ACCEPTANCE.uk.md).
+Закрийте Minecraft, розпакуйте пакет і виконайте
+`python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`,
+потім без прапорця. Оригінали й старий власний JAR резервуються;
+світи, прогрес, сторонні квести та моди зберігаються. Потрібен повний restart.
+
+[Hotfix-звіт](docs/AIA2_0.4.17_HOTFIX.uk.md) · [Встановлення](implementation/INSTALL.uk.txt) · [Client acceptance](docs/testing/PROJECTE_CLIENT_HOTFIX_ACCEPTANCE.uk.md) · [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md) · [Попередній Ad Astra checkpoint](docs/AIA2_0.4.16_CHECKPOINT.uk.md).

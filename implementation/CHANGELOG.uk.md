@@ -1,3 +1,12 @@
+# 0.4.17-alpha — ProjectE client startup hotfix
+
+- Виправлено обов'язковий Tablet redirect: released1.1.0 `use(Level,Player,Hand)` замість відсутніх `openContainer` з пізнішого same-version commit. `require=1`,71mixins і всі permission/key checks збережені.
+- Справжній Sponge0.16.4+mixin0.8.7 відтворює старий InvalidInjectionException і застосовує виправлений redirect до exactrelease-source fixture. Оригінальний binary/fullclient NOT RUN; недоступний JAR явноBLOCKED.
+- Read-only JVM classfile checker; installerpreflight перевіряє критичну Tablet ABI доbackup/write. CI завантажує справжні Sponge/ASM dependencies через Gradle, щоб regression не пропускався на чистому runner.
+- Аудит24ProjectEmixins:21targetProjectE/20classes,3Minecraft; окрімTablet відсутніх source methods/call-site назв не знайдено.36release counterparts,35equivalent/1changedTablet. Історичні source files збережені, active research provenance виправлено.
+- FTB theme/QuestShape та Aether unboundskyroot є наступними збоями в наданому аварійному lifecycle; незалежна первинна проблема не доведена. Конфіги, світи й квести не змінювалися.
+-3371quests/627recipes/96keys/390items+PNG unchanged.201із202classes і1171non-JAR runtimefiles byte-identical. Нового контенту0. Full0.5не реліз; NASA witness/stationadapter залишаються наступним механічним блоком.
+
 # 0.4.16-alpha — Ad Astra: наземний старт, двигуни й NASA cache/menu
 
 - 20нових optional-квестів епох37/38:3371квест/140глав,96виробничих ключів.

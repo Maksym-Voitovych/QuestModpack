@@ -4,6 +4,7 @@ import argparse
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import hashlib
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -320,6 +321,34 @@ def _transform(relative, incoming, previous):
     return incoming
 
 
+def validate_projecte_tablet_pair(source, instance, companion):
+    """Read-only ABI check against the instance's real ProjectE JAR, if present.
+
+    This checks the critical tablet redirect, not all optional Mixin weaving.
+    It runs before backups or writes, including during --dry-run.
+    """
+    candidates = [path for path in (instance / 'mods').glob('*.jar')
+                  if re.match(r'^projecte(?:[-_.]|$)', path.name, re.IGNORECASE)]
+    if not candidates:
+        return {'status': 'not_installed', 'actual_mixin_transform': 'NOT_RUN'}
+    if len(candidates) != 1 or _is_link(candidates[0]) or not candidates[0].is_file():
+        raise InstallError('ProjectE ABI preflight needs one regular ProjectE JAR')
+    checker_path = source / 'tools/check_optional_mixin_targets_v6.py'
+    if not checker_path.is_file() or _is_link(checker_path):
+        raise InstallError('Package is missing the ProjectE compiled Mixin preflight tool')
+    try:
+        spec = importlib.util.spec_from_file_location('_aia2_optional_mixin_preflight', checker_path)
+        checker = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(checker)
+        report = checker.check(companion, candidates, mixin_names={'ProjectETabletSourceMixin'})
+    except (OSError, ValueError, AssertionError, KeyError, IndexError, zipfile.BadZipFile) as failure:
+        raise InstallError('ProjectE compiled Mixin preflight could not read the target JAR: ' + str(failure)) from failure
+    if report['status'] != 'PASSED_BYTECODE_CONTRACTS_NOT_WEAVING' or report['unverified_details']:
+        problems = ', '.join(sorted({row['kind'] for row in report['errors']})) or 'unverified injection details'
+        raise InstallError('ProjectE Tablet Mixin contract failed before installation: ' + problems)
+    return report
+
+
 def plan_install(source, instance):
     """Read and validate every selected source/target before changing the instance."""
     source, instance = Path(source).resolve(), Path(instance).expanduser().resolve()
@@ -436,6 +465,7 @@ def plan_install(source, instance):
                         raise InstallError('This package needs the matching Ad Astra NASA cached recipe and menu guards')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
+            validate_projecte_tablet_pair(source, instance, bundled_jars[0])
     files.extend(bundled_jars)
     operations = []
     for item in sorted(files):

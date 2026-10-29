@@ -1,9 +1,9 @@
-AIA2 0.4.16-alpha — встановлення та перевірка оновлення
+AIA2 0.4.17-alpha — встановлення та перевірка оновлення
 
 1. Закрийте Minecraft і сервер. Збережіть окрему копію свого інстансу та
    світу: інсталятор резервує змінювані файли, а не весь світ.
 2. Оновіть локальний Git checkout зі збереженням власних правок або
-   розпакуйте AIA2-runtime-0.4.16-alpha.zip в окрему папку. Не накладайте
+   розпакуйте AIA2-runtime-0.4.17-alpha.zip в окрему папку. Не накладайте
    старі ручні виправлення uuid()/getUUID() на нові скрипти.
 3. У папці пакета/репозиторію виконайте:
    python -m pip install nbtlib==2.0.4
@@ -15,7 +15,7 @@ AIA2 0.4.16-alpha — встановлення та перевірка онов�
 5. Інсталятор резервує всі змінювані оригінали ДО першої заміни, зливає
    групи та невідомі квести, зберігає data.snbt/світи/командний прогрес.
    Старий власний aia2-machine-guard-*.jar переноситься в backup перед
-   заміною на 0.4.16-alpha; сторонні моди не видаляються. Збережіть шлях
+   заміною на 0.4.17-alpha; сторонні моди не видаляються. Збережіть шлях
    backup і journal.json, які виводяться після встановлення.
 6. Для клієнта й окремого сервера встановіть однакові runtime-файли.
    Оновіть JAR і скрипти разом. Повністю перезапустіть обидва:
@@ -56,24 +56,24 @@ Create/Mekanism/AE2 перехоплення, клієнт і TPS потребу
 Порядок резервування/відкату: INSTALLER-SAFETY.uk.md.
 Інструкція та команди тестування: README.uk.md у корені репозиторію.
 
-Поточний пакет — проміжна розробка0.5 на runtime0.4.16, а не завершена0.5.
+Поточний пакет — проміжна розробка0.5 на runtime0.4.17, а не завершена0.5.
 Після оновлення перевірте чотири нативні виробничі докази (Create4/10, Mek16/23),
 /give не зараховується. До ранньої латуні застосовується незагрітий рецепт AIA2.
 
 Додаткові сценарії MI/Oritech/Roots: docs/testing/INDUSTRIAL_NATIVE_ACCEPTANCE.uk.md.
-Нові native guards потребують саме matching0.4.16JAR; старийAPI4JAR не достатній.
+Нові native guards потребують саме matching0.4.17JAR; старийAPI4JAR не достатній.
 
 EnderIO/Powah acceptance: docs/testing/ENERGY_NATIVE_ACCEPTANCE.uk.md.
 
-0.4.16 Fire Crafting: епоха19, sneak+правий клік кресалом по ВЕРХНІЙ грані основи; потім звичайне запалення. Старі основи потрібно зареєструвати один раз. Згасання bedrock-вогню не скидає власника; заміна основи скидає. Worksite SavedData ніколи не видаляється інсталятором. Див. docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md.
+0.4.17 Fire Crafting: епоха19, sneak+правий клік кресалом по ВЕРХНІЙ грані основи; потім звичайне запалення. Старі основи потрібно зареєструвати один раз. Згасання bedrock-вогню не скидає власника; заміна основи скидає. Worksite SavedData ніколи не видаляється інсталятором. Див. docs/testing/FIRE_WORKSITE_ACCEPTANCE.uk.md.
 
-ProjectE0.4.16: matchingJAR обов’язковий для current-output/TimeWatch guards. Whitelist має14звичайних матеріалів; палива/матерія не синтезуються з EMC. Наше оновлення не очищує знання/EMC гравців. Приймальна перевірка:docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md. Draconic CI633 provenance залишається BLOCKED; точний binary не тестувався.
+ProjectE0.4.17: matchingJAR обов’язковий для current-output/TimeWatch guards. Whitelist має14звичайних матеріалів; палива/матерія не синтезуються з EMC. Наше оновлення не очищує знання/EMC гравців. Приймальна перевірка:docs/testing/PROJECTE_DRACONIC_ACCEPTANCE.uk.md. Draconic CI633 provenance залишається BLOCKED; точний binary не тестувався.
 
-0.4.16: passive inventory/armor/Curios/bag/chest/pedestal/packet guards і таблетка Curios47. Перевірка matching JAR містить класи та реєстрацію mixins. Приймальні сценарії: docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md. Предмети, знання/EMC та збереження додатково не очищуються. Клієнтський Gem-рух і повний optional dispatch потребують гри.
+0.4.17: passive inventory/armor/Curios/bag/chest/pedestal/packet guards і таблетка Curios47. Перевірка matching JAR містить класи та реєстрацію mixins. Приймальні сценарії: docs/testing/PROJECTE_PASSIVE_ACCEPTANCE.uk.md. Предмети, знання/EMC та збереження додатково не очищуються. Клієнтський Gem-рух і повний optional dispatch потребують гри.
 
-EvilCraft0.4.16: matching JAR обов’язковий для infusion/spirit output guards. Spirit Reanimator і Sanguinary Accumulator складаються в Create5×3; JEI/головні матеріали збережено.16нових optional goals, native Closure capture. Manual acceptance:docs/testing/EVILCRAFT_CORE_ACCEPTANCE.uk.md. Forge ritual guard реалізовано; межі й ручні сценарії наведено нижче.
+EvilCraft0.4.17: matching JAR обов’язковий для infusion/spirit output guards. Spirit Reanimator і Sanguinary Accumulator складаються в Create5×3; JEI/головні матеріали збережено.16нових optional goals, native Closure capture. Manual acceptance:docs/testing/EVILCRAFT_CORE_ACCEPTANCE.uk.md. Forge ritual guard реалізовано; межі й ручні сценарії наведено нижче.
 
-0.4.16 — Forbidden Forge:
+0.4.17 — Forbidden Forge:
 За можливості завершіть старі активні ритуали до оновлення. Без нового
 receipt вони зберігаються paused; інсталятор не видаляє їх і не приписує
 оплату. /aia2forge status x y z показує стан своєї кузні поруч. Оператор
@@ -81,7 +81,7 @@ receipt вони зберігаються paused; інсталятор не ви
 входи збережено, есенції не повертаються й результат не видається.
 План повного тестування: docs/testing/FORBIDDEN_RITUAL_ACCEPTANCE.uk.md.
 
-Clibano0.4.16: за можливості завершіть стару плавку до оновлення.
+Clibano0.4.17: за можливості завершіть стару плавку до оновлення.
 ПКМ по рамці своєю дозволеною командою призначає actualmain і26частин.
 Legacy/corrupt незавершений прогрес зберігається paused; інсталятор його не
 скасовує. /aia2clibano status x y z; operator-only cancel робить bounded8backup
@@ -89,7 +89,7 @@ Legacy/corrupt незавершений прогрес зберігається 
 Автоматичний IO через рамку не заявлено. Повний ручний план:
 docs/testing/CLIBANO_ACCEPTANCE.uk.md.
 
-Forge dependencies 0.4.16:
+Forge dependencies 0.4.17:
 До оновлення за можливості завершіть активні ритуали з підсилювачами або
 тегами. Старий receipt не містить історичного відбитка цих залежностей:
 такий процес зберігається paused. Новий запуск записує окремий versioned
@@ -102,7 +102,7 @@ snapshot. Зміни item-tag membership/enhancer definitions після reload
 див. наступний блок. Повний тестовий план:
 docs/testing/FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md.
 
-Clibano dependencies0.4.16:
+Clibano dependencies0.4.17:
 За можливості завершіть стару плавку та використайте residues ДО оновлення.
 Старі dependent paid lanes і positive residues без історичного witness
 зберігаються paused; same currentID/кількість не доводять старе визначення.
@@ -116,7 +116,7 @@ Corrupt history спершу резервується, його lane witnesses �
 Ручні сценарії: docs/testing/CLIBANO_DEPENDENCIES_ACCEPTANCE.uk.md.
 
 
-Ad Astra0.4.16:
+Ad Astra0.4.17:
 20optional-цілей доступні у відповідних главах37/38; старі ID і completion
 збережені. Курс починається перед старимM1, а не після виготовленої ракети.
 Двигуни тепер Create5×3: перевірте JEI й подайте7native units+4міжмодові.
@@ -125,3 +125,20 @@ MatchingJAR містить3NASA mixins і AdAstraNasaAccess; preflight відх�
 Виконайте сценарії docs/testing/AD_ASTRA_ACCEPTANCE.uk.md.
 Кеш preview не є доказом виробництва; NASA action proof і коректна оплата/
 placement орбітальних станцій щеTODO. Fullpack/Survival/TPS NOT RUN.
+
+
+ProjectE startup hotfix0.4.17:
+УPE1.1.0 native Tablet menu відкривається черезuse, неopenContainer.
+Захист47іrequire1збережено. Інсталятор читає наявнийProjectE*.jar і
+перевіряє критичні method/invocation descriptors до будь-яких writes.
+При несумісності установка зупиняється зі зрозумілим повідомленням.
+Не очищуйте FTB Quests, світи, progress або Aetherregistry для цього hotfix.
+Повний client retest обов'язковий; первинний ProjectEbinaryуcloudнедоступний.
+Деталі:docs/AIA2_0.4.17_HOTFIX.uk.md і
+ docs/testing/PROJECTE_CLIENT_HOTFIX_ACCEPTANCE.uk.md.
+
+Окрема read-only перевірка всіх ProjectE contracts:
+python tools/check_optional_mixin_targets_v6.py --guard mods/aia2-machine-guard-0.4.17-alpha.jar --target-jar "C:\CurseForge\AllInOneAdventure2\mods\ProjectE-1.21.1-PE1.1.0.jar" --report projecte-abi.json
+Без --target-jar інструмент повертає BLOCKED, а не PASS.
+Він перевіряє method/INVOKE contracts; slices, повний Mixin pipeline,
+сторонні transformers і clientboot цим не доводяться.
