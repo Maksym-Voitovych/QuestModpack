@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-28 (часовий пояс користувача Europe/Kyiv). База `90ab63f`, робоча версія 0.4.15-alpha (Clibano dependency/residue history); 0.5 ще не реліз.
+Останнє оновлення: 2026-10-30 (Europe/Kyiv). База `90ab63f`, робочий checkpoint 0.4.18-alpha (NASA manufacturing witness); повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,1997 SHA-файлів карт; exact Forbidden2.6.1 і bytecode Valhelsia1.1.5; DraconicCI633 BLOCKED |
-| 3 | Карти прогресії | IN_PROGRESS | 26 scoped core-карт DONE; Forbidden29етапів;35partial та невивчені моди |
-| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини після5новихцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 567нових відv4; цього guard-блоку0нових; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3087item-нагород;0нових; усі3351попередніх quest/rewardpayloads збережено |
-| 7 | Розширення рецептів | IN_PROGRESS | 623рецепти;54v5формули; усі623попередніх entries незмінні у0.4.15 |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,2207 SHA-файлів карт; Ad Astra31етап/42нові джерела; installed binary provenance та DraconicCI633 BLOCKED |
+| 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
+| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,5старих координат переміщено для4NASAцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 591новий відv4;4optional NASA цього checkpoint; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3111item-нагород;4нові тематичні;3371старі quest/rewardpayloads збережені |
+| 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 233Python/57Node/5237Java;151MC@0.4.15/2JVM;285новихmodels+14NBT;fullpack NOT RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.15 проміжний блок; package/installer PASS; commit/push черезGit;0.5не завершено |
+| 10 | Інтеграційні тести | IN_PROGRESS | 298Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.18 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено |
 
 
 
@@ -31,16 +31,16 @@
 | Епоха | Дослідження | Квести v5 | Рецепти v5 | Залежності v5 |
 |---|---|---|---|---|
 | 01 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 02 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 03 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 04 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 05 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
-| 06 | IN_PROGRESS | IN_PROGRESS (3) | TODO | DONE (static) |
-| 07 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
+| 02 | IN_PROGRESS | IN_PROGRESS (4) | 61 мод /63 записи,2207 SHA-файлів карт; Ad Astra31етап/42нові джерела; installed binary provenance та DraconicCI633 BLOCKED | DONE (static) |
+| 03 | IN_PROGRESS | IN_PROGRESS (4) | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено | DONE (static) |
+| 04 | IN_PROGRESS | IN_PROGRESS (13) | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,5старих координат переміщено для4NASAцілей | DONE (static) |
+| 05 | IN_PROGRESS | IN_PROGRESS (5) | 591новий відv4;4optional NASA цього checkpoint; старі обов’язкові лінії IN_PROGRESS | DONE (static) |
+| 06 | IN_PROGRESS | IN_PROGRESS (3) | 3111item-нагород;4нові тематичні;3371старі quest/rewardpayloads збережені | DONE (static) |
+| 07 | IN_PROGRESS | IN_PROGRESS (13) | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
-| 11 | IN_PROGRESS | IN_PROGRESS (21) | IN_PROGRESS (2 формул) | DONE (static) |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | 298Python/57Node/5237Java;154MC@0.4.18/2JVM;326NASAmodels+Sponge3source-shapedtargets; fullpack NOT RUN | DONE (static) |
+| 11 | IN_PROGRESS | IN_PROGRESS (21) | 0.4.18 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
@@ -66,8 +66,8 @@
 | 34 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (2) | IN_PROGRESS (3 формул) | DONE (static) |
-| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra) | IN_PROGRESS (+3 двигуни) | DONE (static) |
-| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
+| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra/+2NASA) | IN_PROGRESS (+3 двигуни) | DONE (static) |
+| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra/+2NASA) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 41 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (2 формул) | DONE (static) |
@@ -610,3 +610,25 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - DONE доставки до коміту:ZIP4560manifestentries/1172runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites; upgradeb428e08(0.4.16)→0.4.17 резервуєoldJAR і зберігаєopaque world/FTB/fire/knowledge+EMC/paidchunkmarkers, foreignquest/mod/script; repeatідемпотентний. Цеsyntheticinstallerfixture, неfullclient/worldmigration.
 - Фінальнийпакетперепаковуєтьсяпісляmetadata; усіsource/runtimeSHAзвіряютьсязпоточнимtree. MatchingJARSHA7252ed44e0a37fa9cc68e86f2afa992b869e41160fec78d213d8990841fd1521. Hotfixзберігаєтьсяокремимmain-комітом/pushбезforce;hash/statusзgitlog/originіexternaldeliveryreportпоручізZIP. BinaryoriginalPEіfullclientлишилисяBLOCKED/NOT_RUN, їхнепозначатизавершеними.
 - Продовження0.5: першоюдієюпринаявностіactualProjectEJar — full21PE ABIcheck/clientretest; наступниймеханічнийблокNASA witness/stationadapter. Frozenbugsource+Spongehost/preflightregressionsзавершені; їхнеписатизаново. Rawuserlogs/worlds/caches/backupsдоGitнепотрапляють.
+
+
+### 2026-10-29 — NASA manufacturing witness: IN_PROGRESS
+
+- Відновленоclean7a60178/main(0.4.17), ProjectEoriginalbinary/fullclient досіBLOCKED/NOT_RUN; незалежнийNASAsource/witnessблок продовжується. Backupbefore-nasa-production у/workspace/aia2-backups/; snapshotb428 захищає3371IDs/627recipes.
+- RootownsNasaProductionAccess/NasaIngredients/AdAstraNasaMixin/ProductionBridge/dropmarker+MCtest/інтеграцію. nasa_witness_source_v7 завершив42SHA evidence (7MCfullsourcesзаміненоAPI-facts, proprietarySDKпозаGit). nasa_witness_content_v7 завершив4additivequests/rules/stages+24tests. nasa_witness_tests_v7 завершуєactualhelper/bridge/handler host і негативніingredient/tagmutationcases.
+- КодщеIN_PROGRESS: одноразовийtry/finallypermit, acceptedworldUUIDentity+defaultcount1output,14orderednative shrink witnesses, currentrecipe/tag/inputrefs/team/generation. Ніякихoutput/refund/rollbackприfailedproof. Old11rules/27stages/20AdAstraquests збережені; нові4optionalmanufacturinggoals не переписуютьстаріtasks.
+- Наступнаконкретнадія: завершитиhelper regressions, ABIpreflightAdAstra/installer, integrateconfig15+4adv, generator/graph/preservation, JDKbuild/minimalMC/fulltests/package/commit/push. Доцьогонеоголошувати0.4.18готовим. Stationpayment/placementщеTODO. Повний0.5не реліз.
+
+### 2026-10-30 — NASA0.4.18: код і перевірки DONE, доставка IN_PROGRESS
+
+- Реалізовано одноразовий native craft scope, current recipe/generation/tag/input/team checks, accepted world UUID entity та14exact ordered debits. Unsupported початковий стан відхиляється до native effects. Generic bridge не видає NASA proof; жодного output/refund/rollback при failed proof. Старі schema1/11rules збережені.
+-3375quests/140chapters/6groups/627recipes/3111itemrewards/390items+models+PNG/96manufacturedkeys. Додано4optional NASA цілі/8tasks/4нагороди; старих змінених нагород0,новихrecipes/items/textures0.27старих AdAstra stages незмінні,31разом;15mechanic rules/18recipeIDs.42нові SHAджерела,2207mapfiles/724stages/1097links/27scopedcore/34partial.
+- Preservation3371non-coordinatepayloads/627recipeentries PASS;5старих координат переміщено в1главі. Layout1154перетини/0structuralwarnings. Одна виправлена українська описка новогоT2квесту. Фінальна generation1175non-JARruntimefiles byte-identical PYTHONHASHSEED131; попередня перевірка127 такожPASS.
+- PASS298Python/57Node/5237Java/JDK21build;326NASAactualhelper+handlers+bridge+realpolicy modeled assertions;244старі permission assertions збережені. СправжнійSponge0.8.7 застосував3NASA Mixins доsource-shapedtargets зexactnativecraftbody.7ABItests,24contenttests,3productiontests і1новийinstallerpairingtest. Післяописки повторні24content+centralvalidator/13JSsyntax PASS.
+- ActualminimalMC154assertions/2JVM/650ticks:3новіcommonContainersmarker/nativeunscopeddrop/UUIDlookup checks. AdAstra/ProjectE там відсутні.209classes/72mixins,196із202старихclassesbyte-identical. JARSHA477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5.
+- Preflight actual AdAstra method/INVOKEcontracts доbackup/write; відсутністьoptionalmod не єPASS йогоABI. OriginalPE/AdAstrabinaryне надані,fullclient/JEI/Survival/TPS NOT_RUN. ProjectEhotfix0.4.17збережено. Read-only незалежнийreview не знайшовпідтвердженого receiptbypass; усіагенти завершилифайли/огляд.
+- Наступна конкретна дія післядоставки: station split-stack/overlappingpayment+acceptedplacement adapter зраннім destinationstageguard. Source-review: docs/research/AD_ASTRA_STATION_NEXT.uk.md; matches doublecount,consume firststackbreak,ignoredplacementbool підтверджені. Реалізаціястанцій TODO, не вважатиNASAcheckpoint їївиправленням.
+- Далі сумісна migrationстарихrequired37/38,34partial/невивченімоди йрештаrequired48ліній. RootsunfinishedritualrestartTODO;DraconicCI633/6IFfluidgapsBLOCKED. Повний0.5 IN_PROGRESS. ZIP/actualCLIupgrade0.4.17→0.4.18,metadata/commit/pushщеIN_PROGRESS, наступнийзапускспочаткузвіряєGit.
+
+- DONE доставки до коміту: ZIP4628manifestentries/1176runtimeSHA/installerSHA/CRC PASS. ActualextractedCLI dry-run0file/directorywrites; upgrade7a60178(0.4.17)→0.4.18 backupoldJAR, opaque world+FTB/fire/knowledge+EMC/paidchunkmarkers таforeignquest/mod/script збережені; repeatідемпотентний. Цеsyntheticinstallerfixture, неfullworldmigration; Windowsінстанснечіпали.
+- ФінальнийZIP перепаковуєтьсяпісляmetadata йзвіряєвсіsource/runtimeSHAзtree. Звіт:implementation/nasa-production-package-install-v7.json. Code/source/docs/installer фіксуютьсяціліснимmain-комітоміpushбезforce; hash/statusзgitlog/originтаexternaldeliveryreportбіляZIP, безself-reference. Наступнийстарт — stationadapterзокремогоsource-review;4NASAцілінестворюватиповторно. Повний0.5 IN_PROGRESS.

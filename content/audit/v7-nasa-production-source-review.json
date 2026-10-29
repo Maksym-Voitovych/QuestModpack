@@ -1,0 +1,300 @@
+{
+  "schema": 1,
+  "scope": "Ad Astra 1.16.26 NASA four-rocket manufacture witness: exact accepted world output and fourteen native input debits",
+  "status": "SOURCE_REVIEW_ONLY_NO_RUNTIME_CLAIM",
+  "baseline_commit": "7a60178c6ac1ca2443363b4c15839559f54dae9f",
+  "evidence_manifest": "content/research/evidence/nasa_production_v7/manifest.json",
+  "boundaries": {
+    "written_paths": [
+      "content/audit/v7-nasa-production-source-review.json",
+      "content/research/evidence/nasa_production_v7/manifest.json",
+      "content/research/evidence/nasa_production_v7/sourcefreeze/**"
+    ],
+    "runtime_edits": false,
+    "network_calls": 0,
+    "inventory_or_give_is_proof": false,
+    "ad_astra_binary_to_commit": "NOT_PROVEN",
+    "verification": "Read pinned official source, installed export, current baseline helper/mixins/bridge and actual local MC1.21.1 NeoForge21.1.264 sources+Containers compiled bytecode. This file proposes implementation; it does not assert implementation or woven runtime success."
+  },
+  "source_facts": [
+    {
+      "source": "ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/machines/NasaWorkbenchBlockEntity.java",
+      "lines": [
+        95,
+        109
+      ],
+      "fact": "craft() returns on null cached recipe; particles precede drop; drop consumes a COPY of preview14 before any input debit; preview14 is then cleared; exactly14 ItemStack.shrink(1) calls run for slots0..13; cached recipe is finally null."
+    },
+    {
+      "source": "ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/machines/NasaWorkbenchBlockEntity.java",
+      "lines": [
+        60,
+        76
+      ],
+      "fact": "serverTick auto-crafts each30ticks when canFunction and canCraft. It first puts recipe.result() itself into preview14 via setItem, so preview can alias the mutable recipe result."
+    },
+    {
+      "source": "ad_astra/src/main/java/earth/terrarium/adastra/common/menus/machines/NasaWorkbenchMenu.java",
+      "lines": [
+        68,
+        77
+      ],
+      "fact": "GUI preview slot is noPlaceOrTake. clicked first calls super.clicked, then any slotIndex14 click crafts if canCraft. Direct craft() and automation are separate entrances and must share the craft-level witness guard."
+    },
+    {
+      "source": "ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/base/BasicContainer.java",
+      "lines": [
+        28,
+        40
+      ],
+      "fact": "setItem changes the list and immediately invokes update(); getItem returns the underlying live ItemStack reference. Native preview clear therefore runs NASA update() and may replace cached recipe before14shrinks. Final commit must validate the captured recipe against the current recipe manager, not require the final cached field to equal it."
+    },
+    {
+      "source": "ad_astra/src/main/java/earth/terrarium/adastra/common/recipes/machines/NasaWorkbenchRecipe.java",
+      "lines": [
+        22,
+        49
+      ],
+      "fact": "Record exposes mutable List<Ingredient> ingredients and mutable ItemStack result. matches tests only ingredients.size entries, allowing shorter recipes in principle. The reviewed4recipes each contain exactly14 nonempty ingredients and outputcount1; enforce that shape for exact14proof."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/Containers.json",
+      "lines": [
+        31,
+        48
+      ],
+      "fact": "dropItemStack uses random position/motion and repeatedly splits10..30items from supplied stack, constructs ItemEntity and invokes level.addFreshEntity. Its void result ignores the accepted-entity boolean. Returning normally or consuming the supplied copy does not prove accepted world output."
+    },
+    {
+      "source": "bytecode/net.minecraft.world.Containers.javap.txt",
+      "fact": "Actual compiled dropItemStack instruction183 is invokevirtual net/minecraft/world/level/Level.addFreshEntity:(Lnet/minecraft/world/entity/Entity;)Z, followed by POP186. The redirect must target this Level-owned INVOKE descriptor even though implementation is inherited/overridden."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/level/Level.json",
+      "lines": [
+        79,
+        79
+      ],
+      "fact": "Level declares no addFreshEntity method; it inherits the LevelWriter contract through LevelAccessor."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/level/LevelWriter.json",
+      "lines": [
+        27,
+        29
+      ],
+      "fact": "Default addFreshEntity returns false. A generic Level call cannot be assumed successful."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/server/level/ServerLevel.json",
+      "lines": [
+        892,
+        940
+      ],
+      "fact": "ServerLevel.addFreshEntity delegates private addEntity; removed entities return false, entityManager rejection returns false, and true is returned only after addNewEntity succeeds and onAddedToLevel completes normally."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/level/entity/PersistentEntitySectionManager.json",
+      "lines": [
+        61,
+        104
+      ],
+      "fact": "EntityJoinLevelEvent is synchronous and cancellable before entity insertion; cancellation returns false. Duplicate UUID also returns false. Event callbacks can mutate machine/team/items or reenter craft before addFreshEntity returns."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/item/ItemStack.json",
+      "lines": [
+        308,
+        312,
+        552,
+        568,
+        584,
+        616,
+        1039,
+        1059
+      ],
+      "fact": "split copies then shrinks supplied stack. copy retains full effective components via copied component map. shrink calls grow(-n) then setCount; getCount masks depleted stacks as0. isSameItemSameComponents ignores count and treats two empty stacks as equal, so count and full component transition checks must be explicit."
+    },
+    {
+      "source": "minecraft_neoforge/net/minecraft/world/item/crafting/Ingredient.json",
+      "lines": [
+        94,
+        122
+      ],
+      "fact": "Vanilla Ingredient.test uses a cached getItems array; custom ingredients execute arbitrary test. Native matches alone is not a current-tag-membership or supported-shape proof. For the curated contract, resolve vanilla ItemValue/TagValue against current registry bindings, reject unsupported custom ingredients and require14nonempty inputs."
+    },
+    {
+      "source": "companion_baseline/companion/src/main/java/ua/aia2/guard/AdAstraNasaAccess.java",
+      "fact": "Baseline already checks canonical live BE, server thread, owner, current generation-aware recipe policy, result/key/output policy, matches and exact preview result. These are admission guards, not accepted-output/payment witnesses."
+    },
+    {
+      "source": "companion_baseline/companion/src/main/java/ua/aia2/guard/ProductionMilestoneBridge.java",
+      "fact": "Baseline does not allow ad_astra:nasa_workbench serializer. finishedMachine checks only current machine/recipe/stage; finishedObservedMachine checks supplied lists, not entity acceptance or exact debits. Neither can independently prove NASA manufacture."
+    },
+    {
+      "source": "companion_baseline/companion/src/main/java/ua/aia2/guard/EnderTaskAccess.java",
+      "fact": "template() first calls Recipe.getResultItem and special-cases only two EnderIO records for empty templates. NASA result() is verified directly in AdAstraNasaAccess. Do not assume uninspected ResourcefulLib CodecRecipe default template behavior; pass captured NASA output or explicitly add exact NASA result support."
+    },
+    {
+      "source": "ad_astra/src/main/generated/resources/data/ad_astra/advancement/tier_1_rocket.json",
+      "fact": "Upstream four tier rocket advancements use minecraft:inventory_changed. They cannot prove NASA production and /give must never record NASA receipts."
+    }
+  ],
+  "curated_recipes": [
+    {
+      "recipe_id": "ad_astra:nasa_workbench/tier_1_rocket_from_nasa_workbench",
+      "serializer": "ad_astra:nasa_workbench",
+      "output": "ad_astra:tier_1_rocket",
+      "count": 1,
+      "ingredient_count": 14,
+      "source_export_semantic_equal": true,
+      "source_result_has_explicit_components": false,
+      "upstream_advancement_trigger": "minecraft:inventory_changed",
+      "native_slot_units": 14
+    },
+    {
+      "recipe_id": "ad_astra:nasa_workbench/tier_2_rocket_from_nasa_workbench",
+      "serializer": "ad_astra:nasa_workbench",
+      "output": "ad_astra:tier_2_rocket",
+      "count": 1,
+      "ingredient_count": 14,
+      "source_export_semantic_equal": true,
+      "source_result_has_explicit_components": false,
+      "upstream_advancement_trigger": "minecraft:inventory_changed",
+      "native_slot_units": 14
+    },
+    {
+      "recipe_id": "ad_astra:nasa_workbench/tier_3_rocket_from_nasa_workbench",
+      "serializer": "ad_astra:nasa_workbench",
+      "output": "ad_astra:tier_3_rocket",
+      "count": 1,
+      "ingredient_count": 14,
+      "source_export_semantic_equal": true,
+      "source_result_has_explicit_components": false,
+      "upstream_advancement_trigger": "minecraft:inventory_changed",
+      "native_slot_units": 14
+    },
+    {
+      "recipe_id": "ad_astra:nasa_workbench/tier_4_rocket_from_nasa_workbench",
+      "serializer": "ad_astra:nasa_workbench",
+      "output": "ad_astra:tier_4_rocket",
+      "count": 1,
+      "ingredient_count": 14,
+      "source_export_semantic_equal": true,
+      "source_result_has_explicit_components": false,
+      "upstream_advancement_trigger": "minecraft:inventory_changed",
+      "native_slot_units": 14
+    }
+  ],
+  "minimal_interception_design": {
+    "admission": "Keep the existing canCraft/GUI/stillValid/quickMove14 guards. Add one craft-level wrapper used by GUI, auto and direct calls. Invalid admission returns before native particles/output/debits. Preserve explicit key-ID regex plus KeyProductionBridge.isKeyOutput at every relevant output boundary.",
+    "wrapper_without_new_dependency": [
+      "Cancellable craft()V HEAD calls a helper; helper captures validated attempt and invokes the original craft once via @Shadow craft or a cached exact reflective craft method under a one-shot permit.",
+      "The reentered HEAD consumes the permit exactly once for the same attempt+machine and lets the native body run. A boolean inCraft bypass is insufficient: after permit consumption, same-machine callback reentry must be denied.",
+      "Use a real Java try/finally around native invocation. Mark success only after normal native return; finally always restores previous ThreadLocal scope, including native Error/exception and commit failure. Reflective InvocationTargetException must not be mistaken for a successful call and should preserve its native cause.",
+      "Either deny all nested attempts or maintain a bounded stack with distinct-machine ownership; if nesting is supported restore parent exactly. A nested attempt cannot consume the parent permit or witness."
+    ],
+    "snapshot": [
+      "Capture server instance, ServerLevel instance, canonical machine reference+position, owner team string, current Recipe object+current holder ID+RecipeManager generation, exact14 ingredient semantics, full result snapshot and exact preview14 snapshot.",
+      "Require exactly14nonempty live input slots and14distinct ItemStack references; capture each reference, item identity, full component snapshot and count. Alias slots are unsupported and must not generate proof.",
+      "For GUI access retain real non-FakePlayer/current menu/live team/permission checks; machine automation credits captured current owner team without nearest-player or inventory fallback."
+    ],
+    "drop_interception": [
+      "Redirect only the single native NASA Containers.dropItemStack invocation to helper. Revalidate canonical machine, owner, current recipe-manager identity,14inputs, output and preview immediately before calling Containers; particles have already run by this point.",
+      "Require same native level and exact native x=blockX,y=blockY+1,z=blockZ arguments, one drop invocation, count1 and full item/components equal captured current result. Delegate Containers.dropItemStack unchanged under a short drop phase with try/finally; retain vanilla RNG, position, split, motion and constructor semantics.",
+      "Add a scoped redirect for Containers.dropItemStack at Level.addFreshEntity:(Entity)Z. Unscoped calls delegate unchanged. For the expected outer call capture exact ItemEntity identity, level, count1, full item/components before and after actual level.addFreshEntity; call it once and preserve returned boolean.",
+      "Set an adding/inFlight flag before invoking native addFreshEntity. Synchronous nested Containers drops in callbacks cannot count toward parent witness. After return true require output entity not removed, same level, count1 and exact full components; require exactly one accepted expected entity and no extra credited output.",
+      "Revalidate machine owner/current recipe generation/result/input snapshot after the native add call. A callback that replaces/mutates them invalidates proof even when insertion returned true. No later receipt may revive an invalid attempt."
+    ],
+    "late_payment": [
+      "Do not wait for payment at the drop edge: native drop happens first. Store the accepted-output witness and continue the original body.",
+      "Redirect only NASA craft native ItemStack.shrink(I)V. Track next expected slot0..13. Require amount1, matching live captured reference, exact expected count/components before the call, and no duplicate or out-of-order callback. Delegate native shrink once and verify exact count decrement1 and component preservation.",
+      "For depleted count1inputs, preserve reference identity and check component map directly. ItemStack.isSameItemSameComponents on empty stacks can hide item/component distinctions; getCount alone also cannot reveal a negative rawcount after illicit repeated shrink.",
+      "After all14 native debits and normal craft return, require slot refs/counts/components equal their expected transitions, preview14 empty, one accepted output with retained correct contents, canonical machine and captured owner still current, captured recipe object still current in the manager, current stage policy allowed and proof rule matching exact captured output.",
+      "The native cached field is expected null at return and can have been rebound by setItem14; current RecipeManager identity and captured recipe are authoritative. Never rebind a removed/stale captured object to a same-ID recipe merely to issue proof."
+    ],
+    "bridge_commit": [
+      "Extend curated serializer allowlist with ad_astra:nasa_workbench only when paired with the exact NASA adapter. Configure4exact recipe IDs+outputs and stable proof IDs through the existing curated config.",
+      "Commit once using a narrow finished-NASA path only after a validated scope has completed; keep generic inventory events, manual caller output lists, /give and advancement completion outside this path.",
+      "At commit re-resolve current rule/generation/holder identity and owner-stage policy; accept captured full output explicitly rather than trusting a guessed getResultItem template. Dedupe within the attempt and use existing persistent per-team receipt storage."
+    ],
+    "failure_behavior": "Failed admission runs no native craft. A failed or exceptional witness records no receipt, creates no adapter output and grants no refund. If native output was accepted before a later native failure, or inputs were partly consumed, preserving native order cannot make that side effect disappear. Do not claim transactional rollback or fabricate replacement output/refund."
+  },
+  "component_policy": {
+    "proven": "Exact full effective item/component equality across captured recipe result, preview, dropped copy and accepted ItemEntity before/after callbacks prevents substitution.",
+    "not_proven": "Equality to a recipe result does not establish the origin of nested inventory/fluid/entity/custom components intentionally supplied by a datapack. Generic copied-component provenance is outside the existing mayProduce item-ID policy.",
+    "smallest_bounded_contract": "For these4native recipe definitions, results have count1 and no explicit component patches. Requiring effective components equal a fresh default stack of that rocket item gives a narrow supported manufacture-proof contract without claiming arbitrary component sanitization.",
+    "native_semantics": "Any choice to deny nondefault recipe outputs globally changes native recipe behavior and must be explicit. Alternatively native output may remain allowed by existing policy while the narrow manufacture witness refuses proof; document that distinction."
+  },
+  "bypass_and_reentry_matrix": [
+    {
+      "case": "GUI click/auto/direct craft",
+      "required": "Shared craft HEAD wrapper; menu-only guards do not cover auto/direct."
+    },
+    {
+      "case": "Preview extraction quickMove14",
+      "required": "Retain baseline explicit denial; preview possession never records manufacture."
+    },
+    {
+      "case": "Cached recipe removed/reloaded",
+      "required": "Reject stale object before drop and before receipt; same ID or output is insufficient."
+    },
+    {
+      "case": "Short/empty/custom ingredient recipe",
+      "required": "No14payment proof; exact bounded shape/current vanilla item-tag semantics required."
+    },
+    {
+      "case": "Output entity rejected by canceled join event/duplicateUUID/removed state",
+      "required": "Native return false means no proof even though supplied drop stack becomes empty."
+    },
+    {
+      "case": "Join callback changes output/input/owner/team/recipe/machine",
+      "required": "Revalidate after return and at commit; invalidate sticky attempt."
+    },
+    {
+      "case": "Same-machine callback invokes craft again",
+      "required": "Consumed one-shot permit denies inner craft before particles/debit/output."
+    },
+    {
+      "case": "Join callback invokes unrelated Containers.dropItemStack",
+      "required": "In-flight guard prevents nested entity from satisfying parent witness; preserve unrelated drop semantics."
+    },
+    {
+      "case": "Two slots alias same nonempty stack",
+      "required": "Deny unsupported witness at admission; aggregate stock count is not14distinct slot payments."
+    },
+    {
+      "case": "Native throws after entity accepted or after some debits",
+      "required": "No proof; restore scope in finally; do not fabricate rollback/refund."
+    },
+    {
+      "case": "Normal return after another mixin canceled native craft",
+      "required": "No proof unless exact native drop+accepted entity+all14debits actually observed."
+    },
+    {
+      "case": "Repeated finish callback/unscoped helper invocation",
+      "required": "Attempt can commit once only; no pending attempt means no receipt."
+    },
+    {
+      "case": "Key as recipe result or key substituted into preview/entity",
+      "required": "Explicit key ID/registered key deny plus full result equality; do not register NASA as a key-production serializer."
+    }
+  ],
+  "minimum_regressions": [
+    "Positive GUI/automatic/direct flows for all4 recipes: accepted1count1rocket, fourteen observed shrink1transitions, exact owner proof once.",
+    "False addFreshEntity with normal Containers return: no proof; no adapter-generated output/refund.",
+    "Join callback removes/mutates/replaces rocket; callback nested drop cannot count; callback same-machine craft cannot reenter.",
+    "Owner/current team/recipe generation changes in particles/join callback/before commit; stale/current sameID object distinction.",
+    "Input swapped/mutated/aliased, missing/extra/out-of-order shrink, amount0/2, repeated callback, component mutation and depleted slotcount1.",
+    "Exceptions before drop, during join, after acceptance, during shrink and during receipt commit restore scopes; a subsequent independent valid craft succeeds.",
+    "Preview/direct quickMove14 denial, output-key variants, wrong output count/components and nondefault component contract.",
+    "/give, inventory_changed and already-owned rocket never create proof; receipt persists in actual SavedData binary/restart test when runtime implementation exists.",
+    "Assert exact optional selectors against reviewed Ad Astra compiled target when binary becomes available and actual MC Containers bytecode now; modeled source fixtures do not establish full pack weaving."
+  ],
+  "unresolved_limits": [
+    "Ad Astra1.16.26 source props match installed version; actual installed binary-to-pin identity remains unproven.",
+    "ResourcefulLib CodecRecipe default getResultItem source was not present locally; do not rely on it for NASA output extraction.",
+    "Source review only: no implementation tests, optional Ad Astra weaving, full client/JEI/Survival/TPS performed.",
+    "Arbitrary addon mutable component values, arbitrary custom Ingredient callbacks and universal rollback are outside the bounded proof contract."
+  ]
+}

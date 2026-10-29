@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/server/level/ServerLevel.java",
+    "sha256": "8d1086b8e63b11d340853e7595a63f2f27edc0d690311c9a0d46d5098eb21925",
+    "line_count": 1887
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "name": "addFreshEntity",
+      "declaration_lines": [
+        893
+      ]
+    },
+    {
+      "name": "addEntity",
+      "declaration_lines": [
+        930
+      ]
+    }
+  ],
+  "facts": [
+    "addFreshEntity delegates private addEntity and returns its boolean.",
+    "addEntity rejects already-removed entities, returns false when entity-manager insertion fails, and returns true after successful insertion and normal completion of onAddedToLevel.",
+    "Exceptions from native callbacks can occur after partial world effects; a successful-return witness cannot be inferred from attempted insertion."
+  ],
+  "scope": "API facts and original source locations only; full decompiled source remains in the local SDK artifact outside the repository."
+}

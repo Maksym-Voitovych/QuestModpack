@@ -1,3 +1,12 @@
+# 0.4.18-alpha — NASA accepted output та точна оплата
+
+- Чотири нові optional-цілі T1–T4 в епохах 37/38: 3375 квестів / 140 глав, 15 mechanic rules / 18 native recipe IDs. Старі 11 rules та durable schema1 збережені.
+- Одноразовий native craft scope, прийнятий/збережений world entity, 14 послідовних shrink(1), current recipe/tag/input/component/team/stage перевірки. Generic bridge не видає NASA proofs; готовий предмет не замінює виробництво.
+- Common Containers redirect делегує звичайні drops. Unsupported початковий стан відхиляється до native effects. Failed proof посеред операції не створює refund/output/rollback.
+- Додано read-only preflight трьох NASA Mixins на фактичному Ad Astra JAR до backup/write. ProjectE hotfix та mandatory injections збережені; оригінальні optional binaries/full client ще не перевірені.
+- Усі 3371 попередні non-coordinate quest payloads, 627 рецептів, 390 предметів/PNG і 96 ключів збережені. Чотири нові нагороди; старих змінених нагород 0. П'ять старих координат переміщено; 1154 перетини / 0 structural warnings.
+- 42 SHA-джерела, 31 етап Ad Astra; повний 0.5 ще не реліз. Station split-stack payment/accepted placement — наступний окремий блок.
+
 # 0.4.17-alpha — ProjectE client startup hotfix
 
 - Виправлено обов'язковий Tablet redirect: released1.1.0 `use(Level,Player,Hand)` замість відсутніх `openContainer` з пізнішого same-version commit. `require=1`,71mixins і всі permission/key checks збережені.

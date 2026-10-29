@@ -349,6 +349,30 @@ def validate_projecte_tablet_pair(source, instance, companion):
     return report
 
 
+def validate_ad_astra_nasa_pair(source, instance, companion):
+    """Check all three optional NASA targets against the instance before writes."""
+    candidates = [path for path in (instance/'mods').glob('*.jar')
+                  if re.match(r'^ad[_-]?astra(?:[-_.]|$)', path.name, re.IGNORECASE)]
+    if not candidates:
+        return {'status': 'not_installed', 'actual_mixin_transform': 'NOT_RUN'}
+    if len(candidates) != 1 or _is_link(candidates[0]) or not candidates[0].is_file():
+        raise InstallError('Ad Astra ABI preflight needs one regular Ad Astra JAR')
+    checker_path = source/'tools/check_optional_mixin_targets_v6.py'
+    if not checker_path.is_file() or _is_link(checker_path):
+        raise InstallError('Package is missing the Ad Astra compiled Mixin preflight tool')
+    try:
+        spec = importlib.util.spec_from_file_location('_aia2_nasa_mixin_preflight', checker_path)
+        checker = importlib.util.module_from_spec(spec); spec.loader.exec_module(checker)
+        report = checker.check(companion, candidates, prefix='earth/terrarium/adastra/',
+                               mixin_names={'AdAstraNasaMixin', 'AdAstraNasaMenuMixin', 'AdAstraNasaBaseMenuMixin'})
+    except (OSError, ValueError, AssertionError, KeyError, IndexError, zipfile.BadZipFile) as failure:
+        raise InstallError('Ad Astra compiled Mixin preflight could not read the target JAR: ' + str(failure)) from failure
+    if report['status'] != 'PASSED_BYTECODE_CONTRACTS_NOT_WEAVING' or report['unverified_details']:
+        problems = ', '.join(sorted({row['kind'] for row in report['errors']})) or 'unverified injection details'
+        raise InstallError('Ad Astra NASA Mixin contract failed before installation: ' + problems)
+    return report
+
+
 def plan_install(source, instance):
     """Read and validate every selected source/target before changing the instance."""
     source, instance = Path(source).resolve(), Path(instance).expanduser().resolve()
@@ -463,9 +487,15 @@ def plan_install(source, instance):
                         'ua/aia2/guard/mixin/' + name + '.class' for name in nasa_mixins}
                     if not nasa_classes <= set(jar.namelist()) or not nasa_mixins <= registered:
                         raise InstallError('This package needs the matching Ad Astra NASA cached recipe and menu guards')
+                    production_classes = {'ua/aia2/guard/' + name + '.class' for name in
+                                          ['NasaProductionAccess', 'NasaIngredients', 'GuardedNasaDrop']}
+                    production_classes.add('ua/aia2/guard/mixin/NasaDropMixin.class')
+                    if not production_classes <= set(jar.namelist()) or 'NasaDropMixin' not in registered:
+                        raise InstallError('This package needs the matching NASA accepted output and native debit witness')
             except zipfile.BadZipFile as error:
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
             validate_projecte_tablet_pair(source, instance, bundled_jars[0])
+            validate_ad_astra_nasa_pair(source, instance, bundled_jars[0])
     files.extend(bundled_jars)
     operations = []
     for item in sorted(files):

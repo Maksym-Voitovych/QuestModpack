@@ -1,0 +1,200 @@
+Compiled from "Containers.java"
+public class net.minecraft.world.Containers {
+  public net.minecraft.world.Containers();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void dropContents(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.Container);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #7                  // Method net/minecraft/core/BlockPos.getX:()I
+       5: i2d
+       6: aload_1
+       7: invokevirtual #13                 // Method net/minecraft/core/BlockPos.getY:()I
+      10: i2d
+      11: aload_1
+      12: invokevirtual #16                 // Method net/minecraft/core/BlockPos.getZ:()I
+      15: i2d
+      16: aload_2
+      17: invokestatic  #19                 // Method dropContents:(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/Container;)V
+      20: return
+
+  public static void dropContents(net.minecraft.world.level.Level, net.minecraft.world.entity.Entity, net.minecraft.world.Container);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #25                 // Method net/minecraft/world/entity/Entity.getX:()D
+       5: aload_1
+       6: invokevirtual #30                 // Method net/minecraft/world/entity/Entity.getY:()D
+       9: aload_1
+      10: invokevirtual #32                 // Method net/minecraft/world/entity/Entity.getZ:()D
+      13: aload_2
+      14: invokestatic  #19                 // Method dropContents:(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/Container;)V
+      17: return
+
+  private static void dropContents(net.minecraft.world.level.Level, double, double, double, net.minecraft.world.Container);
+    Code:
+       0: iconst_0
+       1: istore        8
+       3: iload         8
+       5: aload         7
+       7: invokeinterface #34,  1           // InterfaceMethod net/minecraft/world/Container.getContainerSize:()I
+      12: if_icmpge     38
+      15: aload_0
+      16: dload_1
+      17: dload_3
+      18: dload         5
+      20: aload         7
+      22: iload         8
+      24: invokeinterface #39,  2           // InterfaceMethod net/minecraft/world/Container.getItem:(I)Lnet/minecraft/world/item/ItemStack;
+      29: invokestatic  #43                 // Method dropItemStack:(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V
+      32: iinc          8, 1
+      35: goto          3
+      38: return
+
+  public static void dropContents(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.core.NonNullList<net.minecraft.world.item.ItemStack>);
+    Code:
+       0: aload_2
+       1: aload_0
+       2: aload_1
+       3: invokedynamic #47,  0             // InvokeDynamic #0:accept:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;)Ljava/util/function/Consumer;
+       8: invokevirtual #51                 // Method net/minecraft/core/NonNullList.forEach:(Ljava/util/function/Consumer;)V
+      11: return
+
+  public static void dropItemStack(net.minecraft.world.level.Level, double, double, double, net.minecraft.world.item.ItemStack);
+    Code:
+       0: getstatic     #57                 // Field net/minecraft/world/entity/EntityType.ITEM:Lnet/minecraft/world/entity/EntityType;
+       3: invokevirtual #63                 // Method net/minecraft/world/entity/EntityType.getWidth:()F
+       6: f2d
+       7: dstore        8
+       9: dconst_1
+      10: dload         8
+      12: dsub
+      13: dstore        10
+      15: dload         8
+      17: ldc2_w        #67                 // double 2.0d
+      20: ddiv
+      21: dstore        12
+      23: dload_1
+      24: invokestatic  #69                 // Method java/lang/Math.floor:(D)D
+      27: aload_0
+      28: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+      31: invokeinterface #81,  1           // InterfaceMethod net/minecraft/util/RandomSource.nextDouble:()D
+      36: dload         10
+      38: dmul
+      39: dadd
+      40: dload         12
+      42: dadd
+      43: dstore        14
+      45: dload_3
+      46: invokestatic  #69                 // Method java/lang/Math.floor:(D)D
+      49: aload_0
+      50: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+      53: invokeinterface #81,  1           // InterfaceMethod net/minecraft/util/RandomSource.nextDouble:()D
+      58: dload         10
+      60: dmul
+      61: dadd
+      62: dstore        16
+      64: dload         5
+      66: invokestatic  #69                 // Method java/lang/Math.floor:(D)D
+      69: aload_0
+      70: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+      73: invokeinterface #81,  1           // InterfaceMethod net/minecraft/util/RandomSource.nextDouble:()D
+      78: dload         10
+      80: dmul
+      81: dadd
+      82: dload         12
+      84: dadd
+      85: dstore        18
+      87: aload         7
+      89: invokevirtual #86                 // Method net/minecraft/world/item/ItemStack.isEmpty:()Z
+      92: ifne          190
+      95: new           #92                 // class net/minecraft/world/entity/item/ItemEntity
+      98: dup
+      99: aload_0
+     100: dload         14
+     102: dload         16
+     104: dload         18
+     106: aload         7
+     108: aload_0
+     109: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+     112: bipush        21
+     114: invokeinterface #94,  2           // InterfaceMethod net/minecraft/util/RandomSource.nextInt:(I)I
+     119: bipush        10
+     121: iadd
+     122: invokevirtual #98                 // Method net/minecraft/world/item/ItemStack.split:(I)Lnet/minecraft/world/item/ItemStack;
+     125: invokespecial #101                // Method net/minecraft/world/entity/item/ItemEntity."<init>":(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V
+     128: astore        20
+     130: ldc           #103                // float 0.05f
+     132: fstore        21
+     134: aload         20
+     136: aload_0
+     137: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+     140: dconst_0
+     141: ldc2_w        #104                // double 0.11485000171139836d
+     144: invokeinterface #106,  5          // InterfaceMethod net/minecraft/util/RandomSource.triangle:(DD)D
+     149: aload_0
+     150: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+     153: ldc2_w        #110                // double 0.2d
+     156: ldc2_w        #104                // double 0.11485000171139836d
+     159: invokeinterface #106,  5          // InterfaceMethod net/minecraft/util/RandomSource.triangle:(DD)D
+     164: aload_0
+     165: getfield      #75                 // Field net/minecraft/world/level/Level.random:Lnet/minecraft/util/RandomSource;
+     168: dconst_0
+     169: ldc2_w        #104                // double 0.11485000171139836d
+     172: invokeinterface #106,  5          // InterfaceMethod net/minecraft/util/RandomSource.triangle:(DD)D
+     177: invokevirtual #112                // Method net/minecraft/world/entity/item/ItemEntity.setDeltaMovement:(DDD)V
+     180: aload_0
+     181: aload         20
+     183: invokevirtual #116                // Method net/minecraft/world/level/Level.addFreshEntity:(Lnet/minecraft/world/entity/Entity;)Z
+     186: pop
+     187: goto          87
+     190: return
+
+  public static void dropContentsOnDestroy(net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.block.state.BlockState, net.minecraft.world.level.Level, net.minecraft.core.BlockPos);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #120                // Method net/minecraft/world/level/block/state/BlockState.getBlock:()Lnet/minecraft/world/level/block/Block;
+       5: invokevirtual #126                // Method net/minecraft/world/level/block/state/BlockState.is:(Lnet/minecraft/world/level/block/Block;)Z
+       8: ifne          49
+      11: aload_2
+      12: aload_3
+      13: invokevirtual #130                // Method net/minecraft/world/level/Level.getBlockEntity:(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/block/entity/BlockEntity;
+      16: astore        5
+      18: aload         5
+      20: instanceof    #35                 // class net/minecraft/world/Container
+      23: ifeq          49
+      26: aload         5
+      28: checkcast     #35                 // class net/minecraft/world/Container
+      31: astore        4
+      33: aload_2
+      34: aload_3
+      35: aload         4
+      37: invokestatic  #134                // Method dropContents:(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/Container;)V
+      40: aload_2
+      41: aload_3
+      42: aload_0
+      43: invokevirtual #120                // Method net/minecraft/world/level/block/state/BlockState.getBlock:()Lnet/minecraft/world/level/block/Block;
+      46: invokevirtual #137                // Method net/minecraft/world/level/Level.updateNeighbourForOutputSignal:(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/Block;)V
+      49: return
+
+  private static void lambda$dropContents$0(net.minecraft.world.level.Level, net.minecraft.core.BlockPos, net.minecraft.world.item.ItemStack);
+    Code:
+       0: aload_0
+       1: aload_1
+       2: invokevirtual #7                  // Method net/minecraft/core/BlockPos.getX:()I
+       5: i2d
+       6: aload_1
+       7: invokevirtual #13                 // Method net/minecraft/core/BlockPos.getY:()I
+      10: i2d
+      11: aload_1
+      12: invokevirtual #16                 // Method net/minecraft/core/BlockPos.getZ:()I
+      15: i2d
+      16: aload_2
+      17: invokestatic  #43                 // Method dropItemStack:(Lnet/minecraft/world/level/Level;DDDLnet/minecraft/world/item/ItemStack;)V
+      20: return
+}

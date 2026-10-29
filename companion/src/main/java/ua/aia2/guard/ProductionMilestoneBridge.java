@@ -28,7 +28,7 @@ public final class ProductionMilestoneBridge {
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
             "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual",
-            "enderio:alloy_smelting", "powah:energizing", "forbidden_arcanus:clibano_combustion");
+            "enderio:alloy_smelting", "powah:energizing", "forbidden_arcanus:clibano_combustion", "ad_astra:nasa_workbench");
     private static Map<String, Rule> byRecipe = Map.of();
     private static final Map<Recipe<?>, Rule> identity = new IdentityHashMap<>();
     private static final Map<CrafterBlockEntity, CrafterAttempt> crafterAttempts = new WeakHashMap<>();
@@ -92,7 +92,8 @@ public final class ProductionMilestoneBridge {
                 Rule candidate = byRecipe.get(holder.id().toString());
                 if (candidate != null) {
                     String serializer = BuiltInRegistries.RECIPE_SERIALIZER.getKey(holder.value().getSerializer()).toString();
-                    ItemStack output = EnderTaskAccess.template(holder.value(),level);
+                    ItemStack output = candidate.serializer().equals("ad_astra:nasa_workbench")
+                            ? AdAstraNasaAccess.recipeOutput(holder.value()) : EnderTaskAccess.template(holder.value(),level);
                     if (candidate.serializer().equals(serializer) && !output.isEmpty()
                             && candidate.output().equals(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())) {
                         identity.put(holder.value(), candidate);
@@ -109,7 +110,7 @@ public final class ProductionMilestoneBridge {
         if (!(machine.getLevel() instanceof ServerLevel level)) return;
         Rule rule = rule(level, recipe);
         String team = Aia2MachineGuard.getOwner(machine);
-        if (rule == null || team.isBlank() || !Aia2MachineGuard.mayObserveStage(team, rule.epoch())
+        if (rule == null || rule.serializer().equals("ad_astra:nasa_workbench") || team.isBlank() || !Aia2MachineGuard.mayObserveStage(team, rule.epoch())
                 || !Aia2MachineGuard.mayProcessRecipe(machine, recipe)) return;
         record(level.getServer(), team, rule);
     }
@@ -118,7 +119,7 @@ public final class ProductionMilestoneBridge {
     public static void finishedObservedMachine(BlockEntity machine,Recipe<?> recipe,java.util.List<ItemStack> outputs) {
         if (!(machine.getLevel() instanceof ServerLevel level) || outputs==null) return;
         Rule rule=rule(level,recipe);
-        if (rule==null || !EnderTaskAccess.mayOutput(machine,outputs)) return;
+        if (rule==null || rule.serializer().equals("ad_astra:nasa_workbench") || !EnderTaskAccess.mayOutput(machine,outputs)) return;
         ItemStack template=EnderTaskAccess.template(recipe,level);
         boolean observed=outputs.stream().anyMatch(stack -> !stack.isEmpty()
                 && stack.getCount()==template.getCount() && ItemStack.isSameItemSameComponents(stack,template));
@@ -159,6 +160,18 @@ public final class ProductionMilestoneBridge {
         int result = 0;
         for (int slot = 0; slot < machine.getContainerSize(); slot++) result += machine.getItem(slot).getCount();
         return result;
+    }
+
+    /** Curated NASA proofs require the current accepted-entity and fourteen native debit scope. */
+    static void finishedNasa(BlockEntity machine, Recipe<?> recipe, String team, ItemStack output) {
+        if (!(machine.getLevel() instanceof ServerLevel level)
+                || !NasaProductionAccess.isCommitting(machine, recipe, team, output)) return;
+        Rule rule = rule(level, recipe);
+        if (rule == null || !rule.serializer().equals("ad_astra:nasa_workbench")
+                || !team.equals(Aia2MachineGuard.getOwner(machine))
+                || !Aia2MachineGuard.mayObserveStage(team, rule.epoch())
+                || !Aia2MachineGuard.mayProcessRecipe(machine, recipe)) return;
+        record(level.getServer(), team, rule);
     }
 
     private static void record(MinecraftServer server, String team, Rule rule) {

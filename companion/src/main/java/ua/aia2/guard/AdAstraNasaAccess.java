@@ -91,6 +91,27 @@ public final class AdAstraNasaAccess {
     /** Called before particles, dropped output, slot writes or native14slot consumption. */
     public static boolean mayFinish(BlockEntity machine) { return check(machine, true); }
 
+    static boolean canonicalMachine(BlockEntity machine) { return canonical(machine); }
+
+    static Recipe<?> currentRecipe(BlockEntity machine) {
+        try {
+            Object value = CACHED_RECIPE.get(machine.getClass()).get(machine);
+            return value instanceof Recipe<?> recipe ? recipe : null;
+        } catch (ReflectiveOperationException | RuntimeException failure) {
+            unsupported(machine, failure); return null;
+        }
+    }
+
+    static ItemStack recipeOutput(Recipe<?> recipe) {
+        if (recipe == null) return ItemStack.EMPTY;
+        try {
+            Object value = RESULT.get(recipe.getClass()).invoke(recipe);
+            return value instanceof ItemStack stack ? stack.copy() : ItemStack.EMPTY;
+        } catch (ReflectiveOperationException | RuntimeException failure) {
+            unsupported(recipe, failure); return ItemStack.EMPTY;
+        }
+    }
+
     @SuppressWarnings("unchecked")
     private static boolean check(BlockEntity machine, boolean requirePreview) {
         if (machine == null || machine.getLevel() == null) return false;

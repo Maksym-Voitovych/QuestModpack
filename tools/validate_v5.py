@@ -40,6 +40,10 @@ MECHANIC_CONTRACT = {
                      {'forbidden_arcanus:clibano_combustion/rune_from_clibano_combustion'}),
     'clibano_obsidiansteel': (21, 'forbidden_arcanus:clibano_combustion', 'forbidden_arcanus:obsidiansteel_ingot',
                               {'forbidden_arcanus:clibano_combustion/obsidiansteel_ingot_from_clibano_combustion'}),
+    **{f'nasa_tier_{tier}_rocket': (37 if tier < 3 else 38, 'ad_astra:nasa_workbench',
+                                  f'ad_astra:tier_{tier}_rocket',
+                                  {f'ad_astra:nasa_workbench/tier_{tier}_rocket_from_nasa_workbench'})
+       for tier in range(1, 5)},
 }
 
 
@@ -153,7 +157,7 @@ def validate_compiled_tasks(record, compiled):
 
 
 def verified_mechanic_advancements(root, rules, bundle=None):
-    """Only the eight audited native production contracts can count as actions.
+    """Only the fifteen audited native production contracts can count as actions.
 
     This checks the checked-in recipe/advancement protocol. Successful native
     dispatch still needs its separate Java/runtime tests; inventory triggers
@@ -206,9 +210,9 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Native mechanic lacks runtime recipe provenance', ident, recipe_id)
                 require(compiled_recipes.get(recipe_id) == recipe,
                         'Native mechanic runtime producer differs from frozen evidence', ident, recipe_id)
-            if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion'}:
-                require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'EnderIO proof lacks frozen native recipe', ident)
-                require(read(root/source['frozen_path']) == recipe, 'EnderIO proof export differs', ident)
+            if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'}:
+                require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'Native mechanic proof lacks frozen recipe', ident)
+                require(read(root/source['frozen_path']) == recipe, 'Native mechanic proof export differs', ident)
             if serializer == 'rootsclassic:ritual':
                 require(recipe.get('effect') == 'rootsclassic:crafting' and recipe.get('ingredients'),
                         'Roots proof requires a crafting ritual with real ingredients', ident)
@@ -219,7 +223,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Roots proof recipe differs from frozen export', ident)
                 outputs = [recipe.get('effectConfig', {}).get('result', {})]
             else:
-                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer in {'powah:energizing', 'forbidden_arcanus:clibano_combustion'} else 'output', {})]
+                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer in {'powah:energizing', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'} else 'output', {})]
             require(any(result.get('id') == output and result.get('count', 1) > 0 for result in outputs),
                     'Native mechanic recipe does not produce its output', ident, recipe_id)
         path = root/'kubejs/data/aia2/advancement/mechanics'/(ident + '.json')
@@ -509,6 +513,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/recipes/v5_ad_astra_core.json').exists() else {'enabled':False},
             'ad_astra_course': import_tool('validate_ad_astra_course_v6').validate(root)
                 if (root/'content/quests/v5_ad_astra_depth.json').exists() else {'enabled':False},
+            'nasa_manufacturing': import_tool('build_nasa_process_v7').validate(root, compiled=True)
+                if (root/'content/research/nasa_process_pending_v7.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

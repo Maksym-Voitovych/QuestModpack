@@ -10,8 +10,8 @@ function aia2InitMechanics() {
   if (!global.AIA2Machines.isReady()) return false;
   try {
     if (aia2MechanicConfigured && aia2MechanicBridge.isConfigured()) return true;
-    if (aia2MechanicConfig.schema !== 1 || !aia2MechanicConfig.rules || aia2MechanicConfig.rules.length !== 11) {
-      throw new Error('Потрібні одинадцять перевірених правил виробничих спостережень.');
+    if (aia2MechanicConfig.schema !== 1 || !aia2MechanicConfig.rules || aia2MechanicConfig.rules.length !== 15) {
+      throw new Error('Потрібні п’ятнадцять перевірених правил виробничих спостережень.');
     }
     aia2MechanicBridge.configureJson(JSON.stringify(aia2MechanicConfig.rules));
     aia2MechanicConfigured = aia2MechanicBridge.isConfigured();

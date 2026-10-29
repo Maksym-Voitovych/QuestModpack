@@ -48,6 +48,18 @@ class AdAstraNasaGuardTests(unittest.TestCase):
         if not (jdk/'bin/javac').is_file():
             self.skipTest('JDK21 unavailable')
         fixture = json.loads((ROOT/'tests/fixtures/ad-astra-nasa-host.json').read_text())
+        # Legacy permission suite isolates the new observer; v7 executes its real implementation.
+        fixture['org/spongepowered/asm/mixin/injection/At.java'] = fixture['org/spongepowered/asm/mixin/injection/At.java'].replace('String value();', 'String value();String target() default "";')
+        fixture['ua/aia2/guard/NasaProductionAccess.java'] = '''package ua.aia2.guard;
+import net.minecraft.world.level.block.entity.BlockEntity;import net.minecraft.world.level.Level;import net.minecraft.world.item.ItemStack;
+public final class NasaProductionAccess {
+public static boolean enterNative(BlockEntity m){return AdAstraNasaAccess.mayFinish(m);}public static void craft(BlockEntity m){}
+public static void drop(BlockEntity m,Level l,double x,double y,double z,ItemStack s){net.minecraft.world.Containers.dropItemStack(l,x,y,z,s);}
+public static void shrink(BlockEntity m,ItemStack s,int n){s.shrink(n);}}
+'''
+        fixture['org/spongepowered/asm/mixin/injection/Redirect.java'] = '''package org.spongepowered.asm.mixin.injection;
+import java.lang.annotation.*;@Retention(RetentionPolicy.RUNTIME) @Target(ElementType.METHOD)
+public @interface Redirect {String[] method();At at();boolean remap() default true;int require() default -1;int allow() default -1;}'''
         for mode, parent in [('base', 'AdAstraNasaBaseMenuMixin'), ('nasa', 'AdAstraNasaMenuMixin')]:
             with self.subTest(mode=mode), tempfile.TemporaryDirectory(prefix='aia2-nasa-') as directory:
                 files = []

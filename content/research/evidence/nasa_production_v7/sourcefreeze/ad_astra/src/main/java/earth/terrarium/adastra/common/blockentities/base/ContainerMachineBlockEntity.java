@@ -1,0 +1,134 @@
+package earth.terrarium.adastra.common.blockentities.base;
+
+import com.teamresourceful.resourcefullib.common.menu.ContentMenuProvider;
+import earth.terrarium.adastra.common.blockentities.base.sideconfig.ConfigurationEntry;
+import earth.terrarium.adastra.common.blockentities.base.sideconfig.SideConfigurable;
+import earth.terrarium.adastra.common.menus.content.PositionContent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Container;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.WorldlyContainer;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+public abstract class ContainerMachineBlockEntity extends MachineBlockEntity implements BasicContainer, WorldlyContainer, ContentMenuProvider<PositionContent>, SideConfigurable {
+
+    private final List<ConfigurationEntry> sideConfig = new ArrayList<>();
+    private final NonNullList<ItemStack> items;
+
+    private RedstoneControl redstoneControl = RedstoneControl.ALWAYS_ON;
+
+    public ContainerMachineBlockEntity(BlockPos pos, BlockState state, int containerSize) {
+        super(pos, state);
+        items = NonNullList.withSize(containerSize, ItemStack.EMPTY);
+    }
+
+    @Override
+    public void firstTick(Level level, BlockPos pos, BlockState state) {
+        super.firstTick(level, pos, state);
+        update();
+    }
+
+    @Override
+    public void internalServerTick(ServerLevel level, long time, BlockState state, BlockPos pos) {
+        if (time % 50 == 0 && shouldUpdate()) {
+            update();
+        }
+        if (canFunction()) {
+            tickSideInteractions(pos, f -> true, getSideConfig());
+        }
+    }
+
+    public boolean shouldUpdate() {
+        return true;
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadAdditional(tag, provider);
+        ContainerHelper.loadAllItems(tag, this.items, provider);
+        ConfigurationEntry.load(tag, this.sideConfig, getDefaultConfig());
+        this.redstoneControl = RedstoneControl.values()[tag.getByte("RedstoneControl")];
+    }
+
+    @Override
+    protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveAdditional(tag, provider);
+        ContainerHelper.saveAllItems(tag, this.items, provider);
+        ConfigurationEntry.save(tag, this.sideConfig);
+        tag.putByte("RedstoneControl", (byte) redstoneControl.ordinal());
+    }
+
+    @Override
+    public PositionContent createContent(ServerPlayer serverPlayer) {
+        return new PositionContent(this.worldPosition);
+    }
+
+    @Override
+    public boolean stillValid(@NotNull Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return getBlockState().getBlock().getName();
+    }
+
+    @Override
+    public NonNullList<ItemStack> items() {
+        return this.items;
+    }
+
+    /**
+     * Checks if the machine's redstone configuration allows it to function.
+     *
+     * @return True if the machine can function, false otherwise.
+     */
+    public boolean canFunction() {
+        return getRedstoneControl().canPower(isRedstonePowered());
+    }
+
+    @Override
+    public List<ConfigurationEntry> getSideConfig() {
+        if (this.sideConfig.isEmpty()) {
+            this.sideConfig.addAll(createDefaultConfig());
+        }
+        return sideConfig;
+    }
+
+    public void tickSideInteractions(BlockPos pos, Predicate<Direction> filter, List<ConfigurationEntry> sideConfig) {}
+
+    public RedstoneControl getRedstoneControl() {
+        return redstoneControl;
+    }
+
+    public void setRedstoneControl(RedstoneControl redstoneControl) {
+        this.redstoneControl = redstoneControl;
+        this.setChanged();
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(int index, @NotNull ItemStack itemStack, @Nullable Direction direction) {
+        return true;
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(int index, @NotNull ItemStack stack, @NotNull Direction direction) {
+        return true;
+    }
+}

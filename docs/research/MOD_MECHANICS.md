@@ -6518,6 +6518,62 @@ FTB перевіряє заявлені crafting/item/observation/dimension task
 FTB перевіряє заявлені crafting/item/observation/dimension tasks. NASA-предмети й огляд не доводять оплату конкретної збірки; inventory advancements upstream свідомо не використовуються як manufacturing proof.
 Повний1.21.1 інстанс, прийняття вироблених world-entities і Survival/TPS не тестувалися.
 
+### 28. Підтверджена збірка першого ступеня
+
+Епохи: 37.
+
+Зберіть Tier 1 Rocket на NASA Workbench після підготовки відповідного корпусу. Рецепт займає 14 вхідних слотів: носовий конус, шість сталевих блоків, чотири крила, два баки й двигун. Заберіть створену ракету поряд зі столом.
+Відокремте підготовку матеріалів від серверного приймання оплаченої збірки. Старі цілі отримання ракети зберігають свої ID та умови; це додаткова необов’язкова виробнича мета.
+Попередні кроки: ad_astra.core.rocket_t1.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_1_rocket`.
+Квести: `V7_E37_nasa_manufacture_t1`.
+Виробниче завдання потребує серверного запису для поточної FTB-команди власника столу: світ прийняв вихід, а ті самі 14 слотів оплатили рівно по одній одиниці без заміни рецептів чи матеріалів. Окреме предметне завдання перевіряє наявність ракети; готова ракета з іншого джерела сама не дає виробничого доказу.
+Статичні SHA/генераторні та модельовані перевірки не є запуском повного Ad Astra1.16.26/FTB у Minecraft; optional weaving, JEI, Survival і TPS потребують окремого фактичного тесту.
+Доказ належить поточній FTB-команді власника столу. Він не засвідчує особистого автора ракети, польоту, заправлення або оплати й розміщення космічної станції.
+
+### 29. Приймання місячного корпусу T2
+
+Епохи: 37.
+
+Зберіть Tier 2 Rocket на NASA Workbench після підготовки відповідного корпусу. Рецепт займає 14 вхідних слотів: носовий конус, шість дешевих блоків, чотири крила, два баки й двигун. Заберіть створену ракету поряд зі столом.
+Відокремте підготовку матеріалів від серверного приймання оплаченої збірки. Старі цілі отримання ракети зберігають свої ID та умови; це додаткова необов’язкова виробнича мета.
+Попередні кроки: ad_astra.core.rocket_t2.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_2_rocket`.
+Квести: `V7_E37_nasa_manufacture_t2`.
+Виробниче завдання потребує серверного запису для поточної FTB-команди власника столу: світ прийняв вихід, а ті самі 14 слотів оплатили рівно по одній одиниці без заміни рецептів чи матеріалів. Окреме предметне завдання перевіряє наявність ракети; готова ракета з іншого джерела сама не дає виробничого доказу.
+Статичні SHA/генераторні та модельовані перевірки не є запуском повного Ad Astra1.16.26/FTB у Minecraft; optional weaving, JEI, Survival і TPS потребують окремого фактичного тесту.
+Доказ належить поточній FTB-команді власника столу. Він не засвідчує особистого автора ракети, польоту, заправлення або оплати й розміщення космічної станції.
+
+### 30. Оплачений острамний корпус T3
+
+Епохи: 38.
+
+Зберіть Tier 3 Rocket на NASA Workbench після підготовки відповідного корпусу. Рецепт займає 14 вхідних слотів: носовий конус, шість острамних блоків, чотири крила, два баки й двигун. Заберіть створену ракету поряд зі столом.
+Відокремте підготовку матеріалів від серверного приймання оплаченої збірки. Старі цілі отримання ракети зберігають свої ID та умови; це додаткова необов’язкова виробнича мета.
+Попередні кроки: ad_astra.core.rocket_t3.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_3_rocket`.
+Квести: `V7_E38_nasa_manufacture_t3`.
+Виробниче завдання потребує серверного запису для поточної FTB-команди власника столу: світ прийняв вихід, а ті самі 14 слотів оплатили рівно по одній одиниці без заміни рецептів чи матеріалів. Окреме предметне завдання перевіряє наявність ракети; готова ракета з іншого джерела сама не дає виробничого доказу.
+Статичні SHA/генераторні та модельовані перевірки не є запуском повного Ad Astra1.16.26/FTB у Minecraft; optional weaving, JEI, Survival і TPS потребують окремого фактичного тесту.
+Доказ належить поточній FTB-команді власника столу. Він не засвідчує особистого автора ракети, польоту, заправлення або оплати й розміщення космічної станції.
+
+### 31. Приймання калоритового корпусу T4
+
+Епохи: 38.
+
+Зберіть Tier 4 Rocket на NASA Workbench після підготовки відповідного корпусу. Рецепт займає 14 вхідних слотів: носовий конус, шість калоритових блоків, чотири крила, два баки й двигун. Заберіть створену ракету поряд зі столом.
+Відокремте підготовку матеріалів від серверного приймання оплаченої збірки. Старі цілі отримання ракети зберігають свої ID та умови; це додаткова необов’язкова виробнича мета.
+Попередні кроки: ad_astra.core.rocket_t4.
+Машини: `ad_astra:nasa_workbench`.
+Ресурси й результати: `ad_astra:tier_4_rocket`.
+Квести: `V7_E38_nasa_manufacture_t4`.
+Виробниче завдання потребує серверного запису для поточної FTB-команди власника столу: світ прийняв вихід, а ті самі 14 слотів оплатили рівно по одній одиниці без заміни рецептів чи матеріалів. Окреме предметне завдання перевіряє наявність ракети; готова ракета з іншого джерела сама не дає виробничого доказу.
+Статичні SHA/генераторні та модельовані перевірки не є запуском повного Ad Astra1.16.26/FTB у Minecraft; optional weaving, JEI, Survival і TPS потребують окремого фактичного тесту.
+Доказ належить поточній FTB-команді власника столу. Він не засвідчує особистого автора ракети, польоту, заправлення або оплати й розміщення космічної станції.
+
 Фінальні цілі:
 - Ланцюг чотирьох ракетних ступенів пов’язаний із реальними матеріалами Moon/Mars/Venus.
 - Окремий cold-fuel bootstrap доступний без обов’язкового IceShard передGlacio.
@@ -6540,6 +6596,7 @@ FTB перевіряє заявлені crafting/item/observation/dimension task
 - SpaceStationRecipe оплачує лише перший matching stack, хоча hasIngredients рахує суму; прийняття placeInWorld і матеріальна оплата станції ще потребують окремого adapter. Орбітальний квест не є доказом будівництва станції.
 - Старі required IDs і task payloads збережені. Частина старих launch/oxygen/Mars задач залишається постфактум; це наступна явна міграція умов, не цикл нового optional курсу.
 - Повний Ad Astra/JEI/FTB/Survival, weaving і довготривалий TPS не запускалися. Застарілі або сторонні menu/inventory callbacks поза перевіреним адаптером не оголошуються захищеними.
+- 0.4.18: чотири окремі optional-виробничі задачі потребують accepted world entity та14native debit witnesses, а не inventory. Default-component output лишеcount1; unknownsubclasses/arbitraryaddonrollback не підтримуються. РеальнийAdAstraJAR/fullclientweaving не перевірено.
 
 Джерела:
 
@@ -6688,6 +6745,48 @@ FTB перевіряє заявлені crafting/item/observation/dimension task
 - [minecraft:crafting_shaped](../../content/research/evidence/ad_astra_course_review_v6/etrionic_capacitor.json) — SHA перевірено
 - [ad_astra:compressing](../../content/research/evidence/ad_astra_course_review_v6/compressing/desh_plate_from_compressing_desh_blocks.json) — SHA перевірено
 - [ad_astra:compressing](../../content/research/evidence/ad_astra_course_review_v6/compressing/desh_plate_from_compressing_desh_ingots.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/gradle.properties) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/machines/NasaWorkbenchBlockEntity.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/base/BasicContainer.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/base/ContainerMachineBlockEntity.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/blockentities/base/ContainerRecipeWrapper.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/recipes/machines/NasaWorkbenchRecipe.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/menus/machines/NasaWorkbenchMenu.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/menus/base/BaseContainerMenu.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/items/vehicles/RocketItem.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/items/vehicles/VehicleItem.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/registry/ModItems.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/java/earth/terrarium/adastra/common/registry/ModRecipeSerializers.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/recipe/nasa_workbench/tier_1_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/advancement/tier_1_rocket.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/recipe/nasa_workbench/tier_2_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/advancement/tier_2_rocket.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/recipe/nasa_workbench/tier_3_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/advancement/tier_3_rocket.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/recipe/nasa_workbench/tier_4_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/ad_astra/src/main/generated/resources/data/ad_astra/advancement/tier_4_rocket.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/installed_export/recipes/ad_astra/nasa_workbench/tier_1_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/installed_export/recipes/ad_astra/nasa_workbench/tier_2_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/installed_export/recipes/ad_astra/nasa_workbench/tier_3_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/installed_export/recipes/ad_astra/nasa_workbench/tier_4_rocket_from_nasa_workbench.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/Containers.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/level/Level.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/level/LevelWriter.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/server/level/ServerLevel.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/level/entity/PersistentEntitySectionManager.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/item/ItemStack.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/minecraft_neoforge/net/minecraft/world/item/crafting/Ingredient.json) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/bytecode/net.minecraft.world.Containers.javap.txt) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/AdAstraNasaAccess.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/mixin/AdAstraNasaMixin.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/mixin/AdAstraNasaBaseMenuMixin.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/mixin/AdAstraNasaMenuMixin.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/ProductionMilestoneBridge.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/Aia2MachineGuard.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/EnderTaskAccess.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/KeyProductionBridge.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/src/main/java/ua/aia2/guard/ForbiddenDependencies.java) — SHA перевірено
+- [джерело](../../content/research/evidence/nasa_production_v7/sourcefreeze/companion_baseline/companion/build.gradle) — SHA перевірено
 
 ## Applied Energistics 2
 

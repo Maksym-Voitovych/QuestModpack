@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.CraftingMenu;
 import net.minecraft.world.item.ItemStack;
@@ -173,6 +174,24 @@ public final class NativeSmokeTests {
         check(!Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "constructing or inserting a key item does not grant a production receipt");
         check(!ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                 "constructing or inserting an observed output does not create a generic process observation");
+    }
+
+    /** Actual common drop injection only; optional NASA is absent from this server. */
+    private static void testOrdinaryDropBoundary() {
+        check(GuardedNasaDrop.class.isAssignableFrom(net.minecraft.world.Containers.class),
+                "actual Containers class carries the NASA drop Mixin marker");
+        Set<UUID> before = level.getEntitiesOfClass(ItemEntity.class, AREA).stream()
+                .map(ItemEntity::getUUID).collect(Collectors.toSet());
+        ItemStack supplied = new ItemStack(Items.COBBLESTONE);
+        net.minecraft.world.Containers.dropItemStack(level, A.getX(), A.getY() + 1, A.getZ(), supplied);
+        List<ItemEntity> added = level.getEntitiesOfClass(ItemEntity.class, AREA).stream()
+                .filter(item -> !before.contains(item.getUUID()) && item.getItem().is(Items.COBBLESTONE)).toList();
+        try {
+            check(supplied.isEmpty() && added.size() == 1 && added.getFirst().getItem().getCount() == 1,
+                    "ordinary unscoped Containers drop retains native split/accept behavior");
+            check(level.getEntity(added.getFirst().getUUID()) == added.getFirst(),
+                    "actual accepted ItemEntity is immediately visible through the UUID lookup used by the witness");
+        } finally { added.forEach(Entity::discard); }
     }
 
     /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
@@ -622,6 +641,7 @@ public final class NativeSmokeTests {
                 check(!ProductionMilestoneBridge.hasProof(server, TEAM_B, "native_crafter_fixture"),
                         "generic process observation belongs only to the native machine owner team");
                 testObservedCompletionBridge();
+                testOrdinaryDropBoundary();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");

@@ -1,20 +1,20 @@
 {
-  "version": "0.4.17-alpha",
-  "status": "tested_source_fixture_hotfix_actual_projecte_binary_and_full_client_pending",
+  "version": "0.4.18-alpha",
+  "status": "tested_nasa_manufacturing_checkpoint_full_0_5_in_progress",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
     "epochs": 48,
-    "quests_total": 3371,
-    "substantive_quests": 3275,
+    "quests_total": 3375,
+    "substantive_quests": 3279,
     "preserved_legacy_manual_goals": 96,
-    "quests_added_this_release": 587,
-    "authored_new_courses_this_release": 0,
-    "manufacturing_quests_added": 0,
+    "quests_added_this_release": 591,
+    "authored_new_courses_this_release": 4,
+    "manufacturing_quests_added": 4,
     "chapters": 140,
     "groups": 6,
     "required_quests": 1701,
-    "optional_quests": 1670,
+    "optional_quests": 1674,
     "native_recipes": 627,
     "native_recipes_added_this_release": 58,
     "dual_key_recipes": 96,
@@ -38,7 +38,7 @@
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 0,
+    "quests_added_since_last_checkpoint": 4,
     "native_action_quests": 105,
     "complete_core_maps": 27,
     "mapped_mods": 61,
@@ -46,8 +46,8 @@
     "controller_native_recipe_floors": 41,
     "controller_custom_recipe_floors": 5,
     "new_recipes_since_last_checkpoint": 0,
-    "item_rewards": 3107,
-    "item_rewards_added_since_last_checkpoint": 0,
+    "item_rewards": 3111,
+    "item_rewards_added_since_last_checkpoint": 4,
     "existing_item_rewards_changed_since_last_checkpoint": 0
   },
   "confirmed_fixes": [
@@ -57,7 +57,8 @@
     "RecipeManager cached RecipeHolder overload now uses exact descriptor; actual native furnace rejection tested",
     "Two post-consumption team-bound manufacturing receipts plus paid pending artifact and final FTB completion",
     "Array-shaped corrupt ledgers rejected before JSON could lose UUID-keyed progress; normal completed progress retained",
-    "Ad Astra NASA current cached recipe, output/preview and live owner/team menus checked before native drop/input writes; modeled helper/handler tests, optional weaving not run"
+    "Ad Astra NASA current cached recipe, output/preview and live owner/team menus checked before native drop/input writes; modeled helper/handler tests, optional weaving not run",
+    "NASA one-shot native craft scope requires accepted retained world entity and14exact ordered native debits, current tags/input floors/recipe/team/generation before team receipt; modeled helper+Sponge fixture+common minimalMC checks only"
   ],
   "checks": {
     "node_tests": {
@@ -66,7 +67,7 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 263,
+      "passed": 298,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
@@ -78,12 +79,12 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 151,
+      "passed": 154,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.17-alpha",
+      "version_tested": "0.4.18-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "Actual minimal MC/guard/NBT fixtures in2JVM; ProjectE and other optional content mods absent"
+      "scope": "actual common Containers marker/native unscoped drop+UUID visibility; optional Ad Astra and ProjectE absent"
     },
     "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
@@ -93,15 +94,15 @@
     "custom_component_and_machine_graph": "acyclic 362 nodes/696 edges; explicit sources only",
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
-      "status": "1171non-JAR runtime files byte-identical to b428e08; only companion JAR replaced",
-      "generator": "NOT_RUN: no generated runtime changes required",
-      "report": "implementation/projecte-hotfix-preservation-v6.json"
+      "status": "1175 final non-JAR runtime files byte-identical after full generation with seed131; earlier seed127 also passed",
+      "generator": "tools/generate_game_pack.py",
+      "report": "implementation/nasa-production-rebuild-v7.json"
     },
-    "jar_sha256": "7252ed44e0a37fa9cc68e86f2afa992b869e41160fec78d213d8990841fd1521",
-    "jar_path": "mods/aia2-machine-guard-0.4.17-alpha.jar",
-    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.17-alpha --baseline b428e08 --check-only",
+    "jar_sha256": "477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5",
+    "jar_path": "mods/aia2-machine-guard-0.4.18-alpha.jar",
+    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.18-alpha --baseline 7a60178 --check-only",
     "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed:4560manifest entries/1172runtime hashes and installer",
+    "archive_crc_and_all_sha256_entries": "passed:4628manifest entries/1176runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -144,7 +145,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed: extractedCLI0.4.16→0.4.17; oldJARbackup, opaque world/progress/foreign markers preserved; repeat idempotent",
+    "packaged_installer_upgrade": "passed: extractedCLI0.4.17→0.4.18; oldJARbackup, opaque world/FTB/fire/knowledge+EMC/paidchunk markers and foreignquest/mod/script preserved; repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -180,22 +181,39 @@
     "clibano_dependency_actual_nbt_assertions_added": 14,
     "jar_class_preservation": {
       "status": "passed",
-      "baseline": "b428e08",
-      "classes": 202,
-      "byte_identical_existing_classes": 201,
+      "baseline": "7a60178",
+      "classes": 209,
+      "byte_identical_existing_classes": 196,
       "changed_classes": [
-        "ua/aia2/guard/mixin/ProjectETabletSourceMixin.class"
+        "ua/aia2/guard/AdAstraNasaAccess.class",
+        "ua/aia2/guard/NativeSmokeTests$Original.class",
+        "ua/aia2/guard/NativeSmokeTests.class",
+        "ua/aia2/guard/ProductionMilestoneBridge$ReceiptData.class",
+        "ua/aia2/guard/ProductionMilestoneBridge.class",
+        "ua/aia2/guard/mixin/AdAstraNasaMixin.class"
       ],
-      "mixins": 71,
-      "jar_sha256": "7252ed44e0a37fa9cc68e86f2afa992b869e41160fec78d213d8990841fd1521",
-      "projecte_binary_test": "BLOCKED actualJAR not provided",
+      "new_classes": [
+        "ua/aia2/guard/GuardedNasaDrop.class",
+        "ua/aia2/guard/NasaIngredients$Snapshot.class",
+        "ua/aia2/guard/NasaIngredients.class",
+        "ua/aia2/guard/NasaProductionAccess$1.class",
+        "ua/aia2/guard/NasaProductionAccess$Attempt.class",
+        "ua/aia2/guard/NasaProductionAccess.class",
+        "ua/aia2/guard/mixin/NasaDropMixin.class"
+      ],
+      "mixins": 72,
+      "jar_sha256": "477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5",
+      "ad_astra_installed_binary": "NOT_PROVIDED",
+      "actual_optional_mod_dispatch": "NOT_RUN",
       "full_client": "NOT_RUN"
     },
     "ad_astra_nasa_helpers_modeled": {
       "passed": 244,
       "host": "actual helper and3handlers plus realGuardPolicy; modeled optional Minecraft/Ad Astra receiver, exact native craft body",
       "optional_dispatch": false,
-      "manufacturing_proof_added": false
+      "manufacturing_proof_added": false,
+      "scope": "Historical244permission assertions retained;326new production assertions tracked separately",
+      "historical_checkpoint": "0.4.16 permission-only tests retained; current production326 separately in nasa_manufacturing"
     },
     "ad_astra_source_contract_tests": 7,
     "ad_astra_balance_and_course_tests": 12,
@@ -217,7 +235,67 @@
       "installer_preflight": "critical Tablet compiled target/callee before backup/write if ProjectE*.jar present",
       "secondary_ftb_aether": "follow initial broken mod state in supplied logs; no independent primary cause proven",
       "new_content": 0,
-      "checkpoint_doc": "docs/AIA2_0.4.17_HOTFIX.uk.md"
+      "checkpoint_doc": "docs/AIA2_0.4.17_HOTFIX.uk.md",
+      "historical_checkpoint": "0.4.17-alpha ProjectE hotfix retained;71 was the previous mixin total"
+    },
+    "nasa_manufacturing": {
+      "schema": 1,
+      "version": "0.4.18-alpha",
+      "status": "automated_tests_passed_optional_binary_and_full_client_pending",
+      "baseline": "7a60178",
+      "python_tests": 298,
+      "new_python_tests": 35,
+      "node_tests": 57,
+      "java_policy_assertions": 5237,
+      "javascript_syntax_files": 13,
+      "nasa_helper_modeled_assertions": 326,
+      "legacy_nasa_permission_modeled_assertions": 244,
+      "nasa_content_tests": 24,
+      "nasa_abi_tests": 7,
+      "nasa_production_tests": 3,
+      "new_installer_pairing_tests": 1,
+      "minimal_minecraft": {
+        "assertions": 154,
+        "jvm_boots": 2,
+        "ticks": 650,
+        "new_actual_checks": 3,
+        "scope": "actual common Containers marker/native unscoped drop+UUID visibility; optional Ad Astra and ProjectE absent"
+      },
+      "actual_sponge": {
+        "version": "0.16.4+mixin.0.8.7",
+        "targets": 3,
+        "mixins": [
+          "AdAstraNasaMixin",
+          "AdAstraNasaMenuMixin",
+          "AdAstraNasaBaseMenuMixin"
+        ],
+        "required_handlers": 7,
+        "redirect_call_sites": 2,
+        "receiver": "source-shaped compiled classes, exact frozen native NASA craft body",
+        "dependencies": "modeled Minecraft/Ad Astra host",
+        "installed_binary": "NOT_PROVIDED"
+      },
+      "source_files_added": 42,
+      "ad_astra_stages": 31,
+      "old_stage_payloads_preserved": 27,
+      "old_mechanic_rules_preserved": 11,
+      "mechanic_rules_total": 15,
+      "mechanic_recipe_ids_total": 18,
+      "current_tag_ingredient_shape": "14 vanilla noncustom ingredients; 1..64 values each; aggregate tag membership budget16384",
+      "actual_optional_ad_astra_dispatch": "NOT_RUN",
+      "actual_optional_projecte_dispatch": "BLOCKED_original_JAR_not_provided",
+      "full_client": "NOT_RUN",
+      "jei_survival_tps": "NOT_RUN",
+      "jar_report": "implementation/nasa-production-jar-v7.json",
+      "preservation_report": "implementation/nasa-production-preservation-v7.json",
+      "rebuild_report": "implementation/nasa-production-rebuild-v7.json",
+      "delivery_report": "implementation/nasa-production-package-install-v7.json",
+      "limits": [
+        "Mid-operation invalidation denies proof; native effects are not rolled back or refunded",
+        "Exact NASA class/default component outputcount1 and reviewed14slot recipes only; unsupported initial definitions reject before effects",
+        "Original optional binary provenance and fullpack dispatch still unproven",
+        "Station split-stack/overlap payment and accepted placement remain TODO"
+      ]
     }
   },
   "remaining_acceptance": [
@@ -228,7 +306,7 @@
     "Long-term gameplay balance, economy and TPS under real automation load",
     "Additional native caches/passive armor/Curios/component variants beyond documented hooks",
     "After restart, offline key manufacturing waits for a team member login and FTB branch readiness refresh; ordinary machine progress restores separately",
-    "105 native action goals,11 team process proof rules, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
+    "105 native action goals,15 team process proof rules, Roots/Spawner guards require fullpack dispatch; docs/testing/NATIVE_ACTION_ACCEPTANCE.uk.md",
     "MI paid generated conversions with replaced original remain paused; unpaid lookup waits for native recipe caches (~20s or longer with nested cache timers).",
     "MI changed or removed paid recipe pauses in current runtime. Native MI NBT stores ID/EU without the original codec fingerprint, so semantics across restart are not proven.",
     "Oritech Atomic Forge native fresh lookup may reset its RF buffer when existing contextual RecipeManager filtering yields empty. Cached selector filtering happens after polymorphic capacity adjustment to avoid introducing the same loss there.",
@@ -250,7 +328,7 @@
     "Clibano controller/recipe/menu guards have source/model coverage; exact optional weaving/JEI/Survival/TPS remain NOT_RUN. Frame IO and fullpack dependency/residue acceptance remain open; see CLIBANO_ACCEPTANCE.uk.md.",
     "Forge transitive snapshots have modeled and actual-NBT checks; exact optional runtime/tag reload/Survival/TPS remain NOT_RUN. Full enhancer Component serialization precedes bounded JSON validation; visual description changes conservatively pause. See FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md.",
     "Clibano transitive/history guards are implemented for exact reviewed types; fullpack weaving, actual tag reload, Survival/JEI/world-upgrade/TPS and frame IO remain NOT_RUN. Explicit quarantine backs up unproven stock without output; installer never invokes it.",
-    "Ad Astra NASA accepted-output plus post-consumption manufacturing witness; inventory advancement is not a proof",
+    "Ad Astra NASA manufacturing proof: actual installed optional dispatch/JEI/Survival acceptance still pending; inventory advancement is not proof",
     "Ad Astra station aggregate split-stack payment and accepted structure placement adapter",
     "Explicit migration of old required epoch37/38 post-fact tasks without losing completed IDs",
     "Ad Astra optional NASA Mixin weaving, menu/client JEI, real automation and Survival/TPS"
@@ -275,8 +353,8 @@
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
   "checkpoint_preservation": "implementation/clibano-dependencies-preservation-v6.json",
-  "checkpoint_base_commit": "d5c225c7a3a10178504a437068b088f0c9f5e860",
-  "checkpoint_backup": "/workspace/aia2-backups/before-projecte-client-hotfix-20261029T125009Z/checkpoint-b428e08.tar.gz",
+  "checkpoint_base_commit": "7a60178c6ac1ca2443363b4c15839559f54dae9f",
+  "checkpoint_backup": "/workspace/aia2-backups/before-nasa-production-20261029T184529Z/checkpoint-7a60178.tar.gz",
   "checkpoint_report": "docs/AIA2_0.4.15_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
@@ -536,7 +614,7 @@
     "native_save_codec_or_level_null_omission_preserves_actual_counts": true,
     "package_manifest_and_upgrade": "passed"
   },
-  "checkpoint_baseline": "b428e08b5e98c2ecfe37a19ced75f52e6fb3677f",
+  "checkpoint_baseline": "7a60178c6ac1ca2443363b4c15839559f54dae9f",
   "checkpoint_ad_astra": {
     "status": "implemented_automatically_verified_fullpack_manual_acceptance_pending",
     "quests_added": 20,
@@ -582,5 +660,64 @@
     "secondary_ftb_aether": "follow initial broken mod state in supplied logs; no independent primary cause proven",
     "new_content": 0,
     "checkpoint_doc": "docs/AIA2_0.4.17_HOTFIX.uk.md"
+  },
+  "nasa_manufacturing": {
+    "schema": 1,
+    "version": "0.4.18-alpha",
+    "status": "automated_tests_passed_optional_binary_and_full_client_pending",
+    "baseline": "7a60178",
+    "python_tests": 298,
+    "new_python_tests": 35,
+    "node_tests": 57,
+    "java_policy_assertions": 5237,
+    "javascript_syntax_files": 13,
+    "nasa_helper_modeled_assertions": 326,
+    "legacy_nasa_permission_modeled_assertions": 244,
+    "nasa_content_tests": 24,
+    "nasa_abi_tests": 7,
+    "nasa_production_tests": 3,
+    "new_installer_pairing_tests": 1,
+    "minimal_minecraft": {
+      "assertions": 154,
+      "jvm_boots": 2,
+      "ticks": 650,
+      "new_actual_checks": 3,
+      "scope": "actual common Containers marker/native unscoped drop+UUID visibility; optional Ad Astra and ProjectE absent"
+    },
+    "actual_sponge": {
+      "version": "0.16.4+mixin.0.8.7",
+      "targets": 3,
+      "mixins": [
+        "AdAstraNasaMixin",
+        "AdAstraNasaMenuMixin",
+        "AdAstraNasaBaseMenuMixin"
+      ],
+      "required_handlers": 7,
+      "redirect_call_sites": 2,
+      "receiver": "source-shaped compiled classes, exact frozen native NASA craft body",
+      "dependencies": "modeled Minecraft/Ad Astra host",
+      "installed_binary": "NOT_PROVIDED"
+    },
+    "source_files_added": 42,
+    "ad_astra_stages": 31,
+    "old_stage_payloads_preserved": 27,
+    "old_mechanic_rules_preserved": 11,
+    "mechanic_rules_total": 15,
+    "mechanic_recipe_ids_total": 18,
+    "current_tag_ingredient_shape": "14 vanilla noncustom ingredients; 1..64 values each; aggregate tag membership budget16384",
+    "actual_optional_ad_astra_dispatch": "NOT_RUN",
+    "actual_optional_projecte_dispatch": "BLOCKED_original_JAR_not_provided",
+    "full_client": "NOT_RUN",
+    "jei_survival_tps": "NOT_RUN",
+    "jar_report": "implementation/nasa-production-jar-v7.json",
+    "preservation_report": "implementation/nasa-production-preservation-v7.json",
+    "rebuild_report": "implementation/nasa-production-rebuild-v7.json",
+    "delivery_report": "implementation/nasa-production-package-install-v7.json",
+    "limits": [
+      "Mid-operation invalidation denies proof; native effects are not rolled back or refunded",
+      "Exact NASA class/default component outputcount1 and reviewed14slot recipes only; unsupported initial definitions reject before effects",
+      "Original optional binary provenance and fullpack dispatch still unproven",
+      "Station split-stack/overlap payment and accepted placement remain TODO"
+    ]
   }
 }
