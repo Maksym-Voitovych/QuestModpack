@@ -3,6 +3,9 @@ on: [push, pull_request]
 jobs:
   content:
     runs-on: ubuntu-latest
+    env:
+      # The compiled-fixture tests and Gradle must resolve the same dependency cache.
+      GRADLE_USER_HOME: ${{ github.workspace }}/.gradle
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

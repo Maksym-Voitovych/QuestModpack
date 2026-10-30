@@ -33,6 +33,7 @@ public final class GuardInteropHarness {
         public static void setRulesJson(String json) {}
         public static void setItemRulesJson(String json) {}
         public static void setRecipeRulesJson(String json) {}
+        public static void setDimensionRulesJson(String json) {}
         public static void configureKeyRulesJson(String json) {}
         public static void setTeamProgress(String id, int n) {}
         public static void syncPlayer(PlayerFixture player, String team, int n) { synced = player.getUUID(); }

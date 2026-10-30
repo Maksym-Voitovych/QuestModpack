@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplate.java",
+    "sha256": "7aa235fe90f90f4ce66c92953b675aebb03f0c2e4caca62aa627eee4dec2db78",
+    "line_count": 857
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "query": "public Vec3i getSize(",
+      "declaration_lines": [
+        71,
+        496
+      ]
+    },
+    {
+      "query": "public boolean placeInWorld(",
+      "declaration_lines": [
+        226
+      ]
+    },
+    {
+      "query": "public CompoundTag save(",
+      "declaration_lines": [
+        609
+      ]
+    },
+    {
+      "query": "public static final class Palette",
+      "declaration_lines": [
+        790
+      ]
+    },
+    {
+      "query": "public List<StructureTemplate.StructureBlockInfo> blocks()",
+      "declaration_lines": [
+        798
+      ]
+    },
+    {
+      "query": "public static record StructureBlockInfo",
+      "declaration_lines": [
+        839
+      ]
+    },
+    {
+      "query": "public static class StructureEntityInfo",
+      "declaration_lines": [
+        846
+      ]
+    }
+  ],
+  "facts": [
+    "Private fields are final List<Palette> palettes, final List<StructureEntityInfo> entityInfoList and mutable Vec3i size. A bounded observer can inspect these lists before serializing an entire template.",
+    "Palette.blocks() returns its live underlying list. StructureBlockInfo is a public record(BlockPos pos,BlockState state,nullable CompoundTag nbt) with public record accessors; EntityInfo exposes final Vec3 pos,BlockPos blockPos,CompoundTag nbt fields.",
+    "placeInWorld returns false for no palettes, for no selected blocks/entities, or any size component below1. It returns true after attempting accepted/rejected writes and entities; the result does not require any setBlock to succeed.",
+    "Primary requested block setBlock is separate from a preceding optional barrier write and later neighbor-shape update. The primary boolean governs accepted block bookkeeping.",
+    "Native processing, fluids, block-entity NBT and neighbor updates may alter final state after primary setBlock. Accepted writes do not imply a complete/unchanged finished structure.",
+    "save(CompoundTag) walks all palettes/blocks/entities. A bound checked only after save does not bound serialization work."
+  ],
+  "scope": "API facts and source locations only; full decompiled source remains outside repository in the local SDK artifact."
+}

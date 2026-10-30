@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/level/levelgen/structure/templatesystem/StructurePlaceSettings.java",
+    "sha256": "3bb694cb141bfb5fe2c57d0cd658e739b89024426bfacd9ec26056f699194470",
+    "line_count": 158
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "query": "public Mirror getMirror(",
+      "declaration_lines": [
+        100
+      ]
+    },
+    {
+      "query": "public Rotation getRotation(",
+      "declaration_lines": [
+        104
+      ]
+    },
+    {
+      "query": "public BlockPos getRotationPivot(",
+      "declaration_lines": [
+        108
+      ]
+    },
+    {
+      "query": "public boolean isIgnoreEntities(",
+      "declaration_lines": [
+        120
+      ]
+    },
+    {
+      "query": "public BoundingBox getBoundingBox(",
+      "declaration_lines": [
+        125
+      ]
+    },
+    {
+      "query": "public boolean getKnownShape(",
+      "declaration_lines": [
+        129
+      ]
+    },
+    {
+      "query": "public List<StructureProcessor> getProcessors(",
+      "declaration_lines": [
+        133
+      ]
+    },
+    {
+      "query": "public boolean shouldApplyWaterlogging(",
+      "declaration_lines": [
+        137
+      ]
+    },
+    {
+      "query": "public StructureTemplate.Palette getRandomPalette(",
+      "declaration_lines": [
+        141
+      ]
+    }
+  ],
+  "facts": [
+    "Defaults: Mirror.NONE,Rotation.NONE,pivotZERO,ignoreEntitiesfalse,boundingBoxnull,liquidSettingsAPPLY_WATERLOGGING,randomnull,processors empty,knownShapefalse,finalizeEntitiesfalse,paletteint0.",
+    "getRandomPalette selects a random list entry and throws on empty list. A strict single-palette contract avoids palette-selection ambiguity.",
+    "getProcessors returns the live list. Public getters listed here expose the supported default-settings checks; no public random/finalizeEntities getter is assumed."
+  ],
+  "scope": "API facts and source locations only; full decompiled source remains outside repository in the local SDK artifact."
+}

@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "started_at_utc": "2026-10-29T22:40:37.703011207Z",
-  "finished_at_utc": "2026-10-29T22:41:10.486672249Z",
+  "started_at_utc": "2026-10-30T07:03:47.351299514Z",
+  "finished_at_utc": "2026-10-30T07:04:20.072249917Z",
   "minecraft": "1.21.1",
   "neoforge": "21.1.264",
   "real_minecraft_server": true,
@@ -9,6 +9,18 @@
   "checks": [
     {
       "description": "native bridge became ready with nonempty rules and teams",
+      "passed": true
+    },
+    {
+      "description": "actual native dimension policy rejects unopened orbit",
+      "passed": true
+    },
+    {
+      "description": "actual native dimension policy admits the owning team's open orbit",
+      "passed": true
+    },
+    {
+      "description": "unknown native dimension cannot bypass configured floors",
       "passed": true
     },
     {
@@ -564,6 +576,58 @@
       "passed": true
     },
     {
+      "description": "actual StructureTemplate carries station Mixin marker",
+      "passed": true
+    },
+    {
+      "description": "actual empty template is rejected before station payment",
+      "passed": true
+    },
+    {
+      "description": "actual single-palette standard template snapshot accepts native block entries",
+      "passed": true
+    },
+    {
+      "description": "actual template snapshot is deterministic",
+      "passed": true
+    },
+    {
+      "description": "actual template snapshot cannot be mutated through exposed map",
+      "passed": true
+    },
+    {
+      "description": "actual unscoped StructureTemplate native placement remains unchanged through ordinal1 redirect",
+      "passed": true
+    },
+    {
+      "description": "actual non-null block NBT is rejected without serialization",
+      "passed": true
+    },
+    {
+      "description": "actual duplicate template coordinates are rejected",
+      "passed": true
+    },
+    {
+      "description": "actual oversized template axis is rejected before copying",
+      "passed": true
+    },
+    {
+      "description": "actual all-air template is not a station",
+      "passed": true
+    },
+    {
+      "description": "actual native flags2 accepts a pane next to another pane",
+      "passed": true
+    },
+    {
+      "description": "actual synchronous neighbor feedback preserves placed block identity",
+      "passed": true
+    },
+    {
+      "description": "actual flags2 synchronously adjusts placed pane properties before returning; full-state postcheck would falsely deny",
+      "passed": true
+    },
+    {
       "description": "native SavedData NBT serialization retains the key receipt",
       "passed": true
     },
@@ -584,20 +648,20 @@
       "passed": true
     }
   ],
-  "assertions": 144,
-  "receipt_team": "native-test-a-f265c1fb-90fc-43a6-b317-91b16510241d",
+  "assertions": 160,
+  "receipt_team": "native-test-a-e11e370f-bc20-47b3-b8c7-72b5851262a2",
   "receipt_restart_verification": false,
   "modded_machines_tested": false,
   "ftb_kubejs_runtime_present": false,
   "tps_benchmark": "not performed; this is a small native correctness suite",
   "test_blocks_restored": true,
-  "version_tested": "0.4.18-alpha",
+  "version_tested": "0.4.19-alpha",
   "runner_exit_code": 0,
   "console_log": "run/aia2-native-smoke-console.log (ignored, not shipped)",
   "restart_verification": {
     "status": "passed",
-    "started_at_utc": "2026-10-29T22:41:46.717409472Z",
-    "finished_at_utc": "2026-10-29T22:41:46.747781236Z",
+    "started_at_utc": "2026-10-30T07:04:58.348208613Z",
+    "finished_at_utc": "2026-10-30T07:04:58.378457062Z",
     "minecraft": "1.21.1",
     "neoforge": "21.1.264",
     "real_minecraft_server": true,
@@ -645,16 +709,16 @@
       }
     ],
     "assertions": 10,
-    "receipt_team": "native-test-a-f265c1fb-90fc-43a6-b317-91b16510241d",
+    "receipt_team": "native-test-a-e11e370f-bc20-47b3-b8c7-72b5851262a2",
     "receipt_restart_verification": true,
     "modded_machines_tested": false,
     "ftb_kubejs_runtime_present": false,
     "tps_benchmark": "not performed; this is a small native correctness suite",
     "test_blocks_restored": true,
-    "version_tested": "0.4.18-alpha",
+    "version_tested": "0.4.19-alpha",
     "runner_exit_code": 0,
     "console_log": "run/aia2-native-smoke-restart-console.log (ignored, not shipped)"
   },
-  "assertions_total": 154,
+  "assertions_total": 170,
   "runner_command": "./gradlew --offline runServer -x downloadAssets --no-daemon --console=plain; second JVM verifies SavedData persistence"
 }

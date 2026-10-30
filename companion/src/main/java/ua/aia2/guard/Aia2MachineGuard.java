@@ -48,6 +48,7 @@ public final class Aia2MachineGuard {
         }
     };
     private static final Map<UUID, String> PLAYER_TEAMS = new ConcurrentHashMap<>();
+    private static volatile Map<String, Number> dimensionRules = Map.of();
     private static final LiveTeamResolver LIVE_TEAMS = new LiveTeamResolver();
     private static final AtomicLong DENIED_TICKS = new AtomicLong();
 
@@ -84,6 +85,7 @@ public final class Aia2MachineGuard {
         ProductionMilestoneBridge.clearRuntime();
         PLAYER_TEAMS.clear();
         LIVE_TEAMS.clear();
+        dimensionRules = Map.of();
         DENIED_TICKS.set(0);
     }
 
@@ -103,6 +105,17 @@ public final class Aia2MachineGuard {
     public static void setRecipeRulesJson(String json) {
         RECIPE_POLICY.setRules(parseRulesJson(json));
         RECIPES.reset();
+    }
+
+    /** Same configured floors as the KubeJS dimension travel guard. */
+    public static void setDimensionRulesJson(String json) {
+        Map<String, Number> checked = parseRulesJson(json);
+        new GuardPolicy().setRules(checked);
+        dimensionRules = Map.copyOf(checked);
+    }
+    public static boolean mayUseOwnedDimension(String team, String dimension) {
+        Number floor = dimensionRules.get(dimension);
+        return floor != null && mayObserveStage(team, floor.intValue());
     }
 
     public static void configureKeyRulesJson(String json) { KeyProductionBridge.configure(json); }
@@ -413,6 +426,8 @@ public final class Aia2MachineGuard {
             setRecipeRulesJson(root.getAsJsonObject("recipeGates").toString());
             if (!root.has("dualKeys") || !root.get("dualKeys").isJsonArray()) throw new IOException("Missing dualKeys array");
             configureKeyRulesJson(root.getAsJsonArray("dualKeys").toString());
+            if (!root.has("dimensionGates") || !root.get("dimensionGates").isJsonObject()) throw new IOException("Missing dimensionGates object");
+            setDimensionRulesJson(root.getAsJsonObject("dimensionGates").toString());
             LOGGER.info("AIA2 block rules loaded; staged machines await the server progression bridge");
         } catch (IOException | RuntimeException failure) {
             LOGGER.error("AIA2 machine rules could not load from {}. Modded machines remain locked until the progression bridge initializes.",

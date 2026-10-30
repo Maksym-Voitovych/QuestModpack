@@ -74,6 +74,7 @@ function machines(installed = true) {
     setRulesJson(s) { assert.equal(Object.keys(JSON.parse(s)).length, 16003); calls.push('rules'); },
     setItemRulesJson(s) { assert.ok(Object.keys(JSON.parse(s)).length > 20000); },
     setRecipeRulesJson(s) { assert.ok(Object.keys(JSON.parse(s)).length > 40000); },
+    setDimensionRulesJson(s) { assert.ok(Object.keys(JSON.parse(s)).length > 40); },
     configureKeyRulesJson(s) { assert.equal(JSON.parse(s).length, 96); calls.push('keyrules'); },
     syncPlayer(p, team, completed) {
       assert.equal(p.isFake(), false);

@@ -145,12 +145,16 @@ public final class NativeSmokeTests {
         Aia2MachineGuard.setRulesJson("{\"minecraft:furnace\":5,\"minecraft:crafter\":2,\"minecraft:hopper\":0,\"minecraft:diamond_block\":32}");
         Aia2MachineGuard.setItemRulesJson("{\"minecraft:iron_ingot\":8,\"minecraft:iron_nugget\":0,\"minecraft:coal\":0,\"minecraft:raw_iron\":0,\"minecraft:diamond\":99}");
         Aia2MachineGuard.setRecipeRulesJson("{\"minecraft:iron_ingot_from_smelting_raw_iron\":7,\"minecraft:iron_ingot_from_nuggets\":8}");
+        Aia2MachineGuard.setDimensionRulesJson("{\"ad_astra:earth_orbit\":5,\"ad_astra:moon_orbit\":8}");
         Aia2MachineGuard.configureKeyRulesJson("[{\"recipeId\":\"minecraft:iron_ingot_from_nuggets\",\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"branch\":\"tech\",\"serializer\":\"minecraft:crafting_shaped\"}]");
         ProductionMilestoneBridge.configureJson("[{\"id\":\"native_crafter_fixture\",\"recipeIds\":[\"minecraft:iron_ingot_from_nuggets\"],\"output\":\"minecraft:iron_ingot\",\"epoch\":8,\"serializer\":\"minecraft:crafting_shaped\"}]");
         Aia2MachineGuard.setTeamProgress(TEAM_A, 3);
         Aia2MachineGuard.setTeamProgress(TEAM_B, 7);
         Aia2MachineGuard.setReady();
         check(Aia2MachineGuard.isReady(), "native bridge became ready with nonempty rules and teams");
+        check(!Aia2MachineGuard.mayUseOwnedDimension(TEAM_A, "ad_astra:earth_orbit"), "actual native dimension policy rejects unopened orbit");
+        check(Aia2MachineGuard.mayUseOwnedDimension(TEAM_B, "ad_astra:moon_orbit"), "actual native dimension policy admits the owning team's open orbit");
+        check(!Aia2MachineGuard.mayUseOwnedDimension(TEAM_B, "ad_astra:unknown_orbit"), "unknown native dimension cannot bypass configured floors");
         furnace(A, TEAM_A);
         furnace(B, TEAM_B);
         furnace(UNOWNED, null);
@@ -192,6 +196,48 @@ public final class NativeSmokeTests {
             check(level.getEntity(added.getFirst().getUUID()) == added.getFirst(),
                     "actual accepted ItemEntity is immediately visible through the UUID lookup used by the witness");
         } finally { added.forEach(Entity::discard); }
+    }
+
+    /** Actual common template hook and bounded read; optional Ad Astra is absent. */
+    private static void testStationTemplateBoundary() {
+        var template = new net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate();
+        check(GuardedStationTemplate.class.isAssignableFrom(template.getClass()), "actual StructureTemplate carries station Mixin marker");
+        check(StationTemplateSnapshot.read(template) == null, "actual empty template is rejected before station payment");
+        BlockPos from = A.offset(8, 0, 0), to = A.offset(9, 0, 0);
+        BlockState originalFrom = level.getBlockState(from), originalTo = level.getBlockState(to);
+        try {
+            level.setBlock(from, Blocks.GOLD_BLOCK.defaultBlockState(), 2);
+            template.fillFromWorld(level, from, new BlockPos(1, 1, 1), false, null);
+            var snapshot = StationTemplateSnapshot.read(template);
+            check(snapshot != null && snapshot.allBlocks().size() == 1 && snapshot.nonAir().size() == 1, "actual single-palette standard template snapshot accepts native block entries");
+            check(snapshot.equals(StationTemplateSnapshot.read(template)), "actual template snapshot is deterministic");
+            boolean immutable = false;
+            try { snapshot.allBlocks().clear(); } catch (UnsupportedOperationException expected) { immutable = true; }
+            check(immutable, "actual template snapshot cannot be mutated through exposed map");
+            boolean placed = template.placeInWorld(level, to, to, new net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings(), level.random, 2);
+            check(placed && level.getBlockState(to).is(Blocks.GOLD_BLOCK), "actual unscoped StructureTemplate native placement remains unchanged through ordinal1 redirect");
+            CompoundTag raw = template.save(new CompoundTag());
+            var withNbt = raw.copy(); withNbt.getList("blocks", net.minecraft.nbt.Tag.TAG_COMPOUND).getCompound(0).put("nbt", new CompoundTag());
+            var unsupported = new net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate();
+            unsupported.load(level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BLOCK), withNbt);
+            check(StationTemplateSnapshot.read(unsupported) == null, "actual non-null block NBT is rejected without serialization");
+            var duplicate = raw.copy(); var blocks = duplicate.getList("blocks", net.minecraft.nbt.Tag.TAG_COMPOUND); blocks.add(blocks.getCompound(0).copy());
+            unsupported.load(level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BLOCK), duplicate);
+            check(StationTemplateSnapshot.read(unsupported) == null, "actual duplicate template coordinates are rejected");
+            var huge = raw.copy(); var size = new net.minecraft.nbt.ListTag(); size.add(net.minecraft.nbt.IntTag.valueOf(65)); size.add(net.minecraft.nbt.IntTag.valueOf(1)); size.add(net.minecraft.nbt.IntTag.valueOf(1)); huge.put("size", size);
+            unsupported.load(level.registryAccess().lookupOrThrow(net.minecraft.core.registries.Registries.BLOCK), huge);
+            check(StationTemplateSnapshot.read(unsupported) == null, "actual oversized template axis is rejected before copying");
+            level.setBlock(from, Blocks.AIR.defaultBlockState(), 2); template.fillFromWorld(level, from, new BlockPos(1, 1, 1), false, null);
+            check(StationTemplateSnapshot.read(template) == null, "actual all-air template is not a station");
+            level.setBlock(from, Blocks.AIR.defaultBlockState(), 18);
+            level.setBlock(to, Blocks.AIR.defaultBlockState(), 18);
+            BlockState pane = Blocks.BLACK_STAINED_GLASS_PANE.defaultBlockState();
+            level.setBlock(to, pane, 18);
+            boolean acceptedPane = level.setBlock(from, pane, 2);
+            check(acceptedPane, "actual native flags2 accepts a pane next to another pane");
+            check(level.getBlockState(from).getBlock() == pane.getBlock(), "actual synchronous neighbor feedback preserves placed block identity");
+            check(!level.getBlockState(from).equals(pane), "actual flags2 synchronously adjusts placed pane properties before returning; full-state postcheck would falsely deny");
+        } finally { level.setBlock(from, originalFrom, 2); level.setBlock(to, originalTo, 2); }
     }
 
     /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
@@ -642,6 +688,7 @@ public final class NativeSmokeTests {
                         "generic process observation belongs only to the native machine owner team");
                 testObservedCompletionBridge();
                 testOrdinaryDropBoundary();
+                testStationTemplateBoundary();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");

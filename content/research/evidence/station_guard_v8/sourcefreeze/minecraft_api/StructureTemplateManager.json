@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/level/levelgen/structure/templatesystem/StructureTemplateManager.java",
+    "sha256": "a570023329493bd319d922041b64ea0dacbffebb5ffcbef9159b03ecb2009e06",
+    "line_count": 316
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "query": "public StructureTemplate getOrCreate(",
+      "declaration_lines": [
+        83
+      ]
+    },
+    {
+      "query": "public Optional<StructureTemplate> get(",
+      "declaration_lines": [
+        94
+      ]
+    },
+    {
+      "query": "public void remove(",
+      "declaration_lines": [
+        305
+      ]
+    }
+  ],
+  "facts": [
+    "get(id) returns an Optional and loads/caches a template if present. getOrCreate(id) creates and caches a new empty StructureTemplate when get returns empty.",
+    "Read-only preflight should use get(id) and reject missing/empty structures rather than treating getOrCreate as an existence proof."
+  ],
+  "scope": "API facts and source locations only; full decompiled source remains outside repository in the local SDK artifact."
+}

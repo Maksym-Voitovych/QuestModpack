@@ -29,7 +29,7 @@ var __player = {username: 'Alice', server: __server, blockX: 0, blockY: 64, bloc
 var __team = {getTeamId: function () { return 'fixture-team'; },
   isCompleted: function () { return true; }, getOnlineMembers: function () { return [__player]; }};
 var __guard = {clearRuntime: function () { __fixture.guardReady = false; },
-  setRulesJson: function () {}, setItemRulesJson: function () {}, setRecipeRulesJson: function () {}, setTeamProgress: function () {},
+  setRulesJson: function () {}, setItemRulesJson: function () {}, setRecipeRulesJson: function () {}, setDimensionRulesJson: function () {}, setTeamProgress: function () {},
   apiVersion: function () { return 4; }, syncPlayer: function () {}, configureKeyRulesJson: function () {},
   hasProductionProof: function () { return true; }, setTeamKeyReady: function () {}, setPlayerTeam: function () {}, setReady: function () { __fixture.guardReady = true; },
   isReady: function () { return __fixture.guardReady; }};

@@ -1,6 +1,6 @@
 {
-  "version": "0.4.18-alpha",
-  "status": "tested_nasa_manufacturing_checkpoint_full_0_5_in_progress",
+  "version": "0.4.19-alpha",
+  "status": "station_guard_checkpoint_full_0_5_in_progress",
   "baseline_commit": "7df8f1ccc0b4798e119bfcdb058bf967d415ac31",
   "baseline_backup": "/workspace/aia2-backups/before-dual-keys-20261023T071557Z/tracked-project.tar.gz",
   "counts": {
@@ -9,7 +9,7 @@
     "substantive_quests": 3279,
     "preserved_legacy_manual_goals": 96,
     "quests_added_this_release": 591,
-    "authored_new_courses_this_release": 4,
+    "authored_new_courses_this_release": 0,
     "manufacturing_quests_added": 4,
     "chapters": 140,
     "groups": 6,
@@ -38,7 +38,7 @@
     "new_quest_primary_mods": 48,
     "new_quest_item_namespaces": 49,
     "material_normalizations": 31,
-    "quests_added_since_last_checkpoint": 4,
+    "quests_added_since_last_checkpoint": 0,
     "native_action_quests": 105,
     "complete_core_maps": 27,
     "mapped_mods": 61,
@@ -47,7 +47,7 @@
     "controller_custom_recipe_floors": 5,
     "new_recipes_since_last_checkpoint": 0,
     "item_rewards": 3111,
-    "item_rewards_added_since_last_checkpoint": 4,
+    "item_rewards_added_since_last_checkpoint": 0,
     "existing_item_rewards_changed_since_last_checkpoint": 0
   },
   "confirmed_fixes": [
@@ -58,7 +58,8 @@
     "Two post-consumption team-bound manufacturing receipts plus paid pending artifact and final FTB completion",
     "Array-shaped corrupt ledgers rejected before JSON could lose UUID-keyed progress; normal completed progress retained",
     "Ad Astra NASA current cached recipe, output/preview and live owner/team menus checked before native drop/input writes; modeled helper/handler tests, optional weaving not run",
-    "NASA one-shot native craft scope requires accepted retained world entity and14exact ordered native debits, current tags/input floors/recipe/team/generation before team receipt; modeled helper+Sponge fixture+common minimalMC checks only"
+    "NASA one-shot native craft scope requires accepted retained world entity and14exact ordered native debits, current tags/input floors/recipe/team/generation before team receipt; modeled helper+Sponge fixture+common minimalMC checks only",
+    "Station packet scope: early live team/orbit stage, global non-overlapping split-stack exactpayment, mandatoryacceptedprimarynonairwrites+retainedblocktypes before registration; no rollback or newdurableproof"
   ],
   "checks": {
     "node_tests": {
@@ -67,11 +68,11 @@
       "skipped": 0
     },
     "python_tests": {
-      "passed": 302,
+      "passed": 325,
       "failed": 0,
       "skipped": 0,
       "includes_real_rhino_build85": 3,
-      "includes_installer_tests": 31,
+      "includes_installer_tests": 32,
       "command": "python -m unittest discover -s tests -p 'test_*.py' -v"
     },
     "java_policy_assertions": {
@@ -79,12 +80,12 @@
       "failed": 0
     },
     "native_minecraft_smoke": {
-      "passed": 154,
+      "passed": 170,
       "failed": 0,
       "server_jvm_boots": 2,
-      "version_tested": "0.4.18-alpha",
+      "version_tested": "0.4.19-alpha",
       "report": "companion/native-smoke-report.json",
-      "scope": "actual common Containers marker/native unscoped drop+UUID visibility; optional Ad Astra and ProjectE absent"
+      "scope": "Actual common StructureTemplate marker, unscoped placeInWorld ordinal1, immutable bounded template reads and configured dimension floors; Ad Astra/ProjectE/FTB/KubeJS absent; native synchronous pane feedback regression"
     },
     "javascript_syntax_files": 13,
     "snbt_graph_ids": "passed",
@@ -94,15 +95,14 @@
     "custom_component_and_machine_graph": "acyclic 362 nodes/696 edges; explicit sources only",
     "resources_models_alpha": "passed; all293 old PNG hashes retained;96 new unique key silhouettes",
     "runtime_rebuild": {
-      "status": "1175 final non-JAR runtime files byte-identical after full generation with seed131; earlier seed127 also passed",
-      "generator": "tools/generate_game_pack.py",
-      "report": "implementation/nasa-production-rebuild-v7.json"
+      "status": "1175non-JAR runtime files byte-identical after final shapefix in clean checkout with seed139",
+      "report": "implementation/station-rebuild-v8.json"
     },
-    "jar_sha256": "477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5",
-    "jar_path": "mods/aia2-machine-guard-0.4.18-alpha.jar",
-    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.18-alpha --baseline 7a60178 --check-only",
-    "packaged_installer_dry_run": "passed: actual extracted CLI, zero file/directory writes",
-    "archive_crc_and_all_sha256_entries": "passed:4629manifest entries/1176runtime hashes and installer",
+    "jar_sha256": "13e2176e81f039985314009e7751b5445eb47ae0ff910a2d1a6e664c19ee45d8",
+    "jar_path": "mods/aia2-machine-guard-0.4.19-alpha.jar",
+    "archive_verification_command": "python tools/verify_runtime_delivery.py --version 0.4.19-alpha --baseline 56f07e5 --check-only",
+    "packaged_installer_dry_run": "passed: actual extracted CLI,zero file/directory writes",
+    "archive_crc_and_all_sha256_entries": "passed:4721manifest entries/1176runtime hashes and installer",
     "historical_0_1_archive": "exists and CRC passed; preserved unchanged",
     "draconic_cache_handler_assertions": {
       "passed": 16,
@@ -145,7 +145,7 @@
       "host": "actual handlers + unmodified exact native predicates; modeled Minecraft host",
       "optional_mod_dispatch": false
     },
-    "packaged_installer_upgrade": "passed: extractedCLI0.4.17→0.4.18; oldJARbackup, opaque world/FTB/fire/knowledge+EMC/paidchunk markers and foreignquest/mod/script preserved; repeat idempotent",
+    "packaged_installer_upgrade": "passed: extractedCLI0.4.18→0.4.19,oldJARbackup,opaque world/FTB/fire/EMC/paidchunkmarkers+foreignquest/mod/script preserved,repeat idempotent",
     "energy_helpers_modeled": {
       "passed": 43,
       "optional_dispatch": false
@@ -181,30 +181,32 @@
     "clibano_dependency_actual_nbt_assertions_added": 14,
     "jar_class_preservation": {
       "status": "passed",
-      "baseline": "7a60178",
-      "classes": 209,
-      "byte_identical_existing_classes": 196,
+      "baseline": "56f07e5",
+      "classes": 223,
+      "old_classes_byte_identical": 207,
       "changed_classes": [
-        "ua/aia2/guard/AdAstraNasaAccess.class",
-        "ua/aia2/guard/NativeSmokeTests$Original.class",
-        "ua/aia2/guard/NativeSmokeTests.class",
-        "ua/aia2/guard/ProductionMilestoneBridge$ReceiptData.class",
-        "ua/aia2/guard/ProductionMilestoneBridge.class",
-        "ua/aia2/guard/mixin/AdAstraNasaMixin.class"
+        "ua/aia2/guard/Aia2MachineGuard.class",
+        "ua/aia2/guard/NativeSmokeTests.class"
       ],
       "new_classes": [
-        "ua/aia2/guard/GuardedNasaDrop.class",
-        "ua/aia2/guard/NasaIngredients$Snapshot.class",
-        "ua/aia2/guard/NasaIngredients.class",
-        "ua/aia2/guard/NasaProductionAccess$1.class",
-        "ua/aia2/guard/NasaProductionAccess$Attempt.class",
-        "ua/aia2/guard/NasaProductionAccess.class",
-        "ua/aia2/guard/mixin/NasaDropMixin.class"
+        "ua/aia2/guard/GuardedStationTemplate.class",
+        "ua/aia2/guard/StationConstructionAccess$Attempt.class",
+        "ua/aia2/guard/StationConstructionAccess$Denied.class",
+        "ua/aia2/guard/StationConstructionAccess.class",
+        "ua/aia2/guard/StationIngredients$Snapshot.class",
+        "ua/aia2/guard/StationIngredients.class",
+        "ua/aia2/guard/StationPaymentPlan.class",
+        "ua/aia2/guard/StationTemplateSnapshot$1.class",
+        "ua/aia2/guard/StationTemplateSnapshot$Fields.class",
+        "ua/aia2/guard/StationTemplateSnapshot.class",
+        "ua/aia2/guard/mixin/AdAstraStationPacketMixin.class",
+        "ua/aia2/guard/mixin/AdAstraStationRecipeMixin.class",
+        "ua/aia2/guard/mixin/AdAstraStationRegisterMixin.class",
+        "ua/aia2/guard/mixin/StationTemplateMixin.class"
       ],
-      "mixins": 72,
-      "jar_sha256": "477cfa9fd78d72c6ece91a7f7c2158fc8df05e6058f334d07594fb97158447a5",
-      "ad_astra_installed_binary": "NOT_PROVIDED",
-      "actual_optional_mod_dispatch": "NOT_RUN",
+      "mixins": 76,
+      "jar_sha256": "13e2176e81f039985314009e7751b5445eb47ae0ff910a2d1a6e664c19ee45d8",
+      "original_ad_astra_binary": "NOT_PROVIDED",
       "full_client": "NOT_RUN"
     },
     "ad_astra_nasa_helpers_modeled": {
@@ -319,7 +321,106 @@
       },
       "package_source_tracking_tests": 4
     },
-    "source_delivery": "All42frozen sources tracked;302Python+centralvalidator passed in clean index checkout; pre-package Git-index closure gate"
+    "source_delivery": "All65newfrozen sources staged;325Python+centralvalidator/rebuild139 PASS in clean index checkout",
+    "station_guard": {
+      "schema": 1,
+      "version": "0.4.19-alpha",
+      "status": "automated_and_common_native_tests_passed_original_optional_binary_and_full_client_pending",
+      "baseline": "56f07e5",
+      "python_tests_expected": 325,
+      "python_full_suite": "PASS325tests/0fail/0skip in final clean Git-index checkout after native synchronous-shape correction",
+      "previous_full_run": "Fixed missing config directory in installer fixture; installer32 and full clean325 rerun PASS",
+      "node_tests": 57,
+      "java_legacy_policy_assertions": 5237,
+      "allocator_assertions": 184228,
+      "allocator_exhaustive_oracle_cases": 110604,
+      "station_runtime_modeled_assertions": 1217,
+      "station_abi_tests": 6,
+      "station_floor_tests": 14,
+      "station_payment_tests": 1,
+      "station_runtime_tests": 1,
+      "new_installer_pairing_tests": 1,
+      "minimal_minecraft": {
+        "assertions": 170,
+        "jvm_boots": 2,
+        "ticks": 650,
+        "new_actual_checks": 16,
+        "version": "0.4.19-alpha",
+        "scope": "Actual common StructureTemplate marker, unscoped placeInWorld ordinal1, immutable bounded template reads and configured dimension floors; Ad Astra/ProjectE/FTB/KubeJS absent"
+      },
+      "real_sponge": {
+        "version": "0.16.4+mixin.0.8.7",
+        "optional_targets": 3,
+        "handlers": 5,
+        "bodies_helper_and_minecraft": "modeled",
+        "source_declarations_sha_checked": true,
+        "actual_installed_binary": "NOT_PROVIDED"
+      },
+      "new_quests": 0,
+      "new_recipes": 0,
+      "new_rewards": 0,
+      "new_items": 0,
+      "new_textures": 0,
+      "native_recipe_floors_changed": 6,
+      "new_frozen_sources": 65,
+      "source_map_sha_files": 2272,
+      "current_ad_astra_stages": 31,
+      "full_client": "NOT_RUN",
+      "jei_survival_tps": "NOT_RUN",
+      "native_station_saved_data_migration": "NONE",
+      "new_durable_station_proof": "NOT_IMPLEMENTED",
+      "new_optional_station_quests": "TODO nextblock",
+      "jar_report": "implementation/station-jar-v8.json",
+      "preservation_report": "implementation/station-preservation-v8.json",
+      "delivery_report": "implementation/station-package-install-v8.json",
+      "limits": [
+        "Standard-component payment materials only; unsupported custom Ingredient definitions reject before payment",
+        "Singlepalette/noentities/nullblockNBT templates only,64axis/65536volume+cells; actualnative30752rows/1151nonair fits",
+        "Allprimarynonairwrites accepted; finalretention checks block identity, allowing native shape/waterlogging propertychanges",
+        "No rollback/refund; mid-register callback invalidation preserves native registration alreadyperformed but denies onward teleport/claims",
+        "Snapshot allocations happen only in explicit construction operations; TPS not profiled",
+        "No original optional binary provenance or fullpack dispatch claim"
+      ],
+      "python_tests": 325,
+      "runtime_rebuild": {
+        "status": "passed",
+        "hash_seed": 139,
+        "non_jar_runtime_files": 1175,
+        "byte_identical": true,
+        "clean_checkout": "Git index only; no untracked evidence",
+        "full_python_suite": "325tests after native synchronous shape-property correction"
+      },
+      "package_delivery": {
+        "version": "0.4.19-alpha",
+        "status": "passed",
+        "archive_manifest_entries": 4721,
+        "runtime_hashes_verified": 1176,
+        "packaged_installer_hash": "d51747d48e42c1062e15dbff772ce099d608a5a053ba931ea14baa69c10cf159",
+        "dry_run_writes": 0,
+        "upgrade_from": "0.4.18-alpha",
+        "baseline_commit": "56f07e57f5c1f2750f2291d038147d4338c5ccf6",
+        "old_jar_backed_up": true,
+        "synthetic_world_progress_preserved": true,
+        "foreign_quest_in_owned_chapter_preserved": true,
+        "synthetic_fire_ledger_preserved": true,
+        "synthetic_knowledge_emc_preserved": true,
+        "synthetic_paid_ritual_chunk_marker_preserved": true,
+        "foreign_mod_and_script_preserved": true,
+        "repeat_install_idempotent": true,
+        "fullpack_run": false,
+        "windows_instance_modified": false,
+        "world_markers_are_opaque_synthetic_bytes_not_a_minecraft_persistence_test": true
+      },
+      "git_source_closure": "All65newsourceentries tracked/SHA verified; package index gate4721files PASS",
+      "native_shape_regression": {
+        "real_mc_proved_synchronous_property_change": true,
+        "actual_checks_added": 3,
+        "model_failed_before_fix_and_passed_after": true,
+        "exact_incoming_state_and_native_acceptance_preserved": true,
+        "post_write_and_final_retention": "sameblockidentity, nativepropertyupdatesallowed",
+        "extra_evidence": "content/research/evidence/station_guard_v8/sourcefreeze/minecraft_api/StationNeighborFeedback.json"
+      }
+    }
   },
   "remaining_acceptance": [
     "Full Windows instance client/server startup with exact FTB/KubeJS and all optional mod JARs",
@@ -352,7 +453,7 @@
     "Forge transitive snapshots have modeled and actual-NBT checks; exact optional runtime/tag reload/Survival/TPS remain NOT_RUN. Full enhancer Component serialization precedes bounded JSON validation; visual description changes conservatively pause. See FORBIDDEN_DEPENDENCIES_ACCEPTANCE.uk.md.",
     "Clibano transitive/history guards are implemented for exact reviewed types; fullpack weaving, actual tag reload, Survival/JEI/world-upgrade/TPS and frame IO remain NOT_RUN. Explicit quarantine backs up unproven stock without output; installer never invokes it.",
     "Ad Astra NASA manufacturing proof: actual installed optional dispatch/JEI/Survival acceptance still pending; inventory advancement is not proof",
-    "Ad Astra station aggregate split-stack payment and accepted structure placement adapter",
+    "Ad Astra bounded station adapter implemented; actualoptional/client dispatch and newdurable actionproof stillTODO",
     "Explicit migration of old required epoch37/38 post-fact tasks without losing completed IDs",
     "Ad Astra optional NASA Mixin weaving, menu/client JEI, real automation and Survival/TPS"
   ],
@@ -376,8 +477,8 @@
   "component_variant_balance": "implementation/component-variants-v5-audit.json",
   "roots_mortar_fix": "content/audit/v5-roots-mortar-guard.json",
   "checkpoint_preservation": "implementation/clibano-dependencies-preservation-v6.json",
-  "checkpoint_base_commit": "7a60178c6ac1ca2443363b4c15839559f54dae9f",
-  "checkpoint_backup": "/workspace/aia2-backups/before-nasa-production-20261029T184529Z/checkpoint-7a60178.tar.gz",
+  "checkpoint_base_commit": "56f07e57f5c1f2750f2291d038147d4338c5ccf6",
+  "checkpoint_backup": "/workspace/aia2-backups/before-station-guard-20261029T230204Z/checkpoint-56f07e5.tar.gz",
   "checkpoint_report": "docs/AIA2_0.4.15_CHECKPOINT.uk.md",
   "industrial_core": {
     "new_quests": 30,
@@ -637,7 +738,7 @@
     "native_save_codec_or_level_null_omission_preserves_actual_counts": true,
     "package_manifest_and_upgrade": "passed"
   },
-  "checkpoint_baseline": "7a60178c6ac1ca2443363b4c15839559f54dae9f",
+  "checkpoint_baseline": "56f07e57f5c1f2750f2291d038147d4338c5ccf6",
   "checkpoint_ad_astra": {
     "status": "implemented_automatically_verified_fullpack_manual_acceptance_pending",
     "quests_added": 20,
@@ -764,5 +865,104 @@
       "native_code_or_jar_changes_in_delivery_fix": 0
     },
     "package_source_tracking_tests": 4
+  },
+  "station_guard": {
+    "schema": 1,
+    "version": "0.4.19-alpha",
+    "status": "automated_and_common_native_tests_passed_original_optional_binary_and_full_client_pending",
+    "baseline": "56f07e5",
+    "python_tests_expected": 325,
+    "python_full_suite": "PASS325tests/0fail/0skip in final clean Git-index checkout after native synchronous-shape correction",
+    "previous_full_run": "Fixed missing config directory in installer fixture; installer32 and full clean325 rerun PASS",
+    "node_tests": 57,
+    "java_legacy_policy_assertions": 5237,
+    "allocator_assertions": 184228,
+    "allocator_exhaustive_oracle_cases": 110604,
+    "station_runtime_modeled_assertions": 1217,
+    "station_abi_tests": 6,
+    "station_floor_tests": 14,
+    "station_payment_tests": 1,
+    "station_runtime_tests": 1,
+    "new_installer_pairing_tests": 1,
+    "minimal_minecraft": {
+      "assertions": 170,
+      "jvm_boots": 2,
+      "ticks": 650,
+      "new_actual_checks": 16,
+      "version": "0.4.19-alpha",
+      "scope": "Actual common StructureTemplate marker, unscoped placeInWorld ordinal1, immutable bounded template reads and configured dimension floors; Ad Astra/ProjectE/FTB/KubeJS absent"
+    },
+    "real_sponge": {
+      "version": "0.16.4+mixin.0.8.7",
+      "optional_targets": 3,
+      "handlers": 5,
+      "bodies_helper_and_minecraft": "modeled",
+      "source_declarations_sha_checked": true,
+      "actual_installed_binary": "NOT_PROVIDED"
+    },
+    "new_quests": 0,
+    "new_recipes": 0,
+    "new_rewards": 0,
+    "new_items": 0,
+    "new_textures": 0,
+    "native_recipe_floors_changed": 6,
+    "new_frozen_sources": 65,
+    "source_map_sha_files": 2272,
+    "current_ad_astra_stages": 31,
+    "full_client": "NOT_RUN",
+    "jei_survival_tps": "NOT_RUN",
+    "native_station_saved_data_migration": "NONE",
+    "new_durable_station_proof": "NOT_IMPLEMENTED",
+    "new_optional_station_quests": "TODO nextblock",
+    "jar_report": "implementation/station-jar-v8.json",
+    "preservation_report": "implementation/station-preservation-v8.json",
+    "delivery_report": "implementation/station-package-install-v8.json",
+    "limits": [
+      "Standard-component payment materials only; unsupported custom Ingredient definitions reject before payment",
+      "Singlepalette/noentities/nullblockNBT templates only,64axis/65536volume+cells; actualnative30752rows/1151nonair fits",
+      "Allprimarynonairwrites accepted; finalretention checks block identity, allowing native shape/waterlogging propertychanges",
+      "No rollback/refund; mid-register callback invalidation preserves native registration alreadyperformed but denies onward teleport/claims",
+      "Snapshot allocations happen only in explicit construction operations; TPS not profiled",
+      "No original optional binary provenance or fullpack dispatch claim"
+    ],
+    "python_tests": 325,
+    "runtime_rebuild": {
+      "status": "passed",
+      "hash_seed": 139,
+      "non_jar_runtime_files": 1175,
+      "byte_identical": true,
+      "clean_checkout": "Git index only; no untracked evidence",
+      "full_python_suite": "325tests after native synchronous shape-property correction"
+    },
+    "package_delivery": {
+      "version": "0.4.19-alpha",
+      "status": "passed",
+      "archive_manifest_entries": 4721,
+      "runtime_hashes_verified": 1176,
+      "packaged_installer_hash": "d51747d48e42c1062e15dbff772ce099d608a5a053ba931ea14baa69c10cf159",
+      "dry_run_writes": 0,
+      "upgrade_from": "0.4.18-alpha",
+      "baseline_commit": "56f07e57f5c1f2750f2291d038147d4338c5ccf6",
+      "old_jar_backed_up": true,
+      "synthetic_world_progress_preserved": true,
+      "foreign_quest_in_owned_chapter_preserved": true,
+      "synthetic_fire_ledger_preserved": true,
+      "synthetic_knowledge_emc_preserved": true,
+      "synthetic_paid_ritual_chunk_marker_preserved": true,
+      "foreign_mod_and_script_preserved": true,
+      "repeat_install_idempotent": true,
+      "fullpack_run": false,
+      "windows_instance_modified": false,
+      "world_markers_are_opaque_synthetic_bytes_not_a_minecraft_persistence_test": true
+    },
+    "git_source_closure": "All65newsourceentries tracked/SHA verified; package index gate4721files PASS",
+    "native_shape_regression": {
+      "real_mc_proved_synchronous_property_change": true,
+      "actual_checks_added": 3,
+      "model_failed_before_fix_and_passed_after": true,
+      "exact_incoming_state_and_native_acceptance_preserved": true,
+      "post_write_and_final_retention": "sameblockidentity, nativepropertyupdatesallowed",
+      "extra_evidence": "content/research/evidence/station_guard_v8/sourcefreeze/minecraft_api/StationNeighborFeedback.json"
+    }
   }
 }

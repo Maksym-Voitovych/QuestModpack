@@ -66,7 +66,7 @@ function aia2InitMachines(server) {
     phase = 'rules';
     var rules = global.AIA2.rules;
     if (!rules || !rules.epochs || rules.epochs.length !== 48) throw new Error('Відсутні правила всіх 48 епох.');
-    ['blockGates', 'itemGates', 'recipeGates'].forEach(function (name) {
+    ['blockGates', 'itemGates', 'recipeGates', 'dimensionGates'].forEach(function (name) {
       if (!rules[name] || !Object.keys(rules[name]).length) throw new Error('Відсутня повна карта ' + name + '. Встановіть повний пакет оновлення.');
     });
     phase = 'ftb_readiness';
@@ -80,6 +80,7 @@ function aia2InitMachines(server) {
     AIA2MachineGuard.setRulesJson(JSON.stringify(rules.blockGates));
     AIA2MachineGuard.setItemRulesJson(JSON.stringify(rules.itemGates));
     AIA2MachineGuard.setRecipeRulesJson(JSON.stringify(rules.recipeGates));
+    AIA2MachineGuard.setDimensionRulesJson(JSON.stringify(rules.dimensionGates));
     if (!rules.dualKeys || rules.dualKeys.length !== 96) throw new Error('Відсутні 96 правил подвійних ключів. Встановіть повний пакет оновлення.');
     AIA2MachineGuard.configureKeyRulesJson(JSON.stringify(rules.dualKeys));
     phase = 'team_progress';

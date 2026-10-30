@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.18-alpha'
+VERSION = '0.4.19-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -86,6 +86,11 @@ def main():
                     assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
                     assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
                 assert 'ua/aia2/guard/AdAstraNasaAccess.class' in jar.namelist()
+                for name in ['StationConstructionAccess', 'StationIngredients', 'StationPaymentPlan', 'StationTemplateSnapshot', 'GuardedStationTemplate']:
+                    assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                for name in ['AdAstraStationPacketMixin', 'AdAstraStationRecipeMixin', 'AdAstraStationRegisterMixin', 'StationTemplateMixin']:
+                    assert 'ua/aia2/guard/mixin/' + name + '.class' in jar.namelist()
+                    assert name in json.loads(jar.read('aia2_machine_guard.mixins.json'))['mixins']
                 for name in ['NasaProductionAccess', 'NasaIngredients', 'GuardedNasaDrop']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 assert 'ua/aia2/guard/mixin/NasaDropMixin.class' in jar.namelist()

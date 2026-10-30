@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/entity/player/Inventory.java",
+    "sha256": "0c6000e274beef0a3e0e60e9531986578676d55c2b6b5644765f39d102ca830d",
+    "line_count": 566
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "query": "public ItemStack removeItem(int",
+      "declaration_lines": [
+        309
+      ]
+    },
+    {
+      "query": "public int getContainerSize(",
+      "declaration_lines": [
+        427
+      ]
+    },
+    {
+      "query": "public ItemStack getItem(",
+      "declaration_lines": [
+        455
+      ]
+    }
+  ],
+  "facts": [
+    "getContainerSize sums items,armor,offhand list sizes; vanilla inventory41 includes36main+4armor+1offhand.",
+    "removeItem(slot,count) resolves the compartment and delegates ContainerHelper.removeItem. The operation can return less than requested; caller must verify exact debit and components."
+  ],
+  "scope": "API facts and source locations only; full decompiled source remains outside repository in the local SDK artifact."
+}

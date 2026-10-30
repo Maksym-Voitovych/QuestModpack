@@ -1,9 +1,9 @@
-AIA2 0.4.18-alpha — встановлення та перевірка оновлення
+AIA2 0.4.19-alpha — встановлення та перевірка оновлення
 
 1. Закрийте Minecraft і сервер. Збережіть окрему копію свого інстансу та
    світу: інсталятор резервує змінювані файли, а не весь світ.
 2. Оновіть локальний Git checkout зі збереженням власних правок або
-   розпакуйте AIA2-runtime-0.4.18-alpha.zip в окрему папку. Не накладайте
+   розпакуйте AIA2-runtime-0.4.19-alpha.zip в окрему папку. Не накладайте
    старі ручні виправлення uuid()/getUUID() на нові скрипти.
 3. У папці пакета/репозиторію виконайте:
    python -m pip install nbtlib==2.0.4
@@ -15,7 +15,7 @@ AIA2 0.4.18-alpha — встановлення та перевірка онов�
 5. Інсталятор резервує всі змінювані оригінали ДО першої заміни, зливає
    групи та невідомі квести, зберігає data.snbt/світи/командний прогрес.
    Старий власний aia2-machine-guard-*.jar переноситься в backup перед
-   заміною на 0.4.18-alpha; сторонні моди не видаляються. Збережіть шлях
+   заміною на 0.4.19-alpha; сторонні моди не видаляються. Збережіть шлях
    backup і journal.json, які виводяться після встановлення.
 6. Для клієнта й окремого сервера встановіть однакові runtime-файли.
    Оновіть JAR і скрипти разом. Повністю перезапустіть обидва:
@@ -153,3 +153,16 @@ NasaDropMixin; пакет без цих класів/реєстрації від
 Failed proof не створює refund/rollback; для destructive tests беріть копію світу.
 Ручні сценарії: docs/testing/NASA_MANUFACTURING_ACCEPTANCE.uk.md.
 Station payment/placement, оригінальний optional binary та full client щеTODO.
+
+Station guard0.4.19:
+Matching JAR/JS25 обов'язкові разом. Native dimension floors передаються з
+того самого dimensionGates, що використовує KubeJS travel guard. Installer
+перевіряє три NASA й три station optional Mixins та всі new helper/common
+classes до backup/write. Нативні station data/старі entries не мігруються.
+Survival і правильна команда/орбіта обов'язкові. Подавайте стандартні матеріали;
+нестандартні компоненти не витрачаються. Template: одна палітра, без entities
+і blockNBT, bounded64axis/65536cells; actualnative31×32×31 підтриманий контрактом.
+Failed operation може залишити оплату/частину блоків або вже виконаний native
+entry при callback всередині register; refund/rollback не обіцяється.
+Деструктивні сценарії — лише на копії світу; full client ще NOT_RUN.
+docs/testing/STATION_CONSTRUCTION_ACCEPTANCE.uk.md.

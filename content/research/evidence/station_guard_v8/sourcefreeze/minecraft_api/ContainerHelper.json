@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "source_kind": "minecraft_api_facts",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "original_source": {
+    "artifact_entry": "net/minecraft/world/ContainerHelper.java",
+    "sha256": "4eb9b58a96238f3e6a9b420de4e38ab9798d3bcb76928167ab34f459778fc65c",
+    "line_count": 86
+  },
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950"
+  },
+  "selected_methods": [
+    {
+      "query": "public static ItemStack removeItem(",
+      "declaration_lines": [
+        14
+      ]
+    },
+    {
+      "query": "public static ItemStack takeItem(",
+      "declaration_lines": [
+        20
+      ]
+    }
+  ],
+  "facts": [
+    "removeItem(list,slot,count) calls the original nonempty stack split(count); it does not replace the slot with EMPTY. takeItem is the distinct list.set(slot,EMPTY) operation."
+  ],
+  "scope": "API facts and source locations only; full decompiled source remains outside repository in the local SDK artifact."
+}

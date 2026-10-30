@@ -6,13 +6,12 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Завершений кодовий підблок: **0.4.18-alpha — NASA manufacturing witness** поверх
-ProjectE hotfix0.4.17. Збережені96ключів і старий прогрес; докази NASA мають
-окремі optional-цілі. Фінальні перевірки/доставка — у PROGRESS.
-Наступна конкретна дія після checkpoint: station split-stack/overlapping
-payment та accepted placement adapter з раннім destination-stage guard.
-Оригінальні optional JAR/client retest лишаються BLOCKED/NOT_RUN; це не
-зупиняє незалежні source/model/code задачі. Повний0.5 ще не готовий.
+Поточний checkpoint: **0.4.19-alpha — station payment/placement adapter**.
+NASA0.4.18 і ProjectE0.4.17 збережені. Завершення тестів/доставки та Git-стан
+фіксуються в PROGRESS. Наступний змістовний блок — окремий durable station
+proof і пов'язані optional-цілі, потім явна сумісна міграція старих required37/38.
+Оригінальні optional JAR/client retest лишаються BLOCKED/NOT_RUN;
+продовжувати незалежні source/model/code задачі. Повний0.5 ще не готовий.
 
 ## Правило відновлення
 

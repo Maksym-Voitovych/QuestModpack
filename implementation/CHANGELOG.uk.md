@@ -1,3 +1,12 @@
+# 0.4.19-alpha — Station payment та accepted placement
+
+- Усунуто first-stack underpayment та overlapping-ingredient double count глобальним bounded max-flow; точні native split-stack debits, current tags/recipe/slotrefs/команда/стадія.
+- Scope точного packet Consumer без synthetic lambda selectors; перевірка орбіти до оплати. Creative/Spectator/FakePlayer не будують.
+- Exact incoming state збережено; postwrite blockidentity допускає синхронні native pane-shape updates (realMC regression). Mandatory primary setBlock ordinal1, усі non-air writes прийняті й типи блоків збережені перед register/teleport. False/partial/zero placement перериває продовження; native effects не відкочуються. Старі station SavedData незмінні.
+- Шість native station recipe floors0→37/38; кількості/матеріали/структури й627рецептів збережені. Новихquests/recipes/rewards/items/textures0;3375quests/96keys збережені.
+-65SHAджерел;184228allocator assertions/110604oracle cases,1217modeled runtime checks, справжнійSponge3source-shapedtargets/5handlers. CommonMC/повнийclient мають окремі статуси у verification report.
+- Native template singlepalette/noNBT/noentities bounded; unsupported definitions відхиляються до оплати. Installer preflight NASA/station + package pairing. Повний0.5 не реліз.
+
 # 0.4.18-alpha — NASA accepted output та точна оплата
 
 - Чотири нові optional-цілі T1–T4 в епохах 37/38: 3375 квестів / 140 глав, 15 mechanic rules / 18 native recipe IDs. Старі 11 rules та durable schema1 збережені.

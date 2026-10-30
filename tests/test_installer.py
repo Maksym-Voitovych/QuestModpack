@@ -343,6 +343,28 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_missing_station_classes_or_hooks_rejected_before_writes(self):
+        bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
+        mixins=['AdAstraStationPacketMixin','AdAstraStationRecipeMixin','AdAstraStationRegisterMixin','StationTemplateMixin']
+        classes=['ua/aia2/guard/'+name+'.class' for name in ['StationConstructionAccess','StationIngredients','StationPaymentPlan','StationTemplateSnapshot','GuardedStationTemplate']]
+        classes+=['ua/aia2/guard/mixin/'+name+'.class' for name in mixins]
+        for kind,missing in [('class',x)for x in classes]+[('registration',x)for x in mixins]:
+            with self.subTest(kind=kind,missing=missing),tempfile.TemporaryDirectory() as tmp:
+                package=Path(tmp)/'package';instance=Path(tmp)/'instance'
+                (package/'mods').mkdir(parents=True);(package/'config').mkdir();(package/'kubejs/config').mkdir(parents=True);(instance/'mods').mkdir(parents=True)
+                marker=instance/'saves/world/level.dat';marker.parent.mkdir(parents=True);marker.write_bytes(b'world-with-existing-stations')
+                with zipfile.ZipFile(bundled[0]) as original,zipfile.ZipFile(package/'mods'/bundled[0].name,'w') as altered:
+                    if kind=='class':self.assertIn(missing,original.namelist())
+                    for name in original.namelist():
+                        if kind=='class' and name==missing:continue
+                        raw=original.read(name)
+                        if kind=='registration' and name=='aia2_machine_guard.mixins.json':
+                            value=json.loads(raw);value['mixins'].remove(missing);raw=json.dumps(value).encode()
+                        altered.writestr(name,raw)
+                (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+                with self.assertRaisesRegex(installer.InstallError,'station payment and placement guards'):installer.install(package,instance)
+                self.assertEqual(marker.read_bytes(),b'world-with-existing-stations');self.assertFalse((instance/'aia2-backups').exists());self.assertFalse((instance/'kubejs').exists())
+
     def test_missing_nasa_witness_class_or_common_hook_rejected_before_writes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
         required=['ua/aia2/guard/'+name+'.class' for name in ['NasaProductionAccess','NasaIngredients','GuardedNasaDrop']]

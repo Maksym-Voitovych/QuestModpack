@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "source_kind": "minecraft_api_facts",
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+    "kind": "local actual NeoForm source+compiled SDK; full MC source not distributed"
+  },
+  "sources": [
+    {
+      "artifact_entry": "net/minecraft/world/level/Level.java",
+      "sha256": "7f5e1a7a08b97eccf025c4e09e4f4d4a80d2278b1f0a65a6edcbb35fc551eda7",
+      "line_references": [
+        243,
+        247,
+        276,
+        280
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/block/state/BlockBehaviour.java",
+      "sha256": "410ae028d36585b6c210e853720ea3fb973154a4d7800a082d541293cf355014",
+      "line_references": [
+        702,
+        708
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/block/Block.java",
+      "sha256": "fe57fd48e078ed5a72a3309ac63ac615aa4aed4d7e6cf0d52754b2c06fe27533",
+      "line_references": [
+        171,
+        179
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/redstone/NeighborUpdater.java",
+      "sha256": "723084f7e7e38e619695211163049a1b7489cf945e08e9445d8146630641ccdb",
+      "line_references": [
+        33,
+        38
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/redstone/CollectingNeighborUpdater.java",
+      "sha256": "2872301cb13deae3ed0a0d7d2ffcc7aef494c8fe3476b1b1acd19c4d7dc0d470",
+      "line_references": [
+        66,
+        67
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/block/IronBarsBlock.java",
+      "sha256": "11d04090029c6732d5ec670e314e85e0ca89e9014e70433f1ca299e91ee349ee",
+      "line_references": [
+        62,
+        72
+      ]
+    }
+  ],
+  "facts": [
+    "Level.setBlock calls markAndNotifyBlock before returning true. Flags2 suppress bit1 neighbor notifications but do not suppress bit16 shape updates.",
+    "markAndNotifyBlock invokes neighbor shape propagation with flags2 & -34 =0. NeighborUpdater executeShapeUpdate reaches Block.updateOrDestroy and recursive setBlock.",
+    "CollectingNeighborUpdater drains queued updates synchronously; IronBarsBlock changes pane connection properties. A just-placed pane can therefore keep its block type but have different properties before setBlock returns.",
+    "Guard must validate exact incoming template state and true native acceptance, then retain block identity; full post-return state equality can falsely reject native construction.",
+    "MinimalMC regression places a default black glass pane east withflags18, then a default pane atorigin withflags2; acceptedtrue, sameblockidentity, changedproperties are checked."
+  ],
+  "scope": "Source facts and original-source SHA only; no complete proprietary Minecraft source distributed. Actual minimalMC result is recorded separately."
+}
