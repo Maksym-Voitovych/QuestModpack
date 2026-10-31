@@ -115,6 +115,8 @@ public final class NativeSmokeTests {
                 "a fresh server reloads the separate native process observation from SavedData");
         check(ProductionMilestoneBridge.hasProof(server,team,"native_observed_fixture"),
                 "actual-output verified observation also reloads in a second JVM");
+        check(StationProductionBridge.hasProof(server, team, "station_earth_orbit"),
+                "a second JVM reloads the synthetic station journal fixture through actual native SavedData; this is not station production");
         check(FireWorksiteAccess.owner(level, FIRE_PERSIST).equals(team),
                 "a fresh JVM reloads actual fire worksite ownership from SavedData");
         Aia2MachineGuard.clearRuntime();
@@ -126,6 +128,8 @@ public final class NativeSmokeTests {
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "runtime bridge initialization never resets a receipt loaded after restart");
         check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
                 "runtime reset never clears a reloaded generic process observation");
+        check(!StationProductionBridge.isConfigured() && StationProductionBridge.hasProof(server, team, "station_earth_orbit"),
+                "runtime reset preserves the reloaded synthetic station journal without installing observation rules");
         finish(null);
     }
 
@@ -238,6 +242,81 @@ public final class NativeSmokeTests {
             check(level.getBlockState(from).getBlock() == pane.getBlock(), "actual synchronous neighbor feedback preserves placed block identity");
             check(!level.getBlockState(from).equals(pane), "actual flags2 synchronously adjusts placed pane properties before returning; full-state postcheck would falsely deny");
         } finally { level.setBlock(from, originalFrom, 2); level.setBlock(to, originalTo, 2); }
+    }
+
+    /** Actual NBT/storage tests only. No Ad Astra machine or production is synthesized. */
+    private static void testStationJournal() {
+        check(!StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit"),
+                "a fresh generated native test team has no station proof");
+        check(!StationProductionBridge.hasProof(server, "", "station_earth_orbit")
+                        && !StationProductionBridge.hasProof(null, TEAM_A, "station_earth_orbit"),
+                "blank team and absent server cannot yield a station proof");
+        var rules = new com.google.gson.JsonArray();
+        for (String planet : List.of("earth", "moon", "mars", "mercury", "venus", "glacio")) {
+            var rule = new com.google.gson.JsonObject();
+            rule.addProperty("id", "station_" + planet + "_orbit");
+            rule.addProperty("epoch", Set.of("earth", "moon", "mars").contains(planet) ? 37 : 38);
+            rule.addProperty("dimension", "ad_astra:" + planet + "_orbit");
+            rule.addProperty("recipeId", "ad_astra:space_station/" + planet + "_orbit_space_station");
+            rule.addProperty("serializer", "ad_astra:space_station_recipe");
+            rule.addProperty("advancement", "aia2:stations/" + planet + "_orbit");
+            rules.add(rule);
+        }
+        StationProductionBridge.configureJson(rules.toString());
+        check(StationProductionBridge.isConfigured()
+                        && !StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit"),
+                "configuring six actual station rules creates no production history");
+        StationProductionBridge.finishedStation(null, level, null, TEAM_A);
+        check(!StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit"),
+                "unscoped completion with no real packet witness cannot write a station proof");
+
+        CompoundTag valid = new CompoundTag(), teams = new CompoundTag(), proofs = new CompoundTag();
+        valid.putInt("schema", 1); proofs.putBoolean("station_earth_orbit", true);
+        teams.put(TEAM_A, proofs); valid.put("teams", teams);
+        var restored = StationProductionBridge.ReceiptData.load(valid.copy(), level.registryAccess());
+        check(!restored.blocked && restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("station_earth_orbit"),
+                "actual strict NBT loader accepts a correctly typed synthetic station receipt");
+        check(restored.save(new CompoundTag(), level.registryAccess()).equals(valid),
+                "actual station schema1 NBT round-trip preserves exact synthetic receipt payload");
+
+        var malformed = new LinkedHashMap<String, CompoundTag>();
+        var bad = valid.copy(); bad.remove("schema"); malformed.put("missing schema", bad);
+        bad = valid.copy(); bad.putInt("schema", 2); malformed.put("future schema", bad);
+        bad = valid.copy(); bad.putString("schema", "1"); malformed.put("wrong schema tag type", bad);
+        bad = valid.copy(); bad.remove("teams"); malformed.put("missing teams", bad);
+        bad = valid.copy(); bad.putString("teams", "not a compound"); malformed.put("wrong teams tag type", bad);
+        bad = valid.copy(); bad.getCompound("teams").putString(TEAM_A, "not a compound"); malformed.put("wrong team tag type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putInt("station_earth_orbit", 1); malformed.put("wrong proof tag type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("station_earth_orbit", false); malformed.put("false proof value", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putByte("station_earth_orbit", (byte)2); malformed.put("non-boolean byte value", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("INVALID-ID", true); malformed.put("invalid proof ID", bad);
+        bad = valid.copy(); bad.getCompound("teams").put(" ", new CompoundTag()); malformed.put("blank team", bad);
+        bad = valid.copy(); bad.getCompound("teams").put("x".repeat(129), new CompoundTag()); malformed.put("oversized team", bad);
+        bad = valid.copy();
+        for (int i = 0; i < 65; i++) bad.getCompound("teams").getCompound(TEAM_A).putBoolean("bounded_proof_" + i, true);
+        malformed.put("oversized proof collection", bad);
+        for (var entry : malformed.entrySet()) {
+            var original = entry.getValue().copy();
+            var blocked = StationProductionBridge.ReceiptData.load(entry.getValue(), level.registryAccess());
+            check(blocked.blocked && blocked.proofs.isEmpty() && entry.getValue().equals(original),
+                    "actual station loader fails closed without mutating original NBT: " + entry.getKey());
+            boolean refused = false; CompoundTag output = new CompoundTag();
+            try { blocked.save(output, level.registryAccess()); }
+            catch (IllegalStateException expected) { refused = true; }
+            check(refused && output.isEmpty(), "corrupt station journal cannot overwrite actual NBT: " + entry.getKey());
+        }
+        // Explicit test fixture installation in the runner's owned world; this
+        // exercises actual two-JVM persistence, not the production record path.
+        var stored = server.overworld().getDataStorage().get(StationProductionBridge.ReceiptData.FACTORY,
+                StationProductionBridge.DATA_NAME);
+        if (stored == null) stored = new StationProductionBridge.ReceiptData();
+        check(!stored.blocked, "owned native station storage fixture is writable before adding only its generated test team");
+        stored.proofs.put(TEAM_A, Set.of("station_earth_orbit"));
+        server.overworld().getDataStorage().set(StationProductionBridge.DATA_NAME, stored); stored.setDirty();
+        StationProductionBridge.clearRuntime();
+        check(StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit")
+                        && !StationProductionBridge.hasProof(server, TEAM_B, "station_earth_orbit"),
+                "actual native storage reload retains only the explicitly synthetic team fixture; independent team remains uncredited");
     }
 
     /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
@@ -689,6 +768,7 @@ public final class NativeSmokeTests {
                 testObservedCompletionBridge();
                 testOrdinaryDropBoundary();
                 testStationTemplateBoundary();
+                testStationJournal();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");
@@ -701,6 +781,8 @@ public final class NativeSmokeTests {
                 check(!Aia2MachineGuard.isReady() && Aia2MachineGuard.hasProductionProof(server, TEAM_A, 8, "tech"), "server-script runtime reset closes guard but never clears durable production receipts");
                 check(!ProductionMilestoneBridge.isConfigured() && ProductionMilestoneBridge.hasProof(server, TEAM_A, "native_crafter_fixture"),
                         "runtime reset closes generic observation rules but preserves durable process proofs");
+                check(!StationProductionBridge.isConfigured() && StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit"),
+                        "runtime reset closes station rules while preserving the synthetic native storage fixture");
                 finish(null);
             }
         } catch (Throwable failure) {
@@ -812,6 +894,11 @@ public final class NativeSmokeTests {
                 var mechanics = server.overworld().getDataStorage().get(ProductionMilestoneBridge.ReceiptData.FACTORY, "aia2_mechanics_v1");
                 if (mechanics != null && (restart || failure != null)) {
                     mechanics.proofs.remove(receiptTeam); mechanics.proofs.remove(TEAM_B); mechanics.setDirty();
+                }
+                var stations = server.overworld().getDataStorage().get(StationProductionBridge.ReceiptData.FACTORY,
+                        StationProductionBridge.DATA_NAME);
+                if (stations != null && !stations.blocked && (restart || failure != null)) {
+                    stations.proofs.remove(receiptTeam); stations.proofs.remove(TEAM_B); stations.setDirty();
                 }
             }
             report.put("test_blocks_restored", true);

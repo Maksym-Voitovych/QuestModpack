@@ -8,6 +8,8 @@ import java.util.function.Consumer;
 import earth.terrarium.adastra.api.planets.PlanetApi;
 import earth.terrarium.adastra.common.network.packets.ServerboundConstructSpaceStationPacket;
 import earth.terrarium.adastra.common.recipes.SpaceStationRecipe;
+import earth.terrarium.adastra.common.handlers.SpaceStationHandler;
+import earth.terrarium.adastra.common.handlers.base.SpaceStation;
 import earth.terrarium.adastra.common.recipes.base.IngredientHolder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -51,11 +53,12 @@ public final class StationConstructionHarness {
         SpaceStationRecipe recipe;
         ServerboundConstructSpaceStationPacket packet = new ServerboundConstructSpaceStationPacket(EARTH, NAME);
         int registrations, teleports, claims, nativeCalls, nativeReturns, placementCalls;
-        boolean placementResult = true, performWrites = true;
+        boolean placementResult = true, performWrites = true, registryWrite = true, performLanding = true;
         java.util.function.UnaryOperator<BlockState> incomingState;
-        Runnable afterSelection, afterPayment, afterNativePlacement, beforeRegistration, duringRegistration, afterRegistration;
+        Runnable afterSelection, afterPayment, afterNativePlacement, beforeRegistration, duringRegistration, afterRegistration, afterLanding;
         Fixture() {
             Aia2MachineGuard.configure();
+            StationProductionBridge.reset();
             source.key = EARTH; target.key = ORBIT; target.server = source.server;
             source.server.levels.put(EARTH, source); source.server.levels.put(ORBIT, target);
             player.world = source;source.server.players.players.put(player.getUUID(),player);
@@ -94,11 +97,16 @@ public final class StationConstructionHarness {
             if (beforeRegistration != null) beforeRegistration.run();
             if (StationConstructionAccess.beforeRegister(player, target, NAME)) {
                 registrations++;
+                if (registryWrite) SpaceStationHandler.constructSpaceStation(player, target, NAME);
                 if (duringRegistration != null) duringRegistration.run();
                 StationConstructionAccess.afterRegister(player, target, NAME);
             }
             if (afterRegistration != null) afterRegistration.run();
-            teleports++; claims++; nativeReturns++;
+            teleports++;
+            if (performLanding) player.world = target;
+            claims++;
+            if (afterLanding != null) afterLanding.run();
+            nativeReturns++;
         }
         void run() { StationConstructionAccess.wrap(packet, this::nativeAction).accept(player); }
     }
@@ -183,6 +191,114 @@ public final class StationConstructionHarness {
         check(immediateShape.registrations==1 && immediateShape.teleports==1
                 && immediateShape.target.writes==2,
                 "setBlock may synchronously update properties before returning while preserving accepted block identity");
+    }
+
+    private static void stationProofs() {
+        var paid = new Fixture(); paid.run();
+        check(StationProductionBridge.proofs == 1 && StationProductionBridge.finishCalls == 1,
+                "new registration plus successful native tail records exactly one scoped station proof");
+        check("team".equals(StationProductionBridge.lastTeam), "proof belongs to current synchronized team");
+        check(SpaceStationHandler.getOwnedSpaceStations(paid.player, paid.target).size() == 1,
+                "proof follows actual native owner registry addition");
+        StationProductionBridge.finishedStation(paid.player, paid.target, paid.recipe, "team");
+        check(StationProductionBridge.proofs == 1, "unscoped direct bridge call cannot fabricate another proof");
+        check(!StationConstructionAccess.isCommittingStation(paid.player, paid.target, paid.recipe, "team"),
+                "one-shot proof permit is absent after native consumer returns");
+
+        var premature = new Fixture();
+        premature.afterRegistration = () -> {
+            StationProductionBridge.finishedStation(premature.player, premature.target, premature.recipe, "team");
+            check(StationProductionBridge.proofs == 0, "registration callback cannot record before final normal-return permit");
+        };
+        premature.run(); check(StationProductionBridge.proofs == 1, "normal tail later records the single permitted proof");
+
+        var malformedRegistry = new Fixture(); SpaceStationHandler.constructSpaceStation(malformedRegistry.player, malformedRegistry.target, NAME);
+        var malformedSet = SpaceStationHandler.getOwnedSpaceStations(malformedRegistry.player, malformedRegistry.target);
+        malformedSet.clear(); malformedSet.add(null); malformedRegistry.run();
+        check(malformedRegistry.teleports == 0 && StationProductionBridge.proofs == 0,
+                "malformed native owner entry cannot be snapshotted or earn proof");
+
+        var overBudget = new Fixture(); SpaceStationHandler.constructSpaceStation(overBudget.player, overBudget.target, NAME);
+        var many = SpaceStationHandler.getOwnedSpaceStations(overBudget.player, overBudget.target); many.clear();
+        for (int i=1;i<=4097;i++) many.add(new SpaceStation(new net.minecraft.world.level.ChunkPos(i,0), NAME));
+        overBudget.run(); check(overBudget.teleports == 0 && StationProductionBridge.proofs == 0,
+                "owner registration snapshot above4096entries fails closed with bounded work");
+
+        var noop = new Fixture(); noop.registryWrite = false; noop.run();
+        check(noop.registrations == 1 && noop.teleports == 0 && StationProductionBridge.proofs == 0,
+                "void constructor returning without an actual registry addition cannot continue or prove production");
+        check(noop.player.inventory.removals == 2, "failed registry witness does not fabricate an input refund");
+
+        var old = new Fixture(); SpaceStationHandler.constructSpaceStation(old.player, old.target, NAME); old.run();
+        check(old.teleports == 0 && StationProductionBridge.proofs == 0,
+                "old matching station is never adopted as a newly manufactured station proof");
+        check(SpaceStationHandler.getOwnedSpaceStations(old.player, old.target).size() == 1,
+                "rejecting an old matching station preserves its native owner entry");
+
+        var prior = new Fixture();
+        var priorEntry = new SpaceStation(new net.minecraft.world.level.ChunkPos(4, 2), Component.literal("Стара база"));
+        SpaceStationHandler.constructSpaceStation(prior.player, prior.target, NAME);
+        var priorSet = SpaceStationHandler.getOwnedSpaceStations(prior.player, prior.target);
+        priorSet.clear(); priorSet.add(priorEntry); prior.run();
+        check(StationProductionBridge.proofs == 1 && priorSet.size() == 2 && priorSet.contains(priorEntry),
+                "a different old station is retained while a truly new station earns proof");
+
+        var notLanded = new Fixture(); notLanded.performLanding = false; notLanded.run();
+        check(notLanded.registrations == 1 && StationProductionBridge.proofs == 0,
+                "registration without successful target-world landing does not earn proof");
+
+        var inventoryReturn = new Fixture();
+        inventoryReturn.afterLanding = () -> inventoryReturn.player.inventory.items[7] = stack("minecraft:gold_ingot", 3);
+        inventoryReturn.run();
+        check(StationProductionBridge.proofs == 1,
+                "legitimate menu-close inventory changes after proven registration do not invalidate successful production");
+
+        var teamChange = new Fixture(); teamChange.afterLanding = () -> teamChange.player.team = "other";
+        teamChange.run(); check(StationProductionBridge.proofs == 0, "team change in native landing tail cannot borrow original team's proof");
+        var teamResync = new Fixture(); teamResync.afterLanding = () -> {teamResync.player.team = "other"; teamResync.player.synced = "other";};
+        teamResync.run(); check(StationProductionBridge.proofs == 0, "even a synchronized new team cannot inherit the old team's in-flight proof");
+        var removed = new Fixture(); removed.afterLanding = () -> removed.player.removed = true;
+        removed.run(); check(StationProductionBridge.proofs == 0, "removed player cannot earn final proof");
+        var creative = new Fixture(); creative.afterLanding = () -> creative.player.creative = true;
+        creative.run(); check(StationProductionBridge.proofs == 0, "Creative switched during landing cannot earn final proof");
+        var chunk = new Fixture(); chunk.afterLanding = () -> chunk.player.chunk = new net.minecraft.world.level.ChunkPos(3, 0);
+        chunk.run(); check(StationProductionBridge.proofs == 0, "landing in a different station chunk cannot earn final proof");
+        var replacement = new Fixture(); replacement.afterLanding = () -> replacement.source.server.levels.put(ORBIT, new ServerLevel());
+        replacement.run(); check(StationProductionBridge.proofs == 0, "replaced destination world identity cannot earn final proof");
+        var disconnected = new Fixture(); disconnected.afterLanding = () -> disconnected.source.server.players.players.clear();
+        disconnected.run(); check(StationProductionBridge.proofs == 0, "disconnected player cannot earn final proof");
+        var reloaded = new Fixture(); reloaded.afterLanding = () -> reloaded.target.recipes.replace(List.of(new RecipeHolder<>(RECIPE, reloaded.recipe)));
+        reloaded.run(); check(StationProductionBridge.proofs == 0, "recipe reload in native tail cannot earn proof for stale recipe generation");
+        var definition = new Fixture(); definition.afterLanding = () -> definition.recipe.ingredients().set(0, need("minecraft:gold_ingot",64));
+        definition.run(); check(StationProductionBridge.proofs == 0, "definition mutation after registration cannot earn proof");
+        var structure = new Fixture(); structure.afterLanding = () -> structure.target.blocks.remove(structure.origin());
+        structure.run(); check(StationProductionBridge.proofs == 0, "station removed during landing cannot earn proof");
+        var registryRemoved = new Fixture(); registryRemoved.afterLanding = () -> SpaceStationHandler.getOwnedSpaceStations(registryRemoved.player, registryRemoved.target).clear();
+        registryRemoved.run(); check(StationProductionBridge.proofs == 0, "native entry removed in tail cannot earn proof");
+        var extraRegistration = new Fixture(); extraRegistration.afterLanding = () -> SpaceStationHandler.getOwnedSpaceStations(extraRegistration.player, extraRegistration.target)
+                .add(new SpaceStation(new net.minecraft.world.level.ChunkPos(5,0), NAME));
+        extraRegistration.run(); check(StationProductionBridge.proofs == 0, "unexplained extra registration in tail cannot earn this single-action proof");
+        var lostOld = new Fixture(); SpaceStationHandler.constructSpaceStation(lostOld.player, lostOld.target, NAME);
+        var oldSet = SpaceStationHandler.getOwnedSpaceStations(lostOld.player,lostOld.target); oldSet.clear(); oldSet.add(priorEntry);
+        lostOld.duringRegistration = () -> oldSet.remove(priorEntry); lostOld.run();
+        check(lostOld.teleports == 0 && StationProductionBridge.proofs == 0,
+                "native registry mutation losing old owner entries is not accepted as an exact addition");
+        var nested = new Fixture(); nested.afterLanding = () -> StationConstructionAccess.wrap(nested.packet, p -> {
+            throw new AssertionError("nested native tail executed");}).accept(nested.player);
+        nested.run(); check(StationProductionBridge.proofs == 0, "reentrant native tail invalidates outer manufacturing proof");
+
+        var throwing = new Fixture(); var failure = new IllegalArgumentException("native claim callback failed");
+        throwing.afterLanding = () -> {throw failure;}; boolean propagated = false;
+        try {throwing.run();} catch (IllegalArgumentException actual) {propagated = actual == failure;}
+        check(propagated && StationProductionBridge.proofs == 0, "exception after landing propagates unchanged and grants no proof");
+        check(throwing.registrations == 1 && !StationConstructionAccess.hasScope(),
+                "exception clears permit without rollback of already registered native station");
+        var afterFailure = new Fixture(); afterFailure.run();
+        check(StationProductionBridge.proofs == 1, "failed native tail does not leak state into the next operation");
+
+        var closed = new Fixture(); StationProductionBridge.ready = false; closed.run();
+        check(closed.player.inventory.removals == 0 && closed.registrations == 0 && StationProductionBridge.proofs == 0,
+                "unavailable durable proof journal closes supported construction before native payment");
     }
 
     private static void initialDenials() {
@@ -338,7 +454,7 @@ public final class StationConstructionHarness {
     }
 
     public static void main(String[] args) {
-        successfulPayment();initialDenials();mutationsAndPlacement();tagsAndExceptions();ingredientBounds();unscopedAndDuplicateCalls();
+        successfulPayment();initialDenials();mutationsAndPlacement();tagsAndExceptions();ingredientBounds();unscopedAndDuplicateCalls();stationProofs();
         System.out.println(assertions+" station actual-helper/allocator/real-policy modeled assertions PASS; no optional Mixin or full-client claim");
     }
 }

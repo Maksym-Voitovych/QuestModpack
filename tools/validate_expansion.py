@@ -65,7 +65,14 @@ def validate(root=ROOT):
         from tools.validate_v5 import installed_versions
     authored = migrate_quest_content(authored, root)
     v5_ids = {q['id'] for q in v5_authored}
-    native_actions = validate_native_actions(root, [q for q in authored if q['id'] in v5_ids], rules, installed_versions(root))
+    try:
+        from build_station_proofs_v9 import validate as validate_stations
+    except ImportError:
+        from tools.build_station_proofs_v9 import validate as validate_stations
+    station_proofs = validate_stations(root, compiled=True) \
+        if (root/'content/quests/v5_station_construction.json').exists() else {'approved_advancements': []}
+    native_actions = validate_native_actions(root, [q for q in authored if q['id'] in v5_ids], rules,
+                                           installed_versions(root), station_proofs['approved_advancements'])
     signatures = defaultdict(list)
     byepoch = Counter()
     tasktypes = Counter()
@@ -88,6 +95,7 @@ def validate(root=ROOT):
         try: from validate_v5 import verified_mechanic_advancements
         except ImportError: from tools.validate_v5 import verified_mechanic_advancements
         allowed_advancements.update(verified_mechanic_advancements(root, rules, bundle))
+    allowed_advancements.update(station_proofs['approved_advancements'])
     allowed_advancements.update(native_actions['approved_advancements'])
     for q in authored:
         n=q['epoch']; byepoch[n]+=1

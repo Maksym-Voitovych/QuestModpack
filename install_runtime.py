@@ -412,6 +412,11 @@ def plan_install(source, instance):
                     required.add('ua/aia2/guard/mixin/DraconicFusionCoreMixin.class')
                     if (source / 'kubejs/config/aia2_mechanics.json').is_file():
                         required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
+                    if (source / 'kubejs/config/aia2_stations.json').is_file():
+                        station_proofs = {'ua/aia2/guard/StationProductionBridge.class',
+                                          'ua/aia2/guard/StationRegistrationWitness.class'}
+                        if not station_proofs <= set(jar.namelist()):
+                            raise InstallError('This package needs the matching durable station production proof bridge')
                     if not required <= set(jar.namelist()) or jar.testzip() is not None:
                         raise InstallError('Progression v4 needs the matching API4 companion with FTB, manufacturing, Rhino and cached-fusion guards')
                     creative_guard = {'ua/aia2/guard/CreativeManaGuard.class',

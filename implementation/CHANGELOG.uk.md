@@ -1,3 +1,12 @@
+# 0.4.20-alpha — Докази нового будівництва станцій
+
+- Шість нових optional-цілей Earth/Moon/Mars37 та Mercury/Venus/Glacio38: 3381квест/140глав,12нових tasks і6нагород. Старі3375non-coordinate payloads/ID/нагороди,627рецептів,96ключів,390предметів/PNG збережені.
+- Незмінні bounded знімки native per-player реєстру; рівно один новий запис без втрати старих. Виявляються no-op Set.add, adoption старих станцій і глибокі зміни Component.
+- Доказ лише після нормального завершення native packet та висадки того самого будівничого/команди на потрібній орбіті; пізній exception або зміна контексту доказу не дають. Legitimate menu-close inventory changes після оплати дозволені.
+- Окремі6rules/advancements і SavedData aia2_stations_v1 schema1. Суворі NBT/bounds, existing-unreadable-file sentinel, відмова до оплати та заборона перезапису пошкодженого журналу. Межі запису й читання узгоджені; регресія64→65 відтворена й виправлена.
+- Синхронізація доказів із FTB-командою відкликає старі advancement projections; старі15mechanic rules/схеми не змінені. Installer перевіряє matching proof-класи до записів.
+- До Ad Astra додано6механічних стадій,31попередня незмінна. Нових рецептів/предметів/текстур0. Повний0.5 не реліз; original optional binary/fullclient/JEI/Survival/TPS NOT_RUN.
+
 # 0.4.19-alpha — Station payment та accepted placement
 
 - Усунуто first-stack underpayment та overlapping-ingredient double count глобальним bounded max-flow; точні native split-stack debits, current tags/recipe/slotrefs/команда/стадія.

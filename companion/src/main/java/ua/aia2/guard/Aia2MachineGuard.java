@@ -83,6 +83,7 @@ public final class Aia2MachineGuard {
         FireWorksiteAccess.clearRuntime();
         KeyProductionBridge.clearRuntime();
         ProductionMilestoneBridge.clearRuntime();
+        StationProductionBridge.clearRuntime();
         PLAYER_TEAMS.clear();
         LIVE_TEAMS.clear();
         dimensionRules = Map.of();

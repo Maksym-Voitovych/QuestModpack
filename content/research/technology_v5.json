@@ -4838,6 +4838,204 @@
             "Статичні SHA/генераторні та модельовані перевірки не є запуском повного Ad Astra1.16.26/FTB у Minecraft; optional weaving, JEI, Survival і TPS потребують окремого фактичного тесту.",
             "Доказ належить поточній FTB-команді власника столу. Він не засвідчує особистого автора ракети, польоту, заправлення або оплати й розміщення космічної станції."
           ]
+        },
+        {
+          "id": "ad_astra.station.earth_orbit",
+          "title_uk": "Приймання земного орбітального вузла",
+          "epoch": 37,
+          "prerequisites": [
+            "ad_astra.core.desh_batch"
+          ],
+          "mechanic_uk": "Земна орбіта стає першим місцем для перевірки повного будівельного маршруту. Підготуйте 64 залізні пластини, 32 сталеві зливки, 32 зливки дешу й 32 пластини дешу. Після місячної металургії виберіть створення нової станції в орбітальному меню.",
+          "why_next_uk": "Відокремте доставку комплекту від завершеного будівництва: стос матеріалів або просте відвідування земної орбіти не підтверджують нову станцію.",
+          "item_ids": [
+            "ad_astra:airlock"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/earth_orbit_space_station.json",
+              "sha256": "535fdab424f99f35b30b218f73f012c04e938c33981a545b72f54afc9925bac5",
+              "recipe_id": "ad_astra:space_station/earth_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E37_station_earth_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
+        },
+        {
+          "id": "ad_astra.station.moon_orbit",
+          "title_uk": "Місячна перевалочна станція",
+          "epoch": 37,
+          "prerequisites": [
+            "ad_astra.core.desh_batch"
+          ],
+          "mechanic_uk": "Для місячної орбіти потрібен власний будівельний комплект: 64 залізні пластини, 32 сталеві зливки, 32 зливки дешу й 32 пластини дешу. Створіть новий вузол через меню польоту, не використовуючи вже зареєстровану станцію як доказ нової роботи.",
+          "why_next_uk": "Місячний деш забезпечує обидві перші орбітальні бази. Плануйте окрему партію для станції, щоб не витратити запас на кисневу інфраструктуру поверхневої колонії.",
+          "item_ids": [
+            "ad_astra:water_pump"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/moon_orbit_space_station.json",
+              "sha256": "824fbd8ba59ece2d71558e3fee9399f3de0413a96a7141e1d41344b891b82247",
+              "recipe_id": "ad_astra:space_station/moon_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E37_station_moon_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
+        },
+        {
+          "id": "ad_astra.station.mars_orbit",
+          "title_uk": "Оплачена марсіанська орбітальна база",
+          "epoch": 37,
+          "prerequisites": [
+            "ad_astra.core.mars_sensor"
+          ],
+          "mechanic_uk": "Марсіанська станція переходить на острам: її рецепт вимагає 32 сталеві зливки, 64 сталеві пластини, 32 острамні зливки й 32 острамні пластини. Підготуйте метал після освоєння марсіанської інфраструктури й створіть нову станцію на орбіті Марса.",
+          "why_next_uk": "У маршруті вперше змінюються будівельні матеріали. Розділяйте сталеві листи та острамні компоненти: один і той самий стос не може одночасно оплачувати декілька вимог рецепта.",
+          "item_ids": [
+            "ad_astra:oxygen_sensor"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/mars_orbit_space_station.json",
+              "sha256": "72ca901e36c17518230460e552977a847f1c783d7cef593c627a031adbc5d505",
+              "recipe_id": "ad_astra:space_station/mars_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E37_station_mars_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
+        },
+        {
+          "id": "ad_astra.station.mercury_orbit",
+          "title_uk": "Калоритовий вузол Меркурія",
+          "epoch": 38,
+          "prerequisites": [
+            "ad_astra.core.calorite_metallurgy"
+          ],
+          "mechanic_uk": "Після освоєння калоритової металургії створіть нову станцію на орбіті Меркурія. Комплект містить 64 сталеві зливки, 64 сталеві пластини, 32 калоритові зливки й 32 калоритові пластини. Переходьте до будівництва з повним резервом і спорядженням гарячої експедиції.",
+          "why_next_uk": "Меркуріанська орбіта потребує пізнього калоритового постачання. Відвідування планети або чужої станції не підміняє власне оплачене будівництво для поточної команди.",
+          "item_ids": [
+            "ad_astra:calorite_plate"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/mercury_orbit_space_station.json",
+              "sha256": "b362a501c79ee9b7f3e8136d210503d0a8e34a8bccc9b5fff9191cec9f1a55a5",
+              "recipe_id": "ad_astra:space_station/mercury_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E38_station_mercury_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
+        },
+        {
+          "id": "ad_astra.station.venus_orbit",
+          "title_uk": "Орбітальний тил венеріанської експедиції",
+          "epoch": 38,
+          "prerequisites": [
+            "ad_astra.core.calorite_metallurgy"
+          ],
+          "mechanic_uk": "Створіть нову станцію на орбіті Венери, використавши 64 сталеві зливки, 64 сталеві пластини, 32 калоритові зливки й 32 калоритові пластини. Завершіть природний перехід будівельного меню й прибудьте до створеного орбітального вузла.",
+          "why_next_uk": "Венеріанська металургія забезпечує окрему будівельну партію для орбітального тилу. Ця ціль перевіряє створення станції, але не проголошує її автоматично герметичною чи забезпеченою киснем.",
+          "item_ids": [
+            "ad_astra:calorite_ingot"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/venus_orbit_space_station.json",
+              "sha256": "78f824099febee1dea71af5724cf8126ac843d6d7e4e36d4de2181fa05183832",
+              "recipe_id": "ad_astra:space_station/venus_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E38_station_venus_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
+        },
+        {
+          "id": "ad_astra.station.glacio_orbit",
+          "title_uk": "Станція змішаного постачання Ґласіо",
+          "epoch": 38,
+          "prerequisites": [
+            "ad_astra.core.glacio_fuel"
+          ],
+          "mechanic_uk": "На орбіті Ґласіо створіть станцію з матеріалів кількох етапів: 32 сталеві пластини, 32 зливки дешу, 32 острамні пластини й 32 калоритові пластини. Далекий маршрут потребує узгоджених поставок із попередніх колоній, а не лише останнього відкритого металу.",
+          "why_next_uk": "Завершіть будівництво й прибуття до нової станції. Змішаний комплект є підсумком розвитку космічної металургії; холодне паливо та кисневе забезпечення залишаються окремими завданнями.",
+          "item_ids": [
+            "ad_astra:cryo_freezer"
+          ],
+          "machine_ids": [],
+          "recipe_evidence": [
+            {
+              "path": "content/research/evidence/station_guard_v8/sourcefreeze/installed_export/recipes/ad_astra/space_station/glacio_orbit_space_station.json",
+              "sha256": "7332aa3490d8986b54a69f056077e4c8f280d955aedd441984503ad86ddd05b9",
+              "recipe_id": "ad_astra:space_station/glacio_orbit_space_station",
+              "type": "ad_astra:space_station_recipe",
+              "source_kind": "installed_export_recipe",
+              "verified": true
+            }
+          ],
+          "verification_uk": "Сервер зараховує лише нову операцію: точна оплата матеріалів, прийняті блоки структури, новий запис станції для UUID будівничого та успішне завершення переходу на цю орбіту. Доказ зберігається для FTB-команди, до якої будівничий належав під час операції. Старі станції, телепортація й предмети з /give не створюють цей запис.",
+          "new_quest_ids": [
+            "V9_E38_station_glacio_orbit"
+          ],
+          "proof_scope": "current_builder_team_exact_payment_accepted_structure_new_owner_registration_and_native_landing",
+          "limitations_uk": [
+            "Повний клієнт Ad Astra1.16.26/JEI/Survival/TPS не запускався; source/model/commonMC перевірки не є перевіркою всього модпаку.",
+            "Доказ не відновлюється зі старих native-записів станцій і не засвідчує кисень, герметичність або подальший стан бази."
+          ]
         }
       ],
       "mandatory_quest_ids": [
@@ -4902,7 +5100,13 @@
         "V7_E37_nasa_manufacture_t1",
         "V7_E37_nasa_manufacture_t2",
         "V7_E38_nasa_manufacture_t3",
-        "V7_E38_nasa_manufacture_t4"
+        "V7_E38_nasa_manufacture_t4",
+        "V9_E37_station_earth_orbit",
+        "V9_E37_station_moon_orbit",
+        "V9_E37_station_mars_orbit",
+        "V9_E38_station_mercury_orbit",
+        "V9_E38_station_venus_orbit",
+        "V9_E38_station_glacio_orbit"
       ],
       "intermod_links": [
         {

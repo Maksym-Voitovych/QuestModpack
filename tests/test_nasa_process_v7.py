@@ -110,10 +110,13 @@ class NasaProcessTests(unittest.TestCase):
         self.assertEqual(len(self.pending['preserved_stage_hashes']), 27)
         for ident, digest in self.pending['preserved_stage_hashes'].items():
             self.assertEqual(N.canonical(stages[ident]), digest)
-        stages.update({stage['id']: stage for stage in self.pending['stages']})
-        self.assertEqual(len(stages), 31)
+        for stage in self.pending['stages']:
+            self.assertEqual(stages[stage['id']], stage)
+        published = set(self.pending['preserved_stage_hashes']) | {s['id'] for s in self.pending['stages']}
+        self.assertEqual(len(published), 31)
+        self.assertTrue(published <= stages.keys())
         self.assertEqual(V.validate_graph({ident: {'dependencies': stage.get('prerequisites', [])}
-                                          for ident, stage in stages.items()}), 31)
+                                          for ident, stage in stages.items()}), len(stages))
 
     def test_existing_future_tag_alternative_does_not_strand_steel_recipe(self):
         tags = N.tag_members(self.pending['input_tag_evidence'])

@@ -6,12 +6,13 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний checkpoint: **0.4.19-alpha — station payment/placement adapter**.
-NASA0.4.18 і ProjectE0.4.17 збережені. Завершення тестів/доставки та Git-стан
-фіксуються в PROGRESS. Наступний змістовний блок — окремий durable station
-proof і пов'язані optional-цілі, потім явна сумісна міграція старих required37/38.
-Оригінальні optional JAR/client retest лишаються BLOCKED/NOT_RUN;
-продовжувати незалежні source/model/code задачі. Повний0.5 ще не готовий.
+Поточний checkpoint: **0.4.20-alpha — durable station production proofs**.
+NASA0.4.18, station payment/placement0.4.19 і ProjectE0.4.17 збережені.
+Шість optional station-цілей мають окремий новий журнал; старі записи
+не adopt-яться. Стан фінальних перевірок/доставки й Git — у PROGRESS.
+Наступний змістовний блок — явна сумісна міграція старих required37/38,
+потім34partial карти та решта required48ліній. Original optional binaries
+і повний client retest залишаються BLOCKED/NOT_RUN. Повний0.5 не готовий.
 
 ## Правило відновлення
 

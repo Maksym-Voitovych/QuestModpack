@@ -31,10 +31,12 @@ public final class RhinoCompatibilityHarness {
   static void check(boolean condition, String message) {
     if (!condition) throw new AssertionError(message);
   }
-  static ScriptableObject server(Context cx, Map<String, Object> global, Path root, String saved) throws Exception {
+  static ScriptableObject server(Context cx, Map<String, Object> global, Path root, String saved, String stationReceipts) throws Exception {
     ScriptableObject scope = cx.initStandardObjects();
     cx.addToScope(scope, "global", new ReadonlyGlobal(cx, scope, global));
     cx.addToScope(scope, "__savedLedgerJSON", saved);
+    cx.addToScope(scope, "__savedStationReceiptsJSON", stationReceipts);
+    cx.addToScope(scope, "__stationRulesJSON", Files.readString(root.resolve("kubejs/config/aia2_stations.json")));
     cx.addToScope(scope, "__rulesJSON", Files.readString(root.resolve("kubejs/config/aia2_runtime.json")));
     check(Boolean.TRUE.equals(eval(cx, scope, "typeof globalThis === 'undefined'")), "build.85 has no globalThis");
     try { eval(cx, scope, "global.AIA2 = {}; "); throw new AssertionError("global must be read-only"); }
@@ -43,6 +45,10 @@ public final class RhinoCompatibilityHarness {
     for (String name : new String[]{"00_core.js", "20_progression.js", "25_machine_guard.js"})
       load(cx, scope, root.resolve("kubejs/server_scripts/aia2/" + name));
     eval(cx, scope, "fixtureActivate();");
+    // Activate the original three-module fixture first: its historical host
+    // callback slots are single-valued. The station scenarios then exercise
+    // their actual script callbacks independently, without changing that model.
+    load(cx, scope, root.resolve("kubejs/server_scripts/aia2/45_stations.js"));
     return scope;
   }
   public static void main(String[] args) throws Exception {
@@ -55,18 +61,24 @@ public final class RhinoCompatibilityHarness {
     Object core = global.get("AIA2Core"), api = global.get("AIA2"), machines = global.get("AIA2Machines");
     check(core != null && api != null && machines != null, "startup containers created");
     Context serverCx = new ContextFactory().enter();
-    ScriptableObject first = server(serverCx, global, root, "");
-    eval(serverCx, first, "fixtureForgeFirst(); global.AIA2.obsolete = true;");
+    ScriptableObject first = server(serverCx, global, root, "", "");
+    eval(serverCx, first, "fixtureStationChecks(); fixtureForgeFirst(); global.AIA2.obsolete = true;");
+    check(((Number)eval(serverCx, first, "__fixture.stationAssertions")).intValue() == 24, "all twenty-four station scenario assertions executed");
     String saved = serverCx.toString(eval(serverCx, first, "__fixture.ledger"));
     check(saved.contains("\"completed\":1"), "serialized persistent team progress");
+    String receipts = serverCx.toString(eval(serverCx, first, "JSON.stringify(__fixture.stationProofs)"));
+    check(receipts.contains("station_earth_orbit"), "modeled native station receipts serialized separately");
     Context reloadedCx = new ContextFactory().enter();
-    ScriptableObject second = server(reloadedCx, global, root, saved);
+    ScriptableObject second = server(reloadedCx, global, root, saved, receipts);
     eval(reloadedCx, second, "fixtureAssert(global.AIA2.completed(__player) === 1, 'saved ledger rehydrated');" +
       "fixtureAssert(global.AIA2.obsolete === undefined, 'old closures cleared');" +
-      "fixtureAssert(__fixture.stages.aia2_epoch_02, 'saved progress restores native stage mirror');");
+      "fixtureAssert(__fixture.stages.aia2_epoch_02, 'saved progress restores native stage mirror');" +
+      "fixtureStationReloadChecks();");
+    check(((Number)eval(reloadedCx, second, "__fixture.stationAssertions")).intValue() == 5, "all five fresh-context station assertions executed");
     check(global.get("AIA2Core") == core && global.get("AIA2") == api && global.get("AIA2Machines") == machines,
       "startup aliases survive distinct server contexts");
     System.out.println("RhinoCompatibilityHarness: startup, readonly global, actual three modules, status, key transaction, stage mirror and reload assertions passed");
+    System.out.println("Station script: readonly member, delayed configuration, era/team projection, failure closure, callbacks and distinct-context receipt reload 29 assertions passed (host APIs modeled)");
     System.out.println("Rhino source pin: " + PIN + " (2101.2.7-build.85)");
   }
   static void cxAddWritable(Context cx, Scriptable scope, Map<String, Object> global) {

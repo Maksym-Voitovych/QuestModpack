@@ -387,6 +387,7 @@ def apply(root=ROOT):
                                 ('build_ad_astra_core_v6', 'content/recipes/v5_ad_astra_core.json'),
                                 ('build_nasa_process_v7', 'content/research/nasa_process_pending_v7.json'),
                                 ('build_station_floors_v8', 'content/recipes/v8_station_floors.json'),
+                                ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
         if (root/source).exists():
             import importlib

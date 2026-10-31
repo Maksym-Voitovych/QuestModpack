@@ -162,6 +162,7 @@ function aia2Sync(player) {
   player.persistentData.putString('aia2_last_team', String(aia2Team(player).getTeamId()));
   aia2RefreshBranches(player);
   if (typeof global.AIA2.syncMechanics === 'function') global.AIA2.syncMechanics(player);
+  if (typeof global.AIA2.syncStations === 'function') global.AIA2.syncStations(player);
 }
 
 function aia2AtWorkbench(player) {

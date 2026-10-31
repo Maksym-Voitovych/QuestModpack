@@ -1,33 +1,32 @@
 # All in One Adventure 2.0 — AIA2
 
-**0.4.19-alpha — Ad Astra station payment and placement checkpoint.**
+**0.4.20-alpha — durable Ad Astra station construction proofs.**
 Minecraft1.21.1 NeoForge / FTB Quests2101.1.36 / KubeJS2101.7.2 / Rhino85.
-Full0.5 remains in progress; original optional binaries and the complete client
-have not been tested.
+The full0.5 update remains in progress.
 
-Station construction now uses a packet scope, live owner-team/destination checks,
-and bounded global payment allocation. Split stacks pay the full requirement;
-overlapping ingredients cannot spend one unit twice. All non-air primary writes
-must be accepted and retained before registration/teleport continues. Native
-partial effects are preserved on failure; no rollback/refund is fabricated.
+Six new optional objectives teach construction of each orbital station. Proof
+requires exact paid materials, accepted and retained structure blocks, exactly
+one new native per-player station registration, normal packet completion and
+the same live builder/team on the target orbit. Existing stations and dimension
+visits cannot create production proof. Native effects are never refunded or
+rolled back if a later callback fails.
 
-**48epochs,96manufactured keys,3375quests/140chapters,627recipes,
-3111item rewards,390items/models/PNGs are preserved.** No new quests, recipes,
-rewards, items or textures in this guard block. Only six native station recipe
-floors rise to their orbit's37/38 stage. Old station SavedData, NASA proofs,
-ProjectE hotfix and API4 remain.
-
-The installer checks six optional NASA/station Mixin contracts against an available
-Ad Astra JAR before backup/write; ProjectE tablet preflight remains. The supported
-station template has one palette, no entities/blockNBT and bounded dimensions.
-Custom definitions outside this contract are rejected before payment. Ordinary
-unscoped structure placement keeps native behavior.
+**48epochs,96manufactured keys,3381quests/140chapters,627recipes,
+3117item rewards,390items/models/PNGs.** All3375previous quest payloads and
+627recipe entries are preserved. The six new goals use a separate team journal
+`aia2_stations_v1`; the existing15mechanic rules, NASA receipts, ProjectE
+hotfix and Machine Guard API4 remain. Invalid journal files are preserved and
+new construction stays closed before payment.
 
 Stop Minecraft and extract the package to a separate folder. Run
 `python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`, then
-omit the flag. Originals/old owned JAR are backed up. Restart both sides fully.
+omit the flag. Originals and the old owned JAR are backed up. Restart both sides
+fully. The installer never migrates or adopts old stations into production proof.
 
-[Checkpoint](docs/AIA2_0.4.19_CHECKPOINT.uk.md) ·
+Automated, modeled and minimal-server checks have separate evidence. Original
+optional binaries/full-client/JEI/Survival/TPS acceptance is still pending.
+
+[Checkpoint](docs/AIA2_0.4.20_CHECKPOINT.uk.md) ·
 [Install](implementation/INSTALL.uk.txt) ·
-[Station acceptance](docs/testing/STATION_CONSTRUCTION_ACCEPTANCE.uk.md) ·
+[Station proof acceptance](docs/testing/STATION_PROOF_ACCEPTANCE.uk.md) ·
 [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md).

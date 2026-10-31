@@ -28,7 +28,7 @@ class StationConstructionTests(unittest.TestCase):
                 path.write_text(source)
                 files.append(str(path))
             files += [str(ROOT / f'companion/src/main/java/ua/aia2/guard/{name}.java') for name in
-                      ['GuardPolicy', 'StationPaymentPlan', 'StationIngredients', 'StationConstructionAccess']]
+                      ['GuardPolicy', 'StationPaymentPlan', 'StationIngredients', 'StationRegistrationWitness', 'StationConstructionAccess']]
             files.append(str(ROOT / 'tests/fixtures/StationConstructionHarness.java'))
             classpath = os.pathsep.join([str(directory), str(jars[-1])])
             compiled = subprocess.run([str(jdk / 'bin/javac'), '--release', '21', '-encoding', 'UTF-8',

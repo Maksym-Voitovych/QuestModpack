@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-10-30 (Europe/Kyiv). База `90ab63f`, робочий checkpoint 0.4.19-alpha (station payment/placement adapter); повний0.5 ще не реліз.
+Останнє оновлення: 2026-11-01 (Europe/Kyiv). База `90ab63f`, робочий checkpoint 0.4.20-alpha (station production proof; code/QA/delivery DONE; Git status via log/origin/main); повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra31етап/65нових station-джерел; installed binary provenance та DraconicCI633 BLOCKED |
+| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra37етап/65station-джерел з попереднього checkpoint; installed binary provenance та DraconicCI633 BLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
-| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,5старих координат переміщено для4NASAцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 591новий відv4;4optional NASA цього checkpoint; старі обов’язкові лінії IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3111item-нагород;0нових цього блоку;3375старих quest/rewardpayloads збережено |
+| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,50старих координат в1главі переміщено для6stationцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 597нових відv4;6optional station цього checkpoint; старі обов’язкові лінії IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3117item-нагород;6нових цього блоку;3375старих quest/rewardpayloads збережено |
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 325Python/57Node/5237Java+184228allocator;170MC@0.4.19/2JVM;1217stationmodels+Sponge3targets/5handlers;fullpack NOT_RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.19 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено |
+| 10 | Інтеграційні тести | IN_PROGRESS | 345cleanPython/66Node/5237Java;207MC@0.4.20/2JVM;1251station+167bridge+33registrymodels;finalrebuild1183files PASS;fullpack NOT_RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.20 checkpoint code/QA/package/installer DONE; точний commit/push зgitlog/origin/main;0.5не завершено |
 
 
 
@@ -31,16 +31,16 @@
 | Епоха | Дослідження | Квести v5 | Рецепти v5 | Залежності v5 |
 |---|---|---|---|---|
 | 01 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 02 | IN_PROGRESS | IN_PROGRESS (4) | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra31етап/65нових station-джерел; installed binary provenance та DraconicCI633 BLOCKED | DONE (static) |
+| 02 | IN_PROGRESS | IN_PROGRESS (4) | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra37етап/65station-джерел з попереднього checkpoint; installed binary provenance та DraconicCI633 BLOCKED | DONE (static) |
 | 03 | IN_PROGRESS | IN_PROGRESS (4) | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено | DONE (static) |
-| 04 | IN_PROGRESS | IN_PROGRESS (13) | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,5старих координат переміщено для4NASAцілей | DONE (static) |
-| 05 | IN_PROGRESS | IN_PROGRESS (5) | 591новий відv4;4optional NASA цього checkpoint; старі обов’язкові лінії IN_PROGRESS | DONE (static) |
-| 06 | IN_PROGRESS | IN_PROGRESS (3) | 3111item-нагород;0нових цього блоку;3375старих quest/rewardpayloads збережено | DONE (static) |
+| 04 | IN_PROGRESS | IN_PROGRESS (13) | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,50старих координат в1главі переміщено для6stationцілей | DONE (static) |
+| 05 | IN_PROGRESS | IN_PROGRESS (5) | 597нових відv4;6optional station цього checkpoint; старі обов’язкові лінії IN_PROGRESS | DONE (static) |
+| 06 | IN_PROGRESS | IN_PROGRESS (3) | 3117item-нагород;6нових цього блоку;3375старих quest/rewardpayloads збережено | DONE (static) |
 | 07 | IN_PROGRESS | IN_PROGRESS (13) | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні | DONE (static) |
 | 08 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
-| 10 | IN_PROGRESS | IN_PROGRESS (7) | 325Python/57Node/5237Java+184228allocator;170MC@0.4.19/2JVM;1217stationmodels+Sponge3targets/5handlers;fullpack NOT_RUN | DONE (static) |
-| 11 | IN_PROGRESS | IN_PROGRESS (21) | 0.4.19 проміжний checkpoint; package/actualinstaller PASS; commit/pushчерезGit;0.5не завершено | DONE (static) |
+| 10 | IN_PROGRESS | IN_PROGRESS (7) | 345cleanPython/66Node/5237Java;207MC@0.4.20/2JVM;1251station+167bridge+33registrymodels;finalrebuild1183files PASS;fullpack NOT_RUN | DONE (static) |
+| 11 | IN_PROGRESS | IN_PROGRESS (21) | 0.4.20 checkpoint code/QA/package/installer DONE; точний commit/push зgitlog/origin/main;0.5не завершено | DONE (static) |
 | 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
@@ -66,8 +66,8 @@
 | 34 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (2) | IN_PROGRESS (3 формул) | DONE (static) |
-| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra/+2NASA) | IN_PROGRESS (+3 двигуни) | DONE (static) |
-| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra/+2NASA) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
+| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra/+2NASA/+3station) | IN_PROGRESS (+3 двигуни) | DONE (static) |
+| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra/+2NASA/+3station) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 41 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (2 формул) | DONE (static) |
@@ -679,3 +679,34 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - Наступна конкретна дія: station durableactionproof+optional quests,безadoptionстарихnativeentriesякmanufactureproof. Потімcompatibilitymigrationrequired37/38 ірешта34partial/required48ліній. НЕповторюватиоплату/shapeadapters/6floors. Originaloptionalbinary/fullclient/JEI/Survival/TPS NOT_RUN; новийstationproofщеTODO. Повний0.5 IN_PROGRESS.
 
 - CI configuration: Gradle bootstrap і source-shaped Sponge/ASM tests тепер мають спільний explicit GRADLE_USER_HOME у GitHub workflow; це прибирає залежність CI від хмарного /workspace cache path. Зміна workflow не є заявою про вже пройдений GitHub CI запуск.
+
+### 2026-10-30 — Station production proof: IN_PROGRESS
+
+- Відновлено cleancd789e2/main(0.4.19); origin/main звірено. Backup: /workspace/aia2-backups/before-station-proof-20261030T072636Z/checkpoint-cd789e2.tar.gz.3375quests/627recipes/390items+PNG/96keys збережені.
+- Root owns native registration witness, final packet completion proof, durable newjournal, runtime/installer/integration/tests/Git. station_proof_source_v9 reviews exact native tail/registration sources. station_proof_content_v9 hit model capacity; root continues independent implementation and will retry delegation.
+- Наступна дія: actual newly registered owner entry + successful native tail/target landing required beforeproof; no adoption from oldstations. Separate rules6/advancements/optionalgoals, existingmechanic15 unchanged.
+
+### 2026-11-01 — Station proofs0.4.20: код/native DONE, фінальна доставка IN_PROGRESS
+
+- Відновлено cd789e2/main і попередній IN_PROGRESS. Backup before-station-proof-20261030T072636Z збережений позаGit. Зроблено6optional station quests/12tasks/6нагород;3381квест/140глав/627рецептів/3117itemrewards/390предметів+PNG/96keys. Новихrecipes/items/textures0; усі3375старих non-coordinate payloads/нагороди,627entries і782assetfiles збережені.50координат у1главі;1154перетини/0structuralwarnings.
+- Реалізовано exacttyped native registry witness з deep-immutable JSONname snapshots, strict+1newentry/no-oldloss. Proof видається лише після normal Consumerreturn/targetlanding/currentteam+recipe+retainedstructure. Late inventory return при menuclose дозволено. Старі станції неadopt-яться, native effects не відкочуються/не компенсуються.
+- Окремий schema1 SavedData aia2_stations_v1,6rules/6impossibleadv; старі15mechanicrules незмінні. Corrupt/loaderror existingfile sentinel не дозволяє emptyreplacement; blocked journal save заборонено, newconstruction відмовляє до оплати. Boundaryregression64→65 FAILдоfix/PASSпісля, межі read/write узгоджено.
+- PASS targeted17content/actualBridge167/Access1251/Witness33 modeled assertions;66Node; справжнійRhino85:29новихstationchecks +попередніstatus/key/reload. JDK21build/5237legacyJava PASS. ActualminimalMC207assertions/2JVM/650ticks PASS на finalcode:37новихchecks перевіряють NBT/синтетичнийjournalrestart, не actualAdAstrabuild.229classes/76mixins;219із223старихclassesbyte-identical.
+- Root ownsintegration/docs/QA/delivery/Git; stationproof content/review/tests власники завершили свої файли. Centralvalidators приймають6worldactions лише через separatevalidatedcontract; compiledнагороди звіряютьсязкаталогом, профілі старихкурсів незмінні. Installer matchingproofclasspreflight+opaquejournalmarker preservation додані.
+- FullPython та finalcleanrebuild/package/installer/commit/push ще IN_PROGRESS; не підмінятиїхtargetedPASS. OriginalAdAstra/ProjectEbinary/fullclient/JEI/Survival/TPS NOT_RUN. Наступнийзмістовнийблок після доставки — compatibilitymigrationrequired37/38, потім34partial/required48. Повний0.5не реліз.
+
+- Першийfull344:342PASS/2fail устарихтестах інтеграції (standalone native validator ще не підхоплював окремий station contract; NASA тест вимагав рівно31stage замість збереження31старого+доповнень). Validator тепер сам перевіряє curated station contract для standalone callers; NASA тест звіряє всі31старіpayloads іDAGусіх поточнихетапів, безвідкиданнядоповнень. Додано17-йcontentтест узгодженості compiledнагород. Наступнадія — finalclean345; попередній344непозначатиPASS.
+
+### 2026-11-01 — Station proofs0.4.20: final QA DONE
+
+- FinalcleanGitindex345Python/0fail/0skip PASS (161.954s);66Node,5237legacyJava,29додатковихactualRhino85checks,184228allocatorassertions,1251Access/167Bridge/33registry modeled checks. JDK21build і207actualminimalMC/2JVM/650ticks PASS. NativeserverперевірявsyntheticstationjournalNBT/restart, анеAdAstrabuilddispatch. Незалежнийфінальнийread-onlyreview не знайшовпідтвердженихблокерів.
+- Deterministicrebuild151 наcleanGitindex:1183non-JARruntimefiles byte-identical, root runtime тежзвірено. Centralvalidator/14JSsyntax/SNBT/ID/DAG/recipes/rewards/resources/layout PASS. Новийcompiledrewardregression ловитьневідповідністькаталогу.2272SHAmapfiles/730stages/1103links/61mods(27scopedcore+34partial),37AdAstrastages.
+- MatchingJAR SHA772fa30d890e89b659e98309824b1485a549b09128667d688f7250f59a4a4c5f;229classes/76mixins/219oldclassesbyte-identical. Попередні15rules/96keys/627recipes/3375oldpayloads збережені. OriginalPEcompiledABI statusBLOCKED(артефактненадано), metadataоновленонапоточнийJAR, неSTALE. Fullclient/JEI/Survival/TPS NOT_RUN.
+- Preliminarypackage/actualextractedCLI0.4.19→0.4.20 PASS:dry-run0writes,backupoldJAR,opaqueFTB/world/fire/stationjournal/EMC/paidchunk+foreigncontentpreserved,repeatidempotent. Finalmetadata/repack/all-sourceSHAcheck/Gitcommit/pushщеIN_PROGRESS. Наступниймеханічнийблок — explicitcompatibilitymigrationrequired37/38; не повторювати завершеніstationproofs/6optionalgoals. Повний0.5не реліз.
+
+### 2026-11-01 — Station proofs0.4.20: checkpoint перевірено
+
+- DONE code/source/model/commonMC та345cleanPython/66Node/5237Java/207MC@2JVM. Finalrebuild151:1183non-JARfiles byte-identical; centralvalidator/14JSsyntax PASS. Independentreview: підтвердженихблокерівнемає вмежахдоступногокоду/джерел.
+- DONE доставки:4747manifestentries/1184runtimeSHA/installerSHA/CRC, actualextractedCLI0.4.19→0.4.20 dry-run0file/dirwrites,oldJARbackup, opaqueprogress(включноaia2_stations_v1.dat)/foreigncontentpreservation/repeatidempotence PASS. Finalmetadataперепаковуєтьсяіусі4747SHAзвіряютьсязtreeпередGit. Цеsyntheticinstallerfixture, неfullworldmigration.
+- Code/source/docs/JAR/installerзберігаютьсяціліснимmain-комітомізpushбезforce. Точнийhash/status — gitlog,origin/main таexternaldeliveryreportбіляZIP; не вбудовуватиself-referentialSHA. Повний0.5не реліз,originaloptionalbinary/fullclient/JEI/Survival/TPS NOT_RUN.
+- НАСТУПНА ДІЯ: explicitcompatibilitymigrationстарихrequired37/38 іззбереженнямID/завершеногопрогресу; потім34partial/рештаrequired48ліній. Stationproofs/6optionalgoals/journal/оплату/структуру не повторювати. OriginalJARABI/clientretest виконати, колиартефактидоступні; відсутністьJARнеблокуєнезалежніsource/modelзадачі.

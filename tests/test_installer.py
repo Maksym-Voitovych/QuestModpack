@@ -343,6 +343,32 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_station_proof_config_requires_matching_classes_without_world_writes(self):
+        bundled = list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled), 1)
+        for missing in ['StationProductionBridge', 'StationRegistrationWitness']:
+            with self.subTest(missing=missing), tempfile.TemporaryDirectory() as tmp:
+                package, instance = Path(tmp)/'package', Path(tmp)/'instance'
+                (package/'mods').mkdir(parents=True)
+                (package/'config').mkdir()
+                (package/'kubejs/config').mkdir(parents=True)
+                (instance/'mods').mkdir(parents=True)
+                marker = instance/'saves/world/data/aia2_stations_v1.dat'
+                marker.parent.mkdir(parents=True)
+                marker.write_bytes(b'opaque-existing-station-proof')
+                entry = 'ua/aia2/guard/' + missing + '.class'
+                with zipfile.ZipFile(bundled[0]) as original, zipfile.ZipFile(package/'mods'/bundled[0].name, 'w') as altered:
+                    self.assertIn(entry, original.namelist())
+                    for name in original.namelist():
+                        if name != entry: altered.writestr(name, original.read(name))
+                (package/'kubejs/config/aia2_runtime.json').write_text('{"progressionVersion":4}')
+                (package/'kubejs/config/aia2_stations.json').write_text('{"schema":1}')
+                with self.assertRaisesRegex(installer.InstallError, 'durable station production proof'):
+                    installer.install(package, instance)
+                self.assertEqual(marker.read_bytes(), b'opaque-existing-station-proof')
+                self.assertFalse((instance/'aia2-backups').exists())
+                self.assertFalse((instance/'kubejs').exists())
+
     def test_missing_station_classes_or_hooks_rejected_before_writes(self):
         bundled=list((ROOT/'mods').glob('aia2-machine-guard-*.jar'));self.assertEqual(len(bundled),1)
         mixins=['AdAstraStationPacketMixin','AdAstraStationRecipeMixin','AdAstraStationRegisterMixin','StationTemplateMixin']

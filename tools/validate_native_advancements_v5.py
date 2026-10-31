@@ -41,8 +41,16 @@ def subset(expected, actual):
     return expected == actual
 
 
-def validate(root, records, rules, versions):
+def validate(root, records, rules, versions, separate_advancements=None):
     root = Path(root)
+    if separate_advancements is None:
+        separate_advancements = ()
+        if (root/'content/quests/v5_station_construction.json').is_file():
+            try:
+                from build_station_proofs_v9 import validate as validate_stations
+            except ImportError:
+                from tools.build_station_proofs_v9 import validate as validate_stations
+            separate_advancements = validate_stations(root, compiled=True)['approved_advancements']
     path = root / CONTRACT
     document = json.loads(path.read_text(encoding='utf-8')) if path.is_file() else {'schema': 1, 'advancements': []}
     require(document.get('schema') == 1 and isinstance(document.get('advancements'), list),
@@ -131,7 +139,7 @@ def validate(root, records, rules, versions):
                 require(1 <= int(stage[1]) <= min(48, quest['epoch']),
                         'Quest references an invalid/future epoch proof', quest['id'], identifier)
                 continue
-            if identifier in process_ids:
+            if identifier in process_ids or identifier in separate_advancements:
                 continue
             require(identifier in contracts, 'Quest references an unreviewed native advancement', quest['id'], identifier)
             require(contracts[identifier]['epoch'] <= quest['epoch'],

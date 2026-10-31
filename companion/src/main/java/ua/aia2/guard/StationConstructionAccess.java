@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 
-/** One packet-scoped station operation. No new station data, proof, refund or rollback is fabricated. */
+/** One packet-scoped station operation. Native effects are never fabricated, refunded or rolled back. */
 public final class StationConstructionAccess {
     private static final String PACKET = "earth.terrarium.adastra.common.network.packets.ServerboundConstructSpaceStationPacket";
     private static final String RECIPE = "earth.terrarium.adastra.common.recipes.SpaceStationRecipe";
@@ -39,7 +39,8 @@ public final class StationConstructionAccess {
         StationIngredients.Snapshot ingredients; StructureTemplate template; StationTemplateSnapshot snapshot;
         Map<BlockPos, BlockState> expected;
         ItemStack[] references, before; int[] plan; boolean[] removed;
-        BlockPos origin; boolean paid, placing, placed, registering, registered, invalid;
+        BlockPos origin; boolean paid, placing, placed, registering, registered, invalid, committing;
+        StationRegistrationWitness.Snapshot registrationBefore;
         final Set<BlockPos> writes = new HashSet<>();
         Attempt(ServerPlayer player, ServerLevel target, String team, Component name) {
             this.player = player; source = player.serverLevel(); this.target = target;
@@ -82,7 +83,11 @@ public final class StationConstructionAccess {
                 message(serverPlayer, "непідтримуваний API Ad Astra; перевірте версію JAR"); return;
             }
             ACTIVE.set(a);
-            try { original.accept(player); }
+            try {
+                original.accept(player);
+                // A RETURN injection on registration is too early: landing and claims can still fail.
+                if (a.registered) finish(a);
+            }
             catch (Denied denied) { if (denied.attempt != a) throw denied; message(serverPlayer, denied.getMessage()); }
             finally { ACTIVE.remove(); }
         };
@@ -101,6 +106,9 @@ public final class StationConstructionAccess {
                 || a.source.getServer().getLevel(a.target.dimension()) != a.target
                 || !a.team.equals(Aia2MachineGuard.synchronizedPlayerTeam(a.player))
                 || !Aia2MachineGuard.mayUseOwnedDimension(a.team, a.target.dimension().location().toString())) return false;
+        return definitionLive(a);
+    }
+    private static boolean definitionLive(Attempt a) {
         if (a.recipe == null) return true;
         try {
             if (a.generation != a.target.getRecipeManager().getRecipes()
@@ -122,6 +130,7 @@ public final class StationConstructionAccess {
             Recipe<?> recipe = (Recipe<?>)candidate;
             require(a, a.target.dimension().equals(call(recipe, "dimension"))
                     && Aia2MachineGuard.mayProcessOwnedRecipe(a.target, a.team, recipe), "рецепт ще не відкрито або замінено");
+            require(a, StationProductionBridge.readyFor(a.target, a.team, recipe), "журнал доказів станцій не готовий; матеріали не списано");
             Object id = call(recipe, "structure"); require(a, id instanceof ResourceLocation, "недійсна структура станції");
             StructureTemplate template = a.target.getStructureManager().get((ResourceLocation)id).orElse(null);
             StationIngredients.Snapshot inputs = StationIngredients.read(recipe);
@@ -207,12 +216,46 @@ public final class StationConstructionAccess {
         require(a, player == a.player && level == a.target && a.name.equals(name) && a.paid && a.placed
                 && !a.registering && !a.registered && live(a) && inventory(a) && retained(a)
                 && a.snapshot.equals(StationTemplateSnapshot.read(a.template)), "реєстрація станції не підтверджена оплатою та розміщенням");
+        a.registrationBefore = StationRegistrationWitness.read(player, level);
+        require(a, a.registrationBefore != null && !a.registrationBefore.hasStation(a.chunk, a.name),
+                "реєстр станцій недоступний або такий запис уже існує");
         a.registering = true; return true;
     }
     public static void afterRegister(ServerPlayer player, ServerLevel level, Component name) {
         Attempt a = ACTIVE.get(); if (a == null) return;
         require(a, a.registering && player == a.player && level == a.target && a.name.equals(name) && live(a) && inventory(a) && retained(a)
-                && a.snapshot.equals(StationTemplateSnapshot.read(a.template)), "стан змінився під час реєстрації");
+                && a.snapshot.equals(StationTemplateSnapshot.read(a.template))
+                && StationRegistrationWitness.added(a.registrationBefore, StationRegistrationWitness.read(player, level), a.chunk, a.name),
+                "нативний реєстр не підтвердив рівно одну нову станцію");
         a.registering = false; a.registered = true;
+    }
+
+    private static boolean landed(Attempt a) {
+        return a != null && !a.invalid && a.paid && a.placed && a.registered && !a.registering && !a.placing
+                && !a.player.isRemoved() && a.player.isAlive() && !a.player.isCreative() && !a.player.isSpectator()
+                && a.player.serverLevel() == a.target && a.player.chunkPosition().equals(a.chunk)
+                && a.source.getServer().getPlayerList().getPlayer(a.player.getUUID()) == a.player
+                && a.source.getServer().getLevel(a.source.dimension()) == a.source
+                && a.source.getServer().getLevel(a.target.dimension()) == a.target
+                && a.team.equals(Aia2MachineGuard.synchronizedPlayerTeam(a.player))
+                && Aia2MachineGuard.mayUseOwnedDimension(a.team, a.target.dimension().location().toString())
+                && definitionLive(a) && retained(a) && a.snapshot.equals(StationTemplateSnapshot.read(a.template))
+                && StationRegistrationWitness.added(a.registrationBefore,
+                    StationRegistrationWitness.read(a.player, a.target), a.chunk, a.name);
+    }
+
+    private static void finish(Attempt a) {
+        // Deliberately omit player inventory identity here: native changeDimension closes menus.
+        // All debits and their exact inventory were checked before and after registration.
+        require(a, landed(a), "завершення будівництва й висадку на цільовій орбіті не підтверджено");
+        a.committing = true;
+        try { StationProductionBridge.finishedStation(a.player, a.target, a.recipe, a.team); }
+        finally { a.committing = false; }
+    }
+
+    static boolean isCommittingStation(ServerPlayer player, ServerLevel level, Recipe<?> recipe, String team) {
+        Attempt a = ACTIVE.get();
+        return a != null && a.committing && a.player == player && a.target == level && a.recipe == recipe
+                && a.team.equals(team) && landed(a);
     }
 }

@@ -464,9 +464,12 @@ def validate(root=ROOT, include_layout=True):
     migrated = migrate(old + records, root)
     old, records = migrated[:len(old)], migrated[len(old):]
     mechanic_advancements = verified_mechanic_advancements(root, rules, bundle)
-    native_actions = import_tool('validate_native_advancements_v5').validate(root, records, rules, installed_versions(root))
+    station_proofs = import_tool('build_station_proofs_v9').validate(root, compiled=True) \
+        if (root/'content/quests/v5_station_construction.json').exists() else {'approved_advancements': []}
+    native_actions = import_tool('validate_native_advancements_v5').validate(
+        root, records, rules, installed_versions(root), station_proofs['approved_advancements'])
     catalog = validate_catalog(records, rules, registries, compiled, old, mechanic_advancements,
-                               native_actions['approved_advancements'])
+                               native_actions['approved_advancements'] + station_proofs['approved_advancements'])
     research = validate_research(root, [read(p) for p in maps], installed_versions(root), rules,
                                  registries, {q['id']:q for q in old+records}, compiled)
     layout = {'status': 'not_requested'}
@@ -517,6 +520,7 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/research/nasa_process_pending_v7.json').exists() else {'enabled':False},
             'station_recipe_floors': import_tool('build_station_floors_v8').validate(root, compiled=True)
                 if (root/'content/recipes/v8_station_floors.json').exists() else {'enabled':False},
+            'station_construction_proofs': station_proofs,
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}
