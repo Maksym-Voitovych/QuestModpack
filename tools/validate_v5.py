@@ -521,6 +521,8 @@ def validate(root=ROOT, include_layout=True):
             'station_recipe_floors': import_tool('build_station_floors_v8').validate(root, compiled=True)
                 if (root/'content/recipes/v8_station_floors.json').exists() else {'enabled':False},
             'station_construction_proofs': station_proofs,
+            'required_space_migration': import_tool('build_required_space_v10').validate(root, compiled=True)
+                if (root/'content/audit/v10-space-required-migration.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

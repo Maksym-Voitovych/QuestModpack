@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "mod_id": "ftbquests",
+  "installed_version": "2101.1.36",
+  "source_commit": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+  "source_match_scope": "Pinned source property version and exact implementation; installed binary provenance not supplied",
+  "files": [
+    {
+      "upstream_path": "common/src/main/java/dev/ftb/mods/ftbquests/quest/TeamData.java",
+      "sha256": "7332c8de3fe873ec75389b031b06ebddaa8af1256c1d088423b3b441790645c3",
+      "url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/TeamData.java",
+      "evidence_kind": "Exact upstream full-source SHA; full source remains in external development checkout"
+    },
+    {
+      "upstream_path": "common/src/main/java/dev/ftb/mods/ftbquests/quest/task/Task.java",
+      "sha256": "f11d0979aa9418579a083cf60b0c070141dbcc1724daac214091d178ca2f649a",
+      "url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/Task.java",
+      "evidence_kind": "Exact upstream full-source SHA; full source remains in external development checkout"
+    },
+    {
+      "upstream_path": "common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AbstractBooleanTask.java",
+      "sha256": "49f1198098f76bbc64ed1f85c1ce6dd212ed0eec2c1299496fcd452ceffef0b0",
+      "url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AbstractBooleanTask.java",
+      "evidence_kind": "Exact upstream full-source SHA; full source remains in external development checkout"
+    },
+    {
+      "upstream_path": "common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java",
+      "sha256": "5626d71b5bfb63682d9eb8f676990fe11833f25631013dd11c6c3f8a9e9c9a47",
+      "url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/AdvancementTask.java",
+      "evidence_kind": "Exact upstream full-source SHA; full source remains in external development checkout"
+    },
+    {
+      "upstream_path": "gradle.properties",
+      "sha256": "4e5c2f1c8e80817f9cc1077b0223b531ede3191b7b92338815c6fe55c001a078",
+      "url": "https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/gradle.properties",
+      "evidence_kind": "Exact upstream full-source SHA; full source remains in external development checkout"
+    }
+  ],
+  "facts": [
+    {
+      "owner": "TeamData",
+      "condition": "task_progress maps task ID to long; completed maps object ID to timestamp; no task type provenance",
+      "implication": "An old completed item task must not become a trusted native-action receipt."
+    },
+    {
+      "owner": "AbstractBooleanTask/TeamData",
+      "condition": "boolean max1; setProgress(prev==new) does not call completion callback",
+      "implication": "Reusing an item task ID with old numeric1 can render100% while missing completed timestamp. Preserve old types/counts instead of resetting progress."
+    }
+  ],
+  "compatibility_policy": {
+    "replaced_task_types": 0,
+    "new_world_progress_writes_by_installer": 0,
+    "completed_and_recovery": "unchanged",
+    "old_markerless_paid_pending": "grandfathered with both native key receipts and old milestone/trial/final checks",
+    "new_37_38_paid_pending": "pendingActionContract1 and actual NASA proof required"
+  },
+  "full_client_tested": false,
+  "evidence_scope": "Portable API facts, not redistributed full third-party source; upstream full hashes can be rechecked when the pinned checkout is available"
+}

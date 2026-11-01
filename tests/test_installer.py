@@ -343,6 +343,28 @@ class V4PackagePairingTest(unittest.TestCase):
 
 
 class RootsGuardPackagePairingTest(unittest.TestCase):
+    def test_required_space_contract_rejects_old_companion_before_writes(self):
+        bundled = list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
+        self.assertEqual(len(bundled), 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            package, instance = Path(tmp)/'package', Path(tmp)/'instance'
+            (package/'mods').mkdir(parents=True); (package/'config').mkdir()
+            (package/'kubejs/config').mkdir(parents=True); (instance/'mods').mkdir(parents=True)
+            marker = instance/'saves/world/data/aia2_mechanics_v1.dat'
+            marker.parent.mkdir(parents=True); marker.write_bytes(b'opaque-existing-manufacturing-progress')
+            missing = 'ua/aia2/guard/RequiredSpaceActions.class'
+            with zipfile.ZipFile(bundled[0]) as original, zipfile.ZipFile(package/'mods'/bundled[0].name, 'w') as altered:
+                self.assertIn(missing, original.namelist())
+                for name in original.namelist():
+                    if name != missing: altered.writestr(name, original.read(name))
+            (package/'kubejs/config/aia2_runtime.json').write_text(json.dumps({
+                'progressionVersion':4, 'epochs':[{'branchActionProofs': {'tech':['nasa_tier_1_rocket'], 'arcane':[]}}]}))
+            with self.assertRaisesRegex(installer.InstallError, 'required space action guard'):
+                installer.install(package, instance)
+            self.assertEqual(marker.read_bytes(), b'opaque-existing-manufacturing-progress')
+            self.assertFalse((instance/'aia2-backups').exists())
+            self.assertFalse((instance/'kubejs').exists())
+
     def test_station_proof_config_requires_matching_classes_without_world_writes(self):
         bundled = list((ROOT/'mods').glob('aia2-machine-guard-*.jar'))
         self.assertEqual(len(bundled), 1)

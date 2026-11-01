@@ -45,6 +45,7 @@ var Java = {loadClass: function (name) {
   if (name === 'net.darkhax.gamestages.GameStageHelper') return {
     hasStage: function (player, stage) { return !!__fixture.stages[stage]; }};
   if (name === 'ua.aia2.guard.Aia2MachineGuard') return __guard;
+  if (name === 'ua.aia2.guard.RequiredSpaceActions') return {hasRequiredActions: function () { return true; }};
   if (name === 'ua.aia2.guard.StationProductionBridge') return __stationBridge;
   throw new Error('Unexpected Java class: ' + name);
 }};

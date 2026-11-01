@@ -287,6 +287,21 @@ def compile_quests(root=ROOT):
         for i,q in enumerate(chapter['quests']):
             if i >= 9: q.update(x=float((i-9)%3*2), y=float(8+(i-9)//3*2))
         write(root/f'config/ftbquests/quests/chapters/aia2_epoch_{n:02d}.snbt', chapter)
+    if (root/'content/audit/v10-space-required-migration.json').exists():
+        try:
+            from build_required_space_v10 import link_current_promoted
+        except ImportError:
+            from tools.build_required_space_v10 import link_current_promoted
+        for number in link_current_promoted(quest_objects, records, root):
+            path = root/f'config/ftbquests/quests/chapters/aia2_epoch_{number:02d}.snbt'
+            # Later-epoch mark_required calls also touch shared earlier objects.
+            # Persist only the intended trial links, preserving the on-disk
+            # historical representation of every other earlier quest.
+            chapter = read(path)
+            trial_id = uid(f'E{number:02d}_EXPANSION_TRIAL')
+            trial = next(q for q in chapter['quests'] if q['id'] == trial_id)
+            trial['dependencies'] = list(quest_objects[trial_id]['dependencies'])
+            write(path, chapter)
     # Small addon/cross-mod fragments share a readable chapter rather than dozens
     # of one-node chapters. Every quest keeps its own stable ID and stage proof.
     grouped = defaultdict(list)
@@ -387,6 +402,7 @@ def apply(root=ROOT):
                                 ('build_ad_astra_core_v6', 'content/recipes/v5_ad_astra_core.json'),
                                 ('build_nasa_process_v7', 'content/research/nasa_process_pending_v7.json'),
                                 ('build_station_floors_v8', 'content/recipes/v8_station_floors.json'),
+                                ('build_required_space_v10', 'content/audit/v10-space-required-migration.json'),
                                 ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
         if (root/source).exists():

@@ -91,6 +91,8 @@ def verify(archive, version, baseline):
                 'saves/world/ftbquests/team-progress.snbt': b'synthetic-team-progress',
                 'saves/world/data/aia2_fire_worksites_v1.dat': b'synthetic-fire-ledger',
                 'saves/world/data/aia2_stations_v1.dat': b'synthetic-station-production-proof',
+                'saves/world/data/aia2_mechanics_v1.dat': b'synthetic-existing-nasa-and-mechanics',
+                'saves/world/aia2-test-only/legacy-paid-pending.marker': b'synthetic-team-ledger-with-legacy-paid-pending',
                 'saves/world/data/projecte-knowledge.json': b'synthetic-knowledge',
                 'saves/world/data/projecte-emc.json': b'synthetic-emc',
                 # Receipt storage belongs to a block entity; this opaque marker represents its chunk.
@@ -147,6 +149,7 @@ def verify(archive, version, baseline):
         'foreign_quest_in_owned_chapter_preserved': True,
         'synthetic_fire_ledger_preserved': True, 'synthetic_knowledge_emc_preserved': True,
         'synthetic_station_proof_preserved': True,
+        'synthetic_mechanics_and_pending_ledger_preserved': True,
         'synthetic_paid_ritual_chunk_marker_preserved': True,
         'foreign_mod_and_script_preserved': True, 'repeat_install_idempotent': True,
         'fullpack_run': False, 'windows_instance_modified': False,

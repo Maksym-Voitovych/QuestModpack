@@ -6,13 +6,14 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний checkpoint: **0.4.20-alpha — durable station production proofs**.
-NASA0.4.18, station payment/placement0.4.19 і ProjectE0.4.17 збережені.
-Шість optional station-цілей мають окремий новий журнал; старі записи
-не adopt-яться. Стан фінальних перевірок/доставки й Git — у PROGRESS.
-Наступний змістовний блок — явна сумісна міграція старих required37/38,
-потім34partial карти та решта required48ліній. Original optional binaries
-і повний client retest залишаються BLOCKED/NOT_RUN. Повний0.5 не готовий.
+Поточний checkpoint: **0.4.21-alpha — сумісний required NASA contract37/38**.
+Чотири існуючі NASA-цілі й17підготовчих цілей включені до нового обов’язкового
+маршруту; task IDs/types/progress, старі completed/pending збережені. Шість
+station goals optional, journal/96keys/ProjectE/API4 збережені. Стан фінальних
+QA/доставки й Git — у PROGRESS. Наступний змістовний блок — точні назви/описи
+старих шести віх37/38 відповідно до фактичних умов, потім34partial карти й
+решта required48ліній. Original optional binaries/client/JEI/Survival/TPS
+BLOCKED/NOT_RUN. Повний0.5 не готовий.
 
 ## Правило відновлення
 

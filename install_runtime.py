@@ -412,6 +412,9 @@ def plan_install(source, instance):
                     required.add('ua/aia2/guard/mixin/DraconicFusionCoreMixin.class')
                     if (source / 'kubejs/config/aia2_mechanics.json').is_file():
                         required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
+                    if any(e.get('branchActionProofs') for e in runtime.get('epochs', [])):
+                        if 'ua/aia2/guard/RequiredSpaceActions.class' not in jar.namelist():
+                            raise InstallError('This package needs the matching required space action guard')
                     if (source / 'kubejs/config/aia2_stations.json').is_file():
                         station_proofs = {'ua/aia2/guard/StationProductionBridge.class',
                                           'ua/aia2/guard/StationRegistrationWitness.class'}

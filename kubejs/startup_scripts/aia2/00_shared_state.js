@@ -18,6 +18,10 @@ global.AIA2Core = (function () {
       if (pending !== undefined && (typeof pending !== 'number' || pending % 1 !== 0 || pending !== n + 1 || pending > 48)) {
         fail('Пошкоджений незавершений перехід команди ' + id);
       }
+      var actionContract = state.teams[id].pendingActionContract;
+      if (actionContract !== undefined && (actionContract !== 1 || (pending !== 37 && pending !== 38))) {
+        fail('Пошкоджений контракт незавершеного переходу команди ' + id);
+      }
     });
     return state;
   }

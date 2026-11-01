@@ -115,6 +115,9 @@ public final class NativeSmokeTests {
                 "a fresh server reloads the separate native process observation from SavedData");
         check(ProductionMilestoneBridge.hasProof(server,team,"native_observed_fixture"),
                 "actual-output verified observation also reloads in a second JVM");
+        check(RequiredSpaceActions.hasRequiredActions(server, team, 37, "tech")
+                        && RequiredSpaceActions.hasRequiredActions(server, team, 38, "tech"),
+                "a fresh JVM reads the owned synthetic NASA action fixture from actual SavedData; no optional production claim");
         check(StationProductionBridge.hasProof(server, team, "station_earth_orbit"),
                 "a second JVM reloads the synthetic station journal fixture through actual native SavedData; this is not station production");
         check(FireWorksiteAccess.owner(level, FIRE_PERSIST).equals(team),
@@ -317,6 +320,68 @@ public final class NativeSmokeTests {
         check(StationProductionBridge.hasProof(server, TEAM_A, "station_earth_orbit")
                         && !StationProductionBridge.hasProof(server, TEAM_B, "station_earth_orbit"),
                 "actual native storage reload retains only the explicitly synthetic team fixture; independent team remains uncredited");
+    }
+
+    /** Actual common storage/helper tests with explicitly synthetic NASA history, not optional dispatch. */
+    private static void testRequiredSpaceActionsAndMechanicJournal() {
+        check(RequiredSpaceActions.contractVersion() == 1 && RequiredSpaceActions.applies(37, "tech")
+                && RequiredSpaceActions.applies(38, "tech") && !RequiredSpaceActions.applies(38, "arcane"),
+                "actual additional contract covers only the two space technology branches");
+        check(RequiredSpaceActions.hasRequiredActions(null, "", 36, "tech")
+                && RequiredSpaceActions.hasRequiredActions(null, "", 38, "arcane"),
+                "unrelated native branches do not query or require the mechanic journal");
+        check(!RequiredSpaceActions.hasRequiredActions(server, TEAM_A, 37, "tech"),
+                "old actual key receipt and script readiness cannot establish absent NASA history");
+        var recipe = level.getRecipeManager().byKey(net.minecraft.resources.ResourceLocation.parse("minecraft:iron_ingot_from_nuggets")).orElseThrow().value();
+        Aia2MachineGuard.configureKeyRulesJson("[{\"recipeId\":\"minecraft:iron_ingot_from_nuggets\",\"output\":\"minecraft:iron_ingot\",\"epoch\":37,\"branch\":\"tech\",\"serializer\":\"minecraft:crafting_shaped\"}]");
+        Aia2MachineGuard.setTeamKeyReady(TEAM_A, 37, "tech", true);
+        check(!KeyProductionBridge.mayProcess(level, TEAM_A, recipe),
+                "actual native key helper rejects a synthetic37 rule despite stale ready=true");
+        var stored = level.getDataStorage().get(ProductionMilestoneBridge.ReceiptData.FACTORY, ProductionMilestoneBridge.DATA_NAME);
+        check(stored != null && !stored.blocked, "owned mechanic fixture is valid before adding synthetic history");
+        var own = stored.proofs.get(TEAM_A);
+        own.add("nasa_tier_1_rocket"); stored.setDirty();
+        check(!RequiredSpaceActions.hasRequiredActions(server, TEAM_A, 37, "tech")
+                && !KeyProductionBridge.mayProcess(level, TEAM_A, recipe),
+                "one synthetic NASA entry cannot satisfy the independent second required action");
+        own.add("nasa_tier_2_rocket"); stored.setDirty();
+        check(RequiredSpaceActions.hasRequiredActions(server, TEAM_A, 37, "tech")
+                && KeyProductionBridge.mayProcess(level, TEAM_A, recipe),
+                "actual helper reads two explicitly synthetic team receipts from real SavedData");
+        check(!RequiredSpaceActions.hasRequiredActions(server, TEAM_B, 37, "tech")
+                && !KeyProductionBridge.hasProof(server, TEAM_A, 37, "tech"),
+                "readiness checks create neither another team's action history nor a new key receipt");
+        own.add("nasa_tier_3_rocket"); own.add("nasa_tier_4_rocket"); stored.setDirty();
+        check(RequiredSpaceActions.hasRequiredActions(server, TEAM_A, 38, "tech"),
+                "the synthetic38 history is distinct from the synthetic37 history");
+        CompoundTag valid = stored.save(new CompoundTag(), level.registryAccess());
+        var restored = ProductionMilestoneBridge.ReceiptData.load(valid.copy(), level.registryAccess());
+        check(!restored.blocked && restored.save(new CompoundTag(), level.registryAccess()).equals(valid),
+                "strict actual mechanic NBT round-trip retains existing and synthetic history exactly");
+        var malformed = new LinkedHashMap<String, CompoundTag>();
+        var bad = valid.copy(); bad.putString("schema", "1"); malformed.put("schema type", bad);
+        bad = valid.copy(); bad.putInt("schema", 2); malformed.put("future schema", bad);
+        bad = valid.copy(); bad.remove("teams"); malformed.put("missing teams", bad);
+        bad = valid.copy(); bad.putString("teams", "bad"); malformed.put("teams type", bad);
+        bad = valid.copy(); bad.getCompound("teams").putString(TEAM_A, "bad"); malformed.put("team type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putInt("native_crafter_fixture", 1); malformed.put("proof type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("native_crafter_fixture", false); malformed.put("false proof", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putByte("native_crafter_fixture", (byte)2); malformed.put("non-boolean byte", bad);
+        bad = valid.copy(); bad.getCompound("teams").put(" ", new CompoundTag()); malformed.put("blank team", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("BAD-ID", true); malformed.put("invalid ID", bad);
+        bad = valid.copy();
+        for (int i = 0; i < 65; i++) bad.getCompound("teams").getCompound(TEAM_A).putBoolean("historical_" + i, true);
+        malformed.put("proof capacity", bad);
+        for (var entry : malformed.entrySet()) {
+            var original = entry.getValue().copy();
+            var blocked = ProductionMilestoneBridge.ReceiptData.load(entry.getValue(), level.registryAccess());
+            check(blocked.blocked && blocked.proofs.isEmpty() && entry.getValue().equals(original),
+                    "actual mechanic loader blocks and preserves malformed input: " + entry.getKey());
+            boolean refused = false; CompoundTag output = new CompoundTag();
+            try { blocked.save(output, level.registryAccess()); }
+            catch (IllegalStateException expected) { refused = true; }
+            check(refused && output.isEmpty(), "blocked mechanic journal refuses native NBT overwrite: " + entry.getKey());
+        }
     }
 
     /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
@@ -769,6 +834,7 @@ public final class NativeSmokeTests {
                 testOrdinaryDropBoundary();
                 testStationTemplateBoundary();
                 testStationJournal();
+                testRequiredSpaceActionsAndMechanicJournal();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");

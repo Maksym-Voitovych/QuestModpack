@@ -1,3 +1,13 @@
+# 0.4.21-alpha — Required NASA та сумісність прогресу
+
+- Чотири існуючі NASA-цілі й17підготовчих цілей включено до обов’язкового маршруту нових переходів37/38;6станційних залишені optional. Загалом3381квест/627рецептів/96ключів, новихquests/recipes/items/textures0.
+- Усі старі task payloads/types/counts/IDs і нагороди незмінні. Чотири точні dependency migrations не видаляють старих залежностей;3356non-coordinate quest payloads повністю незмінні. Координати всіх3381цілей незмінні.
+- Виявлено несумісність item→advancement при старому числовому FTB-прогресі; така заміна не виконується. Source facts pinned FTB2101.1.36 збережені. Явний required overlay пояснює ефективні правила поверх історичного каталогу.
+- RequiredSpaceActions перевіряє існуючі нативні командні NASA receipts незалежно від FTB/старих key receipts. Нативний key process і запис receipt закриті без них, навіть при stale ready flag. Виправлено зміну власника Crafter між begin/finish (регресія FAILдоfix/PASSпісля).
+- Нові37/38pending зберігають pendingActionContract1; старі вже оплачені markerless pending та completed/recovery grandfathered без повторного списання чи фабрикації proofs. Readiness обох гілок відкликається при помилці будь-якого journal lookup.
+- Mechanics schema1/15rules збережені; strict NBT, lazy loading і blocked sentinel захищають unreadable journal від empty replacement/overwrite. Admission/read bounds64/16384 узгоджені.
+- API4/ProjectE hotfix/76Mixin contracts збережені; installer preflight перевіряє matching helper перед write. Full original optional binaries/client/JEI/Survival/TPS NOT_RUN; повний0.5 не реліз.
+
 # 0.4.20-alpha — Докази нового будівництва станцій
 
 - Шість нових optional-цілей Earth/Moon/Mars37 та Mercury/Venus/Glacio38: 3381квест/140глав,12нових tasks і6нагород. Старі3375non-coordinate payloads/ID/нагороди,627рецептів,96ключів,390предметів/PNG збережені.

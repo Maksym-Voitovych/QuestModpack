@@ -6,6 +6,7 @@ var AIA2StageHelper = Java.loadClass('net.darkhax.gamestages.GameStageHelper');
 var AIA2Rules = JSON.parse(JsonIO.readString('kubejs/config/aia2_runtime.json'));
 var AIA2StoreKey = 'aia2_runtime_v1';
 var AIA2KeyGuard = Java.loadClass('ua.aia2.guard.Aia2MachineGuard');
+var AIA2SpaceActions = Java.loadClass('ua.aia2.guard.RequiredSpaceActions');
 // Cache by the authoritative serialized value and server identity. A changed value
 // is revalidated; a damaged journal never becomes an empty/new progression.
 var aia2LedgerCache = {server: null, text: null, state: null};
@@ -86,10 +87,23 @@ function aia2RefreshBranches(player) {
   if (completed === 48) return;
   var epoch = AIA2Rules.epochs[completed];
   var team = String(aia2Team(player).getTeamId());
+  var readiness = {};
+  var nativeProofs = {};
+  try {
+    // Read every authority before publishing either branch. FTB's saved
+    // completed flag cannot establish new native action provenance.
+    ['tech', 'arcane'].forEach(function (branch) {
+      readiness[branch] = aia2AllQuests(player, epoch.branchQuestIds[branch]) &&
+        AIA2SpaceActions.hasRequiredActions(player.server, team, epoch.number, branch);
+      nativeProofs[branch] = AIA2KeyGuard.hasProductionProof(player.server, team, epoch.number, branch);
+    });
+  } catch (error) {
+    ['tech', 'arcane'].forEach(function (branch) { AIA2KeyGuard.setTeamKeyReady(team, epoch.number, branch, false); });
+    throw error;
+  }
   ['tech', 'arcane'].forEach(function (branch) {
-    var ready = aia2AllQuests(player, epoch.branchQuestIds[branch]);
-    AIA2KeyGuard.setTeamKeyReady(team, epoch.number, branch, ready);
-    var proof = AIA2KeyGuard.hasProductionProof(player.server, team, epoch.number, branch);
+    AIA2KeyGuard.setTeamKeyReady(team, epoch.number, branch, readiness[branch]);
+    var proof = nativeProofs[branch];
     var name = aia2Name(player);
     var cacheKey = name + ':' + branch;
     var projection = team + ':' + epoch.number + ':' + proof;
@@ -108,17 +122,34 @@ function aia2FinishPending(player) {
   if (!global.AIA2Machines.isReady()) return false;
   var epoch = AIA2Rules.epochs[record.pending - 1];
   var team = String(aia2Team(player).getTeamId());
+  // Markerless pending artifacts were already paid under the previous contract.
+  // Preserve that transaction; all newly issued 37/38 artifacts carry version1.
+  if (record.pendingActionContract === 1 &&
+      (!AIA2SpaceActions.hasRequiredActions(player.server, team, epoch.number, 'tech') ||
+       !AIA2SpaceActions.hasRequiredActions(player.server, team, epoch.number, 'arcane'))) return false;
   if (!AIA2KeyGuard.hasProductionProof(player.server, team, epoch.number, 'tech') ||
       !AIA2KeyGuard.hasProductionProof(player.server, team, epoch.number, 'arcane')) return false;
+  var finalGoals = [epoch.finalQuestId];
+  var legacySpacePending = (epoch.number === 37 || epoch.number === 38) && record.pendingActionContract === undefined;
+  // Newly added dependencies can prevent a previously paid branch quest from
+  // receiving its FTB timestamp. The two native key receipts above remain
+  // mandatory; an old committed transaction must not repay or repeat new goals.
+  if (!legacySpacePending) finalGoals.push(epoch.branchKeyQuestIds.tech, epoch.branchKeyQuestIds.arcane);
   if (!aia2AllQuests(player, epoch.requiredQuestIds) || !aia2AllQuests(player, epoch.milestoneQuestIds) ||
-      !aia2AllQuests(player, [epoch.finalQuestId, epoch.branchKeyQuestIds.tech, epoch.branchKeyQuestIds.arcane])) return false;
+      !aia2AllQuests(player, finalGoals)) return false;
   var previous = record.completed;
   var pending = record.pending;
+  var pendingActionContract = record.pendingActionContract;
   try {
     record.completed = pending;
     delete record.pending;
+    delete record.pendingActionContract;
     aia2Save(player.server, state);
-  } catch (error) { record.completed = previous; record.pending = pending; throw error; }
+  } catch (error) {
+    record.completed = previous; record.pending = pending;
+    if (pendingActionContract !== undefined) record.pendingActionContract = pendingActionContract;
+    throw error;
+  }
   aia2Team(player).getOnlineMembers().forEach(function (member) { aia2Sync(member); });
   player.tell('Фінальний квест епохи ' + pending + ' завершено. Наступний етап відкрито; командний прогрес збережено.');
   return true;
@@ -195,6 +226,9 @@ function aia2Forge(player, restore) {
     aia2RefreshBranches(player);
     var teamId = String(aia2Team(player).getTeamId());
     ['tech', 'arcane'].forEach(function (branch) {
+      if (!AIA2SpaceActions.hasRequiredActions(player.server, teamId, epoch.number, branch)) {
+        throw new Error('[AIA2] Для нового переходу ' + epoch.number + ' потрібні справжні NASA-збірки поточної команди. Завершіть обов’язкові виробничі цілі T1/T2 або T3/T4; старий предмет чи FTB-прапорець не замінює доказ.');
+      }
       if (!aia2AllQuests(player, epoch.branchQuestIds[branch]) ||
           !AIA2KeyGuard.hasProductionProof(player.server, teamId, epoch.number, branch)) {
         throw new Error('[AIA2] Потрібне справжнє виготовлення ключа ' + branch + ' після завершення відповідної гілки. /give не є доказом.');
@@ -235,13 +269,16 @@ function aia2Forge(player, restore) {
       inventory.setStackInSlot(d.slot, stack);
     });
     inventory.setStackInSlot(plan.outputSlot, output);
-    if (!restore && AIA2Rules.dualKeys) record.pending = plan.completed;
+    if (!restore && AIA2Rules.dualKeys) {
+      record.pending = plan.completed;
+      if (plan.completed === 37 || plan.completed === 38) record.pendingActionContract = 1;
+    }
     else record.completed = plan.completed;
     aia2Save(player.server, state);
   } catch (error) {
     for (var slot = 0; slot < 36; slot++) inventory.setStackInSlot(slot, snapshot[slot]);
     record.completed = previous;
-    if (!restore) delete record.pending;
+    if (!restore) { delete record.pending; delete record.pendingActionContract; }
     throw error;
   }
   player.containerMenu.broadcastChanges();

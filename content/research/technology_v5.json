@@ -5237,7 +5237,23 @@
         "Крижаний маршрут далекої колонії",
         "Орбітальний атлас зовнішніх маршрутів"
       ],
-      "station_adapter_scope_uk": "0.4.19: обмежений packet scope, глобальна оплата стандартних матеріалів, поточні теги/рецепт/команда/стадія орбіти та прийняття всіх non-air primary writes перед реєстрацією. Model/commonMC перевірки окремі від ще не проведеного fullpack; native SavedData не мігруються, proof-журнал станцій окремий TODO."
+      "station_adapter_scope_uk": "0.4.19: обмежений packet scope, глобальна оплата стандартних матеріалів, поточні теги/рецепт/команда/стадія орбіти та прийняття всіх non-air primary writes перед реєстрацією. Model/commonMC перевірки окремі від ще не проведеного fullpack; native SavedData не мігруються, proof-журнал станцій окремий TODO.",
+      "requirement_overlays": [
+        {
+          "path": "content/audit/v10-space-required-migration.json",
+          "epochs": [
+            37,
+            38
+          ],
+          "existing_quest_ids": [
+            "V7_E37_nasa_manufacture_t1",
+            "V7_E37_nasa_manufacture_t2",
+            "V7_E38_nasa_manufacture_t3",
+            "V7_E38_nasa_manufacture_t4"
+          ],
+          "policy_uk": "Історичні stage payloads і raw optional каталоги збережені; цей явний overlay включає чотири NASA-цілі до обов’язкових нових переходів без зміни task IDs або типів. Завершені епохи та старі оплачені pending не скидаються."
+        }
+      ]
     },
     {
       "mod_id": "ae2",

@@ -40,6 +40,9 @@ def render(root=ROOT):
         lines += ['## '+title, '', f"Версія експорту: **{version}**. Статус: `{mod.get('status', 'partial')}`.",
                   f'[Структурована карта](../../{path.relative_to(root).as_posix()}).', '']
         lines += strings(mod.get('entry_uk')) + ['']
+        for overlay in mod.get('requirement_overlays', []):
+            lines += [overlay['policy_uk'],
+                      '[Явна міграція обов’язкових умов](../../' + overlay['path'] + ').', '']
         for index, stage in enumerate(mod.get('stages', []), 1):
             epochs = stage.get('epochs', [stage.get('epoch')])
             period = ', '.join(map(str, epochs))

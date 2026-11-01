@@ -98,7 +98,13 @@ public final class NasaProductionHarness {
         return (NasaWorkbenchRecipe)call(AdAstraNasaAccess.class, "currentRecipe", null, machine);
     }
     private static boolean proof(NasaWorkbenchBlockEntity machine, String team) {
-        return ProductionMilestoneBridge.hasProof(((ServerLevel)machine.level).server, team, PROOF);
+        var server = ((ServerLevel)machine.level).server;
+        boolean thread = server.sameThread;
+        // Observe the result on the modeled server thread, after testing that
+        // the production callback itself was denied off-thread.
+        server.sameThread = true;
+        try { return ProductionMilestoneBridge.hasProof(server, team, PROOF); }
+        finally { server.sameThread = thread; }
     }
     private static void noProof(NasaWorkbenchBlockEntity machine, String message) {
         check(!proof(machine, "team") && !proof(machine, "other_team"), message);

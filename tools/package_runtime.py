@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.20-alpha'
+VERSION = '0.4.21-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -52,6 +52,8 @@ def main():
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
                 if (ROOT / 'kubejs/config/aia2_mechanics.json').is_file():
                     assert 'ua/aia2/guard/ProductionMilestoneBridge.class' in jar.namelist()
+                if any(e.get('branchActionProofs') for e in config.get('epochs', [])):
+                    assert 'ua/aia2/guard/RequiredSpaceActions.class' in jar.namelist()
                 if (ROOT / 'kubejs/config/aia2_stations.json').is_file():
                     for name in ['StationProductionBridge', 'StationRegistrationWitness']:
                         assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()

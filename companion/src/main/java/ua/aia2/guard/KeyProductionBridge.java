@@ -108,7 +108,14 @@ public final class KeyProductionBridge {
     }
 
     private static synchronized boolean eligible(String team, Rule rule) {
-        return configured && team != null && eligible.getOrDefault(team, Set.of()).contains(key(rule.epoch(), rule.branch()));
+        return configured && team != null && byRecipe.get(rule.recipeId()) == rule
+                && eligible.getOrDefault(team, Set.of()).contains(key(rule.epoch(), rule.branch()));
+    }
+
+    /** Native recipe boundaries cannot trust a stale script eligibility projection or old key receipt. */
+    private static boolean actionsAllowed(MinecraftServer server, String team, Rule rule) {
+        try { return RequiredSpaceActions.hasRequiredActions(server, team, rule.epoch(), rule.branch()); }
+        catch (RuntimeException unavailableJournal) { return false; }
     }
 
     public static synchronized boolean mayCraftOutput(String itemId, String team) {
@@ -133,7 +140,7 @@ public final class KeyProductionBridge {
 
     public static boolean mayProcess(ServerLevel level, String team, Recipe<?> recipe) {
         Rule rule = rule(level, recipe);
-        return rule == null || eligible(team, rule);
+        return rule == null || eligible(team, rule) && actionsAllowed(level.getServer(), team, rule);
     }
 
     public static PlayerAttempt beginPlayerCraft(Player player, CraftingContainer slots, ItemStack output) {
@@ -147,6 +154,7 @@ public final class KeyProductionBridge {
         Rule rule = rule(level, matched.get().value());
         String team = Aia2MachineGuard.resolveCurrentTeam(real.getUUID());
         if (rule == null || !rule.serializer().equals("minecraft:crafting_shaped") || !eligible(team, rule)
+                || !actionsAllowed(real.getServer(), team, rule)
                 || !rule.output().equals(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())
                 || !Aia2MachineGuard.mayCraft(real, output)) return null;
         return new PlayerAttempt(real.getServer(), team, rule, real.getUUID());
@@ -175,6 +183,7 @@ public final class KeyProductionBridge {
         Rule rule = rule(level, recipe);
         String team = Aia2MachineGuard.getOwner(machine);
         if (rule != null && rule.serializer().equals("minecraft:crafting_shaped") && eligible(team, rule)
+                && actionsAllowed(level.getServer(), team, rule)
                 && rule.output().equals(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())) {
             crafterAttempts.put(machine, new CrafterAttempt(rule, team, inputUnits(machine)));
         }
@@ -185,6 +194,7 @@ public final class KeyProductionBridge {
     public static synchronized void finishCrafter(CrafterBlockEntity machine) {
         CrafterAttempt attempt = crafterAttempts.remove(machine);
         if (attempt != null && machine.getLevel() instanceof ServerLevel level
+                && attempt.team().equals(Aia2MachineGuard.getOwner(machine))
                 && inputUnits(machine) < attempt.inputUnits() && eligible(attempt.team(), attempt.rule())) {
             record(level.getServer(), attempt.team(), attempt.rule());
         }
@@ -198,6 +208,7 @@ public final class KeyProductionBridge {
 
     private static void record(MinecraftServer server, String team, Rule rule) {
         if (!server.isSameThread()) throw new IllegalStateException("Production receipts require the server thread");
+        if (!eligible(team, rule) || !actionsAllowed(server, team, rule)) return;
         ReceiptData data = data(server);
         if (data.proofs.computeIfAbsent(team, ignored -> new HashSet<>()).add(key(rule.epoch(), rule.branch()))) data.setDirty();
     }

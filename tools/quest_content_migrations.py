@@ -21,6 +21,13 @@ def apply(records, root):
         seen.add(identifier)
         assert len(migration.get('reason_uk', '').strip()) >= 30, ('Undocumented item-target repair', identifier)
         quest = by_id[identifier]
+        requirement = migration.get('requirement_change')
+        if requirement is not None:
+            assert requirement == {'from': False, 'to': True}, ('Unsupported requirement migration', identifier)
+            assert quest.get('required') is False, ('Quest requirement no longer matches its source', identifier)
+            assert migration.get('source_audit') == 'content/audit/v10-space-required-migration.json', \
+                ('Unreviewed requirement migration', identifier)
+            quest['required'] = True
         for field, change in migration.get('presentation_changes', {}).items():
             assert field in {'title_uk', 'description_uk', 'icon'}, ('Unsupported presentation migration', identifier, field)
             assert quest.get(field) == change['from'], ('Quest presentation no longer matches its source', identifier, field)

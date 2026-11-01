@@ -2,6 +2,7 @@ package ua.aia2.guard;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.mojang.logging.LogUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
@@ -14,7 +15,9 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.CrafterBlockEntity;
 import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.storage.LevelResource;
 
+import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
@@ -24,6 +27,11 @@ import java.util.WeakHashMap;
 
 /** Curated process proofs; only native post-consumption hooks may record. */
 public final class ProductionMilestoneBridge {
+    static final String DATA_NAME = "aia2_mechanics_v1";
+    private static final int MAX_TEAMS = 16384;
+    private static final int MAX_PROOFS = 64;
+    private static final org.slf4j.Logger LOGGER = LogUtils.getLogger();
+    private static final Map<ServerLevel, ReceiptData> DATA = new WeakHashMap<>();
     private record Rule(String id, int epoch, String output, String serializer) {}
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
@@ -43,6 +51,7 @@ public final class ProductionMilestoneBridge {
         identity.clear();
         generation = null;
         crafterAttempts.clear();
+        DATA.clear();
     }
 
     /** Unique Java signature avoids Rhino overload resolution. Configuration never writes receipts. */
@@ -176,19 +185,43 @@ public final class ProductionMilestoneBridge {
 
     private static void record(MinecraftServer server, String team, Rule rule) {
         if (!server.isSameThread()) throw new IllegalStateException("Mechanic proofs require the server thread");
+        if (team == null || team.isBlank() || team.length() > 128)
+            throw new IllegalArgumentException("Invalid mechanic proof team");
         ReceiptData data = data(server);
-        if (data.proofs.computeIfAbsent(team, ignored -> new HashSet<>()).add(rule.id())) data.setDirty();
+        if (data.blocked) throw new IllegalStateException("Mechanic proof journal is unreadable; original file preserved");
+        Set<String> existing = data.proofs.get(team);
+        if (existing != null && existing.contains(rule.id())) return;
+        // Admission must agree with the loader. Never save a 65th historical
+        // proof or a 16385th team that the next server boot would reject.
+        if (existing == null ? data.proofs.size() >= MAX_TEAMS : existing.size() >= MAX_PROOFS)
+            throw new IllegalStateException("Mechanic proof journal capacity reached; original history preserved");
+        data.proofs.computeIfAbsent(team, ignored -> new HashSet<>()).add(rule.id());
+        server.overworld().getDataStorage().set(DATA_NAME, data);
+        data.setDirty();
     }
 
     public static boolean hasProof(MinecraftServer server, String team, String id) {
         validateId(id);
         if (server == null || team == null || team.isBlank()) return false;
-        return data(server).proofs.getOrDefault(team, Set.of()).contains(id);
+        ReceiptData data = data(server);
+        if (data.blocked) throw new IllegalStateException("Mechanic proof journal is unreadable; original file preserved");
+        return data.proofs.getOrDefault(team, Set.of()).contains(id);
     }
 
     private static ReceiptData data(MinecraftServer server) {
-        if (server.overworld() == null) throw new IllegalStateException("Mechanic proof world is not ready");
-        return server.overworld().getDataStorage().computeIfAbsent(ReceiptData.FACTORY, "aia2_mechanics_v1");
+        if (!server.isSameThread() || server.overworld() == null)
+            throw new IllegalStateException("Mechanic proofs require the live server thread");
+        return DATA.computeIfAbsent(server.overworld(), world -> {
+            ReceiptData stored = world.getDataStorage().get(ReceiptData.FACTORY, DATA_NAME);
+            if (stored != null) return stored;
+            // Vanilla catches both IO and deserialization failures and returns
+            // null. An existing unreadable file must never become an empty map.
+            if (Files.exists(server.getWorldPath(LevelResource.ROOT).resolve("data").resolve(DATA_NAME + ".dat"))) {
+                LOGGER.error("Unreadable AIA2 mechanic proof journal; proofs remain closed and the file is preserved");
+                ReceiptData blocked = new ReceiptData(); blocked.blocked = true; return blocked;
+            }
+            return new ReceiptData(); // Installed/dirtied only by a real native completion.
+        });
     }
 
     private static void validateId(String id) {
@@ -198,20 +231,36 @@ public final class ProductionMilestoneBridge {
     static final class ReceiptData extends SavedData {
         static final Factory<ReceiptData> FACTORY = new Factory<>(ReceiptData::new, ReceiptData::load);
         final Map<String, Set<String>> proofs = new HashMap<>();
+        boolean blocked;
         static ReceiptData load(CompoundTag tag, HolderLookup.Provider registries) {
-            if (tag.getInt("schema") != 1) throw new IllegalStateException("Unsupported mechanic proof schema");
-            ReceiptData result = new ReceiptData();
-            CompoundTag teams = tag.getCompound("teams");
-            for (String team : teams.getAllKeys()) {
-                if (team.isBlank()) throw new IllegalStateException("Blank mechanic proof team");
-                CompoundTag saved = teams.getCompound(team);
-                var proofs = new HashSet<String>();
-                for (String id : saved.getAllKeys()) { validateId(id); if (saved.getBoolean(id)) proofs.add(id); }
-                result.proofs.put(team, proofs);
+            try {
+                if (!tag.contains("schema", 3) || tag.getInt("schema") != 1 || !tag.contains("teams", 10))
+                    throw new IllegalArgumentException("Invalid mechanic proof schema/teams");
+                ReceiptData result = new ReceiptData();
+                CompoundTag teams = tag.getCompound("teams");
+                if (teams.size() > MAX_TEAMS) throw new IllegalArgumentException("Too many mechanic proof teams");
+                for (String team : teams.getAllKeys()) {
+                    if (team.isBlank() || team.length() > 128 || !teams.contains(team, 10))
+                        throw new IllegalArgumentException("Invalid mechanic proof team");
+                    CompoundTag saved = teams.getCompound(team);
+                    if (saved.size() > MAX_PROOFS) throw new IllegalArgumentException("Too many mechanic proofs");
+                    var proofs = new HashSet<String>();
+                    for (String id : saved.getAllKeys()) {
+                        validateId(id);
+                        if (!saved.contains(id, 1) || saved.getByte(id) != 1)
+                            throw new IllegalArgumentException("Invalid mechanic proof value");
+                        proofs.add(id);
+                    }
+                    result.proofs.put(team, proofs);
+                }
+                return result;
+            } catch (RuntimeException malformed) {
+                LOGGER.error("Invalid AIA2 mechanic proof journal; original data preserved", malformed);
+                ReceiptData result = new ReceiptData(); result.blocked = true; return result;
             }
-            return result;
         }
         @Override public CompoundTag save(CompoundTag tag, HolderLookup.Provider registries) {
+            if (blocked) throw new IllegalStateException("Refusing to overwrite a corrupt mechanic proof journal");
             tag.putInt("schema", 1);
             CompoundTag teams = new CompoundTag();
             proofs.forEach((team, proofs) -> {
