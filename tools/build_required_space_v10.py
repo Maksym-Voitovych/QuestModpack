@@ -130,6 +130,12 @@ def validate(root=ROOT, migration=None, runtime=None, compiled=False):
         for expected in unchanged:
             actual = copy.deepcopy(quests[expected['id']])
             actual.pop('x', None); actual.pop('y', None)
+            if (root/'content/audit/v11-space-milestone-presentation.json').exists():
+                try:
+                    from build_space_milestones_v11 import expected_presentation
+                except ImportError:
+                    from tools.build_space_milestones_v11 import expected_presentation
+                expected = expected_presentation(expected['id'], expected, root)
             assert actual == expected, 'Unrelated legacy space quest changed during terminal link update'
         for row in rows:
             actual = copy.deepcopy(quests[row['compiled_id']])

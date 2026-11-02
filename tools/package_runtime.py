@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.21-alpha'
+VERSION = '0.4.22-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -50,6 +50,12 @@ def main():
             if config.get('progressionVersion', 0) >= 4:
                 for name in ['KeyProductionBridge', 'RhinoLongMapBridge', 'FtbQuestBridge', 'CreativeManaGuard', 'RootsAltarAccess', 'RootsRitualProof', 'ModernRecipeProxyAccess', 'EnderTaskAccess', 'EnderSmeltingProxyAccess', 'PowahOrbAccess']:
                     assert 'ua/aia2/guard/' + name + '.class' in jar.namelist()
+                if (ROOT/'content/audit/v11-space-milestone-presentation.json').is_file():
+                    try:
+                        from check_optional_mixin_targets_v6 import key_journal_contract
+                    except ImportError:
+                        from tools.check_optional_mixin_targets_v6 import key_journal_contract
+                    key_journal_contract(jar.read('ua/aia2/guard/KeyProductionBridge.class'))
                 if (ROOT / 'kubejs/config/aia2_mechanics.json').is_file():
                     assert 'ua/aia2/guard/ProductionMilestoneBridge.class' in jar.namelist()
                 if any(e.get('branchActionProofs') for e in config.get('epochs', [])):

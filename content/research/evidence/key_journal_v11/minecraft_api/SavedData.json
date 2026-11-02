@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "source_kind": "minecraft_api_facts",
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+    "kind": "local actual NeoForm source+compiled SDK; complete Minecraft sources are not distributed"
+  },
+  "sources": [
+    {
+      "artifact_entry": "net/minecraft/world/level/saveddata/SavedData.java",
+      "sha256": "c0bfaa4074e2546c8578701b06932e926e916367823eef91cbfd6729267af5b2",
+      "line_references": [
+        17,
+        19,
+        21,
+        25,
+        29,
+        33,
+        34,
+        36,
+        37,
+        40,
+        42,
+        44,
+        45,
+        46,
+        50,
+        54,
+        57,
+        58
+      ]
+    }
+  ],
+  "facts": [
+    "A new SavedData starts with dirty=false; setDirty marks it for persistence.",
+    "SavedData.save(File,Provider) serializes only when dirty. It invokes the abstract compound serializer before dispatching the NeoForge IO worker.",
+    "If a blocked subclass refuses compound serialization, the IO worker write is not scheduled by that call. A blocked sentinel must also never be dirtied or installed as a replacement empty journal.",
+    "NeoForge copies the serialized compound before the asynchronous IO worker write. Runtime cache cleanup must not erase the stored valid SavedData object or mutate its receipt collections."
+  ],
+  "scope": "API/lifecycle facts and exact upstream source hashes; no full proprietary Minecraft source. Runtime/native assertions are recorded separately."
+}

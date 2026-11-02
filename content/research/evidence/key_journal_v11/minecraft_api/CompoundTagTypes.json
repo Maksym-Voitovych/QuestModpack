@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "source_kind": "minecraft_api_facts",
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+    "kind": "local actual NeoForm source+compiled SDK; complete Minecraft sources are not distributed"
+  },
+  "sources": [
+    {
+      "artifact_entry": "net/minecraft/nbt/CompoundTag.java",
+      "sha256": "4072c9a285696c70ebcde1d468639d8d536f780729fd2491bf07f601dcf7c0a7",
+      "line_references": [
+        318,
+        319,
+        320,
+        323,
+        327,
+        329,
+        330,
+        349,
+        351,
+        352,
+        440,
+        442,
+        443
+      ]
+    }
+  ],
+  "facts": [
+    "contains(name,exactTypeId) checks the exact stored tag type except that type99 accepts any numeric tag.",
+    "getByte and getInt accept numeric conversions; calling getInt alone does not establish that the schema tag was stored as an INT.",
+    "getCompound returns an empty compound for absent or wrongly typed data. Explicit contains(name,10) checks must therefore precede reading journal team compounds.",
+    "Journal validation should require an INT schema1 and BYTE value1 for each true proof instead of silently accepting converted, false or malformed values."
+  ],
+  "scope": "API/lifecycle facts and exact upstream source hashes; no full proprietary Minecraft source. Runtime/native assertions are recorded separately."
+}

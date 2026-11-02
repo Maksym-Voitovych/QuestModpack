@@ -321,6 +321,22 @@ def _transform(relative, incoming, previous):
     return incoming
 
 
+def validate_key_journal_pair(source, raw_class):
+    """New presentation packages must include the matching durable key journal."""
+    if not (source/'content/audit/v11-space-milestone-presentation.json').is_file():
+        return {'status': 'legacy_package'}
+    checker_path = source/'tools/check_optional_mixin_targets_v6.py'
+    if not checker_path.is_file() or _is_link(checker_path):
+        raise InstallError('Key journal protection preflight tool is missing')
+    try:
+        spec = importlib.util.spec_from_file_location('_aia2_key_journal_pairing', checker_path)
+        checker = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(checker)
+        return checker.key_journal_contract(raw_class)
+    except Exception as failure:
+        raise InstallError('This package needs key journal protection capability1: ' + str(failure)) from failure
+
+
 def validate_projecte_tablet_pair(source, instance, companion):
     """Read-only ABI check against the instance's real ProjectE JAR, if present.
 
@@ -410,6 +426,7 @@ def plan_install(source, instance):
                                 'ua/aia2/guard/FtbQuestBridge.class',
                                 'ua/aia2/guard/RhinoLongMapBridge.class'}
                     required.add('ua/aia2/guard/mixin/DraconicFusionCoreMixin.class')
+                    validate_key_journal_pair(source, jar.read('ua/aia2/guard/KeyProductionBridge.class'))
                     if (source / 'kubejs/config/aia2_mechanics.json').is_file():
                         required.add('ua/aia2/guard/ProductionMilestoneBridge.class')
                     if any(e.get('branchActionProofs') for e in runtime.get('epochs', [])):

@@ -21,6 +21,8 @@ class RequiredSpaceTests(unittest.TestCase):
         shutil.copytree(ROOT / 'content/quests', root / 'content/quests')
         paths = [S.MIGRATION, S.OVERLAYS, S.RUNTIME, S.nasa.MECHANICS,
                  S.nasa.PENDING, S.nasa.RESEARCH, self.migration['ftb_progress_evidence']['path']]
+        if (ROOT/'content/audit/v11-space-milestone-presentation.json').exists():
+            paths.append('content/audit/v11-space-milestone-presentation.json')
         pending = S.read(ROOT / S.nasa.PENDING)
         paths += [entry['frozen_path'] for rule in pending['mechanic_rules'] for entry in rule['evidence']]
         for relative in paths:

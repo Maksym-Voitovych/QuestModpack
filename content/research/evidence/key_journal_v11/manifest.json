@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "topic": "key_production_journal_preservation",
+  "baseline_commit": "35a4d5d8ea406a980e3253f814c7ced90e98700a",
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "baseline_key_bridge_sha256": "f8a2e293dee2fd0358451a6b3f47768b18d36431aee46f43ecab325e81286abf",
+  "data_name": "aia2_key_production_v1",
+  "existing_schema": 1,
+  "canonical_proof_space": {
+    "epochs": 48,
+    "branches": [
+      "tech",
+      "arcane"
+    ],
+    "maximum_canonical_proofs_per_team": 96
+  },
+  "files": [
+    {
+      "path": "content/research/evidence/key_journal_v11/minecraft_api/CompoundTagTypes.json",
+      "sha256": "78c9986c9dcc279faa6c7062209de898e2658b44e999da6cb31808e90386d452",
+      "source_kind": "minecraft_api_facts"
+    },
+    {
+      "path": "content/research/evidence/key_journal_v11/minecraft_api/DimensionDataStorage.json",
+      "sha256": "05f64a83436b8f3ee055469c23dcfabde2728f15459a59c2913e35c7b4d69625",
+      "source_kind": "minecraft_api_facts"
+    },
+    {
+      "path": "content/research/evidence/key_journal_v11/minecraft_api/SavedData.json",
+      "sha256": "d9e1892c6af34027fa53312504f0052064ab9bfef29f4734825235ae63150e05",
+      "source_kind": "minecraft_api_facts"
+    },
+    {
+      "path": "content/research/evidence/key_journal_v11/minecraft_api/WorldDataPath.json",
+      "sha256": "d79eaaf94e96c36d6c7b485f42d0a7875be711a3e37f49c3838f1866464872e9",
+      "source_kind": "minecraft_api_facts"
+    }
+  ],
+  "baseline_format_facts": [
+    "The baseline writer emits canonical epoch:branch identifiers such as8:tech, using decimal integer formatting without padding.",
+    "The baseline loader validates Integer.parseInt(epoch) but retains the original proof string. Consequently08:tech and+8:tech can pass parsing yet do not satisfy a query for8:tech.",
+    "Canonicalizing a noncanonical historical identifier would change authorization. A safe migration must retain its inert meaning or block the unsupported journal while preserving original bytes; it must not silently activate aliases.",
+    "clearRuntime resets live rules, eligibility and attempt caches. Genuine historical receipt data must survive runtime reset and full server restart."
+  ],
+  "installer_facts": [
+    "Installer plan_install selects kubejs/,config/ and the single owned companion JAR. It does not enumerate worlds/saves or TeamData journals.",
+    "Existing config/ftbquests/quests/data.snbt is left unchanged, and old owned companion JARs are backed up before replacement. Journal hardening is a native read/write policy, not an installer world-save migration."
+  ],
+  "required_validation": [
+    "All96canonical proof identifiers round-trip unchanged.",
+    "Malformed or existing unreadable journals are preserved and cannot become empty writable data.",
+    "Reading/configuration/runtime cleanup cannot create new proofs.",
+    "Repeated true proof recording is idempotent even at capacity.",
+    "Full native NBT/restart and modeled IO tests must be reported separately from complete optional-mod/client acceptance."
+  ],
+  "full_modpack_client_tested": false,
+  "binary_scope": "Actual common NeoForge SDK source+compiled artifact; not evidence that optional Ad Astra/FTB/KubeJS binaries were launched."
+}

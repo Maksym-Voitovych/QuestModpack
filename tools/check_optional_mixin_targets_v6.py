@@ -109,6 +109,19 @@ def class_file(raw):
             'annotations': annotations(attrs), 'pool': pool}
 
 
+def key_journal_contract(raw):
+    """Check the deployment capability, not journal correctness or Minecraft dispatch."""
+    data = class_file(raw)
+    assert data['name'] == 'ua/aia2/guard/KeyProductionBridge', 'Wrong key journal class'
+    methods = [method for method in data['methods']
+               if method['name'] == 'journalProtectionVersion' and method['descriptor'] == '()I'
+               and method['access'] & 9 == 9]
+    assert len(methods) == 1 and methods[0]['code'] == b'\x04\xac', \
+        'Missing key journal protection capability1'
+    return {'status': 'passed', 'key_journal_protection': 1,
+            'scope': 'Compiled pairing capability only; behavioral tests remain separate'}
+
+
 def invocations(data, method):
     """Walk instruction boundaries, including switch padding and WIDE operands."""
     code, pool = method['code'], data['pool']

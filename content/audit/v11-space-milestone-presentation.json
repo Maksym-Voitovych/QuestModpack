@@ -1,0 +1,954 @@
+{
+  "schema": 1,
+  "baseline": "35a4d5d8ea406a980e3253f814c7ced90e98700a",
+  "scope": "twelve_existing_base_space_milestones_presentation_only",
+  "new_quests": 0,
+  "new_recipes": 0,
+  "new_items": 0,
+  "changed_task_payloads": 0,
+  "changed_reward_payloads": 0,
+  "native_dispatch_tested": false,
+  "quests": [
+    {
+      "logical_id": "E37_M1",
+      "quest_id": "0000C13BD8AC783F",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "fdfa70b3de749f0f60755044e3af2acb03b027aa3fc71e4e72186bfc1d1f093b",
+      "old_payload": {
+        "id": "0000C13BD8AC783F",
+        "title": "Життєзабезпечення",
+        "dependencies": [
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "000013BD25DC6943",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:tier_1_rocket",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": false,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000FB75C3EE51DD",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00003231E8895239",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:cheese",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Підготувати кисень, паливо, скафандр і резерв повернення.",
+          "Фактична умова цього коду: 1 × ad_astra:tier_1_rocket (показати — зберігається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:tier_1_rocket",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Ракета T1 у розпорядженні",
+        "description": [
+          "Покажіть одну ракету T1 у своєму інвентарі. Після зарахування вона залишається у вас: підготуйте місце зберігання, щоб не втратити транспорт перед експедицією.",
+          "Ця віха перевіряє наявність готового корпусу. Окрема обов’язкова NASA-ціль підтверджує його справжню збірку та витрату матеріалів вашою командою.",
+          "Перший корпус відкриває підготовчий маршрут кисню й стартової інфраструктури. Перевіряйте запас дихання та пального перед польотом; стан обладнання розглядається в окремих завданнях технологічної гілки."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:tier_1_rocket",
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "inventory_presence"
+    },
+    {
+      "logical_id": "E37_M2",
+      "quest_id": "000003E2998AC2CF",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "8c77f30fb878033b430bdf412931026dc048f44e69b250a482ea677edaa27bf7",
+      "old_payload": {
+        "id": "000003E2998AC2CF",
+        "title": "Місячний старт",
+        "dependencies": [
+          "0000C13BD8AC783F",
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "0000BBA56521E50C",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_ingot",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000191C09858B05",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "0000306511FBBD3A",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Виготовити й запустити T1 rocket, приземлитися на Місяці.",
+          "Фактична умова цього коду: 1 × ad_astra:desh_ingot (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:desh_ingot",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Зразок дешу для місячного маршруту",
+        "description": [
+          "Здайте один зливок дешу в цьому завданні. Цей зливок витрачається під час зарахування; заздалегідь відкладіть окрему партію для наступного виробництва.",
+          "Деш потрібний для компонентів другого ракетного покоління. Внесок фіксує підготовлений матеріал, а місячний видобуток, обробка та маршрут до NASA-збірки T2 проходяться в пов’язаних цілях.",
+          "Розділяйте дослідний зразок і робочий запас: один зданий зливок не замінює блоки та інші деталі повного корпусу. Продовжуйте обидві гілки епохи до технологічного й магічного ключів."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:desh_ingot",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E37_M3",
+      "quest_id": "0000EEC3EB61B517",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "057b26af3db1dd91dd86e074637cba93cf6a8de50597a6a9ccb68a470e9f81ce",
+      "old_payload": {
+        "id": "0000EEC3EB61B517",
+        "title": "Магічна герметизація",
+        "dependencies": [
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "0000AA4D53598319",
+            "type": "item",
+            "item": {
+              "id": "botania:life_essence",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": false,
+            "only_from_crafting": false
+          },
+          {
+            "id": "00000D2DDCC5EAC7",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00001FE0339D2876",
+            "type": "item",
+            "item": {
+              "id": "botania:manasteel_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Виготовити 16 air essence і гібридну оснастку життєзабезпечення.",
+          "Фактична умова цього коду: 1 × botania:life_essence (показати — зберігається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "botania:life_essence",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Магічний резерв: Дух Ґаї",
+        "description": [
+          "Покажіть один Дух Ґаї (Gaia Spirit) з Botania. Предмет зберігається у вашому інвентарі й може залишатися частиною магічного резерву експедиції.",
+          "Ця віха знайомить космічну гілку з уже освоєним магічним матеріалом. Вона перевіряє предмет; підготовка скафандра, кисню та інших засобів перебування на планетах має власні завдання.",
+          "Збережіть додаткові Духи Ґаї для наступного внеску та змішаного комплекту. Плануйте їх разом із промисловими матеріалами, щоб одна гілка не затримувала фінальне складання епохи."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "botania:life_essence",
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "inventory_presence"
+    },
+    {
+      "logical_id": "E37_M4",
+      "quest_id": "0000052B865B9011",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "2e466267ba9a75ff023f64be0343bab82097ca6110114c0e050b5c3efabf9a13",
+      "old_payload": {
+        "id": "0000052B865B9011",
+        "title": "Місячна металургія",
+        "dependencies": [
+          "0000EEC3EB61B517",
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "00008AD8D4060A0C",
+            "type": "item",
+            "item": {
+              "id": "botania:life_essence",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000B9EF2968401F",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00005E1E8DFB11C0",
+            "type": "item",
+            "item": {
+              "id": "botania:green_petal",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Добути й обробити 16 desh ingot на дозволеній місячній гілці.",
+          "Фактична умова цього коду: 1 × botania:life_essence (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "botania:life_essence",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Внесок Духа Ґаї",
+        "description": [
+          "Здайте одного Духа Ґаї (Gaia Spirit) у цьому завданні. На відміну від попередньої віхи з показом предмета, цей внесок витрачається.",
+          "Магічна частина підготовки має власну ціну поруч із місячними металами. Підготуйте окремий запас для комплекту узгодження експедиції, де знадобляться ще два Духи Ґаї.",
+          "Матеріальна віха підтверджує внесок Botania. Дешову металургію та ракетні процеси освоюйте у відповідних технологічних цілях; їхній результат не підміняється магічним предметом."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "botania:life_essence",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E37_M5",
+      "quest_id": "00000E2B3FCEE852",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "cd06799db1d6cc5aa19e3542da8d9369d4114ad4e1e5eec2303af894f4074f97",
+      "old_payload": {
+        "id": "00000E2B3FCEE852",
+        "title": "Марсіанська експедиція",
+        "dependencies": [
+          "000003E2998AC2CF",
+          "0000052B865B9011",
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "000079ABBA26CEED",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:ostrum_ingot",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "000046343725CF55",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00004C3F2E637059",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Створити T2 rocket із desh, дістатися Марса й виготовити 16 ostrum ingot.",
+          "Фактична умова цього коду: 1 × ad_astra:ostrum_ingot (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:ostrum_ingot",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Острамний внесок експедиції",
+        "description": [
+          "Здайте один острамний зливок. Він витрачається як матеріальний внесок у подальший експедиційний маршрут.",
+          "Острам пов’язує марсіанську ресурсну базу з наступним поколінням обладнання. Зберігайте основну партію для виробничих ланцюгів, а для цієї віхи відкладіть окремий зразок.",
+          "Подорож до Марса та справжня NASA-збірка T2 мають окремі умови виконання в обов’язковому маршруті. Тут зараховується саме внесок одного зливка; після нього завершіть змішаний комплект обох гілок."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:ostrum_ingot",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E37_M6",
+      "quest_id": "0000C9D61B7B3644",
+      "epoch": 37,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_37.snbt",
+      "old_payload_sha256": "44b5e5e1960e4ad52a5c7a6f37a32c4726ffefa5d457d6b8ea6c8f5f8b7f53ad",
+      "old_payload": {
+        "id": "0000C9D61B7B3644",
+        "title": "Дві бази з поверненням",
+        "dependencies": [
+          "00000E2B3FCEE852",
+          "0000EDCC4CD05238"
+        ],
+        "tasks": [
+          {
+            "id": "00003DF4A0168516",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_ingot",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "000052BE7ECC8DED",
+            "type": "item",
+            "item": {
+              "id": "botania:life_essence",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000389D632A0FF5",
+            "type": "item",
+            "item": {
+              "id": "modern_industrialization:processing_unit",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000BB5EC130C702",
+            "type": "advancement",
+            "advancement": "aia2:stages/e37"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00001AF542965E1B",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Розгорнути малий автономний пост на обох планетах і повернути експедицію на базу.",
+          "Фактична умова цього коду: 2 × ad_astra:desh_ingot (здати — витрачається); 2 × botania:life_essence (здати — витрачається); 2 × modern_industrialization:processing_unit (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_37. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:desh_ingot",
+          "count": 1
+        }
+      },
+      "new_presentation": {
+        "title": "Комплект узгодження експедиції",
+        "description": [
+          "Здайте змішаний комплект: два зливки дешу, два Духи Ґаї (Gaia Spirit) та два Processing Unit з Modern Industrialization. Усі перелічені предмети витрачаються.",
+          "Цей комплект поєднує космічну металургію, Botania й промислову обробку. Виділіть його окремо від матеріалів для ракет і ключів, щоб завершення однієї частини не спустошило запас іншої.",
+          "Це ресурсне узгодження перед фіналом епохи. Підготовку баз і експедицій продовжуйте в тематичних цілях маршруту, а стан обладнання перевіряйте на місці. Технологічний ключ додатково потребує підтверджених NASA-збірок T1 і T2 поточної команди."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:desh_ingot",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "item": "botania:life_essence",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "item": "modern_industrialization:processing_unit",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E38_M1",
+      "quest_id": "0000FCCBB28B2AB9",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "322f922ae1c69238512602fa121172742a48a26046978d587051d6bc45fe961c",
+      "old_payload": {
+        "id": "0000FCCBB28B2AB9",
+        "title": "Третій ракетний рівень",
+        "dependencies": [
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "000060E209010FFF",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:tier_3_rocket",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": false,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000E3464F26D51B",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00005088A2359528",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:desh_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Виготовити T3 rocket через освоєні desh/ostrum і власні технологічні компоненти.",
+          "Фактична умова цього коду: 1 × ad_astra:tier_3_rocket (показати — зберігається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:tier_3_rocket",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Ракета T3 у розпорядженні",
+        "description": [
+          "Покажіть одну ракету T3. Вона залишається у вашому інвентарі після зарахування цієї віхи.",
+          "Третє покоління транспорту спирається на попередню космічну металургію. Наявність корпусу є окремою перевіркою; справжню збірку й оплату його матеріалів підтверджує обов’язкова NASA-ціль T3.",
+          "Продовжуйте підготовку до гарячих планет і калоритових компонентів. Перевіряйте обладнання перед польотом, а ракету зберігайте разом із запасами для експедиційної інфраструктури."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:tier_3_rocket",
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "inventory_presence"
+    },
+    {
+      "logical_id": "E38_M2",
+      "quest_id": "0000BD9D45941CB9",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "c81403a18f268f485220eb450b9a4e28d98f8e14b74956849c11ac31ae8d6ec4",
+      "old_payload": {
+        "id": "0000BD9D45941CB9",
+        "title": "Гаряча експедиція",
+        "dependencies": [
+          "0000FCCBB28B2AB9",
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "0000A6BAB28E00E0",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:calorite_ingot",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "00006144A6324C50",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "0000EE479242800E",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:cheese",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Завершити дозволені експедиції Venus/Mercury та виплавити 16 calorite ingot.",
+          "Фактична умова цього коду: 1 × ad_astra:calorite_ingot (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:calorite_ingot",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Калоритовий внесок",
+        "description": [
+          "Здайте один калоритовий зливок у цьому завданні. Цей зразок витрачається; основну партію залиште для просунутого обладнання.",
+          "Калорит підводить маршрут до четвертого ракетного покоління. Його обробка й деталі потребують окремих виробничих цілей, тому готуйте матеріал із запасом.",
+          "Ця віха зараховує один зливок. Відвідування Венери, Меркурія та інших світів має власні завдання на виміри; завершення матеріального внеску не замінює ці експедиції."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:calorite_ingot",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E38_M3",
+      "quest_id": "000012C2866495C6",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "de1088142f510ae7efaf874a1010c7f4bb21b8ee30cf47bd35ce99d990cedae1",
+      "old_payload": {
+        "id": "000012C2866495C6",
+        "title": "Захист від крайніх умов",
+        "dependencies": [
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "00002AD4A0EF485D",
+            "type": "item",
+            "item": {
+              "id": "ars_nouveau:wilden_tribute",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": false,
+            "only_from_crafting": false
+          },
+          {
+            "id": "000051FEAB412336",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "000016C9DDFB124E",
+            "type": "item",
+            "item": {
+              "id": "ars_nouveau:magebloom_fiber",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Виготовити вогняні/повітряні магічні компоненти для космічного обладнання.",
+          "Фактична умова цього коду: 1 × ars_nouveau:wilden_tribute (показати — зберігається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ars_nouveau:wilden_tribute",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Трофей Вайлдена для оснастки",
+        "description": [
+          "Покажіть один трофей Wilden Tribute з Ars Nouveau. Предмет залишається у вас після зарахування.",
+          "Це магічна складова підготовки до змішаних комплектів епохи. Відкладіть окремий запас для наступного внеску й фінального комплекту, щоб промислова та магічна гілки розвивалися разом.",
+          "Предметна віха перевіряє наявність трофея. Космічний захист і готовність обладнання до конкретних середовищ опрацьовуйте у відповідних цілях спорядження та експедицій."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ars_nouveau:wilden_tribute",
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "inventory_presence"
+    },
+    {
+      "logical_id": "E38_M4",
+      "quest_id": "0000FCC266D8F64F",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "c6547d70b1958b45eef15547eb899f5b560a4882ac18cc5ba9b102db95cf0ad3",
+      "old_payload": {
+        "id": "0000FCC266D8F64F",
+        "title": "Етріонний цикл",
+        "dependencies": [
+          "000012C2866495C6",
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "00003D42B6CC26D4",
+            "type": "item",
+            "item": {
+              "id": "ars_nouveau:wilden_tribute",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "000090A65B82F460",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "000031C5BB2AA2F9",
+            "type": "item",
+            "item": {
+              "id": "ars_nouveau:source_gem",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Виробити 16 etrium ingot і один etrionic core штатним або затвердженим гібридним маршрутом.",
+          "Фактична умова цього коду: 1 × ars_nouveau:wilden_tribute (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ars_nouveau:wilden_tribute",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Магічний внесок Вайлдена",
+        "description": [
+          "Здайте один Wilden Tribute з Ars Nouveau. На цьому кроці трофей витрачається, тож не плутайте внесок із попередньою перевіркою наявності.",
+          "Магічний маршрут отримує власну матеріальну віху поруч із калоритовою металургією. Для змішаного комплекту наприкінці епохи залиште ще два трофеї.",
+          "Цей внесок фіксує ресурс Ars Nouveau. Етріонні механізми та виробничі процеси мають окремі технологічні цілі; виконання магічної віхи їх не підміняє."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ars_nouveau:wilden_tribute",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E38_M5",
+      "quest_id": "00005A7B57B8CB28",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "dd43af6b228e4cb994124aada8873d77bfcb494cef9da692f8e9ae2666314d06",
+      "old_payload": {
+        "id": "00005A7B57B8CB28",
+        "title": "Четвертий ракетний рівень",
+        "dependencies": [
+          "0000BD9D45941CB9",
+          "0000FCC266D8F64F",
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "00006D25F20C4F85",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:ostrum_ingot",
+              "count": 1
+            },
+            "count": 1,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000F41F70B3B4E8",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00008832268BEB45",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:ostrum_nugget",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Створити T4 rocket, відкрити Glacio та повернутися з експедиції.",
+          "Фактична умова цього коду: 1 × ad_astra:ostrum_ingot (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:ostrum_ingot",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Острамний внесок нового ступеня",
+        "description": [
+          "Здайте один острамний зливок. Він витрачається як внесок у просунутий космічний маршрут.",
+          "Матеріали попередніх планет залишаються потрібними поруч із калоритом і магічними компонентами. Підтримуйте їхні запаси під час переходу до четвертого ракетного покоління.",
+          "Ця віха зараховує один матеріальний зразок. NASA-збірка T4 та дослідження Ґласіо мають власні умови у відповідних цілях; завершення внеску не підтверджує ракетне виробництво або політ."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:ostrum_ingot",
+          "count": 1,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    },
+    {
+      "logical_id": "E38_M6",
+      "quest_id": "00007B45F2C5DFEA",
+      "epoch": 38,
+      "chapter": "config/ftbquests/quests/chapters/aia2_epoch_38.snbt",
+      "old_payload_sha256": "6b459d424c372072c1ec79a2a0889e097c276082cf54620c9f73b928e8947c1f",
+      "old_payload": {
+        "id": "00007B45F2C5DFEA",
+        "title": "Космічна лінія",
+        "dependencies": [
+          "00005A7B57B8CB28",
+          "0000BEAC001E25A4"
+        ],
+        "tasks": [
+          {
+            "id": "00002F9F811C4410",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:calorite_ingot",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000A9752085BA07",
+            "type": "item",
+            "item": {
+              "id": "ars_nouveau:wilden_tribute",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "0000B0F449915139",
+            "type": "item",
+            "item": {
+              "id": "powah:crystal_nitro",
+              "count": 1
+            },
+            "count": 2,
+            "consume_items": true,
+            "only_from_crafting": false
+          },
+          {
+            "id": "00009529E3ACD2CF",
+            "type": "advancement",
+            "advancement": "aia2:stages/e38"
+          }
+        ],
+        "rewards": [
+          {
+            "id": "00007C4635CE6704",
+            "type": "item",
+            "item": {
+              "id": "ad_astra:cheese",
+              "count": 1
+            },
+            "count": 4
+          }
+        ],
+        "description": [
+          "Запустити віддалений виробничий пост на 5 хвилин з реальним життєзабезпеченням.",
+          "Фактична умова цього коду: 2 × ad_astra:calorite_ingot (здати — витрачається); 2 × ars_nouveau:wilden_tribute (здати — витрачається); 2 × powah:crystal_nitro (здати — витрачається).",
+          "Потрібна стадія Game Stages Reborn: aia2_epoch_38. Вона перевіряється нативним advancement.",
+          "Предметна здача підтверджує ресурси, але не вимірює FE/t, час роботи чи топологію автоматизації."
+        ],
+        "hide_until_deps_complete": true,
+        "icon": {
+          "id": "ad_astra:calorite_ingot",
+          "count": 1
+        },
+        "optional": false
+      },
+      "new_presentation": {
+        "title": "Комплект міжмодової оснастки",
+        "description": [
+          "Здайте два калоритові зливки, два Wilden Tribute та два Nitro Crystal з Powah. Увесь комплект витрачається під час зарахування.",
+          "Завершальна матеріальна віха поєднує космічний метал, магічний трофей і енергетичний компонент. Відкладіть ці предмети окремо від запасу для решти виробничих процесів і ключів.",
+          "Комплект підтверджує ресурсний внесок трьох напрямів. Для підготовки віддаленої бази й життєзабезпечення використовуйте тематичні завдання та перевіряйте обладнання на місці. Технологічний ключ додатково потребує справжніх NASA-збірок T3 і T4 поточної команди."
+        ]
+      },
+      "actual_items": [
+        {
+          "item": "ad_astra:calorite_ingot",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "item": "ars_nouveau:wilden_tribute",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        },
+        {
+          "item": "powah:crystal_nitro",
+          "count": 2,
+          "consume_items": true,
+          "only_from_crafting": false
+        }
+      ],
+      "scope": "resource_submission"
+    }
+  ]
+}

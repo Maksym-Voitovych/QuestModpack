@@ -1,3 +1,13 @@
+# 0.4.22-alpha — Збереження журналу ключів і точні космічні віхи
+
+- У 12 існуючих віхах37–38 змінено лише назви й пояснення відповідно до справжніх item tasks: показати або здати з витратою. Вони не засвідчують політ, автоматику чи роботу машини; окремі required NASA goals збережені.
+- 3381квест/140глав/627рецептів/3117item rewards/390предметів+PNG/96ключів збережено; нових квестів, рецептів, нагород і текстур0. ID/tasks/rewards/deps/optional/icons/coords не змінюються.
+- KeyProductionBridge більше не дозволяє vanilla IO/load failure перетворити наявний key journal на порожній replacement. Strict schema1/NBT, blocked sentinel, lazy installation, read/write caps16384команди/96proofs збережено.
+- Неактивні історичні aliases08/+8 зберігаються буквально: канонічні докази8:tech з них не створюються. Пошкоджений файл зберігається, grants/writes блокуються зі зрозумілою помилкою.
+- Compiled capability1 перевіряється пакувальником та інсталятором до backup/write, щоб випадковий старий API4JAR не встановився з новим пакетом. API4/96recipes/схеми прогресу/NASA/station/ProjectE незмінні.
+- Додано регресії справжнього класу на modeled host, негативний контроль старого computeIfAbsent, pinned Minecraft source facts, compiled ABI і відмову installer без записів. Actual minimal-server NBT/restart та повний клієнт мають окремі статуси у checkpoint report.
+- Повний0.5не реліз; original optional binaries/fullclient/JEI/Survival/TPS NOT_RUN.
+
 # 0.4.21-alpha — Required NASA та сумісність прогресу
 
 - Чотири існуючі NASA-цілі й17підготовчих цілей включено до обов’язкового маршруту нових переходів37/38;6станційних залишені optional. Загалом3381квест/627рецептів/96ключів, новихquests/recipes/items/textures0.

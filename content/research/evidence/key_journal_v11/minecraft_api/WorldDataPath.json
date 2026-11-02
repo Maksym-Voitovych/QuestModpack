@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "source_kind": "minecraft_api_facts",
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+    "kind": "local actual NeoForm source+compiled SDK; complete Minecraft sources are not distributed"
+  },
+  "sources": [
+    {
+      "artifact_entry": "net/minecraft/server/level/ServerLevel.java",
+      "sha256": "8d1086b8e63b11d340853e7595a63f2f27edc0d690311c9a0d46d5098eb21925",
+      "line_references": [
+        1349,
+        1350
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/server/level/ServerChunkCache.java",
+      "sha256": "02465fed32fb76cf2bc415c6ec58ba3d7cdf7b2580af2de6f9ba0c278c1bf306",
+      "line_references": [
+        85,
+        86,
+        87
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/server/MinecraftServer.java",
+      "sha256": "b906c6597095e206ade6a9db34f76993f667bdf2bfacaeca793ba9ce14e568ed",
+      "line_references": [
+        1927,
+        1928
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/storage/LevelStorageSource.java",
+      "sha256": "3c083ecdd3ed37107dab8d8a33440882ee6bc16d7928bc3fe5f89d8529f2d019",
+      "line_references": [
+        452,
+        453,
+        456,
+        457
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/storage/LevelResource.java",
+      "sha256": "153fcf42e83bcb8c18d1fa4ce31a70f8ee19b69d2a7ea0ef61b0e4d91a2382fc",
+      "line_references": [
+        15
+      ]
+    },
+    {
+      "artifact_entry": "net/minecraft/world/level/dimension/DimensionType.java",
+      "sha256": "90bc7de24c7bddd647ea8704fd185a3ff87714a3a704332fac55299ae7d3dcde",
+      "line_references": [
+        152,
+        153,
+        154
+      ]
+    }
+  ],
+  "facts": [
+    "ServerLevel.getDataStorage delegates to its ServerChunkCache data storage.",
+    "ServerChunkCache constructs DimensionDataStorage in storageAccess.getDimensionPath(level.dimension()).resolve(\"data\").",
+    "The overworld dimension storage folder is the world root, and LevelResource.ROOT denotes the root resource.",
+    "For the shared overworld key journal, server.getWorldPath(LevelResource.ROOT)/data/aia2_key_production_v1.dat is the corresponding file-preservation check. No per-player UUID path is inferred."
+  ],
+  "scope": "API/lifecycle facts and exact upstream source hashes; no full proprietary Minecraft source. Runtime/native assertions are recorded separately."
+}

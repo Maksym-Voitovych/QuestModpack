@@ -111,6 +111,8 @@ public final class NativeSmokeTests {
         check(team.startsWith("native-test-a-"), "restart verification is restricted to this runner's generated test team");
         check(Aia2MachineGuard.hasProductionProof(server, team, 8, "tech"), "a fresh Minecraft server reloads the actual production receipt from the world SavedData file");
         check(!Aia2MachineGuard.hasProductionProof(server, team, 8, "arcane"), "restart does not fabricate the independent missing arcane proof");
+        check(KeyProductionBridge.hasProof(server, team, 37, "tech"),
+                "second JVM reloads the explicitly synthetic key-journal fixture; no space key production is claimed");
         check(ProductionMilestoneBridge.hasProof(server, team, "native_crafter_fixture"),
                 "a fresh server reloads the separate native process observation from SavedData");
         check(ProductionMilestoneBridge.hasProof(server,team,"native_observed_fixture"),
@@ -382,6 +384,62 @@ public final class NativeSmokeTests {
             catch (IllegalStateException expected) { refused = true; }
             check(refused && output.isEmpty(), "blocked mechanic journal refuses native NBT overwrite: " + entry.getKey());
         }
+    }
+
+    /** Strict key schema tests; synthetic history remains confined to the owned development team. */
+    private static void testKeyJournalPreservation() {
+        check(KeyProductionBridge.journalProtectionVersion() == 1,
+                "actual loaded key bridge advertises safe-journal deployment capability1");
+        CompoundTag valid = new CompoundTag(), teams = new CompoundTag(), keys = new CompoundTag();
+        valid.putInt("schema", 1);
+        for (int epoch = 1; epoch <= 48; epoch++) for (String branch : List.of("tech", "arcane"))
+            keys.putBoolean(epoch + ":" + branch, true);
+        teams.put(TEAM_A, keys); valid.put("teams", teams);
+        var all = KeyProductionBridge.ReceiptData.load(valid.copy(), level.registryAccess());
+        check(!all.blocked && all.proofs.get(TEAM_A).size() == 96,
+                "actual strict loader preserves all96 canonical keys; station64 limit is not reused");
+        check(all.save(new CompoundTag(), level.registryAccess()).equals(valid),
+                "all96 actual key NBT identifiers round-trip without reset or normalization");
+        CompoundTag aliases = new CompoundTag(), aliasTeams = new CompoundTag(), aliasKeys = new CompoundTag();
+        aliases.putInt("schema", 1); aliasKeys.putBoolean("08:tech", true); aliasKeys.putBoolean("+8:tech", true);
+        aliasTeams.put(TEAM_A, aliasKeys); aliases.put("teams", aliasTeams);
+        var aliasData = KeyProductionBridge.ReceiptData.load(aliases.copy(), level.registryAccess());
+        check(!aliasData.blocked && !aliasData.proofs.get(TEAM_A).contains("8:tech")
+                        && aliasData.save(new CompoundTag(), level.registryAccess()).equals(aliases),
+                "actual historical aliases stay inert and literal, never fabricating canonical authorization");
+        var malformed = new LinkedHashMap<String, CompoundTag>();
+        var bad = valid.copy(); bad.remove("schema"); malformed.put("missing schema", bad);
+        bad = valid.copy(); bad.putString("schema", "1"); malformed.put("schema tag type", bad);
+        bad = valid.copy(); bad.putInt("schema", 2); malformed.put("future schema", bad);
+        bad = valid.copy(); bad.remove("teams"); malformed.put("missing teams", bad);
+        bad = valid.copy(); bad.getCompound("teams").putString(TEAM_A, "bad"); malformed.put("team tag type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putInt("8:tech", 1); malformed.put("proof tag type", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("8:tech", false); malformed.put("false proof", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putByte("8:tech", (byte)2); malformed.put("nonboolean byte", bad);
+        bad = aliases.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("0:tech", true); malformed.put("epoch zero", bad);
+        bad = aliases.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("49:tech", true); malformed.put("future epoch", bad);
+        bad = aliases.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("8:unknown", true); malformed.put("unknown branch", bad);
+        bad = valid.copy(); bad.getCompound("teams").put(" ", new CompoundTag()); malformed.put("blank team", bad);
+        bad = valid.copy(); bad.getCompound("teams").getCompound(TEAM_A).putBoolean("08:tech", true); malformed.put("97th historical key", bad);
+        for (var entry : malformed.entrySet()) {
+            var original = entry.getValue().copy();
+            var blocked = KeyProductionBridge.ReceiptData.load(entry.getValue(), level.registryAccess());
+            check(blocked.blocked && blocked.proofs.isEmpty() && entry.getValue().equals(original),
+                    "actual key loader blocks invalid input without altering original NBT: " + entry.getKey());
+            boolean refused = false; CompoundTag output = new CompoundTag();
+            try { blocked.save(output, level.registryAccess()); }
+            catch (IllegalStateException expected) { refused = true; }
+            check(refused && output.isEmpty(), "blocked key journal cannot overwrite native NBT: " + entry.getKey());
+        }
+        var stored = level.getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, KeyProductionBridge.DATA_NAME);
+        check(stored != null && !stored.blocked && stored.proofs.get(TEAM_A).contains("8:tech"),
+                "actual produced old key proof remains present before the owned synthetic persistence fixture");
+        stored.proofs.get(TEAM_A).add("37:tech"); stored.setDirty();
+        KeyProductionBridge.clearRuntime();
+        check(KeyProductionBridge.hasProof(server, TEAM_A, 37, "tech")
+                        && KeyProductionBridge.hasProof(server, TEAM_A, 8, "tech")
+                        && !KeyProductionBridge.hasProof(server, TEAM_A, 8, "arcane"),
+                "runtime reset preserves real8tech plus synthetic37tech without fabricating the independent arcane proof");
     }
 
     /** Real NBT persistence only; this does not exercise optional Forbidden ritual dispatch. */
@@ -835,6 +893,7 @@ public final class NativeSmokeTests {
                 testStationTemplateBoundary();
                 testStationJournal();
                 testRequiredSpaceActionsAndMechanicJournal();
+                testKeyJournalPreservation();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-11-01 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.21-alpha (required NASA migration; code/QA/delivery DONE; точний Git status через log/origin/main); повний0.5 ще не реліз.
+Останнє оновлення: 2026-11-02 (UTC). База `90ab63f`, checkpoint0.4.22-alpha (12milestone presentation/key journal; code/QA/package/actualinstaller DONE; Git status через log/origin/main; точний Git status через log/origin/main); повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -13,13 +13,13 @@
 | 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra37етап/65station-джерел з попереднього checkpoint; installed binary provenance та DraconicCI633 BLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
 | 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,50старих координат в1главі переміщено для6stationцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 3381 quests; цього блоку0нових,4NASA+17prerequisites promotedrequired37/38; старі віхи/решта48 ще IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3117предметних нагород; усі payloads/IDs незмінні в0.4.21; нових0 |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 3381 quests; цього блоку0нових,12старихвіх37/38title+descriptionуточнено; tasks/deps/flags unchanged; решта48 IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3117предметних нагород; усі payloads/IDs незмінні в0.4.22; нових0 |
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | Finalclean370Python/79Node/5237Java/240MC@2JVM PASS; rebuild179/1183runtimefiles/14JSsyntax PASS; fullpack NOT_RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.21 code/QA/package/actualinstaller DONE; commit/push status зgitlog/origin/main;0.5unfinished |
+| 10 | Інтеграційні тести | IN_PROGRESS | Finalclean393Python/79Node/5237Java/273MC@2JVM PASS; rebuild191/1183runtimefiles/14JSsyntax PASS; fullpack NOT_RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.22 code/QA/package/actualinstaller DONE; commit/push status зgitlog/origin/main;0.5unfinished |
 
 
 
@@ -66,8 +66,8 @@
 | 34 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 35 | IN_PROGRESS | IN_PROGRESS (5) | TODO | DONE (static) |
 | 36 | IN_PROGRESS | IN_PROGRESS (2) | IN_PROGRESS (3 формул) | DONE (static) |
-| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra/+2NASArequired/+3stationoptional) | IN_PROGRESS (+3 двигуни) | DONE (static) |
-| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra/+2NASArequired/+3stationoptional) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
+| 37 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+12 Ad Astra/+2NASArequired/+3stationoptional;6base presentation exact) | IN_PROGRESS (+3 двигуни) | DONE (static) |
+| 38 | IN_PROGRESS (Ad Astra core DONE) | IN_PROGRESS (+8 Ad Astra/+2NASArequired/+3stationoptional;6base presentation exact) | IN_PROGRESS (+1 двигун/floors) | DONE (static) |
 | 39 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 40 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 41 | IN_PROGRESS | IN_PROGRESS (16) | IN_PROGRESS (2 формул) | DONE (static) |
@@ -755,3 +755,40 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - DONE delivery:4772manifestentries/1184runtimeSHA/installerSHA/CRC,actualextractedCLI0.4.20→0.4.21 dryrun0files/dirs,oldJARbackup,opaqueFTB/world/fire/station/mechanic+legacy-pendingmarkers/foreigncontentpreserved,repeatidempotent. Finalmetadataперепаковуєтьсяізвіряєвсі4772SHAпередGit; цеsyntheticinstallerfixture,неfullworldmigration.
 - Code/scripts/data/JAR/docs/installerзберігаютьсяоднимціліснимmain-комітомізpushбезforce. Точнийhash/status уgitlog/origin/main таexternaldeliveryreportбіляZIP, безself-referentialSHA. Fulloriginaloptionalbinary/client/JEI/Survival/TPS NOT_RUN; повний0.5не реліз.
 - НАСТУПНЕ: точніназви/описистарих6віх37/38беззміниtaskтипів/reset; окремийаудитIO/loadpreservationlegacykeyreceiptjournal; далі34partialкарти/рештаrequired48. НеповторюватиNASA4required/own-epochlink/21promotions/station6optional/завершеніguards.
+
+### 2026-11-02 — Milestone presentation/key journal0.4.22: IN_PROGRESS
+
+- Відновлено35a4d5d/main0.4.21. Backup передмасовимизмінами:/workspace/aia2-backups/before-space-milestones-key-journal-35a4d5d/checkpoint-35a4d5d.tar.gz. ПісляперериваннязбереженіuncommittedKeyProductionBridge/hostfixture,newkeyledgertests,12presentationmetadata+module,4MCAPI-факти+manifest. Нічогонеперезапускаєтьсязнуля.
+- Scope0.4.22:12baseвіх37/38 ONLY title+descriptionoverlayпісляrewards,передlayout; старіtasks/IDs/counts/rewards/deps/flags/coordsнечіпати. Keyjournal schema1/96proofs:strictblocked/lazyread,existingfilepreservation,безканонізаціїalias08/+8іфабрикаціїproofs. Іншіguards/API4/NASA4required/station6optionalзбережені.
+- RootownsNativeSmoke/compiledpairing/centralintegration/version/docs/QA/Git. finish_milestones_v13ownsmissingpresentationtests/doc;review_key_ledger_v13ownsreadonlyjournalreview+sourcefacts tests. Немаєактивнихпопередніхвласниківпісляenvironmentreset.
+- Наступнадія:finishintegration+nativeall96NBT/restart,capabilitypreflight,journal/contenttargetedtests,strict3381payloadpreservation,cleanfullsuite/rebuild/package/installer/commit/push.0.4.22неоголошуватиготовимдофактичногоQA. Fullclient/optionalbinaries/JEI/Survival/TPSNOT_RUN;повний0.5не реліз.
+
+### 2026-11-02 — Milestone presentation/key journal0.4.22: code/common-native DONE
+
+- Twelve title+description migrations applied afterrewards/beforelayout, narrow frozenpayloadcontract.3381IDs/tasks/rewards/deps/flags/icons/coords exact;3369wholepayloads unchanged.627recipeentries/7runtimeconfigs/782assets exact.0newquests/recipes/items/PNGs/rewards.
+- Key journal schema1 strictNBT/blocked/lazy installation implemented;cap16384teams/96proofs;literal08/+8 aliases preservedinert. Compiledcapability1 prevents accidentaloldJAR pairing beforeinstallerwrites. API4/76mixins/NASA/station/pendingcontracts unchanged.
+- JDK21build/5237Java/79Node PASS;newjournalactualclass231modeledchecks andoldKey424 PASS;legacyemptyreplacementnegativecontrolFAILasintended.12presentation/3sourcefact/6compiledpairing+installer testsPASS.4portablefacts/9exactSDKsourcesSHAverified.
+- ActualminimalMC273/2JVM/650ticksPASS;all96/aliases/malformedNBTinmemory;genuine8tech andexplicitlysynthetic37tech proofsurvivedrestart. Fulloptionalmoddispatch/client/JEI/Survival/TPSNOT_RUN. JAR230classes/224oldbyteidentical/76mixinsunchanged,SHA68f71df22e18890ed9ad93bde80c33576623b4134f047a9eefa5b462367a9807.
+- Independentreadonlyreview foundnoconfirmedblocker. Targeted39PythonPASS aftergenerationcompleted;earlierconcurrentread duringregenerationtransientlyreadunwrittenconfigandfailed1oldKeyhosttest. QA nowusesfrozenGitindexsource,nevermutatingruntimewhiletestsreadit.
+- FinalcleanfullsuiteIN_PROGRESS. Pretestindexcomparison4791trackedfiles:4787byteexact,2legacyCSV+1declaredBATlineendingonly,1native-reportcompletedafterexport;native273reportcompletedafterexportandisstagedseparately. Next:fullsuite/deterministicrebuild,finalmetadata/package/actualinstaller/commit/push. Full0.5unfinished.
+
+### 2026-11-02 — Milestone/key journal0.4.22: finalclean393 DONE
+
+- Frozen Git-index export:393Python/0fail/0skip PASS(294.177s).79Node/5237Java/273actualminimalMC@2JVM/650ticks alsoPASS. Code/content/runtime immutable duringtest;latechangesonlyQA/docs/native-resultmetadata.
+- Deterministicrebuild191+centralvalidator nowIN_PROGRESS onthatcleanexport. Preliminaryruntimepackage+actualextractedinstaller0.4.21→0.4.22 PASS(dry-run0writes/oldJARbackup/opaqueprogress+foreigncontentpreserved/repeatidempotent); finalmetadata/repack/commit/pushpending.
+- Nextconcretecontentcheckpoint:CCA1.6.0/CDG1.3.15 scopedcourse. Freeze128/130exportrecipes+producerfloor11/12/18/19;reconcile8V4goalswith7mapstages peraddon preservingIDs/tasks. CCAsourcepinis1.7.2androllingstagecitescutting;CDGpinmod_versionmatches1.21.1-1.3.15despitefalseversion_match,needsprovenanceaudit. FirstrealprocesscouldbeheatedelectrummixingviaexistingBasin;explicitextensioncontractover15publishedrulesrequired. Rolling-specific/FE-flow/fluidproofsNOTimplemented. SeePLAN;notcountedasnewresearchorcontentin0.4.22.
+
+### 2026-11-02 — Milestone/key journal0.4.22: відтворюваність DONE
+
+- Finalclean393/0fail/0skip PASS(294.177s),79Node/5237Java/273minimalMC@2JVM/650ticks. Finalrebuild191:1183non-JARruntimefiles byte-identical,reviewedrootmatches;central14JSsyntax/SNBT/ID/DAG/requiredclosure/presentationPASS. Productioncodefrozen;onlyfinalQA/delivery/docsmetadatafinishesaftertests.
+- Preservedall3381tasks/rewards/deps/flags/icons/coords;12title+descriptionchanges,3369wholepayloadsunchanged;627recipes/782assets/7runtimeconfigs exact. JAR68f71d.../230classes/224byteidentical/76mixinsunchanged.0newquests/recipes/items/textures/rewards.
+- Finalmetadata/repack/actualCLIcheck-only/Gitcommit+push/publicarchiveverificationnext. Fulloriginaloptionalbinary/client/JEI/Survival/TPSNOT_RUN;no0.5releaseclaim. NextcontenttaskisCCA/CDGscopedcourseinPLAN,notmoreNASA/station/journalhousekeeping.
+
+### 2026-11-02 — Milestone/key journal0.4.22: перевірений checkpoint
+
+- DONE393cleanPython/0fail/0skip,79Node/5237Java/273commonMC@2JVM/650ticks. Rebuild191/1183non-JARruntimefiles byte-identical;central14JSsyntax/SNBT/ID/DAG/migrations/presentationPASS. Independentreview:all3381tasks+rewards+deps+flags+coords preserved,12presentationchanges,627recipes/782assets exact.
+- DONE runtimeZIP CRC/4792manifestSHA/1184runtimeSHA/installerSHA таactualextractedCLI0.4.21→0.4.22:dryrun0files/dirs,oldJARbackup,opaqueFTB/world/fire/station/mechanics/key+paidpendingmarkers/foreigncontentpreserved,repeatidempotent. Цеsyntheticinstallerfixture,неfullworldmigration. Finalmetadatarepacked;check-only/all-sourceSHAperformedbeforeGit.
+- Code/source/docs/JAR/installerзберігаютьсяоднимmain-комітом,pushбезforce. Точнийhash/status—gitlog/origin/main таexternalpublicdeliveryreportбіляZIP,безself-referentialSHA. ProjectEoriginalbinaryABI BLOCKED(currentJARhash,неSTALE);fulloptionalclient/JEI/Survival/TPSNOT_RUN.0.5не реліз.
+- НАСТУПНА ДІЯ:CCA1.6.0/CDG1.3.15 scopedcourse provenance/128+130exportedrecipes,producerfloors11/12/18/19,8V4goals→7stagesreconciliation. Потімновийnativeelectrummixingruleчерезexplicitextensioncontract. Версійно залежніrolling/FEflow/fluidproofsнепідтверджені. Не повторюватиNASA/station/12milestonetitles/keyjournal. Інші34partial/required48і6IFfluidgaps/DraconicCI633залишаютьсявідкритими.
+
+- Finaldeliveryfixtureокремододаноopaqueaia2_key_production_v1.dat marker(2рядкиtool/testreport,після393suite);actualextractedinstallerupgrade/dryrun/repeatповтореноPASS,keyjournalmarkerbyteexact. Production/runtime/generator/unittestкодпісля393не змінювався. ПередфінальнимGitвиконуютьсяrepack→check-only→allmanifestRootSHA; ZIPверифікаціюзапускатилишеПІСЛЯзавершенняpackaging,непаралельно.

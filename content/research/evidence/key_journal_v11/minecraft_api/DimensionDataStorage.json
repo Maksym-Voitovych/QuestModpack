@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "source_kind": "minecraft_api_facts",
+  "artifact": {
+    "filename": "sourcesAndCompiledWithNeoForge_b32b0518e91161afa9605812d7ed9e88514b80ab_output.jar",
+    "sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+    "kind": "local actual NeoForm source+compiled SDK; complete Minecraft sources are not distributed"
+  },
+  "sources": [
+    {
+      "artifact_entry": "net/minecraft/world/level/storage/DimensionDataStorage.java",
+      "sha256": "202ec3a1068a4b22e68e0348e21c5aa08c4a00446364c49b2464a2d90da72daf",
+      "line_references": [
+        39,
+        40,
+        43,
+        44,
+        48,
+        49,
+        55,
+        57,
+        58,
+        59,
+        66,
+        69,
+        70,
+        71,
+        73,
+        74,
+        77,
+        80,
+        81,
+        135,
+        138
+      ]
+    }
+  ],
+  "facts": [
+    "get(factory,name) reads once when the name has not been cached; its cache can contain null.",
+    "readSavedData catches Exception from both disk parsing and the supplied deserializer, logs the failure and returns null. Loader exceptions alone cannot protect the original file.",
+    "computeIfAbsent cannot distinguish an absent journal from a failed read: after null it constructs and installs a new SavedData object.",
+    "set(name,data) replaces the cached entry but does not itself dirty the object. save() forwards each non-null cached entry to SavedData.save(file,registries).",
+    "Guard policy must distinguish a genuinely absent file from an existing unreadable file before installing any empty record."
+  ],
+  "scope": "API/lifecycle facts and exact upstream source hashes; no full proprietary Minecraft source. Runtime/native assertions are recorded separately."
+}

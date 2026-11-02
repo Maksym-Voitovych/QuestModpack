@@ -404,7 +404,8 @@ def apply(root=ROOT):
                                 ('build_station_floors_v8', 'content/recipes/v8_station_floors.json'),
                                 ('build_required_space_v10', 'content/audit/v10-space-required-migration.json'),
                                 ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
-                                ('build_rewards_v5', 'content/rewards/v5_profiles.json')]:
+                                ('build_rewards_v5', 'content/rewards/v5_profiles.json'),
+                                ('build_space_milestones_v11', 'content/audit/v11-space-milestone-presentation.json')]:
         if (root/source).exists():
             import importlib
             try: module = importlib.import_module(module_name)
