@@ -44,6 +44,8 @@ MECHANIC_CONTRACT = {
                                   f'ad_astra:tier_{tier}_rocket',
                                   {f'ad_astra:nasa_workbench/tier_{tier}_rocket_from_nasa_workbench'})
        for tier in range(1, 5)},
+    'cca_electrum_mixing': (15, 'create:mixing', 'immersiveengineering:ingot_electrum',
+                            {'createaddition:mixing/electrum'}),
 }
 
 
@@ -157,7 +159,7 @@ def validate_compiled_tasks(record, compiled):
 
 
 def verified_mechanic_advancements(root, rules, bundle=None):
-    """Only the fifteen audited native production contracts can count as actions.
+    """Only the sixteen explicitly audited native contracts can count as actions.
 
     This checks the checked-in recipe/advancement protocol. Successful native
     dispatch still needs its separate Java/runtime tests; inventory triggers
@@ -210,6 +212,11 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Native mechanic lacks runtime recipe provenance', ident, recipe_id)
                 require(compiled_recipes.get(recipe_id) == recipe,
                         'Native mechanic runtime producer differs from frozen evidence', ident, recipe_id)
+            if ident == 'cca_electrum_mixing':
+                require(source.get('source_sha256') == 'cc53b40416e04bcc272825e463a8f6dabda639b18cab6197468578ca6d1569ef', 'Unreviewed exact electrum recipe hash')
+                require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True) and read(root/source['frozen_path']) == recipe, 'Missing or changed frozen electrum recipe')
+                require(recipe.get('heat_requirement') == 'heated' and recipe.get('results') == [{'count': 2, 'id': output}], 'Electrum heat/output changed')
+                require(rules['blockGates'].get('create:blaze_burner', 100) <= epoch, 'Chosen electrum heat provider is in a future epoch')
             if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'}:
                 require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'Native mechanic proof lacks frozen recipe', ident)
                 require(read(root/source['frozen_path']) == recipe, 'Native mechanic proof export differs', ident)
@@ -420,6 +427,8 @@ def validate_research(root, documents, versions, rules, registries, authored, co
 def validate(root=ROOT, include_layout=True):
     root = Path(root)
     paths = sorted((root/'content/quests').glob('v5*.json'))
+    addon_course = root/'content/quests/v12_create_addons_course.json'
+    if addon_course.is_file(): paths.append(addon_course)
     maps = sorted((root/'content/research').glob('*v5*.json'))
     if not paths and not maps:
         return {'enabled': False, 'reason': 'No authored v5 catalogs or research maps exist yet'}
@@ -525,6 +534,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/audit/v10-space-required-migration.json').exists() else {'enabled':False},
             'space_milestone_presentation': import_tool('build_space_milestones_v11').validate(root, compiled=True)
                 if (root/'content/audit/v11-space-milestone-presentation.json').exists() else {'enabled':False},
+            'create_addons_extension': import_tool('build_create_addons_v12').validate(root, compiled=True)
+                if (root/'content/research/create_addons_pending_v12.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

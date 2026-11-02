@@ -128,14 +128,22 @@ def validate(root=ROOT, pending=None, catalog=None, runtime=None, compiled=False
     own = {row['id']: row for row in specs}
     expected_ids = {f'nasa_tier_{tier}_rocket' for tier, _, _ in TIERS}
     assert len(own) == len(specs) == 4 and set(own) == expected_ids, 'Exactly four NASA mechanic rules required'
-    assert set(actual) in (set(baseline), set(baseline) | expected_ids), 'Unreviewed mechanics set'
+    extensions = set()
+    if (root/'content/research/create_addons_pending_v12.json').is_file():
+        try:
+            from build_create_addons_v12 import validate_mechanic_rules
+        except ImportError:
+            from tools.build_create_addons_v12 import validate_mechanic_rules
+        extension = validate_mechanic_rules(root)
+        extensions = {extension['id']} & set(actual)
+    assert set(actual) in (set(baseline), set(baseline) | expected_ids | extensions), 'Unreviewed mechanics set'
     assert [row['id'] for row in rows if row['id'] in baseline] == list(BASELINE_RULE_IDS), 'Published mechanic rule order changed'
     for ident, digest in baseline.items():
         assert canonical(actual[ident]) == digest, 'Published mechanic rule changed'
     for ident in set(actual) & expected_ids:
         assert actual[ident] == own[ident], 'Previously generated NASA rule changed'
     if compiled:
-        assert set(actual) == set(baseline) | expected_ids, 'NASA rules not generated'
+        assert set(actual) == set(baseline) | expected_ids | extensions, 'NASA rules not generated'
 
     research = next(row for row in read(root / RESEARCH)['mods'] if row['mod_id'] == 'ad_astra')
     previous = pending['preserved_stage_hashes']

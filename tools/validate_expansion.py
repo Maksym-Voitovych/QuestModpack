@@ -51,7 +51,10 @@ def validate(root=ROOT):
         assert new_audit['catalog_sha256']==hashlib.sha256(v4_path.read_bytes()).hexdigest(), 'v4 quest source audit is stale'
     assert len({q['id'] for q in authored}) == len(authored)
     v5_authored = []
-    for path in sorted((root/'content/quests').glob('v5_*.json')):
+    modern_paths = sorted((root/'content/quests').glob('v5_*.json'))
+    addon_course = root/'content/quests/v12_create_addons_course.json'
+    if addon_course.is_file(): modern_paths.append(addon_course)
+    for path in modern_paths:
         v5_authored.extend(normalize(load(path))['quests'])
     authored.extend(v5_authored)
     assert len({q['id'] for q in authored}) == len(authored)

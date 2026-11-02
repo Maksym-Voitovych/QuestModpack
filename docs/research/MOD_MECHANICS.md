@@ -7594,7 +7594,7 @@ Packager/Repackager та Stock Ticker організовують матеріа�
 
 ## Create Crafts & Additions
 
-Версія експорту: **1.6.0**. Статус: `reviewed_partial`.
+Версія експорту: **1.6.0**. Статус: `reviewed_scoped_electromechanical_course_with_explicit_runtime_gaps`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Змінений механічний рецепт генератора використовує водяні руни й точні механізми.
@@ -7679,6 +7679,193 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E32_electromechanical_work_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Електрика повертається в обертання
+
+Епохи: 11.
+
+Електромотор дозволяє живити окрему кінетичну ділянку від електромережі.
+Попередні цілі: Компонент електричної машини; Кабельна арматура Create Addition. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.phase.02.
+Машини: `createaddition:electric_motor`.
+Квести: `E11_X_motor`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 9. Кінетичний генератор біля мережі
+
+Епохи: 11.
+
+Виділіть окрему механічну гілку для генератора, щоб електричне навантаження не зупиняло всі преси. Підготуйте провід та конденсатори як різні частини енергетичної схеми.
+Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Машини: `createaddition:alternator`.
+Ресурси й результати: `immersiveengineering:wire_copper`, `createaddition:capacitor`.
+Квести: `V4_E11_electric_bridge_01`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 10. Пара контактів для передачі
+
+Епохи: 11.
+
+Змонтуйте контакти з доступом для перевірки та ремонту. Спочатку випробуйте коротку ділянку, а потім масштабуйте мережу; котушка сама не підтверджує наявності електричного зв'язку.
+Попередні цілі: Кінетичний генератор біля мережі. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_01.
+Машини: `createaddition:connector`, `createaddition:large_connector`.
+Ресурси й результати: `createaddition:spool`.
+Квести: `V4_E11_electric_bridge_02`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 11. Акумулятор згладжує зупинки
+
+Епохи: 11.
+
+Залиште буфер між змінним механічним виробництвом і постійним споживанням FE. Порівняйте поведінку мережі при короткому вимкненні генератора та запишіть результат у журналі майстерні.
+Попередні цілі: Пара контактів для передачі. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_02.
+Машини: `createaddition:modular_accumulator`.
+Ресурси й результати: `immersiveengineering:wire_electrum`, `minecraft:comparator`.
+Квести: `V4_E11_electric_bridge_03`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 12. Мотор для віддаленої ділянки
+
+Епохи: 11.
+
+Підготуйте двигун для окремого механічного острова з власною сервісною зупинкою. Не під'єднуйте його до генератора в замкнену петлю в очікуванні безкоштовної енергії.
+Попередні цілі: Акумулятор згладжує зупинки. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_03.
+Машини: `createaddition:electric_motor`.
+Ресурси й результати: `create:clutch`, `minecraft:redstone`.
+Квести: `V4_E11_electric_bridge_04`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 13. Прокат дроту та прутків
+
+Епохи: 11.
+
+Порівняйте два виходи прокатного стану й збережіть місце для окремого виведення кожного. Уніфікований матеріал у JEI може мати назву іншого мода, що не змінює його виробничого призначення.
+Попередні цілі: Мотор для віддаленої ділянки. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_04.
+Машини: `createaddition:rolling_mill`.
+Ресурси й результати: `immersiveengineering:stick_iron`, `immersiveengineering:wire_copper`.
+Квести: `V4_E11_electric_bridge_05`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 14. Міст між генерацією та маною
+
+Епохи: 11.
+
+Підготуйте електричний резерв і манасталь для змішаних рецептів майстерні. Енергетична батарея не замінює ману: обидва ресурси повинні мати окремі виробничі джерела.
+Попередні цілі: Прокат дроту та прутків. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_05.
+Машини: `powah:energy_cell_basic`.
+Ресурси й результати: `botania:manasteel_ingot`, `createaddition:capacitor`.
+Квести: `V4_E11_electric_bridge_06`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 15. Реле для технічного циклу
+
+Епохи: 11.
+
+Зберіть комплект для керування електричною ділянкою за зовнішнім сигналом. Перевірте, чи правильний бік реле використано, і передбачте ручне вимкнення на випадок помилкового сигналу.
+Попередні цілі: Міст між генерацією та маною. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_06.
+Машини: `createaddition:redstone_relay`.
+Ресурси й результати: `minecraft:repeater`, `createaddition:copper_spool`.
+Квести: `V4_E11_electric_bridge_07`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 16. Передавання енергії рухомому вузлу
+
+Епохи: 11.
+
+Підготуйте енергетичний та предметний інтерфейси як окремі канали обслуговування рухомого механізму. Суміщення корпусів перевірте дешевим тестовим вантажем перед тривалою експлуатацією.
+Попередні цілі: Реле для технічного циклу. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_07.
+Машини: `createaddition:portable_energy_interface`.
+Ресурси й результати: `createaddition:electrum_spool`, `create:portable_storage_interface`.
+Квести: `V4_E11_electric_bridge_08`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 17. Зливок і пластина дають різні форми міді
+
+Епохи: 11.
+
+Порівняйте два рецепти Rolling Mill: мідний зливок дає два прутки, а мідна пластина — два дроти. Пруток і дріт виконують різні ролі, тому не закладайте один загальний фільтр для всіх мідних напівфабрикатів.
+Попередні цілі: Прокат дроту та прутків. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.legacy_v12.v4_e11_electric_bridge_05.
+Машини: `createaddition:rolling_mill`.
+Ресурси й результати: `create:copper_sheet`, `modern_industrialization:copper_rod`, `immersiveengineering:wire_copper`.
+Квести: `V12_E11_cca_copper_shapes`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 18. Електрум: пруток для контакту, дріт для намотки
+
+Епохи: 11.
+
+Після міді застосуйте ту саму різницю форми до електруму. Прокат зливка дає два createaddition:electrum_rod; прокат електрумової пластини — два immersiveengineering:wire_electrum. Пластина перед прокатом і пруток після прокату не є взаємозамінними.
+Попередні цілі: Зливок і пластина дають різні форми міді. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.core_v12.copper_shapes.
+Ресурси й результати: `immersiveengineering:plate_electrum`, `createaddition:electrum_rod`, `immersiveengineering:wire_electrum`.
+Квести: `V12_E11_cca_electrum_shapes`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 19. Намотайте котушки й складіть конденсатори
+
+Епохи: 11.
+
+Виготовте мідну та електрумову котушки на звичайному верстаку. Кожна формула використовує порожню котушку й чотири дроти відповідного металу; прутки з попередньої ділянки не замінюють дріт.
+Попередні цілі: Електрум: пруток для контакту, дріт для намотки. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.core_v12.electrum_shapes.
+Ресурси й результати: `createaddition:copper_spool`, `createaddition:electrum_spool`, `createaddition:capacitor`.
+Квести: `V12_E11_cca_winding_components`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 20. Реле й мотор мають різну полярність керування
+
+Епохи: 11.
+
+Виготовте Redstone Relay на верстаку: його формула поєднує два контакти, Electron Tube, редстоун і камінь. Залиште окремий контакт установленим для огляду, щоб розрізняти вузол дротяної мережі та керований розрив.
+Попередні цілі: Намотайте котушки й складіть конденсатори. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.core_v12.winding_components.
+Машини: `createaddition:connector`.
+Ресурси й результати: `createaddition:redstone_relay`, `create:electron_tube`.
+Квести: `V12_E11_cca_relay_contacts`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 21. Tesla Coil: стаціонарна обробка замість стикування
+
+Епохи: 11.
+
+Підготуйте стаціонарний Tesla Coil і порівняйте його роль із Portable Energy Interface: зарядна станція працює з предметною обробкою, а переносний інтерфейс слугує енергетичному стикуванню конструкції. Наявність одного блока не підміняє другого.
+Попередні цілі: Намотайте котушки й складіть конденсатори; Генератор і мотор мають різні входи. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.core_v12.winding_components, createaddition.phase.04.
+Машини: `createaddition:tesla_coil`.
+Ресурси й результати: `minecraft:gold_ingot`, `immersiveengineering:ingot_electrum`.
+Квести: `V12_E11_cca_tesla_station`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 22. Справжня партія електруму в Basin
+
+Епохи: 15.
+
+Виготовте електрум за рецептом createaddition:mixing/electrum: один золотий і один срібний зливок відповідних тегів дають два уніфіковані зливки. Потрібне нагрівання Basin; у цій навчальній гілці використовуйте доступний маршрут із Create Blaze Burner.
+Попередні цілі: Електрум: пруток для контакту, дріт для намотки. Цей крок перевіряє нове успішне витрачання входів машиною та командний receipt.
+Попередні кроки: createaddition.core_v12.electrum_shapes.
+Ресурси й результати: `immersiveengineering:ingot_electrum`.
+Квести: `V12_E15_cca_electrum_native`.
+Точний team-bound native Basin receipt після несимульованого успішного процесу; наявність зливка не замінює receipt. Optional binary/client acceptance окремо.
+
+### 23. Біомаса переходить у паливні пелети
+
+Епохи: 15.
+
+Порівняйте рослинну олію як рідкий реагент і біомасу як проміжний предмет. Експортований рецепт біомаси з культур змішує дві одиниці тегу c:crops та100mBолії з тегу c:plantoil у нагрітому Basin.
+Попередні цілі: Справжня партія електруму в Basin; Дві олії, два простори імен, спільний реагент. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createaddition.core_v12.electrum_native.
+Машини: `create:mechanical_press`.
+Ресурси й результати: `createaddition:biomass`, `createaddition:biomass_pellet`, `createaddition:seed_oil_bucket`.
+Квести: `V12_E15_cca_biomass_loop`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
 Фінальні цілі:
 - Заряджання на рухомому майданчику
 - Реле завершує електромеханічний контракт
@@ -7694,9 +7881,11 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"recipe_id": "aia2:v4/createaddition/crafting/portable_energy_interface", "target": "createaddition:portable_energy_interface", "epoch": 11, "ingredient_ids": ["create:brass_casing", "create:chute", "kubejs:aia2_tech_matrix_09"], "direction": "incoming", "description_uk": "Рецепт AIA2 для createaddition:portable_energy_interface споживає міжмодові матеріали create:brass_casing, create:chute, kubejs:aia2_tech_matrix_09. Це власна інтеграція збірки, а не правило оригінального мода."}
 
 Прогалини та межі перевірки:
-- Офіційний pin є суміжною гілкою Minecraft1.21, а не підтвердженим тегом установленого JAR; версійні деталі обмежено експортом.
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Активний pin51e4a389 оголошує1.6.0/Create6.0.10; тегів upstream немає, тотожність установленому binary JAR не перевірена. Історичний pin1c81fab1.7.2 збережено з version_match:false.
+- Курс охоплює вибрану електромеханічну лінію, а не всі128рецептів: charging53, rolling14 і liquid-burning9 не оголошуються повністю перевіреними.
+- Epoch15 нового Basin goal — консервативно обраний штатний Blaze Burner шлях; CDG burner12 може забезпечити heat. Абсолютно найраніший heat/bootstrap/config не доведено.
+- Rolling-specific proof, FE-flow, заряд сховища, Tesla charging/Contraption transfer та TPS не сертифікуються inventory/observation задачами. Новий native receipt перевіряється окремо від optional binary dispatch.
+- Повний Minecraft-клієнт із оригінальними optional-модами, JEI, Survival, активні конфіги та довготривалий TPS NOT_RUN.
 
 Джерела:
 
@@ -7713,10 +7902,165 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shapeless](../../content/research/evidence/technology_v5/createaddition/recipes/createaddition/crafting/portable_energy_interface.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createaddition/recipes/createaddition/crafting/redstone_relay.json) — SHA перевірено
 - [джерело](../../content/research/evidence/active_aia2_bridges_v5.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/channeling.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_shingle_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_shingle_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_shingles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_tile_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_tile_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_exposed_copper_tiles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_shingle_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_shingle_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_shingles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_tile_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_tile_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_oxidized_copper_tiles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_shingle_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_shingle_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_shingles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_tile_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_tile_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_create_weathered_copper_tiles.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_chiseled_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_copper_bulb.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_copper_door.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_copper_grate.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_copper_trapdoor.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_cut_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_cut_copper_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_exposed_cut_copper_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_chiseled_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_copper_bulb.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_copper_door.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_copper_grate.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_copper_trapdoor.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_cut_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_cut_copper_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_oxidized_cut_copper_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_chiseled_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_copper_bulb.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_copper_door.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_copper_grate.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_copper_trapdoor.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_cut_copper.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_cut_copper_slab.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/deoxidize_minecraft_weathered_cut_copper_stairs.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_block.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_ingot.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_nugget.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_rod.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_sheet.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/charging/electrify_gold_wire.json) — SHA перевірено
+- [create:compacting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compacting/biomass_pellet.json) — SHA перевірено
+- [create:compacting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compacting/cake_base.json) — SHA перевірено
+- [create:compacting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compacting/seed_oil.json) — SHA перевірено
+- [createaddition:charging](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/ae2/charged_certus_quartz.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/constantan.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/crushing/steel_ingot.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/fabric_sail.json) — SHA перевірено
+- [create:item_application](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/item_application/kiln_brick.json) — SHA перевірено
+- [create:item_application](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/item_application/leaded_concrete.json) — SHA перевірено
+- [create:item_application](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/item_application/reinforced_blast_brick.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/rolling/aluminum_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/rolling/aluminum_plate.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/rolling/lead_plate.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/rolling/steel_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/rolling/steel_plate.json) — SHA перевірено
+- [immersiveengineering:mineral_mix](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/immersiveengineering/sphalerite.json) — SHA перевірено
+- [mekanism:enriching](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/mekanism/rose_quartz_enriching.json) — SHA перевірено
+- [mekanism:metallurgic_infusing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/compat/mekanism/rose_quartz_metallurgic_infusing.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/barbed_wire.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/biomass_pallet_block.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/biomass_pellet_from_biomass_pallet_block.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/capacitor_1.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/capacitor_2.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/connector.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/copper_spool.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/diamond_grit_sandpaper.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/electrum_amulet.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/electrum_spool.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/festive_spool.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/gold_spool.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/large_connector.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/modular_accumulator.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/portable_energy_interface.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/redstone_relay.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/rolling_mill.json) — SHA перевірено
+- [minecraft:crafting_shapeless](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/small_light_connector.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crafting/spool.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/crushing/diamond.json) — SHA перевірено
+- [create:filling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/filling/cake.json) — SHA перевірено
+- [create:filling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/filling/chocolate_cake.json) — SHA перевірено
+- [create:filling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/filling/honey_cake.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/biodiesel.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/biofuel.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/creosote.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/crude_oil.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/diesel.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/ethanol.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/gasoline.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/lava.json) — SHA перевірено
+- [createaddition:liquid_burning](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/liquid_burning/plantoil.json) — SHA перевірено
+- [create:mechanical_crafting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mechanical_crafting/alternator.json) — SHA перевірено
+- [create:mechanical_crafting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mechanical_crafting/electric_motor.json) — SHA перевірено
+- [create:mechanical_crafting](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mechanical_crafting/tesla_coil.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/bioethanol.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_crops.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_flowers.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_honeycomb.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_leaves.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_plant_foods.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_plants.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_saplings.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/biomass_from_stricks.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/electrum.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/netherrack.json) — SHA перевірено
+- [create:pressing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/pressing/electrum_ingot.json) — SHA перевірено
+- [create:pressing](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/pressing/zinc_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/brass_rod.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/copper_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/copper_plate.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/electrum_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/electrum_plate.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/gold_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/gold_plate.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/iron_ingot.json) — SHA перевірено
+- [createaddition:rolling](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/rolling/iron_plate.json) — SHA перевірено
+- [minecraft:smoking](../../content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/smoking/cake_base_baked.json) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/LICENSE) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/config/CommonConfig.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/energy/WireType.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/item/WireSpool.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/rolling_mill/RollingMillBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/recipe/rolling/RollingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/alternator/AlternatorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/electric_motor/ElectricMotorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/modular_accumulator/ModularAccumulatorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/redstone_relay/RedstoneRelayBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/connector/SmallConnectorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/connector/LargeConnectorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/connector/base/AbstractConnectorBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/tesla_coil/TeslaCoilBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/blocks/portable_energy_interface/PortableEnergyInterfaceBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/mrh0/createaddition/blob/51e4a389ab044a113c02be383e66beaf69ec3110/src/main/java/com/mrh0/createaddition/index/CAPonders.java) — SHA перевірено
+- [джерело](https://github.com/Maksym-Voitovych/QuestModpack/blob/0ca0c5b028da51753057e5a7e4ff079a46a43ae3/kubejs/config/aia2_runtime.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/recipe-index.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/ingots/gold.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/ingots/silver.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/ingots/electrum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/plates/electrum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/wires/electrum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/rods/electrum.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/tags/minecraft/item/c/wires/copper.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cca/manifest.json) — SHA перевірено
 
 ## Create Diesel Generators
 
-Версія експорту: **1.21.1-1.3.15**. Статус: `reviewed_partial`.
+Версія експорту: **1.21.1-1.3.15**. Статус: `reviewed_scoped_fuel_material_course_with_explicit_runtime_gaps`.
 [Структурована карта](../../content/research/technology_v5.json).
 
 Oil Scanner допомагає обрати місце видобувної гілки Create Diesel Generators.
@@ -7801,6 +8145,204 @@ FTB перевіряє саме вказаний тип task; огляд та н
 Квести: `V5_E44_diesel_contract_04`.
 FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.
 
+### 8. Доступний дизельний привід Create
+
+Епохи: 12.
+
+Малий двигун Create Diesel Generators додає ще один паливний шлях до обертання.
+Попередні цілі: Окрема дизельна фракція; Передавання руху від двигуна. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Машини: `createdieselgenerators:diesel_engine`.
+Квести: `E12_X_engine`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 9. Пошук палива починається з вимірювання
+
+Епохи: 12.
+
+Відведіть тару для розвідувальної проби й використайте сканер до монтажу стаціонарного обладнання. Позначте джерело та маршрут повернення, щоб нафта не стала лише випадковою знахідкою в інвентарі.
+Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Машини: `createdieselgenerators:oil_barrel`.
+Ресурси й результати: `createdieselgenerators:oil_scanner`, `createdieselgenerators:canister`.
+Квести: `V4_E12_diesel_01`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 10. Голова насосної установки
+
+Епохи: 12.
+
+Підготуйте верхню частину насоса та механічну передачу для її обслуговування. Звірте склад структури з довідником аддона й не плутайте предметний комплект із доказом завершеного мультиблока.
+Попередні цілі: Пошук палива починається з вимірювання. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_01.
+Машини: `createdieselgenerators:pumpjack_head`.
+Ресурси й результати: `createdieselgenerators:pumpjack_crank`, `create:shaft`.
+Квести: `V4_E12_diesel_02`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 11. Опора бурового вузла
+
+Епохи: 12.
+
+Огляньте несучу частину насосної установки та місце її контакту з родовищем. Залиште доступ для огляду нижньої частини, а не ховайте весь вузол під суцільною підлогою.
+Попередні цілі: Голова насосної установки. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_02.
+Машини: `createdieselgenerators:pumpjack_bearing`, `createdieselgenerators:pumpjack_hole`.
+Ресурси й результати: `minecraft:iron_ingot`.
+Квести: `V4_E12_diesel_03`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 12. Паливна проба двигуна
+
+Епохи: 12.
+
+Перед довгою паливною лінією перевірте двигун на невеликій партії дизеля. Підготуйте запасну рухому деталь і місце для ізоляції подавання палива під час ремонту.
+Попередні цілі: Опора бурового вузла. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_03.
+Машини: `createdieselgenerators:diesel_engine`.
+Ресурси й результати: `createdieselgenerators:diesel_bucket`, `createdieselgenerators:engine_piston`.
+Квести: `V4_E12_diesel_04`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 13. Біопаливо має рослинний початок
+
+Епохи: 12.
+
+Розділіть біологічну сировину та продукти переробки ще до з'єднання труб. Порівняйте нативні рецепти олії й етанолу в JEI та не називайте один резервуар повною біопаливною фабрикою.
+Попередні цілі: Паливна проба двигуна. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_04.
+Машини: `createdieselgenerators:bulk_fermenter`.
+Ресурси й результати: `createdieselgenerators:plant_oil_bucket`, `createdieselgenerators:ethanol_bucket`.
+Квести: `V4_E12_diesel_05`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 14. Паливо для іншого двигуна
+
+Епохи: 12.
+
+Перевірте сумісність обраного палива з великим двигуном та подбайте про зручне місце обслуговування. Глушник є допоміжною деталлю і не збільшує виробництво енергії сам по собі.
+Попередні цілі: Біопаливо має рослинний початок. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_05.
+Машини: `createdieselgenerators:large_diesel_engine`.
+Ресурси й результати: `createdieselgenerators:biodiesel_bucket`, `createdieselgenerators:engine_silencer`.
+Квести: `V4_E12_diesel_06`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 15. Дві ділянки переробки
+
+Епохи: 12.
+
+Відокремте контрольовану переробку від простого зберігання сирої нафти. Перевірте реальний рецепт фракції в JEI, перш ніж під'єднувати її до паливного споживача.
+Попередні цілі: Паливо для іншого двигуна. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_06.
+Машини: `createdieselgenerators:basin_lid`.
+Ресурси й результати: `createdieselgenerators:distillation_controller`, `createdieselgenerators:gasoline_bucket`.
+Квести: `V4_E12_diesel_07`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 16. Планове обслуговування турбіни
+
+Епохи: 12.
+
+Зберіть інструменти й деталі для обслуговування потужнішого двигуна, а не лише його корпус. Під час пробного запуску контролюйте подавання палива та окремо перевірте механічний вихід.
+Попередні цілі: Дві ділянки переробки. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_07.
+Машини: `createdieselgenerators:huge_diesel_engine`.
+Ресурси й результати: `createdieselgenerators:engine_turbocharger`, `createdieselgenerators:hammer`, `createdieselgenerators:wire_cutters`.
+Квести: `V4_E12_diesel_08`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 17. Виготовте дві форми паливного зберігання
+
+Епохи: 12.
+
+Виготовте окремо Oil Barrel і Canister: обидві формули використовують дерев’яну бочку та залізні пластини, але каністрі також потрібен андезитовий сплав. Це різні блоки для організації паливної ділянки, а не готове паливо.
+Попередні цілі: Пошук палива починається з вимірювання. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.legacy_v12.v4_e12_diesel_01.
+Ресурси й результати: `createdieselgenerators:canister`, `createdieselgenerators:oil_barrel`.
+Квести: `V12_E12_cdg_containers`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 18. Кришка Basin і об’ємний ферментер
+
+Епохи: 12.
+
+Виготовте Basin Lid і Bulk Fermenter, щоб порівняти дві ферментаційні машини. Для перевіреного рецепта ферментованої сировини одна цукрова тростина з тегу createdieselgenerators:fermentable та одна кісткова мука є окремими вхідними інгредієнтами.
+Попередні цілі: Виготовте дві форми паливного зберігання. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.containers.
+Ресурси й результати: `createdieselgenerators:basin_lid`, `createdieselgenerators:bulk_fermenter`, `minecraft:sugar_cane`, `minecraft:bone_meal`.
+Квести: `V12_E12_cdg_fermentation_vessels`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 19. Дві олії, два простори імен, спільний реагент
+
+Епохи: 12.
+
+Порівняйте відро Plant Oil із Diesel Generators та Seed Oil із Create Crafts & Additions. Обидва експорти ущільнюють насіння в Basin й дають100mBсвоєї олії за партію; рецепт виробництва й ID рідини потрібно читати окремо.
+Попередні цілі: Кришка Basin і об’ємний ферментер. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.fermentation_vessels.
+Машини: `create:mechanical_press`.
+Ресурси й результати: `minecraft:wheat_seeds`, `createdieselgenerators:plant_oil_bucket`, `createaddition:seed_oil_bucket`.
+Квести: `V12_E12_cdg_seed_oils`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 20. Три проби для біодизельної суміші
+
+Епохи: 12.
+
+Зіставте вхідні реагенти й готове паливо: рецепт create:mixing використовує100mBз тегу рослинної олії та100mBз тегу етанолу, а результатом є200mBбіодизелю. Ці об’єми описують одну рецептурну партію, а не місткість усієї лінії.
+Попередні цілі: Дві олії, два простори імен, спільний реагент. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.seed_oils.
+Машини: `create:mechanical_mixer`.
+Ресурси й результати: `createdieselgenerators:plant_oil_bucket`, `createdieselgenerators:ethanol_bucket`, `createdieselgenerators:biodiesel_bucket`.
+Квести: `V12_E12_cdg_biodiesel_samples`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 21. Форма профілю й одна партія металевих панелей
+
+Епохи: 12.
+
+Підготуйте пилу й прес для окремої лінії формування. Рецепт cutting/lines_mold створює предмет Mold із компонентом createdieselgenerators:mold_type=createdieselgenerators:lines; інші форми використовують той самий базовий Item ID.
+Попередні цілі: Виготовте дві форми паливного зберігання. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.containers.
+Машини: `create:mechanical_saw`, `create:mechanical_press`.
+Ресурси й результати: `createdieselgenerators:mold`, `immersiveengineering:plate_iron`, `createdieselgenerators:sheet_metal_panel`.
+Квести: `V12_E12_cdg_panel_tooling`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 22. Перегонка зберігає обидві фракції
+
+Епохи: 15.
+
+Підготуйте одну рецептурну партію з чотирьох Distillation Controller та чотири Create Fluid Tank як матеріальний запас. Під час перетворення вежі потрібен окремий контролер на кожен блок резервуара: кількість зростає як ширина × ширина × висота, а мінімальна висота визначається конфігурацією.
+Попередні цілі: Три проби для біодизельної суміші. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.biodiesel_samples.
+Машини: `create:blaze_burner`.
+Ресурси й результати: `createdieselgenerators:distillation_controller`, `create:fluid_tank`, `createdieselgenerators:crude_oil_bucket`, `createdieselgenerators:diesel_bucket`, `createdieselgenerators:gasoline_bucket`.
+Квести: `V12_E15_cdg_distillation_samples`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 23. Виготовте комплект обслуговування двигуна
+
+Епохи: 18.
+
+Підготуйте новий комплект сервісних компонентів: два Engine Piston, один Engine Silencer та один Engine Turbocharger. Поршні виходять парою з однієї формули; глушник використовує вовну й трубу, а турбокомпресор — Propeller та металеві деталі.
+Попередні цілі: Перегонка зберігає обидві фракції; Бродіння постачає реальну паливну партію. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.distillation_samples, createdieselgenerators.phase.05.
+Ресурси й результати: `createdieselgenerators:engine_piston`, `createdieselgenerators:engine_silencer`, `createdieselgenerators:engine_turbocharger`.
+Квести: `V12_E18_cdg_service_components`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
+### 24. Паливний двигун і генератор у спільному вузлі
+
+Епохи: 18.
+
+Підготуйте окремий механічний маршрут від Large Diesel Engine до Alternator Create Crafts & Additions. Двигун дає обертання, а генератор використовує механічну потужність для електричної ділянки; не під’єднуйте мотор назад у петлю в очікуванні безкоштовної енергії.
+Попередні цілі: Виготовте комплект обслуговування двигуна; Реле й мотор мають різну полярність керування. Перевірка обмежена явно заданими crafting/item/observation умовами; описаний виробничий або енергетичний процес сам по собі не зараховується.
+Попередні кроки: createdieselgenerators.core_v12.service_components.
+Машини: `createdieselgenerators:large_diesel_engine`, `createaddition:alternator`.
+Ресурси й результати: `create:clutch`, `createaddition:capacitor`.
+Квести: `V12_E18_cdg_backup_energy`.
+Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
+
 Фінальні цілі:
 - Двигун отримує обслуговувану передачу
 - Паливний двигун лишається частиною заводу
@@ -7812,17 +8354,19 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - {"mod_id": "mekanism", "role_uk": "У курсі використано реальний матеріал, сховище або сумісний механізм; інтерфейси та типи середовищ перевіряються окремо."}
 
 Прогалини та межі перевірки:
-- Офіційний pin є суміжною гілкою Minecraft1.21, а не підтвердженим тегом установленого JAR; версійні деталі обмежено експортом.
-- Повний модпак/мережеві режими/довготривалий TPS не тестувалися.
-- Це перевірена карта входу й вибраних спеціалізацій, а не заява про повне освоєння всіх функцій мода.
+- Pin79ce136 оголошує1.21.1-1.3.15/Create6.0.10: source-version match підтверджено, release tag та installed binary equivalence не перевірені.
+- Це вибраний паливно-матеріальний курс, а не повне проходження всіх130експортованих рецептів; turret/track та інші спеціалізації залишаються відкритими.
+- ItemStack ProductionMilestoneBridge не засвідчує CDG fluid completion. Bucket samples, observation і звичайний crafting не є доказом ферментації, дистиляції, витрати палива чи потужності двигуна.
+- Контролер потрібен для кожного tank-блока вежі; мінімальна геометрія/кількість, паливні значення, нагрів CDG12 і config/datapack overrides потребують фактичного інстансу.
+- Mold має component-based профілі при одному Item ID; inventory без component predicate не доводить конкретний профіль. Повний клієнт/JEI/Survival/TPS NOT_RUN.
 
 Джерела:
 
 - [джерело](../../content/research/evidence/technology_v5/installed-metadata.json) — SHA перевірено
-- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/diesel_engine/huge/HugeDieselEngineBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/tools/ChemicalSprayerProjectileEntity.java) — SHA перевірено; upstream-версія відрізняється
-- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/bulk_fermenter/BulkFermenterBlockEntity.java) — SHA перевірено; upstream-версія відрізняється
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/diesel_engine/huge/HugeDieselEngineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/tools/ChemicalSprayerProjectileEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/bulk_fermenter/BulkFermenterBlockEntity.java) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/oil_scanner.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/canister.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/pumpjack_head.json) — SHA перевірено
@@ -7830,6 +8374,177 @@ FTB перевіряє саме вказаний тип task; огляд та н
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/bulk_fermenter.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/large_diesel_engine.json) — SHA перевірено
 - [minecraft:crafting_shaped](../../content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/huge_diesel_engine.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/LICENSE) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGRecipes.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGDataComponents.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGItems.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/basin_lid/BasinFermentingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/basin_lid/BasinLidBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/bulk_fermenter/BulkFermenterBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/bulk_fermenter/BulkFermentingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/burner/BurnerBlock.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/burner/BurnerBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/distillation/DistillationControllerItem.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/distillation/DistillationRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/distillation/DistillationTankBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldItem.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldType.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/CompressionMoldingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/mixins/BasinRecipeMixin.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/fuel_type/FuelType.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/diesel_engine/huge/HugeDieselEngineBlockEntity.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/ponder/BasinScenes.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/ponder/BurnerScenes.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/ponder/DieselEngineScenes.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/ponder/DistillationScene.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/biodiesel.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/diesel.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/ethanol.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/gasoline.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/plantoil.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGConfig.java) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/item/createdieselgenerators/fermentable.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/fluid/c/plantoil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/fluid/c/ethanol.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/fluid/c/crude_oil.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/item/c/seeds.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/tags/minecraft/item/c/seeds/wheat.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/recipe-index.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/installed-mod.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/existing-quest-map.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/producer-floors.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/dough.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/fermentable.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/fermented_spider_eye.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/golden_apple.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/golden_carrot.json) — SHA перевірено
+- [createdieselgenerators:basin_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/basin_fermenting/magma_cream.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/bulk_fermenting/fermentable.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/bulk_fermenting/lava.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/bulk_fermenting/magma_cream.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/bulk_fermenting/pulp.json) — SHA перевірено
+- [createdieselgenerators:casting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/casting/chocolate_bar.json) — SHA перевірено
+- [create:compacting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compacting/plant_oil.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/copper_rod.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/copper_wire.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/electrum_rod.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/electrum_sheet.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/electrum_wire.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/gold_rod.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/gold_wire.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/iron_rod.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/iron_wire.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/createaddition/zinc_sheet.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/aluminum_sheet.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/aluminum_wire.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/constantan_sheet.json) — SHA перевірено
+- [createdieselgenerators:casting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/duroplast_sheet.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/herbicide.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/nickel_sheet.json) — SHA перевірено
+- [createdieselgenerators:bulk_fermenting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/redstone_acid.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/silver_sheet.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/steel_sheet.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/steel_wire.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compat/immersiveengineering/uranium_sheet.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/blaze_rod.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/bowl.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/bucket.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/chain.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/minecart_coupling.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/sheet_metal_panel.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/compression_molding/stick.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/andesite_girder.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/asphalt_block.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/asphalt_slab.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/asphalt_stairs.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/basin_lid.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/bulk_fermenter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/burner.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/canister.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chemical_turret.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chemical_turret_lighter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chip_wood_beam.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chip_wood_block.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chip_wood_slab.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/chip_wood_stairs.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/diesel_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/distillation_controller.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/engine_piston.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/engine_silencer.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/engine_turbocharger.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/entity_filter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/hammer.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/huge_diesel_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/kelp_handle.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/large_diesel_engine.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/lighter.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/oil_barrel.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/oil_scanner.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/pumpjack_bearing.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/pumpjack_head.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/pumpjack_hole.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/track_layers_bag.json) — SHA перевірено
+- [minecraft:crafting_shaped](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crafting/wire_cutters.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_barrels.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_boats.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_buttons.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_casings.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_chest_boats.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_chests.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_chip_wood_stairs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_composter.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_doors.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_fence_gates.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_fences.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_hanging_signs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_ladders.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_logs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_planks.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_pressure_plates.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_signs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_slabs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_stairs.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_sticks.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_trapdoors.json) — SHA перевірено
+- [create:crushing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/crushing/wood_chip_waterwheel.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/cutting/bar_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/cutting/bowl_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/cutting/chain_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/cutting/lines_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/cutting/wood_chips.json) — SHA перевірено
+- [create:deploying](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/deploying/chemical_sprayer_lighter.json) — SHA перевірено
+- [createdieselgenerators:distillation](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/distillation/crude_oil.json) — SHA перевірено
+- [createdieselgenerators:distillation](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/distillation/superheated_crude_oil.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/hammering/brass_sheet.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/hammering/copper_sheet.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/hammering/gold_sheet.json) — SHA перевірено
+- [createdieselgenerators:hammering](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/hammering/iron_sheet.json) — SHA перевірено
+- [create:mechanical_crafting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mechanical_crafting/chemcial_sprayer.json) — SHA перевірено
+- [create:mechanical_crafting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mechanical_crafting/pumpjack_crank.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/asphalt_block.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/biodiesel.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/black_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/blue_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/brown_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/cyan_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/gray_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/green_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/light_blue_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/light_gray_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/lime_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/magenta_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/orange_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/pink_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/purple_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/red_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/white_concrete.json) — SHA перевірено
+- [create:mixing](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/mixing/yellow_concrete.json) — SHA перевірено
+- [minecraft:stonecutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/stonecutting/asphalt_slab.json) — SHA перевірено
+- [minecraft:stonecutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/stonecutting/asphalt_stairs.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/wire_cutting/sticks.json) — SHA перевірено
+- [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/wire_cutting/sticks_from_ladder.json) — SHA перевірено
+- [джерело](../../content/research/evidence/create_addons_core_v12/cdg/manifest.json) — SHA перевірено
 
 ## Draconic Evolution
 

@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "baseline": "0ca0c5b028da51753057e5a7e4ff079a46a43ae3",
+  "source_path": "kubejs/config/aia2_runtime.json",
+  "source_sha256": "af786ccd4a9756f907ce980c35a21522d319c1dff2766eb207742276b9c194d1",
+  "source_kind": "baseline_runtime_contract_facts",
+  "selected_gates": {
+    "itemGates": {
+      "create:basin": 4,
+      "create:mechanical_mixer": 4,
+      "create:mechanical_press": 4,
+      "create:blaze_burner": 15,
+      "createaddition:rolling_mill": 11,
+      "createaddition:connector": 11,
+      "createaddition:alternator": 11,
+      "createaddition:electric_motor": 11,
+      "createaddition:modular_accumulator": 11,
+      "createaddition:portable_energy_interface": 11,
+      "createaddition:redstone_relay": 11,
+      "immersiveengineering:ingot_electrum": 8,
+      "createaddition:electrum_rod": 11,
+      "immersiveengineering:wire_electrum": 8,
+      "createdieselgenerators:burner": 12
+    },
+    "blockGates": {
+      "create:basin": 4,
+      "create:mechanical_mixer": 4,
+      "create:mechanical_press": 4,
+      "create:blaze_burner": 15,
+      "createaddition:rolling_mill": 11,
+      "createaddition:connector": 11,
+      "createaddition:alternator": 11,
+      "createaddition:electric_motor": 11,
+      "createaddition:modular_accumulator": 11,
+      "createaddition:portable_energy_interface": 11,
+      "createaddition:redstone_relay": 11,
+      "createdieselgenerators:burner": 12
+    },
+    "recipeGates": {
+      "createaddition:mixing/electrum": 8,
+      "createaddition:rolling/electrum_ingot": 11,
+      "createaddition:rolling/electrum_plate": 8
+    }
+  },
+  "reason_uk": "Обраний консервативний маршрут Create:mixing heated використовує штатний create:blaze_burner item/block floor15, Basin/Mixer floor4. Recipe/output floor8 не доводить доступність виробника. CDG burner floor12 може дати heat, тому15 не є доведеною абсолютною найранішою епохою. Nativegoal15 є рішенням AIA2курсу, не загальною фізичною забороною ранішого сплавлення. Survival не запускався.",
+  "full_client_run": false,
+  "chosen_create_blaze_burner_path_floor": 15,
+  "absolute_earliest_heat_producer_proven": false,
+  "alternate_producers": [
+    {
+      "producer": "createdieselgenerators:burner",
+      "candidate_floor": 12,
+      "heat": "Ethanol multipler0.9 + full valve can supply SEETHING; sufficient for heated recipes",
+      "scope_uk": "Version-matched CDG source defaults: formula (valve+1)*0.9 приvalve1даєSEETHINGthreshold1.8. Фактичний datapack/config override та повний паливний bootstrap не перевірені. Не стверджувати, що heat абсолютно неможливий до15.",
+      "source_references": [
+        {
+          "path": "content/research/evidence/create_addons_core_v12/cdg/official/src/main/java/com/jesz/createdieselgenerators/content/burner/BurnerBlock.java",
+          "sha256": "e3bcda4f30d39257908ab3f5c37cb2af8515d3406176b92681601fe72686d413",
+          "pin": "79ce136730871b6f3f7b55d3cc748ff2bec2ad12",
+          "lines": [
+            23,
+            36
+          ]
+        },
+        {
+          "path": "content/research/evidence/create_addons_core_v12/cdg/official/src/main/java/com/jesz/createdieselgenerators/content/burner/BurnerBlockEntity.java",
+          "sha256": "e8ae08e9e3b1ef14a65f2d62e344eee986e53e8fa514fea60df9c212d8898b1a",
+          "pin": "79ce136730871b6f3f7b55d3cc748ff2bec2ad12",
+          "lines": [
+            42,
+            86,
+            149,
+            158
+          ]
+        },
+        {
+          "path": "content/research/evidence/create_addons_core_v12/cdg/official/src/main/resources/data/createdieselgenerators/createdieselgenerators/fuel_type/ethanol.json",
+          "sha256": "dfd1fe48fe43cef7d25269ce595312cac6e2091a11e33763035b750cd5670cb5",
+          "pin": "79ce136730871b6f3f7b55d3cc748ff2bec2ad12",
+          "lines": null
+        }
+      ]
+    }
+  ]
+}

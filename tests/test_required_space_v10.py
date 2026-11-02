@@ -23,6 +23,9 @@ class RequiredSpaceTests(unittest.TestCase):
                  S.nasa.PENDING, S.nasa.RESEARCH, self.migration['ftb_progress_evidence']['path']]
         if (ROOT/'content/audit/v11-space-milestone-presentation.json').exists():
             paths.append('content/audit/v11-space-milestone-presentation.json')
+        if (ROOT/'content/research/create_addons_pending_v12.json').exists():
+            paths.extend(['content/research/create_addons_pending_v12.json',
+                          'content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/electrum.json'])
         pending = S.read(ROOT / S.nasa.PENDING)
         paths += [entry['frozen_path'] for rule in pending['mechanic_rules'] for entry in rule['evidence']]
         for relative in paths:

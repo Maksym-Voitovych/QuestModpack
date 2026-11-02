@@ -6,26 +6,22 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний checkpoint: **0.4.22-alpha — збереження журналу ключів і точні віхи37/38**.
-Уточнено лише title/description дванадцяти старих віх: показати предмет або
-здати його з витратою. Tasks/IDs/rewards/deps/coords збережені. Key journal
-schema1 захищений від empty replacement після IO/load failure, без фабрикації
-proofs чи нормалізації aliases. Installer перевіряє compiled capability1.
-Чотири required NASA та шість optional station goals не змінено. Стан фінальних
-QA/доставки й Git — у PROGRESS. Наступний змістовний блок —34partial карти й
-решта required48ліній; не повторювати завершені NASA/станції/назви/journal.
-Original optional binaries/client/JEI/Survival/TPS BLOCKED/NOT_RUN. Повний0.5 не готовий.
+Поточний checkpoint: **0.4.23-alpha — курси CCA/CDG і native electrum proof**.
+Додано15побічних цілей, карти двох аддонів поглиблено до23/24етапів;
+усі3381старі quest payloads без координат збережені. Нативний контракт
+розширено15→16правил із точним збереженням попередніх hashes/schema1.
+258експортованих рецептів і47official source файлів підтверджують дослідження,
+але не тотожність installed binary. CCA1.6.0pin51e4a389,CDG1.3.15pin79ce136.
+Java230classes/Mixins76/API4/96keys/627recipes незмінні. Поточний стан
+остаточних QA/пакета/Git — у PROGRESS. Повний0.5не готовий.
 
-Наступна конкретна дія після доставки0.4.22: scoped course Create Crafts &
-Additions1.6.0 / Create Diesel Generators1.3.15. Спочатку заморозити128/130
-exported recipes і producer-floor reachability11/12/18/19, звірити по8наявних
-V4цілей із7стадіями кожної карти без зміни ID/tasks. CCA source pin поки1.7.2,
-а не1.6.0; stage rolling посилається на cutting — виправити provenance до
-версійно залежних hooks. CDG pin має version1.21.1-1.3.15, тому його false
-version_match потребує предметної перевірки. Перший можливий реальний процес —
-heated electrum mixing через наявний Create Basin hook; новий rule потребує
-явного extension contract поверх15опублікованих rules, без переписування hashes.
-Rolling-specific/FE-flow/fluid-production proof не оголошувати реалізованими.
+Наступна конкретна дія після доставки0.4.23: CDG Mold component-aware tasks.
+Перевірити exact1.3.15 codec createdieselgenerators:mold_type і FTB2101.1.36
+ItemTask component matching; потім додати окремі цілі профілів та реальні
+compression-molding ланцюги без зміни старого generic Mold task. Не видавати
+inventory за fluid/native production proof. Charging53/liquid-burning9 CCA,
+CDG fluid completion, інші34partial карти/required48 та6IFfluidgaps лишаються
+незавершеними. Original optional binaries/client/JEI/Survival/TPS NOT_RUN.
 
 ## Правило відновлення
 

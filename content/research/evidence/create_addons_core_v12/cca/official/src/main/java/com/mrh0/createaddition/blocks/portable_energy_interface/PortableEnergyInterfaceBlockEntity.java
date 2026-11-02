@@ -1,0 +1,153 @@
+package com.mrh0.createaddition.blocks.portable_energy_interface;
+
+import com.mrh0.createaddition.config.CommonConfig;
+import com.mrh0.createaddition.index.CABlockEntities;
+import com.simibubi.create.content.contraptions.Contraption;
+import com.simibubi.create.content.contraptions.actors.psi.PortableStorageInterfaceBlockEntity;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.energy.EnergyStorage;
+import net.neoforged.neoforge.energy.IEnergyStorage;
+
+public class PortableEnergyInterfaceBlockEntity extends PortableStorageInterfaceBlockEntity {
+
+	protected IEnergyStorage capability;
+	//protected LazyOptional<PortableEnergyInterfacePeripheral> peripheral;
+
+	public PortableEnergyInterfaceBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
+		super(type, pos, state);
+
+		capability = this.createEmptyHandler();
+
+		//if (CreateAddition.CC_ACTIVE)
+		//	this.peripheral = LazyOptional.of(() -> Peripherals.createPortableEnergyInterfacePeripheral(this));
+	}
+
+	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
+		event.registerBlockEntity(
+				Capabilities.EnergyStorage.BLOCK,
+				CABlockEntities.PORTABLE_ENERGY_INTERFACE.get(),
+				(be, context) -> be.capability
+		);
+	}
+
+	public void startTransferringTo(Contraption contraption, float distance) {
+		IEnergyStorage oldcap = this.capability;
+		invalidate();
+		this.capability =  new InterfaceEnergyHandler(PortableEnergyManager.get(contraption));
+		//oldcap.invalidate();
+		super.startTransferringTo(contraption, distance);
+	}
+
+	@Override
+	protected void invalidateCapability() {
+		if (level == null) return;
+		level.invalidateCapabilities(getBlockPos());
+		// this.capability.invalidate();
+	}
+
+	@Override
+	protected void stopTransferring() {
+		IEnergyStorage oldcap = this.capability;
+		invalidate();
+		this.capability = this.createEmptyHandler();
+		//oldcap.invalidate();
+		super.stopTransferring();
+	}
+
+	private IEnergyStorage createEmptyHandler() {
+		return new InterfaceEnergyHandler(new EnergyStorage(0));
+	}
+
+	// Implement protected methods.
+
+	public boolean isConnected() {
+		int timeUnit = this.getTransferTimeout();
+		return this.transferTimer >= 4 && this.transferTimer <= timeUnit + 4;
+	}
+
+	protected float getExtensionDistance(float partialTicks) {
+		return (float)(Math.pow(this.connectionAnimation.getValue(partialTicks), 2.0D) * (double)this.distance / 2.0D);
+	}
+
+	protected float getConnectionDistance() {
+		return this.distance;
+	}
+
+	protected Entity getConnectedEntity() {
+		return this.connectedEntity;
+	}
+
+	protected int getTransferTimer() {
+		return this.transferTimer;
+	}
+
+	// CC
+
+	public int getEnergy() {
+		return this.capability.getEnergyStored();
+	}
+
+	public int getCapacity() {
+		return this.capability.getMaxEnergyStored();
+	}
+
+	public class InterfaceEnergyHandler implements IEnergyStorage {
+
+		private final IEnergyStorage wrapped;
+
+		public InterfaceEnergyHandler(IEnergyStorage wrapped) {
+			this.wrapped = wrapped;
+		}
+
+		@Override
+		public int receiveEnergy(int maxReceive, boolean simulate) {
+			if (!PortableEnergyInterfaceBlockEntity.this.canTransfer()) return 0;
+			maxReceive = Math.min(maxReceive, CommonConfig.PEI_MAX_INPUT.get());
+			if (this.wrapped == null) return 0;
+			int received = this.wrapped.receiveEnergy(maxReceive, simulate);
+			if (received != 0 && !simulate) this.keepAlive();
+			return received;
+		}
+
+		@Override
+		public int extractEnergy(int maxExtract, boolean simulate) {
+			if (!PortableEnergyInterfaceBlockEntity.this.canTransfer()) return 0;
+			maxExtract = Math.min(maxExtract, CommonConfig.PEI_MAX_OUTPUT.get());
+			if (this.wrapped == null) return 0;
+			int extracted = this.wrapped.extractEnergy(maxExtract, simulate);
+			if (extracted != 0 && !simulate) this.keepAlive();
+			return extracted;
+		}
+
+		@Override
+		public int getEnergyStored() {
+			if (this.wrapped == null) return 0;
+			return this.wrapped.getEnergyStored();
+		}
+
+		@Override
+		public int getMaxEnergyStored() {
+			if (this.wrapped == null) return 0;
+			return this.wrapped.getMaxEnergyStored();
+		}
+
+		@Override
+		public boolean canExtract() {
+			return true;
+		}
+
+		@Override
+		public boolean canReceive() {
+			return true;
+		}
+
+		public void keepAlive() {
+			PortableEnergyInterfaceBlockEntity.this.onContentTransferred();
+		}
+	}
+}

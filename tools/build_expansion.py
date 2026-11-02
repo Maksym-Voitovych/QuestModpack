@@ -184,7 +184,10 @@ def compile_quests(root=ROOT):
         records.extend(data if isinstance(data, list) else data['quests'])
     v4 = root/'content/quests/v4_mod_depth.json'
     if v4.exists(): records.extend(read(v4)['quests'])
-    for path in sorted((root/'content/quests').glob('v5_*.json')):
+    modern_paths = sorted((root/'content/quests').glob('v5_*.json'))
+    addon_course = root/'content/quests/v12_create_addons_course.json'
+    if addon_course.is_file(): modern_paths.append(addon_course)
+    for path in modern_paths:
         records.extend(read(path)['quests'])
     try:
         from quest_content_migrations import apply as migrate_quest_content
@@ -404,6 +407,7 @@ def apply(root=ROOT):
                                 ('build_station_floors_v8', 'content/recipes/v8_station_floors.json'),
                                 ('build_required_space_v10', 'content/audit/v10-space-required-migration.json'),
                                 ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
+                                ('build_create_addons_v12', 'content/research/create_addons_pending_v12.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json'),
                                 ('build_space_milestones_v11', 'content/audit/v11-space-milestone-presentation.json')]:
         if (root/source).exists():

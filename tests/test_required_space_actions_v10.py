@@ -38,7 +38,7 @@ class RequiredSpaceActionsTests(unittest.TestCase):
     def test_curated_ids_reference_existing_unchanged_native_nasa_rules(self):
         document = json.loads((ROOT / 'kubejs/config/aia2_mechanics.json').read_text())
         rules = {rule['id']: rule for rule in document['rules']}
-        self.assertEqual(len(rules), 15)
+        self.assertEqual(set(rules), {*json.loads((ROOT/'content/research/create_addons_pending_v12.json').read_text())['published_mechanic_hashes'], 'cca_electrum_mixing'})
         source = (ROOT / 'companion/src/main/java/ua/aia2/guard/RequiredSpaceActions.java').read_text()
         for tier, epoch in ((1, 37), (2, 37), (3, 38), (4, 38)):
             ident = f'nasa_tier_{tier}_rocket'

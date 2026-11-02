@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-11-02 (UTC). База `90ab63f`, checkpoint0.4.22-alpha (12milestone presentation/key journal; code/QA/package/actualinstaller DONE; Git status через log/origin/main; точний Git status через log/origin/main); повний0.5 ще не реліз.
+Останнє оновлення: 2026-11-02 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.23-alpha (CCA/CDG:code+targetedQA DONE; code/QA/rebuild/package/installer DONE; Git status через log/origin/main); Git status через log/origin/main; повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61 мод /63 записи,2272 SHA-файлів карт; Ad Astra37етап/65station-джерел з попереднього checkpoint; installed binary provenance та DraconicCI633 BLOCKED |
+| 2 | Дослідження механік | IN_PROGRESS | 61мод/63records,2598SHAfiles;CCA23/CDG24scopedstages,source-versionpinsverified;fullbinaryprovenanceBLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
 | 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,50старих координат в1главі переміщено для6stationцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 3381 quests; цього блоку0нових,12старихвіх37/38title+descriptionуточнено; tasks/deps/flags unchanged; решта48 IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3117предметних нагород; усі payloads/IDs незмінні в0.4.22; нових0 |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 3396quests;+15optionalCCA/CDG11/12/15/18;3381oldpayloadspreserved;remaining48 IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3132itemrewards;+15newthematic;all3117oldpayloads/IDsexact |
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | Finalclean393Python/79Node/5237Java/273MC@2JVM PASS; rebuild191/1183runtimefiles/14JSsyntax PASS; fullpack NOT_RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.22 code/QA/package/actualinstaller DONE; commit/push status зgitlog/origin/main;0.5unfinished |
+| 10 | Інтеграційні тести | IN_PROGRESS | 431cleanPython/81Node/5237Java/43newmodeledPASS;centralvalidator/rebuild211/1184runtimefilesPASS;fullclientNOT_RUN;fullpackNOT_RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.23code/QA/rebuild/package/installerDONE;Gitstatuslog/origin/main;0.5unfinished |
 
 
 
@@ -41,13 +41,13 @@
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (21) | IN_PROGRESS (2 формул) | DONE (static) |
-| 12 | IN_PROGRESS | IN_PROGRESS (17) | TODO | DONE (static) |
+| 12 | IN_PROGRESS | IN_PROGRESS (17) +5 addon | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (29) | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (29) +3 addon | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 18 | IN_PROGRESS | IN_PROGRESS (11) | IN_PROGRESS (7 формул) | DONE (static) |
+| 18 | IN_PROGRESS | IN_PROGRESS (11) +2 addon | IN_PROGRESS (7 формул) | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (35) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (23) | TODO | DONE (static) |
@@ -792,3 +792,38 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - НАСТУПНА ДІЯ:CCA1.6.0/CDG1.3.15 scopedcourse provenance/128+130exportedrecipes,producerfloors11/12/18/19,8V4goals→7stagesreconciliation. Потімновийnativeelectrummixingruleчерезexplicitextensioncontract. Версійно залежніrolling/FEflow/fluidproofsнепідтверджені. Не повторюватиNASA/station/12milestonetitles/keyjournal. Інші34partial/required48і6IFfluidgaps/DraconicCI633залишаютьсявідкритими.
 
 - Finaldeliveryfixtureокремододаноopaqueaia2_key_production_v1.dat marker(2рядкиtool/testreport,після393suite);actualextractedinstallerupgrade/dryrun/repeatповтореноPASS,keyjournalmarkerbyteexact. Production/runtime/generator/unittestкодпісля393не змінювався. ПередфінальнимGitвиконуютьсяrepack→check-only→allmanifestRootSHA; ZIPверифікаціюзапускатилишеПІСЛЯзавершенняpackaging,непаралельно.
+
+### 2026-11-02 — Create addons0.4.23: IN_PROGRESS
+
+- Restoredclean0ca0c5b/main0.4.22;backup/workspace/aia2-backups/before-create-addons-0ca0c5b/checkpoint-0ca0c5b.tar.gz beforechanges. Sourceowners:cca_evidence_v12(cca evidence/doc),cdg_evidence_v12(cdg evidence/doc),create_addon_quests_v12(newcatalog/tests),electrum_extension_v12(newactualhelper/mixinhosttestonly). Rootownssharedcatalog/maps/extension/generators/JS/versions/QA/Git.
+- Scope:exact1.6.0CCA/1.3.15CDGprovenance,128+130recipeinventory,old16V4+8V5questmapsreconciliation,curatedoptionalnewcourse,oneexplicitnativeelectrummixingextensionpreserving15publishedmechanicrules. Nooldtask/ID/rewardreset,NASA/key/stationcontractunchanged.
+- Chosenproducerroute:CreateBlazeBurner15,despiterecipe8/output8/CCA11. CDGBurner12alternateheatconfirmedinsource;absoluteearliestheatNOTclaimed. Newproofgoalepoch15,earlyrolling/electricbranch11unchanged. CCAofficial1.6.0pin51e4a389found;oldpin1.7.2mismatchwillbecorrectedwithoutrewritinghistoricalsourcefiles. CDGsourceversionmatches1.3.15;binaryidentitynotproven.
+- Next:freeze/evidence+catalog,extensioncontractandreadiness/validators,nativehostregressions,generate/fullpreservation/layout/rebuild/installer/commit/push.0.4.23notreadyyet;full0.5unfinished,originaloptionalbinary/fullclient/JEI/Survival/TPSNOT_RUN.
+
+### 2026-11-02 — Create addons0.4.23: integration/source/targeted DONE
+
+- Fifteennewoptionalgoalscompiled:7CCA/8CDG,11ordinary-craftedoutputIDs,oneexactnativeBasinrulecca_electrum_mixing15;all15publishedruleshash/orderanddurablejournalunchanged. Scopeproofnativepostconsumptionhost43checks;no newoptionalMixin. CCA/CDGmaps23/24stages,all32legacy+15newgoalrefs;18formerlyunmappedlegacygoalsnowlinked. Othertechnology-modrecordssemanticSHAunchanged;old14stagesunchangedexceptonecorrectedrollingrecipeevidence.
+- Exactsourceversionpins CCA51e4a3891.6.0/CDG79ce1361.3.15;128+130rawrecipes/47officialfiles/13tags/portablefactsSHAverified.2598sourcefiles/763stages/1136links/61mods(27scopedcore+34partial). Installedbinaryequivalence/fullmodcoverageNOTclaimed.6process-mapwholefileSHArefsupdatedonlyafter15rulepreservation;otherwisecentralvalidatorcorrectlyrejectedstale15-rulehash.
+- Fixedv5-onlycatalogloading incompiler/threevalidators+explicitrewardpolicyselectionforv12;otherwise15sourcegoalswouldnotship. Newcompiledregressionscheckall15actualtasks/gates/rewards. Initial32targetedFAIL1wasover-specificliteralwordingassertion;replacedwithproof_scope+actualtasktypecheck,no productionclaimrelaxed.79targetedPASS,27map/compiled/extensionPASSafterprocessrefregressions.81Node/5237JavaPASS.
+- Preservation0ca0c5b→working:all3381non-coordinatepayloadsbyte-semanticexact,15new3396total/140chapters/6groups/3132itemrewards;627recipebundle+runtimekeys/stations+782assetsbyteexact.24oldcoordsin2addonchaptersmoved;layout1156crossings(vs1154prior),0overlaps/backwards/long/warnings. No artificialedge removal.
+- JAR0.4.23built;230classes+76Mixinconfigbyte-identicalto0.4.22;onlyMETA-INF/neoforge.mods.tomlversionchanged,SHA4560dedf87c78b21ea608c3fca257eb61c0700d22b2b689273efb42d6e66ca31. Existing273minimalMC/2JVM/650ticksevidenceis0.4.22source-identicalcommonclasses,NOTnewCreateexecution. NewCreatehelper/Mixinhost43modeledassertions+negativecontrolPASS;fullclient/optionalweaving/JEI/Survival/TPSNOT_RUN.
+- Agentsfinishedfilesbeforeusageinterruption;rootverifiedsavedmaps23/24and9maptests,tookovermanualacceptance/integration. Nextfinalcleansuite/rebuild/package/actualinstaller/Git. SubsequentcontentblockMoldcomponenttasksinPLAN;do not repeat completed15goals/nativeelectrum/sourcepins.0.5unfinished.
+
+### 2026-11-02 — Create addons0.4.23: finalclean431 DONE
+
+- FreshGitindex5135files:5132byteexact/3knownlegacyCSV+BATlineending-only,code/content/runtimeexactbeforetests.431Python/0fail/0skip PASS(293.282s);81Node/5237Java/43newactualclass+handlerhostchecks PASS. NativeMCnotrerunbecause230classfiles+76Mixinconfigexact0.4.22;previous273scopeexplicit.
+- Deterministicrebuild211/centralvalidatornowrunningonthesamefrozenexport;latestdocs/deliverymetadataarenonfunctional. PreliminaryCRC/5135manifestSHA/1185runtimefiles+actualextractedinstaller0.4.22→0.4.23 PASS:dryrun0writes,oldJARbackup,opaquealljournals/pending/world/foreigncontentpreserved,repeatidempotent.
+- Nextfinishrebuild/metadata/repack/check-only/allsourceSHA/commit/push/publicsourcearchiveverification. FulloptionalCreateclient/JEI/Survival/TPSNOT_RUN,0.5notreleased. NextcontentMoldcomponent-awaretasks,notrepeat15goals/sourcepins/electrum.
+
+### 2026-11-02 — Create addons0.4.23: final reproducibility DONE
+
+-431cleanPython/0fail/0skip PASS(293.282s),81Node/5237Java/43modelednativeclass+handlerchecks. Rebuild211onthatsamefrozenindex:1184non-JARruntimefilesbyte-identical;rootmatches;central14JSsyntax/SNBT/ID/DAG/requiredclosure/v12catalog/rewards/sourceSHA PASS. No productioncodechangedafterfreeze.
+- Preservation:3381oldnon-coordinatepayloads exact;3396total;+15itemrewards/3132total;627recipebundle/runtimekeys/stations/782assets exact;old15mechanicrulesexact.2addonchapters/24oldcoords;1156crossings/0warnings.47researchstages/32legacy+15newgoalsacross2scopedmaps;326newsourcefiles/2598total.
+- Finalmetadata/repack/actualinstallercheck-only/allmanifestRootSHA/commit/push/publicarchiveverificationnowfinishing. Fulloptionalbinary/client/JEI/Survival/TPSNOT_RUN.273commonMCscopeisprevious0.4.22identicalclasses,notnewCreateexecution.0.5unfinished;nextMoldcomponentCodec/FTBmatching,newseparategoalswithoutrewritinggenericoldtask.
+
+### 2026-11-02 — Create addons0.4.23: перевірений checkpoint
+
+- DONE431cleanPython/0fail/0skip(293.282s),81Node/5237Java/43newmodeledactualclass+handlerassertions,independentreview. Rebuild2111184non-JARruntimefilesbyte-identical;central14JSsyntax/SNBT/IDs/DAG/requiredclosure/v12catalog/rewards/processSHA PASS.
+- DONE CRC/5136manifestSHA/1185runtimeSHA/installerSHA таactualextractedCLI0.4.22→0.4.23:dryrun0file/dirwrites,oldJARbackup,opaqueworld/FTB/key/fire/station/mechanics/paidpending/EMC/chunkmarkers+foreigncontentpreserved,repeatidempotent. Цеsyntheticfixture,неfullworldmigration. Finalmetadatarepacked/check-only/allmanifestRootSHAcheckedbeforeGit.
+- Code/scripts/catalogs/evidence/docs/JAR/installerзбереженоціліснимmain-комітомізpushбезforce. Exacthash/status—gitlog/origin/main/externalpublicdeliveryreportбіляZIP,безself-referentialSHA. RootGitcontainsonlyprojectsource/frozenpublicevidence/ownedJAR,nopersonalworlds/logs/caches/backups.
+- Fulloriginaloptionalbinary/client/JEI/Survival/TPSNOT_RUN. Previous273MC/2JVM/650ticksevidenceis0.4.22source-identical230classes,неfreshCreateexecution.0.5не реліз;27scopedcore/34partialmapsremainhonest. НАСТУПНЕ:exactCDGMoldtypeCodec+FTBcomponentmatching→separateprofilequests;oldgenericMoldtaskunchanged. Thenremainingcharging/liquid/nativefluidproofcourses/required48/6IFfluidgaps/DraconicCI633. Неповторювати15завершенихцілей/sourcepins/електрум16правил.

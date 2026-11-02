@@ -165,3 +165,30 @@ test('native receipt errors during a team change revoke old-team projections bef
   assert.equal(revokes(b).length, config.rules.length, 'An unavailable native ledger must never retain another team’s projected proof');
   assert.equal(grants(b).length, 0);
 });
+
+test('v12 installs only published fifteen rules plus the explicit electrum extension', () => {
+  for (const mutate of [
+    d => { d.rules = d.rules.filter(rule => rule.id !== 'cca_electrum_mixing'); },
+    d => { d.rules[d.rules.length - 1].id = 'unreviewed_process'; },
+    d => { d.rules[d.rules.length - 1].id = d.rules[0].id; }
+  ]) {
+    const changed = JSON.parse(JSON.stringify(config)); mutate(changed);
+    const b = fixture(changed); b.ready(); b.sync();
+    assert.equal(b.calls.includes('configure'), false);
+    assert.equal(grants(b).length, 0);
+    assert.equal(b.bridge.isConfigured(), false);
+    assert.ok(b.errors.length > 0);
+  }
+});
+
+test('v12 electrum completion requires its own team receipt and epoch15', () => {
+  const b = fixture(); b.ready(); b.player.completed = 13;
+  b.proofs.add('team-a:cca_electrum_mixing'); b.sync();
+  const command = 'advancement grant Alice only aia2:mechanics/cca_electrum_mixing';
+  assert.equal(b.commands.includes(command), false);
+  b.player.completed = 14; b.commands.length = 0; b.sync();
+  assert.ok(b.commands.includes(command));
+  b.player.team = 'team-b'; b.commands.length = 0; b.sync();
+  assert.ok(b.commands.includes('advancement revoke Alice only aia2:mechanics/cca_electrum_mixing'));
+  assert.equal(b.commands.includes(command), false);
+});

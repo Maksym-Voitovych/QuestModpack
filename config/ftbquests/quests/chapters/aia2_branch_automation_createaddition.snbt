@@ -76,7 +76,7 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.003
     },
     {
       "id": "0000DDEA13496D98",
@@ -154,7 +154,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 4.003
     },
     {
       "id": "000085D0CDB2C151",
@@ -217,7 +217,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.337
     },
     {
       "id": "00008C253BEAC9F9",
@@ -284,7 +284,7 @@
         }
       ],
       "x": 4.0,
-      "y": 0.0
+      "y": 3.337
     },
     {
       "id": "0000D7AF2A3219CC",
@@ -351,7 +351,7 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 3.337
     },
     {
       "id": "0000155ECAAD1419",
@@ -418,7 +418,86 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 3.729
+    },
+    {
+      "id": "000026789D663085",
+      "title": "Зливок і пластина дають різні форми міді",
+      "description": [
+        "Порівняйте два рецепти Rolling Mill: мідний зливок дає два прутки, а мідна пластина — два дроти. Пруток і дріт виконують різні ролі, тому не закладайте один загальний фільтр для всіх мідних напівфабрикатів.",
+        "У цій збірці результат уніфіковано: пруток має ID modern_industrialization:copper_rod, а дріт — immersiveengineering:wire_copper. Простір імен предмета не визначає машину, яка його виготовила; звіряйте саме рецепт прокату в JEI.",
+        "Огляньте встановлену прокатну машину й покажіть пластину та обидва результати. Перевірка підтверджує огляд і запас матеріалів; вона не засвідчує, що ці предмети вийшли саме з Rolling Mill."
+      ],
+      "icon": {
+        "id": "createaddition:rolling_mill",
+        "count": 1
+      },
+      "dependencies": [
+        "0000155ECAAD1419",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000038E2B0CE1E8F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:rolling_mill",
+          "timer": 40
+        },
+        {
+          "id": "00008A50BFB78513",
+          "type": "item",
+          "item": {
+            "id": "create:copper_sheet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C8D25C869D3C",
+          "type": "item",
+          "item": {
+            "id": "modern_industrialization:copper_rod",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00009AAB21F82F33",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A42BA45C3765",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000DB96F0BFA428",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.153
     },
     {
       "id": "0000459BAF88ECCD",
@@ -485,7 +564,79 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 5.306
+    },
+    {
+      "id": "00002A28E5C3F208",
+      "title": "Електрум: пруток для контакту, дріт для намотки",
+      "description": [
+        "Після міді застосуйте ту саму різницю форми до електруму. Прокат зливка дає два createaddition:electrum_rod; прокат електрумової пластини — два immersiveengineering:wire_electrum. Пластина перед прокатом і пруток після прокату не є взаємозамінними.",
+        "Залиште окремі виходи для контактних деталей і намотування котушок. Це зменшує ризик, що автоматичне замовлення споживе всю партію сплаву як прутки, коли наступній формулі потрібен дріт.",
+        "Покажіть одну пластину, два прутки та два дроти. Ця матеріальна перевірка не визначає машину походження й не видає доказ змішування електруму: окремий нативний процес буде перевірено в епосі15."
+      ],
+      "icon": {
+        "id": "createaddition:electrum_rod",
+        "count": 1
+      },
+      "dependencies": [
+        "000026789D663085",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "000045B2EF39B3B3",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_electrum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00008AB441F5E8FE",
+          "type": "item",
+          "item": {
+            "id": "createaddition:electrum_rod",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003E696D5A7ED6",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_electrum",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004DC038AEAA1F",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000040E11B364720",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.153
     },
     {
       "id": "000033EF62E02339",
@@ -552,7 +703,7 @@
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 5.306
     },
     {
       "id": "00008D9166038CFD",
@@ -619,7 +770,351 @@
         }
       ],
       "x": 14.0,
+      "y": 5.306
+    },
+    {
+      "id": "0000E41D05D4A137",
+      "title": "Намотайте котушки й складіть конденсатори",
+      "description": [
+        "Виготовте мідну та електрумову котушки на звичайному верстаку. Кожна формула використовує порожню котушку й чотири дроти відповідного металу; прутки з попередньої ділянки не замінюють дріт.",
+        "Окремо виготовте два Capacitor: у формулі поєднуються мідна й цинкова пластини з редстоуновим факелом. Це компонент подальших машин, а не готовий енергетичний акумулятор.",
+        "Завдання зараховує саме крафти звичайного верстака після відкриття цієї цілі. Раніше накопичені предмети або /give не замінюють ці події; за потреби виготовте нову невелику партію. Електричний потік тут не вимірюється."
+      ],
+      "icon": {
+        "id": "createaddition:copper_spool",
+        "count": 1
+      },
+      "dependencies": [
+        "00002A28E5C3F208",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F1F2D1D7617B",
+          "type": "item",
+          "item": {
+            "id": "createaddition:copper_spool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00002322D4E94616",
+          "type": "item",
+          "item": {
+            "id": "createaddition:electrum_spool",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00007FAEB0BC4749",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008EAAFA60A2E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000111E9E802B13",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 1.0
+    },
+    {
+      "id": "0000913FA5B6475B",
+      "title": "Tesla Coil: стаціонарна обробка замість стикування",
+      "description": [
+        "Підготуйте стаціонарний Tesla Coil і порівняйте його роль із Portable Energy Interface: зарядна станція працює з предметною обробкою, а переносний інтерфейс слугує енергетичному стикуванню конструкції. Наявність одного блока не підміняє другого.",
+        "У наданому реєстрі рецепт createaddition:charging/electrify_gold_ingot перетворює золотий зливок на уніфікований електрумовий зливок, використовуючи36000FE. Це окремий шлях від змішування золота зі сріблом; не приписуйте йому доказ роботи Basin.",
+        "Огляньте Tesla Coil та покажіть золотий зливок і електрумовий результат. Квест перевіряє лише огляд і предметні зразки; реальне заряджання, витрату FE та походження результату він не вимірює."
+      ],
+      "icon": {
+        "id": "createaddition:tesla_coil",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E41D05D4A137",
+        "0000DDEA13496D98",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B52634CAF53E",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:tesla_coil",
+          "timer": 40
+        },
+        {
+          "id": "000095D3A83DADE3",
+          "type": "item",
+          "item": {
+            "id": "minecraft:gold_ingot",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000381611EC4DA2",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_electrum",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000150517C7021A",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D1926B9F39CD",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
       "y": 0.0
+    },
+    {
+      "id": "0000DFEA617194CE",
+      "title": "Реле й мотор мають різну полярність керування",
+      "description": [
+        "Виготовте Redstone Relay на верстаку: його формула поєднує два контакти, Electron Tube, редстоун і камінь. Залиште окремий контакт установленим для огляду, щоб розрізняти вузол дротяної мережі та керований розрив.",
+        "У дослідженій версії1.6.0 живлений редстоуном мотор зупиняє механічний вихід, тоді як живлене реле пропускає з’єднання мережі. Не переносіть одну й ту саму логіку сигналу на обидва блоки без пробного перемикання.",
+        "Крафт реле має відбутися після відкриття цієї цілі; огляд контакту підтверджує його наявність. Реакцію на сигнал і проходження FE перевірте на малому стенді вручну: ці параметри не є автоматичною умовою квесту."
+      ],
+      "icon": {
+        "id": "createaddition:redstone_relay",
+        "count": 1
+      },
+      "dependencies": [
+        "0000E41D05D4A137",
+        "0000586345E37885"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F1EC68716565",
+          "type": "item",
+          "item": {
+            "id": "createaddition:redstone_relay",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00008E492AE9CC8F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:connector",
+          "timer": 40
+        },
+        {
+          "id": "000015B2042DB7E0",
+          "type": "item",
+          "item": {
+            "id": "create:electron_tube",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000C59F6F8855E7",
+          "type": "advancement",
+          "advancement": "aia2:stages/e11"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000B9E33B17133D",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 2.0
+    },
+    {
+      "id": "0000CBB1AF22B13A",
+      "title": "Справжня партія електруму в Basin",
+      "description": [
+        "Виготовте електрум за рецептом createaddition:mixing/electrum: один золотий і один срібний зливок відповідних тегів дають два уніфіковані зливки. Потрібне нагрівання Basin; у цій навчальній гілці використовуйте доступний маршрут із Create Blaze Burner.",
+        "Важливе походження партії: обробка має відбутися на машині з чинним власником вашої команди після відкриття епохи15. Серверний нативний доказ видається після завершення процесу, а показ двох зливків є окремою предметною умовою.",
+        "Зливки з Tesla Coil, торгівлі, нагороди, Creative або /give не створюють цей доказ. Квест не оголошує Blaze Burner єдиним можливим джерелом тепла; альтернативні нагрівачі перевіряються за їхніми власними правилами."
+      ],
+      "icon": {
+        "id": "immersiveengineering:ingot_electrum",
+        "count": 1
+      },
+      "dependencies": [
+        "00002A28E5C3F208",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B720C04313B3",
+          "type": "advancement",
+          "advancement": "aia2:mechanics/cca_electrum_mixing"
+        },
+        {
+          "id": "0000503FF5AC2DA3",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:ingot_electrum",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00006171D9D6CC02",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00004C67D8C89D68",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:wire_copper",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 3.306
+    },
+    {
+      "id": "0000E06E175C87F4",
+      "title": "Біомаса переходить у паливні пелети",
+      "description": [
+        "Порівняйте рослинну олію як рідкий реагент і біомасу як проміжний предмет. Експортований рецепт біомаси з культур змішує дві одиниці тегу c:crops та100mBолії з тегу c:plantoil у нагрітому Basin.",
+        "Далі ущільнення однієї біомаси дає пелету й50mBводи. Розділіть предметний вихід і відведення рідини, щоб побічний продукт не займав той самий шлях, що й наступна паливна партія.",
+        "Огляньте механічний прес та покажіть біомасу, пелету й відро олії насіння Create Crafts & Additions. Це огляд і запас предметів: походження біомаси, повернення води та безперервність автоматизації не зараховуються як нативний доказ."
+      ],
+      "icon": {
+        "id": "createaddition:biomass_pellet",
+        "count": 1
+      },
+      "dependencies": [
+        "0000CBB1AF22B13A",
+        "0000D2F3340C5B97",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000B8F8FBFB4311",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_press",
+          "timer": 40
+        },
+        {
+          "id": "0000C89F74DF92F7",
+          "type": "item",
+          "item": {
+            "id": "createaddition:biomass",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00003DDCDB975527",
+          "type": "item",
+          "item": {
+            "id": "createaddition:biomass_pellet",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007D9A192C45C1",
+          "type": "item",
+          "item": {
+            "id": "createaddition:seed_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000AA678ABA0728",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00003C3A7F08DDF4",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:stick_iron",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 16.0,
+      "y": 4.0
     },
     {
       "id": "0000308E6E3B17D9",
@@ -697,7 +1192,7 @@
         }
       ],
       "x": 2.0,
-      "y": 3.0
+      "y": 5.337
     },
     {
       "id": "0000533A746FA366",
@@ -775,7 +1270,7 @@
         }
       ],
       "x": 4.0,
-      "y": 3.0
+      "y": 5.337
     },
     {
       "id": "0000F68370687ADF",
@@ -853,7 +1348,7 @@
         }
       ],
       "x": 6.0,
-      "y": 3.0
+      "y": 5.337
     }
   ]
 }

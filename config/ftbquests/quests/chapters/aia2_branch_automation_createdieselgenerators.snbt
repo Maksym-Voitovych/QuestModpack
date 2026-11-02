@@ -98,7 +98,7 @@
         }
       ],
       "x": 0.0,
-      "y": 3.0
+      "y": 5.683
     },
     {
       "id": "000092F6EE1D1BD4",
@@ -165,7 +165,68 @@
         }
       ],
       "x": 0.0,
-      "y": 0.0
+      "y": 2.493
+    },
+    {
+      "id": "000074471A4C2F63",
+      "title": "Виготовте дві форми паливного зберігання",
+      "description": [
+        "Виготовте окремо Oil Barrel і Canister: обидві формули використовують дерев’яну бочку та залізні пластини, але каністрі також потрібен андезитовий сплав. Це різні блоки для організації паливної ділянки, а не готове паливо.",
+        "Залиште доступ до приєднань і підпишіть призначення ємностей перед підключенням насоса. Так простіше тримати первинну нафту, проміжні фракції й резерв двигуна в різних місцях.",
+        "Зараховуються саме крафти звичайного верстака після відкриття цієї цілі. Предмети зі старого запасу не підміняють події крафту; кількість рідини, герметичність та реальна робота труб цим завданням не перевіряються."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:canister",
+        "count": 1
+      },
+      "dependencies": [
+        "000092F6EE1D1BD4",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000CEDB0996F202",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:canister",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000A561B42EB77C",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:oil_barrel",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000042394E226248",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D8F33F614AAE",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 2.0,
+      "y": 1.304
     },
     {
       "id": "0000C18F1E0A0360",
@@ -232,7 +293,7 @@
         }
       ],
       "x": 2.0,
-      "y": 0.0
+      "y": 3.683
     },
     {
       "id": "00007F1D4CB7BA0A",
@@ -286,6 +347,175 @@
       "rewards": [
         {
           "id": "00003D27C1905EFD",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 4.607
+    },
+    {
+      "id": "0000980C4B01463B",
+      "title": "Кришка Basin і об’ємний ферментер",
+      "description": [
+        "Виготовте Basin Lid і Bulk Fermenter, щоб порівняти дві ферментаційні машини. Для перевіреного рецепта ферментованої сировини одна цукрова тростина з тегу createdieselgenerators:fermentable та одна кісткова мука є окремими вхідними інгредієнтами.",
+        "У рецептах базовий processing_time дорівнює400, а виходи становлять200mBетанолу для Basin та400mBдля Bulk Fermenter. Реальний час і партія об’ємної конструкції залежать від її розмірів; це не обіцянка однакових400серверних тіків. Для п’яти Basin-партій підготуйте по п’ять одиниць обох реагентів.",
+        "Кришка й ферментер мають бути скрафчені на звичайному верстаку після відкриття квесту. Тростина та кісткова мука перевіряються в інвентарі; реальний час обробки й рідкий вихід не підтверджуються цими предметними умовами."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:bulk_fermenter",
+        "count": 1
+      },
+      "dependencies": [
+        "000074471A4C2F63",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000158A3F179BB0",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:basin_lid",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00004699EA313F28",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:bulk_fermenter",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "0000DD9FDB930770",
+          "type": "item",
+          "item": {
+            "id": "minecraft:sugar_cane",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000DB7EAE98C4FB",
+          "type": "item",
+          "item": {
+            "id": "minecraft:bone_meal",
+            "count": 1
+          },
+          "count": 5,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000079F3B0FA9EF9",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000032CFF2BF24AB",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 4.0,
+      "y": 2.607
+    },
+    {
+      "id": "0000ED35722CBEDF",
+      "title": "Форма профілю й одна партія металевих панелей",
+      "description": [
+        "Підготуйте пилу й прес для окремої лінії формування. Рецепт cutting/lines_mold створює предмет Mold із компонентом createdieselgenerators:mold_type=createdieselgenerators:lines; інші форми використовують той самий базовий Item ID.",
+        "У компресійному формуванні залізна пластина з потрібною формою дає чотири Sheet Metal Panel. Тримайте форми окремо від звичайних пластин і звіряйте компонент у підказці або JEI, перш ніж подавати матеріал у прес.",
+        "Огляд пилки й преса та наявність форми, пластини й чотирьох панелей перевіряються автоматично. Цей квест не порівнює компонент mold_type, тому загальна форма не оголошується доказом вибраного профілю чи виконаного формування."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:sheet_metal_panel",
+        "count": 1
+      },
+      "dependencies": [
+        "000074471A4C2F63",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00005F6BD4626E60",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_saw",
+          "timer": 40
+        },
+        {
+          "id": "0000F9CC3D7AEB7C",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_press",
+          "timer": 40
+        },
+        {
+          "id": "0000982F395C2437",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:mold",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000BA621E7C36FD",
+          "type": "item",
+          "item": {
+            "id": "immersiveengineering:plate_iron",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000038EB086B7DB6",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:sheet_metal_panel",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E29386E59632",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000079C2A98EA68C",
           "type": "item",
           "item": {
             "id": "createdieselgenerators:wood_chip",
@@ -362,7 +592,86 @@
         }
       ],
       "x": 6.0,
-      "y": 0.0
+      "y": 4.607
+    },
+    {
+      "id": "0000D2F3340C5B97",
+      "title": "Дві олії, два простори імен, спільний реагент",
+      "description": [
+        "Порівняйте відро Plant Oil із Diesel Generators та Seed Oil із Create Crafts & Additions. Обидва експорти ущільнюють насіння в Basin й дають100mBсвоєї олії за партію; рецепт виробництва й ID рідини потрібно читати окремо.",
+        "Для одного відра за таким рецептом знадобиться десять одиниць відповідного насіння. Підготуйте запас, перш ніж ділити олію між біодизелем та біомасою; при міжмодовій передачі звіряйте приймальний тег c:plantoil у чинному JEI.",
+        "Огляньте прес і покажіть десять насінин пшениці та два підписані відра. Це перевірка обладнання й зразків у запасі, а не доказ пресування або фактичної сумісності конкретної трубної мережі."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:plant_oil_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000980C4B01463B",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00004E8A5A4221C6",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_press",
+          "timer": 40
+        },
+        {
+          "id": "0000B62646CB4A4A",
+          "type": "item",
+          "item": {
+            "id": "minecraft:wheat_seeds",
+            "count": 1
+          },
+          "count": 10,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000132A775F7047",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:plant_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "000052C5FEDBEE1A",
+          "type": "item",
+          "item": {
+            "id": "createaddition:seed_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000E67B543BC8A0",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000017AF50498F02",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 6.0,
+      "y": 2.607
     },
     {
       "id": "0000C720DA25F7EB",
@@ -429,7 +738,86 @@
         }
       ],
       "x": 8.0,
-      "y": 0.0
+      "y": 4.911
+    },
+    {
+      "id": "0000DD6B3FED77AA",
+      "title": "Три проби для біодизельної суміші",
+      "description": [
+        "Зіставте вхідні реагенти й готове паливо: рецепт create:mixing використовує100mBз тегу рослинної олії та100mBз тегу етанолу, а результатом є200mBбіодизелю. Ці об’єми описують одну рецептурну партію, а не місткість усієї лінії.",
+        "Зберігайте олію та етанол окремо до змішування й перевіряйте рецепт палива для конкретного двигуна. Виділіть вихід готовій суміші, щоб резерв базових реагентів не перетворився на одну непридатну змішану ємність.",
+        "Огляньте міксер і покажіть по відру олії, етанолу та біодизелю як три контрольні зразки. Квест не підтверджує, що саме цей міксер виготовив рідину: надійний нативний доказ рідкого виробництва тут не реалізований."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:biodiesel_bucket",
+        "count": 1
+      },
+      "dependencies": [
+        "0000D2F3340C5B97",
+        "00009BD25F4F6D6B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F0031DDAFE28",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:mechanical_mixer",
+          "timer": 40
+        },
+        {
+          "id": "0000E5E0F3F0EFBD",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:plant_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A0020707EEF0",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:ethanol_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00004AB4AEB55FE6",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:biodiesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000A54350BB1BA2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e12"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000D32B733B5B15",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 8.0,
+      "y": 2.911
     },
     {
       "id": "0000E48BB036F91E",
@@ -496,7 +884,7 @@
         }
       ],
       "x": 10.0,
-      "y": 0.0
+      "y": 4.911
     },
     {
       "id": "00000814F8695B7C",
@@ -563,7 +951,7 @@
         }
       ],
       "x": 12.0,
-      "y": 0.0
+      "y": 4.911
     },
     {
       "id": "0000F39243A27585",
@@ -641,7 +1029,108 @@
         }
       ],
       "x": 14.0,
-      "y": 0.0
+      "y": 4.911
+    },
+    {
+      "id": "0000BAC2F36314B8",
+      "title": "Перегонка зберігає обидві фракції",
+      "description": [
+        "Підготуйте одну рецептурну партію з чотирьох Distillation Controller та чотири Create Fluid Tank як матеріальний запас. Під час перетворення вежі потрібен окремий контролер на кожен блок резервуара: кількість зростає як ширина × ширина × висота, а мінімальна висота визначається конфігурацією.",
+        "У нагрітому рецепті100mBсирої нафти дають50mBдизелю та50mBбензину, у наднагрітому — по75mB; базовий processing_time становить відповідно60і40. Виведіть обидва продукти в окремі сховища. Огляд Blaze Burner є еталонним маршрутом тепла, а не твердженням, що інших нагрівачів немає.",
+        "Покажіть запас компонентів і по відру сирої нафти, дизелю та бензину. Ця кількість контролерів не оголошується комплектом для вежі будь-якого розміру. Перевірка огляду й предметів не засвідчує правильність вежі, рівень нагрівання або походження фракцій."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:distillation_controller",
+        "count": 1
+      },
+      "dependencies": [
+        "0000DD6B3FED77AA",
+        "000036317545A50B"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "00006146DE3B5960",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "create:blaze_burner",
+          "timer": 40
+        },
+        {
+          "id": "0000ED7DC892AA27",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:distillation_controller",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "0000549DC49EF5BD",
+          "type": "item",
+          "item": {
+            "id": "create:fluid_tank",
+            "count": 1
+          },
+          "count": 4,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E75955F3DF9",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:crude_oil_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007C91881DF41B",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:diesel_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00005E5ABDC15FBC",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:gasoline_bucket",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00007947AA3FD554",
+          "type": "advancement",
+          "advancement": "aia2:stages/e15"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "00005A623D147F0B",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 10.0,
+      "y": 2.911
     },
     {
       "id": "000093169D716CFA",
@@ -719,7 +1208,156 @@
         }
       ],
       "x": 2.0,
-      "y": 3.0
+      "y": 5.683
+    },
+    {
+      "id": "00008F03161C3451",
+      "title": "Виготовте комплект обслуговування двигуна",
+      "description": [
+        "Підготуйте новий комплект сервісних компонентів: два Engine Piston, один Engine Silencer та один Engine Turbocharger. Поршні виходять парою з однієї формули; глушник використовує вовну й трубу, а турбокомпресор — Propeller та металеві деталі.",
+        "Розрізняйте заміну механічної деталі, зниження шуму й модифікацію двигуна. Наявність цих предметів не означає, що їх уже встановлено або що універсальна потужність усіх двигунів стала однаковою.",
+        "Кожен зазначений компонент потрібно скрафтити на звичайному верстаку після відкриття цієї цілі. Старі запасні частини не підміняють події крафту; монтаж і зміни робочих характеристик перевіряються під час окремого пробного запуску."
+      ],
+      "icon": {
+        "id": "createdieselgenerators:engine_piston",
+        "count": 1
+      },
+      "dependencies": [
+        "0000BAC2F36314B8",
+        "000093169D716CFA",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000F02BB7F53883",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_piston",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "000076BA75C8799E",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_silencer",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00009E22DC436F15",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:engine_turbocharger",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": true
+        },
+        {
+          "id": "00003D9E8A364BC2",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "0000F8BA07F3F1D2",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 12.0,
+      "y": 2.911
+    },
+    {
+      "id": "0000273239211A72",
+      "title": "Паливний двигун і генератор у спільному вузлі",
+      "description": [
+        "Підготуйте окремий механічний маршрут від Large Diesel Engine до Alternator Create Crafts & Additions. Двигун дає обертання, а генератор використовує механічну потужність для електричної ділянки; не під’єднуйте мотор назад у петлю в очікуванні безкоштовної енергії.",
+        "Залиште Clutch для сервісного роз’єднання та конденсатори для наступного електричного оснащення. Спочатку перевірте коротку ділянку з окремим навантаженням, а вже потім підключайте резервний вузол до виробничого острова.",
+        "Огляньте обидві встановлені машини й покажіть муфту та два конденсатори. Квест підтверджує ці блоки й комплект матеріалів; напрям обертання, навантаження, підключення дротів і фактичний потік FE автоматично не вимірюються."
+      ],
+      "icon": {
+        "id": "createaddition:alternator",
+        "count": 1
+      },
+      "dependencies": [
+        "00008F03161C3451",
+        "0000DFEA617194CE",
+        "000030C0C01A9BCF"
+      ],
+      "hide_until_deps_complete": true,
+      "tasks": [
+        {
+          "id": "0000EE72EE952E1F",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createdieselgenerators:large_diesel_engine",
+          "timer": 40
+        },
+        {
+          "id": "0000947055F3D4C2",
+          "type": "observation",
+          "observation_type": "block",
+          "to_observe": "createaddition:alternator",
+          "timer": 40
+        },
+        {
+          "id": "0000B76B1492ADE6",
+          "type": "item",
+          "item": {
+            "id": "create:clutch",
+            "count": 1
+          },
+          "count": 1,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001E01D14DCCC1",
+          "type": "item",
+          "item": {
+            "id": "createaddition:capacitor",
+            "count": 1
+          },
+          "count": 2,
+          "consume_items": false,
+          "only_from_crafting": false
+        },
+        {
+          "id": "00001B13946F1370",
+          "type": "advancement",
+          "advancement": "aia2:stages/e18"
+        }
+      ],
+      "optional": true,
+      "rewards": [
+        {
+          "id": "000085471AADFB66",
+          "type": "item",
+          "item": {
+            "id": "createdieselgenerators:wood_chip",
+            "count": 1
+          },
+          "count": 4
+        }
+      ],
+      "x": 14.0,
+      "y": 2.911
     },
     {
       "id": "0000083D259FA2F6",
@@ -808,7 +1446,7 @@
         }
       ],
       "x": 4.0,
-      "y": 3.0
+      "y": 6.607
     },
     {
       "id": "00003F9A7773D596",
@@ -897,7 +1535,7 @@
         }
       ],
       "x": 6.0,
-      "y": 3.0
+      "y": 6.607
     }
   ]
 }

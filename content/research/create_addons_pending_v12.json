@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "baseline": "0ca0c5b028da51753057e5a7e4ff079a46a43ae3",
+  "scope": "one_explicit_additive_create_mixing_contract_preserving_fifteen_published_rules",
+  "published_mechanic_hashes": {
+    "andesite_mixing": "7effe537ef431df1847b9cf6e3680696a8377a0f96dffe254d64600c4fa0f722",
+    "brass_mixing": "1f795a8ccb12c24c3e66de8e1a29519b49bb68630736f9e972534640940eb9fe",
+    "infused_alloy": "b24cfdcdc1a0366a4d0dc3eefe1945e13f1fdb9ef9dc89f85e951f24fca51b64",
+    "reinforced_alloy": "453d9ef71d83d8c5b8492bb4e39e4f56cfcab8ce0259d8970b8700f4641c91cc",
+    "roots_living_pickaxe": "844383f55c605f7048d5ddb5f9168f5267da12fb33361b0f8dca51cfa7e59d31",
+    "roots_charged_focus": "aaa649884db5a3fa2861ec798dce3f7559f5122dc338457bdcced5f8ae8f0ad9",
+    "enderio_energetic_alloy": "9ae1bfa4bb5e656ed5aa3f7571a200a28f1ae5a8b520c36ee5ace0224af53e84",
+    "powah_blazing_crystal": "5bcd347e05dc1e6d89d7c0a7723ed09a7eef09fdc448b86f346f9bbc502c30f8",
+    "clibano_arcane_dust": "3ddb68f6662bcddb1f453b73f87ad3273f3e13295f1949ed06032bb7a6a4c683",
+    "clibano_rune": "fe9d1c6310bd562ad24188467c82b50644599e194b0b280ca004c63ec794f54c",
+    "clibano_obsidiansteel": "68102dfc566df1578c1997938002d8562dcc5a15c651ec1447fe4a54d63992f6",
+    "nasa_tier_1_rocket": "95a8a5e58dd6dbea3808bf1fc2c6afa8307c0f6c0c363522647448475fd99def",
+    "nasa_tier_2_rocket": "6a4b5d9e376dbbb48d5e4352eed2cb60ce620ef9f8e1635ef609882935b2857d",
+    "nasa_tier_3_rocket": "f54bfb3c519cfe4dcd98addff22f8c95726f23b73b0d88ef29a1e3be79b3fa13",
+    "nasa_tier_4_rocket": "7604bf910f1c31058944f592e13733881eeb1e5e685cbec171e70de2ef65b056"
+  },
+  "extension_rule": {
+    "id": "cca_electrum_mixing",
+    "epoch": 15,
+    "output": "immersiveengineering:ingot_electrum",
+    "serializer": "create:mixing",
+    "recipeIds": [
+      "createaddition:mixing/electrum"
+    ],
+    "advancement": "aia2:mechanics/cca_electrum_mixing",
+    "evidence": [
+      {
+        "source_kind": "installed_export_recipe",
+        "recipeId": "createaddition:mixing/electrum",
+        "export_path": "recipes/createaddition/mixing/electrum.json",
+        "frozen_path": "content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/electrum.json",
+        "source_sha256": "cc53b40416e04bcc272825e463a8f6dabda639b18cab6197468578ca6d1569ef",
+        "canonical_sha256": "28fce1633172b094b7c022dc8b482e71ba2d8ce68f7eb1ca694c83c440fea42c",
+        "json": {
+          "neoforge:conditions": [
+            {
+              "type": "almostunified:conditional",
+              "conditions_met": true,
+              "original_conditions": [
+                {
+                  "type": "neoforge:not",
+                  "value": {
+                    "type": "neoforge:tag_empty",
+                    "tag": "c:ingots/silver"
+                  }
+                }
+              ]
+            }
+          ],
+          "type": "create:mixing",
+          "heat_requirement": "heated",
+          "ingredients": [
+            {
+              "tag": "c:ingots/gold"
+            },
+            {
+              "tag": "c:ingots/silver"
+            }
+          ],
+          "results": [
+            {
+              "count": 2,
+              "id": "immersiveengineering:ingot_electrum"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "producer_requirements": {
+    "itemGates": {
+      "create:blaze_burner": 15,
+      "create:mechanical_mixer": 4,
+      "create:basin": 4,
+      "immersiveengineering:ingot_silver": 8,
+      "minecraft:gold_ingot": 0
+    },
+    "blockGates": {
+      "create:blaze_burner": 15,
+      "create:mechanical_mixer": 4,
+      "create:basin": 4
+    },
+    "recipeGates": {
+      "createaddition:mixing/electrum": 8
+    }
+  },
+  "quest_id": "V12_E15_cca_electrum_native",
+  "advancement_json": {
+    "criteria": {
+      "native_process": {
+        "trigger": "minecraft:impossible"
+      }
+    }
+  },
+  "new_recipes": 0,
+  "native_create_dispatch_tested": false,
+  "proof_scope": "current_owned_basin_successful_native_apply_not_simulation",
+  "not_proven": [
+    "rolling_specific_output",
+    "FE_network_flow",
+    "fluid_production",
+    "full_optional_binary_dispatch"
+  ],
+  "heat_route": "Chosen verified Create Blaze Burner route at15; CDG burner at12 is a documented alternate heat provider, not excluded by this contract"
+}

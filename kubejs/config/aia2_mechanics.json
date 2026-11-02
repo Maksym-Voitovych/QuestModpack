@@ -818,6 +818,59 @@
           "canonical_sha256": "8d50dd3ea46f8a69a0ee2dc1e5608c592055fd698ef45c8eb3e759abbbca6854"
         }
       ]
+    },
+    {
+      "id": "cca_electrum_mixing",
+      "epoch": 15,
+      "output": "immersiveengineering:ingot_electrum",
+      "serializer": "create:mixing",
+      "recipeIds": [
+        "createaddition:mixing/electrum"
+      ],
+      "advancement": "aia2:mechanics/cca_electrum_mixing",
+      "evidence": [
+        {
+          "source_kind": "installed_export_recipe",
+          "recipeId": "createaddition:mixing/electrum",
+          "export_path": "recipes/createaddition/mixing/electrum.json",
+          "frozen_path": "content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/electrum.json",
+          "source_sha256": "cc53b40416e04bcc272825e463a8f6dabda639b18cab6197468578ca6d1569ef",
+          "canonical_sha256": "28fce1633172b094b7c022dc8b482e71ba2d8ce68f7eb1ca694c83c440fea42c",
+          "json": {
+            "neoforge:conditions": [
+              {
+                "type": "almostunified:conditional",
+                "conditions_met": true,
+                "original_conditions": [
+                  {
+                    "type": "neoforge:not",
+                    "value": {
+                      "type": "neoforge:tag_empty",
+                      "tag": "c:ingots/silver"
+                    }
+                  }
+                ]
+              }
+            ],
+            "type": "create:mixing",
+            "heat_requirement": "heated",
+            "ingredients": [
+              {
+                "tag": "c:ingots/gold"
+              },
+              {
+                "tag": "c:ingots/silver"
+              }
+            ],
+            "results": [
+              {
+                "count": 2,
+                "id": "immersiveengineering:ingot_electrum"
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

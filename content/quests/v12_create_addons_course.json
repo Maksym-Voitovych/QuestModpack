@@ -1,0 +1,768 @@
+{
+  "schema": 1,
+  "scope_uk": "Додаткові необов’язкові цілі двох Create-аддонів: точні форми й компоненти, події звичайного крафту, один нативний командний доказ електруму та чесно обмежені огляди/предметні проби. Старі IDs і tasks не замінюються.",
+  "quests": [
+    {
+      "id": "V12_E11_cca_copper_shapes",
+      "epoch": 11,
+      "title_uk": "Зливок і пластина дають різні форми міді",
+      "description_uk": [
+        "Порівняйте два рецепти Rolling Mill: мідний зливок дає два прутки, а мідна пластина — два дроти. Пруток і дріт виконують різні ролі, тому не закладайте один загальний фільтр для всіх мідних напівфабрикатів.",
+        "У цій збірці результат уніфіковано: пруток має ID modern_industrialization:copper_rod, а дріт — immersiveengineering:wire_copper. Простір імен предмета не визначає машину, яка його виготовила; звіряйте саме рецепт прокату в JEI.",
+        "Огляньте встановлену прокатну машину й покажіть пластину та обидва результати. Перевірка підтверджує огляд і запас матеріалів; вона не засвідчує, що ці предмети вийшли саме з Rolling Mill."
+      ],
+      "icon": "createaddition:rolling_mill",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:rolling_mill",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:copper_sheet",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "modern_industrialization:copper_rod",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wire_copper",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E11_electric_bridge_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "create:andesite_alloy",
+          "count": 1
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.copper_shapes",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E11_cca_electrum_shapes",
+      "epoch": 11,
+      "title_uk": "Електрум: пруток для контакту, дріт для намотки",
+      "description_uk": [
+        "Після міді застосуйте ту саму різницю форми до електруму. Прокат зливка дає два createaddition:electrum_rod; прокат електрумової пластини — два immersiveengineering:wire_electrum. Пластина перед прокатом і пруток після прокату не є взаємозамінними.",
+        "Залиште окремі виходи для контактних деталей і намотування котушок. Це зменшує ризик, що автоматичне замовлення споживе всю партію сплаву як прутки, коли наступній формулі потрібен дріт.",
+        "Покажіть одну пластину, два прутки та два дроти. Ця матеріальна перевірка не визначає машину походження й не видає доказ змішування електруму: окремий нативний процес буде перевірено в епосі15."
+      ],
+      "icon": "createaddition:electrum_rod",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "immersiveengineering:plate_electrum",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:electrum_rod",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:wire_electrum",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E11_cca_copper_shapes"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:nugget_electrum",
+          "count": 3
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.electrum_shapes",
+      "proof_scope": "inventory_samples"
+    },
+    {
+      "id": "V12_E11_cca_winding_components",
+      "epoch": 11,
+      "title_uk": "Намотайте котушки й складіть конденсатори",
+      "description_uk": [
+        "Виготовте мідну та електрумову котушки на звичайному верстаку. Кожна формула використовує порожню котушку й чотири дроти відповідного металу; прутки з попередньої ділянки не замінюють дріт.",
+        "Окремо виготовте два Capacitor: у формулі поєднуються мідна й цинкова пластини з редстоуновим факелом. Це компонент подальших машин, а не готовий енергетичний акумулятор.",
+        "Завдання зараховує саме крафти звичайного верстака після відкриття цієї цілі. Раніше накопичені предмети або /give не замінюють ці події; за потреби виготовте нову невелику партію. Електричний потік тут не вимірюється."
+      ],
+      "icon": "createaddition:copper_spool",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createaddition:copper_spool",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createaddition:electrum_spool",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createaddition:capacitor",
+          "count": 2,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V12_E11_cca_electrum_shapes"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createaddition:spool",
+          "count": 1
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.winding_components",
+      "proof_scope": "crafting_and_inventory"
+    },
+    {
+      "id": "V12_E11_cca_relay_contacts",
+      "epoch": 11,
+      "title_uk": "Реле й мотор мають різну полярність керування",
+      "description_uk": [
+        "Виготовте Redstone Relay на верстаку: його формула поєднує два контакти, Electron Tube, редстоун і камінь. Залиште окремий контакт установленим для огляду, щоб розрізняти вузол дротяної мережі та керований розрив.",
+        "У дослідженій версії1.6.0 живлений редстоуном мотор зупиняє механічний вихід, тоді як живлене реле пропускає з’єднання мережі. Не переносіть одну й ту саму логіку сигналу на обидва блоки без пробного перемикання.",
+        "Крафт реле має відбутися після відкриття цієї цілі; огляд контакту підтверджує його наявність. Реакцію на сигнал і проходження FE перевірте на малому стенді вручну: ці параметри не є автоматичною умовою квесту."
+      ],
+      "icon": "createaddition:redstone_relay",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createaddition:redstone_relay",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "observation",
+          "block": "createaddition:connector",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:electron_tube",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E11_cca_winding_components"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone_torch",
+          "count": 2
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.relay_contacts",
+      "proof_scope": "crafting_and_inventory"
+    },
+    {
+      "id": "V12_E11_cca_tesla_station",
+      "epoch": 11,
+      "title_uk": "Tesla Coil: стаціонарна обробка замість стикування",
+      "description_uk": [
+        "Підготуйте стаціонарний Tesla Coil і порівняйте його роль із Portable Energy Interface: зарядна станція працює з предметною обробкою, а переносний інтерфейс слугує енергетичному стикуванню конструкції. Наявність одного блока не підміняє другого.",
+        "У наданому реєстрі рецепт createaddition:charging/electrify_gold_ingot перетворює золотий зливок на уніфікований електрумовий зливок, використовуючи36000FE. Це окремий шлях від змішування золота зі сріблом; не приписуйте йому доказ роботи Basin.",
+        "Огляньте Tesla Coil та покажіть золотий зливок і електрумовий результат. Квест перевіряє лише огляд і предметні зразки; реальне заряджання, витрату FE та походження результату він не вимірює."
+      ],
+      "icon": "createaddition:tesla_coil",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createaddition:tesla_coil",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:gold_ingot",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_electrum",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E11_cca_winding_components",
+        "V5_E11_electromechanical_work_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "create:electron_tube",
+          "count": 1
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.tesla_station",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E15_cca_electrum_native",
+      "epoch": 15,
+      "title_uk": "Справжня партія електруму в Basin",
+      "description_uk": [
+        "Виготовте електрум за рецептом createaddition:mixing/electrum: один золотий і один срібний зливок відповідних тегів дають два уніфіковані зливки. Потрібне нагрівання Basin; у цій навчальній гілці використовуйте доступний маршрут із Create Blaze Burner.",
+        "Важливе походження партії: обробка має відбутися на машині з чинним власником вашої команди після відкриття епохи15. Серверний нативний доказ видається після завершення процесу, а показ двох зливків є окремою предметною умовою.",
+        "Зливки з Tesla Coil, торгівлі, нагороди, Creative або /give не створюють цей доказ. Квест не оголошує Blaze Burner єдиним можливим джерелом тепла; альтернативні нагрівачі перевіряються за їхніми власними правилами."
+      ],
+      "icon": "immersiveengineering:ingot_electrum",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/cca_electrum_mixing"
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:ingot_electrum",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E11_cca_electrum_shapes"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "immersiveengineering:nugget_electrum",
+          "count": 3
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.electrum_native",
+      "proof_scope": "current_machine_owner_team_native_post_consumption"
+    },
+    {
+      "id": "V12_E15_cca_biomass_loop",
+      "epoch": 15,
+      "title_uk": "Біомаса переходить у паливні пелети",
+      "description_uk": [
+        "Порівняйте рослинну олію як рідкий реагент і біомасу як проміжний предмет. Експортований рецепт біомаси з культур змішує дві одиниці тегу c:crops та100mBолії з тегу c:plantoil у нагрітому Basin.",
+        "Далі ущільнення однієї біомаси дає пелету й50mBводи. Розділіть предметний вихід і відведення рідини, щоб побічний продукт не займав той самий шлях, що й наступна паливна партія.",
+        "Огляньте механічний прес та покажіть біомасу, пелету й відро олії насіння Create Crafts & Additions. Це огляд і запас предметів: походження біомаси, повернення води та безперервність автоматизації не зараховуються як нативний доказ."
+      ],
+      "icon": "createaddition:biomass_pellet",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createaddition:biomass",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:biomass_pellet",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:seed_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E15_cca_electrum_native",
+        "V12_E12_cdg_seed_oils"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 4
+        }
+      ],
+      "mod": "createaddition",
+      "research_stage": "createaddition.core_v12.biomass_loop",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E12_cdg_containers",
+      "epoch": 12,
+      "title_uk": "Виготовте дві форми паливного зберігання",
+      "description_uk": [
+        "Виготовте окремо Oil Barrel і Canister: обидві формули використовують дерев’яну бочку та залізні пластини, але каністрі також потрібен андезитовий сплав. Це різні блоки для організації паливної ділянки, а не готове паливо.",
+        "Залиште доступ до приєднань і підпишіть призначення ємностей перед підключенням насоса. Так простіше тримати первинну нафту, проміжні фракції й резерв двигуна в різних місцях.",
+        "Зараховуються саме крафти звичайного верстака після відкриття цієї цілі. Предмети зі старого запасу не підміняють події крафту; кількість рідини, герметичність та реальна робота труб цим завданням не перевіряються."
+      ],
+      "icon": "createdieselgenerators:canister",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:canister",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:oil_barrel",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.containers",
+      "proof_scope": "crafting_and_inventory"
+    },
+    {
+      "id": "V12_E12_cdg_fermentation_vessels",
+      "epoch": 12,
+      "title_uk": "Кришка Basin і об’ємний ферментер",
+      "description_uk": [
+        "Виготовте Basin Lid і Bulk Fermenter, щоб порівняти дві ферментаційні машини. Для перевіреного рецепта ферментованої сировини одна цукрова тростина з тегу createdieselgenerators:fermentable та одна кісткова мука є окремими вхідними інгредієнтами.",
+        "У рецептах базовий processing_time дорівнює400, а виходи становлять200mBетанолу для Basin та400mBдля Bulk Fermenter. Реальний час і партія об’ємної конструкції залежать від її розмірів; це не обіцянка однакових400серверних тіків. Для п’яти Basin-партій підготуйте по п’ять одиниць обох реагентів.",
+        "Кришка й ферментер мають бути скрафчені на звичайному верстаку після відкриття квесту. Тростина та кісткова мука перевіряються в інвентарі; реальний час обробки й рідкий вихід не підтверджуються цими предметними умовами."
+      ],
+      "icon": "createdieselgenerators:bulk_fermenter",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:basin_lid",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:bulk_fermenter",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "minecraft:sugar_cane",
+          "count": 5,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:bone_meal",
+          "count": 5,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_containers"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:bone_meal",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.fermentation_vessels",
+      "proof_scope": "crafting_and_inventory"
+    },
+    {
+      "id": "V12_E12_cdg_seed_oils",
+      "epoch": 12,
+      "title_uk": "Дві олії, два простори імен, спільний реагент",
+      "description_uk": [
+        "Порівняйте відро Plant Oil із Diesel Generators та Seed Oil із Create Crafts & Additions. Обидва експорти ущільнюють насіння в Basin й дають100mBсвоєї олії за партію; рецепт виробництва й ID рідини потрібно читати окремо.",
+        "Для одного відра за таким рецептом знадобиться десять одиниць відповідного насіння. Підготуйте запас, перш ніж ділити олію між біодизелем та біомасою; при міжмодовій передачі звіряйте приймальний тег c:plantoil у чинному JEI.",
+        "Огляньте прес і покажіть десять насінин пшениці та два підписані відра. Це перевірка обладнання й зразків у запасі, а не доказ пресування або фактичної сумісності конкретної трубної мережі."
+      ],
+      "icon": "createdieselgenerators:plant_oil_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:wheat_seeds",
+          "count": 10,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:plant_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:seed_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_fermentation_vessels"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:wheat_seeds",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.seed_oils",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E12_cdg_biodiesel_samples",
+      "epoch": 12,
+      "title_uk": "Три проби для біодизельної суміші",
+      "description_uk": [
+        "Зіставте вхідні реагенти й готове паливо: рецепт create:mixing використовує100mBз тегу рослинної олії та100mBз тегу етанолу, а результатом є200mBбіодизелю. Ці об’єми описують одну рецептурну партію, а не місткість усієї лінії.",
+        "Зберігайте олію та етанол окремо до змішування й перевіряйте рецепт палива для конкретного двигуна. Виділіть вихід готовій суміші, щоб резерв базових реагентів не перетворився на одну непридатну змішану ємність.",
+        "Огляньте міксер і покажіть по відру олії, етанолу та біодизелю як три контрольні зразки. Квест не підтверджує, що саме цей міксер виготовив рідину: надійний нативний доказ рідкого виробництва тут не реалізований."
+      ],
+      "icon": "createdieselgenerators:biodiesel_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_mixer",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:plant_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:ethanol_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:biodiesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_seed_oils"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass_bottle",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.biodiesel_samples",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E12_cdg_panel_tooling",
+      "epoch": 12,
+      "title_uk": "Форма профілю й одна партія металевих панелей",
+      "description_uk": [
+        "Підготуйте пилу й прес для окремої лінії формування. Рецепт cutting/lines_mold створює предмет Mold із компонентом createdieselgenerators:mold_type=createdieselgenerators:lines; інші форми використовують той самий базовий Item ID.",
+        "У компресійному формуванні залізна пластина з потрібною формою дає чотири Sheet Metal Panel. Тримайте форми окремо від звичайних пластин і звіряйте компонент у підказці або JEI, перш ніж подавати матеріал у прес.",
+        "Огляд пилки й преса та наявність форми, пластини й чотирьох панелей перевіряються автоматично. Цей квест не порівнює компонент mold_type, тому загальна форма не оголошується доказом вибраного профілю чи виконаного формування."
+      ],
+      "icon": "createdieselgenerators:sheet_metal_panel",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:mechanical_saw",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:plate_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:sheet_metal_panel",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_containers"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 6
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.panel_tooling",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E15_cdg_distillation_samples",
+      "epoch": 15,
+      "title_uk": "Перегонка зберігає обидві фракції",
+      "description_uk": [
+        "Підготуйте одну рецептурну партію з чотирьох Distillation Controller та чотири Create Fluid Tank як матеріальний запас. Під час перетворення вежі потрібен окремий контролер на кожен блок резервуара: кількість зростає як ширина × ширина × висота, а мінімальна висота визначається конфігурацією.",
+        "У нагрітому рецепті100mBсирої нафти дають50mBдизелю та50mBбензину, у наднагрітому — по75mB; базовий processing_time становить відповідно60і40. Виведіть обидва продукти в окремі сховища. Огляд Blaze Burner є еталонним маршрутом тепла, а не твердженням, що інших нагрівачів немає.",
+        "Покажіть запас компонентів і по відру сирої нафти, дизелю та бензину. Ця кількість контролерів не оголошується комплектом для вежі будь-якого розміру. Перевірка огляду й предметів не засвідчує правильність вежі, рівень нагрівання або походження фракцій."
+      ],
+      "icon": "createdieselgenerators:distillation_controller",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "create:blaze_burner",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:distillation_controller",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:fluid_tank",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:crude_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:diesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:gasoline_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_biodiesel_samples"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.distillation_samples",
+      "proof_scope": "block_observation_and_inventory"
+    },
+    {
+      "id": "V12_E18_cdg_service_components",
+      "epoch": 18,
+      "title_uk": "Виготовте комплект обслуговування двигуна",
+      "description_uk": [
+        "Підготуйте новий комплект сервісних компонентів: два Engine Piston, один Engine Silencer та один Engine Turbocharger. Поршні виходять парою з однієї формули; глушник використовує вовну й трубу, а турбокомпресор — Propeller та металеві деталі.",
+        "Розрізняйте заміну механічної деталі, зниження шуму й модифікацію двигуна. Наявність цих предметів не означає, що їх уже встановлено або що універсальна потужність усіх двигунів стала однаковою.",
+        "Кожен зазначений компонент потрібно скрафтити на звичайному верстаку після відкриття цієї цілі. Старі запасні частини не підміняють події крафту; монтаж і зміни робочих характеристик перевіряються під час окремого пробного запуску."
+      ],
+      "icon": "createdieselgenerators:engine_piston",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_piston",
+          "count": 2,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_silencer",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_turbocharger",
+          "count": 1,
+          "consume": false,
+          "craft": true
+        }
+      ],
+      "after": [
+        "V12_E15_cdg_distillation_samples",
+        "V5_E18_diesel_contract_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:white_wool",
+          "count": 2
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.service_components",
+      "proof_scope": "crafting_and_inventory"
+    },
+    {
+      "id": "V12_E18_cdg_backup_energy",
+      "epoch": 18,
+      "title_uk": "Паливний двигун і генератор у спільному вузлі",
+      "description_uk": [
+        "Підготуйте окремий механічний маршрут від Large Diesel Engine до Alternator Create Crafts & Additions. Двигун дає обертання, а генератор використовує механічну потужність для електричної ділянки; не під’єднуйте мотор назад у петлю в очікуванні безкоштовної енергії.",
+        "Залиште Clutch для сервісного роз’єднання та конденсатори для наступного електричного оснащення. Спочатку перевірте коротку ділянку з окремим навантаженням, а вже потім підключайте резервний вузол до виробничого острова.",
+        "Огляньте обидві встановлені машини й покажіть муфту та два конденсатори. Квест підтверджує ці блоки й комплект матеріалів; напрям обертання, навантаження, підключення дротів і фактичний потік FE автоматично не вимірюються."
+      ],
+      "icon": "createaddition:alternator",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:large_diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "createaddition:alternator",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:clutch",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createaddition:capacitor",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E18_cdg_service_components",
+        "V12_E11_cca_relay_contacts"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "create:andesite_alloy",
+          "count": 2
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.core_v12.backup_energy",
+      "proof_scope": "block_observation_and_inventory"
+    }
+  ]
+}

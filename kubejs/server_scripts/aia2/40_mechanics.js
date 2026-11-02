@@ -5,14 +5,23 @@ var aia2MechanicConfigured = false;
 var aia2MechanicFailure = '';
 var aia2MechanicProjection = {};
 var aia2MechanicTick = 0;
+// Explicit additive v12 contract: published15 IDs plus one reviewed Basin process.
+var aia2MechanicExpectedIds = ["andesite_mixing", "brass_mixing", "infused_alloy", "reinforced_alloy", "roots_living_pickaxe", "roots_charged_focus", "enderio_energetic_alloy", "powah_blazing_crystal", "clibano_arcane_dust", "clibano_rune", "clibano_obsidiansteel", "nasa_tier_1_rocket", "nasa_tier_2_rocket", "nasa_tier_3_rocket", "nasa_tier_4_rocket", "cca_electrum_mixing"];
 
 function aia2InitMechanics() {
   if (!global.AIA2Machines.isReady()) return false;
   try {
     if (aia2MechanicConfigured && aia2MechanicBridge.isConfigured()) return true;
-    if (aia2MechanicConfig.schema !== 1 || !aia2MechanicConfig.rules || aia2MechanicConfig.rules.length !== 15) {
-      throw new Error('Потрібні п’ятнадцять перевірених правил виробничих спостережень.');
+    if (aia2MechanicConfig.schema !== 1 || !aia2MechanicConfig.rules || aia2MechanicConfig.rules.length !== aia2MechanicExpectedIds.length) {
+      throw new Error('Потрібні шістнадцять перевірених правил виробничих спостережень.');
     }
+    var seen = [];
+    aia2MechanicConfig.rules.forEach(function (rule) {
+      if (!rule || aia2MechanicExpectedIds.indexOf(rule.id) === -1 || seen.indexOf(rule.id) !== -1) {
+        throw new Error('Невідоме або повторне правило виробничого доказу.');
+      }
+      seen.push(rule.id);
+    });
     aia2MechanicBridge.configureJson(JSON.stringify(aia2MechanicConfig.rules));
     aia2MechanicConfigured = aia2MechanicBridge.isConfigured();
     aia2MechanicFailure = '';

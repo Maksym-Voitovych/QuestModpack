@@ -1,0 +1,593 @@
+{
+  "schema": 1,
+  "baseline": "0ca0c5b028da51753057e5a7e4ff079a46a43ae3",
+  "existing_v4_ids": [
+    "V4_E12_diesel_01",
+    "V4_E12_diesel_02",
+    "V4_E12_diesel_03",
+    "V4_E12_diesel_04",
+    "V4_E12_diesel_05",
+    "V4_E12_diesel_06",
+    "V4_E12_diesel_07",
+    "V4_E12_diesel_08"
+  ],
+  "existing_v4_payloads": [
+    {
+      "id": "V4_E12_diesel_01",
+      "epoch": 12,
+      "title_uk": "Пошук палива починається з вимірювання",
+      "description_uk": [
+        "Відведіть тару для розвідувальної проби й використайте сканер до монтажу стаціонарного обладнання. Позначте джерело та маршрут повернення, щоб нафта не стала лише випадковою знахідкою в інвентарі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:oil_scanner",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:oil_barrel",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:oil_scanner",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:canister",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "E12_M1"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:redstone",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_02",
+      "epoch": 12,
+      "title_uk": "Голова насосної установки",
+      "description_uk": [
+        "Підготуйте верхню частину насоса та механічну передачу для її обслуговування. Звірте склад структури з довідником аддона й не плутайте предметний комплект із доказом завершеного мультиблока.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:pumpjack_crank",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:pumpjack_head",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:pumpjack_crank",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:shaft",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_01"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:copper_ingot",
+          "count": 2
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_03",
+      "epoch": 12,
+      "title_uk": "Опора бурового вузла",
+      "description_uk": [
+        "Огляньте несучу частину насосної установки та місце її контакту з родовищем. Залиште доступ для огляду нижньої частини, а не ховайте весь вузол під суцільною підлогою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "minecraft:iron_ingot",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:pumpjack_bearing",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:pumpjack_hole",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_ingot",
+          "count": 8,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_02"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:coal",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_04",
+      "epoch": 12,
+      "title_uk": "Паливна проба двигуна",
+      "description_uk": [
+        "Перед довгою паливною лінією перевірте двигун на невеликій партії дизеля. Підготуйте запасну рухому деталь і місце для ізоляції подавання палива під час ремонту.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:diesel_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:diesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_piston",
+          "count": 2,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_03"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:glass",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_05",
+      "epoch": 12,
+      "title_uk": "Біопаливо має рослинний початок",
+      "description_uk": [
+        "Розділіть біологічну сировину та продукти переробки ще до з'єднання труб. Порівняйте нативні рецепти олії й етанолу в JEI та не називайте один резервуар повною біопаливною фабрикою.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:plant_oil_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:bulk_fermenter",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:plant_oil_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:ethanol_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_04"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:iron_nugget",
+          "count": 8
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_06",
+      "epoch": 12,
+      "title_uk": "Паливо для іншого двигуна",
+      "description_uk": [
+        "Перевірте сумісність обраного палива з великим двигуном та подбайте про зручне місце обслуговування. Глушник є допоміжною деталлю і не збільшує виробництво енергії сам по собі.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:biodiesel_bucket",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:large_diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:biodiesel_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_silencer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_05"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:paper",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_07",
+      "epoch": 12,
+      "title_uk": "Дві ділянки переробки",
+      "description_uk": [
+        "Відокремте контрольовану переробку від простого зберігання сирої нафти. Перевірте реальний рецепт фракції в JEI, перш ніж під'єднувати її до паливного споживача.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:distillation_controller",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:basin_lid",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:distillation_controller",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:gasoline_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_06"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:gold_nugget",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    },
+    {
+      "id": "V4_E12_diesel_08",
+      "epoch": 12,
+      "title_uk": "Планове обслуговування турбіни",
+      "description_uk": [
+        "Зберіть інструменти й деталі для обслуговування потужнішого двигуна, а не лише його корпус. Під час пробного запуску контролюйте подавання палива та окремо перевірте механічний вихід.",
+        "Огляд підтверджує встановлення зазначених блоків; предметні цілі — комплект в інвентарі. Налаштування, безперервність потоку й роботу мультиблока перевірте під час пробного запуску."
+      ],
+      "icon": "createdieselgenerators:engine_turbocharger",
+      "tasks": [
+        {
+          "type": "observation",
+          "block": "createdieselgenerators:huge_diesel_engine",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:engine_turbocharger",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:hammer",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:wire_cutters",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V4_E12_diesel_07"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "minecraft:cooked_beef",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators"
+    }
+  ],
+  "existing_v5_stages": [
+    {
+      "id": "createdieselgenerators.phase.01",
+      "title_uk": "Пошук сировини до будівництва",
+      "epoch": 12,
+      "prerequisites": [],
+      "mechanic_uk": "Oil Scanner допомагає обрати місце видобувної гілки Create Diesel Generators.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:oil_scanner"
+      ],
+      "machine_ids": [],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/oil_scanner.json",
+          "sha256": "7db7c5162b695ef860cc9acb766fdea1e128e64d6459315225eb1f044f0ae7b0",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/oil_scanner.json",
+          "recipe_id": "createdieselgenerators:crafting/oil_scanner",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "existing_quest_ids": [
+        "E12_X_survey"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.02",
+      "title_uk": "Перенесення проби",
+      "epoch": 12,
+      "prerequisites": [
+        "createdieselgenerators.phase.01"
+      ],
+      "mechanic_uk": "Каністра дає переносну тару для роботи з паливними рідинами.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:canister"
+      ],
+      "machine_ids": [],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/canister.json",
+          "sha256": "621b661de53948697ef272d584618372e4c61c53a0c0070955bf247b93e54b4a",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/canister.json",
+          "recipe_id": "createdieselgenerators:crafting/canister",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "existing_quest_ids": [
+        "E12_X_canister"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.03",
+      "title_uk": "Механічний вузол нафтовидобутку",
+      "epoch": 12,
+      "prerequisites": [
+        "createdieselgenerators.phase.02"
+      ],
+      "mechanic_uk": "Різні частини Pumpjack формують окрему складальну гілку.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:pumpjack_head",
+        "createdieselgenerators:pumpjack_crank",
+        "createdieselgenerators:pumpjack_bearing"
+      ],
+      "machine_ids": [],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/pumpjack_head.json",
+          "sha256": "0f498ef082fbf42149feaf45a57531515ab2de8f17bd9083ed271fc76c206ca5",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/pumpjack_head.json",
+          "recipe_id": "createdieselgenerators:crafting/pumpjack_head",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "existing_quest_ids": [
+        "E12_X_pumpjack_parts"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.04",
+      "title_uk": "Нафтовий насос має споживача",
+      "epoch": 12,
+      "prerequisites": [
+        "createdieselgenerators.phase.03"
+      ],
+      "mechanic_uk": "Підготуйте пошук, видобувний вузол і контрольований механічний споживач як один паливний контракт. Розвідка не підтверджує правильної збірки насоса; відокремте її перевірку від першого запуску двигуна.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:diesel_engine",
+        "createdieselgenerators:oil_scanner",
+        "createdieselgenerators:canister",
+        "create:clutch"
+      ],
+      "machine_ids": [
+        "createdieselgenerators:pumpjack_head"
+      ],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/diesel_engine.json",
+          "sha256": "9ccefa86b5ce0df80a35dd411524254b4c84dcae31ec1b08fb08e0e34e6db4eb",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/diesel_engine.json",
+          "recipe_id": "createdieselgenerators:crafting/diesel_engine",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "new_quest_ids": [
+        "V5_E12_diesel_contract_01"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.05",
+      "title_uk": "Бродіння постачає реальну паливну партію",
+      "epoch": 18,
+      "prerequisites": [
+        "createdieselgenerators.phase.04"
+      ],
+      "mechanic_uk": "Підготуйте сільськогосподарський вихід до окремої біопаливної ділянки. Етанол та олія мають різні рецепти і сховища; перед спільним виробництвом перевірте, який саме двигун приймає завершене паливо.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:ethanol_bucket",
+        "createdieselgenerators:plant_oil_bucket",
+        "industrialforegoing:plant_gatherer"
+      ],
+      "machine_ids": [
+        "createdieselgenerators:bulk_fermenter"
+      ],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/bulk_fermenter.json",
+          "sha256": "9498609c2b89290f65a30cdb581c379f99b8a23caca95adb586b1b1bf552f336",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/bulk_fermenter.json",
+          "recipe_id": "createdieselgenerators:crafting/bulk_fermenter",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "new_quest_ids": [
+        "V5_E18_diesel_contract_02"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.06",
+      "title_uk": "Двигун отримує обслуговувану передачу",
+      "epoch": 28,
+      "prerequisites": [
+        "createdieselgenerators.phase.05"
+      ],
+      "mechanic_uk": "Підготуйте сервісний розрив і запасні деталі великого двигуна. Порівняйте показник навантаження під час зупинки споживача й при його роботі; квест не задає вигадану універсальну потужність для всіх типів палива.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:engine_piston",
+        "createdieselgenerators:engine_silencer",
+        "create:stressometer",
+        "create:clutch"
+      ],
+      "machine_ids": [
+        "createdieselgenerators:large_diesel_engine"
+      ],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/large_diesel_engine.json",
+          "sha256": "e0220e472e6a987be8d8ba57d686b1107d5c2148d6420ee74b06d6388a7d195f",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/large_diesel_engine.json",
+          "recipe_id": "createdieselgenerators:crafting/large_diesel_engine",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "new_quest_ids": [
+        "V5_E28_diesel_contract_03"
+      ]
+    },
+    {
+      "id": "createdieselgenerators.phase.07",
+      "title_uk": "Паливний двигун лишається частиною заводу",
+      "epoch": 44,
+      "prerequisites": [
+        "createdieselgenerators.phase.06"
+      ],
+      "mechanic_uk": "Підготуйте контроль паливного запасу та окремий буфер для резервної механічної генерації заводу. Велика електрична мережа не скасовує потребу перевіряти тип палива, напрям обертання та аварійну зупинку локального двигуна.",
+      "why_next_uk": "Попередній крок постачає перевірену матеріальну або інфраструктурну основу; наступний розрізняє новий процес чи спосіб керування, а не лише більшу кількість предмета.",
+      "item_ids": [
+        "createdieselgenerators:engine_turbocharger",
+        "ae2:level_emitter",
+        "mekanism:basic_fluid_tank",
+        "createdieselgenerators:biodiesel_bucket"
+      ],
+      "machine_ids": [
+        "createdieselgenerators:huge_diesel_engine"
+      ],
+      "recipe_evidence": [
+        {
+          "path": "content/research/evidence/technology_v5/createdieselgenerators/recipes/createdieselgenerators/crafting/huge_diesel_engine.json",
+          "sha256": "51511939de0e7d446ca7367145011f34c1952376b1f19f64e67ed8ab06a078af",
+          "url": "user-provided:export/recipes/createdieselgenerators/crafting/huge_diesel_engine.json",
+          "recipe_id": "createdieselgenerators:crafting/huge_diesel_engine",
+          "type": "minecraft:crafting_shaped",
+          "verified": true,
+          "source_kind": "installed_export_recipe"
+        }
+      ],
+      "verification_uk": "FTB перевіряє саме вказаний тип task; огляд та наявність предмета не доводять налаштування мережі, тиск, FE/t чи коректність мультиблока.",
+      "new_quest_ids": [
+        "V5_E44_diesel_contract_04"
+      ]
+    }
+  ],
+  "existing_v5_mandatory_ids": [
+    "E12_X_engine"
+  ],
+  "scope_uk": "Знімок попереднього контенту для доповнення карти; не вказівка перезаписувати ID/tasks/deps/нагороди."
+}
