@@ -193,6 +193,8 @@ def compile_quests(root=ROOT):
     if addon_course.is_file(): modern_paths.append(addon_course)
     molds = root/'content/quests/v13_cdg_molds.json'
     if molds.is_file(): modern_paths.append(molds)
+    panel = root/'content/quests/v14_cdg_panel_native.json'
+    if panel.is_file(): modern_paths.append(panel)
     for path in modern_paths:
         records.extend(read(path)['quests'])
     try:
@@ -415,6 +417,7 @@ def apply(root=ROOT):
                                 ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
                                 ('build_create_addons_v12', 'content/research/create_addons_pending_v12.json'),
                                 ('build_cdg_molds_v13', 'content/quests/v13_cdg_molds.json'),
+                                ('build_cdg_panel_v14', 'content/research/cdg_panel_pending_v14.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json'),
                                 ('build_space_milestones_v11', 'content/audit/v11-space-milestone-presentation.json')]:
         if (root/source).exists():

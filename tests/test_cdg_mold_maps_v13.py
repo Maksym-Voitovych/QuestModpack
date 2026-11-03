@@ -24,6 +24,19 @@ SPECS = {
     'V13_E15_cdg_mold_heated_lines': ('heated_lines', 15, 'lines'),
     'V13_E18_cdg_mold_duroplast': ('duroplast', 18, 'bar'),
 }
+APPROVED_V14_STAGE = 'createdieselgenerators.native_v14.panel_compression'
+APPROVED_V14_QUEST = 'V14_E12_cdg_panel_native'
+# Historical v13 checks exclude only seven reviewed additions, not every path
+# under a prefix. The v14 tests independently pin the complete old projection.
+APPROVED_V14_SOURCES = frozenset({
+    'content/research/evidence/cdg_panel_native_v14/create/LICENSE.md',
+    'content/research/evidence/cdg_panel_native_v14/create/gradle.properties',
+    'content/research/evidence/cdg_panel_native_v14/create/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipeParams.java',
+    'content/research/evidence/cdg_panel_native_v14/create/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingOutput.java',
+    'content/research/evidence/cdg_panel_native_v14/create/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipe.java',
+    'content/research/evidence/cdg_panel_native_v14/create/src/main/java/com/simibubi/create/content/kinetics/mixer/CompactingRecipe.java',
+    'content/research/evidence/cdg_panel_native_v14/manifest.json',
+})
 
 
 def read(path):
@@ -38,6 +51,18 @@ def sha(value):
 def links(mod):
     return {qid: stage for stage in mod['stages']
             for qid in stage.get('existing_quest_ids', []) + stage.get('new_quest_ids', [])}
+
+
+def v13_stages(mod):
+    return [stage for stage in mod['stages'] if stage['id'] != APPROVED_V14_STAGE]
+
+
+def v13_sources(mod):
+    return [source for source in mod['sources'] if source['path'] not in APPROVED_V14_SOURCES]
+
+
+def v13_optional_quests(mod):
+    return [qid for qid in mod['optional_quest_ids'] if qid != APPROVED_V14_QUEST]
 
 
 class CdgMoldMapTests(unittest.TestCase):
@@ -71,8 +96,8 @@ class CdgMoldMapTests(unittest.TestCase):
         expected = {qid: MOD+'.molds_v13.'+spec[0] for qid, spec in SPECS.items()}
         self.assertEqual(set(self.quests), set(expected))
         self.assertEqual(self.audit['new_quest_stage_pairs'], expected)
-        self.assertEqual(len(self.mod['stages']), 30)
-        appended = self.mod['stages'][24:]
+        self.assertEqual(len(v13_stages(self.mod)), 30)
+        appended = v13_stages(self.mod)[24:]
         self.assertEqual({stage['id'] for stage in appended}, set(expected.values()))
         self.assertEqual(sum(len(s.get('existing_quest_ids', [])) + len(s.get('new_quest_ids', []))
                              for s in appended), 6)
@@ -81,16 +106,16 @@ class CdgMoldMapTests(unittest.TestCase):
             self.assertEqual(self.stage_map[identity]['new_quest_ids'], [qid])
             self.assertEqual(self.stage_map[identity]['epoch'], SPECS[qid][1])
             self.assertNotIn('existing_quest_ids', self.stage_map[identity])
-        self.assertEqual(self.mod['optional_quest_ids'], self.audit['old_optional_quest_ids'] + list(SPECS))
+        self.assertEqual(v13_optional_quests(self.mod), self.audit['old_optional_quest_ids'] + list(SPECS))
 
     def test_old_source_prefix_and_exact_forty_four_new_source_paths_are_hash_verified(self):
-        self.assertEqual(sha(self.mod['sources'][:183]), OLD_SOURCES_SHA)
+        self.assertEqual(sha(v13_sources(self.mod)[:183]), OLD_SOURCES_SHA)
         self.assertEqual(self.audit['old_sources_sha256'], OLD_SOURCES_SHA)
         self.assertEqual(len(self.manifest['files']), 43)
         expected = {entry['path']: entry['sha256'] for entry in self.manifest['files']}
         manifest_path = PREFIX+'manifest.json'
         expected[manifest_path] = hashlib.sha256((ROOT/manifest_path).read_bytes()).hexdigest()
-        appended = self.mod['sources'][183:]
+        appended = v13_sources(self.mod)[183:]
         self.assertEqual(len(appended), 44)
         self.assertEqual(len({entry['path'] for entry in appended}), 44)
         self.assertEqual({entry['path']: entry['sha256'] for entry in appended}, expected)
@@ -176,6 +201,17 @@ class CdgMoldMapTests(unittest.TestCase):
         mold = next(task for task in quest['tasks'] if task.get('item') == 'createdieselgenerators:mold')
         self.assertNotIn('components', mold)
         self.assertNotIn('match_components', mold)
+
+    def test_historical_projection_excludes_only_exact_reviewed_v14_identities(self):
+        stage = {'id': APPROVED_V14_STAGE}
+        unknown = {'id': 'createdieselgenerators.native_v14.unreviewed'}
+        self.assertEqual(v13_stages({'stages': [stage, unknown]}), [unknown])
+        sources = [{'path': path} for path in APPROVED_V14_SOURCES]
+        unknown_source = {'path': 'content/research/evidence/cdg_panel_native_v14/unreviewed.json'}
+        self.assertEqual(v13_sources({'sources': sources + [unknown_source]}), [unknown_source])
+        unknown_quest = 'V14_E12_cdg_unreviewed'
+        self.assertEqual(v13_optional_quests({'optional_quest_ids': [APPROVED_V14_QUEST, unknown_quest]}),
+                         [unknown_quest])
 
 
 if __name__ == '__main__':

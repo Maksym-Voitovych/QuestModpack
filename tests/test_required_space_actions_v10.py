@@ -1,4 +1,5 @@
 """Curated NASA action requirement helper, executed against explicit Java host models."""
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -38,7 +39,14 @@ class RequiredSpaceActionsTests(unittest.TestCase):
     def test_curated_ids_reference_existing_unchanged_native_nasa_rules(self):
         document = json.loads((ROOT / 'kubejs/config/aia2_mechanics.json').read_text())
         rules = {rule['id']: rule for rule in document['rules']}
-        self.assertEqual(set(rules), {*json.loads((ROOT/'content/research/create_addons_pending_v12.json').read_text())['published_mechanic_hashes'], 'cca_electrum_mixing'})
+        # The NASA requirement keeps its four identities while the reviewed
+        # CDG successor adds a separate optional manufacturing proof.
+        pending = json.loads((ROOT/'content/research/cdg_panel_pending_v14.json').read_text())
+        self.assertEqual(set(rules), {*pending['published_mechanic_hashes'], 'cdg_panel_compression'})
+        for ident, digest in pending['published_mechanic_hashes'].items():
+            actual = hashlib.sha256(json.dumps(rules[ident], ensure_ascii=False,
+                                               sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+            self.assertEqual(actual, digest, 'Published native rule changed: '+ident)
         source = (ROOT / 'companion/src/main/java/ua/aia2/guard/RequiredSpaceActions.java').read_text()
         for tier, epoch in ((1, 37), (2, 37), (3, 38), (4, 38)):
             ident = f'nasa_tier_{tier}_rocket'

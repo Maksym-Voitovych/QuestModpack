@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.24-alpha'
+VERSION = '0.4.25-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -44,6 +44,12 @@ def main():
         except ImportError:
             from tools.build_cdg_molds_v13 import validate as validate_molds
         validate_molds(ROOT, compiled=True)
+    if (ROOT/'content/research/cdg_panel_pending_v14.json').is_file():
+        try:
+            from build_cdg_panel_v14 import validate as validate_panel
+        except ImportError:
+            from tools.build_cdg_panel_v14 import validate as validate_panel
+        validate_panel(ROOT, compiled=True)
     if config.get('machineGuard', {}).get('mode') == 'required':
         jars = list((ROOT / 'mods').glob('aia2-machine-guard-*.jar'))
         if len(jars) != 1:
@@ -64,6 +70,8 @@ def main():
                     key_journal_contract(jar.read('ua/aia2/guard/KeyProductionBridge.class'))
                 if (ROOT / 'kubejs/config/aia2_mechanics.json').is_file():
                     assert 'ua/aia2/guard/ProductionMilestoneBridge.class' in jar.namelist()
+                if (ROOT/'content/research/cdg_panel_pending_v14.json').is_file():
+                    assert 'ua/aia2/guard/CdgPanelAccess.class' in jar.namelist()
                 if any(e.get('branchActionProofs') for e in config.get('epochs', [])):
                     assert 'ua/aia2/guard/RequiredSpaceActions.class' in jar.namelist()
                 if (ROOT / 'kubejs/config/aia2_stations.json').is_file():

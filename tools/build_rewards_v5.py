@@ -47,7 +47,7 @@ def catalog_records(root):
     """All author catalogs, including future v5 technology/magic/endgame files."""
     for path in sorted((root/'content/quests').glob('*.json')):
         if not (path.name.startswith('epochs_') or re.match(r'v[45]_.*\.json$',path.name)
-                or path.name in {'v12_create_addons_course.json', 'v13_cdg_molds.json'}):
+                or path.name in {'v12_create_addons_course.json', 'v13_cdg_molds.json', 'v14_cdg_panel_native.json'}):
             continue
         data=read(path)
         records=data if isinstance(data,list) else data.get('quests',[])

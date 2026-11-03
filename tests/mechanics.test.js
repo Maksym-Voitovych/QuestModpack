@@ -192,3 +192,31 @@ test('v12 electrum completion requires its own team receipt and epoch15', () => 
   assert.ok(b.commands.includes('advancement revoke Alice only aia2:mechanics/cca_electrum_mixing'));
   assert.equal(b.commands.includes(command), false);
 });
+
+test('v14 panel completion requires its own team receipt at epoch12, never inventory', () => {
+  const b = fixture(); b.ready(); b.player.completed = 10;
+  b.player.inventory = [{id: 'createdieselgenerators:sheet_metal_panel', count: 64}];
+  const command = 'advancement grant Alice only aia2:mechanics/cdg_panel_compression';
+  b.sync(); assert.equal(b.commands.includes(command), false);
+  b.proofs.add('team-a:cdg_panel_compression'); b.sync();
+  assert.equal(b.commands.includes(command), false, 'A legitimate receipt cannot unlock a future epoch');
+  b.player.completed = 11; b.commands.length = 0; b.sync();
+  assert.ok(b.commands.includes(command));
+  b.player.team = 'team-b'; b.commands.length = 0; b.sync();
+  assert.ok(b.commands.includes('advancement revoke Alice only aia2:mechanics/cdg_panel_compression'));
+  assert.equal(b.commands.includes(command), false);
+});
+
+test('v14 refuses the old sixteen-rule map or an unreviewed eighteenth rule', () => {
+  for (const mutate of [
+    d => { d.rules = d.rules.filter(rule => rule.id !== 'cdg_panel_compression'); },
+    d => { d.rules.push({...d.rules[0], id: 'unreviewed_eighteenth_process'}); }
+  ]) {
+    const changed = JSON.parse(JSON.stringify(config)); mutate(changed);
+    const b = fixture(changed); b.ready(); b.sync();
+    assert.equal(b.calls.includes('configure'), false);
+    assert.equal(grants(b).length, 0);
+    assert.equal(b.bridge.isConfigured(), false);
+    assert.ok(b.errors.length > 0);
+  }
+});

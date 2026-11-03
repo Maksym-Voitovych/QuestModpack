@@ -50,6 +50,9 @@ MECHANIC_CONTRACT = {
        for tier in range(1, 5)},
     'cca_electrum_mixing': (15, 'create:mixing', 'immersiveengineering:ingot_electrum',
                             {'createaddition:mixing/electrum'}),
+    'cdg_panel_compression': (12, 'createdieselgenerators:compression_molding',
+                              'createdieselgenerators:sheet_metal_panel',
+                              {'createdieselgenerators:compression_molding/sheet_metal_panel'}),
 }
 
 
@@ -165,7 +168,7 @@ def validate_compiled_tasks(record, compiled):
 
 
 def verified_mechanic_advancements(root, rules, bundle=None):
-    """Only the sixteen explicitly audited native contracts can count as actions.
+    """Only the seventeen explicitly audited native contracts can count as actions.
 
     This checks the checked-in recipe/advancement protocol. Successful native
     dispatch still needs its separate Java/runtime tests; inventory triggers
@@ -223,7 +226,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                 require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True) and read(root/source['frozen_path']) == recipe, 'Missing or changed frozen electrum recipe')
                 require(recipe.get('heat_requirement') == 'heated' and recipe.get('results') == [{'count': 2, 'id': output}], 'Electrum heat/output changed')
                 require(rules['blockGates'].get('create:blaze_burner', 100) <= epoch, 'Chosen electrum heat provider is in a future epoch')
-            if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'}:
+            if serializer in {'enderio:alloy_smelting', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench', 'createdieselgenerators:compression_molding'}:
                 require(verify_evidence(root, {'path': source.get('frozen_path', ''), 'sha256': source['source_sha256']}, claimed=True), 'Native mechanic proof lacks frozen recipe', ident)
                 require(read(root/source['frozen_path']) == recipe, 'Native mechanic proof export differs', ident)
             if serializer == 'rootsclassic:ritual':
@@ -236,7 +239,7 @@ def verified_mechanic_advancements(root, rules, bundle=None):
                         'Roots proof recipe differs from frozen export', ident)
                 outputs = [recipe.get('effectConfig', {}).get('result', {})]
             else:
-                outputs = recipe.get('results', []) if serializer == 'create:mixing' else [recipe.get('result' if serializer in {'powah:energizing', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'} else 'output', {})]
+                outputs = recipe.get('results', []) if serializer in {'create:mixing', 'createdieselgenerators:compression_molding'} else [recipe.get('result' if serializer in {'powah:energizing', 'forbidden_arcanus:clibano_combustion', 'ad_astra:nasa_workbench'} else 'output', {})]
             require(any(result.get('id') == output and result.get('count', 1) > 0 for result in outputs),
                     'Native mechanic recipe does not produce its output', ident, recipe_id)
         path = root/'kubejs/data/aia2/advancement/mechanics'/(ident + '.json')
@@ -438,6 +441,8 @@ def validate(root=ROOT, include_layout=True):
     if addon_course.is_file(): paths.append(addon_course)
     molds = root/'content/quests/v13_cdg_molds.json'
     if molds.is_file(): paths.append(molds)
+    panel = root/'content/quests/v14_cdg_panel_native.json'
+    if panel.is_file(): paths.append(panel)
     maps = sorted((root/'content/research').glob('*v5*.json'))
     if not paths and not maps:
         return {'enabled': False, 'reason': 'No authored v5 catalogs or research maps exist yet'}
@@ -547,6 +552,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/research/create_addons_pending_v12.json').exists() else {'enabled':False},
             'cdg_mold_component_goals': import_tool('build_cdg_molds_v13').validate(root, compiled=True)
                 if (root/'content/quests/v13_cdg_molds.json').exists() else {'enabled':False},
+            'cdg_panel_native_extension': import_tool('build_cdg_panel_v14').validate(root, compiled=True)
+                if (root/'content/research/cdg_panel_pending_v14.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

@@ -157,6 +157,8 @@ def main():
         if addon_course.is_file(): additions += len(read(addon_course)['quests'])
         molds = ROOT/'content/quests/v13_cdg_molds.json'
         if molds.is_file(): additions += len(read(molds)['quests'])
+        panel = ROOT/'content/quests/v14_cdg_panel_native.json'
+        if panel.is_file(): additions += len(read(panel)['quests'])
         assert len(quests) == 2784 + additions, 'Every reviewed v5 goal must compile once, preserving the v4 baseline'
     else: assert 2000 <= len(quests) - 96 <= 3000, 'Exclude the 96 preserved legacy manual tasks from substantive quest count'
     for q in quests.values():

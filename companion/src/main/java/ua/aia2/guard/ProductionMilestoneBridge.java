@@ -36,6 +36,7 @@ public final class ProductionMilestoneBridge {
     private record CrafterAttempt(Rule rule, Recipe<?> recipe, String team, int inputUnits) {}
     private static final Set<String> SERIALIZERS = Set.of("create:mixing", "create:compacting",
             "mekanism:metallurgic_infusing", "minecraft:crafting_shaped", "rootsclassic:ritual",
+            "createdieselgenerators:compression_molding",
             "enderio:alloy_smelting", "powah:energizing", "forbidden_arcanus:clibano_combustion", "ad_astra:nasa_workbench");
     private static Map<String, Rule> byRecipe = Map.of();
     private static final Map<Recipe<?>, Rule> identity = new IdentityHashMap<>();
@@ -105,13 +106,20 @@ public final class ProductionMilestoneBridge {
                             ? AdAstraNasaAccess.recipeOutput(holder.value()) : EnderTaskAccess.template(holder.value(),level);
                     if (candidate.serializer().equals(serializer) && !output.isEmpty()
                             && candidate.output().equals(BuiltInRegistries.ITEM.getKey(output.getItem()).toString())) {
+                        if (candidate.id().equals("cdg_panel_compression")
+                                && !CdgPanelAccess.matchesRecipe(holder.value(), level)) {
+                            LOGGER.error("AIA2 CDG panel proof refused: current recipe {} differs from the reviewed Lines/iron plate/four panels contract", holder.id());
+                            continue;
+                        }
                         identity.put(holder.value(), candidate);
                     }
                 }
             }
             generation = snapshot;
         }
-        return identity.get(recipe);
+        Rule current = identity.get(recipe);
+        return current != null && current.id().equals("cdg_panel_compression")
+                && !CdgPanelAccess.isCurrentMold(recipe) ? null : current;
     }
 
     /** Called only after native input consumption (Basin, Mekanism, Roots). */

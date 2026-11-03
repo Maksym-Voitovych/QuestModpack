@@ -78,8 +78,23 @@ def process_references(root, target_sha, compiled=False):
 def planned_config(root):
     document = read(Path(root)/MECHANICS); by_id = {row['id']: row for row in document['rules']}
     document['rules'] = [by_id[ident] for ident in BASELINE_HASHES] + [extension_rule(root)]
+    successor = reviewed_panel_rule(root)
+    if successor is not None and successor['id'] in by_id:
+        assert by_id[successor['id']] == successor, 'Generated panel rule changed'
+        document['rules'].append(successor)
     digest = hashlib.sha256((json.dumps(document, ensure_ascii=False, indent=2)+'\n').encode()).hexdigest()
     return document, digest
+
+
+def reviewed_panel_rule(root):
+    """The single reviewed successor, never an arbitrary future-ID allowlist."""
+    if not (Path(root)/'content/research/cdg_panel_pending_v14.json').is_file():
+        return None
+    try:
+        from build_cdg_panel_v14 import extension_rule as panel_rule
+    except ImportError:
+        from tools.build_cdg_panel_v14 import extension_rule as panel_rule
+    return panel_rule(root)
 
 
 def extension_rule(root=ROOT):
@@ -118,13 +133,18 @@ def validate_mechanic_rules(root=ROOT, allow_legacy=True):
     # The eleven-rule state exists only inside the independently tested NASA upgrade fixture.
     base_eleven = list(BASELINE_HASHES)[:11]
     allowed = [base_ids, base_ids | {RULE_ID}]
+    successor = reviewed_panel_rule(root)
+    if successor is not None:
+        allowed.append(base_ids | {RULE_ID, successor['id']})
     if allow_legacy: allowed.append(set(base_eleven))
     assert actual in allowed, 'Unreviewed explicit mechanic extension set'
     for ident in actual & base_ids:
         assert canonical(by_id[ident]) == BASELINE_HASHES[ident], 'Published mechanic rule changed'
     assert [row['id'] for row in rows if row['id'] in base_ids] == [ident for ident in BASELINE_HASHES if ident in actual], 'Published mechanic rule order changed'
     if RULE_ID in by_id: assert by_id[RULE_ID] == own, 'Generated electrum rule changed'
-    if not allow_legacy: assert actual == base_ids | {RULE_ID}, 'Electrum extension not generated'
+    if successor is not None and successor['id'] in by_id:
+        assert by_id[successor['id']] == successor, 'Generated panel rule changed'
+    if not allow_legacy: assert base_ids | {RULE_ID} <= actual, 'Electrum extension not generated'
     return own
 
 
@@ -148,11 +168,14 @@ def validate(root=ROOT, compiled=False):
     assert any(t['type'] == 'item' and t['item'] == own['output'] and t.get('count') == 2 and not t.get('consume') and not t.get('craft') for t in quest['tasks']), 'Separate electrum output presence required'
     if compiled:
         assert read(root/f"kubejs/data/aia2/advancement/mechanics/{RULE_ID}.json") == ADVANCEMENT, 'Native proof requires only impossible trigger'
-        assert [row['id'] for row in read(root/MECHANICS)['rules']] == [*BASELINE_HASHES, RULE_ID], 'Final sixteen rule order changed'
-    _, desired_sha = planned_config(root)
+        rows = read(root/MECHANICS)['rules']
+        successor = reviewed_panel_rule(root)
+        suffix = [successor['id']] if successor is not None and any(row['id'] == successor['id'] for row in rows) else []
+        assert [row['id'] for row in rows] == [*BASELINE_HASHES, RULE_ID, *suffix], 'Final published mechanic order changed'
+    planned, desired_sha = planned_config(root)
     _, references = process_references(root, desired_sha, compiled=compiled)
     return {'status': 'passed', 'new_native_rules': 1, 'published_rules_preserved': 15,
-            'mechanic_rules': 16, 'native_goal_epoch': 15, 'new_recipes': 0,
+            'mechanic_rules': len(planned['rules']), 'native_goal_epoch': 15, 'new_recipes': 0,
             'preserved_process_map_references_refreshed': references,
             'native_create_dispatch_tested': False,
             'heat_scope': 'Chosen Create Burner15; CDG12 alternate heat documented, not excluded'}

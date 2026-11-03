@@ -153,6 +153,7 @@ SHA означає перевірку збереженого файла. Від�
 - ../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/lines_mold.json — createdieselgenerators; є перевірений файл
 - ../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/bottling/duroplast_plate.json — createdieselgenerators; є перевірений файл
 - ../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/refinery/resin.json — createdieselgenerators; є перевірений файл
+- ../../content/research/evidence/cdg_panel_native_v14/manifest.json — createdieselgenerators; є перевірений файл
 - ../../content/research/evidence/clibano_core_v6/effective_tags/clibano/creates_enchanted_fire.json — forbidden_arcanus; є перевірений файл
 - ../../content/research/evidence/clibano_core_v6/effective_tags/clibano/creates_soul_fire.json — forbidden_arcanus; є перевірений файл
 - ../../content/research/evidence/clibano_core_v6/effective_tags/runic_stones.json — forbidden_arcanus; є перевірений файл
@@ -1198,16 +1199,21 @@ SHA означає перевірку збереженого файла. Від�
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/refinery.json — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/squeezer.json — immersiveengineering; є перевірений файл
 - https://github.com/BluSunrize/ImmersiveEngineering/blob/583a182549d284a35c813b55ac2a0d1fddcf945a/src/main/resources/assets/immersiveengineering/manual/treated_wood.json — immersiveengineering; є перевірений файл
-- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/gradle.properties — create; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/LICENSE.md — createdieselgenerators; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/gradle.properties — create, createdieselgenerators; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/contraptions/actors/psi/PortableFluidInterfaceBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/crafter/MechanicalCrafterBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/fan/EncasedFanBlockEntity.java — create; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/mixer/CompactingRecipe.java — createdieselgenerators; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/mixer/MechanicalMixerBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/press/MechanicalPressBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/waterwheel/WaterWheelBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/logistics/packager/PackagerBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/logistics/packager/repackager/RepackagerBlockEntity.java — create; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/basin/BasinRecipe.java — create; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingOutput.java — createdieselgenerators; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipe.java — createdieselgenerators; є перевірений файл
+- https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipeParams.java — createdieselgenerators; є перевірений файл
 - https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/sequenced/SequencedAssemblyRecipe.java — create; є перевірений файл
 - https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/LICENSE.txt — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл
 - https://github.com/CyclopsMC/CyclopsCore/blob/c0372426f39c92bb6b18f9fcaf365f9510387b05/gradle.properties — integrateddynamics, integratedterminals, integratedtunnels; є перевірений файл

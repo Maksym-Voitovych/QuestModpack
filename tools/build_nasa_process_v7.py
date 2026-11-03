@@ -136,6 +136,14 @@ def validate(root=ROOT, pending=None, catalog=None, runtime=None, compiled=False
             from tools.build_create_addons_v12 import validate_mechanic_rules
         extension = validate_mechanic_rules(root)
         extensions = {extension['id']} & set(actual)
+        if (root/'content/research/cdg_panel_pending_v14.json').is_file():
+            try:
+                from build_cdg_panel_v14 import extension_rule
+            except ImportError:
+                from tools.build_cdg_panel_v14 import extension_rule
+            # The v12 validator above approves the complete reviewed set first.
+            # A pending file alone never authorizes arbitrary extension IDs.
+            extensions |= {extension_rule(root)['id']} & set(actual)
     assert set(actual) in (set(baseline), set(baseline) | expected_ids | extensions), 'Unreviewed mechanics set'
     assert [row['id'] for row in rows if row['id'] in baseline] == list(BASELINE_RULE_IDS), 'Published mechanic rule order changed'
     for ident, digest in baseline.items():
@@ -246,7 +254,13 @@ def apply(root=ROOT):
     pending = read(root / PENDING)
     document = read(root / MECHANICS)
     own_ids = {row['id'] for row in pending['mechanic_rules']}
-    document['rules'] = [row for row in document['rules'] if row['id'] not in own_ids] + pending['mechanic_rules']
+    if own_ids <= {row['id'] for row in document['rules']}:
+        # Published rules keep their positions across additive later extensions.
+        # Replacing the four values in place also preserves the pre-extension fixture.
+        own = {row['id']: row for row in pending['mechanic_rules']}
+        document['rules'] = [own.get(row['id'], row) for row in document['rules']]
+    else:
+        document['rules'] = [row for row in document['rules'] if row['id'] not in own_ids] + pending['mechanic_rules']
     write(root / MECHANICS, document)
     for row in pending['mechanic_rules']:
         write(root / ('kubejs/data/aia2/advancement/mechanics/' + row['id'] + '.json'), ADVANCEMENT)

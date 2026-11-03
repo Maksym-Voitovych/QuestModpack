@@ -369,6 +369,103 @@ def validate_mold_component_tasks(source):
         raise InstallError('Mold component predicate failed before installation: '+str(failure)) from failure
 
 
+def _panel_package_requires_preflight(source):
+    """A lost source catalog must not turn the seventeenth rule into legacy data."""
+    source = Path(source)
+    markers = (source/'content/quests/v14_cdg_panel_native.json',
+               source/'content/research/cdg_panel_pending_v14.json')
+    if any(path.exists() or _is_link(path) for path in markers):
+        return True
+    mechanics = source/'kubejs/config/aia2_mechanics.json'
+    if not mechanics.is_file():
+        return False
+    try:
+        document = json.loads(mechanics.read_text(encoding='utf-8'))
+        return any(row.get('id') == 'cdg_panel_compression' for row in document.get('rules', []))
+    except (OSError, ValueError, TypeError, AttributeError) as failure:
+        raise InstallError('Mechanics configuration could not be checked before installation: '+str(failure)) from failure
+
+
+def validate_panel_production(source, jar):
+    """Pair the reviewed seventeenth proof with its source, quest and guard JAR.
+
+    This is read-only package validation, not optional-mod ABI or Mixin weaving.
+    JSON and FTB SNBT chapters are accepted before any instance backup/write.
+    """
+    source = Path(source)
+    catalog_relative = Path('content/quests/v14_cdg_panel_native.json')
+    catalog_path = source/catalog_relative
+    if not _panel_package_requires_preflight(source):
+        return {'status': 'legacy_package'}
+    helper_relative = Path('tools/build_cdg_panel_v14.py')
+    helper_path = source/helper_relative
+    try:
+        for relative in (catalog_relative, helper_relative,
+                         Path('content/research/cdg_panel_pending_v14.json'),
+                         Path('content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/sheet_metal_panel.json')):
+            current = source
+            for part in relative.parts:
+                current = current/part
+                assert not _is_link(current), 'Panel preflight files must not be symlinks/junctions'
+            assert current.is_file(), 'Panel preflight source/helper is missing'
+        spec = importlib.util.spec_from_file_location('_aia2_panel_production', helper_path)
+        helper = importlib.util.module_from_spec(spec)
+        # Execute the reviewed local source without emitting package __pycache__.
+        exec(compile(helper_path.read_bytes(), str(helper_path), 'exec'), helper.__dict__)
+        own = helper.validate_mechanic_rules(source, compiled=True)
+        runtime = json.loads((source/'kubejs/config/aia2_runtime.json').read_text(encoding='utf-8'))
+        assert runtime.get('progressionVersion', 0) >= 4 and runtime.get('machineGuard', {}).get('mode') == 'required', 'Panel production requires API4 progression and required Machine Guard'
+        for category, entries in helper.PRODUCERS.items():
+            for ident, epoch in entries.items():
+                assert runtime[category].get(ident) == epoch and epoch <= 12, 'Future or changed panel producer route'
+        assert helper.RECIPE_ID not in json.loads((source/'kubejs/config/aia2_recipes.json').read_text(encoding='utf-8'))['remove'], 'Native panel recipe was removed'
+        required = {'ua/aia2/guard/CdgPanelAccess.class', 'ua/aia2/guard/ProductionMilestoneBridge.class'}
+        assert required <= set(jar.namelist()), 'Panel production needs the matching CdgPanelAccess companion'
+        bridge = jar.read('ua/aia2/guard/ProductionMilestoneBridge.class')
+        assert b'createdieselgenerators:compression_molding' in bridge and b'ua/aia2/guard/CdgPanelAccess' in bridge, 'Companion lacks the paired CDG serializer/helper reference'
+        advancement = source/f'kubejs/data/aia2/advancement/mechanics/{helper.RULE_ID}.json'
+        assert json.loads(advancement.read_text(encoding='utf-8')) == helper.ADVANCEMENT, 'Panel native proof must use only its impossible criterion'
+        catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+        assert catalog.get('schema') == 1 and len(catalog['quests']) == 1, 'Expected one reviewed panel goal'
+        authored = catalog['quests'][0]
+        expected_tasks = [
+            {'type': 'advancement', 'advancement': own['advancement']},
+            {'type': 'item', 'item': own['output'], 'count': 4, 'consume': False, 'craft': False}]
+        assert authored.get('id') == helper.QUEST_ID and authored.get('epoch') == 12 and authored.get('required') is False and authored.get('mod') == 'createdieselgenerators', 'Wrong panel source goal identity/era'
+        assert authored.get('after') == ['V13_E12_cdg_mold_lines'] and authored.get('proof_scope') == helper.PROOF_SCOPE and authored.get('tasks') == expected_tasks, 'Wrong panel source proof/tasks/prerequisite'
+        assert authored['tasks'][1].get('consume') is False and authored['tasks'][1].get('craft') is False, 'Panel source inventory flags require Boolean false'
+        quests = {}
+        for path in sorted((source/'config/ftbquests/quests/chapters').glob('*.snbt')):
+            document = _document_pair(path.read_bytes(), None, str(path))[0]
+            for ident, quest in _id_map(document.get('quests', []), str(path)).items():
+                assert ident not in quests, 'Duplicate compiled quest ID'
+                quests[ident] = quest
+        actual = quests[helper.uid(helper.QUEST_ID)]
+        def flag(value, expected):
+            if type(value) is bool:
+                return value is expected
+            # FTB SNBT represents its explicit true/false literals as Byte tags.
+            return type(value).__module__ == 'nbtlib.tag' and type(value).__name__ == 'Byte' and int(value) == int(expected)
+        def count(value, expected):
+            return (type(value) is int or (type(value).__module__ == 'nbtlib.tag' and type(value).__name__ == 'Int')) and int(value) == expected
+        assert flag(actual.get('optional'), True) and flag(actual.get('hide_until_deps_complete'), True), 'Panel goal must remain optional and gated'
+        expected_dependencies = {helper.uid('V13_E12_cdg_mold_lines'), str(runtime['epochs'][10]['finalQuestId'])}
+        assert set(map(str, actual.get('dependencies', []))) == expected_dependencies, 'Panel prerequisites or epoch gate changed'
+        tasks = actual['tasks']
+        assert len(tasks) == 3 and tasks[0] == {'id': helper.uid(helper.QUEST_ID+':task:0'), 'type': 'advancement', 'advancement': own['advancement']}, 'Compiled native panel proof missing/changed'
+        sample = tasks[1]
+        assert set(sample) == {'id', 'type', 'item', 'count', 'consume_items', 'only_from_crafting'}, 'Compiled panel sample fields changed'
+        assert str(sample['id']) == helper.uid(helper.QUEST_ID+':task:1') and sample['type'] == 'item' and sample['item'] == {'id': own['output'], 'count': 1}, 'Compiled panel sample item/identity changed'
+        assert count(sample['count'], 4) and count(sample['item']['count'], 1) and flag(sample['consume_items'], False) and flag(sample['only_from_crafting'], False), 'Compiled panel sample count/inventory flags changed'
+        assert tasks[2] == {'id': helper.uid(helper.QUEST_ID+':stage'), 'type': 'advancement', 'advancement': 'aia2:stages/e12'}, 'Compiled panel stage check changed'
+        return {'status': 'passed', 'panel_native_goals': 1, 'mechanic_rules': 17,
+                'scope': 'package_pairing_not_optional_binary_dispatch'}
+    except InstallError:
+        raise
+    except Exception as failure:
+        raise InstallError('Panel production contract failed before installation: '+str(failure)) from failure
+
+
 def validate_key_journal_pair(source, raw_class):
     """New presentation packages must include the matching durable key journal."""
     if not (source/'content/audit/v11-space-milestone-presentation.json').is_file():
@@ -577,6 +674,12 @@ def plan_install(source, instance):
                 raise InstallError('The progression v4 companion JAR is damaged or outdated') from error
             validate_projecte_tablet_pair(source, instance, bundled_jars[0])
             validate_ad_astra_nasa_pair(source, instance, bundled_jars[0])
+    if _panel_package_requires_preflight(source):
+        try:
+            with zipfile.ZipFile(bundled_jars[0]) as jar:
+                validate_panel_production(source, jar)
+        except zipfile.BadZipFile as failure:
+            raise InstallError('Panel production companion JAR is damaged') from failure
     files.extend(bundled_jars)
     operations = []
     for item in sorted(files):

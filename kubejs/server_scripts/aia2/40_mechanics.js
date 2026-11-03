@@ -5,15 +5,15 @@ var aia2MechanicConfigured = false;
 var aia2MechanicFailure = '';
 var aia2MechanicProjection = {};
 var aia2MechanicTick = 0;
-// Explicit additive v12 contract: published15 IDs plus one reviewed Basin process.
-var aia2MechanicExpectedIds = ["andesite_mixing", "brass_mixing", "infused_alloy", "reinforced_alloy", "roots_living_pickaxe", "roots_charged_focus", "enderio_energetic_alloy", "powah_blazing_crystal", "clibano_arcane_dust", "clibano_rune", "clibano_obsidiansteel", "nasa_tier_1_rocket", "nasa_tier_2_rocket", "nasa_tier_3_rocket", "nasa_tier_4_rocket", "cca_electrum_mixing"];
+// Explicit v14 extension: preserve sixteen published IDs and add one reviewed CDG process.
+var aia2MechanicExpectedIds = ["andesite_mixing", "brass_mixing", "infused_alloy", "reinforced_alloy", "roots_living_pickaxe", "roots_charged_focus", "enderio_energetic_alloy", "powah_blazing_crystal", "clibano_arcane_dust", "clibano_rune", "clibano_obsidiansteel", "nasa_tier_1_rocket", "nasa_tier_2_rocket", "nasa_tier_3_rocket", "nasa_tier_4_rocket", "cca_electrum_mixing", "cdg_panel_compression"];
 
 function aia2InitMechanics() {
   if (!global.AIA2Machines.isReady()) return false;
   try {
     if (aia2MechanicConfigured && aia2MechanicBridge.isConfigured()) return true;
     if (aia2MechanicConfig.schema !== 1 || !aia2MechanicConfig.rules || aia2MechanicConfig.rules.length !== aia2MechanicExpectedIds.length) {
-      throw new Error('Потрібні шістнадцять перевірених правил виробничих спостережень.');
+      throw new Error('Потрібні сімнадцять перевірених правил виробничих спостережень.');
     }
     var seen = [];
     aia2MechanicConfig.rules.forEach(function (rule) {

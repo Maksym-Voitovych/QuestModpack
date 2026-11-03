@@ -69,9 +69,13 @@ def validate(root=ROOT, compiled=False):
     removed = set(read(root/'kubejs/config/aia2_recipes.json')['remove'])
     maps = read(root/'content/research/technology_v5.json')['mods']
     cdg = next(mod for mod in maps if mod['mod_id'] == 'createdieselgenerators')
-    assert canonical(cdg['stages'][:24]) == PUBLISHED_STAGE_SHA and len(cdg['stages']) == 30, 'Published CDG stages changed'
+    # The later reviewed production objective is separate from these six
+    # component-presence goals. Project only its exact identity, never a prefix.
+    historical_stages = [stage for stage in cdg['stages']
+                         if stage['id'] != 'createdieselgenerators.native_v14.panel_compression']
+    assert canonical(historical_stages[:24]) == PUBLISHED_STAGE_SHA and len(historical_stages) == 30, 'Published CDG stages changed'
     assert canonical([mod for mod in maps if mod['mod_id'] != 'createdieselgenerators']) == OTHER_MODS_SHA, 'Unrelated mod map changed'
-    stages = {stage['id']: stage for stage in cdg['stages'][24:]}
+    stages = {stage['id']: stage for stage in historical_stages[24:]}
     compiled_quests = {}
     if compiled:
         for path in sorted((root/'config/ftbquests/quests/chapters').glob('*.snbt')):

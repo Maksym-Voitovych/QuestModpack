@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "scope_uk": "Одна додаткова необов’язкова ціль після профілю Lines: успішне нативне компресійне виробництво панелей на машині поточної команди. Старі профільні завдання та вимоги 96 ключів не замінюються.",
+  "quests": [
+    {
+      "id": "V14_E12_cdg_panel_native",
+      "epoch": 12,
+      "title_uk": "Пресування панелей: від форми до готової партії",
+      "description_uk": [
+        "Після перевірки профілю Lines запустіть Mechanical Press над Basin: одна пластина з тега c:plates/iron за рецептом createdieselgenerators:compression_molding/sheet_metal_panel дає чотири Sheet Metal Panel. Нагрівання цьому рецепту не потрібне; форму Lines залиште в чаші як оснащення.",
+        "Залиште в Basin одну потрібну форму. CDG перевіряє останній Mold у порядку слотів, тому інша форма наприкінці може зупинити процес навіть за наявності Lines. Для зарахування машина повинна мати чинного власника вашої команди та доступ до епохи12; доказ записується після витрати матеріалу й прийняття виходу.",
+        "Серверний доказ виробництва та наявність чотирьох панелей — дві окремі умови. Готові панелі з інвентарю, нагороди, Creative або /give не створюють доказ, а симуляція рецепта не завершує процес. Це побічна перевірка практики: попередній квест профілю Lines, завершений прогрес і правила двох ключів залишаються чинними."
+      ],
+      "icon": "createdieselgenerators:sheet_metal_panel",
+      "tasks": [
+        {
+          "type": "advancement",
+          "advancement": "aia2:mechanics/cdg_panel_compression"
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:sheet_metal_panel",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V13_E12_cdg_mold_lines"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.native_v14.panel_compression",
+      "proof_scope": "current_owned_basin_successful_native_apply_not_simulation",
+      "recipe_ids": [
+        "createdieselgenerators:compression_molding/sheet_metal_panel"
+      ]
+    }
+  ]
+}

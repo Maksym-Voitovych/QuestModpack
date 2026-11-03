@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-11-03 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.24-alpha (Mold components: реалізація, тести та відтворюваність DONE; перевірка доставки DONE; commit/push — Git log/origin/main); Git status через log/origin/main; повний0.5 ще не реліз.
+Останнє оновлення: 2026-11-03 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.25-alpha (CDG panel proof: реалізація/targeted/native DONE; перевірений checkpoint; commit/push — Git log/origin/main); Git status через log/origin/main; повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61мод/63records,2642researchSHAfiles+1nativeMCfact;CDG30scopedstages/4profilecodecs;fullbinaryprovenanceBLOCKED |
+| 2 | Дослідження механік | IN_PROGRESS | 61мод/63records,2649researchSHAfiles+1nativeMCfact;CDG31scopedstages/4profilecodecs+1nativepanelproof;fullbinaryprovenanceBLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
-| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1157перетинів;20старих координат в1CDGглаві переміщено для6Moldцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 3402quests;+6optionalMold12/15/18;3396oldpayloadspreserved;remaining48 IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3138itemrewards;+6thematic;all3132oldpayloads/IDsexact |
+| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1157перетинів;14старих координат в1CDGглаві переміщено для1nativepanelцілі |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 3403quests;+1optionalnativepanel12;3402oldpayloadspreserved;remaining48 IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3139itemrewards;+1thematic;all3138oldpayloads/IDsexact |
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 472cleanPython/81Node/5237Java/329MC@2JVM/650ticksPASS;88FTBmatcher+77debuggatechecks;rebuild223PASS;fullpackNOT_RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.24code/clean472/rebuild223/deliveryDONE;commit/push—gitlog/origin/main;0.5unfinished |
+| 10 | Інтеграційні тести | IN_PROGRESS | 512cleanPython/83Node/5237Java/329MC@2JVM/650ticksPASS;107CDGmodeledassertions;rebuild227PASS;fullpackNOT_RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.25checkpoint/clean512/rebuild227/deliveryDONE;commit/push—Gitlog/origin/main;0.5unfinished |
 
 
 
@@ -41,7 +41,7 @@
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (21) | IN_PROGRESS (2 формул) | DONE (static) |
-| 12 | IN_PROGRESS | IN_PROGRESS (17) +5 addon +3 Mold | TODO | DONE (static) |
+| 12 | IN_PROGRESS | IN_PROGRESS (17) +5 addon +3 Mold +1 native panel | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
 | 15 | IN_PROGRESS | IN_PROGRESS (29) +3 addon +2 Mold | TODO | DONE (static) |
@@ -860,3 +860,54 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - Версія0.4.24-alpha збережена цілісним checkpoint на main; точний commit/push статус — Git log/origin/main та external delivery report біля пакета. До Git входять джерела, публічні frozen evidence, власний JAR і звіти; особисті світи/логи/кеші/backup не входять. Finalmetadata repack →check-only→allmanifestRootSHA перед Git; public immutable source ZIP перевіряється після push.
 - НАСТУПНЕ: перевірити точну нативну межу CDG compression_molding sheet_metal_panel у чинному Basin apply RETURN. Лише за підтвердження семантики додати explicit17th-rule contract і окрему нову optional ціль після V13 Lines, не переписуючи старі профільні завдання. Casting Bar/Spout — окрема межа. Інші34partial/required48/charging53/liquid9/6IFfluidgaps/DraconicCI633 лишаються відкритими.
 - FulloriginalCDG/FTBUI/client/JEI/Survival/TPS NOT_RUN.0.5.0 не оголошено релізом.
+
+
+### 2026-11-03 — CDG panel production: IN_PROGRESS після0.4.24
+
+- Checkpoint0.4.24 committed/pushed9067fdf71fe1da045e5e1038afe8de140a01b1c9. Публічний immutableGitHubZIP HTTP200/CRC/all5202Gitblobs/1185runtimefiles та local5201manifest bytes PASS; external AIA2-delivery-9067fdf.json. Backup перед новим блоком:/workspace/aia2-backups/before-cdg-panel-9067fdf/checkpoint-9067fdf.tar.gz.
+- Підтверджено exactCDG1.3.15 CompactingRecipe→BasinRecipe, HEAD повторно звіряє останню форму; Create6.0.10applyRETURN(!test,true) після фактичного debit/acceptOutputs. Native serializer ще відсутній у Java allowlist; плановано явне17-те правило та окремий optionalквест12 післяLines. Старі16rules/3402quests/96keys зберігаються.
+- Додатковий підтверджений край: same-ID recipe override може змінити форму/inputs/count, а CDGunknownmold==null та genericMold==null порівнюються рівними. Новий proof мусить відхиляти змінені codecсемантики та null/wrongLines type; однієї inventoryперевірки недостатньо. Нового Mixin не потрібно.
+- Власники: cdg_panel_extension_v14(newbuilder/pending/explicitv12compat/tests); cdg_panel_java_v14(Javahelper/bridge+newmodeledtests); cdg_panel_catalog_v14(newgoal/research/manualdocs/tests). Root:sharedcompiler/validators/maps/NASA/JS/version/QA/Git. ЗміниIN_PROGRESS;0.4.25не оголошено перевіреним. Fullclient/optionalweavingNOT_RUN.
+- Наступна конкретна дія: інтегрувати explicit17thcontract+codecgatedproof, перевірити старі16rules/IDs та negativecontrols, потімclean/native/package/installer/commit/push.
+
+
+### 2026-11-03 — CDG panel0.4.25: implementation/targeted/native DONE
+
+- 1новаoptionalціль12 післяLines →3403total/140глав/6груп/3139itemrewards;усі3402oldnon-coordinatepayloads exact.627recipes/runtimekeys/stations/782assets byteexact;16oldrules/order exact +1explicit17thrule.14старихкоординат в1главі;1157crossings як у базі,0структурнихпопереджень.
+- Actual CdgPanelAccess звіряє точнийoptionalclass/non-nullLines та currentserializer codec normalizedсемантики із shippedrecipe; cheapliveMoldTypecheck відсікає публічну cachedfieldпідміну. Unknown/null==nullcase та same-IDrewrite не отримують proof. Чинний BasinRETURN(!test,true),0новихMixinselectors. Codecробота лише при generationindexrebuild;schema1/96keys unchanged.
+- Explicitv12/NASA/v14 pipeline зберігає16payloads/order,жоднихзагальнихfuture-IDдозволів. Компілятор/валідатори/нагороди/newcatalog загруженіявно. Installerpairing перевіряєhelper/bridge/config/impossibleadv/compiledtasks JSONабоnativeSNBT до записів; активуєтьсязаcatalog/pending/17thrule,щобmissingcatalogнеобходивpreflight.
+- 101targetedPython/83Node/5237JavaPASS;107actualhelper/bridge/handlers/realpolicyassertions ізнезміненимиCDGMoldType/HEAD,але CODEC/Createbody/MC/NBT/IO modeled.3negativecontrolsPASS.329actualcommonMC/2JVM/650ticks повторено на0.4.25,неCDGoptionaldispatch. Installer8tests завершуються передfreeze.
+- JAR234classes/229oldbyte-identical;зміненоProductionMilestoneBridge та ReceiptDataclassmetadata,3нові CdgPanelAccessclasses;76Mixins/keyjournal/otherguardclassesexact. Source7newpaths,CDG31stages(full30oldpreserved),2649SHAfiles/770stages/1143links/61mods(27scopedcore/34partial). Independentread-onlyreview закрив2installerpairing/activationgaps;рештапідтвердженихблокерівнемає.
+- NEXT: finalclean/rebuild/package/actualinstaller/check-only/allsourceSHA/Gitpush/publicZIP. Післяcheckpoint: CastingBar/Spout exactboundary/ABI audit;compressionproofнеєлиттям. FulloptionalCDG/Create/FTBUI/client/JEI/Survival/TPS NOT_RUN.0.5unfinished.
+
+
+### 2026-11-03 — відновлення фінальної QA0.4.25 після заміни середовища
+
+- Git index/усі файли/JAR/звіти збережені; HEAD9067fdf,0.4.25ще не закомічено. Тимчасові /tmp-процеси й незавершений clean-log втрачено, їхній результат не зараховується. Повторний export5228files/5225byteexact+3legacyEOL і повний Python прогін запущено у persistent /workspace/scratch/aia2-v14-final; production code не змінено.
+- Попередня actualextracted delivery0.4.24→0.4.25 PASS:5226manifest/1186runtimeSHA,backup/dryrun0writes/opaquejournals+foreigncontent/repeat. Остаточні metadata/repack/check-only/push лишаються наступною дією.
+- Додатково read-only source-аудит наступного блоку: CastingRecipe.execute приймає output раніше ніж Spout.tick відніме fluid після fillBlock(false); BasinSpoutCasting використовує getAllRecipesFor та не проходить чинний BasinRecipe.apply/getRecipeFor guard. Потрібно окремо дослідити receiver-stage/двокомандні/імпортовані-fluid ризики й транзакційну межу, не видавати compression proof за coverage лиття. Повний runtime exploit не відтворено; нового optional Mixin не додано.
+
+
+### 2026-11-03 — final clean0.4.25: уточнення NASA fixture
+
+- Перший завершений чистий прогін:511tests/10failures(420.673s). Причина: старий action-test очікував16IDs; required-space fixture копіював17rules, але не копіював explicitv14pending+recipe. Суворий production validator правильно відхилив неповну пару, через що9subtest failures зупинялися раніше своїх цілей.
+- Виправлено лише tests/test_required_space_actions_v10.py і tests/test_required_space_v10.py: явний17-й contract у fixture, перевірка всіх16опублікованих hashes, новий regression що видаленняv14pending відхиляє17rules.35targeted testsPASS(13.347s). Production code/JAR/runtime не змінено; validation не послаблено.
+- NEXT: новий fresh Git-index export і повний512test прогін; післяPASS — deterministicrebuild227/centralvalidator/metadata/repack/installer/Git. Перші511FAIL не позначаютьсяPASS і збережені в structured verification history.
+
+
+### 2026-11-03 — CDG panel0.4.25: final clean512 і rebuild227 DONE
+
+- Новий fresh Git-index export5228files/5225byteexact+3knownlegacyCSV/BAT EOL.512Python/0fail/0skip PASS(342.738s); production code/content/runtime незмінні під час перевірок. Попередні511FAIL залишені в історії з причиною та виправленням двох test fixtures;35targeted regressionPASS, validation не послаблено.
+- Deterministicrebuild227:1185non-JARruntimefiles byte-identical до й після та протиRoot; central14JS/SNBT/IDs/DAG/requiredclosure/component/panel17contractPASS.83Node/5237Java/329commonMC@2JVM/650ticks/107modeledCDGassertionsPASS у своїх явно обмежених scope.
+- NEXT: finalmetadata/package/actualinstaller/check-only/allsourceSHA/commit/push/publicZIP. Після доставки — CDG CastingBar/Spout receiver-stage/імпортованіfluid/різнікоманди/оплаченийвихід boundary/ABI audit, без неперевіреного optionalselector. Fullclient/optionalbinary/JEI/Survival/TPS NOT_RUN.0.5unfinished.
+
+
+### 2026-11-03 — CDG panel0.4.25: завершений перевірений checkpoint
+
+- DONE512cleanPython/0fail/0skip(342.738s),83Node/5237Java,329freshcommonMC@2JVM/650ticks,107actualhelper/bridge/handlers/pinnedCDGHEAD/MoldType modeled assertions з3negativecontrols. CODEC/Createbody/MC/NBT/IO уCDGhost змодельовані; commonMC не містить originalCDG/Create.
+- DONErebuild227:1185non-JARruntimefilesbyte-identical/Rootexact;central14JS/SNBT/IDs/DAG/requiredclosure/components/panel17contractPASS. Післяfreeze змінено лише два legacyNASA test files через10first-run fixturefailures;35targeted і новий512clean проходять без послаблення productionvalidator. Усі фінальні code/content/runtime файли перевірені чистим export.
+- DONECRC/5227manifestSHA/1186runtimeSHA/installerSHA та actualextractedCLI0.4.24→0.4.25:dryrun0files/dirs,oldJARbackup,opaqueworld/FTB/key/fire/station/mechanics/paidpending/EMC/chunkmarkers+foreigncontentpreserved,repeatidempotent. Це syntheticinstallerfixture, не перевірка реального світу. Finalmetadata→repack→check-only→allmanifestRootSHA передGit;immutablepublicsourceZIP перевіряється післяpush.
+- 1новийoptionalnativepanelquest12→3403quests/140chapters/6groups/3139itemrewards. Усі3402oldnon-coordinatepayloads,16oldrulepayloads/order,627recipes/runtimekeys/stations/782assets збережені;17thrule/schema1. Нових рецептів/предметів/текстур0. CDG31stages(full30oldpreserved),2649SHAfiles/770stages/1143links/61mods(27scopedcore/34partial).14oldcoords/1chapter;1157crossingsunchanged,0warnings.
+- Цілісний main checkpoint із pushбезforce; точнийhash/status—Gitlog/origin/main та externalpublicdeliveryreport біляZIP. Git не містить особистих світів/логів/кешів/backup. Власників незавершених фонових файлів немає; інтеграцію завершивroot.
+- НАСТУПНА ДІЯ: exactCDG CastingBar/Spout receiverrecipe/outputstage для імпортованоїfluid/двохкоманд, фактичне списанняfluid післяoutputacceptance і ABI boundary. Чинні Basin.apply/getRecipeFor не покривають прямий CDGcasting path; це sourceпідтвердження межі, fullruntimeexploitNOT_RUN. Новий optionalselector без підтвердженоїABI не додавати.34partial/required48/charging53/liquid9/6IFfluidgaps/DraconicCI633 лишаються відкритими.
+- Fulloriginaloptionalbinary/client/FTBUI/JEI/Survival/TPS NOT_RUN.0.5не реліз;0.4.25є проміжною перевіреною частиною.

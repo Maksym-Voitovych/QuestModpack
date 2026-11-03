@@ -8415,6 +8415,18 @@ FTB ItemTask fuzzy перевіряє компонент потрібного п
 Квести: `V13_E18_cdg_mold_duroplast`.
 FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
 
+### 31. Підтверджене пресування панелей Lines
+
+Епохи: 12.
+
+Зберіть Mechanical Press над Basin з формою Lines. Одна залізна пластина з тега c:plates/iron перетворюється на чотири панелі без нагрівання; остання форма у слотах визначає профіль.
+Після перевірки профілю й зразків виконайте справжній виробничий цикл: сервер фіксує завершення лише після витрати інгредієнта й прийняття результату. Окремий proof не підміняє попередню наявність предметів.
+Попередні кроки: createdieselgenerators.molds_v13.lines.
+Машини: `create:mechanical_press`, `create:basin`.
+Ресурси й результати: `createdieselgenerators:mold`, `immersiveengineering:plate_iron`, `createdieselgenerators:sheet_metal_panel`.
+Квести: `V14_E12_cdg_panel_native`.
+Native impossible advancement від current-owner team receipt через чинний Basin apply RETURN(!test,true). Реальні поточні codec-семантики та non-null Lines звіряються перед proof; possession/give/simulation/змінений same-ID recipe не зараховуються. Оригінальні CDG/Create binaries та FTB UI у цьому середовищі не запускалися.
+
 Фінальні цілі:
 - Двигун отримує обслуговувану передачу
 - Паливний двигун лишається частиною заводу
@@ -8661,6 +8673,13 @@ FTB ItemTask fuzzy перевіряє компонент потрібного п
 - [immersiveengineering:refinery](../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/refinery/resin.json) — SHA перевірено
 - [immersiveengineering:bottling_machine](../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/bottling/duroplast_plate.json) — SHA перевірено
 - [джерело](../../content/research/evidence/cdg_molds_v13/manifest.json) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/LICENSE.md) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipeParams.java) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingOutput.java) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/processing/recipe/ProcessingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/Creators-of-Create/Create/blob/ac0c444d9828da3453ae8cc65338e8de063286fb/src/main/java/com/simibubi/create/content/kinetics/mixer/CompactingRecipe.java) — SHA перевірено
+- [джерело](../../content/research/evidence/cdg_panel_native_v14/manifest.json) — SHA перевірено
 
 ## Draconic Evolution
 

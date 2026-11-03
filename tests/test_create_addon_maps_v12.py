@@ -32,6 +32,8 @@ APPROVED_V13_QUESTS = frozenset({
     'V13_E12_cdg_mold_lines', 'V13_E12_cdg_mold_bowl', 'V13_E12_cdg_mold_chain',
     'V13_E15_cdg_mold_bar', 'V13_E15_cdg_mold_heated_lines', 'V13_E18_cdg_mold_duroplast',
 })
+APPROVED_V14_STAGE = 'createdieselgenerators.native_v14.panel_compression'
+APPROVED_V14_QUEST = 'V14_E12_cdg_panel_native'
 
 
 def read(path):
@@ -44,7 +46,8 @@ def sha(value):
 
 
 def v12_stages(mod):
-    return [stage for stage in mod['stages'] if stage['id'] not in APPROVED_V13_STAGES]
+    return [stage for stage in mod['stages']
+            if stage['id'] not in APPROVED_V13_STAGES | {APPROVED_V14_STAGE}]
 
 
 def quest_links(mod):
@@ -154,7 +157,7 @@ class CreateAddonMapTests(unittest.TestCase):
             required = {qid for qid in rows if self.quests[qid].get('required') is True}
             self.assertEqual(set(mod['mandatory_quest_ids']), required)
             self.assertEqual(set(mod['optional_quest_ids']) & set(rows), set(rows)-required)
-            self.assertTrue(set(mod['optional_quest_ids'])-set(rows) <= APPROVED_V13_QUESTS)
+            self.assertTrue(set(mod['optional_quest_ids'])-set(rows) <= APPROVED_V13_QUESTS | {APPROVED_V14_QUEST})
 
     def test_v12_projection_excludes_only_the_six_reviewed_stage_identities(self):
         unknown = {'id': 'createdieselgenerators.molds_v13.unreviewed',
@@ -163,6 +166,9 @@ class CreateAddonMapTests(unittest.TestCase):
                     'new_quest_ids': ['V13_E12_cdg_mold_lines']}
         self.assertEqual(v12_stages({'stages': [reviewed, unknown]}), [unknown])
         self.assertEqual(set(quest_links({'stages': [reviewed, unknown]})), {'UNREVIEWED'})
+        panel = {'id': APPROVED_V14_STAGE, 'new_quest_ids': [APPROVED_V14_QUEST]}
+        unknown_panel = {'id': APPROVED_V14_STAGE+'_unreviewed', 'new_quest_ids': ['UNREVIEWED_PANEL']}
+        self.assertEqual(v12_stages({'stages': [panel, unknown_panel]}), [unknown_panel])
 
     def test_stage_graphs_are_acyclic_and_have_no_future_parent(self):
         for name in MODS:

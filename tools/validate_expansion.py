@@ -60,6 +60,8 @@ def validate(root=ROOT):
     if addon_course.is_file(): modern_paths.append(addon_course)
     molds = root/'content/quests/v13_cdg_molds.json'
     if molds.is_file(): modern_paths.append(molds)
+    panel = root/'content/quests/v14_cdg_panel_native.json'
+    if panel.is_file(): modern_paths.append(panel)
     for path in modern_paths:
         v5_authored.extend(normalize(load(path))['quests'])
     authored.extend(v5_authored)

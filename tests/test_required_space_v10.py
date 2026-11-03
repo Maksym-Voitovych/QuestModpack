@@ -26,6 +26,9 @@ class RequiredSpaceTests(unittest.TestCase):
         if (ROOT/'content/research/create_addons_pending_v12.json').exists():
             paths.extend(['content/research/create_addons_pending_v12.json',
                           'content/research/evidence/create_addons_core_v12/cca/recipes/createaddition/mixing/electrum.json'])
+        if (ROOT/'content/research/cdg_panel_pending_v14.json').exists():
+            paths.extend(['content/research/cdg_panel_pending_v14.json',
+                          'content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/sheet_metal_panel.json'])
         pending = S.read(ROOT / S.nasa.PENDING)
         paths += [entry['frozen_path'] for rule in pending['mechanic_rules'] for entry in rule['evidence']]
         for relative in paths:
@@ -81,6 +84,17 @@ class RequiredSpaceTests(unittest.TestCase):
         self.assertEqual(report['new_recipes'], 0)
         self.assertGreater(report['nasa_recipe_input_alternatives'], 14)
         self.assertEqual(report['native_dispatch_fullpack'], 'NOT_RUN')
+
+    def test_optional_panel_successor_preserves_nasa_overlay_and_requires_its_contract(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary); self.fixture(root)
+            mechanics = S.read(root/S.nasa.MECHANICS)
+            S.apply(root)
+            self.assertEqual(S.read(root/S.nasa.MECHANICS), mechanics)
+            self.assertEqual(mechanics['rules'][-1]['id'], 'cdg_panel_compression')
+            (root/'content/research/cdg_panel_pending_v14.json').unlink()
+            with self.assertRaisesRegex(AssertionError, 'Unreviewed explicit mechanic extension set'):
+                S.apply(root)
 
     def test_authored_catalog_and_tasks_are_preserved_by_requirement_overlay(self):
         records = []

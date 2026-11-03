@@ -6,24 +6,32 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний checkpoint: **0.4.24-alpha — точні профілі CDG Mold**.
-Додано6побічних цілей без зміни3396попередніх payloads. Item tasks зберігають
-modern item.components і literal fuzzy; підтримано4відомі повні ResourceLocation
-профілі. Валідація source/compiled/installer закриває випадкове зняття predicate.
-CDGкарта30етапів, старі24 та інші моди збережені.16native rules/627recipes/96keys
-незмінні. Новий debug-only fixture перевіряє справжній Minecraft CODEC;
-329common-MC checks не є запуском оригінального CDG/FTB UI. Статус остаточних
-QA/доставки/Git — у PROGRESS. Повний0.5не готовий.
+Поточний checkpoint: **0.4.25-alpha — нативне виробництво панелей CDG**.
+Реалізація,512cleanPython/83Node/5237Java/329commonMC і deterministicrebuild227
+перевірені; delivery PASS. Точний commit/push — у Git log/origin/main та
+external immutable-source delivery report; наступна дія нижче.
+Одна окрема optional-ціль12 після V13 Lines; явне17-те правило з незмінними
+16попередніми та schema1. CdgPanelAccess звіряє actualserializer normalized
+codec із Lines/iron-plate/4panels, окремо live non-null MoldType. Нового
+Mixin немає.3402старі payloads/627recipes/96keys і782assets збережені;
+3403цілі загалом. Повний0.5не готовий.
 
-Наступна конкретна дія після доставки0.4.24: нативний доказ CDG compression
-sheet_metal_panel. Спочатку підтвердити, що чинний Create Basin apply RETURN
-спостерігає саме успішний CDG процес із правильною формою, оплатою й прийнятим
-виходом; звірити getResultItem/serializer на exact source1.3.15. Лише після
-цього додати явний additive contract поверх16опублікованих правил і нову
-optional-ціль після V13 Lines, зберігши всі старі tasks/IDs/progress. Новий
-optional Mixin без перевіреної ABI не додавати. Casting Bar/Spout потребує
-окремої межі, component presence не підміняє виробництво. Charging53/liquid9,
-інші34partial карти/required48/6IFfluidgaps/DraconicCI633 лишаються відкритими.
+Наступна конкретна дія після доставки0.4.25: аудит CDG Casting Bar/Spout
+за exact1.3.15 source — де підтверджуються фактичне вилучення рідини,
+відповідна форма, створення/прийняття предмета й власник receiver. Не
+використовувати compression Basin RETURN як доказ лиття. Спочатку скласти
+portable boundary/ABI contract і визначити доступність справжнього бінарника;
+новий optional Mixin додавати лише з перевіреною ціллю та регресіями.
+Підтверджена source-межа: BasinSpoutCasting бере getAllRecipesFor(CASTING),
+викликає CastingRecipe.execute; цей шлях не проходить BasinRecipe.apply
+або чинний guarded getRecipeFor. Casting.execute приймає output до того,
+як Spout.tick відніме fluid після fillBlock(false). Перевірити окремо
+receiver recipe/output-stage захист для імпортованої рідини й різних команд;
+самого tick-stage driver недостатньо для заяви про coverage цього шляху.
+Це source-аудит потенційного обходу, не відтворений повним клієнтом exploit.
+Якщо boundary/ABI не підтверджено, документувати BLOCKED і перейти до
+наступного дослідженого механічного курсу з наявних34partial карт.
+Charging53/liquid9/required48/6IFfluidgaps/DraconicCI633 лишаються відкритими.
 Original optional binaries/client/JEI/Survival/TPS NOT_RUN.
 
 ## Правило відновлення
