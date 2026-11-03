@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '0.4.23-alpha'
+VERSION = '0.4.24-alpha'
 DEFAULT = Path('/workspace/shared/downloads') / ('AIA2-runtime-' + VERSION + '.zip')
 
 
@@ -38,6 +38,12 @@ def main():
     parser.add_argument('--output', type=Path, default=DEFAULT)
     args = parser.parse_args()
     config = json.loads((ROOT / 'kubejs/config/aia2_runtime.json').read_text())
+    if (ROOT/'content/quests/v13_cdg_molds.json').is_file():
+        try:
+            from build_cdg_molds_v13 import validate as validate_molds
+        except ImportError:
+            from tools.build_cdg_molds_v13 import validate as validate_molds
+        validate_molds(ROOT, compiled=True)
     if config.get('machineGuard', {}).get('mode') == 'required':
         jars = list((ROOT / 'mods').glob('aia2-machine-guard-*.jar'))
         if len(jars) != 1:

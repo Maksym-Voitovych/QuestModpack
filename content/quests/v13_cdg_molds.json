@@ -1,0 +1,413 @@
+{
+  "schema": 1,
+  "scope_uk": "Шість нових побічних цілей із перевіркою профілю Mold та зразками застосування. Компонентна відповідність не є доказом виготовлення форми, пресування, лиття чи фактичної роботи рідинної лінії.",
+  "quests": [
+    {
+      "id": "V13_E12_cdg_mold_lines",
+      "epoch": 12,
+      "title_uk": "Профіль Lines: пластина стає панелями",
+      "description_uk": [
+        "Підготуйте залізну пластину та отримайте в Mechanical Saw форму з профілем Lines. Звірте рецепт у JEI й назву готової форми: усі профілі мають один базовий предмет Mold, тому звичайного збігу Item ID недостатньо.",
+        "Установіть у Basin одну потрібну форму та працюйте Mechanical Press над чашею: компресійний рецепт із залізної пластини дає чотири Sheet Metal Panel. Форма задає геометрію, а не замінює матеріал; кілька різних форм у чаші не є універсальним комплектом для преса.",
+        "Автоперевірка порівнює компонент профілю Lines, огляд преса й наявність пластини та чотирьох панелей. Форма не здається з витратою. Це точна перевірка профілю й зразків продукції, а не нативний доказ запуску компресійного процесу."
+      ],
+      "icon": "createdieselgenerators:sheet_metal_panel",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:lines"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:plate_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:sheet_metal_panel",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_panel_tooling"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.lines",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:cutting/lines_mold",
+        "createdieselgenerators:compression_molding/sheet_metal_panel"
+      ]
+    },
+    {
+      "id": "V13_E12_cdg_mold_bowl",
+      "epoch": 12,
+      "title_uk": "Профіль Bowl: дві сировини, дві посудини",
+      "description_uk": [
+        "Отримайте форму Bowl, перевіривши саме її компонент, і підготуйте окрему чашу для цього профілю. Не підміняйте Bowl попередньою Lines: зовнішня назва базового предмета Mold не описує потрібну геометрію.",
+        "Порівняйте два компресійні рецепти: чотири Wood Chip дають одну дерев’яну миску, а одна залізна пластина — одне відро. Обидва використовують Bowl, проте мають різну сировину й призначення; спочатку перевірте одну пробу, потім розділіть подавання матеріалів.",
+        "Завдання перевіряє правильний профіль Bowl, огляд Basin і збережений комплект: чотири Wood Chip, залізну пластину, миску й відро. Ці предмети можуть мати альтернативні джерела, тому їх наявність не оголошується доказом роботи преса або автоматичного сортування."
+      ],
+      "icon": "minecraft:bowl",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:bowl"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:basin",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:plate_iron",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:bowl",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_panel_tooling"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.bowl",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:cutting/bowl_mold",
+        "createdieselgenerators:compression_molding/bowl",
+        "createdieselgenerators:compression_molding/bucket"
+      ]
+    },
+    {
+      "id": "V13_E12_cdg_mold_chain",
+      "epoch": 12,
+      "title_uk": "Профіль Chain: ланцюг і зчеплення вагонеток",
+      "description_uk": [
+        "Підготуйте форму Chain та матеріали для двох різних виробів. Профіль перевіряється за компонентом предмета; проста форма без профілю або Bowl не підходить, навіть якщо у списку інвентарю всі вони називаються Mold.",
+        "Один компресійний рецепт перетворює шість залізних самородків на ланцюг, інший — один Andesite Alloy на Minecart Coupling. Це різні матеріальні маршрути одного профілю: не збільшуйте партію, поки не звірили вибраний рецепт і готовий результат.",
+        "Автоматично перевіряються профіль Chain, огляд преса, шість самородків, Andesite Alloy та зразки ланцюга й зчеплення. Квест не вимірює роботу транспортної мережі, оплату конкретного пресування або число з’єднаних вагонеток; форму та матеріали ви зберігаєте."
+      ],
+      "icon": "minecraft:chain",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:chain"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:iron_nugget",
+          "count": 6,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:andesite_alloy",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:chain",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:minecart_coupling",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_panel_tooling"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.chain",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:cutting/chain_mold",
+        "createdieselgenerators:compression_molding/chain",
+        "createdieselgenerators:compression_molding/minecart_coupling"
+      ]
+    },
+    {
+      "id": "V13_E15_cdg_mold_bar",
+      "epoch": 15,
+      "title_uk": "Профіль Bar: від шоколаду до литого бруска",
+      "description_uk": [
+        "Отримайте форму Bar й обладнайте Basin під Spout: це лиття, а не компресійне пресування. Перед подаванням рідини звірте її тип і профіль форми. Для обраного маршруту підготовки гарячого шоколаду вже доступний штатний Blaze Burner.",
+        "Рецепт CDG витрачає 250 mB Create Chocolate на один Bar of Chocolate. Відро у завданні є зразком рідини й не означає витрату цілого відра за один виріб. Власний пальник CDG може бути альтернативним джерелом нагріву; епоха цього квесту не оголошується найранішим можливим маршрутом.",
+        "Перевіряються компонент Bar, огляд Spout, відро шоколаду й один шоколадний брусок. Нагрів, реальні 250 mB, прийняття виходу та виконання лиття цим не засвідчуються. У цьому завданні немає нативного виробничого доказу або вимоги сконструювати механічний прес."
+      ],
+      "icon": "create:bar_of_chocolate",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:bar"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:spout",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "create:chocolate_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "create:bar_of_chocolate",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V12_E12_cdg_panel_tooling"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.bar",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:cutting/bar_mold",
+        "createdieselgenerators:casting/chocolate_bar"
+      ]
+    },
+    {
+      "id": "V13_E15_cdg_mold_heated_lines",
+      "epoch": 15,
+      "title_uk": "Гаряче формування Lines: повернення стрижня",
+      "description_uk": [
+        "Поверніться до профілю Lines та перевірте окремий нагрітий рецепт. Для контрольної ділянки підготуйте Basin, Mechanical Press і Blaze Burner; профіль форми залишається Lines, хоча умова нагріву відрізняється від холодного формування панелей.",
+        "Рецепт складає чотири Blaze Powder в один Blaze Rod за наявності нагріву. Порівняйте це зі звичайним верстаком: один стрижень дає лише два порошки, отже саме ця пара рецептів є витратною реконструкцією. Дробарки мають власні виходи — перевіряйте їх окремо й не переносіть це співвідношення на всі машини збірки.",
+        "Квест перевіряє компонент Lines, огляд Blaze Burner і преса, чотири порошки та один стрижень у вашому розпорядженні. Це комплект для порівняння рецептів, а не доказ походження стрижня або фактичної температури. Попередній квест на панелі та його прогрес зберігаються."
+      ],
+      "icon": "minecraft:blaze_rod",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:lines"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:blaze_burner",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "create:mechanical_press",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "minecraft:blaze_powder",
+          "count": 4,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "minecraft:blaze_rod",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V13_E12_cdg_mold_lines"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.heated_lines",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:compression_molding/blaze_rod"
+      ]
+    },
+    {
+      "id": "V13_E18_cdg_mold_duroplast",
+      "epoch": 18,
+      "title_uk": "Профіль Bar поєднує смолу IE й лиття CDG",
+      "description_uk": [
+        "Після знайомства з IE Refinery підготуйте фенольну смолу для окремого маршруту матеріалів. Біодизельний процес і смола використовують різні рецепти: для смоли звірте Acetaldehyde та Creosote, а готову рідину відокремте від паливного сховища.",
+        "Профіль Bar придатний не лише для шоколаду. Сумісний рецепт CDG приймає 250 mB рідини з тега phenolic resin через Spout над Basin і створює Duroplast Plate; це альтернативний маршрут до IE Bottling Machine, а не нова назва компресійного пресування.",
+        "Автоматично перевіряються компонент Bar, огляд Spout і IE Refinery, відро Phenolic Resin та одна Duroplast Plate. Наявність зразків не доводить ні хімічний процес, ні витрату рідини, ні роботу лиття. Зберігайте одну потрібну форму на ділянці й перевіряйте фактичний результат пробної операції."
+      ],
+      "icon": "immersiveengineering:plate_duroplast",
+      "tasks": [
+        {
+          "type": "item",
+          "item": "createdieselgenerators:mold",
+          "count": 1,
+          "consume": false,
+          "craft": false,
+          "components": {
+            "createdieselgenerators:mold_type": "createdieselgenerators:bar"
+          },
+          "match_components": "fuzzy"
+        },
+        {
+          "type": "observation",
+          "block": "create:spout",
+          "ticks": 40
+        },
+        {
+          "type": "observation",
+          "block": "immersiveengineering:refinery",
+          "ticks": 40
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:phenolic_resin_bucket",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        },
+        {
+          "type": "item",
+          "item": "immersiveengineering:plate_duroplast",
+          "count": 1,
+          "consume": false,
+          "craft": false
+        }
+      ],
+      "after": [
+        "V13_E15_cdg_mold_bar",
+        "V5_DEPTH_IMMERSIVEENGINEERING_REFINERY"
+      ],
+      "category": "automation",
+      "required": false,
+      "reward": [
+        {
+          "item": "createdieselgenerators:wood_chip",
+          "count": 4
+        }
+      ],
+      "mod": "createdieselgenerators",
+      "research_stage": "createdieselgenerators.molds_v13.duroplast",
+      "proof_scope": "component_profile_and_product_samples",
+      "recipe_ids": [
+        "createdieselgenerators:compat/immersiveengineering/duroplast_sheet",
+        "immersiveengineering:refinery/resin",
+        "immersiveengineering:bottling/duroplast_plate"
+      ]
+    }
+  ]
+}

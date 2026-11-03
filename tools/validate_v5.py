@@ -11,6 +11,10 @@ import importlib
 import json
 from pathlib import Path
 import re
+try:
+    from item_task_components_v13 import predicate as component_predicate, item_stack, signature_suffix
+except ImportError:
+    from tools.item_task_components_v13 import predicate as component_predicate, item_stack, signature_suffix
 
 ROOT = Path(__file__).resolve().parents[1]
 HEX = re.compile(r'^[0-9A-Fa-f]{16}$')
@@ -126,7 +130,7 @@ def objective_signature(tasks):
     """Amounts, observation duration and titles cannot disguise duplicate goals."""
     return tuple(sorted((t['type'], t.get('item', t.get('block', t.get('dimension',
         t.get('biome', t.get('entity', t.get('stat', t.get('advancement', ''))))))),
-        bool(t.get('consume')), bool(t.get('craft'))) for t in tasks))
+        bool(t.get('consume')), bool(t.get('craft'))) + signature_suffix(t) for t in tasks))
 
 
 
@@ -141,8 +145,10 @@ def validate_compiled_tasks(record, compiled):
         kind = task['type']
         expected = {}
         if kind == 'item':
-            expected = {'item': {'id': task['item'], 'count': 1}, 'count': task.get('count', 1),
+            expected = {'item': item_stack(task), 'count': task.get('count', 1),
                         'consume_items': task.get('consume', False), 'only_from_crafting': task.get('craft', False)}
+            spec = component_predicate(task)
+            if spec is not None: expected['match_components'] = spec['match_components']
         elif kind == 'observation':
             expected = {'observation_type': 'block', 'to_observe': task['block'], 'timer': task.get('ticks', 40)}
         elif kind == 'kill':
@@ -265,6 +271,7 @@ def validate_catalog(records, rules, registries, compiled=None, old_records=(), 
         objectives[signature] = qid
         meaningful = False
         for task in q['tasks']:
+            component_predicate(task)
             kind = task['type']; task_types[kind] += 1
             fields = {'item': ('item', rules['itemGates']), 'observation': ('block', rules['blockGates']),
                       'dimension': ('dimension', rules.get('dimensionGates', {}))}
@@ -429,6 +436,8 @@ def validate(root=ROOT, include_layout=True):
     paths = sorted((root/'content/quests').glob('v5*.json'))
     addon_course = root/'content/quests/v12_create_addons_course.json'
     if addon_course.is_file(): paths.append(addon_course)
+    molds = root/'content/quests/v13_cdg_molds.json'
+    if molds.is_file(): paths.append(molds)
     maps = sorted((root/'content/research').glob('*v5*.json'))
     if not paths and not maps:
         return {'enabled': False, 'reason': 'No authored v5 catalogs or research maps exist yet'}
@@ -536,6 +545,8 @@ def validate(root=ROOT, include_layout=True):
                 if (root/'content/audit/v11-space-milestone-presentation.json').exists() else {'enabled':False},
             'create_addons_extension': import_tool('build_create_addons_v12').validate(root, compiled=True)
                 if (root/'content/research/create_addons_pending_v12.json').exists() else {'enabled':False},
+            'cdg_mold_component_goals': import_tool('build_cdg_molds_v13').validate(root, compiled=True)
+                if (root/'content/quests/v13_cdg_molds.json').exists() else {'enabled':False},
             'spawner_rune_gates': import_tool('build_spawner_gates_v5').validate(root,rules)
                 if (root/'content/audit/v5-spawner-rune-gates.json').exists() else {'enabled': False},
             'full_pack_run': False, 'tps_benchmark': 'not run'}

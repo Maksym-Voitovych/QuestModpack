@@ -894,6 +894,7 @@ public final class NativeSmokeTests {
                 testStationJournal();
                 testRequiredSpaceActionsAndMechanicJournal();
                 testKeyJournalPreservation();
+                testComponentItemStackCodec();
                 var stored = server.overworld().getDataStorage().get(KeyProductionBridge.ReceiptData.FACTORY, "aia2_key_production_v1");
                 var restored = KeyProductionBridge.ReceiptData.load(stored.save(new CompoundTag(), level.registryAccess()), level.registryAccess());
                 check(restored.proofs.getOrDefault(TEAM_A, Set.of()).contains("8:tech"), "native SavedData NBT serialization retains the key receipt");
@@ -913,6 +914,104 @@ public final class NativeSmokeTests {
         } catch (Throwable failure) {
             finish(failure);
         }
+    }
+
+    /** Real Minecraft codecs/maps, using a dev-only ResourceLocation component on paper.
+     * This is not the actual CDG registration or an FTB runtime invocation. */
+    private static void testComponentItemStackCodec() {
+        var type = NativeComponentFixtures.profile();
+        check(net.minecraft.core.registries.BuiltInRegistries.DATA_COMPONENT_TYPE.getKey(type)
+                        .equals(NativeComponentFixtures.PROFILE_ID),
+                "owned synthetic ResourceLocation component is registered under the guard namespace only");
+        Map<String, ItemStack> profiles = new LinkedHashMap<>();
+        for (String profile : List.of("createdieselgenerators:bowl", "createdieselgenerators:lines",
+                "createdieselgenerators:chain", "createdieselgenerators:bar")) {
+            CompoundTag source = componentFixtureNbt(profile);
+            ItemStack decoded = ItemStack.parse(level.registryAccess(), source).orElseThrow();
+            check(decoded.is(Items.PAPER) && decoded.getCount() == 1
+                            && net.minecraft.resources.ResourceLocation.parse(profile).equals(decoded.get(type)),
+                    "actual ItemStack CODEC decodes synthetic ResourceLocation profile " + profile);
+            CompoundTag saved = (CompoundTag) decoded.save(level.registryAccess());
+            check(saved.getString("id").equals("minecraft:paper") && saved.getInt("count") == 1
+                            && saved.getCompound("components").getString(NativeComponentFixtures.PROFILE_ID.toString()).equals(profile)
+                            && !saved.contains("Count"),
+                    "actual ItemStack save retains modern count/components and full profile identifier " + profile);
+            ItemStack restored = ItemStack.parse(level.registryAccess(), saved).orElseThrow();
+            check(ItemStack.isSameItemSameComponents(decoded, restored),
+                    "actual component-bearing ItemStack round trip retains all effective components " + profile);
+            CompoundTag icon = source.copy(); icon.remove("count");
+            ItemStack iconStack = ItemStack.SINGLE_ITEM_CODEC.parse(
+                    level.registryAccess().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), icon)
+                    .result().orElseThrow();
+            check(iconStack.getCount() == 1 && ItemStack.isSameItemSameComponents(decoded, iconStack),
+                    "actual SINGLE_ITEM_CODEC retains the synthetic profile in a count-free icon " + profile);
+            profiles.put(profile, decoded);
+        }
+        for (var filter : profiles.entrySet()) {
+            for (var candidate : profiles.entrySet()) {
+                check(nativeFuzzyEquivalent(filter.getValue(), candidate.getValue())
+                                == filter.getKey().equals(candidate.getKey()),
+                        "FTB-shaped predicate on actual component maps distinguishes profiles "
+                                + filter.getKey() + " / " + candidate.getKey());
+            }
+            ItemStack missing = ItemStack.parse(level.registryAccess(), componentFixtureNbt(null)).orElseThrow();
+            check(!missing.has(type) && !nativeFuzzyEquivalent(filter.getValue(), missing),
+                    "actual component map without synthetic profile fails the component predicate");
+            ItemStack named = filter.getValue().copy();
+            named.set(net.minecraft.core.component.DataComponents.CUSTOM_NAME,
+                    net.minecraft.network.chat.Component.literal("owned component fixture"));
+            check(nativeFuzzyEquivalent(filter.getValue(), named)
+                            && !ItemStack.isSameItemSameComponents(filter.getValue(), named),
+                    "actual maps allow extra candidate name in fuzzy-equivalent predicate while native strict equality rejects it");
+            ItemStack changedDefault = filter.getValue().copy();
+            changedDefault.set(net.minecraft.core.component.DataComponents.MAX_STACK_SIZE, 16);
+            check(!nativeFuzzyEquivalent(filter.getValue(), changedDefault),
+                    "actual effective default components remain part of fuzzy-equivalent matching");
+            check(ItemStack.isSameItemSameComponents(filter.getValue(), filter.getValue().copyWithCount(64)),
+                    "actual strict ItemStack component equality does not use stack count");
+        }
+        CompoundTag malformed = componentFixtureNbt("Created Diesel:invalid profile");
+        var malformedResult = ItemStack.CODEC.parse(level.registryAccess().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), malformed);
+        check(malformedResult.error().isPresent(),
+                "actual ItemStack CODEC reports the malformed ResourceLocation component");
+        ItemStack partialMalformed = ItemStack.parse(level.registryAccess(), malformed).orElseThrow();
+        check(!partialMalformed.has(type) && partialMalformed.is(Items.PAPER),
+                "actual ItemStack.parse retains a partial item while dropping its malformed component");
+        check(nativeFuzzyEquivalent(partialMalformed, profiles.get("createdieselgenerators:lines")),
+                "a malformed decoded filter would broaden fuzzy matching; author and installer validation must reject it before runtime");
+        CompoundTag wrongType = componentFixtureNbt("createdieselgenerators:lines");
+        wrongType.getCompound("components").putInt(NativeComponentFixtures.PROFILE_ID.toString(), 1);
+        var wrongTypeResult = ItemStack.CODEC.parse(level.registryAccess().createSerializationContext(net.minecraft.nbt.NbtOps.INSTANCE), wrongType);
+        check(wrongTypeResult.error().isPresent(),
+                "actual ItemStack CODEC reports an integer where a profile string is required");
+        ItemStack partialWrongType = ItemStack.parse(level.registryAccess(), wrongType).orElseThrow();
+        check(!partialWrongType.has(type) && !nativeFuzzyEquivalent(profiles.get("createdieselgenerators:lines"), partialWrongType),
+                "malformed candidate components are dropped and cannot satisfy a valid profile filter");
+        check(nativeFuzzyEquivalent(partialWrongType, profiles.get("createdieselgenerators:bar")),
+                "a wrong-type decoded filter would also broaden matching and must be rejected before installation");
+        ItemStack unknown = ItemStack.parse(level.registryAccess(),
+                componentFixtureNbt("createdieselgenerators:unknown_profile")).orElseThrow();
+        check(unknown.has(type) && !nativeFuzzyEquivalent(profiles.get("createdieselgenerators:lines"), unknown),
+                "valid unknown ResourceLocation syntax decodes but never matches a requested known profile; author validation owns membership");
+    }
+
+    private static CompoundTag componentFixtureNbt(String profile) {
+        CompoundTag source = new CompoundTag();
+        source.putString("id", "minecraft:paper"); source.putInt("count", 1);
+        if (profile != null) {
+            CompoundTag components = new CompoundTag();
+            components.putString(NativeComponentFixtures.PROFILE_ID.toString(), profile);
+            source.put("components", components);
+        }
+        return source;
+    }
+
+    /** Ordinary-item FUZZY algorithm shape from pinned FTB, evaluated on actual MC maps.
+     * Actual unchanged FTB matching is tested separately on its explicitly modeled host. */
+    private static boolean nativeFuzzyEquivalent(ItemStack filter, ItemStack candidate) {
+        return filter.getItem() == candidate.getItem() && filter.getComponents().stream()
+                .allMatch(component -> candidate.getComponents().has(component.type())
+                        && candidate.getComponents().get(component.type()).equals(component.value()));
     }
 
     private static void testObservedCompletionBridge() {

@@ -1,6 +1,6 @@
 # AIA2 0.5.0 — журнал прогресу
 
-Останнє оновлення: 2026-11-02 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.23-alpha (CCA/CDG:code+targetedQA DONE; code/QA/rebuild/package/installer DONE; Git status через log/origin/main); Git status через log/origin/main; повний0.5 ще не реліз.
+Останнє оновлення: 2026-11-03 (Europe/Kyiv). База `90ab63f`, checkpoint0.4.24-alpha (Mold components: реалізація, тести та відтворюваність DONE; перевірка доставки DONE; commit/push — Git log/origin/main); Git status через log/origin/main; повний0.5 ще не реліз.
 Цей файл читати разом із [планом](AIA2_0.5.0_PLAN.md) перед продовженням.
 Статуси: `TODO`, `IN_PROGRESS`, `DONE`, `BLOCKED`.
 
@@ -10,16 +10,16 @@
 |---|---|---|---|
 | 0 | FTB Quests overload hotfix | DONE | Типізований міст, production script20, 16 справжніх Rhino assertions, Node41/Python23/Java5237; окремий fix-коміт |
 | 1 | Аудит 0.4 | DONE | v5-baseline-audit.json; snapshot2784 квестів/569 рецептів, task/reward/dependency ID; export ≠ доступ до Windows |
-| 2 | Дослідження механік | IN_PROGRESS | 61мод/63records,2598SHAfiles;CCA23/CDG24scopedstages,source-versionpinsverified;fullbinaryprovenanceBLOCKED |
+| 2 | Дослідження механік | IN_PROGRESS | 61мод/63records,2642researchSHAfiles+1nativeMCfact;CDG30scopedstages/4profilecodecs;fullbinaryprovenanceBLOCKED |
 | 3 | Карти прогресії | IN_PROGRESS | 27 scoped core-карт DONE у заявлених межах;34partial та невивчені моди; повний модпак не перевірено |
-| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1154перетини,50старих координат в1главі переміщено для6stationцілей |
-| 5 | Поглиблення 48 епох | IN_PROGRESS | 3396quests;+15optionalCCA/CDG11/12/15/18;3381oldpayloadspreserved;remaining48 IN_PROGRESS |
-| 6 | Перегляд нагород | DONE | 3132itemrewards;+15newthematic;all3117oldpayloads/IDsexact |
+| 4 | Перебудова координат | DONE | 140глав;0накладань/зворотних/вертикальних/довгих;1157перетинів;20старих координат в1CDGглаві переміщено для6Moldцілей |
+| 5 | Поглиблення 48 епох | IN_PROGRESS | 3402quests;+6optionalMold12/15/18;3396oldpayloadspreserved;remaining48 IN_PROGRESS |
+| 6 | Перегляд нагород | DONE | 3138itemrewards;+6thematic;all3132oldpayloads/IDsexact |
 | 7 | Розширення рецептів | IN_PROGRESS | 627рецептів;58v5формул; нових цьогоcheckpoint0,усі627entries незмінні |
 | 8 | Предмети без джерел | IN_PROGRESS | 2447предметів;35native-source доказів;6IFfluidgaps залишаються |
 | 9 | Creative/альтернативи | IN_PROGRESS | Forge іClibano dependency/history snapshots реалізовано; fullpack/IOforwarding/інші OP-шляхи відкриті |
-| 10 | Інтеграційні тести | IN_PROGRESS | 431cleanPython/81Node/5237Java/43newmodeledPASS;centralvalidator/rebuild211/1184runtimefilesPASS;fullclientNOT_RUN;fullpackNOT_RUN |
-| 11 | Реліз і push | IN_PROGRESS | 0.4.23code/QA/rebuild/package/installerDONE;Gitstatuslog/origin/main;0.5unfinished |
+| 10 | Інтеграційні тести | IN_PROGRESS | 472cleanPython/81Node/5237Java/329MC@2JVM/650ticksPASS;88FTBmatcher+77debuggatechecks;rebuild223PASS;fullpackNOT_RUN |
+| 11 | Реліз і push | IN_PROGRESS | 0.4.24code/clean472/rebuild223/deliveryDONE;commit/push—gitlog/origin/main;0.5unfinished |
 
 
 
@@ -41,13 +41,13 @@
 | 09 | IN_PROGRESS | IN_PROGRESS (8) | TODO | DONE (static) |
 | 10 | IN_PROGRESS | IN_PROGRESS (7) | TODO | DONE (static) |
 | 11 | IN_PROGRESS | IN_PROGRESS (21) | IN_PROGRESS (2 формул) | DONE (static) |
-| 12 | IN_PROGRESS | IN_PROGRESS (17) +5 addon | TODO | DONE (static) |
+| 12 | IN_PROGRESS | IN_PROGRESS (17) +5 addon +3 Mold | TODO | DONE (static) |
 | 13 | IN_PROGRESS | IN_PROGRESS (14) | IN_PROGRESS (2 формули) | DONE (static) |
 | 14 | IN_PROGRESS | IN_PROGRESS (13) | TODO | DONE (static) |
-| 15 | IN_PROGRESS | IN_PROGRESS (29) +3 addon | TODO | DONE (static) |
+| 15 | IN_PROGRESS | IN_PROGRESS (29) +3 addon +2 Mold | TODO | DONE (static) |
 | 16 | IN_PROGRESS | IN_PROGRESS (12) | IN_PROGRESS (3 формул) | DONE (static) |
 | 17 | IN_PROGRESS | IN_PROGRESS (4) | TODO | DONE (static) |
-| 18 | IN_PROGRESS | IN_PROGRESS (11) +2 addon | IN_PROGRESS (7 формул) | DONE (static) |
+| 18 | IN_PROGRESS | IN_PROGRESS (11) +2 addon +1 Mold | IN_PROGRESS (7 формул) | DONE (static) |
 | 19 | IN_PROGRESS | IN_PROGRESS (35) | IN_PROGRESS (3 формул) | DONE (static) |
 | 20 | IN_PROGRESS | IN_PROGRESS (40) | TODO | DONE (static) |
 | 21 | IN_PROGRESS | IN_PROGRESS (23) | TODO | DONE (static) |
@@ -827,3 +827,36 @@ Portable результати й SHA збережено в `content/audit/v5-pen
 - DONE CRC/5136manifestSHA/1185runtimeSHA/installerSHA таactualextractedCLI0.4.22→0.4.23:dryrun0file/dirwrites,oldJARbackup,opaqueworld/FTB/key/fire/station/mechanics/paidpending/EMC/chunkmarkers+foreigncontentpreserved,repeatidempotent. Цеsyntheticfixture,неfullworldmigration. Finalmetadatarepacked/check-only/allmanifestRootSHAcheckedbeforeGit.
 - Code/scripts/catalogs/evidence/docs/JAR/installerзбереженоціліснимmain-комітомізpushбезforce. Exacthash/status—gitlog/origin/main/externalpublicdeliveryreportбіляZIP,безself-referentialSHA. RootGitcontainsonlyprojectsource/frozenpublicevidence/ownedJAR,nopersonalworlds/logs/caches/backups.
 - Fulloriginaloptionalbinary/client/JEI/Survival/TPSNOT_RUN. Previous273MC/2JVM/650ticksevidenceis0.4.22source-identical230classes,неfreshCreateexecution.0.5не реліз;27scopedcore/34partialmapsremainhonest. НАСТУПНЕ:exactCDGMoldtypeCodec+FTBcomponentmatching→separateprofilequests;oldgenericMoldtaskunchanged. Thenremainingcharging/liquid/nativefluidproofcourses/required48/6IFfluidgaps/DraconicCI633. Неповторювати15завершенихцілей/sourcepins/електрум16правил.
+
+### 2026-11-02 — CDG Mold0.4.24: IN_PROGRESS
+
+- Restoredclean2a0dcdd/main0.4.23; backup/workspace/aia2-backups/before-cdg-molds-2a0dcdd/checkpoint-2a0dcdd.tar.gz beforeedits. Source+matching/designagentsownnewv13evidence/doc/catalog/tests;rootownsschema/compiler/validators/maps/version/QA/Git.
+- ConfirmedexactMOLD_TYPE ResourceLocation.CODEC,fullfourIDs bowl/lines/chain/bar,FTB2101.1.36literal'fuzzy'. UnknownNameMapmodefallstoNONE;authorschemamustrejecttypos/unknownprofilesandretainmodernitem.components/lowercasecount. Fuzzychecksfilterdefaults+profileandallowsextracustomname;notnativeproductionproof.
+- Sixnewoptionalgoalsauthoredwithparallelprofilebranches+heatedlines/duroplastuses,alloldgenericMoldtaskspreserved. Rootscomponenthelper/compiler/validators/signaturesandexplicitv13catalogloadimplemented. Legacyunpredicatedtasksremainbyte-semanticsunchanged. Matching88actualFTBclasschecksPASSonmodeledMC;realcodecdebugfixtureinprogress.
+- Nextsource/contracts+componenttests/nativefixture,append6researchstages,generate/preserve/layout/fullclean/rebuild/installer/commit/push. No0.4.24releaseclaimuntilQA. Fulloptionalbinary/client/JEI/Survival/TPSNOT_RUN;0.5unfinished.
+
+### 2026-11-03 — Mold0.4.24: restored after source/native finding
+
+- Restored2a0dcddHEAD withsaved0.4.24work,backupbefore-cdg-molds-2a0dcddpreserved. PreviousagentsleftCDG30stagecatalog/audit,6goals,41+2IEsourcefiles,componentbuilder/validator+nativefixture/tests;rootverifiedandtookoverintegration. Finishednew8maptests+explicitv12projectionofONLYsixapprovednewstages;allold24CDGandothermods exact.
+- InitialrealMCtestFAILED303:incorrecttestassumedmalformedResourceLocationcomponentmakesItemStack.parseempty. ActualMCItemStack.parseusesresultOrPartial andreturnsitemwithoutbadcomponent. CorrectedtestchecksrawCODECerrorANDpartialitemANDdangerousbroadeningifusedasfilter. Thisiswhystrictauthor/compiled/deploymentchecksarerequired;notahiddenruntimefix.
+- Fixednormalpackschema strictfull4IDs/literalfuzzy/Booleanfalseflags/positiveintcount/exactlowercasekeysincludingtrailingspaces. Installerread-onlypreflightvalidatesall6source/compiledprofilefiltersbeforebackup/write,includingnamespace/type/mode/legacyCount/tag;8newtestspassnormal+dryrun0writesandpositiveSNBT/upgrade. Packageralsocheckscompiledcontract.
+- RealcommonMC329/2JVM/650ticksPASS(56newcodec/mapchecks+273previous). SyntheticcomponentguardnamespaceONLYnativeSmoke+IDE+ownedmarker;notactualCDG/FTBruntime.88actualunchangedFTBmatcherassertionsonmodeledhostand77actualdebugfixturegateassertions/19hostcasesPASS;negativecontrolsfailintended.81Node/5237Java/50targetedPythonPASS.
+- Generation+centralvalidatorPASS:3402quests/140chapters/6groups/3138itemrewards;6newgoals0recipes/items/textures. All3396oldnon-coordinatepayloads/tasks/rewards/deps/flags/icons exact;20oldcoordsin1CDGchaptermoved;1157crossings(vs1156),0structuralwarnings.627recipes/runtimekeys/mechanics16/stations/782assetsbyteexact.
+- NewJAR231classes,229oldbyteidentical;onlyNativeSmokeTestsmodified+NativeComponentFixturesadded;all76Mixins/guardpolicyclassesunchanged. SHA3308ddc5a855487b61f8ab19b4f86d81a2c56183b18c5a951537e0b8e58a7c46.43pinnedsourcefiles+manifest(44researchpaths)and1portableactualMCfact;2642researchsourcefiles/769stages/1142links,61mods(27core/34partial).
+- NEXT:finalcleansuite/rebuild/package/installer/Git. SubsequentnewmechanicalblocknativeCDGpanelcompletionviaexistingBasinboundaryonlyafterexactsourcevalidation;addseparatequest/newextensionwithoutrewritingcomponentgoals. Fulloptionalclient/JEI/Survival/TPSNOT_RUN;0.5unfinished.
+
+### 2026-11-03 — Mold0.4.24: finalclean472 DONE
+
+- FreshGitindex5201files:5198exact/3knownlegacyCSV+BATlineending-only;code/content/runtimeexact.472Python/0fail/0skip PASS(277.982s),81Node/5237Java,329actualMC@2JVM/650ticks.88actualFTBmatcher+77debugfixturegatesmodelchecksPASS;noadditionalproductionchangesafterfreeze.
+- Deterministicrebuild223andcentralvalidatornowrunningonthatsameexport. PreliminaryZIPCRC/5200manifestSHA/1185runtimefiles+actualextractedCLI0.4.23→0.4.24 PASS:read-onlypredicatepreflight,dryrun0writes,oldJARbackup,opaquealljournals/pending/world+foreigncontentpreserved,repeatidempotent.
+- Nextfinishrebuild/metadata/repack/check-only/allsourceSHA/commit/push/publicsourceZIPverification. FulloriginalCDG/FTBUI/client/JEI/Survival/TPSNOT_RUN.0.5unfinished;nextnativecompressionpanelboundaryaudit+explicit17thcontract,separatenewquest.
+
+
+### 2026-11-03 — Mold0.4.24: завершений перевірений checkpoint
+
+- DONE: 472Python/0fail/0skip,81Node/5237Java,329minimalMC/2JVM/650ticks;88FTBmatcher та77fixture-gate assertions мають modeled host. Rebuild223:1184non-JARruntimefiles byte-identical, центральний валідатор14JS/SNBT/IDs/DAG/requiredclosure/componentpredicates PASS. Код не змінювався після чистого запуску.
+- DONE: ZIP CRC/5201manifestSHA/1185runtimeSHA/installerSHA; actual extracted CLI0.4.23→0.4.24, dry-run0file/dirwrites, backup старого JAR, opaque world/FTB/key/fire/station/mechanics/paidpending/EMC/chunkmarkers і сторонній контент збережено, повторне встановлення idempotent. Це synthetic installer fixture, не міграція справжнього світу.
+- 6нових optional квестів →3402total/140глав/6груп/3138itemrewards. Усі3396oldnon-coordinatepayloads,627recipes,96keys,16native rules та782assets збережені. У1главі переміщено20координат;1157crossings(vs1156),0structuralwarnings. Нових рецептів/предметів/текстур/productionproofs0.
+- Версія0.4.24-alpha збережена цілісним checkpoint на main; точний commit/push статус — Git log/origin/main та external delivery report біля пакета. До Git входять джерела, публічні frozen evidence, власний JAR і звіти; особисті світи/логи/кеші/backup не входять. Finalmetadata repack →check-only→allmanifestRootSHA перед Git; public immutable source ZIP перевіряється після push.
+- НАСТУПНЕ: перевірити точну нативну межу CDG compression_molding sheet_metal_panel у чинному Basin apply RETURN. Лише за підтвердження семантики додати explicit17th-rule contract і окрему нову optional ціль після V13 Lines, не переписуючи старі профільні завдання. Casting Bar/Spout — окрема межа. Інші34partial/required48/charging53/liquid9/6IFfluidgaps/DraconicCI633 лишаються відкритими.
+- FulloriginalCDG/FTBUI/client/JEI/Survival/TPS NOT_RUN.0.5.0 не оголошено релізом.

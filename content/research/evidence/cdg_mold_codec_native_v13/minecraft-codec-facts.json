@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.264",
+  "sdk_artifact_sha256": "8ea65866101d67c9f13c3ff42b8154fb671974da51c1478fd494a145dbccf950",
+  "sources": [
+    {
+      "entry": "net/minecraft/world/item/ItemStack.java",
+      "sha256": "b35770a757f0c62a88276a38c36763d26e204d1a6210ea3fcac71a53526bc389",
+      "line_references": [
+        96,
+        103,
+        108,
+        115,
+        119,
+        126,
+        127,
+        128,
+        130,
+        131,
+        132,
+        155,
+        173,
+        176,
+        293
+      ]
+    },
+    {
+      "entry": "net/minecraft/core/component/DataComponentPatch.java",
+      "sha256": "10b21e684ba8137a4daacba6e48eea3c655e2f8a086a012c2bd3d18e008edff7",
+      "line_references": [
+        23,
+        58,
+        262
+      ]
+    },
+    {
+      "entry": "net/minecraft/resources/ResourceLocation.java",
+      "sha256": "0d695fa4fc1750e70167375fea9f2db772eb45ffe02b6720860b45734ffa64a3",
+      "line_references": [
+        26,
+        29
+      ]
+    }
+  ],
+  "facts": [
+    "ItemStack.CODEC has lowercase count and optional components DataComponentPatch; SINGLE_ITEM_CODEC retains components without count.",
+    "ItemStack.parse returns CODEC.parse(...).resultOrPartial(...). On tested malformed ResourceLocation/wrong-type component it returns a partial same-item stack with that component dropped.",
+    "An invalid decoded filter can therefore broaden ordinary fuzzy matching. Source schema and installer must reject missing/malformed/misspelled component predicates before Minecraft loads the file.",
+    "ResourceLocation.CODEC validates identifier syntax, not membership in the four known CDG Mold profiles; whitelist membership is separately required."
+  ],
+  "native_test_scope": "Actual Minecraft codec/maps with an opt-in synthetic guard-namespace ResourceLocation component and vanilla paper. Original CDG/FTB runtime/renderer not loaded. Actual unchanged FTB matcher tested separately on modeled host.",
+  "native_tests_result": "329total/2JVM/650ticks;56newcomponent assertions plus273previouscommon checks; see companion/native-smoke-report.json",
+  "full_client": "NOT_RUN"
+}

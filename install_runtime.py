@@ -321,6 +321,54 @@ def _transform(relative, incoming, previous):
     return incoming
 
 
+def validate_mold_component_tasks(source):
+    """Read-only deployment check: a partial ItemStack must not become a broad filter."""
+    catalog_path = source/'content/quests/v13_cdg_molds.json'
+    if not catalog_path.is_file(): return {'status': 'legacy_package'}
+    helper_path = source/'tools/item_task_components_v13.py'
+    if not helper_path.is_file() or _is_link(helper_path):
+        raise InstallError('Mold component preflight tool is missing')
+    expected_profiles = {'V13_E12_cdg_mold_lines': 'lines', 'V13_E12_cdg_mold_bowl': 'bowl',
+                         'V13_E12_cdg_mold_chain': 'chain', 'V13_E15_cdg_mold_bar': 'bar',
+                         'V13_E15_cdg_mold_heated_lines': 'lines', 'V13_E18_cdg_mold_duroplast': 'bar'}
+    try:
+        spec = importlib.util.spec_from_file_location('_aia2_mold_predicates', helper_path)
+        helper = importlib.util.module_from_spec(spec); spec.loader.exec_module(helper)
+        catalog = json.loads(catalog_path.read_text(encoding='utf-8'))['quests']
+        assert len(catalog) == len(expected_profiles) and {q['id'] for q in catalog} == set(expected_profiles), 'Expected six reviewed Mold goals'
+        quests = {}
+        for path in sorted((source/'config/ftbquests/quests/chapters').glob('*.snbt')):
+            chapter = _document_pair(path.read_bytes(), None, str(path))[0]
+            for quest in chapter.get('quests', []):
+                ident = str(quest['id'])
+                assert ident not in quests, 'Duplicate compiled quest ID'
+                quests[ident] = quest
+        uid = lambda value: hashlib.sha256(('aia2-runtime-v1:'+value).encode()).hexdigest()[:12].upper().rjust(16, '0')
+        checked = 0
+        for record in catalog:
+            source_predicates = []
+            for index, task in enumerate(record['tasks']):
+                predicate = helper.predicate(task)
+                if predicate is not None: source_predicates.append((index, task, predicate))
+            assert len(source_predicates) == 1, 'Each Mold goal needs one explicit profile predicate'
+            index, task, predicate = source_predicates[0]
+            assert predicate['components'] == {'createdieselgenerators:mold_type': 'createdieselgenerators:'+expected_profiles[record['id']]} and task.get('count', 1) == 1, 'Mold goal profile/count differs from reviewed contract'
+            compiled = quests[uid(record['id'])]
+            matches = [t for t in compiled['tasks'] if str(t['id']) == uid(record['id']+':task:'+str(index))]
+            assert len(matches) == 1, 'Missing unique compiled profile task'
+            actual = matches[0]
+            expected_stack = {'id': task['item'], 'count': 1, 'components': predicate['components']}
+            assert actual.get('type') == 'item' and actual.get('item') == expected_stack, 'Missing or changed compiled Mold components'
+            assert actual.get('match_components') == 'fuzzy', 'Missing literal fuzzy matching'
+            assert actual.get('count') == task.get('count', 1) and actual.get('consume_items') == False and actual.get('only_from_crafting') == False, 'Changed Mold task count/inventory flags'
+            checked += 1
+        return {'status': 'passed', 'profile_tasks': checked}
+    except InstallError:
+        raise
+    except Exception as failure:
+        raise InstallError('Mold component predicate failed before installation: '+str(failure)) from failure
+
+
 def validate_key_journal_pair(source, raw_class):
     """New presentation packages must include the matching durable key journal."""
     if not (source/'content/audit/v11-space-milestone-presentation.json').is_file():
@@ -415,6 +463,7 @@ def plan_install(source, instance):
     bundled_jars = sorted((source / 'mods').glob('aia2-machine-guard-*.jar'))
     if len(bundled_jars) != 1 or not bundled_jars[0].is_file() or _is_link(bundled_jars[0]):
         raise InstallError('Package must contain exactly one regular aia2-machine-guard-*.jar')
+    validate_mold_component_tasks(source)
     runtime_path = source / 'kubejs/config/aia2_runtime.json'
     if runtime_path.exists():
         runtime = json.loads(runtime_path.read_text(encoding='utf-8'))

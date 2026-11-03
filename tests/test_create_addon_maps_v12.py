@@ -24,6 +24,14 @@ OLD_STAGE_SHA = {
     'createdieselgenerators.phase.07': '2223028bed35b5a0e186eb3a85401f5d6f1921c792d39d086bb5dd57db6b16ac',
 }
 ROLLING_STAGE_PROTECTED_SHA = 'ae80e299aa4bc3c08f7b55d9347ada3c5cb1921243c6f6f3011d7d3f97ed1708'
+# v12 is a historical contract. Exclude only this reviewed six-stage extension,
+# never a broad prefix which could hide an unexpected future map addition.
+APPROVED_V13_STAGES = frozenset('createdieselgenerators.molds_v13.'+name
+    for name in ('lines', 'bowl', 'chain', 'bar', 'heated_lines', 'duroplast'))
+APPROVED_V13_QUESTS = frozenset({
+    'V13_E12_cdg_mold_lines', 'V13_E12_cdg_mold_bowl', 'V13_E12_cdg_mold_chain',
+    'V13_E15_cdg_mold_bar', 'V13_E15_cdg_mold_heated_lines', 'V13_E18_cdg_mold_duroplast',
+})
 
 
 def read(path):
@@ -35,8 +43,12 @@ def sha(value):
                                      separators=(',', ':')).encode()).hexdigest()
 
 
+def v12_stages(mod):
+    return [stage for stage in mod['stages'] if stage['id'] not in APPROVED_V13_STAGES]
+
+
 def quest_links(mod):
-    return {qid: stage for stage in mod['stages']
+    return {qid: stage for stage in v12_stages(mod)
             for qid in stage.get('existing_quest_ids', []) + stage.get('new_quest_ids', [])}
 
 
@@ -93,9 +105,9 @@ class CreateAddonMapTests(unittest.TestCase):
             additions = {quest['id'] for quest in self.new if quest['mod'] == name}
             self.assertEqual(len(legacy), 16)
             self.assertEqual(set(quest_links(mod)), legacy | additions)
-            self.assertEqual(len(mod['stages']), expected)
+            self.assertEqual(len(v12_stages(mod)), expected)
             self.assertEqual(sum(len(stage.get('existing_quest_ids', [])) + len(stage.get('new_quest_ids', []))
-                                 for stage in mod['stages']), expected)
+                                 for stage in v12_stages(mod)), expected)
             self.assertEqual(mod['coverage_v12']['previously_unmapped_legacy_goals_added'], 9)
             self.assertEqual(mod['coverage_v12']['new_quest_links'], len(additions))
             for quest in self.new:
@@ -141,7 +153,16 @@ class CreateAddonMapTests(unittest.TestCase):
                 self.assertEqual(row['stage_id'], quest_links(mod)[qid]['id'])
             required = {qid for qid in rows if self.quests[qid].get('required') is True}
             self.assertEqual(set(mod['mandatory_quest_ids']), required)
-            self.assertEqual(set(mod['optional_quest_ids']), set(rows)-required)
+            self.assertEqual(set(mod['optional_quest_ids']) & set(rows), set(rows)-required)
+            self.assertTrue(set(mod['optional_quest_ids'])-set(rows) <= APPROVED_V13_QUESTS)
+
+    def test_v12_projection_excludes_only_the_six_reviewed_stage_identities(self):
+        unknown = {'id': 'createdieselgenerators.molds_v13.unreviewed',
+                   'new_quest_ids': ['UNREVIEWED']}
+        reviewed = {'id': 'createdieselgenerators.molds_v13.lines',
+                    'new_quest_ids': ['V13_E12_cdg_mold_lines']}
+        self.assertEqual(v12_stages({'stages': [reviewed, unknown]}), [unknown])
+        self.assertEqual(set(quest_links({'stages': [reviewed, unknown]})), {'UNREVIEWED'})
 
     def test_stage_graphs_are_acyclic_and_have_no_future_parent(self):
         for name in MODS:

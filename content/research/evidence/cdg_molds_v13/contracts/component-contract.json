@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "baseline": "2a0dcdd541a904a4627fb4823e1631b0f5e7bba4",
+  "minecraft": "1.21.1",
+  "mod": "createdieselgenerators",
+  "source_version": "1.21.1-1.3.15",
+  "component": "createdieselgenerators:mold_type",
+  "java_value_type": "net.minecraft.resources.ResourceLocation",
+  "persistent_codec": "ResourceLocation.CODEC",
+  "profiles": [
+    "createdieselgenerators:bowl",
+    "createdieselgenerators:lines",
+    "createdieselgenerators:chain",
+    "createdieselgenerators:bar"
+  ],
+  "item_id": "createdieselgenerators:mold",
+  "task_schema_example": {
+    "type": "item",
+    "item": {
+      "id": "createdieselgenerators:mold",
+      "count": 1,
+      "components": {
+        "createdieselgenerators:mold_type": "createdieselgenerators:lines"
+      }
+    },
+    "count": 1,
+    "consume_items": false,
+    "only_from_crafting": false,
+    "match_components": "fuzzy"
+  },
+  "icon_schema_example": {
+    "id": "createdieselgenerators:mold",
+    "components": {
+      "createdieselgenerators:mold_type": "createdieselgenerators:lines"
+    }
+  },
+  "ftbquests": {
+    "version": "2101.1.36",
+    "pin": "8c53f35a97d8897c861b097f1e39f4fc3beb3a15",
+    "matching_modes": [
+      "none",
+      "fuzzy",
+      "strict"
+    ],
+    "fuzzy": "Same item; every effective filterStack component must exist with equal value on candidate. Extra candidate components allowed.",
+    "strict": "ItemStack.isSameItemSameComponents; extra candidate components fail.",
+    "none": "Same item only; profile ignored.",
+    "unknown_mode": "NameMap.get falls back to default NONE; typos silently ignore profile without pack validation.",
+    "modern_item_serialization": "ItemStack.parse(provider, CompoundTag) retains lowercase count/components. Legacy Count/tag branch discards components.",
+    "icon_serialization": "ItemStack.SINGLE_ITEM_CODEC",
+    "filter_adapter_scope": "Ordinary item matching; ItemFilterAdapter can override matching for a stack recognized as a filter."
+  },
+  "ftblibrary": {
+    "installed_version": "2101.1.37",
+    "quests_build_dependency": "2101.1.36",
+    "pin": "ba8962d4b4dcff22041824c792fe07ae21fe28d5",
+    "source_version_match": true
+  },
+  "machine_facts": [
+    "MechanicalPress matchStaticFilters accepts CDG COMPRESSION_MOLDING type.",
+    "Compression BasinRecipeMixin scans all item slots and retains the last Mold item; its MoldType must equal recipe.moldType. Use one intended profile per Basin.",
+    "CastingRecipe.matches accepts any matching profile in Basin; the last-slot restriction belongs to compression, not casting.",
+    "BasinSpoutCasting is a Spout-over-Basin casting route; no Mechanical Press required for bar casting.",
+    "Mold is not listed as consumable input of frozen compression recipes.",
+    "BAR has casting chocolate/resin routes, but no original compression recipe in the frozen export."
+  ],
+  "proof_scope": "Component-aware inventory identity; not cutting/compression/casting production provenance",
+  "full_client_tested": false,
+  "optional_mixin_added": false,
+  "installed_binary_equivalence_verified": false,
+  "recipes": [
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/casting/chocolate_bar.json",
+      "sha256": "3033d87f9efd739e222d13eb90e805df53a263f62a901ce17be4eb272c7c2419",
+      "recipe_id": "createdieselgenerators:casting/chocolate_bar",
+      "type": "createdieselgenerators:casting"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compat/immersiveengineering/duroplast_sheet.json",
+      "sha256": "9b5713b93422bcc1544c5ef8b598b89c15fe9b3d59fc9ec61aa34a73a0db9bd6",
+      "recipe_id": "createdieselgenerators:compat/immersiveengineering/duroplast_sheet",
+      "type": "createdieselgenerators:casting"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/blaze_rod.json",
+      "sha256": "dd851a39b903538a940db78d88034896d3a68bb5beb5e3463d6c1990b6f3488a",
+      "recipe_id": "createdieselgenerators:compression_molding/blaze_rod",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/bowl.json",
+      "sha256": "a8bcee2917fbd9899eeae529b43f930bc1460e84991da1b115ed6efff473978b",
+      "recipe_id": "createdieselgenerators:compression_molding/bowl",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/bucket.json",
+      "sha256": "1ccd4d9b4841f2cbcf59cdb1345910fa8f515b427302f634c141621c7405b60d",
+      "recipe_id": "createdieselgenerators:compression_molding/bucket",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/chain.json",
+      "sha256": "99662d96a684af12e78934eed5b3edf1002cf40425ca5585a39792fb93f4e972",
+      "recipe_id": "createdieselgenerators:compression_molding/chain",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/minecart_coupling.json",
+      "sha256": "1345547d37fd3c81ae9d04cbf88f04d7dcc181847712c509d69a5dc823b36aff",
+      "recipe_id": "createdieselgenerators:compression_molding/minecart_coupling",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/sheet_metal_panel.json",
+      "sha256": "9841618670e0a89bea6788df3d213a8acb60849c3c5430b91b89ffa78a138d3b",
+      "recipe_id": "createdieselgenerators:compression_molding/sheet_metal_panel",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/stick.json",
+      "sha256": "2ece32e0413fb0e4cf4cf137665f905783b8274a98a1c396c554b91ca3999e66",
+      "recipe_id": "createdieselgenerators:compression_molding/stick",
+      "type": "createdieselgenerators:compression_molding"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/bar_mold.json",
+      "sha256": "c4814dc6ceff1a04dd9946328a27caf90e590251f352e49aeb3e0fbdafb02550",
+      "recipe_id": "createdieselgenerators:cutting/bar_mold",
+      "type": "create:cutting"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/bowl_mold.json",
+      "sha256": "be5b4a613e7fd76a8a284da50533c0836f56b4691e09c34ded240737f34a36e6",
+      "recipe_id": "createdieselgenerators:cutting/bowl_mold",
+      "type": "create:cutting"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/chain_mold.json",
+      "sha256": "430fe00b98581024abdda5a25749c6c91f5419b356b8fc2039aa3388e7df12d9",
+      "recipe_id": "createdieselgenerators:cutting/chain_mold",
+      "type": "create:cutting"
+    },
+    {
+      "path": "content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/lines_mold.json",
+      "sha256": "149c64e07a82e1cffc88ad09423ac90c6b2c4227d628fefb293541d796e9b5c3",
+      "recipe_id": "createdieselgenerators:cutting/lines_mold",
+      "type": "create:cutting"
+    }
+  ]
+}

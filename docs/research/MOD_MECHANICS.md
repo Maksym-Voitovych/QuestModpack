@@ -8343,6 +8343,78 @@ Item/crafting/observation tasks підтверджують лише зазнач
 Квести: `V12_E18_cdg_backup_energy`.
 Item/crafting/observation tasks підтверджують лише зазначені предмети, звичайні крафти чи огляд блока; FE/t, рідина в роботі, компоненти Mold і автоматизація не вважаються доведеними.
 
+### 25. Профіль Lines: пластина стає панелями
+
+Епохи: 12.
+
+Підготуйте залізну пластину та отримайте в Mechanical Saw форму з профілем Lines. Звірте рецепт у JEI й назву готової форми: усі профілі мають один базовий предмет Mold, тому звичайного збігу Item ID недостатньо.
+Установіть у Basin одну потрібну форму та працюйте Mechanical Press над чашею: компресійний рецепт із залізної пластини дає чотири Sheet Metal Panel. Форма задає геометрію, а не замінює матеріал; кілька різних форм у чаші не є універсальним комплектом для преса.
+Попередні кроки: createdieselgenerators.core_v12.panel_tooling.
+Машини: `create:mechanical_press`.
+Ресурси й результати: `createdieselgenerators:mold`, `immersiveengineering:plate_iron`, `createdieselgenerators:sheet_metal_panel`.
+Квести: `V13_E12_cdg_mold_lines`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
+### 26. Профіль Bowl: дві сировини, дві посудини
+
+Епохи: 12.
+
+Отримайте форму Bowl, перевіривши саме її компонент, і підготуйте окрему чашу для цього профілю. Не підміняйте Bowl попередньою Lines: зовнішня назва базового предмета Mold не описує потрібну геометрію.
+Порівняйте два компресійні рецепти: чотири Wood Chip дають одну дерев’яну миску, а одна залізна пластина — одне відро. Обидва використовують Bowl, проте мають різну сировину й призначення; спочатку перевірте одну пробу, потім розділіть подавання матеріалів.
+Попередні кроки: createdieselgenerators.core_v12.panel_tooling.
+Машини: `create:basin`.
+Ресурси й результати: `createdieselgenerators:mold`, `createdieselgenerators:wood_chip`, `immersiveengineering:plate_iron`, `minecraft:bowl`, `minecraft:bucket`.
+Квести: `V13_E12_cdg_mold_bowl`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
+### 27. Профіль Chain: ланцюг і зчеплення вагонеток
+
+Епохи: 12.
+
+Підготуйте форму Chain та матеріали для двох різних виробів. Профіль перевіряється за компонентом предмета; проста форма без профілю або Bowl не підходить, навіть якщо у списку інвентарю всі вони називаються Mold.
+Один компресійний рецепт перетворює шість залізних самородків на ланцюг, інший — один Andesite Alloy на Minecart Coupling. Це різні матеріальні маршрути одного профілю: не збільшуйте партію, поки не звірили вибраний рецепт і готовий результат.
+Попередні кроки: createdieselgenerators.core_v12.panel_tooling.
+Машини: `create:mechanical_press`.
+Ресурси й результати: `createdieselgenerators:mold`, `minecraft:iron_nugget`, `create:andesite_alloy`, `minecraft:chain`, `create:minecart_coupling`.
+Квести: `V13_E12_cdg_mold_chain`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
+### 28. Профіль Bar: від шоколаду до литого бруска
+
+Епохи: 15.
+
+Отримайте форму Bar й обладнайте Basin під Spout: це лиття, а не компресійне пресування. Перед подаванням рідини звірте її тип і профіль форми. Для обраного маршруту підготовки гарячого шоколаду вже доступний штатний Blaze Burner.
+Рецепт CDG витрачає 250 mB Create Chocolate на один Bar of Chocolate. Відро у завданні є зразком рідини й не означає витрату цілого відра за один виріб. Власний пальник CDG може бути альтернативним джерелом нагріву; епоха цього квесту не оголошується найранішим можливим маршрутом.
+Попередні кроки: createdieselgenerators.core_v12.panel_tooling.
+Машини: `create:spout`.
+Ресурси й результати: `createdieselgenerators:mold`, `create:chocolate_bucket`, `create:bar_of_chocolate`.
+Квести: `V13_E15_cdg_mold_bar`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
+### 29. Гаряче формування Lines: повернення стрижня
+
+Епохи: 15.
+
+Поверніться до профілю Lines та перевірте окремий нагрітий рецепт. Для контрольної ділянки підготуйте Basin, Mechanical Press і Blaze Burner; профіль форми залишається Lines, хоча умова нагріву відрізняється від холодного формування панелей.
+Рецепт складає чотири Blaze Powder в один Blaze Rod за наявності нагріву. Порівняйте це зі звичайним верстаком: один стрижень дає лише два порошки, отже саме ця пара рецептів є витратною реконструкцією. Дробарки мають власні виходи — перевіряйте їх окремо й не переносіть це співвідношення на всі машини збірки.
+Попередні кроки: createdieselgenerators.molds_v13.lines.
+Машини: `create:blaze_burner`, `create:mechanical_press`.
+Ресурси й результати: `createdieselgenerators:mold`, `minecraft:blaze_powder`, `minecraft:blaze_rod`.
+Квести: `V13_E15_cdg_mold_heated_lines`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
+### 30. Профіль Bar поєднує смолу IE й лиття CDG
+
+Епохи: 18.
+
+Після знайомства з IE Refinery підготуйте фенольну смолу для окремого маршруту матеріалів. Біодизельний процес і смола використовують різні рецепти: для смоли звірте Acetaldehyde та Creosote, а готову рідину відокремте від паливного сховища.
+Профіль Bar придатний не лише для шоколаду. Сумісний рецепт CDG приймає 250 mB рідини з тега phenolic resin через Spout над Basin і створює Duroplast Plate; це альтернативний маршрут до IE Bottling Machine, а не нова назва компресійного пресування.
+Попередні кроки: createdieselgenerators.molds_v13.bar.
+Машини: `create:spout`, `immersiveengineering:refinery`.
+Ресурси й результати: `createdieselgenerators:mold`, `immersiveengineering:phenolic_resin_bucket`, `immersiveengineering:plate_duroplast`.
+Квести: `V13_E18_cdg_mold_duroplast`.
+FTB ItemTask fuzzy перевіряє компонент потрібного профілю та явно вказані предметні зразки/огляд. Це не є доказом cutting, compression/casting, витрати матеріалів чи рідини або нативного виробництва. Додаткове custom name кандидата дозволено; generic чи неправильний профіль не підходить.
+
 Фінальні цілі:
 - Двигун отримує обслуговувану передачу
 - Паливний двигун лишається частиною заводу
@@ -8545,6 +8617,50 @@ Item/crafting/observation tasks підтверджують лише зазнач
 - [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/wire_cutting/sticks.json) — SHA перевірено
 - [createdieselgenerators:wire_cutting](../../content/research/evidence/create_addons_core_v12/cdg/recipes/createdieselgenerators/wire_cutting/sticks_from_ladder.json) — SHA перевірено
 - [джерело](../../content/research/evidence/create_addons_core_v12/cdg/manifest.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/LICENSE) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGDataComponents.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGItems.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/CDGRecipes.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldType.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldItem.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldItemRenderer.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/MoldRecipeParams.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/CompressionMoldingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/CastingRecipe.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/content/molds/BasinSpoutCasting.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/mixins/BasinRecipeMixin.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/java/com/jesz/createdieselgenerators/mixins/MechanicalPressBlockEntityMixin.java) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/assets/createdieselgenerators/models/item/mold/bowl.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/assets/createdieselgenerators/models/item/mold/lines.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/assets/createdieselgenerators/models/item/mold/chain.json) — SHA перевірено
+- [джерело](https://github.com/george8188625/Create-Diesel-Generators/blob/79ce136730871b6f3f7b55d3cc748ff2bec2ad12/src/main/resources/assets/createdieselgenerators/models/item/mold/bar.json) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/integration/item_filtering/ItemMatchingSystem.java) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/task/ItemTask.java) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/quest/QuestObjectBase.java) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/util/FTBQuestsInventoryListener.java) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Quests/blob/8c53f35a97d8897c861b097f1e39f4fc3beb3a15/common/src/main/java/dev/ftb/mods/ftbquests/api/ItemFilterAdapter.java) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Library/blob/ba8962d4b4dcff22041824c792fe07ae21fe28d5/LICENSE.md) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Library/blob/ba8962d4b4dcff22041824c792fe07ae21fe28d5/gradle.properties) — SHA перевірено
+- [джерело](https://github.com/FTBTeam/FTB-Library/blob/ba8962d4b4dcff22041824c792fe07ae21fe28d5/common/src/main/java/dev/ftb/mods/ftblibrary/config/NameMap.java) — SHA перевірено
+- [createdieselgenerators:casting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/casting/chocolate_bar.json) — SHA перевірено
+- [createdieselgenerators:casting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compat/immersiveengineering/duroplast_sheet.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/blaze_rod.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/bowl.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/bucket.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/chain.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/minecart_coupling.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/sheet_metal_panel.json) — SHA перевірено
+- [createdieselgenerators:compression_molding](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/compression_molding/stick.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/bar_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/bowl_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/chain_mold.json) — SHA перевірено
+- [create:cutting](../../content/research/evidence/cdg_molds_v13/recipes/createdieselgenerators/cutting/lines_mold.json) — SHA перевірено
+- [джерело](../../content/research/evidence/cdg_molds_v13/contracts/component-contract.json) — SHA перевірено
+- [immersiveengineering:refinery](../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/refinery/resin.json) — SHA перевірено
+- [immersiveengineering:bottling_machine](../../content/research/evidence/cdg_molds_v13/recipes/immersiveengineering/bottling/duroplast_plate.json) — SHA перевірено
+- [джерело](../../content/research/evidence/cdg_molds_v13/manifest.json) — SHA перевірено
 
 ## Draconic Evolution
 

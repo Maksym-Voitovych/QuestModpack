@@ -4,6 +4,10 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+try:
+    from item_task_components_v13 import signature_suffix
+except ImportError:
+    from tools.item_task_components_v13 import signature_suffix
 
 ROOT = Path(__file__).resolve().parents[1]
 try:
@@ -54,6 +58,8 @@ def validate(root=ROOT):
     modern_paths = sorted((root/'content/quests').glob('v5_*.json'))
     addon_course = root/'content/quests/v12_create_addons_course.json'
     if addon_course.is_file(): modern_paths.append(addon_course)
+    molds = root/'content/quests/v13_cdg_molds.json'
+    if molds.is_file(): modern_paths.append(molds)
     for path in modern_paths:
         v5_authored.extend(normalize(load(path))['quests'])
     authored.extend(v5_authored)
@@ -109,12 +115,13 @@ def validate(root=ROOT):
         assert rules['itemGates'][q['icon']] <= gate_limit, (q['id'],'future icon',q['icon'])
         signature=[]
         for t in q['tasks']:
+            suffix = signature_suffix(t)
             kind=t['type'];tasktypes[kind]+=1
             if kind=='item':
                 assert t['item'] in items,(q['id'],t)
                 assert rules['itemGates'][t['item']] <= gate_limit,(q['id'],'future item',t['item'],rules['itemGates'][t['item']])
                 assert 1<=t.get('count',1)<=10000000,(q['id'],t)
-                signature.append((kind,t['item'],t.get('consume',False),t.get('craft',False)))
+                signature.append((kind,t['item'],t.get('consume',False),t.get('craft',False)) + suffix)
             elif kind=='observation':
                 assert t['block'] in regs['block'],(q['id'],t)
                 assert rules['blockGates'][t['block']] <= gate_limit,(q['id'],'future block',t['block'],rules['blockGates'][t['block']])

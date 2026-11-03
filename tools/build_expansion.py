@@ -7,8 +7,10 @@ from collections import Counter, defaultdict
 from pathlib import Path
 try:
     from item_normalization import normalize
+    from item_task_components_v13 import item_stack, predicate
 except ModuleNotFoundError:
     from tools.item_normalization import normalize
+    from tools.item_task_components_v13 import item_stack, predicate
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -157,11 +159,13 @@ def component_chains(root=ROOT):
 
 
 def compile_task(record, logical_id, index):
+    spec = predicate(record)
     task = {'id': uid(logical_id + ':task:' + str(index)), 'type': record['type']}
     kind = record['type']
     if kind == 'item':
-        task.update(item={'id': record['item'], 'count': 1}, count=record.get('count', 1),
+        task.update(item=item_stack(record), count=record.get('count', 1),
                     consume_items=record.get('consume', False), only_from_crafting=record.get('craft', False))
+        if spec is not None: task['match_components'] = spec['match_components']
     elif kind == 'kill':
         task.update(entity=record['entity'], value=record.get('count', 1))
     elif kind == 'advancement':
@@ -187,6 +191,8 @@ def compile_quests(root=ROOT):
     modern_paths = sorted((root/'content/quests').glob('v5_*.json'))
     addon_course = root/'content/quests/v12_create_addons_course.json'
     if addon_course.is_file(): modern_paths.append(addon_course)
+    molds = root/'content/quests/v13_cdg_molds.json'
+    if molds.is_file(): modern_paths.append(molds)
     for path in modern_paths:
         records.extend(read(path)['quests'])
     try:
@@ -408,6 +414,7 @@ def apply(root=ROOT):
                                 ('build_required_space_v10', 'content/audit/v10-space-required-migration.json'),
                                 ('build_station_proofs_v9', 'content/quests/v5_station_construction.json'),
                                 ('build_create_addons_v12', 'content/research/create_addons_pending_v12.json'),
+                                ('build_cdg_molds_v13', 'content/quests/v13_cdg_molds.json'),
                                 ('build_rewards_v5', 'content/rewards/v5_profiles.json'),
                                 ('build_space_milestones_v11', 'content/audit/v11-space-milestone-presentation.json')]:
         if (root/source).exists():

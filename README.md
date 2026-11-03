@@ -1,36 +1,35 @@
 # All in One Adventure 2.0 — AIA2
 
-**0.4.23-alpha — Create addon courses and verified electrum manufacturing.**
+**0.4.24-alpha — exact CDG Mold profile objectives.**
 Minecraft1.21.1 NeoForge / FTB Quests2101.1.36 / KubeJS2101.7.2 / Rhino85.
 The full0.5 update remains in progress.
 
-Fifteen optional objectives deepen Create Crafts & Additions1.6.0 and Create
-Diesel Generators1.3.15. They teach metal forms, ordinary component crafting,
-control polarity, storage, fuel samples and service planning. One new native
-Basin receipt requires successful non-simulated electrum mixing by the current
-owner team at epoch15; possession or another alloy recipe never supplies it.
+Six optional goals distinguish Lines, Bowl, Chain and Bar components and teach
+their compression/casting applications. FTB fuzzy matching requires the full
+profile identifier while permitting an extra item name. Generic Mold or another
+profile cannot satisfy these predicates; product samples are not production proof.
 
-**3396quests/140chapters/6groups,627recipes,3132item rewards,390items/models/PNGs,
-48epochs and96manufactured keys.** All3381previous non-coordinate quest
-payloads remain identical.15goals/rewards were added;24old coordinates moved
-in two addon chapters. No old tasks, IDs, rewards or dependencies were replaced.
+**3402quests/140chapters/6groups,627recipes,3138item rewards,390items/models/PNGs,
+48epochs and96manufactured keys.** All3396old non-coordinate quest payloads
+remain identical.20old coordinates moved in one chapter. Old generic Mold tasks,
+rewards, dependencies and completed progress are preserved.
 
-The addon maps now cover23/24stages and all32selected legacy objectives.
-258exported recipes and version-matched source pins are frozen; installed
-binary equivalence/full mod coverage are not claimed. All15published native
-mechanic rules, journal schemas, API4 and76Mixins remain; one explicit rule
-extends the existing Basin hook. All230JARclasses match the previous build.
+Source/compiler/compiled/package/installer checks reject malformed or missing
+predicates before deployment. Actual Minecraft tests confirmed that partial
+ItemStack decoding can discard a bad component and broaden a filter.43pinned
+source/recipe files and a separate native API fact document the boundary.
 
-Fluid production, rolling-specific completion, FE flow, full client/JEI/Survival
-and TPS remain untested. The conservative epoch15 heat route does not exclude
-the documented CDG Burner alternative available earlier.
+329actual minimal-server assertions across2JVMs include56new codec/map checks,
+using an opt-in IDE-only synthetic component.88actual FTB matcher assertions
+use a modeled host. Original CDG/FTB UI, full client, JEI, Survival and TPS are
+not tested. API4,16native rules,76Mixins and guard policy classes remain unchanged.
 
-Stop Minecraft, extract to a separate folder, then run
+Stop Minecraft, extract separately, then run
 `python install_runtime.py "C:\CurseForge\AllInOneAdventure2" --dry-run`.
-Run again without the flag and restart both sides fully. The installer backs up
-changed files and the old owned JAR; it never edits world/player progress.
+Run again without the flag and restart both sides fully. Changed files and the
+old owned JAR are backed up; worlds and player/team progress are never edited.
 
-[Checkpoint](docs/AIA2_0.4.23_CHECKPOINT.uk.md) ·
+[Checkpoint](docs/AIA2_0.4.24_CHECKPOINT.uk.md) ·
 [Install](implementation/INSTALL.uk.txt) ·
-[Acceptance](docs/testing/CREATE_ADDONS_ACCEPTANCE.uk.md) ·
+[Acceptance](docs/testing/CDG_MOLDS_ACCEPTANCE.uk.md) ·
 [PLAN](docs/AIA2_0.5.0_PLAN.md) · [PROGRESS](docs/AIA2_0.5.0_PROGRESS.md).

@@ -6,22 +6,25 @@
 Версію 0.5.0-alpha можна оголосити лише після завершення перевіреного обсягу;
 проміжні робочі зміни мають власні коміти та чесний статус незавершеної роботи.
 
-Поточний checkpoint: **0.4.23-alpha — курси CCA/CDG і native electrum proof**.
-Додано15побічних цілей, карти двох аддонів поглиблено до23/24етапів;
-усі3381старі quest payloads без координат збережені. Нативний контракт
-розширено15→16правил із точним збереженням попередніх hashes/schema1.
-258експортованих рецептів і47official source файлів підтверджують дослідження,
-але не тотожність installed binary. CCA1.6.0pin51e4a389,CDG1.3.15pin79ce136.
-Java230classes/Mixins76/API4/96keys/627recipes незмінні. Поточний стан
-остаточних QA/пакета/Git — у PROGRESS. Повний0.5не готовий.
+Поточний checkpoint: **0.4.24-alpha — точні профілі CDG Mold**.
+Додано6побічних цілей без зміни3396попередніх payloads. Item tasks зберігають
+modern item.components і literal fuzzy; підтримано4відомі повні ResourceLocation
+профілі. Валідація source/compiled/installer закриває випадкове зняття predicate.
+CDGкарта30етапів, старі24 та інші моди збережені.16native rules/627recipes/96keys
+незмінні. Новий debug-only fixture перевіряє справжній Minecraft CODEC;
+329common-MC checks не є запуском оригінального CDG/FTB UI. Статус остаточних
+QA/доставки/Git — у PROGRESS. Повний0.5не готовий.
 
-Наступна конкретна дія після доставки0.4.23: CDG Mold component-aware tasks.
-Перевірити exact1.3.15 codec createdieselgenerators:mold_type і FTB2101.1.36
-ItemTask component matching; потім додати окремі цілі профілів та реальні
-compression-molding ланцюги без зміни старого generic Mold task. Не видавати
-inventory за fluid/native production proof. Charging53/liquid-burning9 CCA,
-CDG fluid completion, інші34partial карти/required48 та6IFfluidgaps лишаються
-незавершеними. Original optional binaries/client/JEI/Survival/TPS NOT_RUN.
+Наступна конкретна дія після доставки0.4.24: нативний доказ CDG compression
+sheet_metal_panel. Спочатку підтвердити, що чинний Create Basin apply RETURN
+спостерігає саме успішний CDG процес із правильною формою, оплатою й прийнятим
+виходом; звірити getResultItem/serializer на exact source1.3.15. Лише після
+цього додати явний additive contract поверх16опублікованих правил і нову
+optional-ціль після V13 Lines, зберігши всі старі tasks/IDs/progress. Новий
+optional Mixin без перевіреної ABI не додавати. Casting Bar/Spout потребує
+окремої межі, component presence не підміняє виробництво. Charging53/liquid9,
+інші34partial карти/required48/6IFfluidgaps/DraconicCI633 лишаються відкритими.
+Original optional binaries/client/JEI/Survival/TPS NOT_RUN.
 
 ## Правило відновлення
 
